@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fJZ28MEezC90iO1WFtOCsrbhy2eOPMuWrBd7dCatgYbMsg1VHhIvU3EBmqJLl8z7ijWuZyMpPvLz8Kel85g0VA==",
+  "dgSpecHash": "zKWUWdPkk0x+wLncYOFererJP5sCufPV4xiPmJ6msie0u+yaQwnkZ3NrdcaqX55UmxkG/ZaJQb4ODb92qcZV5A==",
   "success": true,
-  "projectFilePath": "D:\\VS\\Projects\\DocxDocument.Reader.Test\\DocxDocument.Reader.Test.csproj",
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader.Test\\DocxDocument.Reader.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\qhta1\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.17.1\\documentformat.openxml.2.17.1.nupkg.sha512",
