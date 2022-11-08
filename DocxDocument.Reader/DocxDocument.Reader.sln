@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader", "DocxDocument.Reader.csproj", "{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.OpenXMLTools", "..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj", "{4179CB6E-4716-41A4-907D-B70E9921B5B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.OpenXMLTools", "..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj", "{4179CB6E-4716-41A4-907D-B70E9921B5B1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Model", "..\DocxDocument.Model\DocxDocument.Model.csproj", "{BB231112-E6BC-4A45-9293-D986269D06A6}"
 EndProject

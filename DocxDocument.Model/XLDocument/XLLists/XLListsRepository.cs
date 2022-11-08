@@ -7,11 +7,11 @@ using DocxDocument.Model;
 
 //using Polenter.Serialization;
 
-using Qhta.OpenXMLTools;
 using System.Diagnostics;
 using System.IO;
 //using System.Runtime.Serialization;
 using System.Xml;
+using Qhta.OpenXMLTools;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocxToLatex.Converter.XLDocument.XLLists;

@@ -370,7 +370,6 @@
         "dependencies": {
           "DocumentFormat.OpenXml": "2.17.1",
           "DocxDocument.Model": "1.0.0",
-          "Qhta.OpenXMLTools": "1.0.0",
           "System.Memory": "4.5.5"
         },
         "runtime": {

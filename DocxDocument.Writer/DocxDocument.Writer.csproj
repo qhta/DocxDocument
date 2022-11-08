@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DocxDocument.Model\DocxDocument.Model.csproj" />
-    <ProjectReference Include="..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
   </ItemGroup>
 
 </Project>
