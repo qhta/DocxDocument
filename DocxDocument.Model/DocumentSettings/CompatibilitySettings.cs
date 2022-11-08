@@ -4,51 +4,15 @@ namespace DocxDocument.Model;
 
 public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValuePair<string, object?>>
 {
-  private Dictionary<string, object?> _Items = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
-
-  private void _Set(object? value, [CallerMemberName] string name = null!)
-  {
-    Set(name, value);
-  }
-
-  private object? _Get([CallerMemberName] string name = null!)
-  {
-    return Get(name);
-  }
-
-  private void Set(string name, object? value)
-  {
-    if (_Items.ContainsKey(name))
-    {
-      if (value == null)
-      {
-        _Items.Remove(name);
-      }
-      else
-      {
-        _Items[name] = value;
-      }
-    }
-    if (value != null)
-      _Items.Add(name, value);
-  }
-
-  public object? Get(string name)
-  {
-    if (!_Items.ContainsKey(name))
-      return null;
-    return _Items[name];
-  }
-
-
+  private Dictionary<object?> Items = new Dictionary<object?>();
 
   /// <summary> 
   /// Add Document Grid Line Pitch To Lines in Table Cells.
   ///</summary> 
   public bool? AdjustLineHeightInTable
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -56,8 +20,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? AlignTablesRowByRow
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -65,8 +29,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? AllowSpaceOfSameStyleInTable
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -74,8 +38,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? ApplyBreakingRules
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -83,8 +47,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? AutofitToFirstFixedWidthCell
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -92,8 +56,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? AutoSpaceLikeWord95
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -101,8 +65,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? BalanceSingleByteDoubleByteWidth
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -110,8 +74,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? CachedColumnBalance
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -119,8 +83,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? ConvertMailMergeEscape
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -128,8 +92,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DisplayHangulFixedWidth
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -137,8 +101,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotAutofitConstrainedTables
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -146,8 +110,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotBreakConstrainedForcedTable
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -155,8 +119,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotBreakWrappedTables
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -164,8 +128,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotExpandShiftReturn
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -173,8 +137,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotLeaveBackslashAlone
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -182,8 +146,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotSnapToGridInCell
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -191,8 +155,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotSuppressIndentation
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -200,8 +164,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotSuppressParagraphBorders
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -209,8 +173,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotUseEastAsianBreakRules
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -218,8 +182,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotUseHTMLParagraphAutoSpacing
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -227,8 +191,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotUseIndentAsNumberingTabStop
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -236,8 +200,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotVerticallyAlignCellWithShape
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -245,8 +209,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotVerticallyAlignInTextBox
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -254,8 +218,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? DoNotWrapTextWithPunctuation
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -263,8 +227,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? FootnoteLayoutLikeWord8
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -272,8 +236,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? ForgetLastTabAlignment
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -281,8 +245,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? GrowAutofit
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -290,8 +254,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? LayoutRawTableWidth
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -299,8 +263,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? LayoutTableRowsApart
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -308,8 +272,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? LineWrapLikeWord6
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -317,8 +281,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? MacWordSmallCaps
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -326,8 +290,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? NoColumnBalance
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -335,8 +299,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? NoExtraLineSpacing
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -344,8 +308,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? NoLeading
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -353,8 +317,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? NoSpaceRaiseLower
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -362,8 +326,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? NoTabHangIndent
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -371,8 +335,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? PrintBodyTextBeforeHeader
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -380,8 +344,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? PrintColorBlackWhite
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -389,8 +353,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SelectFieldWithFirstOrLastChar
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -398,8 +362,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? ShapeLayoutLikeWord8
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -407,8 +371,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? ShowBreaksInFrames
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -416,8 +380,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SpaceForUnderline
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -425,8 +389,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SpacingInWholePoints
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -434,8 +398,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SplitPageBreakAndParagraphMark
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -443,8 +407,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SubFontBySize
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -452,8 +416,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SuppressBottomSpacing
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -461,8 +425,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SuppressSpacingAtTopOfPage
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -470,8 +434,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SuppressSpacingBeforeAfterPageBreak
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -479,8 +443,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SuppressTopSpacing
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -488,8 +452,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SuppressTopSpacingWordPerfect
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -497,8 +461,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? SwapBordersFacingPages
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -506,8 +470,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? TruncateFontHeightsLikeWordPerfect
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -515,8 +479,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UnderlineTabInNumberingList
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -524,8 +488,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UnderlineTrailingSpaces
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -533,8 +497,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseAltKinsokuLineBreakRules
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -542,8 +506,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseAnsiKerningPairs
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -551,8 +515,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseFarEastLayout
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -560,8 +524,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseNormalStyleForList
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -569,8 +533,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UsePrinterMetrics
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -578,8 +542,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseSingleBorderForContiguousCells
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -587,8 +551,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseWord2002TableStyleRules
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -596,8 +560,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? UseWord97LineBreakRules
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -605,8 +569,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? WordPerfectJustification
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -614,8 +578,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? WordPerfectSpaceWidth
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -623,8 +587,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   ///</summary> 
   public bool? WrapTrailSpaces
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -632,8 +596,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public int? CompatibilityMode
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -641,8 +605,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? OverrideTableStyleFontSizeAndJustification
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -651,8 +615,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? EnableOpenTypeFeatures
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -661,8 +625,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? DoNotFlipMirrorIndents
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -670,8 +634,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? DifferentiateMultirowTableHeaders
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
 
@@ -682,8 +646,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? AllowHyphenationAtTrackBottom
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -695,8 +659,8 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? UseWord2013TrackBottomHyphenation
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -707,33 +671,31 @@ public class CompatibilitySettings: ICompatibilitySettings, IEnumerable<KeyValue
   /// </summary>
   public bool? AllowTextAfterFloatingTableBreak
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   public void Clear()
   {
-    _Items.Clear();
+    Items.Clear();
   }
 
-  public int Count => _Items.Count;
-
   [XmlIgnore]
-  public bool IsReadOnly { get; }
+  public int Count => Items.Count;
 
 
   public IEnumerator<KeyValuePair<string, object?>> GetEnumerator()
   {
-    return _Items.GetEnumerator();
+    return (Items as IEnumerable<KeyValuePair<string, object?>>).GetEnumerator();
   }
 
   IEnumerator IEnumerable.GetEnumerator()
   {
-    return _Items.GetEnumerator();
+    return Items.GetEnumerator();
   }
 
   public bool Remove(string name)
   {
-    return _Items.Remove(name);
+    return Items.Remove(name);
   }
 }

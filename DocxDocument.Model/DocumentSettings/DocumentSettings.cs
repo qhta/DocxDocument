@@ -4,47 +4,14 @@ using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace DocxDocument.Model;
 
-public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<string, object>> 
+public class DocumentSettings: IDocumentSettings, IEnumerable<KeyValuePair<string, object?>>
 {
   [XmlIgnore]
   [JsonIgnore]
   public Document Document { get; set; } = null!;
 
-  private Dictionary<string, object> Items = new();
+  private Dictionary<object?> Items = new Dictionary<object?>();
 
-  private void _Set(object? value, [CallerMemberName] string name = null!)
-  {
-    Set(name, value);
-  }
-
-  private object? _Get([CallerMemberName] string name = null!)
-  {
-    return Get(name);
-  }
-
-  private void Set(string name, object? value)
-  {
-    if (Items.ContainsKey(name))
-    {
-      if (value == null)
-      {
-        Items.Remove(name);
-      }
-      else
-      {
-        Items[name] = value;
-      }
-    }
-    if (value !=null)
-      Items.Add(name, value);
-  }
-
-  public object? Get(string name)
-  {
-    if (!Items.ContainsKey(name))
-      return null;
-    return Items[name];
-  }
 
   #region Automation settings
 
@@ -53,8 +20,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotIncludeSubdocsInStats
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -62,8 +29,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? SavePreviewPicture
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -71,8 +38,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Percentage? SummaryLength
   {
-    get => (Percentage?)_Get();
-    set => _Set(value);
+    get => (Percentage?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -83,8 +50,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? TrackRevisions
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -92,8 +59,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotTrackFormatting
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -101,8 +68,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotTrackMoves
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -110,8 +77,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public RevisionView? RevisionView
   {
-    get => (RevisionView?)_Get();
-    set => _Set(value);
+    get => (RevisionView?)Items._Get();
+    set => Items._Set(value);
   }
   #endregion
 
@@ -121,8 +88,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public CharacterSpacing? CharacterSpacingControl
   {
-    get => (CharacterSpacing?)_Get();
-    set => _Set(value);
+    get => (CharacterSpacing?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -130,8 +97,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? NoPunctuationKerning
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -143,16 +110,16 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public ICompatibilitySettings? Compatibility
   {
-    get => (ICompatibilitySettings?)_Get();
-    set => _Set(value);
+    get => (ICompatibilitySettings?)Items._Get();
+    set => Items._Set(value);
   }
   /// <summary> 
   /// Upgrade Document on Open to Newest Application Version
   ///</summary> 
   public bool? ForceUpgrade
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -164,8 +131,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? AlwaysMergeEmptyNamespace
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -173,8 +140,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? AlwaysShowPlaceholderText
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -182,8 +149,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? ShowXmlTags
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -191,8 +158,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotDemarcateInvalidXml
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -200,8 +167,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotValidateAgainstSchema
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -209,8 +176,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? IgnoreMixedContent
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -218,8 +185,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? SaveInvalidXml
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -227,8 +194,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? SaveXmlDataOnly
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -236,8 +203,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? UseXsltWhenSaving
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -245,8 +212,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? SaveThroughXslt 
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -254,8 +221,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? SolutionId 
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -263,8 +230,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? AttachedSchema 
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -272,8 +239,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public ISchemaLibrary? SchemaLibrary 
   {
-    get => (ISchemaLibrary?)_Get();
-    set => _Set(value);
+    get => (ISchemaLibrary?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -285,8 +252,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Twips? DrawingGridHorizontalOrigin 
   {
-    get => (Twips?)_Get();
-    set => _Set(value);
+    get => (Twips?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -294,8 +261,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Twips? DrawingGridHorizontalSpacing 
   {
-    get => (Twips?)_Get();
-    set => _Set(value);
+    get => (Twips?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -303,8 +270,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Twips? DrawingGridVerticalOrigin 
   {
-    get => (Twips?)_Get();
-    set => _Set(value);
+    get => (Twips?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -312,8 +279,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Twips? DrawingGridVerticalSpacing 
   {
-    get => (Twips?)_Get();
-    set => _Set(value);
+    get => (Twips?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -321,8 +288,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public int? DisplayHorizontalDrawingGridEvery
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -330,8 +297,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public int? DisplayVerticalDrawingGridEvery
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -339,8 +306,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotUseMarginsForDrawingGridOrigin
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -352,8 +319,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public MailingType? DocumentType
   {
-    get => (MailingType?)_Get();
-    set => _Set(value);
+    get => (MailingType?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -361,8 +328,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? ShowEnvelope
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -370,8 +337,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IMailMergeSettings? MailMerge
   {
-    get => (IMailMergeSettings?)_Get();
-    set => _Set(value);
+    get => (IMailMergeSettings?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -383,8 +350,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? DecimalSymbol
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -392,8 +359,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? ListSeparator
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -401,8 +368,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? UpdateFields
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -414,8 +381,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotShadeFormData
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -423,8 +390,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? SaveFormsData
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -432,8 +399,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? FormsDesign
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -445,8 +412,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? SaveSubsetFonts
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -454,8 +421,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? EmbedSystemFonts
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -463,8 +430,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? EmbedTrueTypeFonts
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -476,8 +443,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotAutoCompressPictures
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -486,8 +453,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public int? DefaultImageDpi
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -496,8 +463,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DiscardImageEditingData
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -509,8 +476,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? AutoHyphenation
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -518,8 +485,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotHyphenateCaps
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -527,8 +494,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public int? ConsecutiveHyphenLimit
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -540,8 +507,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? StrictFirstAndLastChars
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -549,8 +516,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public LangText? NoLineBreaksAfter
   {
-    get => (LangText?)_Get();
-    set => _Set(value);
+    get => (LangText?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -558,8 +525,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public LangText? NoLineBreaksBefore
   {
-    get => (LangText?)_Get();
-    set => _Set(value);
+    get => (LangText?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -571,8 +538,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? MirrorMargins
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -580,8 +547,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? EvenAndOddHeaders
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -589,8 +556,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? BordersDoNotSurroundFooter
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -598,8 +565,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? BordersDoNotSurroundHeader
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -607,8 +574,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? AlignBorderAndEdges
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -616,8 +583,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DisplayBackgroundShape
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -625,8 +592,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? GutterAtTop
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -634,8 +601,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Twips? DefaultTabStop
   {
-    get => (Twips?)_Get();
-    set => _Set(value);
+    get => (Twips?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -643,8 +610,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public ReadModeInkLockDown? ReadModeInkLockDown
   {
-    get => (ReadModeInkLockDown?)_Get();
-    set => _Set(value);
+    get => (ReadModeInkLockDown?)Items._Get();
+    set => Items._Set(value);
   }
   #endregion
 
@@ -655,8 +622,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? PrintFormsData
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -664,8 +631,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? PrintFractionalCharacterWidth
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -673,8 +640,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? PrintPostScriptOverText
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -682,8 +649,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? PrintTwoOnOne
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -691,16 +658,16 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? BookFoldPrinting
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
   /// <summary> 
   /// Reverse Book Fold Printing
   ///</summary> 
   public bool? GetBookFoldReversePrinting
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -708,8 +675,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public int? BookFoldPrintingSheets
   {
-    get => (int?)_Get();
-    set => _Set(value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
   #endregion
 
@@ -720,8 +687,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IWritingStyle? ActiveWritingStyle
   {
-    get => (IWritingStyle?)_Get();
-    set => _Set(value);
+    get => (IWritingStyle?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -729,8 +696,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? HideGrammaticalErrors
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -738,8 +705,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? HideSpellingErrors
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
 
@@ -748,8 +715,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public ProofState? ProofState
   {
-    get => (ProofState?)_Get();
-    set => _Set(value);
+    get => (ProofState?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -761,8 +728,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IDocumentProtection? DocumentProtection
   {
-    get => (IDocumentProtection?)_Get();
-    set => _Set(value);
+    get => (IDocumentProtection?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -770,8 +737,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IWriteProtection? WriteProtection
   {
-    get => (IWriteProtection?)_Get();
-    set => _Set(value);
+    get => (IWriteProtection?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -779,8 +746,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? RemoveDateAndTime
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -788,8 +755,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? RemovePersonalInformation
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -797,8 +764,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? AutoFormatOverride
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -810,8 +777,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? GetStyleLockStylesPart
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -819,8 +786,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? StyleLockThemesPart
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -828,8 +795,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? ClickAndTypeStyle
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -837,8 +804,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? DefaultTableStyle
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -846,8 +813,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? LinkStyles
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -855,8 +822,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public string? AttachedTemplate
   {
-    get => (string?)_Get();
-    set => _Set(value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -864,8 +831,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IColorSchemeMapping? ColorSchemeMapping
   {
-    get => (ColorSchemeMapping?)_Get();
-    set => _Set(value);
+    get => (ColorSchemeMapping?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -873,8 +840,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IScriptTypeLanguage? ThemeFontLanguages
   {
-    get => (IScriptTypeLanguage?)_Get();
-    set => _Set(value);
+    get => (IScriptTypeLanguage?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -882,8 +849,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
-    get => (StylePaneFormatFilter?)_Get();
-    set => _Set(value);
+    get => (StylePaneFormatFilter?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -891,8 +858,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public StylePaneSortMethods? StylePaneSortMethods
   {
-    get => (StylePaneSortMethods?)_Get();
-    set => _Set(value);
+    get => (StylePaneSortMethods?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -904,8 +871,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public bool? DoNotDisplayPageBoundaries
   {
-    get => (bool?)_Get();
-    set => _Set(value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -913,8 +880,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public DocView? View
   {
-    get => (DocView?)_Get();
-    set => _Set(value);
+    get => (DocView?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -922,8 +889,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public Zoom? Zoom
   {
-    get => (Zoom?)_Get();
-    set => _Set(value);
+    get => (Zoom?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -935,8 +902,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public ICaptions? Captions
   {
-    get => (ICaptions?)_Get();
-    set => _Set(value);
+    get => (ICaptions?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -944,8 +911,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IDocumentVariables? DocumentVariables
   {
-    get => (IDocumentVariables?)_Get();
-    set => _Set(value);
+    get => (IDocumentVariables?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -953,8 +920,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IEndnoteProperties? EndnoteDocumentWideProperties
   {
-    get => (IEndnoteProperties?)_Get();
-    set => _Set(value);
+    get => (IEndnoteProperties?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -962,8 +929,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IFootnoteProperties? FootnoteDocumentWideProperties
   {
-    get => (IFootnoteProperties?)_Get();
-    set => _Set(value);
+    get => (IFootnoteProperties?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -971,8 +938,8 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
   ///</summary> 
   public IMathProperties? MathProperties
   {
-    get => (IMathProperties?)_Get();
-    set => _Set(value);
+    get => (IMathProperties?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -985,16 +952,16 @@ public class DocumentSettings : IDocumentSettings, IEnumerable<KeyValuePair<stri
     return true;
   }
 
+  [XmlIgnore]
   public int Count => Items.Count;
 
-
-  public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+  public IEnumerator<KeyValuePair<string, object?>> GetEnumerator()
   {
-    return Items.GetEnumerator();
+    return (Items as IEnumerable<KeyValuePair<string, object?>>).GetEnumerator();
   }
 
   IEnumerator IEnumerable.GetEnumerator()
   {
-    return this.GetEnumerator();
+    return ((IEnumerable)Items).GetEnumerator();
   }
 }
