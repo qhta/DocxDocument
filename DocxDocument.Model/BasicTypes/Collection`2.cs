@@ -3,12 +3,18 @@
 public class Collection<KeyType, ItemType> : ICollection<ItemType>, IDictionary<KeyType, ItemType> where KeyType: IComparable<KeyType>
 {
 
-  private Dictionary<KeyType, ItemType> Items { get; } = new();
+  private Dictionary<KeyType, ItemType> Items { get; set;}
 
-  PropertyInfo KeyProperty { get; set; }
+  private PropertyInfo KeyProperty { get; set; }
 
-  public Collection()
+  public Collection(): this(null)
   {
+
+  }
+
+  public Collection(IEqualityComparer<KeyType>? comparer)
+  {
+    Items = new Dictionary<KeyType, ItemType>(comparer);
     var keyProperty = typeof(ItemType).GetProperties().FirstOrDefault(item => item.GetCustomAttribute<KeyAttribute>() != null);
     if (keyProperty == null)
       throw new InvalidOperationException($"Type {typeof(ItemType).Name} does not have a key property");
