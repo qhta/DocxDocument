@@ -656,8 +656,8 @@
     },
     "Qhta.OpenXMLTools/1.0.0": {
       "type": "project",
-      "path": "../MyLib/Qhta.OpenXMLTools/Qhta.OpenXMLTools.csproj",
-      "msbuildProject": "../MyLib/Qhta.OpenXMLTools/Qhta.OpenXMLTools.csproj"
+      "path": "../../MyLib/Qhta.OpenXMLTools/Qhta.OpenXMLTools.csproj",
+      "msbuildProject": "../../MyLib/Qhta.OpenXMLTools/Qhta.OpenXMLTools.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -665,7 +665,6 @@
       "DocumentFormat.OpenXml >= 2.17.1",
       "DocxDocument.Model >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
-      "Qhta.OpenXMLTools >= 1.0.0",
       "System.Memory >= 4.5.5"
     ]
   },
@@ -676,11 +675,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS\\Projects\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
+      "projectUniqueName": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
       "projectName": "DocxDocument.Reader",
-      "projectPath": "D:\\VS\\Projects\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
+      "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
       "packagesPath": "C:\\Users\\qhta1\\.nuget\\packages\\",
-      "outputPath": "D:\\VS\\Projects\\DocxDocument.Reader\\obj\\",
+      "outputPath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -701,11 +700,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "D:\\VS\\Projects\\DocxDocument.Model\\DocxDocument.Model.csproj": {
-              "projectPath": "D:\\VS\\Projects\\DocxDocument.Model\\DocxDocument.Model.csproj"
-            },
-            "D:\\VS\\Projects\\MyLib\\Qhta.OpenXMLTools\\Qhta.OpenXMLTools.csproj": {
-              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.OpenXMLTools\\Qhta.OpenXMLTools.csproj"
+            "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Model\\DocxDocument.Model.csproj": {
+              "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Model\\DocxDocument.Model.csproj"
             }
           }
         }
