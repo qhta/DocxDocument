@@ -178,7 +178,7 @@ namespace DocxDocument.Reader.Test
 
       if (showDetails)
       {
-        foreach (var setting in document.Settings)
+        foreach (var setting in document.Settings as IEnumerable<KeyValuePair<string, object?>>)
           ShowObject(setting.Key, setting.Value);
       }
     }
@@ -209,12 +209,12 @@ namespace DocxDocument.Reader.Test
             }
           }
         }
-        var intfType = value.GetType().GetInterface("IEnumerable`1");
-        if (intfType is not null)
-        {
-          var arg = intfType.GetGenericArguments().FirstOrDefault();
-          ShowEnumerable(value as IEnumerable, arg, indent + 1);
-        }
+        //var intfType = value.GetType().GetInterface("IEnumerable`1");
+        //if (intfType is not null)
+        //{
+        //  var arg = intfType.GetGenericArguments().FirstOrDefault();
+        //  ShowEnumerable(value as IEnumerable, arg, indent + 1);
+        //}
       }
       else
         TestContext.Progress.WriteLine(indentStr + $"{name} = {value}");
