@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader", "DocxDocument.Reader.csproj", "{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.OpenXMLTools", "..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj", "{4179CB6E-4716-41A4-907D-B70E9921B5B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Model", "..\DocxDocument.Model\DocxDocument.Model.csproj", "{BB231112-E6BC-4A45-9293-D986269D06A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader.Test", "..\DocxDocument.Reader.Test\DocxDocument.Reader.Test.csproj", "{72FFC1F4-213A-456E-B1FB-5936E38792CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Writer", "..\DocxDocument.Writer\DocxDocument.Writer.csproj", "{0BB7F972-D6A9-4752-B601-B4A67DFFC8DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDFBECC-5532-4761-8F70-CBCD085DFAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4179CB6E-4716-41A4-907D-B70E9921B5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4179CB6E-4716-41A4-907D-B70E9921B5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4179CB6E-4716-41A4-907D-B70E9921B5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4179CB6E-4716-41A4-907D-B70E9921B5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB231112-E6BC-4A45-9293-D986269D06A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB231112-E6BC-4A45-9293-D986269D06A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB231112-E6BC-4A45-9293-D986269D06A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB231112-E6BC-4A45-9293-D986269D06A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72FFC1F4-213A-456E-B1FB-5936E38792CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FFC1F4-213A-456E-B1FB-5936E38792CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FFC1F4-213A-456E-B1FB-5936E38792CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FFC1F4-213A-456E-B1FB-5936E38792CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB7F972-D6A9-4752-B601-B4A67DFFC8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB7F972-D6A9-4752-B601-B4A67DFFC8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB7F972-D6A9-4752-B601-B4A67DFFC8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB7F972-D6A9-4752-B601-B4A67DFFC8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC2618B7-5DB9-4864-AB16-CDC4D1AD6E32}
+	EndGlobalSection
+EndGlobal

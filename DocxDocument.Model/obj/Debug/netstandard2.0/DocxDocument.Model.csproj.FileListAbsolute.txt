@@ -1,0 +1,15 @@
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\DocxDocument.Model.deps.json
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\DocxDocument.Model.dll
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\DocxDocument.Model.pdb
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\Office.dll
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\Qhta.OpenXMLTools.dll
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\Qhta.OpenXMLTools.pdb
+D:\VS\Projects\DocxDocument.Model\bin\Debug\netstandard2.0\Office.xml
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.csproj.CoreCompileInputs.cache
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.csproj.CopyComplete
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.dll
+D:\VS\Projects\DocxDocument.Model\obj\Debug\netstandard2.0\DocxDocument.Model.pdb
