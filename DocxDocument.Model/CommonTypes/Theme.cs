@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing;
-
-namespace DocxDocument.Model.Drawing;
+﻿namespace DocxDocument.Model;
 
 public class Theme: Collection<ThemeElement>
 {

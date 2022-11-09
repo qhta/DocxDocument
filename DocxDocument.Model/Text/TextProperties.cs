@@ -6,7 +6,7 @@ public class TextProperties: RunProperties
   public Color? Color { get; set; }
   public String? Country { get; set; }
   public String? FontFamily { get; set; }
-  public double? FontSize { get; set; }
+  public decimal? FontSize { get; set; }
   public String? FontStyle { get; set; }
   public String? FontVariant { get; set; }
   public String? FontWeight { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace DocxDocument.Model.Drawing;
+﻿namespace DocxDocument.Model;
 
 public abstract class ThemeElement
 {

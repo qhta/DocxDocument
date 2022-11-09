@@ -15,24 +15,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DocumentProperties\CustomProperties.cs" />
-    <Compile Remove="DocumentProperties\DocumentProperties - Copy.cs" />
-    <Compile Remove="DocumentSettings\CaptionPositionValues.cs" />
-    <Compile Remove="DocumentSettings\ChapterSeparatorValues.cs" />
-    <Compile Remove="DocumentSettings\CharacterSpacingValues.cs" />
-    <Compile Remove="DocumentSettings\CryptAlgorithmClassValues.cs" />
-    <Compile Remove="DocumentSettings\CryptAlgorithmTypeValues.cs" />
-    <Compile Remove="DocumentSettings\CryptProviderTypeValues.cs" />
-    <Compile Remove="DocumentSettings\DocProtectionValues.cs" />
-    <Compile Remove="DocumentSettings\DocViewValues.cs" />
-    <Compile Remove="DocumentSettings\NumberFormatValues.cs" />
-    <Compile Remove="DocumentSettings\PresetZoomValues.cs" />
-    <Compile Remove="DocumentSettings\ProofingStateValues.cs" />
-    <Compile Remove="DocumentSettings\StylePaneSortMethodsValues.cs" />
-    <Compile Remove="Enums\PresetZoomValues.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.17.1" />
     <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
