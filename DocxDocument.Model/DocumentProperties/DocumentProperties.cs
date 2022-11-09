@@ -1,7 +1,7 @@
 ﻿namespace DocxDocument.Model;
 
 public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, IContentDocumentProperties, 
-  IStatisticDocumentProperties, IExtraDocumentProperties, ICustomProperties
+  IStatisticDocumentProperties, IExtraDocumentProperties, ICustomDocumentProperties
 {
   //const string DateTimeFormat = "yyyy-MM-ddThh:mm:sszzz";
 
@@ -27,7 +27,7 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [JsonIgnore]
   public Document Document { get; set; } = null!;
 
-  public List<IDocumentProperty> Items { get; } = new List<IDocumentProperty> { };
+  private List<IDocumentProperty> Items { get; } = new List<IDocumentProperty> { };
 
   #region IDocumentProperties implementation
   public int Count => Items.Count;
@@ -578,7 +578,7 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
 
   #region ICustomProperties implementation
 
-  int ICustomProperties.Count => Items.OfType<CustomDocumentProperty>().Count();
+  int ICustomDocumentProperties.Count => Items.OfType<CustomDocumentProperty>().Count();
 
   IEnumerator<ICustomDocumentProperty> IEnumerable<ICustomDocumentProperty>.GetEnumerator()
   {

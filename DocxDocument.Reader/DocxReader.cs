@@ -92,7 +92,7 @@ public partial class DocxReader
       document.Settings = ReadDocumentSettings(parts);
     var t1 = DateTime.Now;
     if (parts.HasFlag(Parts.Theme))
-      document.DocumentTheme = ReadDocumentTheme(WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme);
+      document.DocumentTheme = ReadTheme(WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme);
     var t2 = DateTime.Now;
     if (parts.HasFlag(Parts.NumberingDefinitions))
       document.ListDefinitions = ReadListDefinitions(WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering);
@@ -101,7 +101,7 @@ public partial class DocxReader
       document.Styles = ReadStyleDefinitions(WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles);
     var t4 = DateTime.Now;
     Debug.WriteLine($"ReadDocumentProperties {(t1 - t0).TotalMilliseconds} ms");
-    Debug.WriteLine($"ReadDocumentTheme {(t2 - t1).TotalMilliseconds} ms");
+    Debug.WriteLine($"ReadTheme {(t2 - t1).TotalMilliseconds} ms");
     Debug.WriteLine($"ReadListDefinitions {(t3 - t2).TotalMilliseconds} ms");
     Debug.WriteLine($"ReadStyleDefinitions {(t4 - t3).TotalMilliseconds} ms");
     return document;

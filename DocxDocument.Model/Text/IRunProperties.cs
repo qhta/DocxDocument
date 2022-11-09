@@ -74,12 +74,12 @@ public interface IRunProperties: IFont
   /// <summary> 
   /// Ustawia kolor indeksowany dla tekstu.
   ///</summary> 
-  WdColorIndex? ColorIndex { get; set; }
+  ColorIndex? ColorIndex { get; set; }
 
   /// <summary> 
   /// Ustawia kolor indeksowany dla tekstu w językach RTL.
   ///</summary> 
-  WdColorIndex? ColorIndexBi { get; set; }
+  ColorIndex? ColorIndexBi { get; set; }
 
   /// <summary> 
   /// Ustala kolor znaków diakrytycznych. Działa, jeśli jest ustalona właściwość UseDiffDiacColor.
@@ -89,22 +89,22 @@ public interface IRunProperties: IFont
   /// <summary> 
   /// Ustala odstępy międzyznakowe w punktach
   ///</summary> 
-  float? Spacing { get; set; }
+  Decimal? Spacing { get; set; }
 
   /// <summary> 
   /// Ustala poziome skalowanie czcionek w procentach. Czcionki mogą być zwężone lub rozszerzone. Zakres od 1 do 600.
   ///</summary> 
-  int? Scaling { get; set; }
+  Percentage? Scaling { get; set; }
 
   /// <summary> 
   /// Zmienia pionowe położenie tekstu względem linii bazowej (w punktach)
   ///</summary> 
-  int Position { get; set; }
+  Decimal? Position { get; set; }
 
   /// <summary> 
   /// Podaje minimalny rozmiar czcionki (w punktach), poniżej którego stosuje się automatyczne podsuwanie znaków.
   ///</summary> 
-  float? Kerning { get; set; }
+  Decimal? Kerning { get; set; }
 
   /// <summary> 
   /// Nakazuje ignorowanie ustalonej w siatce dokumentu liczby znaków w linii.
@@ -129,7 +129,7 @@ public interface IRunProperties: IFont
   /// <summary> 
   /// Wyświetla specjalny znak zwrócenia uwagi.
   ///</summary> 
-  WdEmphasis­Mark? EmphasisMark { get; set; }
+  Emphasis­Mark? EmphasisMark { get; set; }
 
   /// <summary> 
   /// Podaje właściwości cieniowania tekstu.

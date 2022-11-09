@@ -277,6 +277,14 @@ public partial class DocxReader
     }
     return null;
   }
+
+  public static DM.Hps? ReadHpsMeasure(string? valStr)
+  {
+    if (valStr == null)
+      return null;
+    return new DM.Hps(int.Parse(valStr));
+  }
+
   public static EnumType? ReadEnum<EnumType, EnumValues>(OO.EnumValue<EnumValues>? val) where EnumType : struct, IConvertible where EnumValues : struct, IConvertible
   {
     if (val is not null && val.HasValue)

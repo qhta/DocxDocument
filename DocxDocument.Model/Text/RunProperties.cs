@@ -51,12 +51,12 @@ public class RunProperties
   /// <summary> 
   /// Rozmiar czcionki w punktach.
   ///</summary>
-  public float? FontSize { get; set; }
+  public decimal? FontSize { get; set; }
 
   /// <summary> 
   /// Rozmiar czcionki w dla języków RTL
   ///</summary> 
-  public float? FontSizeBi { get; set; }
+  public decimal? FontSizeBi { get; set; }
 
   /// <summary> 
   /// Wytłuszczenie

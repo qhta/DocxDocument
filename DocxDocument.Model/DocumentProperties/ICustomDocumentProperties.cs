@@ -1,6 +1,6 @@
 ﻿namespace DocxDocument.Model;
 
-public interface ICustomProperties: IEnumerable<ICustomDocumentProperty>
+public interface ICustomDocumentProperties: IEnumerable<ICustomDocumentProperty>
 {
   int Count {get;}
   void Add(ICustomDocumentProperty property);
