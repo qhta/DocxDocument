@@ -115,7 +115,7 @@ namespace DocxDocument.Reader.Test
         }
       }
 
-      ICustomProperties customDocumentProperties = document.Properties as ICustomProperties;
+      ICustomDocumentProperties customDocumentProperties = document.Properties as ICustomDocumentProperties;
       int customPropertiesCount = customDocumentProperties.Count;
       var origCustomPropertiesCount = reader.WordprocessingDocument?.CustomFilePropertiesPart?.Properties.Count() ?? 0;
       TestContext.Progress.WriteLine($"  CustomProperties = {customPropertiesCount}/{origCustomPropertiesCount}");

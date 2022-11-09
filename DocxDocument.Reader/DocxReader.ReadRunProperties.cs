@@ -6,7 +6,7 @@ namespace DocxDocument.Reader;
 
 public partial class DocxReader
 {
-  public DM.RunProperties ReadRunProperties(OpenXml.OpenXmlCompositeElement openXmlElement)
+  public static DM.RunProperties ReadRunProperties(OpenXml.OpenXmlCompositeElement openXmlElement)
   {
     var dmRunProperties = new DM.RunProperties();
     foreach (var element in openXmlElement.Elements())
@@ -23,7 +23,7 @@ public partial class DocxReader
     return dmRunProperties;
   }
 
-  private DM.FontNames ReadFontNames(WP.RunFonts wpRunFonts)
+  public static DM.FontNames ReadFontNames(WP.RunFonts wpRunFonts)
   {
     var dmFontNames = new DM.FontNames();
     dmFontNames.Ascii = wpRunFonts.Ascii;
@@ -38,17 +38,7 @@ public partial class DocxReader
     return dmFontNames;
   }
 
-  private float? ReadHpsMeasure(string? valStr)
-  {
-    if (valStr==null)
-      return null;
-    if (UInt64.TryParse(valStr, out var val))
-      return (float)val / 2;
-    else
-      throw new InvalidOperationException($"Cant convert \"{valStr}\" string to UInt64");
-  }
-
-  private DM.Languages ReadLanguages(WP.Languages wpLanguages)
+  public static DM.Languages ReadLanguages(WP.Languages wpLanguages)
   {
     var dmLanguages = new DM.Languages();
     dmLanguages.Latin = wpLanguages.Val;

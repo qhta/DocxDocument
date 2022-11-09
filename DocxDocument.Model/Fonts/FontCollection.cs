@@ -1,4 +1,4 @@
-﻿namespace DocxDocument.Model.Drawing;
+﻿namespace DocxDocument.Model;
 
 /// <summary>
 /// Assigns font spec to specific scripts. Three scripts are key ones: Latin, ComplexScript, EastAsia.

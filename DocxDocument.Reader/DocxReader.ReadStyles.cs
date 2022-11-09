@@ -9,7 +9,7 @@ namespace DocxDocument.Reader;
 
 public partial class DocxReader
 {
-  public DM.Styles ReadStyleDefinitions(WP.Styles? wpStyles)
+  public static DM.Styles ReadStyleDefinitions(WP.Styles? wpStyles)
   {
     var dmStyles = new DM.Styles();
     if (wpStyles == null)
@@ -41,7 +41,7 @@ public partial class DocxReader
     return dmStyles;
   }
 
-  private DM.BuiltInStyles ReadLatentStyles(WP.LatentStyles wpLatentStyles)
+  public static DM.BuiltInStyles ReadLatentStyles(WP.LatentStyles wpLatentStyles)
   {
     var dmBuiltInStyles = InitBuiltInStyles();
     dmBuiltInStyles.InitCount = wpLatentStyles.Count?.Value;
@@ -97,7 +97,7 @@ public partial class DocxReader
     return dmBuiltInStyles;
   }
 
-  private DM.BuiltInStyles InitBuiltInStyles()
+  public static DM.BuiltInStyles InitBuiltInStyles()
   {
     var dmBuiltInStyles = new DM.BuiltInStyles();
     foreach (var spec in PredefinedStyles.Mapping)
@@ -109,7 +109,7 @@ public partial class DocxReader
     return dmBuiltInStyles;
   }
 
-  private DM.Style ReadCustomStyleDefinition (WP.Style wpStyle)
+  public static DM.Style ReadCustomStyleDefinition (WP.Style wpStyle)
   {
     var dmStyle = new DM.Style();
     if (wpStyle.Type?.Value != null)
@@ -119,7 +119,7 @@ public partial class DocxReader
     return dmStyle;
   }
 
-  private void ReadBuiltInStyleDefinition(DM.BuiltInStyles dmBuiltInStyles, WP.Style wpStyle)
+  public static void ReadBuiltInStyleDefinition(DM.BuiltInStyles dmBuiltInStyles, WP.Style wpStyle)
   {
     var styleID = wpStyle.StyleId?.Value;
     if (styleID != null)
@@ -133,7 +133,7 @@ public partial class DocxReader
     }
   }
 
-  private void ReadStyleDefinition(DM.Style dmStyle, WP.Style wpStyle)
+  public static void ReadStyleDefinition(DM.Style dmStyle, WP.Style wpStyle)
   {
     if (wpStyle.Type?.Value != null)
       dmStyle.Type = WpStyleType2DmStyleType(wpStyle.Type);
@@ -150,7 +150,7 @@ public partial class DocxReader
       dmStyle.RunProperties = ReadRunProperties(wpRunProperties);
   }
 
-  private DM.StyleType WpStyleType2DmStyleType(WP.StyleValues wpStyleType)
+  public static DM.StyleType WpStyleType2DmStyleType(WP.StyleValues wpStyleType)
   {
     switch (wpStyleType)
     {

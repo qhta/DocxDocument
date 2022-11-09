@@ -100,7 +100,7 @@ public class Document
 
   #region Theme
 
-  public Drawing.Theme? DocumentTheme
+  public Theme? DocumentTheme
   {
     get => _DocumentTheme;
     set
@@ -113,7 +113,7 @@ public class Document
       }
     }
   }
-  private Drawing.Theme? _DocumentTheme;
+  private Theme? _DocumentTheme;
 
   #endregion
 
