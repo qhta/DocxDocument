@@ -200,7 +200,7 @@ public partial class DocxReader
       dmDocumentProperties.DocumentId = ReadHexInt(docSettings.GetDocumentId()?.Val);
       dmDocumentProperties.PersistentDocumentId = ReadGuid(docSettings.GetPersistentDocumentId()?.Val);
       dmDocumentProperties.ConflictMode = ReadBoolean(docSettings.GetConflictMode());
-      dmDocumentProperties.RsIds = ReadRsIds(docSettings);
+      dmDocumentProperties.Revisions = ReadRsIds(docSettings);
     }
   }
 
