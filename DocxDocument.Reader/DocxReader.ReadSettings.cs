@@ -699,12 +699,12 @@ public partial class DocxReader
     return default;
   }
 
-  public static DM.RsIds? ReadRsIds(W.Settings? docSettings)
+  public static DM.Revisions? ReadRsIds(W.Settings? docSettings)
   {
     W.Rsids? docRsIds = docSettings?.GetRsids();
     if (docRsIds == null)
       return null;
-    var dmRsIds = new DM.RsIds();
+    var dmRsIds = new DM.Revisions();
     dmRsIds.RsidRoot = ToHexInt(docRsIds.RsidRoot?.Val);
     foreach (var item in docRsIds.Elements<W.Rsid>())
     {

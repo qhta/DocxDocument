@@ -1,21 +1,21 @@
 ﻿namespace DocxDocument.Model;
 
-public class Collection<KeyType, ItemType> : ICollection<ItemType>, IDictionary<KeyType, ItemType> where KeyType: IComparable<KeyType>
+public class IndexedCollection<KeyType, ItemType> : ICollection<ItemType>, IDictionary<KeyType, ItemType> where KeyType: IComparable<KeyType>
 {
 
   private Dictionary<KeyType, ItemType> Items { get; set;}
 
   private PropertyInfo KeyProperty { get; set; }
 
-  public Collection(): this(null)
+  public IndexedCollection(string keyPropertyName): this(keyPropertyName, null)
   {
 
   }
 
-  public Collection(IEqualityComparer<KeyType>? comparer)
+  public IndexedCollection(string keyPropertyName, IEqualityComparer<KeyType>? comparer)
   {
     Items = new Dictionary<KeyType, ItemType>(comparer);
-    var keyProperty = typeof(ItemType).GetProperties().FirstOrDefault(item => item.GetCustomAttribute<KeyAttribute>() != null);
+    var keyProperty = typeof(ItemType).GetProperties().FirstOrDefault(item => item.Name == keyPropertyName);
     if (keyProperty == null)
       throw new InvalidOperationException($"Type {typeof(ItemType).Name} does not have a key property");
     if (keyProperty.PropertyType != typeof(KeyType))

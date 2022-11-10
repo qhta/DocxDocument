@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\DocxDocument.Reader\DocxDocument.Reader.csproj" />
   </ItemGroup>
 
