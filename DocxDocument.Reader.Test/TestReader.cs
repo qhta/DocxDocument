@@ -1,8 +1,13 @@
 using System.Collections;
+using System.IO.Packaging;
 using System.Reflection;
 using System.Xml.Serialization;
 
+using DocumentFormat.OpenXml.Packaging;
+
 using DocxDocument.Model;
+
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 
 using Qhta.OpenXMLTools;
 
@@ -20,6 +25,9 @@ namespace DocxDocument.Reader.Test
     }
 
     public string TestPath { get; set; } = string.Empty;
+    private string[] statisticPropElementsNames = new string[] { "TotalTime", "Characters", "CharactersWithSpaces", 
+      "HiddenSlides", "Lines", "MMClips", "Notes", "Pages", "Paragraphs", "Slides", "TotalTime", "Words" };
+    private string[] extraPropElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode" };
 
     [Test]
     public void TestNormalTemplate()
@@ -30,11 +38,26 @@ namespace DocxDocument.Reader.Test
     }
 
     [Test]
+    public void TestDocumentProperties()
+    {
+      var filename = Path.Combine(TestPath, "DocumentProperties.docx");
+      TestReadProperties(filename, true);
+      TestReadSettings(filename, true);
+    }
+
+    [Test]
+    public void TestCustomProperties()
+    {
+      var filename = Path.Combine(TestPath, "CustomProperties.docx");
+      TestReadProperties(filename, true);
+      TestReadSettings(filename, true);
+    }
+
+    [Test]
     public void TestReadProperties()
     {
-      //int runCount = 0;
       foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-        TestReadProperties(filename, Path.GetFileName(filename) == "CustomProperties.docx");
+        TestReadProperties(filename);
     }
 
     public void TestReadProperties(string filename, bool showDetails = false)
@@ -47,13 +70,22 @@ namespace DocxDocument.Reader.Test
       Assert.That(document.Properties.Count, Is.GreaterThan(0), "Document properties count is 0");
       TestContext.Progress.WriteLine($"  AllDocumentProperties = {document.Properties.Count}");
 
+      #region Core Document Properties
       ICoreDocumentProperties coreDocumentProperties = document.Properties as ICoreDocumentProperties;
+      var coreFilePropertiesPart = reader.WordprocessingDocument.PackageProperties;
+      var coreFilePropertiesPartProperties = typeof(PackageProperties).GetProperties();
+      int origCorePropertiesCount = 0;
+      foreach (var prop in coreFilePropertiesPartProperties)
+      {
+        if (prop.GetValue(coreFilePropertiesPart, new object[0]) != null)
+          origCorePropertiesCount++;
+      }
       var coreProperties = typeof(ICoreDocumentProperties).GetProperties();
       int corePropertiesCount = 0;
       foreach (var prop in coreProperties)
         if (prop.GetValue(coreDocumentProperties, null) != null)
           corePropertiesCount++;
-      TestContext.Progress.WriteLine($"  CoreProperties = {corePropertiesCount}/{coreProperties.Count()}");
+      TestContext.Progress.WriteLine($"  CoreProperties: defined {coreProperties.Count()} loaded {corePropertiesCount} expected {origCorePropertiesCount}");
       if (showDetails)
       {
         foreach (var prop in coreProperties)
@@ -63,14 +95,22 @@ namespace DocxDocument.Reader.Test
             TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
         }
       }
+      #endregion
 
+      #region ContentDocumentProperties
       IContentDocumentProperties contentDocumentProperties = document.Properties as IContentDocumentProperties;
+      var origExtraFilePropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Count() ?? 0;
+      var origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
+        ?.Count(item => statisticPropElementsNames.Contains(item.LocalName)) ?? 0;
       var contentProperties = typeof(IContentDocumentProperties).GetProperties();
+      int origContentPropertiesCount = origExtraFilePropertiesCount - origStatisticPropertiesCount;
       int contentPropertiesCount = 0;
       foreach (var prop in contentProperties)
+      {
         if (prop.GetValue(contentDocumentProperties, null) != null)
           contentPropertiesCount++;
-      TestContext.Progress.WriteLine($"  ContentProperties = {contentPropertiesCount}/{contentProperties.Count()}");
+      }
+      TestContext.Progress.WriteLine($"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
       if (showDetails)
       {
         foreach (var prop in contentProperties)
@@ -80,6 +120,7 @@ namespace DocxDocument.Reader.Test
             TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
         }
       }
+      #endregion
 
       IStatisticDocumentProperties statisticsDocumentProperties = document.Properties as IStatisticDocumentProperties;
       var statisticProperties = typeof(IStatisticDocumentProperties).GetProperties();
@@ -87,7 +128,7 @@ namespace DocxDocument.Reader.Test
       foreach (var prop in statisticProperties)
         if (prop.GetValue(statisticsDocumentProperties, null) != null)
           statisticPropertiesCount++;
-      TestContext.Progress.WriteLine($"  StatisticsProperties = {statisticPropertiesCount}/{statisticProperties.Count()}");
+      TestContext.Progress.WriteLine($"  StatisticsProperties: defined {statisticProperties.Count()} loaded {statisticPropertiesCount} expected {origStatisticPropertiesCount}");
       if (showDetails)
       {
         foreach (var prop in statisticProperties)
@@ -99,12 +140,16 @@ namespace DocxDocument.Reader.Test
       }
 
       IExtraDocumentProperties extraDocumentProperties = document.Properties as IExtraDocumentProperties;
+      var origExtraPropertiesCount = reader.WordprocessingDocument.GetAllParts().OfType<DocumentSettingsPart>().FirstOrDefault()?.Settings?.Elements()
+        ?.Count(item => extraPropElementsNames.Contains(item.Prefix + ":" + item.LocalName)) ?? 0;
       var extraProperties = typeof(IExtraDocumentProperties).GetProperties();
       int extraPropertiesCount = 0;
       foreach (var prop in extraProperties)
+      {
         if (prop.GetValue(extraDocumentProperties, null) != null)
           extraPropertiesCount++;
-      TestContext.Progress.WriteLine($"  ExtraProperties = {extraPropertiesCount}/{extraProperties.Count()}");
+      }
+      TestContext.Progress.WriteLine($"  ExtraProperties: defined {extraProperties.Count()} loaded {extraPropertiesCount} expected {origExtraPropertiesCount}");
       if (showDetails)
       {
         foreach (var prop in extraProperties)
@@ -128,8 +173,15 @@ namespace DocxDocument.Reader.Test
             TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
         }
       }
+      if (showDetails)
+      {
+        foreach (var customProp in customDocumentProperties)
+        {
+          TestContext.Progress.WriteLine($"    {customProp}");
+        }
+      }
 
-      var revisions = document.Properties.RsIds;
+      var revisions = document.Properties.Revisions;
       var revisionsCount = revisions?.Count ?? 0;
       if (revisions?.RsidRoot is HexInt)
         revisionsCount++;
@@ -142,12 +194,12 @@ namespace DocxDocument.Reader.Test
           TestContext.Progress.WriteLine($"    RsidRoot = {value}");
       }
 
-      Assert.That(corePropertiesCount, Is.GreaterThanOrEqualTo(9));
-      Assert.That(contentPropertiesCount, Is.GreaterThanOrEqualTo(8));
-      Assert.That(statisticPropertiesCount, Is.EqualTo(7));
-      Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount));
-      Assert.That(extraPropertiesCount, Is.GreaterThanOrEqualTo(1));
-      Assert.That(revisionsCount, Is.EqualTo(origRevisionsCount));
+      Assert.That(corePropertiesCount, Is.EqualTo(origCorePropertiesCount), "Invalid core properties count");
+      Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
+      Assert.That(statisticPropertiesCount, Is.EqualTo(origStatisticPropertiesCount), "Invalid statistic properties count");
+      Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
+      Assert.That(extraPropertiesCount, Is.EqualTo(origExtraPropertiesCount), "Invalid extra properties count");
+      Assert.That(revisionsCount, Is.EqualTo(origRevisionsCount), "Invalid revisions count");
     }
 
     [Test]
@@ -169,12 +221,15 @@ namespace DocxDocument.Reader.Test
       TestContext.Progress.WriteLine($" AllDocumentSettings = {document.Settings.Count}");
 
       IDocumentSettings documentSettings = document.Settings as IDocumentSettings;
+      var origDocumentSettingsCount = reader.WordprocessingDocument.GetAllParts().OfType<DocumentSettingsPart>().FirstOrDefault()?.Settings?.Elements()
+        ?.Count(item => !extraPropElementsNames.Contains(item.Prefix + ":" + item.LocalName)) ?? 0;
       var documentSettingsProperties = typeof(IDocumentSettings).GetProperties();
       int documentSettingsPropertiesCount = 0;
       foreach (var prop in documentSettingsProperties)
         if (prop.GetValue(documentSettings, null) != null)
           documentSettingsPropertiesCount++;
-      TestContext.Progress.WriteLine($"  DocumentSettings = {documentSettingsPropertiesCount}/{documentSettingsProperties.Count()}");
+      TestContext.Progress.WriteLine($"  DocumentSetting: defined {documentSettingsProperties.Count()} loaded {documentSettingsPropertiesCount} expected {origDocumentSettingsCount}");
+                                     //$" = {documentSettingsPropertiesCount}/{documentSettingsProperties.Count()}");
 
       if (showDetails)
       {

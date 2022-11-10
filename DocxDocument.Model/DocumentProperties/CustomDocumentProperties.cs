@@ -2,7 +2,7 @@
 
 public class CustomDocumentProperties: ICustomDocumentProperties
 {
-  private Collection<string, CustomDocumentProperty> Items = new();
+  private IndexedCollection<string, CustomDocumentProperty> Items = new("Name");
 
 
   public IEnumerator<ICustomDocumentProperty> GetEnumerator()

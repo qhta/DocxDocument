@@ -32,20 +32,16 @@ public class Document
   }
 
   #region DocumentProperties
-  public DocumentProperties? Properties
-  {
-    get => _DocumentProperties;
-    set
-    {
-      _DocumentProperties = value;
-      if (_DocumentProperties != null)
-        _DocumentProperties.Document = this;
-    }
-  }
+  [XmlElement]
+  public DocumentProperties? Properties { get; set;}
 
-  private DocumentProperties? _DocumentProperties;
+  [XmlElement]
+  public CustomDocumentProperties? CustomDocumentProperties { get; set; }
 
-  public bool ShouldSerializeDocumentProperties() => Properties != null && !Properties.IsEmpty();
+  [XmlElement]
+  public Revisions? Revisions { get; set; }
+
+  //public bool ShouldSerializeDocumentProperties() => Properties != null && !Properties.IsEmpty();
   #endregion
 
   #region Settings
@@ -91,7 +87,7 @@ public class Document
     set
     {
       _Styles = value;
-      if (_Styles!=null)
+      if (_Styles != null)
         _Styles.Document = this;
     }
   }
@@ -193,5 +189,5 @@ public class Document
   //public WD.XMLSchemaReferences XMLSchemaReferences { get; }
   //public WD.XMLChildNodeSuggestions ChildNodeSuggestions { get; }
   //public WD.XMLNodes XMLSchemaViolations { get; }
-  
+
 }

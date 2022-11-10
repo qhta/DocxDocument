@@ -75,7 +75,7 @@ public class Dictionary<ItemType> : IEnumerable<KeyValuePair<string, ItemType>>,
     return Items.Remove(key);
   }
 
-  [XmlIgnore] public int Count => Items.Values.Count;
+  [XmlIgnore] public int Count => Items.Count;
 
   [XmlIgnore] public bool IsReadOnly => false;
 

@@ -9,7 +9,6 @@ public class FontSpec
   /// Specifies the script handled by the font.
   /// </summary>
   [XmlAttribute]
-  [Key]
   public string? Script { get; set; }
 
   /// <summary>

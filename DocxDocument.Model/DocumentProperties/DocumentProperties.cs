@@ -6,6 +6,9 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   //const string DateTimeFormat = "yyyy-MM-ddThh:mm:sszzz";
 
   private static SortedSet<string> BuiltInPropertyNames = new ();
+  private Dictionary<object?> Items { get; } = new();
+  public CustomDocumentProperties CustomDocumentProperties { get; set; } = new CustomDocumentProperties ();
+
 
   static DocumentProperties()
   {
@@ -27,9 +30,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [JsonIgnore]
   public Document Document { get; set; } = null!;
 
-  private List<IDocumentProperty> Items { get; } = new List<IDocumentProperty> { };
-
   #region IDocumentProperties implementation
+
   public int Count => Items.Count;
 
   IEnumerator IEnumerable.GetEnumerator()
@@ -37,86 +39,13 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
     return Items.GetEnumerator();
   }
 
-  public IEnumerator<IDocumentProperty> GetEnumerator()
+  public IEnumerator<KeyValuePair<string, object?>> GetEnumerator()
   {
-    return Items.GetEnumerator();
+    return (Items as IEnumerable<KeyValuePair<string, object?>>).GetEnumerator();
   }
 
-  public IDocumentProperty this[int n] => Items[n];
-
-  public IDocumentProperty this[string name] => Items.FirstOrDefault(item => item.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-
-  public void Add(IDocumentProperty property)
-  {
-    if (this[property.Name] != null)
-      throw new InvalidOperationException($"Document property \"{property.Name}\" already exists");
-    Items.Add(property);
-  }
-
-  public bool Remove(IDocumentProperty property)
-  {
-    if (this[property.Name] == null)
-      return false;
-    Items.Remove(property);
-    return true;
-  }
-
-  public void Add(string name, PropertyType type, object? value)
-  {
-    if (this[name] != null)
-      throw new InvalidOperationException($"Document property \"{name}\" already exists");
-    if (BuiltInPropertyNames.Contains(name, StringComparer.OrdinalIgnoreCase))
-      Items.Add(new DocumentProperty { Name = name, Type = type, Value = value });
-    else
-      Items.Add(new CustomDocumentProperty { Name = name, Type = type, Value = value });
-  }
-
-  public bool Remove(string name)
-  {
-    var property = this[name];
-    if (property == null)
-      return false;
-    Items.Remove(property);
-    return true;
-  }
-
-  public bool Change(string name, object? value)
-  {
-    var property = this[name];
-    if (property == null)
-      return false;
-    property.Value = value;
-    return true;
-  }
-
-  public void Set(string name, PropertyType type, object? value)
-  {
-    var property = this[name];
-    if (property != null)
-    {
-      if (value == null)
-      {
-        Remove(property);
-      }
-      else
-      {
-        property.Type = type;
-        property.Value = value;
-      }
-    }
-    if (value ==null)
-      return;
-    property = new DocumentProperty { Name = name, Type = type, Value = value };
-    Items.Add(property);
-  }
-
-  public object? Get(string name)
-  {
-    var property = this[name];
-    if (property != null)
-      return property.Value;
-    return null;
-  }
+  public object? this[string name] => Items[name];
+  public object? Get(string name) => Items.ContainsKey(name) ? Items[name] : null;
 
   #endregion
 
@@ -127,8 +56,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Title
   {
-    get => (string?)Get("Title");
-    set => Set("Title", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -136,8 +65,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Subject
   {
-    get => (string?)Get("Subject");
-    set => Set("Subject", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -145,8 +74,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Category
   {
-    get => (string?)Get("Category");
-    set => Set("Category", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -157,8 +86,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? ContentType
   {
-    get => (string?)Get("ContentType");
-    set => Set("ContentType", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -167,8 +96,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? ContentStatus
   {
-    get => (string?)Get("ContentStatus");
-    set => Set("ContentStatus", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -176,8 +105,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Description
   {
-    get => (string?)Get("Description");
-    set => Set("Description", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -185,8 +114,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Keywords
   {
-    get => (string?)Get("Keywords");
-    set => Set("Keywords", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -194,8 +123,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Creator
   {
-    get => (string?)Get("Creator");
-    set => Set("Creator", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -204,8 +133,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [XmlElement(IsNullable = true)]
   public DateTime? Created
   {
-    get => (DateTime?)Get("Created");
-    set => Set("Created", PropertyType.Date, value);
+    get => (DateTime?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -213,8 +142,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? LastModifiedBy
   {
-    get => (string?)Get("LastModifiedBy");
-    set => Set("LastModifiedBy", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -223,8 +152,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [XmlElement(IsNullable = true)]
   public DateTime? LastModified
   {
-    get => (DateTime?)Get("LastModified");
-    set => Set("LastModified", PropertyType.Date, value);
+    get => (DateTime?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -233,8 +162,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [XmlElement(IsNullable = true)]
   public DateTime? LastPrinted
   {
-    get => (DateTime?)Get("LastPrinted");
-    set => Set("LastPrinted", PropertyType.Date, value);
+    get => (DateTime?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -242,8 +171,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Language
   {
-    get => (string?)Get("Language");
-    set => Set("Language", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -251,8 +180,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Identifier
   {
-    get => (string?)Get("Identifier");
-    set => Set("Identifier", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
 
@@ -261,8 +190,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Version
   {
-    get => (string?)Get("Version");
-    set => Set("Version", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary>
@@ -270,8 +199,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   /// </summary>
   public string? Revision
   {
-    get => (string?)Get("Revision");
-    set => Set("Revision", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -283,8 +212,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? Application
   {
-    get => (string?)Get("Application");
-    set => Set("Application", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -294,8 +223,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? ApplicationVersion
   {
-    get => (string?)Get("ApplicationVersion");
-    set => Set("ApplicationVersion", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -303,8 +232,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? Company
   {
-    get => (string?)Get("Company");
-    set => Set("Company", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -313,8 +242,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [Obsolete]
   public byte[]? DigitalSignature
   {
-    get => (byte[]?)Get("DigitalSignature");
-    set => Set("DigitalSignature", PropertyType.Object, value);
+    get => (byte[]?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -323,8 +252,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public DocSecurity? DocumentSecurity
   {
-    get => (DocSecurity?)Get("DocumentSecurity");
-    set => Set("DocumentSecurity", PropertyType.Object, value);
+    get => (DocSecurity?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -333,8 +262,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public HeadingPairs? HeadingPairs
   {
-    get => (HeadingPairs?)Get("HeadingPairs");
-    set => Set("HeadingPairs", PropertyType.Object, value);
+    get => (HeadingPairs?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -343,8 +272,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? HiddenSlides
   {
-    get => (int?)Get("HiddenSlides");
-    set => Set("HiddenSlides", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -352,8 +281,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public HyperlinkList? HyperlinkList
   {
-    get => (HyperlinkList?)Get("HyperlinkList");
-    set => Set("HyperlinkList", PropertyType.Object, value);
+    get => (HyperlinkList?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -361,8 +290,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? HyperlinkBase
   {
-    get => (string?)Get("HyperlinkBase");
-    set => Set("HyperlinkBase", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -374,8 +303,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(false)]
   public Boolean? HyperlinksChanged
   {
-    get => (bool?)Get("ScaleCrop");
-    set => Set("ScaleCrop", PropertyType.String, value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -385,8 +314,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary>
   public Boolean? LinksUpToDate
   {
-    get => (bool?)Get("LinksUpToDate");
-    set => Set("LinksUpToDate", PropertyType.String, value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -394,8 +323,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? Manager
   {
-    get => (string?)Get("Manager");
-    set => Set("Manager", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -404,8 +333,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? PresentationFormat
   {
-    get => (string?)Get("PresentationFormat");
-    set => Set("PresentationFormat", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -415,8 +344,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public Boolean? ScaleCrop
   {
-    get => (bool?)Get("ScaleCrop");
-    set => Set("ScaleCrop", PropertyType.String, value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -425,8 +354,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public Boolean? SharedDocument
   {
-    get => (bool?)Get("SharedDocument");
-    set => Set("SharedDocument", PropertyType.String, value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -434,8 +363,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public String? Template
   {
-    get => (string?)Get("Template");
-    set => Set("Template", PropertyType.String, value);
+    get => (string?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -443,8 +372,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   ///</summary> 
   public Strings? TitlesOfParts
   {
-    get => (Strings?)Get("TitlesOfParts");
-    set => Set("TitlesOfParts", PropertyType.Object, value);
+    get => (Strings?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -457,8 +386,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? TotalTime
   {
-    get => (int?)Get("TotalTime");
-    set => Set("TotalTime", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -467,8 +396,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Characters
   {
-    get => (int?)Get("Characters");
-    set => Set("Characters", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -477,8 +406,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? CharactersWithSpaces
   {
-    get => (int?)Get("CharactersWithSpaces");
-    set => Set("CharactersWithSpaces", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -487,8 +416,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Words
   {
-    get => (int?)Get("Words");
-    set => Set("Words", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -497,8 +426,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Lines
   {
-    get => (int?)Get("Lines");
-    set => Set("Lines", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -507,8 +436,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Pages
   {
-    get => (int?)Get("Pages");
-    set => Set("Pages", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -517,8 +446,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Paragraphs
   {
-    get => (int?)Get("Paragraphs");
-    set => Set("Paragraphs", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -527,8 +456,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? MultimediaClips
   {
-    get => (int?)Get("MultimediaClips");
-    set => Set("MultimediaClips", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -537,8 +466,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Notes
   {
-    get => (int?)Get("Notes");
-    set => Set("Notes", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   /// <summary> 
@@ -547,8 +476,8 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   [DefaultValue(0)]
   public int? Slides
   {
-    get => (int?)Get("Slides");
-    set => Set("Slides", PropertyType.String, value);
+    get => (int?)Items._Get();
+    set => Items._Set(value);
   }
 
   #endregion
@@ -556,48 +485,48 @@ public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, 
   #region IExtraDocumentProperties implementation
   public HexInt? DocumentId
   {
-    get => (HexInt?)Get("DocumentId");
-    set => Set("DocumentId", PropertyType.String, value);
+    get => (HexInt?)Items._Get();
+    set => Items._Set(value);
   }
 
   public Guid? PersistentDocumentId
   {
-    get => (Guid?)Get("PersistentDocumentId");
-    set => Set("PersistentDocumentId", PropertyType.String, value);
+    get => (Guid?)Items._Get();
+    set => Items._Set(value);
   }
 
   public bool? ConflictMode
   {
-    get => (bool?)Get("ConflictMode");
-    set => Set("ConflictMode", PropertyType.String, value);
+    get => (bool?)Items._Get();
+    set => Items._Set(value);
   }
 
-  public IRsIds? RsIds { get; set;}
+  public IRsIds? Revisions { get; set;}
 
   #endregion
 
   #region ICustomProperties implementation
 
-  int ICustomDocumentProperties.Count => Items.OfType<CustomDocumentProperty>().Count();
+  int ICustomDocumentProperties.Count => CustomDocumentProperties.Count();
 
   IEnumerator<ICustomDocumentProperty> IEnumerable<ICustomDocumentProperty>.GetEnumerator()
   {
-    return Items.OfType<ICustomDocumentProperty>().GetEnumerator();
+    return CustomDocumentProperties.GetEnumerator();
   }
 
   public void Add(ICustomDocumentProperty property)
   {
-    Items.Add(property);
+    CustomDocumentProperties.Add(property);
   }
 
   public bool Remove(ICustomDocumentProperty property)
   {
-    return Items.Remove(property);
+    return CustomDocumentProperties.Remove(property);
   }
   #endregion
 
   public bool IsEmpty()
   {
-    return !Items.Any();
+    return !Items.Any() && !CustomDocumentProperties.Any();
   }
 }

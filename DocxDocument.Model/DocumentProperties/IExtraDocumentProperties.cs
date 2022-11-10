@@ -18,8 +18,4 @@ public interface IExtraDocumentProperties
   ///</summary> 
   public bool? ConflictMode { get; set; }
 
-  /// <summary>
-  /// List of all revisions
-  /// </summary>
-  public IRsIds? RsIds { get; set; }
 }

@@ -4,11 +4,15 @@
 /// Assigns font spec to specific scripts. Three scripts are key ones: Latin, ComplexScript, EastAsia.
 /// </summary>
 
-public class FontCollection : Collection<string, FontSpec>
+public class FontCollection : IndexedCollection<string, FontSpec>
 {
   private const string LatinFontKey = "Latin";
   private const string ComplexScriptFontKey = "ComplexScript";
   public const string EastAsianFontKey = "EastAsia";
+
+  public FontCollection() : base("Script")
+  {
+  }
 
   /// <summary>
   /// Fast access to Latin font spec.
