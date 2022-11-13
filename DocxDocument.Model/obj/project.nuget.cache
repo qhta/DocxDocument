@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gcO+z9DWk2P9fuwln6YNHvi+1EGaVpFx6LpG+Fvv5WxA7f2j+oPkY1AqTam3J8u6ASUaXmv5CWCkNOmz9r4L8w==",
+  "dgSpecHash": "OPsc3GN0a7O/W9EAOgAxeMhG6N7Nflcm90RjGbst+F2Dn32c/UxBwhidDgwWwC8im+5simuCFYEgTb2MMKSogg==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Model\\DocxDocument.Model.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,12 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.ordnumbers\\2.2.1\\qhta.ordnumbers.2.2.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }

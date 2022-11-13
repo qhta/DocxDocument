@@ -883,7 +883,8 @@
           "Microsoft.Office.Interop.Word": "15.0.4797.1004",
           "Newtonsoft.Json": "13.0.1",
           "Qhta.OpenXMLTools": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Memory": "4.5.5"
         },
         "compile": {
           "bin/placeholder/DocxDocument.Model.dll": {}
@@ -3503,7 +3504,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

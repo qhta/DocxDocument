@@ -1,7 +1,7 @@
 ﻿namespace DocxDocument.Model;
 
 [Flags]
-public enum StylePaneFormatFilter
+public enum StylePaneFormatFilter: Int32
 {
   ClearFormatting = 0,
   AlternateStyleNames = 1,
