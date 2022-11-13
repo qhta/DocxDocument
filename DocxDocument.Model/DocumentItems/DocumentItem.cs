@@ -2,7 +2,7 @@
 
 public abstract class DocumentItem
 {
-  [XmlAttribute("ID")]
+  [XmlAttribute("Id")]
   public int ID { get; set; }
 
   [XmlIgnore]

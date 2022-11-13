@@ -118,7 +118,8 @@
           "Microsoft.Office.Interop.Word": "15.0.4797.1004",
           "Newtonsoft.Json": "13.0.1",
           "Qhta.OpenXMLTools": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Memory": "4.5.5"
         },
         "runtime": {
           "DocxDocument.Model.dll": {}

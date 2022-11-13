@@ -6,15 +6,15 @@ public interface IFootnoteProperties
   /// <summary> 
   /// Footnote Placement.
   ///</summary> 
-  public FootnotePosition? FootnotePosition { get; set; }
+  public DM.FootnotePosition? FootnotePosition { get; set; }
   /// <summary> 
   /// Footnote Numbering Format.
   ///</summary> 
-  public NumberingFormat? NumberingFormat { get; set; }
+  public DM.NumberingFormat? NumberingFormat { get; set; }
   /// <summary> 
   /// Footnote and Endnote Numbering Restart Location.
   ///</summary> 
-  public RestartNumber? NumberingRestart { get; set; }
+  public DM.RestartNumber? NumberingRestart { get; set; }
   /// <summary> 
   /// Footnote and Endnote Numbering Starting Value.
   ///</summary> 

@@ -1,6 +1,6 @@
 ﻿namespace DocxDocument.Model;
 
-public interface ISchemaLibrary: ICollection<Schema>
+public interface ISchemaLibrary: ICollection<ISchema>
 {
   
 }

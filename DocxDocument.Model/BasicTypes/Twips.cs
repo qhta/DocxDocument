@@ -2,6 +2,8 @@
 
 public struct Twips
 {
+  public Twips(int val) { value = val; }
+
   private int value;
 
   public static implicit operator Twips(string val) => new Twips { value = int.Parse(val)};
