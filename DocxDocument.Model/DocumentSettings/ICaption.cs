@@ -24,15 +24,15 @@ public interface ICaption
   /// <summary> 
   /// Caption Numbering Format.
   ///</summary> 
-  public NumberFormat? NumberFormat { get; set; }
+  public DM.NumberFormat? NumberFormat { get; set; }
   /// <summary> 
   /// Caption position above or below
   ///</summary> 
-  public CaptionPosition? Position { get; set; }
+  public DM.CaptionPosition? Position { get; set; }
   /// <summary> 
   /// Separator inserted after chapter number.
   ///</summary> 
-  public ChapterSeparator? Separator { get; set; }
+  public DM.ChapterSeparator? Separator { get; set; }
 
 
 }

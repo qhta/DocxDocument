@@ -52,8 +52,8 @@ public class Document
     set
     {
       _Settings = value;
-      if (_Settings != null)
-        _Settings.Document = this;
+      //if (_Settings != null)
+      //  _Settings.Document = this;
     }
   }
   private DocumentSettings? _Settings;

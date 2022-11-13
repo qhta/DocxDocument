@@ -248,6 +248,7 @@ namespace DocxDocument.Reader.Test
       {
         TestContext.Progress.WriteLine(indentStr + $"{name}");
         var typeProperties = type.GetProperties();
+        var propsListed = false;
         foreach (var prop in typeProperties)
         {
           if (prop.GetIndexParameters().Length == 0)
@@ -256,20 +257,27 @@ namespace DocxDocument.Reader.Test
             {
               if (prop.PropertyType.Name == "IEnumerable`1")
               {
+                propsListed = true;
                 var arg = prop.PropertyType.GetGenericArguments().FirstOrDefault();
                 ShowEnumerable(prop.Name, prop.GetValue(value, null) as IEnumerable, arg, indent + 1);
               }
               else
+              {
+                propsListed = true;
                 ShowObject(prop.Name, prop.GetValue(value, null), indent + 1);
+              }
             }
           }
         }
-        //var intfType = value.GetType().GetInterface("IEnumerable`1");
-        //if (intfType is not null)
-        //{
-        //  var arg = intfType.GetGenericArguments().FirstOrDefault();
-        //  ShowEnumerable(value as IEnumerable, arg, indent + 1);
-        //}
+        if (!propsListed)
+        {
+          var intfType = value.GetType().GetInterface("IEnumerable`1");
+          if (intfType is not null)
+          {
+            var arg = intfType.GetGenericArguments().FirstOrDefault();
+            ShowEnumerable(value as IEnumerable, arg, indent + 1);
+          }
+        }
       }
       else
         TestContext.Progress.WriteLine(indentStr + $"{name} = {value}");
@@ -285,7 +293,7 @@ namespace DocxDocument.Reader.Test
       TestContext.Progress.WriteLine(indentStr + $"{name}");
       int itemCount = 0;
       foreach (var item in value)
-        ShowObject($"[{itemCount++}]: ", item, indent + 1);
+        ShowObject($"[{itemCount++}] {item.GetType().Name}", item, indent + 1);
     }
 
     private void ShowEnumerable(IEnumerable? value, Type? itemType, int indent = 0)
@@ -295,7 +303,7 @@ namespace DocxDocument.Reader.Test
       var indentStr = new string(' ', (indent + 2) * 2);
       int itemCount = 0;
       foreach (var item in value)
-        ShowObject($"[{itemCount++}]: ", item, indent + 1);
+        ShowObject($"[{itemCount++}] {item.GetType().Name}", item, indent + 1);
     }
 
   }

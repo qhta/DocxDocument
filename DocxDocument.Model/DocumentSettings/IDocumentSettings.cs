@@ -47,7 +47,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Character-Level Whitespace Compression
   ///</summary> 
-  public CharacterSpacing? CharacterSpacingControl { get; set; }
+  public DM.CharacterSpacing? CharacterSpacingControl { get; set; }
 
   /// <summary> 
   /// Never Kern Punctuation Characters
@@ -120,12 +120,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Custom XSL Transform To Use When Saving As XML File
   ///</summary> 
-  public string? SaveThroughXslt { get; set; }
-
-  /// <summary> 
-  /// Local Identifier for XSL Transform.
-  ///</summary> 
-  public string? SolutionId { get; set; }
+  public ISaveThroughXslt? SaveThroughXslt { get; set; }
 
   /// <summary> 
   /// Attached Custom XML Schema
@@ -164,12 +159,12 @@ public interface IDocumentSettings
   /// <summary> 
   /// Distance between Horizontal Gridlines
   ///</summary> 
-  public int? DisplayHorizontalDrawingGridEvery { get; set; }
+  public int? DisplayHorizontalDrawingGrid { get; set; }
 
   /// <summary> 
   /// Distance between Vertical Gridlines
   ///</summary> 
-  public int? DisplayVerticalDrawingGridEvery { get; set; }
+  public int? DisplayVerticalDrawingGrid { get; set; }
 
   /// <summary> 
   /// Do Not Use Margins for Drawing Grid Origin
@@ -183,7 +178,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Document Classification
   ///</summary> 
-  public MailingType? DocumentType { get; set; }
+  public DM.MailMergeDocumentType? DocumentType { get; set; }
   
   /// <summary> 
   /// Show E-Mail Message Header
@@ -212,7 +207,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Automatically Recalculate Fields on Open
   ///</summary> 
-  public bool? UpdateFields { get; set; }
+  public bool? UpdateFieldsOnOpen { get; set; }
 
   #endregion
 
@@ -292,6 +287,16 @@ public interface IDocumentSettings
   ///</summary> 
   public int? ConsecutiveHyphenLimit { get; set; }
 
+  /// <summary>
+  /// This element specifies the hyphenation zone which shall be used when automatically or manually hyphenating the contents of this document.
+  /// The hyphenation zone is the amount of whitespace which can be left at the end of a line (or added to justified lines)
+  /// before hyphenation should be attempted on the next word in the document (in order to reduce the amount of whitespace on the line).
+  /// A smaller hyphenation zone should reduce the raggedness of the right edge of a given document's body text, as more words is hyphenated.
+  /// Conversely, a larger hyphenation zone should increase the raggedness of the right edge of a given document's text, as fewer words is hyphenated.
+  /// </summary>
+  public Twips? HyphenationZone { get; set; }
+
+
   #endregion
 
   #region Kinsoku line breaking settings
@@ -358,7 +363,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Freeze Document Layout
   ///</summary> 
-  public ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
+  public IReadModeInkLockDown? ReadModeInkLockDown { get; set; }
   #endregion
 
   #region Printing settings
@@ -390,7 +395,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Reverse Book Fold Printing
   ///</summary> 
-  public bool? GetBookFoldReversePrinting { get; set; }
+  public bool? BookFoldReversePrinting { get; set; }
 
   /// <summary> 
   /// Number of Pages Per Booklet
@@ -419,7 +424,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Spelling and Grammatical Checking State
   ///</summary> 
-  public ProofState? ProofState { get; set; }
+  public DM.ProofState? ProofState { get; set; }
 
   #endregion
 
@@ -457,7 +462,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Prevent Replacement of Styles Part
   ///</summary> 
-  public bool? GetStyleLockStylesPart { get; set; }
+  public bool? StyleLockStylesPart { get; set; }
 
   /// <summary> 
   /// Prevent Modification of Themes Part
@@ -482,7 +487,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Attached Document Template
   ///</summary> 
-  public string? AttachedTemplate { get; set; }
+  public Relationship? AttachedTemplate { get; set; }
 
   /// <summary> 
   /// Theme Color Mappings
@@ -502,7 +507,7 @@ public interface IDocumentSettings
   /// <summary> 
   /// Suggested Sorting for List of Document Styles
   ///</summary> 
-  public StylePaneSortMethods? StylePaneSortMethods { get; set; }
+  public DM.StylePaneSortMethods? StylePaneSortMethods { get; set; }
 
   #endregion
 
@@ -516,12 +521,12 @@ public interface IDocumentSettings
   /// <summary> 
   /// Document View Setting
   ///</summary> 
-  public DocView? View { get; set; }
+  public DM.DocView? View { get; set; }
 
   /// <summary> 
   /// Magnification Setting
   ///</summary> 
-  public Zoom? Zoom { get; set; }
+  public IZoom? Zoom { get; set; }
 
   #endregion
 

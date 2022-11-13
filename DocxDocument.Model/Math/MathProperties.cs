@@ -2,8 +2,25 @@
 
 namespace DocxDocument.Model;
 
-public class MathProperties: IMathProperties
+public class MathProperties: IDocxBasedElement, IMathProperties
 {
+  public MathProperties()
+  {
+    OmMathProperties = new OM.MathProperties();
+  }
+
+  public MathProperties(OM.MathProperties omMathProperties)
+  {
+    OmMathProperties = omMathProperties;
+  }
+
+  [XmlIgnore]
+  public OO.OpenXmlElement OpenXmlElement { get => OmMathProperties; set => OmMathProperties = (OM.MathProperties)value; }
+
+  [XmlIgnore]
+  public OM.MathProperties OmMathProperties { get; set; }
+
+
   /// <summary> 
   /// This element specifies how binary operators are treated when they coincide with a line break.
   /// If this element is omitted, the line break occurs before the binary operator.

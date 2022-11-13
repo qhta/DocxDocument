@@ -23,7 +23,7 @@ public interface IWriteProtection
   /// <summary>
   /// Cryptographic Algorithm Class.
   /// </summary>
-  public CryptAlgorithmClass? CryptographicAlgorithmClass { get; set; }
+  public DM.CryptAlgorithmClass? CryptographicAlgorithmClass { get; set; }
 
   /// <summary>
   /// Cryptographic Hashing Algorithm.
@@ -33,7 +33,7 @@ public interface IWriteProtection
   /// <summary>
   /// Cryptographic Algorithm Type.
   /// </summary>
-  public CryptAlgorithmType? CryptographicAlgorithmType { get; set; }
+  public DM.CryptAlgorithmType? CryptographicAlgorithmType { get; set; }
 
   /// <summary>
   /// Cryptographic Provider.
@@ -43,7 +43,7 @@ public interface IWriteProtection
   /// <summary>
   /// Cryptographic Provider Type.
   /// </summary>
-  public CryptProviderType? CryptographicProviderType { get; set; }
+  public DM.CryptProviderType? CryptographicProviderType { get; set; }
 
   /// <summary>
   /// Cryptographic Provider Type Extensibility

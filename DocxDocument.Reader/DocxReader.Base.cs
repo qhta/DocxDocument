@@ -1,7 +1,7 @@
 ﻿using DM = DocxDocument.Model;
 using OM = DocumentFormat.OpenXml.Math;
 using OO = DocumentFormat.OpenXml;
-using W = DocumentFormat.OpenXml.Wordprocessing;
+using WD = DocumentFormat.OpenXml.Wordprocessing;
 using VT = DocumentFormat.OpenXml.VariantTypes;
 using W14 = DocumentFormat.OpenXml.Office2010.Word;
 
@@ -17,7 +17,7 @@ public partial class DocxReader
     return (str == "") ? null : str;
   }
 
-  public static string? ReadString(W.StringType? type)
+  public static string? ReadString(WD.StringType? type)
   {
     if (type is not null)
     {
@@ -69,7 +69,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static bool? ReadBoolean(W.OnOffType? element)
+  public static bool? ReadBoolean(WD.OnOffType? element)
   {
     if (element!=null)
     {
@@ -109,7 +109,8 @@ public partial class DocxReader
     }
     return null;
   }
-  public static bool? ReadBoolean(W.EmptyType? element)
+
+  public static bool? ReadBoolean(WD.EmptyType? element)
   {
     if (element is not null)
       return true;
@@ -158,7 +159,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static int? ReadInteger(W.UnsignedInt7Type? type)
+  public static int? ReadInteger(WD.UnsignedInt7Type? type)
   {
     if (type is not null)
     {
@@ -167,7 +168,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static int? ReadInteger(W.DecimalNumberType? type)
+  public static int? ReadInteger(WD.DecimalNumberType? type)
   {
     if (type is not null)
     {
@@ -176,7 +177,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static int? ReadInteger(W.UnsignedDecimalNumberType? type)
+  public static int? ReadInteger(WD.UnsignedDecimalNumberType? type)
   {
     if (type is not null)
     {
@@ -185,7 +186,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static int? ReadInteger(W.NonNegativeShortType? type)
+  public static int? ReadInteger(WD.NonNegativeShortType? type)
   {
     if (type is not null)
     {
@@ -251,7 +252,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static DM.Twips? ReadTwips(W.NonNegativeShortType? type)
+  public static DM.Twips? ReadTwips(WD.NonNegativeShortType? type)
   {
     if (type is not null)
     {
@@ -260,7 +261,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static DM.Twips? ReadTwips(W.TwipsMeasureType? type)
+  public static DM.Twips? ReadTwips(WD.TwipsMeasureType? type)
   {
     if (type is not null)
     {
@@ -330,7 +331,7 @@ public partial class DocxReader
     return null;
   }
 
-  public static DM.Relationship? ReadRelationship(W.RelationshipType? type)
+  public static DM.Relationship? ReadRelationship(WD.RelationshipType? type)
   {
     if (type?.Id is not null)
     {

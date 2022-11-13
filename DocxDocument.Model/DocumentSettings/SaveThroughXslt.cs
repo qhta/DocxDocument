@@ -1,10 +1,24 @@
 ﻿namespace DocxDocument.Model;
 
-public struct SaveThroughXslt
+public class SaveThroughXslt: DocxBasedElement<WD.SaveThroughXslt>, ISaveThroughXslt
 {
-  [XmlAttribute]
-  public string Name { get; set; }
+
+  public SaveThroughXslt(): base(new WD.SaveThroughXslt()){}
+
+  public SaveThroughXslt(WD.SaveThroughXslt element) : base(element) { }
+
 
   [XmlAttribute]
-  public string? SolutionId {get; set; }
+  public string? Id
+  {
+    get => DocxRead.ReadString(DocxElement.Id);
+    set => DocxElement.Id = value;
+  }
+
+  [XmlAttribute]
+  public string? SolutionId
+  {
+    get => DocxRead.ReadString(DocxElement.SolutionId);
+    set => DocxElement.SolutionId = value;
+  }
 }
