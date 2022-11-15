@@ -84,26 +84,26 @@ public partial class DocxReader
   public DM.Document ReadDocument(Parts parts)
   {
     //WP.Settings
-    var document = new DM.Document();
     var t0 = DateTime.Now;
-    if (parts.HasFlag(Parts.AllDocumentProperties))
-      document.Properties = ReadDocumentProperties(parts);
-    if (parts.HasFlag(Parts.AllDocumentSettings))
-      document.Settings = ReadDocumentSettings(parts);
-    var t1 = DateTime.Now;
-    if (parts.HasFlag(Parts.Theme))
-      document.DocumentTheme = ReadTheme(WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme);
-    var t2 = DateTime.Now;
-    if (parts.HasFlag(Parts.NumberingDefinitions))
-      document.ListDefinitions = ReadListDefinitions(WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering);
-    var t3 = DateTime.Now;
-    if (parts.HasFlag(Parts.StyleDefinitions))
-      document.Styles = ReadStyleDefinitions(WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles);
-    var t4 = DateTime.Now;
-    Debug.WriteLine($"ReadDocumentProperties {(t1 - t0).TotalMilliseconds} ms");
-    Debug.WriteLine($"ReadTheme {(t2 - t1).TotalMilliseconds} ms");
-    Debug.WriteLine($"ReadListDefinitions {(t3 - t2).TotalMilliseconds} ms");
-    Debug.WriteLine($"ReadStyleDefinitions {(t4 - t3).TotalMilliseconds} ms");
+    var document = new DM.Document(WordprocessingDocument);
+    //if (parts.HasFlag(Parts.AllDocumentProperties))
+    //  document.Properties = ReadDocumentProperties(parts);
+    //if (parts.HasFlag(Parts.AllDocumentSettings))
+    //  document.Settings = ReadDocumentSettings(parts);
+    //var t1 = DateTime.Now;
+    //if (parts.HasFlag(Parts.Theme))
+    //  document.DocumentTheme = ReadTheme(WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme);
+    //var t2 = DateTime.Now;
+    //if (parts.HasFlag(Parts.NumberingDefinitions))
+    //  document.ListDefinitions = ReadListDefinitions(WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering);
+    //var t3 = DateTime.Now;
+    //if (parts.HasFlag(Parts.StyleDefinitions))
+    //  document.Styles = ReadStyleDefinitions(WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles);
+    //var t4 = DateTime.Now;
+    //Debug.WriteLine($"ReadDocumentProperties {(t1 - t0).TotalMilliseconds} ms");
+    //Debug.WriteLine($"ReadTheme {(t2 - t1).TotalMilliseconds} ms");
+    //Debug.WriteLine($"ReadListDefinitions {(t3 - t2).TotalMilliseconds} ms");
+    //Debug.WriteLine($"ReadStyleDefinitions {(t4 - t3).TotalMilliseconds} ms");
     return document;
   }
 

@@ -2,7 +2,7 @@
 
 public interface IDocumentProperties: IEnumerable<KeyValuePair<string, object?>>
 {
-  //public int Count { get; }
+  public int Count { get; }
   //public IDocumentProperty this[int n] { get; }
   //public IDocumentProperty this[string name] { get; }
   //public void Add(IDocumentProperty property);

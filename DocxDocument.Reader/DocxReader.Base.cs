@@ -305,10 +305,7 @@ public partial class DocxReader
         if (val != null)
           return (EnumType)Enum.Parse(typeof(EnumType), val.Value, true);
       }
-      catch (Exception ex)
-      {
-
-      }
+      catch { }
     }
     return null;
   }
@@ -415,10 +412,18 @@ public partial class DocxReader
       {
         var item = variant.Elements().FirstOrDefault();
         if (item is not null)
-          variants.Add(ReadVariantValue(item));
+        {
+          var value = ReadVariantValue(item);
+          if (value!=null)
+            variants.Add(value);
+        }
       }
       else
-        variants.Add(ReadVariantValue(element));
+      {
+        var value = ReadVariantValue(element);
+        if (value!=null)
+          variants.Add(value);
+      }
     }
     return variants;
   }
@@ -459,7 +464,8 @@ public partial class DocxReader
     foreach (var itemElement in vVector.Elements())
     {
       var item = ReadVariantValue(itemElement);
-      vectorType.GetMethod("Add")?.Invoke(vector, new object[] { item });
+      if (item!=null)
+        vectorType.GetMethod("Add")?.Invoke(vector, new object[] { item });
     }
     return vector as ICollection;
   }

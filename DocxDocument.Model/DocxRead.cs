@@ -1,10 +1,12 @@
 ﻿using System.IO;
 
-namespace DocxDocument.Reader;
+using DocumentFormat.OpenXml.Math;
+
+namespace DocxDocument.Model;
 
 public static partial class DocxRead
 {
-  //public const string wordUrl = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
+  public const string wordUrl = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
 
   public static string? ReadString(OO.OpenXmlElement? element)
   {
@@ -300,10 +302,7 @@ public static partial class DocxRead
         if (val != null)
           return (EnumType)Enum.Parse(typeof(EnumType), val.Value, true);
       }
-      catch (Exception ex)
-      {
-
-      }
+      catch { }
     }
     return null;
   }
@@ -410,10 +409,18 @@ public static partial class DocxRead
       {
         var item = variant.Elements().FirstOrDefault();
         if (item is not null)
-          variants.Add(ReadVariantValue(item));
+        {
+          var variantElement = ReadVariantValue(item);
+          if (variantElement != null)
+            variants.Add(variantElement);
+        }
       }
       else
-        variants.Add(ReadVariantValue(element));
+      {
+        var variantElement = ReadVariantValue(element);
+        if (variantElement != null)
+          variants.Add(variantElement);
+      }
     }
     return variants;
   }
@@ -454,7 +461,8 @@ public static partial class DocxRead
     foreach (var itemElement in vVector.Elements())
     {
       var item = ReadVariantValue(itemElement);
-      vectorType.GetMethod("Add")?.Invoke(vector, new object[] { item });
+      if (item != null)
+        vectorType.GetMethod("Add")?.Invoke(vector, new object[] { item });
     }
     return vector as ICollection;
   }
@@ -616,6 +624,94 @@ public static partial class DocxRead
     if (val?.Value == null)
       return null;
     return (val.Value);
+  }
+
+  public static DM.HeadingPairs? ReadHeadingParts(XP.HeadingPairs? docHeadingPairs)
+  {
+    var dmVariants = ReadVariants(docHeadingPairs?.VTVector);
+    if (dmVariants != null)
+    {
+      if (dmVariants.Count() % 2 != 0)
+        throw new InvalidDataException($"Non-conformed HeadingPairs element in ContentFileProperties");
+      var dmHeadingPairs = new DM.HeadingPairs();
+      for (int i = 0; i < dmVariants.Count; i += 2)
+      {
+        if (dmVariants[i] is string && dmVariants[i + 1] is int)
+        {
+          var name = (string)dmVariants[i];
+          var count = (int)dmVariants[i + 1];
+          dmHeadingPairs.Add(new DM.HeadingPair { Name = name, Count = count });
+        }
+        else
+          throw new InvalidDataException($"Non-conformed HeadingPairs element in ContentFileProperties");
+      }
+      return dmHeadingPairs;
+    }
+    return null;
+  }
+
+  public static DM.Strings? ReadTitlesOfPairs(XP.TitlesOfParts? docTitlesOfParts)
+  {
+    var dmVariants = ReadVariants(docTitlesOfParts?.VTVector);
+    if (dmVariants != null)
+    {
+      var dmTitlesOfParts = new DM.Strings();
+      foreach (var item in dmVariants)
+        if (item is string str)
+          dmTitlesOfParts.Add(str);
+        else
+          throw new InvalidDataException($"Non-conformed TitlesOfParts element in ContentFileProperties");
+      return dmTitlesOfParts;
+    }
+    return null;
+  }
+
+  public static DM.HyperlinkList? ReadHyperlinks(XP.HyperlinkList? docHyperlinkList)
+  {
+    var dmVariants = ReadVariants(docHyperlinkList?.VTVector);
+    if (dmVariants != null)
+    {
+      if (dmVariants.Count() % 6 != 0)
+        throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+      int hCount = dmVariants.Count() / 6;
+      var dmHyperlinkList = new DM.HyperlinkList();
+      for (int i = 0; i < hCount; i++)
+      {
+        var item = new DM.HyperlinkData();
+
+        if (dmVariants[i * 6] is int n1)
+          item.Data1 = n1;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+
+        if (dmVariants[i * 6 + 1] is int n2)
+          item.Data2 = n2;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+
+        if (dmVariants[i * 6 + 2] is int n3)
+          item.Data3 = n3;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+
+        if (dmVariants[i * 6 + 3] is int n4)
+          item.Data4 = n4;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+
+        if (dmVariants[i * 6 + 4] is string s1)
+          item.Target = s1;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+
+        if (dmVariants[i * 6 + 5] is string s2)
+          item.Location = s2;
+        else
+          throw new InvalidDataException($"Non-conformed HyperlinkList element in ContentFileProperties");
+      }
+      return dmHyperlinkList;
+    }
+    return null;
   }
 
 }

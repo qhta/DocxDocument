@@ -1,29 +1,13 @@
 ﻿namespace DocxDocument.Model;
 
-public class CustomDocumentProperties: ICustomDocumentProperties
+public class CustomDocumentProperties: DocxBasedCollection<DM.CustomDocumentProperty, DM.ICustomDocumentProperty, CP.Properties, CP.CustomDocumentProperty>, ICustomDocumentProperties
 {
-  private IndexedCollection<string, CustomDocumentProperty> Items = new("Name");
-
-
-  public IEnumerator<ICustomDocumentProperty> GetEnumerator()
+  public CustomDocumentProperties() : base(new CP.Properties())
   {
-    return Items.GetEnumerator();
   }
 
-  IEnumerator IEnumerable.GetEnumerator()
+  public CustomDocumentProperties(CP.Properties element) : base(element)
   {
-    return GetEnumerator();
   }
 
-  public int Count => Items.Count;
-
-  public void Add(ICustomDocumentProperty property)
-  {
-    Items.Add((CustomDocumentProperty)property);
-  }
-
-  public bool Remove(ICustomDocumentProperty property)
-  {
-    return Items.Remove((CustomDocumentProperty)property);
-  }
 }

@@ -2,7 +2,7 @@
 
 public class ListStyle : Style
 {
-  public string? Name { get; set; }
+  //public string? Name { get; set; }
   public string? DisplayName { get; set; }
 
   public bool? ConsecutiveNumbering { get; set; }

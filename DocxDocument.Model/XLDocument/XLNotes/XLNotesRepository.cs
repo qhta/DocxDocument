@@ -16,8 +16,11 @@ public class XLNotesRepository : IXLNotesRepository
 
   public XLNotesRepository(WordprocessingDocument document)
   {
-    this.endnotes = document.MainDocumentPart.EndnotesPart?.Endnotes;
-    this.footnotes = document.MainDocumentPart.FootnotesPart?.Footnotes;
+    if (document.MainDocumentPart != null)
+    {
+      this.endnotes = document.MainDocumentPart?.EndnotesPart?.Endnotes;
+      this.footnotes = document.MainDocumentPart?.FootnotesPart?.Footnotes;
+    }
   }
 
   public Paragraph GetEndnoteParagraph(long id)

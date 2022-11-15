@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "DocumentFormat.OpenXml/2.17.1": {
+      "DocumentFormat.OpenXml/2.18.0": {
         "type": "package",
         "dependencies": {
           "System.IO.Packaging": "4.7.0"
@@ -158,7 +158,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "DocumentFormat.OpenXml": "2.17.1",
+          "DocumentFormat.OpenXml": "2.18.0",
           "Qhta.OrdNumbers": "2.2.1"
         },
         "compile": {
@@ -171,14 +171,14 @@
     }
   },
   "libraries": {
-    "DocumentFormat.OpenXml/2.17.1": {
-      "sha512": "Wgt1yrtqeTvlsgaDRcSbd5rsjTQytjNi4CW3a5VsoDcPVW9UbpheI7Ga1EhvwksT9jm7ey8vfkmeY//urMHwKQ==",
+    "DocumentFormat.OpenXml/2.18.0": {
+      "sha512": "5fmehgA7WmJD551QwBhvjSsEmMbCQ/yfW83ZLfbPx1TeQGm0ikGIwAvz/XfO4veCjYWpBQfFH9elVhC2Y+HatQ==",
       "type": "package",
-      "path": "documentformat.openxml/2.17.1",
+      "path": "documentformat.openxml/2.18.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "documentformat.openxml.2.17.1.nupkg.sha512",
+        "documentformat.openxml.2.18.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "icon.png",
         "lib/net35/DocumentFormat.OpenXml.dll",
@@ -640,7 +640,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "DocumentFormat.OpenXml >= 2.17.1",
+      "DocumentFormat.OpenXml >= 2.18.0",
       "Microsoft.Office.Interop.Word >= 15.0.4797.1004",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1",
@@ -699,7 +699,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": {
             "target": "Package",
-            "version": "[2.17.1, )"
+            "version": "[2.18.0, )"
           },
           "Microsoft.Office.Interop.Word": {
             "target": "Package",

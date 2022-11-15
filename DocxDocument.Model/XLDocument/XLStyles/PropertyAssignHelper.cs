@@ -11,7 +11,7 @@ public static class PropertyAssignHelper
       return destProp;
     }
 
-    if (srcProp?.Val == null)
+    if (srcProp?.Val is null)
     {
       return true;
     }
@@ -31,7 +31,7 @@ public static class PropertyAssignHelper
       return destProp;
     }
 
-    if (srcProp?.Val.HasValue == true)
+    if (srcProp?.Val?.HasValue == true)
     {
       switch (srcProp.Val.Value)
       {
@@ -75,7 +75,7 @@ public static class PropertyAssignHelper
       return destProp;
     }
 
-    if (srcProp?.Val.HasValue == true)
+    if (srcProp?.Val?.HasValue == true)
     {
       switch (srcProp.Val.Value)
       {
