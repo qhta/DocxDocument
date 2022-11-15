@@ -1,532 +1,540 @@
-﻿namespace DocxDocument.Model;
+﻿using System.Linq.Expressions;
 
-public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, IContentDocumentProperties, 
+using DocumentFormat.OpenXml.Packaging;
+
+namespace DocxDocument.Model;
+
+public class DocumentProperties : IDocumentProperties, ICoreDocumentProperties, IContentDocumentProperties,
   IStatisticDocumentProperties, IExtraDocumentProperties, ICustomDocumentProperties
 {
-  //const string DateTimeFormat = "yyyy-MM-ddThh:mm:sszzz";
+  public DocumentProperties()
+  {
+    throw new InvalidOperationException("You must not use parameterless constructor of DocumentProperties");
+  }
 
-  private static SortedSet<string> BuiltInPropertyNames = new ();
-  private Dictionary<object?> Items { get; } = new();
-  public CustomDocumentProperties CustomDocumentProperties { get; set; } = new CustomDocumentProperties ();
+  public DocumentProperties(WPK.WordprocessingDocument wordprocessingDocument)
+  {
+    DocxDocument = wordprocessingDocument;
+  }
+
+  public WPK.WordprocessingDocument DocxDocument { get; set; }
+
+  public DM.CoreDocumentProperties? CoreDocumentProperties
+  {
+    get
+    {
+      if (_CoreDocumentProperties == null)
+      {
+        try
+        {
+          var coreFilePropertiesPart = DocxDocument.CoreFilePropertiesPart;
+          if (coreFilePropertiesPart == null)
+            coreFilePropertiesPart = DocxDocument.AddCoreFilePropertiesPart();
+          var coreFileProperties = DocxDocument.PackageProperties;
+          _CoreDocumentProperties = new CoreDocumentProperties(coreFileProperties);
+        }
+        catch { }
+      }
+      return _CoreDocumentProperties;
+    }
+  }
+  private DM.CoreDocumentProperties? _CoreDocumentProperties;
+
+  public DM.ContentDocumentProperties? ContentDocumentProperties
+  {
+    get
+    {
+      if (_ContentDocumentProperties == null)
+      {
+        try
+        {
+          var extFilePropertiesPart = DocxDocument.ExtendedFilePropertiesPart;
+          if (extFilePropertiesPart == null)
+            extFilePropertiesPart = DocxDocument.AddExtendedFilePropertiesPart();
+          var extFileProperties = extFilePropertiesPart.Properties;
+          if (extFileProperties is null)
+          {
+            extFileProperties = new EP.Properties();
+            extFilePropertiesPart.Properties = extFileProperties;
+          }
+          _ContentDocumentProperties = new ContentDocumentProperties(extFileProperties);
+        }
+        catch { }
+      }
+      return _ContentDocumentProperties;
+    }
+  }
+  private DM.ContentDocumentProperties? _ContentDocumentProperties;
+
+  public DM.StatisticDocumentProperties? StatisticDocumentProperties
+  {
+    get
+    {
+      if (_StatisticDocumentProperties == null)
+      {
+        try
+        {
+          var extFilePropertiesPart = DocxDocument.ExtendedFilePropertiesPart;
+          if (extFilePropertiesPart == null)
+            extFilePropertiesPart = DocxDocument.AddExtendedFilePropertiesPart();
+          var extFileProperties = extFilePropertiesPart.Properties;
+          if (extFileProperties is null)
+          {
+            extFileProperties = new EP.Properties();
+            extFilePropertiesPart.Properties = extFileProperties;
+          }
+          _StatisticDocumentProperties = new StatisticDocumentProperties(extFileProperties);
+        }
+        catch { }
+      }
+      return _StatisticDocumentProperties;
+    }
+  }
+  private DM.StatisticDocumentProperties? _StatisticDocumentProperties;
+
+  public DM.CustomDocumentProperties? CustomDocumentProperties
+  {
+    get
+    {
+      if (_CustomDocumentProperties == null)
+      {
+        try
+        {
+          var customFilePropertiesPart = DocxDocument.CustomFilePropertiesPart;
+          if (customFilePropertiesPart == null)
+            customFilePropertiesPart = DocxDocument.AddCustomFilePropertiesPart();
+          var customFileProperties = customFilePropertiesPart.Properties;
+          if (customFileProperties == null)
+            customFileProperties = customFilePropertiesPart.Properties = new CP.Properties();
+          _CustomDocumentProperties = new DM.CustomDocumentProperties(customFileProperties);
+        }
+        catch { }
+      }
+      return _CustomDocumentProperties;
+    }
+  }
+  private DM.CustomDocumentProperties? _CustomDocumentProperties;
+
+  public DM.ExtraDocumentProperties? ExtraDocumentProperties
+  {
+    get
+    {
+      if (_ExtraDocumentProperties == null)
+      {
+        try
+        {
+          var mainDocumentPart = DocxDocument.MainDocumentPart;
+          if (mainDocumentPart == null)
+            mainDocumentPart = DocxDocument.AddMainDocumentPart();
+          var documentSettingsPart = mainDocumentPart.DocumentSettingsPart;
+          if (documentSettingsPart == null)
+            documentSettingsPart = mainDocumentPart.AddNewPart<WPK.DocumentSettingsPart>();
+          var settings = documentSettingsPart.Settings;
+          if (settings == null)
+            settings = documentSettingsPart.Settings = new WD.Settings();
+          _ExtraDocumentProperties = new DM.ExtraDocumentProperties(settings);
+        }
+        catch { }
+      }
+      return _ExtraDocumentProperties;
+    }
+  }
+  private DM.ExtraDocumentProperties? _ExtraDocumentProperties;
 
 
+  public DM.Revisions? Revisions
+  {
+    get
+    {
+      if (_Revisions == null)
+      {
+        var mainDocumentPart = DocxDocument.MainDocumentPart;
+        if (mainDocumentPart == null)
+          mainDocumentPart = DocxDocument.AddMainDocumentPart();
+        var documentSettingsPart = mainDocumentPart.DocumentSettingsPart;
+        if (documentSettingsPart == null)
+          documentSettingsPart = mainDocumentPart.AddNewPart<WPK.DocumentSettingsPart>();
+        var settings = documentSettingsPart.Settings;
+        if (settings == null)
+          settings = documentSettingsPart.Settings = new WD.Settings();
+        var revisions = settings.Elements<WD.Rsids>().FirstOrDefault();
+        if (revisions == null)
+        {
+          revisions = new WD.Rsids();
+          settings.AddChild(revisions);
+        }
+        _Revisions = new DM.Revisions(revisions);
+      }
+      return _Revisions;
+    }
+    set
+    {
+      var mainDocumentPart = DocxDocument.MainDocumentPart;
+      if (mainDocumentPart == null)
+        mainDocumentPart = DocxDocument.AddMainDocumentPart();
+      var documentSettingsPart = mainDocumentPart.DocumentSettingsPart;
+      if (documentSettingsPart == null)
+        documentSettingsPart = mainDocumentPart.AddNewPart<WPK.DocumentSettingsPart>();
+      var settings = documentSettingsPart.Settings;
+      if (settings == null)
+        settings = documentSettingsPart.Settings = new WD.Settings();
+      var revisions = settings.Elements<WD.Rsids>().FirstOrDefault();
+      if (revisions != null)
+        revisions.Remove();
+      if (value != null)
+        settings.AddChild(value.DocxElement);
+    }
+  }
+  private DM.Revisions? _Revisions;
+
+  #region IDocumentProperties implementation
   static DocumentProperties()
   {
     var coreProperties = typeof(ICoreDocumentProperties).GetProperties();
     foreach (var prop in coreProperties)
-      BuiltInPropertyNames.Add(prop.Name);
+      BuiltInProperties.Add(prop.Name, prop);
     var contentProperties = typeof(IContentDocumentProperties).GetProperties();
     foreach (var prop in contentProperties)
-      BuiltInPropertyNames.Add(prop.Name);
+      BuiltInProperties.Add(prop.Name, prop);
     var statisticProperties = typeof(IStatisticDocumentProperties).GetProperties();
     foreach (var prop in statisticProperties)
-      BuiltInPropertyNames.Add(prop.Name);
+      BuiltInProperties.Add(prop.Name, prop);
     var extraProperties = typeof(IExtraDocumentProperties).GetProperties();
     foreach (var prop in extraProperties)
-      BuiltInPropertyNames.Add(prop.Name);
+      BuiltInProperties.Add(prop.Name, prop);
   }
 
-  [XmlIgnore] 
-  [JsonIgnore]
-  public Document Document { get; set; } = null!;
+  private static Dictionary<string, PropertyInfo> BuiltInProperties = new();
 
-  #region IDocumentProperties implementation
-
-  public int Count => Items.Count;
-
-  IEnumerator IEnumerable.GetEnumerator()
+  public object? Get(string propName)
   {
-    return Items.GetEnumerator();
+    if (BuiltInProperties.TryGetValue(propName, out var prop))
+      return prop.GetValue(this);
+    return CustomDocumentProperties.FirstOrDefault(item => item.Name == propName);
   }
 
-  public IEnumerator<KeyValuePair<string, object?>> GetEnumerator()
-  {
-    return (Items as IEnumerable<KeyValuePair<string, object?>>).GetEnumerator();
-  }
+  int ICustomDocumentProperties.Count => CustomDocumentProperties?.Count ?? 0;
 
-  public object? this[string name] => Items[name];
-  public object? Get(string name) => Items.ContainsKey(name) ? Items[name] : null;
-
-  #endregion
-
-  #region ICore Properties implementation
-
-  /// <summary>
-  /// The title od the document.
-  /// </summary>
-  public string? Title
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The subject of the document.
-  /// </summary>
-  public string? Subject
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The category of the document.
-  /// </summary>
-  public string? Category
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The type of document represented, generally defined by a specific
-  /// use and intended audience. Example values include "Whitepaper",
-  /// "Security Bulletin", and "Exam". (This property is distinct from
-  /// MIME content types as defined in RFC 2045.) 
-  /// </summary>
-  public string? ContentType
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The status of the content. Example values include "Draft",
-  /// "Reviewed", and "Final".
-  /// </summary>
-  public string? ContentStatus
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The short description of the document.
-  /// </summary>
-  public string? Description
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// Comma or semicolon delimited list of keywords.
-  /// </summary>
-  public string? Keywords
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The author who created the document. Usually name of the person.
-  /// </summary>
-  public string? Creator
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The creation date and time.
-  /// </summary>
-  [XmlElement(IsNullable = true)]
-  public DateTime? Created
-  {
-    get => (DateTime?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The user who performed the last modification.
-  /// </summary>
-  public string? LastModifiedBy
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The date and time of the last modification.
-  /// </summary>
-  [XmlElement(IsNullable = true)]
-  public DateTime? LastModified
-  {
-    get => (DateTime?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The date and time of the last printing.
-  /// </summary>
-  [XmlElement(IsNullable = true)]
-  public DateTime? LastPrinted
-  {
-    get => (DateTime?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The primary language of the document.
-  /// </summary>
-  public string? Language
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// A unique identifier.
-  /// </summary>
-  public string? Identifier
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-
-  /// <summary>
-  /// The version number.
-  /// </summary>
-  public string? Version
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary>
-  /// The revision number. Modified after each save.
-  /// </summary>
-  public string? Revision
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  #endregion
-
-  #region IContentDocumentProperties implementation
-
-  /// <summary> 
-  /// This element specifies the name of the application that created this document.
-  ///</summary> 
-  public String? Application
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the version of the application which produced this document.
-  /// The content of this element shall be of the form XX.YYYY where X and Y represent numerical values,
-  /// or the document shall be considered non-conformant.
-  ///</summary> 
-  public String? ApplicationVersion
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the name of a company associated with the document.
-  ///</summary> 
-  public String? Company
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element contains the signature of a digitally signed document.
-  /// </summary>
-  [Obsolete]
-  public byte[]? DigitalSignature
-  {
-    get => (byte[]?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This metadata element specifies the security level of a document.
-  ///</summary> 
-  [DefaultValue(0)]
-  public DocSecurity? DocumentSecurity
-  {
-    get => (DocSecurity?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// Heading pairs indicates the grouping of document parts and the number of parts in each group.
-  /// These parts are not document parts but conceptual representations of document sections.
-  ///</summary> 
-  public HeadingPairs? HeadingPairs
-  {
-    get => (HeadingPairs?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the number of hidden slides in a presentation document.
-  ///</summary>
-  [DefaultValue(0)]
-  public int? HiddenSlides
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the set of hyperlinks that were in this document when last saved.
-  ///</summary> 
-  public HyperlinkList? HyperlinkList
-  {
-    get => (HyperlinkList?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the base string used for evaluating relative hyperlinks in this document.
-  ///</summary> 
-  public String? HyperlinkBase
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies that one or more hyperlinks in this part
-  /// were updated exclusively in this part by a producer.
-  /// The next producer to open this document shall update the hyperlink relationships
-  /// with the new hyperlinks specified in this part.
-  ///</summary>
-  [DefaultValue(false)]
-  public Boolean? HyperlinksChanged
-  {
-    get => (bool?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element indicates whether hyperlinks in a document are up-to-date.
-  /// Set this element to TRUE to indicate that hyperlinks are updated.
-  /// Set this element to FALSE to indicate that hyperlinks are outdated.
-  ///</summary>
-  public Boolean? LinksUpToDate
-  {
-    get => (bool?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the name of a supervisor associated with the document.
-  ///</summary> 
-  public String? Manager
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the intended format for a presentation document.
-  /// For example, a presentation intended to be shown on video has PresentationFormat Video.
-  ///</summary> 
-  public String? PresentationFormat
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element indicates the display mode of the document thumbnail. Set this element to TRUE to enable scaling
-  /// of the document thumbnail to the display.Set this element to FALSE to enable cropping of the document
-  /// thumbnail to show only sections that fits the display.
-  ///</summary> 
-  public Boolean? ScaleCrop
-  {
-    get => (bool?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element indicates if this document is currently shared between multiple producers.
-  /// If this element is set to TRUE, producers should take care when updating the document.
-  ///</summary> 
-  public Boolean? SharedDocument
-  {
-    get => (bool?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the name of an external document template containing format and style information used to create the current document.
-  ///</summary> 
-  public String? Template
-  {
-    get => (string?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the title of each document. These parts are not document parts but conceptual representations of document sections.
-  ///</summary> 
-  public Strings? TitlesOfParts
-  {
-    get => (Strings?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  #endregion
-
-  #region IStatisticProperties implementation
-
-  /// <summary> 
-  /// Total time that a document has been edited. The default time unit is minutes.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? TotalTime
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of characters in a document.
-  ///</summary>
-  [DefaultValue(0)]
-  public int? Characters
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the last count of the number of characters (including spaces) in this document.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? CharactersWithSpaces
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of words contained in a document when last saved.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Words
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of lines in a document when last saved by a conforming producer if applicable.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Lines
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of pages of a document if applicable.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Pages
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of paragraphs found in a document if applicable.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Paragraphs
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of sound or video clips that are present in the document.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? MultimediaClips
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the number of slides in a presentation containing notes.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Notes
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  /// <summary> 
-  /// This element specifies the total number of slides in a presentation document.
-  ///</summary> 
-  [DefaultValue(0)]
-  public int? Slides
-  {
-    get => (int?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  #endregion
-
-  #region IExtraDocumentProperties implementation
-  public HexInt? DocumentId
-  {
-    get => (HexInt?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  public Guid? PersistentDocumentId
-  {
-    get => (Guid?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  public bool? ConflictMode
-  {
-    get => (bool?)Items._Get();
-    set => Items._Set(value);
-  }
-
-  public IRsIds? Revisions { get; set;}
-
-  #endregion
-
-  #region ICustomProperties implementation
-
-  int ICustomDocumentProperties.Count => CustomDocumentProperties.Count();
-
-  IEnumerator<ICustomDocumentProperty> IEnumerable<ICustomDocumentProperty>.GetEnumerator()
-  {
-    return CustomDocumentProperties.GetEnumerator();
-  }
+  public bool IsEmpty() => Count==0 && (CustomDocumentProperties?.Count ?? 0) == 0 ;
 
   public void Add(ICustomDocumentProperty property)
   {
-    CustomDocumentProperties.Add(property);
+    CustomDocumentProperties?.Add(property);
   }
 
   public bool Remove(ICustomDocumentProperty property)
   {
-    return CustomDocumentProperties.Remove(property);
+    return CustomDocumentProperties?.Remove(property) ?? false;
   }
+
+  IEnumerator<ICustomDocumentProperty> IEnumerable<ICustomDocumentProperty>.GetEnumerator()
+  {
+    if (CustomDocumentProperties!=null)
+      foreach (var item in CustomDocumentProperties)
+        yield return item;
+    else
+      yield break;
+  }
+
+  public int Count => BuiltInProperties.Values.Where(prop => prop.GetValue(this) != null).Count();
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
+
+  public IEnumerator<KeyValuePair<string, object?>> GetEnumerator()
+  {
+    foreach (var item in BuiltInProperties)
+    {
+      var prop = item.Value;
+      var value = prop.GetValue(this);
+      if (value != null)
+        yield return new KeyValuePair<string, object?>(prop.Name, value);
+    }
+  }
+
+  //public object? this[string name] => Items[name];
+  //public object? Get(string name) => Items.ContainsKey(name) ? Items[name] : null;
+
   #endregion
 
-  public bool IsEmpty()
+  public string? Title
   {
-    return !Items.Any() && !CustomDocumentProperties.Any();
+    get => CoreDocumentProperties?.Title;
+    set
+    {
+      if (CoreDocumentProperties != null) CoreDocumentProperties.Title = value;
+    }
+  }
+
+  public string? Subject
+  {
+    get => CoreDocumentProperties?.Subject;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Subject = value; }
+  }
+
+  public string? Creator
+  {
+    get => CoreDocumentProperties?.Creator;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Creator = value; }
+  }
+
+  public string? Keywords
+  {
+    get => CoreDocumentProperties?.Keywords;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Keywords = value; }
+  }
+
+  public string? Description
+  {
+    get => CoreDocumentProperties?.Description;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Description = value; }
+  }
+
+  public string? LastModifiedBy
+  {
+    get => CoreDocumentProperties?.LastModifiedBy;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.LastModifiedBy = value; }
+  }
+
+  public string? Revision
+  {
+    get => CoreDocumentProperties?.Revision;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Revision = value; }
+  }
+
+  public DateTime? LastPrinted
+  {
+    get => CoreDocumentProperties?.LastPrinted;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.LastPrinted = value; }
+  }
+
+  public DateTime? Created
+  {
+    get => CoreDocumentProperties?.Created;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Created = value; }
+  }
+
+  public DateTime? LastModified
+  {
+    get => CoreDocumentProperties?.LastModified;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.LastModified = value; }
+  }
+
+  public string? Category
+  {
+    get => CoreDocumentProperties?.Category;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Category = value; }
+  }
+
+  public string? ContentStatus
+  {
+    get => CoreDocumentProperties?.ContentStatus;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.ContentStatus = value; }
+  }
+
+  public string? Identifier
+  {
+    get => CoreDocumentProperties?.Identifier;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Identifier = value; }
+  }
+
+  public string? ContentType
+  {
+    get => CoreDocumentProperties?.ContentType;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.ContentType = value; }
+  }
+
+  public string? Version
+  {
+    get => CoreDocumentProperties?.Version;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Version = value; }
+  }
+
+  public string? Language
+  {
+    get => CoreDocumentProperties?.Language;
+    set { if (CoreDocumentProperties!= null) CoreDocumentProperties.Language = value; }
+  }
+
+  public string? Application
+  {
+    get => ContentDocumentProperties?.Application;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.Application = value; }
+  }
+
+  public string? ApplicationVersion
+  {
+    get => ContentDocumentProperties?.ApplicationVersion;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.ApplicationVersion = value; }
+  }
+
+  public string? Company
+  {
+    get => ContentDocumentProperties?.Company;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.Company = value; }
+  }
+
+  public byte[]? DigitalSignature
+  {
+    get => ContentDocumentProperties?.DigitalSignature;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.DigitalSignature = value; }
+  }
+
+  public DocSecurity? DocumentSecurity
+  {
+    get => ContentDocumentProperties?.DocumentSecurity;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.DocumentSecurity = value; }
+  }
+
+  public HeadingPairs? HeadingPairs
+  {
+    get => ContentDocumentProperties?.HeadingPairs;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.HeadingPairs = value; }
+  }
+
+  public HyperlinkList? HyperlinkList
+  {
+    get => ContentDocumentProperties?.HyperlinkList;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.HyperlinkList = value; }
+  }
+
+  public string? HyperlinkBase
+  {
+    get => ContentDocumentProperties?.HyperlinkBase;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.HyperlinkBase = value; }
+  }
+
+  public bool? HyperlinksChanged
+  {
+    get => ContentDocumentProperties?.HyperlinksChanged;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.HyperlinksChanged = value; }
+  }
+
+  public bool? LinksUpToDate
+  {
+    get => ContentDocumentProperties?.LinksUpToDate;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.LinksUpToDate = value; }
+  }
+
+  public string? Manager
+  {
+    get => ContentDocumentProperties?.Manager;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.Manager = value; }
+  }
+
+  public string? PresentationFormat
+  {
+    get => ContentDocumentProperties?.PresentationFormat;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.PresentationFormat = value; }
+  }
+
+  public bool? ScaleCrop
+  {
+    get => ContentDocumentProperties?.ScaleCrop;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.ScaleCrop = value; }
+  }
+
+  public bool? SharedDocument
+  {
+    get => ContentDocumentProperties?.SharedDocument;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.SharedDocument = value; }
+  }
+
+  public string? Template
+  {
+    get => ContentDocumentProperties?.Template;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.Template = value; }
+  }
+
+  public Strings? TitlesOfParts
+  {
+    get => ContentDocumentProperties?.TitlesOfParts;
+    set { if (ContentDocumentProperties!= null) ContentDocumentProperties.TitlesOfParts = value; }
+  }
+
+  public int? TotalTime
+  {
+    get => StatisticDocumentProperties?.TotalTime;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.TotalTime = value; }
+  }
+
+  public int? Characters
+  {
+    get => StatisticDocumentProperties?.Characters;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Characters = value; }
+  }
+
+  public int? CharactersWithSpaces
+  {
+    get => StatisticDocumentProperties?.CharactersWithSpaces;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.CharactersWithSpaces = value; }
+  }
+
+  public int? Lines
+  {
+    get => StatisticDocumentProperties?.Lines;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Lines = value; }
+  }
+
+  public int? Pages
+  {
+    get => StatisticDocumentProperties?.Pages;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Pages = value; }
+  }
+
+  public int? Paragraphs
+  {
+    get => StatisticDocumentProperties?.Paragraphs;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Paragraphs = value; }
+  }
+
+  public int? Words
+  {
+    get => StatisticDocumentProperties?.Words;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Words = value; }
+  }
+
+  public int? Slides
+  {
+    get => StatisticDocumentProperties?.Slides;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Slides = value; }
+  }
+
+  public int? HiddenSlides
+  {
+    get => StatisticDocumentProperties?.HiddenSlides;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.HiddenSlides = value; }
+  }
+
+  public int? MultimediaClips
+  {
+    get => StatisticDocumentProperties?.MultimediaClips;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.MultimediaClips = value; }
+  }
+
+  public int? Notes
+  {
+    get => StatisticDocumentProperties?.Notes;
+    set { if (StatisticDocumentProperties!= null) StatisticDocumentProperties.Notes = value; }
+  }
+
+  public HexInt? DocumentId
+  {
+    get => ExtraDocumentProperties?.DocumentId;
+    set { if (ExtraDocumentProperties!= null) ExtraDocumentProperties.DocumentId = value; }
+  }
+
+  public Guid? PersistentDocumentId
+  {
+    get => ExtraDocumentProperties?.PersistentDocumentId;
+    set { if (ExtraDocumentProperties!= null) ExtraDocumentProperties.PersistentDocumentId = value; }
+  }
+
+  public bool? ConflictMode
+  {
+    get => ExtraDocumentProperties?.ConflictMode;
+    set { if (ExtraDocumentProperties!= null) ExtraDocumentProperties.ConflictMode = value; }
   }
 }

@@ -35,19 +35,23 @@ public class XLListsRepository : IXLListsRepository
     this.wordDocument = document;
     //this.numbering = document.MainDocumentPart.NumberingDefinitionsPart?.Numbering;
     //this.ListDefinitions = ReadListDefinitions(numbering);
-    this.ParagraphListPropertiesDictionary = CreateParagraphListPropertiesDictionary(document.MainDocumentPart.Document.Body);
-    if (wordDocumentName != null)
+    if (document.MainDocumentPart?.Document?.Body != null)
     {
-      string filename = Path.ChangeExtension(wordDocumentName, "lists.xml");
-      using (XmlWriter xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings { Indent = true }))
+      this.ParagraphListPropertiesDictionary = CreateParagraphListPropertiesDictionary(document.MainDocumentPart.Document.Body);
+      if (wordDocumentName != null)
       {
-        XmlSerializer serializer = new XmlSerializer(typeof(ListDefinitions));
-        serializer.Serialize(xmlWriter, ListDefinitions);
-        //DataContractSerializer serializer = new DataContractSerializer(typeof(XLListDefinitions));
-        //serializer.WriteObject(xmlWriter, ListDefinitions);
+        string filename = Path.ChangeExtension(wordDocumentName, "lists.xml");
+        using (XmlWriter xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings { Indent = true }))
+        {
+          XmlSerializer serializer = new XmlSerializer(typeof(ListDefinitions));
+          serializer.Serialize(xmlWriter, ListDefinitions);
+          //DataContractSerializer serializer = new DataContractSerializer(typeof(XLListDefinitions));
+          //serializer.WriteObject(xmlWriter, ListDefinitions);
+        }
+        //SharpSerializer serializer = new SharpSerializer(new SharpSerializerBinarySettings { AdvancedSettings = new Ad});
       }
-      //SharpSerializer serializer = new SharpSerializer(new SharpSerializerBinarySettings { AdvancedSettings = new Ad});
-
+      else
+        this.ParagraphListPropertiesDictionary = CreateParagraphListPropertiesDictionary();
     }
   }
 
@@ -131,17 +135,19 @@ public class XLListsRepository : IXLListsRepository
         listDefinition = new ListDefinition { ID = listId };
         ListDefinitions.Add(listDefinition);
       }
-      listDefinition.UsageCount +=1;
+      listDefinition.UsageCount += 1;
       if (!listDefinition.Levels.TryGetValue(levelId, out var listLevel))
       {
         var wordLevel = wordDocument.GetNumberingLevelDef(abstractNumId, levelId);
         listLevel = new ListLevel
-        { ID = levelId,
+        {
+          ID = levelId,
           Level = levelId,
           StartNumber = wordLevel.StartNumberingValue?.Val ?? 0,
           RestartLevel = wordLevel.LevelRestart?.Val ?? 0,
           NumberingFormat = (DocxDocument.Model.NumberingFormat)(wordLevel.NumberingFormat?.Val?.Value ?? 0),
-          LevelText = wordLevel.LevelText?.Val};
+          LevelText = wordLevel.LevelText?.Val
+        };
         listDefinition.Levels.Add(listLevel);
       }
       List<Paragraph> paragraphsInList = group.Value;
@@ -155,19 +161,18 @@ public class XLListsRepository : IXLListsRepository
         //if (t.Contains("Przypisuj identyfikatory do pozycji w rejestrze"))
         //  Debug.Assert(true);
         int indentLevel = wordDocument.GetNumberingLevel(paragraph);
-        bool isStartingEntry = (idx == 0) || (indentLevel>lastIndent);
+        bool isStartingEntry = (idx == 0) || (indentLevel > lastIndent);
         listLevel.UsageCount += 1;
         bool isLastParagraphInList = idx == paragraphsInList.Count - 1;
-        Paragraph nextParagraph = (isLastParagraphInList) ? paragraph.NextSibling<Paragraph>() : paragraphsInList[idx + 1];
-        int nextParagraphIndentLevel = wordDocument.GetNumberingLevel(nextParagraph);
-        int isEndingEntries = 0;
-        if (nextParagraphIndentLevel < indentLevel)
-          isEndingEntries = indentLevel - nextParagraphIndentLevel;
-        //else if (indentLevel >lastIndent)
-        //{
-        //  listDefinition.ListId=;
-        //}
-        result.Add(paragraph, new ListProperties(listId, listDefinition, indentLevel, isStartingEntry, isEndingEntries));
+        var nextParagraph = (isLastParagraphInList) ? paragraph.NextSibling<Paragraph>() : paragraphsInList[idx + 1];
+        if (nextParagraph != null)
+        {
+          int nextParagraphIndentLevel = wordDocument.GetNumberingLevel(nextParagraph);
+          int isEndingEntries = 0;
+          if (nextParagraphIndentLevel < indentLevel)
+            isEndingEntries = indentLevel - nextParagraphIndentLevel;
+          result.Add(paragraph, new ListProperties(listId, listDefinition, indentLevel, isStartingEntry, isEndingEntries));
+        }
         lastIndent = indentLevel;
       }
     }

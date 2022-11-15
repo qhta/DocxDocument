@@ -31,17 +31,17 @@ public partial class DocxReader
   private void ReadPackageProperties(DM.DocumentProperties dmDocumentProperties)
   {
     var coreFileProperties = WordprocessingDocument.PackageProperties;
-    dmDocumentProperties.Identifier = coreFileProperties.Identifier;
     dmDocumentProperties.Title = coreFileProperties.Title;
-    dmDocumentProperties.Version = coreFileProperties.Version;
     dmDocumentProperties.Revision = coreFileProperties.Revision;
     dmDocumentProperties.Category = coreFileProperties.Category;
     dmDocumentProperties.Subject = coreFileProperties.Subject;
     dmDocumentProperties.Description = coreFileProperties.Description;
     dmDocumentProperties.Keywords = coreFileProperties.Keywords;
-    dmDocumentProperties.Language = coreFileProperties.Language;
     dmDocumentProperties.ContentStatus = coreFileProperties.ContentStatus;
+    dmDocumentProperties.Identifier = coreFileProperties.Identifier;
+    dmDocumentProperties.Language = coreFileProperties.Language;
     dmDocumentProperties.ContentType = coreFileProperties.ContentType;
+    dmDocumentProperties.Version = coreFileProperties.Version;
 
     dmDocumentProperties.Created = coreFileProperties.Created;
     dmDocumentProperties.Creator = coreFileProperties.Creator;

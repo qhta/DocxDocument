@@ -10,9 +10,6 @@ namespace DocxDocument.Model;
 
 public class DocumentSettings : DocxBasedElement<WD.Settings>, IDocumentSettings, IEnumerable<KeyValuePair<string, object?>>
 {
-  public DocumentSettings(): base(new WD.Settings())
-  {
-  }
 
   public DocumentSettings(WD.Settings element): base(element)
   {
@@ -437,7 +434,7 @@ public class DocumentSettings : DocxBasedElement<WD.Settings>, IDocumentSettings
 
   #endregion
 
-  #region Images settings
+  #region Graphics settings
 
   /// <summary> 
   /// Do Not Automatically Compress Images
@@ -468,14 +465,33 @@ public class DocumentSettings : DocxBasedElement<WD.Settings>, IDocumentSettings
     set => DocxElement.WriteW14OnOffType<W14.DiscardImageEditingData>(value);
   }
 
-  #endregion
-
-  #region Hyphenation settings
+  /// <summary> 
+  /// Specifies how the datapoint properties and datalabels in all charts in this document behave.
+  /// If true then they follow their reference.
+  /// If false then they follow their position in the chart.
+  ///</summary> 
+  public bool? ChartTrackingRefBased
+  {
+    get => DocxElement.ReadW15OnOffType<W15.ChartTrackingRefBased>();
+    set => DocxElement.WriteW15OnOffType<W15.ChartTrackingRefBased>(value);
+  }
 
   /// <summary> 
-  /// Automatically Hyphenate Document Contents When Displayed
+  /// Specifies the defaults that are used when creating new shapes.
   ///</summary> 
-  public bool? AutoHyphenation
+  public DM.ShapeDefaults? ShapeDefaults
+  {
+    get => DocxElement.ReadTypedObject<DM.ShapeDefaults, WD.ShapeDefaults, VO.ShapeDefaults>();
+    set => DocxElement.WriteTypedObject<DM.ShapeDefaults, WD.ShapeDefaults, VO.ShapeDefaults>(value);
+  }
+#endregion
+
+#region Hyphenation settings
+
+/// <summary> 
+/// Automatically Hyphenate Document Contents When Displayed
+///</summary> 
+public bool? AutoHyphenation
   {
     get => DocxElement.ReadOnOffType<WD.AutoHyphenation>();
     set => DocxElement.WriteOnOffType<WD.AutoHyphenation>(value);

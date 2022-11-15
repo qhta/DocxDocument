@@ -33,37 +33,40 @@ public class XLBibliographyRepository : IXLBibliographyRepository
 
   public XLBibliographyRepository(WordprocessingDocument document)
   {
-    foreach (CustomXmlPart customXml in document.MainDocumentPart.CustomXmlParts)
+    if (document.MainDocumentPart != null)
     {
-      if (customXml.CustomXmlPropertiesPart != null)
+      foreach (CustomXmlPart customXml in document.MainDocumentPart.CustomXmlParts)
       {
-        DataStoreItem dsi = customXml.CustomXmlPropertiesPart.DataStoreItem;
-        if (dsi.Descendants<SchemaReference>().Single().Uri.Value.EndsWith("bibliography"))
+        if (customXml.CustomXmlPropertiesPart != null)
         {
-          Sources sourcesXml = new Sources();
-          sourcesXml.Load(customXml);
-
-          this.sources = sourcesXml.ChildElements
-            .Cast<Source>()
-            .OrderBy(src => int.Parse(src.ReferenceOrder.Text))
-            .ToList();
-
-          string selectedStyle = sourcesXml.SelectedStyle.Value;
-          string styleFileName = selectedStyle.Substring(selectedStyle.LastIndexOf('\\') + 1);
-          if (!DefaultStyles.TryGetValue(styleFileName, out this.style))
+          DataStoreItem dsi = customXml.CustomXmlPropertiesPart.DataStoreItem;
+          if (dsi.Descendants<SchemaReference>().Single().Uri?.Value?.EndsWith("bibliography") == true)
           {
-            this.style = XLBibliographyStyle.Custom;
-          }
+            Sources sourcesXml = new Sources();
+            sourcesXml.Load(customXml);
 
-          break;
+            this.sources = sourcesXml.ChildElements
+              .Cast<Source>()
+              .OrderBy(src => int.Parse(src.ReferenceOrder?.Text))
+              .ToList();
+
+            var selectedStyle = sourcesXml.SelectedStyle?.Value;
+            if (selectedStyle != null)
+            {
+              var styleFileName = selectedStyle.Substring(selectedStyle.LastIndexOf('\\') + 1);
+              if (!DefaultStyles.TryGetValue(styleFileName, out this.style))
+                this.style = XLBibliographyStyle.Custom;
+            }
+            break;
+          }
         }
       }
     }
-
     if (this.sources == null)
     {
       this.sources = Array.Empty<Source>();
     }
+
   }
 
   public IReadOnlyList<Source> GetSources()

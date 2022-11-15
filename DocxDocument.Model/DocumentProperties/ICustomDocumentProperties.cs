@@ -2,6 +2,7 @@
 
 public interface ICustomDocumentProperties: IEnumerable<ICustomDocumentProperty>
 {
+  [XmlIgnore]
   int Count {get;}
 
   void Add(ICustomDocumentProperty property);

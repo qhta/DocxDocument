@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zEBg9PX/8czcUjnkFCQFQ28bszKrcWCgmpY3MIP+T5QYWbAnN1rAVSR1MufihOt42IJeAUn9xfgmqziUMM3cPg==",
+  "dgSpecHash": "yc9ggvYl8hbnVfnPUE/PuEXSnBkNjxc8ir99u5ngvw7bDe3KpuB02R0FLq1Kqd0fFHlMSzm8daSiOWDlMSoZ6Q==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.17.1\\documentformat.openxml.2.17.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.office.interop.word\\15.0.4797.1004\\microsoft.office.interop.word.15.0.4797.1004.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

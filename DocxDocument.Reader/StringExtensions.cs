@@ -38,10 +38,6 @@ public static class StringExtensions
         Charsets.Add(charsetName, charset);
         return true;
       }
-      else
-      {
-        Charsets.Add(charsetName, null);
-      }
     }
     return false;
   }
