@@ -1,4 +1,6 @@
-﻿namespace DocxDocument.Model;
+﻿using DocumentFormat.OpenXml.Packaging;
+
+namespace DocxDocument.Model;
 
 public class Document
 {
@@ -31,29 +33,78 @@ public class Document
     }
   }
 
+  public Document(WPK.WordprocessingDocument docxDocument)
+  {
+    DocxDocument = docxDocument;
+  }
+
+  [XmlIgnore]
+  public WPK.WordprocessingDocument DocxDocument {get; private set;}
+
+  [XmlIgnore]
+  public WPK.MainDocumentPart MainDocumentPart
+  {
+    get
+    {
+      if (_MainDocumentPart == null)
+      {
+        _MainDocumentPart = DocxDocument.MainDocumentPart;
+        if (_MainDocumentPart == null)
+          _MainDocumentPart = DocxDocument.AddMainDocumentPart();
+      }
+      return _MainDocumentPart;
+    }
+  }
+  public WPK.MainDocumentPart? _MainDocumentPart;
+
   #region DocumentProperties
-  [XmlElement]
-  public DocumentProperties? Properties { get; set;}
 
   [XmlElement]
-  public CustomDocumentProperties? CustomDocumentProperties { get; set; }
+  public DocumentProperties Properties
+  {
+    get
+    {
+      if (_Properties == null)
+        _Properties = new DocumentProperties(DocxDocument);
+      return _Properties;
+    }
+  }
+  public DocumentProperties? _Properties;
 
-  [XmlElement]
-  public Revisions? Revisions { get; set; }
 
-  //public bool ShouldSerializeDocumentProperties() => Properties != null && !Properties.IsEmpty();
+  //[XmlElement]
+  //public CustomDocumentProperties? CustomDocumentProperties { get; set; }
+
+  //[XmlElement]
+  //public Revisions? Revisions { get; set; }
+
+  public bool ShouldSerializeDocumentProperties() => Properties != null && !Properties.IsEmpty();
   #endregion
 
   #region Settings
 
   public DocumentSettings? Settings
   {
-    get => _Settings;
-    set
+    get
     {
-      _Settings = value;
-      //if (_Settings != null)
-      //  _Settings.Document = this;
+      if (_Settings == null)
+      {
+        try
+        {
+          var mainDocumentPart = DocxDocument.MainDocumentPart;
+          if (mainDocumentPart == null)
+            mainDocumentPart = DocxDocument.AddMainDocumentPart();
+          var documentSettingsPart = mainDocumentPart.DocumentSettingsPart;
+          if (documentSettingsPart == null)
+            documentSettingsPart = mainDocumentPart.AddNewPart<WPK.DocumentSettingsPart>();
+          var settings = documentSettingsPart.Settings;
+          if (settings == null)
+            settings = documentSettingsPart.Settings = new WD.Settings();
+          _Settings = new DocumentSettings(settings);
+        }
+        catch { }
+      }
+      return _Settings;
     }
   }
   private DocumentSettings? _Settings;

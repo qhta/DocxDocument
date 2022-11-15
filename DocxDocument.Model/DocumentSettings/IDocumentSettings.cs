@@ -41,6 +41,7 @@ public interface IDocumentSettings
   /// Visibility of Annotation Types
   ///</summary> 
   public RevisionView? RevisionView { get; set; }
+
   #endregion
 
   #region Character Spacing settings
@@ -249,7 +250,7 @@ public interface IDocumentSettings
 
   #endregion
 
-  #region Images settings
+  #region Graphics settings
 
   /// <summary> 
   /// Do Not Automatically Compress Images
@@ -268,6 +269,17 @@ public interface IDocumentSettings
   ///</summary> 
   public bool? DiscardImageEditingData { get; set; }
 
+  /// <summary> 
+  /// Specifies how the datapoint properties and datalabels in all charts in this document behave.
+  /// If true then they follow their reference.
+  /// If false then they follow their position in the chart.
+  ///</summary> 
+  public bool? ChartTrackingRefBased { get; set; }
+
+  /// <summary> 
+  /// Specifies the defaults that are used when creating new shapes.
+  ///</summary> 
+  public DM.ShapeDefaults? ShapeDefaults { get; set; }
   #endregion
 
   #region Hyphenation settings

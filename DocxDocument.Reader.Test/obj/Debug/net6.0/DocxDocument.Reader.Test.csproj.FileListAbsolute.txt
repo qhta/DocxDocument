@@ -243,7 +243,6 @@ D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\System.Sec
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\System.Security.Permissions.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\System.Windows.Extensions.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

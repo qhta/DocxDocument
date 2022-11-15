@@ -1,5 +1,6 @@
 ﻿
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
 
 using DocxDocument.Model;
 
@@ -100,6 +101,29 @@ public static partial class DocxRead
       element.Remove();
     if (value != null)
       parent.AddChild(new ElementType { Val = (bool)value ? W14.OnOffValues.One : W14.OnOffValues.Zero });
+  }
+
+
+  public static bool? ReadW15OnOffType<ElementType>(this OO.OpenXmlCompositeElement parent) where ElementType : W15.OnOffType
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+    {
+      if (element.Val?.HasValue == true)
+        return element?.Val?.Value;
+      else
+        return true;
+    }
+    return null;
+  }
+
+  public static void WriteW15OnOffType<ElementType>(this OO.OpenXmlCompositeElement parent, bool? value) where ElementType : W15.OnOffType, new()
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+      element.Remove();
+    if (value != null)
+      parent.AddChild(new ElementType { Val = (bool)value });
   }
 
   public static bool? ReadEmptyAsBool<ElementType>(this OO.OpenXmlCompositeElement parent) where ElementType : WD.EmptyType
@@ -276,6 +300,78 @@ public static partial class DocxRead
   }
   #endregion
 
+  #region HexInt read/write
+
+  public static DM.HexInt? ReadHexInt<ElementType>(this OO.OpenXmlCompositeElement parent) where ElementType : OO.OpenXmlLeafElement
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+    {
+      var valProp = typeof(ElementType).GetProperty("Val", BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+      if (valProp == null)
+        throw new InvalidOperationException($"{typeof(ElementType).Name} does not have Val property");
+      var valObj = valProp.GetValue(element, null);
+      if (valObj is HexBinaryValue valHex)
+        if (valHex.HasValue)
+          return new DM.HexInt(valHex.Value ?? "");
+    }
+    return null;
+  }
+
+  public static void WriteHexInt<ElementType>(this OO.OpenXmlCompositeElement parent, DM.HexInt? value)
+    where ElementType : OO.OpenXmlLeafElement, new()
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+      element.Remove();
+    if (value != null)
+    {
+      var newElement = new ElementType();
+      var valProp = typeof(ElementType).GetProperty("Val");
+      if (valProp == null)
+        throw new InvalidOperationException($"{typeof(ElementType).Name} does not have Val property");
+      valProp.SetValue(newElement, value.ToString());
+      parent.AddChild(newElement);
+    }
+  }
+  #endregion
+
+  #region Guid read/write
+
+  public static Guid? ReadGuid<ElementType>(this OO.OpenXmlCompositeElement parent) where ElementType : OO.OpenXmlLeafElement
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+    {
+      var valProp = typeof(ElementType).GetProperty("Val", BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+      if (valProp == null)
+        throw new InvalidOperationException($"{typeof(ElementType).Name} does not have Val property");
+      var valObj = valProp.GetValue(element, null);
+      if (valObj is StringValue valStr)
+        if (valStr.HasValue)
+          return new Guid(valStr.Value);
+    }
+    return null;
+  }
+
+  public static void WriteGuid<ElementType>(this OO.OpenXmlCompositeElement parent, Guid? value)
+    where ElementType : OO.OpenXmlLeafElement, new()
+  {
+    var element = parent.Elements<ElementType>().FirstOrDefault();
+    if (element != null)
+      element.Remove();
+    if (value != null)
+    {
+      var newElement = new ElementType();
+      var valProp = typeof(ElementType).GetProperty("Val");
+      if (valProp == null)
+        throw new InvalidOperationException($"{typeof(ElementType).Name} does not have Val property");
+      valProp.SetValue(newElement, ((Guid)value).ToString("B"));
+      parent.AddChild(newElement);
+    }
+  }
+  #endregion
+
   #region Enum Flags read/write
 
   public static EnumType? ReadEnumFlags<EnumType, ElementType>(this OO.OpenXmlCompositeElement parent)
@@ -293,7 +389,7 @@ public static partial class DocxRead
           var propValue = prop.GetValue(element, null);
           if (propValue is OO.OnOffValue onOffValue)
           {
-            var val = ReadBoolean(onOffValue);
+            var val = onOffValue.Value;
             if (val == true)
             {
               var enumVal = typeof(EnumType).GetField(prop.Name, BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
@@ -400,6 +496,44 @@ public static partial class DocxRead
     if (newElement is not null)
     {
       parent.AddChild(newElement);
+    }
+  }
+
+  public static ObjectType? ReadTypedObject<ObjectType, ExtElementType, IntElementType>(this OO.OpenXmlCompositeElement parent)
+    where ObjectType : class, IDocxBasedElement, new() where ExtElementType : OO.OpenXmlCompositeElement where IntElementType : OO.TypedOpenXmlCompositeElement
+  {
+    var element = parent.Elements<ExtElementType>().FirstOrDefault();
+    if (element != null)
+    {
+      var subElement = element.Elements<IntElementType>().FirstOrDefault();
+      if (subElement != null)
+      {
+        var valObj = new ObjectType { OpenXmlElement = subElement };
+        return valObj;
+      }
+    }
+    return null;
+  }
+
+  public static void WriteTypedObject<ObjectType, ExtElementType, IntElementType>(this OO.OpenXmlCompositeElement parent, ObjectType? value)
+    where ObjectType : class, IDocxBasedElement where ExtElementType : OO.OpenXmlCompositeElement, new() where IntElementType : OO.TypedOpenXmlCompositeElement
+  {
+    var newElement = (value != null) ? value.OpenXmlElement : null;
+    var element = parent.Elements<ExtElementType>().FirstOrDefault();
+    if (element != null)
+    {
+      var subElement = element.Elements<IntElementType>().FirstOrDefault();
+      if (subElement == newElement)
+        return;
+      if (subElement != null)
+        subElement.Remove();
+      if (newElement is not null)
+        element.AddChild(newElement);
+    }
+    else if (newElement is not null)
+    {
+      element = new ExtElementType();
+      element.AddChild(newElement);
     }
   }
   #endregion

@@ -28,6 +28,7 @@ namespace DocxDocument.Reader.Test
     private string[] statisticPropElementsNames = new string[] { "TotalTime", "Characters", "CharactersWithSpaces", 
       "HiddenSlides", "Lines", "MMClips", "Notes", "Pages", "Paragraphs", "Slides", "TotalTime", "Words" };
     private string[] extraPropElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode" };
+    private string[] notSettingsElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode", "w:rsids" };
 
     [Test]
     public void TestNormalTemplate()
@@ -222,20 +223,20 @@ namespace DocxDocument.Reader.Test
 
       IDocumentSettings documentSettings = document.Settings as IDocumentSettings;
       var origDocumentSettingsCount = reader.WordprocessingDocument.GetAllParts().OfType<DocumentSettingsPart>().FirstOrDefault()?.Settings?.Elements()
-        ?.Count(item => !extraPropElementsNames.Contains(item.Prefix + ":" + item.LocalName)) ?? 0;
+        ?.Count(item => !notSettingsElementsNames.Contains(item.Prefix + ":" + item.LocalName)) ?? 0;
       var documentSettingsProperties = typeof(IDocumentSettings).GetProperties();
-      int documentSettingsPropertiesCount = 0;
+      int loadedDocumentSettingsCount = 0;
       foreach (var prop in documentSettingsProperties)
         if (prop.GetValue(documentSettings, null) != null)
-          documentSettingsPropertiesCount++;
-      TestContext.Progress.WriteLine($"  DocumentSetting: defined {documentSettingsProperties.Count()} loaded {documentSettingsPropertiesCount} expected {origDocumentSettingsCount}");
-                                     //$" = {documentSettingsPropertiesCount}/{documentSettingsProperties.Count()}");
+          loadedDocumentSettingsCount++;
+      TestContext.Progress.WriteLine($"  DocumentSetting: defined {documentSettingsProperties.Count()} loaded {loadedDocumentSettingsCount} expected {origDocumentSettingsCount}");
 
       if (showDetails)
       {
         foreach (var setting in document.Settings as IEnumerable<KeyValuePair<string, object?>>)
           ShowObject(setting.Key, setting.Value);
       }
+      Assert.That(loadedDocumentSettingsCount, Is.EqualTo(origDocumentSettingsCount));
     }
 
     private void ShowObject(string name, object? value, int indent = 0)
