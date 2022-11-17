@@ -1,0 +1,17 @@
+namespace DocumentModel.Drawing.Charts;
+
+public interface ITrendlineLabel // : DocumentFormat.OpenXml.TypedOpenXmlCompositeElement
+{
+  public DocumentModel.Drawing.Charts.ILayout? Layout { get ; set; }
+
+  public DocumentModel.Drawing.Charts.IChartText? ChartText { get ; set; }
+
+  public DocumentModel.Drawing.Charts.INumberingFormat? NumberingFormat { get ; set; }
+
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
+
+  public DocumentModel.Drawing.Charts.ITextProperties? TextProperties { get ; set; }
+
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
+
+}
