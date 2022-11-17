@@ -1,0 +1,10 @@
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\netstandard2.0\DocumentModel.Attributes.deps.json
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\netstandard2.0\DocumentModel.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\netstandard2.0\DocumentModel.Attributes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.csproj.CoreCompileInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\obj\Debug\netstandard2.0\DocumentModel.Attributes.pdb

@@ -1,4 +1,5 @@
 global using DocumentModel;
+global using DocumentModel.Attributes;
 global using DocumentModel.Bibliography;
 global using DocumentModel.Drawing;
 global using DocumentModel.Drawing.ChartDrawing;
@@ -45,4 +46,5 @@ global using DocumentModel.Vml.Office;
 global using DocumentModel.Wordprocessing;
 global using System;
 global using System.Collections.Generic;
+global using System.ComponentModel;
 global using System.Xml.Serialization;
