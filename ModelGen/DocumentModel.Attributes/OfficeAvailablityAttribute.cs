@@ -1,0 +1,26 @@
+﻿using System;
+
+namespace DocumentModel.Attributes
+{
+  /// <summary>
+  /// Defines an OfficeAvailabilityAttribute class to indicate whether the property is available in a specific version of an Office application.
+  /// </summary>
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Enum)]
+  public sealed class OfficeAvailabilityAttribute : Attribute
+  {
+    /// <summary>
+    /// Gets the Office version of the available property.
+    /// </summary>
+    public FileFormatVersions OfficeVersion { get; }
+
+    /// <summary>
+    /// Initializes a new instance of the OfficeAvailabilityAttribute class.
+    /// </summary>
+    /// <param name="officeVersion">The Office version where this class or property is available.
+    /// If there is more than one version, use bitwise OR to specify multiple versions.</param>
+    public OfficeAvailabilityAttribute(FileFormatVersions officeVersion)
+    {
+      OfficeVersion = officeVersion;
+    }
+  }
+}

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.CodeDom.Compiler;
+using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Linq;
 
@@ -102,7 +103,7 @@ public class Generator
     var typeName = type.ToString();
     if (typeName.Contains('<') || typeName.Contains('+'))
       return false;
-    if (ExcludedClasses.Contains(typeName))
+    if (ExcludedTypes.Contains(typeName))
       return false;
     if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
       return false;
@@ -113,7 +114,7 @@ public class Generator
   {
     foreach (var prop in type.GetProperties())
     {
-      if (!ExcludedProperties.Contains(prop.Name) && !ExcludedClasses.Contains(prop.PropertyType.Namespace ?? ""))
+      if (!ExcludedProperties.Contains(prop.Name) && !ExcludedTypes.Contains(prop.PropertyType.Namespace ?? ""))
       {
         if (AcceptedTypes.TryGetValue(type, out var typeData))
           typeData.PropsCount += 1;
@@ -137,13 +138,14 @@ public class Generator
   public void GenClassOrInterface(Type type, string typeName, string filename, bool toInterface)
   {
     AssurePathExists(filename);
-    using (var writer = File.CreateText(filename))
+    using (var textWriter = File.CreateText(filename))
+    using (var writer = new IndentedTextWriter(textWriter,"  "))
     {
       GenClassOrInterface(type, typeName, writer, toInterface);
     }
   }
 
-  public void GenClassOrInterface(Type type, string typeName, TextWriter writer, bool toInterface)
+  public void GenClassOrInterface(Type type, string typeName, IndentedTextWriter writer, bool toInterface)
   {
     var aNamespace = type.Namespace;
     if (aNamespace != null)
@@ -152,18 +154,21 @@ public class Generator
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
+    GenCustomAttributes(type.CustomAttributes, writer);
     if (toInterface)
       writer.WriteLine($"public interface I{typeName} // : {type.BaseType?.FullName}");
     else
       writer.WriteLine($"public class {typeName}: I{typeName}");
     writer.WriteLine("{");
+    writer.Indent++;
     foreach (var prop in type.GetProperties())
-      if (!ExcludedProperties.Contains(prop.Name) && !ExcludedClasses.Contains(prop.PropertyType.Namespace ?? ""))
+      if (!ExcludedProperties.Contains(prop.Name) && !ExcludedTypes.Contains(prop.PropertyType.Namespace ?? ""))
         GenProperty(prop, writer, toInterface);
+    writer.Indent--;
     writer.WriteLine("}");
   }
 
-  public void GenProperty(PropertyInfo prop, TextWriter writer, bool toInterface)
+  public void GenProperty(PropertyInfo prop, IndentedTextWriter writer, bool toInterface)
   {
     if (prop.Name == "TargetSite")
       Debug.Assert(true);
@@ -173,17 +178,18 @@ public class Generator
     aNamespace = propType.Namespace ?? "";
     if (DuplicatedTypes.Contains(propType))
       propertyTypeName = NewNamespace(propType.Namespace ?? "") + "." + propertyTypeName;
+    GenCustomAttributes(prop.CustomAttributes, writer);
     if (toInterface)
-      writer.WriteLine($"  public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
+      writer.WriteLine($"public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
     else
     {
-      writer.WriteLine($"  public {propertyTypeName}? {prop.Name}");
-      writer.WriteLine($"  {{");
-      writer.WriteLine($"    get;");
-      writer.WriteLine($"    set;");
-      writer.WriteLine($"  }}");
+      writer.WriteLine($"public {propertyTypeName}? {prop.Name}");
+      writer.WriteLine($"{{");
+      writer.WriteLine($"  get;");
+      writer.WriteLine($"  set;");
+      writer.WriteLine($"}}");
     }
-    writer.WriteLine("");
+    writer.WriteLine();
     AddGlobalUsing(aNamespace ?? "");
   }
 
@@ -200,13 +206,14 @@ public class Generator
   public void GenEnumType(Type type, string typeName, string filename)
   {
     AssurePathExists(filename);
-    using (var writer = File.CreateText(filename))
+    using (var textWriter = File.CreateText(filename))
+    using (var writer = new IndentedTextWriter(textWriter, "  "))
     {
       GenEnumType(type, typeName, writer);
     }
   }
 
-  public void GenEnumType(Type type, string typeName, TextWriter writer)
+  public void GenEnumType(Type type, string typeName, IndentedTextWriter writer)
   {
     var aNamespace = type.Namespace;
     if (aNamespace != null)
@@ -215,38 +222,43 @@ public class Generator
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
-    foreach (var customAttrib in type.CustomAttributes)
-      GenCustomAttribute(customAttrib, writer, "");
+    GenCustomAttributes(type.CustomAttributes, writer);
     writer.WriteLine($"public enum {typeName}");
     writer.WriteLine("{");
+    writer.Indent++;
     foreach (var field in type.GetFields(BindingFlags.Static | BindingFlags.Public))
       GenEnum(field, writer);
+    writer.Indent--;
     writer.WriteLine("}");
   }
 
-  public void GenEnum(FieldInfo field, TextWriter writer)
+  public void GenEnum(FieldInfo field, IndentedTextWriter writer)
   {
     if (field.CustomAttributes.Any())
     {
       writer.WriteLine();
-      foreach (var customAttrib in field.CustomAttributes)
-        GenCustomAttribute(customAttrib, writer, "  ");
+      GenCustomAttributes(field.CustomAttributes, writer);
     }
-    writer.WriteLine($"  {field.Name},");
+    writer.WriteLine($"{field.Name},");
   }
 
-  public void GenCustomAttribute(CustomAttributeData attrData, TextWriter writer, string indentStr)
+  public void GenCustomAttributes(IEnumerable<CustomAttributeData> attributes, IndentedTextWriter writer)
+  {
+    foreach (var customAttrib in attributes)
+      GenCustomAttribute(customAttrib, writer);
+    AddGlobalUsing("DocumentModel.Attributes");
+  }
+
+  public void GenCustomAttribute(CustomAttributeData attrData, IndentedTextWriter writer)
   {
     var attributeType = attrData.AttributeType;
-    if (attributeType == typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute))
-      return;
-    if (attributeType.Name.StartsWith("NullableContext"))
-      return;
-    if (attributeType == typeof(DocumentFormat.OpenXml.EnumStringAttribute))
-      attributeType = typeof(System.Xml.Serialization.XmlEnumAttribute);
+    if (AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
+      attributeType = altAttrType;
     var attrTypeName = attributeType.Name;
     if (attrTypeName.EndsWith("Attribute"))
       attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
+    if (ExcludedAttributes.Contains(attrTypeName))
+      return;
     var attrString = attrTypeName;
     if (attrData.ConstructorArguments.Count + attrData.NamedArguments.Count > 0)
     {
@@ -257,10 +269,9 @@ public class Generator
         strList.Add($"{arg.MemberName?.ToString() ?? String.Empty} =  {TypedValueStr(arg.TypedValue.ArgumentType, arg.TypedValue.Value)}");
       attrString += "(" + String.Join(", ", strList) + ")";
     }
-    writer.WriteLine($"{indentStr}[{attrString}]");
+    writer.WriteLine($"[{attrString}]");
     AddGlobalUsing(attributeType.Namespace ?? "");
   }
-
 
   public void AddGlobalUsing(string aNamespace)
   {
@@ -447,15 +458,26 @@ public class Generator
     "HasValue",
   };
 
-  public SortedStrings ExcludedClasses { get; } = new SortedStrings
-  {
-    "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions","*Helper", "*Provider", "*Methods",
-  };
-
   public SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
     "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", "*Packaging"
   };
+
+  public SortedStrings ExcludedTypes { get; } = new SortedStrings
+  {
+    "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions","*Helper", "*Provider", "*Methods", "FileFormatVersions",
+  };
+
+  public SortedStrings ExcludedAttributes { get; } = new SortedStrings
+  {
+    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "DebuggerDisplay"
+  };
+
+  public Dictionary<Type, Type> AttributeConversionTable { get; } = new Dictionary<Type, Type>
+  {
+    { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
+  };
+
 
   public Dictionary<Type, Type> TypeConversionTable { get; } = new Dictionary<Type, Type>
   {
