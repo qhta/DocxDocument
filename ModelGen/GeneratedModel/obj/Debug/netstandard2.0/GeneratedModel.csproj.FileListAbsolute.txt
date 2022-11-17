@@ -11,3 +11,5 @@ D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\obj\Debug\netstandard2.0\Gen
 D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.dll
 D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\obj\Debug\netstandard2.0\GeneratedModel.csproj.CopyComplete
+D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\bin\Debug\netstandard2.0\DocumentModel.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\GeneratedModel\bin\Debug\netstandard2.0\DocumentModel.Attributes.pdb
