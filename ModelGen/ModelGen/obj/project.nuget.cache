@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "AchFu/4YRLGOkYo9IX1yzZ2HwNuTmuyJWx7Qxr2VYe4K4B8But5Mi8rJxWCsmKx7aQO0PH2B/U6cCG1EqWkjYA==",
+  "success": true,
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
