@@ -1,0 +1,18 @@
+namespace DocumentModel.Office2019.Excel.RichData2;
+
+/// <summary>
+/// Defines the ArrayValue Class.
+/// </summary>
+public interface IArrayValue // : DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement
+{
+  /// <summary>
+  /// t, this property is only available in Office 2019 and later.
+  /// </summary>
+  public ArrayValueType? T { get ; set; }
+  
+  /// <summary>
+  /// Gets or sets the text of the current element.
+  /// </summary>
+  public string? Text { get ; set; }
+  
+}

@@ -1,7 +1,13 @@
 namespace DocumentModel.Math;
 
+/// <summary>
+/// Maximum Distribution.
+/// </summary>
 public interface IMaxDistribution // : DocumentFormat.OpenXml.Math.OnOffType
 {
+  /// <summary>
+  /// value
+  /// </summary>
   public Boolean? Val { get ; set; }
   
 }

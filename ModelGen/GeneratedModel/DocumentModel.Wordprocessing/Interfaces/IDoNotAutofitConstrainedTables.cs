@@ -1,7 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
+/// <summary>
+/// Do Not AutoFit Tables To Fit Next To Wrapped Objects.
+/// </summary>
 public interface IDoNotAutofitConstrainedTables // : DocumentFormat.OpenXml.Wordprocessing.OnOffType
 {
+  /// <summary>
+  /// On/Off Value
+  /// </summary>
   public bool? Val { get ; set; }
   
 }

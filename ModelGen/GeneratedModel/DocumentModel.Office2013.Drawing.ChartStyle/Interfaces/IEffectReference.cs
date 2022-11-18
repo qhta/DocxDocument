@@ -1,9 +1,25 @@
 namespace DocumentModel.Office2013.Drawing.ChartStyle;
 
+/// <summary>
+/// Defines the EffectReference Class.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Drawing.IHslColor))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.IPresetColor))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.ISchemeColor))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.IRgbColorModelPercentage))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.IRgbColorModelHex))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.ISystemColor))]
+[ChildElementInfo(typeof(DocumentModel.Office2013.Drawing.ChartStyle.IStyleColor))]
 public interface IEffectReference // : DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference
 {
+  /// <summary>
+  /// idx, this property is only available in Office 2013 and later.
+  /// </summary>
   public uint? Index { get ; set; }
   
+  /// <summary>
+  /// mods, this property is only available in Office 2013 and later.
+  /// </summary>
   public List<string>? Modifiers { get ; set; }
   
 }
