@@ -1,0 +1,20 @@
+namespace DocumentModel.Drawing.Diagrams;
+
+/// <summary>
+/// Algorithm.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Drawing.Diagrams.IExtensionList))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.Diagrams.IParameter))]
+public interface IAlgorithm // : DocumentFormat.OpenXml.TypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// Algorithm Type
+  /// </summary>
+  public Algorithm? Type { get ; set; }
+  
+  /// <summary>
+  /// Revision Number
+  /// </summary>
+  public uint? Revision { get ; set; }
+  
+}
