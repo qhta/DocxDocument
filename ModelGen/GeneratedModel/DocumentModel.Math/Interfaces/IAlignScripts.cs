@@ -1,7 +1,13 @@
 namespace DocumentModel.Math;
 
+/// <summary>
+/// Align Scripts.
+/// </summary>
 public interface IAlignScripts // : DocumentFormat.OpenXml.Math.OnOffType
 {
+  /// <summary>
+  /// value
+  /// </summary>
   public Boolean? Val { get ; set; }
   
 }

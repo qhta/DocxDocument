@@ -1,0 +1,84 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the CustomXmlRun Class.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Math.IAccent))]
+[ChildElementInfo(typeof(DocumentModel.Math.IBar))]
+[ChildElementInfo(typeof(DocumentModel.Math.IBorderBox))]
+[ChildElementInfo(typeof(DocumentModel.Math.IBox))]
+[ChildElementInfo(typeof(DocumentModel.Math.IDelimiter))]
+[ChildElementInfo(typeof(DocumentModel.Math.IEquationArray))]
+[ChildElementInfo(typeof(DocumentModel.Math.IFraction))]
+[ChildElementInfo(typeof(DocumentModel.Math.IMathFunction))]
+[ChildElementInfo(typeof(DocumentModel.Math.IGroupChar))]
+[ChildElementInfo(typeof(DocumentModel.Math.ILimitLower))]
+[ChildElementInfo(typeof(DocumentModel.Math.ILimitUpper))]
+[ChildElementInfo(typeof(DocumentModel.Math.IMatrix))]
+[ChildElementInfo(typeof(DocumentModel.Math.INary))]
+[ChildElementInfo(typeof(DocumentModel.Math.IOfficeMath))]
+[ChildElementInfo(typeof(DocumentModel.Math.IParagraph))]
+[ChildElementInfo(typeof(DocumentModel.Math.IPhantom))]
+[ChildElementInfo(typeof(DocumentModel.Math.IRun))]
+[ChildElementInfo(typeof(DocumentModel.Math.IRadical))]
+[ChildElementInfo(typeof(DocumentModel.Math.IPreSubSuper))]
+[ChildElementInfo(typeof(DocumentModel.Math.ISubscript))]
+[ChildElementInfo(typeof(DocumentModel.Math.ISubSuperscript))]
+[ChildElementInfo(typeof(DocumentModel.Math.ISuperscript))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IBidirectionalOverride))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IBookmarkStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IContentPart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlProperties))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IBidirectionalEmbedding))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IHyperlink))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlInsRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlDelRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlMoveFromRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlMoveToRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.ICustomXmlConflictInsertionRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.ICustomXmlConflictDeletionRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IBookmarkEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICommentRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICommentRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveFromRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveToRangeEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveFromRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveToRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IPermEnd))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IPermStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IProofError))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ISubDocumentReference))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IInsertedRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IDeletedRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveFromRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.IMoveToRun))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.IRunConflictInsertion))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.IRunConflictDeletion))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ISdtRun))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ISimpleField))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlInsRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlDelRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlMoveFromRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Wordprocessing.ICustomXmlMoveToRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.ICustomXmlConflictInsertionRangeStart))]
+[ChildElementInfo(typeof(DocumentModel.Office2010.Word.ICustomXmlConflictDeletionRangeStart))]
+public interface ICustomXmlRun // : DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement
+{
+  /// <summary>
+  /// Gets or sets the custom XML Markup Namespace.
+  /// </summary>
+  public string? Uri { get ; set; }
+  
+  /// <summary>
+  /// Gets or sets the element name.
+  /// </summary>
+  public string? Element { get ; set; }
+  
+  /// <summary>
+  /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
+  /// </summary>
+  public ICustomXmlProperties? CustomXmlProperties { get ; set; }
+  
+}

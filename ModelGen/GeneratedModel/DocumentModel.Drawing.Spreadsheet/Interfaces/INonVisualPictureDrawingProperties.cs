@@ -1,11 +1,25 @@
 namespace DocumentModel.Drawing.Spreadsheet;
 
+/// <summary>
+/// Non-Visual Picture Drawing Properties.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Drawing.INonVisualPicturePropertiesExtensionList))]
+[ChildElementInfo(typeof(DocumentModel.Drawing.IPictureLocks))]
 public interface INonVisualPictureDrawingProperties // : DocumentFormat.OpenXml.TypedOpenXmlCompositeElement
 {
+  /// <summary>
+  /// preferRelativeResize
+  /// </summary>
   public bool? PreferRelativeResize { get ; set; }
   
+  /// <summary>
+  /// PictureLocks.
+  /// </summary>
   public IPictureLocks? PictureLocks { get ; set; }
   
+  /// <summary>
+  /// NonVisualPicturePropertiesExtensionList.
+  /// </summary>
   public INonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get ; set; }
   
 }

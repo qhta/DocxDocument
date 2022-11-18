@@ -1,9 +1,12 @@
 ﻿using System.CodeDom.Compiler;
-using System.Diagnostics;
+//using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Linq;
+using DocumentFormat.OpenXml;
+using Namotion.Reflection;
 
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.Diagnostics;
 
 namespace ModelGen;
 
@@ -17,6 +20,8 @@ public class Generator
     GenProjectFile(projectName + ".csproj");
   }
 
+  private Assembly SourceAssembly { get; set; } = null!;
+
   class TypeData
   {
     public int UsageCount;
@@ -29,16 +34,20 @@ public class Generator
 
   List<Type> DuplicatedTypes { get; } = new();
 
+  SortedDictionary<string, Type> SortedTypes { get; } = new();
+
   SortedSet<string> GlobalUsings { get; } = new ();
 
 
 
   public void GenLibrary(Assembly assembly)
   {
+    SourceAssembly = assembly;
+    Console.WriteLine("Accepting types");
     Dictionary<string, int> TypeNamesCount = new();
     foreach (var type in assembly.GetTypes())
     {
-      if (!TypeConversionTable.ContainsKey(type) && !type.IsGenericType)
+      //if (!TypeConversionTable.ContainsKey(type) && !type.IsGenericType)
       {
         if (CanGenerateType(type))
         {
@@ -51,32 +60,39 @@ public class Generator
       }
     }
 
+    Console.WriteLine("Checking class types");
     foreach (var type in AcceptedTypes.Keys)
     {
       if (type.IsClass)
-        CheckClassType(type);
+        CheckTypeUses(type);
     }
 
+    Console.WriteLine("Removing unused types");
     var UnusedTypes = new List<Type>();
     foreach (var type in AcceptedTypes)
     {
       if (type.Value.UsageCount==0)
         UnusedTypes.Add(type.Key);
     }
-
     foreach (var type in UnusedTypes)
     {
       AcceptedTypes.Remove(type);
     }
 
+    Console.WriteLine("Checking duplicate type names");
     foreach (var type in AcceptedTypes.Keys)
       if (TypeNamesCount[type.Name] > 1)
         DuplicatedTypes.Add(type);
-
     DuplicatedTypes.Sort((item1, item2) => item1.Name.CompareTo(item2.Name));
 
+    Console.WriteLine("Sorting type names");
     foreach (var type in AcceptedTypes.Keys)
+      SortedTypes.Add(type.FullName??"", type);
+
+    Console.WriteLine("Generating");
+    foreach (var item in SortedTypes)
     {
+      var type = item.Value;
       if (type.IsClass)
         GenClassType(type);
       else if (type.IsEnum)
@@ -98,32 +114,78 @@ public class Generator
     }
   }
 
+  #region Check types
   public bool CanGenerateType(Type type)
   {
+    if (type.Name == "BooleanFalse")
+      Debug.Assert(true);
     var typeName = type.ToString();
     if (typeName.Contains('<') || typeName.Contains('+'))
       return false;
-    if (ExcludedTypes.Contains(typeName))
-      return false;
-    if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+    if (IsExcluded(type))
       return false;
     return true;
   }
 
-  public void CheckClassType(Type type)
+  public void CheckTypeUsage(Type type)
   {
+    if (type.Name=="BooleanFalse")
+      Debug.Assert(true);
+    TypeData? typeData;
+    if (AcceptedTypes.TryGetValue(type, out typeData))
+      typeData.UsageCount += 1;
+    else
+    {
+      var newType = TransformedType(type);
+      if (newType!=type)
+        CheckTypeUsage(newType);
+    }
+  }
+
+  public void CheckTypeUses(Type type)
+  {
+    TypeData? typeData;
     foreach (var prop in type.GetProperties())
     {
       if (!ExcludedProperties.Contains(prop.Name) && !ExcludedTypes.Contains(prop.PropertyType.Namespace ?? ""))
       {
-        if (AcceptedTypes.TryGetValue(type, out var typeData))
+        if (AcceptedTypes.TryGetValue(type, out typeData))
           typeData.PropsCount += 1;
-        var propType = NewPropType(prop.PropertyType);
+
+        var propType = TransformedType(prop.PropertyType);
         if (AcceptedTypes.TryGetValue(propType, out typeData))
           typeData.UsageCount += 1;
+        var argument = propType.GenericTypeArguments.FirstOrDefault();
+        if (argument != null)
+        {
+          CheckTypeUsage(argument);
+        }
       }
     }
+    CheckChildItemTypes(type);
   }
+
+  public bool CheckChildItemTypes(Type type)
+  {
+    var documentation = type.GetXmlDocsElement();
+    if (documentation != null)
+    {
+      var childItemTypes = DocumentationReader.GetChildItemTypes(documentation, this.SourceAssembly);
+      if (childItemTypes != null)
+      {
+        foreach (var childItemType in childItemTypes)
+        {
+          if (childItemType!=type)
+            CheckTypeUsage(childItemType);
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+  #endregion
+
+  #region Class type generation
 
   public void GenClassType(Type type)
   {
@@ -147,6 +209,9 @@ public class Generator
 
   public void GenClassOrInterface(Type type, string typeName, IndentedTextWriter writer, bool toInterface)
   {
+    Console.Write($"\r{new string(' ',Console.BufferWidth)}");
+    Console.Write($"\r{type.FullName}");
+
     var aNamespace = type.Namespace;
     if (aNamespace != null)
     {
@@ -154,6 +219,8 @@ public class Generator
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
+
+    GenDocumentationComments(type, writer);
     GenCustomAttributes(type.CustomAttributes, writer);
     if (toInterface)
       writer.WriteLine($"public interface I{typeName} // : {type.BaseType?.FullName}");
@@ -170,14 +237,14 @@ public class Generator
 
   public void GenProperty(PropertyInfo prop, IndentedTextWriter writer, bool toInterface)
   {
-    if (prop.Name == "TargetSite")
+    if (prop.Name == "Axis")
       Debug.Assert(true);
-    var propType = NewPropType(prop.PropertyType);
-    var aNamespace = propType.Namespace ?? "";
+    var propType = TransformedType(prop.PropertyType);
     var propertyTypeName = NewPropTypeName(propType, toInterface);
-    aNamespace = propType.Namespace ?? "";
+    var aNamespace = propType.Namespace ?? "";
     if (DuplicatedTypes.Contains(propType))
       propertyTypeName = NewNamespace(propType.Namespace ?? "") + "." + propertyTypeName;
+    GenDocumentationComments(prop, writer);
     GenCustomAttributes(prop.CustomAttributes, writer);
     if (toInterface)
       writer.WriteLine($"public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
@@ -192,7 +259,9 @@ public class Generator
     writer.WriteLine();
     AddGlobalUsing(aNamespace ?? "");
   }
+  #endregion
 
+  #region Enum types generation
   public void GenEnumType(Type type)
   {
     var outputPath = OutputPath;
@@ -215,6 +284,8 @@ public class Generator
 
   public void GenEnumType(Type type, string typeName, IndentedTextWriter writer)
   {
+    Console.Write($"\r{new string(' ',Console.BufferWidth)}");
+    Console.Write($"\r{type.FullName}");
     var aNamespace = type.Namespace;
     if (aNamespace != null)
     {
@@ -222,6 +293,7 @@ public class Generator
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
+    GenDocumentationComments(type, writer);
     GenCustomAttributes(type.CustomAttributes, writer);
     writer.WriteLine($"public enum {typeName}");
     writer.WriteLine("{");
@@ -234,13 +306,19 @@ public class Generator
 
   public void GenEnum(FieldInfo field, IndentedTextWriter writer)
   {
+    bool addEmptyLine = GenDocumentationComments(field, writer);
     if (field.CustomAttributes.Any())
     {
-      writer.WriteLine();
       GenCustomAttributes(field.CustomAttributes, writer);
+      addEmptyLine = true;
     }
     writer.WriteLine($"{field.Name},");
+    if (addEmptyLine)
+      writer.WriteLine();
   }
+  #endregion
+
+  #region CustomAttributes generation
 
   public void GenCustomAttributes(IEnumerable<CustomAttributeData> attributes, IndentedTextWriter writer)
   {
@@ -249,7 +327,8 @@ public class Generator
     AddGlobalUsing("DocumentModel.Attributes");
   }
 
-  public void GenCustomAttribute(CustomAttributeData attrData, IndentedTextWriter writer)
+
+  public void GenCustomAttribute(MyCustomAttributeData attrData, IndentedTextWriter writer)
   {
     var attributeType = attrData.AttributeType;
     if (AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
@@ -264,15 +343,84 @@ public class Generator
     {
       var strList = new List<string>();
       foreach (CustomAttributeTypedArgument arg in attrData.ConstructorArguments)
-        strList.Add(TypedValueStr(arg.ArgumentType, arg.Value));
+        strList.Add(TypedValueLiteral(arg.ArgumentType, arg.Value));
       foreach (CustomAttributeNamedArgument arg in attrData.NamedArguments)
-        strList.Add($"{arg.MemberName?.ToString() ?? String.Empty} =  {TypedValueStr(arg.TypedValue.ArgumentType, arg.TypedValue.Value)}");
+        strList.Add($"{arg.MemberName?.ToString() ?? String.Empty} =  {TypedValueLiteral(arg.TypedValue.ArgumentType, arg.TypedValue.Value)}");
       attrString += "(" + String.Join(", ", strList) + ")";
     }
     writer.WriteLine($"[{attrString}]");
     AddGlobalUsing(attributeType.Namespace ?? "");
   }
+  #endregion
 
+  #region Documentation comments generation
+
+  public bool GenDocumentationComments(Type type, IndentedTextWriter writer)
+  {
+    var documentation = type.GetXmlDocsElement();
+    if (documentation != null)
+    {
+      var summary = DocumentationReader.GetSummaryFirstPara(documentation);
+      if (summary != null)
+      {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// {summary}");
+        writer.WriteLine("/// </summary>");
+      }
+      var childItemTypes = DocumentationReader.GetChildItemTypes(documentation, this.SourceAssembly);
+      if (childItemTypes != null)
+      {
+        foreach (var childItemType in childItemTypes)
+        {
+          //if (AcceptedTypes.TryGetValue(childItemType, out var typeData) && typeData.UsageCount > 0)
+          {
+            var myCustomAttribute = new MyCustomAttributeData(typeof(DocumentModel.Attributes.ChildElementInfoAttribute));
+            myCustomAttribute.ConstructorArguments.Add(new CustomAttributeTypedArgument(childItemType));
+            GenCustomAttribute(myCustomAttribute, writer);
+          }
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
+  public bool GenDocumentationComments(FieldInfo aField, IndentedTextWriter writer)
+  {
+    var documentation = aField.GetXmlDocsElement();
+    if (documentation != null)
+    {
+      var summary = DocumentationReader.GetSummaryFirstPara(documentation);
+      if (summary != null)
+      {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// {summary}");
+        writer.WriteLine("/// </summary>");
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public bool GenDocumentationComments(PropertyInfo aProp, IndentedTextWriter writer)
+  {
+    var documentation = aProp.GetXmlDocsElement();
+    if (documentation != null)
+    {
+      var summary = DocumentationReader.GetSummaryFirstPara(documentation);
+      if (summary != null)
+      {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// {summary}");
+        writer.WriteLine("/// </summary>");
+        return true;
+      }
+    }
+    return false;
+  }
+  #endregion
+
+  #region Global usings generation
   public void AddGlobalUsing(string aNamespace)
   {
     aNamespace = NewNamespace(aNamespace);
@@ -293,8 +441,10 @@ public class Generator
         writer.WriteLine($"global using {item};");
     }
   }
+  #endregion
 
-  public string TypedValueStr(Type type, object? value)
+  #region Literals generation
+  public string TypedValueLiteral(Type type, object? value)
   {
     if (type == typeof(string))
     {
@@ -302,6 +452,15 @@ public class Generator
         return $"\"{str}\"";
       return "\"\"";
     }
+    else if (value is Type aType)
+    {
+      var aTypeName = "I"+aType.Name;
+      var aNamespace = NewNamespace(aType.Namespace ?? "");
+      return ($"typeof({aNamespace}.{aTypeName})");
+
+    }
+    else if (value is bool bv)
+      return bv.ToString().ToLower();
     else if (value != null)
     {
       if (type.IsEnum)
@@ -317,7 +476,9 @@ public class Generator
     }
     return "";
   }
+  #endregion
 
+  #region Name/Type translation
 
   public string NewNamespace(string aNamespace)
   {
@@ -333,7 +494,7 @@ public class Generator
     return typeName;
   }
 
-  public Type NewPropType(Type propType)
+  public Type TransformedType(Type propType)
   {
     if (TypeConversionTable.TryGetValue(propType, out var targetType))
       return targetType;
@@ -343,7 +504,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
       }
     }
     else if (propTypeName == "Nullable`1")
@@ -351,7 +512,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
       }
     }
     return propType;
@@ -367,7 +528,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"IEnumerable<{NewPropTypeName(propType, inInterface)}>";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -377,7 +538,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"List<{NewPropTypeName(propType, inInterface)}>";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -387,7 +548,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"List<{NewPropTypeName(propType, inInterface)}>";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -397,7 +558,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"IList<{NewPropTypeName(propType, inInterface)}>";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -407,7 +568,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"ICollection<{NewPropTypeName(propType, inInterface)}>";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -417,7 +578,7 @@ public class Generator
       var genericArgument = propType.GetGenericArguments().FirstOrDefault();
       if (genericArgument != null)
       {
-        propType = NewPropType(genericArgument);
+        propType = TransformedType(genericArgument);
         propTypeName = $"{NewPropTypeName(propType, inInterface)}[]";
         AddGlobalUsing("System.Collections.Generic");
       }
@@ -429,7 +590,9 @@ public class Generator
       propTypeName = "I" + propTypeName;
     return propTypeName;
   }
+  #endregion
 
+  #region Filename/Path methods
   public string ValidateFilename(string filename)
   {
     foreach (var ch in Path.GetInvalidFileNameChars())
@@ -444,6 +607,9 @@ public class Generator
       if (!Directory.Exists(filePath))
         Directory.CreateDirectory(filePath);
   }
+  #endregion
+
+  #region Exclusion/translation
 
   public SortedStrings ExcludedProperties { get; } = new SortedStrings
   {
@@ -458,6 +624,17 @@ public class Generator
     "HasValue",
   };
 
+  public bool IsExcluded(Type type)
+  {
+    if (ExcludedNamespaces.Contains(type.Namespace??""))
+      return true;
+    if (IncludedTypes.Contains(type.Name))
+      return false;
+    if (ExcludedTypes.Contains(type.Name))
+      return false;
+    return false;
+  }
+
   public SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
     "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", "*Packaging"
@@ -468,9 +645,14 @@ public class Generator
     "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions","*Helper", "*Provider", "*Methods", "FileFormatVersions",
   };
 
+  public SortedStrings IncludedTypes { get; } = new SortedStrings
+  {
+    "CustomXmlAttribute", "BooleanFalse"
+  };
+
   public SortedStrings ExcludedAttributes { get; } = new SortedStrings
   {
-    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "DebuggerDisplay"
+    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable", "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant"
   };
 
   public Dictionary<Type, Type> AttributeConversionTable { get; } = new Dictionary<Type, Type>
@@ -522,5 +704,5 @@ public class Generator
     { typeof(System.Double), "double" },
     { typeof(System.Decimal), "decimal" },
   };
-
+  #endregion
 }

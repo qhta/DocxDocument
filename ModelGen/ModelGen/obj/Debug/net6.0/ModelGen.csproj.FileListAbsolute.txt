@@ -19,3 +19,6 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\obj\Debug\net6.0\ref\ModelGen.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Csproj.xml
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Namotion.Reflection.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Attributes.pdb

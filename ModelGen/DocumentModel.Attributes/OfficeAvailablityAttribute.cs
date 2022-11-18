@@ -5,7 +5,7 @@ namespace DocumentModel.Attributes
   /// <summary>
   /// Defines an OfficeAvailabilityAttribute class to indicate whether the property is available in a specific version of an Office application.
   /// </summary>
-  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Enum)]
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Interface |AttributeTargets.Field | AttributeTargets.Enum)]
   public sealed class OfficeAvailabilityAttribute : Attribute
   {
     /// <summary>
