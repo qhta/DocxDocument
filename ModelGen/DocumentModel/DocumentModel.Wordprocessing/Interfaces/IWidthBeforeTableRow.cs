@@ -1,0 +1,18 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the WidthBeforeTableRow Class.
+/// </summary>
+public interface IWidthBeforeTableRow // : DocumentFormat.OpenXml.Wordprocessing.TableWidthType
+{
+  /// <summary>
+  /// Table Width Value
+  /// </summary>
+  public string? Width { get ; set; }
+  
+  /// <summary>
+  /// Table Width Type
+  /// </summary>
+  public TableWidthUnitValues? Type { get ; set; }
+  
+}

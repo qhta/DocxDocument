@@ -1,0 +1,26 @@
+namespace DocumentModel.Office2010.Excel;
+
+/// <summary>
+/// Defines the CustomFilter Class.
+/// </summary>
+public class CustomFilter: ICustomFilter
+{
+  /// <summary>
+  /// operator, this property is only available in Office 2010 and later.
+  /// </summary>
+  public FilterOperatorValues? Operator
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// val, this property is only available in Office 2010 and later.
+  /// </summary>
+  public string? Val
+  {
+    get;
+    set;
+  }
+  
+}

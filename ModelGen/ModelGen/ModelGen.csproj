@@ -19,8 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Csproj.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="DocumentModel.Impl.csproj.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DocumentModel.csproj.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

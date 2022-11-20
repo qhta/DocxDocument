@@ -1,0 +1,27 @@
+namespace DocumentModel.Office.ActiveX;
+
+/// <summary>
+/// Defines the SharedComFont Class.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Office.ActiveX.IActiveXObjectProperty))]
+public class SharedComFont: ISharedComFont
+{
+  /// <summary>
+  /// persistence
+  /// </summary>
+  public PersistenceValues? Persistence
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// id
+  /// </summary>
+  public string? Id
+  {
+    get;
+    set;
+  }
+  
+}

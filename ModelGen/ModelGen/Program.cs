@@ -31,24 +31,10 @@ public static class Program
     index = filepath.LastIndexOf(@"\");
     if (index > 0)
       filepath = filepath.Substring(0, index);
-    filepath = Path.Combine(filepath, "GeneratedModel");
-    var generator = new Generator("GeneratedModel", filepath);
-    generator.GenLibrary(typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
+    var intfFilepath = Path.Combine(filepath, "DocumentModel");
+    var implFilepath = Path.Combine(filepath, "DocumentModel.Impl");
+    var generator = new Generator("DocumentModel", intfFilepath, implFilepath);
+    generator.RunOn(typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
   }
-
-
-  //private static string XmlDocumentationKeyHelper(
-  //  string typeFullNameString,
-  //  string? memberNameString)
-  //{
-  //  string key = Regex.Replace(
-  //    typeFullNameString, @"\[.*\]",
-  //    string.Empty).Replace('+', '.');
-  //  if (memberNameString != null)
-  //  {
-  //    key += "." + memberNameString;
-  //  }
-  //  return key;
-  //}
 
 }

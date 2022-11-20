@@ -1,0 +1,45 @@
+namespace DocumentModel.Spreadsheet;
+
+/// <summary>
+/// Icon Set.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Spreadsheet.IConditionalFormatValueObject))]
+public class IconSet: IIconSet
+{
+  /// <summary>
+  /// Icon Set
+  /// </summary>
+  public IconSetValues? IconSetValue
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Show Value
+  /// </summary>
+  public bool? ShowValue
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Percent
+  /// </summary>
+  public bool? Percent
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Reverse Icons
+  /// </summary>
+  public bool? Reverse
+  {
+    get;
+    set;
+  }
+  
+}
