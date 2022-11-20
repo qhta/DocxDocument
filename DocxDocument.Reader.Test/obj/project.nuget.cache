@@ -1,7 +1,12 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "KUfBmznVgR9/gIxvzZTEQMyl9SUo2c+PFeQWqGEh80JKAwEy+/47KKFKWwJiWvsfoCgntFPm8opArAXnnsEDvw==",
   "success": true,
+=======
+  "dgSpecHash": "6Ba4iPkPYwDopc71PswLnYfe/nF1m6dVMGA0KHyDMPGwjD17ar3IFNeWZuhol+uXndprHIhQFnSTCtSOngrGxw==",
+  "success": false,
+>>>>>>> Stashed changes
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.Reader.Test\\DocxDocument.Reader.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\qhta1\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
@@ -11,8 +16,13 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.office.interop.word\\15.0.4797.1004\\microsoft.office.interop.word.15.0.4797.1004.nupkg.sha512",
+<<<<<<< Updated upstream
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.4.0\\microsoft.testplatform.objectmodel.17.4.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.testplatform.testhost\\17.4.0\\microsoft.testplatform.testhost.17.4.0.nupkg.sha512",
+=======
+    "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.1.0\\microsoft.testplatform.objectmodel.17.1.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.testplatform.testhost\\17.1.0\\microsoft.testplatform.testhost.17.1.0.nupkg.sha512",
+>>>>>>> Stashed changes
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
@@ -49,5 +59,15 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\1.0.0\\qhta.collections.1.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: DocumentFormat.OpenXml from 2.18.0 to 2.17.1. Reference the package directly from the project to select a different version. \r\n DocxDocument.Reader.Test -> DocxDocument.Reader -> DocxDocument.Model -> Qhta.OpenXMLTools -> DocumentFormat.OpenXml (>= 2.18.0) \r\n DocxDocument.Reader.Test -> DocxDocument.Reader -> DocumentFormat.OpenXml (>= 2.17.1)",
+      "libraryId": "DocumentFormat.OpenXml",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
