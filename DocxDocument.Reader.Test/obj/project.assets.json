@@ -3161,5 +3161,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: DocumentFormat.OpenXml from 2.18.0 to 2.17.1. Reference the package directly from the project to select a different version. \r\n DocxDocument.Reader.Test -> DocxDocument.Reader -> DocxDocument.Model -> Qhta.OpenXMLTools -> DocumentFormat.OpenXml (>= 2.18.0) \r\n DocxDocument.Reader.Test -> DocxDocument.Reader -> DocumentFormat.OpenXml (>= 2.17.1)",
+      "libraryId": "DocumentFormat.OpenXml",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
