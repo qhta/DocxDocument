@@ -1,0 +1,26 @@
+namespace DocumentModel.Drawing;
+
+/// <summary>
+/// Auto-Numbered Bullet.
+/// </summary>
+public class AutoNumberedBullet: IAutoNumberedBullet
+{
+  /// <summary>
+  /// Bullet Autonumbering Type
+  /// </summary>
+  public TextAutoNumberSchemeValues? Type
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Start Numbering At
+  /// </summary>
+  public int? StartAt
+  {
+    get;
+    set;
+  }
+  
+}

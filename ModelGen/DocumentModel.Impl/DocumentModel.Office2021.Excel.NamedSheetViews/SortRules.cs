@@ -1,0 +1,28 @@
+namespace DocumentModel.Office2021.Excel.NamedSheetViews;
+
+/// <summary>
+/// Defines the SortRules Class.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Office2021.Excel.NamedSheetViews.IExtensionList))]
+[ChildElementInfo(typeof(DocumentModel.Office2021.Excel.NamedSheetViews.ISortRule))]
+public class SortRules: ISortRules
+{
+  /// <summary>
+  /// sortMethod, this property is only available in Office 2021 and later.
+  /// </summary>
+  public SortMethodValues? SortMethod
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// caseSensitive, this property is only available in Office 2021 and later.
+  /// </summary>
+  public bool? CaseSensitive
+  {
+    get;
+    set;
+  }
+  
+}

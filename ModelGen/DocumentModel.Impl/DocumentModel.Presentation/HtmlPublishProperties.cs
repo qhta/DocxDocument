@@ -1,0 +1,39 @@
+namespace DocumentModel.Presentation;
+
+/// <summary>
+/// HTML Publishing Properties.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Presentation.ICustomShowReference))]
+[ChildElementInfo(typeof(DocumentModel.Presentation.ISlideAll))]
+[ChildElementInfo(typeof(DocumentModel.Presentation.IExtensionList))]
+[ChildElementInfo(typeof(DocumentModel.Presentation.ISlideRange))]
+public class HtmlPublishProperties: IHtmlPublishProperties
+{
+  /// <summary>
+  /// Show Speaker Notes
+  /// </summary>
+  public bool? ShowSpeakerNotes
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Browser Support Target
+  /// </summary>
+  public HtmlPublishWebBrowserSupportValues? TargetBrowser
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Publish Path
+  /// </summary>
+  public string? Id
+  {
+    get;
+    set;
+  }
+  
+}

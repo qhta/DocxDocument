@@ -1,0 +1,17 @@
+namespace DocumentModel.CustomXmlDataProperties;
+
+/// <summary>
+/// Associated XML Schema.
+/// </summary>
+public class SchemaReference: ISchemaReference
+{
+  /// <summary>
+  /// Target Namespace of Associated XML Schema
+  /// </summary>
+  public string? Uri
+  {
+    get;
+    set;
+  }
+  
+}
