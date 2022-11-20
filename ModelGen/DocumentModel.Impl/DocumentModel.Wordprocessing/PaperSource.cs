@@ -1,0 +1,26 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the PaperSource Class.
+/// </summary>
+public class PaperSource: IPaperSource
+{
+  /// <summary>
+  /// First Page Printer Tray Code
+  /// </summary>
+  public ushort? First
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Non-First Page Printer Tray Code
+  /// </summary>
+  public ushort? Other
+  {
+    get;
+    set;
+  }
+  
+}

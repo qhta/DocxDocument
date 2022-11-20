@@ -1,0 +1,18 @@
+namespace DocumentModel.Office2021.Drawing.Livefeed;
+
+/// <summary>
+/// Defines the BackgroundBlurProperties Class.
+/// </summary>
+[ChildElementInfo(typeof(DocumentModel.Office2021.Drawing.Livefeed.IOfficeArtExtensionList))]
+public class BackgroundBlurProperties: IBackgroundBlurProperties
+{
+  /// <summary>
+  /// OfficeArtExtensionList.
+  /// </summary>
+  public DocumentModel.Office2021.Drawing.Livefeed.IOfficeArtExtensionList? OfficeArtExtensionList
+  {
+    get;
+    set;
+  }
+  
+}
