@@ -14,9 +14,9 @@ public class EnumInfo: ModelElement
 
   public EnumInfo(FieldInfo fieldInfo): this(fieldInfo.Name, fieldInfo.GetValue(null)?.ToString())
   {
-    var documentation = fieldInfo.GetXmlDocsElement();
-    if (documentation != null)
-      Summary = DocumentationReader.GetSummaryFirstPara(documentation);
+    Documentation = fieldInfo.GetXmlDocsElement();
+    if (Documentation != null)
+      Summary = DocumentationReader.GetSummaryFirstPara(Documentation);
     foreach (var item in fieldInfo.CustomAttributes)
     {
       CustomAttributes.Add(new CustomAttribData(item));
