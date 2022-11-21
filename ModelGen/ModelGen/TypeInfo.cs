@@ -10,28 +10,32 @@ namespace ModelGen;
 public class TypeInfo : ModelElement
 {
   public string Namespace { get; set; }
+
+
   public String FullName => GetFullName(Name, Namespace, true);
 
   public string OrigNamespace => Type.Namespace ?? "";
+
   public string OrigName => Type.Name;
   public String OrigFullName => GetFullName(OrigName, OrigNamespace, false);
 
   public bool IsReflected { get; private set; }
-  public bool IsAccepted { get; set; }
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
   public bool IsConstructedGenericType => Type.IsConstructedGenericType;
   public bool IsGenericTypeBased => (BaseTypeInfo != null) &&
                                     (BaseTypeInfo.IsConstructedGenericType || IsGenericTypeBased);
+  public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
   public TypeKind TypeKind { get; set; }
   public Collection<EnumInfo>? EnumValues { get; set; }
   public Collection<PropInfo>? Properties { get; set; }
+
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public Type Type { get; set; }
   public int UsageCount { get; set; }
-  public int PropsCount { get; set; }
+  public int AcceptedPropsCount { get; set; }
 
   public TypeInfo(Type type) : base(type.Name)
   {
@@ -45,11 +49,17 @@ public class TypeInfo : ModelElement
       return;
     IsReflected = true;
     var type = Type;
-    if ((type.Namespace ?? "").StartsWith("System"))
-    {
-      TypeKind = TypeKind.System;
-    }
-    else if (type.IsEnum)
+    TypeKind = TypeKind.Type;
+    IsAccepted = true;
+    if (ModelFilter.ExcludedNamespaces.Contains(type.Namespace??""))
+      IsAccepted = false;
+    if (ModelFilter.ExcludedTypes.Contains(Type.Name)) 
+      IsAccepted = false;
+    if (ModelFilter.IncludedTypes.Contains(Type.Name)) 
+      IsAccepted = true;
+    if (ModelFilter.TypeConversionTable.ContainsKey(Type))
+      IsAccepted = false;
+    if (type.IsEnum)
     {
       TypeKind = TypeKind.Enum;
       if (EnumValues == null)
@@ -57,9 +67,9 @@ public class TypeInfo : ModelElement
       foreach (var item in Type.GetFields(BindingFlags.Static | BindingFlags.Public))
         EnumValues.Add(new EnumInfo(item));
     }
-    else if ((type.IsClass || type.IsValueType) && type != typeof(string) && type != typeof(object))
+    else if ((type.IsClass || type.IsInterface ||type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
-      TypeKind = (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
+      TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
       if (Properties == null)
         Properties = new Collection<PropInfo>(this);
       foreach (var item in Type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
@@ -72,7 +82,7 @@ public class TypeInfo : ModelElement
       if (type.ContainsGenericParameters)
       {
         var genericTypeParameters = type.GetGenericArguments().ToList();
-        if (genericTypeParameters != null && genericTypeParameters.Count > 0)
+        if (genericTypeParameters.Any())
         {
           foreach (var argType in genericTypeParameters)
             TypeManager.RegisterType(argType, this, Semantics.GenericTypeParam);
@@ -82,94 +92,112 @@ public class TypeInfo : ModelElement
       if (type.IsGenericTypeParameter)
       {
         var genericTypeParamConstraints = type.GetGenericParameterConstraints().ToList();
-        if (genericTypeParamConstraints != null && genericTypeParamConstraints.Count > 0)
+        if (genericTypeParamConstraints.Any())
         {
           foreach (var constraint in genericTypeParamConstraints)
-            TypeManager.RegisterType(type, constraint, Semantics.GenericTypeParamConstraint);
+            TypeManager.RegisterType(constraint, type, Semantics.GenericTypeParamConstraint);
         }
       }
 
       var genericTypeArguments = type.GenericTypeArguments.ToList();
-      if (genericTypeArguments != null && genericTypeArguments.Count > 0)
+      if (genericTypeArguments.Any())
       {
         foreach (var argType in genericTypeArguments)
         {
           TypeManager.RegisterType(argType, this, Semantics.GenericTypeArg);
         }
       }
+
+      var implementedInterfaces = type.GetInterfaces().ToList();
+      if (implementedInterfaces.Any())
+      {
+        foreach (var intf in implementedInterfaces)
+        {
+          TypeManager.RegisterType(intf, this, Semantics.Implementation);
+        }
+      }
+
     }
-    var documentation = type.GetXmlDocsElement();
-    if (documentation != null)
-      Summary = DocumentationReader.GetSummaryFirstPara(documentation);
+    //if (Name == "Body")
+    //  Debug.Assert(true);
+    Documentation = type.GetXmlDocsElement();
+    if (Documentation != null)
+    {
+      Summary = DocumentationReader.GetSummaryFirstPara(Documentation);
+      var childItemTypes = DocumentationReader.GetChildItemTypes(Documentation, type.Assembly);
+      if (childItemTypes != null)
+      {
+        foreach (var childItemType in childItemTypes)
+          TypeManager.RegisterType(childItemType, this, Semantics.Include);
+      }
+
+    }
     foreach (var item in type.CustomAttributes)
-    {
       CustomAttributes.Add(new CustomAttribData(item));
-    }
   }
 
-  public IEnumerable<TypeInfo>? GetGenericArgTypes()
+  public IEnumerable<TypeInfo> GetInterfaces()
   {
     if (!IsReflected)
       Reflect();
-    var genericArgsTypes = TypeManager.GetOutgoingRelationships(this)
-      .Where(item => item.Semantics == Semantics.GenericTypeArg)
-      .Select(item => item.Target);
-    if (genericArgsTypes.Any() == true)
-    {
-      return genericArgsTypes;
-    }
-    return null;
+    return TypeManager.GetRelatedTypes(this, Semantics.Implementation);
   }
 
-  public IEnumerable<TypeInfo>? GetGenericParamTypes()
+  public IEnumerable<TypeInfo> GetIncludedTypes()
   {
     if (!IsReflected)
       Reflect();
-    var genericParamTypes = TypeManager.GetOutgoingRelationships(this)
-      .Where(item => item.Semantics == Semantics.GenericTypeParam)
-      .Select(item => item.Target);
-    if (genericParamTypes.Any() == true)
-    {
-      return genericParamTypes;
-    }
-    return null;
+    return TypeManager.GetRelatedTypes(this,Semantics.Include);
   }
-
-  public IEnumerable<TypeInfo>? GetGenericTypeParamConstraints()
+  public IEnumerable<TypeInfo> GetGenericArgTypes()
   {
     if (!IsReflected)
       Reflect();
-    var genericTypeParamConstraints = TypeManager.GetOutgoingRelationships(this)
-      .Where(item => item.Semantics == Semantics.GenericTypeParamConstraint)
-      .Select(item => item.Target);
-    if (genericTypeParamConstraints.Any() == true)
-    {
-      return genericTypeParamConstraints;
-    }
-    return null;
+    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeArg);
   }
 
-  public IEnumerable<GenericParamConstraint>? GetGenericParamConstraints()
+  public IEnumerable<TypeInfo> GetGenericParamTypes()
+  {
+    if (!IsReflected)
+      Reflect();
+    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeParam);
+  }
+
+  public IEnumerable<TypeInfo> GetGenericTypeParamConstraints()
+  {
+    if (!IsReflected)
+      Reflect();
+    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeParamConstraint);
+
+  }
+
+  public IEnumerable<GenericParamConstraint> GetGenericParamConstraints()
   {  
     if (!IsReflected)
       Reflect();
-    var genericParameterAttributes = Type.GenericParameterAttributes;
     var list = new List<GenericParamConstraint>();
+    if (IsGenericTypeParameter)
+      return list;
+    var genericParameterAttributes = Type.GenericParameterAttributes;
     if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Covariant))
       list.Add(GenericParamConstraint.Covariant);
     if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Contravariant))
       list.Add(GenericParamConstraint.Contravariant);
     if (genericParameterAttributes.HasFlag(GenericParameterAttributes.NotNullableValueTypeConstraint))
-      list.Add(GenericParamConstraint.NotNullable);
+      list.Add(GenericParamConstraint.NotNullableValueType);
     if (genericParameterAttributes.HasFlag(GenericParameterAttributes.ReferenceTypeConstraint))
       list.Add(GenericParamConstraint.ReferenceType);
     if (genericParameterAttributes.HasFlag(GenericParameterAttributes.DefaultConstructorConstraint))
       list.Add(GenericParamConstraint.Newable);
-    return (list.Count>0) ? list : null;
+    return list;
   }
 
   public string GetFullName(string aName, string? aNamespace = null, bool showGenericParams = false)
   {
+    //if (Name=="EnumValue`1")
+    //  Debug.Assert(true);
+    if (IsGenericTypeParameter)
+      return Name;
     if (showGenericParams)
     {
       var apos = aName.IndexOf('`');
@@ -178,13 +206,13 @@ public class TypeInfo : ModelElement
         var genericParams = GetGenericParamTypes();
         var genericArgs = GetGenericArgTypes();
         var ls = new List<String>();
-        if (genericParams != null)
-          foreach (var genericParam in genericParams)
+        if (genericParams.Any())
+          foreach (var genericParam in genericParams.ToList())
           {
             ls.Add(genericParam.Name);
           }
-        else if (genericArgs != null)
-          foreach (var genericArg in genericArgs)
+        else if (genericArgs.Any())
+          foreach (var genericArg in genericArgs.ToList())
           {
             ls.Add(genericArg.FullName);
           }
@@ -200,5 +228,5 @@ public class TypeInfo : ModelElement
     return aName;
   }
 
-  public override string ToString() => GetFullName(Name, Namespace);
+  public override string ToString() => GetFullName(Name, Namespace, true);
 }

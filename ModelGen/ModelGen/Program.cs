@@ -33,7 +33,7 @@ public static class Program
       filepath = filepath.Substring(0, index);
     var intfFilepath = Path.Combine(filepath, "DocumentModel");
     var implFilepath = Path.Combine(filepath, "DocumentModel.Impl");
-    var generator = new Generator("DocumentModel", intfFilepath, implFilepath);
+    var generator = new ModelCreator("DocumentModel", intfFilepath, implFilepath);
     generator.RunOn(typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
   }
 

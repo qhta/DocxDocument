@@ -12,4 +12,9 @@ public class TypeRelationship
     Target = target;
     Semantics = semantics;
   }
+
+    public override string ToString()
+    {
+      return $"{Source} --> ({Semantics}) --> {Target}";
+    }
 }

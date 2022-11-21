@@ -3,6 +3,7 @@
 public enum Semantics
 {
   Inheritance,
+  Implementation,
   Value,
   Include,
   Attribute,
@@ -10,4 +11,5 @@ public enum Semantics
   GenericTypeArg,
   GenericTypeParam,
   GenericTypeParamConstraint,
+  TypeChange,
 }

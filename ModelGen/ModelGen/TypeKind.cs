@@ -3,7 +3,7 @@
 public enum TypeKind
 {
   Unknown,
-  System,
+  Type,
   Enum,
   Struct,
   Class,
