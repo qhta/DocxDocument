@@ -23,3 +23,5 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Att
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Attributes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.csproj.xml
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Impl.csproj.xml
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Collections.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Collections.pdb

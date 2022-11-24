@@ -1,0 +1,23 @@
+namespace DocumentModel.Drawing.Diagrams;
+
+/// <summary>
+/// Style Definition Header.
+/// </summary>
+public interface IStyleDefinitionHeader // : DocumentModel.ITypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// Unique Style ID
+  /// </summary>
+  public String? UniqueId { get ; set; }
+  
+  /// <summary>
+  /// Minimum Version
+  /// </summary>
+  public String? MinVersion { get ; set; }
+  
+  /// <summary>
+  /// Resource ID
+  /// </summary>
+  public Int32? ResourceId { get ; set; }
+  
+}

@@ -1,0 +1,28 @@
+namespace DocumentModel.Office2010.Word.DrawingShape;
+
+/// <summary>
+/// Defines the NonVisualConnectorProperties Class.
+/// </summary>
+public interface INonVisualConnectorProperties // : DocumentModel.ITypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// Connection Shape Locks.
+  /// </summary>
+  public IConnectionShapeLocks? ConnectionShapeLocks { get ; set; }
+  
+  /// <summary>
+  /// Connection Start.
+  /// </summary>
+  public IStartConnection? StartConnection { get ; set; }
+  
+  /// <summary>
+  /// Connection End.
+  /// </summary>
+  public IEndConnection? EndConnection { get ; set; }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public IExtensionList? ExtensionList { get ; set; }
+  
+}
