@@ -20,7 +20,7 @@ public class PropInfo: ModelElement
 
   public PropInfo(PropertyInfo propertyInfo) : this(propertyInfo.Name, propertyInfo.PropertyType)
   {
-    if (ModelFilter.ExcludedProperties.Contains(propertyInfo.Name))
+    if (ModelData.ExcludedProperties.Contains(propertyInfo.Name))
       IsAccepted = false;
     Documentation = propertyInfo.GetXmlDocsElement();
     if (Documentation != null)

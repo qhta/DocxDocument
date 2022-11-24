@@ -1,16 +1,13 @@
 ﻿using System.CodeDom.Compiler;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 //using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Linq;
-using DocumentFormat.OpenXml;
-using Namotion.Reflection;
 
-using DocumentFormat.OpenXml.Wordprocessing;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using DocumentFormat.OpenXml.EMMA;
-using DocumentFormat.OpenXml.Office2010.ExcelAc;
-using System.Text;
+using DocumentFormat.OpenXml;
+
+using Namotion.Reflection;
 
 namespace ModelGen;
 
@@ -37,11 +34,7 @@ public class ModelCreator
   private string IntfOutputPath { get; set; }
   private string ImplOutputPath { get; set; }
 
-  Dictionary<string, int> TypeNamesCount = new();
-
-  SortedDictionary<string, List<Type>> SameNameTypes { get; } = new();
-
-  SortedDictionary<string, TypeInfo> SortedTypes { get; } = new();
+  //Dictionary<string, int> TypeNamesCount = new();
 
   SortedSet<string> GlobalUsings { get; } = new();
 
@@ -56,20 +49,23 @@ public class ModelCreator
     var acceptedTypesCount = 0;
     foreach (var type in assembly.GetTypes())
     {
-      if (ModelFilter.IncludedNamespaces.Count == 0 || ModelFilter.IncludedNamespaces.Contains(type.Namespace ?? ""))
+      if (ModelData.IncludedNamespaces.Count == 0 || ModelData.IncludedNamespaces.Contains(type.Namespace ?? ""))
       {
         Console.Write($"\r{EmptyLine}");
         Console.Write($"\r{type.FullName}");
         totalTypesCount++;
+        var nspace = type.Namespace ?? "";
+        if (nspace == "DocumentFormat.OpenXml.Packaging")
+          Debug.Assert(true);
         if (CanGenerateType(type, out var typeInfo))
         {
           if (typeInfo.IsAccepted == true)
             acceptedTypesCount++;
-          var typeName = typeInfo.Name;
-          if (!TypeNamesCount.ContainsKey(typeName))
-            TypeNamesCount.Add(typeName, 1);
-          else
-            TypeNamesCount[typeName] += 1;
+          //var typeName = typeInfo.Name;
+          //if (!TypeNamesCount.ContainsKey(typeName))
+          //  TypeNamesCount.Add(typeName, 1);
+          //else
+          //  TypeNamesCount[typeName] += 1;
         }
       }
     }
@@ -77,65 +73,94 @@ public class ModelCreator
     Console.WriteLine($"Found {totalTypesCount} types, {TypeManager.KnownTypes.Count} registered, {acceptedTypesCount} accepted");
 
     Console.WriteLine();
-    Console.WriteLine($"Found {TypeManager.Namespaces.Count} namespaces:");
-    ModelMonitorDisplay.ShowNamespaces();
+    Console.WriteLine($"Found {TypeManager.GetNamespaces(true).Count()} namespaces");
+    //ModelMonitorDisplay.ShowNamespaces();
 
     Console.WriteLine();
     Console.WriteLine("Converting types");
     var convertedCount = AddTypeConversion();
     Console.WriteLine($"Converted {convertedCount} types");
-    ModelMonitorDisplay.ShowTypeConversions();
+    //ModelMonitorDisplay.ShowTypeConversions();
     
     Console.WriteLine();
     Console.WriteLine("Checking type usage");
-    var usedCount = CheckTypeUsage();
+    var usedCount = 0;
+    foreach (var type in TypeManager.AcceptedTypes.ToArray())
+    {
+
+      usedCount += CheckTypeUsage(type,
+        (item) =>
+        {
+          Console.Write($"\r{EmptyLine}");
+          Console.Write($"\r{item.GetFullName()}");
+        });
+    }
     var acceptedCount = TypeManager.AcceptedTypes.Count();
     Console.WriteLine($"Found {usedCount} used types among {acceptedCount} accepted types");
-    ModelMonitorDisplay.ShowUnusedTypes();
-    //DocumentFormat.OpenXml.AlternateContent
+    //ModelMonitorDisplay.ShowUnusedTypes();
 
     Console.WriteLine();
     Console.WriteLine("Renaming enums");
     var renamedCount = RenameEnumTypes();
     Console.WriteLine($"Renamed {renamedCount} enum types");
-    ModelMonitorDisplay.ShowTypeRenames();
-
-    //Console.WriteLine();
-    //Console.WriteLine("Renaming enums");
-    //renamedCount = RenameNamespaces();
-    //Console.WriteLine($"Renamed {renamedCount} enum types");
     //ModelMonitorDisplay.ShowTypeRenames();
 
+    //Console.WriteLine();
+    //Console.WriteLine("Reflecting remaining types");
+    //int reflectedCount;
+    //do
+    //{
+    //  reflectedCount = TypeManager.ReflectRemainingTypes();
+    //  Console.WriteLine($"Reflected {reflectedCount} types");
+    //} while (reflectedCount > 0);
+
+    //Console.WriteLine();
+    //Console.WriteLine("Renaming namespaces");
+    //renamedCount = RenameNamespaces();
+    //Console.WriteLine($"Renamed {renamedCount} types");
+
+    //TypeManager.GenerationMode = true;
+
+    //Console.WriteLine();
+    //ModelMonitorDisplay.ShowNamespaceDetails(new ShowOptions
+    //{
+    //  //ShowOptions.OriginalNames
+    //  BaseTypes = true,
+    //  //| ShowOptions.GenericParamsConstraints 
+    //  //| ShowOptions.ImplementedInterfaces
+    //  //| ShowOptions.OutgoingRelationships
+    //  //| ShowOptions.IncomingRelationships
+    //  //| ShowOptions.EnumValues
+    //  Properties = true,
+    //  //| ShowOptions.HideUnacceptedProperties
+    //  //| ShowOptions.HideUnacceptedTypeDetails
+    //  //| ShowOptions.IncludedTypes
+    //});
+    //return;
     Console.WriteLine();
-    ModelMonitorDisplay.ShowNamespaceDetails(
-      ShowOptions.OriginalNames
-      //| ShowOptions.GenericParamsConstraints 
-      //| ShowOptions.ImplementedInterfaces
-      //| ShowOptions.OutgoingRelationships
-      //| ShowOptions.IncomingRelationships
-      //| ShowOptions.EnumValues
-      | ShowOptions.Properties
-      | ShowOptions.HideUnacceptedProperties
-      | ShowOptions.HideUnacceptedTypeDetails
-      //| ShowOptions.IncludedTypes
-      );
+    Console.WriteLine("Generating");
 
-    //Console.WriteLine("Generating");
-    //foreach (var typeInfo in TypeManager.AcceptedTypes)
-    //{
-    //  Console.Write($"\r{EmptyLine}");
-    //  Console.Write($"\r{typeInfo.FullName}");
-    //  if (typeInfo.TypeKind == TypeKind.Class)
-    //    GenClassType(typeInfo);
-    //  else if (typeInfo.TypeKind == TypeKind.Enum)
-    //    GenEnumType(typeInfo);
-    //}
+    foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
+    {
+      //if (typeInfo.Name == "ChartSpace")
+      //  Debug.Assert(true);
+      if (typeInfo.Namespace.StartsWith("System"))
+        continue;
+      if (typeInfo.Name.Contains('`'))
+        continue;
+      Console.Write($"\r{EmptyLine}");
+      Console.Write($"\r{typeInfo.GetFullName(false, true)}");
+      if (typeInfo.TypeKind == TypeKind.Class)
+        GenClassType(typeInfo);
+      else if (typeInfo.TypeKind == TypeKind.Enum)
+        GenEnumType(typeInfo);
+    }
 
-    //if (GlobalUsings.Count > 0)
-    //{
-    //  GenGlobalUsings(Path.Combine(IntfOutputPath, "GlobalUsings.cs"));
-    //  GenGlobalUsings(Path.Combine(ImplOutputPath, "GlobalUsings.cs"));
-    //}
+    if (GlobalUsings.Count > 0)
+    {
+      //GenGlobalUsings(Path.Combine(IntfOutputPath, "GlobalUsings.cs"));
+      //GenGlobalUsings(Path.Combine(ImplOutputPath, "GlobalUsings.cs"));
+    }
   }
 
   private void GenProjectFile(string projectName, string filename)
@@ -155,7 +180,7 @@ public class ModelCreator
     var typeName = type.ToString();
     if (typeName.Contains('<') || typeName.Contains('+'))
       return false;
-    if (ModelFilter.IsExcluded(type))
+    if (ModelData.IsExcluded(type))
       return false;
     typeInfo = TypeManager.RegisterType(type);
     typeInfo.Reflect();
@@ -167,60 +192,116 @@ public class ModelCreator
     var count = 0;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
-      typeInfo.UsageCount = TypeManager.GetIncomingRelationships(typeInfo).Count();
+      typeInfo.UsageCount = CheckTypeUsage(typeInfo);
       if (typeInfo.UsageCount > 0)
         count++;
     }
     return count;
   }
+
+  public int CheckTypeUsage(TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  {
+    if (typeInfo.IsAccepted == false)
+      return 0;
+
+    if (typeInfo.UsesEvaluated)
+      return 0;
+    typeInfo.UsesEvaluated = true;
+
+    if (OnStartChecking != null)
+      OnStartChecking(typeInfo);
+    if (typeInfo.Name == "Accent")
+      Debug.Assert(true);
+
+    if (!typeInfo.IsReflected)
+      typeInfo.Reflect();
+    if (typeInfo.IsAccepted == null)
+      typeInfo.IsAccepted = true;
+
+    var count = 0;
+    count++;
+    if (typeInfo.BaseTypeInfo != null)
+      count += CheckTypeUsage(typeInfo.BaseTypeInfo, OnStartChecking);
+
+    if (typeInfo.Properties != null)
+      foreach (var prop in typeInfo.Properties.ToArray())
+      {
+        if (prop.IsAccepted != false)
+        {
+          var propType = prop.PropertyType;
+          if (propType.IsAccepted != false)
+          {
+            count += CheckTypeUsage(propType, OnStartChecking);
+          }
+        }
+      }
+
+    var interfaces = typeInfo.GetInterfaces();
+    if (interfaces.Any())
+      foreach (var intfType in interfaces.ToArray())
+      {
+        if (intfType.IsAccepted != false)
+        {
+          count += CheckTypeUsage(intfType, OnStartChecking);
+        }
+      }
+
+    var includedTypes = typeInfo.GetIncludedTypes();
+    if (includedTypes.Any())
+      foreach (var incType in includedTypes.ToArray())
+      {
+        if (incType.IsAccepted != false)
+        {
+          count += CheckTypeUsage(incType, OnStartChecking);
+        }
+      }
+    return count;
+  }
+
   #endregion
 
   #region Manage type conversion
   private int AddTypeConversion()
   {
     var count = 0;
-    foreach (var item in ModelFilter.TypeConversionTable)
+    foreach (var item in ModelData.TypeConversionTable)
     {
       var sourceType = item.Key;
       var targetType = item.Value;
       var sourceTypeInfo = TypeManager.RegisterType(sourceType);
       TypeManager.RegisterType(targetType, sourceTypeInfo, Semantics.TypeChange);
       sourceTypeInfo.IsAccepted = false;
-      if (sourceTypeInfo.IsGenericType)
-      {
-        count += AddGenericTypeConversion(sourceType, targetType);
-      }
-      count++;
-    }
-    return count;
-  }
-
-  private int AddGenericTypeConversion(Type sourceType, Type targetType)
-  {
-    var count = 0;
-    foreach (var item in TypeManager.KnownTypes)
-    {
-      var sourceType2 = item.Key;
-      if (/*sourceType2.IsConstructedGenericType && */sourceType2.Name == sourceType.Name)
-      {
-        var sourceTypeInfo = item.Value;
-        var sourceArgTypes = sourceType2.GenericTypeArguments;
-        var targetType2 = targetType;
-        if (targetType2 == typeof(Enum))
-        {
-          targetType2 = sourceArgTypes.FirstOrDefault();
-          if (targetType2 != null)
-          {
-            TypeManager.RegisterType(targetType2, sourceTypeInfo, Semantics.TypeChange);
-            sourceTypeInfo.IsAccepted = false;
-          }
-        }
-      }
       count++;
     }
     count += AddValTypesConversions();
     return count;
   }
+
+  //private static int AddGenericTypeConversion(Type sourceType, Type targetType)
+  //{
+  //  var count = 0;
+  //  foreach (var item in TypeManager.KnownTypes.ToArray())
+  //  {
+  //    var sourceType2 = item.Key;
+  //    if (/*sourceType2.IsConstructedGenericType && */sourceType2.Name == sourceType.Name)
+  //    {
+  //      var sourceTypeInfo = item.Value;
+  //      var sourceArgTypes = sourceType2.GenericTypeArguments;
+  //      var targetType2 = targetType;
+  //      if (targetType2 == typeof(Enum))
+  //      {
+  //        targetType2 = sourceArgTypes.FirstOrDefault();
+  //        if (targetType2 != null)
+  //        {
+  //          var targetTypeInfo = TypeManager.RegisterType(targetType2, sourceTypeInfo, Semantics.TypeChange);
+  //          sourceTypeInfo.IsAccepted = false;
+  //          count++;
+  //        }
+  //      }
+  //    }
+  //  }
+  //  return count;
+  //}
 
   private int AddValTypesConversions()
   {
@@ -228,7 +309,7 @@ public class ModelCreator
     foreach (var item in TypeManager.KnownTypes)
     {
       var sourceTypeInfo = item.Value;
-      if (sourceTypeInfo.TypeKind == TypeKind.Class && sourceTypeInfo.Properties?.Count==1)
+      if (sourceTypeInfo.TypeKind == TypeKind.Class && sourceTypeInfo.Properties?.Count == 1)
       {
         var firstProp = sourceTypeInfo.Properties?.FirstOrDefault();
         if (firstProp != null && firstProp.Name == "Val")
@@ -269,12 +350,11 @@ public class ModelCreator
   private void GenClassOrInterface(TypeInfo type, string typeName, IndentedTextWriter writer, bool toInterface)
   {
     Console.Write($"\r{new string(' ', Console.BufferWidth)}");
-    Console.Write($"\r{type.FullName}");
+    Console.Write($"\r{type.GetFullName(false, true)}");
 
     var aNamespace = type.Namespace;
     if (aNamespace != null)
     {
-      aNamespace = NewNamespace(aNamespace);
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
@@ -282,45 +362,49 @@ public class ModelCreator
     GenDocumentationComments(type, writer);
     GenCustomAttributes(type.CustomAttributes, writer);
     if (toInterface)
-      writer.WriteLine($"public interface I{typeName} // : {type.BaseTypeInfo?.FullName}");
+      writer.WriteLine($"public interface I{typeName} // : {type.BaseTypeInfo?.GetFullName(false, true)}");
     else
       writer.WriteLine($"public class {typeName}: I{typeName}");
     writer.WriteLine("{");
     writer.Indent++;
+    if (type.Name == "AbstractNum")
+      Debug.Assert(true);
     if (type.Properties != null)
       foreach (var prop in type.Properties)
-        if (!(ModelFilter.ExcludedProperties.Contains(prop.Name)) && !(ModelFilter.ExcludedTypes.Contains(prop.PropertyType.Namespace ?? "")))
-          GenProperty(prop, writer, toInterface);
+        //if (!(ModelFilter.ExcludedProperties.Contains(prop.Name)) && !(ModelFilter.ExcludedTypes.Contains(prop.PropertyType.Namespace ?? "")))
+        GenProperty(prop, writer, toInterface);
     writer.Indent--;
     writer.WriteLine("}");
   }
 
   private void GenProperty(PropInfo prop, IndentedTextWriter writer, bool toInterface)
   {
-    ////if (prop.Name == "Val")
-    ////  Debug.Assert(true);
-    //var propType = TransformedType(prop.PropertyType);
-    //var propertyTypeName = NewPropTypeName(propType, toInterface);
-    //var aNamespace = propType.Namespace ?? "";
-    //if (AcceptedTypes.TryGetValue(propType, out var typeInfo))
-    //{
-    //  if (SameNameTypes.ContainsKey(typeInfo.Name))
-    //    propertyTypeName = NewNamespace(propType.Namespace ?? "") + "." + propertyTypeName;
-    //}
-    //GenDocumentationComments(prop, writer);
-    //GenCustomAttributes(prop.CustomAttributes, writer);
-    //if (toInterface)
-    //  writer.WriteLine($"public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
-    //else
-    //{
-    //  writer.WriteLine($"public {propertyTypeName}? {prop.Name}");
-    //  writer.WriteLine($"{{");
-    //  writer.WriteLine($"  get;");
-    //  writer.WriteLine($"  set;");
-    //  writer.WriteLine($"}}");
-    //}
-    //writer.WriteLine();
-    //AddGlobalUsing(aNamespace ?? "");
+    //if (prop.Name == "Val")
+    //  Debug.Assert(true);
+    var propertyType = prop.PropertyType;
+    var targetPropertyType = TypeManager.GetConversionTarget(propertyType);
+    if (targetPropertyType != null)
+      propertyType = targetPropertyType;
+    string propertyTypeName = propertyType.GetFullName(false, true, false);
+    string aNamespace = propertyType.GetNamespace(false);
+    if (propertyType.HasDuplicatesInName())
+    {
+      propertyTypeName = aNamespace + "." + propertyTypeName;
+    }
+    GenDocumentationComments(prop, writer);
+    GenCustomAttributes(prop.CustomAttributes, writer);
+    if (toInterface)
+      writer.WriteLine($"public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
+    else
+    {
+      writer.WriteLine($"public {propertyTypeName}? {prop.Name}");
+      writer.WriteLine($"{{");
+      writer.WriteLine($"  get;");
+      writer.WriteLine($"  set;");
+      writer.WriteLine($"}}");
+    }
+    writer.WriteLine();
+    AddGlobalUsing(aNamespace ?? "");
   }
   #endregion
 
@@ -328,8 +412,8 @@ public class ModelCreator
   private void GenEnumType(TypeInfo type)
   {
     var outputPath = IntfOutputPath;
-    if (type.Namespace != null)
-      outputPath = Path.Combine(outputPath, type.Namespace);
+    var aNamespace = type.Namespace;
+    outputPath = Path.Combine(outputPath, aNamespace);
     var typeName = type.Name;
     var fileName = ValidateFilename(typeName);
     GenEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs"));
@@ -348,11 +432,10 @@ public class ModelCreator
   private void GenEnumType(TypeInfo type, string typeName, IndentedTextWriter writer)
   {
     Console.Write($"\r{new string(' ', Console.BufferWidth)}");
-    Console.Write($"\r{type.FullName}");
-    var aNamespace = type.Namespace;
+    Console.Write($"\r{type.GetFullName(false, true)}");
+    var aNamespace = type.GetNamespace();
     if (aNamespace != null)
     {
-      aNamespace = NewNamespace(aNamespace);
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
@@ -386,26 +469,25 @@ public class ModelCreator
 
   private bool GenCustomAttributes(IEnumerable<CustomAttribData>? attributes, IndentedTextWriter writer)
   {
-    if (attributes?.Any() == true)
-    {
-      foreach (var customAttrib in attributes)
-        GenCustomAttribute(customAttrib, writer);
-      AddGlobalUsing("DocumentModel.Attributes");
-      return true;
-    }
+    //if (attributes?.Any() == true)
+    //{
+    //  foreach (var customAttrib in attributes)
+    //    GenCustomAttribute(customAttrib, writer);
+    //  AddGlobalUsing("DocumentModel.Attributes");
+    //  return true;
+    //}
     return false;
   }
-
 
   private void GenCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
   {
     var attributeType = attrData.AttributeType;
-    if (ModelFilter.AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
-      attributeType = altAttrType;
+    //if (ModelFilter.AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
+    //  attributeType = altAttrType;
     var attrTypeName = attributeType.Name;
     if (attrTypeName.EndsWith("Attribute"))
       attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
-    if (ModelFilter.ExcludedAttributes.Contains(attrTypeName))
+    if (ModelData.ExcludedAttributes.Contains(attrTypeName))
       return;
     var attrString = attrTypeName;
     if (attrData.ConstructorArguments?.Count + attrData.NamedArguments?.Count > 0)
@@ -420,7 +502,7 @@ public class ModelCreator
       attrString += "(" + String.Join(", ", strList) + ")";
     }
     writer.WriteLine($"[{attrString}]");
-    AddGlobalUsing(attributeType.Namespace ?? "");
+    AddGlobalUsing(attributeType.Namespace);
   }
   #endregion
 
@@ -487,8 +569,9 @@ public class ModelCreator
   #region Global usings generation
   private void AddGlobalUsing(string aNamespace)
   {
-    aNamespace = NewNamespace(aNamespace);
     if (aNamespace == "System.IO.Packaging")
+      return;
+    if (aNamespace.StartsWith("DocumentFormat.OpenXml"))
       return;
     if (aNamespace != String.Empty)
       if (!GlobalUsings.Contains(aNamespace))
@@ -516,10 +599,10 @@ public class ModelCreator
         return $"\"{str}\"";
       return "\"\"";
     }
-    else if (value is Type aType)
+    else if (value is TypeInfo aType)
     {
       var aTypeName = "I" + aType.Name;
-      var aNamespace = NewNamespace(aType.Namespace ?? "");
+      var aNamespace = aType.Namespace;
       return ($"typeof({aNamespace}.{aTypeName})");
 
     }
@@ -544,64 +627,22 @@ public class ModelCreator
 
   #region Name/Type translation
 
-  private string NewNamespace(string aNamespace)
-  {
-    return aNamespace.Replace("DocumentFormat.OpenXml", "DocumentModel");
-  }
+  //private string NewNamespace(string aNamespace)
+  //{
+  //  return aNamespace.Replace("DocumentFormat.OpenXml", "DocumentModel");
+  //}
 
-  private TypeInfo TransformedType(TypeInfo typeInfo)
-  {
-    var targetType = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
-    if (targetType != null)
-      return targetType;
-    var typeName = typeInfo.Name;
-    if (typeName == "EnumValue`1")
-    {
-      var genericArgument = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).FirstOrDefault();
-      if (genericArgument != null)
-      {
-        return TransformedType(genericArgument);
-      }
-    }
-    else if (typeName == "Nullable`1")
-    {
-      var genericArgument = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).FirstOrDefault();
-      if (genericArgument != null)
-      {
-        return TransformedType(genericArgument);
-      }
-    }
-    //else if (typeName == "ListValue`1")
-    //{
-    //  var genericArgument = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).FirstOrDefault();
-    //  if (genericArgument != null)
-    //  {
-    //    typeInfo = TransformedType(genericArgument);
-    //    typeInfo = typeof(List<>).MakeGenericType(typeInfo.Type);
-    //    AddGlobalUsing("System.Collections.Generic");
-    //  }
-    //}
-    return typeInfo;
-  }
-
-
-  private string NewTypeName(Type type)
-  {
-    if (type.IsEnum)
-      return NewEnumTypeName(type);
-    return type.Name;
-  }
 
   private int RenameEnumTypes()
   {
     int changeCount = 0;
-    foreach (var nspace in TypeManager.Namespaces)
+    foreach (var nspace in TypeManager.GetNamespaces())
     {
       var nspaceTypes = TypeManager.KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value).ToList();
       foreach (var typeInfo in nspaceTypes.Where(item => item.TypeKind == TypeKind.Enum))
       {
         var newName = NewEnumTypeName(typeInfo.Type);
-        if (!nspaceTypes.Any(item => item != typeInfo && item.Name == newName && item.IsAccepted==true))
+        if (!nspaceTypes.Any(item => item != typeInfo && item.Name == newName && item.IsAccepted == true))
         {
           typeInfo.Name = newName;
           changeCount++;
@@ -631,16 +672,29 @@ public class ModelCreator
     return typeName;
   }
 
-  private string NewPropTypeName(Type propType, bool inInterface)
-  {
-    var propTypeName = propType.Name;
-    if (ModelFilter.BuiltInTypeNames.TryGetValue(propType, out var builtInName))
-      propTypeName = builtInName;
-    else
-    if ((propType.Namespace ?? "").StartsWith("DocumentFormat"))
-      propTypeName = "I" + propTypeName;
-    return propTypeName;
-  }
+  //private int RenameNamespaces()
+  //{
+  //  int count = 0;
+  //  foreach (var typeInfo in TypeManager.AllTypes)
+  //  {
+  //    var nspace = typeInfo.Namespace;
+  //    if (nspace.StartsWith("DocumentFormat.OpenXml"))
+  //    {
+  //      count++;
+  //      typeInfo.Namespace = nspace.Replace("DocumentFormat.OpenXml", "DocumentModel");
+  //    }
+  //  }
+  //  return count;
+  //}
+
+  //private string NewNamespace(TypeInfo typeInfo)
+  //{
+  //  var nspace = typeInfo.Namespace;
+  //  if (nspace.StartsWith("DocumentFormat.OpenXml"))
+  //    return nspace.Replace("DocumentFormat.OpenXml", "DocumentModel");
+  //  return nspace;
+  //}
+
   #endregion
 
   #region Filename/Path methods

@@ -1,0 +1,8 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Print Fractional Character Widths.
+/// </summary>
+public interface IPrintFractionalCharacterWidth // : DocumentModel.Wordprocessing.IOnOffType
+{
+}

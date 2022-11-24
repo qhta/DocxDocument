@@ -1,25 +1,25 @@
-﻿using System.Diagnostics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-
-using Namotion.Reflection;
+﻿using System.Reflection.Metadata.Ecma335;
 
 namespace ModelGen;
 
 public class TypeInfo : ModelElement
 {
-  public string Namespace { get; set; }
-
-
-  public String FullName => GetFullName(Name, Namespace, true);
+  public string Namespace
+  {
+    get => TypeManager.GetNamespace(NamespaceIndex);
+    set
+    {
+      if (value != Namespace)
+        NamespaceIndex = TypeManager.RegisterNamespace(value);
+    }
+  }
+  private int NamespaceIndex { get; set; }
 
   public string OrigNamespace => Type.Namespace ?? "";
 
   public string OrigName => Type.Name;
-  public String OrigFullName => GetFullName(OrigName, OrigNamespace, false);
 
-  public bool IsReflected { get; private set; }
+  public bool IsReflected { get; internal set; }
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
   public bool IsConstructedGenericType => Type.IsConstructedGenericType;
@@ -34,6 +34,7 @@ public class TypeInfo : ModelElement
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public Type Type { get; set; }
+  public bool UsesEvaluated { get; set; }
   public int UsageCount { get; set; }
   public int AcceptedPropsCount { get; set; }
 
@@ -41,192 +42,93 @@ public class TypeInfo : ModelElement
   {
     Type = type;
     Namespace = type.Namespace ?? "";
+    var isAccepted = true;
+    if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
+      isAccepted = false;
+    if (ModelData.ExcludedTypes.Contains(type.Name))
+      isAccepted = false;
+    if (ModelData.IncludedTypes.Contains(type.Name))
+      isAccepted = true;
+    if (ModelData.TypeConversionTable.ContainsKey(type))
+      isAccepted = false;
+    IsAccepted = isAccepted;
   }
 
-  public void Reflect()
+  public string GetNamespace(bool original = false)
   {
-    if (IsReflected)
-      return;
-    IsReflected = true;
-    var type = Type;
-    TypeKind = TypeKind.Type;
-    IsAccepted = true;
-    if (ModelFilter.ExcludedNamespaces.Contains(type.Namespace??""))
-      IsAccepted = false;
-    if (ModelFilter.ExcludedTypes.Contains(Type.Name)) 
-      IsAccepted = false;
-    if (ModelFilter.IncludedTypes.Contains(Type.Name)) 
-      IsAccepted = true;
-    if (ModelFilter.TypeConversionTable.ContainsKey(Type))
-      IsAccepted = false;
-    if (type.IsEnum)
+    string aNamespace;
+    if (original)
     {
-      TypeKind = TypeKind.Enum;
-      if (EnumValues == null)
-        EnumValues = new Collection<EnumInfo>(this);
-      foreach (var item in Type.GetFields(BindingFlags.Static | BindingFlags.Public))
-        EnumValues.Add(new EnumInfo(item));
+      aNamespace = this.OrigNamespace;
     }
-    else if ((type.IsClass || type.IsInterface ||type.IsValueType) && type != typeof(string) && type != typeof(object))
+    else
     {
-      TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
-      if (Properties == null)
-        Properties = new Collection<PropInfo>(this);
-      foreach (var item in Type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
-        Properties.Add(new PropInfo(item));
-      if (type.BaseType != null && type.BaseType != typeof(object) && type.BaseType != typeof(ValueType))
+      aNamespace = this.Namespace;
+      var nSpace = aNamespace;
+      foreach (var item in ModelData.NamespaceRedirectionTable)
       {
-        BaseTypeInfo = TypeManager.RegisterType(type.BaseType, this, Semantics.Inheritance);
+        if (aNamespace.StartsWith(item.Key))
+          nSpace = item.Value;
       }
-
-      if (type.ContainsGenericParameters)
-      {
-        var genericTypeParameters = type.GetGenericArguments().ToList();
-        if (genericTypeParameters.Any())
-        {
-          foreach (var argType in genericTypeParameters)
-            TypeManager.RegisterType(argType, this, Semantics.GenericTypeParam);
-        }
-      }
-
-      if (type.IsGenericTypeParameter)
-      {
-        var genericTypeParamConstraints = type.GetGenericParameterConstraints().ToList();
-        if (genericTypeParamConstraints.Any())
-        {
-          foreach (var constraint in genericTypeParamConstraints)
-            TypeManager.RegisterType(constraint, type, Semantics.GenericTypeParamConstraint);
-        }
-      }
-
-      var genericTypeArguments = type.GenericTypeArguments.ToList();
-      if (genericTypeArguments.Any())
-      {
-        foreach (var argType in genericTypeArguments)
-        {
-          TypeManager.RegisterType(argType, this, Semantics.GenericTypeArg);
-        }
-      }
-
-      var implementedInterfaces = type.GetInterfaces().ToList();
-      if (implementedInterfaces.Any())
-      {
-        foreach (var intf in implementedInterfaces)
-        {
-          TypeManager.RegisterType(intf, this, Semantics.Implementation);
-        }
-      }
-
+      aNamespace = nSpace;
     }
-    //if (Name == "Body")
-    //  Debug.Assert(true);
-    Documentation = type.GetXmlDocsElement();
-    if (Documentation != null)
+    return aNamespace;
+  }
+
+  public string GetFullName(bool original = false, bool asInterface = false, bool withNamespace = true)
+  {
+    string aName;
+    string aNamespace;
+    if (original)
     {
-      Summary = DocumentationReader.GetSummaryFirstPara(Documentation);
-      var childItemTypes = DocumentationReader.GetChildItemTypes(Documentation, type.Assembly);
-      if (childItemTypes != null)
-      {
-        foreach (var childItemType in childItemTypes)
-          TypeManager.RegisterType(childItemType, this, Semantics.Include);
-      }
-
+      aName = this.OrigName;
+      aNamespace = this.OrigNamespace;
     }
-    foreach (var item in type.CustomAttributes)
-      CustomAttributes.Add(new CustomAttribData(item));
-  }
-
-  public IEnumerable<TypeInfo> GetInterfaces()
-  {
-    if (!IsReflected)
-      Reflect();
-    return TypeManager.GetRelatedTypes(this, Semantics.Implementation);
-  }
-
-  public IEnumerable<TypeInfo> GetIncludedTypes()
-  {
-    if (!IsReflected)
-      Reflect();
-    return TypeManager.GetRelatedTypes(this,Semantics.Include);
-  }
-  public IEnumerable<TypeInfo> GetGenericArgTypes()
-  {
-    if (!IsReflected)
-      Reflect();
-    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeArg);
-  }
-
-  public IEnumerable<TypeInfo> GetGenericParamTypes()
-  {
-    if (!IsReflected)
-      Reflect();
-    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeParam);
-  }
-
-  public IEnumerable<TypeInfo> GetGenericTypeParamConstraints()
-  {
-    if (!IsReflected)
-      Reflect();
-    return TypeManager.GetRelatedTypes(this, Semantics.GenericTypeParamConstraint);
-
-  }
-
-  public IEnumerable<GenericParamConstraint> GetGenericParamConstraints()
-  {  
-    if (!IsReflected)
-      Reflect();
-    var list = new List<GenericParamConstraint>();
-    if (IsGenericTypeParameter)
-      return list;
-    var genericParameterAttributes = Type.GenericParameterAttributes;
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Covariant))
-      list.Add(GenericParamConstraint.Covariant);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Contravariant))
-      list.Add(GenericParamConstraint.Contravariant);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.NotNullableValueTypeConstraint))
-      list.Add(GenericParamConstraint.NotNullableValueType);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.ReferenceTypeConstraint))
-      list.Add(GenericParamConstraint.ReferenceType);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.DefaultConstructorConstraint))
-      list.Add(GenericParamConstraint.Newable);
-    return list;
-  }
-
-  public string GetFullName(string aName, string? aNamespace = null, bool showGenericParams = false)
-  {
-    //if (Name=="EnumValue`1")
-    //  Debug.Assert(true);
+    else
+    {
+      aName = this.Name;
+      aNamespace = this.Namespace;
+      if (asInterface && TypeKind == TypeKind.Class && !aName.StartsWith("I"))
+      {
+        aName = "I" + aName;
+      }
+      var nSpace = aNamespace;
+      foreach (var item in ModelData.NamespaceRedirectionTable)
+      {
+        if (aNamespace.StartsWith(item.Key))
+          nSpace = item.Value;
+      }
+      aNamespace = nSpace;
+    }
     if (IsGenericTypeParameter)
       return Name;
-    if (showGenericParams)
+    var apos = aName.IndexOf('`');
+    if (apos >= 0)
     {
-      var apos = aName.IndexOf('`');
-      if (apos >= 0)
-      {
-        var genericParams = GetGenericParamTypes();
-        var genericArgs = GetGenericArgTypes();
-        var ls = new List<String>();
-        if (genericParams.Any())
-          foreach (var genericParam in genericParams.ToList())
-          {
-            ls.Add(genericParam.Name);
-          }
-        else if (genericArgs.Any())
-          foreach (var genericArg in genericArgs.ToList())
-          {
-            ls.Add(genericArg.FullName);
-          }
-        if (ls.Count > 0)
+      var genericParams = this.GetGenericParamTypes();
+      var genericArgs = this.GetGenericArgTypes();
+      var ls = new List<String>();
+      if (genericParams.Any())
+        foreach (var genericParam in genericParams.ToList())
         {
-          aName = aName.Substring(0, apos);
-          aName += $"<{String.Join(",", ls)}>";
+          ls.Add(genericParam.Name);
         }
+      else if (genericArgs.Any())
+        foreach (var genericArg in genericArgs.ToList())
+        {
+          ls.Add(genericArg.GetFullName(true, false, asInterface));
+        }
+      if (ls.Count > 0)
+      {
+        aName = aName.Substring(0, apos);
+        aName += $"<{String.Join(",", ls)}>";
       }
     }
-    if (aNamespace!=null)
+
+    if (withNamespace && aNamespace != null)
       return aNamespace + "." + aName;
     return aName;
   }
 
-  public override string ToString() => GetFullName(Name, Namespace, true);
+  public override string ToString() => GetFullName(true, true);
 }

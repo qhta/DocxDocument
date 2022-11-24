@@ -1,0 +1,28 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the SimpleField Class.
+/// </summary>
+public interface ISimpleField // : DocumentModel.ITypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// Field Codes
+  /// </summary>
+  public String? Instruction { get ; set; }
+  
+  /// <summary>
+  /// Field Should Not Be Recalculated
+  /// </summary>
+  public Boolean? FieldLock { get ; set; }
+  
+  /// <summary>
+  /// Field Result Invalidated
+  /// </summary>
+  public Boolean? Dirty { get ; set; }
+  
+  /// <summary>
+  /// Custom Field Data.
+  /// </summary>
+  public IFieldData? FieldData { get ; set; }
+  
+}

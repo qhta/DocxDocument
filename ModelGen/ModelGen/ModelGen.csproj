@@ -19,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Qhta.Collections">
+      <HintPath>..\..\..\MyLib\bin\Qhta.Collections.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="DocumentModel.Impl.csproj.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

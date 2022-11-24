@@ -10,8 +10,8 @@ public class CustomAttribData: IOwnedElement
 
   public object? Owner { get; set; }
 
-  public Type AttributeType => AttributeTypeInfo.Type;
-  public TypeInfo AttributeTypeInfo { get; }
+  //public Type AttributeType => AttributeTypeInfo.Type;
+  public TypeInfo AttributeType { get; }
 
   public Collection<CustomAttribTypedArgument> ConstructorArguments { get; }
   public Collection<CustomAttribNamedArgument> NamedArguments { get; set; }
@@ -20,7 +20,7 @@ public class CustomAttribData: IOwnedElement
   {
     ConstructorArguments = new Collection<CustomAttribTypedArgument>(this);
     NamedArguments = new Collection<CustomAttribNamedArgument>(this);
-    AttributeTypeInfo = TypeManager.RegisterType(attributeType, this, Semantics.Attribute);
+    AttributeType = TypeManager.RegisterType(attributeType, this, Semantics.Attribute);
   }
 
   public CustomAttribData(Type attributeType, 
@@ -38,6 +38,6 @@ public class CustomAttribData: IOwnedElement
   {
   }
 
-  public override string ToString() => $"CustomAttribData({AttributeTypeInfo})"
+  public override string ToString() => $"CustomAttribData({AttributeType})"
   +((Owner==null) ? "" : $" in {Owner.ToString}");
 }
