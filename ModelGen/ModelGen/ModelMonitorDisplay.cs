@@ -1,27 +1,10 @@
 ﻿using DocumentFormat.OpenXml.Wordprocessing;
 
 using System.CodeDom.Compiler;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace ModelGen;
-
-[Flags]
-public enum ShowOptions
-{
-  AcceptedTypesOnly = 1,
-  OriginalNames = 2,
-  ImplementedInterfaces = 4,
-  GenericParamsConstraints = 8,
-  OutgoingRelationships = 16,
-  IncomingRelationships = 32,
-  SelectedSemantics = 64,
-  ExcludeSemantics = 128,
-  EnumValues = 0x100,
-  Properties = 0x200,
-  HideUnacceptedProperties = 0x400,
-  HideUnacceptedTypeDetails = 0x800,
-  IncludedTypes = 0x1000,
-}
 
 public class ModelMonitorDisplay
 {
@@ -33,12 +16,13 @@ public class ModelMonitorDisplay
   public IndentedTextWriter Writer { get; }
 
 
-  public void ShowNamespaces()
+  public void ShowNamespaces(bool original)
   {
-    if (TypeManager.Namespaces.Count > 0)
+    var namespaces = TypeManager.GetNamespaces(original);
+    if (namespaces.Any())
     {
-      var maxNamespaceLength = TypeManager.Namespaces.Max(item => item.Length);
-      foreach (var nspace in TypeManager.Namespaces)
+      var maxNamespaceLength = namespaces.Max(item => item.Length);
+      foreach (var nspace in namespaces)
       {
         var aSpace = nspace;
         if (aSpace.Length < maxNamespaceLength)
@@ -62,26 +46,26 @@ public class ModelMonitorDisplay
     }
   }
 
-  public void ShowNamespaceDetails(ShowOptions options = 0)
+  public void ShowNamespaceDetails(ShowOptions options)
   {
-    int count = 0;
-    foreach (var nspace in TypeManager.Namespaces.ToList())
+    foreach (var nspace in TypeManager.GetNamespaces(options.OriginalNames).ToList())
     {
-      if (count++ != 0)
-        Writer.WriteLine();
       Writer.Indent++;
       ShowNamespaceDetails(nspace, options);
       Writer.Indent--;
     }
   }
 
-  public void ShowNamespaceDetails(string nspace, ShowOptions options = 0, Semantics[]? semanticsFilter = null)
+  public void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
+    if (nspace.StartsWith("DocumentFormat.OpenXml.Packaging"))
+      Debug.Assert(true);
     var nSpaceTypes = TypeManager.KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value).ToList();
-    if (options.HasFlag(ShowOptions.AcceptedTypesOnly))
+    if (options.AcceptedTypesOnly)
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
     if (nSpaceTypes.Count > 0)
     {
+      Writer.WriteLine();
       Writer.WriteLine($"namespace {nspace}");
       Writer.Indent++;
       foreach (var typeInfo in nSpaceTypes)
@@ -103,51 +87,48 @@ public class ModelMonitorDisplay
     "new()"
   };
 
-  public void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options = 0, Semantics[]? semanticsFilter = null)
+  public void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     if (!typeInfo.IsReflected)
       typeInfo.Reflect();
-    var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.FullName}";
+    var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.OriginalNames)}";
     var changedToType = TypeManager.GetConversionTarget(typeInfo);
     if (changedToType != null)
-      str += $" => {changedToType.FullName}";
+      str += $" => {changedToType.GetFullName(options.OriginalNames)}";
     else if (typeInfo.IsAccepted != null)
       str += $" {{{Accepted(typeInfo.IsAccepted)}}}";
     Writer.WriteLine(str);
-    if (options.HasFlag(ShowOptions.HideUnacceptedTypeDetails) && typeInfo.IsAccepted == false)
+    if (options.HideUnacceptedTypeDetails && typeInfo.IsAccepted == false)
       return;
     Writer.Indent++;
-    if (options.HasFlag(ShowOptions.OriginalNames))
-      if (typeInfo.Name != typeInfo.OrigName)
-        Writer.WriteLine($"original name: {typeInfo.OrigFullName}");
-    if (typeInfo.BaseTypeInfo != null)
+    if (options.BaseTypes && typeInfo.BaseTypeInfo != null)
     {
-      str = $"based on: {typeInfo.BaseTypeInfo.FullName}";
+      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(options.OriginalNames)}";
       changedToType = TypeManager.GetConversionTarget(typeInfo.BaseTypeInfo);
       if (changedToType != null)
-      {
-        str += $" => {changedToType.FullName}";
-      }
+        str += $" => {changedToType.GetFullName(options.OriginalNames)}";
+      else if (typeInfo.BaseTypeInfo.IsAccepted != null)
+        str += $" {{{Accepted(typeInfo.BaseTypeInfo.IsAccepted)}}}";
       Writer.WriteLine(str);
     }
-    if (options.HasFlag(ShowOptions.ImplementedInterfaces))
+    if (options.ImplementedInterfaces)
       ShowImplementedInterfaces(typeInfo, options);
-    if (options.HasFlag(ShowOptions.GenericParamsConstraints))
+    if (options.GenericParamsConstraints)
       ShowGenericParamsConstraints(typeInfo, options);
-    if (options.HasFlag(ShowOptions.OutgoingRelationships))
+    if (options.OutgoingRelationships)
       ShowOutgoingRelationships(typeInfo, options, semanticsFilter);
-    if (options.HasFlag(ShowOptions.IncomingRelationships))
+    if (options.IncomingRelationships)
       ShowIncomingRelationships(typeInfo, options, semanticsFilter);
-    if (options.HasFlag(ShowOptions.IncludedTypes))
+    if (options.IncludedTypes)
       ShowIncludedTypes(typeInfo, options);
-    if (options.HasFlag(ShowOptions.EnumValues))
+    if (options.EnumValues)
       ShowEnumValues(typeInfo, options);
-    if (options.HasFlag(ShowOptions.Properties))
+    if (options.Properties)
       ShowProperties(typeInfo, options);
     Writer.Indent--;
   }
 
-  public void ShowGenericParamsConstraints(TypeInfo typeInfo, ShowOptions options = 0)
+  public void ShowGenericParamsConstraints(TypeInfo typeInfo, ShowOptions options)
   {
     var genericTypeParams = typeInfo.GetGenericParamTypes();
     if (genericTypeParams != null)
@@ -158,7 +139,7 @@ public class ModelMonitorDisplay
         var genericTypeParamsConstraints = genericTypeParam.GetGenericTypeParamConstraints();
         if (genericTypeParamsConstraints != null)
           foreach (var item in genericTypeParamsConstraints.ToArray())
-            ls.Add(item.FullName);
+            ls.Add(item.GetFullName(options.OriginalNames));
         var genericParamConstraints = genericTypeParam.GetGenericParamConstraints();
         if (genericParamConstraints != null)
           foreach (var item in genericParamConstraints.ToArray())
@@ -172,14 +153,14 @@ public class ModelMonitorDisplay
     }
   }
 
-  public void ShowImplementedInterfaces(TypeInfo typeInfo, ShowOptions options = 0)
+  public void ShowImplementedInterfaces(TypeInfo typeInfo, ShowOptions options)
   {
     var implementedInterfaces = typeInfo.GetInterfaces();
     if (implementedInterfaces.Any())
     {
       foreach (var intfType in implementedInterfaces.Take(10).ToArray())
       {
-        var str = $"implements {intfType.FullName}";
+        var str = $"implements {intfType.GetFullName(options.OriginalNames)}";
         Writer.WriteLine(str);
       }
       if (implementedInterfaces.Count()>10)
@@ -187,14 +168,14 @@ public class ModelMonitorDisplay
     }
   }
 
-  public void ShowIncludedTypes(TypeInfo typeInfo, ShowOptions options = 0)
+  public void ShowIncludedTypes(TypeInfo typeInfo, ShowOptions options)
   {
     var includedTypes = typeInfo.GetIncludedTypes();
     if (includedTypes.Any())
     {
       foreach (var intfType in includedTypes.Take(10).ToArray())
       {
-        var str = $"includes {intfType.FullName}";
+        var str = $"includes {intfType.GetFullName(options.OriginalNames)}";
         Writer.WriteLine(str);
       }
       if (includedTypes.Count()>10)
@@ -204,10 +185,10 @@ public class ModelMonitorDisplay
   public void ShowOutgoingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
-    if (options.HasFlag(ShowOptions.ExcludeSemantics) && semanticsFilter != null)
+    if (options.ExcludeSemantics && semanticsFilter != null)
       outgoingRels = outgoingRels.Where(item => !semanticsFilter.Contains(item.Semantics)).ToList();
     else
-    if (options.HasFlag(ShowOptions.SelectedSemantics) && semanticsFilter != null)
+    if (options.SelectedSemantics && semanticsFilter != null)
       outgoingRels = outgoingRels.Where(item => semanticsFilter.Contains(item.Semantics)).ToList();
     if (outgoingRels.Any())
     {
@@ -227,10 +208,10 @@ public class ModelMonitorDisplay
   public void ShowIncomingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
-    if (options.HasFlag(ShowOptions.ExcludeSemantics) && semanticsFilter != null)
+    if (options.ExcludeSemantics && semanticsFilter != null)
       incomingRels = incomingRels.Where(item => !semanticsFilter.Contains(item.Semantics)).ToList();
     else
-    if (options.HasFlag(ShowOptions.SelectedSemantics) && semanticsFilter != null)
+    if (options.SelectedSemantics && semanticsFilter != null)
       incomingRels = incomingRels.Where(item => semanticsFilter.Contains(item.Semantics)).ToList();
     if (incomingRels.Any())
     {
@@ -246,7 +227,7 @@ public class ModelMonitorDisplay
     }
   }
 
-  public void ShowEnumValues(TypeInfo typeInfo, ShowOptions options = 0)
+  public void ShowEnumValues(TypeInfo typeInfo, ShowOptions options)
   {
     var enumValues = typeInfo.EnumValues;
     if (enumValues != null && enumValues.Any())
@@ -265,9 +246,9 @@ public class ModelMonitorDisplay
     }
   }
 
-  public void ShowProperties(TypeInfo typeInfo, ShowOptions options = 0)
+  public void ShowProperties(TypeInfo typeInfo, ShowOptions options)
   {
-    if (options.HasFlag(ShowOptions.HideUnacceptedProperties) && typeInfo.IsAccepted == false)
+    if (options.HideUnacceptedProperties && typeInfo.IsAccepted == false)
       return;
     var properties = typeInfo.Properties;
     if (properties != null && properties.Any())
@@ -275,15 +256,15 @@ public class ModelMonitorDisplay
       Writer.WriteLine("{");
       foreach (var property in properties.Take(1).ToArray())
       {
-        if (options.HasFlag(ShowOptions.HideUnacceptedProperties) && property.IsAccepted == false)
+        if (options.HideUnacceptedProperties && property.IsAccepted == false)
           continue;
         Writer.Indent++;
-        var str = $"{property.Name}: {property.PropertyType.FullName}";
+        var str = $"{property.Name}: {property.PropertyType.GetFullName(options.OriginalNames)}";
         var changedToType = TypeManager.GetConversionTarget(property.PropertyType);
         if (changedToType != null)
-          str += $" => {changedToType.FullName}";
-        if (property.IsAccepted != null)
-          str += $" {{{Accepted(property.IsAccepted)}}}";
+          str += $" => {changedToType.GetFullName(options.OriginalNames)}";
+        else if (property.PropertyType.IsAccepted != null)
+          str += $" {{{Accepted(property.PropertyType.IsAccepted)}}}";
         Writer.WriteLine(str);
         Writer.Indent--;
       }
@@ -295,28 +276,24 @@ public class ModelMonitorDisplay
 
   public void ShowTypeConversions()
   {
-    foreach (var conv in TypeManager.Relationships.Where(item => item.Semantics == Semantics.TypeChange).ToArray())
+    foreach (var type in TypeManager.AllTypes)
     {
-      if (conv.Source is TypeInfo sourceTypeInfo)
-      {
-        Writer.WriteLine($"{sourceTypeInfo} => {conv.Target}");
-        Writer.Indent++;
-        ShowTypeConversions(conv.Target);
-        Writer.Indent--;
-      }
+      ShowTypeConversion(type);
     }
   }
 
-  public void ShowTypeConversions(TypeInfo sourceTypeInfo)
+  public void ShowTypeConversion(TypeInfo type)
   {
-    foreach (var conv in TypeManager.Relationships.Where(item => item.Source == sourceTypeInfo && item.Semantics == Semantics.TypeChange))
+    var convTarget = TypeManager.GetConversionTarget(type, true);
+    if (convTarget != null)
     {
-      Writer.WriteLine($"{conv.Source} => {conv.Target}");
+      Writer.WriteLine($"{type} => {convTarget}");
       Writer.Indent++;
-      ShowTypeConversions(conv.Target);
+      ShowTypeConversion(convTarget);
       Writer.Indent--;
     }
   }
+  
 
   public void ShowTypeUsage()
   {

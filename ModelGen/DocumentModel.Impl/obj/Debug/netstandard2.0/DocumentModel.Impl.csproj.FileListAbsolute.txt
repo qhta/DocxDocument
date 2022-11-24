@@ -1,0 +1,5 @@
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\netstandard2.0\DocumentModel.Impl.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\netstandard2.0\DocumentModel.Impl.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\netstandard2.0\DocumentModel.Impl.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\netstandard2.0\DocumentModel.Impl.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\netstandard2.0\DocumentModel.Impl.csproj.CoreCompileInputs.cache

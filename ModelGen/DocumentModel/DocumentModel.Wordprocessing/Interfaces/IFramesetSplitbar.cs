@@ -1,0 +1,28 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Frameset Splitter Properties.
+/// </summary>
+public interface IFramesetSplitbar // : DocumentModel.ITypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// Frameset Splitter Width.
+  /// </summary>
+  public IWidth? Width { get ; set; }
+  
+  /// <summary>
+  /// Frameset Splitter Color.
+  /// </summary>
+  public IColor? Color { get ; set; }
+  
+  /// <summary>
+  /// Do Not Display Frameset Splitters.
+  /// </summary>
+  public INoBorder? NoBorder { get ; set; }
+  
+  /// <summary>
+  /// Frameset Splitter Border Style.
+  /// </summary>
+  public IFlatBorders? FlatBorders { get ; set; }
+  
+}
