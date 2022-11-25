@@ -8,66 +8,66 @@ public interface ISignatureLine // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Signature Line Flag
   /// </summary>
-  public ITrueFalseValue? IsSignatureLine { get ; set; }
+  public System.Boolean? IsSignatureLine { get ; set; }
   
   /// <summary>
   /// Unique ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Signature Provider ID
   /// </summary>
-  public String? ProviderId { get ; set; }
+  public System.String? ProviderId { get ; set; }
   
   /// <summary>
   /// Use Signing Instructions Flag
   /// </summary>
-  public ITrueFalseValue? SigningInstructionsSet { get ; set; }
+  public System.Boolean? SigningInstructionsSet { get ; set; }
   
   /// <summary>
   /// User-specified Comments Flag
   /// </summary>
-  public ITrueFalseValue? AllowComments { get ; set; }
+  public System.Boolean? AllowComments { get ; set; }
   
   /// <summary>
   /// Show Signed Date Flag
   /// </summary>
-  public ITrueFalseValue? ShowSignDate { get ; set; }
+  public System.Boolean? ShowSignDate { get ; set; }
   
   /// <summary>
   /// Suggested Signer Line 1
   /// </summary>
-  public String? SuggestedSigner { get ; set; }
+  public System.String? SuggestedSigner { get ; set; }
   
   /// <summary>
   /// Suggested Signer Line 2
   /// </summary>
-  public String? SuggestedSigner2 { get ; set; }
+  public System.String? SuggestedSigner2 { get ; set; }
   
   /// <summary>
   /// Suggested Signer E-mail Address
   /// </summary>
-  public String? SuggestedSignerEmail { get ; set; }
+  public System.String? SuggestedSignerEmail { get ; set; }
   
   /// <summary>
   /// Instructions for Signing
   /// </summary>
-  public String? SigningInstructions { get ; set; }
+  public System.String? SigningInstructions { get ; set; }
   
   /// <summary>
   /// Additional Signature Information
   /// </summary>
-  public String? AdditionalXml { get ; set; }
+  public System.String? AdditionalXml { get ; set; }
   
   /// <summary>
   /// Signature Provider Download URL
   /// </summary>
-  public String? SignatureProviderUrl { get ; set; }
+  public System.String? SignatureProviderUrl { get ; set; }
   
 }

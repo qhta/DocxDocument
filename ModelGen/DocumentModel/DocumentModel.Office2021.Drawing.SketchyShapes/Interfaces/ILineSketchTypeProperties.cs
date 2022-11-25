@@ -8,21 +8,21 @@ public interface ILineSketchTypeProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// LineSketchNoneEmpty.
   /// </summary>
-  public ILineSketchNoneEmpty? LineSketchNoneEmpty { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LineSketchNoneEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchCurvedEmpty.
   /// </summary>
-  public ILineSketchCurvedEmpty? LineSketchCurvedEmpty { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LineSketchCurvedEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchFreehandEmpty.
   /// </summary>
-  public ILineSketchFreehandEmpty? LineSketchFreehandEmpty { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LineSketchFreehandEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchScribbleEmpty.
   /// </summary>
-  public ILineSketchScribbleEmpty? LineSketchScribbleEmpty { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LineSketchScribbleEmpty { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface ITimeListConditionalType // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Trigger Event
   /// </summary>
-  public TriggerEventValues? Event { get ; set; }
+  public DocumentModel.Presentation.TriggerEventKind? Event { get ; set; }
   
   /// <summary>
   /// Trigger Delay
   /// </summary>
-  public String? Delay { get ; set; }
+  public System.String? Delay { get ; set; }
   
   /// <summary>
   /// Target Element Trigger Choice.
   /// </summary>
-  public ITargetElement? TargetElement { get ; set; }
+  public DocumentModel.Presentation.ITargetElement? TargetElement { get ; set; }
   
   /// <summary>
   /// Time Node.
   /// </summary>
-  public ITimeNode? TimeNode { get ; set; }
+  public System.UInt32? TimeNode { get ; set; }
   
   /// <summary>
   /// Runtime Node Trigger Choice.
   /// </summary>
-  public IRuntimeNodeTrigger? RuntimeNodeTrigger { get ; set; }
+  public DocumentModel.Presentation.TriggerRuntimeNodeKind? RuntimeNodeTrigger { get ; set; }
   
 }

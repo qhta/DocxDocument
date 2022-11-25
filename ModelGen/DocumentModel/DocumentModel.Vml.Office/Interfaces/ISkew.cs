@@ -8,31 +8,31 @@ public interface ISkew // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Skew ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Skew Toggle
   /// </summary>
-  public ITrueFalseValue? On { get ; set; }
+  public System.Boolean? On { get ; set; }
   
   /// <summary>
   /// Skew Offset
   /// </summary>
-  public String? Offset { get ; set; }
+  public System.String? Offset { get ; set; }
   
   /// <summary>
   /// Skew Origin
   /// </summary>
-  public String? Origin { get ; set; }
+  public System.String? Origin { get ; set; }
   
   /// <summary>
   /// Skew Perspective Matrix
   /// </summary>
-  public String? Matrix { get ; set; }
+  public System.String? Matrix { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IOleObjectEmbed // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Color Scheme Properties for OLE Object
   /// </summary>
-  public OleObjectFollowColorSchemeValues? FollowColorScheme { get ; set; }
+  public DocumentModel.Presentation.OleObjectFollowColorSchemeKind? FollowColorScheme { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

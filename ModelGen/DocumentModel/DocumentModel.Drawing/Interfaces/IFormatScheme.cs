@@ -8,26 +8,26 @@ public interface IFormatScheme // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// Fill Style List.
   /// </summary>
-  public IFillStyleList? FillStyleList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FillStyleList { get ; set; }
   
   /// <summary>
   /// Line Style List.
   /// </summary>
-  public ILineStyleList? LineStyleList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LineStyleList { get ; set; }
   
   /// <summary>
   /// Effect Style List.
   /// </summary>
-  public IEffectStyleList? EffectStyleList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? EffectStyleList { get ; set; }
   
   /// <summary>
   /// Background Fill Style List.
   /// </summary>
-  public IBackgroundFillStyleList? BackgroundFillStyleList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? BackgroundFillStyleList { get ; set; }
   
 }

@@ -8,51 +8,51 @@ public interface IManualLayout // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Layout Target.
   /// </summary>
-  public ILayoutTarget? LayoutTarget { get ; set; }
+  public DocumentModel.Drawing.Charts.LayoutTargetKind? LayoutTarget { get ; set; }
   
   /// <summary>
   /// Left Mode.
   /// </summary>
-  public ILeftMode? LeftMode { get ; set; }
+  public DocumentModel.Drawing.Charts.LayoutMode? LeftMode { get ; set; }
   
   /// <summary>
   /// Top Mode.
   /// </summary>
-  public ITopMode? TopMode { get ; set; }
+  public DocumentModel.Drawing.Charts.LayoutMode? TopMode { get ; set; }
   
   /// <summary>
   /// Width Mode.
   /// </summary>
-  public IWidthMode? WidthMode { get ; set; }
+  public DocumentModel.Drawing.Charts.LayoutMode? WidthMode { get ; set; }
   
   /// <summary>
   /// Height Mode.
   /// </summary>
-  public IHeightMode? HeightMode { get ; set; }
+  public DocumentModel.Drawing.Charts.LayoutMode? HeightMode { get ; set; }
   
   /// <summary>
   /// Left.
   /// </summary>
-  public ILeft? Left { get ; set; }
+  public System.Double? Left { get ; set; }
   
   /// <summary>
   /// Top.
   /// </summary>
-  public ITop? Top { get ; set; }
+  public System.Double? Top { get ; set; }
   
   /// <summary>
   /// Width.
   /// </summary>
-  public IWidth? Width { get ; set; }
+  public System.Double? Width { get ; set; }
   
   /// <summary>
   /// Height.
   /// </summary>
-  public IHeight? Height { get ; set; }
+  public System.Double? Height { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

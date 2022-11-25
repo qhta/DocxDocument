@@ -8,31 +8,31 @@ public interface IAuthor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// name, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// initials, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Initials { get ; set; }
+  public System.String? Initials { get ; set; }
   
   /// <summary>
   /// userId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? UserId { get ; set; }
+  public System.String? UserId { get ; set; }
   
   /// <summary>
   /// providerId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? ProviderId { get ; set; }
+  public System.String? ProviderId { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

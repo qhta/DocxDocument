@@ -8,11 +8,11 @@ public interface ILiveFeedProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// LiveFeedBackgroundProperties.
   /// </summary>
-  public ILiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LiveFeedBackgroundProperties { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

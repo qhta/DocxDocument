@@ -8,6 +8,6 @@ public interface ITableRow // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Height
   /// </summary>
-  public Int64? Height { get ; set; }
+  public System.Int64? Height { get ; set; }
   
 }

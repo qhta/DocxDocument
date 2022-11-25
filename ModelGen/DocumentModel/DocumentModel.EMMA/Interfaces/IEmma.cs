@@ -8,6 +8,6 @@ public interface IEmma // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// version
   /// </summary>
-  public String? Version { get ; set; }
+  public System.String? Version { get ; set; }
   
 }

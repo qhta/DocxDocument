@@ -8,51 +8,51 @@ public interface IInkSource // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// manufacturer
   /// </summary>
-  public String? Manufacturer { get ; set; }
+  public System.String? Manufacturer { get ; set; }
   
   /// <summary>
   /// model
   /// </summary>
-  public String? Model { get ; set; }
+  public System.String? Model { get ; set; }
   
   /// <summary>
   /// serialNo
   /// </summary>
-  public String? SerialNo { get ; set; }
+  public System.String? SerialNo { get ; set; }
   
   /// <summary>
   /// specificationRef
   /// </summary>
-  public String? SpecificationRef { get ; set; }
+  public System.String? SpecificationRef { get ; set; }
   
   /// <summary>
   /// description
   /// </summary>
-  public String? Description { get ; set; }
+  public System.String? Description { get ; set; }
   
   /// <summary>
   /// TraceFormat.
   /// </summary>
-  public ITraceFormat? TraceFormat { get ; set; }
+  public DocumentModel.InkML.ITraceFormat? TraceFormat { get ; set; }
   
   /// <summary>
   /// SampleRate.
   /// </summary>
-  public ISampleRate? SampleRate { get ; set; }
+  public DocumentModel.InkML.ISampleRate? SampleRate { get ; set; }
   
   /// <summary>
   /// Latency.
   /// </summary>
-  public ILatency? Latency { get ; set; }
+  public DocumentModel.InkML.ILatency? Latency { get ; set; }
   
   /// <summary>
   /// ActiveArea.
   /// </summary>
-  public IActiveArea? ActiveArea { get ; set; }
+  public DocumentModel.InkML.IActiveArea? ActiveArea { get ; set; }
   
 }

@@ -8,96 +8,96 @@ public interface IImageData // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Image Transparency Color
   /// </summary>
-  public String? ChromAKey { get ; set; }
+  public System.String? ChromAKey { get ; set; }
   
   /// <summary>
   /// Image Left Crop
   /// </summary>
-  public String? CropLeft { get ; set; }
+  public System.String? CropLeft { get ; set; }
   
   /// <summary>
   /// Image Top Crop
   /// </summary>
-  public String? CropTop { get ; set; }
+  public System.String? CropTop { get ; set; }
   
   /// <summary>
   /// Image Right Crop
   /// </summary>
-  public String? CropRight { get ; set; }
+  public System.String? CropRight { get ; set; }
   
   /// <summary>
   /// Image Bottom Crop
   /// </summary>
-  public String? CropBottom { get ; set; }
+  public System.String? CropBottom { get ; set; }
   
   /// <summary>
   /// Image Intensity
   /// </summary>
-  public String? Gain { get ; set; }
+  public System.String? Gain { get ; set; }
   
   /// <summary>
   /// Image Brightness
   /// </summary>
-  public String? BlackLevel { get ; set; }
+  public System.String? BlackLevel { get ; set; }
   
   /// <summary>
   /// Image Gamma Correction
   /// </summary>
-  public String? Gamma { get ; set; }
+  public System.String? Gamma { get ; set; }
   
   /// <summary>
   /// Image Grayscale Toggle
   /// </summary>
-  public ITrueFalseValue? Grayscale { get ; set; }
+  public System.Boolean? Grayscale { get ; set; }
   
   /// <summary>
   /// Image Bilevel Toggle
   /// </summary>
-  public ITrueFalseValue? BiLevel { get ; set; }
+  public System.Boolean? BiLevel { get ; set; }
   
   /// <summary>
   /// Embossed Color
   /// </summary>
-  public String? EmbossColor { get ; set; }
+  public System.String? EmbossColor { get ; set; }
   
   /// <summary>
   /// Black Recoloring Color
   /// </summary>
-  public String? RecolorTarget { get ; set; }
+  public System.String? RecolorTarget { get ; set; }
   
   /// <summary>
   /// Image Data Title
   /// </summary>
-  public String? Title { get ; set; }
+  public System.String? Title { get ; set; }
   
   /// <summary>
   /// Detect Mouse Click
   /// </summary>
-  public ITrueFalseValue? DetectMouseClick { get ; set; }
+  public System.Boolean? DetectMouseClick { get ; set; }
   
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public String? RelId { get ; set; }
+  public System.String? RelId { get ; set; }
   
   /// <summary>
   /// Explicit Relationship to Image Data
   /// </summary>
-  public String? RelationshipId { get ; set; }
+  public System.String? RelationshipId { get ; set; }
   
   /// <summary>
   /// Explicit Relationship to Alternate Image Data
   /// </summary>
-  public String? Picture { get ; set; }
+  public System.String? Picture { get ; set; }
   
   /// <summary>
   /// Explicit Relationship to Hyperlink Target
   /// </summary>
-  public String? RelHref { get ; set; }
+  public System.String? RelHref { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IOEmbed // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// oEmbedUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? OEmbedUrl { get ; set; }
+  public System.String? OEmbedUrl { get ; set; }
   
   /// <summary>
   /// mediaType, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? MediaType { get ; set; }
+  public System.String? MediaType { get ; set; }
   
   /// <summary>
   /// picLocksAutoForOEmbed, this property is only available in Microsoft365 and later.
   /// </summary>
-  public Boolean? PicLocksAutoForOEmbed { get ; set; }
+  public System.Boolean? PicLocksAutoForOEmbed { get ; set; }
   
 }

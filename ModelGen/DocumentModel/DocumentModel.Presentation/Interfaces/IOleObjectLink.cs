@@ -8,11 +8,11 @@ public interface IOleObjectLink // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Update Linked OLE Objects Automatically
   /// </summary>
-  public Boolean? AutoUpdate { get ; set; }
+  public System.Boolean? AutoUpdate { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

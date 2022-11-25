@@ -8,11 +8,11 @@ public interface IDataLabelsRange // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Formula.
   /// </summary>
-  public IFormula? Formula { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
   
   /// <summary>
   /// DataLabelsRangeChache.
   /// </summary>
-  public IDataLabelsRangeChache? DataLabelsRangeChache { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IStringDataType? DataLabelsRangeChache { get ; set; }
   
 }

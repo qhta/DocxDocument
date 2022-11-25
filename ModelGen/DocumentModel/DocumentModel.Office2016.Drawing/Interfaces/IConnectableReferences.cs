@@ -8,11 +8,11 @@ public interface IConnectableReferences // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// st, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? St { get ; set; }
+  public System.String? St { get ; set; }
   
   /// <summary>
   /// end, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? End { get ; set; }
+  public System.String? End { get ; set; }
   
 }

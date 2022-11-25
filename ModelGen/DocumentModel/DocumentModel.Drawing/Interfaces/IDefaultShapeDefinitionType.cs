@@ -8,26 +8,26 @@ public interface IDefaultShapeDefinitionType // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// BodyProperties.
   /// </summary>
-  public IBodyProperties? BodyProperties { get ; set; }
+  public DocumentModel.Drawing.IBodyProperties? BodyProperties { get ; set; }
   
   /// <summary>
   /// ListStyle.
   /// </summary>
-  public IListStyle? ListStyle { get ; set; }
+  public DocumentModel.Drawing.IListStyle? ListStyle { get ; set; }
   
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public IShapeStyle? ShapeStyle { get ; set; }
+  public DocumentModel.Drawing.IShapeStyle? ShapeStyle { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

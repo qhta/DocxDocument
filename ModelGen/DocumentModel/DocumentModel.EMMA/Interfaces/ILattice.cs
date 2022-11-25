@@ -8,21 +8,21 @@ public interface ILattice // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// initial
   /// </summary>
-  public Int32? Initial { get ; set; }
+  public System.Int32? Initial { get ; set; }
   
   /// <summary>
   /// final
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.DecimalValue>? Final { get ; set; }
+  public System.Collections.Generic.List<System.Decimal>? Final { get ; set; }
   
   /// <summary>
   /// time-ref-uri
   /// </summary>
-  public String? TimeReference { get ; set; }
+  public System.String? TimeReference { get ; set; }
   
   /// <summary>
   /// time-ref-anchor-point
   /// </summary>
-  public AnchorPointValues? TimeReferenceAnchorPoint { get ; set; }
+  public DocumentModel.EMMA.AnchorPointKind? TimeReferenceAnchorPoint { get ; set; }
   
 }

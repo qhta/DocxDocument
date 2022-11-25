@@ -8,11 +8,11 @@ public interface IRadarChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// RadarStyle.
   /// </summary>
-  public IRadarStyle? RadarStyle { get ; set; }
+  public DocumentModel.Drawing.Charts.RadarStyleKind? RadarStyle { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }

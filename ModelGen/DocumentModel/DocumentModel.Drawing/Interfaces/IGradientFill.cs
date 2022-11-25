@@ -8,16 +8,16 @@ public interface IGradientFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Tile Flip
   /// </summary>
-  public TileFlipValues? Flip { get ; set; }
+  public DocumentModel.Drawing.TileFlipKind? Flip { get ; set; }
   
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  public Boolean? RotateWithShape { get ; set; }
+  public System.Boolean? RotateWithShape { get ; set; }
   
   /// <summary>
   /// Gradient Stop List.
   /// </summary>
-  public IGradientStopList? GradientStopList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? GradientStopList { get ; set; }
   
 }

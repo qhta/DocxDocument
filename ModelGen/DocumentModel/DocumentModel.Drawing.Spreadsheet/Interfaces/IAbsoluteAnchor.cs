@@ -8,11 +8,11 @@ public interface IAbsoluteAnchor // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Position.
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IPosition? Position { get ; set; }
   
   /// <summary>
   /// Shape Extent.
   /// </summary>
-  public IExtent? Extent { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IExtent? Extent { get ; set; }
   
 }

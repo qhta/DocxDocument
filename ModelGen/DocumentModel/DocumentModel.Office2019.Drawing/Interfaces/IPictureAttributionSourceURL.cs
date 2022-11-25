@@ -8,6 +8,6 @@ public interface IPictureAttributionSourceURL // : DocumentModel.ITypedOpenXmlLe
   /// <summary>
   /// id, this property is only available in Office 2019 and later.
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

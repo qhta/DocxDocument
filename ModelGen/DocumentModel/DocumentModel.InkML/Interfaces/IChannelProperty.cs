@@ -8,21 +8,21 @@ public interface IChannelProperty // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// channel
   /// </summary>
-  public String? Channel { get ; set; }
+  public System.String? Channel { get ; set; }
   
   /// <summary>
   /// name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// value
   /// </summary>
-  public Decimal? Value { get ; set; }
+  public System.Decimal? Value { get ; set; }
   
   /// <summary>
   /// units
   /// </summary>
-  public String? Units { get ; set; }
+  public System.String? Units { get ; set; }
   
 }

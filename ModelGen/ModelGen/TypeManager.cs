@@ -9,20 +9,26 @@ using Namotion.Reflection;
 
 using Qhta.Collections;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System.Runtime.CompilerServices;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ModelGen;
 
 public static class TypeManager
 {
-  public static Dictionary<Type, TypeInfo> KnownTypes = new();
-  public static BiDiDictionary<int, string> KnownNamespaces = new();
+
+  private static Dictionary<Type, TypeInfo> KnownTypes = new();
+  private static BiDiDictionary<int, string> KnownNamespaces = new();
   private static IEnumerable<string> Namespaces = KnownNamespaces.Select(item => item.Item2);
 
-  public static List<TypeRelationship> Relationships = new List<TypeRelationship>();
+  private static HashSet<TypeRelationship> Relationships = new();
+
+  public static int TotalTypesCount => KnownTypes.Count;
 
   public static IEnumerable<TypeInfo> AllTypes => TypeManager.KnownTypes.Values.Select(item => item);
 
   public static IEnumerable<TypeInfo> AcceptedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
+  public static IEnumerable<TypeInfo> ConvertedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsConverted == true);
 
   public static IEnumerable<TypeInfo> UsedTypes => TypeManager.KnownTypes.Values.Where(item => item.UsageCount > 0);
 
@@ -35,20 +41,33 @@ public static class TypeManager
     return index;
   }
 
+  public static string TranslateNamespace(string nspace)
+  {
+    var newNspace = nspace;
+    foreach (var item in ModelData.NamespaceRedirectionTable)
+    {
+      if (nspace.StartsWith(item.Item1))
+        newNspace = nspace.Replace(item.Item1, item.Item2);
+    }
+    return newNspace;
+  }
+
+  public static string TranslateNamespaceBack(string nspace)
+  {
+    var newNspace = nspace;
+    foreach (var item in ModelData.NamespaceRedirectionTable)
+    {
+      if (nspace.StartsWith(item.Item2))
+        newNspace = nspace.Replace(item.Item2, item.Item1);
+    }
+    return newNspace;
+  }
 
   public static string GetNamespace(int index, bool origin = false)
   {
     var nspace = KnownNamespaces[index].Item2;
     if (!origin)
-    {
-      var newNspace = nspace;
-      foreach (var item in ModelData.NamespaceRedirectionTable)
-      {
-        if (nspace.StartsWith(item.Key))
-          newNspace = nspace.Replace(item.Key, item.Value);
-      }
-      return newNspace;
-    }
+      return TranslateNamespace(nspace);
     return nspace;
   }
 
@@ -57,33 +76,40 @@ public static class TypeManager
     if (origin)
       return KnownNamespaces.Select(item => item.Item2);
     else
+      return KnownNamespaces.Select(item => TranslateNamespace(item.Item2));
+  }
+
+  private static object KnownTypesLock = new object();
+  private static object NamespacesLock = new object();
+  private static object RelationshipsLock = new object();
+
+  public static bool TryGetTypeInfo(Type type, [NotNullWhen(true)] out TypeInfo? info)
+  {
+    lock (KnownTypesLock)
     {
-      var ls = new List<string>();
-      foreach (var item2 in KnownNamespaces)
-      {
-        var nspace = item2.Item2;
-        var newNspace = nspace;
-        foreach (var item in ModelData.NamespaceRedirectionTable)
-        {
-          if (nspace.StartsWith(item.Key))
-            newNspace = nspace.Replace(item.Key, item.Value);
-        }
-        ls.Add(newNspace);
-      }
-      return ls;
+      if (KnownTypes.TryGetValue(type, out info))
+        return true;
     }
+    return false;
   }
 
   public static TypeInfo RegisterType(Type type)
   {
-    if (KnownTypes.TryGetValue(type, out var info))
+    lock (KnownTypesLock)
+    {
+      if (KnownTypes.TryGetValue(type, out var info))
+        return info;
+      var nspace = type.Namespace ?? "";
+      lock (NamespacesLock)
+      {
+        if (!Namespaces.Contains(nspace))
+          RegisterNamespace(nspace);
+      }
+      info = new TypeInfo(type);
+      KnownTypes.Add(type, info);
+      TypeReflector.RequestReflect(info);
       return info;
-    var nspace = type.Namespace ?? "";
-    if (!Namespaces.Contains(nspace))
-      RegisterNamespace(nspace);
-    info = new TypeInfo(type);
-    KnownTypes.Add(type, info);
-    return info;
+    }
   }
 
   public static TypeInfo RegisterType(Type type, object source, Semantics semantics)
@@ -95,111 +121,104 @@ public static class TypeManager
 
   public static TypeRelationship AddRelationship(object source, TypeInfo type, Semantics semantics)
   {
-    var rel = Relationships.FirstOrDefault(item => item.Target == type && item.Source == source && item.Semantics == semantics);
-    if (rel == null)
+    lock (RelationshipsLock)
     {
-      rel = new TypeRelationship(source, type, semantics);
-      Relationships.Add(rel);
+      var rel = new TypeRelationship(source, type, semantics);
+      if (!Relationships.Contains(rel))
+        Relationships.Add(rel);
+      return rel;
     }
-    return rel;
   }
 
   public static IEnumerable<TypeRelationship> GetIncomingRelationships(TypeInfo typeInfo)
   {
-    return Relationships.Where(item => item.Target == typeInfo);
+    lock (RelationshipsLock)
+      return Relationships.Where(item => item.Target == typeInfo);
   }
 
   public static IEnumerable<TypeRelationship> GetOutgoingRelationships(TypeInfo typeInfo)
   {
-    return Relationships.Where(item => item.Source == typeInfo);
+    lock (RelationshipsLock)
+      return Relationships.Where(item => item.Source == typeInfo);
   }
 
   public static IEnumerable<TypeInfo> GetRelatedTypes(TypeInfo typeInfo, Semantics semantics)
   {
-    return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).Select(item => item.Target);
+    lock (RelationshipsLock)
+      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).Select(item => item.Target);
   }
 
-  public static TypeInfo? GetConversionTarget(TypeInfo typeInfo, bool directOnly = true)
+
+  public static IEnumerable<TypeInfo> GetNamespaceTypes(string nspace)
   {
-    var result = Relationships.Where(item => item.Source == typeInfo && item.Semantics == Semantics.TypeChange).Select(item => item.Target).FirstOrDefault();
-    if (result == null && typeInfo.IsConstructedGenericType)
-      if (CheckGenericTypeConversion(typeInfo, out var targetType))
-        result = targetType;
-    if (result != null && !directOnly)
+    lock (KnownTypesLock)
     {
-      var newResult = GetConversionTarget(result, directOnly);
-      if (newResult != null)
-        return newResult;
+      int nspaceIndex = -1;
+      var originalNamespace = TranslateNamespaceBack(nspace);
+      if (KnownNamespaces.TryGetValue1(originalNamespace, out var ns))
+        nspaceIndex = ns;
+      else if (KnownNamespaces.TryGetValue1(nspace, out ns))
+        nspaceIndex = ns;
+      if (nspaceIndex != -1)
+        return KnownTypes.Where(item => item.Value.NamespaceIndex == nspaceIndex).Select(item => item.Value);
+      return KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value);
     }
-    return result;
   }
 
-  private static bool CheckGenericTypeConversion(TypeInfo sourceTypeInfo, out TypeInfo? targetType)
+  public static IEnumerable<TypeInfo> GetInterfaces(this TypeInfo typeInfo)
   {
-    if (sourceTypeInfo.Type.Name.Contains('`'))
-    {
-      var foundTargetType = ModelData.TypeConversionTable.Where(item => item.Key.Name == sourceTypeInfo.Type.Name).Select(item => item.Value).FirstOrDefault();
-      if (foundTargetType != null)
-      {
-        if (foundTargetType == typeof(Enum))
-        {
-          var sourceArgTypes = sourceTypeInfo.Type.GenericTypeArguments;
-          var sourceArgType = sourceArgTypes.FirstOrDefault();
-          if (sourceArgType != null)
-          {
-            targetType = TypeManager.RegisterType(sourceArgType, sourceTypeInfo, Semantics.TypeChange);
-            return true;
-          }
-        }
-      }
-    }
-    targetType = null;
-    return false;
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Implementation);
   }
 
-  private static int AddGenericTypeConversion(Type sourceType, Type targetType)
+  public static IEnumerable<TypeInfo> GetIncludedTypes(this TypeInfo typeInfo)
   {
-    var count = 0;
-    foreach (var item in TypeManager.KnownTypes.ToArray())
-    {
-      var sourceType2 = item.Key;
-      if (/*sourceType2.IsConstructedGenericType && */sourceType2.Name == sourceType.Name)
-      {
-        var sourceTypeInfo = item.Value;
-        var sourceArgTypes = sourceType2.GenericTypeArguments;
-        var targetType2 = targetType;
-        if (targetType2 == typeof(Enum))
-        {
-          targetType2 = sourceArgTypes.FirstOrDefault();
-          if (targetType2 != null)
-          {
-            var targetTypeInfo = TypeManager.RegisterType(targetType2, sourceTypeInfo, Semantics.TypeChange);
-            sourceTypeInfo.IsAccepted = false;
-            count++;
-          }
-        }
-      }
-    }
-    return count;
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include);
+  }
+  public static IEnumerable<TypeInfo> GetGenericArgTypes(this TypeInfo typeInfo)
+  {
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg);
   }
 
-  public static bool HasDuplicatesInName(this TypeInfo type)
+  public static IEnumerable<TypeInfo> GetGenericParamTypes(this TypeInfo typeInfo)
   {
-    if (type.Name.Contains('`'))
-      return false;
-    return KnownTypes.Values.Where(item => item.Name == type.Namespace).Count() > 1;
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParam);
   }
 
-
-  public static int ReflectRemainingTypes()
+  public static IEnumerable<TypeInfo> GetGenericTypeParamConstraints(this TypeInfo typeInfo)
   {
-    int count = 0;
-    foreach (var type in AcceptedTypes.Where(item => !item.IsReflected).ToArray())
-    {
-      count++;
-      type.Reflect();
-    }
-    return count;
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParamConstraint);
+
+  }
+
+  public static IEnumerable<GenericParamConstraint> GetGenericParamConstraints(this TypeInfo typeInfo)
+  {
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    var list = new List<GenericParamConstraint>();
+    if (typeInfo.IsGenericTypeParameter)
+      return list;
+    var genericParameterAttributes = typeInfo.Type.GenericParameterAttributes;
+    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Covariant))
+      list.Add(GenericParamConstraint.Covariant);
+    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Contravariant))
+      list.Add(GenericParamConstraint.Contravariant);
+    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.NotNullableValueTypeConstraint))
+      list.Add(GenericParamConstraint.NotNullableValueType);
+    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.ReferenceTypeConstraint))
+      list.Add(GenericParamConstraint.ReferenceType);
+    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.DefaultConstructorConstraint))
+      list.Add(GenericParamConstraint.Newable);
+    return list;
   }
 
 }

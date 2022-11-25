@@ -8,6 +8,6 @@ public interface IEmbeddedFontDataIdType // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// Relationship Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

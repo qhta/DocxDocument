@@ -8,6 +8,6 @@ public interface IImageProperties // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// ImageLayer.
   /// </summary>
-  public ImageLayer? ImageLayer { get ; set; }
+  public DocumentModel.Office2010.Drawing.IImageLayer? ImageLayer { get ; set; }
   
 }

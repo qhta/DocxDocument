@@ -8,11 +8,11 @@ public interface IArtisticPastelsSmooth // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Transparancy { get ; set; }
+  public System.Int32? Transparancy { get ; set; }
   
   /// <summary>
   /// scaling, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? BrushSize { get ; set; }
+  public System.Int32? BrushSize { get ; set; }
   
 }

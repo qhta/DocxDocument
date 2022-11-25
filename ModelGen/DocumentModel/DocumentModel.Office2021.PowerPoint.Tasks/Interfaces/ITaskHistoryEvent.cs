@@ -8,21 +8,21 @@ public interface ITaskHistoryEvent // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// time, this property is only available in Office 2021 and later.
   /// </summary>
-  public DateTime? Time { get ; set; }
+  public System.DateTime? Time { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// AtrbtnTaskAssignUnassignUser.
   /// </summary>
-  public IAtrbtnTaskAssignUnassignUser? AtrbtnTaskAssignUnassignUser { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Tasks.IOpenXmlTaskAssignUnassignUserElement? AtrbtnTaskAssignUnassignUser { get ; set; }
   
   /// <summary>
   /// TaskAnchor.
   /// </summary>
-  public ITaskAnchor? TaskAnchor { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Tasks.ITaskAnchor? TaskAnchor { get ; set; }
   
 }

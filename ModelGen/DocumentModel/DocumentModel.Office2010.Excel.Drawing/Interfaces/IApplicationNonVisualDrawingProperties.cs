@@ -8,11 +8,11 @@ public interface IApplicationNonVisualDrawingProperties // : DocumentModel.IType
   /// <summary>
   /// macro, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Macro { get ; set; }
+  public System.String? Macro { get ; set; }
   
   /// <summary>
   /// fPublished, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? PublishedFlag { get ; set; }
+  public System.Boolean? PublishedFlag { get ; set; }
   
 }

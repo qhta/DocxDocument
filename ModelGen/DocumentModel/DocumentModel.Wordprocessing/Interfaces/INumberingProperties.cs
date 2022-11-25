@@ -8,21 +8,21 @@ public interface INumberingProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Numbering Level Reference.
   /// </summary>
-  public Int32Value? NumberingLevelReference { get ; set; }
+  public System.Int32? NumberingLevelReference { get ; set; }
   
   /// <summary>
   /// Numbering Definition Instance Reference.
   /// </summary>
-  public INumberingId? NumberingId { get ; set; }
+  public System.Int32? NumberingId { get ; set; }
   
   /// <summary>
   /// Previous Paragraph Numbering Properties.
   /// </summary>
-  public INumberingChange? NumberingChange { get ; set; }
+  public DocumentModel.Wordprocessing.INumberingChange? NumberingChange { get ; set; }
   
   /// <summary>
   /// Inserted Numbering Properties.
   /// </summary>
-  public Inserted? Inserted { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? Inserted { get ; set; }
   
 }

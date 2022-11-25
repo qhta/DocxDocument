@@ -8,136 +8,131 @@ public interface IPresentation // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// serverZoom
   /// </summary>
-  public Int32? ServerZoom { get ; set; }
+  public System.Int32? ServerZoom { get ; set; }
   
   /// <summary>
   /// firstSlideNum
   /// </summary>
-  public Int32? FirstSlideNum { get ; set; }
+  public System.Int32? FirstSlideNum { get ; set; }
   
   /// <summary>
   /// showSpecialPlsOnTitleSld
   /// </summary>
-  public Boolean? ShowSpecialPlaceholderOnTitleSlide { get ; set; }
+  public System.Boolean? ShowSpecialPlaceholderOnTitleSlide { get ; set; }
   
   /// <summary>
   /// rtl
   /// </summary>
-  public Boolean? RightToLeft { get ; set; }
+  public System.Boolean? RightToLeft { get ; set; }
   
   /// <summary>
   /// removePersonalInfoOnSave
   /// </summary>
-  public Boolean? RemovePersonalInfoOnSave { get ; set; }
+  public System.Boolean? RemovePersonalInfoOnSave { get ; set; }
   
   /// <summary>
   /// compatMode
   /// </summary>
-  public Boolean? CompatibilityMode { get ; set; }
+  public System.Boolean? CompatibilityMode { get ; set; }
   
   /// <summary>
   /// strictFirstAndLastChars
   /// </summary>
-  public Boolean? StrictFirstAndLastChars { get ; set; }
+  public System.Boolean? StrictFirstAndLastChars { get ; set; }
   
   /// <summary>
   /// embedTrueTypeFonts
   /// </summary>
-  public Boolean? EmbedTrueTypeFonts { get ; set; }
+  public System.Boolean? EmbedTrueTypeFonts { get ; set; }
   
   /// <summary>
   /// saveSubsetFonts
   /// </summary>
-  public Boolean? SaveSubsetFonts { get ; set; }
+  public System.Boolean? SaveSubsetFonts { get ; set; }
   
   /// <summary>
   /// autoCompressPictures
   /// </summary>
-  public Boolean? AutoCompressPictures { get ; set; }
+  public System.Boolean? AutoCompressPictures { get ; set; }
   
   /// <summary>
   /// bookmarkIdSeed
   /// </summary>
-  public UInt32? BookmarkIdSeed { get ; set; }
+  public System.UInt32? BookmarkIdSeed { get ; set; }
   
   /// <summary>
   /// conformance
   /// </summary>
-  public ConformanceClassValues? Conformance { get ; set; }
+  public DocumentModel.Presentation.ConformanceClassKind? Conformance { get ; set; }
   
   /// <summary>
   /// SlideMasterIdList.
   /// </summary>
-  public ISlideMasterIdList? SlideMasterIdList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SlideMasterIdList { get ; set; }
   
   /// <summary>
   /// NotesMasterIdList.
   /// </summary>
-  public INotesMasterIdList? NotesMasterIdList { get ; set; }
+  public DocumentModel.Presentation.INotesMasterIdList? NotesMasterIdList { get ; set; }
   
   /// <summary>
   /// HandoutMasterIdList.
   /// </summary>
-  public IHandoutMasterIdList? HandoutMasterIdList { get ; set; }
+  public DocumentModel.Presentation.IHandoutMasterIdList? HandoutMasterIdList { get ; set; }
   
   /// <summary>
   /// SlideIdList.
   /// </summary>
-  public ISlideIdList? SlideIdList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SlideIdList { get ; set; }
   
   /// <summary>
   /// SlideSize.
   /// </summary>
-  public ISlideSize? SlideSize { get ; set; }
+  public DocumentModel.Presentation.ISlideSize? SlideSize { get ; set; }
   
   /// <summary>
   /// NotesSize.
   /// </summary>
-  public INotesSize? NotesSize { get ; set; }
+  public DocumentModel.Presentation.IPositiveSize2DType? NotesSize { get ; set; }
   
   /// <summary>
   /// EmbeddedFontList.
   /// </summary>
-  public IEmbeddedFontList? EmbeddedFontList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? EmbeddedFontList { get ; set; }
   
   /// <summary>
   /// CustomShowList.
   /// </summary>
-  public ICustomShowList? CustomShowList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CustomShowList { get ; set; }
   
   /// <summary>
   /// PhotoAlbum.
   /// </summary>
-  public IPhotoAlbum? PhotoAlbum { get ; set; }
+  public DocumentModel.Presentation.IPhotoAlbum? PhotoAlbum { get ; set; }
   
   /// <summary>
   /// CustomerDataList.
   /// </summary>
-  public ICustomerDataList? CustomerDataList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CustomerDataList { get ; set; }
   
   /// <summary>
   /// Kinsoku.
   /// </summary>
-  public IKinsoku? Kinsoku { get ; set; }
+  public DocumentModel.Presentation.IKinsoku? Kinsoku { get ; set; }
   
   /// <summary>
   /// DefaultTextStyle.
   /// </summary>
-  public IDefaultTextStyle? DefaultTextStyle { get ; set; }
+  public DocumentModel.Presentation.ITextListStyleType? DefaultTextStyle { get ; set; }
   
   /// <summary>
   /// ModificationVerifier.
   /// </summary>
-  public IModificationVerifier? ModificationVerifier { get ; set; }
+  public DocumentModel.Presentation.IModificationVerifier? ModificationVerifier { get ; set; }
   
   /// <summary>
   /// PresentationExtensionList.
   /// </summary>
-  public IPresentationExtensionList? PresentationExtensionList { get ; set; }
-  
-  /// <summary>
-  /// Gets the PresentationPart associated with this element.
-  /// </summary>
-  public PresentationPart? PresentationPart { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? PresentationExtensionList { get ; set; }
   
 }

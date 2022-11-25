@@ -8,16 +8,16 @@ public interface ISubscript // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Subscript Properties.
   /// </summary>
-  public ISubscriptProperties? SubscriptProperties { get ; set; }
+  public DocumentModel.Math.ISubscriptProperties? SubscriptProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
   /// <summary>
   /// Subscript (Subscript function).
   /// </summary>
-  public ISubArgument? SubArgument { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
   
 }

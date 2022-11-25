@@ -8,21 +8,21 @@ public interface ITextInput // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Box Form Field Type.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues>? TextBoxFormFieldType { get ; set; }
+  public DocumentModel.Wordprocessing.TextBoxFormFieldKind? TextBoxFormFieldType { get ; set; }
   
   /// <summary>
   /// Default Text Box Form Field String.
   /// </summary>
-  public IDefaultTextBoxFormFieldString? DefaultTextBoxFormFieldString { get ; set; }
+  public System.String? DefaultTextBoxFormFieldString { get ; set; }
   
   /// <summary>
   /// Text Box Form Field Maximum Length.
   /// </summary>
-  public Int16Value? MaxLength { get ; set; }
+  public System.Int16? MaxLength { get ; set; }
   
   /// <summary>
   /// Text Box Form Field Formatting.
   /// </summary>
-  public IStringValue? Format { get ; set; }
+  public System.String? Format { get ; set; }
   
 }

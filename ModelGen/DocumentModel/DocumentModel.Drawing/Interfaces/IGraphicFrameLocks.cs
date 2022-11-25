@@ -8,36 +8,36 @@ public interface IGraphicFrameLocks // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get ; set; }
+  public System.Boolean? NoGrouping { get ; set; }
   
   /// <summary>
   /// Disallow Selection of Child Shapes
   /// </summary>
-  public Boolean? NoDrilldown { get ; set; }
+  public System.Boolean? NoDrilldown { get ; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get ; set; }
+  public System.Boolean? NoSelection { get ; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get ; set; }
+  public System.Boolean? NoChangeAspect { get ; set; }
   
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get ; set; }
+  public System.Boolean? NoMove { get ; set; }
   
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get ; set; }
+  public System.Boolean? NoResize { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

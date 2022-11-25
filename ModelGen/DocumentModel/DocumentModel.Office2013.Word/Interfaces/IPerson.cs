@@ -8,16 +8,16 @@ public interface IPerson // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public String? Contact { get ; set; }
+  public System.String? Contact { get ; set; }
   
   /// <summary>
   /// author, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Author { get ; set; }
+  public System.String? Author { get ; set; }
   
   /// <summary>
   /// PresenceInfo.
   /// </summary>
-  public IPresenceInfo? PresenceInfo { get ; set; }
+  public DocumentModel.Office2013.Word.IPresenceInfo? PresenceInfo { get ; set; }
   
 }

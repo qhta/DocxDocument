@@ -8,16 +8,16 @@ public interface ICanvas // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// traceFormatRef
   /// </summary>
-  public String? TraceFormatRef { get ; set; }
+  public System.String? TraceFormatRef { get ; set; }
   
   /// <summary>
   /// TraceFormat.
   /// </summary>
-  public ITraceFormat? TraceFormat { get ; set; }
+  public DocumentModel.InkML.ITraceFormat? TraceFormat { get ; set; }
   
 }

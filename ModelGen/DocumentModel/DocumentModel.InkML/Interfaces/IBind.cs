@@ -8,21 +8,21 @@ public interface IBind // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// source
   /// </summary>
-  public String? Source { get ; set; }
+  public System.String? Source { get ; set; }
   
   /// <summary>
   /// target
   /// </summary>
-  public String? Target { get ; set; }
+  public System.String? Target { get ; set; }
   
   /// <summary>
   /// column
   /// </summary>
-  public String? Column { get ; set; }
+  public System.String? Column { get ; set; }
   
   /// <summary>
   /// variable
   /// </summary>
-  public String? Variable { get ; set; }
+  public System.String? Variable { get ; set; }
   
 }

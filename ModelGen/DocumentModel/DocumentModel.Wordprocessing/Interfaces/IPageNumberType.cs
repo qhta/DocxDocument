@@ -8,21 +8,21 @@ public interface IPageNumberType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Page Number Format
   /// </summary>
-  public NumberFormatKind? Format { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormatKind? Format { get ; set; }
   
   /// <summary>
   /// Starting Page Number
   /// </summary>
-  public Int32? Start { get ; set; }
+  public System.Int32? Start { get ; set; }
   
   /// <summary>
   /// Chapter Heading Style
   /// </summary>
-  public Byte? ChapterStyle { get ; set; }
+  public System.Byte? ChapterStyle { get ; set; }
   
   /// <summary>
   /// Chapter Separator Character
   /// </summary>
-  public ChapterSeparatorKind? ChapterSeparator { get ; set; }
+  public DocumentModel.Wordprocessing.ChapterSeparatorKind? ChapterSeparator { get ; set; }
   
 }

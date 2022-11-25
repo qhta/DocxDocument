@@ -8,6 +8,6 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

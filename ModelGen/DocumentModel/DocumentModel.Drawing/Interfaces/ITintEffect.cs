@@ -8,11 +8,11 @@ public interface ITintEffect // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Hue
   /// </summary>
-  public Int32? Hue { get ; set; }
+  public System.Int32? Hue { get ; set; }
   
   /// <summary>
   /// Amount
   /// </summary>
-  public Int32? Amount { get ; set; }
+  public System.Int32? Amount { get ; set; }
   
 }

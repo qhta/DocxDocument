@@ -8,31 +8,31 @@ public interface IPermStart // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// edGrp
   /// </summary>
-  public RangePermissionEditingGroupKind? EditorGroup { get ; set; }
+  public DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? EditorGroup { get ; set; }
   
   /// <summary>
   /// ed
   /// </summary>
-  public String? Ed { get ; set; }
+  public System.String? Ed { get ; set; }
   
   /// <summary>
   /// colFirst
   /// </summary>
-  public Int32? ColumnFirst { get ; set; }
+  public System.Int32? ColumnFirst { get ; set; }
   
   /// <summary>
   /// colLast
   /// </summary>
-  public Int32? ColumnLast { get ; set; }
+  public System.Int32? ColumnLast { get ; set; }
   
   /// <summary>
   /// Annotation ID
   /// </summary>
-  public Int32? Id { get ; set; }
+  public System.Int32? Id { get ; set; }
   
   /// <summary>
   /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
   
 }

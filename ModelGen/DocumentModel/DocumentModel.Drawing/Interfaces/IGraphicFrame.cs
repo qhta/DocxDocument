@@ -8,21 +8,21 @@ public interface IGraphicFrame // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Non-Visual Properties for a Graphic Frame.
   /// </summary>
-  public INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
+  public DocumentModel.Drawing.INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
   
   /// <summary>
   /// Graphic.
   /// </summary>
-  public IGraphic? Graphic { get ; set; }
+  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Drawing.ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ISampleRate // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// uniform
   /// </summary>
-  public Boolean? Uniform { get ; set; }
+  public System.Boolean? Uniform { get ; set; }
   
   /// <summary>
   /// value
   /// </summary>
-  public Decimal? Value { get ; set; }
+  public System.Decimal? Value { get ; set; }
   
 }

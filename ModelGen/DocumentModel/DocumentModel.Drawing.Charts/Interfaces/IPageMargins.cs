@@ -8,31 +8,31 @@ public interface IPageMargins // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Left
   /// </summary>
-  public Double? Left { get ; set; }
+  public System.Double? Left { get ; set; }
   
   /// <summary>
   /// Right
   /// </summary>
-  public Double? Right { get ; set; }
+  public System.Double? Right { get ; set; }
   
   /// <summary>
   /// Top
   /// </summary>
-  public Double? Top { get ; set; }
+  public System.Double? Top { get ; set; }
   
   /// <summary>
   /// Bottom
   /// </summary>
-  public Double? Bottom { get ; set; }
+  public System.Double? Bottom { get ; set; }
   
   /// <summary>
   /// Header
   /// </summary>
-  public Double? Header { get ; set; }
+  public System.Double? Header { get ; set; }
   
   /// <summary>
   /// Footer
   /// </summary>
-  public Double? Footer { get ; set; }
+  public System.Double? Footer { get ; set; }
   
 }

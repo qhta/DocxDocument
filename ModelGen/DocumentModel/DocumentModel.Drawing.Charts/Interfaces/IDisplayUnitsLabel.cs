@@ -8,21 +8,21 @@ public interface IDisplayUnitsLabel // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Layout.
   /// </summary>
-  public ILayout? Layout { get ; set; }
+  public DocumentModel.Drawing.Charts.ILayout? Layout { get ; set; }
   
   /// <summary>
   /// ChartText.
   /// </summary>
-  public IChartText? ChartText { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartText? ChartText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public ITextProperties? TextProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.ITextBodyType? TextProperties { get ; set; }
   
 }

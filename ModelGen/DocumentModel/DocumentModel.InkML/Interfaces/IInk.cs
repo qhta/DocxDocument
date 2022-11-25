@@ -8,6 +8,6 @@ public interface IInk // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// documentID
   /// </summary>
-  public String? DocumentId { get ; set; }
+  public System.String? DocumentId { get ; set; }
   
 }

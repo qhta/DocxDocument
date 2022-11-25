@@ -8,11 +8,11 @@ public interface IDocDefaults // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Default Run Properties.
   /// </summary>
-  public IRunPropertiesDefault? RunPropertiesDefault { get ; set; }
+  public DocumentModel.Wordprocessing.IRunPropertiesDefault? RunPropertiesDefault { get ; set; }
   
   /// <summary>
   /// Default Paragraph Properties.
   /// </summary>
-  public IParagraphPropertiesDefault? ParagraphPropertiesDefault { get ; set; }
+  public DocumentModel.Wordprocessing.IParagraphPropertiesDefault? ParagraphPropertiesDefault { get ; set; }
   
 }

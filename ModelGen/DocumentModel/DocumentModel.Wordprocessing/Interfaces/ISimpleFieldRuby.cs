@@ -8,21 +8,21 @@ public interface ISimpleFieldRuby // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// instr
   /// </summary>
-  public String? Instruction { get ; set; }
+  public System.String? Instruction { get ; set; }
   
   /// <summary>
   /// fldLock
   /// </summary>
-  public Boolean? FieldLock { get ; set; }
+  public System.Boolean? FieldLock { get ; set; }
   
   /// <summary>
   /// dirty
   /// </summary>
-  public Boolean? Dirty { get ; set; }
+  public System.Boolean? Dirty { get ; set; }
   
   /// <summary>
   /// FieldData.
   /// </summary>
-  public IFieldData? FieldData { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FieldData { get ; set; }
   
 }

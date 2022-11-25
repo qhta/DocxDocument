@@ -8,11 +8,11 @@ public interface IHiddenEffectsProperties // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Effect Container.
   /// </summary>
-  public IEffectList? EffectList { get ; set; }
+  public DocumentModel.Drawing.IEffectList? EffectList { get ; set; }
   
   /// <summary>
   /// Effect Container.
   /// </summary>
-  public IEffectDag? EffectDag { get ; set; }
+  public DocumentModel.Drawing.IEffectContainerType? EffectDag { get ; set; }
   
 }

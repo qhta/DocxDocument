@@ -8,16 +8,16 @@ public interface IPivotSource // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Pivot Name.
   /// </summary>
-  public IPivotTableName? PivotTableName { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? PivotTableName { get ; set; }
   
   /// <summary>
   /// Format ID.
   /// </summary>
-  public IFormatId? FormatId { get ; set; }
+  public System.UInt32? FormatId { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

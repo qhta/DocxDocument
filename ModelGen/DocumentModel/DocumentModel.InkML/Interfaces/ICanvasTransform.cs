@@ -8,11 +8,11 @@ public interface ICanvasTransform // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// invertible
   /// </summary>
-  public Boolean? Invertible { get ; set; }
+  public System.Boolean? Invertible { get ; set; }
   
 }

@@ -8,66 +8,61 @@ public interface IWebSettings // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Frameset.
   /// </summary>
-  public IFrameset? Frameset { get ; set; }
+  public DocumentModel.Wordprocessing.IFrameset? Frameset { get ; set; }
   
   /// <summary>
   /// Divs.
   /// </summary>
-  public IDivs? Divs { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Divs { get ; set; }
   
   /// <summary>
   /// WebPageEncoding.
   /// </summary>
-  public IWebPageEncoding? WebPageEncoding { get ; set; }
+  public System.String? WebPageEncoding { get ; set; }
   
   /// <summary>
   /// OptimizeForBrowser.
   /// </summary>
-  public IOptimizeForBrowser? OptimizeForBrowser { get ; set; }
+  public System.Boolean? OptimizeForBrowser { get ; set; }
   
   /// <summary>
   /// RelyOnVML.
   /// </summary>
-  public IRelyOnVML? RelyOnVML { get ; set; }
+  public System.Boolean? RelyOnVML { get ; set; }
   
   /// <summary>
   /// AllowPNG.
   /// </summary>
-  public IAllowPNG? AllowPNG { get ; set; }
+  public System.Boolean? AllowPNG { get ; set; }
   
   /// <summary>
   /// DoNotRelyOnCSS.
   /// </summary>
-  public IDoNotRelyOnCSS? DoNotRelyOnCSS { get ; set; }
+  public System.Boolean? DoNotRelyOnCSS { get ; set; }
   
   /// <summary>
   /// DoNotSaveAsSingleFile.
   /// </summary>
-  public IDoNotSaveAsSingleFile? DoNotSaveAsSingleFile { get ; set; }
+  public System.Boolean? DoNotSaveAsSingleFile { get ; set; }
   
   /// <summary>
   /// DoNotOrganizeInFolder.
   /// </summary>
-  public IDoNotOrganizeInFolder? DoNotOrganizeInFolder { get ; set; }
+  public System.Boolean? DoNotOrganizeInFolder { get ; set; }
   
   /// <summary>
   /// DoNotUseLongFileNames.
   /// </summary>
-  public IDoNotUseLongFileNames? DoNotUseLongFileNames { get ; set; }
+  public System.Boolean? DoNotUseLongFileNames { get ; set; }
   
   /// <summary>
   /// PixelsPerInch.
   /// </summary>
-  public IPixelsPerInch? PixelsPerInch { get ; set; }
+  public System.Int32? PixelsPerInch { get ; set; }
   
   /// <summary>
   /// TargetScreenSize.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues>? TargetScreenSize { get ; set; }
-  
-  /// <summary>
-  /// Gets the WebSettingsPart associated with this element.
-  /// </summary>
-  public IWebSettingsPart? WebSettingsPart { get ; set; }
+  public DocumentModel.Wordprocessing.TargetScreenSizeKind? TargetScreenSize { get ; set; }
   
 }

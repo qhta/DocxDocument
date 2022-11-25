@@ -8,76 +8,76 @@ public interface IPath // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Path Definition
   /// </summary>
-  public String? Value { get ; set; }
+  public System.String? Value { get ; set; }
   
   /// <summary>
   /// Limo Stretch Point
   /// </summary>
-  public String? Limo { get ; set; }
+  public System.String? Limo { get ; set; }
   
   /// <summary>
   /// Text Box Bounding Box
   /// </summary>
-  public String? TextboxRectangle { get ; set; }
+  public System.String? TextboxRectangle { get ; set; }
   
   /// <summary>
   /// Shape Fill Toggle
   /// </summary>
-  public ITrueFalseValue? AllowFill { get ; set; }
+  public System.Boolean? AllowFill { get ; set; }
   
   /// <summary>
   /// Stroke Toggle
   /// </summary>
-  public ITrueFalseValue? AllowStroke { get ; set; }
+  public System.Boolean? AllowStroke { get ; set; }
   
   /// <summary>
   /// Shadow Toggle
   /// </summary>
-  public ITrueFalseValue? AllowShading { get ; set; }
+  public System.Boolean? AllowShading { get ; set; }
   
   /// <summary>
   /// Arrowhead Display Toggle
   /// </summary>
-  public ITrueFalseValue? ShowArrowhead { get ; set; }
+  public System.Boolean? ShowArrowhead { get ; set; }
   
   /// <summary>
   /// Gradient Shape Toggle
   /// </summary>
-  public ITrueFalseValue? AllowGradientShape { get ; set; }
+  public System.Boolean? AllowGradientShape { get ; set; }
   
   /// <summary>
   /// Text Path Toggle
   /// </summary>
-  public ITrueFalseValue? AllowTextPath { get ; set; }
+  public System.Boolean? AllowTextPath { get ; set; }
   
   /// <summary>
   /// Inset Stroke From Path Flag
   /// </summary>
-  public ITrueFalseValue? AllowInsetPen { get ; set; }
+  public System.Boolean? AllowInsetPen { get ; set; }
   
   /// <summary>
   /// Connection Point Type
   /// </summary>
-  public ConnectValues? ConnectionPointType { get ; set; }
+  public DocumentModel.Vml.Office.ConnectKind? ConnectionPointType { get ; set; }
   
   /// <summary>
   /// Connection Points
   /// </summary>
-  public String? ConnectionPoints { get ; set; }
+  public System.String? ConnectionPoints { get ; set; }
   
   /// <summary>
   /// Connection Point Connect Angles
   /// </summary>
-  public String? ConnectAngles { get ; set; }
+  public System.String? ConnectAngles { get ; set; }
   
   /// <summary>
   /// Extrusion Toggle
   /// </summary>
-  public ITrueFalseValue? AllowExtrusion { get ; set; }
+  public System.Boolean? AllowExtrusion { get ; set; }
   
 }

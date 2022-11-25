@@ -8,21 +8,21 @@ public interface INary // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// n-ary Properties.
   /// </summary>
-  public INaryProperties? NaryProperties { get ; set; }
+  public DocumentModel.Math.INaryProperties? NaryProperties { get ; set; }
   
   /// <summary>
   /// Lower limit (n-ary) .
   /// </summary>
-  public ISubArgument? SubArgument { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
   
   /// <summary>
   /// Upper limit (n-ary).
   /// </summary>
-  public ISuperArgument? SuperArgument { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? SuperArgument { get ; set; }
   
   /// <summary>
   /// Base (Argument).
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
 }

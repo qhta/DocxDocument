@@ -8,6 +8,6 @@ public interface IMatrix // : DocumentModel.ITypedOpenXmlLeafTextElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

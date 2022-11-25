@@ -8,11 +8,11 @@ public interface IDrawing // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Drawing Element Anchor.
   /// </summary>
-  public IAnchor? Anchor { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.IAnchor? Anchor { get ; set; }
   
   /// <summary>
   /// Inline Drawing Object.
   /// </summary>
-  public Inline? Inline { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.IInline? Inline { get ; set; }
   
 }

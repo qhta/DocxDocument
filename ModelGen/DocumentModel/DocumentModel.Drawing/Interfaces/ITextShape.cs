@@ -8,6 +8,6 @@ public interface ITextShape // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape Text Body.
   /// </summary>
-  public ITextBody? TextBody { get ; set; }
+  public DocumentModel.Drawing.ITextBody? TextBody { get ; set; }
   
 }

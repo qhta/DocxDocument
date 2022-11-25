@@ -8,11 +8,11 @@ public interface IOutlineViewSlideListEntry // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// Relationship Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Collapsed
   /// </summary>
-  public Boolean? Collapse { get ; set; }
+  public System.Boolean? Collapse { get ; set; }
   
 }

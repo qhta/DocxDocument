@@ -8,151 +8,151 @@ public interface ICommonTimeNode // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// id
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// presetID
   /// </summary>
-  public Int32? PresetId { get ; set; }
+  public System.Int32? PresetId { get ; set; }
   
   /// <summary>
   /// presetClass
   /// </summary>
-  public TimeNodePresetClassValues? PresetClass { get ; set; }
+  public DocumentModel.Presentation.TimeNodePresetClassKind? PresetClass { get ; set; }
   
   /// <summary>
   /// presetSubtype
   /// </summary>
-  public Int32? PresetSubtype { get ; set; }
+  public System.Int32? PresetSubtype { get ; set; }
   
   /// <summary>
   /// dur
   /// </summary>
-  public String? Duration { get ; set; }
+  public System.String? Duration { get ; set; }
   
   /// <summary>
   /// repeatCount
   /// </summary>
-  public String? RepeatCount { get ; set; }
+  public System.String? RepeatCount { get ; set; }
   
   /// <summary>
   /// repeatDur
   /// </summary>
-  public String? RepeatDuration { get ; set; }
+  public System.String? RepeatDuration { get ; set; }
   
   /// <summary>
   /// spd
   /// </summary>
-  public Int32? Speed { get ; set; }
+  public System.Int32? Speed { get ; set; }
   
   /// <summary>
   /// accel
   /// </summary>
-  public Int32? Acceleration { get ; set; }
+  public System.Int32? Acceleration { get ; set; }
   
   /// <summary>
   /// decel
   /// </summary>
-  public Int32? Deceleration { get ; set; }
+  public System.Int32? Deceleration { get ; set; }
   
   /// <summary>
   /// autoRev
   /// </summary>
-  public Boolean? AutoReverse { get ; set; }
+  public System.Boolean? AutoReverse { get ; set; }
   
   /// <summary>
   /// restart
   /// </summary>
-  public TimeNodeRestartValues? Restart { get ; set; }
+  public DocumentModel.Presentation.TimeNodeRestartKind? Restart { get ; set; }
   
   /// <summary>
   /// fill
   /// </summary>
-  public TimeNodeFillValues? Fill { get ; set; }
+  public DocumentModel.Presentation.TimeNodeFillKind? Fill { get ; set; }
   
   /// <summary>
   /// syncBehavior
   /// </summary>
-  public TimeNodeSyncValues? SyncBehavior { get ; set; }
+  public DocumentModel.Presentation.TimeNodeSyncKind? SyncBehavior { get ; set; }
   
   /// <summary>
   /// tmFilter
   /// </summary>
-  public String? TimeFilter { get ; set; }
+  public System.String? TimeFilter { get ; set; }
   
   /// <summary>
   /// evtFilter
   /// </summary>
-  public String? EventFilter { get ; set; }
+  public System.String? EventFilter { get ; set; }
   
   /// <summary>
   /// display
   /// </summary>
-  public Boolean? Display { get ; set; }
+  public System.Boolean? Display { get ; set; }
   
   /// <summary>
   /// masterRel
   /// </summary>
-  public TimeNodeMasterRelationValues? MasterRelation { get ; set; }
+  public DocumentModel.Presentation.TimeNodeMasterRelationKind? MasterRelation { get ; set; }
   
   /// <summary>
   /// bldLvl
   /// </summary>
-  public Int32? BuildLevel { get ; set; }
+  public System.Int32? BuildLevel { get ; set; }
   
   /// <summary>
   /// grpId
   /// </summary>
-  public UInt32? GroupId { get ; set; }
+  public System.UInt32? GroupId { get ; set; }
   
   /// <summary>
   /// afterEffect
   /// </summary>
-  public Boolean? AfterEffect { get ; set; }
+  public System.Boolean? AfterEffect { get ; set; }
   
   /// <summary>
   /// nodeType
   /// </summary>
-  public TimeNodeValues? NodeType { get ; set; }
+  public DocumentModel.Presentation.TimeNodeKind? NodeType { get ; set; }
   
   /// <summary>
   /// nodePh
   /// </summary>
-  public Boolean? NodePlaceholder { get ; set; }
+  public System.Boolean? NodePlaceholder { get ; set; }
   
   /// <summary>
   /// presetBounceEnd, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? PresetBounceEnd { get ; set; }
+  public System.Int32? PresetBounceEnd { get ; set; }
   
   /// <summary>
   /// StartConditionList.
   /// </summary>
-  public IStartConditionList? StartConditionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? StartConditionList { get ; set; }
   
   /// <summary>
   /// EndConditionList.
   /// </summary>
-  public IEndConditionList? EndConditionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? EndConditionList { get ; set; }
   
   /// <summary>
   /// EndSync.
   /// </summary>
-  public IEndSync? EndSync { get ; set; }
+  public DocumentModel.Presentation.ITimeListConditionalType? EndSync { get ; set; }
   
   /// <summary>
   /// Iterate.
   /// </summary>
-  public Iterate? Iterate { get ; set; }
+  public DocumentModel.Presentation.IIterate? Iterate { get ; set; }
   
   /// <summary>
   /// ChildTimeNodeList.
   /// </summary>
-  public IChildTimeNodeList? ChildTimeNodeList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ChildTimeNodeList { get ; set; }
   
   /// <summary>
   /// SubTimeNodeList.
   /// </summary>
-  public ISubTimeNodeList? SubTimeNodeList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SubTimeNodeList { get ; set; }
   
 }

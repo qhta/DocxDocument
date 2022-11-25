@@ -8,11 +8,11 @@ public interface IGuide // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Guide Orientation
   /// </summary>
-  public DirectionValues? Orientation { get ; set; }
+  public DocumentModel.Presentation.DirectionKind? Orientation { get ; set; }
   
   /// <summary>
   /// Guide Position
   /// </summary>
-  public Int32? Position { get ; set; }
+  public System.Int32? Position { get ; set; }
   
 }

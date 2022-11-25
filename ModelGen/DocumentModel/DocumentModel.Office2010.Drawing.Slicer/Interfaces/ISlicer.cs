@@ -8,11 +8,11 @@ public interface ISlicer // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// name, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

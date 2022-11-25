@@ -8,46 +8,46 @@ public interface IBorderType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Border Style
   /// </summary>
-  public BorderKind? Val { get ; set; }
+  public DocumentModel.Wordprocessing.BorderKind? Val { get ; set; }
   
   /// <summary>
   /// Border Color
   /// </summary>
-  public String? Color { get ; set; }
+  public System.String? Color { get ; set; }
   
   /// <summary>
   /// Border Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// Border Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get ; set; }
+  public System.String? ThemeTint { get ; set; }
   
   /// <summary>
   /// Border Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get ; set; }
+  public System.String? ThemeShade { get ; set; }
   
   /// <summary>
   /// Border Width
   /// </summary>
-  public UInt32? Size { get ; set; }
+  public System.UInt32? Size { get ; set; }
   
   /// <summary>
   /// Border Spacing Measurement
   /// </summary>
-  public UInt32? Space { get ; set; }
+  public System.UInt32? Space { get ; set; }
   
   /// <summary>
   /// Border Shadow
   /// </summary>
-  public Boolean? Shadow { get ; set; }
+  public System.Boolean? Shadow { get ; set; }
   
   /// <summary>
   /// Create Frame Effect
   /// </summary>
-  public Boolean? Frame { get ; set; }
+  public System.Boolean? Frame { get ; set; }
   
 }

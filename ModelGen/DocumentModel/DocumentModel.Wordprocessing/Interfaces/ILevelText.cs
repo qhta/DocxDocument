@@ -8,11 +8,11 @@ public interface ILevelText // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Level Text
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
   /// <summary>
   /// Level Text Is Null Character
   /// </summary>
-  public Boolean? Null { get ; set; }
+  public System.Boolean? Null { get ; set; }
   
 }

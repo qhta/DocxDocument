@@ -8,11 +8,11 @@ public interface IFootnoteEndnoteType // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Footnote/Endnote Type
   /// </summary>
-  public FootnoteEndnoteKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteKind? Type { get ; set; }
   
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>
-  public Int32? Id { get ; set; }
+  public System.Int32? Id { get ; set; }
   
 }

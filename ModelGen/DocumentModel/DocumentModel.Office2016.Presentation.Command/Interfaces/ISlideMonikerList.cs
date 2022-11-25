@@ -8,11 +8,11 @@ public interface ISlideMonikerList // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// DocumentMoniker.
   /// </summary>
-  public IDocumentMoniker? DocumentMoniker { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? DocumentMoniker { get ; set; }
   
   /// <summary>
   /// SlideMoniker.
   /// </summary>
-  public ISlideMoniker? SlideMoniker { get ; set; }
+  public DocumentModel.Office2016.Presentation.Command.ISlideMoniker? SlideMoniker { get ; set; }
   
 }

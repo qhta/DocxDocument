@@ -8,61 +8,61 @@ public interface IShapeLocks // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get ; set; }
+  public System.Boolean? NoGrouping { get ; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get ; set; }
+  public System.Boolean? NoSelection { get ; set; }
   
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  public Boolean? NoRotation { get ; set; }
+  public System.Boolean? NoRotation { get ; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get ; set; }
+  public System.Boolean? NoChangeAspect { get ; set; }
   
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get ; set; }
+  public System.Boolean? NoMove { get ; set; }
   
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get ; set; }
+  public System.Boolean? NoResize { get ; set; }
   
   /// <summary>
   /// Disallow Shape Point Editing
   /// </summary>
-  public Boolean? NoEditPoints { get ; set; }
+  public System.Boolean? NoEditPoints { get ; set; }
   
   /// <summary>
   /// Disallow Showing Adjust Handles
   /// </summary>
-  public Boolean? NoAdjustHandles { get ; set; }
+  public System.Boolean? NoAdjustHandles { get ; set; }
   
   /// <summary>
   /// Disallow Arrowhead Changes
   /// </summary>
-  public Boolean? NoChangeArrowheads { get ; set; }
+  public System.Boolean? NoChangeArrowheads { get ; set; }
   
   /// <summary>
   /// Disallow Shape Type Change
   /// </summary>
-  public Boolean? NoChangeShapeType { get ; set; }
+  public System.Boolean? NoChangeShapeType { get ; set; }
   
   /// <summary>
   /// Disallow Shape Text Editing
   /// </summary>
-  public Boolean? NoTextEdit { get ; set; }
+  public System.Boolean? NoTextEdit { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

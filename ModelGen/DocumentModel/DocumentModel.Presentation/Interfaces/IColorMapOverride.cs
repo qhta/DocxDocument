@@ -8,11 +8,11 @@ public interface IColorMapOverride // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Master Color Mapping.
   /// </summary>
-  public IMasterColorMapping? MasterColorMapping { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? MasterColorMapping { get ; set; }
   
   /// <summary>
   /// Override Color Mapping.
   /// </summary>
-  public IOverrideColorMapping? OverrideColorMapping { get ; set; }
+  public DocumentModel.Drawing.IColorMappingType? OverrideColorMapping { get ; set; }
   
 }

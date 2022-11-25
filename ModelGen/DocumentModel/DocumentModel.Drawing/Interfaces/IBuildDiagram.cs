@@ -8,11 +8,11 @@ public interface IBuildDiagram // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Build
   /// </summary>
-  public String? Build { get ; set; }
+  public System.String? Build { get ; set; }
   
   /// <summary>
   /// Reverse Animation
   /// </summary>
-  public Boolean? ReverseAnimation { get ; set; }
+  public System.Boolean? ReverseAnimation { get ; set; }
   
 }

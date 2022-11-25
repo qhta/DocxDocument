@@ -8,6 +8,6 @@ public interface ISlideListEntry // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Relationship ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

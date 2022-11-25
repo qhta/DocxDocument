@@ -8,11 +8,11 @@ public interface IPhantom // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Phantom Properties.
   /// </summary>
-  public IPhantomProperties? PhantomProperties { get ; set; }
+  public DocumentModel.Math.IPhantomProperties? PhantomProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
 }

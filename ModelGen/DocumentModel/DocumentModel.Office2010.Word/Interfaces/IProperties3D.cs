@@ -8,36 +8,36 @@ public interface IProperties3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// extrusionH, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int64? ExtrusionHeight { get ; set; }
+  public System.Int64? ExtrusionHeight { get ; set; }
   
   /// <summary>
   /// contourW, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int64? ContourWidth { get ; set; }
+  public System.Int64? ContourWidth { get ; set; }
   
   /// <summary>
   /// prstMaterial, this property is only available in Office 2010 and later.
   /// </summary>
-  public PresetMaterialTypeValues? PresetMaterialType { get ; set; }
+  public DocumentModel.Office2010.Word.PresetMaterialTypeKind? PresetMaterialType { get ; set; }
   
   /// <summary>
   /// BevelTop.
   /// </summary>
-  public IBevelTop? BevelTop { get ; set; }
+  public DocumentModel.Office2010.Word.IBevelType? BevelTop { get ; set; }
   
   /// <summary>
   /// BevelBottom.
   /// </summary>
-  public IBevelBottom? BevelBottom { get ; set; }
+  public DocumentModel.Office2010.Word.IBevelType? BevelBottom { get ; set; }
   
   /// <summary>
   /// ExtrusionColor.
   /// </summary>
-  public IExtrusionColor? ExtrusionColor { get ; set; }
+  public DocumentModel.Office2010.Word.IColorType? ExtrusionColor { get ; set; }
   
   /// <summary>
   /// ContourColor.
   /// </summary>
-  public IContourColor? ContourColor { get ; set; }
+  public DocumentModel.Office2010.Word.IColorType? ContourColor { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface IPivotOptions // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// DropZoneFilter.
   /// </summary>
-  public IDropZoneFilter? DropZoneFilter { get ; set; }
+  public System.Boolean? DropZoneFilter { get ; set; }
   
   /// <summary>
   /// DropZoneCategories.
   /// </summary>
-  public IDropZoneCategories? DropZoneCategories { get ; set; }
+  public System.Boolean? DropZoneCategories { get ; set; }
   
   /// <summary>
   /// DropZoneData.
   /// </summary>
-  public IDropZoneData? DropZoneData { get ; set; }
+  public System.Boolean? DropZoneData { get ; set; }
   
   /// <summary>
   /// DropZoneSeries.
   /// </summary>
-  public IDropZoneSeries? DropZoneSeries { get ; set; }
+  public System.Boolean? DropZoneSeries { get ; set; }
   
   /// <summary>
   /// DropZonesVisible.
   /// </summary>
-  public IDropZonesVisible? DropZonesVisible { get ; set; }
+  public System.Boolean? DropZonesVisible { get ; set; }
   
 }

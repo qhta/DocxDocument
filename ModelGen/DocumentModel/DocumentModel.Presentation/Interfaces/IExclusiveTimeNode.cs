@@ -8,6 +8,6 @@ public interface IExclusiveTimeNode // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Common TimeNode Properties.
   /// </summary>
-  public ICommonTimeNode? CommonTimeNode { get ; set; }
+  public DocumentModel.Presentation.ICommonTimeNode? CommonTimeNode { get ; set; }
   
 }

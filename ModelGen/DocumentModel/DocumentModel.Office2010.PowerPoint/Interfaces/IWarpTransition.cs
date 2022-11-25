@@ -8,6 +8,6 @@ public interface IWarpTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Direction
   /// </summary>
-  public TransitionInOutDirectionValues? Direction { get ; set; }
+  public DocumentModel.Presentation.TransitionInOutDirectionKind? Direction { get ; set; }
   
 }

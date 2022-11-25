@@ -8,16 +8,16 @@ public interface IColorChange // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Consider Alpha Values
   /// </summary>
-  public Boolean? UseAlpha { get ; set; }
+  public System.Boolean? UseAlpha { get ; set; }
   
   /// <summary>
   /// Change Color From.
   /// </summary>
-  public IColorFrom? ColorFrom { get ; set; }
+  public DocumentModel.Drawing.IColorType? ColorFrom { get ; set; }
   
   /// <summary>
   /// Change Color To.
   /// </summary>
-  public IColorTo? ColorTo { get ; set; }
+  public DocumentModel.Drawing.IColorType? ColorTo { get ; set; }
   
 }

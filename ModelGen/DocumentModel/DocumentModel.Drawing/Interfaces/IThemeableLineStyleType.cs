@@ -8,11 +8,11 @@ public interface IThemeableLineStyleType // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Outline.
   /// </summary>
-  public IOutline? Outline { get ; set; }
+  public DocumentModel.Drawing.ILinePropertiesType? Outline { get ; set; }
   
   /// <summary>
   /// Line Reference.
   /// </summary>
-  public ILineReference? LineReference { get ; set; }
+  public DocumentModel.Drawing.IStyleMatrixReferenceType? LineReference { get ; set; }
   
 }

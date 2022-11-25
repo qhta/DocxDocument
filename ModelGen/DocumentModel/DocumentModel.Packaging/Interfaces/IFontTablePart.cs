@@ -5,18 +5,18 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface IFontTablePart // : DocumentModel.Packaging.ITypedOpenXmlPart
 {
-  public String? ContentType { get ; set; }
+  public System.String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the FontParts of the FontTablePart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.FontPart>? FontParts { get ; set; }
+  public DocumentModel.Packaging.IFontPart? FontParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public IFonts? Fonts { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Fonts { get ; set; }
   
-  public String? RelationshipType { get ; set; }
+  public System.String? RelationshipType { get ; set; }
   
 }

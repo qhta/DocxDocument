@@ -8,16 +8,16 @@ public interface IBackground // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Black and White Mode
   /// </summary>
-  public BlackWhiteModeValues? BlackWhiteMode { get ; set; }
+  public DocumentModel.Drawing.BlackWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Background Properties.
   /// </summary>
-  public IBackgroundProperties? BackgroundProperties { get ; set; }
+  public DocumentModel.Presentation.IBackgroundProperties? BackgroundProperties { get ; set; }
   
   /// <summary>
   /// Background Style Reference.
   /// </summary>
-  public IBackgroundStyleReference? BackgroundStyleReference { get ; set; }
+  public DocumentModel.Presentation.IBackgroundStyleReference? BackgroundStyleReference { get ; set; }
   
 }

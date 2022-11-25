@@ -8,11 +8,11 @@ public interface IColorsType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Color Application Method Type
   /// </summary>
-  public ColorApplicationMethodValues? Method { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ColorApplicationMethodKind? Method { get ; set; }
   
   /// <summary>
   /// Hue Direction
   /// </summary>
-  public HueDirectionValues? HueDirection { get ; set; }
+  public DocumentModel.Drawing.Diagrams.HueDirectionKind? HueDirection { get ; set; }
   
 }

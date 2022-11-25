@@ -8,6 +8,6 @@ public interface IDelimiter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Delimiter Properties.
   /// </summary>
-  public IDelimiterProperties? DelimiterProperties { get ; set; }
+  public DocumentModel.Math.IDelimiterProperties? DelimiterProperties { get ; set; }
   
 }

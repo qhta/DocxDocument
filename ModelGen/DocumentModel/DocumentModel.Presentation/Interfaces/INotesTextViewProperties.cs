@@ -8,11 +8,11 @@ public interface INotesTextViewProperties // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Base properties for Notes View.
   /// </summary>
-  public ICommonViewProperties? CommonViewProperties { get ; set; }
+  public DocumentModel.Presentation.ICommonViewProperties? CommonViewProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

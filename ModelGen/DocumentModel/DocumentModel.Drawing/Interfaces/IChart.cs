@@ -8,16 +8,16 @@ public interface IChart // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Series Index
   /// </summary>
-  public Int32? SeriesIndex { get ; set; }
+  public System.Int32? SeriesIndex { get ; set; }
   
   /// <summary>
   /// Category Index
   /// </summary>
-  public Int32? CategoryIndex { get ; set; }
+  public System.Int32? CategoryIndex { get ; set; }
   
   /// <summary>
   /// Animation Build Step
   /// </summary>
-  public ChartBuildStepValues? BuildStep { get ; set; }
+  public DocumentModel.Drawing.ChartBuildStepKind? BuildStep { get ; set; }
   
 }

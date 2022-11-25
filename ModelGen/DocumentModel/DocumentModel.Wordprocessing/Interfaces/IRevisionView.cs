@@ -8,26 +8,26 @@ public interface IRevisionView // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Display Visual Indicator Of Markup Area
   /// </summary>
-  public Boolean? Markup { get ; set; }
+  public System.Boolean? Markup { get ; set; }
   
   /// <summary>
   /// Display Comments
   /// </summary>
-  public Boolean? Comments { get ; set; }
+  public System.Boolean? Comments { get ; set; }
   
   /// <summary>
   /// Display Content Revisions
   /// </summary>
-  public Boolean? DisplayRevision { get ; set; }
+  public System.Boolean? DisplayRevision { get ; set; }
   
   /// <summary>
   /// Display Formatting Revisions
   /// </summary>
-  public Boolean? Formatting { get ; set; }
+  public System.Boolean? Formatting { get ; set; }
   
   /// <summary>
   /// Display Ink Annotations
   /// </summary>
-  public Boolean? InkAnnotations { get ; set; }
+  public System.Boolean? InkAnnotations { get ; set; }
   
 }

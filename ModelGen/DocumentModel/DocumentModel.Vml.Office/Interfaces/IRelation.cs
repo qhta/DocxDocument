@@ -8,21 +8,21 @@ public interface IRelation // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Diagram Relationship Source Shape
   /// </summary>
-  public String? SourceId { get ; set; }
+  public System.String? SourceId { get ; set; }
   
   /// <summary>
   /// Diagram Relationship Destination Shape
   /// </summary>
-  public String? DestinationId { get ; set; }
+  public System.String? DestinationId { get ; set; }
   
   /// <summary>
   /// Diagram Relationship Center Shape
   /// </summary>
-  public String? CenterShapeId { get ; set; }
+  public System.String? CenterShapeId { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IBrowseMode // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// showStatus, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? ShowStatus { get ; set; }
+  public System.Boolean? ShowStatus { get ; set; }
   
 }

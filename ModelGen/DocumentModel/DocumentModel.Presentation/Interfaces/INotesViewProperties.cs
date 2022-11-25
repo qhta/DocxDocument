@@ -8,11 +8,11 @@ public interface INotesViewProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Common Slide View Properties.
   /// </summary>
-  public ICommonSlideViewProperties? CommonSlideViewProperties { get ; set; }
+  public DocumentModel.Presentation.ICommonSlideViewProperties? CommonSlideViewProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IOneCellAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// FromMarker.
   /// </summary>
-  public IFromMarker? FromMarker { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IMarkerType? FromMarker { get ; set; }
   
   /// <summary>
   /// Extent.
   /// </summary>
-  public IExtent? Extent { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IExtent? Extent { get ; set; }
   
 }

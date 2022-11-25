@@ -8,21 +8,21 @@ public interface IParagraphPropertiesChange // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// author
   /// </summary>
-  public String? Author { get ; set; }
+  public System.String? Author { get ; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public DateTime? Date { get ; set; }
+  public System.DateTime? Date { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Previous Paragraph Properties.
   /// </summary>
-  public IParagraphPropertiesExtended? ParagraphPropertiesExtended { get ; set; }
+  public DocumentModel.Wordprocessing.IParagraphPropertiesExtended? ParagraphPropertiesExtended { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IKioskSlideMode // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Restart Show
   /// </summary>
-  public UInt32? Restart { get ; set; }
+  public System.UInt32? Restart { get ; set; }
   
 }

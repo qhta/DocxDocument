@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public class TypeRelationship
+public struct TypeRelationship
 {
   public object Source { get; }
   public TypeInfo Target { get; }

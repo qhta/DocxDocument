@@ -8,11 +8,11 @@ public interface IExternalData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Update Automatically.
   /// </summary>
-  public IAutoUpdate? AutoUpdate { get ; set; }
+  public System.Boolean? AutoUpdate { get ; set; }
   
 }

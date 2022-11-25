@@ -8,11 +8,11 @@ public interface ISlideViewProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// CommonSlideViewProperties.
   /// </summary>
-  public ICommonSlideViewProperties? CommonSlideViewProperties { get ; set; }
+  public DocumentModel.Presentation.ICommonSlideViewProperties? CommonSlideViewProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

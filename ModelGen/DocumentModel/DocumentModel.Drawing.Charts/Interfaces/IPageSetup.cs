@@ -8,46 +8,46 @@ public interface IPageSetup // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Page Size
   /// </summary>
-  public UInt32? PaperSize { get ; set; }
+  public System.UInt32? PaperSize { get ; set; }
   
   /// <summary>
   /// First Page Number
   /// </summary>
-  public Int32? FirstPageNumber { get ; set; }
+  public System.Int32? FirstPageNumber { get ; set; }
   
   /// <summary>
   /// Orientation
   /// </summary>
-  public PageSetupOrientationValues? Orientation { get ; set; }
+  public DocumentModel.Drawing.Charts.PageSetupOrientationKind? Orientation { get ; set; }
   
   /// <summary>
   /// Black and White
   /// </summary>
-  public Boolean? BlackAndWhite { get ; set; }
+  public System.Boolean? BlackAndWhite { get ; set; }
   
   /// <summary>
   /// Draft
   /// </summary>
-  public Boolean? Draft { get ; set; }
+  public System.Boolean? Draft { get ; set; }
   
   /// <summary>
   /// Use First Page Number
   /// </summary>
-  public Boolean? UseFirstPageNumber { get ; set; }
+  public System.Boolean? UseFirstPageNumber { get ; set; }
   
   /// <summary>
   /// Horizontal DPI
   /// </summary>
-  public Int32? HorizontalDpi { get ; set; }
+  public System.Int32? HorizontalDpi { get ; set; }
   
   /// <summary>
   /// Vertical DPI
   /// </summary>
-  public Int32? VerticalDpi { get ; set; }
+  public System.Int32? VerticalDpi { get ; set; }
   
   /// <summary>
   /// Copies
   /// </summary>
-  public UInt32? Copies { get ; set; }
+  public System.UInt32? Copies { get ; set; }
   
 }

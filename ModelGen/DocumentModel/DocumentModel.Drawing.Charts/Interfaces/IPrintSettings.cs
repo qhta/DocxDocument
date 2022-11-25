@@ -8,21 +8,21 @@ public interface IPrintSettings // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Header and Footer.
   /// </summary>
-  public IHeaderFooter? HeaderFooter { get ; set; }
+  public DocumentModel.Drawing.Charts.IHeaderFooter? HeaderFooter { get ; set; }
   
   /// <summary>
   /// Page Margins.
   /// </summary>
-  public IPageMargins? PageMargins { get ; set; }
+  public DocumentModel.Drawing.Charts.IPageMargins? PageMargins { get ; set; }
   
   /// <summary>
   /// Page Setup.
   /// </summary>
-  public IPageSetup? PageSetup { get ; set; }
+  public DocumentModel.Drawing.Charts.IPageSetup? PageSetup { get ; set; }
   
   /// <summary>
   /// Legacy Drawing for Headers and Footers.
   /// </summary>
-  public ILegacyDrawingHeaderFooter? LegacyDrawingHeaderFooter { get ; set; }
+  public DocumentModel.Drawing.Charts.IRelationshipIdType? LegacyDrawingHeaderFooter { get ; set; }
   
 }

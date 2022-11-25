@@ -8,76 +8,76 @@ public interface ILevel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Numbering Level
   /// </summary>
-  public Int32? LevelIndex { get ; set; }
+  public System.Int32? LevelIndex { get ; set; }
   
   /// <summary>
   /// Template Code
   /// </summary>
-  public IHexBinaryValue? TemplateCode { get ; set; }
+  public DocumentModel.IHexBinaryValue? TemplateCode { get ; set; }
   
   /// <summary>
   /// Tentative Numbering
   /// </summary>
-  public Boolean? Tentative { get ; set; }
+  public System.Boolean? Tentative { get ; set; }
   
   /// <summary>
   /// Starting Value.
   /// </summary>
-  public IStartNumberingValue? StartNumberingValue { get ; set; }
+  public System.Int32? StartNumberingValue { get ; set; }
   
   /// <summary>
   /// Numbering Format.
   /// </summary>
-  public INumberingFormat? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.INumberingFormat? NumberingFormat { get ; set; }
   
   /// <summary>
   /// Restart Numbering Level Symbol.
   /// </summary>
-  public ILevelRestart? LevelRestart { get ; set; }
+  public System.Int32? LevelRestart { get ; set; }
   
   /// <summary>
   /// Paragraph Style's Associated Numbering Level.
   /// </summary>
-  public IParagraphStyleIdInLevel? ParagraphStyleIdInLevel { get ; set; }
+  public System.String? ParagraphStyleIdInLevel { get ; set; }
   
   /// <summary>
   /// Display All Levels Using Arabic Numerals.
   /// </summary>
-  public IsLegalNumberingStyle? IsLegalNumberingStyle { get ; set; }
+  public System.Boolean? IsLegalNumberingStyle { get ; set; }
   
   /// <summary>
   /// Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues>? LevelSuffix { get ; set; }
+  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix { get ; set; }
   
   /// <summary>
   /// Numbering Level Text.
   /// </summary>
-  public ILevelText? LevelText { get ; set; }
+  public DocumentModel.Wordprocessing.ILevelText? LevelText { get ; set; }
   
   /// <summary>
   /// Picture Numbering Symbol Definition Reference.
   /// </summary>
-  public ILevelPictureBulletId? LevelPictureBulletId { get ; set; }
+  public System.Int32? LevelPictureBulletId { get ; set; }
   
   /// <summary>
   /// Legacy Numbering Level Properties.
   /// </summary>
-  public ILegacyNumbering? LegacyNumbering { get ; set; }
+  public DocumentModel.Wordprocessing.ILegacyNumbering? LegacyNumbering { get ; set; }
   
   /// <summary>
   /// Justification.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues>? LevelJustification { get ; set; }
+  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification { get ; set; }
   
   /// <summary>
   /// Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public IPreviousParagraphProperties? PreviousParagraphProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IPreviousParagraphProperties? PreviousParagraphProperties { get ; set; }
   
   /// <summary>
   /// Numbering Symbol Run Properties.
   /// </summary>
-  public INumberingSymbolRunProperties? NumberingSymbolRunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.INumberingSymbolRunProperties? NumberingSymbolRunProperties { get ; set; }
   
 }

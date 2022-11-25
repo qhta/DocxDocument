@@ -8,21 +8,21 @@ public interface IRule // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Rule ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Rule Type
   /// </summary>
-  public RuleValues? Type { get ; set; }
+  public DocumentModel.Vml.Office.RuleKind? Type { get ; set; }
   
   /// <summary>
   /// Alignment Rule Type
   /// </summary>
-  public AlignmentValues? How { get ; set; }
+  public DocumentModel.Vml.Office.AlignmentKind? How { get ; set; }
   
   /// <summary>
   /// Rule Shape Reference
   /// </summary>
-  public String? ShapeReference { get ; set; }
+  public System.String? ShapeReference { get ; set; }
   
 }

@@ -8,41 +8,41 @@ public interface IDiv // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// div Data ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Data for HTML blockquote Element.
   /// </summary>
-  public IBlockQuote? BlockQuote { get ; set; }
+  public System.Boolean? BlockQuote { get ; set; }
   
   /// <summary>
   /// Data for HTML body Element.
   /// </summary>
-  public IBodyDiv? BodyDiv { get ; set; }
+  public System.Boolean? BodyDiv { get ; set; }
   
   /// <summary>
   /// Left Margin for HTML div.
   /// </summary>
-  public ILeftMarginDiv? LeftMarginDiv { get ; set; }
+  public System.String? LeftMarginDiv { get ; set; }
   
   /// <summary>
   /// Right Margin for HTML div.
   /// </summary>
-  public IRightMarginDiv? RightMarginDiv { get ; set; }
+  public System.String? RightMarginDiv { get ; set; }
   
   /// <summary>
   /// Top Margin for HTML div.
   /// </summary>
-  public ITopMarginDiv? TopMarginDiv { get ; set; }
+  public System.String? TopMarginDiv { get ; set; }
   
   /// <summary>
   /// Bottom Margin for HTML div.
   /// </summary>
-  public IBottomMarginDiv? BottomMarginDiv { get ; set; }
+  public System.String? BottomMarginDiv { get ; set; }
   
   /// <summary>
   /// Set of Borders for HTML div.
   /// </summary>
-  public IDivBorder? DivBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IDivBorder? DivBorder { get ; set; }
   
 }

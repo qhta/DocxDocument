@@ -8,6 +8,6 @@ public interface IImgLink // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// tgt, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Tgt { get ; set; }
+  public System.String? Tgt { get ; set; }
   
 }

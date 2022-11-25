@@ -8,11 +8,11 @@ public interface ISeriesText // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// StringReference.
   /// </summary>
-  public IStringReference? StringReference { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringReference? StringReference { get ; set; }
   
   /// <summary>
   /// NumericValue.
   /// </summary>
-  public INumericValue? NumericValue { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? NumericValue { get ; set; }
   
 }

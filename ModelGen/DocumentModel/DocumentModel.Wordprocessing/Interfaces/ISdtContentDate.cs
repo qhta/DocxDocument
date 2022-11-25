@@ -8,26 +8,26 @@ public interface ISdtContentDate // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Last Known Date in XML Schema DateTime Format
   /// </summary>
-  public DateTime? FullDate { get ; set; }
+  public System.DateTime? FullDate { get ; set; }
   
   /// <summary>
   /// Date Display Mask.
   /// </summary>
-  public IDateFormat? DateFormat { get ; set; }
+  public System.String? DateFormat { get ; set; }
   
   /// <summary>
   /// Date Picker Language ID.
   /// </summary>
-  public IStringValue? LanguageId { get ; set; }
+  public System.String? LanguageId { get ; set; }
   
   /// <summary>
   /// Custom XML Data Date Storage Format.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues>? SdtDateMappingType { get ; set; }
+  public DocumentModel.Wordprocessing.DateFormatKind? SdtDateMappingType { get ; set; }
   
   /// <summary>
   /// Date Picker Calendar Type.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues>? Calendar { get ; set; }
+  public DocumentModel.Wordprocessing.CalendarKind? Calendar { get ; set; }
   
 }

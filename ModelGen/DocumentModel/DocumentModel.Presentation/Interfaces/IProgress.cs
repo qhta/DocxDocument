@@ -8,6 +8,6 @@ public interface IProgress // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Float Value.
   /// </summary>
-  public IFloatVariantValue? FloatVariantValue { get ; set; }
+  public System.Single? FloatVariantValue { get ; set; }
   
 }

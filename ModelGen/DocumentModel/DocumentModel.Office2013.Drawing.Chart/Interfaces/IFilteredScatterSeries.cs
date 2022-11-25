@@ -8,6 +8,6 @@ public interface IFilteredScatterSeries // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// ScatterChartSeries.
   /// </summary>
-  public IScatterChartSeries? ScatterChartSeries { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IScatterChartSeries? ScatterChartSeries { get ; set; }
   
 }

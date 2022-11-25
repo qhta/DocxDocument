@@ -8,31 +8,31 @@ public interface IComment // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// authorId
   /// </summary>
-  public UInt32? AuthorId { get ; set; }
+  public System.UInt32? AuthorId { get ; set; }
   
   /// <summary>
   /// dt
   /// </summary>
-  public DateTime? DateTime { get ; set; }
+  public System.DateTime? DateTime { get ; set; }
   
   /// <summary>
   /// idx
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// Position.
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Presentation.IPoint2DType? Position { get ; set; }
   
   /// <summary>
   /// Text.
   /// </summary>
-  public IText? Text { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Text { get ; set; }
   
   /// <summary>
   /// CommentExtensionList.
   /// </summary>
-  public ICommentExtensionList? CommentExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CommentExtensionList { get ; set; }
   
 }

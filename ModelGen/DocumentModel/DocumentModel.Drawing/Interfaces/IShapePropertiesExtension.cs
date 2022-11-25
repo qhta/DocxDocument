@@ -8,6 +8,6 @@ public interface IShapePropertiesExtension // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

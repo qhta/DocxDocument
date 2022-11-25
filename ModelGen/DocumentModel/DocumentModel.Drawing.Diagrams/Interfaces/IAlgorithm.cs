@@ -8,11 +8,11 @@ public interface IAlgorithm // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Algorithm Type
   /// </summary>
-  public AlgorithmValues? Type { get ; set; }
+  public DocumentModel.Drawing.Diagrams.AlgorithmKind? Type { get ; set; }
   
   /// <summary>
   /// Revision Number
   /// </summary>
-  public UInt32? Revision { get ; set; }
+  public System.UInt32? Revision { get ; set; }
   
 }

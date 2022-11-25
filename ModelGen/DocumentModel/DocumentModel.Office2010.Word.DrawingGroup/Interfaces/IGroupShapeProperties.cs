@@ -8,11 +8,11 @@ public interface IGroupShapeProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Black and White Mode
   /// </summary>
-  public BlackWhiteModeValues? BlackWhiteMode { get ; set; }
+  public DocumentModel.Drawing.BlackWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// 2D Transform for Grouped Objects.
   /// </summary>
-  public ITransformGroup? TransformGroup { get ; set; }
+  public DocumentModel.Drawing.ITransformGroup? TransformGroup { get ; set; }
   
 }

@@ -8,31 +8,31 @@ public interface ICommentAuthor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// initials
   /// </summary>
-  public String? Initials { get ; set; }
+  public System.String? Initials { get ; set; }
   
   /// <summary>
   /// lastIdx
   /// </summary>
-  public UInt32? LastIndex { get ; set; }
+  public System.UInt32? LastIndex { get ; set; }
   
   /// <summary>
   /// clrIdx
   /// </summary>
-  public UInt32? ColorIndex { get ; set; }
+  public System.UInt32? ColorIndex { get ; set; }
   
   /// <summary>
   /// CommentAuthorExtensionList.
   /// </summary>
-  public ICommentAuthorExtensionList? CommentAuthorExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CommentAuthorExtensionList { get ; set; }
   
 }

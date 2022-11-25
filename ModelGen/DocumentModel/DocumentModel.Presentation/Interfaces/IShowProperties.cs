@@ -8,21 +8,21 @@ public interface IShowProperties // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Loop Slide Show
   /// </summary>
-  public Boolean? Loop { get ; set; }
+  public System.Boolean? Loop { get ; set; }
   
   /// <summary>
   /// Show Narration in Slide Show
   /// </summary>
-  public Boolean? ShowNarration { get ; set; }
+  public System.Boolean? ShowNarration { get ; set; }
   
   /// <summary>
   /// Show Animation in Slide Show
   /// </summary>
-  public Boolean? ShowAnimation { get ; set; }
+  public System.Boolean? ShowAnimation { get ; set; }
   
   /// <summary>
   /// Use Timings in Slide Show
   /// </summary>
-  public Boolean? UseTimings { get ; set; }
+  public System.Boolean? UseTimings { get ; set; }
   
 }

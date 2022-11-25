@@ -8,136 +8,136 @@ public interface IFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Fill Type
   /// </summary>
-  public FillTypeValues? Type { get ; set; }
+  public DocumentModel.Vml.FillTypeKind? Type { get ; set; }
   
   /// <summary>
   /// Fill Toggle
   /// </summary>
-  public ITrueFalseValue? On { get ; set; }
+  public System.Boolean? On { get ; set; }
   
   /// <summary>
   /// Primary Color
   /// </summary>
-  public String? Color { get ; set; }
+  public System.String? Color { get ; set; }
   
   /// <summary>
   /// Primary Color Opacity
   /// </summary>
-  public String? Opacity { get ; set; }
+  public System.String? Opacity { get ; set; }
   
   /// <summary>
   /// Secondary Color
   /// </summary>
-  public String? Color2 { get ; set; }
+  public System.String? Color2 { get ; set; }
   
   /// <summary>
   /// Fill Image Source
   /// </summary>
-  public String? Source { get ; set; }
+  public System.String? Source { get ; set; }
   
   /// <summary>
   /// Hyperlink Target
   /// </summary>
-  public String? Href { get ; set; }
+  public System.String? Href { get ; set; }
   
   /// <summary>
   /// Alternate Image Reference Location
   /// </summary>
-  public String? AlternateImageReference { get ; set; }
+  public System.String? AlternateImageReference { get ; set; }
   
   /// <summary>
   /// Fill Image Size
   /// </summary>
-  public String? Size { get ; set; }
+  public System.String? Size { get ; set; }
   
   /// <summary>
   /// Fill Image Origin
   /// </summary>
-  public String? Origin { get ; set; }
+  public System.String? Origin { get ; set; }
   
   /// <summary>
   /// Fill Image Position
   /// </summary>
-  public String? Position { get ; set; }
+  public System.String? Position { get ; set; }
   
   /// <summary>
   /// Image Aspect Ratio
   /// </summary>
-  public ImageAspectValues? Aspect { get ; set; }
+  public DocumentModel.Vml.ImageAspectKind? Aspect { get ; set; }
   
   /// <summary>
   /// Intermediate Colors
   /// </summary>
-  public String? Colors { get ; set; }
+  public System.String? Colors { get ; set; }
   
   /// <summary>
   /// Gradient Angle
   /// </summary>
-  public Decimal? Angle { get ; set; }
+  public System.Decimal? Angle { get ; set; }
   
   /// <summary>
   /// Align Image With Shape
   /// </summary>
-  public ITrueFalseValue? AlignShape { get ; set; }
+  public System.Boolean? AlignShape { get ; set; }
   
   /// <summary>
   /// Gradient Center
   /// </summary>
-  public String? Focus { get ; set; }
+  public System.String? Focus { get ; set; }
   
   /// <summary>
   /// Radial Gradient Size
   /// </summary>
-  public String? FocusSize { get ; set; }
+  public System.String? FocusSize { get ; set; }
   
   /// <summary>
   /// Radial Gradient Center
   /// </summary>
-  public String? FocusPosition { get ; set; }
+  public System.String? FocusPosition { get ; set; }
   
   /// <summary>
   /// Gradient Fill Method
   /// </summary>
-  public FillMethodValues? Method { get ; set; }
+  public DocumentModel.Vml.FillMethodKind? Method { get ; set; }
   
   /// <summary>
   /// Detect Mouse Click
   /// </summary>
-  public ITrueFalseValue? DetectMouseClick { get ; set; }
+  public System.Boolean? DetectMouseClick { get ; set; }
   
   /// <summary>
   /// Title
   /// </summary>
-  public String? Title { get ; set; }
+  public System.String? Title { get ; set; }
   
   /// <summary>
   /// Secondary Color Opacity
   /// </summary>
-  public String? Opacity2 { get ; set; }
+  public System.String? Opacity2 { get ; set; }
   
   /// <summary>
   /// Recolor Fill as Picture
   /// </summary>
-  public ITrueFalseValue? Recolor { get ; set; }
+  public System.Boolean? Recolor { get ; set; }
   
   /// <summary>
   /// Rotate Fill with Shape
   /// </summary>
-  public ITrueFalseValue? Rotate { get ; set; }
+  public System.Boolean? Rotate { get ; set; }
   
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public String? RelationshipId { get ; set; }
+  public System.String? RelationshipId { get ; set; }
   
   /// <summary>
   /// FillExtendedProperties.
   /// </summary>
-  public IFillExtendedProperties? FillExtendedProperties { get ; set; }
+  public DocumentModel.Vml.Office.IFillExtendedProperties? FillExtendedProperties { get ; set; }
   
 }

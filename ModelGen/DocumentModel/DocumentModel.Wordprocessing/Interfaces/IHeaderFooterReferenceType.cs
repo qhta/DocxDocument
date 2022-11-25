@@ -8,11 +8,11 @@ public interface IHeaderFooterReferenceType // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// type
   /// </summary>
-  public HeaderFooterKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.HeaderFooterKind? Type { get ; set; }
   
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

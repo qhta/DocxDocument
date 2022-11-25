@@ -8,6 +8,6 @@ public interface IPie3DChartExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

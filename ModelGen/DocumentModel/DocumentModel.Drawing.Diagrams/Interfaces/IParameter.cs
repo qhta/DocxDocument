@@ -8,11 +8,11 @@ public interface IParameter // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Parameter Type
   /// </summary>
-  public ParameterIdValues? Type { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ParameterIdKind? Type { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
 }

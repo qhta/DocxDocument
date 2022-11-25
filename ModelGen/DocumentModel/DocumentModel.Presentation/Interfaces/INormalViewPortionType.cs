@@ -8,11 +8,11 @@ public interface INormalViewPortionType // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// Normal View Dimension Size
   /// </summary>
-  public Int32? Size { get ; set; }
+  public System.Int32? Size { get ; set; }
   
   /// <summary>
   /// Auto Adjust Normal View
   /// </summary>
-  public Boolean? AutoAdjust { get ; set; }
+  public System.Boolean? AutoAdjust { get ; set; }
   
 }

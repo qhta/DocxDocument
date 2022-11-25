@@ -8,6 +8,6 @@ public interface IWhole // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Outline.
   /// </summary>
-  public IOutline? Outline { get ; set; }
+  public DocumentModel.Drawing.ILinePropertiesType? Outline { get ; set; }
   
 }

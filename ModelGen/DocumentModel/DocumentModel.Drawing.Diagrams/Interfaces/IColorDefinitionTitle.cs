@@ -8,11 +8,11 @@ public interface IColorDefinitionTitle // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// Language
   /// </summary>
-  public String? Language { get ; set; }
+  public System.String? Language { get ; set; }
   
   /// <summary>
   /// Description Value
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
 }

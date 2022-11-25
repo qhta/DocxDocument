@@ -8,26 +8,26 @@ public interface IAnimateEffect // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Transition
   /// </summary>
-  public AnimateEffectTransitionValues? Transition { get ; set; }
+  public DocumentModel.Presentation.AnimateEffectTransitionKind? Transition { get ; set; }
   
   /// <summary>
   /// Filter
   /// </summary>
-  public String? Filter { get ; set; }
+  public System.String? Filter { get ; set; }
   
   /// <summary>
   /// Property List
   /// </summary>
-  public String? PropertyList { get ; set; }
+  public System.String? PropertyList { get ; set; }
   
   /// <summary>
   /// CommonBehavior.
   /// </summary>
-  public ICommonBehavior? CommonBehavior { get ; set; }
+  public DocumentModel.Presentation.ICommonBehavior? CommonBehavior { get ; set; }
   
   /// <summary>
   /// Progress.
   /// </summary>
-  public IProgress? Progress { get ; set; }
+  public DocumentModel.Presentation.IProgress? Progress { get ; set; }
   
 }

@@ -8,36 +8,36 @@ public interface IView3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// X Rotation.
   /// </summary>
-  public IRotateX? RotateX { get ; set; }
+  public System.SByte? RotateX { get ; set; }
   
   /// <summary>
   /// Height Percent.
   /// </summary>
-  public IHeightPercent? HeightPercent { get ; set; }
+  public System.UInt16? HeightPercent { get ; set; }
   
   /// <summary>
   /// Y Rotation.
   /// </summary>
-  public IRotateY? RotateY { get ; set; }
+  public System.UInt16? RotateY { get ; set; }
   
   /// <summary>
   /// Depth Percent.
   /// </summary>
-  public IDepthPercent? DepthPercent { get ; set; }
+  public System.UInt16? DepthPercent { get ; set; }
   
   /// <summary>
   /// Right Angle Axes.
   /// </summary>
-  public IRightAngleAxes? RightAngleAxes { get ; set; }
+  public System.Boolean? RightAngleAxes { get ; set; }
   
   /// <summary>
   /// Perspective.
   /// </summary>
-  public IPerspective? Perspective { get ; set; }
+  public System.Byte? Perspective { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

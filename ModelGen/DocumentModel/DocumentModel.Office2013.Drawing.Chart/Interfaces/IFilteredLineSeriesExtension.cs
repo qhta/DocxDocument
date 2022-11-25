@@ -8,6 +8,6 @@ public interface IFilteredLineSeriesExtension // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// LineChartSeries.
   /// </summary>
-  public ILineChartSeries? LineChartSeries { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.ILineChartSeries? LineChartSeries { get ; set; }
   
 }

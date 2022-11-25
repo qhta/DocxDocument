@@ -8,96 +8,96 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>
-  public DocumentProtectionKind? Edit { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit { get ; set; }
   
   /// <summary>
   /// Only Allow Formatting With Unlocked Styles
   /// </summary>
-  public Boolean? Formatting { get ; set; }
+  public System.Boolean? Formatting { get ; set; }
   
   /// <summary>
   /// Enforce Document Protection Settings
   /// </summary>
-  public Boolean? Enforcement { get ; set; }
+  public System.Boolean? Enforcement { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider Type
   /// </summary>
-  public CryptProviderKind? CryptographicProviderType { get ; set; }
+  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Class
   /// </summary>
-  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
+  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Type
   /// </summary>
-  public CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
+  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
   
   /// <summary>
   /// Cryptographic Hashing Algorithm
   /// </summary>
-  public Int32? CryptographicAlgorithmSid { get ; set; }
+  public System.Int32? CryptographicAlgorithmSid { get ; set; }
   
   /// <summary>
   /// Iterations to Run Hashing Algorithm
   /// </summary>
-  public UInt32? CryptographicSpinCount { get ; set; }
+  public System.UInt32? CryptographicSpinCount { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider
   /// </summary>
-  public String? CryptographicProvider { get ; set; }
+  public System.String? CryptographicProvider { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public IHexBinaryValue? AlgorithmIdExtensibility { get ; set; }
+  public DocumentModel.IHexBinaryValue? AlgorithmIdExtensibility { get ; set; }
   
   /// <summary>
   /// Algorithm Extensibility Source
   /// </summary>
-  public String? AlgorithmIdExtensibilitySource { get ; set; }
+  public System.String? AlgorithmIdExtensibilitySource { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public IHexBinaryValue? CryptographicProviderTypeExtensibility { get ; set; }
+  public DocumentModel.IHexBinaryValue? CryptographicProviderTypeExtensibility { get ; set; }
   
   /// <summary>
   /// Provider Type Extensibility Source
   /// </summary>
-  public String? CryptographicProviderTypeExtSource { get ; set; }
+  public System.String? CryptographicProviderTypeExtSource { get ; set; }
   
   /// <summary>
   /// Password Hash
   /// </summary>
-  public IBase64BinaryValue? Hash { get ; set; }
+  public DocumentModel.IBase64BinaryValue? Hash { get ; set; }
   
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public IBase64BinaryValue? Salt { get ; set; }
+  public DocumentModel.IBase64BinaryValue? Salt { get ; set; }
   
   /// <summary>
   /// algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AlgorithmName { get ; set; }
+  public System.String? AlgorithmName { get ; set; }
   
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public IBase64BinaryValue? HashValue { get ; set; }
+  public DocumentModel.IBase64BinaryValue? HashValue { get ; set; }
   
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public IBase64BinaryValue? SaltValue { get ; set; }
+  public DocumentModel.IBase64BinaryValue? SaltValue { get ; set; }
   
   /// <summary>
   /// spinCount, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? SpinCount { get ; set; }
+  public System.Int32? SpinCount { get ; set; }
   
 }

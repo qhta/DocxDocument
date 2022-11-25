@@ -8,170 +8,90 @@ public interface IGlossaryDocumentPart // : DocumentModel.Packaging.ITypedOpenXm
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>? AlternativeFormatImportParts { get ; set; }
+  public DocumentModel.Packaging.IAlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ChartPart>? ChartParts { get ; set; }
+  public DocumentModel.Packaging.IChartPart? ChartParts { get ; set; }
   
-  public String? ContentType { get ; set; }
-  
-  /// <summary>
-  /// Gets the CustomizationPart of the GlossaryDocumentPart
-  /// </summary>
-  public CustomizationPart? CustomizationPart { get ; set; }
+  public System.String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>? DiagramColorsParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramColorsPart? DiagramColorsParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramDataParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramDataPart>? DiagramDataParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramDataPart? DiagramDataParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramPersistLayoutPart? DiagramPersistLayoutParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramStyleParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramStylePart>? DiagramStyleParts { get ; set; }
-  
-  /// <summary>
-  /// Gets the DocumentSettingsPart of the GlossaryDocumentPart
-  /// </summary>
-  public IDocumentSettingsPart? DocumentSettingsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the DocumentTasksPart of the GlossaryDocumentPart
-  /// </summary>
-  public DocumentTasksPart? DocumentTasksPart { get ; set; }
+  public DocumentModel.Packaging.IDiagramStylePart? DiagramStyleParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedControlPersistencePart? EmbeddedControlPersistenceParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedObjectParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts { get ; set; }
-  
-  /// <summary>
-  /// Gets the EndnotesPart of the GlossaryDocumentPart
-  /// </summary>
-  public IEndnotesPart? EndnotesPart { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>? ExtendedChartParts { get ; set; }
-  
-  /// <summary>
-  /// Gets the FontTablePart of the GlossaryDocumentPart
-  /// </summary>
-  public IFontTablePart? FontTablePart { get ; set; }
+  public DocumentModel.Packaging.IExtendedChartPart? ExtendedChartParts { get ; set; }
   
   /// <summary>
   /// Gets the FooterParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.FooterPart>? FooterParts { get ; set; }
-  
-  /// <summary>
-  /// Gets the FootnotesPart of the GlossaryDocumentPart
-  /// </summary>
-  public IFootnotesPart? FootnotesPart { get ; set; }
+  public DocumentModel.Packaging.IFooterPart? FooterParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public IGlossaryDocument? GlossaryDocument { get ; set; }
+  public DocumentModel.Wordprocessing.IGlossaryDocument? GlossaryDocument { get ; set; }
   
   /// <summary>
   /// Gets the HeaderParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.HeaderPart>? HeaderParts { get ; set; }
+  public DocumentModel.Packaging.IHeaderPart? HeaderParts { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ImagePart>? ImageParts { get ; set; }
+  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get ; set; }
+  public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
-  /// <summary>
-  /// Gets the NumberingDefinitionsPart of the GlossaryDocumentPart
-  /// </summary>
-  public INumberingDefinitionsPart? NumberingDefinitionsPart { get ; set; }
-  
-  public String? RelationshipType { get ; set; }
-  
-  /// <summary>
-  /// Gets the StyleDefinitionsPart of the GlossaryDocumentPart
-  /// </summary>
-  public StyleDefinitionsPart? StyleDefinitionsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the StylesWithEffectsPart of the GlossaryDocumentPart
-  /// </summary>
-  public StylesWithEffectsPart? StylesWithEffectsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the VbaProjectPart of the GlossaryDocumentPart
-  /// </summary>
-  public VbaProjectPart? VbaProjectPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WebSettingsPart of the GlossaryDocumentPart
-  /// </summary>
-  public IWebSettingsPart? WebSettingsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WordCommentsExtensiblePart of the GlossaryDocumentPart
-  /// </summary>
-  public WordCommentsExtensiblePart? WordCommentsExtensiblePart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WordprocessingCommentsExPart of the GlossaryDocumentPart
-  /// </summary>
-  public WordprocessingCommentsExPart? WordprocessingCommentsExPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WordprocessingCommentsIdsPart of the GlossaryDocumentPart
-  /// </summary>
-  public WordprocessingCommentsIdsPart? WordprocessingCommentsIdsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WordprocessingCommentsPart of the GlossaryDocumentPart
-  /// </summary>
-  public IWordprocessingCommentsPart? WordprocessingCommentsPart { get ; set; }
-  
-  /// <summary>
-  /// Gets the WordprocessingPeoplePart of the GlossaryDocumentPart
-  /// </summary>
-  public WordprocessingPeoplePart? WordprocessingPeoplePart { get ; set; }
+  public System.String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart>? WordprocessingPrinterSettingsParts { get ; set; }
+  public DocumentModel.Packaging.IWordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts { get ; set; }
   
 }

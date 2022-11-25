@@ -8,41 +8,41 @@ public interface IDataPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index.
   /// </summary>
-  public Index? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// Invert if Negative.
   /// </summary>
-  public InvertIfNegative? InvertIfNegative { get ; set; }
+  public System.Boolean? InvertIfNegative { get ; set; }
   
   /// <summary>
   /// Marker.
   /// </summary>
-  public IMarker? Marker { get ; set; }
+  public DocumentModel.Drawing.Charts.IMarker? Marker { get ; set; }
   
   /// <summary>
   /// 3D Bubble.
   /// </summary>
-  public IBubble3D? Bubble3D { get ; set; }
+  public System.Boolean? Bubble3D { get ; set; }
   
   /// <summary>
   /// Explosion.
   /// </summary>
-  public IExplosion? Explosion { get ; set; }
+  public System.UInt32? Explosion { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public IPictureOptions? PictureOptions { get ; set; }
+  public DocumentModel.Drawing.Charts.IPictureOptions? PictureOptions { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

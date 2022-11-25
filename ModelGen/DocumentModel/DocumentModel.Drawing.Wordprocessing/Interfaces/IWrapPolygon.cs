@@ -8,11 +8,11 @@ public interface IWrapPolygon // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Wrapping Points Modified
   /// </summary>
-  public Boolean? Edited { get ; set; }
+  public System.Boolean? Edited { get ; set; }
   
   /// <summary>
   /// Wrapping Polygon Start.
   /// </summary>
-  public IStartPoint? StartPoint { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.IPoint2DType? StartPoint { get ; set; }
   
 }

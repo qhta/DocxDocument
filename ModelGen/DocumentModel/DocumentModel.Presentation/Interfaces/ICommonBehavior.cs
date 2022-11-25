@@ -8,56 +8,56 @@ public interface ICommonBehavior // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Additive
   /// </summary>
-  public BehaviorAdditiveValues? Additive { get ; set; }
+  public DocumentModel.Presentation.BehaviorAdditiveKind? Additive { get ; set; }
   
   /// <summary>
   /// Accumulate
   /// </summary>
-  public BehaviorAccumulateValues? Accumulate { get ; set; }
+  public DocumentModel.Presentation.BehaviorAccumulateKind? Accumulate { get ; set; }
   
   /// <summary>
   /// Transform Type
   /// </summary>
-  public BehaviorTransformValues? TransformType { get ; set; }
+  public DocumentModel.Presentation.BehaviorTransformKind? TransformType { get ; set; }
   
   /// <summary>
   /// From
   /// </summary>
-  public String? From { get ; set; }
+  public System.String? From { get ; set; }
   
   /// <summary>
   /// To
   /// </summary>
-  public String? To { get ; set; }
+  public System.String? To { get ; set; }
   
   /// <summary>
   /// By
   /// </summary>
-  public String? By { get ; set; }
+  public System.String? By { get ; set; }
   
   /// <summary>
   /// Runtime Context
   /// </summary>
-  public String? RuntimeContext { get ; set; }
+  public System.String? RuntimeContext { get ; set; }
   
   /// <summary>
   /// Override
   /// </summary>
-  public BehaviorOverrideValues? Override { get ; set; }
+  public DocumentModel.Presentation.BehaviorOverrideKind? Override { get ; set; }
   
   /// <summary>
   /// CommonTimeNode.
   /// </summary>
-  public ICommonTimeNode? CommonTimeNode { get ; set; }
+  public DocumentModel.Presentation.ICommonTimeNode? CommonTimeNode { get ; set; }
   
   /// <summary>
   /// Target Element.
   /// </summary>
-  public ITargetElement? TargetElement { get ; set; }
+  public DocumentModel.Presentation.ITargetElement? TargetElement { get ; set; }
   
   /// <summary>
   /// Attribute Name List.
   /// </summary>
-  public IAttributeNameList? AttributeNameList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? AttributeNameList { get ; set; }
   
 }

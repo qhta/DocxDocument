@@ -8,6 +8,6 @@ public interface ILatency // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// value
   /// </summary>
-  public Decimal? Value { get ; set; }
+  public System.Decimal? Value { get ; set; }
   
 }

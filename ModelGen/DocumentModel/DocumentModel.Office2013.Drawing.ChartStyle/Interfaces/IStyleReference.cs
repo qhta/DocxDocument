@@ -8,11 +8,11 @@ public interface IStyleReference // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// idx, this property is only available in Office 2013 and later.
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? Modifiers { get ; set; }
+  public System.Collections.Generic.List<System.String>? Modifiers { get ; set; }
   
 }

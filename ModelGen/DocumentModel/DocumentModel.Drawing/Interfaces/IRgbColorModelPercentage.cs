@@ -8,16 +8,16 @@ public interface IRgbColorModelPercentage // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Red
   /// </summary>
-  public Int32? RedPortion { get ; set; }
+  public System.Int32? RedPortion { get ; set; }
   
   /// <summary>
   /// Green
   /// </summary>
-  public Int32? GreenPortion { get ; set; }
+  public System.Int32? GreenPortion { get ; set; }
   
   /// <summary>
   /// Blue
   /// </summary>
-  public Int32? BluePortion { get ; set; }
+  public System.Int32? BluePortion { get ; set; }
   
 }

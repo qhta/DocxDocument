@@ -8,6 +8,6 @@ public interface IBrowseSlideMode // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Show Scroll Bar in Window
   /// </summary>
-  public Boolean? ShowScrollbar { get ; set; }
+  public System.Boolean? ShowScrollbar { get ; set; }
   
 }

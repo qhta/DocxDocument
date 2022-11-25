@@ -8,16 +8,16 @@ public interface IPatternFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Preset Pattern
   /// </summary>
-  public PresetPatternValues? Preset { get ; set; }
+  public DocumentModel.Drawing.PresetPatternKind? Preset { get ; set; }
   
   /// <summary>
   /// Foreground color.
   /// </summary>
-  public IForegroundColor? ForegroundColor { get ; set; }
+  public DocumentModel.Drawing.IColorType? ForegroundColor { get ; set; }
   
   /// <summary>
   /// Background color.
   /// </summary>
-  public IBackgroundColor? BackgroundColor { get ; set; }
+  public DocumentModel.Drawing.IColorType? BackgroundColor { get ; set; }
   
 }

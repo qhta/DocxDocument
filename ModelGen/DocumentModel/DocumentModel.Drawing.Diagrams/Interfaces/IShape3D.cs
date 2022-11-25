@@ -8,46 +8,46 @@ public interface IShape3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape Depth
   /// </summary>
-  public Int64? Z { get ; set; }
+  public System.Int64? Z { get ; set; }
   
   /// <summary>
   /// Extrusion Height
   /// </summary>
-  public Int64? ExtrusionHeight { get ; set; }
+  public System.Int64? ExtrusionHeight { get ; set; }
   
   /// <summary>
   /// Contour Width
   /// </summary>
-  public Int64? ContourWidth { get ; set; }
+  public System.Int64? ContourWidth { get ; set; }
   
   /// <summary>
   /// Preset Material Type
   /// </summary>
-  public PresetMaterialTypeValues? PresetMaterial { get ; set; }
+  public DocumentModel.Drawing.PresetMaterialTypeKind? PresetMaterial { get ; set; }
   
   /// <summary>
   /// Top Bevel.
   /// </summary>
-  public IBevelTop? BevelTop { get ; set; }
+  public DocumentModel.Drawing.IBevelType? BevelTop { get ; set; }
   
   /// <summary>
   /// Bottom Bevel.
   /// </summary>
-  public IBevelBottom? BevelBottom { get ; set; }
+  public DocumentModel.Drawing.IBevelType? BevelBottom { get ; set; }
   
   /// <summary>
   /// Extrusion Color.
   /// </summary>
-  public IExtrusionColor? ExtrusionColor { get ; set; }
+  public DocumentModel.Drawing.IColorType? ExtrusionColor { get ; set; }
   
   /// <summary>
   /// Contour Color.
   /// </summary>
-  public IContourColor? ContourColor { get ; set; }
+  public DocumentModel.Drawing.IColorType? ContourColor { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

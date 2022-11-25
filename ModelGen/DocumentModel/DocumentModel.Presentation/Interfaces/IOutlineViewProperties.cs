@@ -8,16 +8,16 @@ public interface IOutlineViewProperties // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// Common View Properties.
   /// </summary>
-  public ICommonViewProperties? CommonViewProperties { get ; set; }
+  public DocumentModel.Presentation.ICommonViewProperties? CommonViewProperties { get ; set; }
   
   /// <summary>
   /// List of Presentation Slides.
   /// </summary>
-  public IOutlineViewSlideList? OutlineViewSlideList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OutlineViewSlideList { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

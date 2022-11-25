@@ -8,11 +8,11 @@ public interface INonVisualGraphicFrameProperties // : DocumentModel.ITypedOpenX
   /// <summary>
   /// Connection Non-Visual Properties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Graphic Frame Drawing Properties.
   /// </summary>
-  public INonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.INonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get ; set; }
   
 }

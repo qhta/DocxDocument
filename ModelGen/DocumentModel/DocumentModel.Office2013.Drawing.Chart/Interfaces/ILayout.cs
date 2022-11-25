@@ -8,11 +8,11 @@ public interface ILayout // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Manual Layout.
   /// </summary>
-  public IManualLayout? ManualLayout { get ; set; }
+  public DocumentModel.Drawing.Charts.IManualLayout? ManualLayout { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

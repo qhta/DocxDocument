@@ -8,11 +8,11 @@ public interface IConnectionType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Identifier
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// Index
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
 }

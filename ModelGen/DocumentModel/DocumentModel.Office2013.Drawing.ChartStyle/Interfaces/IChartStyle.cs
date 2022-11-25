@@ -8,171 +8,166 @@ public interface IChartStyle // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// AxisTitle.
   /// </summary>
-  public IAxisTitle? AxisTitle { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? AxisTitle { get ; set; }
   
   /// <summary>
   /// CategoryAxis.
   /// </summary>
-  public ICategoryAxis? CategoryAxis { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? CategoryAxis { get ; set; }
   
   /// <summary>
   /// ChartArea.
   /// </summary>
-  public IChartArea? ChartArea { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? ChartArea { get ; set; }
   
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public IDataLabel? DataLabel { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataLabel { get ; set; }
   
   /// <summary>
   /// DataLabelCallout.
   /// </summary>
-  public IDataLabelCallout? DataLabelCallout { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataLabelCallout { get ; set; }
   
   /// <summary>
   /// DataPoint.
   /// </summary>
-  public IDataPoint? DataPoint { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataPoint { get ; set; }
   
   /// <summary>
   /// DataPoint3D.
   /// </summary>
-  public IDataPoint3D? DataPoint3D { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataPoint3D { get ; set; }
   
   /// <summary>
   /// DataPointLine.
   /// </summary>
-  public IDataPointLine? DataPointLine { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataPointLine { get ; set; }
   
   /// <summary>
   /// DataPointMarker.
   /// </summary>
-  public IDataPointMarker? DataPointMarker { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataPointMarker { get ; set; }
   
   /// <summary>
   /// MarkerLayoutProperties.
   /// </summary>
-  public IMarkerLayoutProperties? MarkerLayoutProperties { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IMarkerLayoutProperties? MarkerLayoutProperties { get ; set; }
   
   /// <summary>
   /// DataPointWireframe.
   /// </summary>
-  public IDataPointWireframe? DataPointWireframe { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataPointWireframe { get ; set; }
   
   /// <summary>
   /// DataTableStyle.
   /// </summary>
-  public IDataTableStyle? DataTableStyle { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DataTableStyle { get ; set; }
   
   /// <summary>
   /// DownBar.
   /// </summary>
-  public IDownBar? DownBar { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DownBar { get ; set; }
   
   /// <summary>
   /// DropLine.
   /// </summary>
-  public IDropLine? DropLine { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? DropLine { get ; set; }
   
   /// <summary>
   /// ErrorBar.
   /// </summary>
-  public IErrorBar? ErrorBar { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? ErrorBar { get ; set; }
   
   /// <summary>
   /// Floor.
   /// </summary>
-  public IFloor? Floor { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? Floor { get ; set; }
   
   /// <summary>
   /// GridlineMajor.
   /// </summary>
-  public IGridlineMajor? GridlineMajor { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? GridlineMajor { get ; set; }
   
   /// <summary>
   /// GridlineMinor.
   /// </summary>
-  public IGridlineMinor? GridlineMinor { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? GridlineMinor { get ; set; }
   
   /// <summary>
   /// HiLoLine.
   /// </summary>
-  public IHiLoLine? HiLoLine { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? HiLoLine { get ; set; }
   
   /// <summary>
   /// LeaderLine.
   /// </summary>
-  public ILeaderLine? LeaderLine { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? LeaderLine { get ; set; }
   
   /// <summary>
   /// LegendStyle.
   /// </summary>
-  public ILegendStyle? LegendStyle { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? LegendStyle { get ; set; }
   
   /// <summary>
   /// PlotArea.
   /// </summary>
-  public IPlotArea? PlotArea { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? PlotArea { get ; set; }
   
   /// <summary>
   /// PlotArea3D.
   /// </summary>
-  public IPlotArea3D? PlotArea3D { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? PlotArea3D { get ; set; }
   
   /// <summary>
   /// SeriesAxis.
   /// </summary>
-  public ISeriesAxis? SeriesAxis { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? SeriesAxis { get ; set; }
   
   /// <summary>
   /// SeriesLine.
   /// </summary>
-  public ISeriesLine? SeriesLine { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? SeriesLine { get ; set; }
   
   /// <summary>
   /// TitleStyle.
   /// </summary>
-  public ITitleStyle? TitleStyle { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? TitleStyle { get ; set; }
   
   /// <summary>
   /// TrendlineStyle.
   /// </summary>
-  public ITrendlineStyle? TrendlineStyle { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? TrendlineStyle { get ; set; }
   
   /// <summary>
   /// TrendlineLabel.
   /// </summary>
-  public ITrendlineLabel? TrendlineLabel { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// UpBar.
   /// </summary>
-  public IUpBar? UpBar { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? UpBar { get ; set; }
   
   /// <summary>
   /// ValueAxis.
   /// </summary>
-  public IValueAxis? ValueAxis { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? ValueAxis { get ; set; }
   
   /// <summary>
   /// Wall.
   /// </summary>
-  public IWall? Wall { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleEntry? Wall { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
-  
-  /// <summary>
-  /// Gets the ChartStylePart associated with this element.
-  /// </summary>
-  public ChartStylePart? ChartStylePart { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

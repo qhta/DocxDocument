@@ -8,16 +8,16 @@ public interface IFraction // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Fraction Properties.
   /// </summary>
-  public IFractionProperties? FractionProperties { get ; set; }
+  public DocumentModel.Math.IFractionProperties? FractionProperties { get ; set; }
   
   /// <summary>
   /// Numerator.
   /// </summary>
-  public INumerator? Numerator { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Numerator { get ; set; }
   
   /// <summary>
   /// Denominator.
   /// </summary>
-  public IDenominator? Denominator { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Denominator { get ; set; }
   
 }

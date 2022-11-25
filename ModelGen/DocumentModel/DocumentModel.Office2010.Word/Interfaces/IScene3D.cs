@@ -8,11 +8,11 @@ public interface IScene3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Camera.
   /// </summary>
-  public ICamera? Camera { get ; set; }
+  public DocumentModel.Office2010.Word.ICamera? Camera { get ; set; }
   
   /// <summary>
   /// LightRig.
   /// </summary>
-  public ILightRig? LightRig { get ; set; }
+  public DocumentModel.Office2010.Word.ILightRig? LightRig { get ; set; }
   
 }

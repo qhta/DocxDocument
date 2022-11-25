@@ -8,11 +8,11 @@ public interface IBarProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Position (Bar).
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Math.VerticalJustificationKind? Position { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

@@ -8,41 +8,41 @@ public interface ITrace // : DocumentModel.ITypedOpenXmlLeafTextElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public TraceTypeValues? Type { get ; set; }
+  public DocumentModel.InkML.TraceTypeKind? Type { get ; set; }
   
   /// <summary>
   /// continuation
   /// </summary>
-  public TraceContinuationValues? Continuation { get ; set; }
+  public DocumentModel.InkML.TraceContinuationKind? Continuation { get ; set; }
   
   /// <summary>
   /// priorRef
   /// </summary>
-  public String? PriorRef { get ; set; }
+  public System.String? PriorRef { get ; set; }
   
   /// <summary>
   /// contextRef
   /// </summary>
-  public String? ContextRef { get ; set; }
+  public System.String? ContextRef { get ; set; }
   
   /// <summary>
   /// brushRef
   /// </summary>
-  public String? BrushRef { get ; set; }
+  public System.String? BrushRef { get ; set; }
   
   /// <summary>
   /// duration
   /// </summary>
-  public Decimal? Duration { get ; set; }
+  public System.Decimal? Duration { get ; set; }
   
   /// <summary>
   /// timeOffset
   /// </summary>
-  public Decimal? TimeOffset { get ; set; }
+  public System.Decimal? TimeOffset { get ; set; }
   
 }

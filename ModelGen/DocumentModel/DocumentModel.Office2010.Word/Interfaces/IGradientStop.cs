@@ -8,16 +8,16 @@ public interface IGradientStop // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// pos, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? StopPosition { get ; set; }
+  public System.Int32? StopPosition { get ; set; }
   
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public DocumentModel.IHexBinaryValue? RgbColorModelHex { get ; set; }
   
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  public ISchemeColor? SchemeColor { get ; set; }
+  public DocumentModel.Office2010.Word.SchemeColorKind? SchemeColor { get ; set; }
   
 }

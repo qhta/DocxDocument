@@ -8,21 +8,21 @@ public interface ICell3DProperties // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Preset Material
   /// </summary>
-  public PresetMaterialTypeValues? PresetMaterial { get ; set; }
+  public DocumentModel.Drawing.PresetMaterialTypeKind? PresetMaterial { get ; set; }
   
   /// <summary>
   /// Bevel.
   /// </summary>
-  public IBevel? Bevel { get ; set; }
+  public DocumentModel.Drawing.IBevelType? Bevel { get ; set; }
   
   /// <summary>
   /// Light Rig.
   /// </summary>
-  public ILightRig? LightRig { get ; set; }
+  public DocumentModel.Drawing.ILightRig? LightRig { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

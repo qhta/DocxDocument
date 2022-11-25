@@ -8,36 +8,36 @@ public interface ITableLook // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// val
   /// </summary>
-  public IHexBinaryValue? Val { get ; set; }
+  public DocumentModel.IHexBinaryValue? Val { get ; set; }
   
   /// <summary>
   /// firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstRow { get ; set; }
+  public System.Boolean? FirstRow { get ; set; }
   
   /// <summary>
   /// lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastRow { get ; set; }
+  public System.Boolean? LastRow { get ; set; }
   
   /// <summary>
   /// firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstColumn { get ; set; }
+  public System.Boolean? FirstColumn { get ; set; }
   
   /// <summary>
   /// lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastColumn { get ; set; }
+  public System.Boolean? LastColumn { get ; set; }
   
   /// <summary>
   /// noHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoHorizontalBand { get ; set; }
+  public System.Boolean? NoHorizontalBand { get ; set; }
   
   /// <summary>
   /// noVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoVerticalBand { get ; set; }
+  public System.Boolean? NoVerticalBand { get ; set; }
   
 }

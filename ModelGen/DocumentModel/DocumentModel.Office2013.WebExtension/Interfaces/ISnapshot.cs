@@ -8,16 +8,16 @@ public interface ISnapshot // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
-  public String? Embed { get ; set; }
+  public System.String? Embed { get ; set; }
   
   /// <summary>
   /// Linked Picture Reference
   /// </summary>
-  public String? Link { get ; set; }
+  public System.String? Link { get ; set; }
   
   /// <summary>
   /// Compression state for blips.
   /// </summary>
-  public BlipCompressionValues? CompressionState { get ; set; }
+  public DocumentModel.Drawing.BlipCompressionKind? CompressionState { get ; set; }
   
 }

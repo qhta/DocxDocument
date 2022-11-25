@@ -8,11 +8,11 @@ public interface ISetBehavior // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Common Behavior.
   /// </summary>
-  public ICommonBehavior? CommonBehavior { get ; set; }
+  public DocumentModel.Presentation.ICommonBehavior? CommonBehavior { get ; set; }
   
   /// <summary>
   /// To.
   /// </summary>
-  public IToVariantValue? ToVariantValue { get ; set; }
+  public DocumentModel.Presentation.ITimeListAnimationVariantType? ToVariantValue { get ; set; }
   
 }

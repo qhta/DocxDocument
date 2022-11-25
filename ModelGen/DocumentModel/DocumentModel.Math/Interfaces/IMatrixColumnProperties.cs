@@ -8,11 +8,11 @@ public interface IMatrixColumnProperties // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Matrix Column Count.
   /// </summary>
-  public IMatrixColumnCount? MatrixColumnCount { get ; set; }
+  public System.Int32? MatrixColumnCount { get ; set; }
   
   /// <summary>
   /// Matrix Column Justification.
   /// </summary>
-  public IMatrixColumnJustification? MatrixColumnJustification { get ; set; }
+  public DocumentModel.Math.HorizontalAlignmentKind? MatrixColumnJustification { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ITextType // : DocumentModel.ITypedOpenXmlLeafTextElement
   /// <summary>
   /// space
   /// </summary>
-  public SpaceProcessingMode? Space { get ; set; }
+  public DocumentModel.SpaceProcessingMode? Space { get ; set; }
   
 }

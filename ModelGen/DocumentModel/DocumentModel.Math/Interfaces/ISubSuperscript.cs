@@ -8,21 +8,21 @@ public interface ISubSuperscript // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Sub-Superscript Properties.
   /// </summary>
-  public ISubSuperscriptProperties? SubSuperscriptProperties { get ; set; }
+  public DocumentModel.Math.ISubSuperscriptProperties? SubSuperscriptProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
   /// <summary>
   /// Subscript (Sub-Superscript).
   /// </summary>
-  public ISubArgument? SubArgument { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
   
   /// <summary>
   /// Superscript (Sub-Superscript function).
   /// </summary>
-  public ISuperArgument? SuperArgument { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? SuperArgument { get ; set; }
   
 }

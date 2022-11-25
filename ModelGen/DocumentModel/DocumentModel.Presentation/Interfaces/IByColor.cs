@@ -8,11 +8,11 @@ public interface IByColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// RGB.
   /// </summary>
-  public IRgbColor? RgbColor { get ; set; }
+  public DocumentModel.Presentation.IRgbColor? RgbColor { get ; set; }
   
   /// <summary>
   /// HSL.
   /// </summary>
-  public IHslColor? HslColor { get ; set; }
+  public DocumentModel.Presentation.IHslColor? HslColor { get ; set; }
   
 }

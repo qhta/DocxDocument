@@ -8,36 +8,36 @@ public interface ICategoryFilterException // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public ISequenceOfReferences? SequenceOfReferences { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SequenceOfReferences { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Explosion.
   /// </summary>
-  public IExplosion? Explosion { get ; set; }
+  public System.UInt32? Explosion { get ; set; }
   
   /// <summary>
   /// InvertIfNegativeBoolean.
   /// </summary>
-  public InvertIfNegativeBoolean? InvertIfNegativeBoolean { get ; set; }
+  public System.Boolean? InvertIfNegativeBoolean { get ; set; }
   
   /// <summary>
   /// Bubble3D.
   /// </summary>
-  public IBubble3D? Bubble3D { get ; set; }
+  public System.Boolean? Bubble3D { get ; set; }
   
   /// <summary>
   /// Marker.
   /// </summary>
-  public IMarker? Marker { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IMarker? Marker { get ; set; }
   
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public IDataLabel? DataLabel { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IDataLabel? DataLabel { get ; set; }
   
 }

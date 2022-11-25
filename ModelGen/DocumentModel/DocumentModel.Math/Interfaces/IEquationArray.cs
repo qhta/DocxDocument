@@ -8,6 +8,6 @@ public interface IEquationArray // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Equation Array Properties.
   /// </summary>
-  public IEquationArrayProperties? EquationArrayProperties { get ; set; }
+  public DocumentModel.Math.IEquationArrayProperties? EquationArrayProperties { get ; set; }
   
 }

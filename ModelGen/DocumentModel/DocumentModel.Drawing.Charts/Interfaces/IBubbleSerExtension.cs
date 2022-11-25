@@ -8,6 +8,6 @@ public interface IBubbleSerExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

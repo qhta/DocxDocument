@@ -8,11 +8,11 @@ public interface ITextBodyType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Body Properties.
   /// </summary>
-  public IBodyProperties? BodyProperties { get ; set; }
+  public DocumentModel.Drawing.IBodyProperties? BodyProperties { get ; set; }
   
   /// <summary>
   /// Text List Styles.
   /// </summary>
-  public IListStyle? ListStyle { get ; set; }
+  public DocumentModel.Drawing.IListStyle? ListStyle { get ; set; }
   
 }

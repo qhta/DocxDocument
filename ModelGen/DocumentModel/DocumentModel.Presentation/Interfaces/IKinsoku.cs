@@ -8,16 +8,16 @@ public interface IKinsoku // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Language
   /// </summary>
-  public String? Language { get ; set; }
+  public System.String? Language { get ; set; }
   
   /// <summary>
   /// Invalid Kinsoku Start Characters
   /// </summary>
-  public String? InvalidStartChars { get ; set; }
+  public System.String? InvalidStartChars { get ; set; }
   
   /// <summary>
   /// Invalid Kinsoku End Characters
   /// </summary>
-  public String? InvalidEndChars { get ; set; }
+  public System.String? InvalidEndChars { get ; set; }
   
 }

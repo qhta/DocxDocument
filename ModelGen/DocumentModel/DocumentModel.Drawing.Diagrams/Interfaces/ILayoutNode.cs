@@ -8,21 +8,21 @@ public interface ILayoutNode // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// Style Label
   /// </summary>
-  public String? StyleLabel { get ; set; }
+  public System.String? StyleLabel { get ; set; }
   
   /// <summary>
   /// Child Order
   /// </summary>
-  public ChildOrderValues? ChildOrder { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ChildOrderKind? ChildOrder { get ; set; }
   
   /// <summary>
   /// Move With
   /// </summary>
-  public String? MoveWith { get ; set; }
+  public System.String? MoveWith { get ; set; }
   
 }

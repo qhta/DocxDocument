@@ -8,36 +8,36 @@ public interface IDocPartProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Entry Name.
   /// </summary>
-  public IDocPartName? DocPartName { get ; set; }
+  public DocumentModel.Wordprocessing.IDocPartName? DocPartName { get ; set; }
   
   /// <summary>
   /// Associated Paragraph Style Name.
   /// </summary>
-  public IStyleId? StyleId { get ; set; }
+  public System.String? StyleId { get ; set; }
   
   /// <summary>
   /// Entry Categorization.
   /// </summary>
-  public ICategory? Category { get ; set; }
+  public DocumentModel.Wordprocessing.ICategory? Category { get ; set; }
   
   /// <summary>
   /// Entry Types.
   /// </summary>
-  public IDocPartTypes? DocPartTypes { get ; set; }
+  public DocumentModel.Wordprocessing.IDocPartTypes? DocPartTypes { get ; set; }
   
   /// <summary>
   /// Entry Insertion Behaviors.
   /// </summary>
-  public IBehaviors? Behaviors { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Behaviors { get ; set; }
   
   /// <summary>
   /// Description for Entry.
   /// </summary>
-  public IDescription? Description { get ; set; }
+  public System.String? Description { get ; set; }
   
   /// <summary>
   /// Entry ID.
   /// </summary>
-  public IStringValue? DocPartId { get ; set; }
+  public System.String? DocPartId { get ; set; }
   
 }

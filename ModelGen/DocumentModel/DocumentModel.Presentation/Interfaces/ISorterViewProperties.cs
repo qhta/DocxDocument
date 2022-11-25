@@ -8,16 +8,16 @@ public interface ISorterViewProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Show Formatting
   /// </summary>
-  public Boolean? ShowFormatting { get ; set; }
+  public System.Boolean? ShowFormatting { get ; set; }
   
   /// <summary>
   /// Base properties for Slide Sorter View.
   /// </summary>
-  public ICommonViewProperties? CommonViewProperties { get ; set; }
+  public DocumentModel.Presentation.ICommonViewProperties? CommonViewProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IBackgroundProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Shade to Title
   /// </summary>
-  public Boolean? ShadeToTitle { get ; set; }
+  public System.Boolean? ShadeToTitle { get ; set; }
   
 }

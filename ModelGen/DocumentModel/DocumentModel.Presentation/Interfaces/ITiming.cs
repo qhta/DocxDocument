@@ -8,16 +8,16 @@ public interface ITiming // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TimeNodeList.
   /// </summary>
-  public ITimeNodeList? TimeNodeList { get ; set; }
+  public DocumentModel.Presentation.ITimeNodeList? TimeNodeList { get ; set; }
   
   /// <summary>
   /// Build List.
   /// </summary>
-  public IBuildList? BuildList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? BuildList { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.
   /// </summary>
-  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
+  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

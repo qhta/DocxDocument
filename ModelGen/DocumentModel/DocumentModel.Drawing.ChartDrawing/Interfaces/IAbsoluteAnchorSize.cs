@@ -8,11 +8,11 @@ public interface IAbsoluteAnchorSize // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// FromAnchor.
   /// </summary>
-  public IFromAnchor? FromAnchor { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.IMarkerType? FromAnchor { get ; set; }
   
   /// <summary>
   /// Shape Extent.
   /// </summary>
-  public IExtent? Extent { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.IExtent? Extent { get ; set; }
   
 }

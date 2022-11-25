@@ -8,6 +8,6 @@ public interface ICharacterBullet // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Bullet Character
   /// </summary>
-  public String? Char { get ; set; }
+  public System.String? Char { get ; set; }
   
 }

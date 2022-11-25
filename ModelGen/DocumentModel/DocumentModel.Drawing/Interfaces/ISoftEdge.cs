@@ -8,6 +8,6 @@ public interface ISoftEdge // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Radius
   /// </summary>
-  public Int64? Radius { get ; set; }
+  public System.Int64? Radius { get ; set; }
   
 }

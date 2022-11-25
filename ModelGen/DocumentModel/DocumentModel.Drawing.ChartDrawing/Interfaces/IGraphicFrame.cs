@@ -8,26 +8,26 @@ public interface IGraphicFrame // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  public String? Macro { get ; set; }
+  public System.String? Macro { get ; set; }
   
   /// <summary>
   /// Publish To Server
   /// </summary>
-  public Boolean? Published { get ; set; }
+  public System.Boolean? Published { get ; set; }
   
   /// <summary>
   /// Non-Visual Graphic Frame Properties.
   /// </summary>
-  public INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
   
   /// <summary>
   /// Graphic Frame Transform.
   /// </summary>
-  public ITransform? Transform { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.ITransform? Transform { get ; set; }
   
   /// <summary>
   /// Graphical Object.
   /// </summary>
-  public IGraphic? Graphic { get ; set; }
+  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
   
 }

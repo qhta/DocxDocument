@@ -8,26 +8,26 @@ public interface IBuildGraphics // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape ID
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
   /// <summary>
   /// Group ID
   /// </summary>
-  public UInt32? GroupId { get ; set; }
+  public System.UInt32? GroupId { get ; set; }
   
   /// <summary>
   /// Expand UI
   /// </summary>
-  public Boolean? UiExpand { get ; set; }
+  public System.Boolean? UiExpand { get ; set; }
   
   /// <summary>
   /// Build As One.
   /// </summary>
-  public IBuildAsOne? BuildAsOne { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? BuildAsOne { get ; set; }
   
   /// <summary>
   /// Build Sub Elements.
   /// </summary>
-  public IBuildSubElement? BuildSubElement { get ; set; }
+  public DocumentModel.Presentation.IBuildSubElement? BuildSubElement { get ; set; }
   
 }

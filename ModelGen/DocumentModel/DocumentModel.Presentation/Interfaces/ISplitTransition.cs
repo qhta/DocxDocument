@@ -8,11 +8,11 @@ public interface ISplitTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Orientation
   /// </summary>
-  public DirectionValues? Orientation { get ; set; }
+  public DocumentModel.Presentation.DirectionKind? Orientation { get ; set; }
   
   /// <summary>
   /// Direction
   /// </summary>
-  public TransitionInOutDirectionValues? Direction { get ; set; }
+  public DocumentModel.Presentation.TransitionInOutDirectionKind? Direction { get ; set; }
   
 }

@@ -3,16 +3,16 @@ namespace DocumentModel;
 /// <summary>
 /// Represents arguments for element events.
 /// </summary>
-public interface IElementEventArgs // : System.EventArgs
+public interface IElementEventArgs // : System.IEventArgs
 {
   /// <summary>
   /// Gets the element that caused the event.
   /// </summary>
-  public IOpenXmlElement? Element { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Element { get ; set; }
   
   /// <summary>
   /// Gets the parent element of the element that caused the event.
   /// </summary>
-  public IOpenXmlElement? ParentElement { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ParentElement { get ; set; }
   
 }

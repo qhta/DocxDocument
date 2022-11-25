@@ -8,6 +8,6 @@ public interface INonVisualGroupDrawingShapePropsExtension // : DocumentModel.IT
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

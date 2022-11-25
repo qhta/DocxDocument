@@ -8,6 +8,6 @@ public interface IClassificationOutcome // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// classificationOutcomeType, this property is only available in Office 2021 and later.
   /// </summary>
-  public ClassificationOutcomeType? ClassificationOutcomeType { get ; set; }
+  public DocumentModel.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType? ClassificationOutcomeType { get ; set; }
   
 }

@@ -8,61 +8,61 @@ public interface ILock // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Position Lock
   /// </summary>
-  public ITrueFalseValue? Position { get ; set; }
+  public System.Boolean? Position { get ; set; }
   
   /// <summary>
   /// Selection Lock
   /// </summary>
-  public ITrueFalseValue? Selection { get ; set; }
+  public System.Boolean? Selection { get ; set; }
   
   /// <summary>
   /// Grouping Lock
   /// </summary>
-  public ITrueFalseValue? Grouping { get ; set; }
+  public System.Boolean? Grouping { get ; set; }
   
   /// <summary>
   /// Ungrouping Lock
   /// </summary>
-  public ITrueFalseValue? Ungrouping { get ; set; }
+  public System.Boolean? Ungrouping { get ; set; }
   
   /// <summary>
   /// Rotation Lock
   /// </summary>
-  public ITrueFalseValue? Rotation { get ; set; }
+  public System.Boolean? Rotation { get ; set; }
   
   /// <summary>
   /// Cropping Lock
   /// </summary>
-  public ITrueFalseValue? Cropping { get ; set; }
+  public System.Boolean? Cropping { get ; set; }
   
   /// <summary>
   /// Vertices Lock
   /// </summary>
-  public ITrueFalseValue? Verticies { get ; set; }
+  public System.Boolean? Verticies { get ; set; }
   
   /// <summary>
   /// Handles Lock
   /// </summary>
-  public ITrueFalseValue? AdjustHandles { get ; set; }
+  public System.Boolean? AdjustHandles { get ; set; }
   
   /// <summary>
   /// Text Lock
   /// </summary>
-  public ITrueFalseValue? TextLock { get ; set; }
+  public System.Boolean? TextLock { get ; set; }
   
   /// <summary>
   /// Aspect Ratio Lock
   /// </summary>
-  public ITrueFalseValue? AspectRatio { get ; set; }
+  public System.Boolean? AspectRatio { get ; set; }
   
   /// <summary>
   /// AutoShape Type Lock
   /// </summary>
-  public ITrueFalseValue? ShapeType { get ; set; }
+  public System.Boolean? ShapeType { get ; set; }
   
 }

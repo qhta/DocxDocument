@@ -8,11 +8,11 @@ public interface INumberDataType // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Format Code.
   /// </summary>
-  public IFormatCode? FormatCode { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FormatCode { get ; set; }
   
   /// <summary>
   /// Point Count.
   /// </summary>
-  public IPointCount? PointCount { get ; set; }
+  public System.UInt32? PointCount { get ; set; }
   
 }

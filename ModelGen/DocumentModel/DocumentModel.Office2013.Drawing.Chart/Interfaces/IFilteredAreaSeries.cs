@@ -8,6 +8,6 @@ public interface IFilteredAreaSeries // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// AreaChartSeries.
   /// </summary>
-  public IAreaChartSeries? AreaChartSeries { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IAreaChartSeries? AreaChartSeries { get ; set; }
   
 }

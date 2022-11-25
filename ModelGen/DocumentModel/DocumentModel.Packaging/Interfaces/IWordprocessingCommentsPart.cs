@@ -8,75 +8,75 @@ public interface IWordprocessingCommentsPart // : DocumentModel.Packaging.ITyped
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>? AlternativeFormatImportParts { get ; set; }
+  public DocumentModel.Packaging.IAlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ChartPart>? ChartParts { get ; set; }
+  public DocumentModel.Packaging.IChartPart? ChartParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public IComments? Comments { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Comments { get ; set; }
   
-  public String? ContentType { get ; set; }
+  public System.String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>? DiagramColorsParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramColorsPart? DiagramColorsParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramDataParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramDataPart>? DiagramDataParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramDataPart? DiagramDataParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramPersistLayoutPart? DiagramPersistLayoutParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramStyleParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.DiagramStylePart>? DiagramStyleParts { get ; set; }
+  public DocumentModel.Packaging.IDiagramStylePart? DiagramStyleParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedControlPersistencePart? EmbeddedControlPersistenceParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts { get ; set; }
+  public DocumentModel.Packaging.IEmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>? ExtendedChartParts { get ; set; }
+  public DocumentModel.Packaging.IExtendedChartPart? ExtendedChartParts { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ImagePart>? ImageParts { get ; set; }
+  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get ; set; }
+  public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
-  public String? RelationshipType { get ; set; }
+  public System.String? RelationshipType { get ; set; }
   
 }

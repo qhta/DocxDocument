@@ -8,16 +8,16 @@ public interface IFrameset // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Nested Frameset Size.
   /// </summary>
-  public IFrameSize? FrameSize { get ; set; }
+  public System.String? FrameSize { get ; set; }
   
   /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
-  public IFramesetSplitbar? FramesetSplitbar { get ; set; }
+  public DocumentModel.Wordprocessing.IFramesetSplitbar? FramesetSplitbar { get ; set; }
   
   /// <summary>
   /// Frameset Layout.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues>? FrameLayout { get ; set; }
+  public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout { get ; set; }
   
 }

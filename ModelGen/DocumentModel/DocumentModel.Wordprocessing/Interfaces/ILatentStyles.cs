@@ -8,31 +8,31 @@ public interface ILatentStyles // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Default Style Locking Setting
   /// </summary>
-  public Boolean? DefaultLockedState { get ; set; }
+  public System.Boolean? DefaultLockedState { get ; set; }
   
   /// <summary>
   /// Default User Interface Priority Setting
   /// </summary>
-  public Int32? DefaultUiPriority { get ; set; }
+  public System.Int32? DefaultUiPriority { get ; set; }
   
   /// <summary>
   /// Default Semi-Hidden Setting
   /// </summary>
-  public Boolean? DefaultSemiHidden { get ; set; }
+  public System.Boolean? DefaultSemiHidden { get ; set; }
   
   /// <summary>
   /// Default Hidden Until Used Setting
   /// </summary>
-  public Boolean? DefaultUnhideWhenUsed { get ; set; }
+  public System.Boolean? DefaultUnhideWhenUsed { get ; set; }
   
   /// <summary>
   /// Default Primary Style Setting
   /// </summary>
-  public Boolean? DefaultPrimaryStyle { get ; set; }
+  public System.Boolean? DefaultPrimaryStyle { get ; set; }
   
   /// <summary>
   /// Latent Style Count
   /// </summary>
-  public Int32? Count { get ; set; }
+  public System.Int32? Count { get ; set; }
   
 }

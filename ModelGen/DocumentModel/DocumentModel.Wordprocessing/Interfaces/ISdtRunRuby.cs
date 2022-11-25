@@ -8,6 +8,6 @@ public interface ISdtRunRuby // : DocumentModel.Wordprocessing.ISdtElement
   /// <summary>
   /// SdtContentRunRuby.
   /// </summary>
-  public ISdtContentRunRuby? SdtContentRunRuby { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SdtContentRunRuby { get ; set; }
   
 }

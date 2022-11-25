@@ -8,26 +8,26 @@ public interface IGvmlContentPart // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// bwMode, this property is only available in Office 2010 and later.
   /// </summary>
-  public BlackWhiteModeValues? BlackWhiteMode { get ; set; }
+  public DocumentModel.Drawing.BlackWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? RelationshipId { get ; set; }
+  public System.String? RelationshipId { get ; set; }
   
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  public INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
+  public DocumentModel.Office2010.Drawing.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Office2010.Drawing.ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

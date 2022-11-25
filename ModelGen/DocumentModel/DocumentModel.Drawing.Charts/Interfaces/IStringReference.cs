@@ -8,16 +8,16 @@ public interface IStringReference // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Formula.
   /// </summary>
-  public IFormula? Formula { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
   
   /// <summary>
   /// StringCache.
   /// </summary>
-  public IStringCache? StringCache { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringDataType? StringCache { get ; set; }
   
   /// <summary>
   /// StrRefExtensionList.
   /// </summary>
-  public IStrRefExtensionList? StrRefExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? StrRefExtensionList { get ; set; }
   
 }

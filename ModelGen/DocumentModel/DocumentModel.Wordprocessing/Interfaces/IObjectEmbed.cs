@@ -8,26 +8,26 @@ public interface IObjectEmbed // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// drawAspect
   /// </summary>
-  public ObjectDrawAspect? drawAspect { get ; set; }
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get ; set; }
   
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// progId
   /// </summary>
-  public String? ProgId { get ; set; }
+  public System.String? ProgId { get ; set; }
   
   /// <summary>
   /// shapeId
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
   /// <summary>
   /// fieldCodes
   /// </summary>
-  public String? FieldCodes { get ; set; }
+  public System.String? FieldCodes { get ; set; }
   
 }

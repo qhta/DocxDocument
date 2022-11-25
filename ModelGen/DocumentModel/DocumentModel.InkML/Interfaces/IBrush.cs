@@ -8,11 +8,11 @@ public interface IBrush // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// brushRef
   /// </summary>
-  public String? BrushRef { get ; set; }
+  public System.String? BrushRef { get ; set; }
   
 }

@@ -8,51 +8,51 @@ public interface IHyperlinkType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// relationship identifier to find target URI
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// In case the url is invalid so we can't create a relationship, we'll save it here, r:id will point to a NULL one
   /// </summary>
-  public String? InvalidUrl { get ; set; }
+  public System.String? InvalidUrl { get ; set; }
   
   /// <summary>
   /// Action to take, it may still need r:id to specify an action target
   /// </summary>
-  public String? Action { get ; set; }
+  public System.String? Action { get ; set; }
   
   /// <summary>
   /// target frame for navigating to the URI
   /// </summary>
-  public String? TargetFrame { get ; set; }
+  public System.String? TargetFrame { get ; set; }
   
   /// <summary>
   /// tooltip for display
   /// </summary>
-  public String? Tooltip { get ; set; }
+  public System.String? Tooltip { get ; set; }
   
   /// <summary>
   /// whether to add this URI to the history when navigating to it
   /// </summary>
-  public Boolean? History { get ; set; }
+  public System.Boolean? History { get ; set; }
   
   /// <summary>
   /// Whether to highlight it when click on a shape
   /// </summary>
-  public Boolean? HighlightClick { get ; set; }
+  public System.Boolean? HighlightClick { get ; set; }
   
   /// <summary>
   /// Whether to stop previous sound when click on it
   /// </summary>
-  public Boolean? EndSound { get ; set; }
+  public System.Boolean? EndSound { get ; set; }
   
   /// <summary>
   /// Sound to play..
   /// </summary>
-  public IHyperlinkSound? HyperlinkSound { get ; set; }
+  public DocumentModel.Drawing.IEmbeddedWavAudioFileType? HyperlinkSound { get ; set; }
   
   /// <summary>
   /// Future extensions..
   /// </summary>
-  public IHyperlinkExtensionList? HyperlinkExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? HyperlinkExtensionList { get ; set; }
   
 }

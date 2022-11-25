@@ -8,6 +8,6 @@ public interface IEffect // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Reference
   /// </summary>
-  public String? Reference { get ; set; }
+  public System.String? Reference { get ; set; }
   
 }

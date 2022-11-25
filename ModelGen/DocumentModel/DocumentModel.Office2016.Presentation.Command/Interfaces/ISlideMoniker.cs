@@ -8,11 +8,11 @@ public interface ISlideMoniker // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// cId, this property is only available in Office 2016 and later.
   /// </summary>
-  public UInt32? CId { get ; set; }
+  public System.UInt32? CId { get ; set; }
   
   /// <summary>
   /// sldId, this property is only available in Office 2016 and later.
   /// </summary>
-  public UInt32? SldId { get ; set; }
+  public System.UInt32? SldId { get ; set; }
   
 }

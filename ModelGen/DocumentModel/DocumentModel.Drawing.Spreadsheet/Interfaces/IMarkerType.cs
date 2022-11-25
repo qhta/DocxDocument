@@ -8,21 +8,21 @@ public interface IMarkerType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Column).
   /// </summary>
-  public IColumnId? ColumnId { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ColumnId { get ; set; }
   
   /// <summary>
   /// Column Offset.
   /// </summary>
-  public IColumnOffset? ColumnOffset { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ColumnOffset { get ; set; }
   
   /// <summary>
   /// Row.
   /// </summary>
-  public IRowId? RowId { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? RowId { get ; set; }
   
   /// <summary>
   /// Row Offset.
   /// </summary>
-  public IRowOffset? RowOffset { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? RowOffset { get ; set; }
   
 }

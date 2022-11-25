@@ -8,6 +8,6 @@ public interface IArgumentProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Argument Size.
   /// </summary>
-  public IArgumentSize? ArgumentSize { get ; set; }
+  public System.Int32? ArgumentSize { get ; set; }
   
 }

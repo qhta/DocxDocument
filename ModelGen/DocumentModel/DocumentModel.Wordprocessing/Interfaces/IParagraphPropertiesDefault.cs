@@ -8,6 +8,6 @@ public interface IParagraphPropertiesDefault // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// Paragraph Properties.
   /// </summary>
-  public IParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get ; set; }
+  public DocumentModel.Wordprocessing.IParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get ; set; }
   
 }

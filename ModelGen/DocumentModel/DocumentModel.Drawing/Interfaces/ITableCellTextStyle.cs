@@ -8,11 +8,11 @@ public interface ITableCellTextStyle // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Bold
   /// </summary>
-  public BooleanStyleValues? Bold { get ; set; }
+  public DocumentModel.Drawing.BooleanStyleKind? Bold { get ; set; }
   
   /// <summary>
   /// Italic
   /// </summary>
-  public BooleanStyleValues? Italic { get ; set; }
+  public DocumentModel.Drawing.BooleanStyleKind? Italic { get ; set; }
   
 }

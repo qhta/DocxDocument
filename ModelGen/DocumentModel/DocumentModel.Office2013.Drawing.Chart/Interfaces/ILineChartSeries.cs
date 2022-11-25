@@ -8,31 +8,31 @@ public interface ILineChartSeries // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Index.
   /// </summary>
-  public Index? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// Order.
   /// </summary>
-  public IOrder? Order { get ; set; }
+  public System.UInt32? Order { get ; set; }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  public ISeriesText? SeriesText { get ; set; }
+  public DocumentModel.Drawing.Charts.ISeriesText? SeriesText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Marker.
   /// </summary>
-  public IMarker? Marker { get ; set; }
+  public DocumentModel.Drawing.Charts.IMarker? Marker { get ; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public IPictureOptions? PictureOptions { get ; set; }
+  public DocumentModel.Drawing.Charts.IPictureOptions? PictureOptions { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IValAxExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

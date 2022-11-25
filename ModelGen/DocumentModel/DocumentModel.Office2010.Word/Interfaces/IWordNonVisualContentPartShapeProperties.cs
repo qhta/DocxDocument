@@ -8,11 +8,11 @@ public interface IWordNonVisualContentPartShapeProperties // : DocumentModel.ITy
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Office2010.Word.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualInkContentPartProperties.
   /// </summary>
-  public INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
+  public DocumentModel.Office2010.Word.INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
   
 }

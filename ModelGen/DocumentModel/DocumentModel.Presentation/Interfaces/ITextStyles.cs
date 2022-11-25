@@ -8,21 +8,21 @@ public interface ITextStyles // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Slide Master Title Text Style.
   /// </summary>
-  public ITitleStyle? TitleStyle { get ; set; }
+  public DocumentModel.Presentation.ITextListStyleType? TitleStyle { get ; set; }
   
   /// <summary>
   /// Slide Master Body Text Style.
   /// </summary>
-  public IBodyStyle? BodyStyle { get ; set; }
+  public DocumentModel.Presentation.ITextListStyleType? BodyStyle { get ; set; }
   
   /// <summary>
   /// Slide Master Other Text Style.
   /// </summary>
-  public IOtherStyle? OtherStyle { get ; set; }
+  public DocumentModel.Presentation.ITextListStyleType? OtherStyle { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

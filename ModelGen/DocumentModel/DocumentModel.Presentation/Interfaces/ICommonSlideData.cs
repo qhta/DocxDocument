@@ -8,31 +8,31 @@ public interface ICommonSlideData // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// Slide Background.
   /// </summary>
-  public IBackground? Background { get ; set; }
+  public DocumentModel.Presentation.IBackground? Background { get ; set; }
   
   /// <summary>
   /// Shape Tree.
   /// </summary>
-  public IShapeTree? ShapeTree { get ; set; }
+  public DocumentModel.Presentation.IGroupShapeType? ShapeTree { get ; set; }
   
   /// <summary>
   /// Customer Data List.
   /// </summary>
-  public ICustomerDataList? CustomerDataList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CustomerDataList { get ; set; }
   
   /// <summary>
   /// List of controls.
   /// </summary>
-  public IControlList? ControlList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlList { get ; set; }
   
   /// <summary>
   /// CommonSlideDataExtensionList.
   /// </summary>
-  public ICommonSlideDataExtensionList? CommonSlideDataExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? CommonSlideDataExtensionList { get ; set; }
   
 }

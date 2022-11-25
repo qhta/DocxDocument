@@ -8,11 +8,11 @@ public interface INonVisualGraphicFrameDrawingProperties // : DocumentModel.ITyp
   /// <summary>
   /// Graphic Frame Locks.
   /// </summary>
-  public IGraphicFrameLocks? GraphicFrameLocks { get ; set; }
+  public DocumentModel.Drawing.IGraphicFrameLocks? GraphicFrameLocks { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

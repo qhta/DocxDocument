@@ -1,4 +1,8 @@
-﻿namespace ModelGen;
+﻿using DocumentFormat.OpenXml;
+
+using Qhta.Collections;
+
+namespace ModelGen;
 
 public static class ModelData
 {
@@ -16,6 +20,8 @@ public static class ModelData
     "AddError",
     "*Part",
     "HasValue",
+    "OpenXmlPackage",
+    "Container",
   };
 
   public static bool IsExcluded(Type type)
@@ -41,18 +47,20 @@ public static class ModelData
 
   public static SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
-    "SR", "OpenXml*", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods", "FileFormatVersions",
-    "XmlConvertingReader*", "*.Part",
+    "SR", "OpenXml*", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods", 
+    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1"
   };
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
   {
-    "CustomXmlAttribute", "BooleanFalse", "Wordprocessing*",
+    "CustomXmlAttribute", "BooleanFalse", "Wordprocessing*", 
+    "OpenXmlSolidColorFillPropertiesElement",
+    "OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement"
   };
 
   public static SortedStrings ExcludedAttributes { get; } = new SortedStrings
   {
-    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable", "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant"
+    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable", "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant",
   };
 
   public static Dictionary<Type, Type> AttributeConversionTable { get; } = new Dictionary<Type, Type>
@@ -60,7 +68,7 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
   };
 
-  public static Dictionary<string, string> NamespaceRedirectionTable { get; } = new Dictionary<string, string>()
+  public static BiDiDictionary<string, string> NamespaceRedirectionTable { get; } = new BiDiDictionary<string, string>()
   {
     { "DocumentFormat.OpenXml", "DocumentModel" }
   };
@@ -86,8 +94,10 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.DoubleValue), typeof(System.Double)},
     { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
     { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
-    { typeof(DocumentFormat.OpenXml.EnumValue<>), typeof(System.Enum)},
-    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.HexWord)}
+    { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.BaseTypes.ModelElement)},
+    { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(DocumentModel.BaseTypes.ModelElement)},
+    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.BaseTypes.HexWord)},
+    { typeof(DocumentFormat.OpenXml.Packaging.ImagePart), typeof(DocumentModel.BaseTypes.ImagePart)},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

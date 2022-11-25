@@ -8,11 +8,11 @@ public interface IGraphicElement // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Diagram to Animate.
   /// </summary>
-  public IDiagram? Diagram { get ; set; }
+  public DocumentModel.Drawing.IDiagram? Diagram { get ; set; }
   
   /// <summary>
   /// Chart to Animate.
   /// </summary>
-  public IChart? Chart { get ; set; }
+  public DocumentModel.Drawing.IChart? Chart { get ; set; }
   
 }

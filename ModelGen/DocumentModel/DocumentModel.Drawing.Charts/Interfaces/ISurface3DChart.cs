@@ -8,11 +8,11 @@ public interface ISurface3DChart // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Wireframe.
   /// </summary>
-  public IWireframe? Wireframe { get ; set; }
+  public System.Boolean? Wireframe { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }

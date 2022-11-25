@@ -8,26 +8,26 @@ public interface ITargetElement // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Slide Target.
   /// </summary>
-  public ISlideTarget? SlideTarget { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SlideTarget { get ; set; }
   
   /// <summary>
   /// Sound Target.
   /// </summary>
-  public ISoundTarget? SoundTarget { get ; set; }
+  public DocumentModel.Presentation.IEmbeddedWavAudioFileType? SoundTarget { get ; set; }
   
   /// <summary>
   /// Shape Target.
   /// </summary>
-  public IShapeTarget? ShapeTarget { get ; set; }
+  public DocumentModel.Presentation.IShapeTarget? ShapeTarget { get ; set; }
   
   /// <summary>
   /// Ink Target.
   /// </summary>
-  public InkTarget? InkTarget { get ; set; }
+  public DocumentModel.Presentation.ITimeListSubShapeIdType? InkTarget { get ; set; }
   
   /// <summary>
   /// BookmarkTarget, this property is only available in Office 2010 and later..
   /// </summary>
-  public IBookmarkTarget? BookmarkTarget { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IBookmarkTarget? BookmarkTarget { get ; set; }
   
 }

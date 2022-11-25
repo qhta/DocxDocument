@@ -8,16 +8,16 @@ public interface ISdtContentCheckBox // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Checked.
   /// </summary>
-  public IChecked? Checked { get ; set; }
+  public DocumentModel.Office2010.Word.OnOffKind? Checked { get ; set; }
   
   /// <summary>
   /// CheckedState.
   /// </summary>
-  public ICheckedState? CheckedState { get ; set; }
+  public DocumentModel.Office2010.Word.ICheckBoxSymbolType? CheckedState { get ; set; }
   
   /// <summary>
   /// UncheckedState.
   /// </summary>
-  public IUncheckedState? UncheckedState { get ; set; }
+  public DocumentModel.Office2010.Word.ICheckBoxSymbolType? UncheckedState { get ; set; }
   
 }

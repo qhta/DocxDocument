@@ -8,21 +8,16 @@ public interface IDocument // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// conformance
   /// </summary>
-  public DocumentConformance? Conformance { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get ; set; }
   
   /// <summary>
   /// Document Background.
   /// </summary>
-  public IDocumentBackground? DocumentBackground { get ; set; }
+  public DocumentModel.Wordprocessing.IDocumentBackground? DocumentBackground { get ; set; }
   
   /// <summary>
   /// Body.
   /// </summary>
-  public IBody? Body { get ; set; }
-  
-  /// <summary>
-  /// Gets the MainDocumentPart associated with this element.
-  /// </summary>
-  public IMainDocumentPart? MainDocumentPart { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Body { get ; set; }
   
 }

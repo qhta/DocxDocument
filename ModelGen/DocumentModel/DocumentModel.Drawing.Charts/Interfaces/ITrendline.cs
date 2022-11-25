@@ -8,61 +8,61 @@ public interface ITrendline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Trendline Name.
   /// </summary>
-  public ITrendlineName? TrendlineName { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? TrendlineName { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Trendline Type.
   /// </summary>
-  public ITrendlineType? TrendlineType { get ; set; }
+  public DocumentModel.Drawing.Charts.TrendlineKind? TrendlineType { get ; set; }
   
   /// <summary>
   /// Polynomial Trendline Order.
   /// </summary>
-  public IPolynomialOrder? PolynomialOrder { get ; set; }
+  public System.Byte? PolynomialOrder { get ; set; }
   
   /// <summary>
   /// Period.
   /// </summary>
-  public IPeriod? Period { get ; set; }
+  public System.UInt32? Period { get ; set; }
   
   /// <summary>
   /// Forward.
   /// </summary>
-  public IForward? Forward { get ; set; }
+  public System.Double? Forward { get ; set; }
   
   /// <summary>
   /// Backward.
   /// </summary>
-  public IBackward? Backward { get ; set; }
+  public System.Double? Backward { get ; set; }
   
   /// <summary>
   /// Intercept.
   /// </summary>
-  public Intercept? Intercept { get ; set; }
+  public System.Double? Intercept { get ; set; }
   
   /// <summary>
   /// Display R Squared Value.
   /// </summary>
-  public IDisplayRSquaredValue? DisplayRSquaredValue { get ; set; }
+  public System.Boolean? DisplayRSquaredValue { get ; set; }
   
   /// <summary>
   /// Display Equation.
   /// </summary>
-  public IDisplayEquation? DisplayEquation { get ; set; }
+  public System.Boolean? DisplayEquation { get ; set; }
   
   /// <summary>
   /// Trendline Label.
   /// </summary>
-  public ITrendlineLabel? TrendlineLabel { get ; set; }
+  public DocumentModel.Drawing.Charts.ITrendlineLabel? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

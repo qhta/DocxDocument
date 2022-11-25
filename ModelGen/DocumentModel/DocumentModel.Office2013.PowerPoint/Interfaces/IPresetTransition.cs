@@ -8,16 +8,16 @@ public interface IPresetTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// prst, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Preset { get ; set; }
+  public System.String? Preset { get ; set; }
   
   /// <summary>
   /// invX, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? InvX { get ; set; }
+  public System.Boolean? InvX { get ; set; }
   
   /// <summary>
   /// invY, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? InvY { get ; set; }
+  public System.Boolean? InvY { get ; set; }
   
 }

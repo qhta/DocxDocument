@@ -8,21 +8,21 @@ public interface IGroupCharProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Group Character (Grouping Character).
   /// </summary>
-  public IAccentChar? AccentChar { get ; set; }
+  public System.String? AccentChar { get ; set; }
   
   /// <summary>
   /// Position (Group Character).
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Math.VerticalJustificationKind? Position { get ; set; }
   
   /// <summary>
   /// Vertical Justification.
   /// </summary>
-  public IVerticalJustification? VerticalJustification { get ; set; }
+  public DocumentModel.Math.VerticalJustificationKind? VerticalJustification { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

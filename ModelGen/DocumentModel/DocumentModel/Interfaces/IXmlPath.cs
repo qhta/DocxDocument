@@ -8,21 +8,21 @@ public interface IXmlPath // :
   /// <summary>
   /// Gets the namespace definitions used in . Use  instead
   /// </summary>
-  public IList<System.String>? NamespacesDefinitions { get ; set; }
+  public System.Collections.Generic.IList<System.String>? NamespacesDefinitions { get ; set; }
   
   /// <summary>
   /// Gets the namespace definitions used in
   /// </summary>
-  public IXmlNamespaceResolver? Namespaces { get ; set; }
+  public System.Xml.IXmlNamespaceResolver? Namespaces { get ; set; }
   
   /// <summary>
   /// Gets the XPath string.
   /// </summary>
-  public String? XPath { get ; set; }
+  public System.String? XPath { get ; set; }
   
   /// <summary>
   /// Gets the internal URI of the part relative to the package root.
   /// </summary>
-  public Uri? PartUri { get ; set; }
+  public System.Uri? PartUri { get ; set; }
   
 }

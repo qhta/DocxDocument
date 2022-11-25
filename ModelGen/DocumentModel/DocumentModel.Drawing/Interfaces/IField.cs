@@ -8,26 +8,26 @@ public interface IField // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Field ID
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Field Type
   /// </summary>
-  public String? Type { get ; set; }
+  public System.String? Type { get ; set; }
   
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  public IRunProperties? RunProperties { get ; set; }
+  public DocumentModel.Drawing.ITextCharacterPropertiesType? RunProperties { get ; set; }
   
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
-  public IParagraphProperties? ParagraphProperties { get ; set; }
+  public DocumentModel.Drawing.ITextParagraphPropertiesType? ParagraphProperties { get ; set; }
   
   /// <summary>
   /// Text.
   /// </summary>
-  public IText? Text { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Text { get ; set; }
   
 }

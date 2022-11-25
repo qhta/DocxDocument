@@ -8,6 +8,6 @@ public interface IAlphaModulationEffect // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// EffectContainer.
   /// </summary>
-  public IEffectContainer? EffectContainer { get ; set; }
+  public DocumentModel.Drawing.IEffectContainerType? EffectContainer { get ; set; }
   
 }

@@ -8,31 +8,31 @@ public interface IDataSourceObject // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// UDL Connection String.
   /// </summary>
-  public IUdlConnectionString? UdlConnectionString { get ; set; }
+  public System.String? UdlConnectionString { get ; set; }
   
   /// <summary>
   /// Data Source Table Name.
   /// </summary>
-  public IDataSourceTableName? DataSourceTableName { get ; set; }
+  public System.String? DataSourceTableName { get ; set; }
   
   /// <summary>
   /// ODSO Data Source File Path.
   /// </summary>
-  public ISourceReference? SourceReference { get ; set; }
+  public DocumentModel.Wordprocessing.IRelationshipType? SourceReference { get ; set; }
   
   /// <summary>
   /// Column Delimiter for Data Source.
   /// </summary>
-  public IColumnDelimiter? ColumnDelimiter { get ; set; }
+  public System.UInt32? ColumnDelimiter { get ; set; }
   
   /// <summary>
   /// ODSO Data Source Type.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues>? MailMergeSource { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeSourceKind? MailMergeSource { get ; set; }
   
   /// <summary>
   /// First Row of Data Source Contains Column Names.
   /// </summary>
-  public IFirstRowHeader? FirstRowHeader { get ; set; }
+  public System.Boolean? FirstRowHeader { get ; set; }
   
 }

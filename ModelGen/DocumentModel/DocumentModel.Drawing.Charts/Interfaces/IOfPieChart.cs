@@ -8,11 +8,11 @@ public interface IOfPieChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Pie of Pie or Bar of Pie Type.
   /// </summary>
-  public IOfPieType? OfPieType { get ; set; }
+  public DocumentModel.Drawing.Charts.OfPieKind? OfPieType { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }
