@@ -8,6 +8,6 @@ public interface ISdtPlaceholder // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Document Part Reference.
   /// </summary>
-  public IDocPartReference? DocPartReference { get ; set; }
+  public System.String? DocPartReference { get ; set; }
   
 }

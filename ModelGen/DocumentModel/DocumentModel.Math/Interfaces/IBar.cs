@@ -8,11 +8,11 @@ public interface IBar // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Bar Properties.
   /// </summary>
-  public IBarProperties? BarProperties { get ; set; }
+  public DocumentModel.Math.IBarProperties? BarProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
 }

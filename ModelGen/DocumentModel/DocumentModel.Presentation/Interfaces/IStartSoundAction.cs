@@ -8,11 +8,11 @@ public interface IStartSoundAction // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Loop Sound
   /// </summary>
-  public Boolean? Loop { get ; set; }
+  public System.Boolean? Loop { get ; set; }
   
   /// <summary>
   /// Sound.
   /// </summary>
-  public ISound? Sound { get ; set; }
+  public DocumentModel.Presentation.IEmbeddedWavAudioFileType? Sound { get ; set; }
   
 }

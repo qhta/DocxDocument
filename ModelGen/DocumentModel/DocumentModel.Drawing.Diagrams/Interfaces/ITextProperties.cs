@@ -8,11 +8,11 @@ public interface ITextProperties // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Apply 3D shape properties.
   /// </summary>
-  public IShape3DType? Shape3DType { get ; set; }
+  public DocumentModel.Drawing.IShape3DType? Shape3DType { get ; set; }
   
   /// <summary>
   /// No text in 3D scene.
   /// </summary>
-  public IFlatText? FlatText { get ; set; }
+  public DocumentModel.Drawing.IFlatText? FlatText { get ; set; }
   
 }

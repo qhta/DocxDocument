@@ -8,11 +8,11 @@ public interface IFillExtendedProperties // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Fill Type
   /// </summary>
-  public FillValues? Type { get ; set; }
+  public DocumentModel.Vml.Office.FillKind? Type { get ; set; }
   
 }

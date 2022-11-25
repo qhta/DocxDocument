@@ -8,11 +8,11 @@ public interface IGridColumn // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Width
   /// </summary>
-  public Int64? Width { get ; set; }
+  public System.Int64? Width { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

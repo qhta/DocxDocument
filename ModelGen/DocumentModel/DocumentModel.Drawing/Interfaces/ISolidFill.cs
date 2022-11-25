@@ -8,31 +8,31 @@ public interface ISolidFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  public IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public DocumentModel.Drawing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public IHslColor? HslColor { get ; set; }
+  public DocumentModel.Drawing.IHslColor? HslColor { get ; set; }
   
   /// <summary>
   /// System Color.
   /// </summary>
-  public ISystemColor? SystemColor { get ; set; }
+  public DocumentModel.Drawing.ISystemColor? SystemColor { get ; set; }
   
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  public ISchemeColor? SchemeColor { get ; set; }
+  public DocumentModel.Drawing.SchemeColorKind? SchemeColor { get ; set; }
   
   /// <summary>
   /// Preset Color.
   /// </summary>
-  public IPresetColor? PresetColor { get ; set; }
+  public DocumentModel.Drawing.PresetColorKind? PresetColor { get ; set; }
   
 }

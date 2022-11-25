@@ -8,6 +8,6 @@ public interface IOptionalBlackTransitionType // : DocumentModel.ITypedOpenXmlLe
   /// <summary>
   /// Transition Through Black
   /// </summary>
-  public Boolean? ThroughBlack { get ; set; }
+  public System.Boolean? ThroughBlack { get ; set; }
   
 }

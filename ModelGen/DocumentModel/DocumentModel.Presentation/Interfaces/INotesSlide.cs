@@ -8,31 +8,26 @@ public interface INotesSlide // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Show Master Shapes
   /// </summary>
-  public Boolean? ShowMasterShapes { get ; set; }
+  public System.Boolean? ShowMasterShapes { get ; set; }
   
   /// <summary>
   /// Show Master Placeholder Animations
   /// </summary>
-  public Boolean? ShowMasterPlaceholderAnimations { get ; set; }
+  public System.Boolean? ShowMasterPlaceholderAnimations { get ; set; }
   
   /// <summary>
   /// Common slide data for notes slides.
   /// </summary>
-  public ICommonSlideData? CommonSlideData { get ; set; }
+  public DocumentModel.Presentation.ICommonSlideData? CommonSlideData { get ; set; }
   
   /// <summary>
   /// Color Scheme Map Override.
   /// </summary>
-  public IColorMapOverride? ColorMapOverride { get ; set; }
+  public DocumentModel.Presentation.IColorMapOverride? ColorMapOverride { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.
   /// </summary>
-  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
-  
-  /// <summary>
-  /// Gets the NotesSlidePart associated with this element.
-  /// </summary>
-  public NotesSlidePart? NotesSlidePart { get ; set; }
+  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

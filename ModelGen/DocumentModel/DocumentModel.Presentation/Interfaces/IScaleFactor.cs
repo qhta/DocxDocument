@@ -8,11 +8,11 @@ public interface IScaleFactor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Horizontal Ratio.
   /// </summary>
-  public IScaleX? ScaleX { get ; set; }
+  public DocumentModel.Drawing.IRatioType? ScaleX { get ; set; }
   
   /// <summary>
   /// Vertical Ratio.
   /// </summary>
-  public IScaleY? ScaleY { get ; set; }
+  public DocumentModel.Drawing.IRatioType? ScaleY { get ; set; }
   
 }

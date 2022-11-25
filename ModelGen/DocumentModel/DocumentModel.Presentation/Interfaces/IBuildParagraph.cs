@@ -8,51 +8,51 @@ public interface IBuildParagraph // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Shape ID
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
   /// <summary>
   /// Group ID
   /// </summary>
-  public UInt32? GroupId { get ; set; }
+  public System.UInt32? GroupId { get ; set; }
   
   /// <summary>
   /// Expand UI
   /// </summary>
-  public Boolean? UiExpand { get ; set; }
+  public System.Boolean? UiExpand { get ; set; }
   
   /// <summary>
   /// Build Types
   /// </summary>
-  public ParagraphBuildValues? Build { get ; set; }
+  public DocumentModel.Presentation.ParagraphBuildKind? Build { get ; set; }
   
   /// <summary>
   /// Build Level
   /// </summary>
-  public UInt32? BuildLevel { get ; set; }
+  public System.UInt32? BuildLevel { get ; set; }
   
   /// <summary>
   /// Animate Background
   /// </summary>
-  public Boolean? AnimateBackground { get ; set; }
+  public System.Boolean? AnimateBackground { get ; set; }
   
   /// <summary>
   /// Auto Update Animation Background
   /// </summary>
-  public Boolean? AutoAnimateBackground { get ; set; }
+  public System.Boolean? AutoAnimateBackground { get ; set; }
   
   /// <summary>
   /// Reverse
   /// </summary>
-  public Boolean? Reverse { get ; set; }
+  public System.Boolean? Reverse { get ; set; }
   
   /// <summary>
   /// Auto Advance Time
   /// </summary>
-  public String? AutoAdvance { get ; set; }
+  public System.String? AutoAdvance { get ; set; }
   
   /// <summary>
   /// Template effects.
   /// </summary>
-  public ITemplateList? TemplateList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? TemplateList { get ; set; }
   
 }

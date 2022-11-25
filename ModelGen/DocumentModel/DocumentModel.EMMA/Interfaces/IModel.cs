@@ -8,11 +8,11 @@ public interface IModel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// ref
   /// </summary>
-  public String? Reference { get ; set; }
+  public System.String? Reference { get ; set; }
   
 }

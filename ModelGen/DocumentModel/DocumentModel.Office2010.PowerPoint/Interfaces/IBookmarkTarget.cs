@@ -8,11 +8,11 @@ public interface IBookmarkTarget // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// spid, this property is only available in Office 2010 and later.
   /// </summary>
-  public UInt32? ShapeId { get ; set; }
+  public System.UInt32? ShapeId { get ; set; }
   
   /// <summary>
   /// bmkName, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? BookmarkName { get ; set; }
+  public System.String? BookmarkName { get ; set; }
   
 }

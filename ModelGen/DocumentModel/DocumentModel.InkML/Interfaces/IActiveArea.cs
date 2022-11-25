@@ -8,21 +8,21 @@ public interface IActiveArea // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// size
   /// </summary>
-  public String? Size { get ; set; }
+  public System.String? Size { get ; set; }
   
   /// <summary>
   /// height
   /// </summary>
-  public Decimal? Height { get ; set; }
+  public System.Decimal? Height { get ; set; }
   
   /// <summary>
   /// width
   /// </summary>
-  public Decimal? Width { get ; set; }
+  public System.Decimal? Width { get ; set; }
   
   /// <summary>
   /// units
   /// </summary>
-  public String? Units { get ; set; }
+  public System.String? Units { get ; set; }
   
 }

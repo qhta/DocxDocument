@@ -8,26 +8,26 @@ public interface ITimeListAnimationVariantType // : DocumentModel.ITypedOpenXmlC
   /// <summary>
   /// Boolean Variant.
   /// </summary>
-  public IBooleanVariantValue? BooleanVariantValue { get ; set; }
+  public System.Boolean? BooleanVariantValue { get ; set; }
   
   /// <summary>
   /// Integer.
   /// </summary>
-  public IntegerVariantValue? IntegerVariantValue { get ; set; }
+  public System.Int32? IntegerVariantValue { get ; set; }
   
   /// <summary>
   /// Float Value.
   /// </summary>
-  public IFloatVariantValue? FloatVariantValue { get ; set; }
+  public System.Single? FloatVariantValue { get ; set; }
   
   /// <summary>
   /// String Value.
   /// </summary>
-  public IStringVariantValue? StringVariantValue { get ; set; }
+  public System.String? StringVariantValue { get ; set; }
   
   /// <summary>
   /// Color Value.
   /// </summary>
-  public IColorValue? ColorValue { get ; set; }
+  public DocumentModel.Presentation.IColorType? ColorValue { get ; set; }
   
 }

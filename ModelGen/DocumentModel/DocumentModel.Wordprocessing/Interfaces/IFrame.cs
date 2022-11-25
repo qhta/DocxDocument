@@ -8,41 +8,41 @@ public interface IFrame // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Frame Size.
   /// </summary>
-  public IFrameSize? FrameSize { get ; set; }
+  public System.String? FrameSize { get ; set; }
   
   /// <summary>
   /// Frame Name.
   /// </summary>
-  public IFrameName? FrameName { get ; set; }
+  public System.String? FrameName { get ; set; }
   
   /// <summary>
   /// Source File for Frame.
   /// </summary>
-  public ISourceFileReference? SourceFileReference { get ; set; }
+  public DocumentModel.Wordprocessing.IRelationshipType? SourceFileReference { get ; set; }
   
   /// <summary>
   /// Left and Right Margin for Frame.
   /// </summary>
-  public IMarginWidth? MarginWidth { get ; set; }
+  public System.UInt32? MarginWidth { get ; set; }
   
   /// <summary>
   /// Top and Bottom Margin for Frame.
   /// </summary>
-  public IMarginHeight? MarginHeight { get ; set; }
+  public System.UInt32? MarginHeight { get ; set; }
   
   /// <summary>
   /// Scrollbar Display Option.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues>? ScrollbarVisibility { get ; set; }
+  public DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind? ScrollbarVisibility { get ; set; }
   
   /// <summary>
   /// Frame Cannot Be Resized.
   /// </summary>
-  public INoResizeAllowed? NoResizeAllowed { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoResizeAllowed { get ; set; }
   
   /// <summary>
   /// Maintain Link to Existing File.
   /// </summary>
-  public ILinkedToFile? LinkedToFile { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? LinkedToFile { get ; set; }
   
 }

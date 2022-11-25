@@ -8,16 +8,16 @@ public interface ISlideSize // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Extent Length
   /// </summary>
-  public Int32? Cx { get ; set; }
+  public System.Int32? Cx { get ; set; }
   
   /// <summary>
   /// Extent Width
   /// </summary>
-  public Int32? Cy { get ; set; }
+  public System.Int32? Cy { get ; set; }
   
   /// <summary>
   /// Type of Size
   /// </summary>
-  public SlideSizeValues? Type { get ; set; }
+  public DocumentModel.Presentation.SlideSizeKind? Type { get ; set; }
   
 }

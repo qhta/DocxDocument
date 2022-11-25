@@ -8,36 +8,36 @@ public interface IAdjustHandleXY // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Horizontal Adjustment Guide
   /// </summary>
-  public String? XAdjustmentGuide { get ; set; }
+  public System.String? XAdjustmentGuide { get ; set; }
   
   /// <summary>
   /// Minimum Horizontal Adjustment
   /// </summary>
-  public String? MinX { get ; set; }
+  public System.String? MinX { get ; set; }
   
   /// <summary>
   /// Maximum Horizontal Adjustment
   /// </summary>
-  public String? MaxX { get ; set; }
+  public System.String? MaxX { get ; set; }
   
   /// <summary>
   /// Vertical Adjustment Guide
   /// </summary>
-  public String? YAdjustmentGuide { get ; set; }
+  public System.String? YAdjustmentGuide { get ; set; }
   
   /// <summary>
   /// Minimum Vertical Adjustment
   /// </summary>
-  public String? MinY { get ; set; }
+  public System.String? MinY { get ; set; }
   
   /// <summary>
   /// Maximum Vertical Adjustment
   /// </summary>
-  public String? MaxY { get ; set; }
+  public System.String? MaxY { get ; set; }
   
   /// <summary>
   /// Position.
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Drawing.IAdjustPoint2DType? Position { get ; set; }
   
 }

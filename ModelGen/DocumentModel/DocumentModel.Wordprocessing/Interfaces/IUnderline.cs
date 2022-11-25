@@ -8,26 +8,26 @@ public interface IUnderline // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Underline Style
   /// </summary>
-  public UnderlineKind? Val { get ; set; }
+  public DocumentModel.Wordprocessing.UnderlineKind? Val { get ; set; }
   
   /// <summary>
   /// Underline Color
   /// </summary>
-  public String? Color { get ; set; }
+  public System.String? Color { get ; set; }
   
   /// <summary>
   /// Underline Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// Underline Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get ; set; }
+  public System.String? ThemeTint { get ; set; }
   
   /// <summary>
   /// Underline Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get ; set; }
+  public System.String? ThemeShade { get ; set; }
   
 }

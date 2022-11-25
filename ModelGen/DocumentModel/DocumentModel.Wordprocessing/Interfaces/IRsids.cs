@@ -8,6 +8,6 @@ public interface IRsids // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
-  public IRsidRoot? RsidRoot { get ; set; }
+  public DocumentModel.BaseTypes.HexWord? RsidRoot { get ; set; }
   
 }

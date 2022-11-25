@@ -8,11 +8,11 @@ public interface IBuildSubElement // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Build Diagram.
   /// </summary>
-  public IBuildDiagram? BuildDiagram { get ; set; }
+  public DocumentModel.Drawing.IBuildDiagram? BuildDiagram { get ; set; }
   
   /// <summary>
   /// Build Chart.
   /// </summary>
-  public IBuildChart? BuildChart { get ; set; }
+  public DocumentModel.Drawing.IBuildChart? BuildChart { get ; set; }
   
 }

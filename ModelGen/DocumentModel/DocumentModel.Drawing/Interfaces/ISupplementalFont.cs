@@ -8,11 +8,11 @@ public interface ISupplementalFont // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Script
   /// </summary>
-  public String? Script { get ; set; }
+  public System.String? Script { get ; set; }
   
   /// <summary>
   /// Typeface
   /// </summary>
-  public String? Typeface { get ; set; }
+  public System.String? Typeface { get ; set; }
   
 }

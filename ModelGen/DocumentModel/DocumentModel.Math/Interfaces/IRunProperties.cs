@@ -8,6 +8,6 @@ public interface IRunProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Literal.
   /// </summary>
-  public ILiteral? Literal { get ; set; }
+  public DocumentModel.Math.BooleanKind? Literal { get ; set; }
   
 }

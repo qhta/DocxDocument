@@ -8,11 +8,11 @@ public interface ILuminanceEffect // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Brightness
   /// </summary>
-  public Int32? Brightness { get ; set; }
+  public System.Int32? Brightness { get ; set; }
   
   /// <summary>
   /// Contrast
   /// </summary>
-  public Int32? Contrast { get ; set; }
+  public System.Int32? Contrast { get ; set; }
   
 }

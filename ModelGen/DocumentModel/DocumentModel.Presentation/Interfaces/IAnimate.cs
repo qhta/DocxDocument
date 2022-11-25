@@ -8,41 +8,41 @@ public interface IAnimate // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// by
   /// </summary>
-  public String? By { get ; set; }
+  public System.String? By { get ; set; }
   
   /// <summary>
   /// from
   /// </summary>
-  public String? From { get ; set; }
+  public System.String? From { get ; set; }
   
   /// <summary>
   /// to
   /// </summary>
-  public String? To { get ; set; }
+  public System.String? To { get ; set; }
   
   /// <summary>
   /// calcmode
   /// </summary>
-  public AnimateBehaviorCalculateModeValues? CalculationMode { get ; set; }
+  public DocumentModel.Presentation.AnimateBehaviorCalculateMode? CalculationMode { get ; set; }
   
   /// <summary>
   /// valueType
   /// </summary>
-  public AnimateBehaviorValues? ValueType { get ; set; }
+  public DocumentModel.Presentation.AnimateBehaviorKind? ValueType { get ; set; }
   
   /// <summary>
   /// bounceEnd, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? BounceEnd { get ; set; }
+  public System.Int32? BounceEnd { get ; set; }
   
   /// <summary>
   /// CommonBehavior.
   /// </summary>
-  public ICommonBehavior? CommonBehavior { get ; set; }
+  public DocumentModel.Presentation.ICommonBehavior? CommonBehavior { get ; set; }
   
   /// <summary>
   /// TimeAnimateValueList.
   /// </summary>
-  public ITimeAnimateValueList? TimeAnimateValueList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? TimeAnimateValueList { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface IReadModeInkLockDown // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// Use Actual Pages, Not Virtual Pages
   /// </summary>
-  public Boolean? UseActualPages { get ; set; }
+  public System.Boolean? UseActualPages { get ; set; }
   
   /// <summary>
   /// Virtual Page Width
   /// </summary>
-  public UInt32? Width { get ; set; }
+  public System.UInt32? Width { get ; set; }
   
   /// <summary>
   /// Virtual Page Height
   /// </summary>
-  public UInt32? Height { get ; set; }
+  public System.UInt32? Height { get ; set; }
   
   /// <summary>
   /// Font Size Scaling
   /// </summary>
-  public String? FontSize { get ; set; }
+  public System.String? FontSize { get ; set; }
   
 }

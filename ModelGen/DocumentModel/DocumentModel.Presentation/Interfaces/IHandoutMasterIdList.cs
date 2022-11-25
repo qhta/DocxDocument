@@ -8,6 +8,6 @@ public interface IHandoutMasterIdList // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Handout Master ID.
   /// </summary>
-  public IHandoutMasterId? HandoutMasterId { get ; set; }
+  public DocumentModel.Presentation.IHandoutMasterId? HandoutMasterId { get ; set; }
   
 }

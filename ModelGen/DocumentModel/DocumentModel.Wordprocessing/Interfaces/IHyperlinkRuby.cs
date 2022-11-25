@@ -8,31 +8,31 @@ public interface IHyperlinkRuby // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// tgtFrame
   /// </summary>
-  public String? TargetFrame { get ; set; }
+  public System.String? TargetFrame { get ; set; }
   
   /// <summary>
   /// tooltip
   /// </summary>
-  public String? Tooltip { get ; set; }
+  public System.String? Tooltip { get ; set; }
   
   /// <summary>
   /// docLocation
   /// </summary>
-  public String? DocLocation { get ; set; }
+  public System.String? DocLocation { get ; set; }
   
   /// <summary>
   /// history
   /// </summary>
-  public Boolean? History { get ; set; }
+  public System.Boolean? History { get ; set; }
   
   /// <summary>
   /// anchor
   /// </summary>
-  public String? Anchor { get ; set; }
+  public System.String? Anchor { get ; set; }
   
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

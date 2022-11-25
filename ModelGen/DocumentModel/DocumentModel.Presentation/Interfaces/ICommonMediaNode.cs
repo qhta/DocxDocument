@@ -8,31 +8,31 @@ public interface ICommonMediaNode // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Volume
   /// </summary>
-  public Int32? Volume { get ; set; }
+  public System.Int32? Volume { get ; set; }
   
   /// <summary>
   /// Mute
   /// </summary>
-  public Boolean? Mute { get ; set; }
+  public System.Boolean? Mute { get ; set; }
   
   /// <summary>
   /// Number of Slides
   /// </summary>
-  public UInt32? SlideCount { get ; set; }
+  public System.UInt32? SlideCount { get ; set; }
   
   /// <summary>
   /// Show When Stopped
   /// </summary>
-  public Boolean? ShowWhenStopped { get ; set; }
+  public System.Boolean? ShowWhenStopped { get ; set; }
   
   /// <summary>
   /// Common Time Node Properties.
   /// </summary>
-  public ICommonTimeNode? CommonTimeNode { get ; set; }
+  public DocumentModel.Presentation.ICommonTimeNode? CommonTimeNode { get ; set; }
   
   /// <summary>
   /// TargetElement.
   /// </summary>
-  public ITargetElement? TargetElement { get ; set; }
+  public DocumentModel.Presentation.ITargetElement? TargetElement { get ; set; }
   
 }

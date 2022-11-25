@@ -8,51 +8,51 @@ public interface IConnection // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Model Identifier
   /// </summary>
-  public String? ModelId { get ; set; }
+  public System.String? ModelId { get ; set; }
   
   /// <summary>
   /// Point Type
   /// </summary>
-  public ConnectionValues? Type { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ConnectionKind? Type { get ; set; }
   
   /// <summary>
   /// Source Identifier
   /// </summary>
-  public String? SourceId { get ; set; }
+  public System.String? SourceId { get ; set; }
   
   /// <summary>
   /// Destination Identifier
   /// </summary>
-  public String? DestinationId { get ; set; }
+  public System.String? DestinationId { get ; set; }
   
   /// <summary>
   /// Source Position
   /// </summary>
-  public UInt32? SourcePosition { get ; set; }
+  public System.UInt32? SourcePosition { get ; set; }
   
   /// <summary>
   /// Destination Position
   /// </summary>
-  public UInt32? DestinationPosition { get ; set; }
+  public System.UInt32? DestinationPosition { get ; set; }
   
   /// <summary>
   /// Parent Transition Identifier
   /// </summary>
-  public String? ParentTransitionId { get ; set; }
+  public System.String? ParentTransitionId { get ; set; }
   
   /// <summary>
   /// Sibling Transition Identifier
   /// </summary>
-  public String? SiblingTransitionId { get ; set; }
+  public System.String? SiblingTransitionId { get ; set; }
   
   /// <summary>
   /// Presentation Identifier
   /// </summary>
-  public String? PresentationId { get ; set; }
+  public System.String? PresentationId { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

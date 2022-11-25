@@ -8,26 +8,26 @@ public interface IDocumentBackground // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// color
   /// </summary>
-  public String? Color { get ; set; }
+  public System.String? Color { get ; set; }
   
   /// <summary>
   /// themeColor
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// themeTint
   /// </summary>
-  public String? ThemeTint { get ; set; }
+  public System.String? ThemeTint { get ; set; }
   
   /// <summary>
   /// themeShade
   /// </summary>
-  public String? ThemeShade { get ; set; }
+  public System.String? ThemeShade { get ; set; }
   
   /// <summary>
   /// Background.
   /// </summary>
-  public IBackground? Background { get ; set; }
+  public DocumentModel.Vml.IBackground? Background { get ; set; }
   
 }

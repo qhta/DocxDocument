@@ -8,6 +8,6 @@ public interface IApplicationNonVisualDrawingPropertiesExtension // : DocumentMo
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

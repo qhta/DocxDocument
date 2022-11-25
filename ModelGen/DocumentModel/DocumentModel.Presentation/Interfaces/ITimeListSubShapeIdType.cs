@@ -8,6 +8,6 @@ public interface ITimeListSubShapeIdType // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// Shape ID
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
 }

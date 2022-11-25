@@ -8,6 +8,6 @@ public interface ISurface3DChartExtension // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
 }

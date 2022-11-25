@@ -8,21 +8,21 @@ public interface IPageSize // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Page Width
   /// </summary>
-  public UInt32? Width { get ; set; }
+  public System.UInt32? Width { get ; set; }
   
   /// <summary>
   /// Page Height
   /// </summary>
-  public UInt32? Height { get ; set; }
+  public System.UInt32? Height { get ; set; }
   
   /// <summary>
   /// Page Orientation
   /// </summary>
-  public PageOrientationKind? Orient { get ; set; }
+  public DocumentModel.Wordprocessing.PageOrientationKind? Orient { get ; set; }
   
   /// <summary>
   /// Printer Paper Code
   /// </summary>
-  public UInt16? Code { get ; set; }
+  public System.UInt16? Code { get ; set; }
   
 }

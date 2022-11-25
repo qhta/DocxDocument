@@ -8,11 +8,11 @@ public interface ISdtElement // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Gets or sets the SdtProperties.
   /// </summary>
-  public ISdtProperties? SdtProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SdtProperties { get ; set; }
   
   /// <summary>
   /// Gets or sets the SdtEndCharProperties.
   /// </summary>
-  public ISdtEndCharProperties? SdtEndCharProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SdtEndCharProperties { get ; set; }
   
 }

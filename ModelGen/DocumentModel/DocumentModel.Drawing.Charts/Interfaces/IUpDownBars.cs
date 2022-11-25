@@ -8,21 +8,21 @@ public interface IUpDownBars // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Gap Width.
   /// </summary>
-  public IGapWidth? GapWidth { get ; set; }
+  public System.UInt16? GapWidth { get ; set; }
   
   /// <summary>
   /// Up Bars.
   /// </summary>
-  public IUpBars? UpBars { get ; set; }
+  public DocumentModel.Drawing.Charts.IUpDownBarType? UpBars { get ; set; }
   
   /// <summary>
   /// Down Bars.
   /// </summary>
-  public IDownBars? DownBars { get ; set; }
+  public DocumentModel.Drawing.Charts.IUpDownBarType? DownBars { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

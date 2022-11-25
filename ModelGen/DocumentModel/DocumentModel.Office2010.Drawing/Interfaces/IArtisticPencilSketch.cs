@@ -8,11 +8,11 @@ public interface IArtisticPencilSketch // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Transparancy { get ; set; }
+  public System.Int32? Transparancy { get ; set; }
   
   /// <summary>
   /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Pressure { get ; set; }
+  public System.Int32? Pressure { get ; set; }
   
 }

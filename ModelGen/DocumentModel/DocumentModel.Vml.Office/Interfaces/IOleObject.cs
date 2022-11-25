@@ -8,51 +8,51 @@ public interface IOleObject // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OLE Object Type
   /// </summary>
-  public OleValues? Type { get ; set; }
+  public DocumentModel.Vml.Office.OleKind? Type { get ; set; }
   
   /// <summary>
   /// OLE Object Application
   /// </summary>
-  public String? ProgId { get ; set; }
+  public System.String? ProgId { get ; set; }
   
   /// <summary>
   /// OLE Object Shape
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
   /// <summary>
   /// OLE Object Representation
   /// </summary>
-  public OleDrawAspectValues? DrawAspect { get ; set; }
+  public DocumentModel.Vml.Office.OleDrawAspectKind? DrawAspect { get ; set; }
   
   /// <summary>
   /// OLE Object Unique ID
   /// </summary>
-  public String? ObjectId { get ; set; }
+  public System.String? ObjectId { get ; set; }
   
   /// <summary>
   /// Relationship
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// OLE Update Mode
   /// </summary>
-  public OleUpdateModeValues? UpdateMode { get ; set; }
+  public DocumentModel.Vml.Office.OleUpdateMode? UpdateMode { get ; set; }
   
   /// <summary>
   /// Embedded Object Alternate Image Request.
   /// </summary>
-  public ILinkType? LinkType { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LinkType { get ; set; }
   
   /// <summary>
   /// Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public ILockedField? LockedField { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? LockedField { get ; set; }
   
   /// <summary>
   /// WordprocessingML Field Switches.
   /// </summary>
-  public IFieldCodes? FieldCodes { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FieldCodes { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface ITraceGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// contextRef
   /// </summary>
-  public String? ContextRef { get ; set; }
+  public System.String? ContextRef { get ; set; }
   
   /// <summary>
   /// brushRef
   /// </summary>
-  public String? BrushRef { get ; set; }
+  public System.String? BrushRef { get ; set; }
   
 }

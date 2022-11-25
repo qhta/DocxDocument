@@ -8,11 +8,11 @@ public interface INonVisualPictureProperties // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Picture Drawing Properties.
   /// </summary>
-  public INonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.INonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get ; set; }
   
 }

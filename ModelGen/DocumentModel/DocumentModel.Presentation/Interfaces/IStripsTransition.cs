@@ -8,6 +8,6 @@ public interface IStripsTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Direction
   /// </summary>
-  public TransitionCornerDirectionValues? Direction { get ; set; }
+  public DocumentModel.Presentation.TransitionCornerDirectionKind? Direction { get ; set; }
   
 }

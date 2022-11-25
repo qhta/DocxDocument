@@ -8,11 +8,11 @@ public interface ILineChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Grouping.
   /// </summary>
-  public IGrouping? Grouping { get ; set; }
+  public DocumentModel.Drawing.Charts.GroupingKind? Grouping { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }

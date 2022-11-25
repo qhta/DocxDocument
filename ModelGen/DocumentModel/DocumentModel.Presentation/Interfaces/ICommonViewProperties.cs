@@ -8,16 +8,16 @@ public interface ICommonViewProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Variable Scale
   /// </summary>
-  public Boolean? VariableScale { get ; set; }
+  public System.Boolean? VariableScale { get ; set; }
   
   /// <summary>
   /// View Scale.
   /// </summary>
-  public IScaleFactor? ScaleFactor { get ; set; }
+  public DocumentModel.Presentation.IScaleFactor? ScaleFactor { get ; set; }
   
   /// <summary>
   /// View Origin.
   /// </summary>
-  public IOrigin? Origin { get ; set; }
+  public DocumentModel.Presentation.IPoint2DType? Origin { get ; set; }
   
 }

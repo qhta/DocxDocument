@@ -8,11 +8,11 @@ public interface IHandoutMasterId // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Relationship Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

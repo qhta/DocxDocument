@@ -8,11 +8,11 @@ public interface IWordprocessingShape // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// normalEastAsianFlow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NormalEastAsianFlow { get ; set; }
+  public System.Boolean? NormalEastAsianFlow { get ; set; }
   
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingShape.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
 }

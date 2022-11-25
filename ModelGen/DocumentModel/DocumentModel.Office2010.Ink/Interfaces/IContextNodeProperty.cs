@@ -8,6 +8,6 @@ public interface IContextNodeProperty // : DocumentModel.ITypedOpenXmlLeafTextEl
   /// <summary>
   /// type
   /// </summary>
-  public String? Type { get ; set; }
+  public System.String? Type { get ; set; }
   
 }

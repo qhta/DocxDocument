@@ -8,21 +8,21 @@ public interface IFramesetSplitbar // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Frameset Splitter Width.
   /// </summary>
-  public IWidth? Width { get ; set; }
+  public System.String? Width { get ; set; }
   
   /// <summary>
   /// Frameset Splitter Color.
   /// </summary>
-  public IColor? Color { get ; set; }
+  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
   
   /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
-  public INoBorder? NoBorder { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoBorder { get ; set; }
   
   /// <summary>
   /// Frameset Splitter Border Style.
   /// </summary>
-  public IFlatBorders? FlatBorders { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? FlatBorders { get ; set; }
   
 }

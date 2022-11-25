@@ -8,21 +8,21 @@ public interface IBackdrop // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Anchor Point.
   /// </summary>
-  public IAnchor? Anchor { get ; set; }
+  public DocumentModel.Drawing.IAnchor? Anchor { get ; set; }
   
   /// <summary>
   /// Normal.
   /// </summary>
-  public INormal? Normal { get ; set; }
+  public DocumentModel.Drawing.IVector3DType? Normal { get ; set; }
   
   /// <summary>
   /// Up Vector.
   /// </summary>
-  public IUpVector? UpVector { get ; set; }
+  public DocumentModel.Drawing.IVector3DType? UpVector { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

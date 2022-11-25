@@ -8,101 +8,101 @@ public interface IBodyProperties // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Rotation
   /// </summary>
-  public Int32? Rotation { get ; set; }
+  public System.Int32? Rotation { get ; set; }
   
   /// <summary>
   /// Paragraph Spacing
   /// </summary>
-  public Boolean? UseParagraphSpacing { get ; set; }
+  public System.Boolean? UseParagraphSpacing { get ; set; }
   
   /// <summary>
   /// Text Vertical Overflow
   /// </summary>
-  public TextVerticalOverflowValues? VerticalOverflow { get ; set; }
+  public DocumentModel.Drawing.TextVerticalOverflowKind? VerticalOverflow { get ; set; }
   
   /// <summary>
   /// Text Horizontal Overflow
   /// </summary>
-  public TextHorizontalOverflowValues? HorizontalOverflow { get ; set; }
+  public DocumentModel.Drawing.TextHorizontalOverflowKind? HorizontalOverflow { get ; set; }
   
   /// <summary>
   /// Vertical Text
   /// </summary>
-  public TextVerticalValues? Vertical { get ; set; }
+  public DocumentModel.Drawing.TextVerticalKind? Vertical { get ; set; }
   
   /// <summary>
   /// Text Wrapping Type
   /// </summary>
-  public TextWrappingValues? Wrap { get ; set; }
+  public DocumentModel.Drawing.TextWrappingKind? Wrap { get ; set; }
   
   /// <summary>
   /// Left Inset
   /// </summary>
-  public Int32? LeftInset { get ; set; }
+  public System.Int32? LeftInset { get ; set; }
   
   /// <summary>
   /// Top Inset
   /// </summary>
-  public Int32? TopInset { get ; set; }
+  public System.Int32? TopInset { get ; set; }
   
   /// <summary>
   /// Right Inset
   /// </summary>
-  public Int32? RightInset { get ; set; }
+  public System.Int32? RightInset { get ; set; }
   
   /// <summary>
   /// Bottom Inset
   /// </summary>
-  public Int32? BottomInset { get ; set; }
+  public System.Int32? BottomInset { get ; set; }
   
   /// <summary>
   /// Number of Columns
   /// </summary>
-  public Int32? ColumnCount { get ; set; }
+  public System.Int32? ColumnCount { get ; set; }
   
   /// <summary>
   /// Space Between Columns
   /// </summary>
-  public Int32? ColumnSpacing { get ; set; }
+  public System.Int32? ColumnSpacing { get ; set; }
   
   /// <summary>
   /// Columns Right-To-Left
   /// </summary>
-  public Boolean? RightToLeftColumns { get ; set; }
+  public System.Boolean? RightToLeftColumns { get ; set; }
   
   /// <summary>
   /// From WordArt
   /// </summary>
-  public Boolean? FromWordArt { get ; set; }
+  public System.Boolean? FromWordArt { get ; set; }
   
   /// <summary>
   /// Anchor
   /// </summary>
-  public TextAnchoringTypeValues? Anchor { get ; set; }
+  public DocumentModel.Drawing.TextAnchoringTypeKind? Anchor { get ; set; }
   
   /// <summary>
   /// Anchor Center
   /// </summary>
-  public Boolean? AnchorCenter { get ; set; }
+  public System.Boolean? AnchorCenter { get ; set; }
   
   /// <summary>
   /// Force Anti-Alias
   /// </summary>
-  public Boolean? ForceAntiAlias { get ; set; }
+  public System.Boolean? ForceAntiAlias { get ; set; }
   
   /// <summary>
   /// Text Upright
   /// </summary>
-  public Boolean? UpRight { get ; set; }
+  public System.Boolean? UpRight { get ; set; }
   
   /// <summary>
   /// Compatible Line Spacing
   /// </summary>
-  public Boolean? CompatibleLineSpacing { get ; set; }
+  public System.Boolean? CompatibleLineSpacing { get ; set; }
   
   /// <summary>
   /// Preset Text Shape.
   /// </summary>
-  public IPresetTextWrap? PresetTextWrap { get ; set; }
+  public DocumentModel.Drawing.IPresetTextWrap? PresetTextWrap { get ; set; }
   
 }

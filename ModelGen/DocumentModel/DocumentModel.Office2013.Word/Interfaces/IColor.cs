@@ -8,21 +8,21 @@ public interface IColor // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Run Content Color
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
   /// <summary>
   /// Run Content Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// Run Content Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get ; set; }
+  public System.String? ThemeTint { get ; set; }
   
   /// <summary>
   /// Run Content Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get ; set; }
+  public System.String? ThemeShade { get ; set; }
   
 }

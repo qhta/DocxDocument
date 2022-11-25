@@ -8,6 +8,6 @@ public interface IMatrixColumn // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Matrix Column Properties.
   /// </summary>
-  public IMatrixColumnProperties? MatrixColumnProperties { get ; set; }
+  public DocumentModel.Math.IMatrixColumnProperties? MatrixColumnProperties { get ; set; }
   
 }

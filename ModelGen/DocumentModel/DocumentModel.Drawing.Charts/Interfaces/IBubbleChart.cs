@@ -8,6 +8,6 @@ public interface IBubbleChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }

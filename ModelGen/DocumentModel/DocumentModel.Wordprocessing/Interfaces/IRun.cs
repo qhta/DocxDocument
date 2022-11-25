@@ -8,21 +8,21 @@ public interface IRun // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  public IHexBinaryValue? RsidRunProperties { get ; set; }
+  public DocumentModel.IHexBinaryValue? RsidRunProperties { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  public IHexBinaryValue? RsidRunDeletion { get ; set; }
+  public DocumentModel.IHexBinaryValue? RsidRunDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  public IHexBinaryValue? RsidRunAddition { get ; set; }
+  public DocumentModel.IHexBinaryValue? RsidRunAddition { get ; set; }
   
   /// <summary>
   /// Run Properties.
   /// </summary>
-  public IRunProperties? RunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
   
 }

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.BaseTypes;
 
 public struct HexInt
 {

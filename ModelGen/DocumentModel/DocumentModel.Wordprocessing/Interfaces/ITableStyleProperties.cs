@@ -8,31 +8,31 @@ public interface ITableStyleProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Table Style Conditional Formatting Type
   /// </summary>
-  public TableStyleOverrideKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.TableStyleOverrideKind? Type { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Paragraph Properties.
   /// </summary>
-  public IStyleParagraphProperties? StyleParagraphProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IStyleParagraphProperties? StyleParagraphProperties { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Run Properties.
   /// </summary>
-  public IRunPropertiesBaseStyle? RunPropertiesBaseStyle { get ; set; }
+  public DocumentModel.Wordprocessing.IRunPropertiesBaseStyle? RunPropertiesBaseStyle { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Table Properties.
   /// </summary>
-  public ITableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get ; set; }
+  public DocumentModel.Wordprocessing.ITableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  public ITableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? TableStyleConditionalFormattingTableRowProperties { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Table Cell Properties.
   /// </summary>
-  public ITableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get ; set; }
+  public DocumentModel.Wordprocessing.ITableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get ; set; }
   
 }

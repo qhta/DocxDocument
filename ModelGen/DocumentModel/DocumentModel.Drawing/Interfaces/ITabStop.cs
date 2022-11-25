@@ -8,11 +8,11 @@ public interface ITabStop // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Tab Position
   /// </summary>
-  public Int32? Position { get ; set; }
+  public System.Int32? Position { get ; set; }
   
   /// <summary>
   /// Tab Alignment
   /// </summary>
-  public TextTabAlignmentValues? Alignment { get ; set; }
+  public DocumentModel.Drawing.TextTabAlignmentKind? Alignment { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface IIterate // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Iterate Type
   /// </summary>
-  public IterateValues? Type { get ; set; }
+  public DocumentModel.Presentation.IterateKind? Type { get ; set; }
   
   /// <summary>
   /// Backwards
   /// </summary>
-  public Boolean? Backwards { get ; set; }
+  public System.Boolean? Backwards { get ; set; }
   
   /// <summary>
   /// Time Absolute.
   /// </summary>
-  public ITimeAbsolute? TimeAbsolute { get ; set; }
+  public System.String? TimeAbsolute { get ; set; }
   
   /// <summary>
   /// Time Percentage.
   /// </summary>
-  public ITimePercentage? TimePercentage { get ; set; }
+  public System.Int32? TimePercentage { get ; set; }
   
 }

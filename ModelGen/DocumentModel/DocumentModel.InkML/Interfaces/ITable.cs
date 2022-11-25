@@ -8,16 +8,16 @@ public interface ITable // : DocumentModel.ITypedOpenXmlLeafTextElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// apply
   /// </summary>
-  public TableApplyValues? Apply { get ; set; }
+  public DocumentModel.InkML.TableApplyKind? Apply { get ; set; }
   
   /// <summary>
   /// interpolation
   /// </summary>
-  public TableInterpolationValues? Interpolation { get ; set; }
+  public DocumentModel.InkML.TableInterpolationKind? Interpolation { get ; set; }
   
 }

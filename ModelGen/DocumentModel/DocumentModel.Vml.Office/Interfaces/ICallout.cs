@@ -8,71 +8,71 @@ public interface ICallout // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Callout toggle
   /// </summary>
-  public ITrueFalseValue? On { get ; set; }
+  public System.Boolean? On { get ; set; }
   
   /// <summary>
   /// Callout type
   /// </summary>
-  public String? Type { get ; set; }
+  public System.String? Type { get ; set; }
   
   /// <summary>
   /// Callout gap
   /// </summary>
-  public String? Gap { get ; set; }
+  public System.String? Gap { get ; set; }
   
   /// <summary>
   /// Callout angle
   /// </summary>
-  public AngleValues? Angle { get ; set; }
+  public DocumentModel.Vml.Office.AngleKind? Angle { get ; set; }
   
   /// <summary>
   /// Callout automatic drop toggle
   /// </summary>
-  public ITrueFalseValue? DropAuto { get ; set; }
+  public System.Boolean? DropAuto { get ; set; }
   
   /// <summary>
   /// Callout drop position
   /// </summary>
-  public String? Drop { get ; set; }
+  public System.String? Drop { get ; set; }
   
   /// <summary>
   /// Callout drop distance
   /// </summary>
-  public String? Distance { get ; set; }
+  public System.String? Distance { get ; set; }
   
   /// <summary>
   /// Callout length toggle
   /// </summary>
-  public ITrueFalseValue? LengthSpecified { get ; set; }
+  public System.Boolean? LengthSpecified { get ; set; }
   
   /// <summary>
   /// Callout length
   /// </summary>
-  public String? Length { get ; set; }
+  public System.String? Length { get ; set; }
   
   /// <summary>
   /// Callout accent bar toggle
   /// </summary>
-  public ITrueFalseValue? AccentBar { get ; set; }
+  public System.Boolean? AccentBar { get ; set; }
   
   /// <summary>
   /// Callout text border toggle
   /// </summary>
-  public ITrueFalseValue? TextBorder { get ; set; }
+  public System.Boolean? TextBorder { get ; set; }
   
   /// <summary>
   /// Callout flip x
   /// </summary>
-  public ITrueFalseValue? MinusX { get ; set; }
+  public System.Boolean? MinusX { get ; set; }
   
   /// <summary>
   /// Callout flip y
   /// </summary>
-  public ITrueFalseValue? MinusY { get ; set; }
+  public System.Boolean? MinusY { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ISVGBlip // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
-  public String? Embed { get ; set; }
+  public System.String? Embed { get ; set; }
   
   /// <summary>
   /// Linked Picture Reference
   /// </summary>
-  public String? Link { get ; set; }
+  public System.String? Link { get ; set; }
   
 }

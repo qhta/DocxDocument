@@ -8,6 +8,6 @@ public interface IAlphaModulationFixed // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// Amount
   /// </summary>
-  public Int32? Amount { get ; set; }
+  public System.Int32? Amount { get ; set; }
   
 }

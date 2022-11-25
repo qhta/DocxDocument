@@ -8,11 +8,11 @@ public interface IShapeIdMap // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Shape IDs
   /// </summary>
-  public String? Data { get ; set; }
+  public System.String? Data { get ; set; }
   
 }

@@ -8,31 +8,31 @@ public interface IParagraphBorders // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public ITopBorder? TopBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? TopBorder { get ; set; }
   
   /// <summary>
   /// Left Paragraph Border.
   /// </summary>
-  public ILeftBorder? LeftBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? LeftBorder { get ; set; }
   
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public IBottomBorder? BottomBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? BottomBorder { get ; set; }
   
   /// <summary>
   /// Right Paragraph Border.
   /// </summary>
-  public IRightBorder? RightBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? RightBorder { get ; set; }
   
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public IBetweenBorder? BetweenBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? BetweenBorder { get ; set; }
   
   /// <summary>
   /// Paragraph Border Between Facing Pages.
   /// </summary>
-  public IBarBorder? BarBorder { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? BarBorder { get ; set; }
   
 }

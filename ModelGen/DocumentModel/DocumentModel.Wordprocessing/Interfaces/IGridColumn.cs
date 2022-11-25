@@ -8,6 +8,6 @@ public interface IGridColumn // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Grid Column Width
   /// </summary>
-  public String? Width { get ; set; }
+  public System.String? Width { get ; set; }
   
 }

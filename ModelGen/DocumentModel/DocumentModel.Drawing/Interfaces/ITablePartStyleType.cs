@@ -8,11 +8,11 @@ public interface ITablePartStyleType // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Table Cell Text Style.
   /// </summary>
-  public ITableCellTextStyle? TableCellTextStyle { get ; set; }
+  public DocumentModel.Drawing.ITableCellTextStyle? TableCellTextStyle { get ; set; }
   
   /// <summary>
   /// Table Cell Style.
   /// </summary>
-  public ITableCellStyle? TableCellStyle { get ; set; }
+  public DocumentModel.Drawing.ITableCellStyle? TableCellStyle { get ; set; }
   
 }

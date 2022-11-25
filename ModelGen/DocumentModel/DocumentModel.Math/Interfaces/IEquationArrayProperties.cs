@@ -8,31 +8,31 @@ public interface IEquationArrayProperties // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Equation Array Base Justification.
   /// </summary>
-  public IBaseJustification? BaseJustification { get ; set; }
+  public DocumentModel.Math.VerticalAlignmentKind? BaseJustification { get ; set; }
   
   /// <summary>
   /// Maximum Distribution.
   /// </summary>
-  public IMaxDistribution? MaxDistribution { get ; set; }
+  public DocumentModel.Math.BooleanKind? MaxDistribution { get ; set; }
   
   /// <summary>
   /// Object Distribution.
   /// </summary>
-  public IObjectDistribution? ObjectDistribution { get ; set; }
+  public DocumentModel.Math.BooleanKind? ObjectDistribution { get ; set; }
   
   /// <summary>
   /// Row Spacing Rule.
   /// </summary>
-  public IRowSpacingRule? RowSpacingRule { get ; set; }
+  public System.Int32? RowSpacingRule { get ; set; }
   
   /// <summary>
   /// Row Spacing (Equation Array).
   /// </summary>
-  public IRowSpacing? RowSpacing { get ; set; }
+  public System.UInt16? RowSpacing { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IWordprocessingGroupType // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualGroupDrawingShapeProperties.
   /// </summary>
-  public INonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.INonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get ; set; }
   
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public IGroupShapeProperties? GroupShapeProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
 }

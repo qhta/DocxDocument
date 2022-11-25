@@ -8,26 +8,26 @@ public interface ITableStyleConditionalFormattingTableCellProperties // : Docume
   /// <summary>
   /// TableCellBorders.
   /// </summary>
-  public ITableCellBorders? TableCellBorders { get ; set; }
+  public DocumentModel.Wordprocessing.ITableCellBorders? TableCellBorders { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public IShading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
   
   /// <summary>
   /// NoWrap.
   /// </summary>
-  public INoWrap? NoWrap { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoWrap { get ; set; }
   
   /// <summary>
   /// TableCellMargin.
   /// </summary>
-  public ITableCellMargin? TableCellMargin { get ; set; }
+  public DocumentModel.Wordprocessing.ITableCellMargin? TableCellMargin { get ; set; }
   
   /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues>? TableCellVerticalAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IMultiLevelStringCache // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// PointCount.
   /// </summary>
-  public IPointCount? PointCount { get ; set; }
+  public System.UInt32? PointCount { get ; set; }
   
 }

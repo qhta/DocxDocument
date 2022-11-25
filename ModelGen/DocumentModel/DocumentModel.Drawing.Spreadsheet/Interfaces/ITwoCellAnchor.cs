@@ -8,16 +8,16 @@ public interface ITwoCellAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Positioning and Resizing Behaviors
   /// </summary>
-  public EditAsValues? EditAs { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.EditAsKind? EditAs { get ; set; }
   
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
-  public IFromMarker? FromMarker { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IMarkerType? FromMarker { get ; set; }
   
   /// <summary>
   /// Ending Anchor Point.
   /// </summary>
-  public IToMarker? ToMarker { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IMarkerType? ToMarker { get ; set; }
   
 }

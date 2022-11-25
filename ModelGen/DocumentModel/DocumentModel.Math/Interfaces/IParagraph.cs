@@ -8,6 +8,6 @@ public interface IParagraph // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Office Math Paragraph Properties.
   /// </summary>
-  public IParagraphProperties? ParagraphProperties { get ; set; }
+  public DocumentModel.Math.IParagraphProperties? ParagraphProperties { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface INonVisualShapeProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// Non-Visual Drawing Properties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Presentation.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Drawing Properties for a Shape.
   /// </summary>
-  public INonVisualShapeDrawingProperties? NonVisualShapeDrawingProperties { get ; set; }
+  public DocumentModel.Presentation.INonVisualShapeDrawingProperties? NonVisualShapeDrawingProperties { get ; set; }
   
   /// <summary>
   /// Application Non-Visual Drawing Properties.
   /// </summary>
-  public IApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Presentation.IApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get ; set; }
   
 }

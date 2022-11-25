@@ -8,6 +8,6 @@ public interface IEightDirectionTransitionType // : DocumentModel.ITypedOpenXmlL
   /// <summary>
   /// Direction
   /// </summary>
-  public String? Direction { get ; set; }
+  public System.String? Direction { get ; set; }
   
 }

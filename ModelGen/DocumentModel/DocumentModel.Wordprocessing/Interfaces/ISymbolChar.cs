@@ -8,11 +8,11 @@ public interface ISymbolChar // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Symbol Character Font
   /// </summary>
-  public String? Font { get ; set; }
+  public System.String? Font { get ; set; }
   
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public IHexBinaryValue? Char { get ; set; }
+  public DocumentModel.IHexBinaryValue? Char { get ; set; }
   
 }

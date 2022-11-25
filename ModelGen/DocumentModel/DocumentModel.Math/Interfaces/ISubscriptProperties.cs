@@ -8,6 +8,6 @@ public interface ISubscriptProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

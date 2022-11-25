@@ -8,11 +8,11 @@ public interface IAudioCDTimeType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Track
   /// </summary>
-  public Byte? Track { get ; set; }
+  public System.Byte? Track { get ; set; }
   
   /// <summary>
   /// Time
   /// </summary>
-  public UInt32? Time { get ; set; }
+  public System.UInt32? Time { get ; set; }
   
 }

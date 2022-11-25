@@ -8,61 +8,61 @@ public interface IConstraint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Constraint Type
   /// </summary>
-  public ConstraintValues? Type { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ConstraintKind? Type { get ; set; }
   
   /// <summary>
   /// For
   /// </summary>
-  public ConstraintRelationshipValues? For { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ConstraintRelationshipKind? For { get ; set; }
   
   /// <summary>
   /// For Name
   /// </summary>
-  public String? ForName { get ; set; }
+  public System.String? ForName { get ; set; }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public ElementValues? PointType { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ElementKind? PointType { get ; set; }
   
   /// <summary>
   /// Reference Type
   /// </summary>
-  public ConstraintValues? ReferenceType { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ConstraintKind? ReferenceType { get ; set; }
   
   /// <summary>
   /// Reference For
   /// </summary>
-  public ConstraintRelationshipValues? ReferenceFor { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ConstraintRelationshipKind? ReferenceFor { get ; set; }
   
   /// <summary>
   /// Reference For Name
   /// </summary>
-  public String? ReferenceForName { get ; set; }
+  public System.String? ReferenceForName { get ; set; }
   
   /// <summary>
   /// Reference Point Type
   /// </summary>
-  public ElementValues? ReferencePointType { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ElementKind? ReferencePointType { get ; set; }
   
   /// <summary>
   /// Operator
   /// </summary>
-  public BoolOperatorValues? Operator { get ; set; }
+  public DocumentModel.Drawing.Diagrams.BoolOperatorKind? Operator { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public Double? Val { get ; set; }
+  public System.Double? Val { get ; set; }
   
   /// <summary>
   /// Factor
   /// </summary>
-  public Double? Fact { get ; set; }
+  public System.Double? Fact { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

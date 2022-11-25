@@ -8,16 +8,16 @@ public interface IStyleDefinitionHeader // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// Unique Style ID
   /// </summary>
-  public String? UniqueId { get ; set; }
+  public System.String? UniqueId { get ; set; }
   
   /// <summary>
   /// Minimum Version
   /// </summary>
-  public String? MinVersion { get ; set; }
+  public System.String? MinVersion { get ; set; }
   
   /// <summary>
   /// Resource ID
   /// </summary>
-  public Int32? ResourceId { get ; set; }
+  public System.Int32? ResourceId { get ; set; }
   
 }

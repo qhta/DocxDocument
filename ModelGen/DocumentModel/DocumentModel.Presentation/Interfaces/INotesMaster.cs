@@ -8,31 +8,26 @@ public interface INotesMaster // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// CommonSlideData.
   /// </summary>
-  public ICommonSlideData? CommonSlideData { get ; set; }
+  public DocumentModel.Presentation.ICommonSlideData? CommonSlideData { get ; set; }
   
   /// <summary>
   /// Color Scheme Map.
   /// </summary>
-  public IColorMap? ColorMap { get ; set; }
+  public DocumentModel.Presentation.IColorMap? ColorMap { get ; set; }
   
   /// <summary>
   /// HeaderFooter.
   /// </summary>
-  public IHeaderFooter? HeaderFooter { get ; set; }
+  public DocumentModel.Presentation.IHeaderFooter? HeaderFooter { get ; set; }
   
   /// <summary>
   /// NotesStyle.
   /// </summary>
-  public INotesStyle? NotesStyle { get ; set; }
+  public DocumentModel.Presentation.ITextListStyleType? NotesStyle { get ; set; }
   
   /// <summary>
   /// NotesMasterExtensionList.
   /// </summary>
-  public INotesMasterExtensionList? NotesMasterExtensionList { get ; set; }
-  
-  /// <summary>
-  /// Gets the NotesMasterPart associated with this element.
-  /// </summary>
-  public NotesMasterPart? NotesMasterPart { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? NotesMasterExtensionList { get ; set; }
   
 }

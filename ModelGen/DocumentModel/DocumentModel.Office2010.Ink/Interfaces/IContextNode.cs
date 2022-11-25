@@ -8,106 +8,106 @@ public interface IContextNode // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public String? Type { get ; set; }
+  public System.String? Type { get ; set; }
   
   /// <summary>
   /// rotatedBoundingBox
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? RotatedBoundingBox { get ; set; }
+  public System.Collections.Generic.List<System.String>? RotatedBoundingBox { get ; set; }
   
   /// <summary>
   /// alignmentLevel
   /// </summary>
-  public Int32? AlignmentLevel { get ; set; }
+  public System.Int32? AlignmentLevel { get ; set; }
   
   /// <summary>
   /// contentType
   /// </summary>
-  public Int32? ContentType { get ; set; }
+  public System.Int32? ContentType { get ; set; }
   
   /// <summary>
   /// ascender
   /// </summary>
-  public String? Ascender { get ; set; }
+  public System.String? Ascender { get ; set; }
   
   /// <summary>
   /// descender
   /// </summary>
-  public String? Descender { get ; set; }
+  public System.String? Descender { get ; set; }
   
   /// <summary>
   /// baseline
   /// </summary>
-  public String? Baseline { get ; set; }
+  public System.String? Baseline { get ; set; }
   
   /// <summary>
   /// midline
   /// </summary>
-  public String? Midline { get ; set; }
+  public System.String? Midline { get ; set; }
   
   /// <summary>
   /// customRecognizerId
   /// </summary>
-  public String? CustomRecognizerId { get ; set; }
+  public System.String? CustomRecognizerId { get ; set; }
   
   /// <summary>
   /// mathML
   /// </summary>
-  public String? MathML { get ; set; }
+  public System.String? MathML { get ; set; }
   
   /// <summary>
   /// mathStruct
   /// </summary>
-  public String? MathStruct { get ; set; }
+  public System.String? MathStruct { get ; set; }
   
   /// <summary>
   /// mathSymbol
   /// </summary>
-  public String? MathSymbol { get ; set; }
+  public System.String? MathSymbol { get ; set; }
   
   /// <summary>
   /// beginModifierType
   /// </summary>
-  public String? BeginModifierType { get ; set; }
+  public System.String? BeginModifierType { get ; set; }
   
   /// <summary>
   /// endModifierType
   /// </summary>
-  public String? EndModifierType { get ; set; }
+  public System.String? EndModifierType { get ; set; }
   
   /// <summary>
   /// rotationAngle
   /// </summary>
-  public Int32? RotationAngle { get ; set; }
+  public System.Int32? RotationAngle { get ; set; }
   
   /// <summary>
   /// hotPoints
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? HotPoints { get ; set; }
+  public System.Collections.Generic.List<System.String>? HotPoints { get ; set; }
   
   /// <summary>
   /// centroid
   /// </summary>
-  public String? Centroid { get ; set; }
+  public System.String? Centroid { get ; set; }
   
   /// <summary>
   /// semanticType
   /// </summary>
-  public String? SemanticType { get ; set; }
+  public System.String? SemanticType { get ; set; }
   
   /// <summary>
   /// shapeName
   /// </summary>
-  public String? ShapeName { get ; set; }
+  public System.String? ShapeName { get ; set; }
   
   /// <summary>
   /// shapeGeometry
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? ShapeGeometry { get ; set; }
+  public System.Collections.Generic.List<System.String>? ShapeGeometry { get ; set; }
   
 }

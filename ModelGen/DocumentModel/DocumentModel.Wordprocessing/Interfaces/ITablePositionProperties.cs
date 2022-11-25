@@ -8,51 +8,51 @@ public interface ITablePositionProperties // : DocumentModel.ITypedOpenXmlLeafEl
   /// <summary>
   /// Distance From Left of Table to Text
   /// </summary>
-  public Int16? LeftFromText { get ; set; }
+  public System.Int16? LeftFromText { get ; set; }
   
   /// <summary>
   /// (Distance From Right of Table to Text
   /// </summary>
-  public Int16? RightFromText { get ; set; }
+  public System.Int16? RightFromText { get ; set; }
   
   /// <summary>
   /// Distance From Top of Table to Text
   /// </summary>
-  public Int16? TopFromText { get ; set; }
+  public System.Int16? TopFromText { get ; set; }
   
   /// <summary>
   /// Distance From Bottom of Table to Text
   /// </summary>
-  public Int16? BottomFromText { get ; set; }
+  public System.Int16? BottomFromText { get ; set; }
   
   /// <summary>
   /// Table Vertical Anchor
   /// </summary>
-  public VerticalAnchorKind? VerticalAnchor { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalAnchorKind? VerticalAnchor { get ; set; }
   
   /// <summary>
   /// Table Horizontal Anchor
   /// </summary>
-  public HorizontalAnchorKind? HorizontalAnchor { get ; set; }
+  public DocumentModel.Wordprocessing.HorizontalAnchorKind? HorizontalAnchor { get ; set; }
   
   /// <summary>
   /// Relative Horizontal Alignment From Anchor
   /// </summary>
-  public HorizontalAlignmentKind? TablePositionXAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.HorizontalAlignmentKind? TablePositionXAlignment { get ; set; }
   
   /// <summary>
   /// Absolute Horizontal Distance From Anchor
   /// </summary>
-  public Int32? TablePositionX { get ; set; }
+  public System.Int32? TablePositionX { get ; set; }
   
   /// <summary>
   /// Relative Vertical Alignment from Anchor
   /// </summary>
-  public VerticalAlignmentKind? TablePositionYAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalAlignmentKind? TablePositionYAlignment { get ; set; }
   
   /// <summary>
   /// Absolute Vertical Distance From Anchor
   /// </summary>
-  public Int32? TablePositionY { get ; set; }
+  public System.Int32? TablePositionY { get ; set; }
   
 }

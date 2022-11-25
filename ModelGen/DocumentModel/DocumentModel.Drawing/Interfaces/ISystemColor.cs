@@ -8,11 +8,11 @@ public interface ISystemColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Value
   /// </summary>
-  public SystemColorValues? Val { get ; set; }
+  public DocumentModel.Drawing.SystemColorKind? Val { get ; set; }
   
   /// <summary>
   /// Last Color
   /// </summary>
-  public IHexBinaryValue? LastColor { get ; set; }
+  public DocumentModel.IHexBinaryValue? LastColor { get ; set; }
   
 }

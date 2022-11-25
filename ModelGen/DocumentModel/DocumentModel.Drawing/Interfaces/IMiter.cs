@@ -8,6 +8,6 @@ public interface IMiter // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Miter Join Limit
   /// </summary>
-  public Int32? Limit { get ; set; }
+  public System.Int32? Limit { get ; set; }
   
 }

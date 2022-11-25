@@ -8,11 +8,11 @@ public interface ITaskAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// CommentAnchor.
   /// </summary>
-  public ICommentAnchor? CommentAnchor { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Tasks.ICommentAnchor? CommentAnchor { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

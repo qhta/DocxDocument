@@ -8,6 +8,6 @@ public interface IFormulaReference // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public ISequenceOfReferences? SequenceOfReferences { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SequenceOfReferences { get ; set; }
   
 }

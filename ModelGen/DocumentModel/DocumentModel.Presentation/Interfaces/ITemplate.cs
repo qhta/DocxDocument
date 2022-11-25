@@ -8,11 +8,11 @@ public interface ITemplate // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Level
   /// </summary>
-  public UInt32? Level { get ; set; }
+  public System.UInt32? Level { get ; set; }
   
   /// <summary>
   /// Time Node List.
   /// </summary>
-  public ITimeNodeList? TimeNodeList { get ; set; }
+  public DocumentModel.Presentation.ITimeNodeList? TimeNodeList { get ; set; }
   
 }

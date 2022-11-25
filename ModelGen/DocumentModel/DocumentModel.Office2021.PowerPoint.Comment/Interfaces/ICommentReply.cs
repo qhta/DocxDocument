@@ -8,41 +8,41 @@ public interface ICommentReply // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// authorId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? AuthorId { get ; set; }
+  public System.String? AuthorId { get ; set; }
   
   /// <summary>
   /// status, this property is only available in Office 2021 and later.
   /// </summary>
-  public CommentStatus? Status { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Comment.CommentStatus? Status { get ; set; }
   
   /// <summary>
   /// created, this property is only available in Office 2021 and later.
   /// </summary>
-  public DateTime? Created { get ; set; }
+  public System.DateTime? Created { get ; set; }
   
   /// <summary>
   /// tags, this property is only available in Office 2021 and later.
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? Tags { get ; set; }
+  public System.Collections.Generic.List<System.String>? Tags { get ; set; }
   
   /// <summary>
   /// likes, this property is only available in Office 2021 and later.
   /// </summary>
-  public IListValue<DocumentFormat.OpenXml.StringValue>? Likes { get ; set; }
+  public System.Collections.Generic.List<System.String>? Likes { get ; set; }
   
   /// <summary>
   /// TextBodyType.
   /// </summary>
-  public ITextBodyType? TextBodyType { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Comment.ITextBodyType? TextBodyType { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

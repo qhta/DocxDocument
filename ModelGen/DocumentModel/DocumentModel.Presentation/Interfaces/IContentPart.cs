@@ -8,26 +8,26 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// bwMode, this property is only available in Office 2010 and later.
   /// </summary>
-  public BlackWhiteModeValues? BwMode { get ; set; }
+  public DocumentModel.Drawing.BlackWhiteMode? BwMode { get ; set; }
   
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  public INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// ExtensionListModify.
   /// </summary>
-  public IExtensionListModify? ExtensionListModify { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IExtensionListModify? ExtensionListModify { get ; set; }
   
 }

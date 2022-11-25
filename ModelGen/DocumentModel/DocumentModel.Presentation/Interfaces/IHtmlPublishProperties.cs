@@ -8,16 +8,16 @@ public interface IHtmlPublishProperties // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// Show Speaker Notes
   /// </summary>
-  public Boolean? ShowSpeakerNotes { get ; set; }
+  public System.Boolean? ShowSpeakerNotes { get ; set; }
   
   /// <summary>
   /// Browser Support Target
   /// </summary>
-  public HtmlPublishWebBrowserSupportValues? TargetBrowser { get ; set; }
+  public DocumentModel.Presentation.HtmlPublishWebBrowserSupportKind? TargetBrowser { get ; set; }
   
   /// <summary>
   /// Publish Path
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

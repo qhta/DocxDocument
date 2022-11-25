@@ -8,6 +8,6 @@ public interface IFilteredSurfaceSeries // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// SurfaceChartSeries.
   /// </summary>
-  public ISurfaceChartSeries? SurfaceChartSeries { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.ISurfaceChartSeries? SurfaceChartSeries { get ; set; }
   
 }

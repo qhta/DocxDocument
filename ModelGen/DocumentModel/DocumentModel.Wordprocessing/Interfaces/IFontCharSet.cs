@@ -8,11 +8,11 @@ public interface IFontCharSet // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// val
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
   /// <summary>
   /// characterSet
   /// </summary>
-  public StrictCharacterSet? StrictCharacterSet { get ; set; }
+  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface ISurfaceType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Thickness.
   /// </summary>
-  public IThickness? Thickness { get ; set; }
+  public System.Byte? Thickness { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Picture Options.
   /// </summary>
-  public IPictureOptions? PictureOptions { get ; set; }
+  public DocumentModel.Drawing.Charts.IPictureOptions? PictureOptions { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }
