@@ -8,11 +8,11 @@ public interface IBlend // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Blend Mode
   /// </summary>
-  public BlendModeValues? BlendMode { get ; set; }
+  public DocumentModel.Drawing.BlendMode? BlendMode { get ; set; }
   
   /// <summary>
   /// Effect to blend.
   /// </summary>
-  public IEffectContainer? EffectContainer { get ; set; }
+  public DocumentModel.Drawing.IEffectContainerType? EffectContainer { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IColorMostRecentlyUsed // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Recent colors
   /// </summary>
-  public String? Colors { get ; set; }
+  public System.String? Colors { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface IFontScheme // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// Major Font.
   /// </summary>
-  public IMajorFont? MajorFont { get ; set; }
+  public DocumentModel.Drawing.IFontCollectionType? MajorFont { get ; set; }
   
   /// <summary>
   /// Minor fonts.
   /// </summary>
-  public IMinorFont? MinorFont { get ; set; }
+  public DocumentModel.Drawing.IFontCollectionType? MinorFont { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

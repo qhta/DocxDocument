@@ -8,11 +8,11 @@ public interface ITaskScheduleEventInfo // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// stDt, this property is only available in Office 2021 and later.
   /// </summary>
-  public DateTime? StDt { get ; set; }
+  public System.DateTime? StDt { get ; set; }
   
   /// <summary>
   /// endDt, this property is only available in Office 2021 and later.
   /// </summary>
-  public DateTime? EndDt { get ; set; }
+  public System.DateTime? EndDt { get ; set; }
   
 }

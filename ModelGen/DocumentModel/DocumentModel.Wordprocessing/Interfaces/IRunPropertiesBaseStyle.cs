@@ -8,171 +8,171 @@ public interface IRunPropertiesBaseStyle // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// RunFonts.
   /// </summary>
-  public IRunFonts? RunFonts { get ; set; }
+  public DocumentModel.Wordprocessing.IRunFonts? RunFonts { get ; set; }
   
   /// <summary>
   /// Bold.
   /// </summary>
-  public IBold? Bold { get ; set; }
+  public System.Boolean? Bold { get ; set; }
   
   /// <summary>
   /// BoldComplexScript.
   /// </summary>
-  public IBoldComplexScript? BoldComplexScript { get ; set; }
+  public System.Boolean? BoldComplexScript { get ; set; }
   
   /// <summary>
   /// Italic.
   /// </summary>
-  public Italic? Italic { get ; set; }
+  public System.Boolean? Italic { get ; set; }
   
   /// <summary>
   /// ItalicComplexScript.
   /// </summary>
-  public ItalicComplexScript? ItalicComplexScript { get ; set; }
+  public System.Boolean? ItalicComplexScript { get ; set; }
   
   /// <summary>
   /// Caps.
   /// </summary>
-  public ICaps? Caps { get ; set; }
+  public System.Boolean? Caps { get ; set; }
   
   /// <summary>
   /// SmallCaps.
   /// </summary>
-  public ISmallCaps? SmallCaps { get ; set; }
+  public System.Boolean? SmallCaps { get ; set; }
   
   /// <summary>
   /// Strike.
   /// </summary>
-  public IStrike? Strike { get ; set; }
+  public System.Boolean? Strike { get ; set; }
   
   /// <summary>
   /// DoubleStrike.
   /// </summary>
-  public IDoubleStrike? DoubleStrike { get ; set; }
+  public System.Boolean? DoubleStrike { get ; set; }
   
   /// <summary>
   /// Outline.
   /// </summary>
-  public IOutline? Outline { get ; set; }
+  public System.Boolean? Outline { get ; set; }
   
   /// <summary>
   /// Shadow.
   /// </summary>
-  public IShadow? Shadow { get ; set; }
+  public System.Boolean? Shadow { get ; set; }
   
   /// <summary>
   /// Emboss.
   /// </summary>
-  public IEmboss? Emboss { get ; set; }
+  public System.Boolean? Emboss { get ; set; }
   
   /// <summary>
   /// Imprint.
   /// </summary>
-  public Imprint? Imprint { get ; set; }
+  public System.Boolean? Imprint { get ; set; }
   
   /// <summary>
   /// NoProof.
   /// </summary>
-  public INoProof? NoProof { get ; set; }
+  public System.Boolean? NoProof { get ; set; }
   
   /// <summary>
   /// SnapToGrid.
   /// </summary>
-  public ISnapToGrid? SnapToGrid { get ; set; }
+  public System.Boolean? SnapToGrid { get ; set; }
   
   /// <summary>
   /// Vanish.
   /// </summary>
-  public IVanish? Vanish { get ; set; }
+  public System.Boolean? Vanish { get ; set; }
   
   /// <summary>
   /// WebHidden.
   /// </summary>
-  public IWebHidden? WebHidden { get ; set; }
+  public System.Boolean? WebHidden { get ; set; }
   
   /// <summary>
   /// Color.
   /// </summary>
-  public IColor? Color { get ; set; }
+  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
   
   /// <summary>
   /// Spacing.
   /// </summary>
-  public Int32Value? Spacing { get ; set; }
+  public System.Int32? Spacing { get ; set; }
   
   /// <summary>
   /// CharacterScale.
   /// </summary>
-  public IntegerValue? CharacterScale { get ; set; }
+  public System.Int32? CharacterScale { get ; set; }
   
   /// <summary>
   /// Kern.
   /// </summary>
-  public IUInt32Value? Kern { get ; set; }
+  public System.UInt32? Kern { get ; set; }
   
   /// <summary>
   /// Position.
   /// </summary>
-  public IStringValue? Position { get ; set; }
+  public System.String? Position { get ; set; }
   
   /// <summary>
   /// FontSize.
   /// </summary>
-  public IFontSize? FontSize { get ; set; }
+  public System.String? FontSize { get ; set; }
   
   /// <summary>
   /// FontSizeComplexScript.
   /// </summary>
-  public IFontSizeComplexScript? FontSizeComplexScript { get ; set; }
+  public System.String? FontSizeComplexScript { get ; set; }
   
   /// <summary>
   /// Underline.
   /// </summary>
-  public IUnderline? Underline { get ; set; }
+  public DocumentModel.Wordprocessing.IUnderline? Underline { get ; set; }
   
   /// <summary>
   /// TextEffect.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues>? TextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get ; set; }
   
   /// <summary>
   /// Border.
   /// </summary>
-  public IBorder? Border { get ; set; }
+  public DocumentModel.Wordprocessing.IBorderType? Border { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public IShading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
   
   /// <summary>
   /// FitText.
   /// </summary>
-  public IFitText? FitText { get ; set; }
+  public DocumentModel.Wordprocessing.IFitText? FitText { get ; set; }
   
   /// <summary>
   /// VerticalTextAlignment.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues>? VerticalTextAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get ; set; }
   
   /// <summary>
   /// Emphasis.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues>? Emphasis { get ; set; }
+  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get ; set; }
   
   /// <summary>
   /// Languages.
   /// </summary>
-  public ILanguages? Languages { get ; set; }
+  public DocumentModel.Wordprocessing.ILanguageType? Languages { get ; set; }
   
   /// <summary>
   /// EastAsianLayout.
   /// </summary>
-  public IEastAsianLayout? EastAsianLayout { get ; set; }
+  public DocumentModel.Wordprocessing.IEastAsianLayout? EastAsianLayout { get ; set; }
   
   /// <summary>
   /// SpecVanish.
   /// </summary>
-  public ISpecVanish? SpecVanish { get ; set; }
+  public System.Boolean? SpecVanish { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IBackgroundBlurProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

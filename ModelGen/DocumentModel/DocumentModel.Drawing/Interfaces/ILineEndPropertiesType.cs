@@ -8,16 +8,16 @@ public interface ILineEndPropertiesType // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// Line Head/End Type
   /// </summary>
-  public LineEndValues? Type { get ; set; }
+  public DocumentModel.Drawing.LineEndKind? Type { get ; set; }
   
   /// <summary>
   /// Width of Head/End
   /// </summary>
-  public LineEndWidthValues? Width { get ; set; }
+  public DocumentModel.Drawing.LineEndWidthKind? Width { get ; set; }
   
   /// <summary>
   /// Length of Head/End
   /// </summary>
-  public LineEndLengthValues? Length { get ; set; }
+  public DocumentModel.Drawing.LineEndLengthKind? Length { get ; set; }
   
 }

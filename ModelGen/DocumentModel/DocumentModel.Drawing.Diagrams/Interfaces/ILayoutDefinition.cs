@@ -8,21 +8,16 @@ public interface ILayoutDefinition // : DocumentModel.ITypedOpenXmlPartRootEleme
   /// <summary>
   /// uniqueId
   /// </summary>
-  public String? UniqueId { get ; set; }
+  public System.String? UniqueId { get ; set; }
   
   /// <summary>
   /// minVer
   /// </summary>
-  public String? MinVersion { get ; set; }
+  public System.String? MinVersion { get ; set; }
   
   /// <summary>
   /// defStyle
   /// </summary>
-  public String? DefaultStyle { get ; set; }
-  
-  /// <summary>
-  /// Gets the DiagramLayoutDefinitionPart associated with this element.
-  /// </summary>
-  public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionPart { get ; set; }
+  public System.String? DefaultStyle { get ; set; }
   
 }

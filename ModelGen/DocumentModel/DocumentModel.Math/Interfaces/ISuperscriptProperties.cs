@@ -8,6 +8,6 @@ public interface ISuperscriptProperties // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

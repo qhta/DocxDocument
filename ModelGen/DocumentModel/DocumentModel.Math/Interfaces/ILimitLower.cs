@@ -8,16 +8,16 @@ public interface ILimitLower // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Lower Limit Properties.
   /// </summary>
-  public ILimitLowerProperties? LimitLowerProperties { get ; set; }
+  public DocumentModel.Math.ILimitLowerProperties? LimitLowerProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public IBase? Base { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
   
   /// <summary>
   /// Limit (Lower).
   /// </summary>
-  public ILimit? Limit { get ; set; }
+  public DocumentModel.Math.IOfficeMathArgumentType? Limit { get ; set; }
   
 }

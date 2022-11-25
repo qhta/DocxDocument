@@ -8,16 +8,16 @@ public interface IWrapTopBottom // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>
-  public UInt32? DistanceFromTop { get ; set; }
+  public System.UInt32? DistanceFromTop { get ; set; }
   
   /// <summary>
   /// Distance From Text on Bottom Edge
   /// </summary>
-  public UInt32? DistanceFromBottom { get ; set; }
+  public System.UInt32? DistanceFromBottom { get ; set; }
   
   /// <summary>
   /// Wrapping Boundaries.
   /// </summary>
-  public IEffectExtent? EffectExtent { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.IEffectExtent? EffectExtent { get ; set; }
   
 }

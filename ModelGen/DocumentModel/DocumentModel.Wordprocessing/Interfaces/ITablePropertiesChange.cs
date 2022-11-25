@@ -8,21 +8,21 @@ public interface ITablePropertiesChange // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// author
   /// </summary>
-  public String? Author { get ; set; }
+  public System.String? Author { get ; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public DateTime? Date { get ; set; }
+  public System.DateTime? Date { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Previous Table Properties.
   /// </summary>
-  public IPreviousTableProperties? PreviousTableProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IPreviousTableProperties? PreviousTableProperties { get ; set; }
   
 }

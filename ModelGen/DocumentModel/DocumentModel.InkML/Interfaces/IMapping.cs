@@ -8,16 +8,16 @@ public interface IMapping // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public MappingTypeValues? Type { get ; set; }
+  public DocumentModel.InkML.MappingTypeKind? Type { get ; set; }
   
   /// <summary>
   /// mappingRef
   /// </summary>
-  public String? MappingRef { get ; set; }
+  public System.String? MappingRef { get ; set; }
   
 }

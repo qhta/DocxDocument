@@ -8,36 +8,36 @@ public interface IShowEventRecordList // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// TriggerEventRecord.
   /// </summary>
-  public ITriggerEventRecord? TriggerEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.ITriggerEventRecord? TriggerEventRecord { get ; set; }
   
   /// <summary>
   /// PlayEventRecord.
   /// </summary>
-  public IPlayEventRecord? PlayEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IMediaPlaybackEventRecordType? PlayEventRecord { get ; set; }
   
   /// <summary>
   /// StopEventRecord.
   /// </summary>
-  public IStopEventRecord? StopEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IMediaPlaybackEventRecordType? StopEventRecord { get ; set; }
   
   /// <summary>
   /// PauseEventRecord.
   /// </summary>
-  public IPauseEventRecord? PauseEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IMediaPlaybackEventRecordType? PauseEventRecord { get ; set; }
   
   /// <summary>
   /// ResumeEventRecord.
   /// </summary>
-  public IResumeEventRecord? ResumeEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IMediaPlaybackEventRecordType? ResumeEventRecord { get ; set; }
   
   /// <summary>
   /// SeekEventRecord.
   /// </summary>
-  public ISeekEventRecord? SeekEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.ISeekEventRecord? SeekEventRecord { get ; set; }
   
   /// <summary>
   /// NullEventRecord.
   /// </summary>
-  public INullEventRecord? NullEventRecord { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.INullEventRecord? NullEventRecord { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IGradientFillProperties // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// GradientStopList.
   /// </summary>
-  public IGradientStopList? GradientStopList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? GradientStopList { get ; set; }
   
 }

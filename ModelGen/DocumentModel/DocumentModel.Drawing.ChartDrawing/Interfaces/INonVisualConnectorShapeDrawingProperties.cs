@@ -8,11 +8,11 @@ public interface INonVisualConnectorShapeDrawingProperties // : DocumentModel.IT
   /// <summary>
   /// Chart Non Visual Properties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Connection Shape Drawing Properties.
   /// </summary>
-  public INonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.INonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get ; set; }
   
 }

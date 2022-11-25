@@ -1,0 +1,13 @@
+namespace DocumentModel.Office2016.Drawing.ChartDrawing;
+
+/// <summary>
+/// Defines the ChartStringValue Class.
+/// </summary>
+public interface IChartStringValue // : DocumentModel.ITypedOpenXmlLeafTextElement
+{
+  /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public System.UInt32? Index { get ; set; }
+  
+}

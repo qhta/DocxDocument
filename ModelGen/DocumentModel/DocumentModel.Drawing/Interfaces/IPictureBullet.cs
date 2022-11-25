@@ -8,6 +8,6 @@ public interface IPictureBullet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Blip.
   /// </summary>
-  public IBlip? Blip { get ; set; }
+  public DocumentModel.Drawing.IBlip? Blip { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IListItem // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// List Entry Display Text
   /// </summary>
-  public String? DisplayText { get ; set; }
+  public System.String? DisplayText { get ; set; }
   
   /// <summary>
   /// List Entry Value
   /// </summary>
-  public String? Value { get ; set; }
+  public System.String? Value { get ; set; }
   
 }

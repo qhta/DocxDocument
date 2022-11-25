@@ -8,11 +8,11 @@ public interface IScatterChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ScatterStyle.
   /// </summary>
-  public IScatterStyle? ScatterStyle { get ; set; }
+  public DocumentModel.Drawing.Charts.ScatterStyleKind? ScatterStyle { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public IVaryColors? VaryColors { get ; set; }
+  public System.Boolean? VaryColors { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface INode // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// node-number
   /// </summary>
-  public Int32? NodeNumber { get ; set; }
+  public System.Int32? NodeNumber { get ; set; }
   
   /// <summary>
   /// confidence
   /// </summary>
-  public Decimal? Confidence { get ; set; }
+  public System.Decimal? Confidence { get ; set; }
   
   /// <summary>
   /// cost
   /// </summary>
-  public Decimal? Cost { get ; set; }
+  public System.Decimal? Cost { get ; set; }
   
 }

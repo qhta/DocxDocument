@@ -8,11 +8,11 @@ public interface IContextLinkType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// direction
   /// </summary>
-  public LinkDirectionValues? Direction { get ; set; }
+  public DocumentModel.Office2010.Ink.LinkDirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// ref
   /// </summary>
-  public String? Reference { get ; set; }
+  public System.String? Reference { get ; set; }
   
 }

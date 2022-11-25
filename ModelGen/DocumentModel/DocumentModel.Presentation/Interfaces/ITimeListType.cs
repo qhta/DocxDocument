@@ -8,11 +8,11 @@ public interface ITimeListType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// X coordinate
   /// </summary>
-  public Int32? X { get ; set; }
+  public System.Int32? X { get ; set; }
   
   /// <summary>
   /// Y coordinate
   /// </summary>
-  public Int32? Y { get ; set; }
+  public System.Int32? Y { get ; set; }
   
 }

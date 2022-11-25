@@ -8,11 +8,11 @@ public interface IMarkerType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Relative X Coordinate.
   /// </summary>
-  public IXPosition? XPosition { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? XPosition { get ; set; }
   
   /// <summary>
   /// Relative Y Coordinate.
   /// </summary>
-  public IYPosition? YPosition { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? YPosition { get ; set; }
   
 }

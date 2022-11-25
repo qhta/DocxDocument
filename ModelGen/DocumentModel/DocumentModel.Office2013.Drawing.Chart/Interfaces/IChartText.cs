@@ -8,16 +8,16 @@ public interface IChartText // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// String Reference.
   /// </summary>
-  public IStringReference? StringReference { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringReference? StringReference { get ; set; }
   
   /// <summary>
   /// Rich Text.
   /// </summary>
-  public IRichText? RichText { get ; set; }
+  public DocumentModel.Drawing.Charts.ITextBodyType? RichText { get ; set; }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public IStringLiteral? StringLiteral { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringDataType? StringLiteral { get ; set; }
   
 }

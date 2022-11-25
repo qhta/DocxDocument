@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseTypes", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.Attributes", "DocumentModel.Attributes\DocumentModel.Attributes.csproj", "{D7D38CF3-8CEE-40C3-88CB-791A7DE02D8B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.Impl", "DocumentModel.Impl\DocumentModel.Impl.csproj", "{A9A37415-9F71-4BB2-9933-F95712641B3A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{D7D38CF3-8CEE-40C3-88CB-791A7DE02D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7D38CF3-8CEE-40C3-88CB-791A7DE02D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7D38CF3-8CEE-40C3-88CB-791A7DE02D8B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9A37415-9F71-4BB2-9933-F95712641B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9A37415-9F71-4BB2-9933-F95712641B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9A37415-9F71-4BB2-9933-F95712641B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9A37415-9F71-4BB2-9933-F95712641B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

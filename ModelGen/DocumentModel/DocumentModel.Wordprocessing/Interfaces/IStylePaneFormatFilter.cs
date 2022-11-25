@@ -8,81 +8,81 @@ public interface IStylePaneFormatFilter // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// val
   /// </summary>
-  public IHexBinaryValue? Val { get ; set; }
+  public DocumentModel.IHexBinaryValue? Val { get ; set; }
   
   /// <summary>
   /// allStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? AllStyles { get ; set; }
+  public System.Boolean? AllStyles { get ; set; }
   
   /// <summary>
   /// customStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? CustomStyles { get ; set; }
+  public System.Boolean? CustomStyles { get ; set; }
   
   /// <summary>
   /// latentStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LatentStyles { get ; set; }
+  public System.Boolean? LatentStyles { get ; set; }
   
   /// <summary>
   /// stylesInUse, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? StylesInUse { get ; set; }
+  public System.Boolean? StylesInUse { get ; set; }
   
   /// <summary>
   /// headingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? HeadingStyles { get ; set; }
+  public System.Boolean? HeadingStyles { get ; set; }
   
   /// <summary>
   /// numberingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NumberingStyles { get ; set; }
+  public System.Boolean? NumberingStyles { get ; set; }
   
   /// <summary>
   /// tableStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? TableStyles { get ; set; }
+  public System.Boolean? TableStyles { get ; set; }
   
   /// <summary>
   /// directFormattingOnRuns, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? DirectFormattingOnRuns { get ; set; }
+  public System.Boolean? DirectFormattingOnRuns { get ; set; }
   
   /// <summary>
   /// directFormattingOnParagraphs, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? DirectFormattingOnParagraphs { get ; set; }
+  public System.Boolean? DirectFormattingOnParagraphs { get ; set; }
   
   /// <summary>
   /// directFormattingOnNumbering, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? DirectFormattingOnNumbering { get ; set; }
+  public System.Boolean? DirectFormattingOnNumbering { get ; set; }
   
   /// <summary>
   /// directFormattingOnTables, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? DirectFormattingOnTables { get ; set; }
+  public System.Boolean? DirectFormattingOnTables { get ; set; }
   
   /// <summary>
   /// clearFormatting, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? ClearFormatting { get ; set; }
+  public System.Boolean? ClearFormatting { get ; set; }
   
   /// <summary>
   /// top3HeadingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Top3HeadingStyles { get ; set; }
+  public System.Boolean? Top3HeadingStyles { get ; set; }
   
   /// <summary>
   /// visibleStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? VisibleStyles { get ; set; }
+  public System.Boolean? VisibleStyles { get ; set; }
   
   /// <summary>
   /// alternateStyleNames, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? AlternateStyleNames { get ; set; }
+  public System.Boolean? AlternateStyleNames { get ; set; }
   
 }

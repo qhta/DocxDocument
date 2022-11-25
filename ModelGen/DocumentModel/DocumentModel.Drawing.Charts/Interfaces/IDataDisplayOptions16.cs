@@ -8,6 +8,6 @@ public interface IDataDisplayOptions16 // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// BooleanFalse.
   /// </summary>
-  public Boolean? BooleanFalse { get ; set; }
+  public System.Boolean? BooleanFalse { get ; set; }
   
 }

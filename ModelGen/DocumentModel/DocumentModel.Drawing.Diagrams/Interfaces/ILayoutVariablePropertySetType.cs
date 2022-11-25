@@ -8,46 +8,46 @@ public interface ILayoutVariablePropertySetType // : DocumentModel.ITypedOpenXml
   /// <summary>
   /// Show Organization Chart User Interface.
   /// </summary>
-  public IOrganizationChart? OrganizationChart { get ; set; }
+  public System.Boolean? OrganizationChart { get ; set; }
   
   /// <summary>
   /// Maximum Children.
   /// </summary>
-  public IMaxNumberOfChildren? MaxNumberOfChildren { get ; set; }
+  public System.Int32? MaxNumberOfChildren { get ; set; }
   
   /// <summary>
   /// Preferred Number of Children.
   /// </summary>
-  public IPreferredNumberOfChildren? PreferredNumberOfChildren { get ; set; }
+  public System.Int32? PreferredNumberOfChildren { get ; set; }
   
   /// <summary>
   /// Show Insert Bullet.
   /// </summary>
-  public IBulletEnabled? BulletEnabled { get ; set; }
+  public System.Boolean? BulletEnabled { get ; set; }
   
   /// <summary>
   /// Diagram Direction.
   /// </summary>
-  public IDirection? Direction { get ; set; }
+  public DocumentModel.Drawing.Diagrams.DirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// Organization Chart Branch Style.
   /// </summary>
-  public IHierarchyBranch? HierarchyBranch { get ; set; }
+  public DocumentModel.Drawing.Diagrams.HierarchyBranchStyleKind? HierarchyBranch { get ; set; }
   
   /// <summary>
   /// One by One Animation String.
   /// </summary>
-  public IAnimateOneByOne? AnimateOneByOne { get ; set; }
+  public DocumentModel.Drawing.Diagrams.AnimateOneByOneKind? AnimateOneByOne { get ; set; }
   
   /// <summary>
   /// Level Animation.
   /// </summary>
-  public IAnimationLevel? AnimationLevel { get ; set; }
+  public DocumentModel.Drawing.Diagrams.AnimationLevelStringKind? AnimationLevel { get ; set; }
   
   /// <summary>
   /// Shape Resize Style.
   /// </summary>
-  public IResizeHandles? ResizeHandles { get ; set; }
+  public DocumentModel.Drawing.Diagrams.ResizeHandlesStringKind? ResizeHandles { get ; set; }
   
 }

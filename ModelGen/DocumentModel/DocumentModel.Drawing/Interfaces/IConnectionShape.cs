@@ -8,21 +8,21 @@ public interface IConnectionShape // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Non-Visual Properties for a Connection Shape.
   /// </summary>
-  public INonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get ; set; }
+  public DocumentModel.Drawing.INonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get ; set; }
   
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public IShapeStyle? ShapeStyle { get ; set; }
+  public DocumentModel.Drawing.IShapeStyle? ShapeStyle { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface ITextFontType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Text Typeface
   /// </summary>
-  public String? Typeface { get ; set; }
+  public System.String? Typeface { get ; set; }
   
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public IHexBinaryValue? Panose { get ; set; }
+  public DocumentModel.IHexBinaryValue? Panose { get ; set; }
   
   /// <summary>
   /// Similar Font Family
   /// </summary>
-  public SByte? PitchFamily { get ; set; }
+  public System.SByte? PitchFamily { get ; set; }
   
   /// <summary>
   /// Similar Character Set
   /// </summary>
-  public SByte? CharacterSet { get ; set; }
+  public System.SByte? CharacterSet { get ; set; }
   
 }

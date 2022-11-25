@@ -8,11 +8,11 @@ public interface IThreadingInfo // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// timeZoneBias, this property is only available in Office 2013 and later.
   /// </summary>
-  public Int32? TimeZoneBias { get ; set; }
+  public System.Int32? TimeZoneBias { get ; set; }
   
   /// <summary>
   /// ParentCommentIdentifier.
   /// </summary>
-  public IParentCommentIdentifier? ParentCommentIdentifier { get ; set; }
+  public DocumentModel.Office2013.PowerPoint.IParentCommentIdentifier? ParentCommentIdentifier { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface IGraphicFrame // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualGraphicFrameProperties.
   /// </summary>
-  public INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.INonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingGroup.ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// Graphic.
   /// </summary>
-  public IGraphic? Graphic { get ; set; }
+  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
   
 }

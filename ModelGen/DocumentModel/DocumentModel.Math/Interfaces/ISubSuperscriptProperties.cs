@@ -8,11 +8,11 @@ public interface ISubSuperscriptProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// Align Scripts.
   /// </summary>
-  public IAlignScripts? AlignScripts { get ; set; }
+  public DocumentModel.Math.BooleanKind? AlignScripts { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

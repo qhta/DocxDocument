@@ -8,21 +8,21 @@ public interface IHiddenLineProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// line width
   /// </summary>
-  public Int32? Width { get ; set; }
+  public System.Int32? Width { get ; set; }
   
   /// <summary>
   /// line cap
   /// </summary>
-  public LineCapValues? CapType { get ; set; }
+  public DocumentModel.Drawing.LineCapKind? CapType { get ; set; }
   
   /// <summary>
   /// compound line type
   /// </summary>
-  public CompoundLineValues? CompoundLineType { get ; set; }
+  public DocumentModel.Drawing.CompoundLineKind? CompoundLineType { get ; set; }
   
   /// <summary>
   /// pen alignment
   /// </summary>
-  public PenAlignmentValues? Alignment { get ; set; }
+  public DocumentModel.Drawing.PenAlignmentKind? Alignment { get ; set; }
   
 }

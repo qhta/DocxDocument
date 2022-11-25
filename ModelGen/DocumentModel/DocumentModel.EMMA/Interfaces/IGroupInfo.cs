@@ -8,6 +8,6 @@ public interface IGroupInfo // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ref
   /// </summary>
-  public String? Reference { get ; set; }
+  public System.String? Reference { get ; set; }
   
 }

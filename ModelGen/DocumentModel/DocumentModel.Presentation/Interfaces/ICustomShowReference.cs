@@ -8,6 +8,6 @@ public interface ICustomShowReference // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// Custom Show Identifier
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
 }

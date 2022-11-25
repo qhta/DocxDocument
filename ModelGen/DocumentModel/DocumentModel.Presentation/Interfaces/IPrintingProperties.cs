@@ -8,31 +8,31 @@ public interface IPrintingProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Print Output
   /// </summary>
-  public PrintOutputValues? PrintWhat { get ; set; }
+  public DocumentModel.Presentation.PrintOutputKind? PrintWhat { get ; set; }
   
   /// <summary>
   /// Print Color Mode
   /// </summary>
-  public PrintColorModeValues? ColorMode { get ; set; }
+  public DocumentModel.Presentation.PrintColorMode? ColorMode { get ; set; }
   
   /// <summary>
   /// Print Hidden Slides
   /// </summary>
-  public Boolean? HiddenSlides { get ; set; }
+  public System.Boolean? HiddenSlides { get ; set; }
   
   /// <summary>
   /// Scale to Fit Paper when printing
   /// </summary>
-  public Boolean? ScaleToFitPaper { get ; set; }
+  public System.Boolean? ScaleToFitPaper { get ; set; }
   
   /// <summary>
   /// Frame slides when printing
   /// </summary>
-  public Boolean? FrameSlides { get ; set; }
+  public System.Boolean? FrameSlides { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

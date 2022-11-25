@@ -8,16 +8,16 @@ public interface IBorderType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Border Style
   /// </summary>
-  public BorderValues? Type { get ; set; }
+  public DocumentModel.Vml.Wordprocessing.BorderKind? Type { get ; set; }
   
   /// <summary>
   /// Border Width
   /// </summary>
-  public Int32? Width { get ; set; }
+  public System.Int32? Width { get ; set; }
   
   /// <summary>
   /// Border shadow
   /// </summary>
-  public ITrueFalseValue? Shadow { get ; set; }
+  public System.Boolean? Shadow { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IFontCollectionType // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Latin Font.
   /// </summary>
-  public ILatinFont? LatinFont { get ; set; }
+  public DocumentModel.Drawing.ITextFontType? LatinFont { get ; set; }
   
   /// <summary>
   /// East Asian Font.
   /// </summary>
-  public IEastAsianFont? EastAsianFont { get ; set; }
+  public DocumentModel.Drawing.ITextFontType? EastAsianFont { get ; set; }
   
   /// <summary>
   /// Complex Script Font.
   /// </summary>
-  public IComplexScriptFont? ComplexScriptFont { get ; set; }
+  public DocumentModel.Drawing.ITextFontType? ComplexScriptFont { get ; set; }
   
 }

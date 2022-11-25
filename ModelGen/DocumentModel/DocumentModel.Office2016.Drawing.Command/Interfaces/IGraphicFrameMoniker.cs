@@ -8,11 +8,11 @@ public interface IGraphicFrameMoniker // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// creationId, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? CreationId { get ; set; }
+  public System.String? CreationId { get ; set; }
   
 }

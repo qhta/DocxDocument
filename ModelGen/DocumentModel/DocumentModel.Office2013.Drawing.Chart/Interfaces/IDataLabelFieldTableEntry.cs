@@ -8,16 +8,16 @@ public interface IDataLabelFieldTableEntry // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// TextFieldGuid.
   /// </summary>
-  public ITextFieldGuid? TextFieldGuid { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? TextFieldGuid { get ; set; }
   
   /// <summary>
   /// Formula.
   /// </summary>
-  public IFormula? Formula { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
   
   /// <summary>
   /// DataLabelFieldTableCache.
   /// </summary>
-  public IDataLabelFieldTableCache? DataLabelFieldTableCache { get ; set; }
+  public DocumentModel.Office2013.Drawing.Chart.IStringDataType? DataLabelFieldTableCache { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IFlythroughTransition // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public TransitionInOutDirectionValues? Direction { get ; set; }
+  public DocumentModel.Presentation.TransitionInOutDirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// hasBounce, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? HasBounce { get ; set; }
+  public System.Boolean? HasBounce { get ; set; }
   
 }

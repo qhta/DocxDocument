@@ -5,18 +5,18 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface INumberingDefinitionsPart // : DocumentModel.Packaging.ITypedOpenXmlPart
 {
-  public String? ContentType { get ; set; }
+  public System.String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  public IEnumerable<DocumentFormat.OpenXml.Packaging.ImagePart>? ImageParts { get ; set; }
+  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public INumbering? Numbering { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? Numbering { get ; set; }
   
-  public String? RelationshipType { get ; set; }
+  public System.String? RelationshipType { get ; set; }
   
 }

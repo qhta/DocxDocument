@@ -8,46 +8,46 @@ public interface ITableCellBorders // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Left Border.
   /// </summary>
-  public ILeftBorder? LeftBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? LeftBorder { get ; set; }
   
   /// <summary>
   /// Right Border.
   /// </summary>
-  public IRightBorder? RightBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? RightBorder { get ; set; }
   
   /// <summary>
   /// Top Border.
   /// </summary>
-  public ITopBorder? TopBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? TopBorder { get ; set; }
   
   /// <summary>
   /// Bottom Border.
   /// </summary>
-  public IBottomBorder? BottomBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? BottomBorder { get ; set; }
   
   /// <summary>
   /// Inside Horizontal Border.
   /// </summary>
-  public InsideHorizontalBorder? InsideHorizontalBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? InsideHorizontalBorder { get ; set; }
   
   /// <summary>
   /// Inside Vertical Border.
   /// </summary>
-  public InsideVerticalBorder? InsideVerticalBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? InsideVerticalBorder { get ; set; }
   
   /// <summary>
   /// Top Left to Bottom Right Border.
   /// </summary>
-  public ITopLeftToBottomRightBorder? TopLeftToBottomRightBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? TopLeftToBottomRightBorder { get ; set; }
   
   /// <summary>
   /// Top Right to Bottom Left Border.
   /// </summary>
-  public ITopRightToBottomLeftBorder? TopRightToBottomLeftBorder { get ; set; }
+  public DocumentModel.Drawing.IThemeableLineStyleType? TopRightToBottomLeftBorder { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

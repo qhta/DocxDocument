@@ -8,26 +8,26 @@ public interface IScaling // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Logarithmic Base.
   /// </summary>
-  public ILogBase? LogBase { get ; set; }
+  public System.Double? LogBase { get ; set; }
   
   /// <summary>
   /// Axis Orientation.
   /// </summary>
-  public IOrientation? Orientation { get ; set; }
+  public DocumentModel.Drawing.Charts.OrientationKind? Orientation { get ; set; }
   
   /// <summary>
   /// Maximum.
   /// </summary>
-  public IMaxAxisValue? MaxAxisValue { get ; set; }
+  public System.Double? MaxAxisValue { get ; set; }
   
   /// <summary>
   /// Minimum.
   /// </summary>
-  public IMinAxisValue? MinAxisValue { get ; set; }
+  public System.Double? MinAxisValue { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

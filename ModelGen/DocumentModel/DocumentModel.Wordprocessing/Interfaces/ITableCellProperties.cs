@@ -8,66 +8,66 @@ public interface ITableCellProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// ConditionalFormatStyle.
   /// </summary>
-  public IConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
+  public DocumentModel.Wordprocessing.IConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
   
   /// <summary>
   /// TableCellWidth.
   /// </summary>
-  public ITableCellWidth? TableCellWidth { get ; set; }
+  public DocumentModel.Wordprocessing.ITableWidthType? TableCellWidth { get ; set; }
   
   /// <summary>
   /// GridSpan.
   /// </summary>
-  public IGridSpan? GridSpan { get ; set; }
+  public System.Int32? GridSpan { get ; set; }
   
   /// <summary>
   /// HorizontalMerge.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues>? HorizontalMerge { get ; set; }
+  public DocumentModel.Wordprocessing.MergedCellKind? HorizontalMerge { get ; set; }
   
   /// <summary>
   /// VerticalMerge.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues>? VerticalMerge { get ; set; }
+  public DocumentModel.Wordprocessing.MergedCellKind? VerticalMerge { get ; set; }
   
   /// <summary>
   /// TableCellBorders.
   /// </summary>
-  public ITableCellBorders? TableCellBorders { get ; set; }
+  public DocumentModel.Wordprocessing.ITableCellBorders? TableCellBorders { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public IShading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
   
   /// <summary>
   /// NoWrap.
   /// </summary>
-  public INoWrap? NoWrap { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoWrap { get ; set; }
   
   /// <summary>
   /// TableCellMargin.
   /// </summary>
-  public ITableCellMargin? TableCellMargin { get ; set; }
+  public DocumentModel.Wordprocessing.ITableCellMargin? TableCellMargin { get ; set; }
   
   /// <summary>
   /// TextDirection.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues>? TextDirection { get ; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get ; set; }
   
   /// <summary>
   /// TableCellFitText.
   /// </summary>
-  public ITableCellFitText? TableCellFitText { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableCellFitText { get ; set; }
   
   /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues>? TableCellVerticalAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment { get ; set; }
   
   /// <summary>
   /// HideMark.
   /// </summary>
-  public IHideMark? HideMark { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? HideMark { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IBrushProperty // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// value
   /// </summary>
-  public String? Value { get ; set; }
+  public System.String? Value { get ; set; }
   
   /// <summary>
   /// units
   /// </summary>
-  public String? Units { get ; set; }
+  public System.String? Units { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IEmbeddedObject // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// dxaOrig
   /// </summary>
-  public String? DxaOriginal { get ; set; }
+  public System.String? DxaOriginal { get ; set; }
   
   /// <summary>
   /// dyaOrig
   /// </summary>
-  public String? DyaOriginal { get ; set; }
+  public System.String? DyaOriginal { get ; set; }
   
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public IHexBinaryValue? AnchorId { get ; set; }
+  public DocumentModel.IHexBinaryValue? AnchorId { get ; set; }
   
 }

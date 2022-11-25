@@ -8,46 +8,46 @@ public interface IPreviousTablePropertyExceptions // : DocumentModel.ITypedOpenX
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>
-  public ITableWidth? TableWidth { get ; set; }
+  public DocumentModel.Wordprocessing.ITableWidthType? TableWidth { get ; set; }
   
   /// <summary>
   /// Table Alignment Exception.
   /// </summary>
-  public IEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues>? TableJustification { get ; set; }
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get ; set; }
   
   /// <summary>
   /// Table Cell Spacing Exception.
   /// </summary>
-  public ITableCellSpacing? TableCellSpacing { get ; set; }
+  public DocumentModel.Wordprocessing.ITableWidthType? TableCellSpacing { get ; set; }
   
   /// <summary>
   /// Table Indent from Leading Margin Exception.
   /// </summary>
-  public ITableIndentation? TableIndentation { get ; set; }
+  public DocumentModel.Wordprocessing.ITableIndentation? TableIndentation { get ; set; }
   
   /// <summary>
   /// Table Borders Exceptions.
   /// </summary>
-  public ITableBorders? TableBorders { get ; set; }
+  public DocumentModel.Wordprocessing.ITableBorders? TableBorders { get ; set; }
   
   /// <summary>
   /// Table Shading Exception.
   /// </summary>
-  public IShading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
   
   /// <summary>
   /// Table Layout Exception.
   /// </summary>
-  public ITableLayout? TableLayout { get ; set; }
+  public DocumentModel.Wordprocessing.ITableLayout? TableLayout { get ; set; }
   
   /// <summary>
   /// Table Cell Margin Exceptions.
   /// </summary>
-  public ITableCellMarginDefault? TableCellMarginDefault { get ; set; }
+  public DocumentModel.Wordprocessing.ITableCellMarginDefault? TableCellMarginDefault { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Settings Exception.
   /// </summary>
-  public ITableLook? TableLook { get ; set; }
+  public DocumentModel.Wordprocessing.ITableLook? TableLook { get ; set; }
   
 }

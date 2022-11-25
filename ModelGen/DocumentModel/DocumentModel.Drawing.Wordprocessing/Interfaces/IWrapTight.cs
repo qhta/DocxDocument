@@ -8,21 +8,21 @@ public interface IWrapTight // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Wrapping Location
   /// </summary>
-  public WrapTextValues? WrapText { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.WrapTextKind? WrapText { get ; set; }
   
   /// <summary>
   /// Distance From Test on Left Edge
   /// </summary>
-  public UInt32? DistanceFromLeft { get ; set; }
+  public System.UInt32? DistanceFromLeft { get ; set; }
   
   /// <summary>
   /// Distance From Text on Right Edge
   /// </summary>
-  public UInt32? DistanceFromRight { get ; set; }
+  public System.UInt32? DistanceFromRight { get ; set; }
   
   /// <summary>
   /// Tight Wrapping Extents Polygon.
   /// </summary>
-  public IWrapPolygon? WrapPolygon { get ; set; }
+  public DocumentModel.Drawing.Wordprocessing.IWrapPolygon? WrapPolygon { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IMarkupRangeType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

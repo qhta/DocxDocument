@@ -8,6 +8,6 @@ public interface IExtensionListWithModification // : DocumentModel.ITypedOpenXml
   /// <summary>
   /// Modify
   /// </summary>
-  public Boolean? Modify { get ; set; }
+  public System.Boolean? Modify { get ; set; }
   
 }

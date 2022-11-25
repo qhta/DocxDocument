@@ -8,11 +8,11 @@ public interface ILinearGradientFill // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Angle
   /// </summary>
-  public Int32? Angle { get ; set; }
+  public System.Int32? Angle { get ; set; }
   
   /// <summary>
   /// Scaled
   /// </summary>
-  public Boolean? Scaled { get ; set; }
+  public System.Boolean? Scaled { get ; set; }
   
 }

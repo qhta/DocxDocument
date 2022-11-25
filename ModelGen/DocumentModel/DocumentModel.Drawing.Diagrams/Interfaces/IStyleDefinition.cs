@@ -8,16 +8,11 @@ public interface IStyleDefinition // : DocumentModel.ITypedOpenXmlPartRootElemen
   /// <summary>
   /// Unique Style ID
   /// </summary>
-  public String? UniqueId { get ; set; }
+  public System.String? UniqueId { get ; set; }
   
   /// <summary>
   /// Minimum Version
   /// </summary>
-  public String? MinVersion { get ; set; }
-  
-  /// <summary>
-  /// Gets the DiagramStylePart associated with this element.
-  /// </summary>
-  public DiagramStylePart? DiagramStylePart { get ; set; }
+  public System.String? MinVersion { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IClientData // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Locks With Sheet Flag
   /// </summary>
-  public Boolean? LockWithSheet { get ; set; }
+  public System.Boolean? LockWithSheet { get ; set; }
   
   /// <summary>
   /// Prints With Sheet Flag
   /// </summary>
-  public Boolean? PrintWithSheet { get ; set; }
+  public System.Boolean? PrintWithSheet { get ; set; }
   
 }

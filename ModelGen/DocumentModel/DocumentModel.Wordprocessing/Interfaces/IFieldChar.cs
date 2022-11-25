@@ -8,31 +8,31 @@ public interface IFieldChar // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Field Character Type
   /// </summary>
-  public FieldCharKind? FieldCharType { get ; set; }
+  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType { get ; set; }
   
   /// <summary>
   /// Field Should Not Be Recalculated
   /// </summary>
-  public Boolean? FieldLock { get ; set; }
+  public System.Boolean? FieldLock { get ; set; }
   
   /// <summary>
   /// Field Result Invalidated
   /// </summary>
-  public Boolean? Dirty { get ; set; }
+  public System.Boolean? Dirty { get ; set; }
   
   /// <summary>
   /// Custom Field Data.
   /// </summary>
-  public IFieldData? FieldData { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FieldData { get ; set; }
   
   /// <summary>
   /// Form Field Properties.
   /// </summary>
-  public IFormFieldData? FormFieldData { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? FormFieldData { get ; set; }
   
   /// <summary>
   /// Previous Numbering Field Properties.
   /// </summary>
-  public INumberingChange? NumberingChange { get ; set; }
+  public DocumentModel.Wordprocessing.INumberingChange? NumberingChange { get ; set; }
   
 }

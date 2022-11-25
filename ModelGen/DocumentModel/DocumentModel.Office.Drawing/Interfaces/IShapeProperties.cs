@@ -8,11 +8,11 @@ public interface IShapeProperties // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Black and White Mode
   /// </summary>
-  public BlackWhiteModeValues? BlackWhiteMode { get ; set; }
+  public DocumentModel.Drawing.BlackWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Drawing.ITransform2D? Transform2D { get ; set; }
   
 }

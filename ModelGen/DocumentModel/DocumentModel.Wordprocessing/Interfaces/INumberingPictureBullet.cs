@@ -8,16 +8,16 @@ public interface INumberingPictureBullet // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// numPicBulletId
   /// </summary>
-  public Int32? NumberingPictureBulletId { get ; set; }
+  public System.Int32? NumberingPictureBulletId { get ; set; }
   
   /// <summary>
   /// PictureBulletBase.
   /// </summary>
-  public IPictureBulletBase? PictureBulletBase { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? PictureBulletBase { get ; set; }
   
   /// <summary>
   /// Drawing.
   /// </summary>
-  public IDrawing? Drawing { get ; set; }
+  public DocumentModel.Wordprocessing.IDrawing? Drawing { get ; set; }
   
 }

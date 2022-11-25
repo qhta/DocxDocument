@@ -8,11 +8,11 @@ public interface ITag // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
 }

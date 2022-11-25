@@ -8,11 +8,11 @@ public interface IRelativeAnchorSize // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
-  public IFromAnchor? FromAnchor { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.IMarkerType? FromAnchor { get ; set; }
   
   /// <summary>
   /// Ending Anchor Point.
   /// </summary>
-  public IToAnchor? ToAnchor { get ; set; }
+  public DocumentModel.Drawing.ChartDrawing.IMarkerType? ToAnchor { get ; set; }
   
 }

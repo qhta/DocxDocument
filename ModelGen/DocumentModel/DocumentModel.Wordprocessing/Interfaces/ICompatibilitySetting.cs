@@ -8,16 +8,16 @@ public interface ICompatibilitySetting // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// name
   /// </summary>
-  public CompatSettingNameKind? Name { get ; set; }
+  public DocumentModel.Wordprocessing.CompatSettingNameKind? Name { get ; set; }
   
   /// <summary>
   /// uri
   /// </summary>
-  public String? Uri { get ; set; }
+  public System.String? Uri { get ; set; }
   
   /// <summary>
   /// val
   /// </summary>
-  public String? Val { get ; set; }
+  public System.String? Val { get ; set; }
   
 }

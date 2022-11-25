@@ -8,16 +8,16 @@ public interface INumberDiagramInfo // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// lvl, this property is only available in Office 2019 and later.
   /// </summary>
-  public UInt32? Lvl { get ; set; }
+  public System.UInt32? Lvl { get ; set; }
   
   /// <summary>
   /// ptType, this property is only available in Office 2019 and later.
   /// </summary>
-  public STorageType? PtType { get ; set; }
+  public DocumentModel.Office2019.Drawing.Diagram11.STorageType? PtType { get ; set; }
   
   /// <summary>
   /// DiagramAutoBullet.
   /// </summary>
-  public IDiagramAutoBullet? DiagramAutoBullet { get ; set; }
+  public DocumentModel.Office2019.Drawing.Diagram11.IDiagramAutoBullet? DiagramAutoBullet { get ; set; }
   
 }

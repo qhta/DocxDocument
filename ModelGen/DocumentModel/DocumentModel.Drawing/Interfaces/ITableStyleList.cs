@@ -8,11 +8,6 @@ public interface ITableStyleList // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Default
   /// </summary>
-  public String? Default { get ; set; }
-  
-  /// <summary>
-  /// Gets the TableStylesPart associated with this element.
-  /// </summary>
-  public TableStylesPart? TableStylesPart { get ; set; }
+  public System.String? Default { get ; set; }
   
 }

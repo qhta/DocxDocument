@@ -8,6 +8,6 @@ public interface ILineSketchStyleProperties // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// sd, this property is only available in Office 2021 and later.
   /// </summary>
-  public UInt32? Sd { get ; set; }
+  public System.UInt32? Sd { get ; set; }
   
 }

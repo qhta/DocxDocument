@@ -8,11 +8,11 @@ public interface IQuickTimeFromFile // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
-  public String? Link { get ; set; }
+  public System.String? Link { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public IExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
   
 }

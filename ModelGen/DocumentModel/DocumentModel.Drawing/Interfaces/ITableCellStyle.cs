@@ -8,6 +8,6 @@ public interface ITableCellStyle // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Table Cell Borders.
   /// </summary>
-  public ITableCellBorders? TableCellBorders { get ; set; }
+  public DocumentModel.Drawing.ITableCellBorders? TableCellBorders { get ; set; }
   
 }

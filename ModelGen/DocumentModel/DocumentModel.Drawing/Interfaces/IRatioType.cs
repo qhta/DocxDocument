@@ -8,11 +8,11 @@ public interface IRatioType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Numerator
   /// </summary>
-  public Int32? Numerator { get ; set; }
+  public System.Int32? Numerator { get ; set; }
   
   /// <summary>
   /// Denominator
   /// </summary>
-  public Int32? Denominator { get ; set; }
+  public System.Int32? Denominator { get ; set; }
   
 }

@@ -1,16 +1,100 @@
-﻿using Namotion.Reflection;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
 
+using Namotion.Reflection;
+
+using System.Diagnostics;
 using System.Reflection;
 
 namespace ModelGen;
 
 public static class TypeReflector
 {
-  public static void Reflect(this TypeInfo typeInfo)
+
+  private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
+
+  public static void RequestReflect(this TypeInfo typeInfo)
+  {
+    if (typeInfo.IsReflected)
+      return;
+    lock (typeInfo)
+    {
+      if (!TypeQueue.Contains(typeInfo))
+        TypeQueue.Enqueue(typeInfo);
+      if (!isStarted) Start();
+    }
+  }
+
+  private static bool isStarted => ReflectionTasks is not null;
+  private static int TaskCount = 2;
+  private static Task[] ReflectionTasks = null!;
+  private static int RunTrials = 100;
+  public static void Start()
+  {
+    ReflectionTasks = new Task[TaskCount];
+    for (int i = 0; i < TaskCount; i++)
+    {
+      ReflectionTasks[i] = new Task(() =>
+      {
+        var trials = RunTrials;
+        do
+        {
+          trials--;
+          if (TypeQueue.Any())
+          {
+            TypeInfo? typeInfo = null;
+            lock (TypeQueue)
+            {
+              if (TypeQueue.Count>0)
+                typeInfo = TypeQueue.Dequeue();
+              else
+              {
+                typeInfo = null;
+              }
+            }
+            if (typeInfo != null)
+            {
+              DoReflect(typeInfo);
+              trials = RunTrials;
+            }
+            else
+              Thread.Sleep(10);
+          }
+        } while (trials > 0);
+      });
+      ReflectionTasks[i].Start();
+    }
+  }
+
+
+  public static void WaitDone()
+  {
+    if (ReflectionTasks is not null)
+      Task.WaitAll(ReflectionTasks);
+  }
+
+  public static void WaitForReflection(this TypeInfo typeInfo)
+  {
+    while (typeInfo.IsReflected == false)
+    {
+      Thread.Sleep(100);
+    }
+  }
+
+  public static object reflectedLock = new ();
+  public static int reflected;
+  public static void DoReflect(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
       return;
     typeInfo.IsReflected = true;
+    lock (reflectedLock)
+    {
+      reflected++;
+      ModelDisplay.ConsoleWriteSameLine(
+        $"Total {TypeManager.TotalTypesCount} registered types, {reflected} reflected, {TypeQueue.Count} waiting. {typeInfo.Namespace}.{typeInfo.Name}");
+    }
+    //if (typeInfo.Name == "DataPart")
+    //  Debug.Assert(true);
     var type = typeInfo.Type;
     typeInfo.TypeKind = TypeKind.Type;
     if (type.IsEnum)
@@ -71,6 +155,7 @@ public static class TypeReflector
         }
       }
 
+      ModelManager.TryAddTypeConversion(typeInfo);
     }
 
     typeInfo.Documentation = type.GetXmlDocsElement();
@@ -89,59 +174,4 @@ public static class TypeReflector
       typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
-  public static IEnumerable<TypeInfo> GetInterfaces(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Implementation);
-  }
-
-  public static IEnumerable<TypeInfo> GetIncludedTypes(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include);
-  }
-  public static IEnumerable<TypeInfo> GetGenericArgTypes(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg);
-  }
-
-  public static IEnumerable<TypeInfo> GetGenericParamTypes(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParam);
-  }
-
-  public static IEnumerable<TypeInfo> GetGenericTypeParamConstraints(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParamConstraint);
-
-  }
-
-  public static IEnumerable<GenericParamConstraint> GetGenericParamConstraints(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      Reflect(typeInfo);
-    var list = new List<GenericParamConstraint>();
-    if (typeInfo.IsGenericTypeParameter)
-      return list;
-    var genericParameterAttributes = typeInfo.Type.GenericParameterAttributes;
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Covariant))
-      list.Add(GenericParamConstraint.Covariant);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.Contravariant))
-      list.Add(GenericParamConstraint.Contravariant);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.NotNullableValueTypeConstraint))
-      list.Add(GenericParamConstraint.NotNullableValueType);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.ReferenceTypeConstraint))
-      list.Add(GenericParamConstraint.ReferenceType);
-    if (genericParameterAttributes.HasFlag(GenericParameterAttributes.DefaultConstructorConstraint))
-      list.Add(GenericParamConstraint.Newable);
-    return list;
-  }
 }

@@ -8,6 +8,6 @@ public interface ILegendEntry // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index.
   /// </summary>
-  public Index? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
 }

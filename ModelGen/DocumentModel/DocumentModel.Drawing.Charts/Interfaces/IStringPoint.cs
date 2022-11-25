@@ -8,11 +8,11 @@ public interface IStringPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// Text Value.
   /// </summary>
-  public INumericValue? NumericValue { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? NumericValue { get ; set; }
   
 }

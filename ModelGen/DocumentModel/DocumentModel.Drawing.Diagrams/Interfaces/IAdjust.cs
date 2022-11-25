@@ -8,11 +8,11 @@ public interface IAdjust // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Adjust Handle Index
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public System.UInt32? Index { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public Double? Val { get ; set; }
+  public System.Double? Val { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IPrismTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public TransitionSlideDirectionValues? Direction { get ; set; }
+  public DocumentModel.Presentation.TransitionSlideDirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// isContent, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? IsContent { get ; set; }
+  public System.Boolean? IsContent { get ; set; }
   
   /// <summary>
   /// isInverted, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? IsInverted { get ; set; }
+  public System.Boolean? IsInverted { get ; set; }
   
 }

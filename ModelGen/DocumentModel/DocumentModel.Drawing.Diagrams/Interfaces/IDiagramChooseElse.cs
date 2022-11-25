@@ -8,6 +8,6 @@ public interface IDiagramChooseElse // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
 }

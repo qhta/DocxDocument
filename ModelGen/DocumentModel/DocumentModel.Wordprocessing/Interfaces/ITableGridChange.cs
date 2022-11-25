@@ -8,11 +8,11 @@ public interface ITableGridChange // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// Previous Table Grid.
   /// </summary>
-  public IPreviousTableGrid? PreviousTableGrid { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? PreviousTableGrid { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IInvertSolidFillFormat // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Office2010.Drawing.Charts.IShapeProperties? ShapeProperties { get ; set; }
   
 }

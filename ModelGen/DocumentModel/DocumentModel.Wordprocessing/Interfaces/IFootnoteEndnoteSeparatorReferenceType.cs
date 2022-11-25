@@ -8,6 +8,6 @@ public interface IFootnoteEndnoteSeparatorReferenceType // : DocumentModel.IType
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>
-  public Int32? Id { get ; set; }
+  public System.Int32? Id { get ; set; }
   
 }

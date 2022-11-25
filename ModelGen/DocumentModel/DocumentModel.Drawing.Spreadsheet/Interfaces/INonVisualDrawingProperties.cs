@@ -8,41 +8,41 @@ public interface INonVisualDrawingProperties // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// id
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public System.UInt32? Id { get ; set; }
   
   /// <summary>
   /// name
   /// </summary>
-  public String? Name { get ; set; }
+  public System.String? Name { get ; set; }
   
   /// <summary>
   /// descr
   /// </summary>
-  public String? Description { get ; set; }
+  public System.String? Description { get ; set; }
   
   /// <summary>
   /// hidden
   /// </summary>
-  public Boolean? Hidden { get ; set; }
+  public System.Boolean? Hidden { get ; set; }
   
   /// <summary>
   /// title
   /// </summary>
-  public String? Title { get ; set; }
+  public System.String? Title { get ; set; }
   
   /// <summary>
   /// HyperlinkOnClick.
   /// </summary>
-  public IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnClick { get ; set; }
   
   /// <summary>
   /// HyperlinkOnHover.
   /// </summary>
-  public IHyperlinkOnHover? HyperlinkOnHover { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnHover { get ; set; }
   
   /// <summary>
   /// NonVisualDrawingPropertiesExtensionList.
   /// </summary>
-  public INonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? NonVisualDrawingPropertiesExtensionList { get ; set; }
   
 }

@@ -8,31 +8,31 @@ public interface IUnderlineFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// NoFill.
   /// </summary>
-  public INoFill? NoFill { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? NoFill { get ; set; }
   
   /// <summary>
   /// SolidFill.
   /// </summary>
-  public ISolidFill? SolidFill { get ; set; }
+  public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
   
   /// <summary>
   /// GradientFill.
   /// </summary>
-  public IGradientFill? GradientFill { get ; set; }
+  public DocumentModel.Drawing.IGradientFill? GradientFill { get ; set; }
   
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public IBlipFill? BlipFill { get ; set; }
+  public DocumentModel.Drawing.IBlipFill? BlipFill { get ; set; }
   
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  public IPatternFill? PatternFill { get ; set; }
+  public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
   
   /// <summary>
   /// Group Fill.
   /// </summary>
-  public IGroupFill? GroupFill { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? GroupFill { get ; set; }
   
 }

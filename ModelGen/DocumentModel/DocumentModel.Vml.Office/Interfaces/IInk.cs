@@ -8,11 +8,11 @@ public interface IInk // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Ink Data
   /// </summary>
-  public IBase64BinaryValue? InkData { get ; set; }
+  public DocumentModel.IBase64BinaryValue? InkData { get ; set; }
   
   /// <summary>
   /// Annotation Flag
   /// </summary>
-  public ITrueFalseValue? AnnotationFlag { get ; set; }
+  public System.Boolean? AnnotationFlag { get ; set; }
   
 }

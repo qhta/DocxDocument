@@ -8,11 +8,11 @@ public interface ITableRowHeight // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Table Row Height
   /// </summary>
-  public UInt32? Val { get ; set; }
+  public System.UInt32? Val { get ; set; }
   
   /// <summary>
   /// Table Row Height Type
   /// </summary>
-  public HeightRuleKind? HeightType { get ; set; }
+  public DocumentModel.Wordprocessing.HeightRuleKind? HeightType { get ; set; }
   
 }

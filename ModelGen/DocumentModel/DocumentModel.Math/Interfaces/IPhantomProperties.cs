@@ -8,31 +8,31 @@ public interface IPhantomProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Phantom Show.
   /// </summary>
-  public IShowPhantom? ShowPhantom { get ; set; }
+  public DocumentModel.Math.BooleanKind? ShowPhantom { get ; set; }
   
   /// <summary>
   /// Phantom Zero Width.
   /// </summary>
-  public IZeroWidth? ZeroWidth { get ; set; }
+  public DocumentModel.Math.BooleanKind? ZeroWidth { get ; set; }
   
   /// <summary>
   /// Phantom Zero Ascent.
   /// </summary>
-  public IZeroAscent? ZeroAscent { get ; set; }
+  public DocumentModel.Math.BooleanKind? ZeroAscent { get ; set; }
   
   /// <summary>
   /// Phantom Zero Descent.
   /// </summary>
-  public IZeroDescent? ZeroDescent { get ; set; }
+  public DocumentModel.Math.BooleanKind? ZeroDescent { get ; set; }
   
   /// <summary>
   /// Transparent (Phantom).
   /// </summary>
-  public ITransparent? Transparent { get ; set; }
+  public DocumentModel.Math.BooleanKind? Transparent { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public IControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
   
 }

@@ -1,0 +1,13 @@
+namespace DocumentModel.Office2016.Drawing.ChartDrawing;
+
+/// <summary>
+/// Defines the PlotArea Class.
+/// </summary>
+public interface IPlotArea // : DocumentModel.ITypedOpenXmlCompositeElement
+{
+  /// <summary>
+  /// PlotAreaRegion.
+  /// </summary>
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IPlotAreaRegion? PlotAreaRegion { get ; set; }
+  
+}

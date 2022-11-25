@@ -8,6 +8,6 @@ public interface ISurfaceChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Wireframe.
   /// </summary>
-  public IWireframe? Wireframe { get ; set; }
+  public System.Boolean? Wireframe { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ISdtRun // : DocumentModel.Wordprocessing.ISdtElement
   /// <summary>
   /// Inline-Level Structured Document Tag Content.
   /// </summary>
-  public ISdtContentRun? SdtContentRun { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SdtContentRun { get ; set; }
   
 }

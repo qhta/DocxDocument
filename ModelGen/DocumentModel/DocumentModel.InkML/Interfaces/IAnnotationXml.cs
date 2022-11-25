@@ -8,21 +8,21 @@ public interface IAnnotationXml // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// type
   /// </summary>
-  public String? Type { get ; set; }
+  public System.String? Type { get ; set; }
   
   /// <summary>
   /// encoding
   /// </summary>
-  public String? Encoding { get ; set; }
+  public System.String? Encoding { get ; set; }
   
   /// <summary>
   /// href
   /// </summary>
-  public String? Href { get ; set; }
+  public System.String? Href { get ; set; }
   
   /// <summary>
   /// Emma.
   /// </summary>
-  public IEmma? Emma { get ; set; }
+  public DocumentModel.EMMA.IEmma? Emma { get ; set; }
   
 }

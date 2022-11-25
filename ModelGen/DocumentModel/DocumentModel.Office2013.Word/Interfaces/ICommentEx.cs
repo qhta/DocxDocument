@@ -8,16 +8,16 @@ public interface ICommentEx // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public IHexBinaryValue? ParaId { get ; set; }
+  public DocumentModel.IHexBinaryValue? ParaId { get ; set; }
   
   /// <summary>
   /// paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public IHexBinaryValue? ParaIdParent { get ; set; }
+  public DocumentModel.IHexBinaryValue? ParaIdParent { get ; set; }
   
   /// <summary>
   /// done, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? Done { get ; set; }
+  public System.Boolean? Done { get ; set; }
   
 }

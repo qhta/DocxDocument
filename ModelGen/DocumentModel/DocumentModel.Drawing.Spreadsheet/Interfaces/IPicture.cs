@@ -8,31 +8,31 @@ public interface IPicture // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Reference To Custom Function
   /// </summary>
-  public String? Macro { get ; set; }
+  public System.String? Macro { get ; set; }
   
   /// <summary>
   /// Publish to Server Flag
   /// </summary>
-  public Boolean? Published { get ; set; }
+  public System.Boolean? Published { get ; set; }
   
   /// <summary>
   /// Non-Visual Properties for a Picture.
   /// </summary>
-  public INonVisualPictureProperties? NonVisualPictureProperties { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.INonVisualPictureProperties? NonVisualPictureProperties { get ; set; }
   
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public IBlipFill? BlipFill { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IBlipFill? BlipFill { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public IShapeStyle? ShapeStyle { get ; set; }
+  public DocumentModel.Drawing.Spreadsheet.IShapeStyle? ShapeStyle { get ; set; }
   
 }

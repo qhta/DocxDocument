@@ -8,6 +8,6 @@ public interface ILegend // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Legend Position.
   /// </summary>
-  public ILegendPosition? LegendPosition { get ; set; }
+  public DocumentModel.Drawing.Charts.LegendPositionKind? LegendPosition { get ; set; }
   
 }

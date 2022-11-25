@@ -8,6 +8,6 @@ public interface ILegacyDrawing // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Shape ID
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public System.String? ShapeId { get ; set; }
   
 }

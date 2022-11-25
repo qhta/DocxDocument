@@ -8,6 +8,6 @@ public interface INotesMasterIdList // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Notes Master ID.
   /// </summary>
-  public INotesMasterId? NotesMasterId { get ; set; }
+  public DocumentModel.Presentation.INotesMasterId? NotesMasterId { get ; set; }
   
 }

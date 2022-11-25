@@ -8,36 +8,36 @@ public interface IAdjustHandlePolar // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Radial Adjustment Guide
   /// </summary>
-  public String? RadialAdjustmentGuide { get ; set; }
+  public System.String? RadialAdjustmentGuide { get ; set; }
   
   /// <summary>
   /// Minimum Radial Adjustment
   /// </summary>
-  public String? MinRadial { get ; set; }
+  public System.String? MinRadial { get ; set; }
   
   /// <summary>
   /// Maximum Radial Adjustment
   /// </summary>
-  public String? MaxRadial { get ; set; }
+  public System.String? MaxRadial { get ; set; }
   
   /// <summary>
   /// Angle Adjustment Guide
   /// </summary>
-  public String? AngleAdjustmentGuide { get ; set; }
+  public System.String? AngleAdjustmentGuide { get ; set; }
   
   /// <summary>
   /// Minimum Angle Adjustment
   /// </summary>
-  public String? MinAngle { get ; set; }
+  public System.String? MinAngle { get ; set; }
   
   /// <summary>
   /// Maximum Angle Adjustment
   /// </summary>
-  public String? MaxAngle { get ; set; }
+  public System.String? MaxAngle { get ; set; }
   
   /// <summary>
   /// Shape Position Coordinate.
   /// </summary>
-  public IPosition? Position { get ; set; }
+  public DocumentModel.Drawing.IAdjustPoint2DType? Position { get ; set; }
   
 }

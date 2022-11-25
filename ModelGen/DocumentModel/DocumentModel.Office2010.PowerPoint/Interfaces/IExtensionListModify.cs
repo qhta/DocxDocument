@@ -8,6 +8,6 @@ public interface IExtensionListModify // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Modify
   /// </summary>
-  public Boolean? Modify { get ; set; }
+  public System.Boolean? Modify { get ; set; }
   
 }

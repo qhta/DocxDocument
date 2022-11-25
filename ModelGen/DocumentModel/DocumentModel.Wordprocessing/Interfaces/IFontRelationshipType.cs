@@ -8,16 +8,16 @@ public interface IFontRelationshipType // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// fontKey
   /// </summary>
-  public String? FontKey { get ; set; }
+  public System.String? FontKey { get ; set; }
   
   /// <summary>
   /// subsetted
   /// </summary>
-  public Boolean? Subsetted { get ; set; }
+  public System.Boolean? Subsetted { get ; set; }
   
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

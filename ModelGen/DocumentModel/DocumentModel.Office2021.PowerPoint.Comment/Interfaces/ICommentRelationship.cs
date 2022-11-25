@@ -8,6 +8,6 @@ public interface ICommentRelationship // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
 }

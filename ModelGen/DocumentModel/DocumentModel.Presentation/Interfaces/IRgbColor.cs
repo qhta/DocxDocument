@@ -8,16 +8,16 @@ public interface IRgbColor // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Red
   /// </summary>
-  public Int32? Red { get ; set; }
+  public System.Int32? Red { get ; set; }
   
   /// <summary>
   /// Green
   /// </summary>
-  public Int32? Green { get ; set; }
+  public System.Int32? Green { get ; set; }
   
   /// <summary>
   /// Blue
   /// </summary>
-  public Int32? Blue { get ; set; }
+  public System.Int32? Blue { get ; set; }
   
 }

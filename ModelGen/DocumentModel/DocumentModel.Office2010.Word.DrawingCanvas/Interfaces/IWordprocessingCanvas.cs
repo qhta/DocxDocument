@@ -8,11 +8,11 @@ public interface IWordprocessingCanvas // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// BackgroundFormatting.
   /// </summary>
-  public IBackgroundFormatting? BackgroundFormatting { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? BackgroundFormatting { get ; set; }
   
   /// <summary>
   /// WholeFormatting.
   /// </summary>
-  public IWholeFormatting? WholeFormatting { get ; set; }
+  public DocumentModel.Office2010.Word.DrawingCanvas.IWholeFormatting? WholeFormatting { get ; set; }
   
 }

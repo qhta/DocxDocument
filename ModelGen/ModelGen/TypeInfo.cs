@@ -13,7 +13,7 @@ public class TypeInfo : ModelElement
         NamespaceIndex = TypeManager.RegisterNamespace(value);
     }
   }
-  private int NamespaceIndex { get; set; }
+  public int NamespaceIndex { get; private set; }
 
   public string OrigNamespace => Type.Namespace ?? "";
 
@@ -23,13 +23,15 @@ public class TypeInfo : ModelElement
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
   public bool IsConstructedGenericType => Type.IsConstructedGenericType;
-  public bool IsGenericTypeBased => (BaseTypeInfo != null) &&
-                                    (BaseTypeInfo.IsConstructedGenericType || IsGenericTypeBased);
+  private bool IsGenericTypeBased => (BaseTypeInfo != null) &&
+                                    (BaseTypeInfo.IsConstructedGenericType || BaseTypeInfo.IsGenericTypeBased);
   public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
   public TypeKind TypeKind { get; set; }
   public Collection<EnumInfo>? EnumValues { get; set; }
   public Collection<PropInfo>? Properties { get; set; }
+
+  public IEnumerable<PropInfo>? AcceptedProperties => Properties?.Where(item => item.IsAccepted != false);
 
   public TypeInfo? BaseTypeInfo { get; set; }
 
@@ -67,8 +69,8 @@ public class TypeInfo : ModelElement
       var nSpace = aNamespace;
       foreach (var item in ModelData.NamespaceRedirectionTable)
       {
-        if (aNamespace.StartsWith(item.Key))
-          nSpace = item.Value;
+        if (aNamespace.StartsWith(item.Item1))
+          nSpace = item.Item2;
       }
       aNamespace = nSpace;
     }
@@ -92,13 +94,7 @@ public class TypeInfo : ModelElement
       {
         aName = "I" + aName;
       }
-      var nSpace = aNamespace;
-      foreach (var item in ModelData.NamespaceRedirectionTable)
-      {
-        if (aNamespace.StartsWith(item.Key))
-          nSpace = item.Value;
-      }
-      aNamespace = nSpace;
+      aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (IsGenericTypeParameter)
       return Name;
@@ -130,5 +126,5 @@ public class TypeInfo : ModelElement
     return aName;
   }
 
-  public override string ToString() => GetFullName(true, true);
+  public override string ToString() => $"{Namespace}.{Name}";
 }

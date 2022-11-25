@@ -8,26 +8,26 @@ public interface IPicture // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Non-Visual Properties for a Picture.
   /// </summary>
-  public INonVisualPictureProperties? NonVisualPictureProperties { get ; set; }
+  public DocumentModel.Presentation.INonVisualPictureProperties? NonVisualPictureProperties { get ; set; }
   
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public IBlipFill? BlipFill { get ; set; }
+  public DocumentModel.Presentation.IBlipFill? BlipFill { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public IShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Presentation.IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public IShapeStyle? ShapeStyle { get ; set; }
+  public DocumentModel.Presentation.IShapeStyle? ShapeStyle { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.
   /// </summary>
-  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
+  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

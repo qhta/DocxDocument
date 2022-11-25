@@ -8,6 +8,6 @@ public interface IAlphaBiLevel // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Threshold
   /// </summary>
-  public Int32? Threshold { get ; set; }
+  public System.Int32? Threshold { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface ITimestamp // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// id
   /// </summary>
-  public String? Id { get ; set; }
+  public System.String? Id { get ; set; }
   
   /// <summary>
   /// time
   /// </summary>
-  public Decimal? Time { get ; set; }
+  public System.Decimal? Time { get ; set; }
   
   /// <summary>
   /// timestampRef
   /// </summary>
-  public String? TimestampRef { get ; set; }
+  public System.String? TimestampRef { get ; set; }
   
   /// <summary>
   /// timeString
   /// </summary>
-  public DateTime? TimeString { get ; set; }
+  public System.DateTime? TimeString { get ; set; }
   
   /// <summary>
   /// timeOffset
   /// </summary>
-  public Decimal? TimeOffset { get ; set; }
+  public System.Decimal? TimeOffset { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ISdtCell // : DocumentModel.Wordprocessing.ISdtElement
   /// <summary>
   /// Cell-Level Structured Document Tag Content.
   /// </summary>
-  public ISdtContentCell? SdtContentCell { get ; set; }
+  public DocumentModel.BaseTypes.ModelElement? SdtContentCell { get ; set; }
   
 }

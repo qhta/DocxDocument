@@ -8,156 +8,156 @@ public interface IExtrusion // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorValues? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Extrusion Toggle
   /// </summary>
-  public ITrueFalseValue? On { get ; set; }
+  public System.Boolean? On { get ; set; }
   
   /// <summary>
   /// Extrusion Type
   /// </summary>
-  public ExtrusionValues? Type { get ; set; }
+  public DocumentModel.Vml.Office.ExtrusionKind? Type { get ; set; }
   
   /// <summary>
   /// Extrusion Render Mode
   /// </summary>
-  public ExtrusionRenderValues? Render { get ; set; }
+  public DocumentModel.Vml.Office.ExtrusionRenderKind? Render { get ; set; }
   
   /// <summary>
   /// Extrusion Viewpoint Origin
   /// </summary>
-  public String? ViewpointOrigin { get ; set; }
+  public System.String? ViewpointOrigin { get ; set; }
   
   /// <summary>
   /// Extrusion Viewpoint
   /// </summary>
-  public String? Viewpoint { get ; set; }
+  public System.String? Viewpoint { get ; set; }
   
   /// <summary>
   /// Extrusion Skew Angle
   /// </summary>
-  public Single? SkewAngle { get ; set; }
+  public System.Single? SkewAngle { get ; set; }
   
   /// <summary>
   /// Extrusion Skew
   /// </summary>
-  public String? SkewAmount { get ; set; }
+  public System.String? SkewAmount { get ; set; }
   
   /// <summary>
   /// Forward Extrusion
   /// </summary>
-  public String? ForceDepth { get ; set; }
+  public System.String? ForceDepth { get ; set; }
   
   /// <summary>
   /// Backward Extrusion Depth
   /// </summary>
-  public String? BackDepth { get ; set; }
+  public System.String? BackDepth { get ; set; }
   
   /// <summary>
   /// Rotation Axis
   /// </summary>
-  public String? Orientation { get ; set; }
+  public System.String? Orientation { get ; set; }
   
   /// <summary>
   /// Rotation Around Axis
   /// </summary>
-  public Single? OrientationAngle { get ; set; }
+  public System.Single? OrientationAngle { get ; set; }
   
   /// <summary>
   /// Rotation Toggle
   /// </summary>
-  public ITrueFalseValue? LockRotationCenter { get ; set; }
+  public System.Boolean? LockRotationCenter { get ; set; }
   
   /// <summary>
   /// Center of Rotation Toggle
   /// </summary>
-  public ITrueFalseValue? AutoRotationCenter { get ; set; }
+  public System.Boolean? AutoRotationCenter { get ; set; }
   
   /// <summary>
   /// Rotation Center
   /// </summary>
-  public String? RotationCenter { get ; set; }
+  public System.String? RotationCenter { get ; set; }
   
   /// <summary>
   /// X-Y Rotation Angle
   /// </summary>
-  public String? RotationAngle { get ; set; }
+  public System.String? RotationAngle { get ; set; }
   
   /// <summary>
   /// Extrusion Color
   /// </summary>
-  public String? Color { get ; set; }
+  public System.String? Color { get ; set; }
   
   /// <summary>
   /// Shininess
   /// </summary>
-  public Single? Shininess { get ; set; }
+  public System.Single? Shininess { get ; set; }
   
   /// <summary>
   /// Specularity
   /// </summary>
-  public String? Specularity { get ; set; }
+  public System.String? Specularity { get ; set; }
   
   /// <summary>
   /// Diffuse Reflection
   /// </summary>
-  public String? Diffusity { get ; set; }
+  public System.String? Diffusity { get ; set; }
   
   /// <summary>
   /// Metallic Surface Toggle
   /// </summary>
-  public ITrueFalseValue? Metal { get ; set; }
+  public System.Boolean? Metal { get ; set; }
   
   /// <summary>
   /// Simulated Bevel
   /// </summary>
-  public String? Edge { get ; set; }
+  public System.String? Edge { get ; set; }
   
   /// <summary>
   /// Faceting Quality
   /// </summary>
-  public String? Facet { get ; set; }
+  public System.String? Facet { get ; set; }
   
   /// <summary>
   /// Shape Face Lighting Toggle
   /// </summary>
-  public ITrueFalseValue? LightFace { get ; set; }
+  public System.Boolean? LightFace { get ; set; }
   
   /// <summary>
   /// Brightness
   /// </summary>
-  public String? Brightness { get ; set; }
+  public System.String? Brightness { get ; set; }
   
   /// <summary>
   /// Primary Light Position
   /// </summary>
-  public String? LightPosition { get ; set; }
+  public System.String? LightPosition { get ; set; }
   
   /// <summary>
   /// Primary Light Intensity
   /// </summary>
-  public String? LightLevel { get ; set; }
+  public System.String? LightLevel { get ; set; }
   
   /// <summary>
   /// Primary Light Harshness Toggle
   /// </summary>
-  public ITrueFalseValue? LightHarsh { get ; set; }
+  public System.Boolean? LightHarsh { get ; set; }
   
   /// <summary>
   /// Secondary Light Position
   /// </summary>
-  public String? LightPosition2 { get ; set; }
+  public System.String? LightPosition2 { get ; set; }
   
   /// <summary>
   /// Secondary Light Intensity
   /// </summary>
-  public String? LightLevel2 { get ; set; }
+  public System.String? LightLevel2 { get ; set; }
   
   /// <summary>
   /// Secondary Light Harshness Toggle
   /// </summary>
-  public ITrueFalseValue? LightHarsh2 { get ; set; }
+  public System.Boolean? LightHarsh2 { get ; set; }
   
 }
