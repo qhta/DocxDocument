@@ -23,6 +23,6 @@ public interface IThemeFamily // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2013.Theme.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

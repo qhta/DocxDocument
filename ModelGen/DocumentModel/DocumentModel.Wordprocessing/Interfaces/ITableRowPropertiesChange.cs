@@ -23,6 +23,6 @@ public interface ITableRowPropertiesChange // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// Previous Table Row Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PreviousTableRowProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IPreviousTableRowProperties? PreviousTableRowProperties { get ; set; }
   
 }

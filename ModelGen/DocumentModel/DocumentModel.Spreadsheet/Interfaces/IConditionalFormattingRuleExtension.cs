@@ -10,4 +10,6 @@ public interface IConditionalFormattingRuleExtension // : DocumentModel.ITypedOp
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public System.String? Id { get ; set; }
+  
 }

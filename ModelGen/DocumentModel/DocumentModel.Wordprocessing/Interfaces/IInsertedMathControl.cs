@@ -20,4 +20,8 @@ public interface IInsertedMathControl // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? Id { get ; set; }
   
+  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IDeletedMathControl? DeletedMathControl { get ; set; }
+  
 }

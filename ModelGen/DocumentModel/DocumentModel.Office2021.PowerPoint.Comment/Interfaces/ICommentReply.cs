@@ -43,6 +43,6 @@ public interface ICommentReply // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2021.PowerPoint.Comment.IExtensionList? ExtensionList { get ; set; }
   
 }

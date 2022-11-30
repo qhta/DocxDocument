@@ -10,4 +10,6 @@ public interface IEquationArray // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Math.IEquationArrayProperties? EquationArrayProperties { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Math.IBase>? Bases { get ; set; }
+  
 }

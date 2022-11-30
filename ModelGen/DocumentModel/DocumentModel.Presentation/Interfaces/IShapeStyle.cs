@@ -8,17 +8,17 @@ public interface IShapeStyle // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// LineReference.
   /// </summary>
-  public DocumentModel.Drawing.IStyleMatrixReferenceType? LineReference { get ; set; }
+  public DocumentModel.Drawing.ILineReference? LineReference { get ; set; }
   
   /// <summary>
   /// FillReference.
   /// </summary>
-  public DocumentModel.Drawing.IStyleMatrixReferenceType? FillReference { get ; set; }
+  public DocumentModel.Drawing.IFillReference? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.
   /// </summary>
-  public DocumentModel.Drawing.IStyleMatrixReferenceType? EffectReference { get ; set; }
+  public DocumentModel.Drawing.IEffectReference? EffectReference { get ; set; }
   
   /// <summary>
   /// Font Reference.

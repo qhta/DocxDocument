@@ -10,4 +10,6 @@ public interface ICacheHierarchyExtension // : DocumentModel.ITypedOpenXmlCompos
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2010.Excel.ICacheHierarchy? CacheHierarchy { get ; set; }
+  
 }

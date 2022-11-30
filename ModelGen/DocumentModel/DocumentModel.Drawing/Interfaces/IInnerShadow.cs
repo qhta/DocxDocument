@@ -43,11 +43,11 @@ public interface IInnerShadow // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  public DocumentModel.Drawing.SchemeColorKind? SchemeColor { get ; set; }
+  public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
   
   /// <summary>
   /// Preset Color.
   /// </summary>
-  public DocumentModel.Drawing.PresetColorKind? PresetColor { get ; set; }
+  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
   
 }

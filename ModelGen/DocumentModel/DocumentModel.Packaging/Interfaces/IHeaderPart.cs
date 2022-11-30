@@ -65,18 +65,24 @@ public interface IHeaderPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Header { get ; set; }
+  public DocumentModel.Wordprocessing.IHeader? Header { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the HeaderPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

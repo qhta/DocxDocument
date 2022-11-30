@@ -70,4 +70,14 @@ public interface IConditionalFormattingRule // : DocumentModel.ITypedOpenXmlComp
   /// </summary>
   public System.Boolean? EqualAverage { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IXstringType>? Formulas { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IColorScale? ColorScale { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IDataBar? DataBar { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IIconSet? IconSet { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IConditionalFormattingRuleExtensionList? ConditionalFormattingRuleExtensionList { get ; set; }
+  
 }

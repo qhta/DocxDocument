@@ -43,11 +43,11 @@ public interface IMatrixProperties // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Matrix Columns.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? MatrixColumns { get ; set; }
+  public DocumentModel.Math.IMatrixColumns? MatrixColumns { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
+  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
   
 }

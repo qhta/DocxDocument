@@ -43,6 +43,6 @@ public interface ICalculatedMember // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// CalculatedMemberExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CalculatedMemberExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.ICalculatedMemberExtensionList? CalculatedMemberExtensionList { get ; set; }
   
 }

@@ -25,4 +25,18 @@ public interface ITextOutlineEffect // : DocumentModel.ITypedOpenXmlCompositeEle
   /// </summary>
   public DocumentModel.Office2010.Word.PenAlignmentKind? Alignment { get ; set; }
   
+  public System.Boolean? NoFillEmpty { get ; set; }
+  
+  public DocumentModel.Office2010.Word.ISolidColorFillProperties? SolidColorFillProperties { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IGradientFillProperties? GradientFillProperties { get ; set; }
+  
+  public DocumentModel.Office2010.Word.PresetLineDashKind? PresetLineDashProperties { get ; set; }
+  
+  public System.Boolean? RoundEmpty { get ; set; }
+  
+  public System.Boolean? BevelEmpty { get ; set; }
+  
+  public DocumentModel.Office2010.Word.ILineJoinMiterProperties? LineJoinMiterProperties { get ; set; }
+  
 }

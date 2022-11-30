@@ -128,17 +128,17 @@ public interface ICommonTimeNode // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// StartConditionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? StartConditionList { get ; set; }
+  public DocumentModel.Presentation.IStartConditionList? StartConditionList { get ; set; }
   
   /// <summary>
   /// EndConditionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EndConditionList { get ; set; }
+  public DocumentModel.Presentation.IEndConditionList? EndConditionList { get ; set; }
   
   /// <summary>
   /// EndSync.
   /// </summary>
-  public DocumentModel.Presentation.ITimeListConditionalType? EndSync { get ; set; }
+  public DocumentModel.Presentation.IEndSync? EndSync { get ; set; }
   
   /// <summary>
   /// Iterate.
@@ -148,11 +148,11 @@ public interface ICommonTimeNode // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// ChildTimeNodeList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ChildTimeNodeList { get ; set; }
+  public DocumentModel.Presentation.IChildTimeNodeList? ChildTimeNodeList { get ; set; }
   
   /// <summary>
   /// SubTimeNodeList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SubTimeNodeList { get ; set; }
+  public DocumentModel.Presentation.ISubTimeNodeList? SubTimeNodeList { get ; set; }
   
 }

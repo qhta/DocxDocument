@@ -23,6 +23,6 @@ public interface IDisplayUnitsLabel // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ITextBodyType? TextProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.ITextProperties? TextProperties { get ; set; }
   
 }

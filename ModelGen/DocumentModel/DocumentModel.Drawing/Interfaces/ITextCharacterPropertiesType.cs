@@ -113,6 +113,6 @@ public interface ITextCharacterPropertiesType // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// Outline.
   /// </summary>
-  public DocumentModel.Drawing.ILinePropertiesType? Outline { get ; set; }
+  public DocumentModel.Drawing.IOutline? Outline { get ; set; }
   
 }

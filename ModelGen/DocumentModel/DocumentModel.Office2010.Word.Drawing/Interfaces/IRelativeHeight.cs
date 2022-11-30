@@ -13,6 +13,6 @@ public interface IRelativeHeight // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// PercentageHeight.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PercentageHeight { get ; set; }
+  public System.String? PercentageHeight { get ; set; }
   
 }

@@ -15,4 +15,6 @@ public interface IStringLevel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Name { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.IChartStringValue>? ChartStringValues { get ; set; }
+  
 }

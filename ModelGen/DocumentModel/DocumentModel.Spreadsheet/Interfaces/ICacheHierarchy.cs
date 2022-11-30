@@ -128,6 +128,6 @@ public interface ICacheHierarchy // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// CacheHierarchyExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CacheHierarchyExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.ICacheHierarchyExtensionList? CacheHierarchyExtensionList { get ; set; }
   
 }

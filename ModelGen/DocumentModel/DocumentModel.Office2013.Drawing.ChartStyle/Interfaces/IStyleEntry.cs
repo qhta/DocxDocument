@@ -13,22 +13,22 @@ public interface IStyleEntry // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// LineReference.
   /// </summary>
-  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleReference? LineReference { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.ILineReference? LineReference { get ; set; }
   
   /// <summary>
   /// LineWidthScale.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? LineWidthScale { get ; set; }
+  public System.String? LineWidthScale { get ; set; }
   
   /// <summary>
   /// FillReference.
   /// </summary>
-  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleReference? FillReference { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IFillReference? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.
   /// </summary>
-  public DocumentModel.Office2013.Drawing.ChartStyle.IStyleReference? EffectReference { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IEffectReference? EffectReference { get ; set; }
   
   /// <summary>
   /// FontReference.
@@ -53,6 +53,6 @@ public interface IStyleEntry // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2013.Drawing.ChartStyle.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

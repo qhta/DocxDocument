@@ -13,16 +13,16 @@ public interface IPreSubSuper // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Subscript (Pre-Sub-Superscript).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
+  public DocumentModel.Math.ISubArgument? SubArgument { get ; set; }
   
   /// <summary>
   /// Superscript(Pre-Sub-Superscript function).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? SuperArgument { get ; set; }
+  public DocumentModel.Math.ISuperArgument? SuperArgument { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
 }

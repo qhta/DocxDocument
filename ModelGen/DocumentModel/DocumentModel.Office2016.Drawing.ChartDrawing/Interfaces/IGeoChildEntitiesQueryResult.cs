@@ -13,6 +13,6 @@ public interface IGeoChildEntitiesQueryResult // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// GeoChildEntities.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? GeoChildEntities { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IGeoChildEntities? GeoChildEntities { get ; set; }
   
 }

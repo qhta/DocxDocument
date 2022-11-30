@@ -1,29 +1,61 @@
-﻿using System.Diagnostics;
-using System.Reflection.Metadata;
-using System.Reflection;
-using System.Text.Json.Serialization;
-
-using DocumentFormat.OpenXml;
+﻿using System.CodeDom.Compiler;
+using System.Diagnostics;
 
 using Namotion.Reflection;
 
-using Qhta.Collections;
-using DocumentFormat.OpenXml.Spreadsheet;
-using System.CodeDom.Compiler;
-
 namespace ModelGen;
 
-public static class ModelGenerator
+public class ModelGenerator
 {
+  public ModelGenerator(string projectName, string outputPath)
+  {
+    IntfProjectName = projectName;
+    IntfOutputPath = outputPath;
+    ImplProjectName = projectName + ".Impl";
+    ImplOutputPath = outputPath + ".Impl";
+  }
 
-  public static void ClearProjectFolder(string projectPath)
+  public string IntfProjectName { get; private set; }
+  public string IntfOutputPath { get; private set; }
+
+  public string ImplProjectName { get; private set; }
+  public string ImplOutputPath { get; private set; }
+
+  public int GeneratedClassesCount { get; private set;}
+  public int GeneratedInterfacesCount { get; private set; }
+  public int GeneratedStructsCount { get; private set; }
+  public int GeneratedEnumTypesCount { get; private set; }
+
+  public int GeneratedPropertiesCount { get; private set; }
+
+  public int GeneratedEnumValuesCount { get; private set; }
+
+  public void PrepareProjects()
+  {
+    if (!Directory.Exists(IntfOutputPath))
+      Directory.CreateDirectory(IntfOutputPath);
+    ClearProjectFolder(IntfOutputPath);
+    GenProjectFile(IntfProjectName, Path.Combine(IntfOutputPath, IntfProjectName + ".csproj"));
+
+
+    if (!Directory.Exists(ImplOutputPath))
+      Directory.CreateDirectory(ImplOutputPath);
+    ClearProjectFolder(ImplOutputPath);
+    GenProjectFile(ImplProjectName, Path.Combine(ImplOutputPath, ImplProjectName + ".csproj"));
+  }
+
+  private void ClearProjectFolder(string projectPath)
   {
     var subfolders = Directory.GetDirectories(projectPath);
     foreach (var subfolder in subfolders)
-      Directory.Delete(subfolder, true);
+      try
+      {
+        Directory.Delete(subfolder, true);
+      }
+      catch { }
   }
 
-  public static void GenProjectFile(string projectName, string filename)
+  private void GenProjectFile(string projectName, string filename)
   {
     AssurePathExists(filename);
     using (var writer = File.CreateText(filename))
@@ -33,17 +65,17 @@ public static class ModelGenerator
     }
   }
 
-  public static void GenerateTypeFile(TypeInfo typeInfo, string IntfOutputPath, string ImplOutputPath)
+  public void GenerateTypeFile(TypeInfo typeInfo)
   {
     if (typeInfo.TypeKind == TypeKind.Class)
-      GenClassType(typeInfo, IntfOutputPath, ImplOutputPath);
+      GenClassType(typeInfo);
     else if (typeInfo.TypeKind == TypeKind.Enum)
-      GenEnumType(typeInfo, IntfOutputPath);
+      GenEnumType(typeInfo);
   }
 
   #region Class type generation
 
-  public static void GenClassType(TypeInfo type, string IntfOutputPath, string ImplOutputPath)
+  private void GenClassType(TypeInfo type)
   {
     var typeName = type.Name;
     var aNamespace = type.Namespace;
@@ -53,8 +85,10 @@ public static class ModelGenerator
     //GenClassOrInterface(type, typeName, Path.Combine(implOutputPath, typeName + ".cs"), false);
   }
 
-  public static void GenClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
+  private void GenClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
   {
+    if (typeName.EndsWith('&'))
+      Debug.Assert(true);
     AssurePathExists(filename);
     using (var textWriter = File.CreateText(filename))
     using (var writer = new IndentedTextWriter(textWriter, "  "))
@@ -63,34 +97,40 @@ public static class ModelGenerator
     }
   }
 
-  public static void GenClassOrInterface(TypeInfo type, string typeName, IndentedTextWriter writer, bool toInterface)
+  private void GenClassOrInterface(TypeInfo typeInfo, string typeName, IndentedTextWriter writer, bool toInterface)
   {
-    var aNamespace = type.Namespace;
+    var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
     {
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
 
-    GenDocumentationComments(type, writer);
-    GenCustomAttributes(type.CustomAttributes, writer);
+    GenDocumentationComments(typeInfo, writer);
+    GenCustomAttributes(typeInfo.CustomAttributes, writer);
     if (toInterface)
-      writer.WriteLine($"public interface I{typeName} // : {type.BaseTypeInfo?.GetFullName(false, true)}");
+      writer.WriteLine($"public interface I{typeName} // : {typeInfo.BaseTypeInfo?.GetFullName(false, true)}");
     else
       writer.WriteLine($"public class {typeName}: I{typeName}");
     writer.WriteLine("{");
     writer.Indent++;
     //if (type.Name == "AreaChartSeries")
     //  Debug.Assert(true);
-    if (type.AcceptedProperties != null)
-      foreach (var prop in type.AcceptedProperties)
+    if (typeInfo.AcceptedProperties != null)
+      foreach (var prop in typeInfo.AcceptedProperties)
         //if (!(ModelFilter.ExcludedProperties.Contains(prop.Name)) && !(ModelFilter.ExcludedTypes.Contains(prop.PropertyType.Namespace ?? "")))
         GenProperty(prop, writer, toInterface);
     writer.Indent--;
     writer.WriteLine("}");
+    if (toInterface)
+      GeneratedInterfacesCount += 1;
+    else if (typeInfo.TypeKind == TypeKind.Struct)
+      GeneratedStructsCount += 1;
+    else
+      GeneratedClassesCount += 1;
   }
 
-  public static void GenProperty(PropInfo prop, IndentedTextWriter writer, bool toInterface)
+  private void GenProperty(PropInfo prop, IndentedTextWriter writer, bool toInterface)
   {
     //if (prop.Name == "Index")
     //  Debug.Assert(true);
@@ -117,13 +157,14 @@ public static class ModelGenerator
     }
     writer.WriteLine();
     //AddGlobalUsing(aNamespace ?? "");
+    GeneratedPropertiesCount += 1;
   }
 
 
   #endregion
 
   #region Enum types generation
-  public static void GenEnumType(TypeInfo type, string IntfOutputPath)
+  private void GenEnumType(TypeInfo type)
   {
     var outputPath = IntfOutputPath;
     var aNamespace = type.Namespace;
@@ -131,9 +172,10 @@ public static class ModelGenerator
     var typeName = type.Name;
     var fileName = ValidateFilename(typeName);
     GenEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs"));
+    GeneratedEnumTypesCount += 1;
   }
 
-  public static void GenEnumType(TypeInfo type, string typeName, string filename)
+  private void GenEnumType(TypeInfo type, string typeName, string filename)
   {
     AssurePathExists(filename);
     using (var textWriter = File.CreateText(filename))
@@ -143,7 +185,7 @@ public static class ModelGenerator
     }
   }
 
-  public static void GenEnumType(TypeInfo type, string typeName, IndentedTextWriter writer)
+  private void GenEnumType(TypeInfo type, string typeName, IndentedTextWriter writer)
   {
     var aNamespace = type.GetNamespace();
     if (aNamespace != null)
@@ -163,7 +205,7 @@ public static class ModelGenerator
     writer.WriteLine("}");
   }
 
-  public static void GenEnum(EnumInfo field, IndentedTextWriter writer)
+  private void GenEnum(EnumInfo field, IndentedTextWriter writer)
   {
     bool addEmptyLine = GenDocumentationComments(field, writer);
     if (field.CustomAttributes != null)
@@ -174,12 +216,13 @@ public static class ModelGenerator
     writer.WriteLine($"{field.Name},");
     if (addEmptyLine)
       writer.WriteLine();
+    GeneratedEnumValuesCount += 1;
   }
   #endregion
 
   #region CustomAttributes generation
 
-  public static bool GenCustomAttributes(IEnumerable<CustomAttribData>? attributes, IndentedTextWriter writer)
+  private bool GenCustomAttributes(IEnumerable<CustomAttribData>? attributes, IndentedTextWriter writer)
   {
     //if (attributes?.Any() == true)
     //{
@@ -191,7 +234,7 @@ public static class ModelGenerator
     return false;
   }
 
-  public static void GenCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
+  private void GenCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
   {
     var attributeType = attrData.AttributeType;
     //if (ModelFilter.AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
@@ -220,7 +263,7 @@ public static class ModelGenerator
 
   #region Documentation comments generation
 
-  public static bool GenDocumentationComments(TypeInfo typeInfo, IndentedTextWriter writer)
+  private bool GenDocumentationComments(TypeInfo typeInfo, IndentedTextWriter writer)
   {
     var documentation = typeInfo.Type.GetXmlDocsElement();
     if (documentation != null)
@@ -251,7 +294,7 @@ public static class ModelGenerator
     return false;
   }
 
-  public static bool GenDocumentationComments(EnumInfo aField, IndentedTextWriter writer)
+  private bool GenDocumentationComments(EnumInfo aField, IndentedTextWriter writer)
   {
     var summary = aField.Summary;
     if (summary != null)
@@ -264,7 +307,7 @@ public static class ModelGenerator
     return false;
   }
 
-  public static bool GenDocumentationComments(PropInfo aProp, IndentedTextWriter writer)
+  private bool GenDocumentationComments(PropInfo aProp, IndentedTextWriter writer)
   {
     var summary = aProp.Summary;
     if (summary != null)
@@ -281,9 +324,9 @@ public static class ModelGenerator
   #region Global usings generation
 
 
-  static SortedSet<string> GlobalUsings { get; } = new();
+  SortedSet<string> GlobalUsings { get; } = new();
 
-  public static void AddGlobalUsing(string aNamespace)
+  private void AddGlobalUsing(string aNamespace)
   {
     if (aNamespace == "System.IO.Packaging")
       return;
@@ -295,7 +338,7 @@ public static class ModelGenerator
 
   }
 
-  public static void GenGlobalUsings(string filename)
+  private void GenGlobalUsings(string filename)
   {
     AssurePathExists(filename);
     using (var writer = File.CreateText(filename))
@@ -307,7 +350,7 @@ public static class ModelGenerator
   #endregion
 
   #region Literals generation
-  public static string TypedValueLiteral(Type type, object? value)
+  private string TypedValueLiteral(Type type, object? value)
   {
     if (type == typeof(string))
     {
@@ -342,14 +385,14 @@ public static class ModelGenerator
   #endregion
 
   #region Filename/Path methods
-  public static string ValidateFilename(string filename)
+  private string ValidateFilename(string filename)
   {
     foreach (var ch in Path.GetInvalidFileNameChars())
       filename = filename.Replace(new string(ch, 1), "");
     return filename;
   }
 
-  public static void AssurePathExists(string filename)
+  private void AssurePathExists(string filename)
   {
     var filePath = Path.GetDirectoryName(filename);
     if (filePath != null)

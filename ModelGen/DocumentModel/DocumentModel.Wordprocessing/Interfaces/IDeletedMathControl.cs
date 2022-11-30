@@ -20,4 +20,6 @@ public interface IDeletedMathControl // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? Id { get ; set; }
   
+  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
+  
 }

@@ -13,11 +13,11 @@ public interface IRuby // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Phonetic Guide Text.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? RubyContent { get ; set; }
+  public DocumentModel.Wordprocessing.IRubyContent? RubyContent { get ; set; }
   
   /// <summary>
   /// Phonetic Guide Base Text.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? RubyBase { get ; set; }
+  public DocumentModel.Wordprocessing.IRubyBase? RubyBase { get ; set; }
   
 }

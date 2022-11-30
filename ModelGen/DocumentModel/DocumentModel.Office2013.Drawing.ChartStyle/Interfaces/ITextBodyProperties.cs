@@ -78,7 +78,7 @@ public interface ITextBodyProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Anchor
   /// </summary>
-  public DocumentModel.Drawing.TextAnchoringTypeKind? Anchor { get ; set; }
+  public DocumentModel.Drawing.TextAnchoringKind? Anchor { get ; set; }
   
   /// <summary>
   /// Anchor Center
@@ -104,5 +104,19 @@ public interface ITextBodyProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// Preset Text Shape.
   /// </summary>
   public DocumentModel.Drawing.IPresetTextWrap? PresetTextWrap { get ; set; }
+  
+  public System.Boolean? NoAutoFit { get ; set; }
+  
+  public DocumentModel.Drawing.INormalAutoFit? NormalAutoFit { get ; set; }
+  
+  public System.Boolean? ShapeAutoFit { get ; set; }
+  
+  public DocumentModel.Drawing.IScene3DType? Scene3DType { get ; set; }
+  
+  public DocumentModel.Drawing.IShape3DType? Shape3DType { get ; set; }
+  
+  public DocumentModel.Drawing.IFlatText? FlatText { get ; set; }
+  
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

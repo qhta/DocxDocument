@@ -35,4 +35,6 @@ public interface ILatentStyles // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Int32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ILatentStyleExceptionInfo>? LatentStyleExceptionInfos { get ; set; }
+  
 }

@@ -13,11 +13,11 @@ public interface IChartText // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Rich Text.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ITextBodyType? RichText { get ; set; }
+  public DocumentModel.Drawing.Charts.IRichText? RichText { get ; set; }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IStringDataType? StringLiteral { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringLiteral? StringLiteral { get ; set; }
   
 }

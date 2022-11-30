@@ -13,11 +13,11 @@ public interface ILimitUpper // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
   /// <summary>
   /// Limit (Upper).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Limit { get ; set; }
+  public DocumentModel.Math.ILimit? Limit { get ; set; }
   
 }

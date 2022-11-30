@@ -10,4 +10,10 @@ public interface IStringDimension // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// </summary>
   public DocumentModel.Office2016.Drawing.ChartDrawing.StringDimensionType? Type { get ; set; }
   
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IOpenXmlFormulaElement? Formula { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IOpenXmlFormulaElement? NfFormula { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.IStringLevel>? StringLevels { get ; set; }
+  
 }

@@ -15,4 +15,12 @@ public interface IRadarChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? VaryColors { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IRadarChartSeries>? RadarChartSerieses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IRadarChartExtensionList? RadarChartExtensionList { get ; set; }
+  
 }

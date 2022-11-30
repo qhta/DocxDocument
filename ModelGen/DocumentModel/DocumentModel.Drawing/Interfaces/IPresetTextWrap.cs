@@ -13,6 +13,6 @@ public interface IPresetTextWrap // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AdjustValueList { get ; set; }
+  public DocumentModel.Drawing.IAdjustValueList? AdjustValueList { get ; set; }
   
 }

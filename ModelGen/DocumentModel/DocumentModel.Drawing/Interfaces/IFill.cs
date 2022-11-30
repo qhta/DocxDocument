@@ -8,7 +8,7 @@ public interface IFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// NoFill.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NoFill { get ; set; }
+  public System.Boolean? NoFill { get ; set; }
   
   /// <summary>
   /// SolidFill.
@@ -33,6 +33,6 @@ public interface IFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Group Fill.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? GroupFill { get ; set; }
+  public System.Boolean? GroupFill { get ; set; }
   
 }

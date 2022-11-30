@@ -65,4 +65,32 @@ public interface IComment // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Title { get ; set; }
   
+  public DocumentModel.Office2016.Presentation.Command.ISlideMonikerList? SlideMonikerList { get ; set; }
+  
+  public DocumentModel.BaseTypes.ModelElement? SlideLayoutMonikerList { get ; set; }
+  
+  public DocumentModel.BaseTypes.ModelElement? MainMasterMonikerList { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? DeMkLstDrawingElementMonikerLists { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? TextBodyMonikerLists { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? TextCharRangeMonikerLists { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? TableCellMonikerLists { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? TableRowMonikerLists { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.ModelElement>? TableColumnMonikerLists { get ; set; }
+  
+  public System.Boolean? CommentUnknownAnchor { get ; set; }
+  
+  public DocumentModel.Office2021.PowerPoint.Comment.IPoint2DType? Point2DType { get ; set; }
+  
+  public DocumentModel.Office2021.PowerPoint.Comment.ICommentReplyList? CommentReplyList { get ; set; }
+  
+  public DocumentModel.Office2021.PowerPoint.Comment.ITextBodyType? TextBodyType { get ; set; }
+  
+  public DocumentModel.Office2021.PowerPoint.Comment.IExtensionList? ExtensionList { get ; set; }
+  
 }

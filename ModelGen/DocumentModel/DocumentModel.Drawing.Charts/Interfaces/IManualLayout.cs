@@ -53,6 +53,6 @@ public interface IManualLayout // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
   
 }

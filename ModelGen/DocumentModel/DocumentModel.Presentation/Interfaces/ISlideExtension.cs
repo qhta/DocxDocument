@@ -10,4 +10,10 @@ public interface ISlideExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2010.PowerPoint.ILaserTraceList? LaserTraceList { get ; set; }
+  
+  public DocumentModel.Office2010.PowerPoint.IShowEventRecordList? ShowEventRecordList { get ; set; }
+  
+  public DocumentModel.Office2021.PowerPoint.Comment.ICommentRelationship? CommentRelationship { get ; set; }
+  
 }

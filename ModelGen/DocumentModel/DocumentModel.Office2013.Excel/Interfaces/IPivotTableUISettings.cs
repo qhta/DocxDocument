@@ -15,4 +15,8 @@ public interface IPivotTableUISettings // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.Boolean? RelNeededHidden { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2013.Excel.IFieldListActiveTabTopLevelEntity>? FieldListActiveTabTopLevelEntities { get ; set; }
+  
+  public DocumentModel.Office2013.Excel.IExtensionList? ExtensionList { get ; set; }
+  
 }

@@ -10,4 +10,6 @@ public interface IHyperlinkExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum? HyperlinkColor { get ; set; }
+  
 }

@@ -7,6 +7,8 @@ public interface ITableDefinitionPart // : DocumentModel.Packaging.ITypedOpenXml
 {
   public System.String? ContentType { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
@@ -18,5 +20,9 @@ public interface ITableDefinitionPart // : DocumentModel.Packaging.ITypedOpenXml
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Spreadsheet.ITable? Table { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

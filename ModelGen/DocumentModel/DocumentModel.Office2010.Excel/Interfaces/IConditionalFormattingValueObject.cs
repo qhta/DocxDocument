@@ -8,7 +8,7 @@ public interface IConditionalFormattingValueObject // : DocumentModel.ITypedOpen
   /// <summary>
   /// type, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.ConditionalFormattingValueObjectTypeKind? Type { get ; set; }
+  public DocumentModel.Office2010.Excel.ConditionalFormattingValueObjectKind? Type { get ; set; }
   
   /// <summary>
   /// gte, this property is only available in Office 2010 and later.
@@ -18,11 +18,11 @@ public interface IConditionalFormattingValueObject // : DocumentModel.ITypedOpen
   /// <summary>
   /// Formula.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
+  public System.String? Formula { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

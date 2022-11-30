@@ -58,6 +58,6 @@ public interface ICommonBehavior // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Attribute Name List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AttributeNameList { get ; set; }
+  public DocumentModel.Presentation.IAttributeNameList? AttributeNameList { get ; set; }
   
 }

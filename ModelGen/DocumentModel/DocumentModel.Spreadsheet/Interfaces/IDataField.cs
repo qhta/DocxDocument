@@ -43,6 +43,6 @@ public interface IDataField // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// DataFieldExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? DataFieldExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IDataFieldExtensionList? DataFieldExtensionList { get ; set; }
   
 }

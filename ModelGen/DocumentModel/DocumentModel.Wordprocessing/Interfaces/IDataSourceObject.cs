@@ -35,4 +35,8 @@ public interface IDataSourceObject // : DocumentModel.ITypedOpenXmlCompositeElem
   /// </summary>
   public System.Boolean? FirstRowHeader { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IFieldMapData>? FieldMapDatas { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IRelationshipType? RecipientDataReference { get ; set; }
+  
 }

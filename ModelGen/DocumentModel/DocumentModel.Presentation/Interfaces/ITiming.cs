@@ -13,7 +13,7 @@ public interface ITiming // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Build List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? BuildList { get ; set; }
+  public DocumentModel.Presentation.IBuildList? BuildList { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.

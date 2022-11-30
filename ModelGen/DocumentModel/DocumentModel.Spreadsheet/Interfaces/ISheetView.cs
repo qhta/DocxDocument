@@ -105,4 +105,10 @@ public interface ISheetView // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Spreadsheet.IPane? Pane { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISelection>? Selections { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotSelection>? PivotSelections { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  
 }

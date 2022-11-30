@@ -13,16 +13,16 @@ public interface IUpDownBars // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Up Bars.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IUpDownBarType? UpBars { get ; set; }
+  public DocumentModel.Drawing.Charts.IUpBars? UpBars { get ; set; }
   
   /// <summary>
   /// Down Bars.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IUpDownBarType? DownBars { get ; set; }
+  public DocumentModel.Drawing.Charts.IDownBars? DownBars { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
   
 }

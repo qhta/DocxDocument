@@ -23,12 +23,12 @@ public interface IFieldChar // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Custom Field Data.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FieldData { get ; set; }
+  public System.String? FieldData { get ; set; }
   
   /// <summary>
   /// Form Field Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FormFieldData { get ; set; }
+  public DocumentModel.Wordprocessing.IFormFieldData? FormFieldData { get ; set; }
   
   /// <summary>
   /// Previous Numbering Field Properties.

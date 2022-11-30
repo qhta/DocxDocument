@@ -23,6 +23,6 @@ public interface IWebExtensionBinding // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2013.WebExtension.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

@@ -20,4 +20,10 @@ public interface INsvFilter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? TableId { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2021.Excel.NamedSheetViews.IColumnFilter>? ColumnFilters { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.ISortRules? SortRules { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.IExtensionList? ExtensionList { get ; set; }
+  
 }

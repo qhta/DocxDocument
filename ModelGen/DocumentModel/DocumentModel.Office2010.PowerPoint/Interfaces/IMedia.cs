@@ -28,11 +28,11 @@ public interface IMedia // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// MediaBookmarkList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? MediaBookmarkList { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IMediaBookmarkList? MediaBookmarkList { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.PowerPoint.IExtensionList? ExtensionList { get ; set; }
   
 }

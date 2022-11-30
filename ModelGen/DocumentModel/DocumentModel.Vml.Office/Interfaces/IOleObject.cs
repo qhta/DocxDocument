@@ -43,16 +43,16 @@ public interface IOleObject // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Embedded Object Alternate Image Request.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? LinkType { get ; set; }
+  public System.String? LinkType { get ; set; }
   
   /// <summary>
   /// Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? LockedField { get ; set; }
+  public System.String? LockedField { get ; set; }
   
   /// <summary>
   /// WordprocessingML Field Switches.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FieldCodes { get ; set; }
+  public System.String? FieldCodes { get ; set; }
   
 }

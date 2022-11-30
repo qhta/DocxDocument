@@ -68,7 +68,7 @@ public interface IStrokeChildType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Stroke Image Style
   /// </summary>
-  public DocumentModel.Vml.FillTypeKind? FillType { get ; set; }
+  public DocumentModel.Vml.FillKind? FillType { get ; set; }
   
   /// <summary>
   /// Stroke Image Location

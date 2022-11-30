@@ -28,12 +28,12 @@ public interface IErrorBars // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Plus.
   /// </summary>
-  public DocumentModel.Drawing.Charts.INumberDataSourceType? Plus { get ; set; }
+  public DocumentModel.Drawing.Charts.IPlus? Plus { get ; set; }
   
   /// <summary>
   /// Minus.
   /// </summary>
-  public DocumentModel.Drawing.Charts.INumberDataSourceType? Minus { get ; set; }
+  public DocumentModel.Drawing.Charts.IMinus? Minus { get ; set; }
   
   /// <summary>
   /// Error Bar Value.
@@ -48,6 +48,6 @@ public interface IErrorBars // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
   
 }

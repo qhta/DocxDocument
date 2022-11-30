@@ -18,6 +18,6 @@ public interface IFormatOverride // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
   
 }

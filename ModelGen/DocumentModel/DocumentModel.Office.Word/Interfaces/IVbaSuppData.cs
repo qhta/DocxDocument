@@ -13,6 +13,6 @@ public interface IVbaSuppData // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Mcds.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Mcds { get ; set; }
+  public DocumentModel.Office.Word.IMcds? Mcds { get ; set; }
   
 }

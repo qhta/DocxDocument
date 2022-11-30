@@ -10,4 +10,8 @@ public interface IGeoCache // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Provider { get ; set; }
   
+  public System.String? Xsdbase64Binary { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IClear? Clear { get ; set; }
+  
 }

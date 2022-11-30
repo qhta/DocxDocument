@@ -8,11 +8,11 @@ public interface ISparkline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Formula.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
+  public System.String? Formula { get ; set; }
   
   /// <summary>
   /// ReferenceSequence.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ReferenceSequence { get ; set; }
+  public System.String? ReferenceSequence { get ; set; }
   
 }

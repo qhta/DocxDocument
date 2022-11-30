@@ -33,16 +33,16 @@ public interface IDocProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnClick { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
   
   /// <summary>
   /// Hyperlink associated with hovering over the element..
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnHover { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkOnHover? HyperlinkOnHover { get ; set; }
   
   /// <summary>
   /// Future extension.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NonVisualDrawingPropertiesExtensionList { get ; set; }
+  public DocumentModel.Drawing.INonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
   
 }

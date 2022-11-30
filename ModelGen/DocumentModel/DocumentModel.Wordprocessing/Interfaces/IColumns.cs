@@ -25,4 +25,6 @@ public interface IColumns // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? Separator { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IColumn>? Columns { get ; set; }
+  
 }

@@ -90,4 +90,8 @@ public interface IPivotAreaReference // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.Boolean? ApplyVariancePInSubtotal { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.UInt32>? FieldItems { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  
 }

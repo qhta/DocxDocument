@@ -33,6 +33,6 @@ public interface IEquationArrayProperties // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
+  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
   
 }

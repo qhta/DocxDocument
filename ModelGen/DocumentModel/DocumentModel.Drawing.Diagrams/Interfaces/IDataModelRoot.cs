@@ -8,17 +8,17 @@ public interface IDataModelRoot // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Point List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PointList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IPointList? PointList { get ; set; }
   
   /// <summary>
   /// Connection List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ConnectionList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IConnectionList? ConnectionList { get ; set; }
   
   /// <summary>
   /// Background Formatting.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Background { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IBackground? Background { get ; set; }
   
   /// <summary>
   /// Whole E2O Formatting.
@@ -28,6 +28,6 @@ public interface IDataModelRoot // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// DataModelExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? DataModelExtensionList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IDataModelExtensionList? DataModelExtensionList { get ; set; }
   
 }

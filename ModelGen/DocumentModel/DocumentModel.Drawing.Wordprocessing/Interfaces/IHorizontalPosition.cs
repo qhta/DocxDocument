@@ -13,16 +13,16 @@ public interface IHorizontalPosition // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Relative Horizontal Alignment.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? HorizontalAlignment { get ; set; }
+  public System.String? HorizontalAlignment { get ; set; }
   
   /// <summary>
   /// Absolute Position Offset.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PositionOffset { get ; set; }
+  public System.String? PositionOffset { get ; set; }
   
   /// <summary>
   /// PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PercentagePositionHeightOffset { get ; set; }
+  public System.String? PercentagePositionHeightOffset { get ; set; }
   
 }

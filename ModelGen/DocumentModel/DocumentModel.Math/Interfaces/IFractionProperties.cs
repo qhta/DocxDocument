@@ -8,11 +8,11 @@ public interface IFractionProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Fraction type.
   /// </summary>
-  public DocumentModel.Math.FractionTypeKind? FractionType { get ; set; }
+  public DocumentModel.Math.FractionKind? FractionType { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
+  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
   
 }

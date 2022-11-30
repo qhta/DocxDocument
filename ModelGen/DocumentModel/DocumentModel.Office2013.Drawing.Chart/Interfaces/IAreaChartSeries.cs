@@ -30,4 +30,18 @@ public interface IAreaChartSeries // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// </summary>
   public DocumentModel.Drawing.Charts.IPictureOptions? PictureOptions { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IDataPoint>? DataPoints { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.ITrendline>? Trendlines { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IErrorBars>? ErrorBarses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ICategoryAxisData? CategoryAxisData { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IValues? Values { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IAreaSerExtensionList? AreaSerExtensionList { get ; set; }
+  
 }

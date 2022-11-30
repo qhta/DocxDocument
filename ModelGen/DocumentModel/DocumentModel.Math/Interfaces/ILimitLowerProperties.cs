@@ -8,6 +8,6 @@ public interface ILimitLowerProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
+  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
   
 }

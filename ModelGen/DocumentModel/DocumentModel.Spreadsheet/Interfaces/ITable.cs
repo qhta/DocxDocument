@@ -138,6 +138,6 @@ public interface ITable // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TableExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.ITableExtensionList? TableExtensionList { get ; set; }
   
 }

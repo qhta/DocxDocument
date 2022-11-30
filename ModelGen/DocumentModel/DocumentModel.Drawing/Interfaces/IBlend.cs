@@ -13,6 +13,6 @@ public interface IBlend // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Effect to blend.
   /// </summary>
-  public DocumentModel.Drawing.IEffectContainerType? EffectContainer { get ; set; }
+  public DocumentModel.Drawing.IEffectContainer? EffectContainer { get ; set; }
   
 }

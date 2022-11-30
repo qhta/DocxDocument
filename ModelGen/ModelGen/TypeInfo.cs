@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System.Diagnostics;
+using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ModelGen;
 
@@ -79,6 +81,8 @@ public class TypeInfo : ModelElement
 
   public string GetFullName(bool original = false, bool asInterface = false, bool withNamespace = true)
   {
+    //if (Name.StartsWith("Dictionary"))
+    //  Debug.Assert(true);
     string aName;
     string aNamespace;
     if (original)

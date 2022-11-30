@@ -13,11 +13,11 @@ public interface IGlow // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  public DocumentModel.IHexBinaryValue? RgbColorModelHex { get ; set; }
+  public DocumentModel.Office2010.Word.IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  public DocumentModel.Office2010.Word.SchemeColorKind? SchemeColor { get ; set; }
+  public DocumentModel.Office2010.Word.ISchemeColor? SchemeColor { get ; set; }
   
 }

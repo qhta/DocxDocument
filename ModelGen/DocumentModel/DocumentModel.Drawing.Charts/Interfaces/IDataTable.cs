@@ -33,11 +33,11 @@ public interface IDataTable // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ITextBodyType? TextProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.ITextProperties? TextProperties { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
   
 }

@@ -10,4 +10,6 @@ public interface ICalculatedMemberExtension // : DocumentModel.ITypedOpenXmlComp
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2010.Excel.ICalculatedMember? CalculatedMember { get ; set; }
+  
 }

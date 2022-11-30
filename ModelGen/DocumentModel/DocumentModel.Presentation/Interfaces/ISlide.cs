@@ -43,6 +43,6 @@ public interface ISlide // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// SlideExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SlideExtensionList { get ; set; }
+  public DocumentModel.Presentation.ISlideExtensionList? SlideExtensionList { get ; set; }
   
 }

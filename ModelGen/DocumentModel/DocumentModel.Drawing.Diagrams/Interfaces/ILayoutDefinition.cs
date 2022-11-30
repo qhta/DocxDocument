@@ -20,4 +20,20 @@ public interface ILayoutDefinition // : DocumentModel.ITypedOpenXmlPartRootEleme
   /// </summary>
   public System.String? DefaultStyle { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Diagrams.ITitle>? Titles { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Diagrams.IDescription>? Descriptions { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.ICategoryList? CategoryList { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.ISampleData? SampleData { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IStyleData? StyleData { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IColorData? ColorData { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.ILayoutNode? LayoutNode { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IDiagramDefinitionExtensionList? DiagramDefinitionExtensionList { get ; set; }
+  
 }

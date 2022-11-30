@@ -10,4 +10,6 @@ public interface IRsids // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.BaseTypes.HexWord? RsidRoot { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.BaseTypes.HexWord>? Rsids { get ; set; }
+  
 }

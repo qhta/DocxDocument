@@ -13,16 +13,16 @@ public interface INary // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Lower limit (n-ary) .
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
+  public DocumentModel.Math.ISubArgument? SubArgument { get ; set; }
   
   /// <summary>
   /// Upper limit (n-ary).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? SuperArgument { get ; set; }
+  public DocumentModel.Math.ISuperArgument? SuperArgument { get ; set; }
   
   /// <summary>
   /// Base (Argument).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
 }

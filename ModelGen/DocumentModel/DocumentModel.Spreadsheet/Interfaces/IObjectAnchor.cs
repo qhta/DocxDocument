@@ -23,11 +23,11 @@ public interface IObjectAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// FromMarker.
   /// </summary>
-  public DocumentModel.Spreadsheet.IMarkerType? FromMarker { get ; set; }
+  public DocumentModel.Spreadsheet.IFromMarker? FromMarker { get ; set; }
   
   /// <summary>
   /// ToMarker.
   /// </summary>
-  public DocumentModel.Spreadsheet.IMarkerType? ToMarker { get ; set; }
+  public DocumentModel.Spreadsheet.IToMarker? ToMarker { get ; set; }
   
 }

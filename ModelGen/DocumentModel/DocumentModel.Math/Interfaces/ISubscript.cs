@@ -13,11 +13,11 @@ public interface ISubscript // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
   /// <summary>
   /// Subscript (Subscript function).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? SubArgument { get ; set; }
+  public DocumentModel.Math.ISubArgument? SubArgument { get ; set; }
   
 }

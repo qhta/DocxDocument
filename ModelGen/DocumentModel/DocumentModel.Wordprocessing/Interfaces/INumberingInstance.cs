@@ -20,4 +20,6 @@ public interface INumberingInstance // : DocumentModel.ITypedOpenXmlCompositeEle
   /// </summary>
   public System.Int32? AbstractNumId { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ILevelOverride>? LevelOverrides { get ; set; }
+  
 }

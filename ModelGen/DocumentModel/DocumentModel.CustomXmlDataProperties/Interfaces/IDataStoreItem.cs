@@ -13,6 +13,6 @@ public interface IDataStoreItem // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Set of Associated XML Schemas.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SchemaReferences { get ; set; }
+  public DocumentModel.CustomXmlDataProperties.ISchemaReferences? SchemaReferences { get ; set; }
   
 }

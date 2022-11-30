@@ -15,4 +15,12 @@ public interface ISurface3DChart // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.Boolean? VaryColors { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.ISurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IBandFormats? BandFormats { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ISurface3DChartExtensionList? Surface3DChartExtensionList { get ; set; }
+  
 }

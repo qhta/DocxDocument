@@ -20,4 +20,8 @@ public interface IDataBar // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? ShowValue { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormatValueObject>? ConditionalFormatValueObjects { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IColorType? Color { get ; set; }
+  
 }

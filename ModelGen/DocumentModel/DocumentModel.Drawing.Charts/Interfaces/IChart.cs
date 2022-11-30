@@ -18,7 +18,7 @@ public interface IChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// pivot chart format persistence data.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotFormats { get ; set; }
+  public DocumentModel.Drawing.Charts.IPivotFormats? PivotFormats { get ; set; }
   
   /// <summary>
   /// 3D view settings.
@@ -28,17 +28,17 @@ public interface IChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// 3D floor formatting.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ISurfaceType? Floor { get ; set; }
+  public DocumentModel.Drawing.Charts.IFloor? Floor { get ; set; }
   
   /// <summary>
   /// 3D side wall formatting.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ISurfaceType? SideWall { get ; set; }
+  public DocumentModel.Drawing.Charts.ISideWall? SideWall { get ; set; }
   
   /// <summary>
   /// 3D back wall formatting.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ISurfaceType? BackWall { get ; set; }
+  public DocumentModel.Drawing.Charts.IBackWall? BackWall { get ; set; }
   
   /// <summary>
   /// Plot data and formatting.
@@ -68,6 +68,6 @@ public interface IChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Extensibility container.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ChartExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IChartExtensionList? ChartExtensionList { get ; set; }
   
 }

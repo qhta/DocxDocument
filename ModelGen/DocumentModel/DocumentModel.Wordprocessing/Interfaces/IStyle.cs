@@ -123,11 +123,13 @@ public interface IStyle // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Style Table Row Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TableStyleConditionalFormattingTableRowProperties { get ; set; }
+  public DocumentModel.Wordprocessing.ITableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get ; set; }
   
   /// <summary>
   /// Style Table Cell Properties.
   /// </summary>
   public DocumentModel.Wordprocessing.IStyleTableCellProperties? StyleTableCellProperties { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ITableStyleProperties>? TableStylePropertieses { get ; set; }
   
 }

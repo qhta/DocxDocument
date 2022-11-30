@@ -15,4 +15,16 @@ public interface IArea3DChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? VaryColors { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IAreaChartSeries>? AreaChartSerieses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDropLines? DropLines { get ; set; }
+  
+  public System.UInt16? GapDepth { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IArea3DChartExtensionList? Area3DChartExtensionList { get ; set; }
+  
 }

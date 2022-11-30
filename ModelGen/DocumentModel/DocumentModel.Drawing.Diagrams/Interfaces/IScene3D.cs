@@ -23,6 +23,6 @@ public interface IScene3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

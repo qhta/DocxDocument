@@ -33,12 +33,12 @@ public interface ISurfaceChartSeries // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// CategoryAxisData.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IAxisDataSourceType? CategoryAxisData { get ; set; }
+  public DocumentModel.Drawing.Charts.ICategoryAxisData? CategoryAxisData { get ; set; }
   
   /// <summary>
   /// Values.
   /// </summary>
-  public DocumentModel.Drawing.Charts.INumberDataSourceType? Values { get ; set; }
+  public DocumentModel.Drawing.Charts.IValues? Values { get ; set; }
   
   /// <summary>
   /// Bubble3D.
@@ -48,6 +48,6 @@ public interface ISurfaceChartSeries // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// SurfaceSerExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SurfaceSerExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.ISurfaceSerExtensionList? SurfaceSerExtensionList { get ; set; }
   
 }

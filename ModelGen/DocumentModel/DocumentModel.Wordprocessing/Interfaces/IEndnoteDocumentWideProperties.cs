@@ -25,4 +25,6 @@ public interface IEndnoteDocumentWideProperties // : DocumentModel.ITypedOpenXml
   /// </summary>
   public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IFootnoteEndnoteSeparatorReferenceType>? EndnoteSpecialReferences { get ; set; }
+  
 }

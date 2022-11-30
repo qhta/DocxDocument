@@ -13,11 +13,11 @@ public interface IPatternFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Foreground color.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? ForegroundColor { get ; set; }
+  public DocumentModel.Drawing.IForegroundColor? ForegroundColor { get ; set; }
   
   /// <summary>
   /// Background color.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? BackgroundColor { get ; set; }
+  public DocumentModel.Drawing.IBackgroundColor? BackgroundColor { get ; set; }
   
 }

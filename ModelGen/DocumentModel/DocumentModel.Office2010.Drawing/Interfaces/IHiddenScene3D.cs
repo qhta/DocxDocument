@@ -23,6 +23,6 @@ public interface IHiddenScene3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

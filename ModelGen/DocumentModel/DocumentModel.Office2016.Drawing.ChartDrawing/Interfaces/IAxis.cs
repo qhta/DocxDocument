@@ -15,4 +15,30 @@ public interface IAxis // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? Hidden { get ; set; }
   
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ICategoryAxisScaling? CategoryAxisScaling { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IValueAxisScaling? ValueAxisScaling { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IAxisTitle? AxisTitle { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IAxisUnits? AxisUnits { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMajorGridlinesGridlines? MajorGridlinesGridlines { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMinorGridlinesGridlines? MinorGridlinesGridlines { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMajorTickMarksTickMarks? MajorTickMarksTickMarks { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMinorTickMarksTickMarks? MinorTickMarksTickMarks { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ITickLabels? TickLabels { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.INumberFormat? NumberFormat { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IShapeProperties? ShapeProperties { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ITxPrTextBody? TxPrTextBody { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
+  
 }

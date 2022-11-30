@@ -15,4 +15,8 @@ public interface IConditionalFormatting // : DocumentModel.ITypedOpenXmlComposit
   /// </summary>
   public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingRule>? ConditionalFormattingRules { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  
 }

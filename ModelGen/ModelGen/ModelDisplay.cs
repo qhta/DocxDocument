@@ -308,13 +308,16 @@ public class ModelDisplay
 
   public void ShowTypeConversion(TypeInfo type)
   {
-    var convTarget = ModelManager.GetConversionTarget(type, true);
-    if (convTarget != null)
+    if (type.IsConverted)
     {
-      Writer.WriteLine($"{type} => {convTarget}");
-      Writer.Indent++;
-      ShowTypeConversion(convTarget);
-      Writer.Indent--;
+      var convTarget = ModelManager.GetConversionTarget(type, true);
+      if (convTarget != null)
+      {
+        Writer.WriteLine($"{type} => {convTarget}");
+        Writer.Indent++;
+        ShowTypeConversion(convTarget);
+        Writer.Indent--;
+      }
     }
   }
   

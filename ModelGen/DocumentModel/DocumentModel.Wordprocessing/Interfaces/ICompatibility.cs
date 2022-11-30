@@ -330,4 +330,6 @@ public interface ICompatibility // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? CachedColumnBalance { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICompatibilitySetting>? CompatibilitySettings { get ; set; }
+  
 }

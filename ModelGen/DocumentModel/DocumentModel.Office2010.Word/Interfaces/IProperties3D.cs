@@ -18,7 +18,7 @@ public interface IProperties3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// prstMaterial, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Word.PresetMaterialTypeKind? PresetMaterialType { get ; set; }
+  public DocumentModel.Office2010.Word.PresetMaterialKind? PresetMaterialType { get ; set; }
   
   /// <summary>
   /// BevelTop.
@@ -33,11 +33,11 @@ public interface IProperties3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtrusionColor.
   /// </summary>
-  public DocumentModel.Office2010.Word.IColorType? ExtrusionColor { get ; set; }
+  public DocumentModel.Office2010.Word.IExtrusionColor? ExtrusionColor { get ; set; }
   
   /// <summary>
   /// ContourColor.
   /// </summary>
-  public DocumentModel.Office2010.Word.IColorType? ContourColor { get ; set; }
+  public DocumentModel.Office2010.Word.IContourColor? ContourColor { get ; set; }
   
 }

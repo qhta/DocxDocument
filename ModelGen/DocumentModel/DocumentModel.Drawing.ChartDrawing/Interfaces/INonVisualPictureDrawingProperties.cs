@@ -18,6 +18,6 @@ public interface INonVisualPictureDrawingProperties // : DocumentModel.ITypedOpe
   /// <summary>
   /// NonVisualPicturePropertiesExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NonVisualPicturePropertiesExtensionList { get ; set; }
+  public DocumentModel.Drawing.INonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get ; set; }
   
 }

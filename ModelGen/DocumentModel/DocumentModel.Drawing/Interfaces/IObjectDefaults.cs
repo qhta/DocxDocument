@@ -8,21 +8,21 @@ public interface IObjectDefaults // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Shape Default.
   /// </summary>
-  public DocumentModel.Drawing.IDefaultShapeDefinitionType? ShapeDefault { get ; set; }
+  public DocumentModel.Drawing.IShapeDefault? ShapeDefault { get ; set; }
   
   /// <summary>
   /// Line Default.
   /// </summary>
-  public DocumentModel.Drawing.IDefaultShapeDefinitionType? LineDefault { get ; set; }
+  public DocumentModel.Drawing.ILineDefault? LineDefault { get ; set; }
   
   /// <summary>
   /// Text Default.
   /// </summary>
-  public DocumentModel.Drawing.IDefaultShapeDefinitionType? TextDefault { get ; set; }
+  public DocumentModel.Drawing.ITextDefault? TextDefault { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

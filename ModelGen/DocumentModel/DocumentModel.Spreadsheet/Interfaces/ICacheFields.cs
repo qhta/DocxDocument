@@ -10,4 +10,6 @@ public interface ICacheFields // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICacheField>? CacheFields { get ; set; }
+  
 }

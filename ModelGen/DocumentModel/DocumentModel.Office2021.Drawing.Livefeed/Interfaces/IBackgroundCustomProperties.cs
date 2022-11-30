@@ -8,6 +8,6 @@ public interface IBackgroundCustomProperties // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2021.Drawing.Livefeed.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

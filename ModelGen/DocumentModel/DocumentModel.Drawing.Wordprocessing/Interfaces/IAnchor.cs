@@ -95,4 +95,22 @@ public interface IAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Drawing.Wordprocessing.IEffectExtent? EffectExtent { get ; set; }
   
+  public System.Boolean? WrapNone { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.IWrapSquare? WrapSquare { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.IWrapTight? WrapTight { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.IWrapThrough? WrapThrough { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.IWrapTopBottom? WrapTopBottom { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.IDocProperties? DocProperties { get ; set; }
+  
+  public DocumentModel.Drawing.Wordprocessing.INonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get ; set; }
+  
+  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
+  
+  public DocumentModel.Office2010.Word.Drawing.IRelativeWidth? RelativeWidth { get ; set; }
+  
 }

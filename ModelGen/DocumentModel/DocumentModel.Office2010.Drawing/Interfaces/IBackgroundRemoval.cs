@@ -25,4 +25,8 @@ public interface IBackgroundRemoval // : DocumentModel.ITypedOpenXmlCompositeEle
   /// </summary>
   public System.Int32? MarqueeRight { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Drawing.IForegroundMark>? ForegroundMarks { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Drawing.IBackgroundMark>? BackgroundMarks { get ; set; }
+  
 }

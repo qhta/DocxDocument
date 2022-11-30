@@ -33,16 +33,16 @@ public interface INonVisualDrawingProperties // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// HyperlinkOnClick.
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnClick { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
   
   /// <summary>
   /// HyperlinkOnHover.
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkType? HyperlinkOnHover { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkOnHover? HyperlinkOnHover { get ; set; }
   
   /// <summary>
   /// NonVisualDrawingPropertiesExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NonVisualDrawingPropertiesExtensionList { get ; set; }
+  public DocumentModel.Drawing.INonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
   
 }

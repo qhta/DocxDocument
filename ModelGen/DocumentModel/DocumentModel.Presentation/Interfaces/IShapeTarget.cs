@@ -13,7 +13,7 @@ public interface IShapeTarget // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Background.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? BackgroundAnimation { get ; set; }
+  public System.Boolean? BackgroundAnimation { get ; set; }
   
   /// <summary>
   /// Subshape.

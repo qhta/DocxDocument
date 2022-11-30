@@ -35,4 +35,20 @@ public interface ILineChartSeries // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// </summary>
   public DocumentModel.Drawing.Charts.IPictureOptions? PictureOptions { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IDataPoint>? DataPoints { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.ITrendline>? Trendlines { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IErrorBars? ErrorBars { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ICategoryAxisData? CategoryAxisData { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IValues? Values { get ; set; }
+  
+  public System.Boolean? Smooth { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ILineSerExtensionList? LineSerExtensionList { get ; set; }
+  
 }

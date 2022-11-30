@@ -28,6 +28,6 @@ public interface ICacheSource // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// CacheSourceExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CacheSourceExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.ICacheSourceExtensionList? CacheSourceExtensionList { get ; set; }
   
 }

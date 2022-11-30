@@ -35,4 +35,14 @@ public interface IPieChartSeries // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.UInt32? Explosion { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IDataPoint>? DataPoints { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ICategoryAxisData? CategoryAxisData { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IValues? Values { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IPieSerExtensionList? PieSerExtensionList { get ; set; }
+  
 }

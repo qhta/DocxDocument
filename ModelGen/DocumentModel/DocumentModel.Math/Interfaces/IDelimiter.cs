@@ -10,4 +10,6 @@ public interface IDelimiter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Math.IDelimiterProperties? DelimiterProperties { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Math.IBase>? Bases { get ; set; }
+  
 }

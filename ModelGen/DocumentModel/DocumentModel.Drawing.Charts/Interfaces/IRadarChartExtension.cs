@@ -10,4 +10,6 @@ public interface IRadarChartExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredRadarSeries? FilteredRadarSeries { get ; set; }
+  
 }

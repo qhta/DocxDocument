@@ -8,11 +8,11 @@ public interface IPresetGeometry // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Preset Shape
   /// </summary>
-  public DocumentModel.Drawing.ShapeTypeKind? Preset { get ; set; }
+  public DocumentModel.Drawing.ShapeKind? Preset { get ; set; }
   
   /// <summary>
   /// List of Shape Adjust Values.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AdjustValueList { get ; set; }
+  public DocumentModel.Drawing.IAdjustValueList? AdjustValueList { get ; set; }
   
 }

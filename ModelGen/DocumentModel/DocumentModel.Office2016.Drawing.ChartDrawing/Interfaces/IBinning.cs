@@ -23,11 +23,11 @@ public interface IBinning // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Xsddouble.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Xsddouble { get ; set; }
+  public System.String? Xsddouble { get ; set; }
   
   /// <summary>
   /// BinCountXsdunsignedInt.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? BinCountXsdunsignedInt { get ; set; }
+  public System.String? BinCountXsdunsignedInt { get ; set; }
   
 }

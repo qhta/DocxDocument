@@ -45,4 +45,6 @@ public interface IDiv // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Wordprocessing.IDivBorder? DivBorder { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IDivsChild>? DivsChilds { get ; set; }
+  
 }

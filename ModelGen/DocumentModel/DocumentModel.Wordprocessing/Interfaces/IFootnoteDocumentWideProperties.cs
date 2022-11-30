@@ -25,4 +25,6 @@ public interface IFootnoteDocumentWideProperties // : DocumentModel.ITypedOpenXm
   /// </summary>
   public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IFootnoteEndnoteSeparatorReferenceType>? FootnoteSpecialReferences { get ; set; }
+  
 }

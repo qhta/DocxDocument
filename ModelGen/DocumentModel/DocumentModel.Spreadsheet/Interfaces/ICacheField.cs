@@ -80,4 +80,8 @@ public interface ICacheField // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Spreadsheet.IFieldGroup? FieldGroup { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertiesMaps { get ; set; }
+  
+  public DocumentModel.Spreadsheet.ICacheFieldExtensionList? CacheFieldExtensionList { get ; set; }
+  
 }

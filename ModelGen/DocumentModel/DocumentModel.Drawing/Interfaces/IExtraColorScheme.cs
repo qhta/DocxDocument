@@ -13,6 +13,6 @@ public interface IExtraColorScheme // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// ColorMap.
   /// </summary>
-  public DocumentModel.Drawing.IColorMappingType? ColorMap { get ; set; }
+  public DocumentModel.Drawing.IColorMap? ColorMap { get ; set; }
   
 }

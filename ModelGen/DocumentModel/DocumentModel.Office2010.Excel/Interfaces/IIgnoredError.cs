@@ -53,6 +53,6 @@ public interface IIgnoredError // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ReferenceSequence.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ReferenceSequence { get ; set; }
+  public System.String? ReferenceSequence { get ; set; }
   
 }

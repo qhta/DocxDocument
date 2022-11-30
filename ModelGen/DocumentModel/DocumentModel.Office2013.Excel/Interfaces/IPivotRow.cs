@@ -15,4 +15,6 @@ public interface IPivotRow // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2013.Excel.IPivotValueCell>? PivotValueCells { get ; set; }
+  
 }

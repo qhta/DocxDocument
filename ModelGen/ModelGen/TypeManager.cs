@@ -21,7 +21,7 @@ public static class TypeManager
   private static BiDiDictionary<int, string> KnownNamespaces = new();
   private static IEnumerable<string> Namespaces = KnownNamespaces.Select(item => item.Item2);
 
-  private static HashSet<TypeRelationship> Relationships = new();
+  private static List<TypeRelationship> Relationships = new();
 
   public static int TotalTypesCount => KnownTypes.Count;
 
@@ -93,7 +93,7 @@ public static class TypeManager
     return false;
   }
 
-  public static TypeInfo RegisterType(Type type)
+  public static TypeInfo RegisterAndReflectType(Type type)
   {
     lock (KnownTypesLock)
     {
@@ -107,7 +107,28 @@ public static class TypeManager
       }
       info = new TypeInfo(type);
       KnownTypes.Add(type, info);
-      TypeReflector.RequestReflect(info);
+      TypeReflector.ReflectType(info);
+      return info;
+    }
+  }
+
+  public static TypeInfo RegisterType(Type type)
+  {
+    if (type.Name.Contains('&'))
+      Debug.Assert(true);
+    lock (KnownTypesLock)
+    {
+      if (KnownTypes.TryGetValue(type, out var info))
+        return info;
+      var nspace = type.Namespace ?? "";
+      lock (NamespacesLock)
+      {
+        if (!Namespaces.Contains(nspace))
+          RegisterNamespace(nspace);
+      }
+      info = new TypeInfo(type);
+      KnownTypes.Add(type, info);
+      TypeReflector.ReflectTypeAsync(info);
       return info;
     }
   }
@@ -119,37 +140,53 @@ public static class TypeManager
     return result;
   }
 
-  public static TypeRelationship AddRelationship(object source, TypeInfo type, Semantics semantics)
+  public static TypeRelationship AddRelationship(object source, TypeInfo type, Semantics semantics, int order = 0)
   {
     lock (RelationshipsLock)
     {
       var rel = new TypeRelationship(source, type, semantics);
-      if (!Relationships.Contains(rel))
-        Relationships.Add(rel);
+      //if (!Relationships.Contains(rel))
+      Relationships.Add(rel);
       return rel;
     }
   }
 
-  public static IEnumerable<TypeRelationship> GetIncomingRelationships(TypeInfo typeInfo)
+  public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo type, Semantics semantics, int order = 0)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Target == typeInfo);
+    {
+      var rel = new TypeRelationship(source, type, semantics);
+      //if (!Relationships.Contains(rel))
+      Relationships.Add(rel);
+      return rel;
+    }
   }
-
-  public static IEnumerable<TypeRelationship> GetOutgoingRelationships(TypeInfo typeInfo)
+  public static TypeRelationship[] GetIncomingRelationships(this TypeInfo typeInfo)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Source == typeInfo);
+      return Relationships.Where(item => item.Target == typeInfo).ToArray();
   }
 
-  public static IEnumerable<TypeInfo> GetRelatedTypes(TypeInfo typeInfo, Semantics semantics)
+  public static TypeRelationship[] GetOutgoingRelationships(this TypeInfo typeInfo)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).Select(item => item.Target);
+      return Relationships.Where(item => item.Source == typeInfo).ToArray();
+  }
+
+  public static TypeRelationship[] GetOutgoingRelationships(this TypeInfo typeInfo, Semantics semantics)
+  {
+    lock (RelationshipsLock)
+      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).ToArray();
+  }
+
+  public static TypeInfo[] GetRelatedTypes(this TypeInfo typeInfo, Semantics semantics)
+  {
+    lock (RelationshipsLock)
+      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).Select(item => item.Target).ToArray();
   }
 
 
-  public static IEnumerable<TypeInfo> GetNamespaceTypes(string nspace)
+  public static TypeInfo[] GetNamespaceTypes(string nspace)
   {
     lock (KnownTypesLock)
     {
@@ -160,43 +197,43 @@ public static class TypeManager
       else if (KnownNamespaces.TryGetValue1(nspace, out ns))
         nspaceIndex = ns;
       if (nspaceIndex != -1)
-        return KnownTypes.Where(item => item.Value.NamespaceIndex == nspaceIndex).Select(item => item.Value);
-      return KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value);
+        return KnownTypes.Where(item => item.Value.NamespaceIndex == nspaceIndex).Select(item => item.Value).ToArray();
+      return KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value).ToArray();
     }
   }
 
-  public static IEnumerable<TypeInfo> GetInterfaces(this TypeInfo typeInfo)
+  public static TypeInfo[] GetInterfaces(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Implementation);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Implementation).ToArray();
   }
 
-  public static IEnumerable<TypeInfo> GetIncludedTypes(this TypeInfo typeInfo)
+  public static TypeInfo[] GetIncludedTypes(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include).ToArray();
   }
-  public static IEnumerable<TypeInfo> GetGenericArgTypes(this TypeInfo typeInfo)
+  public static TypeInfo[] GetGenericArgTypes(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg);
-  }
-
-  public static IEnumerable<TypeInfo> GetGenericParamTypes(this TypeInfo typeInfo)
-  {
-    if (!typeInfo.IsReflected)
-      TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParam);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).ToArray();
   }
 
-  public static IEnumerable<TypeInfo> GetGenericTypeParamConstraints(this TypeInfo typeInfo)
+  public static TypeInfo[] GetGenericParamTypes(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParamConstraint);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParam).ToArray();
+  }
+
+  public static TypeInfo[] GetGenericTypeParamConstraints(this TypeInfo typeInfo)
+  {
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
+    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeParamConstraint).ToArray();
 
   }
 

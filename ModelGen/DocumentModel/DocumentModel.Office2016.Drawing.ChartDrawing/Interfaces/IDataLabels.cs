@@ -23,7 +23,7 @@ public interface IDataLabels // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.ITextBodyType? TxPrTextBody { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ITxPrTextBody? TxPrTextBody { get ; set; }
   
   /// <summary>
   /// DataLabelVisibilities.
@@ -33,6 +33,12 @@ public interface IDataLabels // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// SeparatorXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SeparatorXsdstring { get ; set; }
+  public System.String? SeparatorXsdstring { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.IDataLabel>? DataLabels { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.IDataLabelHidden>? DataLabelHiddens { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
   
 }

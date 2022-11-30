@@ -68,6 +68,8 @@ public interface IErrorItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Tuples.
   /// </summary>
-  public DocumentModel.Spreadsheet.ITuplesType? Tuples { get ; set; }
+  public DocumentModel.Spreadsheet.ITuples? Tuples { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertyIndexs { get ; set; }
   
 }

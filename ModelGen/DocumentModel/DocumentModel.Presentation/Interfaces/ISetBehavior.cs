@@ -13,6 +13,6 @@ public interface ISetBehavior // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// To.
   /// </summary>
-  public DocumentModel.Presentation.ITimeListAnimationVariantType? ToVariantValue { get ; set; }
+  public DocumentModel.Presentation.IToVariantValue? ToVariantValue { get ; set; }
   
 }

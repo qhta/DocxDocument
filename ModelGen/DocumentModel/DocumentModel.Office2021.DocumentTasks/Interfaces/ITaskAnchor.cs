@@ -13,6 +13,6 @@ public interface ITaskAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2021.DocumentTasks.IExtensionList? ExtensionList { get ; set; }
   
 }

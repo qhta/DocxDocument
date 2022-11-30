@@ -25,8 +25,14 @@ public interface IChartPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
+  
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
   
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

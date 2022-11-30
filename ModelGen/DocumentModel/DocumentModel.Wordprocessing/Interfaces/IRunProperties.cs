@@ -248,7 +248,7 @@ public interface IRunProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? StylisticSets { get ; set; }
+  public DocumentModel.Office2010.Word.IStylisticSets? StylisticSets { get ; set; }
   
   /// <summary>
   /// ContextualAlternatives, this property is only available in Office 2010 and later..

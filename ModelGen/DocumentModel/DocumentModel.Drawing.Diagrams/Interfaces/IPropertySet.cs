@@ -148,7 +148,7 @@ public interface IPropertySet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Presentation Layout Variables.
   /// </summary>
-  public DocumentModel.Drawing.Diagrams.ILayoutVariablePropertySetType? PresentationLayoutVariables { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IPresentationLayoutVariables? PresentationLayoutVariables { get ; set; }
   
   /// <summary>
   /// Shape Style.

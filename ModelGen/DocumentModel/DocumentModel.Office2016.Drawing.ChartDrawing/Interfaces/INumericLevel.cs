@@ -20,4 +20,6 @@ public interface INumericLevel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Name { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.INumericValue>? NumericValues { get ; set; }
+  
 }

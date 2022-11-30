@@ -28,7 +28,7 @@ public interface ITableStyleProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TableStyleConditionalFormattingTableRowProperties { get ; set; }
+  public DocumentModel.Wordprocessing.ITableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get ; set; }
   
   /// <summary>
   /// Table Style Conditional Formatting Table Cell Properties.

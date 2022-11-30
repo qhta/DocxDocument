@@ -33,6 +33,6 @@ public interface IConditionalFormat // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

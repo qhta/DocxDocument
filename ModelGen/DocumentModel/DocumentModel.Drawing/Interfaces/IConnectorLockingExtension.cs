@@ -10,4 +10,6 @@ public interface IConnectorLockingExtension // : DocumentModel.ITypedOpenXmlComp
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
+  
 }

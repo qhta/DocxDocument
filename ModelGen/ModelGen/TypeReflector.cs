@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 using Namotion.Reflection;
 
@@ -12,7 +14,7 @@ public static class TypeReflector
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
 
-  public static void RequestReflect(this TypeInfo typeInfo)
+  public static void ReflectTypeAsync(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
       return;
@@ -53,7 +55,7 @@ public static class TypeReflector
             }
             if (typeInfo != null)
             {
-              DoReflect(typeInfo);
+              ReflectType(typeInfo);
               trials = RunTrials;
             }
             else
@@ -74,15 +76,18 @@ public static class TypeReflector
 
   public static void WaitForReflection(this TypeInfo typeInfo)
   {
-    while (typeInfo.IsReflected == false)
+    int count = 10;
+    while (typeInfo.IsReflected == false && (count--)>0)
     {
-      Thread.Sleep(100);
+      Thread.Sleep(10);
     }
+    if (!typeInfo.IsReflected)
+      ReflectType(typeInfo);
   }
 
   public static object reflectedLock = new ();
   public static int reflected;
-  public static void DoReflect(this TypeInfo typeInfo)
+  public static void ReflectType(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
       return;
@@ -111,15 +116,20 @@ public static class TypeReflector
       if (typeInfo.Properties == null)
         typeInfo.Properties = new Collection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
-        typeInfo.Properties.Add(new PropInfo(item));
+      {
+        if (!item.PropertyType.Name.EndsWith('&'))
+          typeInfo.Properties.Add(new PropInfo(item));
+      }
       if (type.BaseType != null && type.BaseType != typeof(object) && type.BaseType != typeof(ValueType))
       {
         typeInfo.BaseTypeInfo = TypeManager.RegisterType(type.BaseType, typeInfo, Semantics.Inheritance);
       }
 
+      //if (type.Name.StartsWith("Dictionary"))
+      //  Debug.Assert(true);
       if (type.ContainsGenericParameters)
       {
-        var genericTypeParameters = type.GetGenericArguments().ToList();
+        var genericTypeParameters = type.GetGenericArguments();
         if (genericTypeParameters.Any())
         {
           foreach (var argType in genericTypeParameters)
@@ -129,7 +139,7 @@ public static class TypeReflector
 
       if (type.IsGenericTypeParameter)
       {
-        var genericTypeParamConstraints = type.GetGenericParameterConstraints().ToList();
+        var genericTypeParamConstraints = type.GetGenericParameterConstraints();
         if (genericTypeParamConstraints.Any())
         {
           foreach (var constraint in genericTypeParamConstraints)
@@ -137,16 +147,18 @@ public static class TypeReflector
         }
       }
 
-      var genericTypeArguments = type.GenericTypeArguments.ToList();
+      var genericTypeArguments = type.GenericTypeArguments;
       if (genericTypeArguments.Any())
       {
+        int cnt = 0;
         foreach (var argType in genericTypeArguments)
         {
-          TypeManager.RegisterType(argType, typeInfo, Semantics.GenericTypeArg);
+          var argTypeInfo = TypeManager.RegisterType(argType);
+          var rel = TypeManager.AddRelationship(typeInfo, argTypeInfo, Semantics.GenericTypeArg, ++cnt);
         }
       }
 
-      var implementedInterfaces = type.GetInterfaces().ToList();
+      var implementedInterfaces = type.GetInterfaces();
       if (implementedInterfaces.Any())
       {
         foreach (var intf in implementedInterfaces)
@@ -154,24 +166,55 @@ public static class TypeReflector
           TypeManager.RegisterType(intf, typeInfo, Semantics.Implementation);
         }
       }
-
-      ModelManager.TryAddTypeConversion(typeInfo);
     }
 
     typeInfo.Documentation = type.GetXmlDocsElement();
     if (typeInfo.Documentation != null)
     {
       typeInfo.Summary = DocumentationReader.GetSummaryFirstPara(typeInfo.Documentation);
-      var childItemTypes = DocumentationReader.GetChildItemTypes(typeInfo.Documentation, type.Assembly);
-      if (childItemTypes != null)
-      {
-        foreach (var childItemType in childItemTypes)
-          TypeManager.RegisterType(childItemType, typeInfo, Semantics.Include);
-      }
+      //var childItemTypes = DocumentationReader.GetChildItemTypes(typeInfo.Documentation, type.Assembly);
+      //if (childItemTypes != null)
+      //{
+      //  foreach (var childItemType in childItemTypes)
+      //    TypeManager.RegisterType(childItemType, typeInfo, Semantics.Include);
+      //}
 
     }
+    TypeInspector.InspectType(typeInfo);
+    foreach (var includeRelationship in typeInfo.GetOutgoingRelationships(Semantics.Include))
+    {
+      if (typeInfo.Properties == null)
+        typeInfo.Properties = new Collection<PropInfo>(typeInfo);
+      if (includeRelationship.IsMultiple == true)
+      {
+        var propName = MultipleItemsPropName(includeRelationship.Target.Name);
+        if (!typeInfo.Properties.Any(item => item.Name == propName))
+        {
+          var propInfo = new PropInfo(includeRelationship.Target);
+          propInfo.Name = propName;
+          Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { includeRelationship.Target.Type });
+          propInfo.PropertyType = TypeManager.RegisterType(propertyType);
+          typeInfo.Properties.Add(propInfo);
+        }
+      }
+      else
+      {
+        if (!typeInfo.Properties.Any(item=>item.Name == includeRelationship.Target.Name))
+          typeInfo.Properties.Add(new PropInfo(includeRelationship.Target));
+      }
+    }
+
+
     foreach (var item in type.CustomAttributes)
       typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
+  private static string MultipleItemsPropName(string aName)
+  {
+    if (aName.EndsWith('y'))
+      return aName.Substring(0, aName.Length - 1) + "ies";
+    else if (aName.EndsWith('s'))
+      return aName + "es";
+    return aName + "s";
+  }
 }

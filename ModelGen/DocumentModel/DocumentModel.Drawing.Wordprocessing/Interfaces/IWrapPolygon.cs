@@ -15,4 +15,6 @@ public interface IWrapPolygon // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Drawing.Wordprocessing.IPoint2DType? StartPoint { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Wordprocessing.IPoint2DType>? LineTos { get ; set; }
+  
 }

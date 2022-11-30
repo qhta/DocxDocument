@@ -13,6 +13,6 @@ public interface IStringPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Value.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NumericValue { get ; set; }
+  public System.String? NumericValue { get ; set; }
   
 }

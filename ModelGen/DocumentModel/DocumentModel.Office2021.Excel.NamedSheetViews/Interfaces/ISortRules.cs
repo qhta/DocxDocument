@@ -15,4 +15,8 @@ public interface ISortRules // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? CaseSensitive { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2021.Excel.NamedSheetViews.ISortRule>? SortRules { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.IExtensionList? ExtensionList { get ; set; }
+  
 }

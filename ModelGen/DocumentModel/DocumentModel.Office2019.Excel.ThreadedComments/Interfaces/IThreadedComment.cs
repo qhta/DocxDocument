@@ -38,16 +38,16 @@ public interface IThreadedComment // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// ThreadedCommentText.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ThreadedCommentText { get ; set; }
+  public System.String? ThreadedCommentText { get ; set; }
   
   /// <summary>
   /// ThreadedCommentMentions.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ThreadedCommentMentions { get ; set; }
+  public DocumentModel.Office2019.Excel.ThreadedComments.IThreadedCommentMentions? ThreadedCommentMentions { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2019.Excel.ThreadedComments.IExtensionList? ExtensionList { get ; set; }
   
 }

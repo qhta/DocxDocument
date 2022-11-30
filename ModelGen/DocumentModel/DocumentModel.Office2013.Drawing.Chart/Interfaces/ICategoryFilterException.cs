@@ -8,7 +8,7 @@ public interface ICategoryFilterException // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SequenceOfReferences { get ; set; }
+  public System.String? SequenceOfReferences { get ; set; }
   
   /// <summary>
   /// ShapeProperties.

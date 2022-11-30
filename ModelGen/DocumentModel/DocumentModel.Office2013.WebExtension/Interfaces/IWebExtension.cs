@@ -28,17 +28,17 @@ public interface IWebExtension // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// WebExtensionReferenceList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? WebExtensionReferenceList { get ; set; }
+  public DocumentModel.Office2013.WebExtension.IWebExtensionReferenceList? WebExtensionReferenceList { get ; set; }
   
   /// <summary>
   /// WebExtensionPropertyBag.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? WebExtensionPropertyBag { get ; set; }
+  public DocumentModel.Office2013.WebExtension.IWebExtensionPropertyBag? WebExtensionPropertyBag { get ; set; }
   
   /// <summary>
   /// WebExtensionBindingList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? WebExtensionBindingList { get ; set; }
+  public DocumentModel.Office2013.WebExtension.IWebExtensionBindingList? WebExtensionBindingList { get ; set; }
   
   /// <summary>
   /// Snapshot.
@@ -48,6 +48,6 @@ public interface IWebExtension // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2013.WebExtension.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

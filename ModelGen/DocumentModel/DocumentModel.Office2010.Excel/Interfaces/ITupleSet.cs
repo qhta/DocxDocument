@@ -18,11 +18,11 @@ public interface ITupleSet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TupleSetHeaders.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TupleSetHeaders { get ; set; }
+  public DocumentModel.Office2010.Excel.ITupleSetHeaders? TupleSetHeaders { get ; set; }
   
   /// <summary>
   /// TupleSetRows.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TupleSetRows { get ; set; }
+  public DocumentModel.Office2010.Excel.ITupleSetRows? TupleSetRows { get ; set; }
   
 }

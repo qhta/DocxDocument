@@ -58,6 +58,6 @@ public interface ISlicer // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

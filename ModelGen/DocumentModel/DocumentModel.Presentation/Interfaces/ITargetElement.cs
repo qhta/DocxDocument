@@ -8,7 +8,7 @@ public interface ITargetElement // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Slide Target.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SlideTarget { get ; set; }
+  public System.Boolean? SlideTarget { get ; set; }
   
   /// <summary>
   /// Sound Target.

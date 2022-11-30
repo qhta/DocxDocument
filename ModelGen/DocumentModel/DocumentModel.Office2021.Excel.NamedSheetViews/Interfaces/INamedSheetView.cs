@@ -15,4 +15,8 @@ public interface INamedSheetView // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.String? Id { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2021.Excel.NamedSheetViews.INsvFilter>? NsvFilters { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.IExtensionList? ExtensionList { get ; set; }
+  
 }

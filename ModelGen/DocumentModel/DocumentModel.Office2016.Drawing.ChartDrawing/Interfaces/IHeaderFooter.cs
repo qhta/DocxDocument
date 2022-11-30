@@ -23,31 +23,31 @@ public interface IHeaderFooter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OddHeaderXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OddHeaderXsdstring { get ; set; }
+  public System.String? OddHeaderXsdstring { get ; set; }
   
   /// <summary>
   /// OddFooterXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OddFooterXsdstring { get ; set; }
+  public System.String? OddFooterXsdstring { get ; set; }
   
   /// <summary>
   /// EvenHeaderXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EvenHeaderXsdstring { get ; set; }
+  public System.String? EvenHeaderXsdstring { get ; set; }
   
   /// <summary>
   /// EvenFooterXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EvenFooterXsdstring { get ; set; }
+  public System.String? EvenFooterXsdstring { get ; set; }
   
   /// <summary>
   /// FirstHeaderXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FirstHeaderXsdstring { get ; set; }
+  public System.String? FirstHeaderXsdstring { get ; set; }
   
   /// <summary>
   /// FirstFooterXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FirstFooterXsdstring { get ; set; }
+  public System.String? FirstFooterXsdstring { get ; set; }
   
 }

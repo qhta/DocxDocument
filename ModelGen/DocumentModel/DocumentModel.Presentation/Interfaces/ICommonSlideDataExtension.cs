@@ -10,4 +10,6 @@ public interface ICommonSlideDataExtension // : DocumentModel.ITypedOpenXmlCompo
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public System.UInt32? CreationId { get ; set; }
+  
 }

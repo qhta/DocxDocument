@@ -18,6 +18,6 @@ public interface IOEmbedShared // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office.Drawing.Y2021.OEmbed.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

@@ -13,11 +13,11 @@ public interface IRadical // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Degree.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Degree { get ; set; }
+  public DocumentModel.Math.IDegree? Degree { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
 }

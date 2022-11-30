@@ -12,6 +12,12 @@ public interface IControlPropertiesPart // : DocumentModel.Packaging.ITypedOpenX
   /// </summary>
   public DocumentModel.Office2010.Excel.IFormControlProperties? FormControlProperties { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

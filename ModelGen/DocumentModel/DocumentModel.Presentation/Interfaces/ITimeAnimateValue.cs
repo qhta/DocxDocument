@@ -18,6 +18,6 @@ public interface ITimeAnimateValue // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Value.
   /// </summary>
-  public DocumentModel.Presentation.ITimeListAnimationVariantType? VariantValue { get ; set; }
+  public DocumentModel.Presentation.IVariantValue? VariantValue { get ; set; }
   
 }

@@ -10,4 +10,6 @@ public interface IRowHierarchiesUsage // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IHierarchyUsageType>? RowHierarchyUsages { get ; set; }
+  
 }

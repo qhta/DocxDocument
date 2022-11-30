@@ -13,11 +13,11 @@ public interface IFraction // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Numerator.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Numerator { get ; set; }
+  public DocumentModel.Math.INumerator? Numerator { get ; set; }
   
   /// <summary>
   /// Denominator.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Denominator { get ; set; }
+  public DocumentModel.Math.IDenominator? Denominator { get ; set; }
   
 }

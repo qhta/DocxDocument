@@ -20,4 +20,8 @@ public interface IColumnFilter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Office2021.Excel.NamedSheetViews.IDifferentialFormatType? DifferentialFormatType { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2021.Excel.NamedSheetViews.IFilterColumn>? FilterColumns { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.IExtensionList? ExtensionList { get ; set; }
+  
 }

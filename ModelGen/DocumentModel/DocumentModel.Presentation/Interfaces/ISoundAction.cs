@@ -13,6 +13,6 @@ public interface ISoundAction // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Stop Sound Action.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EndSoundAction { get ; set; }
+  public System.Boolean? EndSoundAction { get ; set; }
   
 }

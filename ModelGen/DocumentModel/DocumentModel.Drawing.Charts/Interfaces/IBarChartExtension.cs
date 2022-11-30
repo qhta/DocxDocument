@@ -10,4 +10,6 @@ public interface IBarChartExtension // : DocumentModel.ITypedOpenXmlCompositeEle
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredBarSeries? FilteredBarSeries { get ; set; }
+  
 }

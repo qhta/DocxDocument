@@ -13,16 +13,16 @@ public interface IVerticalPosition // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Relative Vertical Alignment.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? VerticalAlignment { get ; set; }
+  public System.String? VerticalAlignment { get ; set; }
   
   /// <summary>
   /// PositionOffset.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PositionOffset { get ; set; }
+  public System.String? PositionOffset { get ; set; }
   
   /// <summary>
   /// PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PercentagePositionVerticalOffset { get ; set; }
+  public System.String? PercentagePositionVerticalOffset { get ; set; }
   
 }

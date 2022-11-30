@@ -22,6 +22,8 @@ public static class ModelData
     "HasValue",
     "OpenXmlPackage",
     "Container",
+    "RootElementContext",
+    "WebExtensions"
   };
 
   public static bool IsExcluded(Type type)
@@ -47,15 +49,17 @@ public static class ModelData
 
   public static SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
-    "SR", "OpenXml*", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods", 
-    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1"
+    "SR", /*"OpenXml*", */"*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods", 
+    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer",
   };
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
   {
     "CustomXmlAttribute", "BooleanFalse", "Wordprocessing*", 
     "OpenXmlSolidColorFillPropertiesElement",
-    "OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement"
+    "OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
+    "OpenXmlPartRootElement",
+    "OpenXmlFormulaElement",
   };
 
   public static SortedStrings ExcludedAttributes { get; } = new SortedStrings
@@ -95,9 +99,10 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
     { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
     { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.BaseTypes.ModelElement)},
-    { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(DocumentModel.BaseTypes.ModelElement)},
+    { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
+    { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
     { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.BaseTypes.HexWord)},
-    { typeof(DocumentFormat.OpenXml.Packaging.ImagePart), typeof(DocumentModel.BaseTypes.ImagePart)},
+    //{ typeof(DocumentFormat.OpenXml.Packaging.ImagePart), typeof(DocumentModel.BaseTypes.ImagePart)},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

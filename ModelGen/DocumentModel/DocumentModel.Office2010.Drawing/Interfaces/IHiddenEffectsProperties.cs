@@ -13,6 +13,6 @@ public interface IHiddenEffectsProperties // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// Effect Container.
   /// </summary>
-  public DocumentModel.Drawing.IEffectContainerType? EffectDag { get ; set; }
+  public DocumentModel.Drawing.IEffectDag? EffectDag { get ; set; }
   
 }

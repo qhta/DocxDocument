@@ -8,7 +8,7 @@ public interface IFillTextEffect // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// NoFillEmpty.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NoFillEmpty { get ; set; }
+  public System.Boolean? NoFillEmpty { get ; set; }
   
   /// <summary>
   /// SolidColorFillProperties.

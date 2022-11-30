@@ -23,7 +23,7 @@ public interface IHiddenShape3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Preset Material Type
   /// </summary>
-  public DocumentModel.Drawing.PresetMaterialTypeKind? PresetMaterial { get ; set; }
+  public DocumentModel.Drawing.PresetMaterialKind? PresetMaterial { get ; set; }
   
   /// <summary>
   /// Top Bevel.
@@ -38,16 +38,16 @@ public interface IHiddenShape3D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Extrusion Color.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? ExtrusionColor { get ; set; }
+  public DocumentModel.Drawing.IExtrusionColor? ExtrusionColor { get ; set; }
   
   /// <summary>
   /// Contour Color.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? ContourColor { get ; set; }
+  public DocumentModel.Drawing.IContourColor? ContourColor { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

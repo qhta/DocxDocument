@@ -25,4 +25,6 @@ public interface ITextBox // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? SingleClick { get ; set; }
   
+  public DocumentModel.Wordprocessing.ITextBoxContent? TextBoxContent { get ; set; }
+  
 }

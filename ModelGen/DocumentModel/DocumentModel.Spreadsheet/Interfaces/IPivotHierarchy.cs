@@ -65,4 +65,8 @@ public interface IPivotHierarchy // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public DocumentModel.Spreadsheet.IMemberProperties? MemberProperties { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IMembers>? Memberses { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IPivotHierarchyExtensionList? PivotHierarchyExtensionList { get ; set; }
+  
 }

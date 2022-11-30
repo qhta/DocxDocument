@@ -10,7 +10,7 @@ public interface IVmlDrawingPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ImageParts of the VmlDrawingPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the LegacyDiagramTextParts of the VmlDrawingPart
@@ -18,5 +18,11 @@ public interface IVmlDrawingPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   public DocumentModel.Packaging.ILegacyDiagramTextPart? LegacyDiagramTextParts { get ; set; }
   
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetFileExtension { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

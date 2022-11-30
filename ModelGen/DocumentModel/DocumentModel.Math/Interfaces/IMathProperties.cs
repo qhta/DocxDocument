@@ -65,4 +65,12 @@ public interface IMathProperties // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.UInt32? IntraSpacing { get ; set; }
   
+  public System.UInt32? WrapIndent { get ; set; }
+  
+  public DocumentModel.Math.BooleanKind? WrapRight { get ; set; }
+  
+  public DocumentModel.Math.LimitLocationKind? IntegralLimitLocation { get ; set; }
+  
+  public DocumentModel.Math.LimitLocationKind? NaryLimitLocation { get ; set; }
+  
 }

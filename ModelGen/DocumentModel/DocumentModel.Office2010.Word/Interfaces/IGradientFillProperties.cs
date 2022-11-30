@@ -8,6 +8,10 @@ public interface IGradientFillProperties // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// GradientStopList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? GradientStopList { get ; set; }
+  public DocumentModel.Office2010.Word.IGradientStopList? GradientStopList { get ; set; }
+  
+  public DocumentModel.Office2010.Word.ILinearShadeProperties? LinearShadeProperties { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IPathShadeProperties? PathShadeProperties { get ; set; }
   
 }

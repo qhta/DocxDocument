@@ -10,4 +10,6 @@ public interface ICustomFilters // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? And { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.ICustomFilter>? CustomFilters { get ; set; }
+  
 }

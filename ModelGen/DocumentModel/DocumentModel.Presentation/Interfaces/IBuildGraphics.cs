@@ -23,7 +23,7 @@ public interface IBuildGraphics // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Build As One.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? BuildAsOne { get ; set; }
+  public System.Boolean? BuildAsOne { get ; set; }
   
   /// <summary>
   /// Build Sub Elements.

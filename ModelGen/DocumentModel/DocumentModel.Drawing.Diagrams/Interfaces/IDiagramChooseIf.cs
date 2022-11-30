@@ -60,4 +60,22 @@ public interface IDiagramChooseIf // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// </summary>
   public System.String? Val { get ; set; }
   
+  public DocumentModel.Drawing.Diagrams.IAlgorithm? Algorithm { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IShape? Shape { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IPresentationOf? PresentationOf { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IConstraints? Constraints { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IRuleList? RuleList { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IForEach? ForEach { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.ILayoutNode? LayoutNode { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IChoose? Choose { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IExtensionList? ExtensionList { get ; set; }
+  
 }

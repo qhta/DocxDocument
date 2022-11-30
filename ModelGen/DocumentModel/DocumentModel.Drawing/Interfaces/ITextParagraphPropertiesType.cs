@@ -28,7 +28,7 @@ public interface ITextParagraphPropertiesType // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// Alignment
   /// </summary>
-  public DocumentModel.Drawing.TextAlignmentTypeKind? Alignment { get ; set; }
+  public DocumentModel.Drawing.TextAlignmentKind? Alignment { get ; set; }
   
   /// <summary>
   /// Default Tab Size
@@ -63,16 +63,16 @@ public interface ITextParagraphPropertiesType // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// Line Spacing.
   /// </summary>
-  public DocumentModel.Drawing.ITextSpacingType? LineSpacing { get ; set; }
+  public DocumentModel.Drawing.ILineSpacing? LineSpacing { get ; set; }
   
   /// <summary>
   /// Space Before.
   /// </summary>
-  public DocumentModel.Drawing.ITextSpacingType? SpaceBefore { get ; set; }
+  public DocumentModel.Drawing.ISpaceBefore? SpaceBefore { get ; set; }
   
   /// <summary>
   /// Space After.
   /// </summary>
-  public DocumentModel.Drawing.ITextSpacingType? SpaceAfter { get ; set; }
+  public DocumentModel.Drawing.ISpaceAfter? SpaceAfter { get ; set; }
   
 }

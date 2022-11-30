@@ -8,7 +8,7 @@ public interface IOpenXmlValueColorEndPositionElement // : DocumentModel.ITypedO
   /// <summary>
   /// ExtremeValueColorPosition.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtremeValueColorPosition { get ; set; }
+  public System.Boolean? ExtremeValueColorPosition { get ; set; }
   
   /// <summary>
   /// NumberColorPosition.

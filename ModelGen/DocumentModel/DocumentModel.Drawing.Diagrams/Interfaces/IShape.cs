@@ -43,11 +43,11 @@ public interface IShape // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape Adjust List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AdjustList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IAdjustList? AdjustList { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IExtensionList? ExtensionList { get ; set; }
   
 }

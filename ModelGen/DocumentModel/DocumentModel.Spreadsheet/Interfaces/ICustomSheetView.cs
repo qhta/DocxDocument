@@ -118,12 +118,12 @@ public interface ICustomSheetView // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Horizontal Page Breaks.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPageBreakType? RowBreaks { get ; set; }
+  public DocumentModel.Spreadsheet.IRowBreaks? RowBreaks { get ; set; }
   
   /// <summary>
   /// Vertical Page Breaks.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPageBreakType? ColumnBreaks { get ; set; }
+  public DocumentModel.Spreadsheet.IColumnBreaks? ColumnBreaks { get ; set; }
   
   /// <summary>
   /// Page Margins.
@@ -153,6 +153,6 @@ public interface ICustomSheetView // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   
 }

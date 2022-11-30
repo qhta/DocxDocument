@@ -40,7 +40,7 @@ public interface IWorksheetPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
@@ -51,6 +51,8 @@ public interface IWorksheetPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
   public DocumentModel.Packaging.INamedSheetViewsPart? NamedSheetViewsParts { get ; set; }
+  
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
   
   /// <summary>
   /// Gets the PivotTableParts of the WorksheetPart
@@ -78,6 +80,10 @@ public interface IWorksheetPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// Gets the TableDefinitionParts of the WorksheetPart
   /// </summary>
   public DocumentModel.Packaging.ITableDefinitionPart? TableDefinitionParts { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the TimeLineParts of the WorksheetPart
