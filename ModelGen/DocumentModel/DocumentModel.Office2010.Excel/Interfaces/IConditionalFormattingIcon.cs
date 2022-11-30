@@ -8,7 +8,7 @@ public interface IConditionalFormattingIcon // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// iconSet, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.IconSetTypeKind? IconSet { get ; set; }
+  public DocumentModel.Office2010.Excel.IconSetKind? IconSet { get ; set; }
   
   /// <summary>
   /// iconId, this property is only available in Office 2010 and later.

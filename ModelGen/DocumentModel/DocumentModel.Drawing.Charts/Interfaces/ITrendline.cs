@@ -8,7 +8,7 @@ public interface ITrendline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Trendline Name.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TrendlineName { get ; set; }
+  public System.String? TrendlineName { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
@@ -63,6 +63,6 @@ public interface ITrendline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
   
 }

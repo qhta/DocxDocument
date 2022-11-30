@@ -43,6 +43,6 @@ public interface IAnimate // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TimeAnimateValueList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TimeAnimateValueList { get ; set; }
+  public DocumentModel.Presentation.ITimeAnimateValueList? TimeAnimateValueList { get ; set; }
   
 }

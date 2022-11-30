@@ -13,6 +13,6 @@ public interface INonVisualGroupShapeDrawingProperties // : DocumentModel.ITyped
   /// <summary>
   /// NonVisualGroupDrawingShapePropsExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NonVisualGroupDrawingShapePropsExtensionList { get ; set; }
+  public DocumentModel.Drawing.INonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get ; set; }
   
 }

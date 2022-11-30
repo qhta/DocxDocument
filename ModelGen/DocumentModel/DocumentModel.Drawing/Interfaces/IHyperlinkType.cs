@@ -53,6 +53,6 @@ public interface IHyperlinkType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Future extensions..
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? HyperlinkExtensionList { get ; set; }
+  public DocumentModel.Drawing.IHyperlinkExtensionList? HyperlinkExtensionList { get ; set; }
   
 }

@@ -65,7 +65,7 @@ public interface INotesSlidePart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ImageParts of the NotesSlidePart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the NotesSlidePart
@@ -77,7 +77,13 @@ public interface INotesSlidePart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// </summary>
   public DocumentModel.Presentation.INotesSlide? NotesSlide { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the UserDefinedTagsParts of the NotesSlidePart

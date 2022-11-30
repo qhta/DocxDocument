@@ -53,6 +53,6 @@ public interface IBuildParagraph // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Template effects.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TemplateList { get ; set; }
+  public DocumentModel.Presentation.ITemplateList? TemplateList { get ; set; }
   
 }

@@ -13,66 +13,66 @@ public interface IColorScheme // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Dark 1.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Dark1Color { get ; set; }
+  public DocumentModel.Drawing.IDark1Color? Dark1Color { get ; set; }
   
   /// <summary>
   /// Light 1.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Light1Color { get ; set; }
+  public DocumentModel.Drawing.ILight1Color? Light1Color { get ; set; }
   
   /// <summary>
   /// Dark 2.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Dark2Color { get ; set; }
+  public DocumentModel.Drawing.IDark2Color? Dark2Color { get ; set; }
   
   /// <summary>
   /// Light 2.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Light2Color { get ; set; }
+  public DocumentModel.Drawing.ILight2Color? Light2Color { get ; set; }
   
   /// <summary>
   /// Accent 1.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent1Color { get ; set; }
+  public DocumentModel.Drawing.IAccent1Color? Accent1Color { get ; set; }
   
   /// <summary>
   /// Accent 2.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent2Color { get ; set; }
+  public DocumentModel.Drawing.IAccent2Color? Accent2Color { get ; set; }
   
   /// <summary>
   /// Accent 3.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent3Color { get ; set; }
+  public DocumentModel.Drawing.IAccent3Color? Accent3Color { get ; set; }
   
   /// <summary>
   /// Accent 4.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent4Color { get ; set; }
+  public DocumentModel.Drawing.IAccent4Color? Accent4Color { get ; set; }
   
   /// <summary>
   /// Accent 5.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent5Color { get ; set; }
+  public DocumentModel.Drawing.IAccent5Color? Accent5Color { get ; set; }
   
   /// <summary>
   /// Accent 6.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Accent6Color { get ; set; }
+  public DocumentModel.Drawing.IAccent6Color? Accent6Color { get ; set; }
   
   /// <summary>
   /// Hyperlink.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? Hyperlink { get ; set; }
+  public DocumentModel.Drawing.IHyperlink? Hyperlink { get ; set; }
   
   /// <summary>
   /// Followed Hyperlink.
   /// </summary>
-  public DocumentModel.Drawing.IColor2Type? FollowedHyperlinkColor { get ; set; }
+  public DocumentModel.Drawing.IFollowedHyperlinkColor? FollowedHyperlinkColor { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

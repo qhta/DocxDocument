@@ -10,4 +10,6 @@ public interface IPie3DChartExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredPieSeries? FilteredPieSeries { get ; set; }
+  
 }

@@ -8,6 +8,6 @@ public interface IFullReference // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SequenceOfReferences { get ; set; }
+  public System.String? SequenceOfReferences { get ; set; }
   
 }

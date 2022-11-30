@@ -18,6 +18,6 @@ public interface ISlideLayoutId // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
   
 }

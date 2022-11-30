@@ -38,6 +38,6 @@ public interface IDifferentialFormatType // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   
 }

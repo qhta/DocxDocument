@@ -13,6 +13,6 @@ public interface INumberDataSourceType // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public DocumentModel.Drawing.Charts.INumberDataType? NumberLiteral { get ; set; }
+  public DocumentModel.Drawing.Charts.INumberLiteral? NumberLiteral { get ; set; }
   
 }

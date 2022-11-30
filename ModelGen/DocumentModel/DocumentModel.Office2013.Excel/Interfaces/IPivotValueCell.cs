@@ -18,7 +18,7 @@ public interface IPivotValueCell // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Xstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Xstring { get ; set; }
+  public System.String? Xstring { get ; set; }
   
   /// <summary>
   /// PivotValueCellExtra.

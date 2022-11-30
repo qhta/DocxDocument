@@ -38,11 +38,11 @@ public interface IGeoData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// GeoPolygons.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? GeoPolygons { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IGeoPolygons? GeoPolygons { get ; set; }
   
   /// <summary>
   /// Copyrights.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Copyrights { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ICopyrights? Copyrights { get ; set; }
   
 }

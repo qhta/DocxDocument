@@ -428,6 +428,6 @@ public interface IPivotTableDefinition // : DocumentModel.ITypedOpenXmlPartRootE
   /// <summary>
   /// PivotTableDefinitionExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotTableDefinitionExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IPivotTableDefinitionExtensionList? PivotTableDefinitionExtensionList { get ; set; }
   
 }

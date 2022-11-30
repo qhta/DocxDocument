@@ -23,6 +23,6 @@ public interface IRunPropertiesChange // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Previous Run Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PreviousRunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.IPreviousRunProperties? PreviousRunProperties { get ; set; }
   
 }

@@ -60,7 +60,7 @@ public interface IEndnotesPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Endnotes { get ; set; }
+  public DocumentModel.Wordprocessing.IEndnotes? Endnotes { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the EndnotesPart
@@ -70,13 +70,19 @@ public interface IEndnotesPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ImageParts of the EndnotesPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the EndnotesPart
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

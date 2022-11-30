@@ -33,6 +33,6 @@ public interface IPhantomProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlProperties { get ; set; }
+  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
   
 }

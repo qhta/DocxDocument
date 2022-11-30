@@ -18,6 +18,12 @@ public interface IGradientFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Gradient Stop List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? GradientStopList { get ; set; }
+  public DocumentModel.Drawing.IGradientStopList? GradientStopList { get ; set; }
+  
+  public DocumentModel.Drawing.ILinearGradientFill? LinearGradientFill { get ; set; }
+  
+  public DocumentModel.Drawing.IPathGradientFill? PathGradientFill { get ; set; }
+  
+  public DocumentModel.Drawing.IRelativeRectangleType? TileRectangle { get ; set; }
   
 }

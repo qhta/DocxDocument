@@ -15,4 +15,10 @@ public interface IFieldGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Base { get ; set; }
   
+  public DocumentModel.Spreadsheet.IRangeProperties? RangeProperties { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IDiscreteProperties? DiscreteProperties { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IGroupItems? GroupItems { get ; set; }
+  
 }

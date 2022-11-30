@@ -18,6 +18,6 @@ public interface IDocument // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Body.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Body { get ; set; }
+  public DocumentModel.Wordprocessing.IBody? Body { get ; set; }
   
 }

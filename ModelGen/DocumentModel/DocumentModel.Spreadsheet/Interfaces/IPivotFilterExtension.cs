@@ -10,4 +10,8 @@ public interface IPivotFilterExtension // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Excel.IPivotFilter? PivotFilter { get ; set; }
+  
+  public DocumentModel.Office2013.Excel.IMovingPeriodState? MovingPeriodState { get ; set; }
+  
 }

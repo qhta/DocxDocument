@@ -175,4 +175,38 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? TableLimits { get ; set; }
   
+  public DocumentModel.Vml.IGroup? Group { get ; set; }
+  
+  public DocumentModel.Vml.IShape? Shape { get ; set; }
+  
+  public DocumentModel.Vml.IShapetype? Shapetype { get ; set; }
+  
+  public DocumentModel.Vml.IArc? Arc { get ; set; }
+  
+  public DocumentModel.Vml.ICurve? Curve { get ; set; }
+  
+  public DocumentModel.Vml.IImageFile? ImageFile { get ; set; }
+  
+  public DocumentModel.Vml.ILine? Line { get ; set; }
+  
+  public DocumentModel.Vml.IOval? Oval { get ; set; }
+  
+  public DocumentModel.Vml.IPolyLine? PolyLine { get ; set; }
+  
+  public DocumentModel.Vml.IRectangle? Rectangle { get ; set; }
+  
+  public DocumentModel.Vml.IRoundRectangle? RoundRectangle { get ; set; }
+  
+  public DocumentModel.Vml.Office.IDiagram? Diagram { get ; set; }
+  
+  public DocumentModel.Vml.Office.ILock? Lock { get ; set; }
+  
+  public DocumentModel.Vml.Office.IClipPath? ClipPath { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.ITextWrap? TextWrap { get ; set; }
+  
+  public System.Boolean? AnchorLock { get ; set; }
+  
+  public DocumentModel.Vml.Spreadsheet.IClientData? ClientData { get ; set; }
+  
 }

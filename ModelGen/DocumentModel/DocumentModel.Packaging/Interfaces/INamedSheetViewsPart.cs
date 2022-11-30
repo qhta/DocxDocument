@@ -10,8 +10,14 @@ public interface INamedSheetViewsPart // : DocumentModel.Packaging.ITypedOpenXml
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NamedSheetViews { get ; set; }
+  public DocumentModel.Office2021.Excel.NamedSheetViews.INamedSheetViews? NamedSheetViews { get ; set; }
+  
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
   
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

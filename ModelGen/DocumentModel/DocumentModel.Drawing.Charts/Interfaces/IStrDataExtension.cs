@@ -10,4 +10,6 @@ public interface IStrDataExtension // : DocumentModel.ITypedOpenXmlCompositeElem
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public System.Boolean? AutoGeneneratedCategories { get ; set; }
+  
 }

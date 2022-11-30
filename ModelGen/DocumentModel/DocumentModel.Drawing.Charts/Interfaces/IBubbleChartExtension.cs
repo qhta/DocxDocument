@@ -10,4 +10,6 @@ public interface IBubbleChartExtension // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredBubbleSeries? FilteredBubbleSeries { get ; set; }
+  
 }

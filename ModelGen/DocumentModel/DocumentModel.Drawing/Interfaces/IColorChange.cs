@@ -13,11 +13,11 @@ public interface IColorChange // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Change Color From.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? ColorFrom { get ; set; }
+  public DocumentModel.Drawing.IColorFrom? ColorFrom { get ; set; }
   
   /// <summary>
   /// Change Color To.
   /// </summary>
-  public DocumentModel.Drawing.IColorType? ColorTo { get ; set; }
+  public DocumentModel.Drawing.IColorTo? ColorTo { get ; set; }
   
 }

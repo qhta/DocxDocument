@@ -23,6 +23,6 @@ public interface ICommentExtensible // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2021.Word.CommentsExt.IExtensionList? ExtensionList { get ; set; }
   
 }

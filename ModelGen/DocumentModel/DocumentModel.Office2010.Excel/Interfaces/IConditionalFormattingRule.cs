@@ -75,4 +75,16 @@ public interface IConditionalFormattingRule // : DocumentModel.ITypedOpenXmlComp
   /// </summary>
   public System.String? Id { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.String>? Formulas { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorScale? ColorScale { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IDataBar? DataBar { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IIconSet? IconSet { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IDifferentialType? DifferentialType { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
+  
 }

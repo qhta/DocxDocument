@@ -35,4 +35,6 @@ public interface IScenario // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Comment { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IInputCells>? InputCellses { get ; set; }
+  
 }

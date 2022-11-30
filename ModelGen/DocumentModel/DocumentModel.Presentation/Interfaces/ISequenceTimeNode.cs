@@ -28,11 +28,11 @@ public interface ISequenceTimeNode // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Previous Conditions List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PreviousConditionList { get ; set; }
+  public DocumentModel.Presentation.IPreviousConditionList? PreviousConditionList { get ; set; }
   
   /// <summary>
   /// Next Conditions List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NextConditionList { get ; set; }
+  public DocumentModel.Presentation.INextConditionList? NextConditionList { get ; set; }
   
 }

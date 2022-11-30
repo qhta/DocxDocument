@@ -13,7 +13,7 @@ public interface IWebSettings // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Divs.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Divs { get ; set; }
+  public DocumentModel.Wordprocessing.IDivs? Divs { get ; set; }
   
   /// <summary>
   /// WebPageEncoding.

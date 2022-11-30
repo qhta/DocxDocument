@@ -25,4 +25,108 @@ public interface IPreviousParagraphMarkRunProperties // : DocumentModel.ITypedOp
   /// </summary>
   public DocumentModel.Wordprocessing.ITrackChangeType? MoveTo { get ; set; }
   
+  public DocumentModel.Office2010.Word.ITrackChangeType? ConflictInsertion { get ; set; }
+  
+  public DocumentModel.Office2010.Word.ITrackChangeType? ConflictDeletion { get ; set; }
+  
+  public System.String? RunStyle { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IRunFonts? RunFonts { get ; set; }
+  
+  public System.Boolean? Bold { get ; set; }
+  
+  public System.Boolean? BoldComplexScript { get ; set; }
+  
+  public System.Boolean? Italic { get ; set; }
+  
+  public System.Boolean? ItalicComplexScript { get ; set; }
+  
+  public System.Boolean? Caps { get ; set; }
+  
+  public System.Boolean? SmallCaps { get ; set; }
+  
+  public System.Boolean? Strike { get ; set; }
+  
+  public System.Boolean? DoubleStrike { get ; set; }
+  
+  public System.Boolean? Outline { get ; set; }
+  
+  public System.Boolean? Shadow { get ; set; }
+  
+  public System.Boolean? Emboss { get ; set; }
+  
+  public System.Boolean? Imprint { get ; set; }
+  
+  public System.Boolean? NoProof { get ; set; }
+  
+  public System.Boolean? SnapToGrid { get ; set; }
+  
+  public System.Boolean? Vanish { get ; set; }
+  
+  public System.Boolean? WebHidden { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
+  
+  public System.Int32? Spacing { get ; set; }
+  
+  public System.Int32? CharacterScale { get ; set; }
+  
+  public System.UInt32? Kern { get ; set; }
+  
+  public System.String? Position { get ; set; }
+  
+  public System.String? FontSize { get ; set; }
+  
+  public System.String? FontSizeComplexScript { get ; set; }
+  
+  public DocumentModel.Wordprocessing.HighlightColorKind? Highlight { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IUnderline? Underline { get ; set; }
+  
+  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IBorderType? Border { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IFitText? FitText { get ; set; }
+  
+  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get ; set; }
+  
+  public System.Boolean? RightToLeftText { get ; set; }
+  
+  public System.Boolean? ComplexScript { get ; set; }
+  
+  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ILanguageType? Languages { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IEastAsianLayout? EastAsianLayout { get ; set; }
+  
+  public System.Boolean? SpecVanish { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IGlow? Glow { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IReflection? Reflection { get ; set; }
+  
+  public DocumentModel.Office2010.Word.ITextOutlineEffect? TextOutlineEffect { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IFillTextEffect? FillTextEffect { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IScene3D? Scene3D { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IProperties3D? Properties3D { get ; set; }
+  
+  public DocumentModel.Office2010.Word.LigaturesKind? Ligatures { get ; set; }
+  
+  public DocumentModel.Office2010.Word.NumberFormKind? NumberingFormat { get ; set; }
+  
+  public DocumentModel.Office2010.Word.NumberSpacingKind? NumberSpacing { get ; set; }
+  
+  public DocumentModel.Office2010.Word.IStylisticSets? StylisticSets { get ; set; }
+  
+  public DocumentModel.Office2010.Word.OnOffKind? ContextualAlternatives { get ; set; }
+  
+  public System.Boolean? OfficeMath { get ; set; }
+  
 }

@@ -28,6 +28,6 @@ public interface ITupleCache // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   
 }

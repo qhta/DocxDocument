@@ -10,4 +10,8 @@ public interface IDiagramDefinitionExtension // : DocumentModel.ITypedOpenXmlCom
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2019.Drawing.Diagram11.INumberDiagramInfoList? NumberDiagramInfoList { get ; set; }
+  
+  public DocumentModel.Office2019.Drawing.Diagram12.ITextListStyleType? TextListStyleType { get ; set; }
+  
 }

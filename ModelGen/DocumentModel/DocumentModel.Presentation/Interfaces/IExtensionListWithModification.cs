@@ -10,4 +10,6 @@ public interface IExtensionListWithModification // : DocumentModel.ITypedOpenXml
   /// </summary>
   public System.Boolean? Modify { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.IExtension>? Extensions { get ; set; }
+  
 }

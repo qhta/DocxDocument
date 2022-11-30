@@ -23,7 +23,7 @@ public interface ISparklineGroup // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// type, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.SparklineTypeKind? Type { get ; set; }
+  public DocumentModel.Office2010.Excel.SparklineKind? Type { get ; set; }
   
   /// <summary>
   /// dateAxis, this property is only available in Office 2010 and later.
@@ -133,11 +133,11 @@ public interface ISparklineGroup // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Formula.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
+  public System.String? Formula { get ; set; }
   
   /// <summary>
   /// Sparklines.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Sparklines { get ; set; }
+  public DocumentModel.Office2010.Excel.ISparklines? Sparklines { get ; set; }
   
 }

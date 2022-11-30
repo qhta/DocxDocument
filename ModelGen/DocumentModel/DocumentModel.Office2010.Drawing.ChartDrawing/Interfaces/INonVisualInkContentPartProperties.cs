@@ -18,6 +18,6 @@ public interface INonVisualInkContentPartProperties // : DocumentModel.ITypedOpe
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2010.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

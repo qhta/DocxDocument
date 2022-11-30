@@ -28,7 +28,7 @@ public interface IComment // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Comment Text.
   /// </summary>
-  public DocumentModel.Spreadsheet.IRstType? CommentText { get ; set; }
+  public DocumentModel.Spreadsheet.ICommentText? CommentText { get ; set; }
   
   /// <summary>
   /// CommentProperties, this property is only available in Office 2010 and later..

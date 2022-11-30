@@ -28,11 +28,11 @@ public interface ILegend // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.ITextBodyType? TxPrTextBody { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ITxPrTextBody? TxPrTextBody { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
   
 }

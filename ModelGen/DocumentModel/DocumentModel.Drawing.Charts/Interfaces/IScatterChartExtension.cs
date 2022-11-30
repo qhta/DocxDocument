@@ -10,4 +10,6 @@ public interface IScatterChartExtension // : DocumentModel.ITypedOpenXmlComposit
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredScatterSeries? FilteredScatterSeries { get ; set; }
+  
 }

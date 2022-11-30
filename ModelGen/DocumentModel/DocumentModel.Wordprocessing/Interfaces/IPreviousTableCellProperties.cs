@@ -70,4 +70,10 @@ public interface IPreviousTableCellProperties // : DocumentModel.ITypedOpenXmlCo
   /// </summary>
   public DocumentModel.Wordprocessing.OnOffOnlyKind? HideMark { get ; set; }
   
+  public DocumentModel.Wordprocessing.ITrackChangeType? CellInsertion { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ITrackChangeType? CellDeletion { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ICellMerge? CellMerge { get ; set; }
+  
 }

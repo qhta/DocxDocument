@@ -10,4 +10,6 @@ public interface IQueryTableDeletedFields // : DocumentModel.ITypedOpenXmlCompos
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IDeletedField>? DeletedFields { get ; set; }
+  
 }

@@ -13,7 +13,7 @@ public interface IFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Fill Type
   /// </summary>
-  public DocumentModel.Vml.FillTypeKind? Type { get ; set; }
+  public DocumentModel.Vml.FillKind? Type { get ; set; }
   
   /// <summary>
   /// Fill Toggle

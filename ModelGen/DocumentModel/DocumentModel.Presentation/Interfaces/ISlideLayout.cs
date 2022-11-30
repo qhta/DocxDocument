@@ -63,6 +63,6 @@ public interface ISlideLayout // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// SlideLayoutExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SlideLayoutExtensionList { get ; set; }
+  public DocumentModel.Presentation.ISlideLayoutExtensionList? SlideLayoutExtensionList { get ; set; }
   
 }

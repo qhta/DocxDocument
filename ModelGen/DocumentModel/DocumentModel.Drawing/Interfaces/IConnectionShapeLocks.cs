@@ -58,6 +58,6 @@ public interface IConnectionShapeLocks // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// ConnectorLockingExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ConnectorLockingExtensionList { get ; set; }
+  public DocumentModel.Drawing.IConnectorLockingExtensionList? ConnectorLockingExtensionList { get ; set; }
   
 }

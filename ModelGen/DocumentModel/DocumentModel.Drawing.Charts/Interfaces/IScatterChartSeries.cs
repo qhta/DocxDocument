@@ -30,4 +30,20 @@ public interface IScatterChartSeries // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public DocumentModel.Drawing.Charts.IMarker? Marker { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IDataPoint>? DataPoints { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.ITrendline>? Trendlines { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IErrorBars>? ErrorBarses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IXValues? XValues { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IYValues? YValues { get ; set; }
+  
+  public System.Boolean? Smooth { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IScatterSerExtensionList? ScatterSerExtensionList { get ; set; }
+  
 }

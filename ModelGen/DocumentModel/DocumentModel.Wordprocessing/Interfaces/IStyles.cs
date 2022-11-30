@@ -15,4 +15,6 @@ public interface IStyles // : DocumentModel.ITypedOpenXmlPartRootElement
   /// </summary>
   public DocumentModel.Wordprocessing.ILatentStyles? LatentStyles { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IStyle>? Styles { get ; set; }
+  
 }

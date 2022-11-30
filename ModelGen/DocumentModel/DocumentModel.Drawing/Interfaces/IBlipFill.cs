@@ -25,4 +25,8 @@ public interface IBlipFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Drawing.IRelativeRectangleType? SourceRectangle { get ; set; }
   
+  public DocumentModel.Drawing.ITile? Tile { get ; set; }
+  
+  public DocumentModel.Drawing.IStretch? Stretch { get ; set; }
+  
 }

@@ -10,4 +10,6 @@ public interface ISurface3DChartExtension // : DocumentModel.ITypedOpenXmlCompos
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredSurfaceSeries? FilteredSurfaceSeries { get ; set; }
+  
 }

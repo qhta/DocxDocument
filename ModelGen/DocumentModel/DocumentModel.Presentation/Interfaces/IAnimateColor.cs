@@ -28,11 +28,11 @@ public interface IAnimateColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// From.
   /// </summary>
-  public DocumentModel.Presentation.IColor3Type? FromColor { get ; set; }
+  public DocumentModel.Presentation.IFromColor? FromColor { get ; set; }
   
   /// <summary>
   /// To.
   /// </summary>
-  public DocumentModel.Presentation.IColor3Type? ToColor { get ; set; }
+  public DocumentModel.Presentation.IToColor? ToColor { get ; set; }
   
 }

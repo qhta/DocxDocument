@@ -123,6 +123,6 @@ public interface IQueryTable // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// QueryTableExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? QueryTableExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IQueryTableExtensionList? QueryTableExtensionList { get ; set; }
   
 }

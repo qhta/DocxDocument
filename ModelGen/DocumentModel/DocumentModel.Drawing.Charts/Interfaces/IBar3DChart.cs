@@ -20,4 +20,18 @@ public interface IBar3DChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? VaryColors { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.IBarChartSeries>? BarChartSerieses { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IDataLabels? DataLabels { get ; set; }
+  
+  public System.UInt16? GapWidth { get ; set; }
+  
+  public System.UInt16? GapDepth { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ShapeKind? Shape { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IBar3DChartExtensionList? Bar3DChartExtensionList { get ; set; }
+  
 }

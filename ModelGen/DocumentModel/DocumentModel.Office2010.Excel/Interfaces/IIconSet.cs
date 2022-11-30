@@ -8,7 +8,7 @@ public interface IIconSet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// iconSet, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.IconSetTypeKind? IconSetTypes { get ; set; }
+  public DocumentModel.Office2010.Excel.IconSetKind? IconSetTypes { get ; set; }
   
   /// <summary>
   /// showValue, this property is only available in Office 2010 and later.
@@ -29,5 +29,9 @@ public interface IIconSet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// custom, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Custom { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.IConditionalFormattingValueObject>? ConditionalFormattingValueObjects { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.IConditionalFormattingIcon>? ConditionalFormattingIcons { get ; set; }
   
 }

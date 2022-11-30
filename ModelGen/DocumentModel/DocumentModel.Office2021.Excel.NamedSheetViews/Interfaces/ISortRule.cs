@@ -20,4 +20,8 @@ public interface ISortRule // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Office2021.Excel.NamedSheetViews.IDifferentialFormatType? DifferentialFormatType { get ; set; }
   
+  public DocumentModel.Office2021.Excel.NamedSheetViews.ISortCondition? SortCondition { get ; set; }
+  
+  public DocumentModel.Office2021.Excel.NamedSheetViews.IRichSortCondition? RichSortCondition { get ; set; }
+  
 }

@@ -13,6 +13,6 @@ public interface IDocPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Contents of Glossary Document Entry.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? DocPartBody { get ; set; }
+  public DocumentModel.Wordprocessing.IDocPartBody? DocPartBody { get ; set; }
   
 }

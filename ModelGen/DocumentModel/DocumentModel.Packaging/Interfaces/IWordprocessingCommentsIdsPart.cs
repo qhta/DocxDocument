@@ -18,7 +18,7 @@ public interface IWordprocessingCommentsIdsPart // : DocumentModel.Packaging.ITy
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CommentsIds { get ; set; }
+  public DocumentModel.Office2019.Word.Cid.ICommentsIds? CommentsIds { get ; set; }
   
   public System.String? ContentType { get ; set; }
   
@@ -70,13 +70,19 @@ public interface IWordprocessingCommentsIdsPart // : DocumentModel.Packaging.ITy
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsIdsPart
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

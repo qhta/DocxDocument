@@ -28,7 +28,7 @@ public interface IDataLabel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.ITextBodyType? TxPrTextBody { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ITxPrTextBody? TxPrTextBody { get ; set; }
   
   /// <summary>
   /// DataLabelVisibilities.
@@ -38,11 +38,11 @@ public interface IDataLabel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// SeparatorXsdstring.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SeparatorXsdstring { get ; set; }
+  public System.String? SeparatorXsdstring { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
   
 }

@@ -33,6 +33,6 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

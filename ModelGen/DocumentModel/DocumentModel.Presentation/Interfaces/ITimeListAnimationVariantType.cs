@@ -28,6 +28,6 @@ public interface ITimeListAnimationVariantType // : DocumentModel.ITypedOpenXmlC
   /// <summary>
   /// Color Value.
   /// </summary>
-  public DocumentModel.Presentation.IColorType? ColorValue { get ; set; }
+  public DocumentModel.Presentation.IColorValue? ColorValue { get ; set; }
   
 }

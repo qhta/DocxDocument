@@ -65,4 +65,8 @@ public interface IStringItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? Bold { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITuples>? Tupleses { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertyIndexs { get ; set; }
+  
 }

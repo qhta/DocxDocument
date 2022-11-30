@@ -18,11 +18,11 @@ public interface ITask // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TaskHistory.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TaskHistory { get ; set; }
+  public DocumentModel.Office2021.DocumentTasks.ITaskHistory? TaskHistory { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2021.DocumentTasks.IExtensionList? ExtensionList { get ; set; }
   
 }

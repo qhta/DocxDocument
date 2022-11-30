@@ -23,46 +23,46 @@ public interface IBorder // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? StartBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IStartBorder? StartBorder { get ; set; }
   
   /// <summary>
   /// EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? EndBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IEndBorder? EndBorder { get ; set; }
   
   /// <summary>
   /// Left Border.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? LeftBorder { get ; set; }
+  public DocumentModel.Spreadsheet.ILeftBorder? LeftBorder { get ; set; }
   
   /// <summary>
   /// Right Border.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? RightBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IRightBorder? RightBorder { get ; set; }
   
   /// <summary>
   /// Top Border.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? TopBorder { get ; set; }
+  public DocumentModel.Spreadsheet.ITopBorder? TopBorder { get ; set; }
   
   /// <summary>
   /// Bottom Border.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? BottomBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IBottomBorder? BottomBorder { get ; set; }
   
   /// <summary>
   /// Diagonal.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? DiagonalBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IDiagonalBorder? DiagonalBorder { get ; set; }
   
   /// <summary>
   /// Vertical Inner Border.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? VerticalBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IVerticalBorder? VerticalBorder { get ; set; }
   
   /// <summary>
   /// Horizontal Inner Borders.
   /// </summary>
-  public DocumentModel.Spreadsheet.IBorderPropertiesType? HorizontalBorder { get ; set; }
+  public DocumentModel.Spreadsheet.IHorizontalBorder? HorizontalBorder { get ; set; }
   
 }

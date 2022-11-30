@@ -25,4 +25,6 @@ public interface IDataValidations // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IDataValidation>? DataValidations { get ; set; }
+  
 }

@@ -10,4 +10,6 @@ public interface ICustomXmlProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? CustomXmlPlaceholder { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICustomXmlAttribute>? CustomXmlAttributes { get ; set; }
+  
 }

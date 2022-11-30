@@ -18,7 +18,7 @@ public interface IAxisDataSourceType // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public DocumentModel.Drawing.Charts.INumberDataType? NumberLiteral { get ; set; }
+  public DocumentModel.Drawing.Charts.INumberLiteral? NumberLiteral { get ; set; }
   
   /// <summary>
   /// StringReference.
@@ -28,6 +28,6 @@ public interface IAxisDataSourceType // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// String Literal.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IStringDataType? StringLiteral { get ; set; }
+  public DocumentModel.Drawing.Charts.IStringLiteral? StringLiteral { get ; set; }
   
 }

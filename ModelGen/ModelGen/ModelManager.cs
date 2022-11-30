@@ -1,21 +1,12 @@
 ﻿using System.Diagnostics;
-using System.Reflection.Metadata;
-using System.Reflection;
-using System.Text.Json.Serialization;
-
 using DocumentFormat.OpenXml;
-
-using Namotion.Reflection;
-
-using Qhta.Collections;
-using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace ModelGen;
 
 public static class ModelManager
 {
 
-  public static bool TryAddTypeConversion(TypeInfo typeInfo)
+  public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
@@ -84,12 +75,12 @@ public static class ModelManager
 
   private static bool TryAddGenericTypeConversion(TypeInfo typeInfo, out TypeInfo? targetType)
   {
-    //if (typeInfo.Name == "EnumValue`1")
-    //{
+    if (typeInfo.Name == "EnumValue`1")
+    {
     //  ModelDisplay.ConsoleWriteSameLine($"{typeInfo}[{typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name}]\n");
     //  if (typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name == "MultiLevelValues") 
     //    Debug.Assert(true);
-    //}
+    }
     targetType = null;
     if (typeInfo.IsConverted)
       return false;
@@ -115,10 +106,10 @@ public static class ModelManager
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
-          //var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
-          //TypeReflector.WaitForReflection(genericParamTypeInfo);
-          //if (genericParamTypeInfo.IsConverted)
-          //  sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+          var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
+          genericParamTypeInfo.TryAddTypeConversion();
+          if (genericParamTypeInfo.IsConverted)
+            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
           sourceArgType = typeof(List<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsAccepted = false;
@@ -145,6 +136,8 @@ public static class ModelManager
 
   public static string GetConvertedName(this TypeInfo typeInfo, bool asInterface, bool withNamespace)
   {
+    //if (typeInfo.Name.StartsWith("Dictionary"))
+    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
     string aName = typeInfo.Name;
@@ -195,12 +188,50 @@ public static class ModelManager
     if (result == null && typeInfo.IsConstructedGenericType)
       if (TryAddGenericTypeConversion(typeInfo, out var targetType))
         result = targetType;
-    if (finalTarget && result != null && result.IsConverted)
+    if (finalTarget && result != null)
     {
-      result = GetConversionTarget(result, finalTarget);
+      result.TryAddTypeConversion();
+      if (result.IsConverted)
+        result = GetConversionTarget(result, finalTarget);
     }
     return result ?? typeInfo;
   }
+
+  #region Rename types
+  public static bool RenameType(TypeInfo typeInfo)
+  {
+    if (typeInfo.TypeKind == TypeKind.Enum)
+    {
+      var newName = NewEnumTypeName(typeInfo.Type);
+      if (newName != typeInfo.Name)
+      {
+        typeInfo.Name = newName;
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static string NewEnumTypeName(Type type)
+  {
+    var typeName = type.Name;
+    if (typeName.EndsWith("Values"))
+    {
+      typeName = typeName.Substring(0, typeName.Length - "Values".Length);
+      if (typeName.EndsWith("Type"))
+      {
+        typeName = typeName.Substring(0, typeName.Length - "Type".Length);
+        typeName = typeName + "Kind";
+      }
+      else
+      if (!typeName.EndsWith("Mode"))
+      {
+        typeName = typeName + "Kind";
+      }
+    }
+    return typeName;
+  }
+  #endregion
 
   public static bool HasDuplicatesInName(this TypeInfo type)
   {

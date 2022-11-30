@@ -8,22 +8,22 @@ public interface ICustomGeometry // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AdjustValueList { get ; set; }
+  public DocumentModel.Drawing.IAdjustValueList? AdjustValueList { get ; set; }
   
   /// <summary>
   /// List of Shape Guides.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ShapeGuideList { get ; set; }
+  public DocumentModel.Drawing.IShapeGuideList? ShapeGuideList { get ; set; }
   
   /// <summary>
   /// List of Shape Adjust Handles.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? AdjustHandleList { get ; set; }
+  public DocumentModel.Drawing.IAdjustHandleList? AdjustHandleList { get ; set; }
   
   /// <summary>
   /// List of Shape Connection Sites.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ConnectionSiteList { get ; set; }
+  public DocumentModel.Drawing.IConnectionSiteList? ConnectionSiteList { get ; set; }
   
   /// <summary>
   /// Shape Text Rectangle.
@@ -33,6 +33,6 @@ public interface ICustomGeometry // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// List of Shape Paths.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PathList { get ; set; }
+  public DocumentModel.Drawing.IPathList? PathList { get ; set; }
   
 }

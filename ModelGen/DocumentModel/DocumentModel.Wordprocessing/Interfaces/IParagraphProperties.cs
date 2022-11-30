@@ -58,7 +58,7 @@ public interface IParagraphProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Tabs.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Tabs { get ; set; }
+  public DocumentModel.Wordprocessing.ITabs? Tabs { get ; set; }
   
   /// <summary>
   /// SuppressAutoHyphens.

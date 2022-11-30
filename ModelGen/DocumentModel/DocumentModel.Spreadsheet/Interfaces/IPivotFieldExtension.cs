@@ -10,4 +10,6 @@ public interface IPivotFieldExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2010.Excel.IPivotField? PivotField { get ; set; }
+  
 }

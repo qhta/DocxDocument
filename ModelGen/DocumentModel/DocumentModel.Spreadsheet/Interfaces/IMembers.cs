@@ -15,4 +15,6 @@ public interface IMembers // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Level { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IMember>? Members { get ; set; }
+  
 }

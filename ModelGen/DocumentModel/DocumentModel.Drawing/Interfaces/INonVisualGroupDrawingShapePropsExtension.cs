@@ -10,4 +10,6 @@ public interface INonVisualGroupDrawingShapePropsExtension // : DocumentModel.IT
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.INonVisualGroupProperties? NonVisualGroupProperties { get ; set; }
+  
 }

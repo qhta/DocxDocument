@@ -13,6 +13,6 @@ public interface IAccent // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
 }

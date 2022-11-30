@@ -258,6 +258,6 @@ public interface IPivotField // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotFieldExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IPivotFieldExtensionList? PivotFieldExtensionList { get ; set; }
   
 }

@@ -23,11 +23,11 @@ public interface INotesMaster // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// NotesStyle.
   /// </summary>
-  public DocumentModel.Presentation.ITextListStyleType? NotesStyle { get ; set; }
+  public DocumentModel.Presentation.INotesStyle? NotesStyle { get ; set; }
   
   /// <summary>
   /// NotesMasterExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NotesMasterExtensionList { get ; set; }
+  public DocumentModel.Presentation.INotesMasterExtensionList? NotesMasterExtensionList { get ; set; }
   
 }

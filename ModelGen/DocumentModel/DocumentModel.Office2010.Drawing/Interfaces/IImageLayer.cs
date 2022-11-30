@@ -10,4 +10,6 @@ public interface IImageLayer // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Embed { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Drawing.IImageEffect>? ImageEffects { get ; set; }
+  
 }

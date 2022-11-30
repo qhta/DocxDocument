@@ -8,7 +8,7 @@ public interface IMultiLevelStringReference // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// Formula.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
+  public System.String? Formula { get ; set; }
   
   /// <summary>
   /// MultiLevelStringCache.
@@ -18,6 +18,6 @@ public interface IMultiLevelStringReference // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// MultiLvlStrRefExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? MultiLvlStrRefExtensionList { get ; set; }
+  public DocumentModel.Drawing.Charts.IMultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get ; set; }
   
 }

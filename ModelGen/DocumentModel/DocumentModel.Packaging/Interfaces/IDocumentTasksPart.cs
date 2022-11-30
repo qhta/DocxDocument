@@ -7,11 +7,17 @@ public interface IDocumentTasksPart // : DocumentModel.Packaging.ITypedOpenXmlPa
 {
   public System.String? ContentType { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Tasks { get ; set; }
+  public DocumentModel.Office2021.DocumentTasks.ITasks? Tasks { get ; set; }
   
 }

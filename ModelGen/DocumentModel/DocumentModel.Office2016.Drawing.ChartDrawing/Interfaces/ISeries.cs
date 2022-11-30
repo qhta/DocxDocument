@@ -50,4 +50,16 @@ public interface ISeries // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Office2016.Drawing.ChartDrawing.IValueColorPositions? ValueColorPositions { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.IDataPoint>? DataPoints { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IDataLabels? DataLabels { get ; set; }
+  
+  public System.UInt32? DataId { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.ISeriesLayoutProperties? SeriesLayoutProperties { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<System.String>? AxisIds { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
+  
 }

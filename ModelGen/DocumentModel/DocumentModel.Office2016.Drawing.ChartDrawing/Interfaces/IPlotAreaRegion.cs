@@ -10,4 +10,8 @@ public interface IPlotAreaRegion // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public DocumentModel.Office2016.Drawing.ChartDrawing.IPlotSurface? PlotSurface { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2016.Drawing.ChartDrawing.ISeries>? Serieses { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
+  
 }

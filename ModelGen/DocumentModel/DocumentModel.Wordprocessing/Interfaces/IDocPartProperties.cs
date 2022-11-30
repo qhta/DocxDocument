@@ -28,7 +28,7 @@ public interface IDocPartProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Entry Insertion Behaviors.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Behaviors { get ; set; }
+  public DocumentModel.Wordprocessing.IBehaviors? Behaviors { get ; set; }
   
   /// <summary>
   /// Description for Entry.

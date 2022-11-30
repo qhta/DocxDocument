@@ -28,16 +28,16 @@ public interface ITheme // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// ExtraColorSchemeList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtraColorSchemeList { get ; set; }
+  public DocumentModel.Drawing.IExtraColorSchemeList? ExtraColorSchemeList { get ; set; }
   
   /// <summary>
   /// CustomColorList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CustomColorList { get ; set; }
+  public DocumentModel.Drawing.ICustomColorList? CustomColorList { get ; set; }
   
   /// <summary>
   /// OfficeStyleSheetExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeStyleSheetExtensionList { get ; set; }
+  public DocumentModel.Drawing.IOfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get ; set; }
   
 }

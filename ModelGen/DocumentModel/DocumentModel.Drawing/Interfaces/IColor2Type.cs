@@ -28,6 +28,6 @@ public interface IColor2Type // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Preset Color.
   /// </summary>
-  public DocumentModel.Drawing.PresetColorKind? PresetColor { get ; set; }
+  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
   
 }
