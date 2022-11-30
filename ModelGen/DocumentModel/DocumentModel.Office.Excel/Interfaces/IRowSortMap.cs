@@ -15,4 +15,6 @@ public interface IRowSortMap // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office.Excel.ISortMapItemType>? RowSortMapItems { get ; set; }
+  
 }

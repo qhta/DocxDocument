@@ -20,4 +20,8 @@ public interface IFrameset // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout { get ; set; }
   
+  public DocumentModel.Wordprocessing.IFrameset? Frameset { get ; set; }
+  
+  public DocumentModel.Wordprocessing.IFrame? Frame { get ; set; }
+  
 }

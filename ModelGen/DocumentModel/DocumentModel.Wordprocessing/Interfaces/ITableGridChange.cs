@@ -13,6 +13,6 @@ public interface ITableGridChange // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Previous Table Grid.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PreviousTableGrid { get ; set; }
+  public DocumentModel.Wordprocessing.IPreviousTableGrid? PreviousTableGrid { get ; set; }
   
 }

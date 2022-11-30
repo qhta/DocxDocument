@@ -38,6 +38,6 @@ public interface IPresentationOf // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IExtensionList? ExtensionList { get ; set; }
   
 }

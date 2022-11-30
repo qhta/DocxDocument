@@ -29,6 +29,12 @@ public class PropInfo: ModelElement
       CustomAttributes.Add(new CustomAttribData(item));
   }
 
+  public PropInfo(TypeInfo typeInfo) : this(typeInfo.Name, typeInfo.Type)
+  {
+    if (ModelData.ExcludedProperties.Contains(typeInfo.Name))
+      IsAccepted = false;
+  }
+
   public override string ToString() => $"Prop({Name}: {PropertyType})"
                                        +((Owner==null) ? "" : $" in {Owner.ToString}");
 }

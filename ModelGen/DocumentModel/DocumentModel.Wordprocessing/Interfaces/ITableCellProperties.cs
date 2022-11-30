@@ -70,4 +70,12 @@ public interface ITableCellProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public DocumentModel.Wordprocessing.OnOffOnlyKind? HideMark { get ; set; }
   
+  public DocumentModel.Wordprocessing.ITrackChangeType? CellInsertion { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ITrackChangeType? CellDeletion { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ICellMerge? CellMerge { get ; set; }
+  
+  public DocumentModel.Wordprocessing.ITableCellPropertiesChange? TableCellPropertiesChange { get ; set; }
+  
 }

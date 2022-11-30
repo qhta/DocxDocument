@@ -10,4 +10,10 @@ public interface IData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? Id { get ; set; }
   
+  public DocumentModel.Office2016.Drawing.ChartDrawing.INumericDimension? NumericDimension { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IStringDimension? StringDimension { get ; set; }
+  
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IExtensionList? ExtensionList { get ; set; }
+  
 }

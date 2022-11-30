@@ -13,16 +13,16 @@ public interface IFontScheme // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Major Font.
   /// </summary>
-  public DocumentModel.Drawing.IFontCollectionType? MajorFont { get ; set; }
+  public DocumentModel.Drawing.IMajorFont? MajorFont { get ; set; }
   
   /// <summary>
   /// Minor fonts.
   /// </summary>
-  public DocumentModel.Drawing.IFontCollectionType? MinorFont { get ; set; }
+  public DocumentModel.Drawing.IMinorFont? MinorFont { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
   
 }

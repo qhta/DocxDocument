@@ -40,4 +40,6 @@ public interface IAbstractNum // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? NumberingStyleLink { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ILevel>? Levels { get ; set; }
+  
 }

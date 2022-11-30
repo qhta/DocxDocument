@@ -10,4 +10,8 @@ public interface IMultiLevelStringCache // : DocumentModel.ITypedOpenXmlComposit
   /// </summary>
   public System.UInt32? PointCount { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Charts.ILevel>? Levels { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.IExtensionList? ExtensionList { get ; set; }
+  
 }

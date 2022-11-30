@@ -9,4 +9,10 @@ public interface IModel3DReferenceRelationshipPart // : DocumentModel.Packaging.
   
   public System.String? RelationshipType { get ; set; }
   
+  public System.String? TargetFileExtension { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
+  
 }

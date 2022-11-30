@@ -7,11 +7,17 @@ public interface IPivotTableCacheRecordsPart // : DocumentModel.Packaging.ITyped
 {
   public System.String? ContentType { get ; set; }
   
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Spreadsheet.IPivotCacheRecords? PivotCacheRecords { get ; set; }
   
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

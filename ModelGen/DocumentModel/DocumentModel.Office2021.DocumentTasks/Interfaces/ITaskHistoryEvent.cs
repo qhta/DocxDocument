@@ -25,4 +25,28 @@ public interface ITaskHistoryEvent // : DocumentModel.ITypedOpenXmlCompositeElem
   /// </summary>
   public DocumentModel.Office2021.DocumentTasks.ITaskAnchor? TaskAnchor { get ; set; }
   
+  public DocumentModel.Office2021.DocumentTasks.IOpenXmlTaskUserElement? AssignTaskUser { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.IOpenXmlTaskUserElement? UnassignTaskUser { get ; set; }
+  
+  public System.Boolean? TaskCreateEventInfo { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.ITaskTitleEventInfo? TaskTitleEventInfo { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.ITaskScheduleEventInfo? TaskScheduleEventInfo { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.ITaskProgressEventInfo? TaskProgressEventInfo { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.ITaskPriorityEventInfo? TaskPriorityEventInfo { get ; set; }
+  
+  public System.Boolean? TaskDeleteEventInfo { get ; set; }
+  
+  public System.Boolean? TaskUndeleteEventInfo { get ; set; }
+  
+  public System.Boolean? TaskUnassignAll { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.ITaskUndo? TaskUndo { get ; set; }
+  
+  public DocumentModel.Office2021.DocumentTasks.IExtensionList? ExtensionList { get ; set; }
+  
 }

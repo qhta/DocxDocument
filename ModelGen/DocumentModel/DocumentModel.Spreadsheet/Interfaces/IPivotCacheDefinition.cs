@@ -153,6 +153,6 @@ public interface IPivotCacheDefinition // : DocumentModel.ITypedOpenXmlPartRootE
   /// <summary>
   /// PivotCacheDefinitionExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotCacheDefinitionExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IPivotCacheDefinitionExtensionList? PivotCacheDefinitionExtensionList { get ; set; }
   
 }

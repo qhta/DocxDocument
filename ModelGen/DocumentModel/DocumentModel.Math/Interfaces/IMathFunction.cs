@@ -13,11 +13,11 @@ public interface IMathFunction // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Function Name.
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? FunctionName { get ; set; }
+  public DocumentModel.Math.IFunctionName? FunctionName { get ; set; }
   
   /// <summary>
   /// Base (Argument).
   /// </summary>
-  public DocumentModel.Math.IOfficeMathArgumentType? Base { get ; set; }
+  public DocumentModel.Math.IBase? Base { get ; set; }
   
 }

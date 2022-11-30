@@ -38,6 +38,6 @@ public interface IPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// PtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PtExtensionList { get ; set; }
+  public DocumentModel.Drawing.Diagrams.IPtExtensionList? PtExtensionList { get ; set; }
   
 }

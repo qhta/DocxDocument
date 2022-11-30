@@ -13,7 +13,7 @@ public interface IPivotEdit // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TupleItems.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? TupleItems { get ; set; }
+  public DocumentModel.Office2010.Excel.ITupleItems? TupleItems { get ; set; }
   
   /// <summary>
   /// PivotArea.
@@ -23,6 +23,6 @@ public interface IPivotEdit // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

@@ -13,7 +13,7 @@ public interface INumberingPictureBullet // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// PictureBulletBase.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PictureBulletBase { get ; set; }
+  public DocumentModel.Wordprocessing.IPictureBulletBase? PictureBulletBase { get ; set; }
   
   /// <summary>
   /// Drawing.

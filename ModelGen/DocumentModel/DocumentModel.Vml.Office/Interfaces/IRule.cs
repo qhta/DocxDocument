@@ -25,4 +25,6 @@ public interface IRule // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? ShapeReference { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Vml.Office.IProxy>? Proxies { get ; set; }
+  
 }

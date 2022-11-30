@@ -10,4 +10,6 @@ public interface ISdtContentComboBox // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? LastValue { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IListItem>? ListItems { get ; set; }
+  
 }

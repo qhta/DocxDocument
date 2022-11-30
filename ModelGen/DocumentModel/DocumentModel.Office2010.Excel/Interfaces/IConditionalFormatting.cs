@@ -10,4 +10,10 @@ public interface IConditionalFormatting // : DocumentModel.ITypedOpenXmlComposit
   /// </summary>
   public System.Boolean? Pivot { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.IConditionalFormattingRule>? ConditionalFormattingRules { get ; set; }
+  
+  public System.String? ReferenceSequence { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
+  
 }

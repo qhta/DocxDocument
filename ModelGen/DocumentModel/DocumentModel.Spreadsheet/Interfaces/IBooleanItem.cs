@@ -30,4 +30,6 @@ public interface IBooleanItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.UInt32? PropertyCount { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertyIndexs { get ; set; }
+  
 }

@@ -8,66 +8,66 @@ public interface IDocEvents // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// EventDocNewXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocNewXsdString { get ; set; }
+  public System.String? EventDocNewXsdString { get ; set; }
   
   /// <summary>
   /// EventDocOpenXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocOpenXsdString { get ; set; }
+  public System.String? EventDocOpenXsdString { get ; set; }
   
   /// <summary>
   /// EventDocCloseXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocCloseXsdString { get ; set; }
+  public System.String? EventDocCloseXsdString { get ; set; }
   
   /// <summary>
   /// EventDocSyncXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocSyncXsdString { get ; set; }
+  public System.String? EventDocSyncXsdString { get ; set; }
   
   /// <summary>
   /// EventDocXmlAfterInsertXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocXmlAfterInsertXsdString { get ; set; }
+  public System.String? EventDocXmlAfterInsertXsdString { get ; set; }
   
   /// <summary>
   /// EventDocXmlBeforeDeleteXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocXmlBeforeDeleteXsdString { get ; set; }
+  public System.String? EventDocXmlBeforeDeleteXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlAfterInsertXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocContentControlAfterInsertXsdString { get ; set; }
+  public System.String? EventDocContentControlAfterInsertXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlBeforeDeleteXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocContentControlBeforeDeleteXsdString { get ; set; }
+  public System.String? EventDocContentControlBeforeDeleteXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlOnExistXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocContentControlOnExistXsdString { get ; set; }
+  public System.String? EventDocContentControlOnExistXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlOnEnterXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocContentControlOnEnterXsdString { get ; set; }
+  public System.String? EventDocContentControlOnEnterXsdString { get ; set; }
   
   /// <summary>
   /// EventDocStoreUpdateXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocStoreUpdateXsdString { get ; set; }
+  public System.String? EventDocStoreUpdateXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlUpdateXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocContentControlUpdateXsdString { get ; set; }
+  public System.String? EventDocContentControlUpdateXsdString { get ; set; }
   
   /// <summary>
   /// EventDocBuildingBlockAfterInsertXsdString.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EventDocBuildingBlockAfterInsertXsdString { get ; set; }
+  public System.String? EventDocBuildingBlockAfterInsertXsdString { get ; set; }
   
 }

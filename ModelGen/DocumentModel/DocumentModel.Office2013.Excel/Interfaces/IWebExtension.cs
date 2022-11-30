@@ -13,6 +13,6 @@ public interface IWebExtension // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Formula.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Formula { get ; set; }
+  public System.String? Formula { get ; set; }
   
 }

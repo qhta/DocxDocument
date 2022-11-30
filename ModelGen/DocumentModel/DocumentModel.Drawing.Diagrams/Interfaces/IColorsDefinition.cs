@@ -15,4 +15,14 @@ public interface IColorsDefinition // : DocumentModel.ITypedOpenXmlPartRootEleme
   /// </summary>
   public System.String? MinVersion { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Diagrams.IColorDefinitionTitle>? ColorDefinitionTitles { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Diagrams.IColorTransformDescription>? ColorTransformDescriptions { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IColorTransformCategories? ColorTransformCategories { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.Diagrams.IColorTransformStyleLabel>? ColorTransformStyleLabels { get ; set; }
+  
+  public DocumentModel.Drawing.Diagrams.IExtensionList? ExtensionList { get ; set; }
+  
 }

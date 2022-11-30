@@ -18,21 +18,21 @@ public interface ICommonSlideData // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Shape Tree.
   /// </summary>
-  public DocumentModel.Presentation.IGroupShapeType? ShapeTree { get ; set; }
+  public DocumentModel.Presentation.IShapeTree? ShapeTree { get ; set; }
   
   /// <summary>
   /// Customer Data List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CustomerDataList { get ; set; }
+  public DocumentModel.Presentation.ICustomerDataList? CustomerDataList { get ; set; }
   
   /// <summary>
   /// List of controls.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ControlList { get ; set; }
+  public DocumentModel.Presentation.IControlList? ControlList { get ; set; }
   
   /// <summary>
   /// CommonSlideDataExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CommonSlideDataExtensionList { get ; set; }
+  public DocumentModel.Presentation.ICommonSlideDataExtensionList? CommonSlideDataExtensionList { get ; set; }
   
 }

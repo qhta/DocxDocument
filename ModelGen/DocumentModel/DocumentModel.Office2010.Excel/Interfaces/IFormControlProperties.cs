@@ -8,7 +8,7 @@ public interface IFormControlProperties // : DocumentModel.ITypedOpenXmlPartRoot
   /// <summary>
   /// objectType, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.ObjectTypeKind? ObjectType { get ; set; }
+  public DocumentModel.Office2010.Excel.ObjectKind? ObjectType { get ; set; }
   
   /// <summary>
   /// checked, this property is only available in Office 2010 and later.
@@ -118,7 +118,7 @@ public interface IFormControlProperties // : DocumentModel.ITypedOpenXmlPartRoot
   /// <summary>
   /// seltype, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Office2010.Excel.SelectionTypeKind? SelectionType { get ; set; }
+  public DocumentModel.Office2010.Excel.SelectionKind? SelectionType { get ; set; }
   
   /// <summary>
   /// textHAlign, this property is only available in Office 2010 and later.
@@ -163,11 +163,11 @@ public interface IFormControlProperties // : DocumentModel.ITypedOpenXmlPartRoot
   /// <summary>
   /// ListItems.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ListItems { get ; set; }
+  public DocumentModel.Office2010.Excel.IListItems? ListItems { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2010.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

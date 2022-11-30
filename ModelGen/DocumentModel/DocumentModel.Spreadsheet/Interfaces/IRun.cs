@@ -8,7 +8,7 @@ public interface IRun // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Run Properties.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? RunProperties { get ; set; }
+  public DocumentModel.Spreadsheet.IRunProperties? RunProperties { get ; set; }
   
   /// <summary>
   /// Text.

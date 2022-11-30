@@ -35,4 +35,6 @@ public interface IGradientFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Double? Bottom { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IGradientStop>? GradientStops { get ; set; }
+  
 }

@@ -270,4 +270,50 @@ public interface IArc // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Decimal? EndAngle { get ; set; }
   
+  public DocumentModel.Vml.IPath? Path { get ; set; }
+  
+  public DocumentModel.Vml.IFormulas? Formulas { get ; set; }
+  
+  public DocumentModel.Vml.IShapeHandles? ShapeHandles { get ; set; }
+  
+  public DocumentModel.Vml.IFill? Fill { get ; set; }
+  
+  public DocumentModel.Vml.IStroke? Stroke { get ; set; }
+  
+  public DocumentModel.Vml.IShadow? Shadow { get ; set; }
+  
+  public DocumentModel.Vml.ITextBox? TextBox { get ; set; }
+  
+  public DocumentModel.Vml.ITextPath? TextPath { get ; set; }
+  
+  public DocumentModel.Vml.IImageData? ImageData { get ; set; }
+  
+  public DocumentModel.Vml.Office.ISkew? Skew { get ; set; }
+  
+  public DocumentModel.Vml.Office.IExtrusion? Extrusion { get ; set; }
+  
+  public DocumentModel.Vml.Office.ICallout? Callout { get ; set; }
+  
+  public DocumentModel.Vml.Office.ILock? Lock { get ; set; }
+  
+  public DocumentModel.Vml.Office.IClipPath? ClipPath { get ; set; }
+  
+  public DocumentModel.Vml.Office.ISignatureLine? SignatureLine { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.ITextWrap? TextWrap { get ; set; }
+  
+  public System.Boolean? AnchorLock { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.IBorderType? TopBorder { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.IBorderType? BottomBorder { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.IBorderType? LeftBorder { get ; set; }
+  
+  public DocumentModel.Vml.Wordprocessing.IBorderType? RightBorder { get ; set; }
+  
+  public DocumentModel.Vml.Spreadsheet.IClientData? ClientData { get ; set; }
+  
+  public DocumentModel.Vml.Presentation.ITextData? TextData { get ; set; }
+  
 }

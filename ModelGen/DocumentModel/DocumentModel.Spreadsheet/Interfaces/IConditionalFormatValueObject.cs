@@ -23,6 +23,6 @@ public interface IConditionalFormatValueObject // : DocumentModel.ITypedOpenXmlC
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   
 }

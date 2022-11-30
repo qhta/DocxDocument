@@ -13,6 +13,6 @@ public interface IRelativeWidth // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// PercentageWidth.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PercentageWidth { get ; set; }
+  public System.String? PercentageWidth { get ; set; }
   
 }

@@ -23,7 +23,7 @@ public interface ISlideMaster // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// SlideLayoutIdList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SlideLayoutIdList { get ; set; }
+  public DocumentModel.Presentation.ISlideLayoutIdList? SlideLayoutIdList { get ; set; }
   
   /// <summary>
   /// Transition.
@@ -48,6 +48,6 @@ public interface ISlideMaster // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// SlideMasterExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? SlideMasterExtensionList { get ; set; }
+  public DocumentModel.Presentation.ISlideMasterExtensionList? SlideMasterExtensionList { get ; set; }
   
 }

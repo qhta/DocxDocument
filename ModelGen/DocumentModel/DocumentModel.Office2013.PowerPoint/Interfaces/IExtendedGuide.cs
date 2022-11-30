@@ -38,6 +38,6 @@ public interface IExtendedGuide // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2013.PowerPoint.IExtensionList? ExtensionList { get ; set; }
   
 }

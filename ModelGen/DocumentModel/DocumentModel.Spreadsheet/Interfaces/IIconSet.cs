@@ -25,4 +25,6 @@ public interface IIconSet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? Reverse { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormatValueObject>? ConditionalFormatValueObjects { get ; set; }
+  
 }

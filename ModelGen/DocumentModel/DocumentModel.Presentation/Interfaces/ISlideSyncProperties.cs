@@ -23,6 +23,6 @@ public interface ISlideSyncProperties // : DocumentModel.ITypedOpenXmlPartRootEl
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
   
 }

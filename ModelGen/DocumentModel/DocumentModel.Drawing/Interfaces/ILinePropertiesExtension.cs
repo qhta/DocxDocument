@@ -10,4 +10,6 @@ public interface ILinePropertiesExtension // : DocumentModel.ITypedOpenXmlCompos
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2021.Drawing.SketchyShapes.ILineSketchStyleProperties? LineSketchStyleProperties { get ; set; }
+  
 }

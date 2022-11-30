@@ -38,6 +38,6 @@ public interface IShape // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Office.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

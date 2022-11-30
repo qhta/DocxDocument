@@ -28,11 +28,11 @@ public interface IComment // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Text { get ; set; }
+  public System.String? Text { get ; set; }
   
   /// <summary>
   /// CommentExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? CommentExtensionList { get ; set; }
+  public DocumentModel.Presentation.ICommentExtensionList? CommentExtensionList { get ; set; }
   
 }

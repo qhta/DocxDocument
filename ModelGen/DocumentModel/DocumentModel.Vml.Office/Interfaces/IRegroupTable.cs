@@ -10,4 +10,6 @@ public interface IRegroupTable // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Vml.Office.IEntry>? Entries { get ; set; }
+  
 }

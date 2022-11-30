@@ -20,4 +20,6 @@ public interface IPivotTableData // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.UInt32? CacheId { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2013.Excel.IPivotRow>? PivotRows { get ; set; }
+  
 }

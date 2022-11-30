@@ -50,4 +50,16 @@ public interface IDataBar // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Office2010.Excel.DataBarAxisPositionKind? AxisPosition { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.IConditionalFormattingValueObject>? ConditionalFormattingValueObjects { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorType? FillColor { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorType? BorderColor { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorType? NegativeFillColor { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorType? NegativeBorderColor { get ; set; }
+  
+  public DocumentModel.Office2010.Excel.IColorType? BarAxisColor { get ; set; }
+  
 }

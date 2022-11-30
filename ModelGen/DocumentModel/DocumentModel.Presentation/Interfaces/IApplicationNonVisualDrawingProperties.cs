@@ -20,4 +20,18 @@ public interface IApplicationNonVisualDrawingProperties // : DocumentModel.IType
   /// </summary>
   public DocumentModel.Presentation.IPlaceholderShape? PlaceholderShape { get ; set; }
   
+  public DocumentModel.Drawing.IAudioFromCD? AudioFromCD { get ; set; }
+  
+  public DocumentModel.Drawing.IEmbeddedWavAudioFileType? WaveAudioFile { get ; set; }
+  
+  public DocumentModel.Drawing.IAudioFromFile? AudioFromFile { get ; set; }
+  
+  public DocumentModel.Drawing.IVideoFromFile? VideoFromFile { get ; set; }
+  
+  public DocumentModel.Drawing.IQuickTimeFromFile? QuickTimeFromFile { get ; set; }
+  
+  public DocumentModel.Presentation.ICustomerDataList? CustomerDataList { get ; set; }
+  
+  public DocumentModel.Presentation.IApplicationNonVisualDrawingPropertiesExtensionList? ApplicationNonVisualDrawingPropertiesExtensionList { get ; set; }
+  
 }

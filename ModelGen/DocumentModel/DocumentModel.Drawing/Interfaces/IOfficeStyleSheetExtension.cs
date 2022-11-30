@@ -10,4 +10,6 @@ public interface IOfficeStyleSheetExtension // : DocumentModel.ITypedOpenXmlComp
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Theme.IThemeFamily? ThemeFamily { get ; set; }
+  
 }

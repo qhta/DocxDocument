@@ -28,12 +28,12 @@ public interface ICategoryAxis // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Major Gridlines.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IChartLinesType? MajorGridlines { get ; set; }
+  public DocumentModel.Drawing.Charts.IMajorGridlines? MajorGridlines { get ; set; }
   
   /// <summary>
   /// Minor Gridlines.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IChartLinesType? MinorGridlines { get ; set; }
+  public DocumentModel.Drawing.Charts.IMinorGridlines? MinorGridlines { get ; set; }
   
   /// <summary>
   /// Title.
@@ -68,11 +68,29 @@ public interface ICategoryAxis // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public DocumentModel.Drawing.Charts.ITextBodyType? TextProperties { get ; set; }
+  public DocumentModel.Drawing.Charts.ITextProperties? TextProperties { get ; set; }
   
   /// <summary>
   /// Crossing Axis ID.
   /// </summary>
   public System.UInt32? CrossingAxis { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.CrossesKind? Crosses { get ; set; }
+  
+  public System.Double? CrossesAt { get ; set; }
+  
+  public System.Boolean? AutoLabeled { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.LabelAlignmentKind? LabelAlignment { get ; set; }
+  
+  public System.UInt16? LabelOffset { get ; set; }
+  
+  public System.Int32? TickLabelSkip { get ; set; }
+  
+  public System.Int32? TickMarkSkip { get ; set; }
+  
+  public System.Boolean? NoMultiLevelLabels { get ; set; }
+  
+  public DocumentModel.Drawing.Charts.ICatAxExtensionList? CatAxExtensionList { get ; set; }
   
 }

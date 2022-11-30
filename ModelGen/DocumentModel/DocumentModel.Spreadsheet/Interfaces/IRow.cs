@@ -70,4 +70,8 @@ public interface IRow // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Double? DyDescent { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICell>? Cells { get ; set; }
+  
+  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  
 }

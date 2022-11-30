@@ -68,6 +68,6 @@ public interface IPivotFilter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// PivotFilterExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotFilterExtensionList { get ; set; }
+  public DocumentModel.Spreadsheet.IPivotFilterExtensionList? PivotFilterExtensionList { get ; set; }
   
 }

@@ -10,4 +10,6 @@ public interface ISerAxExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.INumberingFormat? NumberingFormat { get ; set; }
+  
 }

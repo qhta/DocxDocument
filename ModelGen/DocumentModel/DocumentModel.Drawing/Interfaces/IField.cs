@@ -18,16 +18,16 @@ public interface IField // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  public DocumentModel.Drawing.ITextCharacterPropertiesType? RunProperties { get ; set; }
+  public DocumentModel.Drawing.IRunProperties? RunProperties { get ; set; }
   
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
-  public DocumentModel.Drawing.ITextParagraphPropertiesType? ParagraphProperties { get ; set; }
+  public DocumentModel.Drawing.IParagraphProperties? ParagraphProperties { get ; set; }
   
   /// <summary>
   /// Text.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Text { get ; set; }
+  public System.String? Text { get ; set; }
   
 }

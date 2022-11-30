@@ -63,6 +63,6 @@ public interface ITimeline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ExtensionList { get ; set; }
+  public DocumentModel.Office2013.Excel.IExtensionList? ExtensionList { get ; set; }
   
 }

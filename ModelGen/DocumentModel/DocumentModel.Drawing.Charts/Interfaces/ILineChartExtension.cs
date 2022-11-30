@@ -10,4 +10,6 @@ public interface ILineChartExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredLineSeriesExtension? FilteredLineSeriesExtension { get ; set; }
+  
 }

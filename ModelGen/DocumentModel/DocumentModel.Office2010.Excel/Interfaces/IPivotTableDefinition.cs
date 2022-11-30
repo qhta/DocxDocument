@@ -58,12 +58,12 @@ public interface IPivotTableDefinition // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// PivotEdits.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotEdits { get ; set; }
+  public DocumentModel.Office2010.Excel.IPivotEdits? PivotEdits { get ; set; }
   
   /// <summary>
   /// PivotChanges.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? PivotChanges { get ; set; }
+  public DocumentModel.Office2010.Excel.IPivotChanges? PivotChanges { get ; set; }
   
   /// <summary>
   /// ConditionalFormats.

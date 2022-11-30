@@ -18,7 +18,7 @@ public interface IDiagramAutoBullet // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// No Bullet.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? NoBullet { get ; set; }
+  public System.Boolean? NoBullet { get ; set; }
   
   /// <summary>
   /// Auto-Numbered Bullet.

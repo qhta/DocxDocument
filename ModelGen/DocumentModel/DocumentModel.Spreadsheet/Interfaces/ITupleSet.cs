@@ -30,4 +30,8 @@ public interface ITupleSet // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? QueryFailed { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITuples>? Tupleses { get ; set; }
+  
+  public DocumentModel.Spreadsheet.ISortByTuple? SortByTuple { get ; set; }
+  
 }

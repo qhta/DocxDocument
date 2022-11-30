@@ -20,4 +20,6 @@ public interface IScenarios // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IScenario>? Scenarios { get ; set; }
+  
 }

@@ -10,4 +10,12 @@ public interface INonVisualPicturePropertiesExtension // : DocumentModel.ITypedO
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2010.Drawing.ICameraTool? CameraTool { get ; set; }
+  
+  public DocumentModel.Office2013.Drawing.ISignatureLine? SignatureLine { get ; set; }
+  
+  public DocumentModel.Office2013.Drawing.IObjectProperties? ObjectProperties { get ; set; }
+  
+  public DocumentModel.Office2021.Drawing.Livefeed.ILiveFeedProperties? LiveFeedProperties { get ; set; }
+  
 }

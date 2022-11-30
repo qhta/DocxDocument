@@ -15,4 +15,14 @@ public interface IGroupShape // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Drawing.Spreadsheet.IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
+  public DocumentModel.Drawing.Spreadsheet.IShape? Shape { get ; set; }
+  
+  public DocumentModel.Drawing.Spreadsheet.IGroupShape? GroupShape { get ; set; }
+  
+  public DocumentModel.Drawing.Spreadsheet.IGraphicFrame? GraphicFrame { get ; set; }
+  
+  public DocumentModel.Drawing.Spreadsheet.IConnectionShape? ConnectionShape { get ; set; }
+  
+  public DocumentModel.Drawing.Spreadsheet.IPicture? Picture { get ; set; }
+  
 }

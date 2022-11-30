@@ -15,4 +15,6 @@ public interface IDropDownListFormField // : DocumentModel.ITypedOpenXmlComposit
   /// </summary>
   public System.Int32? DefaultDropDownListItemIndex { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.String>? ListEntryFormFields { get ; set; }
+  
 }

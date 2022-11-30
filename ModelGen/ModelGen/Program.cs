@@ -4,6 +4,10 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
+
+using DocumentFormat.OpenXml.Framework.Metadata;
+using DocumentFormat.OpenXml.Wordprocessing;
+
 using ModelGen;
 using Namotion.Reflection;
 
@@ -11,19 +15,9 @@ public static class Program
 {
   public static void Main(string[] args)
   {
-
-    //var documentation = typeof(DocumentFormat.OpenXml.Math.MatrixProperties).GetXmlDocsElement();
-    //if (documentation != null)
-    //{
-    //  var types = DocumentationReader.GetChildItemTypes(documentation,typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
-    //  if (types != null)
-    //  {
-    //    foreach (var type in types)
-    //    {
-    //      Console.WriteLine($"Type: {type}");
-    //    }
-    //  }
-    //}
+    //var typeInfo = TypeManager.RegisterType(typeof(DocumentFormat.OpenXml.Wordprocessing.Rsids));
+    //TypeReflector.WaitDone();
+    //TypeInspector.InspectType(typeInfo);
     var filepath = Assembly.GetExecutingAssembly().Location;
     var index = filepath.IndexOf(@"\bin");
     if (index > 0)
@@ -31,9 +25,8 @@ public static class Program
     index = filepath.LastIndexOf(@"\");
     if (index > 0)
       filepath = filepath.Substring(0, index);
-    var intfFilepath = Path.Combine(filepath, "DocumentModel");
-    var implFilepath = Path.Combine(filepath, "DocumentModel.Impl");
-    var generator = new ModelCreator("DocumentModel", intfFilepath, implFilepath);
+    filepath = Path.Combine(filepath, "DocumentModel");
+    var generator = new ModelCreator("DocumentModel", filepath);
     generator.RunOn(typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
   }
 

@@ -10,4 +10,6 @@ public interface IDiscreteProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.UInt32? Count { get ; set; }
   
+  public System.Collections.ObjectModel.Collection<System.UInt32>? FieldItems { get ; set; }
+  
 }

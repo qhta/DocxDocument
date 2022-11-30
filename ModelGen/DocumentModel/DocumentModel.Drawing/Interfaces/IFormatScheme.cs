@@ -13,21 +13,21 @@ public interface IFormatScheme // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Fill Style List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? FillStyleList { get ; set; }
+  public DocumentModel.Drawing.IFillStyleList? FillStyleList { get ; set; }
   
   /// <summary>
   /// Line Style List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? LineStyleList { get ; set; }
+  public DocumentModel.Drawing.ILineStyleList? LineStyleList { get ; set; }
   
   /// <summary>
   /// Effect Style List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? EffectStyleList { get ; set; }
+  public DocumentModel.Drawing.IEffectStyleList? EffectStyleList { get ; set; }
   
   /// <summary>
   /// Background Fill Style List.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? BackgroundFillStyleList { get ; set; }
+  public DocumentModel.Drawing.IBackgroundFillStyleList? BackgroundFillStyleList { get ; set; }
   
 }

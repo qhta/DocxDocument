@@ -30,4 +30,16 @@ public interface IPath // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.Boolean? ExtrusionOk { get ; set; }
   
+  public System.Boolean? CloseShapePath { get ; set; }
+  
+  public DocumentModel.Drawing.IMoveTo? MoveTo { get ; set; }
+  
+  public DocumentModel.Drawing.ILineTo? LineTo { get ; set; }
+  
+  public DocumentModel.Drawing.IArcTo? ArcTo { get ; set; }
+  
+  public DocumentModel.Drawing.IQuadraticBezierCurveTo? QuadraticBezierCurveTo { get ; set; }
+  
+  public DocumentModel.Drawing.ICubicBezierCurveTo? CubicBezierCurveTo { get ; set; }
+  
 }

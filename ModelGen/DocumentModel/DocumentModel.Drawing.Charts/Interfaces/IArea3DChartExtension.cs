@@ -10,4 +10,6 @@ public interface IArea3DChartExtension // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.String? Uri { get ; set; }
   
+  public DocumentModel.Office2013.Drawing.Chart.IFilteredAreaSeries? FilteredAreaSeries { get ; set; }
+  
 }

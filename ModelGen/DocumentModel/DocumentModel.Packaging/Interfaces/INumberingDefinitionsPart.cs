@@ -10,13 +10,19 @@ public interface INumberingDefinitionsPart // : DocumentModel.Packaging.ITypedOp
   /// <summary>
   /// Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  public DocumentModel.BaseTypes.ImagePart? ImageParts { get ; set; }
+  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Numbering { get ; set; }
+  public DocumentModel.Wordprocessing.INumbering? Numbering { get ; set; }
+  
+  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
   
   public System.String? RelationshipType { get ; set; }
+  
+  public System.String? TargetName { get ; set; }
+  
+  public System.String? TargetPath { get ; set; }
   
 }

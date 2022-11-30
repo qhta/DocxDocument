@@ -13,7 +13,7 @@ public interface IValueColorPositions // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// MinValueColorEndPosition.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.IOpenXmlValueColorEndPositionElement? MinValueColorEndPosition { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMinValueColorEndPosition? MinValueColorEndPosition { get ; set; }
   
   /// <summary>
   /// ValueColorMiddlePosition.
@@ -23,6 +23,6 @@ public interface IValueColorPositions // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// MaxValueColorEndPosition.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.IOpenXmlValueColorEndPositionElement? MaxValueColorEndPosition { get ; set; }
+  public DocumentModel.Office2016.Drawing.ChartDrawing.IMaxValueColorEndPosition? MaxValueColorEndPosition { get ; set; }
   
 }

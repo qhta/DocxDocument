@@ -68,16 +68,16 @@ public interface IDataValidation // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// DataValidationForumla1.
   /// </summary>
-  public DocumentModel.Office2010.Excel.IDataValidationFormulaType? DataValidationForumla1 { get ; set; }
+  public DocumentModel.Office2010.Excel.IDataValidationForumla1? DataValidationForumla1 { get ; set; }
   
   /// <summary>
   /// DataValidationForumla2.
   /// </summary>
-  public DocumentModel.Office2010.Excel.IDataValidationFormulaType? DataValidationForumla2 { get ; set; }
+  public DocumentModel.Office2010.Excel.IDataValidationForumla2? DataValidationForumla2 { get ; set; }
   
   /// <summary>
   /// ReferenceSequence.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ReferenceSequence { get ; set; }
+  public System.String? ReferenceSequence { get ; set; }
   
 }
