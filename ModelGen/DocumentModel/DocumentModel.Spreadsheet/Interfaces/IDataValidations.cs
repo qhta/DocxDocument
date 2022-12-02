@@ -6,22 +6,22 @@ namespace DocumentModel.Spreadsheet;
 public interface IDataValidations // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Disable Prompts
+  /// disablePrompts, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? DisablePrompts { get ; set; }
   
   /// <summary>
-  /// Top Left Corner (X Coodrinate)
+  /// xWindow, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? XWindow { get ; set; }
   
   /// <summary>
-  /// Top Left Corner (Y Coordinate)
+  /// yWindow, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? YWindow { get ; set; }
   
   /// <summary>
-  /// Data Validation Item Count
+  /// count, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? Count { get ; set; }
   

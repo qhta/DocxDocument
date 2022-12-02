@@ -10,19 +10,13 @@ public interface IDiagramPersistLayoutPart // : DocumentModel.Packaging.ITypedOp
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Office.Drawing.IDrawing? Drawing { get ; set; }
+  public DocumentModel.Drawing.IDrawing? Drawing { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
   public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

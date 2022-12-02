@@ -13,11 +13,9 @@ using Namotion.Reflection;
 
 public static class Program
 {
+
   public static void Main(string[] args)
   {
-    //var typeInfo = TypeManager.RegisterType(typeof(DocumentFormat.OpenXml.Wordprocessing.Rsids));
-    //TypeReflector.WaitDone();
-    //TypeInspector.InspectType(typeInfo);
     var filepath = Assembly.GetExecutingAssembly().Location;
     var index = filepath.IndexOf(@"\bin");
     if (index > 0)

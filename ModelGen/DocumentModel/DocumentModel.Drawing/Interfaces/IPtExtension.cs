@@ -10,6 +10,6 @@ public interface IPtExtension // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Drawing.Diagram.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
 }

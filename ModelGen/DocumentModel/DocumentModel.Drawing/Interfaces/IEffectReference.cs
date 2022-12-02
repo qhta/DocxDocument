@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawing;
 
 /// <summary>
-/// Effect Reference.
+/// Defines the EffectReference Class.
 /// </summary>
-public interface IEffectReference // : DocumentModel.Drawing.IStyleMatrixReferenceType
+public interface IEffectReference // : DocumentModel.Drawing.IStyleReference
 {
   public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
@@ -16,5 +16,7 @@ public interface IEffectReference // : DocumentModel.Drawing.IStyleMatrixReferen
   public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
   
   public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  
+  public DocumentModel.Drawing.IStyleColor? StyleColor { get ; set; }
   
 }

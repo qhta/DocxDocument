@@ -113,7 +113,7 @@ public interface IImageFile // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Horizontal Rule Alignment
   /// </summary>
-  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
+  public DocumentModel.Vml.HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
   
   /// <summary>
   /// Allow in Table Cell
@@ -168,7 +168,7 @@ public interface IImageFile // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Inset Mode
   /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get ; set; }
+  public DocumentModel.Vml.InsetMarginKind? InsetMode { get ; set; }
   
   /// <summary>
   /// Shape Fill Toggle
@@ -208,22 +208,22 @@ public interface IImageFile // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape Connector Type
   /// </summary>
-  public DocumentModel.Vml.Office.ConnectorKind? ConnectorType { get ; set; }
+  public DocumentModel.Vml.ConnectorKind? ConnectorType { get ; set; }
   
   /// <summary>
   /// Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Pure Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? PureBlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Normal Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? NormalBlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Force Dashed Outline
@@ -328,32 +328,32 @@ public interface IImageFile // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public DocumentModel.Vml.IImageData? ImageData { get ; set; }
   
-  public DocumentModel.Vml.Office.ISkew? Skew { get ; set; }
+  public DocumentModel.Vml.ISkew? Skew { get ; set; }
   
-  public DocumentModel.Vml.Office.IExtrusion? Extrusion { get ; set; }
+  public DocumentModel.Vml.IExtrusion? Extrusion { get ; set; }
   
-  public DocumentModel.Vml.Office.ICallout? Callout { get ; set; }
+  public DocumentModel.Vml.ICallout? Callout { get ; set; }
   
-  public DocumentModel.Vml.Office.ILock? Lock { get ; set; }
+  public DocumentModel.Vml.ILock? Lock { get ; set; }
   
-  public DocumentModel.Vml.Office.IClipPath? ClipPath { get ; set; }
+  public DocumentModel.Vml.IClipPath? ClipPath { get ; set; }
   
-  public DocumentModel.Vml.Office.ISignatureLine? SignatureLine { get ; set; }
+  public DocumentModel.Vml.ISignatureLine? SignatureLine { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.ITextWrap? TextWrap { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.ITextWrap? TextWrap { get ; set; }
   
   public System.Boolean? AnchorLock { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.IBorderType? TopBorder { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.IBorderType? TopBorder { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.IBorderType? BottomBorder { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.IBorderType? BottomBorder { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.IBorderType? LeftBorder { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.IBorderType? LeftBorder { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.IBorderType? RightBorder { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.IBorderType? RightBorder { get ; set; }
   
-  public DocumentModel.Vml.Spreadsheet.IClientData? ClientData { get ; set; }
+  public DocumentModel.Spreadsheet.Vml.IClientData? ClientData { get ; set; }
   
-  public DocumentModel.Vml.Presentation.ITextData? TextData { get ; set; }
+  public DocumentModel.Presentation.Vml.ITextData? TextData { get ; set; }
   
 }

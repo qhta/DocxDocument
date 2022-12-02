@@ -118,7 +118,7 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// hralign
   /// </summary>
-  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
+  public DocumentModel.Vml.HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
   
   /// <summary>
   /// allowincell
@@ -153,7 +153,7 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// insetmode
   /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get ; set; }
+  public DocumentModel.Vml.InsetMarginKind? InsetMode { get ; set; }
   
   /// <summary>
   /// Encoded Package
@@ -197,16 +197,16 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public DocumentModel.Vml.IRoundRectangle? RoundRectangle { get ; set; }
   
-  public DocumentModel.Vml.Office.IDiagram? Diagram { get ; set; }
+  public DocumentModel.Vml.IDiagram? Diagram { get ; set; }
   
-  public DocumentModel.Vml.Office.ILock? Lock { get ; set; }
+  public DocumentModel.Vml.ILock? Lock { get ; set; }
   
-  public DocumentModel.Vml.Office.IClipPath? ClipPath { get ; set; }
+  public DocumentModel.Vml.IClipPath? ClipPath { get ; set; }
   
-  public DocumentModel.Vml.Wordprocessing.ITextWrap? TextWrap { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.ITextWrap? TextWrap { get ; set; }
   
   public System.Boolean? AnchorLock { get ; set; }
   
-  public DocumentModel.Vml.Spreadsheet.IClientData? ClientData { get ; set; }
+  public DocumentModel.Spreadsheet.Vml.IClientData? ClientData { get ; set; }
   
 }

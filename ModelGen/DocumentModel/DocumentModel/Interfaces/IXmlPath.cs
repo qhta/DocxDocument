@@ -21,7 +21,7 @@ public interface IXmlPath // :
   public System.String? XPath { get ; set; }
   
   /// <summary>
-  /// Gets the public URI of the part relative to the package root.
+  /// Gets the internal URI of the part relative to the package root.
   /// </summary>
   public System.Uri? PartUri { get ; set; }
   

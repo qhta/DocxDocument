@@ -1,0 +1,18 @@
+namespace DocumentModel.Spreadsheet.Drawing;
+
+/// <summary>
+/// Position.
+/// </summary>
+public interface IPosition // : DocumentModel.ITypedOpenXmlLeafElement
+{
+  /// <summary>
+  /// X-Axis Coordinate
+  /// </summary>
+  public System.Int64? X { get ; set; }
+  
+  /// <summary>
+  /// Y-Axis Coordinate
+  /// </summary>
+  public System.Int64? Y { get ; set; }
+  
+}

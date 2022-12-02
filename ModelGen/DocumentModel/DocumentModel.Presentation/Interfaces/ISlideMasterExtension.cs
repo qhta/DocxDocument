@@ -10,6 +10,6 @@ public interface ISlideMasterExtension // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2013.PowerPoint.ISlideGuideList? SlideGuideList { get ; set; }
+  public DocumentModel.Presentation.ISlideGuideList? SlideGuideList { get ; set; }
   
 }

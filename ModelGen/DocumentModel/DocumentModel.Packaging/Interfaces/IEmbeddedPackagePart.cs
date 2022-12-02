@@ -7,10 +7,4 @@ public interface IEmbeddedPackagePart // : DocumentModel.Packaging.ITypedOpenXml
 {
   public System.String? RelationshipType { get ; set; }
   
-  public System.String? TargetFileExtension { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
-  
 }

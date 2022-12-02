@@ -5,10 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IHexBinaryValue // : DocumentModel.IStringValue
 {
-  public System.Boolean? IsValid { get ; set; }
-  
-  public System.Int32? Length { get ; set; }
-  
   /// <summary>
   /// Gets or sets the hex binary value
   /// </summary>

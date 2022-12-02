@@ -10,6 +10,6 @@ public interface IQueryTableExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2013.Excel.IQueryTable? QueryTable { get ; set; }
+  public DocumentModel.Spreadsheet.IQueryTable? QueryTable { get ; set; }
   
 }

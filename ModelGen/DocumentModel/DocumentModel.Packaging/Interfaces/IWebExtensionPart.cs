@@ -12,17 +12,11 @@ public interface IWebExtensionPart // : DocumentModel.Packaging.ITypedOpenXmlPar
   /// </summary>
   public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Office2013.WebExtension.IWebExtension? WebExtension { get ; set; }
+  public DocumentModel.IWebExtension? WebExtension { get ; set; }
   
 }

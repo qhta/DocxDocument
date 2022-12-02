@@ -88,10 +88,7 @@ public class ModelCreator
       {
         //ModelMonitorDisplay.WriteSameLine(type.FullName);
         foundTypesCount++;
-        var nspace = type.Namespace ?? "";
-        if (nspace == "DocumentFormat.OpenXml.Packaging")
-          Debug.Assert(true);
-        if (CanGenerateType(type, out var typeInfo))
+        if (TryAcceptType(type, out var typeInfo))
         {
           approvedTypesCount++;
         }
@@ -198,7 +195,7 @@ public class ModelCreator
   }
 
   #region Check types
-  private bool CanGenerateType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
+  private bool TryAcceptType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
   {
     typeInfo = null;
     var typeName = type.ToString();

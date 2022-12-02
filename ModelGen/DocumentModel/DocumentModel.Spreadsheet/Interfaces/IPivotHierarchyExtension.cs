@@ -10,6 +10,6 @@ public interface IPivotHierarchyExtension // : DocumentModel.ITypedOpenXmlCompos
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IPivotHierarchy? PivotHierarchy { get ; set; }
+  public DocumentModel.Spreadsheet.IPivotHierarchy? PivotHierarchy { get ; set; }
   
 }

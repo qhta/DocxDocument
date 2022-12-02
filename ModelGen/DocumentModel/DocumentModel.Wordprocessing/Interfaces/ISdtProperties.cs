@@ -23,9 +23,9 @@ public interface ISdtProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public System.String? Tag { get ; set; }
   
-  public DocumentModel.Office2013.Word.IColor? Color { get ; set; }
+  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
   
-  public DocumentModel.Office2013.Word.SdtAppearance? Appearance { get ; set; }
+  public DocumentModel.Wordprocessing.SdtAppearance? Appearance { get ; set; }
   
   public System.Boolean? WebExtensionLinked { get ; set; }
   
@@ -57,9 +57,9 @@ public interface ISdtProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public System.Boolean? EntityPickerEmpty { get ; set; }
   
-  public DocumentModel.Office2010.Word.ISdtContentCheckBox? SdtContentCheckBox { get ; set; }
+  public DocumentModel.Wordprocessing.ISdtContentCheckBox? SdtContentCheckBox { get ; set; }
   
-  public DocumentModel.Office2013.Word.ISdtRepeatedSection? SdtRepeatedSection { get ; set; }
+  public DocumentModel.Wordprocessing.ISdtRepeatedSection? SdtRepeatedSection { get ; set; }
   
   public System.Boolean? SdtRepeatedSectionItem { get ; set; }
   

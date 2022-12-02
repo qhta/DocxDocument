@@ -13,7 +13,7 @@ public interface IChartPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawing.Charts.IChartSpace? ChartSpace { get ; set; }
+  public DocumentModel.Drawing.IChartSpace? ChartSpace { get ; set; }
   
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
@@ -27,12 +27,6 @@ public interface IChartPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// </summary>
   public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

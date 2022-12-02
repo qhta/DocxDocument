@@ -1,0 +1,4570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:oo="DocumentFormat.OpenXml" xmlns:ac="DocumentFormat.OpenXml.AdditionalCharacteristics" xmlns:bib="DocumentFormat.OpenXml.Bibliography" xmlns:cp="DocumentFormat.OpenXml.CustomProperties" xmlns:cxdatpr="DocumentFormat.OpenXml.CustomXmlDataProperties" xmlns:cxschpr="DocumentFormat.OpenXml.CustomXmlSchemaReferences" xmlns:dr="DocumentFormat.OpenXml.Drawing" xmlns:chrtdr="DocumentFormat.OpenXml.Drawing.ChartDrawing" xmlns:chrt="DocumentFormat.OpenXml.Drawing.Charts" xmlns:dgk="DocumentFormat.OpenXml.Drawing.Diagrams" xmlns:drlc="DocumentFormat.OpenXml.Drawing.LegacyCompatibility" xmlns:drc="DocumentFormat.OpenXml.Drawing.LockedCanvas" xmlns:pic="DocumentFormat.OpenXml.Drawing.Pictures" xmlns:drs="DocumentFormat.OpenXml.Drawing.Spreadsheet" xmlns:drw="DocumentFormat.OpenXml.Drawing.Wordprocessing" xmlns:em="DocumentFormat.OpenXml.EMMA" xmlns:xp="DocumentFormat.OpenXml.ExtendedProperties" xmlns:feat="DocumentFormat.OpenXml.Features" xmlns:fw="DocumentFormat.OpenXml.Framework" xmlns:fwm="DocumentFormat.OpenXml.Framework.Metadata" xmlns:fws="DocumentFormat.OpenXml.Framework.Schema" xmlns:ink="DocumentFormat.OpenXml.InkML" xmlns:m="DocumentFormat.OpenXml.Math" xmlns:oax="DocumentFormat.OpenXml.Office.ActiveX" xmlns:oct="DocumentFormat.OpenXml.Office.ContentType" xmlns:ocpp="DocumentFormat.OpenXml.Office.CoverPageProps" xmlns:ocdip="DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel" xmlns:oui="DocumentFormat.OpenXml.Office.CustomUI" xmlns:ocxsn="DocumentFormat.OpenXml.Office.CustomXsn" xmlns:odr="DocumentFormat.OpenXml.Office.Drawing" xmlns:odr21e="DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed" xmlns:odr21s="DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink" xmlns:ox="DocumentFormat.OpenXml.Office.Excel" xmlns:olp="DocumentFormat.OpenXml.Office.LongProperties" xmlns:oma="DocumentFormat.OpenXml.Office.MetaAttributes" xmlns:op21="DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main" xmlns:os21="DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021" xmlns:os22="DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo" xmlns:ow="DocumentFormat.OpenXml.Office.Word" xmlns:ow20e="DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed" xmlns:o10ui="DocumentFormat.OpenXml.Office2010.CustomUI" xmlns:o10dr="DocumentFormat.OpenXml.Office2010.Drawing" xmlns:o10chrtdr="DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing" xmlns:o10chrt="DocumentFormat.OpenXml.Office2010.Drawing.Charts" xmlns:o10dgm="DocumentFormat.OpenXml.Office2010.Drawing.Diagram" xmlns:o10drlc="DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility" xmlns:o10pic="DocumentFormat.OpenXml.Office2010.Drawing.Pictures" xmlns:o10slc="DocumentFormat.OpenXml.Office2010.Drawing.Slicer" xmlns:o10x="DocumentFormat.OpenXml.Office2010.Excel" xmlns:o10xdr="DocumentFormat.OpenXml.Office2010.Excel.Drawing" xmlns:o10xac="DocumentFormat.OpenXml.Office2010.ExcelAc" xmlns:o10ink="DocumentFormat.OpenXml.Office2010.Ink" xmlns:o10p="DocumentFormat.OpenXml.Office2010.PowerPoint" xmlns:o10w="DocumentFormat.OpenXml.Office2010.Word" xmlns:o10wdr="DocumentFormat.OpenXml.Office2010.Word.Drawing" xmlns:o10wdc="DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas" xmlns:o10drg="DocumentFormat.OpenXml.Office2010.Word.DrawingGroup" xmlns:o10drs="DocumentFormat.OpenXml.Office2010.Word.DrawingShape" xmlns:o13dr="DocumentFormat.OpenXml.Office2013.Drawing" xmlns:o13drchrt="DocumentFormat.OpenXml.Office2013.Drawing.Chart" xmlns:o13drchrts="DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle" xmlns:o13tslc="DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer" xmlns:o13x="DocumentFormat.OpenXml.Office2013.Excel" xmlns:o13xac="DocumentFormat.OpenXml.Office2013.ExcelAc" xmlns:o13p="DocumentFormat.OpenXml.Office2013.PowerPoint" xmlns:o13pr="DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming" xmlns:o13th="DocumentFormat.OpenXml.Office2013.Theme" xmlns:o13wx="DocumentFormat.OpenXml.Office2013.WebExtension" xmlns:o13wxp="DocumentFormat.OpenXml.Office2013.WebExtentionPane" xmlns:o13w="DocumentFormat.OpenXml.Office2013.Word" xmlns:o13wdr="DocumentFormat.OpenXml.Office2013.Word.Drawing" xmlns:o16dr="DocumentFormat.OpenXml.Office2016.Drawing" xmlns:o16chrtdr="DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing" xmlns:o16chrt="DocumentFormat.OpenXml.Office2016.Drawing.Charts" xmlns:o16chrtac="DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc" xmlns:o16drcmd="DocumentFormat.OpenXml.Office2016.Drawing.Command" xmlns:o16x="DocumentFormat.OpenXml.Office2016.Excel" xmlns:o16xac="DocumentFormat.OpenXml.Office2016.ExcelAc" xmlns:o16p="DocumentFormat.OpenXml.Office2016.Presentation" xmlns:o16pcmd="DocumentFormat.OpenXml.Office2016.Presentation.Command" xmlns:o16="DocumentFormat.OpenXml.Office2016.Word.Symex" xmlns:o19dr="DocumentFormat.OpenXml.Office2019.Drawing" xmlns:o19dran="DocumentFormat.OpenXml.Office2019.Drawing.Animation" xmlns:o19dran3d="DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D" xmlns:o19drchrt="DocumentFormat.OpenXml.Office2019.Drawing.Chart" xmlns:o19dgm1="DocumentFormat.OpenXml.Office2019.Drawing.Diagram11" xmlns:O19dgm2="DocumentFormat.OpenXml.Office2019.Drawing.Diagram12" xmlns:o19hlc="DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor" xmlns:o19ink="DocumentFormat.OpenXml.Office2019.Drawing.Ink" xmlns:o19dr3d="DocumentFormat.OpenXml.Office2019.Drawing.Model3D" xmlns:o19svg="DocumentFormat.OpenXml.Office2019.Drawing.SVG" xmlns:o19xcf="DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures" xmlns:o10xda="DocumentFormat.OpenXml.Office2019.Excel.DynamicArray" xmlns:o19xpdl="DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout" xmlns:o19xrd="DocumentFormat.OpenXml.Office2019.Excel.RichData" xmlns:o19xrd2="DocumentFormat.OpenXml.Office2019.Excel.RichData2" xmlns:o19xtc="DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments" xmlns:o19p="DocumentFormat.OpenXml.Office2019.Presentation" xmlns:o19wcid="DocumentFormat.OpenXml.Office2019.Word.Cid" xmlns:o21dt="DocumentFormat.OpenXml.Office2021.DocumentTasks" xmlns:o23dc="DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification" xmlns:o32lf="DocumentFormat.OpenXml.Office2021.Drawing.Livefeed" xmlns:o23ss="DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes" xmlns:o21xl="DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks" xmlns:o32nsv="DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews" xmlns:o21xpvt="DocumentFormat.OpenXml.Office2021.Excel.Pivot" xmlns:o21xrdwimg="DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage" xmlns:o21rvrint="DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals" xmlns:o21xtc2="DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2" xmlns:o21mlmd="DocumentFormat.OpenXml.Office2021.MipLabelMetaData" xmlns:o21oxl="DocumentFormat.OpenXml.Office2021.OfficeExtLst" xmlns:o21pc="DocumentFormat.OpenXml.Office2021.PowerPoint.Comment" xmlns:o21pd="DocumentFormat.OpenXml.Office2021.PowerPoint.Designer" xmlns:o21pt="DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks" xmlns:o21wcx="DocumentFormat.OpenXml.Office2021.Word.CommentsExt" xmlns:o21wxl="DocumentFormat.OpenXml.Office2021.Word.ExtensionList" xmlns:pck="DocumentFormat.OpenXml.Packaging" xmlns:p="DocumentFormat.OpenXml.Presentation" xmlns:s="DocumentFormat.OpenXml.Spreadsheet" xmlns:val="DocumentFormat.OpenXml.Validation" xmlns:valsch="DocumentFormat.OpenXml.Validation.Schema" xmlns:valrest="DocumentFormat.OpenXml.Validation.Schema.Restrictions" xmlns:valsem="DocumentFormat.OpenXml.Validation.Semantic" xmlns:vt="DocumentFormat.OpenXml.VariantTypes" xmlns:vml="DocumentFormat.OpenXml.Vml" xmlns:vmlo="DocumentFormat.OpenXml.Vml.Office" xmlns:vmlp="DocumentFormat.OpenXml.Vml.Presentation" xmlns:vmls="DocumentFormat.OpenXml.Vml.Spreadsheet" xmlns:vmlw="DocumentFormat.OpenXml.Vml.Wordprocessing" xmlns:w="DocumentFormat.OpenXml.Wordprocessing" targetNamespace="DocumentFormat.OpenXml.Wordprocessing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AbsolutePositionTabAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AbsolutePositionTabLeaderCharValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Dot" />
+      <xs:enumeration value="Hyphen" />
+      <xs:enumeration value="Underscore" />
+      <xs:enumeration value="MiddleDot" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AbsolutePositionTabPositioningBaseValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Margin" />
+      <xs:enumeration value="Indent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AbstractNum">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Nsid" />
+      <xs:element type="w:MultiLevelType" />
+      <xs:element type="w:TemplateCode" />
+      <xs:element type="w:AbstractNumDefinitionName" />
+      <xs:element type="w:StyleLink" />
+      <xs:element type="w:NumberingStyleLink" />
+      <xs:element minOccurs="0" maxOccurs="9" type="w:Level" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AbstractNumDefinitionName">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="AbstractNumId">
+    <xs:restriction base="w:NonNegativeDecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="Active">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ActiveRecord">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="ActiveWritingStyle">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="AddressFieldName">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="AdjustLineHeightInTable">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AdjustRightIndent">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Aliases">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="AlignBorderAndEdges">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AlignTablesRowByRow">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AllowPNG">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AllowSpaceOfSameStyleInTable">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="AltChunk">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:AltChunkProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AltChunkProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:MatchSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AltName">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="AlwaysMergeEmptyNamespace">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AlwaysShowPlaceholderText">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AnnotationReferenceMark">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="ApplyBreakingRules">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AttachedSchema">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="AttachedTemplate">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoCaption">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="AutoCaptions">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:AutoCaption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AutofitToFirstFixedWidthCell">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoFormatOverride">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoHyphenation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutomaticallySizeFormField">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutomaticColorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AutoRedefine">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoSpaceDE">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoSpaceDN">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="AutoSpaceLikeWord95">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BalanceSingleByteDoubleByteWidth">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BarBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="BasedOn">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="Behavior">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="Behaviors">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:Behavior" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="BetweenBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="BiDi">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="BidirectionalEmbedding">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BidirectionalOverride">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="BiDiVisual">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="BlockQuote">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="Body">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:BodyType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SectionProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="BodyDiv">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Bold">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BoldComplexScript">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BookFoldPrinting">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BookFoldPrintingSheets">
+    <xs:restriction base="w:NonNegativeShortType" />
+  </xs:simpleType>
+  <xs:simpleType name="BookFoldReversePrinting">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BookmarkEnd">
+    <xs:restriction base="w:MarkupRangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="BookmarkStart">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Border">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="BordersDoNotSurroundFooter">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BordersDoNotSurroundHeader">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="BorderValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nil" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Single" />
+      <xs:enumeration value="Thick" />
+      <xs:enumeration value="Double" />
+      <xs:enumeration value="Dotted" />
+      <xs:enumeration value="Dashed" />
+      <xs:enumeration value="DotDash" />
+      <xs:enumeration value="DotDotDash" />
+      <xs:enumeration value="Triple" />
+      <xs:enumeration value="ThinThickSmallGap" />
+      <xs:enumeration value="ThickThinSmallGap" />
+      <xs:enumeration value="ThinThickThinSmallGap" />
+      <xs:enumeration value="ThinThickMediumGap" />
+      <xs:enumeration value="ThickThinMediumGap" />
+      <xs:enumeration value="ThinThickThinMediumGap" />
+      <xs:enumeration value="ThinThickLargeGap" />
+      <xs:enumeration value="ThickThinLargeGap" />
+      <xs:enumeration value="ThinThickThinLargeGap" />
+      <xs:enumeration value="Wave" />
+      <xs:enumeration value="DoubleWave" />
+      <xs:enumeration value="DashSmallGap" />
+      <xs:enumeration value="DashDotStroked" />
+      <xs:enumeration value="ThreeDEmboss" />
+      <xs:enumeration value="ThreeDEngrave" />
+      <xs:enumeration value="Outset" />
+      <xs:enumeration value="Inset" />
+      <xs:enumeration value="Apples" />
+      <xs:enumeration value="ArchedScallops" />
+      <xs:enumeration value="BabyPacifier" />
+      <xs:enumeration value="BabyRattle" />
+      <xs:enumeration value="Balloons3Colors" />
+      <xs:enumeration value="BalloonsHotAir" />
+      <xs:enumeration value="BasicBlackDashes" />
+      <xs:enumeration value="BasicBlackDots" />
+      <xs:enumeration value="BasicBlackSquares" />
+      <xs:enumeration value="BasicThinLines" />
+      <xs:enumeration value="BasicWhiteDashes" />
+      <xs:enumeration value="BasicWhiteDots" />
+      <xs:enumeration value="BasicWhiteSquares" />
+      <xs:enumeration value="BasicWideInline" />
+      <xs:enumeration value="BasicWideMidline" />
+      <xs:enumeration value="BasicWideOutline" />
+      <xs:enumeration value="Bats" />
+      <xs:enumeration value="Birds" />
+      <xs:enumeration value="BirdsFlight" />
+      <xs:enumeration value="Cabins" />
+      <xs:enumeration value="CakeSlice" />
+      <xs:enumeration value="CandyCorn" />
+      <xs:enumeration value="CelticKnotwork" />
+      <xs:enumeration value="CertificateBanner" />
+      <xs:enumeration value="ChainLink" />
+      <xs:enumeration value="ChampagneBottle" />
+      <xs:enumeration value="CheckedBarBlack" />
+      <xs:enumeration value="CheckedBarColor" />
+      <xs:enumeration value="Checkered" />
+      <xs:enumeration value="ChristmasTree" />
+      <xs:enumeration value="CirclesLines" />
+      <xs:enumeration value="CirclesRectangles" />
+      <xs:enumeration value="ClassicalWave" />
+      <xs:enumeration value="Clocks" />
+      <xs:enumeration value="Compass" />
+      <xs:enumeration value="Confetti" />
+      <xs:enumeration value="ConfettiGrays" />
+      <xs:enumeration value="ConfettiOutline" />
+      <xs:enumeration value="ConfettiStreamers" />
+      <xs:enumeration value="ConfettiWhite" />
+      <xs:enumeration value="CornerTriangles" />
+      <xs:enumeration value="CouponCutoutDashes" />
+      <xs:enumeration value="CouponCutoutDots" />
+      <xs:enumeration value="CrazyMaze" />
+      <xs:enumeration value="CreaturesButterfly" />
+      <xs:enumeration value="CreaturesFish" />
+      <xs:enumeration value="CreaturesInsects" />
+      <xs:enumeration value="CreaturesLadyBug" />
+      <xs:enumeration value="CrossStitch" />
+      <xs:enumeration value="Cup" />
+      <xs:enumeration value="DecoArch" />
+      <xs:enumeration value="DecoArchColor" />
+      <xs:enumeration value="DecoBlocks" />
+      <xs:enumeration value="DiamondsGray" />
+      <xs:enumeration value="DoubleD" />
+      <xs:enumeration value="DoubleDiamonds" />
+      <xs:enumeration value="Earth1" />
+      <xs:enumeration value="Earth2" />
+      <xs:enumeration value="EclipsingSquares1" />
+      <xs:enumeration value="EclipsingSquares2" />
+      <xs:enumeration value="EggsBlack" />
+      <xs:enumeration value="Fans" />
+      <xs:enumeration value="Film" />
+      <xs:enumeration value="Firecrackers" />
+      <xs:enumeration value="FlowersBlockPrint" />
+      <xs:enumeration value="FlowersDaisies" />
+      <xs:enumeration value="FlowersModern1" />
+      <xs:enumeration value="FlowersModern2" />
+      <xs:enumeration value="FlowersPansy" />
+      <xs:enumeration value="FlowersRedRose" />
+      <xs:enumeration value="FlowersRoses" />
+      <xs:enumeration value="FlowersTeacup" />
+      <xs:enumeration value="FlowersTiny" />
+      <xs:enumeration value="Gems" />
+      <xs:enumeration value="GingerbreadMan" />
+      <xs:enumeration value="Gradient" />
+      <xs:enumeration value="Handmade1" />
+      <xs:enumeration value="Handmade2" />
+      <xs:enumeration value="HeartBalloon" />
+      <xs:enumeration value="HeartGray" />
+      <xs:enumeration value="Hearts" />
+      <xs:enumeration value="HeebieJeebies" />
+      <xs:enumeration value="Holly" />
+      <xs:enumeration value="HouseFunky" />
+      <xs:enumeration value="Hypnotic" />
+      <xs:enumeration value="IceCreamCones" />
+      <xs:enumeration value="LightBulb" />
+      <xs:enumeration value="Lightning1" />
+      <xs:enumeration value="Lightning2" />
+      <xs:enumeration value="MapPins" />
+      <xs:enumeration value="MapleLeaf" />
+      <xs:enumeration value="MapleMuffins" />
+      <xs:enumeration value="Marquee" />
+      <xs:enumeration value="MarqueeToothed" />
+      <xs:enumeration value="Moons" />
+      <xs:enumeration value="Mosaic" />
+      <xs:enumeration value="MusicNotes" />
+      <xs:enumeration value="Northwest" />
+      <xs:enumeration value="Ovals" />
+      <xs:enumeration value="Packages" />
+      <xs:enumeration value="PalmsBlack" />
+      <xs:enumeration value="PalmsColor" />
+      <xs:enumeration value="PaperClips" />
+      <xs:enumeration value="Papyrus" />
+      <xs:enumeration value="PartyFavor" />
+      <xs:enumeration value="PartyGlass" />
+      <xs:enumeration value="Pencils" />
+      <xs:enumeration value="People" />
+      <xs:enumeration value="PeopleWaving" />
+      <xs:enumeration value="PeopleHats" />
+      <xs:enumeration value="Poinsettias" />
+      <xs:enumeration value="PostageStamp" />
+      <xs:enumeration value="Pumpkin1" />
+      <xs:enumeration value="PushPinNote2" />
+      <xs:enumeration value="PushPinNote1" />
+      <xs:enumeration value="Pyramids" />
+      <xs:enumeration value="PyramidsAbove" />
+      <xs:enumeration value="Quadrants" />
+      <xs:enumeration value="Rings" />
+      <xs:enumeration value="Safari" />
+      <xs:enumeration value="Sawtooth" />
+      <xs:enumeration value="SawtoothGray" />
+      <xs:enumeration value="ScaredCat" />
+      <xs:enumeration value="Seattle" />
+      <xs:enumeration value="ShadowedSquares" />
+      <xs:enumeration value="SharksTeeth" />
+      <xs:enumeration value="ShorebirdTracks" />
+      <xs:enumeration value="Skyrocket" />
+      <xs:enumeration value="SnowflakeFancy" />
+      <xs:enumeration value="Snowflakes" />
+      <xs:enumeration value="Sombrero" />
+      <xs:enumeration value="Southwest" />
+      <xs:enumeration value="Stars" />
+      <xs:enumeration value="StarsTop" />
+      <xs:enumeration value="Stars3d" />
+      <xs:enumeration value="StarsBlack" />
+      <xs:enumeration value="StarsShadowed" />
+      <xs:enumeration value="Sun" />
+      <xs:enumeration value="Swirligig" />
+      <xs:enumeration value="TornPaper" />
+      <xs:enumeration value="TornPaperBlack" />
+      <xs:enumeration value="Trees" />
+      <xs:enumeration value="TriangleParty" />
+      <xs:enumeration value="Triangles" />
+      <xs:enumeration value="Tribal1" />
+      <xs:enumeration value="Tribal2" />
+      <xs:enumeration value="Tribal3" />
+      <xs:enumeration value="Tribal4" />
+      <xs:enumeration value="Tribal5" />
+      <xs:enumeration value="Tribal6" />
+      <xs:enumeration value="Triangle1" />
+      <xs:enumeration value="Triangle2" />
+      <xs:enumeration value="TriangleCircle1" />
+      <xs:enumeration value="TriangleCircle2" />
+      <xs:enumeration value="Shapes1" />
+      <xs:enumeration value="Shapes2" />
+      <xs:enumeration value="TwistedLines1" />
+      <xs:enumeration value="TwistedLines2" />
+      <xs:enumeration value="Vine" />
+      <xs:enumeration value="Waveline" />
+      <xs:enumeration value="WeavingAngles" />
+      <xs:enumeration value="WeavingBraid" />
+      <xs:enumeration value="WeavingRibbon" />
+      <xs:enumeration value="WeavingStrips" />
+      <xs:enumeration value="WhiteFlowers" />
+      <xs:enumeration value="Woodwork" />
+      <xs:enumeration value="XIllusions" />
+      <xs:enumeration value="ZanyTriangles" />
+      <xs:enumeration value="ZigZag" />
+      <xs:enumeration value="ZigZagStitch" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BottomBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="BottomMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="BottomMarginDiv">
+    <xs:restriction base="w:SignedTwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="Break">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="BreakTextRestartLocationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BreakValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Page" />
+      <xs:enumeration value="Column" />
+      <xs:enumeration value="TextWrapping" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CachedColumnBalance">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="CalculateOnExit">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Calendar">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="CalendarValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Gregorian" />
+      <xs:enumeration value="Hijri" />
+      <xs:enumeration value="Umalqura" />
+      <xs:enumeration value="Hebrew" />
+      <xs:enumeration value="Taiwan" />
+      <xs:enumeration value="Japan" />
+      <xs:enumeration value="Thai" />
+      <xs:enumeration value="Korea" />
+      <xs:enumeration value="Saka" />
+      <xs:enumeration value="GregorianTransliteratedEnglish" />
+      <xs:enumeration value="GregorianTransliteratedFrench" />
+      <xs:enumeration value="GregorianUs" />
+      <xs:enumeration value="GregorianMeFrench" />
+      <xs:enumeration value="GregorianArabic" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CantSplit">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="Caps">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Caption">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="CaptionPositionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Above" />
+      <xs:enumeration value="Below" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Captions">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Caption" />
+      <xs:element type="w:AutoCaptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CarriageReturn">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="Category">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Name" />
+      <xs:element type="w:Gallery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CellDeletion">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CellInsertion">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CellMerge">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ChapterSeparatorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hyphen" />
+      <xs:enumeration value="Period" />
+      <xs:enumeration value="Colon" />
+      <xs:enumeration value="EmDash" />
+      <xs:enumeration value="EnDash" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CharacterScale">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="CharacterSpacingControl">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="CharacterSpacingValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DoNotCompress" />
+      <xs:enumeration value="CompressPunctuation" />
+      <xs:enumeration value="CompressPunctuationAndJapaneseKana" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CheckBox">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice>
+        <xs:element type="w:FormFieldSize" />
+        <xs:element type="w:AutomaticallySizeFormField" />
+      </xs:choice>
+      <xs:element type="w:DefaultCheckBoxFormFieldState" />
+      <xs:element type="w:Checked" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Checked">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="CheckErrors">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="ClickAndTypeStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="Color">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ColorSchemeIndexValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Dark1" />
+      <xs:enumeration value="Light1" />
+      <xs:enumeration value="Dark2" />
+      <xs:enumeration value="Light2" />
+      <xs:enumeration value="Accent1" />
+      <xs:enumeration value="Accent2" />
+      <xs:enumeration value="Accent3" />
+      <xs:enumeration value="Accent4" />
+      <xs:enumeration value="Accent5" />
+      <xs:enumeration value="Accent6" />
+      <xs:enumeration value="Hyperlink" />
+      <xs:enumeration value="FollowedHyperlink" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ColorSchemeMapping">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Column">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ColumnDelimiter">
+    <xs:restriction base="w:UnsignedDecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="ColumnIndex">
+    <xs:restriction base="w:UnsignedDecimalNumberType" />
+  </xs:simpleType>
+  <xs:complexType name="Columns">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CombineBracketValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Round" />
+      <xs:enumeration value="Square" />
+      <xs:enumeration value="Angle" />
+      <xs:enumeration value="Curly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Comment">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CommentRangeEnd">
+    <xs:restriction base="w:MarkupRangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CommentRangeStart">
+    <xs:restriction base="w:MarkupRangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CommentReference">
+    <xs:restriction base="w:MarkupType" />
+  </xs:simpleType>
+  <xs:complexType name="Comments">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:Comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Compatibility">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:UseSingleBorderForContiguousCells" />
+      <xs:element type="w:WordPerfectJustification" />
+      <xs:element type="w:NoTabHangIndent" />
+      <xs:element type="w:NoLeading" />
+      <xs:element type="w:SpaceForUnderline" />
+      <xs:element type="w:NoColumnBalance" />
+      <xs:element type="w:BalanceSingleByteDoubleByteWidth" />
+      <xs:element type="w:NoExtraLineSpacing" />
+      <xs:element type="w:DoNotLeaveBackslashAlone" />
+      <xs:element type="w:UnderlineTrailingSpaces" />
+      <xs:element type="w:DoNotExpandShiftReturn" />
+      <xs:element type="w:SpacingInWholePoints" />
+      <xs:element type="w:LineWrapLikeWord6" />
+      <xs:element type="w:PrintBodyTextBeforeHeader" />
+      <xs:element type="w:PrintColorBlackWhite" />
+      <xs:element type="w:WordPerfectSpaceWidth" />
+      <xs:element type="w:ShowBreaksInFrames" />
+      <xs:element type="w:SubFontBySize" />
+      <xs:element type="w:SuppressBottomSpacing" />
+      <xs:element type="w:SuppressTopSpacing" />
+      <xs:element type="w:SuppressSpacingAtTopOfPage" />
+      <xs:element type="w:SuppressTopSpacingWordPerfect" />
+      <xs:element type="w:SuppressSpacingBeforeAfterPageBreak" />
+      <xs:element type="w:SwapBordersFacingPages" />
+      <xs:element type="w:ConvertMailMergeEscape" />
+      <xs:element type="w:TruncateFontHeightsLikeWordPerfect" />
+      <xs:element type="w:MacWordSmallCaps" />
+      <xs:element type="w:UsePrinterMetrics" />
+      <xs:element type="w:DoNotSuppressParagraphBorders" />
+      <xs:element type="w:WrapTrailSpaces" />
+      <xs:element type="w:FootnoteLayoutLikeWord8" />
+      <xs:element type="w:ShapeLayoutLikeWord8" />
+      <xs:element type="w:AlignTablesRowByRow" />
+      <xs:element type="w:ForgetLastTabAlignment" />
+      <xs:element type="w:AdjustLineHeightInTable" />
+      <xs:element type="w:AutoSpaceLikeWord95" />
+      <xs:element type="w:NoSpaceRaiseLower" />
+      <xs:element type="w:DoNotUseHTMLParagraphAutoSpacing" />
+      <xs:element type="w:LayoutRawTableWidth" />
+      <xs:element type="w:LayoutTableRowsApart" />
+      <xs:element type="w:UseWord97LineBreakRules" />
+      <xs:element type="w:DoNotBreakWrappedTables" />
+      <xs:element type="w:DoNotSnapToGridInCell" />
+      <xs:element type="w:SelectFieldWithFirstOrLastChar" />
+      <xs:element type="w:ApplyBreakingRules" />
+      <xs:element type="w:DoNotWrapTextWithPunctuation" />
+      <xs:element type="w:DoNotUseEastAsianBreakRules" />
+      <xs:element type="w:UseWord2002TableStyleRules" />
+      <xs:element type="w:GrowAutofit" />
+      <xs:element type="w:UseFarEastLayout" />
+      <xs:element type="w:UseNormalStyleForList" />
+      <xs:element type="w:DoNotUseIndentAsNumberingTabStop" />
+      <xs:element type="w:UseAltKinsokuLineBreakRules" />
+      <xs:element type="w:AllowSpaceOfSameStyleInTable" />
+      <xs:element type="w:DoNotSuppressIndentation" />
+      <xs:element type="w:DoNotAutofitConstrainedTables" />
+      <xs:element type="w:AutofitToFirstFixedWidthCell" />
+      <xs:element type="w:UnderlineTabInNumberingList" />
+      <xs:element type="w:DisplayHangulFixedWidth" />
+      <xs:element type="w:SplitPageBreakAndParagraphMark" />
+      <xs:element type="w:DoNotVerticallyAlignCellWithShape" />
+      <xs:element type="w:DoNotBreakConstrainedForcedTable" />
+      <xs:element type="w:DoNotVerticallyAlignInTextBox" />
+      <xs:element type="w:UseAnsiKerningPairs" />
+      <xs:element type="w:CachedColumnBalance" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:CompatibilitySetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CompatibilitySetting">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="CompatSettingNameValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CompatibilityMode" />
+      <xs:enumeration value="OverrideTableStyleFontSizeAndJustification" />
+      <xs:enumeration value="EnableOpenTypeFeatures" />
+      <xs:enumeration value="DoNotFlipMirrorIndents" />
+      <xs:enumeration value="DifferentiateMultirowTableHeaders" />
+      <xs:enumeration value="UseWord2013TrackBottomHyphenation" />
+      <xs:enumeration value="AllowHyphenationAtTrackBottom" />
+      <xs:enumeration value="AllowTextAfterFloatingTableBreak" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ComplexScript">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ConditionalFormatStyle">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ConnectString">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="ConsecutiveHyphenLimit">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ContentPart">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ContextualSpacing">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ContinuationSeparatorMark">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="Control">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ConvertMailMergeEscape">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="CryptAlgorithmClassValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hash" />
+      <xs:enumeration value="Custom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CryptAlgorithmValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TypeAny" />
+      <xs:enumeration value="Custom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CryptProviderValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RsaAdvancedEncryptionStandard" />
+      <xs:enumeration value="RsaFull" />
+      <xs:enumeration value="Custom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlAttribute">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="CustomXmlBlock">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:CustomXmlElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomXmlCell">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:CustomXmlElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CustomXmlDelRangeEnd">
+    <xs:restriction base="w:MarkupType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlDelRangeStart">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlInsRangeEnd">
+    <xs:restriction base="w:MarkupType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlInsRangeStart">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlMoveFromRangeEnd">
+    <xs:restriction base="w:MarkupType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlMoveFromRangeStart">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlMoveToRangeEnd">
+    <xs:restriction base="w:MarkupType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlMoveToRangeStart">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomXmlPlaceholder">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="CustomXmlProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlPlaceholder" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:CustomXmlAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomXmlRow">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:CustomXmlElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomXmlRuby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:CustomXmlElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomXmlRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:CustomXmlElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:CustomXmlProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DataBinding">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="DataSourceObject">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:UdlConnectionString" />
+      <xs:element type="w:DataSourceTableName" />
+      <xs:element type="w:SourceReference" />
+      <xs:element type="w:ColumnDelimiter" />
+      <xs:element type="w:MailMergeSource" />
+      <xs:element type="w:FirstRowHeader" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:FieldMapData" />
+      <xs:element type="w:RecipientDataReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DataSourceReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="DataSourceTableName">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="DataType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DateFormat">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="DateFormatValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="DateTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DayLong">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="DayShort">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="DecimalSymbol">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="DefaultCheckBoxFormFieldState">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DefaultDropDownListItemIndex">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DefaultTableStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="DefaultTabStop">
+    <xs:restriction base="w:NonNegativeShortType" />
+  </xs:simpleType>
+  <xs:simpleType name="DefaultTextBoxFormFieldString">
+    <xs:restriction base="w:String255Type" />
+  </xs:simpleType>
+  <xs:simpleType name="Deleted">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="DeletedFieldCode">
+    <xs:restriction base="w:TextType" />
+  </xs:simpleType>
+  <xs:complexType name="DeletedMathControl">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeletedRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RunTrackChangeType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DeletedText">
+    <xs:restriction base="w:TextType" />
+  </xs:simpleType>
+  <xs:simpleType name="Description">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="Destination">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DirectionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ltr" />
+      <xs:enumeration value="Rtl" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Dirty">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DisplacedByCustomXmlValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Next" />
+      <xs:enumeration value="Previous" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DisplayBackgroundShape">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DisplayHangulFixedWidth">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DisplayHorizontalDrawingGrid">
+    <xs:restriction base="w:UnsignedInt7Type" />
+  </xs:simpleType>
+  <xs:simpleType name="DisplayVerticalDrawingGrid">
+    <xs:restriction base="w:UnsignedInt7Type" />
+  </xs:simpleType>
+  <xs:complexType name="Div">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:BlockQuote" />
+      <xs:element type="w:BodyDiv" />
+      <xs:element type="w:LeftMarginDiv" />
+      <xs:element type="w:RightMarginDiv" />
+      <xs:element type="w:TopMarginDiv" />
+      <xs:element type="w:BottomMarginDiv" />
+      <xs:element type="w:DivBorder" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:DivsChild" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DivBorder">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopBorder" />
+      <xs:element type="w:LeftBorder" />
+      <xs:element type="w:BottomBorder" />
+      <xs:element type="w:RightBorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DivId">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="Divs">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:DivsType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Div" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DivsChild">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:DivsType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Div" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocDefaults">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RunPropertiesDefault" />
+      <xs:element type="w:ParagraphPropertiesDefault" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DocGrid">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DocGridValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Lines" />
+      <xs:enumeration value="LinesAndChars" />
+      <xs:enumeration value="SnapToChars" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocPart">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocPartProperties" />
+      <xs:element type="w:DocPartBody" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DocPartBehaviorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Content" />
+      <xs:enumeration value="Paragraph" />
+      <xs:enumeration value="Page" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocPartBody">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:BodyType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SectionProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DocPartCategory">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="DocPartGallery">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="DocPartGalleryValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Placeholder" />
+      <xs:enumeration value="Any" />
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="DocumentPart" />
+      <xs:enumeration value="CoverPage" />
+      <xs:enumeration value="Equation" />
+      <xs:enumeration value="Footer" />
+      <xs:enumeration value="Header" />
+      <xs:enumeration value="PageNumber" />
+      <xs:enumeration value="Table" />
+      <xs:enumeration value="WaterMark" />
+      <xs:enumeration value="AutoText" />
+      <xs:enumeration value="TextBox" />
+      <xs:enumeration value="PageNumberTop" />
+      <xs:enumeration value="PageNumberBottom" />
+      <xs:enumeration value="PageNumberMargins" />
+      <xs:enumeration value="TableOfContents" />
+      <xs:enumeration value="Bibliography" />
+      <xs:enumeration value="CustomQuickParts" />
+      <xs:enumeration value="CustomCoverPage" />
+      <xs:enumeration value="CustomEquation" />
+      <xs:enumeration value="CustomFooter" />
+      <xs:enumeration value="CustomHeaders" />
+      <xs:enumeration value="CustomPageNumber" />
+      <xs:enumeration value="CustomTable" />
+      <xs:enumeration value="CustomWatermark" />
+      <xs:enumeration value="CustomAutoText" />
+      <xs:enumeration value="CustomTextBox" />
+      <xs:enumeration value="CustomPageNumberTop" />
+      <xs:enumeration value="CustomPageNumberBottom" />
+      <xs:enumeration value="CustomPageNumberMargin" />
+      <xs:enumeration value="CustomTableOfContents" />
+      <xs:enumeration value="CustomBibliography" />
+      <xs:enumeration value="Custom1" />
+      <xs:enumeration value="Custom2" />
+      <xs:enumeration value="Custom3" />
+      <xs:enumeration value="Custom4" />
+      <xs:enumeration value="Custom5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DocPartId">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DocPartName">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="DocPartProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocPartName" />
+      <xs:element type="w:StyleId" />
+      <xs:element type="w:Category" />
+      <xs:element type="w:DocPartTypes" />
+      <xs:element type="w:Behaviors" />
+      <xs:element type="w:Description" />
+      <xs:element type="w:DocPartId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DocPartReference">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="DocParts">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:DocPart" />
+      <xs:element type="w:DocPart" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="DocPartType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="DocPartTypes">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:DocPartType" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="DocPartUnique">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DocPartValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="AutoExp" />
+      <xs:enumeration value="Toolbar" />
+      <xs:enumeration value="Speller" />
+      <xs:enumeration value="FormField" />
+      <xs:enumeration value="SdtPlaceholder" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Document">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:DocumentBackground" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:Body" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentBackground">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="vml:Background" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="DocumentConformance">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="transitional" />
+      <xs:enumeration value="strict" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DocumentProtection">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DocumentProtectionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ReadOnly" />
+      <xs:enumeration value="Comments" />
+      <xs:enumeration value="TrackedChanges" />
+      <xs:enumeration value="Forms" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DocumentType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="DocumentTypeValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Letter" />
+      <xs:enumeration value="Email" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DocumentVariable">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="DocumentVariables">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:DocumentVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DoNotAutoCompressPictures">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotAutofitConstrainedTables">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotBreakConstrainedForcedTable">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotBreakWrappedTables">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotDemarcateInvalidXml">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotDisplayPageBoundaries">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotExpandShiftReturn">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotHyphenateCaps">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotIncludeSubdocsInStats">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotLeaveBackslashAlone">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotOrganizeInFolder">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotRelyOnCSS">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotSaveAsSingleFile">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotShadeFormData">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotSnapToGridInCell">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotSuppressBlankLines">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotSuppressIndentation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotSuppressParagraphBorders">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotTrackFormatting">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotTrackMoves">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotUseEastAsianBreakRules">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotUseHTMLParagraphAutoSpacing">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotUseIndentAsNumberingTabStop">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotUseLongFileNames">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotUseMarginsForDrawingGridOrigin">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotValidateAgainstSchema">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotVerticallyAlignCellWithShape">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotVerticallyAlignInTextBox">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoNotWrapTextWithPunctuation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="DoubleStrike">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="Drawing">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="drw:Anchor" />
+      <xs:element type="drw:Inline" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="DrawingGridHorizontalOrigin">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="DrawingGridHorizontalSpacing">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="DrawingGridVerticalOrigin">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="DrawingGridVerticalSpacing">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="DropCapLocationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Drop" />
+      <xs:enumeration value="Margin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DropDownListFormField">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DropDownListSelection" />
+      <xs:element type="w:DefaultDropDownListItemIndex" />
+      <xs:element minOccurs="0" maxOccurs="25" type="w:ListEntryFormField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DropDownListSelection">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="DynamicAddress">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="EastAsianLayout">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="EmbedBoldFont">
+    <xs:restriction base="w:FontRelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="EmbedBoldItalicFont">
+    <xs:restriction base="w:FontRelationshipType" />
+  </xs:simpleType>
+  <xs:complexType name="EmbeddedObject">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0">
+        <xs:element type="vml:Arc" />
+        <xs:element type="vml:Curve" />
+        <xs:element type="vmlo:OleObject" />
+      </xs:choice>
+      <xs:sequence>
+        <xs:element type="w:Drawing" />
+        <xs:choice>
+          <xs:element type="w:Control" />
+          <xs:element type="w:ObjectEmbed" />
+          <xs:element type="w:ObjectLink" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EmbedItalicFont">
+    <xs:restriction base="w:FontRelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="EmbedRegularFont">
+    <xs:restriction base="w:FontRelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="EmbedSystemFonts">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="EmbedTrueTypeFonts">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Emboss">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Emphasis">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="EmphasisMarkValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Dot" />
+      <xs:enumeration value="Comma" />
+      <xs:enumeration value="Circle" />
+      <xs:enumeration value="UnderDot" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Enabled">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="EndBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="EndMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:complexType name="Endnote">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:FootnoteEndnoteType" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="EndnoteDocumentWideProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:EndnotePosition" />
+        <xs:element type="w:NumberingFormat" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="3" type="w:EndnoteSpecialReference" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EndnotePosition">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="EndnotePositionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SectionEnd" />
+      <xs:enumeration value="DocumentEnd" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EndnoteProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:EndnotePosition" />
+      <xs:element type="w:NumberingFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EndnoteReference">
+    <xs:restriction base="w:FootnoteEndnoteReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EndnoteReferenceMark">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="Endnotes">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Endnote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EndnoteSpecialReference">
+    <xs:restriction base="w:FootnoteEndnoteSeparatorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EntryMacro">
+    <xs:restriction base="w:MacroNameType" />
+  </xs:simpleType>
+  <xs:simpleType name="EvenAndOddHeaders">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ExitMacro">
+    <xs:restriction base="w:MacroNameType" />
+  </xs:simpleType>
+  <xs:complexType name="FieldChar">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:FieldData" />
+      <xs:element type="w:FormFieldData" />
+      <xs:element type="w:NumberingChange" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="FieldCharValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Begin" />
+      <xs:enumeration value="Separate" />
+      <xs:enumeration value="End" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FieldCode">
+    <xs:restriction base="w:TextType" />
+  </xs:simpleType>
+  <xs:simpleType name="FieldData">
+    <xs:restriction base="oo:TypedOpenXmlLeafTextElement" />
+  </xs:simpleType>
+  <xs:complexType name="FieldMapData">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:all />
+  </xs:complexType>
+  <xs:simpleType name="FirstRowHeader">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="FitText">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FlatBorders">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:complexType name="Font">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:AltName" />
+      <xs:element type="w:Panose1Number" />
+      <xs:element type="w:FontCharSet" />
+      <xs:element type="w:FontFamily" />
+      <xs:element type="w:NotTrueType" />
+      <xs:element type="w:Pitch" />
+      <xs:element type="w:FontSignature" />
+      <xs:element type="w:EmbedRegularFont" />
+      <xs:element type="w:EmbedBoldFont" />
+      <xs:element type="w:EmbedItalicFont" />
+      <xs:element type="w:EmbedBoldItalicFont" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FontCharSet">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FontFamily">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FontFamilyValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Decorative" />
+      <xs:enumeration value="Modern" />
+      <xs:enumeration value="Roman" />
+      <xs:enumeration value="Script" />
+      <xs:enumeration value="Swiss" />
+      <xs:enumeration value="Auto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FontPitchValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fixed" />
+      <xs:enumeration value="Variable" />
+      <xs:enumeration value="Default" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Fonts">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:Font" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FontSignature">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FontSize">
+    <xs:restriction base="w:HpsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="FontSizeComplexScript">
+    <xs:restriction base="w:HpsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="FontTypeHintValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="EastAsia" />
+      <xs:enumeration value="ComplexScript" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Footer">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="FooterReference">
+    <xs:restriction base="w:HeaderFooterReferenceType" />
+  </xs:simpleType>
+  <xs:complexType name="Footnote">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:FootnoteEndnoteType" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="FootnoteDocumentWideProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:FootnotePosition" />
+        <xs:element type="w:NumberingFormat" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="3" type="w:FootnoteSpecialReference" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FootnoteEndnoteValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Separator" />
+      <xs:enumeration value="ContinuationSeparator" />
+      <xs:enumeration value="ContinuationNotice" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FootnoteLayoutLikeWord8">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="FootnotePosition">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FootnotePositionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PageBottom" />
+      <xs:enumeration value="BeneathText" />
+      <xs:enumeration value="SectionEnd" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FootnoteProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:FootnotePosition" />
+      <xs:element type="w:NumberingFormat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FootnoteReference">
+    <xs:restriction base="w:FootnoteEndnoteReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="FootnoteReferenceMark">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="Footnotes">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Footnote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FootnoteSpecialReference">
+    <xs:restriction base="w:FootnoteEndnoteSeparatorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="ForceUpgrade">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="ForgetLastTabAlignment">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Format">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="FormFieldData">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:FormFieldName" />
+      <xs:element type="w:Enabled" />
+      <xs:element type="w:CalculateOnExit" />
+      <xs:element type="w:EntryMacro" />
+      <xs:element type="w:ExitMacro" />
+      <xs:element type="w:HelpText" />
+      <xs:element type="w:StatusText" />
+      <xs:choice>
+        <xs:element type="w:CheckBox" />
+        <xs:element type="w:DropDownListFormField" />
+        <xs:element type="w:TextInput" />
+      </xs:choice>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="FormFieldName">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FormFieldSize">
+    <xs:restriction base="w:HpsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="FormProtection">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="FormsDesign">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="Frame">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:FrameSize" />
+      <xs:element type="w:FrameName" />
+      <xs:element type="w:SourceFileReference" />
+      <xs:element type="w:MarginWidth" />
+      <xs:element type="w:MarginHeight" />
+      <xs:element type="w:ScrollbarVisibility" />
+      <xs:element type="w:NoResizeAllowed" />
+      <xs:element type="w:LinkedToFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FrameLayout">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FrameLayoutValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Rows" />
+      <xs:enumeration value="Columns" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FrameName">
+    <xs:restriction base="w:String255Type" />
+  </xs:simpleType>
+  <xs:simpleType name="FrameProperties">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="FrameScrollbarVisibilityValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="On" />
+      <xs:enumeration value="Off" />
+      <xs:enumeration value="Auto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Frameset">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:FrameSize" />
+      <xs:element type="w:FramesetSplitbar" />
+      <xs:element type="w:FrameLayout" />
+      <xs:sequence>
+        <xs:choice>
+          <xs:element type="w:Frameset" />
+          <xs:element type="w:Frame" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FramesetSplitbar">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Width" />
+      <xs:element type="w:Color" />
+      <xs:element type="w:NoBorder" />
+      <xs:element type="w:FlatBorders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FrameSize">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="Gallery">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="GlossaryDocument">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:DocumentBackground" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:DocParts" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="GridAfter">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="GridBefore">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="GridColumn">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="GridSpan">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="GrowAutofit">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="GutterAtTop">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="GutterOnRight">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="Header">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="HeaderFooterValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Even" />
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="First" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HeaderReference">
+    <xs:restriction base="w:HeaderFooterReferenceType" />
+  </xs:simpleType>
+  <xs:complexType name="HeaderShapeDefaults">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:ShapeDefaultsType" />
+    </xs:complexContent>
+    <xs:choice minOccurs="0" maxOccurs="0">
+      <xs:element type="vmlo:ShapeDefaults" />
+      <xs:element type="vmlo:ShapeLayout" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="HeaderSource">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="HeightRuleValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto" />
+      <xs:enumeration value="Exact" />
+      <xs:enumeration value="AtLeast" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HelpText">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Hidden">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="HideGrammaticalErrors">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="HideMark">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="HideSpellingErrors">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Highlight">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="HighlightColorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Black" />
+      <xs:enumeration value="Blue" />
+      <xs:enumeration value="Cyan" />
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="Magenta" />
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="White" />
+      <xs:enumeration value="DarkBlue" />
+      <xs:enumeration value="DarkCyan" />
+      <xs:enumeration value="DarkGreen" />
+      <xs:enumeration value="DarkMagenta" />
+      <xs:enumeration value="DarkRed" />
+      <xs:enumeration value="DarkYellow" />
+      <xs:enumeration value="DarkGray" />
+      <xs:enumeration value="LightGray" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HorizontalAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Inside" />
+      <xs:enumeration value="Outside" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HorizontalAnchorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Margin" />
+      <xs:enumeration value="Page" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HorizontalMerge">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="Hyperlink">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HyperlinkRuby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="HyphenationZone">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="IgnoreMixedContent">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Imprint">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Indentation">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="InfoTextValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="AutoText" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Inserted">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:complexType name="InsertedMathControl">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertedRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RunTrackChangeType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="InsideHorizontalBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="InsideVerticalBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="IsLegalNumberingStyle">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Italic">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ItalicComplexScript">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Justification">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="JustificationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Start" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="End" />
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="MediumKashida" />
+      <xs:enumeration value="Distribute" />
+      <xs:enumeration value="NumTab" />
+      <xs:enumeration value="HighKashida" />
+      <xs:enumeration value="LowKashida" />
+      <xs:enumeration value="ThaiDistribute" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="KeepLines">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="KeepNext">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Kern">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Kinsoku">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="LanguageId">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Languages">
+    <xs:restriction base="w:LanguageType" />
+  </xs:simpleType>
+  <xs:simpleType name="LastRenderedPageBreak">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="LatentStyleExceptionInfo">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="LatentStyles">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:LatentStyleExceptionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="LayoutRawTableWidth">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="LayoutTableRowsApart">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="LeftBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="LeftMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="LeftMarginDiv">
+    <xs:restriction base="w:SignedTwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="LegacyNumbering">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="Level">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:StartNumberingValue" />
+      <xs:element type="w:NumberingFormat" />
+      <xs:element type="w:LevelRestart" />
+      <xs:element type="w:ParagraphStyleIdInLevel" />
+      <xs:element type="w:IsLegalNumberingStyle" />
+      <xs:element type="w:LevelSuffix" />
+      <xs:element type="w:LevelText" />
+      <xs:element type="w:LevelPictureBulletId" />
+      <xs:element type="w:LegacyNumbering" />
+      <xs:element type="w:LevelJustification" />
+      <xs:element type="w:PreviousParagraphProperties" />
+      <xs:element type="w:NumberingSymbolRunProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="LevelJustification">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="LevelJustificationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LevelOverride">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:StartOverrideNumberingValue" />
+      <xs:element type="w:Level" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="LevelPictureBulletId">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="LevelRestart">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="LevelSuffix">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="LevelSuffixValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tab" />
+      <xs:enumeration value="Space" />
+      <xs:enumeration value="Nothing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LevelText">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="LineNumberRestartValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewPage" />
+      <xs:enumeration value="NewSection" />
+      <xs:enumeration value="Continuous" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LineNumberType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="LineSpacingRuleValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto" />
+      <xs:enumeration value="Exact" />
+      <xs:enumeration value="AtLeast" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LineWrapLikeWord6">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="LinkedStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="LinkedToFile">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="LinkStyles">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="LinkToQuery">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ListEntryFormField">
+    <xs:restriction base="w:String255Type" />
+  </xs:simpleType>
+  <xs:simpleType name="ListItem">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ListSeparator">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="Lock">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Locked">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="LockingValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SdtLocked" />
+      <xs:enumeration value="ContentLocked" />
+      <xs:enumeration value="Unlocked" />
+      <xs:enumeration value="SdtContentLocked" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MacWordSmallCaps">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="MailAsAttachment">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="MailMerge">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:MainDocumentType" />
+      <xs:element type="w:LinkToQuery" />
+      <xs:element type="w:DataType" />
+      <xs:element type="w:ConnectString" />
+      <xs:element type="w:Query" />
+      <xs:element type="w:DataSourceReference" />
+      <xs:element type="w:HeaderSource" />
+      <xs:element type="w:DoNotSuppressBlankLines" />
+      <xs:element type="w:Destination" />
+      <xs:element type="w:AddressFieldName" />
+      <xs:element type="w:MailSubject" />
+      <xs:element type="w:MailAsAttachment" />
+      <xs:element type="w:ViewMergedData" />
+      <xs:element type="w:ActiveRecord" />
+      <xs:element type="w:CheckErrors" />
+      <xs:element type="w:DataSourceObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MailMergeDataValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TextFile" />
+      <xs:enumeration value="Database" />
+      <xs:enumeration value="Spreadsheet" />
+      <xs:enumeration value="Query" />
+      <xs:enumeration value="Odbc" />
+      <xs:enumeration value="Native" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeDestinationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewDocument" />
+      <xs:enumeration value="Printer" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Fax" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeDocumentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Catalog" />
+      <xs:enumeration value="Envelope" />
+      <xs:enumeration value="MailingLabel" />
+      <xs:enumeration value="FormLetter" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Fax" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeFieldType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeOdsoFieldValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Null" />
+      <xs:enumeration value="DbColumn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeSource">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="MailMergeSourceValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Database" />
+      <xs:enumeration value="AddressBook" />
+      <xs:enumeration value="Document1" />
+      <xs:enumeration value="Document2" />
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Native" />
+      <xs:enumeration value="Legacy" />
+      <xs:enumeration value="Master" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MailSubject">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="MainDocumentType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="MappedName">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="MarginHeight">
+    <xs:restriction base="w:PixelsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="MarginWidth">
+    <xs:restriction base="w:PixelsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="MatchSource">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="MaxLength">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="MergedCellValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Continue" />
+      <xs:enumeration value="Restart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MirrorIndents">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="MirrorMargins">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="MonthLong">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="MonthShort">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="MoveFrom">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:complexType name="MoveFromMathControl">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:MathControlMoveType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MoveFromRangeEnd">
+    <xs:restriction base="w:MarkupRangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="MoveFromRangeStart">
+    <xs:restriction base="w:MoveBookmarkType" />
+  </xs:simpleType>
+  <xs:complexType name="MoveFromRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RunTrackChangeType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MoveTo">
+    <xs:restriction base="w:TrackChangeType" />
+  </xs:simpleType>
+  <xs:complexType name="MoveToMathControl">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:MathControlMoveType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MoveToRangeEnd">
+    <xs:restriction base="w:MarkupRangeType" />
+  </xs:simpleType>
+  <xs:simpleType name="MoveToRangeStart">
+    <xs:restriction base="w:MoveBookmarkType" />
+  </xs:simpleType>
+  <xs:complexType name="MoveToRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RunTrackChangeType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MovieReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="MultiLevelType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="MultiLevelValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleLevel" />
+      <xs:enumeration value="Multilevel" />
+      <xs:enumeration value="HybridMultilevel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Name">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="NextParagraphStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="NoBorder">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoBreakHyphen">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoColumnBalance">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoEndnote">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoExtraLineSpacing">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoLeading">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoLineBreaksAfterKinsoku">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NoLineBreaksBeforeKinsoku">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NoProof">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoPunctuationKerning">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoResizeAllowed">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoSpaceRaiseLower">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoTabHangIndent">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NotTrueType">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="NoWrap">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="Nsid">
+    <xs:restriction base="w:LongHexNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberFormatValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="UpperRoman" />
+      <xs:enumeration value="LowerRoman" />
+      <xs:enumeration value="UpperLetter" />
+      <xs:enumeration value="LowerLetter" />
+      <xs:enumeration value="Ordinal" />
+      <xs:enumeration value="CardinalText" />
+      <xs:enumeration value="OrdinalText" />
+      <xs:enumeration value="Hex" />
+      <xs:enumeration value="Chicago" />
+      <xs:enumeration value="IdeographDigital" />
+      <xs:enumeration value="JapaneseCounting" />
+      <xs:enumeration value="Aiueo" />
+      <xs:enumeration value="Iroha" />
+      <xs:enumeration value="DecimalFullWidth" />
+      <xs:enumeration value="DecimalHalfWidth" />
+      <xs:enumeration value="JapaneseLegal" />
+      <xs:enumeration value="JapaneseDigitalTenThousand" />
+      <xs:enumeration value="DecimalEnclosedCircle" />
+      <xs:enumeration value="DecimalFullWidth2" />
+      <xs:enumeration value="AiueoFullWidth" />
+      <xs:enumeration value="IrohaFullWidth" />
+      <xs:enumeration value="DecimalZero" />
+      <xs:enumeration value="Bullet" />
+      <xs:enumeration value="Ganada" />
+      <xs:enumeration value="Chosung" />
+      <xs:enumeration value="DecimalEnclosedFullstop" />
+      <xs:enumeration value="DecimalEnclosedParen" />
+      <xs:enumeration value="DecimalEnclosedCircleChinese" />
+      <xs:enumeration value="IdeographEnclosedCircle" />
+      <xs:enumeration value="IdeographTraditional" />
+      <xs:enumeration value="IdeographZodiac" />
+      <xs:enumeration value="IdeographZodiacTraditional" />
+      <xs:enumeration value="TaiwaneseCounting" />
+      <xs:enumeration value="IdeographLegalTraditional" />
+      <xs:enumeration value="TaiwaneseCountingThousand" />
+      <xs:enumeration value="TaiwaneseDigital" />
+      <xs:enumeration value="ChineseCounting" />
+      <xs:enumeration value="ChineseLegalSimplified" />
+      <xs:enumeration value="ChineseCountingThousand" />
+      <xs:enumeration value="KoreanDigital" />
+      <xs:enumeration value="KoreanCounting" />
+      <xs:enumeration value="KoreanLegal" />
+      <xs:enumeration value="KoreanDigital2" />
+      <xs:enumeration value="VietnameseCounting" />
+      <xs:enumeration value="RussianLower" />
+      <xs:enumeration value="RussianUpper" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NumberInDash" />
+      <xs:enumeration value="Hebrew1" />
+      <xs:enumeration value="Hebrew2" />
+      <xs:enumeration value="ArabicAlpha" />
+      <xs:enumeration value="ArabicAbjad" />
+      <xs:enumeration value="HindiVowels" />
+      <xs:enumeration value="HindiConsonants" />
+      <xs:enumeration value="HindiNumbers" />
+      <xs:enumeration value="HindiCounting" />
+      <xs:enumeration value="ThaiLetters" />
+      <xs:enumeration value="ThaiNumbers" />
+      <xs:enumeration value="ThaiCounting" />
+      <xs:enumeration value="BahtText" />
+      <xs:enumeration value="DollarText" />
+      <xs:enumeration value="Custom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Numbering">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:NumberingPictureBullet" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:AbstractNum" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:NumberingInstance" />
+      <xs:element type="w:NumberingIdMacAtCleanup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NumberingChange">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberingFormat">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberingId">
+    <xs:restriction base="w:NonNegativeDecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberingIdMacAtCleanup">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:complexType name="NumberingInstance">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:AbstractNumId" />
+      <xs:element minOccurs="0" maxOccurs="9" type="w:LevelOverride" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NumberingLevelReference">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="NumberingPictureBullet">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice>
+        <xs:element type="w:PictureBulletBase" />
+        <xs:element type="w:Drawing" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NumberingProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:NumberingLevelReference" />
+      <xs:element type="w:NumberingId" />
+      <xs:element type="w:NumberingChange" />
+      <xs:element type="w:Inserted" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NumberingRestart">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberingStart">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="NumberingStyleLink">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:complexType name="NumberingSymbolRunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:simpleType name="ObjectDrawAspect">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="content" />
+      <xs:enumeration value="icon" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ObjectEmbed">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ObjectLink">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ObjectUpdateMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="always" />
+      <xs:enumeration value="onCall" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OfficeMath">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="OnOffOnlyValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="On" />
+      <xs:enumeration value="Off" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OptimizeForBrowser">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Outline">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="OutlineLevel">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="OverflowPunctuation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PageBorderDisplayValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AllPages" />
+      <xs:enumeration value="FirstPage" />
+      <xs:enumeration value="NotFirstPage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PageBorderOffsetValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Page" />
+      <xs:enumeration value="Text" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PageBorders">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopBorder" />
+      <xs:element type="w:LeftBorder" />
+      <xs:element type="w:BottomBorder" />
+      <xs:element type="w:RightBorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PageBorderZOrderValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="Back" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PageBreakBefore">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PageMargin">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PageNumber">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="PageNumberType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PageOrientationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Portrait" />
+      <xs:enumeration value="Landscape" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PageSize">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Panose1Number">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PaperSource">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="Paragraph">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:ParagraphProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphBorders">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopBorder" />
+      <xs:element type="w:LeftBorder" />
+      <xs:element type="w:BottomBorder" />
+      <xs:element type="w:RightBorder" />
+      <xs:element type="w:BetweenBorder" />
+      <xs:element type="w:BarBorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphMarkRunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:ParagraphMarkRunPropertiesChange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphMarkRunPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousParagraphMarkRunProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:sequence />
+        <xs:sequence>
+          <xs:element type="w:DivId" />
+          <xs:element type="w:ConditionalFormatStyle" />
+        </xs:sequence>
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:ParagraphMarkRunProperties" />
+        <xs:element type="w:SectionProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphPropertiesBaseStyle">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ParagraphPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:ParagraphPropertiesExtended" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphPropertiesDefault">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:ParagraphPropertiesBaseStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParagraphPropertiesExtended">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence />
+      <xs:sequence>
+        <xs:element type="w:DivId" />
+        <xs:element type="w:ConditionalFormatStyle" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ParagraphStyleId">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="ParagraphStyleIdInLevel">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="PermEnd">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PermStart">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Personal">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="PersonalCompose">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="PersonalReply">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="PhoneticGuideBaseTextSize">
+    <xs:restriction base="w:HpsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="PhoneticGuideRaise">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PhoneticGuideTextFontSize">
+    <xs:restriction base="w:HpsMeasureType" />
+  </xs:simpleType>
+  <xs:complexType name="Picture">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="0">
+        <xs:element type="vml:Arc" />
+        <xs:element type="vml:Curve" />
+        <xs:element type="vmlo:OleObject" />
+      </xs:choice>
+      <xs:sequence>
+        <xs:element type="w:MovieReference" />
+        <xs:element type="w:Control" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PictureBulletBase">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice minOccurs="0" maxOccurs="0" />
+  </xs:complexType>
+  <xs:simpleType name="Pitch">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PixelsPerInch">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="Position">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PositionalTab">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="PresetZoomValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="FullPage" />
+      <xs:enumeration value="BestFit" />
+      <xs:enumeration value="TextFit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PreviousParagraphMarkRunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="PreviousParagraphProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="PreviousRunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="PreviousSectionProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="PreviousTableCellProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence />
+      <xs:sequence />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreviousTableGrid">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:GridColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreviousTableProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TableCaption" />
+      <xs:element type="w:TableDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreviousTablePropertyExceptions">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TableWidth" />
+      <xs:element type="w:TableJustification" />
+      <xs:element type="w:TableCellSpacing" />
+      <xs:element type="w:TableIndentation" />
+      <xs:element type="w:TableBorders" />
+      <xs:element type="w:Shading" />
+      <xs:element type="w:TableLayout" />
+      <xs:element type="w:TableCellMarginDefault" />
+      <xs:element type="w:TableLook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreviousTableRowProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice />
+  </xs:complexType>
+  <xs:simpleType name="PrimaryStyle">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintBodyTextBeforeHeader">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintColorBlackWhite">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrinterSettingsReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintFormsData">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintFractionalCharacterWidth">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintPostScriptOverText">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="PrintTwoOnOne">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ProofError">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ProofingErrorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SpellStart" />
+      <xs:enumeration value="SpellEnd" />
+      <xs:enumeration value="GrammarStart" />
+      <xs:enumeration value="GrammarEnd" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProofingStateValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Clean" />
+      <xs:enumeration value="Dirty" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProofState">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Query">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="RangePermissionEditingGroupValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Everyone" />
+      <xs:enumeration value="Administrators" />
+      <xs:enumeration value="Contributors" />
+      <xs:enumeration value="Editors" />
+      <xs:enumeration value="Owners" />
+      <xs:enumeration value="Current" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ReadModeInkLockDown">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="RecipientData">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Active" />
+      <xs:element type="w:ColumnIndex" />
+      <xs:element type="w:UniqueTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RecipientDataReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:complexType name="Recipients">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RecipientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RelyOnVML">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="RemoveDateAndTime">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="RemovePersonalInformation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="RestartNumberValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Continuous" />
+      <xs:enumeration value="EachSection" />
+      <xs:enumeration value="EachPage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RevisionView">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="RightBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="RightMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="RightMarginDiv">
+    <xs:restriction base="w:SignedTwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="RightToLeftText">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Rsid">
+    <xs:restriction base="w:LongHexNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="RsidRoot">
+    <xs:restriction base="w:LongHexNumberType" />
+  </xs:simpleType>
+  <xs:complexType name="Rsids">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RsidRoot" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:Rsid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Ruby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RubyProperties" />
+      <xs:element type="w:RubyContent" />
+      <xs:element type="w:RubyBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RubyAlign">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="RubyAlignValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="DistributeLetter" />
+      <xs:enumeration value="DistributeSpace" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="RightVertical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RubyBase">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RubyContentType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RubyContent">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:RubyContentType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RubyProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RubyAlign" />
+      <xs:element type="w:PhoneticGuideTextFontSize" />
+      <xs:element type="w:PhoneticGuideRaise" />
+      <xs:element type="w:PhoneticGuideBaseTextSize" />
+      <xs:element type="w:LanguageId" />
+      <xs:element type="w:Dirty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Run">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:simpleType name="RunFonts">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="RunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="RunPropertiesBaseStyle">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="RunPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousRunProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RunPropertiesDefault">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:RunPropertiesBaseStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RunStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="SaveFormsData">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SaveInvalidXml">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SavePreviewPicture">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SaveSubsetFonts">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SaveThroughXslt">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SaveXmlDataOnly">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ScrollbarVisibility">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SdtAlias">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="SdtBlock">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SdtProperties" />
+      <xs:element type="w:SdtEndCharProperties" />
+      <xs:element type="w:SdtContentBlock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtCell">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SdtProperties" />
+      <xs:element type="w:SdtEndCharProperties" />
+      <xs:element type="w:SdtContentCell" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SdtContentBibliography">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="SdtContentBlock">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SdtContentCell">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SdtContentCitation">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="SdtContentComboBox">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:ListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtContentDate">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DateFormat" />
+      <xs:element type="w:LanguageId" />
+      <xs:element type="w:SdtDateMappingType" />
+      <xs:element type="w:Calendar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtContentDocPartList">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtDocPartType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocPartGallery" />
+      <xs:element type="w:DocPartCategory" />
+      <xs:element type="w:DocPartUnique" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtContentDocPartObject">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtDocPartType" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocPartGallery" />
+      <xs:element type="w:DocPartCategory" />
+      <xs:element type="w:DocPartUnique" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtContentDropDownList">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="0" type="w:ListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SdtContentEquation">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="SdtContentGroup">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="SdtContentPicture">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="SdtContentRichText">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="SdtContentRow">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SdtContentRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice minOccurs="0" maxOccurs="0" />
+  </xs:complexType>
+  <xs:complexType name="SdtContentRunRuby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SdtContentText">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SdtDateMappingType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="SdtEndCharProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:RunProperties" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="SdtId">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:complexType name="SdtPlaceholder">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocPartReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice>
+      <xs:element type="w:RunProperties" />
+      <xs:element type="w:SdtAlias" />
+      <xs:element type="w:Lock" />
+      <xs:element type="w:SdtPlaceholder" />
+      <xs:element type="w:ShowingPlaceholder" />
+      <xs:choice>
+        <xs:element type="w:DataBinding" />
+        <xs:element type="o13w:DataBinding" />
+      </xs:choice>
+      <xs:element type="w:TemporarySdt" />
+      <xs:element type="w:SdtId" />
+      <xs:element type="w:Tag" />
+      <xs:element type="o13w:Color" />
+      <xs:element type="o13w:Appearance" />
+      <xs:element type="o13w:WebExtensionLinked" />
+      <xs:element type="o13w:WebExtensionCreated" />
+      <xs:choice>
+        <xs:element type="w:SdtContentEquation" />
+        <xs:element type="w:SdtContentComboBox" />
+        <xs:element type="w:SdtContentDate" />
+        <xs:element type="w:SdtContentDocPartObject" />
+        <xs:element type="w:SdtContentDocPartList" />
+        <xs:element type="w:SdtContentDropDownList" />
+        <xs:element type="w:SdtContentPicture" />
+        <xs:element type="w:SdtContentRichText" />
+        <xs:element type="w:SdtContentText" />
+        <xs:element type="w:SdtContentCitation" />
+        <xs:element type="w:SdtContentGroup" />
+        <xs:element type="w:SdtContentBibliography" />
+        <xs:element type="o10w:EntityPickerEmpty" />
+        <xs:element type="o10w:SdtContentCheckBox" />
+        <xs:element type="o13w:SdtRepeatedSection" />
+        <xs:element type="o13w:SdtRepeatedSectionItem" />
+      </xs:choice>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SdtRow">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SdtProperties" />
+      <xs:element type="w:SdtEndCharProperties" />
+      <xs:element type="w:SdtContentRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtRun">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SdtProperties" />
+      <xs:element type="w:SdtEndCharProperties" />
+      <xs:element type="w:SdtContentRun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SdtRunRuby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:SdtElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SdtProperties" />
+      <xs:element type="w:SdtEndCharProperties" />
+      <xs:element type="w:SdtContentRunRuby" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SectionMarkValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NextPage" />
+      <xs:enumeration value="NextColumn" />
+      <xs:enumeration value="Continuous" />
+      <xs:enumeration value="EvenPage" />
+      <xs:enumeration value="OddPage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SectionProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:SectionPropertiesChange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SectionPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousSectionProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SectionType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SelectFieldWithFirstOrLastChar">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SemiHidden">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="SeparatorMark">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="Settings">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:WriteProtection" />
+      <xs:element type="w:View" />
+      <xs:element type="w:Zoom" />
+      <xs:element type="w:RemovePersonalInformation" />
+      <xs:element type="w:RemoveDateAndTime" />
+      <xs:element type="w:DoNotDisplayPageBoundaries" />
+      <xs:element type="w:DisplayBackgroundShape" />
+      <xs:element type="w:PrintPostScriptOverText" />
+      <xs:element type="w:PrintFractionalCharacterWidth" />
+      <xs:element type="w:PrintFormsData" />
+      <xs:element type="w:EmbedTrueTypeFonts" />
+      <xs:element type="w:EmbedSystemFonts" />
+      <xs:element type="w:SaveSubsetFonts" />
+      <xs:element type="w:SaveFormsData" />
+      <xs:element type="w:MirrorMargins" />
+      <xs:element type="w:AlignBorderAndEdges" />
+      <xs:element type="w:BordersDoNotSurroundHeader" />
+      <xs:element type="w:BordersDoNotSurroundFooter" />
+      <xs:element type="w:GutterAtTop" />
+      <xs:element type="w:HideSpellingErrors" />
+      <xs:element type="w:HideGrammaticalErrors" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:ActiveWritingStyle" />
+      <xs:element type="w:ProofState" />
+      <xs:element type="w:FormsDesign" />
+      <xs:element type="w:AttachedTemplate" />
+      <xs:element type="w:LinkStyles" />
+      <xs:element type="w:StylePaneFormatFilter" />
+      <xs:element type="w:StylePaneSortMethods" />
+      <xs:element type="w:DocumentType" />
+      <xs:element type="w:MailMerge" />
+      <xs:element type="w:RevisionView" />
+      <xs:element type="w:TrackRevisions" />
+      <xs:element type="w:DoNotTrackMoves" />
+      <xs:element type="w:DoNotTrackFormatting" />
+      <xs:element type="w:DocumentProtection" />
+      <xs:element type="w:AutoFormatOverride" />
+      <xs:element type="w:StyleLockThemesPart" />
+      <xs:element type="w:StyleLockStylesPart" />
+      <xs:element type="w:DefaultTabStop" />
+      <xs:element type="w:AutoHyphenation" />
+      <xs:element type="w:ConsecutiveHyphenLimit" />
+      <xs:element type="w:HyphenationZone" />
+      <xs:element type="w:DoNotHyphenateCaps" />
+      <xs:element type="w:ShowEnvelope" />
+      <xs:element type="w:SummaryLength" />
+      <xs:element type="w:ClickAndTypeStyle" />
+      <xs:element type="w:DefaultTableStyle" />
+      <xs:element type="w:EvenAndOddHeaders" />
+      <xs:element type="w:BookFoldReversePrinting" />
+      <xs:element type="w:BookFoldPrinting" />
+      <xs:element type="w:BookFoldPrintingSheets" />
+      <xs:element type="w:DrawingGridHorizontalSpacing" />
+      <xs:element type="w:DrawingGridVerticalSpacing" />
+      <xs:element type="w:DisplayHorizontalDrawingGrid" />
+      <xs:element type="w:DisplayVerticalDrawingGrid" />
+      <xs:element type="w:DoNotUseMarginsForDrawingGridOrigin" />
+      <xs:element type="w:DrawingGridHorizontalOrigin" />
+      <xs:element type="w:DrawingGridVerticalOrigin" />
+      <xs:element type="w:DoNotShadeFormData" />
+      <xs:element type="w:NoPunctuationKerning" />
+      <xs:element type="w:CharacterSpacingControl" />
+      <xs:element type="w:PrintTwoOnOne" />
+      <xs:element type="w:StrictFirstAndLastChars" />
+      <xs:element type="w:NoLineBreaksAfterKinsoku" />
+      <xs:element type="w:NoLineBreaksBeforeKinsoku" />
+      <xs:element type="w:SavePreviewPicture" />
+      <xs:element type="w:DoNotValidateAgainstSchema" />
+      <xs:element type="w:SaveInvalidXml" />
+      <xs:element type="w:IgnoreMixedContent" />
+      <xs:element type="w:AlwaysShowPlaceholderText" />
+      <xs:element type="w:DoNotDemarcateInvalidXml" />
+      <xs:element type="w:SaveXmlDataOnly" />
+      <xs:element type="w:UseXsltWhenSaving" />
+      <xs:element type="w:SaveThroughXslt" />
+      <xs:element type="w:ShowXmlTags" />
+      <xs:element type="w:AlwaysMergeEmptyNamespace" />
+      <xs:element type="w:UpdateFieldsOnOpen" />
+      <xs:element type="w:HeaderShapeDefaults" />
+      <xs:element type="w:FootnoteDocumentWideProperties" />
+      <xs:element type="w:EndnoteDocumentWideProperties" />
+      <xs:element type="w:Compatibility" />
+      <xs:element type="w:DocumentVariables" />
+      <xs:element type="w:Rsids" />
+      <xs:element type="m:MathProperties" />
+      <xs:element type="w:UICompatibleWith97To2003" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:AttachedSchema" />
+      <xs:element type="w:ThemeFontLanguages" />
+      <xs:element type="w:ColorSchemeMapping" />
+      <xs:element type="w:DoNotIncludeSubdocsInStats" />
+      <xs:element type="w:DoNotAutoCompressPictures" />
+      <xs:element type="w:ForceUpgrade" />
+      <xs:element type="w:Captions" />
+      <xs:element type="w:ReadModeInkLockDown" />
+      <xs:element type="cxschpr:SchemaLibrary" />
+      <xs:element type="w:ShapeDefaults" />
+      <xs:element type="w:DecimalSymbol" />
+      <xs:element type="w:ListSeparator" />
+      <xs:element type="o10w:DocumentId" />
+      <xs:element type="o10w:DiscardImageEditingData" />
+      <xs:element type="o10w:DefaultImageDpi" />
+      <xs:element type="o10w:ConflictMode" />
+      <xs:element type="o13w:ChartTrackingRefBased" />
+      <xs:element type="o13w:PersistentDocumentId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Shading">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ShadingPatternValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nil" />
+      <xs:enumeration value="Clear" />
+      <xs:enumeration value="Solid" />
+      <xs:enumeration value="HorizontalStripe" />
+      <xs:enumeration value="VerticalStripe" />
+      <xs:enumeration value="ReverseDiagonalStripe" />
+      <xs:enumeration value="DiagonalStripe" />
+      <xs:enumeration value="HorizontalCross" />
+      <xs:enumeration value="DiagonalCross" />
+      <xs:enumeration value="ThinHorizontalStripe" />
+      <xs:enumeration value="ThinVerticalStripe" />
+      <xs:enumeration value="ThinReverseDiagonalStripe" />
+      <xs:enumeration value="ThinDiagonalStripe" />
+      <xs:enumeration value="ThinHorizontalCross" />
+      <xs:enumeration value="ThinDiagonalCross" />
+      <xs:enumeration value="Percent5" />
+      <xs:enumeration value="Percent10" />
+      <xs:enumeration value="Percent12" />
+      <xs:enumeration value="Percent15" />
+      <xs:enumeration value="Percent20" />
+      <xs:enumeration value="Percent25" />
+      <xs:enumeration value="Percent30" />
+      <xs:enumeration value="Percent35" />
+      <xs:enumeration value="Percent37" />
+      <xs:enumeration value="Percent40" />
+      <xs:enumeration value="Percent45" />
+      <xs:enumeration value="Percent50" />
+      <xs:enumeration value="Percent55" />
+      <xs:enumeration value="Percent60" />
+      <xs:enumeration value="Percent62" />
+      <xs:enumeration value="Percent65" />
+      <xs:enumeration value="Percent70" />
+      <xs:enumeration value="Percent75" />
+      <xs:enumeration value="Percent80" />
+      <xs:enumeration value="Percent85" />
+      <xs:enumeration value="Percent87" />
+      <xs:enumeration value="Percent90" />
+      <xs:enumeration value="Percent95" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Shadow">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="ShapeDefaults">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="w:ShapeDefaultsType" />
+    </xs:complexContent>
+    <xs:choice minOccurs="0" maxOccurs="0">
+      <xs:element type="vmlo:ShapeDefaults" />
+      <xs:element type="vmlo:ShapeLayout" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="ShapeLayoutLikeWord8">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ShowBreaksInFrames">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ShowEnvelope">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ShowingPlaceholder">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ShowXmlTags">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="SimpleField">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:FieldData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SimpleFieldRuby">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:FieldData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SmallCaps">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SnapToGrid">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SoftHyphen">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="SourceFileReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="SourceReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="SpaceForUnderline">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Spacing">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SpacingBetweenLines">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SpacingInWholePoints">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SpecVanish">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SplitPageBreakAndParagraphMark">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="StartBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="StartMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="StartNumberingValue">
+    <xs:restriction base="w:NonNegativeDecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="StartOverrideNumberingValue">
+    <xs:restriction base="w:DecimalNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="StatusText">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="StrictCharacterSet">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="chsAnsi" />
+      <xs:enumeration value="chsMacFfn" />
+      <xs:enumeration value="chsShiftJIS" />
+      <xs:enumeration value="chsHangeul" />
+      <xs:enumeration value="chsJohab" />
+      <xs:enumeration value="chsGB2312" />
+      <xs:enumeration value="chsChinese5" />
+      <xs:enumeration value="chsGreek" />
+      <xs:enumeration value="chsTurkish" />
+      <xs:enumeration value="chsVietnamese" />
+      <xs:enumeration value="chsHebrew" />
+      <xs:enumeration value="chsArabic" />
+      <xs:enumeration value="chsBaltic" />
+      <xs:enumeration value="chsRussian" />
+      <xs:enumeration value="chsThai" />
+      <xs:enumeration value="chsEastEurope" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StrictFirstAndLastChars">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Strike">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:complexType name="Style">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:StyleName" />
+      <xs:element type="w:Aliases" />
+      <xs:element type="w:BasedOn" />
+      <xs:element type="w:NextParagraphStyle" />
+      <xs:element type="w:LinkedStyle" />
+      <xs:element type="w:AutoRedefine" />
+      <xs:element type="w:StyleHidden" />
+      <xs:element type="w:UIPriority" />
+      <xs:element type="w:SemiHidden" />
+      <xs:element type="w:UnhideWhenUsed" />
+      <xs:element type="w:PrimaryStyle" />
+      <xs:element type="w:Locked" />
+      <xs:element type="w:Personal" />
+      <xs:element type="w:PersonalCompose" />
+      <xs:element type="w:PersonalReply" />
+      <xs:element type="w:Rsid" />
+      <xs:element type="w:StyleParagraphProperties" />
+      <xs:element type="w:StyleRunProperties" />
+      <xs:element type="w:StyleTableProperties" />
+      <xs:element type="w:TableStyleConditionalFormattingTableRowProperties" />
+      <xs:element type="w:StyleTableCellProperties" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:TableStyleProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StyleHidden">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="StyleId">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="StyleLink">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="StyleLockStylesPart">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="StyleLockThemesPart">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="StyleName">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="StylePaneFormatFilter">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="StylePaneSortMethods">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="StylePaneSortMethodsValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Zero" />
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="One" />
+      <xs:enumeration value="Priority" />
+      <xs:enumeration value="Two" />
+      <xs:enumeration value="Font" />
+      <xs:enumeration value="Three" />
+      <xs:enumeration value="BasedOn" />
+      <xs:enumeration value="Four" />
+      <xs:enumeration value="Type" />
+      <xs:enumeration value="Five" />
+      <xs:enumeration value="Default" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="StyleParagraphProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence />
+      <xs:sequence />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StyleRunProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="Styles">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:DocDefaults" />
+      <xs:element type="w:LatentStyles" />
+      <xs:element minOccurs="0" maxOccurs="0" type="w:Style" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StyleTableCellProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="StyleTableProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:simpleType name="StyleValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Paragraph" />
+      <xs:enumeration value="Character" />
+      <xs:enumeration value="Table" />
+      <xs:enumeration value="Numbering" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SubDocumentReference">
+    <xs:restriction base="w:RelationshipType" />
+  </xs:simpleType>
+  <xs:simpleType name="SubFontBySize">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SummaryLength">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressAutoHyphens">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressBottomSpacing">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressLineNumbers">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressOverlap">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressSpacingAtTopOfPage">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressSpacingBeforeAfterPageBreak">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressTopSpacing">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SuppressTopSpacingWordPerfect">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SwapBordersFacingPages">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="SymbolChar">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TabChar">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:complexType name="Table">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TableProperties" />
+      <xs:element type="w:TableGrid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableBorders">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopBorder" />
+      <xs:element type="w:LeftBorder" />
+      <xs:element type="w:StartBorder" />
+      <xs:element type="w:BottomBorder" />
+      <xs:element type="w:RightBorder" />
+      <xs:element type="w:EndBorder" />
+      <xs:element type="w:InsideHorizontalBorder" />
+      <xs:element type="w:InsideVerticalBorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableCaption">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="TableCell">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TableCellProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableCellBorders">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopBorder" />
+      <xs:element type="w:LeftBorder" />
+      <xs:element type="w:StartBorder" />
+      <xs:element type="w:BottomBorder" />
+      <xs:element type="w:RightBorder" />
+      <xs:element type="w:EndBorder" />
+      <xs:element type="w:InsideHorizontalBorder" />
+      <xs:element type="w:InsideVerticalBorder" />
+      <xs:element type="w:TopLeftToBottomRightCellBorder" />
+      <xs:element type="w:TopRightToBottomLeftCellBorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableCellFitText">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableCellLeftMargin">
+    <xs:restriction base="w:TableWidthDxaNilType" />
+  </xs:simpleType>
+  <xs:complexType name="TableCellMargin">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopMargin" />
+      <xs:element type="w:LeftMargin" />
+      <xs:element type="w:StartMargin" />
+      <xs:element type="w:BottomMargin" />
+      <xs:element type="w:RightMargin" />
+      <xs:element type="w:EndMargin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableCellMarginDefault">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TopMargin" />
+      <xs:element type="w:TableCellLeftMargin" />
+      <xs:element type="w:StartMargin" />
+      <xs:element type="w:BottomMargin" />
+      <xs:element type="w:TableCellRightMargin" />
+      <xs:element type="w:EndMargin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableCellProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:sequence />
+        <xs:sequence />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TableCellPropertiesChange" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableCellPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousTableCellProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableCellRightMargin">
+    <xs:restriction base="w:TableWidthDxaNilType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableCellSpacing">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableCellVerticalAlignment">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableCellWidth">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableDescription">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="TableGrid">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="0" type="w:GridColumn" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TableGridChange" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableGridChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousTableGrid" />
+        <xs:element type="w:PreviousTableGrid" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableHeader">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableIndentation">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableJustification">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableLayout">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableLayoutValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fixed" />
+      <xs:enumeration value="Autofit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TableLook">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableOverlap">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TableOverlapValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Never" />
+      <xs:enumeration value="Overlap" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TablePositionProperties">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="TableProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TableCaption" />
+        <xs:element type="w:TableDescription" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TablePropertiesChange" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TablePropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousTableProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TablePropertyExceptions">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TableWidth" />
+        <xs:element type="w:TableJustification" />
+        <xs:element type="w:TableCellSpacing" />
+        <xs:element type="w:TableIndentation" />
+        <xs:element type="w:TableBorders" />
+        <xs:element type="w:Shading" />
+        <xs:element type="w:TableLayout" />
+        <xs:element type="w:TableCellMarginDefault" />
+        <xs:element type="w:TableLook" />
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:TablePropertyExceptionsChange" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TablePropertyExceptionsChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousTablePropertyExceptions" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableRow">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TablePropertyExceptions" />
+      <xs:element type="w:TableRowProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableRowAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TableRowHeight">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="TableRowProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:choice />
+      <xs:sequence>
+        <xs:element type="w:Inserted" />
+        <xs:element type="w:Deleted" />
+        <xs:element type="w:TableRowPropertiesChange" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TableRowPropertiesChange">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:sequence>
+        <xs:element type="w:PreviousTableRowProperties" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableStyle">
+    <xs:restriction base="w:String253Type" />
+  </xs:simpleType>
+  <xs:simpleType name="TableStyleColumnBandSize">
+    <xs:restriction base="w:UnsignedDecimalNumberMax3Type" />
+  </xs:simpleType>
+  <xs:complexType name="TableStyleConditionalFormattingTableCellProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="TableStyleConditionalFormattingTableProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="TableStyleConditionalFormattingTableRowProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:choice />
+  </xs:complexType>
+  <xs:simpleType name="TableStyleOverrideValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WholeTable" />
+      <xs:enumeration value="FirstRow" />
+      <xs:enumeration value="LastRow" />
+      <xs:enumeration value="FirstColumn" />
+      <xs:enumeration value="LastColumn" />
+      <xs:enumeration value="Band1Vertical" />
+      <xs:enumeration value="Band2Vertical" />
+      <xs:enumeration value="Band1Horizontal" />
+      <xs:enumeration value="Band2Horizontal" />
+      <xs:enumeration value="NorthEastCell" />
+      <xs:enumeration value="NorthWestCell" />
+      <xs:enumeration value="SouthEastCell" />
+      <xs:enumeration value="SouthWestCell" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TableStyleProperties">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:StyleParagraphProperties" />
+      <xs:element type="w:RunPropertiesBaseStyle" />
+      <xs:element type="w:TableStyleConditionalFormattingTableProperties" />
+      <xs:element type="w:TableStyleConditionalFormattingTableRowProperties" />
+      <xs:element type="w:TableStyleConditionalFormattingTableCellProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TableStyleRowBandSize">
+    <xs:restriction base="w:UnsignedDecimalNumberMax3Type" />
+  </xs:simpleType>
+  <xs:simpleType name="TableVerticalAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Bottom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TableWidth">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="TableWidthUnitValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nil" />
+      <xs:enumeration value="Pct" />
+      <xs:enumeration value="Dxa" />
+      <xs:enumeration value="Auto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TableWidthValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nil" />
+      <xs:enumeration value="Dxa" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Tabs">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TabStop" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TabStop">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TabStopLeaderCharValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Dot" />
+      <xs:enumeration value="Hyphen" />
+      <xs:enumeration value="Underscore" />
+      <xs:enumeration value="Heavy" />
+      <xs:enumeration value="MiddleDot" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TabStopValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Clear" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Start" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="End" />
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="Bar" />
+      <xs:enumeration value="Number" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Tag">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="TargetScreenSize">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TargetScreenSizeValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sz544x376" />
+      <xs:enumeration value="Sz640x480" />
+      <xs:enumeration value="Sz720x512" />
+      <xs:enumeration value="Sz800x600" />
+      <xs:enumeration value="Sz1024x768" />
+      <xs:enumeration value="Sz1152x882" />
+      <xs:enumeration value="Sz1152x900" />
+      <xs:enumeration value="Sz1280x1024" />
+      <xs:enumeration value="Sz1600x1200" />
+      <xs:enumeration value="Sz1800x1440" />
+      <xs:enumeration value="Sz1920x1200" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TemplateCode">
+    <xs:restriction base="w:LongHexNumberType" />
+  </xs:simpleType>
+  <xs:simpleType name="TemporarySdt">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Text">
+    <xs:restriction base="w:TextType" />
+  </xs:simpleType>
+  <xs:simpleType name="TextAlignment">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:complexType name="TextBoxContent">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TextBoxFormFieldType">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TextBoxFormFieldValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Regular" />
+      <xs:enumeration value="Number" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="CurrentTime" />
+      <xs:enumeration value="CurrentDate" />
+      <xs:enumeration value="Calculated" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextBoxTightWrap">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TextBoxTightWrapValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AllLines" />
+      <xs:enumeration value="FirstAndLastLine" />
+      <xs:enumeration value="FirstLineOnly" />
+      <xs:enumeration value="LastLineOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextDirection">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TextDirectionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LefToRightTopToBottom" />
+      <xs:enumeration value="LeftToRightTopToBottom2010" />
+      <xs:enumeration value="TopToBottomRightToLeft" />
+      <xs:enumeration value="TopToBottomRightToLeft2010" />
+      <xs:enumeration value="BottomToTopLeftToRight" />
+      <xs:enumeration value="BottomToTopLeftToRight2010" />
+      <xs:enumeration value="LefttoRightTopToBottomRotated" />
+      <xs:enumeration value="LeftToRightTopToBottomRotated2010" />
+      <xs:enumeration value="TopToBottomRightToLeftRotated" />
+      <xs:enumeration value="TopToBottomRightToLeftRotated2010" />
+      <xs:enumeration value="TopToBottomLeftToRightRotated" />
+      <xs:enumeration value="TopToBottomLeftToRightRotated2010" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextEffect">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="TextEffectValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BlinkBackground" />
+      <xs:enumeration value="Lights" />
+      <xs:enumeration value="AntsBlack" />
+      <xs:enumeration value="AntsRed" />
+      <xs:enumeration value="Shimmer" />
+      <xs:enumeration value="Sparkle" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TextInput">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlCompositeElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:TextBoxFormFieldType" />
+      <xs:element type="w:DefaultTextBoxFormFieldString" />
+      <xs:element type="w:MaxLength" />
+      <xs:element type="w:Format" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TextWrappingValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto" />
+      <xs:enumeration value="NotBeside" />
+      <xs:enumeration value="Around" />
+      <xs:enumeration value="Tight" />
+      <xs:enumeration value="Through" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ThemeColorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Dark1" />
+      <xs:enumeration value="Light1" />
+      <xs:enumeration value="Dark2" />
+      <xs:enumeration value="Light2" />
+      <xs:enumeration value="Accent1" />
+      <xs:enumeration value="Accent2" />
+      <xs:enumeration value="Accent3" />
+      <xs:enumeration value="Accent4" />
+      <xs:enumeration value="Accent5" />
+      <xs:enumeration value="Accent6" />
+      <xs:enumeration value="Hyperlink" />
+      <xs:enumeration value="FollowedHyperlink" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Background1" />
+      <xs:enumeration value="Text1" />
+      <xs:enumeration value="Background2" />
+      <xs:enumeration value="Text2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ThemeFontLanguages">
+    <xs:restriction base="w:LanguageType" />
+  </xs:simpleType>
+  <xs:simpleType name="ThemeFontValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MajorEastAsia" />
+      <xs:enumeration value="MajorBidi" />
+      <xs:enumeration value="MajorAscii" />
+      <xs:enumeration value="MajorHighAnsi" />
+      <xs:enumeration value="MinorEastAsia" />
+      <xs:enumeration value="MinorBidi" />
+      <xs:enumeration value="MinorAscii" />
+      <xs:enumeration value="MinorHighAnsi" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TitlePage">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopLeftToBottomRightCellBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopLinePunctuation">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopMargin">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopMarginDiv">
+    <xs:restriction base="w:SignedTwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="TopRightToBottomLeftCellBorder">
+    <xs:restriction base="w:BorderType" />
+  </xs:simpleType>
+  <xs:simpleType name="TrackRevisions">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="TruncateFontHeightsLikeWordPerfect">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UdlConnectionString">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:simpleType name="UICompatibleWith97To2003">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UIPriority">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="Underline">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="UnderlineTabInNumberingList">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UnderlineTrailingSpaces">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UnderlineValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Single" />
+      <xs:enumeration value="Words" />
+      <xs:enumeration value="Double" />
+      <xs:enumeration value="Thick" />
+      <xs:enumeration value="Dotted" />
+      <xs:enumeration value="DottedHeavy" />
+      <xs:enumeration value="Dash" />
+      <xs:enumeration value="DashedHeavy" />
+      <xs:enumeration value="DashLong" />
+      <xs:enumeration value="DashLongHeavy" />
+      <xs:enumeration value="DotDash" />
+      <xs:enumeration value="DashDotHeavy" />
+      <xs:enumeration value="DotDotDash" />
+      <xs:enumeration value="DashDotDotHeavy" />
+      <xs:enumeration value="Wave" />
+      <xs:enumeration value="WavyHeavy" />
+      <xs:enumeration value="WavyDouble" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UnhideWhenUsed">
+    <xs:restriction base="w:OnOffOnlyType" />
+  </xs:simpleType>
+  <xs:simpleType name="UniqueTag">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="UpdateFieldsOnOpen">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseAltKinsokuLineBreakRules">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseAnsiKerningPairs">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseFarEastLayout">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseNormalStyleForList">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UsePrinterMetrics">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseSingleBorderForContiguousCells">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseWord2002TableStyleRules">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseWord97LineBreakRules">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="UseXsltWhenSaving">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Vanish">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="VerticalAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inline" />
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Bottom" />
+      <xs:enumeration value="Inside" />
+      <xs:enumeration value="Outside" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VerticalAnchorValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Margin" />
+      <xs:enumeration value="Page" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VerticalJustificationValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="Bottom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VerticalMerge">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="VerticalMergeRevisionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Continue" />
+      <xs:enumeration value="Restart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VerticalPositionValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Baseline" />
+      <xs:enumeration value="Superscript" />
+      <xs:enumeration value="Subscript" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VerticalTextAlignment">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="VerticalTextAlignmentOnPage">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="VerticalTextAlignmentValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Baseline" />
+      <xs:enumeration value="Bottom" />
+      <xs:enumeration value="Auto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="View">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="ViewMergedData">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="ViewValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Print" />
+      <xs:enumeration value="Outline" />
+      <xs:enumeration value="MasterPages" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Web" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WebHidden">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="WebPageEncoding">
+    <xs:restriction base="w:StringType" />
+  </xs:simpleType>
+  <xs:complexType name="WebSettings">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:TypedOpenXmlPartRootElement" />
+    </xs:complexContent>
+    <xs:sequence>
+      <xs:element type="w:Frameset" />
+      <xs:element type="w:Divs" />
+      <xs:element type="w:WebPageEncoding" />
+      <xs:element type="w:OptimizeForBrowser" />
+      <xs:element type="w:RelyOnVML" />
+      <xs:element type="w:AllowPNG" />
+      <xs:element type="w:DoNotRelyOnCSS" />
+      <xs:element type="w:DoNotSaveAsSingleFile" />
+      <xs:element type="w:DoNotOrganizeInFolder" />
+      <xs:element type="w:DoNotUseLongFileNames" />
+      <xs:element type="w:PixelsPerInch" />
+      <xs:element type="w:TargetScreenSize" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="WidowControl">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="Width">
+    <xs:restriction base="w:TwipsMeasureType" />
+  </xs:simpleType>
+  <xs:simpleType name="WidthAfterTableRow">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="WidthBeforeTableRow">
+    <xs:restriction base="w:TableWidthType" />
+  </xs:simpleType>
+  <xs:simpleType name="WordPerfectJustification">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="WordPerfectSpaceWidth">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="WordWrap">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="WrapTrailSpaces">
+    <xs:restriction base="w:OnOffType" />
+  </xs:simpleType>
+  <xs:simpleType name="WriteProtection">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+  <xs:simpleType name="YearLong">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="YearShort">
+    <xs:restriction base="w:EmptyType" />
+  </xs:simpleType>
+  <xs:simpleType name="Zoom">
+    <xs:restriction base="oo:TypedOpenXmlLeafElement" />
+  </xs:simpleType>
+</xs:schema>

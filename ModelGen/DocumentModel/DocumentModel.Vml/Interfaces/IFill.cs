@@ -138,6 +138,6 @@ public interface IFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// FillExtendedProperties.
   /// </summary>
-  public DocumentModel.Vml.Office.IFillExtendedProperties? FillExtendedProperties { get ; set; }
+  public DocumentModel.Vml.IFillExtendedProperties? FillExtendedProperties { get ; set; }
   
 }
