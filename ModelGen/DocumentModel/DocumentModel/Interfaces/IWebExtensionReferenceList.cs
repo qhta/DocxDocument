@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IWebExtensionReferenceList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.IWebExtensionStoreReference>? WebExtensionStoreReferences { get ; set; }
+  public Collection<IWebExtensionStoreReference>? WebExtensionStoreReferences { get ; set; }
   
 }

@@ -15,6 +15,6 @@ public interface IMailMergeRecipientDataPart // : DocumentModel.Packaging.ITyped
   /// </summary>
   public DocumentModel.Wordprocessing.IMailMergeRecipients? MailMergeRecipients { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

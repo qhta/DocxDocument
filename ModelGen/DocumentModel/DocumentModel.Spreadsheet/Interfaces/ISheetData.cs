@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISheetData // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IRow>? Rows { get ; set; }
+  public Collection<IRow>? Rows { get ; set; }
   
 }

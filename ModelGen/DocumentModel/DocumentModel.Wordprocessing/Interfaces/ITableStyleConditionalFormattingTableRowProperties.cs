@@ -5,14 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ITableStyleConditionalFormattingTableRowProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Boolean? Hidden { get ; set; }
+  public Collection<Boolean>? Hiddens { get ; set; }
   
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? CantSplit { get ; set; }
+  public Collection<OnOffOnlyKind>? CantSplits { get ; set; }
   
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableHeader { get ; set; }
+  public Collection<OnOffOnlyKind>? TableHeaders { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITableWidthType? TableCellSpacing { get ; set; }
+  public Collection<ITableWidthType>? TableCellSpacings { get ; set; }
   
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get ; set; }
+  public Collection<TableRowAlignmentKind>? TableJustifications { get ; set; }
   
 }

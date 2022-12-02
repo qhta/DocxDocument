@@ -8,6 +8,6 @@ public interface IExtension2 // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// uri, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
 }

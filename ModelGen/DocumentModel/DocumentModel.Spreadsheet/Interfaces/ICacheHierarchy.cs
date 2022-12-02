@@ -8,6 +8,6 @@ public interface ICacheHierarchy // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// aggregatedColumn, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Int32? AggregatedColumn { get ; set; }
+  public Int32? AggregatedColumn { get ; set; }
   
 }

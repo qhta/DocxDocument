@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITupleSetHeaders // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITupleSetHeader>? TupleSetHeaders { get ; set; }
+  public Collection<ITupleSetHeader>? TupleSetHeaders { get ; set; }
   
 }

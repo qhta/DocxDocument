@@ -8,11 +8,11 @@ public interface IDataStoreItem // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Custom XML Data ID
   /// </summary>
-  public System.String? ItemId { get ; set; }
+  public String? ItemId { get ; set; }
   
   /// <summary>
   /// Set of Associated XML Schemas.
   /// </summary>
-  public DocumentModel.CustomXml.ISchemaReferences? SchemaReferences { get ; set; }
+  public ISchemaReferences? SchemaReferences { get ; set; }
   
 }

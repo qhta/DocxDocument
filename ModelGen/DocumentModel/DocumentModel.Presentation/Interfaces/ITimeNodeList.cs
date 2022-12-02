@@ -8,6 +8,6 @@ public interface ITimeNodeList // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ParallelTimeNode.
   /// </summary>
-  public DocumentModel.Presentation.IParallelTimeNode? ParallelTimeNode { get ; set; }
+  public IParallelTimeNode? ParallelTimeNode { get ; set; }
   
 }

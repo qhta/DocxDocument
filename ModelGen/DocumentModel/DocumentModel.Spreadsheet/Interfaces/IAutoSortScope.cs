@@ -8,6 +8,6 @@ public interface IAutoSortScope // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Auto Sort Scope.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPivotArea? PivotArea { get ; set; }
+  public IPivotArea? PivotArea { get ; set; }
   
 }

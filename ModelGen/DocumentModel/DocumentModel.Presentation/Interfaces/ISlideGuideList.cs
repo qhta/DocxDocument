@@ -5,8 +5,8 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ISlideGuideList // : DocumentModel.Presentation.IExtendedGuideList
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.IExtendedGuide>? ExtendedGuides { get ; set; }
+  public Collection<IExtendedGuide>? ExtendedGuides { get ; set; }
   
-  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

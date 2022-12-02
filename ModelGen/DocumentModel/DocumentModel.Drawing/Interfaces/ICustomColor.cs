@@ -8,36 +8,36 @@ public interface ICustomColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  public DocumentModel.Drawing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public DocumentModel.Drawing.IHslColor? HslColor { get ; set; }
+  public IHslColor? HslColor { get ; set; }
   
   /// <summary>
   /// System Color.
   /// </summary>
-  public DocumentModel.Drawing.ISystemColor? SystemColor { get ; set; }
+  public ISystemColor? SystemColor { get ; set; }
   
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
+  public ISchemeColor? SchemeColor { get ; set; }
   
   /// <summary>
   /// Preset Color.
   /// </summary>
-  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  public IPresetColor? PresetColor { get ; set; }
   
 }

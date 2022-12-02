@@ -8,26 +8,26 @@ public interface IBuildOleChart // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Shape ID
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// Group ID
   /// </summary>
-  public System.UInt32? GroupId { get ; set; }
+  public UInt32? GroupId { get ; set; }
   
   /// <summary>
   /// Expand UI
   /// </summary>
-  public System.Boolean? UiExpand { get ; set; }
+  public Boolean? UiExpand { get ; set; }
   
   /// <summary>
   /// Build
   /// </summary>
-  public DocumentModel.Presentation.OleChartBuildKind? Build { get ; set; }
+  public OleChartBuildKind? Build { get ; set; }
   
   /// <summary>
   /// Animate Background
   /// </summary>
-  public System.Boolean? AnimateBackground { get ; set; }
+  public Boolean? AnimateBackground { get ; set; }
   
 }

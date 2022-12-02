@@ -8,62 +8,62 @@ public interface ISchemeColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Value
   /// </summary>
-  public DocumentModel.Drawing.SchemeColorKind? Val { get ; set; }
+  public SchemeColorKind? Val { get ; set; }
   
-  public System.Int32? Tint { get ; set; }
+  public Collection<Int32>? Tints { get ; set; }
   
-  public System.Int32? Shade { get ; set; }
+  public Collection<Int32>? Shades { get ; set; }
   
-  public System.Boolean? Complement { get ; set; }
+  public Collection<Boolean>? Complements { get ; set; }
   
-  public System.Boolean? Inverse { get ; set; }
+  public Collection<Boolean>? Inverses { get ; set; }
   
-  public System.Boolean? Gray { get ; set; }
+  public Collection<Boolean>? Graies { get ; set; }
   
-  public System.Int32? Alpha { get ; set; }
+  public Collection<Int32>? Alphas { get ; set; }
   
-  public System.Int32? AlphaOffset { get ; set; }
+  public Collection<Int32>? AlphaOffsets { get ; set; }
   
-  public System.Int32? AlphaModulation { get ; set; }
+  public Collection<Int32>? AlphaModulations { get ; set; }
   
-  public System.Int32? Hue { get ; set; }
+  public Collection<Int32>? Hues { get ; set; }
   
-  public System.Int32? HueOffset { get ; set; }
+  public Collection<Int32>? HueOffsets { get ; set; }
   
-  public System.Int32? HueModulation { get ; set; }
+  public Collection<Int32>? HueModulations { get ; set; }
   
-  public System.Int32? Saturation { get ; set; }
+  public Collection<Int32>? Saturations { get ; set; }
   
-  public System.Int32? SaturationOffset { get ; set; }
+  public Collection<Int32>? SaturationOffsets { get ; set; }
   
-  public System.Int32? SaturationModulation { get ; set; }
+  public Collection<Int32>? SaturationModulations { get ; set; }
   
-  public System.Int32? Luminance { get ; set; }
+  public Collection<Int32>? Luminances { get ; set; }
   
-  public System.Int32? LuminanceOffset { get ; set; }
+  public Collection<Int32>? LuminanceOffsets { get ; set; }
   
-  public System.Int32? LuminanceModulation { get ; set; }
+  public Collection<Int32>? LuminanceModulations { get ; set; }
   
-  public System.Int32? Red { get ; set; }
+  public Collection<Int32>? Reds { get ; set; }
   
-  public System.Int32? RedOffset { get ; set; }
+  public Collection<Int32>? RedOffsets { get ; set; }
   
-  public System.Int32? RedModulation { get ; set; }
+  public Collection<Int32>? RedModulations { get ; set; }
   
-  public System.Int32? Green { get ; set; }
+  public Collection<Int32>? Greens { get ; set; }
   
-  public System.Int32? GreenOffset { get ; set; }
+  public Collection<Int32>? GreenOffsets { get ; set; }
   
-  public System.Int32? GreenModulation { get ; set; }
+  public Collection<Int32>? GreenModulations { get ; set; }
   
-  public System.Int32? Blue { get ; set; }
+  public Collection<Int32>? Blues { get ; set; }
   
-  public System.Int32? BlueOffset { get ; set; }
+  public Collection<Int32>? BlueOffsets { get ; set; }
   
-  public System.Int32? BlueModulation { get ; set; }
+  public Collection<Int32>? BlueModulations { get ; set; }
   
-  public System.Boolean? Gamma { get ; set; }
+  public Collection<Boolean>? Gammas { get ; set; }
   
-  public System.Boolean? InverseGamma { get ; set; }
+  public Collection<Boolean>? InverseGammas { get ; set; }
   
 }

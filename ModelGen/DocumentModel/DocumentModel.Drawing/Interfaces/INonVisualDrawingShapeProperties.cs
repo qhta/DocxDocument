@@ -8,16 +8,16 @@ public interface INonVisualDrawingShapeProperties // : DocumentModel.ITypedOpenX
   /// <summary>
   /// Text Box
   /// </summary>
-  public System.Boolean? TextBox { get ; set; }
+  public Boolean? TextBox { get ; set; }
   
   /// <summary>
   /// Shape Locks.
   /// </summary>
-  public DocumentModel.Drawing.IShapeLocks? ShapeLocks { get ; set; }
+  public IShapeLocks? ShapeLocks { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

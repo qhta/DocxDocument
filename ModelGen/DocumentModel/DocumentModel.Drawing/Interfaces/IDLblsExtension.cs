@@ -8,20 +8,20 @@ public interface IDLblsExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IChartText? ChartText { get ; set; }
+  public IChartText? ChartText { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabelFieldTable? DataLabelFieldTable { get ; set; }
+  public IDataLabelFieldTable? DataLabelFieldTable { get ; set; }
   
-  public System.Boolean? ShowDataLabelsRange { get ; set; }
+  public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
+  public IShapeProperties? ShapeProperties { get ; set; }
   
-  public DocumentModel.Drawing.ILayout? Layout { get ; set; }
+  public ILayout? Layout { get ; set; }
   
-  public System.Boolean? ShowLeaderLines { get ; set; }
+  public Boolean? ShowLeaderLines { get ; set; }
   
-  public DocumentModel.Drawing.ILeaderLines? LeaderLines { get ; set; }
+  public ILeaderLines? LeaderLines { get ; set; }
   
 }

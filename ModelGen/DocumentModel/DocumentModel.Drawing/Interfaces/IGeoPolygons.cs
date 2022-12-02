@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IGeoPolygons // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IGeoPolygon>? GeoPolygons { get ; set; }
+  public Collection<IGeoPolygon>? GeoPolygons { get ; set; }
   
 }

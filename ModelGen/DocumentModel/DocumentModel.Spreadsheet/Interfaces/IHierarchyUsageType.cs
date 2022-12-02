@@ -8,6 +8,6 @@ public interface IHierarchyUsageType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Hierarchy Usage
   /// </summary>
-  public System.Int32? Value { get ; set; }
+  public Int32? Value { get ; set; }
   
 }

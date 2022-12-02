@@ -8,11 +8,11 @@ public interface IGeoDataPointToEntityQueryResult // : DocumentModel.ITypedOpenX
   /// <summary>
   /// GeoDataPointQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoDataPointQuery? GeoDataPointQuery { get ; set; }
+  public IGeoDataPointQuery? GeoDataPointQuery { get ; set; }
   
   /// <summary>
   /// GeoDataPointToEntityQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get ; set; }
+  public IGeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get ; set; }
   
 }

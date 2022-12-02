@@ -8,7 +8,7 @@ public interface INonVisualShapeDrawingProperties // : DocumentModel.ITypedOpenX
   /// <summary>
   /// Text Box
   /// </summary>
-  public System.Boolean? TextBox { get ; set; }
+  public Boolean? TextBox { get ; set; }
   
   /// <summary>
   /// Shape Locks.

@@ -5,8 +5,8 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotVersionInfo // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.String>? RequiredFeatureXsdstrings { get ; set; }
+  public Collection<String>? RequiredFeatureXsdstrings { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.String>? LastUpdateFeatureXsdstrings { get ; set; }
+  public Collection<String>? LastUpdateFeatureXsdstrings { get ; set; }
   
 }

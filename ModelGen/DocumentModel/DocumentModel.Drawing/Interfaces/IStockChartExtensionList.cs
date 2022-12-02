@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IStockChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IStockChartExtension>? StockChartExtensions { get ; set; }
+  public Collection<IStockChartExtension>? StockChartExtensions { get ; set; }
   
 }

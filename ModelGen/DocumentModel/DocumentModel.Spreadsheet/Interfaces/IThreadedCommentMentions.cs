@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IThreadedCommentMentions // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IMention>? Mentions { get ; set; }
+  public Collection<IMention>? Mentions { get ; set; }
   
 }

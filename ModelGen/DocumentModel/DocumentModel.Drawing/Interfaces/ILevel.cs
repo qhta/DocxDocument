@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ILevel // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IStringPoint>? StringPoints { get ; set; }
+  public Collection<IStringPoint>? StringPoints { get ; set; }
   
 }

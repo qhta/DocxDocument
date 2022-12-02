@@ -8,31 +8,31 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? RelationshipId { get ; set; }
+  public String? RelationshipId { get ; set; }
   
   /// <summary>
   /// bwMode, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Drawing.BlackWhiteMode? BlackWhiteMode { get ; set; }
+  public BlackWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
+  public INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
   
   /// <summary>
   /// ApplicationNonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawing.IApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get ; set; }
+  public IApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public DocumentModel.Drawing.ITransform2D? Transform2D { get ; set; }
+  public ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

@@ -5,16 +5,16 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ITextFillColorList // : DocumentModel.Drawing.IColorsType
 {
-  public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public Collection<IRgbColorModelPercentage>? RgbColorModelPercentages { get ; set; }
   
-  public DocumentModel.Drawing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public Collection<IRgbColorModelHex>? RgbColorModelHexs { get ; set; }
   
-  public DocumentModel.Drawing.IHslColor? HslColor { get ; set; }
+  public Collection<IHslColor>? HslColors { get ; set; }
   
-  public DocumentModel.Drawing.ISystemColor? SystemColor { get ; set; }
+  public Collection<ISystemColor>? SystemColors { get ; set; }
   
-  public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
+  public Collection<ISchemeColor>? SchemeColors { get ; set; }
   
-  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  public Collection<IPresetColor>? PresetColors { get ; set; }
   
 }

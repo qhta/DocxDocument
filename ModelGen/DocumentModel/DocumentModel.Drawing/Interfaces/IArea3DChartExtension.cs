@@ -8,8 +8,8 @@ public interface IArea3DChartExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredAreaSeries? FilteredAreaSeries { get ; set; }
+  public IFilteredAreaSeries? FilteredAreaSeries { get ; set; }
   
 }

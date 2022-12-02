@@ -5,22 +5,22 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPlotArea // : DocumentModel.Drawing.IStyleEntry
 {
-  public DocumentModel.Drawing.ILineReference? LineReference { get ; set; }
+  public ILineReference? LineReference { get ; set; }
   
-  public System.String? LineWidthScale { get ; set; }
+  public String? LineWidthScale { get ; set; }
   
-  public DocumentModel.Drawing.IFillReference? FillReference { get ; set; }
+  public IFillReference? FillReference { get ; set; }
   
-  public DocumentModel.Drawing.IEffectReference? EffectReference { get ; set; }
+  public IEffectReference? EffectReference { get ; set; }
   
-  public DocumentModel.Drawing.IFontReference? FontReference { get ; set; }
+  public IFontReference? FontReference { get ; set; }
   
-  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
+  public IShapeProperties? ShapeProperties { get ; set; }
   
-  public DocumentModel.Drawing.ITextCharacterPropertiesType? TextCharacterPropertiesType { get ; set; }
+  public ITextCharacterPropertiesType? TextCharacterPropertiesType { get ; set; }
   
-  public DocumentModel.Drawing.ITextBodyProperties? TextBodyProperties { get ; set; }
+  public ITextBodyProperties? TextBodyProperties { get ; set; }
   
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

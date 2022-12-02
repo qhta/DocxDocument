@@ -8,7 +8,7 @@ public interface IBlipFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  public System.Boolean? RotateWithShape { get ; set; }
+  public Boolean? RotateWithShape { get ; set; }
   
   /// <summary>
   /// Blip.

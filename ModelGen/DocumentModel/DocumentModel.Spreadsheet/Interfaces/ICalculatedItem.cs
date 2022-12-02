@@ -8,21 +8,21 @@ public interface ICalculatedItem // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Field Index
   /// </summary>
-  public System.UInt32? Field { get ; set; }
+  public UInt32? Field { get ; set; }
   
   /// <summary>
   /// Calculated Item Formula
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
   /// <summary>
   /// Calculated Item Location.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPivotArea? PivotArea { get ; set; }
+  public IPivotArea? PivotArea { get ; set; }
   
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

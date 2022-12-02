@@ -203261,7 +203261,7 @@
         </member>
         <member name="F:DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues.Dash">
             <summary>
-            pecifies a line border consisting of a dashed line around the parent object..
+            Specifies a line border consisting of a dashed line around the parent object..
             <para>When the item is serialized out as xml, its value is "dash".</para>
             </summary>
         </member>

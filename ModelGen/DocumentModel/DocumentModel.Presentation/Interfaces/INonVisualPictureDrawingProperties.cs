@@ -8,7 +8,7 @@ public interface INonVisualPictureDrawingProperties // : DocumentModel.ITypedOpe
   /// <summary>
   /// preferRelativeResize
   /// </summary>
-  public System.Boolean? PreferRelativeResize { get ; set; }
+  public Boolean? PreferRelativeResize { get ; set; }
   
   /// <summary>
   /// PictureLocks.

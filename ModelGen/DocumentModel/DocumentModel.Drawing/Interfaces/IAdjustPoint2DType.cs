@@ -8,11 +8,11 @@ public interface IAdjustPoint2DType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// X-Coordinate
   /// </summary>
-  public System.String? X { get ; set; }
+  public String? X { get ; set; }
   
   /// <summary>
   /// Y-Coordinate
   /// </summary>
-  public System.String? Y { get ; set; }
+  public String? Y { get ; set; }
   
 }

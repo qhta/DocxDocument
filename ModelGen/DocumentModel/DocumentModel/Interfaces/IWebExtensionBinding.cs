@@ -8,21 +8,21 @@ public interface IWebExtensionBinding // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// type, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Type { get ; set; }
+  public String? Type { get ; set; }
   
   /// <summary>
   /// appref, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? AppReference { get ; set; }
+  public String? AppReference { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

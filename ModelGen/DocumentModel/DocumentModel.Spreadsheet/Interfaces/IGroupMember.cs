@@ -8,11 +8,11 @@ public interface IGroupMember // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Group Member Unique Name
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// Group
   /// </summary>
-  public System.Boolean? Group { get ; set; }
+  public Boolean? Group { get ; set; }
   
 }

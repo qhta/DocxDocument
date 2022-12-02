@@ -5,16 +5,16 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBackgroundFillStyleList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Boolean? NoFill { get ; set; }
+  public Collection<Boolean>? NoFills { get ; set; }
   
-  public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
+  public Collection<ISolidFill>? SolidFills { get ; set; }
   
-  public DocumentModel.Drawing.IGradientFill? GradientFill { get ; set; }
+  public Collection<IGradientFill>? GradientFills { get ; set; }
   
-  public DocumentModel.Drawing.IBlipFill? BlipFill { get ; set; }
+  public Collection<IBlipFill>? BlipFills { get ; set; }
   
-  public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
+  public Collection<IPatternFill>? PatternFills { get ; set; }
   
-  public System.Boolean? GroupFill { get ; set; }
+  public Collection<Boolean>? GroupFills { get ; set; }
   
 }

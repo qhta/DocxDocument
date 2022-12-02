@@ -8,36 +8,50 @@ public interface IShowEventRecordList // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// TriggerEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.ITriggerEventRecord? TriggerEventRecord { get ; set; }
+  public ITriggerEventRecord? TriggerEventRecord { get ; set; }
   
   /// <summary>
   /// PlayEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.IMediaPlaybackEventRecordType? PlayEventRecord { get ; set; }
+  public IMediaPlaybackEventRecordType? PlayEventRecord { get ; set; }
   
   /// <summary>
   /// StopEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.IMediaPlaybackEventRecordType? StopEventRecord { get ; set; }
+  public IMediaPlaybackEventRecordType? StopEventRecord { get ; set; }
   
   /// <summary>
   /// PauseEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.IMediaPlaybackEventRecordType? PauseEventRecord { get ; set; }
+  public IMediaPlaybackEventRecordType? PauseEventRecord { get ; set; }
   
   /// <summary>
   /// ResumeEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.IMediaPlaybackEventRecordType? ResumeEventRecord { get ; set; }
+  public IMediaPlaybackEventRecordType? ResumeEventRecord { get ; set; }
   
   /// <summary>
   /// SeekEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.ISeekEventRecord? SeekEventRecord { get ; set; }
+  public ISeekEventRecord? SeekEventRecord { get ; set; }
   
   /// <summary>
   /// NullEventRecord.
   /// </summary>
-  public DocumentModel.Presentation.INullEventRecord? NullEventRecord { get ; set; }
+  public INullEventRecord? NullEventRecord { get ; set; }
+  
+  public Collection<ITriggerEventRecord>? TriggerEventRecords { get ; set; }
+  
+  public Collection<IMediaPlaybackEventRecordType>? PlayEventRecords { get ; set; }
+  
+  public Collection<IMediaPlaybackEventRecordType>? StopEventRecords { get ; set; }
+  
+  public Collection<IMediaPlaybackEventRecordType>? PauseEventRecords { get ; set; }
+  
+  public Collection<IMediaPlaybackEventRecordType>? ResumeEventRecords { get ; set; }
+  
+  public Collection<ISeekEventRecord>? SeekEventRecords { get ; set; }
+  
+  public Collection<INullEventRecord>? NullEventRecords { get ; set; }
   
 }

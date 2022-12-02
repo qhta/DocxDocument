@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IToAnchor // : DocumentModel.Drawing.IMarkerType
 {
-  public System.String? XPosition { get ; set; }
+  public String? XPosition { get ; set; }
   
-  public System.String? YPosition { get ; set; }
+  public String? YPosition { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IColumns // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IColumn>? Columns { get ; set; }
+  public Collection<IColumn>? Columns { get ; set; }
   
 }

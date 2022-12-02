@@ -10,8 +10,8 @@ public interface ISlideCommentsPart // : DocumentModel.Packaging.ITypedOpenXmlPa
   /// </summary>
   public DocumentModel.Presentation.ICommentList? CommentList { get ; set; }
   
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

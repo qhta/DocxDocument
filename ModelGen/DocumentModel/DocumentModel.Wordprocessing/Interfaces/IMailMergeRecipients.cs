@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IMailMergeRecipients // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ISingleDataSourceRecord>? SingleDataSourceRecords { get ; set; }
+  public Collection<ISingleDataSourceRecord>? SingleDataSourceRecords { get ; set; }
   
 }

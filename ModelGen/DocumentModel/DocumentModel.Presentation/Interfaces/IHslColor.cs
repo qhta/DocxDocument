@@ -8,16 +8,16 @@ public interface IHslColor // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Hue
   /// </summary>
-  public System.Int32? Hue { get ; set; }
+  public Int32? Hue { get ; set; }
   
   /// <summary>
   /// Saturation
   /// </summary>
-  public System.Int32? Saturation { get ; set; }
+  public Int32? Saturation { get ; set; }
   
   /// <summary>
   /// Lightness
   /// </summary>
-  public System.Int32? Lightness { get ; set; }
+  public Int32? Lightness { get ; set; }
   
 }

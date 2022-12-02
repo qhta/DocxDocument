@@ -8,21 +8,21 @@ public interface IXmlCellProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Table Field Id
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
   /// <summary>
   /// Unique Table Name
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// Column XML Properties.
   /// </summary>
-  public DocumentModel.Spreadsheet.IXmlProperties? XmlProperties { get ; set; }
+  public IXmlProperties? XmlProperties { get ; set; }
   
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

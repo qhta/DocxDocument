@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IDataLabelFieldTable // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDataLabelFieldTableEntry>? DataLabelFieldTableEntries { get ; set; }
+  public Collection<IDataLabelFieldTableEntry>? DataLabelFieldTableEntries { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IGroupShapeType // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// GroupShapeNonVisualProperties.
   /// </summary>
-  public DocumentModel.Drawing.IGroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
+  public IGroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
   
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IGroupShapeProperties? GroupShapeProperties { get ; set; }
+  public IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
 }

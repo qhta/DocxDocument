@@ -8,12 +8,12 @@ public interface IConditionalFormatting // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// pivot, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? Pivot { get ; set; }
+  public Boolean? Pivot { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingRule>? ConditionalFormattingRules { get ; set; }
+  public Collection<IConditionalFormattingRule>? ConditionalFormattingRules { get ; set; }
   
-  public System.String? ReferenceSequence { get ; set; }
+  public String? ReferenceSequence { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

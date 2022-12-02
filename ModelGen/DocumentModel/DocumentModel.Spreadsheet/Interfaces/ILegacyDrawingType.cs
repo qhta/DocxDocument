@@ -8,6 +8,6 @@ public interface ILegacyDrawingType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Relationship Id
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

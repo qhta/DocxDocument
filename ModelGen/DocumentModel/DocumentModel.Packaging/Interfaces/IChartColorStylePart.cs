@@ -10,8 +10,8 @@ public interface IChartColorStylePart // : DocumentModel.Packaging.ITypedOpenXml
   /// </summary>
   public DocumentModel.Drawing.IColorStyle? ColorStyle { get ; set; }
   
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

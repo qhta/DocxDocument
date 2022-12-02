@@ -8,6 +8,6 @@ public interface IAlternateContentChoice // : DocumentModel.IOpenXmlCompositeEle
   /// <summary>
   /// Gets or sets a whitespace-delimited list of namespace prefixes that identify the
   /// </summary>
-  public System.String? Requires { get ; set; }
+  public String? Requires { get ; set; }
   
 }

@@ -8,13 +8,13 @@ public interface IDropDownListFormField // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// Drop-Down List Selection.
   /// </summary>
-  public System.Int32? DropDownListSelection { get ; set; }
+  public Int32? DropDownListSelection { get ; set; }
   
   /// <summary>
   /// Default Drop-Down List Item Index.
   /// </summary>
-  public System.Int32? DefaultDropDownListItemIndex { get ; set; }
+  public Int32? DefaultDropDownListItemIndex { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.String>? ListEntryFormFields { get ; set; }
+  public Collection<String>? ListEntryFormFields { get ; set; }
   
 }

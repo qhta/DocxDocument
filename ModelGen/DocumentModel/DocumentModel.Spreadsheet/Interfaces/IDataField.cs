@@ -8,6 +8,6 @@ public interface IDataField // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// isCountDistinct, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? IsCountDistinct { get ; set; }
+  public Boolean? IsCountDistinct { get ; set; }
   
 }

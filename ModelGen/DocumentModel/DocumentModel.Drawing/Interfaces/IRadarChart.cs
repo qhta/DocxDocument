@@ -8,19 +8,19 @@ public interface IRadarChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// RadarStyle.
   /// </summary>
-  public DocumentModel.Drawing.RadarStyleKind? RadarStyle { get ; set; }
+  public RadarStyleKind? RadarStyle { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public System.Boolean? VaryColors { get ; set; }
+  public Boolean? VaryColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IRadarChartSeries>? RadarChartSerieses { get ; set; }
+  public Collection<IRadarChartSeries>? RadarChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  public Collection<UInt32>? AxisIds { get ; set; }
   
-  public DocumentModel.Drawing.IRadarChartExtensionList? RadarChartExtensionList { get ; set; }
+  public IRadarChartExtensionList? RadarChartExtensionList { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IRstType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text.
   /// </summary>
-  public DocumentModel.Spreadsheet.IXstringType? Text { get ; set; }
+  public IXstringType? Text { get ; set; }
   
 }

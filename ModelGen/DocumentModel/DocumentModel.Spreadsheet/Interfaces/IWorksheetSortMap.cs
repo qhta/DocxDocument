@@ -8,11 +8,11 @@ public interface IWorksheetSortMap // : DocumentModel.ITypedOpenXmlPartRootEleme
   /// <summary>
   /// Row Sort Map.
   /// </summary>
-  public DocumentModel.Spreadsheet.IRowSortMap? RowSortMap { get ; set; }
+  public IRowSortMap? RowSortMap { get ; set; }
   
   /// <summary>
   /// Column Sort Map.
   /// </summary>
-  public DocumentModel.Spreadsheet.IColumnSortMap? ColumnSortMap { get ; set; }
+  public IColumnSortMap? ColumnSortMap { get ; set; }
   
 }

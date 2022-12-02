@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IDocumentVariables // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IDocumentVariable>? DocumentVariables { get ; set; }
+  public Collection<IDocumentVariable>? DocumentVariables { get ; set; }
   
 }

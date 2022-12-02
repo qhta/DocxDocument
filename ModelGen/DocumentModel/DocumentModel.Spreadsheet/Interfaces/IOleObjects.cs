@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IOleObjects // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IOleObject>? OleObjects { get ; set; }
+  public Collection<IOleObject>? OleObjects { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IIdPartPair // :
   /// <summary>
   /// Gets or sets the relationship ID in the pair.
   /// </summary>
-  public System.String? RelationshipId { get ; set; }
+  public String? RelationshipId { get ; set; }
   
 }

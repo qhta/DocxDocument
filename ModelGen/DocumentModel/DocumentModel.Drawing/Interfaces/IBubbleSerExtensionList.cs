@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBubbleSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBubbleSerExtension>? BubbleSerExtensions { get ; set; }
+  public Collection<IBubbleSerExtension>? BubbleSerExtensions { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IGroupShapeNonVisualProperties // : DocumentModel.ITypedOpenXml
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualGroupDrawingShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get ; set; }
+  public INonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get ; set; }
   
 }

@@ -5,48 +5,48 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IDefaultRunProperties // : DocumentModel.Drawing.ITextCharacterPropertiesType
 {
-  public DocumentModel.Drawing.IOutline? Outline { get ; set; }
+  public IOutline? Outline { get ; set; }
   
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
-  public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
+  public ISolidFill? SolidFill { get ; set; }
   
-  public DocumentModel.Drawing.IGradientFill? GradientFill { get ; set; }
+  public IGradientFill? GradientFill { get ; set; }
   
-  public DocumentModel.Drawing.IBlipFill? BlipFill { get ; set; }
+  public IBlipFill? BlipFill { get ; set; }
   
-  public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
+  public IPatternFill? PatternFill { get ; set; }
   
-  public System.Boolean? GroupFill { get ; set; }
+  public Boolean? GroupFill { get ; set; }
   
-  public DocumentModel.Drawing.IEffectList? EffectList { get ; set; }
+  public IEffectList? EffectList { get ; set; }
   
-  public DocumentModel.Drawing.IEffectDag? EffectDag { get ; set; }
+  public IEffectDag? EffectDag { get ; set; }
   
-  public DocumentModel.Drawing.IHighlight? Highlight { get ; set; }
+  public IHighlight? Highlight { get ; set; }
   
-  public System.Boolean? UnderlineFollowsText { get ; set; }
+  public Boolean? UnderlineFollowsText { get ; set; }
   
-  public DocumentModel.Drawing.IUnderline? Underline { get ; set; }
+  public IUnderline? Underline { get ; set; }
   
-  public System.Boolean? UnderlineFillText { get ; set; }
+  public Boolean? UnderlineFillText { get ; set; }
   
-  public DocumentModel.Drawing.IUnderlineFill? UnderlineFill { get ; set; }
+  public IUnderlineFill? UnderlineFill { get ; set; }
   
-  public DocumentModel.Drawing.ITextFontType? LatinFont { get ; set; }
+  public ITextFontType? LatinFont { get ; set; }
   
-  public DocumentModel.Drawing.ITextFontType? EastAsianFont { get ; set; }
+  public ITextFontType? EastAsianFont { get ; set; }
   
-  public DocumentModel.Drawing.ITextFontType? ComplexScriptFont { get ; set; }
+  public ITextFontType? ComplexScriptFont { get ; set; }
   
-  public DocumentModel.Drawing.ITextFontType? SymbolFont { get ; set; }
+  public ITextFontType? SymbolFont { get ; set; }
   
-  public DocumentModel.Drawing.IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
+  public IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
   
-  public DocumentModel.Drawing.IHyperlinkOnMouseOver? HyperlinkOnMouseOver { get ; set; }
+  public IHyperlinkOnMouseOver? HyperlinkOnMouseOver { get ; set; }
   
-  public System.Boolean? RightToLeft { get ; set; }
+  public Boolean? RightToLeft { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

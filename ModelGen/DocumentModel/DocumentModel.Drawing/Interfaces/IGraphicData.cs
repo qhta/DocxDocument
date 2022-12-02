@@ -8,6 +8,6 @@ public interface IGraphicData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Uniform Resource Identifier
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
 }

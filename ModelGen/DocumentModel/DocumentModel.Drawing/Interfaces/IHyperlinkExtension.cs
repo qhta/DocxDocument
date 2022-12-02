@@ -8,8 +8,8 @@ public interface IHyperlinkExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.HyperlinkColorEnum? HyperlinkColor { get ; set; }
+  public HyperlinkColorEnum? HyperlinkColor { get ; set; }
   
 }

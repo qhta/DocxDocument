@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ITemplateList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ITemplate>? Templates { get ; set; }
+  public Collection<ITemplate>? Templates { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ISingleDataSourceRecord // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// RecordIncluded.
   /// </summary>
-  public System.Boolean? RecordIncluded { get ; set; }
+  public Boolean? RecordIncluded { get ; set; }
   
   /// <summary>
   /// RecordHashCode.
   /// </summary>
-  public System.Int32? RecordHashCode { get ; set; }
+  public Int32? RecordHashCode { get ; set; }
   
 }

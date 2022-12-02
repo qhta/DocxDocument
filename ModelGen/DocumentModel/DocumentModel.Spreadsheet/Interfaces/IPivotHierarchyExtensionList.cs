@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotHierarchyExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotHierarchyExtension>? PivotHierarchyExtensions { get ; set; }
+  public Collection<IPivotHierarchyExtension>? PivotHierarchyExtensions { get ; set; }
   
 }

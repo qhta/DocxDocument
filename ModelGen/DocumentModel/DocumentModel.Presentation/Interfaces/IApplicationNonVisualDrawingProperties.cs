@@ -8,17 +8,17 @@ public interface IApplicationNonVisualDrawingProperties // : DocumentModel.IType
   /// <summary>
   /// Is a Photo Album
   /// </summary>
-  public System.Boolean? IsPhoto { get ; set; }
+  public Boolean? IsPhoto { get ; set; }
   
   /// <summary>
   /// Is User Drawn
   /// </summary>
-  public System.Boolean? UserDrawn { get ; set; }
+  public Boolean? UserDrawn { get ; set; }
   
   /// <summary>
   /// Placeholder Shape.
   /// </summary>
-  public DocumentModel.Presentation.IPlaceholderShape? PlaceholderShape { get ; set; }
+  public IPlaceholderShape? PlaceholderShape { get ; set; }
   
   public DocumentModel.Drawing.IAudioFromCD? AudioFromCD { get ; set; }
   
@@ -30,8 +30,8 @@ public interface IApplicationNonVisualDrawingProperties // : DocumentModel.IType
   
   public DocumentModel.Drawing.IQuickTimeFromFile? QuickTimeFromFile { get ; set; }
   
-  public DocumentModel.Presentation.ICustomerDataList? CustomerDataList { get ; set; }
+  public ICustomerDataList? CustomerDataList { get ; set; }
   
-  public DocumentModel.Presentation.IApplicationNonVisualDrawingPropertiesExtensionList? ApplicationNonVisualDrawingPropertiesExtensionList { get ; set; }
+  public IApplicationNonVisualDrawingPropertiesExtensionList? ApplicationNonVisualDrawingPropertiesExtensionList { get ; set; }
   
 }

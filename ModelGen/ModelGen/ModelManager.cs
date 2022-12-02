@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+
 using DocumentFormat.OpenXml;
 
 namespace ModelGen;
@@ -77,9 +78,9 @@ public static class ModelManager
   {
     if (typeInfo.Name == "EnumValue`1")
     {
-    //  ModelDisplay.ConsoleWriteSameLine($"{typeInfo}[{typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name}]\n");
-    //  if (typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name == "MultiLevelValues") 
-    //    Debug.Assert(true);
+      //  ModelDisplay.ConsoleWriteSameLine($"{typeInfo}[{typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name}]\n");
+      //  if (typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name == "MultiLevelValues") 
+      //    Debug.Assert(true);
     }
     targetType = null;
     if (typeInfo.IsConverted)
@@ -134,49 +135,43 @@ public static class ModelManager
     return false;
   }
 
-  public static string GetConvertedName(this TypeInfo typeInfo, bool asInterface, bool withNamespace)
+  public static CompoundName GetConvertedName(this TypeInfo typeInfo, bool asInterface, bool withNamespace)
   {
-    //if (typeInfo.Name.StartsWith("Dictionary"))
-    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
-      return aName;
+      return new CompoundName(aName);
     string aNamespace = typeInfo.Namespace;
-    if (asInterface && typeInfo.TypeKind == TypeKind.Class 
+    if (asInterface && typeInfo.TypeKind == TypeKind.Class
         && !aNamespace.StartsWith("System") && !aNamespace.StartsWith("DocumentModel.BaseTypes"))
     {
       aName = "I" + aName;
     }
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
-
     var apos = aName.IndexOf('`');
+    if (apos >= 0)
+      aName = aName.Substring(0, apos);
+
+    var result = new CompoundName(aName, (withNamespace && aNamespace != null) ? aNamespace : null);
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
       var genericArgs = typeInfo.GetGenericArgTypes();
-      var ls = new List<String>();
       if (genericParams.Any())
-        foreach (var genericParam in genericParams.ToList())
-        {
-          ls.Add(genericParam.Name);
-        }
-      else if (genericArgs.Any())
-        foreach (var genericArg in genericArgs.ToList())
-        {
-          ls.Add(GetConvertedName(genericArg, asInterface, withNamespace));
-        }
-      if (ls.Count > 0)
       {
-        aName = aName.Substring(0, apos);
-        aName += $"<{String.Join(",", ls)}>";
+        result.ArgNames = new();
+        foreach (var genericParam in genericParams.ToList())
+          result.ArgNames.Add(new CompoundName(genericParam.Name));
+      }
+      else if (genericArgs.Any())
+      {
+        result.ArgNames = new();
+        foreach (var genericArg in genericArgs.ToList())
+          result.ArgNames.Add(GetConvertedName(genericArg, asInterface, withNamespace));
       }
     }
-
-    if (withNamespace && aNamespace != null)
-      return aNamespace + "." + aName;
-    return aName;
+    return result;
   }
 
   public static TypeInfo GetConversionTarget(this TypeInfo typeInfo, bool finalTarget)

@@ -8,21 +8,21 @@ public interface IDimension // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Measure
   /// </summary>
-  public System.Boolean? Measure { get ; set; }
+  public Boolean? Measure { get ; set; }
   
   /// <summary>
   /// Dimension Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Dimension Unique Name
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// Dimension Display Name
   /// </summary>
-  public System.String? Caption { get ; set; }
+  public String? Caption { get ; set; }
   
 }

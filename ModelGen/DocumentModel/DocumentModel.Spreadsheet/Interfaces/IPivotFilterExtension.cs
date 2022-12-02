@@ -8,10 +8,10 @@ public interface IPivotFilterExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotFilter? PivotFilter { get ; set; }
+  public IPivotFilter? PivotFilter { get ; set; }
   
-  public DocumentModel.Spreadsheet.IMovingPeriodState? MovingPeriodState { get ; set; }
+  public IMovingPeriodState? MovingPeriodState { get ; set; }
   
 }

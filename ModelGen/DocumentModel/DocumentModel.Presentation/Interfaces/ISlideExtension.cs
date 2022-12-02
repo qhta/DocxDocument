@@ -8,12 +8,12 @@ public interface ISlideExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Presentation.ILaserTraceList? LaserTraceList { get ; set; }
+  public ILaserTraceList? LaserTraceList { get ; set; }
   
-  public DocumentModel.Presentation.IShowEventRecordList? ShowEventRecordList { get ; set; }
+  public IShowEventRecordList? ShowEventRecordList { get ; set; }
   
-  public DocumentModel.Presentation.ICommentRelationship? CommentRelationship { get ; set; }
+  public ICommentRelationship? CommentRelationship { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ITupleSetRowItem // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// u, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// d, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? DisplayName { get ; set; }
+  public String? DisplayName { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotFilterExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotFilterExtension>? PivotFilterExtensions { get ; set; }
+  public Collection<IPivotFilterExtension>? PivotFilterExtensions { get ; set; }
   
 }

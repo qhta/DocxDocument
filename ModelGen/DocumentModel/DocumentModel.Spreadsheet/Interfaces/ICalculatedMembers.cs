@@ -8,8 +8,8 @@ public interface ICalculatedMembers // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Calculated Members Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICalculatedMember>? CalculatedMembers { get ; set; }
+  public Collection<ICalculatedMember>? CalculatedMembers { get ; set; }
   
 }

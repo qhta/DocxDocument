@@ -8,31 +8,31 @@ public interface ITableCellMarginDefault // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Table Cell Top Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthType? TopMargin { get ; set; }
+  public ITableWidthType? TopMargin { get ; set; }
   
   /// <summary>
   /// Table Cell Left Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthDxaNilType? TableCellLeftMargin { get ; set; }
+  public ITableWidthDxaNilType? TableCellLeftMargin { get ; set; }
   
   /// <summary>
   /// StartMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthType? StartMargin { get ; set; }
+  public ITableWidthType? StartMargin { get ; set; }
   
   /// <summary>
   /// Table Cell Bottom Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthType? BottomMargin { get ; set; }
+  public ITableWidthType? BottomMargin { get ; set; }
   
   /// <summary>
   /// Table Cell Right Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthDxaNilType? TableCellRightMargin { get ; set; }
+  public ITableWidthDxaNilType? TableCellRightMargin { get ; set; }
   
   /// <summary>
   /// EndMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthType? EndMargin { get ; set; }
+  public ITableWidthType? EndMargin { get ; set; }
   
 }

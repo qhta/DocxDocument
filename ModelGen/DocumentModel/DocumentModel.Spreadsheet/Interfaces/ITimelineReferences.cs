@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITimelineReferences // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITimelineReference>? TimelineReferences { get ; set; }
+  public Collection<ITimelineReference>? TimelineReferences { get ; set; }
   
 }

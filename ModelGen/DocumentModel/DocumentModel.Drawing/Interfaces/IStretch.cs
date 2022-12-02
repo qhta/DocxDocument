@@ -8,6 +8,6 @@ public interface IStretch // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Fill Rectangle.
   /// </summary>
-  public DocumentModel.Drawing.IRelativeRectangleType? FillRectangle { get ; set; }
+  public IRelativeRectangleType? FillRectangle { get ; set; }
   
 }

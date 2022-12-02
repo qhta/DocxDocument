@@ -8,21 +8,21 @@ public interface IConditionalFormatValueObject // : DocumentModel.ITypedOpenXmlC
   /// <summary>
   /// Type
   /// </summary>
-  public DocumentModel.Spreadsheet.ConditionalFormatValueObjectKind? Type { get ; set; }
+  public ConditionalFormatValueObjectKind? Type { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
   /// <summary>
   /// Greater Than Or Equal
   /// </summary>
-  public System.Boolean? GreaterThanOrEqual { get ; set; }
+  public Boolean? GreaterThanOrEqual { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

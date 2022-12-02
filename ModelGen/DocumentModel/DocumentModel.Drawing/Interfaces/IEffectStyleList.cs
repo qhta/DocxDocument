@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IEffectStyleList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IEffectStyle>? EffectStyles { get ; set; }
+  public Collection<IEffectStyle>? EffectStyles { get ; set; }
   
 }

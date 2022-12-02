@@ -8,11 +8,11 @@ public interface IDashStop // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Dash Length
   /// </summary>
-  public System.Int32? DashLength { get ; set; }
+  public Int32? DashLength { get ; set; }
   
   /// <summary>
   /// Space Length
   /// </summary>
-  public System.Int32? SpaceLength { get ; set; }
+  public Int32? SpaceLength { get ; set; }
   
 }

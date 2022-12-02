@@ -8,10 +8,10 @@ public interface IDiagramDefinitionExtension // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.INumberDiagramInfoList? NumberDiagramInfoList { get ; set; }
+  public INumberDiagramInfoList? NumberDiagramInfoList { get ; set; }
   
-  public DocumentModel.Drawing.ITextListStyleType? TextListStyleType { get ; set; }
+  public ITextListStyleType? TextListStyleType { get ; set; }
   
 }

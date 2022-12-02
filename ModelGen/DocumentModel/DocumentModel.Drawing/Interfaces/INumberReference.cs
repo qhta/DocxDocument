@@ -8,16 +8,16 @@ public interface INumberReference // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
   /// <summary>
   /// NumberingCache.
   /// </summary>
-  public DocumentModel.Drawing.INumberingCache? NumberingCache { get ; set; }
+  public INumberingCache? NumberingCache { get ; set; }
   
   /// <summary>
   /// NumRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.INumRefExtensionList? NumRefExtensionList { get ; set; }
+  public INumRefExtensionList? NumRefExtensionList { get ; set; }
   
 }

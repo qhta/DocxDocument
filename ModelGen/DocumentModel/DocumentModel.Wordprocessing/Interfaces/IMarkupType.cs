@@ -8,6 +8,6 @@ public interface IMarkupType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

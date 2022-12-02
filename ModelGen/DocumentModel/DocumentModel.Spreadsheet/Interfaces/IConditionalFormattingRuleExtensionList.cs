@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IConditionalFormattingRuleExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingRuleExtension>? ConditionalFormattingRuleExtensions { get ; set; }
+  public Collection<IConditionalFormattingRuleExtension>? ConditionalFormattingRuleExtensions { get ; set; }
   
 }

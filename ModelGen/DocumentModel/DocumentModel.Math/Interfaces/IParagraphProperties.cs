@@ -8,6 +8,6 @@ public interface IParagraphProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Justification.
   /// </summary>
-  public DocumentModel.Math.JustificationKind? Justification { get ; set; }
+  public JustificationKind? Justification { get ; set; }
   
 }

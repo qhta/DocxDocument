@@ -8,6 +8,6 @@ public interface IPivotCacheDecoupled // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// decoupled, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? Decoupled { get ; set; }
+  public Boolean? Decoupled { get ; set; }
   
 }

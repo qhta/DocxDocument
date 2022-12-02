@@ -8,14 +8,14 @@ public interface IPivotTableDefinitionExtension // : DocumentModel.ITypedOpenXml
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotTableDefinition? PivotTableDefinition { get ; set; }
+  public IPivotTableDefinition? PivotTableDefinition { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotTableData? PivotTableData { get ; set; }
+  public IPivotTableData? PivotTableData { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotTableUISettings? PivotTableUISettings { get ; set; }
+  public IPivotTableUISettings? PivotTableUISettings { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotVersionInfo? PivotVersionInfo { get ; set; }
+  public IPivotVersionInfo? PivotVersionInfo { get ; set; }
   
 }

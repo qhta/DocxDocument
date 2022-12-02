@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IAllocatedCommands // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IAllocatedCommand>? AllocatedCommands { get ; set; }
+  public Collection<IAllocatedCommand>? AllocatedCommands { get ; set; }
   
 }

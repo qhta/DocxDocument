@@ -8,75 +8,75 @@ public interface IRun // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Run Properties.
   /// </summary>
-  public DocumentModel.Math.IRunProperties? MathRunProperties { get ; set; }
+  public IRunProperties? MathRunProperties { get ; set; }
   
   /// <summary>
   /// Run Properties.
   /// </summary>
   public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBreak? Break { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IBreak>? Breaks { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextType? Text { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITextType>? Texts { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextType? DeletedText { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITextType>? DeletedTexts { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextType? FieldCode { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITextType>? FieldCodes { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextType? DeletedFieldCode { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITextType>? DeletedFieldCodes { get ; set; }
   
-  public System.Boolean? NoBreakHyphen { get ; set; }
+  public Collection<Boolean>? NoBreakHyphens { get ; set; }
   
-  public System.Boolean? SoftHyphen { get ; set; }
+  public Collection<Boolean>? SoftHyphens { get ; set; }
   
-  public System.Boolean? DayShort { get ; set; }
+  public Collection<Boolean>? DayShorts { get ; set; }
   
-  public System.Boolean? MonthShort { get ; set; }
+  public Collection<Boolean>? MonthShorts { get ; set; }
   
-  public System.Boolean? YearShort { get ; set; }
+  public Collection<Boolean>? YearShorts { get ; set; }
   
-  public System.Boolean? DayLong { get ; set; }
+  public Collection<Boolean>? DayLongs { get ; set; }
   
-  public System.Boolean? MonthLong { get ; set; }
+  public Collection<Boolean>? MonthLongs { get ; set; }
   
-  public System.Boolean? YearLong { get ; set; }
+  public Collection<Boolean>? YearLongs { get ; set; }
   
-  public System.Boolean? AnnotationReferenceMark { get ; set; }
+  public Collection<Boolean>? AnnotationReferenceMarks { get ; set; }
   
-  public System.Boolean? FootnoteReferenceMark { get ; set; }
+  public Collection<Boolean>? FootnoteReferenceMarks { get ; set; }
   
-  public System.Boolean? EndnoteReferenceMark { get ; set; }
+  public Collection<Boolean>? EndnoteReferenceMarks { get ; set; }
   
-  public System.Boolean? SeparatorMark { get ; set; }
+  public Collection<Boolean>? SeparatorMarks { get ; set; }
   
-  public System.Boolean? ContinuationSeparatorMark { get ; set; }
+  public Collection<Boolean>? ContinuationSeparatorMarks { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISymbolChar? SymbolChar { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ISymbolChar>? SymbolChars { get ; set; }
   
-  public System.Boolean? PageNumber { get ; set; }
+  public Collection<Boolean>? PageNumbers { get ; set; }
   
-  public System.Boolean? CarriageReturn { get ; set; }
+  public Collection<Boolean>? CarriageReturns { get ; set; }
   
-  public System.Boolean? TabChar { get ; set; }
+  public Collection<Boolean>? TabChars { get ; set; }
   
-  public DocumentModel.Wordprocessing.IEmbeddedObject? EmbeddedObject { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IEmbeddedObject>? EmbeddedObjects { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPicture? Picture { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IPicture>? Pictures { get ; set; }
   
-  public DocumentModel.Wordprocessing.IFieldChar? FieldChar { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IFieldChar>? FieldChars { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRuby? Ruby { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IRuby>? Rubies { get ; set; }
   
-  public DocumentModel.Wordprocessing.IFootnoteEndnoteReferenceType? FootnoteReference { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IFootnoteEndnoteReferenceType>? FootnoteReferences { get ; set; }
   
-  public DocumentModel.Wordprocessing.IFootnoteEndnoteReferenceType? EndnoteReference { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IFootnoteEndnoteReferenceType>? EndnoteReferences { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CommentReference { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CommentReferences { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDrawing? Drawing { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IDrawing>? Drawings { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPositionalTab? PositionalTab { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IPositionalTab>? PositionalTabs { get ; set; }
   
-  public System.Boolean? LastRenderedPageBreak { get ; set; }
+  public Collection<Boolean>? LastRenderedPageBreaks { get ; set; }
   
 }

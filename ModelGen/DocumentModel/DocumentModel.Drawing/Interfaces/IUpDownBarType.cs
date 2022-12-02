@@ -8,6 +8,6 @@ public interface IUpDownBarType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
 }

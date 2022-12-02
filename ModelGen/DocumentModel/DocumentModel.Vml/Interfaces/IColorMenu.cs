@@ -8,26 +8,26 @@ public interface IColorMenu // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
+  public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
   /// <summary>
   /// Default stroke color
   /// </summary>
-  public System.String? StrokeColor { get ; set; }
+  public String? StrokeColor { get ; set; }
   
   /// <summary>
   /// Default fill color
   /// </summary>
-  public System.String? FillColor { get ; set; }
+  public String? FillColor { get ; set; }
   
   /// <summary>
   /// Default shadow color
   /// </summary>
-  public System.String? ShadowColor { get ; set; }
+  public String? ShadowColor { get ; set; }
   
   /// <summary>
   /// Default extrusion color
   /// </summary>
-  public System.String? ExtrusionColor { get ; set; }
+  public String? ExtrusionColor { get ; set; }
   
 }

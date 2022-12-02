@@ -8,8 +8,8 @@ public interface IQueryTableFields // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Column Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IQueryTableField>? QueryTableFields { get ; set; }
+  public Collection<IQueryTableField>? QueryTableFields { get ; set; }
   
 }

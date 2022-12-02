@@ -8,21 +8,21 @@ public interface IRelativeAnchorSize // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
-  public DocumentModel.Drawing.IFromAnchor? FromAnchor { get ; set; }
+  public IFromAnchor? FromAnchor { get ; set; }
   
   /// <summary>
   /// Ending Anchor Point.
   /// </summary>
-  public DocumentModel.Drawing.IToAnchor? ToAnchor { get ; set; }
+  public IToAnchor? ToAnchor { get ; set; }
   
-  public DocumentModel.Drawing.IShape? Shape { get ; set; }
+  public IShape? Shape { get ; set; }
   
-  public DocumentModel.Drawing.IGroupShape? GroupShape { get ; set; }
+  public IGroupShape? GroupShape { get ; set; }
   
-  public DocumentModel.Drawing.IGraphicFrame? GraphicFrame { get ; set; }
+  public IGraphicFrame? GraphicFrame { get ; set; }
   
-  public DocumentModel.Drawing.IConnectionShape? ConnectionShape { get ; set; }
+  public IConnectionShape? ConnectionShape { get ; set; }
   
-  public DocumentModel.Drawing.IPicture? Picture { get ; set; }
+  public IPicture? Picture { get ; set; }
   
 }

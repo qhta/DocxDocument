@@ -8,8 +8,8 @@ public interface ISlideMasterExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Presentation.ISlideGuideList? SlideGuideList { get ; set; }
+  public ISlideGuideList? SlideGuideList { get ; set; }
   
 }

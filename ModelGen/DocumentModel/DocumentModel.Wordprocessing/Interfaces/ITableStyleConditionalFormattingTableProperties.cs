@@ -8,31 +8,31 @@ public interface ITableStyleConditionalFormattingTableProperties // : DocumentMo
   /// <summary>
   /// TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get ; set; }
+  public TableRowAlignmentKind? TableJustification { get ; set; }
   
   /// <summary>
   /// TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableWidthType? TableCellSpacing { get ; set; }
+  public ITableWidthType? TableCellSpacing { get ; set; }
   
   /// <summary>
   /// TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableIndentation? TableIndentation { get ; set; }
+  public ITableIndentation? TableIndentation { get ; set; }
   
   /// <summary>
   /// TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableBorders? TableBorders { get ; set; }
+  public ITableBorders? TableBorders { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
+  public IShading? Shading { get ; set; }
   
   /// <summary>
   /// TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableCellMarginDefault? TableCellMarginDefault { get ; set; }
+  public ITableCellMarginDefault? TableCellMarginDefault { get ; set; }
   
 }

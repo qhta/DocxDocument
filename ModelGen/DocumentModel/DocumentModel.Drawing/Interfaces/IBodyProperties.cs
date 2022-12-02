@@ -8,115 +8,115 @@ public interface IBodyProperties // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Rotation
   /// </summary>
-  public System.Int32? Rotation { get ; set; }
+  public Int32? Rotation { get ; set; }
   
   /// <summary>
   /// Paragraph Spacing
   /// </summary>
-  public System.Boolean? UseParagraphSpacing { get ; set; }
+  public Boolean? UseParagraphSpacing { get ; set; }
   
   /// <summary>
   /// Text Vertical Overflow
   /// </summary>
-  public DocumentModel.Drawing.TextVerticalOverflowKind? VerticalOverflow { get ; set; }
+  public TextVerticalOverflowKind? VerticalOverflow { get ; set; }
   
   /// <summary>
   /// Text Horizontal Overflow
   /// </summary>
-  public DocumentModel.Drawing.TextHorizontalOverflowKind? HorizontalOverflow { get ; set; }
+  public TextHorizontalOverflowKind? HorizontalOverflow { get ; set; }
   
   /// <summary>
   /// Vertical Text
   /// </summary>
-  public DocumentModel.Drawing.TextVerticalKind? Vertical { get ; set; }
+  public TextVerticalKind? Vertical { get ; set; }
   
   /// <summary>
   /// Text Wrapping Type
   /// </summary>
-  public DocumentModel.Drawing.TextWrappingKind? Wrap { get ; set; }
+  public TextWrappingKind? Wrap { get ; set; }
   
   /// <summary>
   /// Left Inset
   /// </summary>
-  public System.Int32? LeftInset { get ; set; }
+  public Int32? LeftInset { get ; set; }
   
   /// <summary>
   /// Top Inset
   /// </summary>
-  public System.Int32? TopInset { get ; set; }
+  public Int32? TopInset { get ; set; }
   
   /// <summary>
   /// Right Inset
   /// </summary>
-  public System.Int32? RightInset { get ; set; }
+  public Int32? RightInset { get ; set; }
   
   /// <summary>
   /// Bottom Inset
   /// </summary>
-  public System.Int32? BottomInset { get ; set; }
+  public Int32? BottomInset { get ; set; }
   
   /// <summary>
   /// Number of Columns
   /// </summary>
-  public System.Int32? ColumnCount { get ; set; }
+  public Int32? ColumnCount { get ; set; }
   
   /// <summary>
   /// Space Between Columns
   /// </summary>
-  public System.Int32? ColumnSpacing { get ; set; }
+  public Int32? ColumnSpacing { get ; set; }
   
   /// <summary>
   /// Columns Right-To-Left
   /// </summary>
-  public System.Boolean? RightToLeftColumns { get ; set; }
+  public Boolean? RightToLeftColumns { get ; set; }
   
   /// <summary>
   /// From WordArt
   /// </summary>
-  public System.Boolean? FromWordArt { get ; set; }
+  public Boolean? FromWordArt { get ; set; }
   
   /// <summary>
   /// Anchor
   /// </summary>
-  public DocumentModel.Drawing.TextAnchoringKind? Anchor { get ; set; }
+  public TextAnchoringKind? Anchor { get ; set; }
   
   /// <summary>
   /// Anchor Center
   /// </summary>
-  public System.Boolean? AnchorCenter { get ; set; }
+  public Boolean? AnchorCenter { get ; set; }
   
   /// <summary>
   /// Force Anti-Alias
   /// </summary>
-  public System.Boolean? ForceAntiAlias { get ; set; }
+  public Boolean? ForceAntiAlias { get ; set; }
   
   /// <summary>
   /// Text Upright
   /// </summary>
-  public System.Boolean? UpRight { get ; set; }
+  public Boolean? UpRight { get ; set; }
   
   /// <summary>
   /// Compatible Line Spacing
   /// </summary>
-  public System.Boolean? CompatibleLineSpacing { get ; set; }
+  public Boolean? CompatibleLineSpacing { get ; set; }
   
   /// <summary>
   /// Preset Text Shape.
   /// </summary>
-  public DocumentModel.Drawing.IPresetTextWrap? PresetTextWrap { get ; set; }
+  public IPresetTextWrap? PresetTextWrap { get ; set; }
   
-  public System.Boolean? NoAutoFit { get ; set; }
+  public Boolean? NoAutoFit { get ; set; }
   
-  public DocumentModel.Drawing.INormalAutoFit? NormalAutoFit { get ; set; }
+  public INormalAutoFit? NormalAutoFit { get ; set; }
   
-  public System.Boolean? ShapeAutoFit { get ; set; }
+  public Boolean? ShapeAutoFit { get ; set; }
   
-  public DocumentModel.Drawing.IScene3DType? Scene3DType { get ; set; }
+  public IScene3DType? Scene3DType { get ; set; }
   
-  public DocumentModel.Drawing.IShape3DType? Shape3DType { get ; set; }
+  public IShape3DType? Shape3DType { get ; set; }
   
-  public DocumentModel.Drawing.IFlatText? FlatText { get ; set; }
+  public IFlatText? FlatText { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

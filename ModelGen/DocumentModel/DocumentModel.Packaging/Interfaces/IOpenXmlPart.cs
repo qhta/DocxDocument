@@ -8,16 +8,16 @@ public interface IOpenXmlPart // : DocumentModel.Packaging.IOpenXmlPartContainer
   /// <summary>
   /// Gets the internal part path in the package.
   /// </summary>
-  public System.Uri? Uri { get ; set; }
+  public Uri? Uri { get ; set; }
   
   /// <summary>
   /// Gets the content type (MIME type) of the content data in the part.
   /// </summary>
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the relationship type of the part.
   /// </summary>
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

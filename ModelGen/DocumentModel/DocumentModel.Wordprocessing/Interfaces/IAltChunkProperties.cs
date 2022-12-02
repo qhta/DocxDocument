@@ -8,6 +8,6 @@ public interface IAltChunkProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Keep Source Formatting on Import.
   /// </summary>
-  public System.Boolean? MatchSource { get ; set; }
+  public Boolean? MatchSource { get ; set; }
   
 }

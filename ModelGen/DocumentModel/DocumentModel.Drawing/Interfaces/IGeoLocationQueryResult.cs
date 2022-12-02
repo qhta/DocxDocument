@@ -8,11 +8,11 @@ public interface IGeoLocationQueryResult // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// GeoLocationQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoLocationQuery? GeoLocationQuery { get ; set; }
+  public IGeoLocationQuery? GeoLocationQuery { get ; set; }
   
   /// <summary>
   /// GeoLocations.
   /// </summary>
-  public DocumentModel.Drawing.IGeoLocations? GeoLocations { get ; set; }
+  public IGeoLocations? GeoLocations { get ; set; }
   
 }

@@ -8,47 +8,47 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit { get ; set; }
+  public DocumentProtectionKind? Edit { get ; set; }
   
   /// <summary>
   /// Only Allow Formatting With Unlocked Styles
   /// </summary>
-  public System.Boolean? Formatting { get ; set; }
+  public Boolean? Formatting { get ; set; }
   
   /// <summary>
   /// Enforce Document Protection Settings
   /// </summary>
-  public System.Boolean? Enforcement { get ; set; }
+  public Boolean? Enforcement { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider Type
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get ; set; }
+  public CryptProviderKind? CryptographicProviderType { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Class
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
+  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Type
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
+  public CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
   
   /// <summary>
   /// Cryptographic Hashing Algorithm
   /// </summary>
-  public System.Int32? CryptographicAlgorithmSid { get ; set; }
+  public Int32? CryptographicAlgorithmSid { get ; set; }
   
   /// <summary>
   /// Iterations to Run Hashing Algorithm
   /// </summary>
-  public System.UInt32? CryptographicSpinCount { get ; set; }
+  public UInt32? CryptographicSpinCount { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider
   /// </summary>
-  public System.String? CryptographicProvider { get ; set; }
+  public String? CryptographicProvider { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Extensibility
@@ -58,7 +58,7 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Algorithm Extensibility Source
   /// </summary>
-  public System.String? AlgorithmIdExtensibilitySource { get ; set; }
+  public String? AlgorithmIdExtensibilitySource { get ; set; }
   
   /// <summary>
   /// Cryptographic Provider Type Extensibility
@@ -68,7 +68,7 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Provider Type Extensibility Source
   /// </summary>
-  public System.String? CryptographicProviderTypeExtSource { get ; set; }
+  public String? CryptographicProviderTypeExtSource { get ; set; }
   
   /// <summary>
   /// Password Hash
@@ -83,7 +83,7 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? AlgorithmName { get ; set; }
+  public String? AlgorithmName { get ; set; }
   
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
@@ -98,6 +98,6 @@ public interface IDocumentProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// spinCount, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? SpinCount { get ; set; }
+  public Int32? SpinCount { get ; set; }
   
 }

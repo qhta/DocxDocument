@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IGeoChildTypes // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.String>? EntityTypes { get ; set; }
+  public Collection<String>? EntityTypes { get ; set; }
   
 }

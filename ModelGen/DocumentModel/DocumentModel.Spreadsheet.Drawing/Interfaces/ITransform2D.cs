@@ -8,17 +8,17 @@ public interface ITransform2D // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Rotation
   /// </summary>
-  public System.Int32? Rotation { get ; set; }
+  public Int32? Rotation { get ; set; }
   
   /// <summary>
   /// Horizontal Flip
   /// </summary>
-  public System.Boolean? HorizontalFlip { get ; set; }
+  public Boolean? HorizontalFlip { get ; set; }
   
   /// <summary>
   /// Vertical Flip
   /// </summary>
-  public System.Boolean? VerticalFlip { get ; set; }
+  public Boolean? VerticalFlip { get ; set; }
   
   /// <summary>
   /// Offset.

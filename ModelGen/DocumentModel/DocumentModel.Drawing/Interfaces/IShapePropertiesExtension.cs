@@ -8,18 +8,18 @@ public interface IShapePropertiesExtension // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IHiddenFillProperties? HiddenFillProperties { get ; set; }
+  public IHiddenFillProperties? HiddenFillProperties { get ; set; }
   
-  public DocumentModel.Drawing.IHiddenLineProperties? HiddenLineProperties { get ; set; }
+  public IHiddenLineProperties? HiddenLineProperties { get ; set; }
   
-  public DocumentModel.Drawing.IHiddenEffectsProperties? HiddenEffectsProperties { get ; set; }
+  public IHiddenEffectsProperties? HiddenEffectsProperties { get ; set; }
   
-  public DocumentModel.Drawing.IHiddenScene3D? HiddenScene3D { get ; set; }
+  public IHiddenScene3D? HiddenScene3D { get ; set; }
   
-  public DocumentModel.Drawing.IHiddenShape3D? HiddenShape3D { get ; set; }
+  public IHiddenShape3D? HiddenShape3D { get ; set; }
   
-  public System.Boolean? ShadowObscured { get ; set; }
+  public Boolean? ShadowObscured { get ; set; }
   
 }

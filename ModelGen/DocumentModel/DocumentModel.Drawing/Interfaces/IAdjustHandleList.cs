@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IAdjustHandleList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Drawing.IAdjustHandleXY? AdjustHandleXY { get ; set; }
+  public Collection<IAdjustHandleXY>? AdjustHandleXYs { get ; set; }
   
-  public DocumentModel.Drawing.IAdjustHandlePolar? AdjustHandlePolar { get ; set; }
+  public Collection<IAdjustHandlePolar>? AdjustHandlePolars { get ; set; }
   
 }

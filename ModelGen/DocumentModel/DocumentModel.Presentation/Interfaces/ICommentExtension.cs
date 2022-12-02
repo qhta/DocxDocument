@@ -8,8 +8,8 @@ public interface ICommentExtension // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Presentation.IThreadingInfo? ThreadingInfo { get ; set; }
+  public IThreadingInfo? ThreadingInfo { get ; set; }
   
 }

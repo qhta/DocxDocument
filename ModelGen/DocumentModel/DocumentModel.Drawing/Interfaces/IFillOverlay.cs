@@ -8,36 +8,36 @@ public interface IFillOverlay // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Blend
   /// </summary>
-  public DocumentModel.Drawing.BlendMode? Blend { get ; set; }
+  public BlendMode? Blend { get ; set; }
   
   /// <summary>
   /// NoFill.
   /// </summary>
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
   /// <summary>
   /// SolidFill.
   /// </summary>
-  public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
+  public ISolidFill? SolidFill { get ; set; }
   
   /// <summary>
   /// GradientFill.
   /// </summary>
-  public DocumentModel.Drawing.IGradientFill? GradientFill { get ; set; }
+  public IGradientFill? GradientFill { get ; set; }
   
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public DocumentModel.Drawing.IBlipFill? BlipFill { get ; set; }
+  public IBlipFill? BlipFill { get ; set; }
   
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
+  public IPatternFill? PatternFill { get ; set; }
   
   /// <summary>
   /// Group Fill.
   /// </summary>
-  public System.Boolean? GroupFill { get ; set; }
+  public Boolean? GroupFill { get ; set; }
   
 }

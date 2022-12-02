@@ -8,6 +8,6 @@ public interface IFlatText // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Z Coordinate
   /// </summary>
-  public System.Int64? Z { get ; set; }
+  public Int64? Z { get ; set; }
   
 }

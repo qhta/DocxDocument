@@ -8,10 +8,10 @@ public interface ICacheFieldExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.ICacheField? CacheField { get ; set; }
+  public ICacheField? CacheField { get ; set; }
   
-  public DocumentModel.Spreadsheet.ICachedUniqueNames? CachedUniqueNames { get ; set; }
+  public ICachedUniqueNames? CachedUniqueNames { get ; set; }
   
 }

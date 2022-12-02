@@ -8,6 +8,6 @@ public interface IRelationshipIdType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

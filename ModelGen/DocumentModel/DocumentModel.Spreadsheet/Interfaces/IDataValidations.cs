@@ -8,23 +8,23 @@ public interface IDataValidations // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// disablePrompts, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? DisablePrompts { get ; set; }
+  public Boolean? DisablePrompts { get ; set; }
   
   /// <summary>
   /// xWindow, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? XWindow { get ; set; }
+  public UInt32? XWindow { get ; set; }
   
   /// <summary>
   /// yWindow, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? YWindow { get ; set; }
+  public UInt32? YWindow { get ; set; }
   
   /// <summary>
   /// count, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IDataValidation>? DataValidations { get ; set; }
+  public Collection<IDataValidation>? DataValidations { get ; set; }
   
 }

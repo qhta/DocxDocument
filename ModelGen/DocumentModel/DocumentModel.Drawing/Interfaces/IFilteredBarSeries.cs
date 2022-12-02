@@ -8,6 +8,6 @@ public interface IFilteredBarSeries // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// BarChartSeries.
   /// </summary>
-  public DocumentModel.Drawing.IBarChartSeries? BarChartSeries { get ; set; }
+  public IBarChartSeries? BarChartSeries { get ; set; }
   
 }

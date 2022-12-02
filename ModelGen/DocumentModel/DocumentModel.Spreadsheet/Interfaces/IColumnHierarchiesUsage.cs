@@ -8,8 +8,8 @@ public interface IColumnHierarchiesUsage // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Items Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IHierarchyUsageType>? ColumnHierarchyUsages { get ; set; }
+  public Collection<IHierarchyUsageType>? ColumnHierarchyUsages { get ; set; }
   
 }

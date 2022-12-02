@@ -8,21 +8,21 @@ public interface IGroupShape // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Non-Visual Properties for a Group Shape.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.INonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get ; set; }
+  public INonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get ; set; }
   
   /// <summary>
   /// Group Shape Properties.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.IGroupShapeProperties? GroupShapeProperties { get ; set; }
+  public IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGroupShape? GroupShape { get ; set; }
+  public Collection<IGroupShape>? GroupShapes { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGraphicFrame? GraphicFrame { get ; set; }
+  public Collection<IGraphicFrame>? GraphicFrames { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IConnectionShape? ConnectionShape { get ; set; }
+  public Collection<IConnectionShape>? ConnectionShapes { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IPicture? Picture { get ; set; }
+  public Collection<IPicture>? Pictures { get ; set; }
   
 }

@@ -8,8 +8,8 @@ public interface IDiscreteProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Mapping Index Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? FieldItems { get ; set; }
+  public Collection<UInt32>? FieldItems { get ; set; }
   
 }

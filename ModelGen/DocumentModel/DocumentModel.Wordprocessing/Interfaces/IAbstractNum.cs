@@ -8,38 +8,38 @@ public interface IAbstractNum // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Abstract Numbering Definition ID
   /// </summary>
-  public System.Int32? AbstractNumberId { get ; set; }
+  public Int32? AbstractNumberId { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Identifier.
   /// </summary>
-  public DocumentModel.BaseTypes.HexWord? Nsid { get ; set; }
+  public HexWord? Nsid { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MultiLevelKind? MultiLevelType { get ; set; }
+  public MultiLevelKind? MultiLevelType { get ; set; }
   
   /// <summary>
   /// Numbering Template Code.
   /// </summary>
-  public DocumentModel.BaseTypes.HexWord? TemplateCode { get ; set; }
+  public HexWord? TemplateCode { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Name.
   /// </summary>
-  public System.String? AbstractNumDefinitionName { get ; set; }
+  public String? AbstractNumDefinitionName { get ; set; }
   
   /// <summary>
   /// Numbering Style Definition.
   /// </summary>
-  public System.String? StyleLink { get ; set; }
+  public String? StyleLink { get ; set; }
   
   /// <summary>
   /// Numbering Style Reference.
   /// </summary>
-  public System.String? NumberingStyleLink { get ; set; }
+  public String? NumberingStyleLink { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ILevel>? Levels { get ; set; }
+  public Collection<ILevel>? Levels { get ; set; }
   
 }

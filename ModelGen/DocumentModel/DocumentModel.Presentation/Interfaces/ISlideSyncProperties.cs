@@ -8,21 +8,21 @@ public interface ISlideSyncProperties // : DocumentModel.ITypedOpenXmlPartRootEl
   /// <summary>
   /// Server's Slide File ID
   /// </summary>
-  public System.String? ServerSlideId { get ; set; }
+  public String? ServerSlideId { get ; set; }
   
   /// <summary>
   /// Server's Slide File's modification date/time
   /// </summary>
-  public System.DateTime? ServerSlideModifiedTime { get ; set; }
+  public DateTime? ServerSlideModifiedTime { get ; set; }
   
   /// <summary>
   /// Client Slide Insertion date/time
   /// </summary>
-  public System.DateTime? ClientInsertedTime { get ; set; }
+  public DateTime? ClientInsertedTime { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

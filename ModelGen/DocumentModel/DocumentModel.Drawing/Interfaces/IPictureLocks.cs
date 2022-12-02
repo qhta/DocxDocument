@@ -8,61 +8,61 @@ public interface IPictureLocks // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public System.Boolean? NoGrouping { get ; set; }
+  public Boolean? NoGrouping { get ; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public System.Boolean? NoSelection { get ; set; }
+  public Boolean? NoSelection { get ; set; }
   
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  public System.Boolean? NoRotation { get ; set; }
+  public Boolean? NoRotation { get ; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public System.Boolean? NoChangeAspect { get ; set; }
+  public Boolean? NoChangeAspect { get ; set; }
   
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  public System.Boolean? NoMove { get ; set; }
+  public Boolean? NoMove { get ; set; }
   
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  public System.Boolean? NoResize { get ; set; }
+  public Boolean? NoResize { get ; set; }
   
   /// <summary>
   /// Disallow Shape Point Editing
   /// </summary>
-  public System.Boolean? NoEditPoints { get ; set; }
+  public Boolean? NoEditPoints { get ; set; }
   
   /// <summary>
   /// Disallow Showing Adjust Handles
   /// </summary>
-  public System.Boolean? NoAdjustHandles { get ; set; }
+  public Boolean? NoAdjustHandles { get ; set; }
   
   /// <summary>
   /// Disallow Arrowhead Changes
   /// </summary>
-  public System.Boolean? NoChangeArrowheads { get ; set; }
+  public Boolean? NoChangeArrowheads { get ; set; }
   
   /// <summary>
   /// Disallow Shape Type Change
   /// </summary>
-  public System.Boolean? NoChangeShapeType { get ; set; }
+  public Boolean? NoChangeShapeType { get ; set; }
   
   /// <summary>
   /// Disallow Crop Changes
   /// </summary>
-  public System.Boolean? NoCrop { get ; set; }
+  public Boolean? NoCrop { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

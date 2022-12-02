@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISingleXmlCells // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISingleXmlCell>? SingleXmlCells { get ; set; }
+  public Collection<ISingleXmlCell>? SingleXmlCells { get ; set; }
   
 }

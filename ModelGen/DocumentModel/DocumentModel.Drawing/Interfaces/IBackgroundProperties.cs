@@ -8,21 +8,21 @@ public interface IBackgroundProperties // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// bwMode, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Drawing.BlackWhiteMode? Mode { get ; set; }
+  public BlackWhiteMode? Mode { get ; set; }
   
   /// <summary>
   /// bwPure, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Drawing.BlackWhiteMode? Pure { get ; set; }
+  public BlackWhiteMode? Pure { get ; set; }
   
   /// <summary>
   /// bwNormal, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Drawing.BlackWhiteMode? Normal { get ; set; }
+  public BlackWhiteMode? Normal { get ; set; }
   
   /// <summary>
   /// targetScreenSize, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Drawing.TargetScreenSize? TargetScreenSize { get ; set; }
+  public TargetScreenSize? TargetScreenSize { get ; set; }
   
 }

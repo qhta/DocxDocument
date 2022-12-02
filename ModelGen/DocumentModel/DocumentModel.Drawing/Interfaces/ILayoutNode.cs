@@ -8,41 +8,41 @@ public interface ILayoutNode // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Style Label
   /// </summary>
-  public System.String? StyleLabel { get ; set; }
+  public String? StyleLabel { get ; set; }
   
   /// <summary>
   /// Child Order
   /// </summary>
-  public DocumentModel.Drawing.ChildOrderKind? ChildOrder { get ; set; }
+  public ChildOrderKind? ChildOrder { get ; set; }
   
   /// <summary>
   /// Move With
   /// </summary>
-  public System.String? MoveWith { get ; set; }
+  public String? MoveWith { get ; set; }
   
-  public DocumentModel.Drawing.IAlgorithm? Algorithm { get ; set; }
+  public Collection<IAlgorithm>? Algorithms { get ; set; }
   
-  public DocumentModel.Drawing.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Drawing.IPresentationOf? PresentationOf { get ; set; }
+  public Collection<IPresentationOf>? PresentationOfs { get ; set; }
   
-  public DocumentModel.Drawing.IConstraints? Constraints { get ; set; }
+  public Collection<IConstraints>? Constraintses { get ; set; }
   
-  public DocumentModel.Drawing.IRuleList? RuleList { get ; set; }
+  public Collection<IRuleList>? RuleLists { get ; set; }
   
-  public DocumentModel.Drawing.IVariableList? VariableList { get ; set; }
+  public Collection<IVariableList>? VariableLists { get ; set; }
   
-  public DocumentModel.Drawing.IForEach? ForEach { get ; set; }
+  public Collection<IForEach>? ForEachs { get ; set; }
   
-  public DocumentModel.Drawing.ILayoutNode? LayoutNode { get ; set; }
+  public Collection<ILayoutNode>? LayoutNodes { get ; set; }
   
-  public DocumentModel.Drawing.IChoose? Choose { get ; set; }
+  public Collection<IChoose>? Chooses { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public Collection<IExtensionList>? ExtensionLists { get ; set; }
   
 }

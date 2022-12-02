@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.IExtension>? Extensions { get ; set; }
+  public Collection<IExtension>? Extensions { get ; set; }
   
 }

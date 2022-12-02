@@ -8,6 +8,6 @@ public interface IBreak // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Run Properties.
   /// </summary>
-  public DocumentModel.Drawing.IRunProperties? RunProperties { get ; set; }
+  public IRunProperties? RunProperties { get ; set; }
   
 }

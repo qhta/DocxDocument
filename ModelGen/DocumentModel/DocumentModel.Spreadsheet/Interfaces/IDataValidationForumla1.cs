@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IDataValidationForumla1 // : DocumentModel.Spreadsheet.IDataValidationFormulaType
 {
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
 }

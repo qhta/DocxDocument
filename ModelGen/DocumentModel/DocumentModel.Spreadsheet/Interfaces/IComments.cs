@@ -8,16 +8,16 @@ public interface IComments // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Authors.
   /// </summary>
-  public DocumentModel.Spreadsheet.IAuthors? Authors { get ; set; }
+  public IAuthors? Authors { get ; set; }
   
   /// <summary>
   /// List of Comments.
   /// </summary>
-  public DocumentModel.Spreadsheet.ICommentList? CommentList { get ; set; }
+  public ICommentList? CommentList { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

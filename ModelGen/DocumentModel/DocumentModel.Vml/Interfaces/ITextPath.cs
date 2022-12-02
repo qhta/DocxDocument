@@ -8,41 +8,41 @@ public interface ITextPath // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  public System.String? Style { get ; set; }
+  public String? Style { get ; set; }
   
   /// <summary>
   /// Text Path Toggle
   /// </summary>
-  public System.Boolean? On { get ; set; }
+  public Boolean? On { get ; set; }
   
   /// <summary>
   /// Shape Fit Toggle
   /// </summary>
-  public System.Boolean? FitShape { get ; set; }
+  public Boolean? FitShape { get ; set; }
   
   /// <summary>
   /// Path Fit Toggle
   /// </summary>
-  public System.Boolean? FitPath { get ; set; }
+  public Boolean? FitPath { get ; set; }
   
   /// <summary>
   /// Text Path Trim Toggle
   /// </summary>
-  public System.Boolean? Trim { get ; set; }
+  public Boolean? Trim { get ; set; }
   
   /// <summary>
   /// Text X-Scaling
   /// </summary>
-  public System.Boolean? XScale { get ; set; }
+  public Boolean? XScale { get ; set; }
   
   /// <summary>
   /// Text Path Text
   /// </summary>
-  public System.String? String { get ; set; }
+  public String? String { get ; set; }
   
 }

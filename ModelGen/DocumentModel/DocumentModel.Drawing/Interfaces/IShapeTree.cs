@@ -5,14 +5,14 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IShapeTree // : DocumentModel.Drawing.IGroupShapeType
 {
-  public DocumentModel.Drawing.IGroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
+  public IGroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
   
-  public DocumentModel.Drawing.IGroupShapeProperties? GroupShapeProperties { get ; set; }
+  public IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
-  public DocumentModel.Drawing.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Drawing.IGroupShape? GroupShape { get ; set; }
+  public Collection<IGroupShape>? GroupShapes { get ; set; }
   
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

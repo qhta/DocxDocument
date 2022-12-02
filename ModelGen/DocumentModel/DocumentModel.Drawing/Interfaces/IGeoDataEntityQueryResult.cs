@@ -8,11 +8,11 @@ public interface IGeoDataEntityQueryResult // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// GeoDataEntityQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoDataEntityQuery? GeoDataEntityQuery { get ; set; }
+  public IGeoDataEntityQuery? GeoDataEntityQuery { get ; set; }
   
   /// <summary>
   /// GeoData.
   /// </summary>
-  public DocumentModel.Drawing.IGeoData? GeoData { get ; set; }
+  public IGeoData? GeoData { get ; set; }
   
 }

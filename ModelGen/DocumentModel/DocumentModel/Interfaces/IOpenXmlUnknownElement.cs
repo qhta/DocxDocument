@@ -8,6 +8,6 @@ public interface IOpenXmlUnknownElement // : DocumentModel.IOpenXmlCompositeElem
   /// <summary>
   /// Gets the text of the unknown element, only if the unknown element
   /// </summary>
-  public System.String? Text { get ; set; }
+  public String? Text { get ; set; }
   
 }

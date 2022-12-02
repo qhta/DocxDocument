@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IConstraints // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IConstraint>? Constraints { get ; set; }
+  public Collection<IConstraint>? Constraints { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface ISphereCoordinates // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// lat, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Lattitude { get ; set; }
+  public Int32? Lattitude { get ; set; }
   
   /// <summary>
   /// lon, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Longitude { get ; set; }
+  public Int32? Longitude { get ; set; }
   
   /// <summary>
   /// rev, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Revolution { get ; set; }
+  public Int32? Revolution { get ; set; }
   
 }

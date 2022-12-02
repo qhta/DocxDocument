@@ -5,6 +5,6 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public interface ISchemaReferences // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.ISchemaReference>? SchemaReferences { get ; set; }
+  public Collection<ISchemaReference>? SchemaReferences { get ; set; }
   
 }

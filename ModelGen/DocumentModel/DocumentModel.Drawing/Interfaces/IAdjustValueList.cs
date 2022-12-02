@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IAdjustValueList // : DocumentModel.Drawing.IGeometryGuideListType
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IShapeGuide>? ShapeGuides { get ; set; }
+  public Collection<IShapeGuide>? ShapeGuides { get ; set; }
   
 }

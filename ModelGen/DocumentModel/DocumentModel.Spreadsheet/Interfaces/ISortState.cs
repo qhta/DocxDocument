@@ -8,25 +8,25 @@ public interface ISortState // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Sort by Columns
   /// </summary>
-  public System.Boolean? ColumnSort { get ; set; }
+  public Boolean? ColumnSort { get ; set; }
   
   /// <summary>
   /// Case Sensitive
   /// </summary>
-  public System.Boolean? CaseSensitive { get ; set; }
+  public Boolean? CaseSensitive { get ; set; }
   
   /// <summary>
   /// Sort Method
   /// </summary>
-  public DocumentModel.Spreadsheet.SortMethodKind? SortMethod { get ; set; }
+  public SortMethodKind? SortMethod { get ; set; }
   
   /// <summary>
   /// Sort Range
   /// </summary>
-  public System.String? Reference { get ; set; }
+  public String? Reference { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISortCondition>? SortConditions { get ; set; }
+  public Collection<ISortCondition>? SortConditions { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

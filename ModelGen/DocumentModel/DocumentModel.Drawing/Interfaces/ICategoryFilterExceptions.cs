@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICategoryFilterExceptions // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ICategoryFilterException>? CategoryFilterExceptions { get ; set; }
+  public Collection<ICategoryFilterException>? CategoryFilterExceptions { get ; set; }
   
 }

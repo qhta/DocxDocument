@@ -5,10 +5,10 @@ namespace DocumentModel.Spreadsheet.Drawing;
 /// </summary>
 public interface IWorksheetDrawing // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public DocumentModel.Spreadsheet.Drawing.ITwoCellAnchor? TwoCellAnchor { get ; set; }
+  public Collection<ITwoCellAnchor>? TwoCellAnchors { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IOneCellAnchor? OneCellAnchor { get ; set; }
+  public Collection<IOneCellAnchor>? OneCellAnchors { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IAbsoluteAnchor? AbsoluteAnchor { get ; set; }
+  public Collection<IAbsoluteAnchor>? AbsoluteAnchors { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ITextElement // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Character Range.
   /// </summary>
-  public DocumentModel.Presentation.IIndexRangeType? CharRange { get ; set; }
+  public IIndexRangeType? CharRange { get ; set; }
   
   /// <summary>
   /// Paragraph Text Range.
   /// </summary>
-  public DocumentModel.Presentation.IIndexRangeType? ParagraphIndexRange { get ; set; }
+  public IIndexRangeType? ParagraphIndexRange { get ; set; }
   
 }

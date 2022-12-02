@@ -8,18 +8,18 @@ public interface INumericLevel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.UInt32? PtCount { get ; set; }
+  public UInt32? PtCount { get ; set; }
   
   /// <summary>
   /// formatCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? FormatCode { get ; set; }
+  public String? FormatCode { get ; set; }
   
   /// <summary>
   /// name, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INumericValue>? NumericValues { get ; set; }
+  public Collection<INumericValue>? NumericValues { get ; set; }
   
 }

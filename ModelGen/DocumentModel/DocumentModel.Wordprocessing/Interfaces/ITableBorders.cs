@@ -8,41 +8,41 @@ public interface ITableBorders // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Table Top Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? TopBorder { get ; set; }
+  public IBorderType? TopBorder { get ; set; }
   
   /// <summary>
   /// Table Left Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? LeftBorder { get ; set; }
+  public IBorderType? LeftBorder { get ; set; }
   
   /// <summary>
   /// StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? StartBorder { get ; set; }
+  public IBorderType? StartBorder { get ; set; }
   
   /// <summary>
   /// Table Bottom Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? BottomBorder { get ; set; }
+  public IBorderType? BottomBorder { get ; set; }
   
   /// <summary>
   /// Table Right Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? RightBorder { get ; set; }
+  public IBorderType? RightBorder { get ; set; }
   
   /// <summary>
   /// EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? EndBorder { get ; set; }
+  public IBorderType? EndBorder { get ; set; }
   
   /// <summary>
   /// Table Inside Horizontal Edges Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? InsideHorizontalBorder { get ; set; }
+  public IBorderType? InsideHorizontalBorder { get ; set; }
   
   /// <summary>
   /// Table Inside Vertical Edges Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? InsideVerticalBorder { get ; set; }
+  public IBorderType? InsideVerticalBorder { get ; set; }
   
 }

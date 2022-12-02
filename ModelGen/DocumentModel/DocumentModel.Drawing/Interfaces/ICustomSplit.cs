@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICustomSplit // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.UInt32>? SecondPiePoints { get ; set; }
+  public Collection<UInt32>? SecondPiePoints { get ; set; }
   
 }

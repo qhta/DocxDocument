@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IConnectionSiteList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IConnectionSite>? ConnectionSites { get ; set; }
+  public Collection<IConnectionSite>? ConnectionSites { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IBorderPropertiesType // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Line Style
   /// </summary>
-  public DocumentModel.Spreadsheet.BorderStyleKind? Style { get ; set; }
+  public BorderStyleKind? Style { get ; set; }
   
   /// <summary>
   /// Color.
   /// </summary>
-  public DocumentModel.Spreadsheet.IColorType? Color { get ; set; }
+  public IColorType? Color { get ; set; }
   
 }

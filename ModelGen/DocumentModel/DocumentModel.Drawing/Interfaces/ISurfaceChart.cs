@@ -8,14 +8,14 @@ public interface ISurfaceChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Wireframe.
   /// </summary>
-  public System.Boolean? Wireframe { get ; set; }
+  public Boolean? Wireframe { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
+  public Collection<ISurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IBandFormats? BandFormats { get ; set; }
+  public IBandFormats? BandFormats { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  public Collection<UInt32>? AxisIds { get ; set; }
   
-  public DocumentModel.Drawing.ISurfaceChartExtensionList? SurfaceChartExtensionList { get ; set; }
+  public ISurfaceChartExtensionList? SurfaceChartExtensionList { get ; set; }
   
 }

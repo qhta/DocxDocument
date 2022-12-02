@@ -8,16 +8,16 @@ public interface IControl // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Unique Name for Embedded Control
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Associated VML Data Reference
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// Embedded Control Properties Relationship Reference
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

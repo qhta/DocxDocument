@@ -8,8 +8,8 @@ public interface IPivotFields // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Field Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotField>? PivotFields { get ; set; }
+  public Collection<IPivotField>? PivotFields { get ; set; }
   
 }

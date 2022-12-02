@@ -8,8 +8,8 @@ public interface ILinePropertiesExtension // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.ILineSketchStyleProperties? LineSketchStyleProperties { get ; set; }
+  public ILineSketchStyleProperties? LineSketchStyleProperties { get ; set; }
   
 }

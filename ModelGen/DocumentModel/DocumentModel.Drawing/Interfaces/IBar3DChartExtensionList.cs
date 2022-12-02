@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBar3DChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBar3DChartExtension>? Bar3DChartExtensions { get ; set; }
+  public Collection<IBar3DChartExtension>? Bar3DChartExtensions { get ; set; }
   
 }

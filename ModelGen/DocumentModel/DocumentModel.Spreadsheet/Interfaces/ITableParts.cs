@@ -8,6 +8,6 @@ public interface ITableParts // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
 }

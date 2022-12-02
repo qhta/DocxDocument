@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IAdjustList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IAdjust>? Adjusts { get ; set; }
+  public Collection<IAdjust>? Adjusts { get ; set; }
   
 }

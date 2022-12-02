@@ -8,46 +8,46 @@ public interface IErrorBars // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Error Bar Direction.
   /// </summary>
-  public DocumentModel.Drawing.ErrorBarDirectionKind? ErrorDirection { get ; set; }
+  public ErrorBarDirectionKind? ErrorDirection { get ; set; }
   
   /// <summary>
   /// Error Bar Type.
   /// </summary>
-  public DocumentModel.Drawing.ErrorBarKind? ErrorBarType { get ; set; }
+  public ErrorBarKind? ErrorBarType { get ; set; }
   
   /// <summary>
   /// Error Bar Value Type.
   /// </summary>
-  public DocumentModel.Drawing.ErrorKind? ErrorBarValueType { get ; set; }
+  public ErrorKind? ErrorBarValueType { get ; set; }
   
   /// <summary>
   /// No End Cap.
   /// </summary>
-  public System.Boolean? NoEndCap { get ; set; }
+  public Boolean? NoEndCap { get ; set; }
   
   /// <summary>
   /// Plus.
   /// </summary>
-  public DocumentModel.Drawing.IPlus? Plus { get ; set; }
+  public IPlus? Plus { get ; set; }
   
   /// <summary>
   /// Minus.
   /// </summary>
-  public DocumentModel.Drawing.IMinus? Minus { get ; set; }
+  public IMinus? Minus { get ; set; }
   
   /// <summary>
   /// Error Bar Value.
   /// </summary>
-  public System.Double? ErrorBarValue { get ; set; }
+  public Double? ErrorBarValue { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

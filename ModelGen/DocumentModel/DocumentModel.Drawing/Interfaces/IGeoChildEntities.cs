@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IGeoChildEntities // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IGeoHierarchyEntity>? GeoHierarchyEntities { get ; set; }
+  public Collection<IGeoHierarchyEntity>? GeoHierarchyEntities { get ; set; }
   
 }

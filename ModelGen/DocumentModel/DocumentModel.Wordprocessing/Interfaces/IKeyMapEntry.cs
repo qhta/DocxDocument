@@ -28,27 +28,27 @@ public interface IKeyMapEntry // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// mask
   /// </summary>
-  public System.Boolean? Mask { get ; set; }
+  public Boolean? Mask { get ; set; }
   
   /// <summary>
   /// FixedCommandKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.IFixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization { get ; set; }
+  public IFixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization { get ; set; }
   
   /// <summary>
   /// MacroKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.IMacroWllType? MacroKeyboardCustomization { get ; set; }
+  public IMacroWllType? MacroKeyboardCustomization { get ; set; }
   
   /// <summary>
   /// AllocatedCommandKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.IAcceleratorKeymapType? AllocatedCommandKeyboardCustomization { get ; set; }
+  public IAcceleratorKeymapType? AllocatedCommandKeyboardCustomization { get ; set; }
   
   /// <summary>
   /// WllMacroKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.IMacroWllType? WllMacroKeyboardCustomization { get ; set; }
+  public IMacroWllType? WllMacroKeyboardCustomization { get ; set; }
   
   /// <summary>
   /// CharacterInsertion.

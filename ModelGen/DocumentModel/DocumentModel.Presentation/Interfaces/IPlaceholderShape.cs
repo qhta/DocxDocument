@@ -8,31 +8,31 @@ public interface IPlaceholderShape // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Placeholder Type
   /// </summary>
-  public DocumentModel.Presentation.PlaceholderKind? Type { get ; set; }
+  public PlaceholderKind? Type { get ; set; }
   
   /// <summary>
   /// Placeholder Orientation
   /// </summary>
-  public DocumentModel.Presentation.DirectionKind? Orientation { get ; set; }
+  public DirectionKind? Orientation { get ; set; }
   
   /// <summary>
   /// Placeholder Size
   /// </summary>
-  public DocumentModel.Presentation.PlaceholderSizeKind? Size { get ; set; }
+  public PlaceholderSizeKind? Size { get ; set; }
   
   /// <summary>
   /// Placeholder Index
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// Placeholder has custom prompt
   /// </summary>
-  public System.Boolean? HasCustomPrompt { get ; set; }
+  public Boolean? HasCustomPrompt { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.
   /// </summary>
-  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
+  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

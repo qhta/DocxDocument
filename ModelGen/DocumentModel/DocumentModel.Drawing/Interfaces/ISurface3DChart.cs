@@ -8,19 +8,19 @@ public interface ISurface3DChart // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Wireframe.
   /// </summary>
-  public System.Boolean? Wireframe { get ; set; }
+  public Boolean? Wireframe { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public System.Boolean? VaryColors { get ; set; }
+  public Boolean? VaryColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
+  public Collection<ISurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IBandFormats? BandFormats { get ; set; }
+  public IBandFormats? BandFormats { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  public Collection<UInt32>? AxisIds { get ; set; }
   
-  public DocumentModel.Drawing.ISurface3DChartExtensionList? Surface3DChartExtensionList { get ; set; }
+  public ISurface3DChartExtensionList? Surface3DChartExtensionList { get ; set; }
   
 }

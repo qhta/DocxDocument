@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IMultiLvlStrRefExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IMultiLvlStrRefExtension>? MultiLvlStrRefExtensions { get ; set; }
+  public Collection<IMultiLvlStrRefExtension>? MultiLvlStrRefExtensions { get ; set; }
   
 }
