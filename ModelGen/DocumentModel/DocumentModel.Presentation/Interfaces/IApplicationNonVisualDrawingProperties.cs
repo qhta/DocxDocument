@@ -1,7 +1,7 @@
 namespace DocumentModel.Presentation;
 
 /// <summary>
-/// Application Non-Visual Drawing Properties.
+/// Defines the ApplicationNonVisualDrawingProperties Class.
 /// </summary>
 public interface IApplicationNonVisualDrawingProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {

@@ -71850,8 +71850,8 @@
         </member>
         <member name="P:DocumentFormat.OpenXml.Office.MetaAttributes.Dummy.InternalName">
             <summary>
-            <para>publicName</para>
-            <para>Represents the following attribute in the schema: publicName</para>
+            <para>internalName</para>
+            <para>Represents the following attribute in the schema: internalName</para>
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Office.MetaAttributes.Dummy.LCID">
@@ -141247,7 +141247,7 @@
         </member>
         <member name="T:DocumentFormat.OpenXml.Packaging.AudioReferenceRelationship">
             <summary>
-            Represents an public audio reference relationship to a MediaDataPart element.
+            Represents an internal audio reference relationship to a MediaDataPart element.
             </summary>
         </member>
         <member name="F:DocumentFormat.OpenXml.Packaging.AudioReferenceRelationship.RelationshipTypeConst">
@@ -141877,7 +141877,7 @@
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.DataPart.Uri">
-            <summary>Gets the public part path in the package.</summary>
+            <summary>Gets the internal part path in the package.</summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.Packaging.DataPart.GetDataPartReferenceRelationships">
             <summary>
@@ -141917,10 +141917,10 @@
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.DataPart.PackagePart">
-            <summary>Gets the public metro PackagePart.</summary>
+            <summary>Gets the internal metro PackagePart.</summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.DataPart.TargetPath">
-            <summary>Gets the public path to be used for the part name.</summary>
+            <summary>Gets the internal path to be used for the part name.</summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.DataPart.TargetName">
             <summary>
@@ -141939,7 +141939,7 @@
         </member>
         <member name="T:DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship">
             <summary>
-            Represents an public reference relationship to a DataPart element.
+            Represents an internal reference relationship to a DataPart element.
             </summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship.#ctor(DocumentFormat.OpenXml.Packaging.DataPart,System.String,System.String)">
@@ -144945,7 +144945,7 @@
         </member>
         <member name="T:DocumentFormat.OpenXml.Packaging.MediaReferenceRelationship">
             <summary>
-            Represents an public media reference relationship to a MediaDataPart element.
+            Represents an internal media reference relationship to a MediaDataPart element.
             </summary>
         </member>
         <member name="F:DocumentFormat.OpenXml.Packaging.MediaReferenceRelationship.RelationshipTypeConst">
@@ -145994,7 +145994,7 @@
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.Uri">
-            <summary>Gets the public part path in the package.</summary>
+            <summary>Gets the internal part path in the package.</summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetParentParts">
             <summary>
@@ -146062,7 +146062,7 @@
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.PackagePart">
-            <summary>Gets the public metro PackagePart element.</summary>
+            <summary>Gets the internal metro PackagePart element.</summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.MaxCharactersInPart">
             <summary>
@@ -146085,21 +146085,21 @@
             <returns>True if the content type is valid for this part. False otherwise.</returns>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.TargetPath">
-            <summary>Gets the public path to be used for the part name.</summary>
+            <summary>Gets the internal path to be used for the part name.</summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.TargetPathOfWord">
             <summary>
-            Gets the public path (Word specific TargetPath) to be used for the part name.
+            Gets the internal path (Word specific TargetPath) to be used for the part name.
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.TargetPathOfExcel">
             <summary>
-            Gets the public path (Excel specific TargetPath) to be used for the part name.
+            Gets the internal path (Excel specific TargetPath) to be used for the part name.
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.TargetPathOfPPT">
             <summary>
-            Gets the public path (PPT specific TargetPath) to be used for the part name.
+            Gets the internal path (PPT specific TargetPath) to be used for the part name.
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPart.TargetName">
@@ -146594,7 +146594,7 @@
             <param name="loadedParts">Temp collection to detect loaded (shared) parts.</param>
         </member>
         <member name="P:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.InternalOpenXmlPackage">
-            <summary>Gets the public OpenXmlPackage instance</summary>
+            <summary>Gets the internal OpenXmlPackage instance</summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.ThrowIfObjectDisposed">
             <summary>Test whether the object is already disposed.</summary>
@@ -147611,7 +147611,7 @@
         </member>
         <member name="T:DocumentFormat.OpenXml.Packaging.ReferenceRelationship">
             <summary>
-            Defines a reference relationship. A reference relationship can be public or external.
+            Defines a reference relationship. A reference relationship can be internal or external.
             </summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.Packaging.ReferenceRelationship.#ctor(System.IO.Packaging.PackageRelationship)">
@@ -149517,7 +149517,7 @@
         </member>
         <member name="T:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship">
             <summary>
-            Represents an public video reference relationship to a MediaDataPart element.
+            Represents an internal video reference relationship to a MediaDataPart element.
             </summary>
         </member>
         <member name="F:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship.RelationshipTypeConst">
@@ -196630,10 +196630,10 @@
             token represents tokenized strings.
             The ·value space· of token is the set of strings that do not contain the carriage return (#xD),
             line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and
-            that have no public sequences of two or more spaces.
+            that have no internal sequences of two or more spaces.
             The ·lexical space· of token is the set of strings that do not contain the carriage return (#xD),
             line feed (#xA) nor tab (#x9) characters, that have no leading or trailing spaces (#x20) and
-            that have no public sequences of two or more spaces. The ·base type· of token is normalizedString
+            that have no internal sequences of two or more spaces. The ·base type· of token is normalizedString
             
             In Ecma376, most token are enumerations.
             </remarks>
@@ -244277,9 +244277,9 @@
         </member>
         <member name="M:DocumentFormat.OpenXml.OnOffValue.ToBoolean(DocumentFormat.OpenXml.OnOffValue)">
             <summary>
-            Returns the public <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.OnOffValue" /> object.
+            Returns the internal <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.OnOffValue" /> object.
             </summary>
-            <param name="value">A <see cref="T:DocumentFormat.OpenXml.OnOffValue" /> object to retrieve an public <see cref="T:System.Boolean" /> representation.</param>
+            <param name="value">A <see cref="T:DocumentFormat.OpenXml.OnOffValue" /> object to retrieve an internal <see cref="T:System.Boolean" /> representation.</param>
             <returns>A <see cref="T:System.Boolean" /> value that represents a <see cref="T:DocumentFormat.OpenXml.OnOffValue" /> object.</returns>
         </member>
         <member name="T:DocumentFormat.OpenXml.OpenXmlAttribute">
@@ -245308,7 +245308,7 @@
         </member>
         <member name="P:DocumentFormat.OpenXml.OpenXmlElementContext.XmlReaderSettings">
             <summary>
-            Gets the XmlReaderSettings to be used by public XmlReader
+            Gets the XmlReaderSettings to be used by internal XmlReader
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.OpenXmlElementContext.LoadMode">
@@ -246157,8 +246157,8 @@
         </member>
         <member name="P:DocumentFormat.OpenXml.OpenXmlSimpleType.TextValue">
             <summary>
-            Gets or sets the public raw text value.
-            DO NOT use this property. Only for OpenXmlSimpleType.cs public use.
+            Gets or sets the internal raw text value.
+            DO NOT use this property. Only for OpenXmlSimpleType.cs internal use.
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.OpenXmlSimpleType.HasValue">
@@ -246238,7 +246238,7 @@
         <member name="M:DocumentFormat.OpenXml.OpenXmlSimpleValue`1.op_Implicit(DocumentFormat.OpenXml.OpenXmlSimpleValue{`0})~`0">
             <summary>Implicitly converts the specified value to T.</summary>
             <param name="xmlAttribute">The OpenXmlSimpleValue instance.</param>
-            <returns>The public value in the OpenXmlSimpleValue class.</returns>
+            <returns>The internal value in the OpenXmlSimpleValue class.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown when xmlAttribute is null.</exception>
         </member>
         <member name="M:DocumentFormat.OpenXml.OpenXmlSimpleValue`1.Equals(System.Object)">
@@ -246726,9 +246726,9 @@
         </member>
         <member name="M:DocumentFormat.OpenXml.TrueFalseBlankValue.ToBoolean(DocumentFormat.OpenXml.TrueFalseBlankValue)">
             <summary>
-            Returns the public <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue" /> object.
+            Returns the internal <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue" /> object.
             </summary>
-            <param name="value">A <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue" /> object to retrieve an public <see cref="T:System.Boolean" /> representation.</param>
+            <param name="value">A <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue" /> object to retrieve an internal <see cref="T:System.Boolean" /> representation.</param>
             <returns>A <see cref="T:System.Boolean" /> value that represents a <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue" /> object.</returns>
         </member>
         <member name="M:DocumentFormat.OpenXml.TrueFalseBlankValue.Parse(System.String)">
@@ -246786,9 +246786,9 @@
         </member>
         <member name="M:DocumentFormat.OpenXml.TrueFalseValue.ToBoolean(DocumentFormat.OpenXml.TrueFalseValue)">
             <summary>
-            Returns the public <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.TrueFalseValue" /> object.
+            Returns the internal <see cref="T:System.Boolean" /> representation of a <see cref="T:DocumentFormat.OpenXml.TrueFalseValue" /> object.
             </summary>
-            <param name="value">A <see cref="T:DocumentFormat.OpenXml.TrueFalseValue" /> object to retrieve an public <see cref="T:System.Boolean" /> representation.</param>
+            <param name="value">A <see cref="T:DocumentFormat.OpenXml.TrueFalseValue" /> object to retrieve an internal <see cref="T:System.Boolean" /> representation.</param>
             <returns>A <see cref="T:System.Boolean" /> value that represents a <see cref="T:DocumentFormat.OpenXml.TrueFalseValue" /> object.</returns>
         </member>
         <member name="M:DocumentFormat.OpenXml.TrueFalseValue.Parse(System.String)">
@@ -247179,7 +247179,7 @@
         </member>
         <member name="P:DocumentFormat.OpenXml.XmlPath.PartUri">
             <summary>
-            Gets the public URI of the part relative to the package root.
+            Gets the internal URI of the part relative to the package root.
             </summary>
         </member>
         <member name="M:DocumentFormat.OpenXml.XmlPath.GetXPath(DocumentFormat.OpenXml.OpenXmlElement)">

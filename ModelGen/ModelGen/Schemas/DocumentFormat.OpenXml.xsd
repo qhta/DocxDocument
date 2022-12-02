@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:oo="DocumentFormat.OpenXml" xmlns:ac="DocumentFormat.OpenXml.AdditionalCharacteristics" xmlns:bib="DocumentFormat.OpenXml.Bibliography" xmlns:cp="DocumentFormat.OpenXml.CustomProperties" xmlns:cxdatpr="DocumentFormat.OpenXml.CustomXmlDataProperties" xmlns:cxschpr="DocumentFormat.OpenXml.CustomXmlSchemaReferences" xmlns:dr="DocumentFormat.OpenXml.Drawing" xmlns:chrtdr="DocumentFormat.OpenXml.Drawing.ChartDrawing" xmlns:chrt="DocumentFormat.OpenXml.Drawing.Charts" xmlns:dgk="DocumentFormat.OpenXml.Drawing.Diagrams" xmlns:drlc="DocumentFormat.OpenXml.Drawing.LegacyCompatibility" xmlns:drc="DocumentFormat.OpenXml.Drawing.LockedCanvas" xmlns:pic="DocumentFormat.OpenXml.Drawing.Pictures" xmlns:drs="DocumentFormat.OpenXml.Drawing.Spreadsheet" xmlns:drw="DocumentFormat.OpenXml.Drawing.Wordprocessing" xmlns:em="DocumentFormat.OpenXml.EMMA" xmlns:xp="DocumentFormat.OpenXml.ExtendedProperties" xmlns:feat="DocumentFormat.OpenXml.Features" xmlns:fw="DocumentFormat.OpenXml.Framework" xmlns:fwm="DocumentFormat.OpenXml.Framework.Metadata" xmlns:fws="DocumentFormat.OpenXml.Framework.Schema" xmlns:ink="DocumentFormat.OpenXml.InkML" xmlns:m="DocumentFormat.OpenXml.Math" xmlns:oax="DocumentFormat.OpenXml.Office.ActiveX" xmlns:oct="DocumentFormat.OpenXml.Office.ContentType" xmlns:ocpp="DocumentFormat.OpenXml.Office.CoverPageProps" xmlns:ocdip="DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel" xmlns:oui="DocumentFormat.OpenXml.Office.CustomUI" xmlns:ocxsn="DocumentFormat.OpenXml.Office.CustomXsn" xmlns:odr="DocumentFormat.OpenXml.Office.Drawing" xmlns:odr21e="DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed" xmlns:odr21s="DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink" xmlns:ox="DocumentFormat.OpenXml.Office.Excel" xmlns:olp="DocumentFormat.OpenXml.Office.LongProperties" xmlns:oma="DocumentFormat.OpenXml.Office.MetaAttributes" xmlns:op21="DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main" xmlns:os21="DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021" xmlns:os22="DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo" xmlns:ow="DocumentFormat.OpenXml.Office.Word" xmlns:ow20e="DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed" xmlns:o10ui="DocumentFormat.OpenXml.Office2010.CustomUI" xmlns:o10dr="DocumentFormat.OpenXml.Office2010.Drawing" xmlns:o10chrtdr="DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing" xmlns:o10chrt="DocumentFormat.OpenXml.Office2010.Drawing.Charts" xmlns:o10dgm="DocumentFormat.OpenXml.Office2010.Drawing.Diagram" xmlns:o10drlc="DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility" xmlns:o10pic="DocumentFormat.OpenXml.Office2010.Drawing.Pictures" xmlns:o10slc="DocumentFormat.OpenXml.Office2010.Drawing.Slicer" xmlns:o10x="DocumentFormat.OpenXml.Office2010.Excel" xmlns:o10xdr="DocumentFormat.OpenXml.Office2010.Excel.Drawing" xmlns:o10xac="DocumentFormat.OpenXml.Office2010.ExcelAc" xmlns:o10ink="DocumentFormat.OpenXml.Office2010.Ink" xmlns:o10p="DocumentFormat.OpenXml.Office2010.PowerPoint" xmlns:o10w="DocumentFormat.OpenXml.Office2010.Word" xmlns:o10wdr="DocumentFormat.OpenXml.Office2010.Word.Drawing" xmlns:o10wdc="DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas" xmlns:o10drg="DocumentFormat.OpenXml.Office2010.Word.DrawingGroup" xmlns:o10drs="DocumentFormat.OpenXml.Office2010.Word.DrawingShape" xmlns:o13dr="DocumentFormat.OpenXml.Office2013.Drawing" xmlns:o13drchrt="DocumentFormat.OpenXml.Office2013.Drawing.Chart" xmlns:o13drchrts="DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle" xmlns:o13tslc="DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer" xmlns:o13x="DocumentFormat.OpenXml.Office2013.Excel" xmlns:o13xac="DocumentFormat.OpenXml.Office2013.ExcelAc" xmlns:o13p="DocumentFormat.OpenXml.Office2013.PowerPoint" xmlns:o13pr="DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming" xmlns:o13th="DocumentFormat.OpenXml.Office2013.Theme" xmlns:o13wx="DocumentFormat.OpenXml.Office2013.WebExtension" xmlns:o13wxp="DocumentFormat.OpenXml.Office2013.WebExtentionPane" xmlns:o13w="DocumentFormat.OpenXml.Office2013.Word" xmlns:o13wdr="DocumentFormat.OpenXml.Office2013.Word.Drawing" xmlns:o16dr="DocumentFormat.OpenXml.Office2016.Drawing" xmlns:o16chrtdr="DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing" xmlns:o16chrt="DocumentFormat.OpenXml.Office2016.Drawing.Charts" xmlns:o16chrtac="DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc" xmlns:o16drcmd="DocumentFormat.OpenXml.Office2016.Drawing.Command" xmlns:o16x="DocumentFormat.OpenXml.Office2016.Excel" xmlns:o16xac="DocumentFormat.OpenXml.Office2016.ExcelAc" xmlns:o16p="DocumentFormat.OpenXml.Office2016.Presentation" xmlns:o16pcmd="DocumentFormat.OpenXml.Office2016.Presentation.Command" xmlns:o16="DocumentFormat.OpenXml.Office2016.Word.Symex" xmlns:o19dr="DocumentFormat.OpenXml.Office2019.Drawing" xmlns:o19dran="DocumentFormat.OpenXml.Office2019.Drawing.Animation" xmlns:o19dran3d="DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D" xmlns:o19drchrt="DocumentFormat.OpenXml.Office2019.Drawing.Chart" xmlns:o19dgm1="DocumentFormat.OpenXml.Office2019.Drawing.Diagram11" xmlns:O19dgm2="DocumentFormat.OpenXml.Office2019.Drawing.Diagram12" xmlns:o19hlc="DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor" xmlns:o19ink="DocumentFormat.OpenXml.Office2019.Drawing.Ink" xmlns:o19dr3d="DocumentFormat.OpenXml.Office2019.Drawing.Model3D" xmlns:o19svg="DocumentFormat.OpenXml.Office2019.Drawing.SVG" xmlns:o19xcf="DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures" xmlns:o10xda="DocumentFormat.OpenXml.Office2019.Excel.DynamicArray" xmlns:o19xpdl="DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout" xmlns:o19xrd="DocumentFormat.OpenXml.Office2019.Excel.RichData" xmlns:o19xrd2="DocumentFormat.OpenXml.Office2019.Excel.RichData2" xmlns:o19xtc="DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments" xmlns:o19p="DocumentFormat.OpenXml.Office2019.Presentation" xmlns:o19wcid="DocumentFormat.OpenXml.Office2019.Word.Cid" xmlns:o21dt="DocumentFormat.OpenXml.Office2021.DocumentTasks" xmlns:o23dc="DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification" xmlns:o32lf="DocumentFormat.OpenXml.Office2021.Drawing.Livefeed" xmlns:o23ss="DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes" xmlns:o21xl="DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks" xmlns:o32nsv="DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews" xmlns:o21xpvt="DocumentFormat.OpenXml.Office2021.Excel.Pivot" xmlns:o21xrdwimg="DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage" xmlns:o21rvrint="DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals" xmlns:o21xtc2="DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2" xmlns:o21mlmd="DocumentFormat.OpenXml.Office2021.MipLabelMetaData" xmlns:o21oxl="DocumentFormat.OpenXml.Office2021.OfficeExtLst" xmlns:o21pc="DocumentFormat.OpenXml.Office2021.PowerPoint.Comment" xmlns:o21pd="DocumentFormat.OpenXml.Office2021.PowerPoint.Designer" xmlns:o21pt="DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks" xmlns:o21wcx="DocumentFormat.OpenXml.Office2021.Word.CommentsExt" xmlns:o21wxl="DocumentFormat.OpenXml.Office2021.Word.ExtensionList" xmlns:pck="DocumentFormat.OpenXml.Packaging" xmlns:p="DocumentFormat.OpenXml.Presentation" xmlns:s="DocumentFormat.OpenXml.Spreadsheet" xmlns:val="DocumentFormat.OpenXml.Validation" xmlns:valsch="DocumentFormat.OpenXml.Validation.Schema" xmlns:valrest="DocumentFormat.OpenXml.Validation.Schema.Restrictions" xmlns:valsem="DocumentFormat.OpenXml.Validation.Semantic" xmlns:vt="DocumentFormat.OpenXml.VariantTypes" xmlns:vml="DocumentFormat.OpenXml.Vml" xmlns:vmlo="DocumentFormat.OpenXml.Vml.Office" xmlns:vmlp="DocumentFormat.OpenXml.Vml.Presentation" xmlns:vmls="DocumentFormat.OpenXml.Vml.Spreadsheet" xmlns:vmlw="DocumentFormat.OpenXml.Vml.Wordprocessing" xmlns:w="DocumentFormat.OpenXml.Wordprocessing" targetNamespace="DocumentFormat.OpenXml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AlternateContent">
+    <xs:complexContent mixed="false">
+      <xs:restriction base="oo:OpenXmlCompositeElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AlternateContentChoice">
+    <xs:restriction base="oo:OpenXmlCompositeElement" />
+  </xs:simpleType>
+  <xs:simpleType name="AlternateContentFallback">
+    <xs:restriction base="oo:OpenXmlCompositeElement" />
+  </xs:simpleType>
+  <xs:simpleType name="AppendOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="List" />
+      <xs:enumeration value="Ordered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ApplicationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Word" />
+      <xs:enumeration value="Excel" />
+      <xs:enumeration value="PowerPoint" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AttributeAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Ignore" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ElementAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Ignore" />
+      <xs:enumeration value="ProcessContent" />
+      <xs:enumeration value="ACBlock" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ElementState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Null" />
+      <xs:enumeration value="Start" />
+      <xs:enumeration value="End" />
+      <xs:enumeration value="LeafStart" />
+      <xs:enumeration value="LeafEnd" />
+      <xs:enumeration value="LoadEnd" />
+      <xs:enumeration value="MiscNode" />
+      <xs:enumeration value="EOF" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FileFormatVersions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Office2007" />
+      <xs:enumeration value="Office2010" />
+      <xs:enumeration value="Office2013" />
+      <xs:enumeration value="Office2016" />
+      <xs:enumeration value="Office2019" />
+      <xs:enumeration value="Office2021" />
+      <xs:enumeration value="Microsoft365" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OpenXmlLoadMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Full" />
+      <xs:enumeration value="Lazy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PresentationDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Presentation" />
+      <xs:enumeration value="Template" />
+      <xs:enumeration value="Slideshow" />
+      <xs:enumeration value="MacroEnabledPresentation" />
+      <xs:enumeration value="MacroEnabledTemplate" />
+      <xs:enumeration value="MacroEnabledSlideshow" />
+      <xs:enumeration value="AddIn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SpaceProcessingModeValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Preserve" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SpreadsheetDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Workbook" />
+      <xs:enumeration value="Template" />
+      <xs:enumeration value="MacroEnabledWorkbook" />
+      <xs:enumeration value="MacroEnabledTemplate" />
+      <xs:enumeration value="AddIn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WordprocessingDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Document" />
+      <xs:enumeration value="Template" />
+      <xs:enumeration value="MacroEnabledDocument" />
+      <xs:enumeration value="MacroEnabledTemplate" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

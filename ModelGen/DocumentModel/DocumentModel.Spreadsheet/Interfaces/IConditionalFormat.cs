@@ -1,27 +1,32 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Conditional Formatting.
+/// Defines the ConditionalFormat Class.
 /// </summary>
 public interface IConditionalFormat // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Conditional Formatting Scope
+  /// scope, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.ScopeKind? Scope { get ; set; }
   
   /// <summary>
-  /// Conditional Formatting Rule Type
+  /// type, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.RuleKind? Type { get ; set; }
   
   /// <summary>
-  /// Priority
+  /// priority, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? Priority { get ; set; }
   
   /// <summary>
-  /// Pivot Areas.
+  /// id, this property is only available in Office 2010 and later.
+  /// </summary>
+  public System.String? Id { get ; set; }
+  
+  /// <summary>
+  /// PivotAreas.
   /// </summary>
   public DocumentModel.Spreadsheet.IPivotAreas? PivotAreas { get ; set; }
   

@@ -198,62 +198,62 @@ public interface IRunProperties // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IGlow? Glow { get ; set; }
+  public DocumentModel.Wordprocessing.IGlow? Glow { get ; set; }
   
   /// <summary>
   /// Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IShadow? Shadow14 { get ; set; }
+  public DocumentModel.Wordprocessing.IShadow? Shadow14 { get ; set; }
   
   /// <summary>
   /// Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IReflection? Reflection { get ; set; }
+  public DocumentModel.Wordprocessing.IReflection? Reflection { get ; set; }
   
   /// <summary>
   /// TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.ITextOutlineEffect? TextOutlineEffect { get ; set; }
+  public DocumentModel.Wordprocessing.ITextOutlineEffect? TextOutlineEffect { get ; set; }
   
   /// <summary>
   /// FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IFillTextEffect? FillTextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.IFillTextEffect? FillTextEffect { get ; set; }
   
   /// <summary>
   /// Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IScene3D? Scene3D { get ; set; }
+  public DocumentModel.Wordprocessing.IScene3D? Scene3D { get ; set; }
   
   /// <summary>
   /// Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IProperties3D? Properties3D { get ; set; }
+  public DocumentModel.Wordprocessing.IProperties3D? Properties3D { get ; set; }
   
   /// <summary>
   /// Ligatures, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.LigaturesKind? Ligatures { get ; set; }
+  public DocumentModel.Wordprocessing.LigaturesKind? Ligatures { get ; set; }
   
   /// <summary>
   /// NumberingFormat, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.NumberFormKind? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormKind? NumberingFormat { get ; set; }
   
   /// <summary>
   /// NumberSpacing, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.NumberSpacingKind? NumberSpacing { get ; set; }
+  public DocumentModel.Wordprocessing.NumberSpacingKind? NumberSpacing { get ; set; }
   
   /// <summary>
   /// StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.IStylisticSets? StylisticSets { get ; set; }
+  public DocumentModel.Wordprocessing.IStylisticSets? StylisticSets { get ; set; }
   
   /// <summary>
   /// ContextualAlternatives, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.Word.OnOffKind? ContextualAlternatives { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives { get ; set; }
   
   /// <summary>
   /// RunPropertiesChange.

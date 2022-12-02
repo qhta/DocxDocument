@@ -12,12 +12,6 @@ public interface ISlideCommentsPart // : DocumentModel.Packaging.ITypedOpenXmlPa
   
   public System.String? ContentType { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

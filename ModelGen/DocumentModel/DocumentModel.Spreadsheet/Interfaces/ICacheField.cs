@@ -1,87 +1,13 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// PivotCache Field.
+/// Defines the CacheField Class.
 /// </summary>
-public interface ICacheField // : DocumentModel.ITypedOpenXmlCompositeElement
+public interface ICacheField // : DocumentModel.ITypedOpenXmlLeafElement
 {
   /// <summary>
-  /// name
+  /// ignore, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
-  
-  /// <summary>
-  /// caption
-  /// </summary>
-  public System.String? Caption { get ; set; }
-  
-  /// <summary>
-  /// propertyName
-  /// </summary>
-  public System.String? PropertyName { get ; set; }
-  
-  /// <summary>
-  /// serverField
-  /// </summary>
-  public System.Boolean? ServerField { get ; set; }
-  
-  /// <summary>
-  /// uniqueList
-  /// </summary>
-  public System.Boolean? UniqueList { get ; set; }
-  
-  /// <summary>
-  /// numFmtId
-  /// </summary>
-  public System.UInt32? NumberFormatId { get ; set; }
-  
-  /// <summary>
-  /// formula
-  /// </summary>
-  public System.String? Formula { get ; set; }
-  
-  /// <summary>
-  /// sqlType
-  /// </summary>
-  public System.Int32? SqlType { get ; set; }
-  
-  /// <summary>
-  /// hierarchy
-  /// </summary>
-  public System.Int32? Hierarchy { get ; set; }
-  
-  /// <summary>
-  /// level
-  /// </summary>
-  public System.UInt32? Level { get ; set; }
-  
-  /// <summary>
-  /// databaseField
-  /// </summary>
-  public System.Boolean? DatabaseField { get ; set; }
-  
-  /// <summary>
-  /// mappingCount
-  /// </summary>
-  public System.UInt32? MappingCount { get ; set; }
-  
-  /// <summary>
-  /// memberPropertyField
-  /// </summary>
-  public System.Boolean? MemberPropertyField { get ; set; }
-  
-  /// <summary>
-  /// SharedItems.
-  /// </summary>
-  public DocumentModel.Spreadsheet.ISharedItems? SharedItems { get ; set; }
-  
-  /// <summary>
-  /// FieldGroup.
-  /// </summary>
-  public DocumentModel.Spreadsheet.IFieldGroup? FieldGroup { get ; set; }
-  
-  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertiesMaps { get ; set; }
-  
-  public DocumentModel.Spreadsheet.ICacheFieldExtensionList? CacheFieldExtensionList { get ; set; }
+  public System.Boolean? Ignore { get ; set; }
   
 }

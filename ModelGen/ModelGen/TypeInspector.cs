@@ -6,7 +6,7 @@ namespace ModelGen;
 
 public static class TypeInspector
 {
-  public static IElementMetadata? InspectType(TypeInfo typeInfo)
+  internal static IElementMetadata? InspectType(TypeInfo typeInfo)
   {
     var type = typeInfo.Type;
     if (type != null)
@@ -26,7 +26,7 @@ public static class TypeInspector
     return null;
   }
 
-  public static void InspectParticle(TypeInfo typeInfo, ParticleConstraint particle)
+  internal static void InspectParticle(TypeInfo typeInfo, ParticleConstraint particle)
   {
     var isMultiple = particle.CanOccursMoreThanOne;
     if (particle is CompositeParticle compositeParticle)

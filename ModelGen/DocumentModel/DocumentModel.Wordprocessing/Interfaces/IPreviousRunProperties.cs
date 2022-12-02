@@ -81,26 +81,26 @@ public interface IPreviousRunProperties // : DocumentModel.ITypedOpenXmlComposit
   
   public System.Boolean? SpecVanish { get ; set; }
   
-  public DocumentModel.Office2010.Word.IGlow? Glow { get ; set; }
+  public DocumentModel.Wordprocessing.IGlow? Glow { get ; set; }
   
-  public DocumentModel.Office2010.Word.IReflection? Reflection { get ; set; }
+  public DocumentModel.Wordprocessing.IReflection? Reflection { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITextOutlineEffect? TextOutlineEffect { get ; set; }
+  public DocumentModel.Wordprocessing.ITextOutlineEffect? TextOutlineEffect { get ; set; }
   
-  public DocumentModel.Office2010.Word.IFillTextEffect? FillTextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.IFillTextEffect? FillTextEffect { get ; set; }
   
-  public DocumentModel.Office2010.Word.IScene3D? Scene3D { get ; set; }
+  public DocumentModel.Wordprocessing.IScene3D? Scene3D { get ; set; }
   
-  public DocumentModel.Office2010.Word.IProperties3D? Properties3D { get ; set; }
+  public DocumentModel.Wordprocessing.IProperties3D? Properties3D { get ; set; }
   
-  public DocumentModel.Office2010.Word.LigaturesKind? Ligatures { get ; set; }
+  public DocumentModel.Wordprocessing.LigaturesKind? Ligatures { get ; set; }
   
-  public DocumentModel.Office2010.Word.NumberFormKind? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormKind? NumberingFormat { get ; set; }
   
-  public DocumentModel.Office2010.Word.NumberSpacingKind? NumberSpacing { get ; set; }
+  public DocumentModel.Wordprocessing.NumberSpacingKind? NumberSpacing { get ; set; }
   
-  public DocumentModel.Office2010.Word.IStylisticSets? StylisticSets { get ; set; }
+  public DocumentModel.Wordprocessing.IStylisticSets? StylisticSets { get ; set; }
   
-  public DocumentModel.Office2010.Word.OnOffKind? ContextualAlternatives { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives { get ; set; }
   
 }

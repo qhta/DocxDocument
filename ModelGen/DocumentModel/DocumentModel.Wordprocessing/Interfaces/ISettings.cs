@@ -250,7 +250,7 @@ public interface ISettings // : DocumentModel.ITypedOpenXmlPartRootElement
   
   public DocumentModel.Wordprocessing.IReadModeInkLockDown? ReadModeInkLockDown { get ; set; }
   
-  public DocumentModel.CustomXmlSchemaReferences.ISchemaLibrary? SchemaLibrary { get ; set; }
+  public DocumentModel.CustomXml.ISchemaLibrary? SchemaLibrary { get ; set; }
   
   public DocumentModel.Wordprocessing.IShapeDefaults? ShapeDefaults { get ; set; }
   
@@ -260,11 +260,11 @@ public interface ISettings // : DocumentModel.ITypedOpenXmlPartRootElement
   
   public DocumentModel.IHexBinaryValue? DocumentId { get ; set; }
   
-  public DocumentModel.Office2010.Word.OnOffKind? DiscardImageEditingData { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? DiscardImageEditingData { get ; set; }
   
   public System.Int32? DefaultImageDpi { get ; set; }
   
-  public DocumentModel.Office2010.Word.OnOffKind? ConflictMode { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? ConflictMode { get ; set; }
   
   public System.Boolean? ChartTrackingRefBased { get ; set; }
   

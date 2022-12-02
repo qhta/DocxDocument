@@ -69,43 +69,43 @@ public interface ITransition // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public System.Boolean? FlashTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ISideDirectionTransitionType? VortexTransition { get ; set; }
+  public DocumentModel.Presentation.ISideDirectionTransitionType? VortexTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ILeftRightDirectionTransitionType? SwitchTransition { get ; set; }
+  public DocumentModel.Presentation.ILeftRightDirectionTransitionType? SwitchTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ILeftRightDirectionTransitionType? FlipTransition { get ; set; }
+  public DocumentModel.Presentation.ILeftRightDirectionTransitionType? FlipTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IRippleTransition? RippleTransition { get ; set; }
+  public DocumentModel.Presentation.IRippleTransition? RippleTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IGlitterTransition? GlitterTransition { get ; set; }
+  public DocumentModel.Presentation.IGlitterTransition? GlitterTransition { get ; set; }
   
   public System.Boolean? HoneycombTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IPrismTransition? PrismTransition { get ; set; }
+  public DocumentModel.Presentation.IPrismTransition? PrismTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IOrientationTransitionType? DoorsTransition { get ; set; }
+  public DocumentModel.Presentation.IOrientationTransitionType? DoorsTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IOrientationTransitionType? WindowTransition { get ; set; }
+  public DocumentModel.Presentation.IOrientationTransitionType? WindowTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IShredTransition? ShredTransition { get ; set; }
+  public DocumentModel.Presentation.IShredTransition? ShredTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ILeftRightDirectionTransitionType? FerrisTransition { get ; set; }
+  public DocumentModel.Presentation.ILeftRightDirectionTransitionType? FerrisTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IFlythroughTransition? FlythroughTransition { get ; set; }
+  public DocumentModel.Presentation.IFlythroughTransition? FlythroughTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IWarpTransition? WarpTransition { get ; set; }
+  public DocumentModel.Presentation.IWarpTransition? WarpTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ILeftRightDirectionTransitionType? GalleryTransition { get ; set; }
+  public DocumentModel.Presentation.ILeftRightDirectionTransitionType? GalleryTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ILeftRightDirectionTransitionType? ConveyorTransition { get ; set; }
+  public DocumentModel.Presentation.ILeftRightDirectionTransitionType? ConveyorTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.ISideDirectionTransitionType? PanTransition { get ; set; }
+  public DocumentModel.Presentation.ISideDirectionTransitionType? PanTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IRevealTransition? RevealTransition { get ; set; }
+  public DocumentModel.Presentation.IRevealTransition? RevealTransition { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IWheelReverseTransition? WheelReverseTransition { get ; set; }
+  public DocumentModel.Presentation.IWheelReverseTransition? WheelReverseTransition { get ; set; }
   
-  public DocumentModel.Office2013.PowerPoint.IPresetTransition? PresetTransition { get ; set; }
+  public DocumentModel.Presentation.IPresetTransition? PresetTransition { get ; set; }
   
   public DocumentModel.Presentation.ISoundAction? SoundAction { get ; set; }
   

@@ -1,21 +1,18 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Conditional Formatting.
+/// Defines the ConditionalFormatting Class.
 /// </summary>
 public interface IConditionalFormatting // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// PivotTable Conditional Formatting
+  /// pivot, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Pivot { get ; set; }
   
-  /// <summary>
-  /// Sequence of References
-  /// </summary>
-  public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
-  
   public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingRule>? ConditionalFormattingRules { get ; set; }
+  
+  public System.String? ReferenceSequence { get ; set; }
   
   public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   

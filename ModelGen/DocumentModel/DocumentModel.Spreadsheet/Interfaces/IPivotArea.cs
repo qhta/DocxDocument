@@ -1,7 +1,7 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Calculated Item Location.
+/// Defines the PivotArea Class.
 /// </summary>
 public interface IPivotArea // : DocumentModel.ITypedOpenXmlCompositeElement
 {

@@ -10,6 +10,6 @@ public interface IDataFieldExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IDataField? DataField { get ; set; }
+  public DocumentModel.Spreadsheet.IDataField? DataField { get ; set; }
   
 }

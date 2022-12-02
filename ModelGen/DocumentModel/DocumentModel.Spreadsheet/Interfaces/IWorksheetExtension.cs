@@ -10,18 +10,18 @@ public interface IWorksheetExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IConditionalFormattings? ConditionalFormattings { get ; set; }
+  public DocumentModel.Spreadsheet.IConditionalFormattings? ConditionalFormattings { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IDataValidations? DataValidations { get ; set; }
+  public DocumentModel.Spreadsheet.IDataValidations? DataValidations { get ; set; }
   
-  public DocumentModel.Office2010.Excel.ISparklineGroups? SparklineGroups { get ; set; }
+  public DocumentModel.Spreadsheet.ISparklineGroups? SparklineGroups { get ; set; }
   
-  public DocumentModel.Office2010.Excel.ISlicerList? SlicerList { get ; set; }
+  public DocumentModel.Spreadsheet.ISlicerList? SlicerList { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IProtectedRanges? ProtectedRanges { get ; set; }
+  public DocumentModel.Spreadsheet.IProtectedRanges? ProtectedRanges { get ; set; }
   
-  public DocumentModel.Office2010.Excel.IIgnoredErrors? IgnoredErrors { get ; set; }
+  public DocumentModel.Spreadsheet.IIgnoredErrors? IgnoredErrors { get ; set; }
   
-  public DocumentModel.Office2013.Excel.ITimelineReferences? TimelineReferences { get ; set; }
+  public DocumentModel.Spreadsheet.ITimelineReferences? TimelineReferences { get ; set; }
   
 }

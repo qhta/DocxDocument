@@ -46,12 +46,12 @@ public interface ISdtBlock // : DocumentModel.Wordprocessing.ISdtElement
   
   public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public DocumentModel.Office2010.Word.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public DocumentModel.Office2010.Word.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
 }

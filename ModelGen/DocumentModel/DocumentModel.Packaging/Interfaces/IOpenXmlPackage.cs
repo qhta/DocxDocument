@@ -5,10 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface IOpenXmlPackage // : DocumentModel.Packaging.IOpenXmlPartContainer
 {
-  public DocumentModel.Packaging.IOpenSettings? OpenSettings { get ; set; }
-  
-  public DocumentModel.ApplicationType? ApplicationType { get ; set; }
-  
   /// <summary>
   /// Gets a value indicating whether this package contains Transitional relationships converted from Strict.
   /// </summary>
@@ -53,22 +49,5 @@ public interface IOpenXmlPackage // : DocumentModel.Packaging.IOpenXmlPartContai
   /// Gets a value indicating whether the parts should be saved when disposed.
   /// </summary>
   public System.Boolean? AutoSave { get ; set; }
-  
-  /// <summary>
-  /// Gets the relationship type of the main part.
-  /// </summary>
-  public System.String? MainPartRelationshipType { get ; set; }
-  
-  /// <summary>
-  /// Gets or sets the content type of the main part of the package.
-  /// </summary>
-  public System.String? MainPartContentType { get ; set; }
-  
-  /// <summary>
-  /// Gets the list of valid content types for the main part.
-  /// </summary>
-  public System.Collections.Generic.ICollection<System.String>? ValidMainPartContentTypes { get ; set; }
-  
-  public DocumentModel.Packaging.IOpenXmlPackage? InternalOpenXmlPackage { get ; set; }
   
 }

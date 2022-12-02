@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawing;
 
 /// <summary>
-/// Fill Reference.
+/// Defines the FillReference Class.
 /// </summary>
-public interface IFillReference // : DocumentModel.Drawing.IStyleMatrixReferenceType
+public interface IFillReference // : DocumentModel.Drawing.IStyleReference
 {
   public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
@@ -16,5 +16,7 @@ public interface IFillReference // : DocumentModel.Drawing.IStyleMatrixReference
   public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
   
   public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  
+  public DocumentModel.Drawing.IStyleColor? StyleColor { get ; set; }
   
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawing;
 public interface IExtension // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// URI
+  /// Uniform Resource Identifier
   /// </summary>
   public System.String? Uri { get ; set; }
   

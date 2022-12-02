@@ -77,13 +77,7 @@ public interface INotesMasterPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// </summary>
   public DocumentModel.Presentation.INotesMaster? NotesMaster { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the UserDefinedTagsParts of the NotesMasterPart

@@ -6,24 +6,14 @@ namespace DocumentModel.Vml;
 public enum FillKind
 {
   /// <summary>
+  /// Centered Radial Gradient.
+  /// </summary>
+  GradientCenter,
+  
+  /// <summary>
   /// Solid Fill.
   /// </summary>
   Solid,
-  
-  /// <summary>
-  /// Linear Gradient.
-  /// </summary>
-  Gradient,
-  
-  /// <summary>
-  /// Radial Gradient.
-  /// </summary>
-  GradientRadial,
-  
-  /// <summary>
-  /// Tiled Image.
-  /// </summary>
-  Tile,
   
   /// <summary>
   /// Image Pattern.
@@ -31,8 +21,33 @@ public enum FillKind
   Pattern,
   
   /// <summary>
+  /// Tiled Image.
+  /// </summary>
+  Tile,
+  
+  /// <summary>
   /// Stretch Image to Fit.
   /// </summary>
   Frame,
+  
+  /// <summary>
+  /// Unscaled Gradient.
+  /// </summary>
+  GradientUnscaled,
+  
+  /// <summary>
+  /// Radial Gradient.
+  /// </summary>
+  GradientRadial,
+  
+  /// <summary>
+  /// Linear Gradient.
+  /// </summary>
+  Gradient,
+  
+  /// <summary>
+  /// Use Background Fill.
+  /// </summary>
+  Background,
   
 }

@@ -63,7 +63,7 @@ public interface IPath // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Connection Point Type
   /// </summary>
-  public DocumentModel.Vml.Office.ConnectKind? ConnectionPointType { get ; set; }
+  public DocumentModel.Vml.ConnectKind? ConnectionPointType { get ; set; }
   
   /// <summary>
   /// Connection Points
