@@ -5,8 +5,4 @@ namespace DocumentModel;
 /// </summary>
 public interface IOpenXmlSimpleType // : 
 {
-  public System.Boolean? IsValid { get ; set; }
-  
-  public System.Boolean? IsEnum { get ; set; }
-  
 }

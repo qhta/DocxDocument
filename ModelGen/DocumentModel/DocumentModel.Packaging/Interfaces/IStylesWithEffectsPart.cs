@@ -9,8 +9,4 @@ public interface IStylesWithEffectsPart // : DocumentModel.Packaging.IStylesPart
   
   public System.String? RelationshipType { get ; set; }
   
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
-  
 }

@@ -10,6 +10,6 @@ public interface ICommentExtension // : DocumentModel.ITypedOpenXmlCompositeElem
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2013.PowerPoint.IThreadingInfo? ThreadingInfo { get ; set; }
+  public DocumentModel.Presentation.IThreadingInfo? ThreadingInfo { get ; set; }
   
 }

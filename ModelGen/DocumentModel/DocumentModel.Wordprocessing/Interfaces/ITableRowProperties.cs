@@ -35,8 +35,8 @@ public interface ITableRowProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   
   public DocumentModel.Wordprocessing.ITableRowPropertiesChange? TableRowPropertiesChange { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? ConflictInsertion { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? ConflictInsertion { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? ConflictDeletion { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? ConflictDeletion { get ; set; }
   
 }

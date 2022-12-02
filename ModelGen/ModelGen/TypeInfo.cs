@@ -69,7 +69,7 @@ public class TypeInfo : ModelElement
     {
       aNamespace = this.Namespace;
       var nSpace = aNamespace;
-      foreach (var item in ModelData.NamespaceRedirectionTable)
+      foreach (var item in ModelData.NamespaceTranslationTable)
       {
         if (aNamespace.StartsWith(item.Item1))
           nSpace = item.Item2;

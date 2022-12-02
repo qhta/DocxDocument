@@ -10,7 +10,7 @@ public interface IApplicationNonVisualDrawingPropertiesExtension // : DocumentMo
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.PowerPoint.IMedia? Media { get ; set; }
+  public DocumentModel.Presentation.IMedia? Media { get ; set; }
   
   public System.UInt32? ModificationId { get ; set; }
   

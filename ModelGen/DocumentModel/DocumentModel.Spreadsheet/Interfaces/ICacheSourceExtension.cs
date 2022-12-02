@@ -10,6 +10,6 @@ public interface ICacheSourceExtension // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Excel.ISourceConnection? SourceConnection { get ; set; }
+  public DocumentModel.Spreadsheet.ISourceConnection? SourceConnection { get ; set; }
   
 }

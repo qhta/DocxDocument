@@ -18,16 +18,16 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  public DocumentModel.Office2010.PowerPoint.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
+  public DocumentModel.Presentation.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public DocumentModel.Office2010.PowerPoint.ITransform2D? Transform2D { get ; set; }
+  public DocumentModel.Presentation.ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// ExtensionListModify.
   /// </summary>
-  public DocumentModel.Office2010.PowerPoint.IExtensionListModify? ExtensionListModify { get ; set; }
+  public DocumentModel.Presentation.IExtensionListModify? ExtensionListModify { get ; set; }
   
 }

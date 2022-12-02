@@ -52,13 +52,7 @@ public interface IDrawingsPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// </summary>
   public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the WebExtensionParts of the DrawingsPart
@@ -68,6 +62,6 @@ public interface IDrawingsPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawing.Spreadsheet.IWorksheetDrawing? WorksheetDrawing { get ; set; }
+  public DocumentModel.Spreadsheet.Drawing.IWorksheetDrawing? WorksheetDrawing { get ; set; }
   
 }

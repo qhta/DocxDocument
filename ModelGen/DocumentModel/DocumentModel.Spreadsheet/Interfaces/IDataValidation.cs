@@ -1,88 +1,83 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Data Validation.
+/// Defines the DataValidation Class.
 /// </summary>
 public interface IDataValidation // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// type
+  /// type, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.DataValidationKind? Type { get ; set; }
   
   /// <summary>
-  /// errorStyle
+  /// errorStyle, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.DataValidationErrorStyleKind? ErrorStyle { get ; set; }
   
   /// <summary>
-  /// imeMode
+  /// imeMode, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.DataValidationImeMode? ImeMode { get ; set; }
   
   /// <summary>
-  /// operator
+  /// operator, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.DataValidationOperatorKind? Operator { get ; set; }
   
   /// <summary>
-  /// allowBlank
+  /// allowBlank, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? AllowBlank { get ; set; }
   
   /// <summary>
-  /// showDropDown
+  /// showDropDown, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? ShowDropDown { get ; set; }
   
   /// <summary>
-  /// showInputMessage
+  /// showInputMessage, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? ShowInputMessage { get ; set; }
   
   /// <summary>
-  /// showErrorMessage
+  /// showErrorMessage, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? ShowErrorMessage { get ; set; }
   
   /// <summary>
-  /// errorTitle
+  /// errorTitle, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? ErrorTitle { get ; set; }
   
   /// <summary>
-  /// error
+  /// error, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? Error { get ; set; }
   
   /// <summary>
-  /// promptTitle
+  /// promptTitle, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? PromptTitle { get ; set; }
   
   /// <summary>
-  /// prompt
+  /// prompt, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? Prompt { get ; set; }
   
   /// <summary>
-  /// sqref
+  /// DataValidationForumla1.
   /// </summary>
-  public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
+  public DocumentModel.Spreadsheet.IDataValidationForumla1? DataValidationForumla1 { get ; set; }
   
   /// <summary>
-  /// List, this property is only available in Office 2013 and later..
+  /// DataValidationForumla2.
   /// </summary>
-  public System.String? List { get ; set; }
+  public DocumentModel.Spreadsheet.IDataValidationForumla2? DataValidationForumla2 { get ; set; }
   
   /// <summary>
-  /// Formula1.
+  /// ReferenceSequence.
   /// </summary>
-  public DocumentModel.Spreadsheet.IXstringType? Formula1 { get ; set; }
-  
-  /// <summary>
-  /// Formula2.
-  /// </summary>
-  public DocumentModel.Spreadsheet.IXstringType? Formula2 { get ; set; }
+  public System.String? ReferenceSequence { get ; set; }
   
 }

@@ -10,8 +10,4 @@ public interface IBase64BinaryValue // : DocumentModel.IStringValue
   /// </summary>
   public System.String? Value { get ; set; }
   
-  public System.Boolean? IsValid { get ; set; }
-  
-  public System.Int32? Length { get ; set; }
-  
 }

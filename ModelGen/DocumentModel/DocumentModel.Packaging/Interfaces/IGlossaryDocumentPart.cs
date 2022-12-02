@@ -87,13 +87,7 @@ public interface IGlossaryDocumentPart // : DocumentModel.Packaging.ITypedOpenXm
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart

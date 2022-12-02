@@ -1,37 +1,28 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// OLAP Set.
+/// Defines the TupleSet Class.
 /// </summary>
 public interface ITupleSet // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Number of Tuples
+  /// rowCount, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public System.UInt32? RowCount { get ; set; }
   
   /// <summary>
-  /// Maximum Rank Requested
+  /// columnCount, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? MaxRank { get ; set; }
+  public System.UInt32? ColumnCount { get ; set; }
   
   /// <summary>
-  /// MDX Set Definition
+  /// TupleSetHeaders.
   /// </summary>
-  public System.String? SetDefinition { get ; set; }
+  public DocumentModel.Spreadsheet.ITupleSetHeaders? TupleSetHeaders { get ; set; }
   
   /// <summary>
-  /// Set Sort Order
+  /// TupleSetRows.
   /// </summary>
-  public DocumentModel.Spreadsheet.SortKind? SortType { get ; set; }
-  
-  /// <summary>
-  /// Query Failed
-  /// </summary>
-  public System.Boolean? QueryFailed { get ; set; }
-  
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITuples>? Tupleses { get ; set; }
-  
-  public DocumentModel.Spreadsheet.ISortByTuple? SortByTuple { get ; set; }
+  public DocumentModel.Spreadsheet.ITupleSetRows? TupleSetRows { get ; set; }
   
 }

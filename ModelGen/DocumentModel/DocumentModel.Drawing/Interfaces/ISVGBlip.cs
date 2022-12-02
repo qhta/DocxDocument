@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawing;
+
+/// <summary>
+/// Defines the SVGBlip Class.
+/// </summary>
+public interface ISVGBlip // : DocumentModel.ITypedOpenXmlLeafElement
+{
+  /// <summary>
+  /// Embedded Picture Reference
+  /// </summary>
+  public System.String? Embed { get ; set; }
+  
+  /// <summary>
+  /// Linked Picture Reference
+  /// </summary>
+  public System.String? Link { get ; set; }
+  
+}

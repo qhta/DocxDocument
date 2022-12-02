@@ -6,37 +6,37 @@ namespace DocumentModel.Spreadsheet;
 public interface ISortCondition // : DocumentModel.ITypedOpenXmlLeafElement
 {
   /// <summary>
-  /// Descending
+  /// descending, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Descending { get ; set; }
   
   /// <summary>
-  /// Sort By
+  /// sortBy, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.SortByKind? SortBy { get ; set; }
   
   /// <summary>
-  /// Reference
+  /// ref, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? Reference { get ; set; }
   
   /// <summary>
-  /// Custom List
+  /// customList, this property is only available in Office 2010 and later.
   /// </summary>
   public System.String? CustomList { get ; set; }
   
   /// <summary>
-  /// Format Id
+  /// dxfId, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? FormatId { get ; set; }
   
   /// <summary>
-  /// Icon Set
+  /// iconSet, this property is only available in Office 2010 and later.
   /// </summary>
   public DocumentModel.Spreadsheet.IconSetKind? IconSet { get ; set; }
   
   /// <summary>
-  /// Icon Id
+  /// iconId, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? IconId { get ; set; }
   

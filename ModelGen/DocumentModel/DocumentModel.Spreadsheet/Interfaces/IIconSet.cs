@@ -1,30 +1,37 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Icon Set.
+/// Defines the IconSet Class.
 /// </summary>
 public interface IIconSet // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Icon Set
+  /// iconSet, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.IconSetKind? IconSetValue { get ; set; }
+  public DocumentModel.Spreadsheet.IconSetKind? IconSetTypes { get ; set; }
   
   /// <summary>
-  /// Show Value
+  /// showValue, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? ShowValue { get ; set; }
   
   /// <summary>
-  /// Percent
+  /// percent, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Percent { get ; set; }
   
   /// <summary>
-  /// Reverse Icons
+  /// reverse, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Reverse { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormatValueObject>? ConditionalFormatValueObjects { get ; set; }
+  /// <summary>
+  /// custom, this property is only available in Office 2010 and later.
+  /// </summary>
+  public System.Boolean? Custom { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingValueObject>? ConditionalFormattingValueObjects { get ; set; }
+  
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingIcon>? ConditionalFormattingIcons { get ; set; }
   
 }

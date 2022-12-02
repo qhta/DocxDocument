@@ -1,7 +1,7 @@
 namespace DocumentModel.Presentation;
 
 /// <summary>
-/// Comment List.
+/// Defines the CommentList Class.
 /// </summary>
 public interface ICommentList // : DocumentModel.ITypedOpenXmlPartRootElement
 {

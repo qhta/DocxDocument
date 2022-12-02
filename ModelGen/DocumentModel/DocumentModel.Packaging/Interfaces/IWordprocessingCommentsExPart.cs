@@ -18,7 +18,7 @@ public interface IWordprocessingCommentsExPart // : DocumentModel.Packaging.ITyp
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Office2013.Word.ICommentsEx? CommentsEx { get ; set; }
+  public DocumentModel.Wordprocessing.ICommentsEx? CommentsEx { get ; set; }
   
   public System.String? ContentType { get ; set; }
   
@@ -77,12 +77,6 @@ public interface IWordprocessingCommentsExPart // : DocumentModel.Packaging.ITyp
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

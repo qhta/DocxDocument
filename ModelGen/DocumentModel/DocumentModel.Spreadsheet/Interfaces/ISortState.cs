@@ -25,7 +25,7 @@ public interface ISortState // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public System.String? Reference { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Office2010.Excel.ISortCondition>? SortConditions { get ; set; }
+  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISortCondition>? SortConditions { get ; set; }
   
   public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
   

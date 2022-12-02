@@ -6,7 +6,7 @@ namespace DocumentModel.Spreadsheet;
 public interface IConditionalFormats // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Conditional Format Count
+  /// count, this property is only available in Office 2010 and later.
   /// </summary>
   public System.UInt32? Count { get ; set; }
   

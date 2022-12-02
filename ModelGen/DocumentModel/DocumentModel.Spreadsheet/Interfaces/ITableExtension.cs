@@ -10,6 +10,6 @@ public interface ITableExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// </summary>
   public System.String? Uri { get ; set; }
   
-  public DocumentModel.Office2010.Excel.ITable? Table { get ; set; }
+  public DocumentModel.Spreadsheet.ITable? Table { get ; set; }
   
 }

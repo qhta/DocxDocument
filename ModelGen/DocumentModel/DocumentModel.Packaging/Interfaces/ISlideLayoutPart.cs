@@ -77,8 +77,6 @@ public interface ISlideLayoutPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// </summary>
   public DocumentModel.Packaging.IModel3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
   
   /// <summary>
@@ -90,10 +88,6 @@ public interface ISlideLayoutPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// Gets the SlideParts of the SlideLayoutPart
   /// </summary>
   public DocumentModel.Packaging.ISlidePart? SlideParts { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
   /// <summary>
   /// Gets the UserDefinedTagsParts of the SlideLayoutPart

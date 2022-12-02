@@ -32,7 +32,7 @@ public interface IPicture // : DocumentModel.ITypedOpenXmlCompositeElement
   
   public DocumentModel.Vml.ICurve? Curve { get ; set; }
   
-  public DocumentModel.Vml.Office.IOleObject? OleObject { get ; set; }
+  public DocumentModel.Vml.IOleObject? OleObject { get ; set; }
   
   public DocumentModel.Wordprocessing.IRelationshipType? MovieReference { get ; set; }
   

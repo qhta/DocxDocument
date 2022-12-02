@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawing;
 
 /// <summary>
-/// Visual Properties.
+/// Defines the ShapeProperties Class.
 /// </summary>
 public interface IShapeProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {

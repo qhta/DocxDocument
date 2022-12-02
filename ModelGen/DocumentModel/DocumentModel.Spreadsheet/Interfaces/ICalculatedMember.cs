@@ -1,48 +1,23 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Calculated Member.
+/// Defines the CalculatedMember Class.
 /// </summary>
-public interface ICalculatedMember // : DocumentModel.ITypedOpenXmlCompositeElement
+public interface ICalculatedMember // : DocumentModel.ITypedOpenXmlLeafElement
 {
   /// <summary>
-  /// name
+  /// measureGroup, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public System.String? MeasureGroup { get ; set; }
   
   /// <summary>
-  /// mdx
+  /// numberFormat, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Mdx { get ; set; }
+  public DocumentModel.Spreadsheet.CalculatedMemberNumberFormat? NumberFormat { get ; set; }
   
   /// <summary>
-  /// memberName
+  /// measure, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? MemberName { get ; set; }
-  
-  /// <summary>
-  /// hierarchy
-  /// </summary>
-  public System.String? Hierarchy { get ; set; }
-  
-  /// <summary>
-  /// parent
-  /// </summary>
-  public System.String? ParentName { get ; set; }
-  
-  /// <summary>
-  /// solveOrder
-  /// </summary>
-  public System.Int32? SolveOrder { get ; set; }
-  
-  /// <summary>
-  /// set
-  /// </summary>
-  public System.Boolean? Set { get ; set; }
-  
-  /// <summary>
-  /// CalculatedMemberExtensionList.
-  /// </summary>
-  public DocumentModel.Spreadsheet.ICalculatedMemberExtensionList? CalculatedMemberExtensionList { get ; set; }
+  public System.Boolean? Measure { get ; set; }
   
 }

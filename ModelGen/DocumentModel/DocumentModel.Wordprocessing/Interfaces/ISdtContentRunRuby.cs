@@ -53,13 +53,13 @@ public interface ISdtContentRunRuby // : DocumentModel.ITypedOpenXmlCompositeEle
   
   public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public DocumentModel.Office2010.Word.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public DocumentModel.Office2010.Word.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public DocumentModel.Office2010.Word.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
   public DocumentModel.Wordprocessing.IInsertedRun? InsertedRun { get ; set; }
   
@@ -69,9 +69,9 @@ public interface ISdtContentRunRuby // : DocumentModel.ITypedOpenXmlCompositeEle
   
   public DocumentModel.Wordprocessing.IMoveToRun? MoveToRun { get ; set; }
   
-  public DocumentModel.Office2010.Word.IRunConflictInsertion? RunConflictInsertion { get ; set; }
+  public DocumentModel.Wordprocessing.IRunConflictInsertion? RunConflictInsertion { get ; set; }
   
-  public DocumentModel.Office2010.Word.IRunConflictDeletion? RunConflictDeletion { get ; set; }
+  public DocumentModel.Wordprocessing.IRunConflictDeletion? RunConflictDeletion { get ; set; }
   
   public DocumentModel.Math.IParagraph? Paragraph { get ; set; }
   

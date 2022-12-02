@@ -13,7 +13,7 @@ public interface IExtendedChartPart // : DocumentModel.Packaging.ITypedOpenXmlPa
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Office2016.Drawing.ChartDrawing.IChartSpace? ChartSpace { get ; set; }
+  public DocumentModel.Drawing.IChartSpace? ChartSpace { get ; set; }
   
   /// <summary>
   /// Gets the ChartStyleParts of the ExtendedChartPart
@@ -27,12 +27,6 @@ public interface IExtendedChartPart // : DocumentModel.Packaging.ITypedOpenXmlPa
   /// </summary>
   public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

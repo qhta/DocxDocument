@@ -148,26 +148,26 @@ public interface IStroke // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// LeftStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.IStrokeChildType? LeftStroke { get ; set; }
+  public DocumentModel.Vml.IStrokeChildType? LeftStroke { get ; set; }
   
   /// <summary>
   /// TopStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.IStrokeChildType? TopStroke { get ; set; }
+  public DocumentModel.Vml.IStrokeChildType? TopStroke { get ; set; }
   
   /// <summary>
   /// RightStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.IStrokeChildType? RightStroke { get ; set; }
+  public DocumentModel.Vml.IStrokeChildType? RightStroke { get ; set; }
   
   /// <summary>
   /// BottomStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.IStrokeChildType? BottomStroke { get ; set; }
+  public DocumentModel.Vml.IStrokeChildType? BottomStroke { get ; set; }
   
   /// <summary>
   /// ColumnStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.IStrokeChildType? ColumnStroke { get ; set; }
+  public DocumentModel.Vml.IStrokeChildType? ColumnStroke { get ; set; }
   
 }

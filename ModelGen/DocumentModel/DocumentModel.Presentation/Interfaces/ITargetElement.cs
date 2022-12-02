@@ -28,6 +28,6 @@ public interface ITargetElement // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// BookmarkTarget, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Office2010.PowerPoint.IBookmarkTarget? BookmarkTarget { get ; set; }
+  public DocumentModel.Presentation.IBookmarkTarget? BookmarkTarget { get ; set; }
   
 }

@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawing;
 
 /// <summary>
-/// Style.
+/// Defines the ShapeStyle Class.
 /// </summary>
 public interface IShapeStyle // : DocumentModel.ITypedOpenXmlCompositeElement
 {

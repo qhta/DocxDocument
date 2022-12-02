@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawing;
 
 /// <summary>
-/// Defines the BlipFill Class.
+/// Picture Fill.
 /// </summary>
 public interface IBlipFill // : DocumentModel.ITypedOpenXmlCompositeElement
 {

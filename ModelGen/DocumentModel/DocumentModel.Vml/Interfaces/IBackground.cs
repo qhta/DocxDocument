@@ -23,22 +23,22 @@ public interface IBackground // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? BlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Pure Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? PureBlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Normal Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get ; set; }
+  public DocumentModel.Vml.BlackAndWhiteMode? NormalBlackWhiteMode { get ; set; }
   
   /// <summary>
   /// Target Screen Size
   /// </summary>
-  public DocumentModel.Vml.Office.ScreenSizeKind? TargetScreenSize { get ; set; }
+  public DocumentModel.Vml.ScreenSizeKind? TargetScreenSize { get ; set; }
   
   /// <summary>
   /// Fill.

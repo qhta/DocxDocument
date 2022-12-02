@@ -1,7 +1,7 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// AutoFilter Column.
+/// Defines the FilterColumn Class.
 /// </summary>
 public interface IFilterColumn // : DocumentModel.ITypedOpenXmlCompositeElement
 {
@@ -31,9 +31,9 @@ public interface IFilterColumn // : DocumentModel.ITypedOpenXmlCompositeElement
   public DocumentModel.Spreadsheet.ITop10? Top10 { get ; set; }
   
   /// <summary>
-  /// CustomFilters14, this property is only available in Office 2010 and later..
+  /// CustomFilters14.
   /// </summary>
-  public DocumentModel.Office2010.Excel.ICustomFilters? CustomFilters14 { get ; set; }
+  public DocumentModel.Spreadsheet.ICustomFilters? CustomFilters14 { get ; set; }
   
   /// <summary>
   /// Custom Filters.
@@ -51,9 +51,9 @@ public interface IFilterColumn // : DocumentModel.ITypedOpenXmlCompositeElement
   public DocumentModel.Spreadsheet.IColorFilter? ColorFilter { get ; set; }
   
   /// <summary>
-  /// IconFilter14, this property is only available in Office 2010 and later..
+  /// IconFilter14.
   /// </summary>
-  public DocumentModel.Office2010.Excel.IIconFilter? IconFilter14 { get ; set; }
+  public DocumentModel.Spreadsheet.IIconFilter? IconFilter14 { get ; set; }
   
   /// <summary>
   /// Icon Filter.

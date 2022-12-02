@@ -17,12 +17,6 @@ public interface INumberingDefinitionsPart // : DocumentModel.Packaging.ITypedOp
   /// </summary>
   public DocumentModel.Wordprocessing.INumbering? Numbering { get ; set; }
   
-  public DocumentModel.IOpenXmlPartRootElement? PartRootElement { get ; set; }
-  
   public System.String? RelationshipType { get ; set; }
-  
-  public System.String? TargetName { get ; set; }
-  
-  public System.String? TargetPath { get ; set; }
   
 }

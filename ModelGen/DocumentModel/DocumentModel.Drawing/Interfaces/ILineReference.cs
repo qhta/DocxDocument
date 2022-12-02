@@ -3,7 +3,7 @@ namespace DocumentModel.Drawing;
 /// <summary>
 /// Defines the LineReference Class.
 /// </summary>
-public interface ILineReference // : DocumentModel.Drawing.IStyleMatrixReferenceType
+public interface ILineReference // : DocumentModel.Drawing.IStyleReference
 {
   public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
@@ -16,5 +16,7 @@ public interface ILineReference // : DocumentModel.Drawing.IStyleMatrixReference
   public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
   
   public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  
+  public DocumentModel.Drawing.IStyleColor? StyleColor { get ; set; }
   
 }

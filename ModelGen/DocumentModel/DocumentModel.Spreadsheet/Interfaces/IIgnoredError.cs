@@ -1,58 +1,58 @@
 namespace DocumentModel.Spreadsheet;
 
 /// <summary>
-/// Ignored Error.
+/// Defines the IgnoredError Class.
 /// </summary>
-public interface IIgnoredError // : DocumentModel.ITypedOpenXmlLeafElement
+public interface IIgnoredError // : DocumentModel.ITypedOpenXmlCompositeElement
 {
   /// <summary>
-  /// Sequence of References
-  /// </summary>
-  public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
-  
-  /// <summary>
-  /// Evaluation Error
+  /// evalError, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? EvalError { get ; set; }
   
   /// <summary>
-  /// Two Digit Text Year
+  /// twoDigitTextYear, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? TwoDigitTextYear { get ; set; }
   
   /// <summary>
-  /// Number Stored As Text
+  /// numberStoredAsText, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? NumberStoredAsText { get ; set; }
   
   /// <summary>
-  /// Formula
+  /// formula, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? Formula { get ; set; }
   
   /// <summary>
-  /// Formula Range
+  /// formulaRange, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? FormulaRange { get ; set; }
   
   /// <summary>
-  /// Unlocked Formula
+  /// unlockedFormula, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? UnlockedFormula { get ; set; }
   
   /// <summary>
-  /// Empty Cell Reference
+  /// emptyCellReference, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? EmptyCellReference { get ; set; }
   
   /// <summary>
-  /// List Data Validation
+  /// listDataValidation, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? ListDataValidation { get ; set; }
   
   /// <summary>
-  /// Calculated Column
+  /// calculatedColumn, this property is only available in Office 2010 and later.
   /// </summary>
   public System.Boolean? CalculatedColumn { get ; set; }
+  
+  /// <summary>
+  /// ReferenceSequence.
+  /// </summary>
+  public System.String? ReferenceSequence { get ; set; }
   
 }

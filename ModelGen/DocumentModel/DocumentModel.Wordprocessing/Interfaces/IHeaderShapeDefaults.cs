@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IHeaderShapeDefaults // : DocumentModel.Wordprocessing.IShapeDefaultsType
 {
-  public DocumentModel.Vml.Office.IShapeDefaults? ShapeDefaults { get ; set; }
+  public DocumentModel.Vml.IShapeDefaults? ShapeDefaults { get ; set; }
   
-  public DocumentModel.Vml.Office.IShapeLayout? ShapeLayout { get ; set; }
+  public DocumentModel.Vml.IShapeLayout? ShapeLayout { get ; set; }
   
 }
