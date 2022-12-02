@@ -8,21 +8,21 @@ public interface IMarker // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Symbol.
   /// </summary>
-  public DocumentModel.Drawing.MarkerStyleKind? Symbol { get ; set; }
+  public MarkerStyleKind? Symbol { get ; set; }
   
   /// <summary>
   /// Size.
   /// </summary>
-  public System.Byte? Size { get ; set; }
+  public Byte? Size { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

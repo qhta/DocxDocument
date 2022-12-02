@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITableExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITableExtension>? TableExtensions { get ; set; }
+  public Collection<ITableExtension>? TableExtensions { get ; set; }
   
 }

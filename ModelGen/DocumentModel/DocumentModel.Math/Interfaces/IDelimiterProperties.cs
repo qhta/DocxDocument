@@ -8,31 +8,31 @@ public interface IDelimiterProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Delimiter Beginning Character.
   /// </summary>
-  public System.String? BeginChar { get ; set; }
+  public String? BeginChar { get ; set; }
   
   /// <summary>
   /// Delimiter Separator Character.
   /// </summary>
-  public System.String? SeparatorChar { get ; set; }
+  public String? SeparatorChar { get ; set; }
   
   /// <summary>
   /// Delimiter Ending Character.
   /// </summary>
-  public System.String? EndChar { get ; set; }
+  public String? EndChar { get ; set; }
   
   /// <summary>
   /// Delimiter Grow.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? GrowOperators { get ; set; }
+  public BooleanKind? GrowOperators { get ; set; }
   
   /// <summary>
   /// Shape (Delimiters).
   /// </summary>
-  public DocumentModel.Math.ShapeDelimiterKind? Shape { get ; set; }
+  public ShapeDelimiterKind? Shape { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
+  public IControlProperties? ControlProperties { get ; set; }
   
 }

@@ -36,7 +36,7 @@ public enum BorderKind
   Dot,
   
   /// <summary>
-  /// pecifies a line border consisting of a dashed line around the parent object..
+  /// Specifies a line border consisting of a dashed line around the parent object..
   /// </summary>
   Dash,
   

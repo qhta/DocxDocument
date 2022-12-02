@@ -8,6 +8,6 @@ public interface ITimelinePivotCacheDefinition // : DocumentModel.ITypedOpenXmlL
   /// <summary>
   /// timelineData, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? TimelineData { get ; set; }
+  public Boolean? TimelineData { get ; set; }
   
 }

@@ -8,12 +8,12 @@ public interface IChartSpaceExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IPivotOptions? PivotOptions { get ; set; }
+  public IPivotOptions? PivotOptions { get ; set; }
   
-  public DocumentModel.Drawing.ISketchOptions? SketchOptions { get ; set; }
+  public ISketchOptions? SketchOptions { get ; set; }
   
-  public DocumentModel.Drawing.IPivotSource? PivotSource { get ; set; }
+  public IPivotSource? PivotSource { get ; set; }
   
 }

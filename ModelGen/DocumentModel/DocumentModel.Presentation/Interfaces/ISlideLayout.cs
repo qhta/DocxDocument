@@ -8,61 +8,61 @@ public interface ISlideLayout // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Show Master Shapes
   /// </summary>
-  public System.Boolean? ShowMasterShapes { get ; set; }
+  public Boolean? ShowMasterShapes { get ; set; }
   
   /// <summary>
   /// Show Master Placeholder Animations
   /// </summary>
-  public System.Boolean? ShowMasterPlaceholderAnimations { get ; set; }
+  public Boolean? ShowMasterPlaceholderAnimations { get ; set; }
   
   /// <summary>
   /// matchingName
   /// </summary>
-  public System.String? MatchingName { get ; set; }
+  public String? MatchingName { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public DocumentModel.Presentation.SlideLayoutKind? Type { get ; set; }
+  public SlideLayoutKind? Type { get ; set; }
   
   /// <summary>
   /// preserve
   /// </summary>
-  public System.Boolean? Preserve { get ; set; }
+  public Boolean? Preserve { get ; set; }
   
   /// <summary>
   /// userDrawn
   /// </summary>
-  public System.Boolean? UserDrawn { get ; set; }
+  public Boolean? UserDrawn { get ; set; }
   
   /// <summary>
   /// CommonSlideData.
   /// </summary>
-  public DocumentModel.Presentation.ICommonSlideData? CommonSlideData { get ; set; }
+  public ICommonSlideData? CommonSlideData { get ; set; }
   
   /// <summary>
   /// Color Scheme Map Override.
   /// </summary>
-  public DocumentModel.Presentation.IColorMapOverride? ColorMapOverride { get ; set; }
+  public IColorMapOverride? ColorMapOverride { get ; set; }
   
   /// <summary>
   /// Transition.
   /// </summary>
-  public DocumentModel.Presentation.ITransition? Transition { get ; set; }
+  public ITransition? Transition { get ; set; }
   
   /// <summary>
   /// Timing.
   /// </summary>
-  public DocumentModel.Presentation.ITiming? Timing { get ; set; }
+  public ITiming? Timing { get ; set; }
   
   /// <summary>
   /// HeaderFooter.
   /// </summary>
-  public DocumentModel.Presentation.IHeaderFooter? HeaderFooter { get ; set; }
+  public IHeaderFooter? HeaderFooter { get ; set; }
   
   /// <summary>
   /// SlideLayoutExtensionList.
   /// </summary>
-  public DocumentModel.Presentation.ISlideLayoutExtensionList? SlideLayoutExtensionList { get ; set; }
+  public ISlideLayoutExtensionList? SlideLayoutExtensionList { get ; set; }
   
 }

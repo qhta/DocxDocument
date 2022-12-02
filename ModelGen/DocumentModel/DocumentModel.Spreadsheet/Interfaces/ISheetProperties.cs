@@ -8,61 +8,61 @@ public interface ISheetProperties // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Synch Horizontal
   /// </summary>
-  public System.Boolean? SyncHorizontal { get ; set; }
+  public Boolean? SyncHorizontal { get ; set; }
   
   /// <summary>
   /// Synch Vertical
   /// </summary>
-  public System.Boolean? SyncVertical { get ; set; }
+  public Boolean? SyncVertical { get ; set; }
   
   /// <summary>
   /// Synch Reference
   /// </summary>
-  public System.String? SyncReference { get ; set; }
+  public String? SyncReference { get ; set; }
   
   /// <summary>
   /// Transition Formula Evaluation
   /// </summary>
-  public System.Boolean? TransitionEvaluation { get ; set; }
+  public Boolean? TransitionEvaluation { get ; set; }
   
   /// <summary>
   /// Transition Formula Entry
   /// </summary>
-  public System.Boolean? TransitionEntry { get ; set; }
+  public Boolean? TransitionEntry { get ; set; }
   
   /// <summary>
   /// Published
   /// </summary>
-  public System.Boolean? Published { get ; set; }
+  public Boolean? Published { get ; set; }
   
   /// <summary>
   /// Code Name
   /// </summary>
-  public System.String? CodeName { get ; set; }
+  public String? CodeName { get ; set; }
   
   /// <summary>
   /// Filter Mode
   /// </summary>
-  public System.Boolean? FilterMode { get ; set; }
+  public Boolean? FilterMode { get ; set; }
   
   /// <summary>
   /// Enable Conditional Formatting Calculations
   /// </summary>
-  public System.Boolean? EnableFormatConditionsCalculation { get ; set; }
+  public Boolean? EnableFormatConditionsCalculation { get ; set; }
   
   /// <summary>
   /// Sheet Tab Color.
   /// </summary>
-  public DocumentModel.Spreadsheet.IColorType? TabColor { get ; set; }
+  public IColorType? TabColor { get ; set; }
   
   /// <summary>
   /// Outline Properties.
   /// </summary>
-  public DocumentModel.Spreadsheet.IOutlineProperties? OutlineProperties { get ; set; }
+  public IOutlineProperties? OutlineProperties { get ; set; }
   
   /// <summary>
   /// Page Setup Properties.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPageSetupProperties? PageSetupProperties { get ; set; }
+  public IPageSetupProperties? PageSetupProperties { get ; set; }
   
 }

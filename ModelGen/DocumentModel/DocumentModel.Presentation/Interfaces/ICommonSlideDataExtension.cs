@@ -8,8 +8,8 @@ public interface ICommonSlideDataExtension // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public System.UInt32? CreationId { get ; set; }
+  public UInt32? CreationId { get ; set; }
   
 }

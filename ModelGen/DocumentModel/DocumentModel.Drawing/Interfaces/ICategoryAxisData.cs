@@ -5,14 +5,14 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICategoryAxisData // : DocumentModel.Drawing.IAxisDataSourceType
 {
-  public DocumentModel.Drawing.IMultiLevelStringReference? MultiLevelStringReference { get ; set; }
+  public IMultiLevelStringReference? MultiLevelStringReference { get ; set; }
   
-  public DocumentModel.Drawing.INumberReference? NumberReference { get ; set; }
+  public INumberReference? NumberReference { get ; set; }
   
-  public DocumentModel.Drawing.INumberLiteral? NumberLiteral { get ; set; }
+  public INumberLiteral? NumberLiteral { get ; set; }
   
-  public DocumentModel.Drawing.IStringReference? StringReference { get ; set; }
+  public IStringReference? StringReference { get ; set; }
   
-  public DocumentModel.Drawing.IStringLiteral? StringLiteral { get ; set; }
+  public IStringLiteral? StringLiteral { get ; set; }
   
 }

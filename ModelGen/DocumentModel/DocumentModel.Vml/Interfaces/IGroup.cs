@@ -8,152 +8,152 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  public System.String? Style { get ; set; }
+  public String? Style { get ; set; }
   
   /// <summary>
   /// Hyperlink Target
   /// </summary>
-  public System.String? Href { get ; set; }
+  public String? Href { get ; set; }
   
   /// <summary>
   /// Hyperlink Display Target
   /// </summary>
-  public System.String? Target { get ; set; }
+  public String? Target { get ; set; }
   
   /// <summary>
   /// CSS Reference
   /// </summary>
-  public System.String? Class { get ; set; }
+  public String? Class { get ; set; }
   
   /// <summary>
   /// Shape Title
   /// </summary>
-  public System.String? Title { get ; set; }
+  public String? Title { get ; set; }
   
   /// <summary>
   /// Alternate Text
   /// </summary>
-  public System.String? Alternate { get ; set; }
+  public String? Alternate { get ; set; }
   
   /// <summary>
   /// Coordinate Space Size
   /// </summary>
-  public System.String? CoordinateSize { get ; set; }
+  public String? CoordinateSize { get ; set; }
   
   /// <summary>
   /// Coordinate Space Origin
   /// </summary>
-  public System.String? CoordinateOrigin { get ; set; }
+  public String? CoordinateOrigin { get ; set; }
   
   /// <summary>
   /// Shape Bounding Polygon
   /// </summary>
-  public System.String? WrapCoordinates { get ; set; }
+  public String? WrapCoordinates { get ; set; }
   
   /// <summary>
   /// Print Toggle
   /// </summary>
-  public System.Boolean? Print { get ; set; }
+  public Boolean? Print { get ; set; }
   
   /// <summary>
   /// spid
   /// </summary>
-  public System.String? OptionalString { get ; set; }
+  public String? OptionalString { get ; set; }
   
   /// <summary>
   /// oned
   /// </summary>
-  public System.Boolean? Oned { get ; set; }
+  public Boolean? Oned { get ; set; }
   
   /// <summary>
   /// regroupid
   /// </summary>
-  public System.Int32? RegroupId { get ; set; }
+  public Int32? RegroupId { get ; set; }
   
   /// <summary>
   /// doubleclicknotify
   /// </summary>
-  public System.Boolean? DoubleClickNotify { get ; set; }
+  public Boolean? DoubleClickNotify { get ; set; }
   
   /// <summary>
   /// button
   /// </summary>
-  public System.Boolean? Button { get ; set; }
+  public Boolean? Button { get ; set; }
   
   /// <summary>
   /// userhidden
   /// </summary>
-  public System.Boolean? UserHidden { get ; set; }
+  public Boolean? UserHidden { get ; set; }
   
   /// <summary>
   /// bullet
   /// </summary>
-  public System.Boolean? Bullet { get ; set; }
+  public Boolean? Bullet { get ; set; }
   
   /// <summary>
   /// hr
   /// </summary>
-  public System.Boolean? Horizontal { get ; set; }
+  public Boolean? Horizontal { get ; set; }
   
   /// <summary>
   /// hrstd
   /// </summary>
-  public System.Boolean? HorizontalStandard { get ; set; }
+  public Boolean? HorizontalStandard { get ; set; }
   
   /// <summary>
   /// hrnoshade
   /// </summary>
-  public System.Boolean? HorizontalNoShade { get ; set; }
+  public Boolean? HorizontalNoShade { get ; set; }
   
   /// <summary>
   /// hrpct
   /// </summary>
-  public System.Single? HorizontalPercentage { get ; set; }
+  public Single? HorizontalPercentage { get ; set; }
   
   /// <summary>
   /// hralign
   /// </summary>
-  public DocumentModel.Vml.HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
+  public HorizontalRuleAlignmentKind? HorizontalAlignment { get ; set; }
   
   /// <summary>
   /// allowincell
   /// </summary>
-  public System.Boolean? AllowInCell { get ; set; }
+  public Boolean? AllowInCell { get ; set; }
   
   /// <summary>
   /// allowoverlap
   /// </summary>
-  public System.Boolean? AllowOverlap { get ; set; }
+  public Boolean? AllowOverlap { get ; set; }
   
   /// <summary>
   /// userdrawn
   /// </summary>
-  public System.Boolean? UserDrawn { get ; set; }
+  public Boolean? UserDrawn { get ; set; }
   
   /// <summary>
   /// dgmlayout
   /// </summary>
-  public System.Int32? DiagramLayout { get ; set; }
+  public Int32? DiagramLayout { get ; set; }
   
   /// <summary>
   /// dgmnodekind
   /// </summary>
-  public System.Int32? DiagramNodeKind { get ; set; }
+  public Int32? DiagramNodeKind { get ; set; }
   
   /// <summary>
   /// dgmlayoutmru
   /// </summary>
-  public System.Int32? DiagramLayoutMostRecentUsed { get ; set; }
+  public Int32? DiagramLayoutMostRecentUsed { get ; set; }
   
   /// <summary>
   /// insetmode
   /// </summary>
-  public DocumentModel.Vml.InsetMarginKind? InsetMode { get ; set; }
+  public InsetMarginKind? InsetMode { get ; set; }
   
   /// <summary>
   /// Encoded Package
@@ -163,50 +163,50 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Group Diagram Type
   /// </summary>
-  public DocumentModel.Vml.EditAsKind? EditAs { get ; set; }
+  public EditAsKind? EditAs { get ; set; }
   
   /// <summary>
   /// Table Properties
   /// </summary>
-  public System.String? TableProperties { get ; set; }
+  public String? TableProperties { get ; set; }
   
   /// <summary>
   /// Table Row Height Limits
   /// </summary>
-  public System.String? TableLimits { get ; set; }
+  public String? TableLimits { get ; set; }
   
-  public DocumentModel.Vml.IGroup? Group { get ; set; }
+  public Collection<IGroup>? Groups { get ; set; }
   
-  public DocumentModel.Vml.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Vml.IShapetype? Shapetype { get ; set; }
+  public Collection<IShapetype>? Shapetypes { get ; set; }
   
-  public DocumentModel.Vml.IArc? Arc { get ; set; }
+  public Collection<IArc>? Arcs { get ; set; }
   
-  public DocumentModel.Vml.ICurve? Curve { get ; set; }
+  public Collection<ICurve>? Curves { get ; set; }
   
-  public DocumentModel.Vml.IImageFile? ImageFile { get ; set; }
+  public Collection<IImageFile>? ImageFiles { get ; set; }
   
-  public DocumentModel.Vml.ILine? Line { get ; set; }
+  public Collection<ILine>? Lines { get ; set; }
   
-  public DocumentModel.Vml.IOval? Oval { get ; set; }
+  public Collection<IOval>? Ovals { get ; set; }
   
-  public DocumentModel.Vml.IPolyLine? PolyLine { get ; set; }
+  public Collection<IPolyLine>? PolyLines { get ; set; }
   
-  public DocumentModel.Vml.IRectangle? Rectangle { get ; set; }
+  public Collection<IRectangle>? Rectangles { get ; set; }
   
-  public DocumentModel.Vml.IRoundRectangle? RoundRectangle { get ; set; }
+  public Collection<IRoundRectangle>? RoundRectangles { get ; set; }
   
-  public DocumentModel.Vml.IDiagram? Diagram { get ; set; }
+  public Collection<IDiagram>? Diagrams { get ; set; }
   
-  public DocumentModel.Vml.ILock? Lock { get ; set; }
+  public Collection<ILock>? Locks { get ; set; }
   
-  public DocumentModel.Vml.IClipPath? ClipPath { get ; set; }
+  public Collection<IClipPath>? ClipPaths { get ; set; }
   
-  public DocumentModel.Wordprocessing.Vml.ITextWrap? TextWrap { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.Vml.ITextWrap>? TextWraps { get ; set; }
   
-  public System.Boolean? AnchorLock { get ; set; }
+  public Collection<Boolean>? AnchorLocks { get ; set; }
   
-  public DocumentModel.Spreadsheet.Vml.IClientData? ClientData { get ; set; }
+  public Collection<DocumentModel.Spreadsheet.Vml.IClientData>? ClientDatas { get ; set; }
   
 }

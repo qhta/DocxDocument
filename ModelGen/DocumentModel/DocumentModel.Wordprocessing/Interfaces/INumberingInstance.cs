@@ -8,18 +8,18 @@ public interface INumberingInstance // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// numId
   /// </summary>
-  public System.Int32? NumberID { get ; set; }
+  public Int32? NumberID { get ; set; }
   
   /// <summary>
   /// durableId
   /// </summary>
-  public System.Int32? DurableId { get ; set; }
+  public Int32? DurableId { get ; set; }
   
   /// <summary>
   /// AbstractNumId.
   /// </summary>
-  public System.Int32? AbstractNumId { get ; set; }
+  public Int32? AbstractNumId { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ILevelOverride>? LevelOverrides { get ; set; }
+  public Collection<ILevelOverride>? LevelOverrides { get ; set; }
   
 }

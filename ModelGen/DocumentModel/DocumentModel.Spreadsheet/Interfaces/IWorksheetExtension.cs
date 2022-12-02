@@ -8,20 +8,20 @@ public interface IWorksheetExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IConditionalFormattings? ConditionalFormattings { get ; set; }
+  public IConditionalFormattings? ConditionalFormattings { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDataValidations? DataValidations { get ; set; }
+  public IDataValidations? DataValidations { get ; set; }
   
-  public DocumentModel.Spreadsheet.ISparklineGroups? SparklineGroups { get ; set; }
+  public ISparklineGroups? SparklineGroups { get ; set; }
   
-  public DocumentModel.Spreadsheet.ISlicerList? SlicerList { get ; set; }
+  public ISlicerList? SlicerList { get ; set; }
   
-  public DocumentModel.Spreadsheet.IProtectedRanges? ProtectedRanges { get ; set; }
+  public IProtectedRanges? ProtectedRanges { get ; set; }
   
-  public DocumentModel.Spreadsheet.IIgnoredErrors? IgnoredErrors { get ; set; }
+  public IIgnoredErrors? IgnoredErrors { get ; set; }
   
-  public DocumentModel.Spreadsheet.ITimelineReferences? TimelineReferences { get ; set; }
+  public ITimelineReferences? TimelineReferences { get ; set; }
   
 }

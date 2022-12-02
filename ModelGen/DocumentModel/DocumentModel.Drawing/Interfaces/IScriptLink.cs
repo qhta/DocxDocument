@@ -8,11 +8,11 @@ public interface IScriptLink // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// val, this property is only available in Microsoft365 and later.
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

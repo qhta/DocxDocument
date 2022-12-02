@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IColorData // : DocumentModel.Drawing.ISampleDataType
 {
-  public DocumentModel.Drawing.IDataModel? DataModel { get ; set; }
+  public IDataModel? DataModel { get ; set; }
   
 }

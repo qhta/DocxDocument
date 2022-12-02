@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IScatterSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IScatterSerExtension>? ScatterSerExtensions { get ; set; }
+  public Collection<IScatterSerExtension>? ScatterSerExtensions { get ; set; }
   
 }

@@ -8,14 +8,14 @@ public interface INonVisualPicturePropertiesExtension // : DocumentModel.ITypedO
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.ICameraTool? CameraTool { get ; set; }
+  public ICameraTool? CameraTool { get ; set; }
   
-  public DocumentModel.Drawing.ISignatureLine? SignatureLine { get ; set; }
+  public ISignatureLine? SignatureLine { get ; set; }
   
-  public DocumentModel.Drawing.IObjectProperties? ObjectProperties { get ; set; }
+  public IObjectProperties? ObjectProperties { get ; set; }
   
-  public DocumentModel.Drawing.ILiveFeedProperties? LiveFeedProperties { get ; set; }
+  public ILiveFeedProperties? LiveFeedProperties { get ; set; }
   
 }

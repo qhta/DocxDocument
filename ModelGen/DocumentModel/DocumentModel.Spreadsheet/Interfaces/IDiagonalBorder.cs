@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IDiagonalBorder // : DocumentModel.Spreadsheet.IBorderPropertiesType
 {
-  public DocumentModel.Spreadsheet.IColorType? Color { get ; set; }
+  public IColorType? Color { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IOfficeStyleSheetExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IOfficeStyleSheetExtension>? OfficeStyleSheetExtensions { get ; set; }
+  public Collection<IOfficeStyleSheetExtension>? OfficeStyleSheetExtensions { get ; set; }
   
 }

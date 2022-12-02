@@ -8,6 +8,6 @@ public interface ISheetCalculationProperties // : DocumentModel.ITypedOpenXmlLea
   /// <summary>
   /// Full Calculation On Load
   /// </summary>
-  public System.Boolean? FullCalculationOnLoad { get ; set; }
+  public Boolean? FullCalculationOnLoad { get ; set; }
   
 }

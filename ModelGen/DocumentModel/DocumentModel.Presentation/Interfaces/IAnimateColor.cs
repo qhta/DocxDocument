@@ -8,31 +8,31 @@ public interface IAnimateColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Color Space
   /// </summary>
-  public DocumentModel.Presentation.AnimateColorSpaceKind? ColorSpace { get ; set; }
+  public AnimateColorSpaceKind? ColorSpace { get ; set; }
   
   /// <summary>
   /// Direction
   /// </summary>
-  public DocumentModel.Presentation.AnimateColorDirectionKind? Direction { get ; set; }
+  public AnimateColorDirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// CommonBehavior.
   /// </summary>
-  public DocumentModel.Presentation.ICommonBehavior? CommonBehavior { get ; set; }
+  public ICommonBehavior? CommonBehavior { get ; set; }
   
   /// <summary>
   /// By.
   /// </summary>
-  public DocumentModel.Presentation.IByColor? ByColor { get ; set; }
+  public IByColor? ByColor { get ; set; }
   
   /// <summary>
   /// From.
   /// </summary>
-  public DocumentModel.Presentation.IFromColor? FromColor { get ; set; }
+  public IFromColor? FromColor { get ; set; }
   
   /// <summary>
   /// To.
   /// </summary>
-  public DocumentModel.Presentation.IToColor? ToColor { get ; set; }
+  public IToColor? ToColor { get ; set; }
   
 }

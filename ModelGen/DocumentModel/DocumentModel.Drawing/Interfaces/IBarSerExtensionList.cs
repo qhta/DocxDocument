@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBarSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBarSerExtension>? BarSerExtensions { get ; set; }
+  public Collection<IBarSerExtension>? BarSerExtensions { get ; set; }
   
 }

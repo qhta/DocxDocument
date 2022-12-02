@@ -8,6 +8,6 @@ public interface IOrientationTransitionType // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// Transition Direction
   /// </summary>
-  public DocumentModel.Presentation.DirectionKind? Direction { get ; set; }
+  public DirectionKind? Direction { get ; set; }
   
 }

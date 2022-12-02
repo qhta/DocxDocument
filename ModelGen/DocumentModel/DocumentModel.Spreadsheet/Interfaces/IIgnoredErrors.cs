@@ -5,8 +5,8 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IIgnoredErrors // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IIgnoredError>? IgnoredErrors { get ; set; }
+  public Collection<IIgnoredError>? IgnoredErrors { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

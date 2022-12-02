@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ILineStyleList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IOutline>? Outlines { get ; set; }
+  public Collection<IOutline>? Outlines { get ; set; }
   
 }

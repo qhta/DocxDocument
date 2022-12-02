@@ -8,11 +8,11 @@ public interface IWebExtensionProperty // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// value, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Value { get ; set; }
+  public String? Value { get ; set; }
   
 }

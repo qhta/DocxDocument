@@ -8,8 +8,8 @@ public interface IPieChartExtension // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredPieSeries? FilteredPieSeries { get ; set; }
+  public IFilteredPieSeries? FilteredPieSeries { get ; set; }
   
 }

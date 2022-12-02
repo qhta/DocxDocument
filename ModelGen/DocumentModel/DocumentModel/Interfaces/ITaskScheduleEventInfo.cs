@@ -8,11 +8,11 @@ public interface ITaskScheduleEventInfo // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// startDate, this property is only available in Office 2021 and later.
   /// </summary>
-  public System.DateTime? StartDate { get ; set; }
+  public DateTime? StartDate { get ; set; }
   
   /// <summary>
   /// dueDate, this property is only available in Office 2021 and later.
   /// </summary>
-  public System.DateTime? DueDate { get ; set; }
+  public DateTime? DueDate { get ; set; }
   
 }

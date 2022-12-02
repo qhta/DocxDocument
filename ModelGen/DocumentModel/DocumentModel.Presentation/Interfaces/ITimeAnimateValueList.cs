@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ITimeAnimateValueList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ITimeAnimateValue>? TimeAnimateValues { get ; set; }
+  public Collection<ITimeAnimateValue>? TimeAnimateValues { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ITupleSetHeader // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// uniqueName, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// hierarchyName, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? HierarchyName { get ; set; }
+  public String? HierarchyName { get ; set; }
   
 }

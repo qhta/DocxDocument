@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IMediaBookmarkList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.IMediaBookmark>? MediaBookmarks { get ; set; }
+  public Collection<IMediaBookmark>? MediaBookmarks { get ; set; }
   
 }

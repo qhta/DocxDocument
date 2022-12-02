@@ -8,15 +8,15 @@ public interface IFilters // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Filter by Blank
   /// </summary>
-  public System.Boolean? Blank { get ; set; }
+  public Boolean? Blank { get ; set; }
   
   /// <summary>
   /// Calendar Type
   /// </summary>
-  public DocumentModel.Spreadsheet.CalendarKind? CalendarType { get ; set; }
+  public CalendarKind? CalendarType { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.String>? Filters { get ; set; }
+  public Collection<String>? Filters { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IDateGroupItem>? DateGroupItems { get ; set; }
+  public Collection<IDateGroupItem>? DateGroupItems { get ; set; }
   
 }

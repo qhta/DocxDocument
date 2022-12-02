@@ -8,11 +8,11 @@ public interface ISoundAction // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Start Sound Action.
   /// </summary>
-  public DocumentModel.Presentation.IStartSoundAction? StartSoundAction { get ; set; }
+  public IStartSoundAction? StartSoundAction { get ; set; }
   
   /// <summary>
   /// Stop Sound Action.
   /// </summary>
-  public System.Boolean? EndSoundAction { get ; set; }
+  public Boolean? EndSoundAction { get ; set; }
   
 }

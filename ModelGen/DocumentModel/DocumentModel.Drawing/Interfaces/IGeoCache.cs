@@ -8,10 +8,10 @@ public interface IGeoCache // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// provider, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Provider { get ; set; }
+  public String? Provider { get ; set; }
   
-  public System.String? Xsdbase64Binary { get ; set; }
+  public Collection<String>? Xsdbase64Binaries { get ; set; }
   
-  public DocumentModel.Drawing.IClear? Clear { get ; set; }
+  public Collection<IClear>? Clears { get ; set; }
   
 }

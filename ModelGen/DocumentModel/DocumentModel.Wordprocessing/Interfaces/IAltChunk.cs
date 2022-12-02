@@ -8,11 +8,11 @@ public interface IAltChunk // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// External Content Import Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IAltChunkProperties? AltChunkProperties { get ; set; }
+  public IAltChunkProperties? AltChunkProperties { get ; set; }
   
 }

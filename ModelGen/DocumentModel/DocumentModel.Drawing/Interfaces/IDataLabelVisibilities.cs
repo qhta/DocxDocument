@@ -8,16 +8,16 @@ public interface IDataLabelVisibilities // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// seriesName, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? SeriesName { get ; set; }
+  public Boolean? SeriesName { get ; set; }
   
   /// <summary>
   /// categoryName, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? CategoryName { get ; set; }
+  public Boolean? CategoryName { get ; set; }
   
   /// <summary>
   /// value, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? Value { get ; set; }
+  public Boolean? Value { get ; set; }
   
 }

@@ -8,8 +8,8 @@ public interface ITableExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.ITable? Table { get ; set; }
+  public ITable? Table { get ; set; }
   
 }

@@ -8,17 +8,17 @@ public interface IMcd // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// macroName
   /// </summary>
-  public System.String? MacroName { get ; set; }
+  public String? MacroName { get ; set; }
   
   /// <summary>
   /// name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// menuHelp
   /// </summary>
-  public System.String? MenuHelp { get ; set; }
+  public String? MenuHelp { get ; set; }
   
   /// <summary>
   /// bEncrypt

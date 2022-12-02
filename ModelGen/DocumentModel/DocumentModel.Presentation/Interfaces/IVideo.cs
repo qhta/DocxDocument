@@ -8,11 +8,11 @@ public interface IVideo // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Full Screen
   /// </summary>
-  public System.Boolean? FullScreen { get ; set; }
+  public Boolean? FullScreen { get ; set; }
   
   /// <summary>
   /// Common Media Node Properties.
   /// </summary>
-  public DocumentModel.Presentation.ICommonMediaNode? CommonMediaNode { get ; set; }
+  public ICommonMediaNode? CommonMediaNode { get ; set; }
   
 }

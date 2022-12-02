@@ -8,6 +8,6 @@ public interface IStringDataType // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// PointCount.
   /// </summary>
-  public System.UInt32? PointCount { get ; set; }
+  public UInt32? PointCount { get ; set; }
   
 }

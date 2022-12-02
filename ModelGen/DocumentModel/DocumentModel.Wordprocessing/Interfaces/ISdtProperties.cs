@@ -5,62 +5,62 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ISdtProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
+  public Collection<IRunProperties>? RunPropertieses { get ; set; }
   
-  public System.String? SdtAlias { get ; set; }
+  public Collection<String>? SdtAliases { get ; set; }
   
-  public DocumentModel.Wordprocessing.LockingKind? Lock { get ; set; }
+  public Collection<LockingKind>? Locks { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtPlaceholder? SdtPlaceholder { get ; set; }
+  public Collection<ISdtPlaceholder>? SdtPlaceholders { get ; set; }
   
-  public System.Boolean? ShowingPlaceholder { get ; set; }
+  public Collection<Boolean>? ShowingPlaceholders { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDataBinding? DataBinding { get ; set; }
+  public Collection<IDataBinding>? DataBindings { get ; set; }
   
-  public System.Boolean? TemporarySdt { get ; set; }
+  public Collection<Boolean>? TemporarySdts { get ; set; }
   
-  public System.Int32? SdtId { get ; set; }
+  public Collection<Int32>? SdtIds { get ; set; }
   
-  public System.String? Tag { get ; set; }
+  public Collection<String>? Tags { get ; set; }
   
-  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
+  public Collection<IColor>? Colors { get ; set; }
   
-  public DocumentModel.Wordprocessing.SdtAppearance? Appearance { get ; set; }
+  public Collection<SdtAppearance>? Appearances { get ; set; }
   
-  public System.Boolean? WebExtensionLinked { get ; set; }
+  public Collection<Boolean>? WebExtensionLinkeds { get ; set; }
   
-  public System.Boolean? WebExtensionCreated { get ; set; }
+  public Collection<Boolean>? WebExtensionCreateds { get ; set; }
   
-  public System.Boolean? SdtContentEquation { get ; set; }
+  public Collection<Boolean>? SdtContentEquations { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentComboBox? SdtContentComboBox { get ; set; }
+  public Collection<ISdtContentComboBox>? SdtContentComboBoxs { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentDate? SdtContentDate { get ; set; }
+  public Collection<ISdtContentDate>? SdtContentDates { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentDocPartObject? SdtContentDocPartObject { get ; set; }
+  public Collection<ISdtContentDocPartObject>? SdtContentDocPartObjects { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentDocPartList? SdtContentDocPartList { get ; set; }
+  public Collection<ISdtContentDocPartList>? SdtContentDocPartLists { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentDropDownList? SdtContentDropDownList { get ; set; }
+  public Collection<ISdtContentDropDownList>? SdtContentDropDownLists { get ; set; }
   
-  public System.Boolean? SdtContentPicture { get ; set; }
+  public Collection<Boolean>? SdtContentPictures { get ; set; }
   
-  public System.Boolean? SdtContentRichText { get ; set; }
+  public Collection<Boolean>? SdtContentRichTexts { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentText? SdtContentText { get ; set; }
+  public Collection<ISdtContentText>? SdtContentTexts { get ; set; }
   
-  public System.Boolean? SdtContentCitation { get ; set; }
+  public Collection<Boolean>? SdtContentCitations { get ; set; }
   
-  public System.Boolean? SdtContentGroup { get ; set; }
+  public Collection<Boolean>? SdtContentGroups { get ; set; }
   
-  public System.Boolean? SdtContentBibliography { get ; set; }
+  public Collection<Boolean>? SdtContentBibliographies { get ; set; }
   
-  public System.Boolean? EntityPickerEmpty { get ; set; }
+  public Collection<Boolean>? EntityPickerEmpties { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtContentCheckBox? SdtContentCheckBox { get ; set; }
+  public Collection<ISdtContentCheckBox>? SdtContentCheckBoxs { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtRepeatedSection? SdtRepeatedSection { get ; set; }
+  public Collection<ISdtRepeatedSection>? SdtRepeatedSections { get ; set; }
   
-  public System.Boolean? SdtRepeatedSectionItem { get ; set; }
+  public Collection<Boolean>? SdtRepeatedSectionItems { get ; set; }
   
 }

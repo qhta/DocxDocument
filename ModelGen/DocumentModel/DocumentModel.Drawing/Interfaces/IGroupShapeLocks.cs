@@ -8,41 +8,41 @@ public interface IGroupShapeLocks // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public System.Boolean? NoGrouping { get ; set; }
+  public Boolean? NoGrouping { get ; set; }
   
   /// <summary>
   /// Disallow Shape Ungrouping
   /// </summary>
-  public System.Boolean? NoUngrouping { get ; set; }
+  public Boolean? NoUngrouping { get ; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public System.Boolean? NoSelection { get ; set; }
+  public Boolean? NoSelection { get ; set; }
   
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  public System.Boolean? NoRotation { get ; set; }
+  public Boolean? NoRotation { get ; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public System.Boolean? NoChangeAspect { get ; set; }
+  public Boolean? NoChangeAspect { get ; set; }
   
   /// <summary>
   /// Disallow Moving Shape
   /// </summary>
-  public System.Boolean? NoMove { get ; set; }
+  public Boolean? NoMove { get ; set; }
   
   /// <summary>
   /// Disallow Shape Resizing
   /// </summary>
-  public System.Boolean? NoResize { get ; set; }
+  public Boolean? NoResize { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

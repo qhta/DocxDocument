@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml;
+﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Framework.Metadata;
 using DocumentFormat.OpenXml.Validation.Schema;
 
@@ -17,8 +19,10 @@ public static class TypeInspector
         if (element != null)
         {
           var elementMetadata = new ElementMetadataFactoryFeature().GetMetadata(element);
+          if (typeInfo.Type == typeof(DocumentFormat.OpenXml.Wordprocessing.Body))
+            Debug.Assert(true);
           var particle = elementMetadata.Particle?.Particle;
-          if (particle != null) InspectParticle(typeInfo, particle);
+          if (particle != null) InspectParticle(typeInfo, particle, false);
           return elementMetadata;
         }
       }
@@ -26,13 +30,13 @@ public static class TypeInspector
     return null;
   }
 
-  internal static void InspectParticle(TypeInfo typeInfo, ParticleConstraint particle)
+  internal static void InspectParticle(TypeInfo typeInfo, ParticleConstraint particle, bool multiple)
   {
-    var isMultiple = particle.CanOccursMoreThanOne;
+    var isMultiple = multiple || particle.CanOccursMoreThanOne;
     if (particle is CompositeParticle compositeParticle)
     {
       foreach (var childParticle in compositeParticle.ChildrenParticles)
-        InspectParticle(typeInfo, childParticle);
+        InspectParticle(typeInfo, childParticle, isMultiple);
     }
     else 
     if (particle is ElementParticle elementParticle)

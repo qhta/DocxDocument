@@ -8,6 +8,6 @@ public interface ITaskTitleEventInfo // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// title, this property is only available in Office 2021 and later.
   /// </summary>
-  public System.String? Title { get ; set; }
+  public String? Title { get ; set; }
   
 }

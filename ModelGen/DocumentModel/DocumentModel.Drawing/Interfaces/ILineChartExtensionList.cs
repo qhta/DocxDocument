@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ILineChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ILineChartExtension>? LineChartExtensions { get ; set; }
+  public Collection<ILineChartExtension>? LineChartExtensions { get ; set; }
   
 }

@@ -8,36 +8,36 @@ public interface ITheme // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? ThemeId { get ; set; }
+  public String? ThemeId { get ; set; }
   
   /// <summary>
   /// ThemeElements.
   /// </summary>
-  public DocumentModel.Drawing.IThemeElements? ThemeElements { get ; set; }
+  public IThemeElements? ThemeElements { get ; set; }
   
   /// <summary>
   /// ObjectDefaults.
   /// </summary>
-  public DocumentModel.Drawing.IObjectDefaults? ObjectDefaults { get ; set; }
+  public IObjectDefaults? ObjectDefaults { get ; set; }
   
   /// <summary>
   /// ExtraColorSchemeList.
   /// </summary>
-  public DocumentModel.Drawing.IExtraColorSchemeList? ExtraColorSchemeList { get ; set; }
+  public IExtraColorSchemeList? ExtraColorSchemeList { get ; set; }
   
   /// <summary>
   /// CustomColorList.
   /// </summary>
-  public DocumentModel.Drawing.ICustomColorList? CustomColorList { get ; set; }
+  public ICustomColorList? CustomColorList { get ; set; }
   
   /// <summary>
   /// OfficeStyleSheetExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IOfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get ; set; }
+  public IOfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get ; set; }
   
 }

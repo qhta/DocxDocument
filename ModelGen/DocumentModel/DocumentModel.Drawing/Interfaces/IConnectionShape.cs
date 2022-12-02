@@ -8,26 +8,26 @@ public interface IConnectionShape // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  public System.String? Macro { get ; set; }
+  public String? Macro { get ; set; }
   
   /// <summary>
   /// Publish to Server
   /// </summary>
-  public System.Boolean? Published { get ; set; }
+  public Boolean? Published { get ; set; }
   
   /// <summary>
   /// Connector Non Visual Properties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get ; set; }
+  public INonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get ; set; }
   
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
+  public IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public DocumentModel.Drawing.IStyle? Style { get ; set; }
+  public IStyle? Style { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ISharpenSoften // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// amount, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Amount { get ; set; }
+  public Int32? Amount { get ; set; }
   
 }

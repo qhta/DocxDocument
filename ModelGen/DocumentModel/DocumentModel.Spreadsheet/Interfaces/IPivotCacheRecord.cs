@@ -5,18 +5,18 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotCacheRecord // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Spreadsheet.IMissingItem? MissingItem { get ; set; }
+  public Collection<IMissingItem>? MissingItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.INumberItem? NumberItem { get ; set; }
+  public Collection<INumberItem>? NumberItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IBooleanItem? BooleanItem { get ; set; }
+  public Collection<IBooleanItem>? BooleanItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IErrorItem? ErrorItem { get ; set; }
+  public Collection<IErrorItem>? ErrorItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IStringItem? StringItem { get ; set; }
+  public Collection<IStringItem>? StringItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDateTimeItem? DateTimeItem { get ; set; }
+  public Collection<IDateTimeItem>? DateTimeItems { get ; set; }
   
-  public System.UInt32? FieldItem { get ; set; }
+  public Collection<UInt32>? FieldItems { get ; set; }
   
 }

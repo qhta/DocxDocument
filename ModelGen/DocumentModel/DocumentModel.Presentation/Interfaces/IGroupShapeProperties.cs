@@ -15,7 +15,7 @@ public interface IGroupShapeProperties // : DocumentModel.ITypedOpenXmlComposite
   /// </summary>
   public DocumentModel.Drawing.ITransformGroup? TransformGroup { get ; set; }
   
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
   public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
   
@@ -25,7 +25,7 @@ public interface IGroupShapeProperties // : DocumentModel.ITypedOpenXmlComposite
   
   public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
   
-  public System.Boolean? GroupFill { get ; set; }
+  public Boolean? GroupFill { get ; set; }
   
   public DocumentModel.Drawing.IEffectList? EffectList { get ; set; }
   

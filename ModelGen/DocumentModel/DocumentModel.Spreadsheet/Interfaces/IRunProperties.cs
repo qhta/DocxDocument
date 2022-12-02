@@ -5,34 +5,34 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IRunProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Boolean? Bold { get ; set; }
+  public Collection<Boolean>? Bolds { get ; set; }
   
-  public System.Boolean? Italic { get ; set; }
+  public Collection<Boolean>? Italics { get ; set; }
   
-  public System.Boolean? Strike { get ; set; }
+  public Collection<Boolean>? Strikes { get ; set; }
   
-  public System.Boolean? Condense { get ; set; }
+  public Collection<Boolean>? Condenses { get ; set; }
   
-  public System.Boolean? Extend { get ; set; }
+  public Collection<Boolean>? Extends { get ; set; }
   
-  public System.Boolean? Outline { get ; set; }
+  public Collection<Boolean>? Outlines { get ; set; }
   
-  public System.Boolean? Shadow { get ; set; }
+  public Collection<Boolean>? Shadows { get ; set; }
   
-  public DocumentModel.Spreadsheet.UnderlineKind? Underline { get ; set; }
+  public Collection<UnderlineKind>? Underlines { get ; set; }
   
-  public DocumentModel.Spreadsheet.VerticalAlignmentRunKind? VerticalTextAlignment { get ; set; }
+  public Collection<VerticalAlignmentRunKind>? VerticalTextAlignments { get ; set; }
   
-  public System.Double? FontSize { get ; set; }
+  public Collection<Double>? FontSizes { get ; set; }
   
-  public DocumentModel.Spreadsheet.IColorType? Color { get ; set; }
+  public Collection<IColorType>? Colors { get ; set; }
   
-  public System.String? RunFont { get ; set; }
+  public Collection<String>? RunFonts { get ; set; }
   
-  public System.Int32? FontFamily { get ; set; }
+  public Collection<Int32>? FontFamilies { get ; set; }
   
-  public System.Int32? RunPropertyCharSet { get ; set; }
+  public Collection<Int32>? RunPropertyCharSets { get ; set; }
   
-  public DocumentModel.Spreadsheet.FontSchemeKind? FontScheme { get ; set; }
+  public Collection<FontSchemeKind>? FontSchemes { get ; set; }
   
 }

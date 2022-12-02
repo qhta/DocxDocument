@@ -8,27 +8,27 @@ public interface IColorStyle // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// meth, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Method { get ; set; }
+  public String? Method { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
-  public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public Collection<IRgbColorModelPercentage>? RgbColorModelPercentages { get ; set; }
   
-  public DocumentModel.Drawing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public Collection<IRgbColorModelHex>? RgbColorModelHexs { get ; set; }
   
-  public DocumentModel.Drawing.IHslColor? HslColor { get ; set; }
+  public Collection<IHslColor>? HslColors { get ; set; }
   
-  public DocumentModel.Drawing.ISystemColor? SystemColor { get ; set; }
+  public Collection<ISystemColor>? SystemColors { get ; set; }
   
-  public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
+  public Collection<ISchemeColor>? SchemeColors { get ; set; }
   
-  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  public Collection<IPresetColor>? PresetColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IColorStyleVariation>? ColorStyleVariations { get ; set; }
+  public Collection<IColorStyleVariation>? ColorStyleVariations { get ; set; }
   
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

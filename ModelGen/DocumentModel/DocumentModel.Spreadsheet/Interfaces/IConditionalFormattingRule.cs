@@ -8,83 +8,83 @@ public interface IConditionalFormattingRule // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// type, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.ConditionalFormatKind? Type { get ; set; }
+  public ConditionalFormatKind? Type { get ; set; }
   
   /// <summary>
   /// priority, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Priority { get ; set; }
+  public Int32? Priority { get ; set; }
   
   /// <summary>
   /// stopIfTrue, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? StopIfTrue { get ; set; }
+  public Boolean? StopIfTrue { get ; set; }
   
   /// <summary>
   /// aboveAverage, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? AboveAverage { get ; set; }
+  public Boolean? AboveAverage { get ; set; }
   
   /// <summary>
   /// percent, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? Percent { get ; set; }
+  public Boolean? Percent { get ; set; }
   
   /// <summary>
   /// bottom, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? Bottom { get ; set; }
+  public Boolean? Bottom { get ; set; }
   
   /// <summary>
   /// operator, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.ConditionalFormattingOperatorKind? Operator { get ; set; }
+  public ConditionalFormattingOperatorKind? Operator { get ; set; }
   
   /// <summary>
   /// text, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Text { get ; set; }
+  public String? Text { get ; set; }
   
   /// <summary>
   /// timePeriod, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.TimePeriodKind? TimePeriod { get ; set; }
+  public TimePeriodKind? TimePeriod { get ; set; }
   
   /// <summary>
   /// rank, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Rank { get ; set; }
+  public UInt32? Rank { get ; set; }
   
   /// <summary>
   /// stdDev, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? StandardDeviation { get ; set; }
+  public Int32? StandardDeviation { get ; set; }
   
   /// <summary>
   /// equalAverage, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? EqualAverage { get ; set; }
+  public Boolean? EqualAverage { get ; set; }
   
   /// <summary>
   /// activePresent, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? ActivePresent { get ; set; }
+  public Boolean? ActivePresent { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.String>? Formulas { get ; set; }
+  public Collection<String>? Formulas { get ; set; }
   
-  public DocumentModel.Spreadsheet.IColorScale? ColorScale { get ; set; }
+  public IColorScale? ColorScale { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDataBar? DataBar { get ; set; }
+  public IDataBar? DataBar { get ; set; }
   
-  public DocumentModel.Spreadsheet.IIconSet? IconSet { get ; set; }
+  public IIconSet? IconSet { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDifferentialType? DifferentialType { get ; set; }
+  public IDifferentialType? DifferentialType { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

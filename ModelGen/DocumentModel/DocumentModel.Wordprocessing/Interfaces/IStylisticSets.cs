@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IStylisticSets // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IStyleSet>? StyleSets { get ; set; }
+  public Collection<IStyleSet>? StyleSets { get ; set; }
   
 }

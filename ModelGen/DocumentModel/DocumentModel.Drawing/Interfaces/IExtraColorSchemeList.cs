@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IExtraColorSchemeList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IExtraColorScheme>? ExtraColorSchemes { get ; set; }
+  public Collection<IExtraColorScheme>? ExtraColorSchemes { get ; set; }
   
 }

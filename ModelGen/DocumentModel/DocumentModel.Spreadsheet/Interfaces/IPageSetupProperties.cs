@@ -8,11 +8,11 @@ public interface IPageSetupProperties // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// Show Auto Page Breaks
   /// </summary>
-  public System.Boolean? AutoPageBreaks { get ; set; }
+  public Boolean? AutoPageBreaks { get ; set; }
   
   /// <summary>
   /// Fit To Page
   /// </summary>
-  public System.Boolean? FitToPage { get ; set; }
+  public Boolean? FitToPage { get ; set; }
   
 }

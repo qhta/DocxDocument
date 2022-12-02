@@ -8,11 +8,11 @@ public interface IAudio // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Is Narration
   /// </summary>
-  public System.Boolean? IsNarration { get ; set; }
+  public Boolean? IsNarration { get ; set; }
   
   /// <summary>
   /// Common Media Node Properties.
   /// </summary>
-  public DocumentModel.Presentation.ICommonMediaNode? CommonMediaNode { get ; set; }
+  public ICommonMediaNode? CommonMediaNode { get ; set; }
   
 }

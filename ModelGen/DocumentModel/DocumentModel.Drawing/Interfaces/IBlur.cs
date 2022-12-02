@@ -8,11 +8,11 @@ public interface IBlur // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Radius
   /// </summary>
-  public System.Int64? Radius { get ; set; }
+  public Int64? Radius { get ; set; }
   
   /// <summary>
   /// Grow Bounds
   /// </summary>
-  public System.Boolean? Grow { get ; set; }
+  public Boolean? Grow { get ; set; }
   
 }

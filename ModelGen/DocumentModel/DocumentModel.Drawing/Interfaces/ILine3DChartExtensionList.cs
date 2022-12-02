@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ILine3DChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ILine3DChartExtension>? Line3DChartExtensions { get ; set; }
+  public Collection<ILine3DChartExtension>? Line3DChartExtensions { get ; set; }
   
 }

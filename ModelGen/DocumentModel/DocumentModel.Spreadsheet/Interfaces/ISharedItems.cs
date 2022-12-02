@@ -8,83 +8,83 @@ public interface ISharedItems // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Contains Semi Mixed Data Types
   /// </summary>
-  public System.Boolean? ContainsSemiMixedTypes { get ; set; }
+  public Boolean? ContainsSemiMixedTypes { get ; set; }
   
   /// <summary>
   /// Contains Non Date
   /// </summary>
-  public System.Boolean? ContainsNonDate { get ; set; }
+  public Boolean? ContainsNonDate { get ; set; }
   
   /// <summary>
   /// Contains Date
   /// </summary>
-  public System.Boolean? ContainsDate { get ; set; }
+  public Boolean? ContainsDate { get ; set; }
   
   /// <summary>
   /// Contains String
   /// </summary>
-  public System.Boolean? ContainsString { get ; set; }
+  public Boolean? ContainsString { get ; set; }
   
   /// <summary>
   /// Contains Blank
   /// </summary>
-  public System.Boolean? ContainsBlank { get ; set; }
+  public Boolean? ContainsBlank { get ; set; }
   
   /// <summary>
   /// Contains Mixed Data Types
   /// </summary>
-  public System.Boolean? ContainsMixedTypes { get ; set; }
+  public Boolean? ContainsMixedTypes { get ; set; }
   
   /// <summary>
   /// Contains Numbers
   /// </summary>
-  public System.Boolean? ContainsNumber { get ; set; }
+  public Boolean? ContainsNumber { get ; set; }
   
   /// <summary>
   /// Contains Integer
   /// </summary>
-  public System.Boolean? ContainsInteger { get ; set; }
+  public Boolean? ContainsInteger { get ; set; }
   
   /// <summary>
   /// Minimum Numeric Value
   /// </summary>
-  public System.Double? MinValue { get ; set; }
+  public Double? MinValue { get ; set; }
   
   /// <summary>
   /// Maximum Numeric Value
   /// </summary>
-  public System.Double? MaxValue { get ; set; }
+  public Double? MaxValue { get ; set; }
   
   /// <summary>
   /// Minimum Date Time
   /// </summary>
-  public System.DateTime? MinDate { get ; set; }
+  public DateTime? MinDate { get ; set; }
   
   /// <summary>
   /// Maximum Date Time Value
   /// </summary>
-  public System.DateTime? MaxDate { get ; set; }
+  public DateTime? MaxDate { get ; set; }
   
   /// <summary>
   /// Shared Items Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
   /// <summary>
   /// Long Text
   /// </summary>
-  public System.Boolean? LongText { get ; set; }
+  public Boolean? LongText { get ; set; }
   
-  public DocumentModel.Spreadsheet.IMissingItem? MissingItem { get ; set; }
+  public Collection<IMissingItem>? MissingItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.INumberItem? NumberItem { get ; set; }
+  public Collection<INumberItem>? NumberItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IBooleanItem? BooleanItem { get ; set; }
+  public Collection<IBooleanItem>? BooleanItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IErrorItem? ErrorItem { get ; set; }
+  public Collection<IErrorItem>? ErrorItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IStringItem? StringItem { get ; set; }
+  public Collection<IStringItem>? StringItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDateTimeItem? DateTimeItem { get ; set; }
+  public Collection<IDateTimeItem>? DateTimeItems { get ; set; }
   
 }

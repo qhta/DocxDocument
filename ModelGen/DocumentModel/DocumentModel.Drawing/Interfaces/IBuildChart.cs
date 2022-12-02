@@ -8,11 +8,11 @@ public interface IBuildChart // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Build
   /// </summary>
-  public System.String? Build { get ; set; }
+  public String? Build { get ; set; }
   
   /// <summary>
   /// Animate Background
   /// </summary>
-  public System.Boolean? AnimateBackground { get ; set; }
+  public Boolean? AnimateBackground { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IPivotUserEdit // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
   /// <summary>
   /// PivotEditValue.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPivotEditValue? PivotEditValue { get ; set; }
+  public IPivotEditValue? PivotEditValue { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IGeoLocationQueryResults // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IGeoLocationQueryResult>? GeoLocationQueryResults { get ; set; }
+  public Collection<IGeoLocationQueryResult>? GeoLocationQueryResults { get ; set; }
   
 }

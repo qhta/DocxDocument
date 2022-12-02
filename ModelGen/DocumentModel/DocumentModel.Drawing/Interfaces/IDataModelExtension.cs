@@ -8,10 +8,10 @@ public interface IDataModelExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IDataModelExtensionBlock? DataModelExtensionBlock { get ; set; }
+  public IDataModelExtensionBlock? DataModelExtensionBlock { get ; set; }
   
-  public System.Boolean? RecolorImages { get ; set; }
+  public Boolean? RecolorImages { get ; set; }
   
 }

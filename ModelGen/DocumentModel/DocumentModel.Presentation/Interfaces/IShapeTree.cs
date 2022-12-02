@@ -5,20 +5,20 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IShapeTree // : DocumentModel.Presentation.IGroupShapeType
 {
-  public DocumentModel.Presentation.INonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get ; set; }
+  public INonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get ; set; }
   
-  public DocumentModel.Presentation.IGroupShapeProperties? GroupShapeProperties { get ; set; }
+  public IGroupShapeProperties? GroupShapeProperties { get ; set; }
   
-  public DocumentModel.Presentation.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Presentation.IGroupShape? GroupShape { get ; set; }
+  public Collection<IGroupShape>? GroupShapes { get ; set; }
   
-  public DocumentModel.Presentation.IGraphicFrame? GraphicFrame { get ; set; }
+  public Collection<IGraphicFrame>? GraphicFrames { get ; set; }
   
-  public DocumentModel.Presentation.IConnectionShape? ConnectionShape { get ; set; }
+  public Collection<IConnectionShape>? ConnectionShapes { get ; set; }
   
-  public DocumentModel.Presentation.IPicture? Picture { get ; set; }
+  public Collection<IPicture>? Pictures { get ; set; }
   
-  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
+  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

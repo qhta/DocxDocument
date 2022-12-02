@@ -8,6 +8,6 @@ public interface IExtension // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IQueryTableExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IQueryTableExtension>? QueryTableExtensions { get ; set; }
+  public Collection<IQueryTableExtension>? QueryTableExtensions { get ; set; }
   
 }

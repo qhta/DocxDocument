@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITupleSetRows // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITupleSetRow>? TupleSetRows { get ; set; }
+  public Collection<ITupleSetRow>? TupleSetRows { get ; set; }
   
 }

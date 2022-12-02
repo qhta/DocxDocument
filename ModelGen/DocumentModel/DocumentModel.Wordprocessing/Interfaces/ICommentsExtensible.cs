@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ICommentsExtensible // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICommentExtensible>? CommentExtensibles { get ; set; }
+  public Collection<ICommentExtensible>? CommentExtensibles { get ; set; }
   
-  public DocumentModel.Wordprocessing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

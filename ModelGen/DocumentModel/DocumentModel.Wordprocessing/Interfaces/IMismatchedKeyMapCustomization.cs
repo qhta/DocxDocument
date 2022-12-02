@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IMismatchedKeyMapCustomization // : DocumentModel.Wordprocessing.IKeymapsType
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IKeyMapEntry>? KeyMapEntries { get ; set; }
+  public Collection<IKeyMapEntry>? KeyMapEntries { get ; set; }
   
 }

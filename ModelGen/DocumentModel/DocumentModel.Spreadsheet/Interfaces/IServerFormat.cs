@@ -8,11 +8,11 @@ public interface IServerFormat // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Culture
   /// </summary>
-  public System.String? Culture { get ; set; }
+  public String? Culture { get ; set; }
   
   /// <summary>
   /// Format
   /// </summary>
-  public System.String? Format { get ; set; }
+  public String? Format { get ; set; }
   
 }

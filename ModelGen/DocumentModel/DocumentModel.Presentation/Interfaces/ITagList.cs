@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ITagList // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ITag>? Tags { get ; set; }
+  public Collection<ITag>? Tags { get ; set; }
   
 }

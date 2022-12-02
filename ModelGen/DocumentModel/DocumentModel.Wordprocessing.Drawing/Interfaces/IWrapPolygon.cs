@@ -8,13 +8,13 @@ public interface IWrapPolygon // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Wrapping Points Modified
   /// </summary>
-  public System.Boolean? Edited { get ; set; }
+  public Boolean? Edited { get ; set; }
   
   /// <summary>
   /// Wrapping Polygon Start.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing.IPoint2DType? StartPoint { get ; set; }
+  public IPoint2DType? StartPoint { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Drawing.IPoint2DType>? LineTos { get ; set; }
+  public Collection<IPoint2DType>? LineTos { get ; set; }
   
 }

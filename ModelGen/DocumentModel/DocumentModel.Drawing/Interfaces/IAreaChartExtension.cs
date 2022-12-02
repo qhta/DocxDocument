@@ -8,8 +8,8 @@ public interface IAreaChartExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredAreaSeries? FilteredAreaSeries { get ; set; }
+  public IFilteredAreaSeries? FilteredAreaSeries { get ; set; }
   
 }

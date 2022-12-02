@@ -8,8 +8,8 @@ public interface IBubbleChartExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredBubbleSeries? FilteredBubbleSeries { get ; set; }
+  public IFilteredBubbleSeries? FilteredBubbleSeries { get ; set; }
   
 }

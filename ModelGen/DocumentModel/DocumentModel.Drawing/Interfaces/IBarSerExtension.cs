@@ -8,16 +8,16 @@ public interface IBarSerExtension // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IInvertSolidFillFormat? InvertSolidFillFormat { get ; set; }
+  public IInvertSolidFillFormat? InvertSolidFillFormat { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredSeriesTitle? FilteredSeriesTitle { get ; set; }
+  public IFilteredSeriesTitle? FilteredSeriesTitle { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredCategoryTitle? FilteredCategoryTitle { get ; set; }
+  public IFilteredCategoryTitle? FilteredCategoryTitle { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabelsRange? DataLabelsRange { get ; set; }
+  public IDataLabelsRange? DataLabelsRange { get ; set; }
   
-  public DocumentModel.Drawing.ICategoryFilterExceptions? CategoryFilterExceptions { get ; set; }
+  public ICategoryFilterExceptions? CategoryFilterExceptions { get ; set; }
   
 }

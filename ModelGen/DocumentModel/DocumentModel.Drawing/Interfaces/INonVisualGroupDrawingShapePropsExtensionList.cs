@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface INonVisualGroupDrawingShapePropsExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INonVisualGroupDrawingShapePropsExtension>? NonVisualGroupDrawingShapePropsExtensions { get ; set; }
+  public Collection<INonVisualGroupDrawingShapePropsExtension>? NonVisualGroupDrawingShapePropsExtensions { get ; set; }
   
 }

@@ -8,46 +8,46 @@ public interface IMatrixProperties // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Matrix Base Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalAlignmentKind? BaseJustification { get ; set; }
+  public VerticalAlignmentKind? BaseJustification { get ; set; }
   
   /// <summary>
   /// Hide Placeholders (Matrix).
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HidePlaceholder { get ; set; }
+  public BooleanKind? HidePlaceholder { get ; set; }
   
   /// <summary>
   /// Row Spacing Rule.
   /// </summary>
-  public System.Int32? RowSpacingRule { get ; set; }
+  public Int32? RowSpacingRule { get ; set; }
   
   /// <summary>
   /// Matrix Column Gap Rule.
   /// </summary>
-  public System.Int32? ColumnGapRule { get ; set; }
+  public Int32? ColumnGapRule { get ; set; }
   
   /// <summary>
   /// Row Spacing (Matrix).
   /// </summary>
-  public System.UInt16? RowSpacing { get ; set; }
+  public UInt16? RowSpacing { get ; set; }
   
   /// <summary>
   /// Matrix Column Spacing.
   /// </summary>
-  public System.UInt32? ColumnSpacing { get ; set; }
+  public UInt32? ColumnSpacing { get ; set; }
   
   /// <summary>
   /// Matrix Column Gap.
   /// </summary>
-  public System.UInt16? ColumnGap { get ; set; }
+  public UInt16? ColumnGap { get ; set; }
   
   /// <summary>
   /// Matrix Columns.
   /// </summary>
-  public DocumentModel.Math.IMatrixColumns? MatrixColumns { get ; set; }
+  public IMatrixColumns? MatrixColumns { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
+  public IControlProperties? ControlProperties { get ; set; }
   
 }

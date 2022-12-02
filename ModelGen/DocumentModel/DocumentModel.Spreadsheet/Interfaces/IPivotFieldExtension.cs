@@ -8,8 +8,8 @@ public interface IPivotFieldExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotField? PivotField { get ; set; }
+  public IPivotField? PivotField { get ; set; }
   
 }

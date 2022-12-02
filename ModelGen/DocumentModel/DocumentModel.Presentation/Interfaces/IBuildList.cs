@@ -5,12 +5,12 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IBuildList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Presentation.IBuildParagraph? BuildParagraph { get ; set; }
+  public Collection<IBuildParagraph>? BuildParagraphs { get ; set; }
   
-  public DocumentModel.Presentation.IBuildDiagram? BuildDiagram { get ; set; }
+  public Collection<IBuildDiagram>? BuildDiagrams { get ; set; }
   
-  public DocumentModel.Presentation.IBuildOleChart? BuildOleChart { get ; set; }
+  public Collection<IBuildOleChart>? BuildOleCharts { get ; set; }
   
-  public DocumentModel.Presentation.IBuildGraphics? BuildGraphics { get ; set; }
+  public Collection<IBuildGraphics>? BuildGraphicses { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ISolidColorFillProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  public DocumentModel.Wordprocessing.ISchemeColor? SchemeColor { get ; set; }
+  public ISchemeColor? SchemeColor { get ; set; }
   
 }

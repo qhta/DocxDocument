@@ -8,8 +8,8 @@ public interface IItems // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Field Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IItem>? Items { get ; set; }
+  public Collection<IItem>? Items { get ; set; }
   
 }

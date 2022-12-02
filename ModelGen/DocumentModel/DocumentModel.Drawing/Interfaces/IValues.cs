@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IValues // : DocumentModel.Drawing.INumberDataSourceType
 {
-  public DocumentModel.Drawing.INumberReference? NumberReference { get ; set; }
+  public INumberReference? NumberReference { get ; set; }
   
-  public DocumentModel.Drawing.INumberLiteral? NumberLiteral { get ; set; }
+  public INumberLiteral? NumberLiteral { get ; set; }
   
 }

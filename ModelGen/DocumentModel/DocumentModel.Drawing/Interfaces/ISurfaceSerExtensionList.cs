@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISurfaceSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISurfaceSerExtension>? SurfaceSerExtensions { get ; set; }
+  public Collection<ISurfaceSerExtension>? SurfaceSerExtensions { get ; set; }
   
 }

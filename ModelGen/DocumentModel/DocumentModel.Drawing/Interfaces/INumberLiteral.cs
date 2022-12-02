@@ -5,12 +5,12 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface INumberLiteral // : DocumentModel.Drawing.INumberDataType
 {
-  public System.String? FormatCode { get ; set; }
+  public String? FormatCode { get ; set; }
   
-  public System.UInt32? PointCount { get ; set; }
+  public UInt32? PointCount { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INumericPoint>? NumericPoints { get ; set; }
+  public Collection<INumericPoint>? NumericPoints { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

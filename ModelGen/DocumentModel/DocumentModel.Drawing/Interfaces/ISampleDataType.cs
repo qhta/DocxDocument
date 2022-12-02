@@ -8,11 +8,11 @@ public interface ISampleDataType // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Use Default
   /// </summary>
-  public System.Boolean? UseDefault { get ; set; }
+  public Boolean? UseDefault { get ; set; }
   
   /// <summary>
   /// Data Model.
   /// </summary>
-  public DocumentModel.Drawing.IDataModel? DataModel { get ; set; }
+  public IDataModel? DataModel { get ; set; }
   
 }

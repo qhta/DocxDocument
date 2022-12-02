@@ -8,11 +8,11 @@ public interface IValueColorMiddlePosition // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// NumberColorPosition.
   /// </summary>
-  public System.Double? NumberColorPosition { get ; set; }
+  public Double? NumberColorPosition { get ; set; }
   
   /// <summary>
   /// PercentageColorPosition.
   /// </summary>
-  public System.Double? PercentageColorPosition { get ; set; }
+  public Double? PercentageColorPosition { get ; set; }
   
 }

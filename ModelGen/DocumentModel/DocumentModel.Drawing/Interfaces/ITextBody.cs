@@ -8,13 +8,13 @@ public interface ITextBody // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Body Properties.
   /// </summary>
-  public DocumentModel.Drawing.IBodyProperties? BodyProperties { get ; set; }
+  public IBodyProperties? BodyProperties { get ; set; }
   
   /// <summary>
   /// Text List Styles.
   /// </summary>
-  public DocumentModel.Drawing.IListStyle? ListStyle { get ; set; }
+  public IListStyle? ListStyle { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IParagraph>? Paragraphs { get ; set; }
+  public Collection<IParagraph>? Paragraphs { get ; set; }
   
 }

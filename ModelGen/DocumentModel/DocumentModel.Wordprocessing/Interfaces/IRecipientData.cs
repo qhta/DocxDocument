@@ -8,12 +8,12 @@ public interface IRecipientData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Record Is Included in Mail Merge.
   /// </summary>
-  public System.Boolean? Active { get ; set; }
+  public Boolean? Active { get ; set; }
   
   /// <summary>
   /// Index of Column Containing Unique Values for Record.
   /// </summary>
-  public System.UInt32? ColumnIndex { get ; set; }
+  public UInt32? ColumnIndex { get ; set; }
   
   /// <summary>
   /// Unique Value for Record.

@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IGradientStopList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IGradientStop>? GradientStops { get ; set; }
+  public Collection<IGradientStop>? GradientStops { get ; set; }
   
 }

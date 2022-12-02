@@ -5,6 +5,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface IFormulas // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Vml.IFormula>? Formulas { get ; set; }
+  public Collection<IFormula>? Formulas { get ; set; }
   
 }

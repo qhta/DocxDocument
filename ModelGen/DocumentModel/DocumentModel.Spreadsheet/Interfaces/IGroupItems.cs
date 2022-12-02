@@ -8,18 +8,18 @@ public interface IGroupItems // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Items Created Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public DocumentModel.Spreadsheet.IMissingItem? MissingItem { get ; set; }
+  public Collection<IMissingItem>? MissingItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.INumberItem? NumberItem { get ; set; }
+  public Collection<INumberItem>? NumberItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IBooleanItem? BooleanItem { get ; set; }
+  public Collection<IBooleanItem>? BooleanItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IErrorItem? ErrorItem { get ; set; }
+  public Collection<IErrorItem>? ErrorItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IStringItem? StringItem { get ; set; }
+  public Collection<IStringItem>? StringItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDateTimeItem? DateTimeItem { get ; set; }
+  public Collection<IDateTimeItem>? DateTimeItems { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ICellWatch // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Reference
   /// </summary>
-  public System.String? CellReference { get ; set; }
+  public String? CellReference { get ; set; }
   
 }

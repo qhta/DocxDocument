@@ -15,6 +15,6 @@ public interface ITextBodyType // : DocumentModel.ITypedOpenXmlCompositeElement
   /// </summary>
   public DocumentModel.Drawing.IListStyle? ListStyle { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IParagraph>? Paragraphs { get ; set; }
+  public Collection<DocumentModel.Drawing.IParagraph>? Paragraphs { get ; set; }
   
 }

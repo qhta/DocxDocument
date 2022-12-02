@@ -8,16 +8,16 @@ public interface IValueColors // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// MinColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawing.IMinColorSolidColorFillProperties? MinColorSolidColorFillProperties { get ; set; }
+  public IMinColorSolidColorFillProperties? MinColorSolidColorFillProperties { get ; set; }
   
   /// <summary>
   /// MidColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawing.IMidColorSolidColorFillProperties? MidColorSolidColorFillProperties { get ; set; }
+  public IMidColorSolidColorFillProperties? MidColorSolidColorFillProperties { get ; set; }
   
   /// <summary>
   /// MaxColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawing.IMaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties { get ; set; }
+  public IMaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties { get ; set; }
   
 }

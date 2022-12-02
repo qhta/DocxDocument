@@ -8,6 +8,6 @@ public interface IFilteredCategoryTitle // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  public DocumentModel.Drawing.IAxisDataSourceType? AxisDataSourceType { get ; set; }
+  public IAxisDataSourceType? AxisDataSourceType { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IAlphaOutset // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Radius
   /// </summary>
-  public System.Int64? Radius { get ; set; }
+  public Int64? Radius { get ; set; }
   
 }

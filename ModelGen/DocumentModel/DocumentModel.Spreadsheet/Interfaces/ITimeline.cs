@@ -8,61 +8,61 @@ public interface ITimeline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// cache, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Cache { get ; set; }
+  public String? Cache { get ; set; }
   
   /// <summary>
   /// caption, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Caption { get ; set; }
+  public String? Caption { get ; set; }
   
   /// <summary>
   /// showHeader, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? ShowHeader { get ; set; }
+  public Boolean? ShowHeader { get ; set; }
   
   /// <summary>
   /// showSelectionLabel, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? ShowSelectionLabel { get ; set; }
+  public Boolean? ShowSelectionLabel { get ; set; }
   
   /// <summary>
   /// showTimeLevel, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? ShowTimeLevel { get ; set; }
+  public Boolean? ShowTimeLevel { get ; set; }
   
   /// <summary>
   /// showHorizontalScrollbar, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? ShowHorizontalScrollbar { get ; set; }
+  public Boolean? ShowHorizontalScrollbar { get ; set; }
   
   /// <summary>
   /// level, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? Level { get ; set; }
+  public UInt32? Level { get ; set; }
   
   /// <summary>
   /// selectionLevel, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? SelectionLevel { get ; set; }
+  public UInt32? SelectionLevel { get ; set; }
   
   /// <summary>
   /// scrollPosition, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.DateTime? ScrollPosition { get ; set; }
+  public DateTime? ScrollPosition { get ; set; }
   
   /// <summary>
   /// style, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Style { get ; set; }
+  public String? Style { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

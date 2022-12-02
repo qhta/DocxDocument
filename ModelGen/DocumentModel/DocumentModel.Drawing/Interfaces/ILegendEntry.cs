@@ -8,12 +8,12 @@ public interface ILegendEntry // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
-  public System.Boolean? Delete { get ; set; }
+  public Boolean? Delete { get ; set; }
   
-  public DocumentModel.Drawing.ITextProperties? TextProperties { get ; set; }
+  public ITextProperties? TextProperties { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

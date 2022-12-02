@@ -8,11 +8,11 @@ public interface IMeasureDimensionMap // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// Measure Group Id
   /// </summary>
-  public System.UInt32? MeasureGroup { get ; set; }
+  public UInt32? MeasureGroup { get ; set; }
   
   /// <summary>
   /// Dimension Id
   /// </summary>
-  public System.UInt32? Dimension { get ; set; }
+  public UInt32? Dimension { get ; set; }
   
 }

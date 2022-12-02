@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISlicerList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISlicerRef>? SlicerRefs { get ; set; }
+  public Collection<ISlicerRef>? SlicerRefs { get ; set; }
   
 }

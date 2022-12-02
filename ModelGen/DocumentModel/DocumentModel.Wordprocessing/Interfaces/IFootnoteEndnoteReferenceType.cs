@@ -8,11 +8,11 @@ public interface IFootnoteEndnoteReferenceType // : DocumentModel.ITypedOpenXmlL
   /// <summary>
   /// Suppress Footnote/Endnote Reference Mark
   /// </summary>
-  public System.Boolean? CustomMarkFollows { get ; set; }
+  public Boolean? CustomMarkFollows { get ; set; }
   
   /// <summary>
   /// Footnote/Endnote ID Reference
   /// </summary>
-  public System.Int32? Id { get ; set; }
+  public Int32? Id { get ; set; }
   
 }

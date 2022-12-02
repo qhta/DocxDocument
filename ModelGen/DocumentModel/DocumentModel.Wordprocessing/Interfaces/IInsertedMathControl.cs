@@ -8,20 +8,20 @@ public interface IInsertedMathControl // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// author
   /// </summary>
-  public System.String? Author { get ; set; }
+  public String? Author { get ; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public System.DateTime? Date { get ; set; }
+  public DateTime? Date { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
+  public IRunProperties? RunProperties { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDeletedMathControl? DeletedMathControl { get ; set; }
+  public IDeletedMathControl? DeletedMathControl { get ; set; }
   
 }

@@ -10,24 +10,24 @@ public interface IRgbColorModelHex // : DocumentModel.ITypedOpenXmlCompositeElem
   /// </summary>
   public DocumentModel.IHexBinaryValue? Val { get ; set; }
   
-  public System.Int32? Tint { get ; set; }
+  public Collection<Int32>? Tints { get ; set; }
   
-  public System.Int32? Shade { get ; set; }
+  public Collection<Int32>? Shades { get ; set; }
   
-  public System.Int32? Alpha { get ; set; }
+  public Collection<Int32>? Alphas { get ; set; }
   
-  public System.Int32? HueModulation { get ; set; }
+  public Collection<Int32>? HueModulations { get ; set; }
   
-  public System.Int32? Saturation { get ; set; }
+  public Collection<Int32>? Saturations { get ; set; }
   
-  public System.Int32? SaturationOffset { get ; set; }
+  public Collection<Int32>? SaturationOffsets { get ; set; }
   
-  public System.Int32? SaturationModulation { get ; set; }
+  public Collection<Int32>? SaturationModulations { get ; set; }
   
-  public System.Int32? Luminance { get ; set; }
+  public Collection<Int32>? Luminances { get ; set; }
   
-  public System.Int32? LuminanceOffset { get ; set; }
+  public Collection<Int32>? LuminanceOffsets { get ; set; }
   
-  public System.Int32? LuminanceModulation { get ; set; }
+  public Collection<Int32>? LuminanceModulations { get ; set; }
   
 }

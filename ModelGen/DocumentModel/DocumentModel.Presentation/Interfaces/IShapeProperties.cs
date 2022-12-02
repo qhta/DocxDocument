@@ -19,7 +19,7 @@ public interface IShapeProperties // : DocumentModel.ITypedOpenXmlCompositeEleme
   
   public DocumentModel.Drawing.IPresetGeometry? PresetGeometry { get ; set; }
   
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
   public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
   
@@ -29,7 +29,7 @@ public interface IShapeProperties // : DocumentModel.ITypedOpenXmlCompositeEleme
   
   public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
   
-  public System.Boolean? GroupFill { get ; set; }
+  public Boolean? GroupFill { get ; set; }
   
   public DocumentModel.Drawing.IOutline? Outline { get ; set; }
   

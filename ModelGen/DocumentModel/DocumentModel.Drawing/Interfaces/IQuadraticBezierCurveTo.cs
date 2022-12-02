@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IQuadraticBezierCurveTo // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IAdjustPoint2DType>? Points { get ; set; }
+  public Collection<IAdjustPoint2DType>? Points { get ; set; }
   
 }

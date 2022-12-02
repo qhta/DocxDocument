@@ -8,11 +8,11 @@ public interface ICategory // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Category Type
   /// </summary>
-  public System.String? Type { get ; set; }
+  public String? Type { get ; set; }
   
   /// <summary>
   /// Priority
   /// </summary>
-  public System.UInt32? Priority { get ; set; }
+  public UInt32? Priority { get ; set; }
   
 }

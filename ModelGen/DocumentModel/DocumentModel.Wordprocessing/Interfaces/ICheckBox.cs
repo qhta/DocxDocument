@@ -5,12 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ICheckBox // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.String? FormFieldSize { get ; set; }
+  public String? FormFieldSize { get ; set; }
   
-  public System.Boolean? AutomaticallySizeFormField { get ; set; }
+  public Boolean? AutomaticallySizeFormField { get ; set; }
   
-  public System.Boolean? DefaultCheckBoxFormFieldState { get ; set; }
+  public Boolean? DefaultCheckBoxFormFieldState { get ; set; }
   
-  public System.Boolean? Checked { get ; set; }
+  public Boolean? Checked { get ; set; }
   
 }

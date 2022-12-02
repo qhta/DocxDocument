@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IStyleDisplayCategories // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IStyleDisplayCategory>? StyleDisplayCategories { get ; set; }
+  public Collection<IStyleDisplayCategory>? StyleDisplayCategories { get ; set; }
   
 }

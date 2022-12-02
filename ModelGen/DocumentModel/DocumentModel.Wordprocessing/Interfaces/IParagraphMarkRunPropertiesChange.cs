@@ -8,21 +8,21 @@ public interface IParagraphMarkRunPropertiesChange // : DocumentModel.ITypedOpen
   /// <summary>
   /// author
   /// </summary>
-  public System.String? Author { get ; set; }
+  public String? Author { get ; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public System.DateTime? Date { get ; set; }
+  public DateTime? Date { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// Previous Run Properties for the Paragraph Mark.
   /// </summary>
-  public DocumentModel.Wordprocessing.IPreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get ; set; }
+  public IPreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get ; set; }
   
 }

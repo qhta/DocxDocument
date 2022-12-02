@@ -8,36 +8,36 @@ public interface IPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Model Identifier
   /// </summary>
-  public System.String? ModelId { get ; set; }
+  public String? ModelId { get ; set; }
   
   /// <summary>
   /// Point Type
   /// </summary>
-  public DocumentModel.Drawing.PointKind? Type { get ; set; }
+  public PointKind? Type { get ; set; }
   
   /// <summary>
   /// Connection Identifier
   /// </summary>
-  public System.String? ConnectionId { get ; set; }
+  public String? ConnectionId { get ; set; }
   
   /// <summary>
   /// Property Set.
   /// </summary>
-  public DocumentModel.Drawing.IPropertySet? PropertySet { get ; set; }
+  public IPropertySet? PropertySet { get ; set; }
   
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
+  public IShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Text Body.
   /// </summary>
-  public DocumentModel.Drawing.ITextBody? TextBody { get ; set; }
+  public ITextBody? TextBody { get ; set; }
   
   /// <summary>
   /// PtExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IPtExtensionList? PtExtensionList { get ; set; }
+  public IPtExtensionList? PtExtensionList { get ; set; }
   
 }

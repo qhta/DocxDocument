@@ -8,21 +8,21 @@ public interface IThemeFamily // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// vid, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Vid { get ; set; }
+  public String? Vid { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

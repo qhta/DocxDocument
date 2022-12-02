@@ -8,11 +8,11 @@ public interface INumberDataSourceType // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Number Reference.
   /// </summary>
-  public DocumentModel.Drawing.INumberReference? NumberReference { get ; set; }
+  public INumberReference? NumberReference { get ; set; }
   
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public DocumentModel.Drawing.INumberLiteral? NumberLiteral { get ; set; }
+  public INumberLiteral? NumberLiteral { get ; set; }
   
 }

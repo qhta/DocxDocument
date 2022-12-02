@@ -8,6 +8,6 @@ public interface IParentLabelLayout // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// val, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.ParentLabelLayoutVal? ParentLabelLayoutVal { get ; set; }
+  public ParentLabelLayoutVal? ParentLabelLayoutVal { get ; set; }
   
 }

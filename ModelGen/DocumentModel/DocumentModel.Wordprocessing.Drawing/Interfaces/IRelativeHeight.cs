@@ -8,11 +8,11 @@ public interface IRelativeHeight // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing.SizeRelativeVerticallyKind? RelativeFrom { get ; set; }
+  public SizeRelativeVerticallyKind? RelativeFrom { get ; set; }
   
   /// <summary>
   /// PercentageHeight.
   /// </summary>
-  public System.String? PercentageHeight { get ; set; }
+  public String? PercentageHeight { get ; set; }
   
 }

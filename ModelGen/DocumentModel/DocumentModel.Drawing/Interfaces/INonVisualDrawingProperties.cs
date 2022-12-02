@@ -8,41 +8,41 @@ public interface INonVisualDrawingProperties // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// Application defined unique identifier.
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
   /// <summary>
   /// Name compatible with Object Model (non-unique).
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Description of the drawing element.
   /// </summary>
-  public System.String? Description { get ; set; }
+  public String? Description { get ; set; }
   
   /// <summary>
   /// Flag determining to show or hide this element.
   /// </summary>
-  public System.Boolean? Hidden { get ; set; }
+  public Boolean? Hidden { get ; set; }
   
   /// <summary>
   /// Title
   /// </summary>
-  public System.String? Title { get ; set; }
+  public String? Title { get ; set; }
   
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
+  public IHyperlinkOnClick? HyperlinkOnClick { get ; set; }
   
   /// <summary>
   /// Hyperlink associated with hovering over the element..
   /// </summary>
-  public DocumentModel.Drawing.IHyperlinkOnHover? HyperlinkOnHover { get ; set; }
+  public IHyperlinkOnHover? HyperlinkOnHover { get ; set; }
   
   /// <summary>
   /// Future extension.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
+  public INonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IPivotEditValue // : DocumentModel.ITypedOpenXmlLeafTextElement
   /// <summary>
   /// valueType, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.PivotEditValueKind? ValueType { get ; set; }
+  public PivotEditValueKind? ValueType { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface INumericPoint // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// Number Format
   /// </summary>
-  public System.String? FormatCode { get ; set; }
+  public String? FormatCode { get ; set; }
   
   /// <summary>
   /// Numeric Value.
   /// </summary>
-  public System.String? NumericValue { get ; set; }
+  public String? NumericValue { get ; set; }
   
 }

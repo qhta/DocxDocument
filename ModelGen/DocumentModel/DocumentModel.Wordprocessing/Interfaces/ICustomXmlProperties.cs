@@ -8,8 +8,8 @@ public interface ICustomXmlProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Custom XML Element Placeholder Text.
   /// </summary>
-  public System.String? CustomXmlPlaceholder { get ; set; }
+  public String? CustomXmlPlaceholder { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICustomXmlAttribute>? CustomXmlAttributes { get ; set; }
+  public Collection<ICustomXmlAttribute>? CustomXmlAttributes { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISlicers // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISlicer>? Slicers { get ; set; }
+  public Collection<ISlicer>? Slicers { get ; set; }
   
 }

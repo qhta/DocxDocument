@@ -8,11 +8,11 @@ public interface IStatusText // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Status Text Type
   /// </summary>
-  public DocumentModel.Wordprocessing.InfoTextKind? Type { get ; set; }
+  public InfoTextKind? Type { get ; set; }
   
   /// <summary>
   /// Status Text Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
 }

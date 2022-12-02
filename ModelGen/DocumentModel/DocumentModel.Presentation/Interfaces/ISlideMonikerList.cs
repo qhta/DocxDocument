@@ -8,11 +8,11 @@ public interface ISlideMonikerList // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// DocumentMoniker.
   /// </summary>
-  public System.Boolean? DocumentMoniker { get ; set; }
+  public Boolean? DocumentMoniker { get ; set; }
   
   /// <summary>
   /// SlideMoniker.
   /// </summary>
-  public DocumentModel.Presentation.ISlideMoniker? SlideMoniker { get ; set; }
+  public ISlideMoniker? SlideMoniker { get ; set; }
   
 }

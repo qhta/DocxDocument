@@ -8,10 +8,10 @@ public interface IApplicationNonVisualDrawingPropertiesExtension // : DocumentMo
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Presentation.IMedia? Media { get ; set; }
+  public IMedia? Media { get ; set; }
   
-  public System.UInt32? ModificationId { get ; set; }
+  public UInt32? ModificationId { get ; set; }
   
 }

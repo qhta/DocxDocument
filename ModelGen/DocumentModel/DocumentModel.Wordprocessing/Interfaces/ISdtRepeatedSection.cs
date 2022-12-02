@@ -8,11 +8,11 @@ public interface ISdtRepeatedSection // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// SectionTitle.
   /// </summary>
-  public System.String? SectionTitle { get ; set; }
+  public String? SectionTitle { get ; set; }
   
   /// <summary>
   /// DoNotAllowInsertDeleteSection.
   /// </summary>
-  public System.Boolean? DoNotAllowInsertDeleteSection { get ; set; }
+  public Boolean? DoNotAllowInsertDeleteSection { get ; set; }
   
 }

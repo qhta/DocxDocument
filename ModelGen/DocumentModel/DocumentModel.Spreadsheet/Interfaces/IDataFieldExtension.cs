@@ -8,8 +8,8 @@ public interface IDataFieldExtension // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IDataField? DataField { get ; set; }
+  public IDataField? DataField { get ; set; }
   
 }

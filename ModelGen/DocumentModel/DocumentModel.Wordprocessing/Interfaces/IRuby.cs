@@ -8,16 +8,16 @@ public interface IRuby // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Phonetic Guide Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRubyProperties? RubyProperties { get ; set; }
+  public IRubyProperties? RubyProperties { get ; set; }
   
   /// <summary>
   /// Phonetic Guide Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRubyContent? RubyContent { get ; set; }
+  public IRubyContent? RubyContent { get ; set; }
   
   /// <summary>
   /// Phonetic Guide Base Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRubyBase? RubyBase { get ; set; }
+  public IRubyBase? RubyBase { get ; set; }
   
 }

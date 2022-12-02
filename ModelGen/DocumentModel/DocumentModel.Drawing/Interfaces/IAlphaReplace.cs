@@ -8,6 +8,6 @@ public interface IAlphaReplace // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Alpha
   /// </summary>
-  public System.Int32? Alpha { get ; set; }
+  public Int32? Alpha { get ; set; }
   
 }

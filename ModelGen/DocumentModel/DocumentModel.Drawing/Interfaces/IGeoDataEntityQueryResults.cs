@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IGeoDataEntityQueryResults // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IGeoDataEntityQueryResult>? GeoDataEntityQueryResults { get ; set; }
+  public Collection<IGeoDataEntityQueryResult>? GeoDataEntityQueryResults { get ; set; }
   
 }

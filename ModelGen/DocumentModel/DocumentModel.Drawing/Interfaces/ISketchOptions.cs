@@ -8,11 +8,11 @@ public interface ISketchOptions // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// InSketchMode.
   /// </summary>
-  public System.Boolean? InSketchMode { get ; set; }
+  public Boolean? InSketchMode { get ; set; }
   
   /// <summary>
   /// ShowSketchButton.
   /// </summary>
-  public System.Boolean? ShowSketchButton { get ; set; }
+  public Boolean? ShowSketchButton { get ; set; }
   
 }

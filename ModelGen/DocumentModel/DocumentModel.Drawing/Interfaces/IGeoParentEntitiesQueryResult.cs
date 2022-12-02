@@ -8,16 +8,16 @@ public interface IGeoParentEntitiesQueryResult // : DocumentModel.ITypedOpenXmlC
   /// <summary>
   /// GeoParentEntitiesQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoParentEntitiesQuery? GeoParentEntitiesQuery { get ; set; }
+  public IGeoParentEntitiesQuery? GeoParentEntitiesQuery { get ; set; }
   
   /// <summary>
   /// GeoEntity.
   /// </summary>
-  public DocumentModel.Drawing.IGeoEntity? GeoEntity { get ; set; }
+  public IGeoEntity? GeoEntity { get ; set; }
   
   /// <summary>
   /// GeoParentEntity.
   /// </summary>
-  public DocumentModel.Drawing.IGeoParentEntity? GeoParentEntity { get ; set; }
+  public IGeoParentEntity? GeoParentEntity { get ; set; }
   
 }

@@ -8,8 +8,8 @@ public interface IRowItems // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Items in a Row Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IRowItem>? RowItems { get ; set; }
+  public Collection<IRowItem>? RowItems { get ; set; }
   
 }

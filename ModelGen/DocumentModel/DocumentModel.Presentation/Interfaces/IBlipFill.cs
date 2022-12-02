@@ -8,12 +8,12 @@ public interface IBlipFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// DPI Setting
   /// </summary>
-  public System.UInt32? Dpi { get ; set; }
+  public UInt32? Dpi { get ; set; }
   
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  public System.Boolean? RotateWithShape { get ; set; }
+  public Boolean? RotateWithShape { get ; set; }
   
   /// <summary>
   /// Blip.

@@ -8,12 +8,12 @@ public interface IColorType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Automatic
   /// </summary>
-  public System.Boolean? Auto { get ; set; }
+  public Boolean? Auto { get ; set; }
   
   /// <summary>
   /// Index
   /// </summary>
-  public System.UInt32? Indexed { get ; set; }
+  public UInt32? Indexed { get ; set; }
   
   /// <summary>
   /// Alpha Red Green Blue Color Value
@@ -23,11 +23,11 @@ public interface IColorType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Theme Color
   /// </summary>
-  public System.UInt32? Theme { get ; set; }
+  public UInt32? Theme { get ; set; }
   
   /// <summary>
   /// Tint
   /// </summary>
-  public System.Double? Tint { get ; set; }
+  public Double? Tint { get ; set; }
   
 }

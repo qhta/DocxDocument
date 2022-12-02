@@ -8,21 +8,21 @@ public interface IVerticalPosition // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Vertical Position Relative Base
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing.VerticalRelativePositionKind? RelativeFrom { get ; set; }
+  public VerticalRelativePositionKind? RelativeFrom { get ; set; }
   
   /// <summary>
   /// Relative Vertical Alignment.
   /// </summary>
-  public System.String? VerticalAlignment { get ; set; }
+  public String? VerticalAlignment { get ; set; }
   
   /// <summary>
   /// PositionOffset.
   /// </summary>
-  public System.String? PositionOffset { get ; set; }
+  public String? PositionOffset { get ; set; }
   
   /// <summary>
   /// PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public System.String? PercentagePositionVerticalOffset { get ; set; }
+  public String? PercentagePositionVerticalOffset { get ; set; }
   
 }

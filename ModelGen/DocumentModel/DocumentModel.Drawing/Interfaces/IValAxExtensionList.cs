@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IValAxExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IValAxExtension>? ValAxExtensions { get ; set; }
+  public Collection<IValAxExtension>? ValAxExtensions { get ; set; }
   
 }

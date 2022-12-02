@@ -8,51 +8,51 @@ public interface ISnapshot // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
-  public System.String? Embed { get ; set; }
+  public String? Embed { get ; set; }
   
   /// <summary>
   /// Linked Picture Reference
   /// </summary>
-  public System.String? Link { get ; set; }
+  public String? Link { get ; set; }
   
   /// <summary>
   /// Compression state for blips.
   /// </summary>
   public DocumentModel.Drawing.BlipCompressionKind? CompressionState { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaBiLevel? AlphaBiLevel { get ; set; }
+  public Collection<DocumentModel.Drawing.IAlphaBiLevel>? AlphaBiLevels { get ; set; }
   
-  public System.Boolean? AlphaCeiling { get ; set; }
+  public Collection<Boolean>? AlphaCeilings { get ; set; }
   
-  public System.Boolean? AlphaFloor { get ; set; }
+  public Collection<Boolean>? AlphaFloors { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaInverse? AlphaInverse { get ; set; }
+  public Collection<DocumentModel.Drawing.IAlphaInverse>? AlphaInverses { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaModulationEffect? AlphaModulationEffect { get ; set; }
+  public Collection<DocumentModel.Drawing.IAlphaModulationEffect>? AlphaModulationEffects { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaModulationFixed? AlphaModulationFixed { get ; set; }
+  public Collection<DocumentModel.Drawing.IAlphaModulationFixed>? AlphaModulationFixeds { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaReplace? AlphaReplace { get ; set; }
+  public Collection<DocumentModel.Drawing.IAlphaReplace>? AlphaReplaces { get ; set; }
   
-  public DocumentModel.Drawing.IBiLevel? BiLevel { get ; set; }
+  public Collection<DocumentModel.Drawing.IBiLevel>? BiLevels { get ; set; }
   
-  public DocumentModel.Drawing.IBlur? Blur { get ; set; }
+  public Collection<DocumentModel.Drawing.IBlur>? Blurs { get ; set; }
   
-  public DocumentModel.Drawing.IColorChange? ColorChange { get ; set; }
+  public Collection<DocumentModel.Drawing.IColorChange>? ColorChanges { get ; set; }
   
-  public DocumentModel.Drawing.IColorReplacement? ColorReplacement { get ; set; }
+  public Collection<DocumentModel.Drawing.IColorReplacement>? ColorReplacements { get ; set; }
   
-  public DocumentModel.Drawing.IDuotone? Duotone { get ; set; }
+  public Collection<DocumentModel.Drawing.IDuotone>? Duotones { get ; set; }
   
-  public DocumentModel.Drawing.IFillOverlay? FillOverlay { get ; set; }
+  public Collection<DocumentModel.Drawing.IFillOverlay>? FillOverlaies { get ; set; }
   
-  public System.Boolean? Grayscale { get ; set; }
+  public Collection<Boolean>? Grayscales { get ; set; }
   
-  public DocumentModel.Drawing.IHsl? Hsl { get ; set; }
+  public Collection<DocumentModel.Drawing.IHsl>? Hsls { get ; set; }
   
-  public DocumentModel.Drawing.ILuminanceEffect? LuminanceEffect { get ; set; }
+  public Collection<DocumentModel.Drawing.ILuminanceEffect>? LuminanceEffects { get ; set; }
   
-  public DocumentModel.Drawing.ITintEffect? TintEffect { get ; set; }
+  public Collection<DocumentModel.Drawing.ITintEffect>? TintEffects { get ; set; }
   
   public DocumentModel.Drawing.IBlipExtensionList? BlipExtensionList { get ; set; }
   

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IHyperlinks // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IHyperlink>? Hyperlinks { get ; set; }
+  public Collection<IHyperlink>? Hyperlinks { get ; set; }
   
 }

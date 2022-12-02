@@ -5,8 +5,8 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISheetViews // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISheetView>? SheetViews { get ; set; }
+  public Collection<ISheetView>? SheetViews { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

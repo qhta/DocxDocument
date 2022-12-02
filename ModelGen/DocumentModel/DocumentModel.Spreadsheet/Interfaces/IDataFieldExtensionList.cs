@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IDataFieldExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IDataFieldExtension>? DataFieldExtensions { get ; set; }
+  public Collection<IDataFieldExtension>? DataFieldExtensions { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ITaskAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// CommentAnchor.
   /// </summary>
-  public DocumentModel.ICommentAnchor? CommentAnchor { get ; set; }
+  public ICommentAnchor? CommentAnchor { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

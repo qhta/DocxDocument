@@ -8,6 +8,6 @@ public interface ISourceConnection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// name, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
 }

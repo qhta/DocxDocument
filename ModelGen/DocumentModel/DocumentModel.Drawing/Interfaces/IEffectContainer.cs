@@ -5,64 +5,64 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IEffectContainer // : DocumentModel.Drawing.IEffectContainerType
 {
-  public DocumentModel.Drawing.IEffectContainer? EffectContainer { get ; set; }
+  public Collection<IEffectContainer>? EffectContainers { get ; set; }
   
-  public DocumentModel.Drawing.IEffect? Effect { get ; set; }
+  public Collection<IEffect>? Effects { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaBiLevel? AlphaBiLevel { get ; set; }
+  public Collection<IAlphaBiLevel>? AlphaBiLevels { get ; set; }
   
-  public System.Boolean? AlphaCeiling { get ; set; }
+  public Collection<Boolean>? AlphaCeilings { get ; set; }
   
-  public System.Boolean? AlphaFloor { get ; set; }
+  public Collection<Boolean>? AlphaFloors { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaInverse? AlphaInverse { get ; set; }
+  public Collection<IAlphaInverse>? AlphaInverses { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaModulationEffect? AlphaModulationEffect { get ; set; }
+  public Collection<IAlphaModulationEffect>? AlphaModulationEffects { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaModulationFixed? AlphaModulationFixed { get ; set; }
+  public Collection<IAlphaModulationFixed>? AlphaModulationFixeds { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaOutset? AlphaOutset { get ; set; }
+  public Collection<IAlphaOutset>? AlphaOutsets { get ; set; }
   
-  public DocumentModel.Drawing.IAlphaReplace? AlphaReplace { get ; set; }
+  public Collection<IAlphaReplace>? AlphaReplaces { get ; set; }
   
-  public DocumentModel.Drawing.IBiLevel? BiLevel { get ; set; }
+  public Collection<IBiLevel>? BiLevels { get ; set; }
   
-  public DocumentModel.Drawing.IBlend? Blend { get ; set; }
+  public Collection<IBlend>? Blends { get ; set; }
   
-  public DocumentModel.Drawing.IBlur? Blur { get ; set; }
+  public Collection<IBlur>? Blurs { get ; set; }
   
-  public DocumentModel.Drawing.IColorChange? ColorChange { get ; set; }
+  public Collection<IColorChange>? ColorChanges { get ; set; }
   
-  public DocumentModel.Drawing.IColorReplacement? ColorReplacement { get ; set; }
+  public Collection<IColorReplacement>? ColorReplacements { get ; set; }
   
-  public DocumentModel.Drawing.IDuotone? Duotone { get ; set; }
+  public Collection<IDuotone>? Duotones { get ; set; }
   
-  public DocumentModel.Drawing.IFill? Fill { get ; set; }
+  public Collection<IFill>? Fills { get ; set; }
   
-  public DocumentModel.Drawing.IFillOverlay? FillOverlay { get ; set; }
+  public Collection<IFillOverlay>? FillOverlaies { get ; set; }
   
-  public DocumentModel.Drawing.IGlow? Glow { get ; set; }
+  public Collection<IGlow>? Glows { get ; set; }
   
-  public System.Boolean? Grayscale { get ; set; }
+  public Collection<Boolean>? Grayscales { get ; set; }
   
-  public DocumentModel.Drawing.IHsl? Hsl { get ; set; }
+  public Collection<IHsl>? Hsls { get ; set; }
   
-  public DocumentModel.Drawing.IInnerShadow? InnerShadow { get ; set; }
+  public Collection<IInnerShadow>? InnerShadows { get ; set; }
   
-  public DocumentModel.Drawing.ILuminanceEffect? LuminanceEffect { get ; set; }
+  public Collection<ILuminanceEffect>? LuminanceEffects { get ; set; }
   
-  public DocumentModel.Drawing.IOuterShadow? OuterShadow { get ; set; }
+  public Collection<IOuterShadow>? OuterShadows { get ; set; }
   
-  public DocumentModel.Drawing.IPresetShadow? PresetShadow { get ; set; }
+  public Collection<IPresetShadow>? PresetShadows { get ; set; }
   
-  public DocumentModel.Drawing.IReflection? Reflection { get ; set; }
+  public Collection<IReflection>? Reflections { get ; set; }
   
-  public DocumentModel.Drawing.IRelativeOffset? RelativeOffset { get ; set; }
+  public Collection<IRelativeOffset>? RelativeOffsets { get ; set; }
   
-  public DocumentModel.Drawing.ISoftEdge? SoftEdge { get ; set; }
+  public Collection<ISoftEdge>? SoftEdges { get ; set; }
   
-  public DocumentModel.Drawing.ITintEffect? TintEffect { get ; set; }
+  public Collection<ITintEffect>? TintEffects { get ; set; }
   
-  public DocumentModel.Drawing.ITransformEffect? TransformEffect { get ; set; }
+  public Collection<ITransformEffect>? TransformEffects { get ; set; }
   
 }

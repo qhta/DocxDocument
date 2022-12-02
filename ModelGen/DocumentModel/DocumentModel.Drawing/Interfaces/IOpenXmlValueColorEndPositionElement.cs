@@ -8,16 +8,16 @@ public interface IOpenXmlValueColorEndPositionElement // : DocumentModel.ITypedO
   /// <summary>
   /// ExtremeValueColorPosition.
   /// </summary>
-  public System.Boolean? ExtremeValueColorPosition { get ; set; }
+  public Boolean? ExtremeValueColorPosition { get ; set; }
   
   /// <summary>
   /// NumberColorPosition.
   /// </summary>
-  public System.Double? NumberColorPosition { get ; set; }
+  public Double? NumberColorPosition { get ; set; }
   
   /// <summary>
   /// PercentageColorPosition.
   /// </summary>
-  public System.Double? PercentageColorPosition { get ; set; }
+  public Double? PercentageColorPosition { get ; set; }
   
 }

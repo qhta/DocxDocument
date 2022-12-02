@@ -8,10 +8,10 @@ public interface IWhole // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Outline.
   /// </summary>
-  public DocumentModel.Drawing.IOutline? Outline { get ; set; }
+  public IOutline? Outline { get ; set; }
   
-  public DocumentModel.Drawing.IEffectList? EffectList { get ; set; }
+  public IEffectList? EffectList { get ; set; }
   
-  public DocumentModel.Drawing.IEffectDag? EffectDag { get ; set; }
+  public IEffectDag? EffectDag { get ; set; }
   
 }

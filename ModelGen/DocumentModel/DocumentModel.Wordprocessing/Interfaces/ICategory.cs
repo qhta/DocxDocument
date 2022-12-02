@@ -8,11 +8,11 @@ public interface ICategory // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Category Associated With Entry.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Gallery Associated With Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartGalleryKind? Gallery { get ; set; }
+  public DocPartGalleryKind? Gallery { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ILevelReference // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public System.String? SequenceOfReferences { get ; set; }
+  public String? SequenceOfReferences { get ; set; }
   
 }

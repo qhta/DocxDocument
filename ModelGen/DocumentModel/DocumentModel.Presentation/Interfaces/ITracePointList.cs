@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ITracePointList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ITracePoint>? TracePoints { get ; set; }
+  public Collection<ITracePoint>? TracePoints { get ; set; }
   
 }

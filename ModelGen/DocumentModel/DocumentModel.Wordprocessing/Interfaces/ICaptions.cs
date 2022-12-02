@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ICaptions // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICaption>? Captions { get ; set; }
+  public Collection<ICaption>? Captions { get ; set; }
   
-  public DocumentModel.Wordprocessing.IAutoCaptions? AutoCaptions { get ; set; }
+  public IAutoCaptions? AutoCaptions { get ; set; }
   
 }

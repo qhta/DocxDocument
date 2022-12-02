@@ -8,11 +8,11 @@ public interface IDataPart // :
   /// <summary>
   /// Gets the internal part path in the package.
   /// </summary>
-  public System.Uri? Uri { get ; set; }
+  public Uri? Uri { get ; set; }
   
   /// <summary>
   /// Gets the content type (MIME type) of the data in the part.
   /// </summary>
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
 }

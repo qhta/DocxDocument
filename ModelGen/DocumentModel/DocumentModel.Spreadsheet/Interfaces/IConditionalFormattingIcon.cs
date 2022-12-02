@@ -8,11 +8,11 @@ public interface IConditionalFormattingIcon // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// iconSet, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.IconSetKind? IconSet { get ; set; }
+  public IconSetKind? IconSet { get ; set; }
   
   /// <summary>
   /// iconId, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? IconId { get ; set; }
+  public UInt32? IconId { get ; set; }
   
 }

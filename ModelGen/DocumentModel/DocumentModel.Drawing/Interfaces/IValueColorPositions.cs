@@ -8,21 +8,21 @@ public interface IValueColorPositions // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// count, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Int32? Count { get ; set; }
+  public Int32? Count { get ; set; }
   
   /// <summary>
   /// MinValueColorEndPosition.
   /// </summary>
-  public DocumentModel.Drawing.IMinValueColorEndPosition? MinValueColorEndPosition { get ; set; }
+  public IMinValueColorEndPosition? MinValueColorEndPosition { get ; set; }
   
   /// <summary>
   /// ValueColorMiddlePosition.
   /// </summary>
-  public DocumentModel.Drawing.IValueColorMiddlePosition? ValueColorMiddlePosition { get ; set; }
+  public IValueColorMiddlePosition? ValueColorMiddlePosition { get ; set; }
   
   /// <summary>
   /// MaxValueColorEndPosition.
   /// </summary>
-  public DocumentModel.Drawing.IMaxValueColorEndPosition? MaxValueColorEndPosition { get ; set; }
+  public IMaxValueColorEndPosition? MaxValueColorEndPosition { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface INumberDiagramInfoList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INumberDiagramInfo>? NumberDiagramInfos { get ; set; }
+  public Collection<INumberDiagramInfo>? NumberDiagramInfos { get ; set; }
   
 }

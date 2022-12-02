@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IDateAxExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDateAxExtension>? DateAxExtensions { get ; set; }
+  public Collection<IDateAxExtension>? DateAxExtensions { get ; set; }
   
 }

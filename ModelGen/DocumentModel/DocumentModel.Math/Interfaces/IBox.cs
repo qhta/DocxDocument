@@ -8,11 +8,11 @@ public interface IBox // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Box Properties.
   /// </summary>
-  public DocumentModel.Math.IBoxProperties? BoxProperties { get ; set; }
+  public IBoxProperties? BoxProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IBase? Base { get ; set; }
+  public IBase? Base { get ; set; }
   
 }

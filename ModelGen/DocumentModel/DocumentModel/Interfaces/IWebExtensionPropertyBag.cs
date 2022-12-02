@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IWebExtensionPropertyBag // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.IWebExtensionProperty>? WebExtensionProperties { get ; set; }
+  public Collection<IWebExtensionProperty>? WebExtensionProperties { get ; set; }
   
 }

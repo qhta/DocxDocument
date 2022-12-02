@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IHyperlinkExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IHyperlinkExtension>? HyperlinkExtensions { get ; set; }
+  public Collection<IHyperlinkExtension>? HyperlinkExtensions { get ; set; }
   
 }

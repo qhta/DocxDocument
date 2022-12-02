@@ -8,11 +8,11 @@ public interface IPaperSource // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// First Page Printer Tray Code
   /// </summary>
-  public System.UInt16? First { get ; set; }
+  public UInt16? First { get ; set; }
   
   /// <summary>
   /// Non-First Page Printer Tray Code
   /// </summary>
-  public System.UInt16? Other { get ; set; }
+  public UInt16? Other { get ; set; }
   
 }

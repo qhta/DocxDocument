@@ -8,8 +8,8 @@ public interface IMemberProperties // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// OLAP Member Properties Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IMemberProperty>? MemberProperties { get ; set; }
+  public Collection<IMemberProperty>? MemberProperties { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ICategoryAxisScaling // : DocumentModel.ITypedOpenXmlLeafElemen
   /// <summary>
   /// gapWidth, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? GapWidth { get ; set; }
+  public String? GapWidth { get ; set; }
   
 }

@@ -8,81 +8,81 @@ public interface ITableColumn // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Table Field Id
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
   /// <summary>
   /// Unique Name
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// Column name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Totals Row Function
   /// </summary>
-  public DocumentModel.Spreadsheet.TotalsRowFunctionKind? TotalsRowFunction { get ; set; }
+  public TotalsRowFunctionKind? TotalsRowFunction { get ; set; }
   
   /// <summary>
   /// Totals Row Label
   /// </summary>
-  public System.String? TotalsRowLabel { get ; set; }
+  public String? TotalsRowLabel { get ; set; }
   
   /// <summary>
   /// Query Table Field Id
   /// </summary>
-  public System.UInt32? QueryTableFieldId { get ; set; }
+  public UInt32? QueryTableFieldId { get ; set; }
   
   /// <summary>
   /// Header Row Cell Format Id
   /// </summary>
-  public System.UInt32? HeaderRowDifferentialFormattingId { get ; set; }
+  public UInt32? HeaderRowDifferentialFormattingId { get ; set; }
   
   /// <summary>
   /// Data and Insert Row Format Id
   /// </summary>
-  public System.UInt32? DataFormatId { get ; set; }
+  public UInt32? DataFormatId { get ; set; }
   
   /// <summary>
   /// Totals Row Format Id
   /// </summary>
-  public System.UInt32? TotalsRowDifferentialFormattingId { get ; set; }
+  public UInt32? TotalsRowDifferentialFormattingId { get ; set; }
   
   /// <summary>
   /// Header Row Cell Style
   /// </summary>
-  public System.String? HeaderRowCellStyle { get ; set; }
+  public String? HeaderRowCellStyle { get ; set; }
   
   /// <summary>
   /// Data Area Style Name
   /// </summary>
-  public System.String? DataCellStyle { get ; set; }
+  public String? DataCellStyle { get ; set; }
   
   /// <summary>
   /// Totals Row Style Name
   /// </summary>
-  public System.String? TotalsRowCellStyle { get ; set; }
+  public String? TotalsRowCellStyle { get ; set; }
   
   /// <summary>
   /// Calculated Column Formula.
   /// </summary>
-  public DocumentModel.Spreadsheet.ITableFormulaType? CalculatedColumnFormula { get ; set; }
+  public ITableFormulaType? CalculatedColumnFormula { get ; set; }
   
   /// <summary>
   /// Totals Row Formula.
   /// </summary>
-  public DocumentModel.Spreadsheet.ITableFormulaType? TotalsRowFormula { get ; set; }
+  public ITableFormulaType? TotalsRowFormula { get ; set; }
   
   /// <summary>
   /// XML Column Properties.
   /// </summary>
-  public DocumentModel.Spreadsheet.IXmlColumnProperties? XmlColumnProperties { get ; set; }
+  public IXmlColumnProperties? XmlColumnProperties { get ; set; }
   
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

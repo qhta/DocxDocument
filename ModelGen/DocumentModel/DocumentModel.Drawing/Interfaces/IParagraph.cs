@@ -8,16 +8,16 @@ public interface IParagraph // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
-  public DocumentModel.Drawing.IParagraphProperties? ParagraphProperties { get ; set; }
+  public IParagraphProperties? ParagraphProperties { get ; set; }
   
-  public DocumentModel.Drawing.IRun? Run { get ; set; }
+  public Collection<IRun>? Runs { get ; set; }
   
-  public DocumentModel.Drawing.IBreak? Break { get ; set; }
+  public Collection<IBreak>? Breaks { get ; set; }
   
-  public DocumentModel.Drawing.IField? Field { get ; set; }
+  public Collection<IField>? Fields { get ; set; }
   
-  public System.Boolean? TextMath { get ; set; }
+  public Collection<Boolean>? TextMaths { get ; set; }
   
-  public DocumentModel.Drawing.IEndParagraphRunProperties? EndParagraphRunProperties { get ; set; }
+  public IEndParagraphRunProperties? EndParagraphRunProperties { get ; set; }
   
 }

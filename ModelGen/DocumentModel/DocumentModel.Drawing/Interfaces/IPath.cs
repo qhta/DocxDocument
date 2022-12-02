@@ -8,38 +8,38 @@ public interface IPath // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Path Width
   /// </summary>
-  public System.Int64? Width { get ; set; }
+  public Int64? Width { get ; set; }
   
   /// <summary>
   /// Path Height
   /// </summary>
-  public System.Int64? Height { get ; set; }
+  public Int64? Height { get ; set; }
   
   /// <summary>
   /// Path Fill
   /// </summary>
-  public DocumentModel.Drawing.PathFillMode? Fill { get ; set; }
+  public PathFillMode? Fill { get ; set; }
   
   /// <summary>
   /// Path Stroke
   /// </summary>
-  public System.Boolean? Stroke { get ; set; }
+  public Boolean? Stroke { get ; set; }
   
   /// <summary>
   /// 3D Extrusion Allowed
   /// </summary>
-  public System.Boolean? ExtrusionOk { get ; set; }
+  public Boolean? ExtrusionOk { get ; set; }
   
-  public System.Boolean? CloseShapePath { get ; set; }
+  public Collection<Boolean>? CloseShapePaths { get ; set; }
   
-  public DocumentModel.Drawing.IMoveTo? MoveTo { get ; set; }
+  public Collection<IMoveTo>? MoveTos { get ; set; }
   
-  public DocumentModel.Drawing.ILineTo? LineTo { get ; set; }
+  public Collection<ILineTo>? LineTos { get ; set; }
   
-  public DocumentModel.Drawing.IArcTo? ArcTo { get ; set; }
+  public Collection<IArcTo>? ArcTos { get ; set; }
   
-  public DocumentModel.Drawing.IQuadraticBezierCurveTo? QuadraticBezierCurveTo { get ; set; }
+  public Collection<IQuadraticBezierCurveTo>? QuadraticBezierCurveTos { get ; set; }
   
-  public DocumentModel.Drawing.ICubicBezierCurveTo? CubicBezierCurveTo { get ; set; }
+  public Collection<ICubicBezierCurveTo>? CubicBezierCurveTos { get ; set; }
   
 }

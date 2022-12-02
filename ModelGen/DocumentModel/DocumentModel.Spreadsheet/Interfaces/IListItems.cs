@@ -5,8 +5,8 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IListItems // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.String>? ListItems { get ; set; }
+  public Collection<String>? ListItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

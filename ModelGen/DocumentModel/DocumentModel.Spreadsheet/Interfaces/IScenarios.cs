@@ -8,18 +8,18 @@ public interface IScenarios // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Current Scenario
   /// </summary>
-  public System.UInt32? Current { get ; set; }
+  public UInt32? Current { get ; set; }
   
   /// <summary>
   /// Last Shown Scenario
   /// </summary>
-  public System.UInt32? Show { get ; set; }
+  public UInt32? Show { get ; set; }
   
   /// <summary>
   /// Sequence of References
   /// </summary>
-  public System.Collections.Generic.List<System.String>? SequenceOfReferences { get ; set; }
+  public List<String>? SequenceOfReferences { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IScenario>? Scenarios { get ; set; }
+  public Collection<IScenario>? Scenarios { get ; set; }
   
 }

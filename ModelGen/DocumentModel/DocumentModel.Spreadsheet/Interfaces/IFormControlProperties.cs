@@ -8,166 +8,166 @@ public interface IFormControlProperties // : DocumentModel.ITypedOpenXmlPartRoot
   /// <summary>
   /// objectType, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.ObjectKind? ObjectType { get ; set; }
+  public ObjectKind? ObjectType { get ; set; }
   
   /// <summary>
   /// checked, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.CheckedKind? Checked { get ; set; }
+  public CheckedKind? Checked { get ; set; }
   
   /// <summary>
   /// colored, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? Colored { get ; set; }
+  public Boolean? Colored { get ; set; }
   
   /// <summary>
   /// dropLines, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? DropLines { get ; set; }
+  public UInt32? DropLines { get ; set; }
   
   /// <summary>
   /// dropStyle, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.DropStyleKind? DropStyle { get ; set; }
+  public DropStyleKind? DropStyle { get ; set; }
   
   /// <summary>
   /// dx, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? ScrollBarWidth { get ; set; }
+  public UInt32? ScrollBarWidth { get ; set; }
   
   /// <summary>
   /// firstButton, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? FirstButton { get ; set; }
+  public Boolean? FirstButton { get ; set; }
   
   /// <summary>
   /// fmlaGroup, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? FmlaGroup { get ; set; }
+  public String? FmlaGroup { get ; set; }
   
   /// <summary>
   /// fmlaLink, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? FmlaLink { get ; set; }
+  public String? FmlaLink { get ; set; }
   
   /// <summary>
   /// fmlaRange, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? FmlaRange { get ; set; }
+  public String? FmlaRange { get ; set; }
   
   /// <summary>
   /// fmlaTxbx, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? FmlaTextbox { get ; set; }
+  public String? FmlaTextbox { get ; set; }
   
   /// <summary>
   /// horiz, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? Horizontal { get ; set; }
+  public Boolean? Horizontal { get ; set; }
   
   /// <summary>
   /// inc, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Incremental { get ; set; }
+  public UInt32? Incremental { get ; set; }
   
   /// <summary>
   /// justLastX, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? JustLastX { get ; set; }
+  public Boolean? JustLastX { get ; set; }
   
   /// <summary>
   /// lockText, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? LockText { get ; set; }
+  public Boolean? LockText { get ; set; }
   
   /// <summary>
   /// max, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Max { get ; set; }
+  public UInt32? Max { get ; set; }
   
   /// <summary>
   /// min, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Min { get ; set; }
+  public UInt32? Min { get ; set; }
   
   /// <summary>
   /// multiSel, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? MultipleSelection { get ; set; }
+  public String? MultipleSelection { get ; set; }
   
   /// <summary>
   /// noThreeD, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? NoThreeD { get ; set; }
+  public Boolean? NoThreeD { get ; set; }
   
   /// <summary>
   /// noThreeD2, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? NoThreeD2 { get ; set; }
+  public Boolean? NoThreeD2 { get ; set; }
   
   /// <summary>
   /// page, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Page { get ; set; }
+  public UInt32? Page { get ; set; }
   
   /// <summary>
   /// sel, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Selected { get ; set; }
+  public UInt32? Selected { get ; set; }
   
   /// <summary>
   /// seltype, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.SelectionKind? SelectionType { get ; set; }
+  public SelectionKind? SelectionType { get ; set; }
   
   /// <summary>
   /// textHAlign, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.TextHorizontalAlignmentKind? TextHorizontalAlign { get ; set; }
+  public TextHorizontalAlignmentKind? TextHorizontalAlign { get ; set; }
   
   /// <summary>
   /// textVAlign, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.TextVerticalAlignmentKind? TextVerticalAlign { get ; set; }
+  public TextVerticalAlignmentKind? TextVerticalAlign { get ; set; }
   
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Val { get ; set; }
+  public UInt32? Val { get ; set; }
   
   /// <summary>
   /// widthMin, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? MinimumWidth { get ; set; }
+  public UInt32? MinimumWidth { get ; set; }
   
   /// <summary>
   /// editVal, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.EditValidationKind? EditVal { get ; set; }
+  public EditValidationKind? EditVal { get ; set; }
   
   /// <summary>
   /// multiLine, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? MultipleLines { get ; set; }
+  public Boolean? MultipleLines { get ; set; }
   
   /// <summary>
   /// verticalBar, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? VerticalBar { get ; set; }
+  public Boolean? VerticalBar { get ; set; }
   
   /// <summary>
   /// passwordEdit, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? PasswordEdit { get ; set; }
+  public Boolean? PasswordEdit { get ; set; }
   
   /// <summary>
   /// ListItems.
   /// </summary>
-  public DocumentModel.Spreadsheet.IListItems? ListItems { get ; set; }
+  public IListItems? ListItems { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

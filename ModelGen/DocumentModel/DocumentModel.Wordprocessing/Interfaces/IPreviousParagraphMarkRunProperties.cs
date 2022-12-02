@@ -8,125 +8,125 @@ public interface IPreviousParagraphMarkRunProperties // : DocumentModel.ITypedOp
   /// <summary>
   /// Inserted Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITrackChangeType? Inserted { get ; set; }
+  public ITrackChangeType? Inserted { get ; set; }
   
   /// <summary>
   /// Deleted Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITrackChangeType? Deleted { get ; set; }
+  public ITrackChangeType? Deleted { get ; set; }
   
   /// <summary>
   /// Move Source Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITrackChangeType? MoveFrom { get ; set; }
+  public ITrackChangeType? MoveFrom { get ; set; }
   
   /// <summary>
   /// Move Destination Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITrackChangeType? MoveTo { get ; set; }
+  public ITrackChangeType? MoveTo { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? ConflictInsertion { get ; set; }
+  public ITrackChangeType? ConflictInsertion { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? ConflictDeletion { get ; set; }
+  public ITrackChangeType? ConflictDeletion { get ; set; }
   
-  public System.String? RunStyle { get ; set; }
+  public Collection<String>? RunStyles { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunFonts? RunFonts { get ; set; }
+  public Collection<IRunFonts>? RunFontses { get ; set; }
   
-  public System.Boolean? Bold { get ; set; }
+  public Collection<Boolean>? Bolds { get ; set; }
   
-  public System.Boolean? BoldComplexScript { get ; set; }
+  public Collection<Boolean>? BoldComplexScripts { get ; set; }
   
-  public System.Boolean? Italic { get ; set; }
+  public Collection<Boolean>? Italics { get ; set; }
   
-  public System.Boolean? ItalicComplexScript { get ; set; }
+  public Collection<Boolean>? ItalicComplexScripts { get ; set; }
   
-  public System.Boolean? Caps { get ; set; }
+  public Collection<Boolean>? Capses { get ; set; }
   
-  public System.Boolean? SmallCaps { get ; set; }
+  public Collection<Boolean>? SmallCapses { get ; set; }
   
-  public System.Boolean? Strike { get ; set; }
+  public Collection<Boolean>? Strikes { get ; set; }
   
-  public System.Boolean? DoubleStrike { get ; set; }
+  public Collection<Boolean>? DoubleStrikes { get ; set; }
   
-  public System.Boolean? Outline { get ; set; }
+  public Collection<Boolean>? Outlines { get ; set; }
   
-  public System.Boolean? Shadow { get ; set; }
+  public Collection<Boolean>? Shadows { get ; set; }
   
-  public System.Boolean? Emboss { get ; set; }
+  public Collection<Boolean>? Embosses { get ; set; }
   
-  public System.Boolean? Imprint { get ; set; }
+  public Collection<Boolean>? Imprints { get ; set; }
   
-  public System.Boolean? NoProof { get ; set; }
+  public Collection<Boolean>? NoProofs { get ; set; }
   
-  public System.Boolean? SnapToGrid { get ; set; }
+  public Collection<Boolean>? SnapToGrids { get ; set; }
   
-  public System.Boolean? Vanish { get ; set; }
+  public Collection<Boolean>? Vanishs { get ; set; }
   
-  public System.Boolean? WebHidden { get ; set; }
+  public Collection<Boolean>? WebHiddens { get ; set; }
   
-  public DocumentModel.Wordprocessing.IColor? Color { get ; set; }
+  public Collection<IColor>? Colors { get ; set; }
   
-  public System.Int32? Spacing { get ; set; }
+  public Collection<Int32>? Spacings { get ; set; }
   
-  public System.Int32? CharacterScale { get ; set; }
+  public Collection<Int32>? CharacterScales { get ; set; }
   
-  public System.UInt32? Kern { get ; set; }
+  public Collection<UInt32>? Kerns { get ; set; }
   
-  public System.String? Position { get ; set; }
+  public Collection<String>? Positions { get ; set; }
   
-  public System.String? FontSize { get ; set; }
+  public Collection<String>? FontSizes { get ; set; }
   
-  public System.String? FontSizeComplexScript { get ; set; }
+  public Collection<String>? FontSizeComplexScripts { get ; set; }
   
-  public DocumentModel.Wordprocessing.HighlightColorKind? Highlight { get ; set; }
+  public Collection<HighlightColorKind>? Highlights { get ; set; }
   
-  public DocumentModel.Wordprocessing.IUnderline? Underline { get ; set; }
+  public Collection<IUnderline>? Underlines { get ; set; }
   
-  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get ; set; }
+  public Collection<TextEffectKind>? TextEffects { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBorderType? Border { get ; set; }
+  public Collection<IBorderType>? Borders { get ; set; }
   
-  public DocumentModel.Wordprocessing.IShading? Shading { get ; set; }
+  public Collection<IShading>? Shadings { get ; set; }
   
-  public DocumentModel.Wordprocessing.IFitText? FitText { get ; set; }
+  public Collection<IFitText>? FitTexts { get ; set; }
   
-  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get ; set; }
+  public Collection<VerticalPositionKind>? VerticalTextAlignments { get ; set; }
   
-  public System.Boolean? RightToLeftText { get ; set; }
+  public Collection<Boolean>? RightToLeftTexts { get ; set; }
   
-  public System.Boolean? ComplexScript { get ; set; }
+  public Collection<Boolean>? ComplexScripts { get ; set; }
   
-  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get ; set; }
+  public Collection<EmphasisMarkKind>? Emphasises { get ; set; }
   
-  public DocumentModel.Wordprocessing.ILanguageType? Languages { get ; set; }
+  public Collection<ILanguageType>? Languageses { get ; set; }
   
-  public DocumentModel.Wordprocessing.IEastAsianLayout? EastAsianLayout { get ; set; }
+  public Collection<IEastAsianLayout>? EastAsianLayouts { get ; set; }
   
-  public System.Boolean? SpecVanish { get ; set; }
+  public Collection<Boolean>? SpecVanishs { get ; set; }
   
-  public DocumentModel.Wordprocessing.IGlow? Glow { get ; set; }
+  public Collection<IGlow>? Glows { get ; set; }
   
-  public DocumentModel.Wordprocessing.IReflection? Reflection { get ; set; }
+  public Collection<IReflection>? Reflections { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextOutlineEffect? TextOutlineEffect { get ; set; }
+  public Collection<ITextOutlineEffect>? TextOutlineEffects { get ; set; }
   
-  public DocumentModel.Wordprocessing.IFillTextEffect? FillTextEffect { get ; set; }
+  public Collection<IFillTextEffect>? FillTextEffects { get ; set; }
   
-  public DocumentModel.Wordprocessing.IScene3D? Scene3D { get ; set; }
+  public Collection<IScene3D>? Scene3Ds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IProperties3D? Properties3D { get ; set; }
+  public Collection<IProperties3D>? Properties3Ds { get ; set; }
   
-  public DocumentModel.Wordprocessing.LigaturesKind? Ligatures { get ; set; }
+  public Collection<LigaturesKind>? Ligatureses { get ; set; }
   
-  public DocumentModel.Wordprocessing.NumberFormKind? NumberingFormat { get ; set; }
+  public Collection<NumberFormKind>? NumberingFormats { get ; set; }
   
-  public DocumentModel.Wordprocessing.NumberSpacingKind? NumberSpacing { get ; set; }
+  public Collection<NumberSpacingKind>? NumberSpacings { get ; set; }
   
-  public DocumentModel.Wordprocessing.IStylisticSets? StylisticSets { get ; set; }
+  public Collection<IStylisticSets>? StylisticSetses { get ; set; }
   
-  public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives { get ; set; }
+  public Collection<OnOffKind>? ContextualAlternativeses { get ; set; }
   
-  public System.Boolean? OfficeMath { get ; set; }
+  public Collection<Boolean>? OfficeMaths { get ; set; }
   
 }

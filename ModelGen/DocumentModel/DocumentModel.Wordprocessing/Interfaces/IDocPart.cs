@@ -8,11 +8,11 @@ public interface IDocPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IDocPartProperties? DocPartProperties { get ; set; }
+  public IDocPartProperties? DocPartProperties { get ; set; }
   
   /// <summary>
   /// Contents of Glossary Document Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.IDocPartBody? DocPartBody { get ; set; }
+  public IDocPartBody? DocPartBody { get ; set; }
   
 }

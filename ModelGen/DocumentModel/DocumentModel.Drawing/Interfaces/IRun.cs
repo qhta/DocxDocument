@@ -8,11 +8,11 @@ public interface IRun // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  public DocumentModel.Drawing.IRunProperties? RunProperties { get ; set; }
+  public IRunProperties? RunProperties { get ; set; }
   
   /// <summary>
   /// Text String.
   /// </summary>
-  public System.String? Text { get ; set; }
+  public String? Text { get ; set; }
   
 }

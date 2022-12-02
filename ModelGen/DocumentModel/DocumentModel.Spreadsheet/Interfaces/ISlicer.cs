@@ -8,56 +8,56 @@ public interface ISlicer // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// name, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// cache, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Cache { get ; set; }
+  public String? Cache { get ; set; }
   
   /// <summary>
   /// caption, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Caption { get ; set; }
+  public String? Caption { get ; set; }
   
   /// <summary>
   /// startItem, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? StartItem { get ; set; }
+  public UInt32? StartItem { get ; set; }
   
   /// <summary>
   /// columnCount, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? ColumnCount { get ; set; }
+  public UInt32? ColumnCount { get ; set; }
   
   /// <summary>
   /// showCaption, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? ShowCaption { get ; set; }
+  public Boolean? ShowCaption { get ; set; }
   
   /// <summary>
   /// level, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Level { get ; set; }
+  public UInt32? Level { get ; set; }
   
   /// <summary>
   /// style, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Style { get ; set; }
+  public String? Style { get ; set; }
   
   /// <summary>
   /// lockedPosition, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? LockedPosition { get ; set; }
+  public Boolean? LockedPosition { get ; set; }
   
   /// <summary>
   /// rowHeight, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? RowHeight { get ; set; }
+  public UInt32? RowHeight { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

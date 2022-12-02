@@ -5,28 +5,28 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IOutline // : DocumentModel.Drawing.ILinePropertiesType
 {
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
-  public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
+  public ISolidFill? SolidFill { get ; set; }
   
-  public DocumentModel.Drawing.IGradientFill? GradientFill { get ; set; }
+  public IGradientFill? GradientFill { get ; set; }
   
-  public DocumentModel.Drawing.IPatternFill? PatternFill { get ; set; }
+  public IPatternFill? PatternFill { get ; set; }
   
-  public DocumentModel.Drawing.PresetLineDashKind? PresetDash { get ; set; }
+  public PresetLineDashKind? PresetDash { get ; set; }
   
-  public DocumentModel.Drawing.ICustomDash? CustomDash { get ; set; }
+  public ICustomDash? CustomDash { get ; set; }
   
-  public System.Boolean? Round { get ; set; }
+  public Boolean? Round { get ; set; }
   
-  public System.Boolean? LineJoinBevel { get ; set; }
+  public Boolean? LineJoinBevel { get ; set; }
   
-  public DocumentModel.Drawing.IMiter? Miter { get ; set; }
+  public IMiter? Miter { get ; set; }
   
-  public DocumentModel.Drawing.ILineEndPropertiesType? HeadEnd { get ; set; }
+  public ILineEndPropertiesType? HeadEnd { get ; set; }
   
-  public DocumentModel.Drawing.ILineEndPropertiesType? TailEnd { get ; set; }
+  public ILineEndPropertiesType? TailEnd { get ; set; }
   
-  public DocumentModel.Drawing.ILinePropertiesExtensionList? LinePropertiesExtensionList { get ; set; }
+  public ILinePropertiesExtensionList? LinePropertiesExtensionList { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface IAxisDataSourceType // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Multi Level String Reference.
   /// </summary>
-  public DocumentModel.Drawing.IMultiLevelStringReference? MultiLevelStringReference { get ; set; }
+  public IMultiLevelStringReference? MultiLevelStringReference { get ; set; }
   
   /// <summary>
   /// Number Reference.
   /// </summary>
-  public DocumentModel.Drawing.INumberReference? NumberReference { get ; set; }
+  public INumberReference? NumberReference { get ; set; }
   
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public DocumentModel.Drawing.INumberLiteral? NumberLiteral { get ; set; }
+  public INumberLiteral? NumberLiteral { get ; set; }
   
   /// <summary>
   /// StringReference.
   /// </summary>
-  public DocumentModel.Drawing.IStringReference? StringReference { get ; set; }
+  public IStringReference? StringReference { get ; set; }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public DocumentModel.Drawing.IStringLiteral? StringLiteral { get ; set; }
+  public IStringLiteral? StringLiteral { get ; set; }
   
 }

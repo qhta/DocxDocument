@@ -8,16 +8,16 @@ public interface IMultiLevelStringReference // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
   /// <summary>
   /// MultiLevelStringCache.
   /// </summary>
-  public DocumentModel.Drawing.IMultiLevelStringCache? MultiLevelStringCache { get ; set; }
+  public IMultiLevelStringCache? MultiLevelStringCache { get ; set; }
   
   /// <summary>
   /// MultiLvlStrRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IMultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get ; set; }
+  public IMultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get ; set; }
   
 }

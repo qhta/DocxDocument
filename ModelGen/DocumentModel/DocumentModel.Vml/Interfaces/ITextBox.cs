@@ -8,22 +8,22 @@ public interface ITextBox // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  public System.String? Style { get ; set; }
+  public String? Style { get ; set; }
   
   /// <summary>
   /// Text Box Inset
   /// </summary>
-  public System.String? Inset { get ; set; }
+  public String? Inset { get ; set; }
   
   /// <summary>
   /// Text Box Single-Click Selection Toggle
   /// </summary>
-  public System.Boolean? SingleClick { get ; set; }
+  public Boolean? SingleClick { get ; set; }
   
   public DocumentModel.Wordprocessing.ITextBoxContent? TextBoxContent { get ; set; }
   

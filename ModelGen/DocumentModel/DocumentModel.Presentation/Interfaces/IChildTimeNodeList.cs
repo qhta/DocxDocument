@@ -5,30 +5,30 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IChildTimeNodeList // : DocumentModel.Presentation.ITimeTypeListType
 {
-  public DocumentModel.Presentation.IParallelTimeNode? ParallelTimeNode { get ; set; }
+  public Collection<IParallelTimeNode>? ParallelTimeNodes { get ; set; }
   
-  public DocumentModel.Presentation.ISequenceTimeNode? SequenceTimeNode { get ; set; }
+  public Collection<ISequenceTimeNode>? SequenceTimeNodes { get ; set; }
   
-  public DocumentModel.Presentation.IExclusiveTimeNode? ExclusiveTimeNode { get ; set; }
+  public Collection<IExclusiveTimeNode>? ExclusiveTimeNodes { get ; set; }
   
-  public DocumentModel.Presentation.IAnimate? Animate { get ; set; }
+  public Collection<IAnimate>? Animates { get ; set; }
   
-  public DocumentModel.Presentation.IAnimateColor? AnimateColor { get ; set; }
+  public Collection<IAnimateColor>? AnimateColors { get ; set; }
   
-  public DocumentModel.Presentation.IAnimateEffect? AnimateEffect { get ; set; }
+  public Collection<IAnimateEffect>? AnimateEffects { get ; set; }
   
-  public DocumentModel.Presentation.IAnimateMotion? AnimateMotion { get ; set; }
+  public Collection<IAnimateMotion>? AnimateMotions { get ; set; }
   
-  public DocumentModel.Presentation.IAnimateRotation? AnimateRotation { get ; set; }
+  public Collection<IAnimateRotation>? AnimateRotations { get ; set; }
   
-  public DocumentModel.Presentation.IAnimateScale? AnimateScale { get ; set; }
+  public Collection<IAnimateScale>? AnimateScales { get ; set; }
   
-  public DocumentModel.Presentation.ICommand? Command { get ; set; }
+  public Collection<ICommand>? Commands { get ; set; }
   
-  public DocumentModel.Presentation.ISetBehavior? SetBehavior { get ; set; }
+  public Collection<ISetBehavior>? SetBehaviors { get ; set; }
   
-  public DocumentModel.Presentation.IAudio? Audio { get ; set; }
+  public Collection<IAudio>? Audios { get ; set; }
   
-  public DocumentModel.Presentation.IVideo? Video { get ; set; }
+  public Collection<IVideo>? Videos { get ; set; }
   
 }

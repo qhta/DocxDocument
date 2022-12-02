@@ -8,11 +8,11 @@ public interface IExtraColorScheme // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// ColorScheme.
   /// </summary>
-  public DocumentModel.Drawing.IColorScheme? ColorScheme { get ; set; }
+  public IColorScheme? ColorScheme { get ; set; }
   
   /// <summary>
   /// ColorMap.
   /// </summary>
-  public DocumentModel.Drawing.IColorMap? ColorMap { get ; set; }
+  public IColorMap? ColorMap { get ; set; }
   
 }

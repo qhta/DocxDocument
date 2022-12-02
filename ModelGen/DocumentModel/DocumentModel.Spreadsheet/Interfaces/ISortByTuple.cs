@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ISortByTuple // : DocumentModel.Spreadsheet.ITuplesType
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITuple>? Tuples { get ; set; }
+  public Collection<ITuple>? Tuples { get ; set; }
   
 }

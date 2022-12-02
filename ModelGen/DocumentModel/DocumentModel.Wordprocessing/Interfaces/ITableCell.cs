@@ -8,74 +8,74 @@ public interface ITableCell // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ITableCellProperties? TableCellProperties { get ; set; }
+  public ITableCellProperties? TableCellProperties { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IAltChunk>? AltChunks { get ; set; }
+  public Collection<IAltChunk>? AltChunks { get ; set; }
   
-  public DocumentModel.Wordprocessing.ICustomXmlBlock? CustomXmlBlock { get ; set; }
+  public Collection<ICustomXmlBlock>? CustomXmlBlocks { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtBlock? SdtBlock { get ; set; }
+  public Collection<ISdtBlock>? SdtBlocks { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IParagraph>? Paragraphs { get ; set; }
+  public Collection<IParagraph>? Paragraphs { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ITable>? Tables { get ; set; }
+  public Collection<ITable>? Tables { get ; set; }
   
-  public DocumentModel.Wordprocessing.IProofError? ProofError { get ; set; }
+  public Collection<IProofError>? ProofErrors { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermStart? PermStart { get ; set; }
+  public Collection<IPermStart>? PermStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermEnd? PermEnd { get ; set; }
+  public Collection<IPermEnd>? PermEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBookmarkStart? BookmarkStart { get ; set; }
+  public Collection<IBookmarkStart>? BookmarkStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? BookmarkEnd { get ; set; }
+  public Collection<IMarkupRangeType>? BookmarkEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeStart { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveFromRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveToRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveToRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlInsRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlInsRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlInsRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlDelRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlDelRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlDelRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IInsertedRun? InsertedRun { get ; set; }
+  public Collection<IInsertedRun>? InsertedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDeletedRun? DeletedRun { get ; set; }
+  public Collection<IDeletedRun>? DeletedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveFromRun? MoveFromRun { get ; set; }
+  public Collection<IMoveFromRun>? MoveFromRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveToRun? MoveToRun { get ; set; }
+  public Collection<IMoveToRun>? MoveToRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictInsertion? RunConflictInsertion { get ; set; }
+  public Collection<IRunConflictInsertion>? RunConflictInsertions { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictDeletion? RunConflictDeletion { get ; set; }
+  public Collection<IRunConflictDeletion>? RunConflictDeletions { get ; set; }
   
 }

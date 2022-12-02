@@ -8,21 +8,21 @@ public interface IPivotValueCell // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// i, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? Item { get ; set; }
+  public UInt32? Item { get ; set; }
   
   /// <summary>
   /// t, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.SXVCellType? Text { get ; set; }
+  public SXVCellType? Text { get ; set; }
   
   /// <summary>
   /// Xstring.
   /// </summary>
-  public System.String? Xstring { get ; set; }
+  public String? Xstring { get ; set; }
   
   /// <summary>
   /// PivotValueCellExtra.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPivotValueCellExtra? PivotValueCellExtra { get ; set; }
+  public IPivotValueCellExtra? PivotValueCellExtra { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ICalculatedMemberExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICalculatedMemberExtension>? CalculatedMemberExtensions { get ; set; }
+  public Collection<ICalculatedMemberExtension>? CalculatedMemberExtensions { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IFilteredPieSeries // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// PieChartSeries.
   /// </summary>
-  public DocumentModel.Drawing.IPieChartSeries? PieChartSeries { get ; set; }
+  public IPieChartSeries? PieChartSeries { get ; set; }
   
 }

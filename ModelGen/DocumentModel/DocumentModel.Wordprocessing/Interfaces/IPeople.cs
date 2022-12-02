@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IPeople // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IPerson>? Persons { get ; set; }
+  public Collection<IPerson>? Persons { get ; set; }
   
 }

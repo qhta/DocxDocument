@@ -8,11 +8,11 @@ public interface IBorderBox // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Border Box Properties.
   /// </summary>
-  public DocumentModel.Math.IBorderBoxProperties? BorderBoxProperties { get ; set; }
+  public IBorderBoxProperties? BorderBoxProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IBase? Base { get ; set; }
+  public IBase? Base { get ; set; }
   
 }

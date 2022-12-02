@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IMcds // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IMcd>? Mcds { get ; set; }
+  public Collection<IMcd>? Mcds { get ; set; }
   
 }

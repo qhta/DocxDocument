@@ -8,6 +8,6 @@ public interface IAcceleratorKeymapType // : DocumentModel.ITypedOpenXmlLeafElem
   /// <summary>
   /// acdName
   /// </summary>
-  public System.String? AcceleratorName { get ; set; }
+  public String? AcceleratorName { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBlipExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBlipExtension>? BlipExtensions { get ; set; }
+  public Collection<IBlipExtension>? BlipExtensions { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPie3DChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IPie3DChartExtension>? Pie3DChartExtensions { get ; set; }
+  public Collection<IPie3DChartExtension>? Pie3DChartExtensions { get ; set; }
   
 }

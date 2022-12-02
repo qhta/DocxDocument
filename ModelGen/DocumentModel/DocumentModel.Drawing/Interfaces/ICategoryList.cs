@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICategoryList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ICategory>? Categories { get ; set; }
+  public Collection<ICategory>? Categories { get ; set; }
   
 }

@@ -8,20 +8,20 @@ public interface INonVisualDrawingPropertiesExtension // : DocumentModel.ITypedO
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.ICompatExtension? CompatExtension { get ; set; }
+  public ICompatExtension? CompatExtension { get ; set; }
   
-  public DocumentModel.Drawing.IBackgroundProperties? BackgroundProperties { get ; set; }
+  public IBackgroundProperties? BackgroundProperties { get ; set; }
   
-  public DocumentModel.Drawing.ICreationId? CreationId { get ; set; }
+  public ICreationId? CreationId { get ; set; }
   
-  public DocumentModel.Drawing.IPredecessorDrawingElementReference? PredecessorDrawingElementReference { get ; set; }
+  public IPredecessorDrawingElementReference? PredecessorDrawingElementReference { get ; set; }
   
-  public System.Boolean? Decorative { get ; set; }
+  public Boolean? Decorative { get ; set; }
   
-  public DocumentModel.Drawing.IClassificationOutcome? ClassificationOutcome { get ; set; }
+  public IClassificationOutcome? ClassificationOutcome { get ; set; }
   
-  public DocumentModel.Drawing.IScriptLink? ScriptLink { get ; set; }
+  public IScriptLink? ScriptLink { get ; set; }
   
 }

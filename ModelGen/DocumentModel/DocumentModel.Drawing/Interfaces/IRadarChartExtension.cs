@@ -8,8 +8,8 @@ public interface IRadarChartExtension // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredRadarSeries? FilteredRadarSeries { get ; set; }
+  public IFilteredRadarSeries? FilteredRadarSeries { get ; set; }
   
 }

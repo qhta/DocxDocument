@@ -8,51 +8,51 @@ public interface IOleObject // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// OLE Object Type
   /// </summary>
-  public DocumentModel.Vml.OleKind? Type { get ; set; }
+  public OleKind? Type { get ; set; }
   
   /// <summary>
   /// OLE Object Application
   /// </summary>
-  public System.String? ProgId { get ; set; }
+  public String? ProgId { get ; set; }
   
   /// <summary>
   /// OLE Object Shape
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// OLE Object Representation
   /// </summary>
-  public DocumentModel.Vml.OleDrawAspectKind? DrawAspect { get ; set; }
+  public OleDrawAspectKind? DrawAspect { get ; set; }
   
   /// <summary>
   /// OLE Object Unique ID
   /// </summary>
-  public System.String? ObjectId { get ; set; }
+  public String? ObjectId { get ; set; }
   
   /// <summary>
   /// Relationship
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// OLE Update Mode
   /// </summary>
-  public DocumentModel.Vml.OleUpdateMode? UpdateMode { get ; set; }
+  public OleUpdateMode? UpdateMode { get ; set; }
   
   /// <summary>
   /// Embedded Object Alternate Image Request.
   /// </summary>
-  public System.String? LinkType { get ; set; }
+  public String? LinkType { get ; set; }
   
   /// <summary>
   /// Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public System.String? LockedField { get ; set; }
+  public String? LockedField { get ; set; }
   
   /// <summary>
   /// WordprocessingML Field Switches.
   /// </summary>
-  public System.String? FieldCodes { get ; set; }
+  public String? FieldCodes { get ; set; }
   
 }

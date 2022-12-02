@@ -8,6 +8,6 @@ public interface IDrawing // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// ShapeTree.
   /// </summary>
-  public DocumentModel.Drawing.IShapeTree? ShapeTree { get ; set; }
+  public IShapeTree? ShapeTree { get ; set; }
   
 }

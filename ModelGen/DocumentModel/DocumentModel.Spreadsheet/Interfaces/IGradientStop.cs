@@ -8,11 +8,11 @@ public interface IGradientStop // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Gradient Stop Position
   /// </summary>
-  public System.Double? Position { get ; set; }
+  public Double? Position { get ; set; }
   
   /// <summary>
   /// Color.
   /// </summary>
-  public DocumentModel.Spreadsheet.IColorType? Color { get ; set; }
+  public IColorType? Color { get ; set; }
   
 }

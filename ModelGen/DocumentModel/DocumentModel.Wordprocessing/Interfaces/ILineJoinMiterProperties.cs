@@ -8,6 +8,6 @@ public interface ILineJoinMiterProperties // : DocumentModel.ITypedOpenXmlLeafEl
   /// <summary>
   /// lim, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Limit { get ; set; }
+  public Int32? Limit { get ; set; }
   
 }

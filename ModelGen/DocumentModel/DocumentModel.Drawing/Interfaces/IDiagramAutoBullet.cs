@@ -8,31 +8,31 @@ public interface IDiagramAutoBullet // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// prefix, this property is only available in Office 2019 and later.
   /// </summary>
-  public System.String? AutoBulletPrefix { get ; set; }
+  public String? AutoBulletPrefix { get ; set; }
   
   /// <summary>
   /// leadZeros, this property is only available in Office 2019 and later.
   /// </summary>
-  public System.Boolean? LeadZeros { get ; set; }
+  public Boolean? LeadZeros { get ; set; }
   
   /// <summary>
   /// No Bullet.
   /// </summary>
-  public System.Boolean? NoBullet { get ; set; }
+  public Boolean? NoBullet { get ; set; }
   
   /// <summary>
   /// Auto-Numbered Bullet.
   /// </summary>
-  public DocumentModel.Drawing.IAutoNumberedBullet? AutoNumberedBullet { get ; set; }
+  public IAutoNumberedBullet? AutoNumberedBullet { get ; set; }
   
   /// <summary>
   /// Character Bullet.
   /// </summary>
-  public DocumentModel.Drawing.ICharacterBullet? CharacterBullet { get ; set; }
+  public ICharacterBullet? CharacterBullet { get ; set; }
   
   /// <summary>
   /// Picture Bullet.
   /// </summary>
-  public DocumentModel.Drawing.IPictureBullet? PictureBullet { get ; set; }
+  public IPictureBullet? PictureBullet { get ; set; }
   
 }

@@ -8,22 +8,22 @@ public interface IBubbleChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public System.Boolean? VaryColors { get ; set; }
+  public Boolean? VaryColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBubbleChartSeries>? BubbleChartSerieses { get ; set; }
+  public Collection<IBubbleChartSeries>? BubbleChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public System.Boolean? Bubble3D { get ; set; }
+  public Boolean? Bubble3D { get ; set; }
   
-  public System.UInt32? BubbleScale { get ; set; }
+  public UInt32? BubbleScale { get ; set; }
   
-  public System.Boolean? ShowNegativeBubbles { get ; set; }
+  public Boolean? ShowNegativeBubbles { get ; set; }
   
-  public DocumentModel.Drawing.SizeRepresentsKind? SizeRepresents { get ; set; }
+  public SizeRepresentsKind? SizeRepresents { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  public Collection<UInt32>? AxisIds { get ; set; }
   
-  public DocumentModel.Drawing.IBubbleChartExtensionList? BubbleChartExtensionList { get ; set; }
+  public IBubbleChartExtensionList? BubbleChartExtensionList { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IRadical // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Radical Properties.
   /// </summary>
-  public DocumentModel.Math.IRadicalProperties? RadicalProperties { get ; set; }
+  public IRadicalProperties? RadicalProperties { get ; set; }
   
   /// <summary>
   /// Degree.
   /// </summary>
-  public DocumentModel.Math.IDegree? Degree { get ; set; }
+  public IDegree? Degree { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IBase? Base { get ; set; }
+  public IBase? Base { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IControlList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.IControl>? Controls { get ; set; }
+  public Collection<IControl>? Controls { get ; set; }
   
 }

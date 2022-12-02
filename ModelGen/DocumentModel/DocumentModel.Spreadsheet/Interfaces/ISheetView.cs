@@ -8,107 +8,107 @@ public interface ISheetView // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Window Protection
   /// </summary>
-  public System.Boolean? WindowProtection { get ; set; }
+  public Boolean? WindowProtection { get ; set; }
   
   /// <summary>
   /// Show Formulas
   /// </summary>
-  public System.Boolean? ShowFormulas { get ; set; }
+  public Boolean? ShowFormulas { get ; set; }
   
   /// <summary>
   /// Show Grid Lines
   /// </summary>
-  public System.Boolean? ShowGridLines { get ; set; }
+  public Boolean? ShowGridLines { get ; set; }
   
   /// <summary>
   /// Show Headers
   /// </summary>
-  public System.Boolean? ShowRowColHeaders { get ; set; }
+  public Boolean? ShowRowColHeaders { get ; set; }
   
   /// <summary>
   /// Show Zero Values
   /// </summary>
-  public System.Boolean? ShowZeros { get ; set; }
+  public Boolean? ShowZeros { get ; set; }
   
   /// <summary>
   /// Right To Left
   /// </summary>
-  public System.Boolean? RightToLeft { get ; set; }
+  public Boolean? RightToLeft { get ; set; }
   
   /// <summary>
   /// Sheet Tab Selected
   /// </summary>
-  public System.Boolean? TabSelected { get ; set; }
+  public Boolean? TabSelected { get ; set; }
   
   /// <summary>
   /// Show Ruler
   /// </summary>
-  public System.Boolean? ShowRuler { get ; set; }
+  public Boolean? ShowRuler { get ; set; }
   
   /// <summary>
   /// Show Outline Symbols
   /// </summary>
-  public System.Boolean? ShowOutlineSymbols { get ; set; }
+  public Boolean? ShowOutlineSymbols { get ; set; }
   
   /// <summary>
   /// Default Grid Color
   /// </summary>
-  public System.Boolean? DefaultGridColor { get ; set; }
+  public Boolean? DefaultGridColor { get ; set; }
   
   /// <summary>
   /// Show White Space
   /// </summary>
-  public System.Boolean? ShowWhiteSpace { get ; set; }
+  public Boolean? ShowWhiteSpace { get ; set; }
   
   /// <summary>
   /// View Type
   /// </summary>
-  public DocumentModel.Spreadsheet.SheetViewKind? View { get ; set; }
+  public SheetViewKind? View { get ; set; }
   
   /// <summary>
   /// Top Left Visible Cell
   /// </summary>
-  public System.String? TopLeftCell { get ; set; }
+  public String? TopLeftCell { get ; set; }
   
   /// <summary>
   /// Color Id
   /// </summary>
-  public System.UInt32? ColorId { get ; set; }
+  public UInt32? ColorId { get ; set; }
   
   /// <summary>
   /// Zoom Scale
   /// </summary>
-  public System.UInt32? ZoomScale { get ; set; }
+  public UInt32? ZoomScale { get ; set; }
   
   /// <summary>
   /// Zoom Scale Normal View
   /// </summary>
-  public System.UInt32? ZoomScaleNormal { get ; set; }
+  public UInt32? ZoomScaleNormal { get ; set; }
   
   /// <summary>
   /// Zoom Scale Page Break Preview
   /// </summary>
-  public System.UInt32? ZoomScaleSheetLayoutView { get ; set; }
+  public UInt32? ZoomScaleSheetLayoutView { get ; set; }
   
   /// <summary>
   /// Zoom Scale Page Layout View
   /// </summary>
-  public System.UInt32? ZoomScalePageLayoutView { get ; set; }
+  public UInt32? ZoomScalePageLayoutView { get ; set; }
   
   /// <summary>
   /// Workbook View Index
   /// </summary>
-  public System.UInt32? WorkbookViewId { get ; set; }
+  public UInt32? WorkbookViewId { get ; set; }
   
   /// <summary>
   /// View Pane.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPane? Pane { get ; set; }
+  public IPane? Pane { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ISelection>? Selections { get ; set; }
+  public Collection<ISelection>? Selections { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotSelection>? PivotSelections { get ; set; }
+  public Collection<IPivotSelection>? PivotSelections { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

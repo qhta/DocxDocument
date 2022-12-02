@@ -8,21 +8,21 @@ public interface IConditionalFormattingValueObject // : DocumentModel.ITypedOpen
   /// <summary>
   /// type, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.ConditionalFormattingValueObjectKind? Type { get ; set; }
+  public ConditionalFormattingValueObjectKind? Type { get ; set; }
   
   /// <summary>
   /// gte, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? GreaterThanOrEqual { get ; set; }
+  public Boolean? GreaterThanOrEqual { get ; set; }
   
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

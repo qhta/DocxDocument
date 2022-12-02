@@ -8,16 +8,16 @@ public interface IPrintSettings // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// HeaderFooter.
   /// </summary>
-  public DocumentModel.Drawing.IHeaderFooter? HeaderFooter { get ; set; }
+  public IHeaderFooter? HeaderFooter { get ; set; }
   
   /// <summary>
   /// PageMargins.
   /// </summary>
-  public DocumentModel.Drawing.IPageMargins? PageMargins { get ; set; }
+  public IPageMargins? PageMargins { get ; set; }
   
   /// <summary>
   /// PageSetup.
   /// </summary>
-  public DocumentModel.Drawing.IPageSetup? PageSetup { get ; set; }
+  public IPageSetup? PageSetup { get ; set; }
   
 }

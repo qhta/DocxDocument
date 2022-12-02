@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IHyperlinkOnClick // : DocumentModel.Drawing.IHyperlinkType
 {
-  public DocumentModel.Drawing.IEmbeddedWavAudioFileType? HyperlinkSound { get ; set; }
+  public IEmbeddedWavAudioFileType? HyperlinkSound { get ; set; }
   
-  public DocumentModel.Drawing.IHyperlinkExtensionList? HyperlinkExtensionList { get ; set; }
+  public IHyperlinkExtensionList? HyperlinkExtensionList { get ; set; }
   
 }

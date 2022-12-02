@@ -8,11 +8,11 @@ public interface INonVisualContentPartProperties // : DocumentModel.ITypedOpenXm
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualInkContentPartProperties.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
+  public INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface ISeriesElementVisibilities // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// connectorLines, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? ConnectorLines { get ; set; }
+  public Boolean? ConnectorLines { get ; set; }
   
   /// <summary>
   /// meanLine, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? MeanLine { get ; set; }
+  public Boolean? MeanLine { get ; set; }
   
   /// <summary>
   /// meanMarker, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? MeanMarker { get ; set; }
+  public Boolean? MeanMarker { get ; set; }
   
   /// <summary>
   /// nonoutliers, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? Nonoutliers { get ; set; }
+  public Boolean? Nonoutliers { get ; set; }
   
   /// <summary>
   /// outliers, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Boolean? Outliers { get ; set; }
+  public Boolean? Outliers { get ; set; }
   
 }

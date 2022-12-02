@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISampleData // : DocumentModel.Drawing.ISampleDataType
 {
-  public DocumentModel.Drawing.IDataModel? DataModel { get ; set; }
+  public IDataModel? DataModel { get ; set; }
   
 }

@@ -5,8 +5,8 @@ namespace DocumentModel;
 /// </summary>
 public interface ITasks // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.ITask>? Tasks { get ; set; }
+  public Collection<ITask>? Tasks { get ; set; }
   
-  public DocumentModel.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface IPathGradientFill // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Gradient Fill Path
   /// </summary>
-  public DocumentModel.Drawing.PathShadeKind? Path { get ; set; }
+  public PathShadeKind? Path { get ; set; }
   
   /// <summary>
   /// Fill To Rectangle.
   /// </summary>
-  public DocumentModel.Drawing.IRelativeRectangleType? FillToRectangle { get ; set; }
+  public IRelativeRectangleType? FillToRectangle { get ; set; }
   
 }

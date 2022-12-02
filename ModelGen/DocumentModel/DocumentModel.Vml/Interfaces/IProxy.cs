@@ -8,21 +8,21 @@ public interface IProxy // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Start Point Connection Flag
   /// </summary>
-  public System.Boolean? Start { get ; set; }
+  public Boolean? Start { get ; set; }
   
   /// <summary>
   /// End Point Connection Flag
   /// </summary>
-  public System.Boolean? End { get ; set; }
+  public Boolean? End { get ; set; }
   
   /// <summary>
   /// Proxy Shape Reference
   /// </summary>
-  public System.String? ShapeReference { get ; set; }
+  public String? ShapeReference { get ; set; }
   
   /// <summary>
   /// Connection Location
   /// </summary>
-  public System.Int32? ConnectionLocation { get ; set; }
+  public Int32? ConnectionLocation { get ; set; }
   
 }

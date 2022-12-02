@@ -8,14 +8,14 @@ public interface IPieChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public System.Boolean? VaryColors { get ; set; }
+  public Boolean? VaryColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IPieChartSeries>? PieChartSerieses { get ; set; }
+  public Collection<IPieChartSeries>? PieChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public System.UInt16? FirstSliceAngle { get ; set; }
+  public UInt16? FirstSliceAngle { get ; set; }
   
-  public DocumentModel.Drawing.IPieChartExtensionList? PieChartExtensionList { get ; set; }
+  public IPieChartExtensionList? PieChartExtensionList { get ; set; }
   
 }

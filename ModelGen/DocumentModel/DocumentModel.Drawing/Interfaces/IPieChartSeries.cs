@@ -8,41 +8,41 @@ public interface IPieChartSeries // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Index.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// Order.
   /// </summary>
-  public System.UInt32? Order { get ; set; }
+  public UInt32? Order { get ; set; }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  public DocumentModel.Drawing.ISeriesText? SeriesText { get ; set; }
+  public ISeriesText? SeriesText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public DocumentModel.Drawing.IPictureOptions? PictureOptions { get ; set; }
+  public IPictureOptions? PictureOptions { get ; set; }
   
   /// <summary>
   /// Explosion.
   /// </summary>
-  public System.UInt32? Explosion { get ; set; }
+  public UInt32? Explosion { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDataPoint>? DataPoints { get ; set; }
+  public Collection<IDataPoint>? DataPoints { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public DocumentModel.Drawing.ICategoryAxisData? CategoryAxisData { get ; set; }
+  public ICategoryAxisData? CategoryAxisData { get ; set; }
   
-  public DocumentModel.Drawing.IValues? Values { get ; set; }
+  public IValues? Values { get ; set; }
   
-  public DocumentModel.Drawing.IPieSerExtensionList? PieSerExtensionList { get ; set; }
+  public IPieSerExtensionList? PieSerExtensionList { get ; set; }
   
 }

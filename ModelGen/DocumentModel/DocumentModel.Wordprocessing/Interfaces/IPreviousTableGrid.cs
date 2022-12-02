@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IPreviousTableGrid // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IGridColumn>? GridColumns { get ; set; }
+  public Collection<IGridColumn>? GridColumns { get ; set; }
   
 }

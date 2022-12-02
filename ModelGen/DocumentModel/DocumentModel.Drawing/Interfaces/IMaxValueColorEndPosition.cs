@@ -5,10 +5,10 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IMaxValueColorEndPosition // : DocumentModel.Drawing.IOpenXmlValueColorEndPositionElement
 {
-  public System.Boolean? ExtremeValueColorPosition { get ; set; }
+  public Boolean? ExtremeValueColorPosition { get ; set; }
   
-  public System.Double? NumberColorPosition { get ; set; }
+  public Double? NumberColorPosition { get ; set; }
   
-  public System.Double? PercentageColorPosition { get ; set; }
+  public Double? PercentageColorPosition { get ; set; }
   
 }

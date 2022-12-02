@@ -6,41 +6,38 @@ using System.Reflection;
 
 namespace ModelGen;
 
-public class ModelDisplay
+public static class ModelDisplay
 {
 
-  public ModelDisplay()
-  {
-    Writer = new IndentedTextWriter(Console.Out, "  ");
-  }
 
-  public ModelDisplay(TextWriter textWriter)
+  public static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
+
+  public static void SetOutput(TextWriter textWriter)
   {
     Writer = new IndentedTextWriter(textWriter, "  ");
   }
-  
-  public IndentedTextWriter Writer { get; }
 
-  static String EmptyLine { get; } = new String(' ', Console.BufferWidth);
 
-  public void WriteSameLine(string? str)
+  public static void WriteSameLine(string? str)
   {
+    String EmptyLine = new String(' ', Console.BufferWidth);
     Writer.Write($"\r{EmptyLine}");
     Writer.Write($"\r{str}");
   }
 
   public static void ConsoleWriteSameLine(string? str)
   {
-    Console.Write($"\r{EmptyLine}");
-    Console.Write($"\r{str}");
+    String EmptyLine = new String(' ', Console.BufferWidth);
+    Writer.Write($"\r{EmptyLine}");
+    Writer.Write($"\r{str}");
   }
 
-  public void WriteLine(string? str)
+  public static void WriteLine(string? str)
   {
     Writer.WriteLine(str);
   }
 
-  public void ShowNamespaces(bool original=false)
+  public static void ShowNamespaces(bool original=false)
   {
     var namespaces = TypeManager.GetNamespaces(original);
     if (namespaces.Any())
@@ -70,7 +67,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowNamespaceDetails(ShowOptions options)
+  public static void ShowNamespaceDetails(ShowOptions options)
   {
     foreach (var nspace in TypeManager.GetNamespaces(options.OriginalNames).ToList())
     {
@@ -80,7 +77,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     if (nspace.StartsWith("DocumentFormat.OpenXml.Packaging"))
       Debug.Assert(true);
@@ -111,7 +108,7 @@ public class ModelDisplay
     "new()"
   };
 
-  public void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     if (!typeInfo.IsReflected)
       typeInfo.WaitForReflection();
@@ -152,7 +149,7 @@ public class ModelDisplay
     Writer.Indent--;
   }
 
-  public void ShowGenericParamsConstraints(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowGenericParamsConstraints(TypeInfo typeInfo, ShowOptions options)
   {
     var genericTypeParams = typeInfo.GetGenericParamTypes();
     if (genericTypeParams != null)
@@ -177,7 +174,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowImplementedInterfaces(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowImplementedInterfaces(TypeInfo typeInfo, ShowOptions options)
   {
     var implementedInterfaces = typeInfo.GetInterfaces();
     if (implementedInterfaces.Any())
@@ -192,7 +189,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowIncludedTypes(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowIncludedTypes(TypeInfo typeInfo, ShowOptions options)
   {
     var includedTypes = typeInfo.GetIncludedTypes();
     if (includedTypes.Any())
@@ -206,7 +203,7 @@ public class ModelDisplay
         Writer.WriteLine("...");
     }
   }
-  public void ShowOutgoingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowOutgoingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
     if (options.ExcludeSemantics && semanticsFilter != null)
@@ -229,7 +226,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowIncomingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowIncomingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
     if (options.ExcludeSemantics && semanticsFilter != null)
@@ -251,7 +248,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowEnumValues(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowEnumValues(TypeInfo typeInfo, ShowOptions options)
   {
     var enumValues = typeInfo.EnumValues;
     if (enumValues != null && enumValues.Any())
@@ -270,7 +267,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowProperties(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowProperties(TypeInfo typeInfo, ShowOptions options)
   {
     if (options.HideUnacceptedProperties && typeInfo.IsAccepted == false)
       return;
@@ -298,7 +295,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowTypeConversions()
+  public static void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)
     {
@@ -306,7 +303,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowTypeConversion(TypeInfo type)
+  public static void ShowTypeConversion(TypeInfo type)
   {
     if (type.IsConverted)
     {
@@ -322,7 +319,7 @@ public class ModelDisplay
   }
   
 
-  public void ShowTypeUsage()
+  public static void ShowTypeUsage()
   {
     foreach (var typeInfo in TypeManager.AcceptedTypes)
     {
@@ -330,7 +327,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowUnusedTypes()
+  public static void ShowUnusedTypes()
   {
     foreach (var typeInfo in TypeManager.AcceptedTypes.Where(item => item.UsageCount == 0))
     {
@@ -338,7 +335,7 @@ public class ModelDisplay
     }
   }
 
-  public void ShowTypeRenames()
+  public static void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)
     {
@@ -349,10 +346,10 @@ public class ModelDisplay
     }
   }
 
-  private string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+  private static string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
 
-  private string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
+  private static string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
 
-  private string Accepted(bool? isAccepted) => isAccepted == true ? "accepted" : (isAccepted == false) ? "unaccepted" : string.Empty;
+  private static string Accepted(bool? isAccepted) => isAccepted == true ? "accepted" : (isAccepted == false) ? "unaccepted" : string.Empty;
 }
 

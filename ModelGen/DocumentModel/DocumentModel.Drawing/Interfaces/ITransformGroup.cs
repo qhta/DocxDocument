@@ -8,36 +8,36 @@ public interface ITransformGroup // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Rotation
   /// </summary>
-  public System.Int32? Rotation { get ; set; }
+  public Int32? Rotation { get ; set; }
   
   /// <summary>
   /// Horizontal Flip
   /// </summary>
-  public System.Boolean? HorizontalFlip { get ; set; }
+  public Boolean? HorizontalFlip { get ; set; }
   
   /// <summary>
   /// Vertical Flip
   /// </summary>
-  public System.Boolean? VerticalFlip { get ; set; }
+  public Boolean? VerticalFlip { get ; set; }
   
   /// <summary>
   /// Offset.
   /// </summary>
-  public DocumentModel.Drawing.IPoint2DType? Offset { get ; set; }
+  public IPoint2DType? Offset { get ; set; }
   
   /// <summary>
   /// Extents.
   /// </summary>
-  public DocumentModel.Drawing.IPositiveSize2DType? Extents { get ; set; }
+  public IPositiveSize2DType? Extents { get ; set; }
   
   /// <summary>
   /// Child Offset.
   /// </summary>
-  public DocumentModel.Drawing.IPoint2DType? ChildOffset { get ; set; }
+  public IPoint2DType? ChildOffset { get ; set; }
   
   /// <summary>
   /// Child Extents.
   /// </summary>
-  public DocumentModel.Drawing.IPositiveSize2DType? ChildExtents { get ; set; }
+  public IPositiveSize2DType? ChildExtents { get ; set; }
   
 }

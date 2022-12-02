@@ -8,8 +8,8 @@ public interface ICatAxExtension // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.INumberingFormat? NumberingFormat { get ; set; }
+  public INumberingFormat? NumberingFormat { get ; set; }
   
 }

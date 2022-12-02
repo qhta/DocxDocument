@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IDiagramDefinitionExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDiagramDefinitionExtension>? DiagramDefinitionExtensions { get ; set; }
+  public Collection<IDiagramDefinitionExtension>? DiagramDefinitionExtensions { get ; set; }
   
 }

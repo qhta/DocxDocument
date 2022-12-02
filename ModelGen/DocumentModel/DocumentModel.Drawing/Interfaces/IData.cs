@@ -8,12 +8,12 @@ public interface IData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
-  public DocumentModel.Drawing.INumericDimension? NumericDimension { get ; set; }
+  public Collection<INumericDimension>? NumericDimensions { get ; set; }
   
-  public DocumentModel.Drawing.IStringDimension? StringDimension { get ; set; }
+  public Collection<IStringDimension>? StringDimensions { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

@@ -8,7 +8,7 @@ public interface ITableFormulaType // : DocumentModel.ITypedOpenXmlLeafTextEleme
   /// <summary>
   /// Array
   /// </summary>
-  public System.Boolean? Array { get ; set; }
+  public Boolean? Array { get ; set; }
   
   /// <summary>
   /// space

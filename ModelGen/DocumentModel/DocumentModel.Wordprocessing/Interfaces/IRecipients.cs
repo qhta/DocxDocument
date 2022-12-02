@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IRecipients // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IRecipientData>? RecipientDatas { get ; set; }
+  public Collection<IRecipientData>? RecipientDatas { get ; set; }
   
 }

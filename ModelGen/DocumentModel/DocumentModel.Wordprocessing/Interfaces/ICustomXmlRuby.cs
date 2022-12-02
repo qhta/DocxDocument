@@ -5,116 +5,116 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ICustomXmlRuby // : DocumentModel.Wordprocessing.ICustomXmlElement
 {
-  public DocumentModel.Wordprocessing.ICustomXmlProperties? CustomXmlProperties { get ; set; }
+  public ICustomXmlProperties? CustomXmlProperties { get ; set; }
   
-  public DocumentModel.Wordprocessing.ICustomXmlRuby? CustomXmlRuby { get ; set; }
+  public Collection<ICustomXmlRuby>? CustomXmlRubies { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISimpleFieldRuby? SimpleFieldRuby { get ; set; }
+  public Collection<ISimpleFieldRuby>? SimpleFieldRubies { get ; set; }
   
-  public DocumentModel.Wordprocessing.IHyperlinkRuby? HyperlinkRuby { get ; set; }
+  public Collection<IHyperlinkRuby>? HyperlinkRubies { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRun? Run { get ; set; }
+  public Collection<IRun>? Runs { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtRunRuby? SdtRunRuby { get ; set; }
+  public Collection<ISdtRunRuby>? SdtRunRubies { get ; set; }
   
-  public DocumentModel.Wordprocessing.IProofError? ProofError { get ; set; }
+  public Collection<IProofError>? ProofErrors { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermStart? PermStart { get ; set; }
+  public Collection<IPermStart>? PermStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermEnd? PermEnd { get ; set; }
+  public Collection<IPermEnd>? PermEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBookmarkStart? BookmarkStart { get ; set; }
+  public Collection<IBookmarkStart>? BookmarkStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? BookmarkEnd { get ; set; }
+  public Collection<IMarkupRangeType>? BookmarkEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeStart { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveFromRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveToRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveToRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlInsRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlInsRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlInsRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlDelRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlDelRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlDelRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IInsertedRun? InsertedRun { get ; set; }
+  public Collection<IInsertedRun>? InsertedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDeletedRun? DeletedRun { get ; set; }
+  public Collection<IDeletedRun>? DeletedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveFromRun? MoveFromRun { get ; set; }
+  public Collection<IMoveFromRun>? MoveFromRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveToRun? MoveToRun { get ; set; }
+  public Collection<IMoveToRun>? MoveToRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictInsertion? RunConflictInsertion { get ; set; }
+  public Collection<IRunConflictInsertion>? RunConflictInsertions { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictDeletion? RunConflictDeletion { get ; set; }
+  public Collection<IRunConflictDeletion>? RunConflictDeletions { get ; set; }
   
-  public DocumentModel.Math.IParagraph? Paragraph { get ; set; }
+  public Collection<DocumentModel.Math.IParagraph>? Paragraphs { get ; set; }
   
-  public DocumentModel.Math.IOfficeMath? OfficeMath { get ; set; }
+  public Collection<DocumentModel.Math.IOfficeMath>? OfficeMaths { get ; set; }
   
-  public DocumentModel.Math.IAccent? Accent { get ; set; }
+  public Collection<DocumentModel.Math.IAccent>? Accents { get ; set; }
   
-  public DocumentModel.Math.IBar? Bar { get ; set; }
+  public Collection<DocumentModel.Math.IBar>? Bars { get ; set; }
   
-  public DocumentModel.Math.IBox? Box { get ; set; }
+  public Collection<DocumentModel.Math.IBox>? Boxs { get ; set; }
   
-  public DocumentModel.Math.IBorderBox? BorderBox { get ; set; }
+  public Collection<DocumentModel.Math.IBorderBox>? BorderBoxs { get ; set; }
   
-  public DocumentModel.Math.IDelimiter? Delimiter { get ; set; }
+  public Collection<DocumentModel.Math.IDelimiter>? Delimiters { get ; set; }
   
-  public DocumentModel.Math.IEquationArray? EquationArray { get ; set; }
+  public Collection<DocumentModel.Math.IEquationArray>? EquationArraies { get ; set; }
   
-  public DocumentModel.Math.IFraction? Fraction { get ; set; }
+  public Collection<DocumentModel.Math.IFraction>? Fractions { get ; set; }
   
-  public DocumentModel.Math.IMathFunction? MathFunction { get ; set; }
+  public Collection<DocumentModel.Math.IMathFunction>? MathFunctions { get ; set; }
   
-  public DocumentModel.Math.IGroupChar? GroupChar { get ; set; }
+  public Collection<DocumentModel.Math.IGroupChar>? GroupChars { get ; set; }
   
-  public DocumentModel.Math.ILimitLower? LimitLower { get ; set; }
+  public Collection<DocumentModel.Math.ILimitLower>? LimitLowers { get ; set; }
   
-  public DocumentModel.Math.ILimitUpper? LimitUpper { get ; set; }
+  public Collection<DocumentModel.Math.ILimitUpper>? LimitUppers { get ; set; }
   
-  public DocumentModel.Math.IMatrix? Matrix { get ; set; }
+  public Collection<DocumentModel.Math.IMatrix>? Matrixs { get ; set; }
   
-  public DocumentModel.Math.INary? Nary { get ; set; }
+  public Collection<DocumentModel.Math.INary>? Naries { get ; set; }
   
-  public DocumentModel.Math.IPhantom? Phantom { get ; set; }
+  public Collection<DocumentModel.Math.IPhantom>? Phantoms { get ; set; }
   
-  public DocumentModel.Math.IRadical? Radical { get ; set; }
+  public Collection<DocumentModel.Math.IRadical>? Radicals { get ; set; }
   
-  public DocumentModel.Math.IPreSubSuper? PreSubSuper { get ; set; }
+  public Collection<DocumentModel.Math.IPreSubSuper>? PreSubSupers { get ; set; }
   
-  public DocumentModel.Math.ISubscript? Subscript { get ; set; }
+  public Collection<DocumentModel.Math.ISubscript>? Subscripts { get ; set; }
   
-  public DocumentModel.Math.ISubSuperscript? SubSuperscript { get ; set; }
+  public Collection<DocumentModel.Math.ISubSuperscript>? SubSuperscripts { get ; set; }
   
-  public DocumentModel.Math.ISuperscript? Superscript { get ; set; }
+  public Collection<DocumentModel.Math.ISuperscript>? Superscripts { get ; set; }
   
 }

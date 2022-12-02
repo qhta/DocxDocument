@@ -8,21 +8,21 @@ public interface INonVisualConnectionShapeProperties // : DocumentModel.ITypedOp
   /// <summary>
   /// Connection Shape Locks.
   /// </summary>
-  public DocumentModel.Drawing.IConnectionShapeLocks? ConnectionShapeLocks { get ; set; }
+  public IConnectionShapeLocks? ConnectionShapeLocks { get ; set; }
   
   /// <summary>
   /// Connection Start.
   /// </summary>
-  public DocumentModel.Drawing.IConnectionType? StartConnection { get ; set; }
+  public IConnectionType? StartConnection { get ; set; }
   
   /// <summary>
   /// Connection End.
   /// </summary>
-  public DocumentModel.Drawing.IConnectionType? EndConnection { get ; set; }
+  public IConnectionType? EndConnection { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

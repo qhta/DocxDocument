@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISurfaceChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISurfaceChartExtension>? SurfaceChartExtensions { get ; set; }
+  public Collection<ISurfaceChartExtension>? SurfaceChartExtensions { get ; set; }
   
 }

@@ -8,21 +8,21 @@ public interface ILineSketchTypeProperties // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// LineSketchNoneEmpty.
   /// </summary>
-  public System.Boolean? LineSketchNoneEmpty { get ; set; }
+  public Boolean? LineSketchNoneEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchCurvedEmpty.
   /// </summary>
-  public System.Boolean? LineSketchCurvedEmpty { get ; set; }
+  public Boolean? LineSketchCurvedEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchFreehandEmpty.
   /// </summary>
-  public System.Boolean? LineSketchFreehandEmpty { get ; set; }
+  public Boolean? LineSketchFreehandEmpty { get ; set; }
   
   /// <summary>
   /// LineSketchScribbleEmpty.
   /// </summary>
-  public System.Boolean? LineSketchScribbleEmpty { get ; set; }
+  public Boolean? LineSketchScribbleEmpty { get ; set; }
   
 }

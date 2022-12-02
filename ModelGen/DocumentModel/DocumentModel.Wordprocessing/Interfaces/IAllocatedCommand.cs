@@ -8,12 +8,12 @@ public interface IAllocatedCommand // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// argValue
   /// </summary>
-  public System.String? ArgumentValue { get ; set; }
+  public String? ArgumentValue { get ; set; }
   
   /// <summary>
   /// fciBasedOn
   /// </summary>
-  public System.String? CommandBasedOn { get ; set; }
+  public String? CommandBasedOn { get ; set; }
   
   /// <summary>
   /// fciIndexBasedOn
@@ -23,6 +23,6 @@ public interface IAllocatedCommand // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// acdName
   /// </summary>
-  public System.String? AcceleratorName { get ; set; }
+  public String? AcceleratorName { get ; set; }
   
 }

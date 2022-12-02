@@ -8,12 +8,12 @@ public interface INumericDimension // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.NumericDimensionType? Type { get ; set; }
+  public NumericDimensionType? Type { get ; set; }
   
-  public DocumentModel.Drawing.IOpenXmlFormulaElement? Formula { get ; set; }
+  public IOpenXmlFormulaElement? Formula { get ; set; }
   
-  public DocumentModel.Drawing.IOpenXmlFormulaElement? NfFormula { get ; set; }
+  public IOpenXmlFormulaElement? NfFormula { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INumericLevel>? NumericLevels { get ; set; }
+  public Collection<INumericLevel>? NumericLevels { get ; set; }
   
 }

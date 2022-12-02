@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IScatterChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IScatterChartExtension>? ScatterChartExtensions { get ; set; }
+  public Collection<IScatterChartExtension>? ScatterChartExtensions { get ; set; }
   
 }

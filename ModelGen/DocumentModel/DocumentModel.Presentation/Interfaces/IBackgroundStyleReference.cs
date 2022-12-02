@@ -8,7 +8,7 @@ public interface IBackgroundStyleReference // : DocumentModel.ITypedOpenXmlCompo
   /// <summary>
   /// Style Matrix Index
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// RGB Color Model - Percentage Variant.

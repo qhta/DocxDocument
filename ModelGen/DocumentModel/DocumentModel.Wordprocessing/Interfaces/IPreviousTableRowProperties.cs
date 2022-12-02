@@ -5,28 +5,28 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IPreviousTableRowProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Wordprocessing.IConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
+  public Collection<IConditionalFormatStyle>? ConditionalFormatStyles { get ; set; }
   
-  public System.String? DivId { get ; set; }
+  public Collection<String>? DivIds { get ; set; }
   
-  public System.Int32? GridBefore { get ; set; }
+  public Collection<Int32>? GridBefores { get ; set; }
   
-  public System.Int32? GridAfter { get ; set; }
+  public Collection<Int32>? GridAfters { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITableWidthType? WidthBeforeTableRow { get ; set; }
+  public Collection<ITableWidthType>? WidthBeforeTableRows { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITableWidthType? WidthAfterTableRow { get ; set; }
+  public Collection<ITableWidthType>? WidthAfterTableRows { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITableRowHeight? TableRowHeight { get ; set; }
+  public Collection<ITableRowHeight>? TableRowHeights { get ; set; }
   
-  public System.Boolean? Hidden { get ; set; }
+  public Collection<Boolean>? Hiddens { get ; set; }
   
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? CantSplit { get ; set; }
+  public Collection<OnOffOnlyKind>? CantSplits { get ; set; }
   
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableHeader { get ; set; }
+  public Collection<OnOffOnlyKind>? TableHeaders { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITableWidthType? TableCellSpacing { get ; set; }
+  public Collection<ITableWidthType>? TableCellSpacings { get ; set; }
   
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get ; set; }
+  public Collection<TableRowAlignmentKind>? TableJustifications { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface ISdtContentText // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Allow Soft Line Breaks
   /// </summary>
-  public System.Boolean? MultiLine { get ; set; }
+  public Boolean? MultiLine { get ; set; }
   
 }

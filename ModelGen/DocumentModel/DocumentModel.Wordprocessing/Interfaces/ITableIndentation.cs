@@ -8,11 +8,11 @@ public interface ITableIndentation // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// w
   /// </summary>
-  public System.Int32? Width { get ; set; }
+  public Int32? Width { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get ; set; }
+  public TableWidthUnitKind? Type { get ; set; }
   
 }

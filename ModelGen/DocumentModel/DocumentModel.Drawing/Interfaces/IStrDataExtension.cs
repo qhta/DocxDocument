@@ -8,8 +8,8 @@ public interface IStrDataExtension // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public System.Boolean? AutoGeneneratedCategories { get ; set; }
+  public Boolean? AutoGeneneratedCategories { get ; set; }
   
 }

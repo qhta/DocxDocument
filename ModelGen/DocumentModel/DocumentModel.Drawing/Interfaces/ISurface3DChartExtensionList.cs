@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISurface3DChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISurface3DChartExtension>? Surface3DChartExtensions { get ; set; }
+  public Collection<ISurface3DChartExtension>? Surface3DChartExtensions { get ; set; }
   
 }

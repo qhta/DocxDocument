@@ -8,11 +8,11 @@ public interface IPositiveSize2DType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Extent Length
   /// </summary>
-  public System.Int64? Cx { get ; set; }
+  public Int64? Cx { get ; set; }
   
   /// <summary>
   /// Extent Width
   /// </summary>
-  public System.Int64? Cy { get ; set; }
+  public Int64? Cy { get ; set; }
   
 }

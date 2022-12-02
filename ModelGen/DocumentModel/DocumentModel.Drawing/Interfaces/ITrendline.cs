@@ -8,61 +8,61 @@ public interface ITrendline // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Trendline Name.
   /// </summary>
-  public System.String? TrendlineName { get ; set; }
+  public String? TrendlineName { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Trendline Type.
   /// </summary>
-  public DocumentModel.Drawing.TrendlineKind? TrendlineType { get ; set; }
+  public TrendlineKind? TrendlineType { get ; set; }
   
   /// <summary>
   /// Polynomial Trendline Order.
   /// </summary>
-  public System.Byte? PolynomialOrder { get ; set; }
+  public Byte? PolynomialOrder { get ; set; }
   
   /// <summary>
   /// Period.
   /// </summary>
-  public System.UInt32? Period { get ; set; }
+  public UInt32? Period { get ; set; }
   
   /// <summary>
   /// Forward.
   /// </summary>
-  public System.Double? Forward { get ; set; }
+  public Double? Forward { get ; set; }
   
   /// <summary>
   /// Backward.
   /// </summary>
-  public System.Double? Backward { get ; set; }
+  public Double? Backward { get ; set; }
   
   /// <summary>
   /// Intercept.
   /// </summary>
-  public System.Double? Intercept { get ; set; }
+  public Double? Intercept { get ; set; }
   
   /// <summary>
   /// Display R Squared Value.
   /// </summary>
-  public System.Boolean? DisplayRSquaredValue { get ; set; }
+  public Boolean? DisplayRSquaredValue { get ; set; }
   
   /// <summary>
   /// Display Equation.
   /// </summary>
-  public System.Boolean? DisplayEquation { get ; set; }
+  public Boolean? DisplayEquation { get ; set; }
   
   /// <summary>
   /// Trendline Label.
   /// </summary>
-  public DocumentModel.Drawing.ITrendlineLabel? TrendlineLabel { get ; set; }
+  public ITrendlineLabel? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

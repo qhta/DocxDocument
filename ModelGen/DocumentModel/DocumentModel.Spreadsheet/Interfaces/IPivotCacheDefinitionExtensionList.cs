@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotCacheDefinitionExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotCacheDefinitionExtension>? PivotCacheDefinitionExtensions { get ; set; }
+  public Collection<IPivotCacheDefinitionExtension>? PivotCacheDefinitionExtensions { get ; set; }
   
 }

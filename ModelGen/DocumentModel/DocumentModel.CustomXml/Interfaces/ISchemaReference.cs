@@ -8,6 +8,6 @@ public interface ISchemaReference // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Target Namespace of Associated XML Schema
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
 }

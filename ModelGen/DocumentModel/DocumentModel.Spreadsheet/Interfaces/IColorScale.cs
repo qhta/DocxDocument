@@ -5,8 +5,8 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IColorScale // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IConditionalFormattingValueObject>? ConditionalFormattingValueObjects { get ; set; }
+  public Collection<IConditionalFormattingValueObject>? ConditionalFormattingValueObjects { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IColorType>? Colors { get ; set; }
+  public Collection<IColorType>? Colors { get ; set; }
   
 }

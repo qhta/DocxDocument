@@ -8,8 +8,8 @@ public interface IPivotHierarchyExtension // : DocumentModel.ITypedOpenXmlCompos
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotHierarchy? PivotHierarchy { get ; set; }
+  public IPivotHierarchy? PivotHierarchy { get ; set; }
   
 }

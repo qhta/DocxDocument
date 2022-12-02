@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBubbleChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBubbleChartExtension>? BubbleChartExtensions { get ; set; }
+  public Collection<IBubbleChartExtension>? BubbleChartExtensions { get ; set; }
   
 }

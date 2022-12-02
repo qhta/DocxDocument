@@ -8,11 +8,11 @@ public interface ICustomFilter // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Filter Comparison Operator
   /// </summary>
-  public DocumentModel.Spreadsheet.FilterOperatorKind? Operator { get ; set; }
+  public FilterOperatorKind? Operator { get ; set; }
   
   /// <summary>
   /// Top or Bottom Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
 }

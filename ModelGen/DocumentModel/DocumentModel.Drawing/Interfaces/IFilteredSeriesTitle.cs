@@ -8,6 +8,6 @@ public interface IFilteredSeriesTitle // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// ChartText.
   /// </summary>
-  public DocumentModel.Drawing.IChartText? ChartText { get ; set; }
+  public IChartText? ChartText { get ; set; }
   
 }

@@ -8,8 +8,8 @@ public interface ICustomFilters // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// And
   /// </summary>
-  public System.Boolean? And { get ; set; }
+  public Boolean? And { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICustomFilter>? CustomFilters { get ; set; }
+  public Collection<ICustomFilter>? CustomFilters { get ; set; }
   
 }

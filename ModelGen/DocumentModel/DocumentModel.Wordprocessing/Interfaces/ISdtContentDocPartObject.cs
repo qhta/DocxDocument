@@ -5,10 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ISdtContentDocPartObject // : DocumentModel.Wordprocessing.ISdtDocPartType
 {
-  public System.String? DocPartGallery { get ; set; }
+  public String? DocPartGallery { get ; set; }
   
-  public System.String? DocPartCategory { get ; set; }
+  public String? DocPartCategory { get ; set; }
   
-  public System.Boolean? DocPartUnique { get ; set; }
+  public Boolean? DocPartUnique { get ; set; }
   
 }

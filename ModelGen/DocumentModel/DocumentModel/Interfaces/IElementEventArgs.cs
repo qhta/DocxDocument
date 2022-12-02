@@ -8,11 +8,11 @@ public interface IElementEventArgs // : System.IEventArgs
   /// <summary>
   /// Gets the element that caused the event.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? Element { get ; set; }
+  public ModelElement? Element { get ; set; }
   
   /// <summary>
   /// Gets the parent element of the element that caused the event.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? ParentElement { get ; set; }
+  public ModelElement? ParentElement { get ; set; }
   
 }

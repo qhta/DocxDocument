@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IFormatOverrides // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IFormatOverride>? FormatOverrides { get ; set; }
+  public Collection<IFormatOverride>? FormatOverrides { get ; set; }
   
 }

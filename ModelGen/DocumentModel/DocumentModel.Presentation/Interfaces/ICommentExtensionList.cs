@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ICommentExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ICommentExtension>? CommentExtensions { get ; set; }
+  public Collection<ICommentExtension>? CommentExtensions { get ; set; }
   
 }

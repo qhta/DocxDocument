@@ -10,8 +10,8 @@ public interface IWorksheetCommentsPart // : DocumentModel.Packaging.ITypedOpenX
   /// </summary>
   public DocumentModel.Spreadsheet.IComments? Comments { get ; set; }
   
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

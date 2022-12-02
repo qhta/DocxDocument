@@ -8,26 +8,26 @@ public interface IProtection // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Chart Object.
   /// </summary>
-  public System.Boolean? ChartObject { get ; set; }
+  public Boolean? ChartObject { get ; set; }
   
   /// <summary>
   /// Data Cannot Be Changed.
   /// </summary>
-  public System.Boolean? Data { get ; set; }
+  public Boolean? Data { get ; set; }
   
   /// <summary>
   /// Formatting.
   /// </summary>
-  public System.Boolean? Formatting { get ; set; }
+  public Boolean? Formatting { get ; set; }
   
   /// <summary>
   /// Selection.
   /// </summary>
-  public System.Boolean? Selection { get ; set; }
+  public Boolean? Selection { get ; set; }
   
   /// <summary>
   /// User Interface.
   /// </summary>
-  public System.Boolean? UserInterface { get ; set; }
+  public Boolean? UserInterface { get ; set; }
   
 }

@@ -8,16 +8,16 @@ public interface IPositionalTab // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Positional Tab Stop Alignment
   /// </summary>
-  public DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind? Alignment { get ; set; }
+  public AbsolutePositionTabAlignmentKind? Alignment { get ; set; }
   
   /// <summary>
   /// Positional Tab Base
   /// </summary>
-  public DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind? RelativeTo { get ; set; }
+  public AbsolutePositionTabPositioningBaseKind? RelativeTo { get ; set; }
   
   /// <summary>
   /// Tab Leader Character
   /// </summary>
-  public DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind? Leader { get ; set; }
+  public AbsolutePositionTabLeaderCharKind? Leader { get ; set; }
   
 }

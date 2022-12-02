@@ -8,26 +8,26 @@ public interface IInputCells // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Reference
   /// </summary>
-  public System.String? CellReference { get ; set; }
+  public String? CellReference { get ; set; }
   
   /// <summary>
   /// Deleted
   /// </summary>
-  public System.Boolean? Deleted { get ; set; }
+  public Boolean? Deleted { get ; set; }
   
   /// <summary>
   /// Undone
   /// </summary>
-  public System.Boolean? Undone { get ; set; }
+  public Boolean? Undone { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
   /// <summary>
   /// Number Format Id
   /// </summary>
-  public System.UInt32? NumberFormatId { get ; set; }
+  public UInt32? NumberFormatId { get ; set; }
   
 }

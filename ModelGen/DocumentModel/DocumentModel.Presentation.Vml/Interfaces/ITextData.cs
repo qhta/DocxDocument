@@ -8,6 +8,6 @@ public interface ITextData // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Text Reference
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

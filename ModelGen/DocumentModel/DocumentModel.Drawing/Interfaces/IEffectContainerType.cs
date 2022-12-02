@@ -8,11 +8,11 @@ public interface IEffectContainerType // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// Effect Container Type
   /// </summary>
-  public DocumentModel.Drawing.EffectContainerKind? Type { get ; set; }
+  public EffectContainerKind? Type { get ; set; }
   
   /// <summary>
   /// Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
 }

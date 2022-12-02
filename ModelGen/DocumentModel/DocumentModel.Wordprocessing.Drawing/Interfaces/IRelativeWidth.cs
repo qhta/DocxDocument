@@ -8,11 +8,11 @@ public interface IRelativeWidth // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing.SizeRelativeHorizontallyKind? ObjectId { get ; set; }
+  public SizeRelativeHorizontallyKind? ObjectId { get ; set; }
   
   /// <summary>
   /// PercentageWidth.
   /// </summary>
-  public System.String? PercentageWidth { get ; set; }
+  public String? PercentageWidth { get ; set; }
   
 }

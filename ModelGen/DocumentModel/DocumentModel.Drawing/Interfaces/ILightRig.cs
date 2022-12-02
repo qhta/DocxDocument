@@ -8,16 +8,16 @@ public interface ILightRig // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Rig Preset
   /// </summary>
-  public DocumentModel.Drawing.LightRigKind? Rig { get ; set; }
+  public LightRigKind? Rig { get ; set; }
   
   /// <summary>
   /// Direction
   /// </summary>
-  public DocumentModel.Drawing.LightRigDirectionKind? Direction { get ; set; }
+  public LightRigDirectionKind? Direction { get ; set; }
   
   /// <summary>
   /// Rotation.
   /// </summary>
-  public DocumentModel.Drawing.IRotation? Rotation { get ; set; }
+  public IRotation? Rotation { get ; set; }
   
 }

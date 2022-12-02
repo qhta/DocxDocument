@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ICellWatches // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICellWatch>? CellWatchs { get ; set; }
+  public Collection<ICellWatch>? CellWatchs { get ; set; }
   
 }

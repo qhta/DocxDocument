@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ICachedUniqueNames // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICachedUniqueName>? CachedUniqueNames { get ; set; }
+  public Collection<ICachedUniqueName>? CachedUniqueNames { get ; set; }
   
 }

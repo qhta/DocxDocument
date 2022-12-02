@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IFootnotes // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public DocumentModel.Wordprocessing.IFootnote? Footnote { get ; set; }
+  public Collection<IFootnote>? Footnotes { get ; set; }
   
 }

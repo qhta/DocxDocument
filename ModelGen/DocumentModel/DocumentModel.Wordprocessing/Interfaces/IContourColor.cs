@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IContourColor // : DocumentModel.Wordprocessing.IColorType
 {
-  public DocumentModel.Wordprocessing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISchemeColor? SchemeColor { get ; set; }
+  public ISchemeColor? SchemeColor { get ; set; }
   
 }

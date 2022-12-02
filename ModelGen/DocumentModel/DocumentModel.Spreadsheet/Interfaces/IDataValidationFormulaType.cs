@@ -8,6 +8,6 @@ public interface IDataValidationFormulaType // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
 }

@@ -8,11 +8,11 @@ public interface ITable // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// altText, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? AltText { get ; set; }
+  public String? AltText { get ; set; }
   
   /// <summary>
   /// altTextSummary, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? AltTextSummary { get ; set; }
+  public String? AltTextSummary { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IFonts // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IFont>? Fonts { get ; set; }
+  public Collection<IFont>? Fonts { get ; set; }
   
 }

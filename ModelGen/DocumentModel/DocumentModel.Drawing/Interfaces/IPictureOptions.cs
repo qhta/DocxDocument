@@ -8,26 +8,26 @@ public interface IPictureOptions // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Apply To Front.
   /// </summary>
-  public System.Boolean? ApplyToFront { get ; set; }
+  public Boolean? ApplyToFront { get ; set; }
   
   /// <summary>
   /// Apply To Sides.
   /// </summary>
-  public System.Boolean? ApplyToSides { get ; set; }
+  public Boolean? ApplyToSides { get ; set; }
   
   /// <summary>
   /// Apply to End.
   /// </summary>
-  public System.Boolean? ApplyToEnd { get ; set; }
+  public Boolean? ApplyToEnd { get ; set; }
   
   /// <summary>
   /// Picture Format.
   /// </summary>
-  public DocumentModel.Drawing.PictureFormatKind? PictureFormat { get ; set; }
+  public PictureFormatKind? PictureFormat { get ; set; }
   
   /// <summary>
   /// Picture Stack Unit.
   /// </summary>
-  public System.Double? PictureStackUnit { get ; set; }
+  public Double? PictureStackUnit { get ; set; }
   
 }

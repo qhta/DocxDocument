@@ -8,11 +8,11 @@ public interface INonVisualGroupDrawingShapeProperties // : DocumentModel.ITyped
   /// <summary>
   /// GroupShapeLocks.
   /// </summary>
-  public DocumentModel.Drawing.IGroupShapeLocks? GroupShapeLocks { get ; set; }
+  public IGroupShapeLocks? GroupShapeLocks { get ; set; }
   
   /// <summary>
   /// NonVisualGroupDrawingShapePropsExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get ; set; }
+  public INonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get ; set; }
   
 }

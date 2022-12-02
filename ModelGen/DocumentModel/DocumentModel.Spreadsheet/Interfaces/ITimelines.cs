@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITimelines // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITimeline>? Timelines { get ; set; }
+  public Collection<ITimeline>? Timelines { get ; set; }
   
 }

@@ -5,8 +5,8 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ICustomerDataList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ICustomerData>? CustomerDatas { get ; set; }
+  public Collection<ICustomerData>? CustomerDatas { get ; set; }
   
-  public DocumentModel.Presentation.ICustomerDataTags? CustomerDataTags { get ; set; }
+  public ICustomerDataTags? CustomerDataTags { get ; set; }
   
 }

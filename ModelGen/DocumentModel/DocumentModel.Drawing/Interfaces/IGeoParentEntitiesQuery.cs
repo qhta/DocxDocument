@@ -8,6 +8,6 @@ public interface IGeoParentEntitiesQuery // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? EntityId { get ; set; }
+  public String? EntityId { get ; set; }
   
 }

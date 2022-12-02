@@ -8,41 +8,41 @@ public interface IQueryTableField // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Field Id
   /// </summary>
-  public System.UInt32? Id { get ; set; }
+  public UInt32? Id { get ; set; }
   
   /// <summary>
   /// Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Data Bound Column
   /// </summary>
-  public System.Boolean? DataBound { get ; set; }
+  public Boolean? DataBound { get ; set; }
   
   /// <summary>
   /// Row Numbers
   /// </summary>
-  public System.Boolean? RowNumbers { get ; set; }
+  public Boolean? RowNumbers { get ; set; }
   
   /// <summary>
   /// Fill This Formula On Refresh
   /// </summary>
-  public System.Boolean? FillFormulas { get ; set; }
+  public Boolean? FillFormulas { get ; set; }
   
   /// <summary>
   /// Clipped Column
   /// </summary>
-  public System.Boolean? Clipped { get ; set; }
+  public Boolean? Clipped { get ; set; }
   
   /// <summary>
   /// Table Column Id
   /// </summary>
-  public System.UInt32? TableColumnId { get ; set; }
+  public UInt32? TableColumnId { get ; set; }
   
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

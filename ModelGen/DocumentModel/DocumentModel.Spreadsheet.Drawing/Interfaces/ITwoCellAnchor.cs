@@ -8,28 +8,28 @@ public interface ITwoCellAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Positioning and Resizing Behaviors
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.EditAsKind? EditAs { get ; set; }
+  public EditAsKind? EditAs { get ; set; }
   
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.IFromMarker? FromMarker { get ; set; }
+  public IFromMarker? FromMarker { get ; set; }
   
   /// <summary>
   /// Ending Anchor Point.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.IToMarker? ToMarker { get ; set; }
+  public IToMarker? ToMarker { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IShape? Shape { get ; set; }
+  public IShape? Shape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGroupShape? GroupShape { get ; set; }
+  public IGroupShape? GroupShape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGraphicFrame? GraphicFrame { get ; set; }
+  public IGraphicFrame? GraphicFrame { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IConnectionShape? ConnectionShape { get ; set; }
+  public IConnectionShape? ConnectionShape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IPicture? Picture { get ; set; }
+  public IPicture? Picture { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IClientData? ClientData { get ; set; }
+  public IClientData? ClientData { get ; set; }
   
 }

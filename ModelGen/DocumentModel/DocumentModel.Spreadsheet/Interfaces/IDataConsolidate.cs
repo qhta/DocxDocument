@@ -8,31 +8,31 @@ public interface IDataConsolidate // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Function Index
   /// </summary>
-  public DocumentModel.Spreadsheet.DataConsolidateFunctionKind? Function { get ; set; }
+  public DataConsolidateFunctionKind? Function { get ; set; }
   
   /// <summary>
   /// Use Left Column Labels
   /// </summary>
-  public System.Boolean? LeftLabels { get ; set; }
+  public Boolean? LeftLabels { get ; set; }
   
   /// <summary>
   /// startLabels, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? StartLabels { get ; set; }
+  public Boolean? StartLabels { get ; set; }
   
   /// <summary>
   /// Labels In Top Row
   /// </summary>
-  public System.Boolean? TopLabels { get ; set; }
+  public Boolean? TopLabels { get ; set; }
   
   /// <summary>
   /// Link
   /// </summary>
-  public System.Boolean? Link { get ; set; }
+  public Boolean? Link { get ; set; }
   
   /// <summary>
   /// Data Consolidation References.
   /// </summary>
-  public DocumentModel.Spreadsheet.IDataReferences? DataReferences { get ; set; }
+  public IDataReferences? DataReferences { get ; set; }
   
 }

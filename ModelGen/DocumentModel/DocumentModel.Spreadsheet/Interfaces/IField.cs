@@ -8,6 +8,6 @@ public interface IField // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Field Index
   /// </summary>
-  public System.Int32? Index { get ; set; }
+  public Int32? Index { get ; set; }
   
 }

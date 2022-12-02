@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IRowBreaks // : DocumentModel.Spreadsheet.IPageBreakType
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IBreak>? Breaks { get ; set; }
+  public Collection<IBreak>? Breaks { get ; set; }
   
 }

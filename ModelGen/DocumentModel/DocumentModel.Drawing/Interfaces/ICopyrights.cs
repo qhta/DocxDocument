@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICopyrights // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.String>? CopyrightXsdstrings { get ; set; }
+  public Collection<String>? CopyrightXsdstrings { get ; set; }
   
 }

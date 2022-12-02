@@ -8,11 +8,11 @@ public interface IProtection // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Cell Locked
   /// </summary>
-  public System.Boolean? Locked { get ; set; }
+  public Boolean? Locked { get ; set; }
   
   /// <summary>
   /// Hidden Cell
   /// </summary>
-  public System.Boolean? Hidden { get ; set; }
+  public Boolean? Hidden { get ; set; }
   
 }

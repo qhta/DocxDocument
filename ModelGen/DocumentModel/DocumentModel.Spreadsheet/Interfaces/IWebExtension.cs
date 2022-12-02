@@ -8,11 +8,11 @@ public interface IWebExtension // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// appRef, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? ApplicationReference { get ; set; }
+  public String? ApplicationReference { get ; set; }
   
   /// <summary>
   /// Formula.
   /// </summary>
-  public System.String? Formula { get ; set; }
+  public String? Formula { get ; set; }
   
 }

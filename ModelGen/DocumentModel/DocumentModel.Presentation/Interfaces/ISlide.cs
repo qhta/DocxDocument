@@ -8,41 +8,41 @@ public interface ISlide // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Show Master Shapes
   /// </summary>
-  public System.Boolean? ShowMasterShapes { get ; set; }
+  public Boolean? ShowMasterShapes { get ; set; }
   
   /// <summary>
   /// Show Master Placeholder Animations
   /// </summary>
-  public System.Boolean? ShowMasterPlaceholderAnimations { get ; set; }
+  public Boolean? ShowMasterPlaceholderAnimations { get ; set; }
   
   /// <summary>
   /// Show Slide in Slide Show
   /// </summary>
-  public System.Boolean? Show { get ; set; }
+  public Boolean? Show { get ; set; }
   
   /// <summary>
   /// Common slide data for slides.
   /// </summary>
-  public DocumentModel.Presentation.ICommonSlideData? CommonSlideData { get ; set; }
+  public ICommonSlideData? CommonSlideData { get ; set; }
   
   /// <summary>
   /// Color Scheme Map Override.
   /// </summary>
-  public DocumentModel.Presentation.IColorMapOverride? ColorMapOverride { get ; set; }
+  public IColorMapOverride? ColorMapOverride { get ; set; }
   
   /// <summary>
   /// Slide Transition.
   /// </summary>
-  public DocumentModel.Presentation.ITransition? Transition { get ; set; }
+  public ITransition? Transition { get ; set; }
   
   /// <summary>
   /// Slide Timing Information for a Slide.
   /// </summary>
-  public DocumentModel.Presentation.ITiming? Timing { get ; set; }
+  public ITiming? Timing { get ; set; }
   
   /// <summary>
   /// SlideExtensionList.
   /// </summary>
-  public DocumentModel.Presentation.ISlideExtensionList? SlideExtensionList { get ; set; }
+  public ISlideExtensionList? SlideExtensionList { get ; set; }
   
 }

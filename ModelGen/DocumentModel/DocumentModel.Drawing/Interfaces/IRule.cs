@@ -8,41 +8,41 @@ public interface IRule // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Constraint Type
   /// </summary>
-  public DocumentModel.Drawing.ConstraintKind? Type { get ; set; }
+  public ConstraintKind? Type { get ; set; }
   
   /// <summary>
   /// For
   /// </summary>
-  public DocumentModel.Drawing.ConstraintRelationshipKind? For { get ; set; }
+  public ConstraintRelationshipKind? For { get ; set; }
   
   /// <summary>
   /// For Name
   /// </summary>
-  public System.String? ForName { get ; set; }
+  public String? ForName { get ; set; }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public DocumentModel.Drawing.ElementKind? PointType { get ; set; }
+  public ElementKind? PointType { get ; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public System.Double? Val { get ; set; }
+  public Double? Val { get ; set; }
   
   /// <summary>
   /// Factor
   /// </summary>
-  public System.Double? Fact { get ; set; }
+  public Double? Fact { get ; set; }
   
   /// <summary>
   /// Max Value
   /// </summary>
-  public System.Double? Max { get ; set; }
+  public Double? Max { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

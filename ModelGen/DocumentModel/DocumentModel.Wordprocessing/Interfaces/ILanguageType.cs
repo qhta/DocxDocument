@@ -8,16 +8,16 @@ public interface ILanguageType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Latin Language
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
   /// <summary>
   /// East Asian Language
   /// </summary>
-  public System.String? EastAsia { get ; set; }
+  public String? EastAsia { get ; set; }
   
   /// <summary>
   /// Complex Script Language
   /// </summary>
-  public System.String? Bidi { get ; set; }
+  public String? Bidi { get ; set; }
   
 }

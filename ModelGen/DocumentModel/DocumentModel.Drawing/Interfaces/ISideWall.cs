@@ -5,12 +5,12 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISideWall // : DocumentModel.Drawing.ISurfaceType
 {
-  public System.Byte? Thickness { get ; set; }
+  public Byte? Thickness { get ; set; }
   
-  public DocumentModel.Drawing.IShapeProperties? ShapeProperties { get ; set; }
+  public IShapeProperties? ShapeProperties { get ; set; }
   
-  public DocumentModel.Drawing.IPictureOptions? PictureOptions { get ; set; }
+  public IPictureOptions? PictureOptions { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

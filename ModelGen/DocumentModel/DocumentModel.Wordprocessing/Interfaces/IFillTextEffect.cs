@@ -8,16 +8,16 @@ public interface IFillTextEffect // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// NoFillEmpty.
   /// </summary>
-  public System.Boolean? NoFillEmpty { get ; set; }
+  public Boolean? NoFillEmpty { get ; set; }
   
   /// <summary>
   /// SolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ISolidColorFillProperties? SolidColorFillProperties { get ; set; }
+  public ISolidColorFillProperties? SolidColorFillProperties { get ; set; }
   
   /// <summary>
   /// GradientFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IGradientFillProperties? GradientFillProperties { get ; set; }
+  public IGradientFillProperties? GradientFillProperties { get ; set; }
   
 }

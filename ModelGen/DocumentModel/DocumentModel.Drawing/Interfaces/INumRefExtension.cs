@@ -8,12 +8,12 @@ public interface INumRefExtension // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFullReference? FullReference { get ; set; }
+  public IFullReference? FullReference { get ; set; }
   
-  public DocumentModel.Drawing.ILevelReference? LevelReference { get ; set; }
+  public ILevelReference? LevelReference { get ; set; }
   
-  public DocumentModel.Drawing.IFormulaReference? FormulaReference { get ; set; }
+  public IFormulaReference? FormulaReference { get ; set; }
   
 }

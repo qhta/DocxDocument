@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IShapePropertiesExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IShapePropertiesExtension>? ShapePropertiesExtensions { get ; set; }
+  public Collection<IShapePropertiesExtension>? ShapePropertiesExtensions { get ; set; }
   
 }

@@ -8,7 +8,7 @@ public interface ISymbolChar // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Symbol Character Font
   /// </summary>
-  public System.String? Font { get ; set; }
+  public String? Font { get ; set; }
   
   /// <summary>
   /// Symbol Character Code

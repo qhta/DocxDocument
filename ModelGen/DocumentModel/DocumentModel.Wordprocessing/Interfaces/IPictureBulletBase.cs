@@ -5,22 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IPictureBulletBase // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Vml.IGroup? Group { get ; set; }
+  public Collection<DocumentModel.Vml.IGroup>? Groups { get ; set; }
   
-  public DocumentModel.Vml.IImageFile? ImageFile { get ; set; }
+  public Collection<DocumentModel.Vml.IImageFile>? ImageFiles { get ; set; }
   
-  public DocumentModel.Vml.ILine? Line { get ; set; }
+  public Collection<DocumentModel.Vml.ILine>? Lines { get ; set; }
   
-  public DocumentModel.Vml.IOval? Oval { get ; set; }
+  public Collection<DocumentModel.Vml.IOval>? Ovals { get ; set; }
   
-  public DocumentModel.Vml.IPolyLine? PolyLine { get ; set; }
+  public Collection<DocumentModel.Vml.IPolyLine>? PolyLines { get ; set; }
   
-  public DocumentModel.Vml.IRectangle? Rectangle { get ; set; }
+  public Collection<DocumentModel.Vml.IRectangle>? Rectangles { get ; set; }
   
-  public DocumentModel.Vml.IRoundRectangle? RoundRectangle { get ; set; }
+  public Collection<DocumentModel.Vml.IRoundRectangle>? RoundRectangles { get ; set; }
   
-  public DocumentModel.Vml.IShape? Shape { get ; set; }
+  public Collection<DocumentModel.Vml.IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Vml.IShapetype? Shapetype { get ; set; }
+  public Collection<DocumentModel.Vml.IShapetype>? Shapetypes { get ; set; }
   
 }

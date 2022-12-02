@@ -8,6 +8,6 @@ public interface ISideDirectionTransitionType // : DocumentModel.ITypedOpenXmlLe
   /// <summary>
   /// Direction
   /// </summary>
-  public DocumentModel.Presentation.TransitionSlideDirectionKind? Direction { get ; set; }
+  public TransitionSlideDirectionKind? Direction { get ; set; }
   
 }

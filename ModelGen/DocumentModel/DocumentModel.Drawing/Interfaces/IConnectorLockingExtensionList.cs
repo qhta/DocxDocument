@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IConnectorLockingExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IConnectorLockingExtension>? ConnectorLockingExtensions { get ; set; }
+  public Collection<IConnectorLockingExtension>? ConnectorLockingExtensions { get ; set; }
   
 }

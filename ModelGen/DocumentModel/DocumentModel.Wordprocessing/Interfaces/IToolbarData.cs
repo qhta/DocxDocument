@@ -8,6 +8,6 @@ public interface IToolbarData // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// id
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

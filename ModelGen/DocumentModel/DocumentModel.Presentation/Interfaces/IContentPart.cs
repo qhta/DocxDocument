@@ -13,21 +13,21 @@ public interface IContentPart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// id
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  public DocumentModel.Presentation.INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
+  public INonVisualContentPartProperties? NonVisualContentPartProperties { get ; set; }
   
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public DocumentModel.Presentation.ITransform2D? Transform2D { get ; set; }
+  public ITransform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// ExtensionListModify.
   /// </summary>
-  public DocumentModel.Presentation.IExtensionListModify? ExtensionListModify { get ; set; }
+  public IExtensionListModify? ExtensionListModify { get ; set; }
   
 }

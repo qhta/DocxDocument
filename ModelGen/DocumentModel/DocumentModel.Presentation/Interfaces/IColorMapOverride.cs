@@ -8,7 +8,7 @@ public interface IColorMapOverride // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Master Color Mapping.
   /// </summary>
-  public System.Boolean? MasterColorMapping { get ; set; }
+  public Boolean? MasterColorMapping { get ; set; }
   
   /// <summary>
   /// Override Color Mapping.

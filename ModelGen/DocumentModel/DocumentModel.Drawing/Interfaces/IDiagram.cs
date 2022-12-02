@@ -8,11 +8,11 @@ public interface IDiagram // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// Animation Build Step
   /// </summary>
-  public DocumentModel.Drawing.DiagramBuildStepKind? BuildStep { get ; set; }
+  public DiagramBuildStepKind? BuildStep { get ; set; }
   
 }

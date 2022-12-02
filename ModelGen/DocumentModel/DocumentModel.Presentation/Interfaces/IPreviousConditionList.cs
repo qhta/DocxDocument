@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface IPreviousConditionList // : DocumentModel.Presentation.ITimeListTimeConditionalListType
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ICondition>? Conditions { get ; set; }
+  public Collection<ICondition>? Conditions { get ; set; }
   
 }

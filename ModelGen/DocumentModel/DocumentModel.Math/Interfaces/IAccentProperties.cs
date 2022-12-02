@@ -8,11 +8,11 @@ public interface IAccentProperties // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Accent Character.
   /// </summary>
-  public System.String? AccentChar { get ; set; }
+  public String? AccentChar { get ; set; }
   
   /// <summary>
   /// Control Properties.
   /// </summary>
-  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
+  public IControlProperties? ControlProperties { get ; set; }
   
 }

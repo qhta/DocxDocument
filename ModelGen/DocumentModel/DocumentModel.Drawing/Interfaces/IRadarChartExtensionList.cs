@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IRadarChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IRadarChartExtension>? RadarChartExtensions { get ; set; }
+  public Collection<IRadarChartExtension>? RadarChartExtensions { get ; set; }
   
 }

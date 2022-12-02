@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPivotFormats // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IPivotFormat>? PivotFormats { get ; set; }
+  public Collection<IPivotFormat>? PivotFormats { get ; set; }
   
 }

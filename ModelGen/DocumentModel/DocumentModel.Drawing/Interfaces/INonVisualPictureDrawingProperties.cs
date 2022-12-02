@@ -8,16 +8,16 @@ public interface INonVisualPictureDrawingProperties // : DocumentModel.ITypedOpe
   /// <summary>
   /// preferRelativeResize
   /// </summary>
-  public System.Boolean? PreferRelativeResize { get ; set; }
+  public Boolean? PreferRelativeResize { get ; set; }
   
   /// <summary>
   /// PictureLocks.
   /// </summary>
-  public DocumentModel.Drawing.IPictureLocks? PictureLocks { get ; set; }
+  public IPictureLocks? PictureLocks { get ; set; }
   
   /// <summary>
   /// NonVisualPicturePropertiesExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.INonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get ; set; }
+  public INonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get ; set; }
   
 }

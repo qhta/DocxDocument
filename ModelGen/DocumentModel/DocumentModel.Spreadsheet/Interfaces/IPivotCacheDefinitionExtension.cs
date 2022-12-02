@@ -8,18 +8,18 @@ public interface IPivotCacheDefinitionExtension // : DocumentModel.ITypedOpenXml
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotCacheDefinition? PivotCacheDefinition { get ; set; }
+  public IPivotCacheDefinition? PivotCacheDefinition { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotCacheDecoupled? PivotCacheDecoupled { get ; set; }
+  public IPivotCacheDecoupled? PivotCacheDecoupled { get ; set; }
   
-  public DocumentModel.Spreadsheet.ITimelinePivotCacheDefinition? TimelinePivotCacheDefinition { get ; set; }
+  public ITimelinePivotCacheDefinition? TimelinePivotCacheDefinition { get ; set; }
   
-  public DocumentModel.Spreadsheet.IPivotCacheIdVersion? PivotCacheIdVersion { get ; set; }
+  public IPivotCacheIdVersion? PivotCacheIdVersion { get ; set; }
   
-  public System.String? Xsdboolean { get ; set; }
+  public String? Xsdboolean { get ; set; }
   
-  public DocumentModel.Spreadsheet.ICacheVersionInfo? CacheVersionInfo { get ; set; }
+  public ICacheVersionInfo? CacheVersionInfo { get ; set; }
   
 }

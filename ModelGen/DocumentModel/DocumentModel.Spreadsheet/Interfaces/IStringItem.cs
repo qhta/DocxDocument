@@ -8,32 +8,32 @@ public interface IStringItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
   /// <summary>
   /// Unused Item
   /// </summary>
-  public System.Boolean? Unused { get ; set; }
+  public Boolean? Unused { get ; set; }
   
   /// <summary>
   /// Calculated Item
   /// </summary>
-  public System.Boolean? Calculated { get ; set; }
+  public Boolean? Calculated { get ; set; }
   
   /// <summary>
   /// Item Caption
   /// </summary>
-  public System.String? Caption { get ; set; }
+  public String? Caption { get ; set; }
   
   /// <summary>
   /// Member Property Count
   /// </summary>
-  public System.UInt32? PropertyCount { get ; set; }
+  public UInt32? PropertyCount { get ; set; }
   
   /// <summary>
   /// Format Index
   /// </summary>
-  public System.UInt32? FormatIndex { get ; set; }
+  public UInt32? FormatIndex { get ; set; }
   
   /// <summary>
   /// Background Color
@@ -48,25 +48,25 @@ public interface IStringItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Italic
   /// </summary>
-  public System.Boolean? Italic { get ; set; }
+  public Boolean? Italic { get ; set; }
   
   /// <summary>
   /// Underline
   /// </summary>
-  public System.Boolean? Underline { get ; set; }
+  public Boolean? Underline { get ; set; }
   
   /// <summary>
   /// Strikethrough
   /// </summary>
-  public System.Boolean? Strikethrough { get ; set; }
+  public Boolean? Strikethrough { get ; set; }
   
   /// <summary>
   /// Bold
   /// </summary>
-  public System.Boolean? Bold { get ; set; }
+  public Boolean? Bold { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ITuples>? Tupleses { get ; set; }
+  public Collection<ITuples>? Tupleses { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertyIndexs { get ; set; }
+  public Collection<Int32>? MemberPropertyIndexs { get ; set; }
   
 }

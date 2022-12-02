@@ -8,16 +8,16 @@ public interface IAudioFromCD // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Audio Start Time.
   /// </summary>
-  public DocumentModel.Drawing.IAudioCDTimeType? StartTime { get ; set; }
+  public IAudioCDTimeType? StartTime { get ; set; }
   
   /// <summary>
   /// Audio End Time.
   /// </summary>
-  public DocumentModel.Drawing.IAudioCDTimeType? EndTime { get ; set; }
+  public IAudioCDTimeType? EndTime { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

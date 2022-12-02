@@ -5,6 +5,6 @@ namespace DocumentModel.Math;
 /// </summary>
 public interface IMatrixRow // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Math.IBase>? Bases { get ; set; }
+  public Collection<IBase>? Bases { get ; set; }
   
 }

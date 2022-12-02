@@ -8,11 +8,11 @@ public interface IConnectionSite // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Connection Site Angle
   /// </summary>
-  public System.String? Angle { get ; set; }
+  public String? Angle { get ; set; }
   
   /// <summary>
   /// Position.
   /// </summary>
-  public DocumentModel.Drawing.IAdjustPoint2DType? Position { get ; set; }
+  public IAdjustPoint2DType? Position { get ; set; }
   
 }

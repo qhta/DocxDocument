@@ -8,11 +8,11 @@ public interface IShredTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// pattern, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Presentation.TransitionShredPatternKind? Pattern { get ; set; }
+  public TransitionShredPatternKind? Pattern { get ; set; }
   
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Presentation.TransitionInOutDirectionKind? Direction { get ; set; }
+  public TransitionInOutDirectionKind? Direction { get ; set; }
   
 }

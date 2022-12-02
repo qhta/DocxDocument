@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface INonVisualPicturePropertiesExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.INonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions { get ; set; }
+  public Collection<INonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions { get ; set; }
   
 }

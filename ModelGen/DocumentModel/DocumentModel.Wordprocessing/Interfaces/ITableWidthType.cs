@@ -8,11 +8,11 @@ public interface ITableWidthType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Table Width Value
   /// </summary>
-  public System.String? Width { get ; set; }
+  public String? Width { get ; set; }
   
   /// <summary>
   /// Table Width Type
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get ; set; }
+  public TableWidthUnitKind? Type { get ; set; }
   
 }

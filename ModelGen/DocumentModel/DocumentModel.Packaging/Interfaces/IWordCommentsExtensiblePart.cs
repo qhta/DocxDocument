@@ -10,8 +10,8 @@ public interface IWordCommentsExtensiblePart // : DocumentModel.Packaging.ITyped
   /// </summary>
   public DocumentModel.Wordprocessing.ICommentsExtensible? CommentsExtensible { get ; set; }
   
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

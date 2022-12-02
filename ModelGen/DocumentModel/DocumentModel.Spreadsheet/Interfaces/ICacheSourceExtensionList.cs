@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ICacheSourceExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICacheSourceExtension>? CacheSourceExtensions { get ; set; }
+  public Collection<ICacheSourceExtension>? CacheSourceExtensions { get ; set; }
   
 }

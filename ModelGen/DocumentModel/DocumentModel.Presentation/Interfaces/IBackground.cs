@@ -13,11 +13,11 @@ public interface IBackground // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Background Properties.
   /// </summary>
-  public DocumentModel.Presentation.IBackgroundProperties? BackgroundProperties { get ; set; }
+  public IBackgroundProperties? BackgroundProperties { get ; set; }
   
   /// <summary>
   /// Background Style Reference.
   /// </summary>
-  public DocumentModel.Presentation.IBackgroundStyleReference? BackgroundStyleReference { get ; set; }
+  public IBackgroundStyleReference? BackgroundStyleReference { get ; set; }
   
 }

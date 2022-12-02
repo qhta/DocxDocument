@@ -8,7 +8,7 @@ public interface IChartPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.IChartColorStylePart? ChartColorStyleParts { get ; set; }
+  public IChartColorStylePart? ChartColorStyleParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -18,15 +18,15 @@ public interface IChartPart // : DocumentModel.Packaging.ITypedOpenXmlPart
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.IChartStylePart? ChartStyleParts { get ; set; }
+  public IChartStylePart? ChartStyleParts { get ; set; }
   
-  public System.String? ContentType { get ; set; }
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.IImagePart? ImageParts { get ; set; }
+  public IImagePart? ImageParts { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

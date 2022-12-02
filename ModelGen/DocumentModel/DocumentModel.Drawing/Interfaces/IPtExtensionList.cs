@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPtExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IPtExtension>? PtExtensions { get ; set; }
+  public Collection<IPtExtension>? PtExtensions { get ; set; }
   
 }

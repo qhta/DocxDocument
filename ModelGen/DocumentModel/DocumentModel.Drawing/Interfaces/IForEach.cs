@@ -8,59 +8,59 @@ public interface IForEach // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Reference
   /// </summary>
-  public System.String? Reference { get ; set; }
+  public String? Reference { get ; set; }
   
   /// <summary>
   /// Axis
   /// </summary>
-  public System.Collections.Generic.List<DocumentModel.Drawing.AxisKind>? Axis { get ; set; }
+  public List<AxisKind>? Axis { get ; set; }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public System.Collections.Generic.List<DocumentModel.Drawing.ElementKind>? PointType { get ; set; }
+  public List<ElementKind>? PointType { get ; set; }
   
   /// <summary>
   /// Hide Last Transition
   /// </summary>
-  public System.Collections.Generic.List<System.Boolean>? HideLastTrans { get ; set; }
+  public List<Boolean>? HideLastTrans { get ; set; }
   
   /// <summary>
   /// Start
   /// </summary>
-  public System.Collections.Generic.List<System.Int32>? Start { get ; set; }
+  public List<Int32>? Start { get ; set; }
   
   /// <summary>
   /// Count
   /// </summary>
-  public System.Collections.Generic.List<System.UInt32>? Count { get ; set; }
+  public List<UInt32>? Count { get ; set; }
   
   /// <summary>
   /// Step
   /// </summary>
-  public System.Collections.Generic.List<System.Int32>? Step { get ; set; }
+  public List<Int32>? Step { get ; set; }
   
-  public DocumentModel.Drawing.IAlgorithm? Algorithm { get ; set; }
+  public Collection<IAlgorithm>? Algorithms { get ; set; }
   
-  public DocumentModel.Drawing.IShape? Shape { get ; set; }
+  public Collection<IShape>? Shapes { get ; set; }
   
-  public DocumentModel.Drawing.IPresentationOf? PresentationOf { get ; set; }
+  public Collection<IPresentationOf>? PresentationOfs { get ; set; }
   
-  public DocumentModel.Drawing.IConstraints? Constraints { get ; set; }
+  public Collection<IConstraints>? Constraintses { get ; set; }
   
-  public DocumentModel.Drawing.IRuleList? RuleList { get ; set; }
+  public Collection<IRuleList>? RuleLists { get ; set; }
   
-  public DocumentModel.Drawing.IForEach? ForEach { get ; set; }
+  public Collection<IForEach>? ForEachs { get ; set; }
   
-  public DocumentModel.Drawing.ILayoutNode? LayoutNode { get ; set; }
+  public Collection<ILayoutNode>? LayoutNodes { get ; set; }
   
-  public DocumentModel.Drawing.IChoose? Choose { get ; set; }
+  public Collection<IChoose>? Chooses { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public Collection<IExtensionList>? ExtensionLists { get ; set; }
   
 }

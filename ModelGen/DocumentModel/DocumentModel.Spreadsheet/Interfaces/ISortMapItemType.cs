@@ -8,11 +8,11 @@ public interface ISortMapItemType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// New Value
   /// </summary>
-  public System.UInt32? NewVal { get ; set; }
+  public UInt32? NewVal { get ; set; }
   
   /// <summary>
   /// Old Value
   /// </summary>
-  public System.UInt32? OldVal { get ; set; }
+  public UInt32? OldVal { get ; set; }
   
 }

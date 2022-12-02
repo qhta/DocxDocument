@@ -8,8 +8,8 @@ public interface IConnectorLockingExtension // : DocumentModel.ITypedOpenXmlComp
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IGraphic? Graphic { get ; set; }
+  public IGraphic? Graphic { get ; set; }
   
 }

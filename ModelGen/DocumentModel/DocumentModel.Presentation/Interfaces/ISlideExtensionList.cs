@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ISlideExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ISlideExtension>? SlideExtensions { get ; set; }
+  public Collection<ISlideExtension>? SlideExtensions { get ; set; }
   
 }

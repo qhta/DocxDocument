@@ -8,8 +8,8 @@ public interface ISdtContentDropDownList // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Drop-down List Last Saved Value
   /// </summary>
-  public System.String? LastValue { get ; set; }
+  public String? LastValue { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IListItem>? ListItems { get ; set; }
+  public Collection<IListItem>? ListItems { get ; set; }
   
 }

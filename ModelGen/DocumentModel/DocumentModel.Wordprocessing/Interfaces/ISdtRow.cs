@@ -8,50 +8,50 @@ public interface ISdtRow // : DocumentModel.Wordprocessing.ISdtElement
   /// <summary>
   /// Row-Level Structured Document Tag Content.
   /// </summary>
-  public DocumentModel.Wordprocessing.ISdtContentRow? SdtContentRow { get ; set; }
+  public ISdtContentRow? SdtContentRow { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtProperties? SdtProperties { get ; set; }
+  public ISdtProperties? SdtProperties { get ; set; }
   
-  public DocumentModel.Wordprocessing.ISdtEndCharProperties? SdtEndCharProperties { get ; set; }
+  public ISdtEndCharProperties? SdtEndCharProperties { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBookmarkStart? BookmarkStart { get ; set; }
+  public Collection<IBookmarkStart>? BookmarkStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? BookmarkEnd { get ; set; }
+  public Collection<IMarkupRangeType>? BookmarkEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeStart { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? CommentRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveFromRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveToRangeStart { get ; set; }
+  public Collection<IMoveBookmarkType>? MoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveToRangeEnd { get ; set; }
+  public Collection<IMarkupRangeType>? MoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlInsRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlInsRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlInsRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlDelRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlDelRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlDelRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public Collection<ITrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public Collection<IMarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
   
 }
