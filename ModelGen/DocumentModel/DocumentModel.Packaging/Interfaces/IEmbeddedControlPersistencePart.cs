@@ -8,8 +8,8 @@ public interface IEmbeddedControlPersistencePart // : DocumentModel.Packaging.IT
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
   /// </summary>
-  public DocumentModel.Packaging.IEmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
+  public IEmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
   
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

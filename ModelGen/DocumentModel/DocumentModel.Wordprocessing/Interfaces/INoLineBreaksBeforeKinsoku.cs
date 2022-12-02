@@ -8,11 +8,11 @@ public interface INoLineBreaksBeforeKinsoku // : DocumentModel.ITypedOpenXmlLeaf
   /// <summary>
   /// lang
   /// </summary>
-  public System.String? Language { get ; set; }
+  public String? Language { get ; set; }
   
   /// <summary>
   /// val
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
 }

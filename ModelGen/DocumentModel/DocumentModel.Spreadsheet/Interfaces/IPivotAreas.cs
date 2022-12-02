@@ -8,8 +8,8 @@ public interface IPivotAreas // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Pivot Area Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotArea>? PivotAreas { get ; set; }
+  public Collection<IPivotArea>? PivotAreas { get ; set; }
   
 }

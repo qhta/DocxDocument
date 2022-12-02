@@ -8,16 +8,16 @@ public interface INonVisualInkContentPartProperties // : DocumentModel.ITypedOpe
   /// <summary>
   /// isComment, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? IsComment { get ; set; }
+  public Boolean? IsComment { get ; set; }
   
   /// <summary>
   /// ContentPartLocks.
   /// </summary>
-  public DocumentModel.Drawing.IContentPartLocks? ContentPartLocks { get ; set; }
+  public IContentPartLocks? ContentPartLocks { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

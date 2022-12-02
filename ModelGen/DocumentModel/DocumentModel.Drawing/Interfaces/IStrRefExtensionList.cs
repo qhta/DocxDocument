@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IStrRefExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IStrRefExtension>? StrRefExtensions { get ; set; }
+  public Collection<IStrRefExtension>? StrRefExtensions { get ; set; }
   
 }

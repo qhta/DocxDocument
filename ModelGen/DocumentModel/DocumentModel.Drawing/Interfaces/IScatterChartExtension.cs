@@ -8,8 +8,8 @@ public interface IScatterChartExtension // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredScatterSeries? FilteredScatterSeries { get ; set; }
+  public IFilteredScatterSeries? FilteredScatterSeries { get ; set; }
   
 }

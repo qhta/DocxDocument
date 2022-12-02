@@ -8,11 +8,11 @@ public interface IRelativeOffset // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Offset X
   /// </summary>
-  public System.Int32? OffsetX { get ; set; }
+  public Int32? OffsetX { get ; set; }
   
   /// <summary>
   /// Offset Y
   /// </summary>
-  public System.Int32? OffsetY { get ; set; }
+  public Int32? OffsetY { get ; set; }
   
 }

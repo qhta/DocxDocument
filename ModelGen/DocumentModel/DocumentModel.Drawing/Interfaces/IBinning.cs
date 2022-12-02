@@ -8,26 +8,26 @@ public interface IBinning // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// intervalClosed, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.IntervalClosedSide? IntervalClosed { get ; set; }
+  public IntervalClosedSide? IntervalClosed { get ; set; }
   
   /// <summary>
   /// underflow, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Underflow { get ; set; }
+  public String? Underflow { get ; set; }
   
   /// <summary>
   /// overflow, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Overflow { get ; set; }
+  public String? Overflow { get ; set; }
   
   /// <summary>
   /// Xsddouble.
   /// </summary>
-  public System.String? Xsddouble { get ; set; }
+  public String? Xsddouble { get ; set; }
   
   /// <summary>
   /// BinCountXsdunsignedInt.
   /// </summary>
-  public System.String? BinCountXsdunsignedInt { get ; set; }
+  public String? BinCountXsdunsignedInt { get ; set; }
   
 }

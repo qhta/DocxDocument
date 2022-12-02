@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IBehaviors // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocPartBehaviorKind>? Behaviors { get ; set; }
+  public Collection<DocPartBehaviorKind>? Behaviors { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface ISchemeColor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.SchemeColorKind? Val { get ; set; }
+  public SchemeColorKind? Val { get ; set; }
   
-  public System.Int32? Tint { get ; set; }
+  public Collection<Int32>? Tints { get ; set; }
   
-  public System.Int32? Shade { get ; set; }
+  public Collection<Int32>? Shades { get ; set; }
   
-  public System.Int32? Alpha { get ; set; }
+  public Collection<Int32>? Alphas { get ; set; }
   
-  public System.Int32? HueModulation { get ; set; }
+  public Collection<Int32>? HueModulations { get ; set; }
   
-  public System.Int32? Saturation { get ; set; }
+  public Collection<Int32>? Saturations { get ; set; }
   
-  public System.Int32? SaturationOffset { get ; set; }
+  public Collection<Int32>? SaturationOffsets { get ; set; }
   
-  public System.Int32? SaturationModulation { get ; set; }
+  public Collection<Int32>? SaturationModulations { get ; set; }
   
-  public System.Int32? Luminance { get ; set; }
+  public Collection<Int32>? Luminances { get ; set; }
   
-  public System.Int32? LuminanceOffset { get ; set; }
+  public Collection<Int32>? LuminanceOffsets { get ; set; }
   
-  public System.Int32? LuminanceModulation { get ; set; }
+  public Collection<Int32>? LuminanceModulations { get ; set; }
   
 }

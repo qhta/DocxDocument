@@ -8,8 +8,8 @@ public interface ILine3DChartExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredLineSeriesExtension? FilteredLineSeriesExtension { get ; set; }
+  public IFilteredLineSeriesExtension? FilteredLineSeriesExtension { get ; set; }
   
 }

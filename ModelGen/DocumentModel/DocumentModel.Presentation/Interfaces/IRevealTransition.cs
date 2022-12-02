@@ -8,11 +8,11 @@ public interface IRevealTransition // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// thruBlk, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Boolean? ThroughBlack { get ; set; }
+  public Boolean? ThroughBlack { get ; set; }
   
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Presentation.TransitionLeftRightDirectionKind? Direction { get ; set; }
+  public TransitionLeftRightDirectionKind? Direction { get ; set; }
   
 }

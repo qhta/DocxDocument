@@ -8,6 +8,6 @@ public interface IPageItem // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Page Item Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
 }

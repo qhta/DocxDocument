@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IProtectedRanges // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IProtectedRange>? ProtectedRanges { get ; set; }
+  public Collection<IProtectedRange>? ProtectedRanges { get ; set; }
   
 }

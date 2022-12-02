@@ -8,9 +8,9 @@ public interface IBackgroundProperties // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Shade to Title
   /// </summary>
-  public System.Boolean? ShadeToTitle { get ; set; }
+  public Boolean? ShadeToTitle { get ; set; }
   
-  public System.Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
   public DocumentModel.Drawing.ISolidFill? SolidFill { get ; set; }
   
@@ -24,6 +24,6 @@ public interface IBackgroundProperties // : DocumentModel.ITypedOpenXmlComposite
   
   public DocumentModel.Drawing.IEffectDag? EffectDag { get ; set; }
   
-  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

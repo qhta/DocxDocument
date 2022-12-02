@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ICacheHierarchyExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.ICacheHierarchyExtension>? CacheHierarchyExtensions { get ; set; }
+  public Collection<ICacheHierarchyExtension>? CacheHierarchyExtensions { get ; set; }
   
 }

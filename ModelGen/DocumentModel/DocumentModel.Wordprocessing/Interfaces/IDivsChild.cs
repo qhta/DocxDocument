@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IDivsChild // : DocumentModel.Wordprocessing.IDivsType
 {
-  public DocumentModel.Wordprocessing.IDiv? Div { get ; set; }
+  public Collection<IDiv>? Divs { get ; set; }
   
 }

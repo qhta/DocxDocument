@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface ITaskHistory // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.ITaskHistoryEvent>? TaskHistoryEvents { get ; set; }
+  public Collection<ITaskHistoryEvent>? TaskHistoryEvents { get ; set; }
   
 }

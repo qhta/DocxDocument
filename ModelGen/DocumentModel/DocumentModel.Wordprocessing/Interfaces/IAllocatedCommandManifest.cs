@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IAllocatedCommandManifest // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IAcceleratorKeymapType>? AllocatedCommandManifestEntries { get ; set; }
+  public Collection<IAcceleratorKeymapType>? AllocatedCommandManifestEntries { get ; set; }
   
 }

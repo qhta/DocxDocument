@@ -5,22 +5,22 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPresentationLayoutVariables // : DocumentModel.Drawing.ILayoutVariablePropertySetType
 {
-  public System.Boolean? OrganizationChart { get ; set; }
+  public Boolean? OrganizationChart { get ; set; }
   
-  public System.Int32? MaxNumberOfChildren { get ; set; }
+  public Int32? MaxNumberOfChildren { get ; set; }
   
-  public System.Int32? PreferredNumberOfChildren { get ; set; }
+  public Int32? PreferredNumberOfChildren { get ; set; }
   
-  public System.Boolean? BulletEnabled { get ; set; }
+  public Boolean? BulletEnabled { get ; set; }
   
-  public DocumentModel.Drawing.DirectionKind? Direction { get ; set; }
+  public DirectionKind? Direction { get ; set; }
   
-  public DocumentModel.Drawing.HierarchyBranchStyleKind? HierarchyBranch { get ; set; }
+  public HierarchyBranchStyleKind? HierarchyBranch { get ; set; }
   
-  public DocumentModel.Drawing.AnimateOneByOneKind? AnimateOneByOne { get ; set; }
+  public AnimateOneByOneKind? AnimateOneByOne { get ; set; }
   
-  public DocumentModel.Drawing.AnimationLevelStringKind? AnimationLevel { get ; set; }
+  public AnimationLevelStringKind? AnimationLevel { get ; set; }
   
-  public DocumentModel.Drawing.ResizeHandlesStringKind? ResizeHandles { get ; set; }
+  public ResizeHandlesStringKind? ResizeHandles { get ; set; }
   
 }

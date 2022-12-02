@@ -8,66 +8,66 @@ public interface IDocEvents // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// EventDocNewXsdString.
   /// </summary>
-  public System.String? EventDocNewXsdString { get ; set; }
+  public String? EventDocNewXsdString { get ; set; }
   
   /// <summary>
   /// EventDocOpenXsdString.
   /// </summary>
-  public System.String? EventDocOpenXsdString { get ; set; }
+  public String? EventDocOpenXsdString { get ; set; }
   
   /// <summary>
   /// EventDocCloseXsdString.
   /// </summary>
-  public System.String? EventDocCloseXsdString { get ; set; }
+  public String? EventDocCloseXsdString { get ; set; }
   
   /// <summary>
   /// EventDocSyncXsdString.
   /// </summary>
-  public System.String? EventDocSyncXsdString { get ; set; }
+  public String? EventDocSyncXsdString { get ; set; }
   
   /// <summary>
   /// EventDocXmlAfterInsertXsdString.
   /// </summary>
-  public System.String? EventDocXmlAfterInsertXsdString { get ; set; }
+  public String? EventDocXmlAfterInsertXsdString { get ; set; }
   
   /// <summary>
   /// EventDocXmlBeforeDeleteXsdString.
   /// </summary>
-  public System.String? EventDocXmlBeforeDeleteXsdString { get ; set; }
+  public String? EventDocXmlBeforeDeleteXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlAfterInsertXsdString.
   /// </summary>
-  public System.String? EventDocContentControlAfterInsertXsdString { get ; set; }
+  public String? EventDocContentControlAfterInsertXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlBeforeDeleteXsdString.
   /// </summary>
-  public System.String? EventDocContentControlBeforeDeleteXsdString { get ; set; }
+  public String? EventDocContentControlBeforeDeleteXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlOnExistXsdString.
   /// </summary>
-  public System.String? EventDocContentControlOnExistXsdString { get ; set; }
+  public String? EventDocContentControlOnExistXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlOnEnterXsdString.
   /// </summary>
-  public System.String? EventDocContentControlOnEnterXsdString { get ; set; }
+  public String? EventDocContentControlOnEnterXsdString { get ; set; }
   
   /// <summary>
   /// EventDocStoreUpdateXsdString.
   /// </summary>
-  public System.String? EventDocStoreUpdateXsdString { get ; set; }
+  public String? EventDocStoreUpdateXsdString { get ; set; }
   
   /// <summary>
   /// EventDocContentControlUpdateXsdString.
   /// </summary>
-  public System.String? EventDocContentControlUpdateXsdString { get ; set; }
+  public String? EventDocContentControlUpdateXsdString { get ; set; }
   
   /// <summary>
   /// EventDocBuildingBlockAfterInsertXsdString.
   /// </summary>
-  public System.String? EventDocBuildingBlockAfterInsertXsdString { get ; set; }
+  public String? EventDocBuildingBlockAfterInsertXsdString { get ; set; }
   
 }

@@ -8,41 +8,41 @@ public interface IControl // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// spid
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// showAsIcon
   /// </summary>
-  public System.Boolean? ShowAsIcon { get ; set; }
+  public Boolean? ShowAsIcon { get ; set; }
   
   /// <summary>
   /// id
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// imgW
   /// </summary>
-  public System.Int32? ImageWidth { get ; set; }
+  public Int32? ImageWidth { get ; set; }
   
   /// <summary>
   /// imgH
   /// </summary>
-  public System.Int32? ImageHeight { get ; set; }
+  public Int32? ImageHeight { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Presentation.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
   /// <summary>
   /// Picture.
   /// </summary>
-  public DocumentModel.Presentation.IPicture? Picture { get ; set; }
+  public IPicture? Picture { get ; set; }
   
 }

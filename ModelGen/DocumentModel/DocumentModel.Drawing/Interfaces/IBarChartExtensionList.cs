@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IBarChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IBarChartExtension>? BarChartExtensions { get ; set; }
+  public Collection<IBarChartExtension>? BarChartExtensions { get ; set; }
   
 }

@@ -8,31 +8,31 @@ public interface IGeography // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// projectionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.GeoProjectionType? ProjectionType { get ; set; }
+  public GeoProjectionType? ProjectionType { get ; set; }
   
   /// <summary>
   /// viewedRegionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.GeoMappingLevel? ViewedRegionType { get ; set; }
+  public GeoMappingLevel? ViewedRegionType { get ; set; }
   
   /// <summary>
   /// cultureLanguage, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? CultureLanguage { get ; set; }
+  public String? CultureLanguage { get ; set; }
   
   /// <summary>
   /// cultureRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? CultureRegion { get ; set; }
+  public String? CultureRegion { get ; set; }
   
   /// <summary>
   /// attribution, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? Attribution { get ; set; }
+  public String? Attribution { get ; set; }
   
   /// <summary>
   /// GeoCache.
   /// </summary>
-  public DocumentModel.Drawing.IGeoCache? GeoCache { get ; set; }
+  public IGeoCache? GeoCache { get ; set; }
   
 }

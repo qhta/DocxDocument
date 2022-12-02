@@ -25,9 +25,7 @@ public class ModelGenerator
   public int GeneratedInterfacesCount { get; private set; }
   public int GeneratedStructsCount { get; private set; }
   public int GeneratedEnumTypesCount { get; private set; }
-
   public int GeneratedPropertiesCount { get; private set; }
-
   public int GeneratedEnumValuesCount { get; private set; }
 
   public void PrepareProjects()
@@ -35,13 +33,13 @@ public class ModelGenerator
     if (!Directory.Exists(IntfOutputPath))
       Directory.CreateDirectory(IntfOutputPath);
     ClearProjectFolder(IntfOutputPath);
-    GenProjectFile(IntfProjectName, Path.Combine(IntfOutputPath, IntfProjectName + ".csproj"));
+    GenerateProjectFile(IntfProjectName, Path.Combine(IntfOutputPath, IntfProjectName + ".csproj"));
 
 
     if (!Directory.Exists(ImplOutputPath))
       Directory.CreateDirectory(ImplOutputPath);
     ClearProjectFolder(ImplOutputPath);
-    GenProjectFile(ImplProjectName, Path.Combine(ImplOutputPath, ImplProjectName + ".csproj"));
+    GenerateProjectFile(ImplProjectName, Path.Combine(ImplOutputPath, ImplProjectName + ".csproj"));
   }
 
   private void ClearProjectFolder(string projectPath)
@@ -55,7 +53,7 @@ public class ModelGenerator
       catch { }
   }
 
-  private void GenProjectFile(string projectName, string filename)
+  private void GenerateProjectFile(string projectName, string filename)
   {
     AssurePathExists(filename);
     using (var writer = File.CreateText(filename))
@@ -68,24 +66,24 @@ public class ModelGenerator
   public void GenerateTypeFile(TypeInfo typeInfo)
   {
     if (typeInfo.TypeKind == TypeKind.Class)
-      GenClassType(typeInfo);
+      GenerateClassType(typeInfo);
     else if (typeInfo.TypeKind == TypeKind.Enum)
       GenEnumType(typeInfo);
   }
 
   #region Class type generation
 
-  private void GenClassType(TypeInfo type)
+  private void GenerateClassType(TypeInfo type)
   {
     var typeName = type.Name;
     var aNamespace = type.Namespace;
     var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
-    GenClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", "I" + typeName + ".cs"), true);
+    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", "I" + typeName + ".cs"), true);
     //var implOutputPath = Path.Combine(ImplOutputPath, aNamespace);
     //GenClassOrInterface(type, typeName, Path.Combine(implOutputPath, typeName + ".cs"), false);
   }
 
-  private void GenClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
+  private void GenerateClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
   {
     if (typeName.EndsWith('&'))
       Debug.Assert(true);
@@ -93,11 +91,11 @@ public class ModelGenerator
     using (var textWriter = File.CreateText(filename))
     using (var writer = new IndentedTextWriter(textWriter, "  "))
     {
-      GenClassOrInterface(type, typeName, writer, toInterface);
+      GenerateClassOrInterface(type, typeName, writer, toInterface);
     }
   }
 
-  private void GenClassOrInterface(TypeInfo typeInfo, string typeName, IndentedTextWriter writer, bool toInterface)
+  private void GenerateClassOrInterface(TypeInfo typeInfo, string typeName, IndentedTextWriter writer, bool toInterface)
   {
     var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
@@ -119,7 +117,7 @@ public class ModelGenerator
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
         //if (!(ModelFilter.ExcludedProperties.Contains(prop.Name)) && !(ModelFilter.ExcludedTypes.Contains(prop.PropertyType.Namespace ?? "")))
-        GenProperty(prop, writer, toInterface);
+        GenerateProperty(prop, aNamespace, writer, toInterface);
     writer.Indent--;
     writer.WriteLine("}");
     if (toInterface)
@@ -130,33 +128,40 @@ public class ModelGenerator
       GeneratedClassesCount += 1;
   }
 
-  private void GenProperty(PropInfo prop, IndentedTextWriter writer, bool toInterface)
+  private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, bool toInterface)
   {
     //if (prop.Name == "Index")
     //  Debug.Assert(true);
     var propertyType = prop.PropertyType;
-    if (propertyType.ToString() == "DocumentModel.Drawing.Charts.Index")
-      Debug.Assert(true);
-    string propertyTypeName = propertyType.GetConvertedName(true, true);
-    //string aNamespace = propertyType.GetNamespace(false);
-    //if (propertyType.HasDuplicatesInName())
-    //{
-    //  propertyTypeName = propertyType.GetConvertedName(true, false);
-    //}
+    //if (propertyType.ToString() == "DocumentModel.Drawing.Charts.Index")
+    //  Debug.Assert(true);
+    CompoundName propertyTypeName = propertyType.GetConvertedName(true, true);
+    var namespaces = propertyTypeName.GetNamespaces();
+    foreach (var ns in namespaces)
+      if (ns.StartsWith("System") || ns=="DocumentModel.BaseTypes")
+      {
+        AddGlobalUsing(ns);
+        propertyTypeName.RemoveNamespace(ns);
+      }
+      else
+      if (ns==InNamespace)
+      {
+        propertyTypeName.RemoveNamespace(ns);
+      }
+    var propTypeName = propertyTypeName.ToString();
     GenDocumentationComments(prop, writer);
     GenCustomAttributes(prop.CustomAttributes, writer);
     if (toInterface)
-      writer.WriteLine($"public {propertyTypeName}? {prop.Name} {{ get ; set; }}");
+      writer.WriteLine($"public {propTypeName}? {prop.Name} {{ get ; set; }}");
     else
     {
-      writer.WriteLine($"public {propertyTypeName}? {prop.Name}");
+      writer.WriteLine($"public {propTypeName}? {prop.Name}");
       writer.WriteLine($"{{");
       writer.WriteLine($"  get;");
       writer.WriteLine($"  set;");
       writer.WriteLine($"}}");
     }
     writer.WriteLine();
-    //AddGlobalUsing(aNamespace ?? "");
     GeneratedPropertiesCount += 1;
   }
 
@@ -328,17 +333,18 @@ public class ModelGenerator
 
   private void AddGlobalUsing(string aNamespace)
   {
-    if (aNamespace == "System.IO.Packaging")
-      return;
-    if (aNamespace.StartsWith("DocumentFormat.OpenXml"))
-      return;
     if (aNamespace != String.Empty)
       if (!GlobalUsings.Contains(aNamespace))
         GlobalUsings.Add(aNamespace);
 
   }
 
-  private void GenGlobalUsings(string filename)
+  public void GenerateGlobalUsings()
+  {
+    GenerateGlobalUsings(Path.Combine(IntfOutputPath, "GlobalUsings.cs"));
+  }
+
+  private void GenerateGlobalUsings(string filename)
   {
     AssurePathExists(filename);
     using (var writer = File.CreateText(filename))

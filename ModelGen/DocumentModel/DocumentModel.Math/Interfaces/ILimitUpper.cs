@@ -8,16 +8,16 @@ public interface ILimitUpper // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Upper Limit Properties.
   /// </summary>
-  public DocumentModel.Math.ILimitUpperProperties? LimitUpperProperties { get ; set; }
+  public ILimitUpperProperties? LimitUpperProperties { get ; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.IBase? Base { get ; set; }
+  public IBase? Base { get ; set; }
   
   /// <summary>
   /// Limit (Upper).
   /// </summary>
-  public DocumentModel.Math.ILimit? Limit { get ; set; }
+  public ILimit? Limit { get ; set; }
   
 }

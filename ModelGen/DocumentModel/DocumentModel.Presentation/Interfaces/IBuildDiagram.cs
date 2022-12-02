@@ -8,21 +8,21 @@ public interface IBuildDiagram // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Shape ID
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// Group ID
   /// </summary>
-  public System.UInt32? GroupId { get ; set; }
+  public UInt32? GroupId { get ; set; }
   
   /// <summary>
   /// Expand UI
   /// </summary>
-  public System.Boolean? UiExpand { get ; set; }
+  public Boolean? UiExpand { get ; set; }
   
   /// <summary>
   /// Diagram Build Types
   /// </summary>
-  public DocumentModel.Presentation.DiagramBuildKind? Build { get ; set; }
+  public DiagramBuildKind? Build { get ; set; }
   
 }

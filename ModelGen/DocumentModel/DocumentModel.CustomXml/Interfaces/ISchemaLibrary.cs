@@ -5,6 +5,6 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public interface ISchemaLibrary // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.ISchema>? Schemas { get ; set; }
+  public Collection<ISchema>? Schemas { get ; set; }
   
 }

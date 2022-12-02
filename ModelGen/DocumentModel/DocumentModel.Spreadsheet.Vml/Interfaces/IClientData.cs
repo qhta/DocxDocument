@@ -8,140 +8,140 @@ public interface IClientData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Object type
   /// </summary>
-  public DocumentModel.Spreadsheet.Vml.ObjectKind? ObjectType { get ; set; }
+  public ObjectKind? ObjectType { get ; set; }
   
-  public System.String? MoveWithCells { get ; set; }
+  public Collection<String>? MoveWithCellses { get ; set; }
   
-  public System.String? ResizeWithCells { get ; set; }
+  public Collection<String>? ResizeWithCellses { get ; set; }
   
-  public System.String? Anchor { get ; set; }
+  public Collection<String>? Anchors { get ; set; }
   
-  public System.String? Locked { get ; set; }
+  public Collection<String>? Lockeds { get ; set; }
   
-  public System.String? DefaultSize { get ; set; }
+  public Collection<String>? DefaultSizes { get ; set; }
   
-  public System.String? PrintObject { get ; set; }
+  public Collection<String>? PrintObjects { get ; set; }
   
-  public System.String? Disabled { get ; set; }
+  public Collection<String>? Disableds { get ; set; }
   
-  public System.String? AutoFill { get ; set; }
+  public Collection<String>? AutoFills { get ; set; }
   
-  public System.String? AutoLine { get ; set; }
+  public Collection<String>? AutoLines { get ; set; }
   
-  public System.String? AutoSizePicture { get ; set; }
+  public Collection<String>? AutoSizePictures { get ; set; }
   
-  public System.String? FormulaMacro { get ; set; }
+  public Collection<String>? FormulaMacros { get ; set; }
   
-  public System.String? HorizontalTextAlignment { get ; set; }
+  public Collection<String>? HorizontalTextAlignments { get ; set; }
   
-  public System.String? VerticalTextAlignment { get ; set; }
+  public Collection<String>? VerticalTextAlignments { get ; set; }
   
-  public System.String? LockText { get ; set; }
+  public Collection<String>? LockTexts { get ; set; }
   
-  public System.String? JustifyLastLine { get ; set; }
+  public Collection<String>? JustifyLastLines { get ; set; }
   
-  public System.String? SecretEdit { get ; set; }
+  public Collection<String>? SecretEdits { get ; set; }
   
-  public System.String? DefaultButton { get ; set; }
+  public Collection<String>? DefaultButtons { get ; set; }
   
-  public System.String? HelpButton { get ; set; }
+  public Collection<String>? HelpButtons { get ; set; }
   
-  public System.String? CancelButton { get ; set; }
+  public Collection<String>? CancelButtons { get ; set; }
   
-  public System.String? DismissButton { get ; set; }
+  public Collection<String>? DismissButtons { get ; set; }
   
-  public System.String? AcceleratorPrimary { get ; set; }
+  public Collection<String>? AcceleratorPrimaries { get ; set; }
   
-  public System.String? AcceleratorSecondary { get ; set; }
+  public Collection<String>? AcceleratorSecondaries { get ; set; }
   
-  public System.String? CommentRowTarget { get ; set; }
+  public Collection<String>? CommentRowTargets { get ; set; }
   
-  public System.String? CommentColumnTarget { get ; set; }
+  public Collection<String>? CommentColumnTargets { get ; set; }
   
-  public System.String? Visible { get ; set; }
+  public Collection<String>? Visibles { get ; set; }
   
-  public System.String? RowHidden { get ; set; }
+  public Collection<String>? RowHiddens { get ; set; }
   
-  public System.String? ColumnHidden { get ; set; }
+  public Collection<String>? ColumnHiddens { get ; set; }
   
-  public System.String? InputValidationType { get ; set; }
+  public Collection<String>? InputValidationTypes { get ; set; }
   
-  public System.String? MultiLine { get ; set; }
+  public Collection<String>? MultiLines { get ; set; }
   
-  public System.String? VerticalScrollBar { get ; set; }
+  public Collection<String>? VerticalScrollBars { get ; set; }
   
-  public System.String? ValidIds { get ; set; }
+  public Collection<String>? ValidIdses { get ; set; }
   
-  public System.String? FormulaRange { get ; set; }
+  public Collection<String>? FormulaRanges { get ; set; }
   
-  public System.String? MinDropDownWidth { get ; set; }
+  public Collection<String>? MinDropDownWidths { get ; set; }
   
-  public System.String? SelectionEntry { get ; set; }
+  public Collection<String>? SelectionEntries { get ; set; }
   
-  public System.String? Disable3DForListBoxAndDropDown { get ; set; }
+  public Collection<String>? Disable3DForListBoxAndDropDowns { get ; set; }
   
-  public System.String? SelectionType { get ; set; }
+  public Collection<String>? SelectionTypes { get ; set; }
   
-  public System.String? MultiSelections { get ; set; }
+  public Collection<String>? MultiSelectionses { get ; set; }
   
-  public System.String? ListBoxCallbackType { get ; set; }
+  public Collection<String>? ListBoxCallbackTypes { get ; set; }
   
-  public System.String? ListItem { get ; set; }
+  public Collection<String>? ListItems { get ; set; }
   
-  public System.String? DropStyle { get ; set; }
+  public Collection<String>? DropStyles { get ; set; }
   
-  public System.String? Colored { get ; set; }
+  public Collection<String>? Coloreds { get ; set; }
   
-  public System.String? DropLines { get ; set; }
+  public Collection<String>? DropLineses { get ; set; }
   
-  public System.String? Checked { get ; set; }
+  public Collection<String>? Checkeds { get ; set; }
   
-  public System.String? FormulaLink { get ; set; }
+  public Collection<String>? FormulaLinks { get ; set; }
   
-  public System.String? FormulaPicture { get ; set; }
+  public Collection<String>? FormulaPictures { get ; set; }
   
-  public System.String? Disable3D { get ; set; }
+  public Collection<String>? Disable3Ds { get ; set; }
   
-  public System.String? FirstButton { get ; set; }
+  public Collection<String>? FirstButtons { get ; set; }
   
-  public System.String? FormulaGroup { get ; set; }
+  public Collection<String>? FormulaGroups { get ; set; }
   
-  public System.String? ScrollBarPosition { get ; set; }
+  public Collection<String>? ScrollBarPositions { get ; set; }
   
-  public System.String? ScrollBarMin { get ; set; }
+  public Collection<String>? ScrollBarMins { get ; set; }
   
-  public System.String? ScrollBarMax { get ; set; }
+  public Collection<String>? ScrollBarMaxs { get ; set; }
   
-  public System.String? ScrollBarIncrement { get ; set; }
+  public Collection<String>? ScrollBarIncrements { get ; set; }
   
-  public System.String? ScrollBarPageIncrement { get ; set; }
+  public Collection<String>? ScrollBarPageIncrements { get ; set; }
   
-  public System.String? HorizontalScrollBar { get ; set; }
+  public Collection<String>? HorizontalScrollBars { get ; set; }
   
-  public System.String? ScrollBarWidth { get ; set; }
+  public Collection<String>? ScrollBarWidths { get ; set; }
   
-  public System.String? MapOcxControl { get ; set; }
+  public Collection<String>? MapOcxControls { get ; set; }
   
-  public System.String? ClipboardFormat { get ; set; }
+  public Collection<String>? ClipboardFormats { get ; set; }
   
-  public System.String? CameraObject { get ; set; }
+  public Collection<String>? CameraObjects { get ; set; }
   
-  public System.String? RecalculateAlways { get ; set; }
+  public Collection<String>? RecalculateAlwayses { get ; set; }
   
-  public System.String? AutoScaleFont { get ; set; }
+  public Collection<String>? AutoScaleFonts { get ; set; }
   
-  public System.String? DdeObject { get ; set; }
+  public Collection<String>? DdeObjects { get ; set; }
   
-  public System.String? UIObject { get ; set; }
+  public Collection<String>? UIObjects { get ; set; }
   
-  public System.String? ScriptText { get ; set; }
+  public Collection<String>? ScriptTexts { get ; set; }
   
-  public System.String? ScriptExtended { get ; set; }
+  public Collection<String>? ScriptExtendeds { get ; set; }
   
-  public System.String? ScriptLanguage { get ; set; }
+  public Collection<String>? ScriptLanguages { get ; set; }
   
-  public System.String? ScriptLocation { get ; set; }
+  public Collection<String>? ScriptLocations { get ; set; }
   
-  public System.String? FormulaTextBox { get ; set; }
+  public Collection<String>? FormulaTextBoxs { get ; set; }
   
 }

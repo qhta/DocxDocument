@@ -8,16 +8,16 @@ public interface IGeoDataPointQuery // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.EntityTypeEnum? EntityType { get ; set; }
+  public EntityTypeEnum? EntityType { get ; set; }
   
   /// <summary>
   /// latitude, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? Latitude { get ; set; }
+  public Double? Latitude { get ; set; }
   
   /// <summary>
   /// longitude, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? Longitude { get ; set; }
+  public Double? Longitude { get ; set; }
   
 }

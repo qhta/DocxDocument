@@ -13,7 +13,6 @@ namespace ModelGen;
 
 public class ModelCreator
 {
-  ModelDisplay ModelDisplay = new ModelDisplay();
   private ModelGenerator ModelGenerator = null!;
 
   public ModelCreator(string projectName, string outputPath)
@@ -45,7 +44,7 @@ public class ModelCreator
 
     ////ShowNamespaceDetails();
 
-    GenerateCode();
+    totalTime += GenerateCode();
 
     ModelDisplay.WriteLine($"Total time = {totalTime}");
   }
@@ -55,17 +54,8 @@ public class ModelCreator
     Console.WriteLine();
     ModelDisplay.ShowNamespaceDetails(new ShowOptions
     {
-      //ShowOptions.OriginalNames
       BaseTypes = true,
-      //| ShowOptions.GenericParamsConstraints 
-      //| ShowOptions.ImplementedInterfaces
-      //| ShowOptions.OutgoingRelationships
-      //| ShowOptions.IncomingRelationships
-      //| ShowOptions.EnumValues
       Properties = true,
-      //| ShowOptions.HideUnacceptedProperties
-      //| ShowOptions.HideUnacceptedTypeDetails
-      //| ShowOptions.IncludedTypes
     });
   }
 
@@ -170,12 +160,13 @@ public class ModelCreator
     //ModelMonitorDisplay.ShowUnusedTypes();
   }
 
-  private void GenerateCode()
+  private TimeSpan GenerateCode()
   {
     Console.WriteLine();
     ModelGenerator.PrepareProjects();
     int generatedCount = 0;
     Console.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
       if (typeInfo.Name == "RgbColorModelPercentage")
@@ -188,10 +179,15 @@ public class ModelCreator
       ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false, true)}");
       ModelGenerator.GenerateTypeFile(typeInfo);
     }
+    ModelGenerator.GenerateGlobalUsings();
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
     Console.WriteLine();
+    Console.WriteLine($"Generating time {ts}");
     Console.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
                       $", {ModelGenerator.GeneratedStructsCount} structs, {ModelGenerator.GeneratedEnumTypesCount} enums");
     Console.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
+    return ts;
   }
 
   #region Check types

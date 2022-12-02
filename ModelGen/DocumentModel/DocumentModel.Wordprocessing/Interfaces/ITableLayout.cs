@@ -8,6 +8,6 @@ public interface ITableLayout // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Table Layout Setting
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLayoutKind? Type { get ; set; }
+  public TableLayoutKind? Type { get ; set; }
   
 }

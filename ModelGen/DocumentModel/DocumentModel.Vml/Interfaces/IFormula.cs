@@ -8,6 +8,6 @@ public interface IFormula // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Equation
   /// </summary>
-  public System.String? Equation { get ; set; }
+  public String? Equation { get ; set; }
   
 }

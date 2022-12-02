@@ -8,6 +8,6 @@ public interface IOpenXmlFormulaElement // : DocumentModel.ITypedOpenXmlLeafText
   /// <summary>
   /// dir, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.FormulaDirection? Dir { get ; set; }
+  public FormulaDirection? Dir { get ; set; }
   
 }

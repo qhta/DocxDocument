@@ -8,6 +8,6 @@ public interface IHexBinaryValue // : DocumentModel.IStringValue
   /// <summary>
   /// Gets or sets the hex binary value
   /// </summary>
-  public System.String? Value { get ; set; }
+  public String? Value { get ; set; }
   
 }

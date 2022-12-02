@@ -8,10 +8,10 @@ public interface IPlotAreaRegion // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// PlotSurface.
   /// </summary>
-  public DocumentModel.Drawing.IPlotSurface? PlotSurface { get ; set; }
+  public IPlotSurface? PlotSurface { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISeries>? Serieses { get ; set; }
+  public Collection<ISeries>? Serieses { get ; set; }
   
-  public DocumentModel.Drawing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

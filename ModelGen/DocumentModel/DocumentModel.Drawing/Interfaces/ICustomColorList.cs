@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICustomColorList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ICustomColor>? CustomColors { get ; set; }
+  public Collection<ICustomColor>? CustomColors { get ; set; }
   
 }

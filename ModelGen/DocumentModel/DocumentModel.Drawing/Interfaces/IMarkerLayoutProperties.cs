@@ -8,11 +8,11 @@ public interface IMarkerLayoutProperties // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// symbol, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.Drawing.MarkerStyle? Symbol { get ; set; }
+  public MarkerStyle? Symbol { get ; set; }
   
   /// <summary>
   /// size, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Byte? Size { get ; set; }
+  public Byte? Size { get ; set; }
   
 }

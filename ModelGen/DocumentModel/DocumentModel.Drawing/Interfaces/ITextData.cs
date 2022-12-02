@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ITextData // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Drawing.IOpenXmlFormulaElement? Formula { get ; set; }
+  public IOpenXmlFormulaElement? Formula { get ; set; }
   
-  public System.String? VXsdstring { get ; set; }
+  public String? VXsdstring { get ; set; }
   
 }

@@ -8,26 +8,26 @@ public interface IWebExtensionStoreReference // : DocumentModel.ITypedOpenXmlCom
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// version, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Version { get ; set; }
+  public String? Version { get ; set; }
   
   /// <summary>
   /// store, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? Store { get ; set; }
+  public String? Store { get ; set; }
   
   /// <summary>
   /// storeType, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.String? StoreType { get ; set; }
+  public String? StoreType { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public IOfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

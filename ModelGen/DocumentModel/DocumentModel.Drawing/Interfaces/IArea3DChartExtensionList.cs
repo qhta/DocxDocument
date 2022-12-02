@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IArea3DChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IArea3DChartExtension>? Area3DChartExtensions { get ; set; }
+  public Collection<IArea3DChartExtension>? Area3DChartExtensions { get ; set; }
   
 }

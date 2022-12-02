@@ -8,11 +8,11 @@ public interface IPoint2DType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// X-Axis Coordinate
   /// </summary>
-  public System.Int64? X { get ; set; }
+  public Int64? X { get ; set; }
   
   /// <summary>
   /// Y-Axis Coordinate
   /// </summary>
-  public System.Int64? Y { get ; set; }
+  public Int64? Y { get ; set; }
   
 }

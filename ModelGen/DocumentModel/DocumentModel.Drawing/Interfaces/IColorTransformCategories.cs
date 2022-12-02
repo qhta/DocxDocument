@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IColorTransformCategories // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IColorTransformCategory>? ColorTransformCategories { get ; set; }
+  public Collection<IColorTransformCategory>? ColorTransformCategories { get ; set; }
   
 }

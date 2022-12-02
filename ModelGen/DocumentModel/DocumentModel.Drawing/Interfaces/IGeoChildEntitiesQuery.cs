@@ -8,11 +8,11 @@ public interface IGeoChildEntitiesQuery // : DocumentModel.ITypedOpenXmlComposit
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? EntityId { get ; set; }
+  public String? EntityId { get ; set; }
   
   /// <summary>
   /// GeoChildTypes.
   /// </summary>
-  public DocumentModel.Drawing.IGeoChildTypes? GeoChildTypes { get ; set; }
+  public IGeoChildTypes? GeoChildTypes { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface ITupleItems // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.String>? Xstrings { get ; set; }
+  public Collection<String>? Xstrings { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface IShapeHandles // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Vml.IShapeHandle>? ShapeHandles { get ; set; }
+  public Collection<IShapeHandle>? ShapeHandles { get ; set; }
   
 }

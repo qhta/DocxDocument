@@ -8,7 +8,7 @@ public interface ITextFontType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Text Typeface
   /// </summary>
-  public System.String? Typeface { get ; set; }
+  public String? Typeface { get ; set; }
   
   /// <summary>
   /// Panose Setting
@@ -18,11 +18,11 @@ public interface ITextFontType // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Similar Font Family
   /// </summary>
-  public System.SByte? PitchFamily { get ; set; }
+  public SByte? PitchFamily { get ; set; }
   
   /// <summary>
   /// Similar Character Set
   /// </summary>
-  public System.SByte? CharacterSet { get ; set; }
+  public SByte? CharacterSet { get ; set; }
   
 }

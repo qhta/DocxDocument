@@ -5,8 +5,8 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IUserShapes // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public DocumentModel.Drawing.IRelativeAnchorSize? RelativeAnchorSize { get ; set; }
+  public Collection<IRelativeAnchorSize>? RelativeAnchorSizes { get ; set; }
   
-  public DocumentModel.Drawing.IAbsoluteAnchorSize? AbsoluteAnchorSize { get ; set; }
+  public Collection<IAbsoluteAnchorSize>? AbsoluteAnchorSizes { get ; set; }
   
 }

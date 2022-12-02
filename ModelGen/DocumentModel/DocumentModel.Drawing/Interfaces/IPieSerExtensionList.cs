@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IPieSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IPieSerExtension>? PieSerExtensions { get ; set; }
+  public Collection<IPieSerExtension>? PieSerExtensions { get ; set; }
   
 }

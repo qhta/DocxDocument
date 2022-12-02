@@ -8,31 +8,31 @@ public interface IConditionalFormat // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// scope, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.ScopeKind? Scope { get ; set; }
+  public ScopeKind? Scope { get ; set; }
   
   /// <summary>
   /// type, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Spreadsheet.RuleKind? Type { get ; set; }
+  public RuleKind? Type { get ; set; }
   
   /// <summary>
   /// priority, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.UInt32? Priority { get ; set; }
+  public UInt32? Priority { get ; set; }
   
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
   /// <summary>
   /// PivotAreas.
   /// </summary>
-  public DocumentModel.Spreadsheet.IPivotAreas? PivotAreas { get ; set; }
+  public IPivotAreas? PivotAreas { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

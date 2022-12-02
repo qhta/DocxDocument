@@ -8,6 +8,6 @@ public interface IRunPropertiesDefault // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRunPropertiesBaseStyle? RunPropertiesBaseStyle { get ; set; }
+  public IRunPropertiesBaseStyle? RunPropertiesBaseStyle { get ; set; }
   
 }

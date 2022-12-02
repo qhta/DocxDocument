@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ITabStopList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ITabStop>? TabStops { get ; set; }
+  public Collection<ITabStop>? TabStops { get ; set; }
   
 }

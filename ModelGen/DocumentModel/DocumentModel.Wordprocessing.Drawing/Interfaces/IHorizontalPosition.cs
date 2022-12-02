@@ -8,21 +8,21 @@ public interface IHorizontalPosition // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Horizontal Position Relative Base
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing.HorizontalRelativePositionKind? RelativeFrom { get ; set; }
+  public HorizontalRelativePositionKind? RelativeFrom { get ; set; }
   
   /// <summary>
   /// Relative Horizontal Alignment.
   /// </summary>
-  public System.String? HorizontalAlignment { get ; set; }
+  public String? HorizontalAlignment { get ; set; }
   
   /// <summary>
   /// Absolute Position Offset.
   /// </summary>
-  public System.String? PositionOffset { get ; set; }
+  public String? PositionOffset { get ; set; }
   
   /// <summary>
   /// PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public System.String? PercentagePositionHeightOffset { get ; set; }
+  public String? PercentagePositionHeightOffset { get ; set; }
   
 }

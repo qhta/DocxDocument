@@ -8,8 +8,8 @@ public interface IBarChartExtension // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Drawing.IFilteredBarSeries? FilteredBarSeries { get ; set; }
+  public IFilteredBarSeries? FilteredBarSeries { get ; set; }
   
 }

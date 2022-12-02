@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISubtotals // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<System.UInt32>? UnsignedIntegerTypes { get ; set; }
+  public Collection<UInt32>? UnsignedIntegerTypes { get ; set; }
   
 }

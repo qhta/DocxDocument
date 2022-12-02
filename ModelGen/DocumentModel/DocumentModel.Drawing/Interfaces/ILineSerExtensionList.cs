@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ILineSerExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ILineSerExtension>? LineSerExtensions { get ; set; }
+  public Collection<ILineSerExtension>? LineSerExtensions { get ; set; }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IChartSpaceExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IChartSpaceExtension>? ChartSpaceExtensions { get ; set; }
+  public Collection<IChartSpaceExtension>? ChartSpaceExtensions { get ; set; }
   
 }

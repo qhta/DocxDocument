@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IOfficeArtExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IExtension>? Extensions { get ; set; }
+  public Collection<DocumentModel.Drawing.IExtension>? Extensions { get ; set; }
   
 }

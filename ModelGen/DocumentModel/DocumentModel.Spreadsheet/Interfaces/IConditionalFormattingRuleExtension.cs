@@ -8,8 +8,8 @@ public interface IConditionalFormattingRuleExtension // : DocumentModel.ITypedOp
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

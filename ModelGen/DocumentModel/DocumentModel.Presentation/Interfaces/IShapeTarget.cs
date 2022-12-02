@@ -8,31 +8,31 @@ public interface IShapeTarget // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Shape ID
   /// </summary>
-  public System.String? ShapeId { get ; set; }
+  public String? ShapeId { get ; set; }
   
   /// <summary>
   /// Background.
   /// </summary>
-  public System.Boolean? BackgroundAnimation { get ; set; }
+  public Boolean? BackgroundAnimation { get ; set; }
   
   /// <summary>
   /// Subshape.
   /// </summary>
-  public DocumentModel.Presentation.ITimeListSubShapeIdType? SubShape { get ; set; }
+  public ITimeListSubShapeIdType? SubShape { get ; set; }
   
   /// <summary>
   /// OLE Chart Element.
   /// </summary>
-  public DocumentModel.Presentation.IOleChartElement? OleChartElement { get ; set; }
+  public IOleChartElement? OleChartElement { get ; set; }
   
   /// <summary>
   /// Text Element.
   /// </summary>
-  public DocumentModel.Presentation.ITextElement? TextElement { get ; set; }
+  public ITextElement? TextElement { get ; set; }
   
   /// <summary>
   /// Graphic Element.
   /// </summary>
-  public DocumentModel.Presentation.IGraphicElement? GraphicElement { get ; set; }
+  public IGraphicElement? GraphicElement { get ; set; }
   
 }

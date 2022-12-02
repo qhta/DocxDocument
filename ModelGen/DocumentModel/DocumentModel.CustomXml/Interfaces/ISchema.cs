@@ -8,16 +8,16 @@ public interface ISchema // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Custom XML Schema Namespace
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
   /// <summary>
   /// Resource File Location
   /// </summary>
-  public System.String? ManifestLocation { get ; set; }
+  public String? ManifestLocation { get ; set; }
   
   /// <summary>
   /// Custom XML Schema Location
   /// </summary>
-  public System.String? SchemaLocation { get ; set; }
+  public String? SchemaLocation { get ; set; }
   
 }

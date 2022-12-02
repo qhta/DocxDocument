@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IToolbars // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IAllocatedCommandManifest>? AllocatedCommandManifests { get ; set; }
+  public Collection<IAllocatedCommandManifest>? AllocatedCommandManifests { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IToolbarData>? ToolbarDatas { get ; set; }
+  public Collection<IToolbarData>? ToolbarDatas { get ; set; }
   
 }

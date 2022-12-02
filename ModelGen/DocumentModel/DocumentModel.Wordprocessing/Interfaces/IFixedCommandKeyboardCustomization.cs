@@ -8,7 +8,7 @@ public interface IFixedCommandKeyboardCustomization // : DocumentModel.ITypedOpe
   /// <summary>
   /// fciName
   /// </summary>
-  public System.String? CommandName { get ; set; }
+  public String? CommandName { get ; set; }
   
   /// <summary>
   /// fciIndex

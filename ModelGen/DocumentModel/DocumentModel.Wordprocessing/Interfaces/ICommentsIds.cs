@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ICommentsIds // : DocumentModel.ITypedOpenXmlPartRootElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ICommentId>? CommentIds { get ; set; }
+  public Collection<ICommentId>? CommentIds { get ; set; }
   
 }

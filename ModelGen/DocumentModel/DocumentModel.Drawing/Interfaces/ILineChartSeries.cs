@@ -8,47 +8,47 @@ public interface ILineChartSeries // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Index.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// Order.
   /// </summary>
-  public System.UInt32? Order { get ; set; }
+  public UInt32? Order { get ; set; }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  public DocumentModel.Drawing.ISeriesText? SeriesText { get ; set; }
+  public ISeriesText? SeriesText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// Marker.
   /// </summary>
-  public DocumentModel.Drawing.IMarker? Marker { get ; set; }
+  public IMarker? Marker { get ; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public DocumentModel.Drawing.IPictureOptions? PictureOptions { get ; set; }
+  public IPictureOptions? PictureOptions { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDataPoint>? DataPoints { get ; set; }
+  public Collection<IDataPoint>? DataPoints { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ITrendline>? Trendlines { get ; set; }
+  public Collection<ITrendline>? Trendlines { get ; set; }
   
-  public DocumentModel.Drawing.IErrorBars? ErrorBars { get ; set; }
+  public IErrorBars? ErrorBars { get ; set; }
   
-  public DocumentModel.Drawing.ICategoryAxisData? CategoryAxisData { get ; set; }
+  public ICategoryAxisData? CategoryAxisData { get ; set; }
   
-  public DocumentModel.Drawing.IValues? Values { get ; set; }
+  public IValues? Values { get ; set; }
   
-  public System.Boolean? Smooth { get ; set; }
+  public Boolean? Smooth { get ; set; }
   
-  public DocumentModel.Drawing.ILineSerExtensionList? LineSerExtensionList { get ; set; }
+  public ILineSerExtensionList? LineSerExtensionList { get ; set; }
   
 }

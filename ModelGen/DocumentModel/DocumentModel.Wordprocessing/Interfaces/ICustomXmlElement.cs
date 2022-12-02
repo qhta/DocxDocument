@@ -8,16 +8,16 @@ public interface ICustomXmlElement // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Gets or sets the custom XML Markup Namespace.
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
   /// <summary>
   /// Gets or sets the element name.
   /// </summary>
-  public System.String? Element { get ; set; }
+  public String? Element { get ; set; }
   
   /// <summary>
   /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  public DocumentModel.Wordprocessing.ICustomXmlProperties? CustomXmlProperties { get ; set; }
+  public ICustomXmlProperties? CustomXmlProperties { get ; set; }
   
 }

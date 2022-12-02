@@ -8,23 +8,23 @@ public interface IOneCellAnchor // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// FromMarker.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.IFromMarker? FromMarker { get ; set; }
+  public IFromMarker? FromMarker { get ; set; }
   
   /// <summary>
   /// Extent.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.IExtent? Extent { get ; set; }
+  public IExtent? Extent { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IShape? Shape { get ; set; }
+  public IShape? Shape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGroupShape? GroupShape { get ; set; }
+  public IGroupShape? GroupShape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IGraphicFrame? GraphicFrame { get ; set; }
+  public IGraphicFrame? GraphicFrame { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IConnectionShape? ConnectionShape { get ; set; }
+  public IConnectionShape? ConnectionShape { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IPicture? Picture { get ; set; }
+  public IPicture? Picture { get ; set; }
   
-  public DocumentModel.Spreadsheet.Drawing.IClientData? ClientData { get ; set; }
+  public IClientData? ClientData { get ; set; }
   
 }

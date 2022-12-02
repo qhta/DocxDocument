@@ -8,11 +8,11 @@ public interface IHelpText // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Help Text Type
   /// </summary>
-  public DocumentModel.Wordprocessing.InfoTextKind? Type { get ; set; }
+  public InfoTextKind? Type { get ; set; }
   
   /// <summary>
   /// Help Text Value
   /// </summary>
-  public System.String? Val { get ; set; }
+  public String? Val { get ; set; }
   
 }

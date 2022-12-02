@@ -8,26 +8,26 @@ public interface IXmlColumnProperties // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// XML Map Id
   /// </summary>
-  public System.UInt32? MapId { get ; set; }
+  public UInt32? MapId { get ; set; }
   
   /// <summary>
   /// XPath
   /// </summary>
-  public System.String? XPath { get ; set; }
+  public String? XPath { get ; set; }
   
   /// <summary>
   /// Denormalized
   /// </summary>
-  public System.Boolean? Denormalized { get ; set; }
+  public Boolean? Denormalized { get ; set; }
   
   /// <summary>
   /// XML Data Type
   /// </summary>
-  public DocumentModel.Spreadsheet.XmlDataKind? XmlDataType { get ; set; }
+  public XmlDataKind? XmlDataType { get ; set; }
   
   /// <summary>
   /// Future Feature Data Storage Area.
   /// </summary>
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

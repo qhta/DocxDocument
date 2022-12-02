@@ -8,36 +8,36 @@ public interface IDataLabel // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Index.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
-  public System.Boolean? Delete { get ; set; }
+  public Boolean? Delete { get ; set; }
   
-  public DocumentModel.Drawing.ILayout? Layout { get ; set; }
+  public ILayout? Layout { get ; set; }
   
-  public DocumentModel.Drawing.IChartText? ChartText { get ; set; }
+  public IChartText? ChartText { get ; set; }
   
-  public DocumentModel.Drawing.INumberingFormat? NumberingFormat { get ; set; }
+  public INumberingFormat? NumberingFormat { get ; set; }
   
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
-  public DocumentModel.Drawing.ITextProperties? TextProperties { get ; set; }
+  public ITextProperties? TextProperties { get ; set; }
   
-  public DocumentModel.Drawing.DataLabelPositionKind? DataLabelPosition { get ; set; }
+  public DataLabelPositionKind? DataLabelPosition { get ; set; }
   
-  public System.Boolean? ShowLegendKey { get ; set; }
+  public Boolean? ShowLegendKey { get ; set; }
   
-  public System.Boolean? ShowValue { get ; set; }
+  public Boolean? ShowValue { get ; set; }
   
-  public System.Boolean? ShowCategoryName { get ; set; }
+  public Boolean? ShowCategoryName { get ; set; }
   
-  public System.Boolean? ShowSeriesName { get ; set; }
+  public Boolean? ShowSeriesName { get ; set; }
   
-  public System.Boolean? ShowPercent { get ; set; }
+  public Boolean? ShowPercent { get ; set; }
   
-  public System.Boolean? ShowBubbleSize { get ; set; }
+  public Boolean? ShowBubbleSize { get ; set; }
   
-  public System.String? Separator { get ; set; }
+  public String? Separator { get ; set; }
   
-  public DocumentModel.Drawing.IDLblExtensionList? DLblExtensionList { get ; set; }
+  public IDLblExtensionList? DLblExtensionList { get ; set; }
   
 }

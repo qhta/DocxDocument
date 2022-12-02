@@ -8,16 +8,16 @@ public interface IGeoPolygon // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// polygonId, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? PolygonId { get ; set; }
+  public String? PolygonId { get ; set; }
   
   /// <summary>
   /// numPoints, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Int32? NumPoints { get ; set; }
+  public Int32? NumPoints { get ; set; }
   
   /// <summary>
   /// pcaRings, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? PcaRings { get ; set; }
+  public String? PcaRings { get ; set; }
   
 }

@@ -8,18 +8,18 @@ public interface IRowItem // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Item Type
   /// </summary>
-  public DocumentModel.Spreadsheet.ItemKind? ItemType { get ; set; }
+  public ItemKind? ItemType { get ; set; }
   
   /// <summary>
   /// Repeated Items Count
   /// </summary>
-  public System.UInt32? RepeatedItemCount { get ; set; }
+  public UInt32? RepeatedItemCount { get ; set; }
   
   /// <summary>
   /// Data Field Index
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.Int32>? MemberPropertyIndexs { get ; set; }
+  public Collection<Int32>? MemberPropertyIndexs { get ; set; }
   
 }

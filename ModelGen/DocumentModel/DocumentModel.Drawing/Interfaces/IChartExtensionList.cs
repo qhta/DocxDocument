@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IChartExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDataDisplayOptions16>? DataDisplayOptions16s { get ; set; }
+  public Collection<IDataDisplayOptions16>? DataDisplayOptions16s { get ; set; }
   
 }

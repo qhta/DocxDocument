@@ -5,24 +5,24 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IFormFieldData // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.String? FormFieldName { get ; set; }
+  public Collection<String>? FormFieldNames { get ; set; }
   
-  public System.Boolean? Enabled { get ; set; }
+  public Collection<Boolean>? Enableds { get ; set; }
   
-  public System.Boolean? CalculateOnExit { get ; set; }
+  public Collection<Boolean>? CalculateOnExits { get ; set; }
   
-  public System.String? EntryMacro { get ; set; }
+  public Collection<String>? EntryMacros { get ; set; }
   
-  public System.String? ExitMacro { get ; set; }
+  public Collection<String>? ExitMacros { get ; set; }
   
-  public DocumentModel.Wordprocessing.IHelpText? HelpText { get ; set; }
+  public Collection<IHelpText>? HelpTexts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IStatusText? StatusText { get ; set; }
+  public Collection<IStatusText>? StatusTexts { get ; set; }
   
-  public DocumentModel.Wordprocessing.ICheckBox? CheckBox { get ; set; }
+  public Collection<ICheckBox>? CheckBoxs { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDropDownListFormField? DropDownListFormField { get ; set; }
+  public Collection<IDropDownListFormField>? DropDownListFormFields { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITextInput? TextInput { get ; set; }
+  public Collection<ITextInput>? TextInputs { get ; set; }
   
 }

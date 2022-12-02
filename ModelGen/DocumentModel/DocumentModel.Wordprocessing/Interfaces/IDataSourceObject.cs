@@ -8,35 +8,35 @@ public interface IDataSourceObject // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// UDL Connection String.
   /// </summary>
-  public System.String? UdlConnectionString { get ; set; }
+  public String? UdlConnectionString { get ; set; }
   
   /// <summary>
   /// Data Source Table Name.
   /// </summary>
-  public System.String? DataSourceTableName { get ; set; }
+  public String? DataSourceTableName { get ; set; }
   
   /// <summary>
   /// ODSO Data Source File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.IRelationshipType? SourceReference { get ; set; }
+  public IRelationshipType? SourceReference { get ; set; }
   
   /// <summary>
   /// Column Delimiter for Data Source.
   /// </summary>
-  public System.UInt32? ColumnDelimiter { get ; set; }
+  public UInt32? ColumnDelimiter { get ; set; }
   
   /// <summary>
   /// ODSO Data Source Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeSourceKind? MailMergeSource { get ; set; }
+  public MailMergeSourceKind? MailMergeSource { get ; set; }
   
   /// <summary>
   /// First Row of Data Source Contains Column Names.
   /// </summary>
-  public System.Boolean? FirstRowHeader { get ; set; }
+  public Boolean? FirstRowHeader { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IFieldMapData>? FieldMapDatas { get ; set; }
+  public Collection<IFieldMapData>? FieldMapDatas { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRelationshipType? RecipientDataReference { get ; set; }
+  public IRelationshipType? RecipientDataReference { get ; set; }
   
 }

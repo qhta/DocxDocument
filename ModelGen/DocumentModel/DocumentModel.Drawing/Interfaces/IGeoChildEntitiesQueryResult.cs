@@ -8,11 +8,11 @@ public interface IGeoChildEntitiesQueryResult // : DocumentModel.ITypedOpenXmlCo
   /// <summary>
   /// GeoChildEntitiesQuery.
   /// </summary>
-  public DocumentModel.Drawing.IGeoChildEntitiesQuery? GeoChildEntitiesQuery { get ; set; }
+  public IGeoChildEntitiesQuery? GeoChildEntitiesQuery { get ; set; }
   
   /// <summary>
   /// GeoChildEntities.
   /// </summary>
-  public DocumentModel.Drawing.IGeoChildEntities? GeoChildEntities { get ; set; }
+  public IGeoChildEntities? GeoChildEntities { get ; set; }
   
 }

@@ -8,46 +8,46 @@ public interface ISurfaceChartSeries // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Index.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
   /// <summary>
   /// Order.
   /// </summary>
-  public System.UInt32? Order { get ; set; }
+  public UInt32? Order { get ; set; }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  public DocumentModel.Drawing.ISeriesText? SeriesText { get ; set; }
+  public ISeriesText? SeriesText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawing.IChartShapeProperties? ChartShapeProperties { get ; set; }
+  public IChartShapeProperties? ChartShapeProperties { get ; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public DocumentModel.Drawing.IPictureOptions? PictureOptions { get ; set; }
+  public IPictureOptions? PictureOptions { get ; set; }
   
   /// <summary>
   /// CategoryAxisData.
   /// </summary>
-  public DocumentModel.Drawing.ICategoryAxisData? CategoryAxisData { get ; set; }
+  public ICategoryAxisData? CategoryAxisData { get ; set; }
   
   /// <summary>
   /// Values.
   /// </summary>
-  public DocumentModel.Drawing.IValues? Values { get ; set; }
+  public IValues? Values { get ; set; }
   
   /// <summary>
   /// Bubble3D.
   /// </summary>
-  public System.Boolean? Bubble3D { get ; set; }
+  public Boolean? Bubble3D { get ; set; }
   
   /// <summary>
   /// SurfaceSerExtensionList.
   /// </summary>
-  public DocumentModel.Drawing.ISurfaceSerExtensionList? SurfaceSerExtensionList { get ; set; }
+  public ISurfaceSerExtensionList? SurfaceSerExtensionList { get ; set; }
   
 }

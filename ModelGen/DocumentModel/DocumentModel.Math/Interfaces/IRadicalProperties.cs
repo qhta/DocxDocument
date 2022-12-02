@@ -8,11 +8,11 @@ public interface IRadicalProperties // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// Hide Degree.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideDegree { get ; set; }
+  public BooleanKind? HideDegree { get ; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
+  public IControlProperties? ControlProperties { get ; set; }
   
 }

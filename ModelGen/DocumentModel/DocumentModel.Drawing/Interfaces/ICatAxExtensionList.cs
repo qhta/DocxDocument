@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICatAxExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ICatAxExtension>? CatAxExtensions { get ; set; }
+  public Collection<ICatAxExtension>? CatAxExtensions { get ; set; }
   
 }

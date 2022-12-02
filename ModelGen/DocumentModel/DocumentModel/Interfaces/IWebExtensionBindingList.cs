@@ -5,6 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface IWebExtensionBindingList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.IWebExtensionBinding>? WebExtensionBindings { get ; set; }
+  public Collection<IWebExtensionBinding>? WebExtensionBindings { get ; set; }
   
 }

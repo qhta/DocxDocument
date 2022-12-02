@@ -8,6 +8,6 @@ public interface IWheelReverseTransition // : DocumentModel.ITypedOpenXmlLeafEle
   /// <summary>
   /// Spokes
   /// </summary>
-  public System.UInt32? Spokes { get ; set; }
+  public UInt32? Spokes { get ; set; }
   
 }

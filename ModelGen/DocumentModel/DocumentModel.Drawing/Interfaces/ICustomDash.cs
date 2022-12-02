@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ICustomDash // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IDashStop>? DashStops { get ; set; }
+  public Collection<IDashStop>? DashStops { get ; set; }
   
 }

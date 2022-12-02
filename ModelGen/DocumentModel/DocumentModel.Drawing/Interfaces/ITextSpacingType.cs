@@ -8,11 +8,11 @@ public interface ITextSpacingType // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// Spacing Percent.
   /// </summary>
-  public System.Int32? SpacingPercent { get ; set; }
+  public Int32? SpacingPercent { get ; set; }
   
   /// <summary>
   /// Spacing Points.
   /// </summary>
-  public System.Int32? SpacingPoints { get ; set; }
+  public Int32? SpacingPoints { get ; set; }
   
 }

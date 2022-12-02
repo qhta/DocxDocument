@@ -8,31 +8,31 @@ public interface IGroup // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Group Name
   /// </summary>
-  public System.String? Name { get ; set; }
+  public String? Name { get ; set; }
   
   /// <summary>
   /// Unique Group Name
   /// </summary>
-  public System.String? UniqueName { get ; set; }
+  public String? UniqueName { get ; set; }
   
   /// <summary>
   /// Group Caption
   /// </summary>
-  public System.String? Caption { get ; set; }
+  public String? Caption { get ; set; }
   
   /// <summary>
   /// Parent Unique Name
   /// </summary>
-  public System.String? UniqueParent { get ; set; }
+  public String? UniqueParent { get ; set; }
   
   /// <summary>
   /// Group Id
   /// </summary>
-  public System.Int32? Id { get ; set; }
+  public Int32? Id { get ; set; }
   
   /// <summary>
   /// OLAP Group Members.
   /// </summary>
-  public DocumentModel.Spreadsheet.IGroupMembers? GroupMembers { get ; set; }
+  public IGroupMembers? GroupMembers { get ; set; }
   
 }

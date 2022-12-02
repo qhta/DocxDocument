@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ISlideLayoutIdList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ISlideLayoutId>? SlideLayoutIds { get ; set; }
+  public Collection<ISlideLayoutId>? SlideLayoutIds { get ; set; }
   
 }

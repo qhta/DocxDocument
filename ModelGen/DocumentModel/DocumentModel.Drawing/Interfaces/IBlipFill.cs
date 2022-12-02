@@ -8,25 +8,25 @@ public interface IBlipFill // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// DPI Setting
   /// </summary>
-  public System.UInt32? Dpi { get ; set; }
+  public UInt32? Dpi { get ; set; }
   
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  public System.Boolean? RotateWithShape { get ; set; }
+  public Boolean? RotateWithShape { get ; set; }
   
   /// <summary>
   /// Blip.
   /// </summary>
-  public DocumentModel.Drawing.IBlip? Blip { get ; set; }
+  public IBlip? Blip { get ; set; }
   
   /// <summary>
   /// Source Rectangle.
   /// </summary>
-  public DocumentModel.Drawing.IRelativeRectangleType? SourceRectangle { get ; set; }
+  public IRelativeRectangleType? SourceRectangle { get ; set; }
   
-  public DocumentModel.Drawing.ITile? Tile { get ; set; }
+  public ITile? Tile { get ; set; }
   
-  public DocumentModel.Drawing.IStretch? Stretch { get ; set; }
+  public IStretch? Stretch { get ; set; }
   
 }

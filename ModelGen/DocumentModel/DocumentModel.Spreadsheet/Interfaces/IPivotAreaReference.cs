@@ -8,90 +8,90 @@ public interface IPivotAreaReference // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// Field Index
   /// </summary>
-  public System.UInt32? Field { get ; set; }
+  public UInt32? Field { get ; set; }
   
   /// <summary>
   /// Item Index Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
   /// <summary>
   /// Selected
   /// </summary>
-  public System.Boolean? Selected { get ; set; }
+  public Boolean? Selected { get ; set; }
   
   /// <summary>
   /// Positional Reference
   /// </summary>
-  public System.Boolean? ByPosition { get ; set; }
+  public Boolean? ByPosition { get ; set; }
   
   /// <summary>
   /// Relative Reference
   /// </summary>
-  public System.Boolean? Relative { get ; set; }
+  public Boolean? Relative { get ; set; }
   
   /// <summary>
   /// Include Default Filter
   /// </summary>
-  public System.Boolean? DefaultSubtotal { get ; set; }
+  public Boolean? DefaultSubtotal { get ; set; }
   
   /// <summary>
   /// Include Sum Filter
   /// </summary>
-  public System.Boolean? SumSubtotal { get ; set; }
+  public Boolean? SumSubtotal { get ; set; }
   
   /// <summary>
   /// Include CountA Filter
   /// </summary>
-  public System.Boolean? CountASubtotal { get ; set; }
+  public Boolean? CountASubtotal { get ; set; }
   
   /// <summary>
   /// Include Average Filter
   /// </summary>
-  public System.Boolean? AverageSubtotal { get ; set; }
+  public Boolean? AverageSubtotal { get ; set; }
   
   /// <summary>
   /// Include Maximum Filter
   /// </summary>
-  public System.Boolean? MaxSubtotal { get ; set; }
+  public Boolean? MaxSubtotal { get ; set; }
   
   /// <summary>
   /// Include Minimum Filter
   /// </summary>
-  public System.Boolean? MinSubtotal { get ; set; }
+  public Boolean? MinSubtotal { get ; set; }
   
   /// <summary>
   /// Include Product Filter
   /// </summary>
-  public System.Boolean? ApplyProductInSubtotal { get ; set; }
+  public Boolean? ApplyProductInSubtotal { get ; set; }
   
   /// <summary>
   /// Include Count Subtotal
   /// </summary>
-  public System.Boolean? CountSubtotal { get ; set; }
+  public Boolean? CountSubtotal { get ; set; }
   
   /// <summary>
   /// Include StdDev Filter
   /// </summary>
-  public System.Boolean? ApplyStandardDeviationInSubtotal { get ; set; }
+  public Boolean? ApplyStandardDeviationInSubtotal { get ; set; }
   
   /// <summary>
   /// Include StdDevP Filter
   /// </summary>
-  public System.Boolean? ApplyStandardDeviationPInSubtotal { get ; set; }
+  public Boolean? ApplyStandardDeviationPInSubtotal { get ; set; }
   
   /// <summary>
   /// Include Var Filter
   /// </summary>
-  public System.Boolean? ApplyVarianceInSubtotal { get ; set; }
+  public Boolean? ApplyVarianceInSubtotal { get ; set; }
   
   /// <summary>
   /// Include VarP Filter
   /// </summary>
-  public System.Boolean? ApplyVariancePInSubtotal { get ; set; }
+  public Boolean? ApplyVariancePInSubtotal { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? FieldItems { get ; set; }
+  public Collection<UInt32>? FieldItems { get ; set; }
   
-  public DocumentModel.Spreadsheet.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

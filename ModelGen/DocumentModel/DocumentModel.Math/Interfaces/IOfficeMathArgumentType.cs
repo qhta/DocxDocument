@@ -8,6 +8,6 @@ public interface IOfficeMathArgumentType // : DocumentModel.ITypedOpenXmlComposi
   /// <summary>
   /// Argument Properties.
   /// </summary>
-  public DocumentModel.Math.IArgumentProperties? ArgumentProperties { get ; set; }
+  public IArgumentProperties? ArgumentProperties { get ; set; }
   
 }

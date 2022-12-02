@@ -8,6 +8,6 @@ public interface IOpenXmlMiscNode // : DocumentModel.IOpenXmlElement
   /// <summary>
   /// Gets the type of XML node.
   /// </summary>
-  public System.Xml.XmlNodeType? XmlNodeType { get ; set; }
+  public XmlNodeType? XmlNodeType { get ; set; }
   
 }

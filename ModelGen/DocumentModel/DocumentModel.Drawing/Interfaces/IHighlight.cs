@@ -5,16 +5,16 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface IHighlight // : DocumentModel.Drawing.IColorType
 {
-  public DocumentModel.Drawing.IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public IRgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
-  public DocumentModel.Drawing.IRgbColorModelHex? RgbColorModelHex { get ; set; }
+  public IRgbColorModelHex? RgbColorModelHex { get ; set; }
   
-  public DocumentModel.Drawing.IHslColor? HslColor { get ; set; }
+  public IHslColor? HslColor { get ; set; }
   
-  public DocumentModel.Drawing.ISystemColor? SystemColor { get ; set; }
+  public ISystemColor? SystemColor { get ; set; }
   
-  public DocumentModel.Drawing.ISchemeColor? SchemeColor { get ; set; }
+  public ISchemeColor? SchemeColor { get ; set; }
   
-  public DocumentModel.Drawing.IPresetColor? PresetColor { get ; set; }
+  public IPresetColor? PresetColor { get ; set; }
   
 }

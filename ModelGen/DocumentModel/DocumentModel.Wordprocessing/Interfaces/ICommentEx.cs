@@ -18,6 +18,6 @@ public interface ICommentEx // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// done, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.Boolean? Done { get ; set; }
+  public Boolean? Done { get ; set; }
   
 }

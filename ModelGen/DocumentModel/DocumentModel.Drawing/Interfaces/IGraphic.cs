@@ -8,6 +8,6 @@ public interface IGraphic // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Graphic Object Data.
   /// </summary>
-  public DocumentModel.Drawing.IGraphicData? GraphicData { get ; set; }
+  public IGraphicData? GraphicData { get ; set; }
   
 }

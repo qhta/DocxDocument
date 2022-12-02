@@ -8,11 +8,11 @@ public interface IParentCommentIdentifier // : DocumentModel.ITypedOpenXmlLeafEl
   /// <summary>
   /// authorId, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? AuthorId { get ; set; }
+  public UInt32? AuthorId { get ; set; }
   
   /// <summary>
   /// idx, this property is only available in Office 2013 and later.
   /// </summary>
-  public System.UInt32? Index { get ; set; }
+  public UInt32? Index { get ; set; }
   
 }

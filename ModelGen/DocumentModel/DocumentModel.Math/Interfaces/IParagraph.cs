@@ -8,68 +8,68 @@ public interface IParagraph // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Office Math Paragraph Properties.
   /// </summary>
-  public DocumentModel.Math.IParagraphProperties? ParagraphProperties { get ; set; }
+  public IParagraphProperties? ParagraphProperties { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Math.IOfficeMath>? OfficeMaths { get ; set; }
+  public Collection<IOfficeMath>? OfficeMaths { get ; set; }
   
-  public DocumentModel.Math.IRun? Run { get ; set; }
+  public Collection<IRun>? Runs { get ; set; }
   
-  public DocumentModel.Wordprocessing.IProofError? ProofError { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IProofError>? ProofErrors { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermStart? PermStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IPermStart>? PermStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IPermEnd? PermEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IPermEnd>? PermEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IBookmarkStart? BookmarkStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IBookmarkStart>? BookmarkStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? BookmarkEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupRangeType>? BookmarkEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupRangeType>? CommentRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? CommentRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupRangeType>? CommentRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveFromRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMoveBookmarkType>? MoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveFromRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupRangeType>? MoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveBookmarkType? MoveToRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMoveBookmarkType>? MoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupRangeType? MoveToRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupRangeType>? MoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlInsRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlInsRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlInsRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlDelRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlDelRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlDelRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlMoveToRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.ITrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.ITrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
   
-  public DocumentModel.Wordprocessing.IInsertedRun? InsertedRun { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IInsertedRun>? InsertedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IDeletedRun? DeletedRun { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IDeletedRun>? DeletedRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveFromRun? MoveFromRun { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMoveFromRun>? MoveFromRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IMoveToRun? MoveToRun { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IMoveToRun>? MoveToRuns { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictInsertion? RunConflictInsertion { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IRunConflictInsertion>? RunConflictInsertions { get ; set; }
   
-  public DocumentModel.Wordprocessing.IRunConflictDeletion? RunConflictDeletion { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.IRunConflictDeletion>? RunConflictDeletions { get ; set; }
   
 }

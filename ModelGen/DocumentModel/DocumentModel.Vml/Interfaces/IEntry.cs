@@ -8,11 +8,11 @@ public interface IEntry // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// New Group ID
   /// </summary>
-  public System.Int32? New { get ; set; }
+  public Int32? New { get ; set; }
   
   /// <summary>
   /// Old Group ID
   /// </summary>
-  public System.Int32? Old { get ; set; }
+  public Int32? Old { get ; set; }
   
 }

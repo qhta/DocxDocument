@@ -8,8 +8,8 @@ public interface ICacheSourceExtension // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// URI
   /// </summary>
-  public System.String? Uri { get ; set; }
+  public String? Uri { get ; set; }
   
-  public DocumentModel.Spreadsheet.ISourceConnection? SourceConnection { get ; set; }
+  public ISourceConnection? SourceConnection { get ; set; }
   
 }

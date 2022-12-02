@@ -13,6 +13,6 @@ public interface IInk // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// Annotation Flag
   /// </summary>
-  public System.Boolean? AnnotationFlag { get ; set; }
+  public Boolean? AnnotationFlag { get ; set; }
   
 }

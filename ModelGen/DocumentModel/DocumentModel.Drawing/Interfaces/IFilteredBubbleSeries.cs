@@ -8,6 +8,6 @@ public interface IFilteredBubbleSeries // : DocumentModel.ITypedOpenXmlComposite
   /// <summary>
   /// BubbleChartSeries.
   /// </summary>
-  public DocumentModel.Drawing.IBubbleChartSeries? BubbleChartSeries { get ; set; }
+  public IBubbleChartSeries? BubbleChartSeries { get ; set; }
   
 }

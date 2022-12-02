@@ -8,6 +8,6 @@ public interface IFilteredRadarSeries // : DocumentModel.ITypedOpenXmlCompositeE
   /// <summary>
   /// RadarChartSeries.
   /// </summary>
-  public DocumentModel.Drawing.IRadarChartSeries? RadarChartSeries { get ; set; }
+  public IRadarChartSeries? RadarChartSeries { get ; set; }
   
 }

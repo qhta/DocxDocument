@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface ICustomXmlPart // : DocumentModel.Packaging.ITypedOpenXmlPart
 {
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

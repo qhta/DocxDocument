@@ -5,6 +5,6 @@ namespace DocumentModel.Drawing;
 /// </summary>
 public interface ISerAxExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.ISerAxExtension>? SerAxExtensions { get ; set; }
+  public Collection<ISerAxExtension>? SerAxExtensions { get ; set; }
   
 }

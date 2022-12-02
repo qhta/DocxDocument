@@ -8,8 +8,6 @@ namespace ModelGen;
 
 public class PropInfo: ModelElement
 {
-  //public Type PropertyType => PropertyTypeInfo.Type;
-
   public TypeInfo PropertyType { get; set; }
 
 

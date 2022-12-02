@@ -8,36 +8,36 @@ public interface IPageBorders // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Z-Ordering of Page Border
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderZOrderKind? ZOrder { get ; set; }
+  public PageBorderZOrderKind? ZOrder { get ; set; }
   
   /// <summary>
   /// Pages to Display Page Borders
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderDisplayKind? Display { get ; set; }
+  public PageBorderDisplayKind? Display { get ; set; }
   
   /// <summary>
   /// Page Border Positioning
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderOffsetKind? OffsetFrom { get ; set; }
+  public PageBorderOffsetKind? OffsetFrom { get ; set; }
   
   /// <summary>
   /// Top Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? TopBorder { get ; set; }
+  public IBorderType? TopBorder { get ; set; }
   
   /// <summary>
   /// Left Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? LeftBorder { get ; set; }
+  public IBorderType? LeftBorder { get ; set; }
   
   /// <summary>
   /// Bottom Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? BottomBorder { get ; set; }
+  public IBorderType? BottomBorder { get ; set; }
   
   /// <summary>
   /// Right Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.IBorderType? RightBorder { get ; set; }
+  public IBorderType? RightBorder { get ; set; }
   
 }

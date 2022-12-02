@@ -8,8 +8,8 @@ public interface IOpenXmlElementList // :
   /// <summary>
   /// Gets the number of OpenXmlElement elements in the OpenXmlElementList.
   /// </summary>
-  public System.Int32? Count { get ; set; }
+  public Int32? Count { get ; set; }
   
-  public DocumentModel.BaseTypes.ModelElement? Item { get ; set; }
+  public ModelElement? Item { get ; set; }
   
 }

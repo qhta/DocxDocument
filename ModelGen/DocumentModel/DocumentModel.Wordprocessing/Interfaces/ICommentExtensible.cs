@@ -13,16 +13,16 @@ public interface ICommentExtensible // : DocumentModel.ITypedOpenXmlCompositeEle
   /// <summary>
   /// dateUtc, this property is only available in Office 2021 and later.
   /// </summary>
-  public System.DateTime? DateUtc { get ; set; }
+  public DateTime? DateUtc { get ; set; }
   
   /// <summary>
   /// intelligentPlaceholder, this property is only available in Office 2021 and later.
   /// </summary>
-  public System.Boolean? IntelligentPlaceholder { get ; set; }
+  public Boolean? IntelligentPlaceholder { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.IExtensionList? ExtensionList { get ; set; }
+  public IExtensionList? ExtensionList { get ; set; }
   
 }

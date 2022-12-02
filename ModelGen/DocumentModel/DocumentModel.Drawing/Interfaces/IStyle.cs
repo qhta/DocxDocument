@@ -8,21 +8,21 @@ public interface IStyle // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// LineReference.
   /// </summary>
-  public DocumentModel.Drawing.ILineReference? LineReference { get ; set; }
+  public ILineReference? LineReference { get ; set; }
   
   /// <summary>
   /// FillReference.
   /// </summary>
-  public DocumentModel.Drawing.IFillReference? FillReference { get ; set; }
+  public IFillReference? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.
   /// </summary>
-  public DocumentModel.Drawing.IEffectReference? EffectReference { get ; set; }
+  public IEffectReference? EffectReference { get ; set; }
   
   /// <summary>
   /// Font Reference.
   /// </summary>
-  public DocumentModel.Drawing.IFontReference? FontReference { get ; set; }
+  public IFontReference? FontReference { get ; set; }
   
 }

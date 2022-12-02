@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ISdtEndCharProperties // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public DocumentModel.Wordprocessing.IRunProperties? RunProperties { get ; set; }
+  public Collection<IRunProperties>? RunPropertieses { get ; set; }
   
 }

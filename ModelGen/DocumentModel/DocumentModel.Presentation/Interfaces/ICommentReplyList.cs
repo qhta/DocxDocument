@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface ICommentReplyList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.ICommentReply>? CommentReplies { get ; set; }
+  public Collection<ICommentReply>? CommentReplies { get ; set; }
   
 }

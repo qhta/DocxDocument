@@ -8,12 +8,12 @@ public interface IStringDimension // : DocumentModel.ITypedOpenXmlCompositeEleme
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawing.StringDimensionType? Type { get ; set; }
+  public StringDimensionType? Type { get ; set; }
   
-  public DocumentModel.Drawing.IOpenXmlFormulaElement? Formula { get ; set; }
+  public IOpenXmlFormulaElement? Formula { get ; set; }
   
-  public DocumentModel.Drawing.IOpenXmlFormulaElement? NfFormula { get ; set; }
+  public IOpenXmlFormulaElement? NfFormula { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IStringLevel>? StringLevels { get ; set; }
+  public Collection<IStringLevel>? StringLevels { get ; set; }
   
 }

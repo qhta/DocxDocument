@@ -8,41 +8,41 @@ public interface IGeoData // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? EntityName { get ; set; }
+  public String? EntityName { get ; set; }
   
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.String? EntityId { get ; set; }
+  public String? EntityId { get ; set; }
   
   /// <summary>
   /// east, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? East { get ; set; }
+  public Double? East { get ; set; }
   
   /// <summary>
   /// west, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? West { get ; set; }
+  public Double? West { get ; set; }
   
   /// <summary>
   /// north, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? North { get ; set; }
+  public Double? North { get ; set; }
   
   /// <summary>
   /// south, this property is only available in Office 2016 and later.
   /// </summary>
-  public System.Double? South { get ; set; }
+  public Double? South { get ; set; }
   
   /// <summary>
   /// GeoPolygons.
   /// </summary>
-  public DocumentModel.Drawing.IGeoPolygons? GeoPolygons { get ; set; }
+  public IGeoPolygons? GeoPolygons { get ; set; }
   
   /// <summary>
   /// Copyrights.
   /// </summary>
-  public DocumentModel.Drawing.ICopyrights? Copyrights { get ; set; }
+  public ICopyrights? Copyrights { get ; set; }
   
 }

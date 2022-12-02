@@ -8,8 +8,8 @@ public interface IPivotHierarchies // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// OLAP Hierarchy Count
   /// </summary>
-  public System.UInt32? Count { get ; set; }
+  public UInt32? Count { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotHierarchy>? PivotHierarchies { get ; set; }
+  public Collection<IPivotHierarchy>? PivotHierarchies { get ; set; }
   
 }

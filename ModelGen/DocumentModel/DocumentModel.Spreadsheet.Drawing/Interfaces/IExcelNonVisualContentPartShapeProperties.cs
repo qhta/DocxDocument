@@ -8,11 +8,11 @@ public interface IExcelNonVisualContentPartShapeProperties // : DocumentModel.IT
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public INonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualInkContentPartProperties.
   /// </summary>
-  public DocumentModel.Spreadsheet.Drawing.INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
+  public INonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
   
 }

@@ -8,13 +8,13 @@ public interface IStyles // : DocumentModel.ITypedOpenXmlPartRootElement
   /// <summary>
   /// Document Default Paragraph and Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.IDocDefaults? DocDefaults { get ; set; }
+  public IDocDefaults? DocDefaults { get ; set; }
   
   /// <summary>
   /// Latent Style Information.
   /// </summary>
-  public DocumentModel.Wordprocessing.ILatentStyles? LatentStyles { get ; set; }
+  public ILatentStyles? LatentStyles { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.IStyle>? Styles { get ; set; }
+  public Collection<IStyle>? Styles { get ; set; }
   
 }

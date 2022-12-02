@@ -8,11 +8,11 @@ public interface IArtisticPhotocopy // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Transparancy { get ; set; }
+  public Int32? Transparancy { get ; set; }
   
   /// <summary>
   /// detail, this property is only available in Office 2010 and later.
   /// </summary>
-  public System.Int32? Detail { get ; set; }
+  public Int32? Detail { get ; set; }
   
 }

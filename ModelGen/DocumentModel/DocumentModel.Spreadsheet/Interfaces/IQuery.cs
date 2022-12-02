@@ -8,11 +8,11 @@ public interface IQuery // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// MDX Query String
   /// </summary>
-  public System.String? Mdx { get ; set; }
+  public String? Mdx { get ; set; }
   
   /// <summary>
   /// Tuples.
   /// </summary>
-  public DocumentModel.Spreadsheet.ITuples? Tuples { get ; set; }
+  public ITuples? Tuples { get ; set; }
   
 }

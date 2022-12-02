@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ITabs // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ITabStop>? TabStops { get ; set; }
+  public Collection<ITabStop>? TabStops { get ; set; }
   
 }

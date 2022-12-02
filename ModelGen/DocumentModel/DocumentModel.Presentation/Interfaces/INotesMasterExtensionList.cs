@@ -5,6 +5,6 @@ namespace DocumentModel.Presentation;
 /// </summary>
 public interface INotesMasterExtensionList // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Presentation.INotesMasterExtension>? NotesMasterExtensions { get ; set; }
+  public Collection<INotesMasterExtension>? NotesMasterExtensions { get ; set; }
   
 }

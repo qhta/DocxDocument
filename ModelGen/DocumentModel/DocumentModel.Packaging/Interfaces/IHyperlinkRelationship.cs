@@ -8,6 +8,6 @@ public interface IHyperlinkRelationship // : DocumentModel.Packaging.IReferenceR
   /// <summary>
   /// Gets the relationship type.
   /// </summary>
-  public System.String? RelationshipType { get ; set; }
+  public String? RelationshipType { get ; set; }
   
 }

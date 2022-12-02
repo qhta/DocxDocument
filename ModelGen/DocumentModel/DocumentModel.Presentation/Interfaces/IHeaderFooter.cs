@@ -8,26 +8,26 @@ public interface IHeaderFooter // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// Slide Number Placeholder
   /// </summary>
-  public System.Boolean? SlideNumber { get ; set; }
+  public Boolean? SlideNumber { get ; set; }
   
   /// <summary>
   /// Header Placeholder
   /// </summary>
-  public System.Boolean? Header { get ; set; }
+  public Boolean? Header { get ; set; }
   
   /// <summary>
   /// Footer Placeholder
   /// </summary>
-  public System.Boolean? Footer { get ; set; }
+  public Boolean? Footer { get ; set; }
   
   /// <summary>
   /// Date/Time Placeholder
   /// </summary>
-  public System.Boolean? DateTime { get ; set; }
+  public Boolean? DateTime { get ; set; }
   
   /// <summary>
   /// ExtensionListWithModification.
   /// </summary>
-  public DocumentModel.Presentation.IExtensionListWithModification? ExtensionListWithModification { get ; set; }
+  public IExtensionListWithModification? ExtensionListWithModification { get ; set; }
   
 }

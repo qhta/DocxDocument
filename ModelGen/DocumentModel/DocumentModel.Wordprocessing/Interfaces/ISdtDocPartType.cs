@@ -8,16 +8,16 @@ public interface ISdtDocPartType // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Document Part Gallery Filter.
   /// </summary>
-  public System.String? DocPartGallery { get ; set; }
+  public String? DocPartGallery { get ; set; }
   
   /// <summary>
   /// Document Part Category Filter.
   /// </summary>
-  public System.String? DocPartCategory { get ; set; }
+  public String? DocPartCategory { get ; set; }
   
   /// <summary>
   /// Built-In Document Part.
   /// </summary>
-  public System.Boolean? DocPartUnique { get ; set; }
+  public Boolean? DocPartUnique { get ; set; }
   
 }

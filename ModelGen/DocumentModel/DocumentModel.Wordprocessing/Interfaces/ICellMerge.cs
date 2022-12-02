@@ -8,26 +8,26 @@ public interface ICellMerge // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// vMerge
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMerge { get ; set; }
+  public VerticalMergeRevisionKind? VerticalMerge { get ; set; }
   
   /// <summary>
   /// vMergeOrig
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMergeOriginal { get ; set; }
+  public VerticalMergeRevisionKind? VerticalMergeOriginal { get ; set; }
   
   /// <summary>
   /// author
   /// </summary>
-  public System.String? Author { get ; set; }
+  public String? Author { get ; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public System.DateTime? Date { get ; set; }
+  public DateTime? Date { get ; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public System.String? Id { get ; set; }
+  public String? Id { get ; set; }
   
 }

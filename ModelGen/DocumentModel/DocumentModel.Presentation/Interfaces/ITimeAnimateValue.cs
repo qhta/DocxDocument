@@ -8,16 +8,16 @@ public interface ITimeAnimateValue // : DocumentModel.ITypedOpenXmlCompositeElem
   /// <summary>
   /// Time
   /// </summary>
-  public System.String? Time { get ; set; }
+  public String? Time { get ; set; }
   
   /// <summary>
   /// Formula
   /// </summary>
-  public System.String? Fomula { get ; set; }
+  public String? Fomula { get ; set; }
   
   /// <summary>
   /// Value.
   /// </summary>
-  public DocumentModel.Presentation.IVariantValue? VariantValue { get ; set; }
+  public IVariantValue? VariantValue { get ; set; }
   
 }

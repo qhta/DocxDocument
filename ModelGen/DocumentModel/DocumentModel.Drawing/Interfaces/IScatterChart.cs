@@ -8,19 +8,19 @@ public interface IScatterChart // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// ScatterStyle.
   /// </summary>
-  public DocumentModel.Drawing.ScatterStyleKind? ScatterStyle { get ; set; }
+  public ScatterStyleKind? ScatterStyle { get ; set; }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  public System.Boolean? VaryColors { get ; set; }
+  public Boolean? VaryColors { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<DocumentModel.Drawing.IScatterChartSeries>? ScatterChartSerieses { get ; set; }
+  public Collection<IScatterChartSeries>? ScatterChartSerieses { get ; set; }
   
-  public DocumentModel.Drawing.IDataLabels? DataLabels { get ; set; }
+  public IDataLabels? DataLabels { get ; set; }
   
-  public System.Collections.ObjectModel.Collection<System.UInt32>? AxisIds { get ; set; }
+  public Collection<UInt32>? AxisIds { get ; set; }
   
-  public DocumentModel.Drawing.IScatterChartExtensionList? ScatterChartExtensionList { get ; set; }
+  public IScatterChartExtensionList? ScatterChartExtensionList { get ; set; }
   
 }

@@ -8,6 +8,6 @@ public interface IFunctionProperties // : DocumentModel.ITypedOpenXmlCompositeEl
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.Math.IControlProperties? ControlProperties { get ; set; }
+  public IControlProperties? ControlProperties { get ; set; }
   
 }

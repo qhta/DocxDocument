@@ -8,6 +8,6 @@ public interface ICamera // : DocumentModel.ITypedOpenXmlLeafElement
   /// <summary>
   /// prst, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.PresetCameraKind? PresetCameraType { get ; set; }
+  public PresetCameraKind? PresetCameraType { get ; set; }
   
 }

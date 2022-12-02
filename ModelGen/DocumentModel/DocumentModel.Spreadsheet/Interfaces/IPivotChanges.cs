@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IPivotChanges // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IPivotChange>? PivotChanges { get ; set; }
+  public Collection<IPivotChange>? PivotChanges { get ; set; }
   
 }

@@ -8,7 +8,7 @@ public interface IMarkupCompatibilityProcessSettings // :
   /// <summary>
   /// Gets the markup compatibility process mode.
   /// </summary>
-  public DocumentModel.Packaging.MarkupCompatibilityProcessMode? ProcessMode { get ; set; }
+  public MarkupCompatibilityProcessMode? ProcessMode { get ; set; }
   
   /// <summary>
   /// Gets the target file format versions.

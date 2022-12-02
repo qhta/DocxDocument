@@ -8,11 +8,11 @@ public interface IPresetTextWrap // : DocumentModel.ITypedOpenXmlCompositeElemen
   /// <summary>
   /// Preset Warp Shape
   /// </summary>
-  public DocumentModel.Drawing.TextShapeKind? Preset { get ; set; }
+  public TextShapeKind? Preset { get ; set; }
   
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  public DocumentModel.Drawing.IAdjustValueList? AdjustValueList { get ; set; }
+  public IAdjustValueList? AdjustValueList { get ; set; }
   
 }

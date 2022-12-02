@@ -8,11 +8,11 @@ public interface IGlossaryDocument // : DocumentModel.ITypedOpenXmlPartRootEleme
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.IDocumentBackground? DocumentBackground { get ; set; }
+  public IDocumentBackground? DocumentBackground { get ; set; }
   
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public DocumentModel.BaseTypes.ModelElement? DocParts { get ; set; }
+  public ModelElement? DocParts { get ; set; }
   
 }

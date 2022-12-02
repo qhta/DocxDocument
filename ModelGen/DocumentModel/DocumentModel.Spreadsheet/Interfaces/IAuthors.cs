@@ -5,6 +5,6 @@ namespace DocumentModel.Spreadsheet;
 /// </summary>
 public interface IAuthors // : DocumentModel.ITypedOpenXmlCompositeElement
 {
-  public System.Collections.ObjectModel.Collection<DocumentModel.Spreadsheet.IXstringType>? Authors { get ; set; }
+  public Collection<IXstringType>? Authors { get ; set; }
   
 }

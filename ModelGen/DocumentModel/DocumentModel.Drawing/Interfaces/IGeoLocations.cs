@@ -8,6 +8,6 @@ public interface IGeoLocations // : DocumentModel.ITypedOpenXmlCompositeElement
   /// <summary>
   /// GeoLocation.
   /// </summary>
-  public DocumentModel.Drawing.IGeoLocation? GeoLocation { get ; set; }
+  public IGeoLocation? GeoLocation { get ; set; }
   
 }

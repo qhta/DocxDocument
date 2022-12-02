@@ -8,11 +8,11 @@ public interface ITableWidthDxaNilType // : DocumentModel.ITypedOpenXmlLeafEleme
   /// <summary>
   /// w
   /// </summary>
-  public System.Int16? Width { get ; set; }
+  public Int16? Width { get ; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthKind? Type { get ; set; }
+  public TableWidthKind? Type { get ; set; }
   
 }
