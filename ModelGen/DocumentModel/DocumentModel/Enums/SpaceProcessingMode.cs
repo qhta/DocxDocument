@@ -8,11 +8,13 @@ public enum SpaceProcessingMode
   /// <summary>
   /// default.
   /// </summary>
+  [XmlEnum("default")]
   Default,
   
   /// <summary>
   /// preserve.
   /// </summary>
+  [XmlEnum("preserve")]
   Preserve,
   
 }

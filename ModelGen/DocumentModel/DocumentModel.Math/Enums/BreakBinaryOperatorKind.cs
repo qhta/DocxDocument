@@ -8,16 +8,19 @@ public enum BreakBinaryOperatorKind
   /// <summary>
   /// Before.
   /// </summary>
+  [XmlEnum("before")]
   Before,
   
   /// <summary>
   /// After.
   /// </summary>
+  [XmlEnum("after")]
   After,
   
   /// <summary>
   /// Repeat.
   /// </summary>
+  [XmlEnum("repeat")]
   Repeat,
   
 }

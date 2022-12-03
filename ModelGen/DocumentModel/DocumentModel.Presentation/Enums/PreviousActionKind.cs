@@ -8,11 +8,13 @@ public enum PreviousActionKind
   /// <summary>
   /// Previous Action Type Enum ( None ).
   /// </summary>
+  [XmlEnum("none")]
   None,
   
   /// <summary>
   /// Previous Action Type Enum ( Skip Timed ).
   /// </summary>
+  [XmlEnum("skipTimed")]
   SkipTimed,
   
 }

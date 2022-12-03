@@ -8,11 +8,13 @@ public enum BehaviorTransformKind
   /// <summary>
   /// Point.
   /// </summary>
+  [XmlEnum("pt")]
   Point,
   
   /// <summary>
   /// Image.
   /// </summary>
+  [XmlEnum("img")]
   Image,
   
 }

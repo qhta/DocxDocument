@@ -96,7 +96,7 @@ public static class TypeReflector
     {
       reflected++;
       ModelDisplay.ConsoleWriteSameLine(
-        $"Total {TypeManager.TotalTypesCount} registered types, {reflected} reflected, {TypeQueue.Count} waiting. {typeInfo.Namespace}.{typeInfo.Name}");
+        $"Total {TypeManager.TotalTypesCount} registered types, {reflected} reflected, {TypeQueue.Count} waiting. {typeInfo.OriginalNamespace}.{typeInfo.OriginalName}");
     }
     //if (typeInfo.Name == "DataPart")
     //  Debug.Assert(true);
@@ -106,7 +106,7 @@ public static class TypeReflector
     {
       typeInfo.TypeKind = TypeKind.Enum;
       if (typeInfo.EnumValues == null)
-        typeInfo.EnumValues = new Collection<EnumInfo>(typeInfo);
+        typeInfo.EnumValues = new OwnedCollection<EnumInfo>(typeInfo);
       foreach (var item in type.GetFields(BindingFlags.Static | BindingFlags.Public))
         typeInfo.EnumValues.Add(new EnumInfo(item));
     }
@@ -114,7 +114,7 @@ public static class TypeReflector
     {
       typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
       if (typeInfo.Properties == null)
-        typeInfo.Properties = new Collection<PropInfo>(typeInfo);
+        typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
       {
         if (!item.PropertyType.Name.EndsWith('&'))
@@ -125,8 +125,6 @@ public static class TypeReflector
         typeInfo.BaseTypeInfo = TypeManager.RegisterType(type.BaseType, typeInfo, Semantics.Inheritance);
       }
 
-      //if (type.Name.StartsWith("Dictionary"))
-      //  Debug.Assert(true);
       if (type.ContainsGenericParameters)
       {
         var genericTypeParameters = type.GetGenericArguments();
@@ -184,7 +182,7 @@ public static class TypeReflector
     foreach (var includeRelationship in typeInfo.GetOutgoingRelationships(Semantics.Include))
     {
       if (typeInfo.Properties == null)
-        typeInfo.Properties = new Collection<PropInfo>(typeInfo);
+        typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       if (includeRelationship.IsMultiple == true)
       {
         var propName = MultipleItemsPropName(includeRelationship.Target.Name);

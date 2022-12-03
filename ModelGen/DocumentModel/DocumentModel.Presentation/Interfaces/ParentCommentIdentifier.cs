@@ -1,0 +1,18 @@
+namespace DocumentModel.Presentation;
+
+/// <summary>
+/// Defines the ParentCommentIdentifier Class.
+/// </summary>
+public interface ParentCommentIdentifier // : System.Boolean
+{
+  /// <summary>
+  /// authorId, this property is only available in Office 2013 and later.
+  /// </summary>
+  public UInt32? AuthorId { get ; set; }
+  
+  /// <summary>
+  /// idx, this property is only available in Office 2013 and later.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+}

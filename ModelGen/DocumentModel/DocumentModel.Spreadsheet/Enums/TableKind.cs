@@ -8,16 +8,19 @@ public enum TableKind
   /// <summary>
   /// Worksheet.
   /// </summary>
+  [XmlEnum("worksheet")]
   Worksheet,
   
   /// <summary>
   /// XML.
   /// </summary>
+  [XmlEnum("xml")]
   Xml,
   
   /// <summary>
   /// Query Table.
   /// </summary>
+  [XmlEnum("queryTable")]
   QueryTable,
   
 }

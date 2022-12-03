@@ -8,11 +8,13 @@ public enum DataViewAspectKind
   /// <summary>
   /// Object Display Content.
   /// </summary>
+  [XmlEnum("DVASPECT_CONTENT")]
   DataViewAspectContent,
   
   /// <summary>
   /// Object Display Icon.
   /// </summary>
+  [XmlEnum("DVASPECT_ICON")]
   DataViewAspectIcon,
   
 }

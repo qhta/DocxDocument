@@ -8,21 +8,25 @@ public enum TransitionSlideDirectionKind
   /// <summary>
   /// Transition Slide Direction Enum ( Left ).
   /// </summary>
+  [XmlEnum("l")]
   Left,
   
   /// <summary>
   /// Transition Slide Direction Enum ( Up ).
   /// </summary>
+  [XmlEnum("u")]
   Up,
   
   /// <summary>
   /// Transition Slide Direction ( Right ).
   /// </summary>
+  [XmlEnum("r")]
   Right,
   
   /// <summary>
   /// Transition Slide Direction Enum ( Down ).
   /// </summary>
+  [XmlEnum("d")]
   Down,
   
 }

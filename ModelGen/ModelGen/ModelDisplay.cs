@@ -339,9 +339,9 @@ public static class ModelDisplay
   {
     foreach (var typeInfo in TypeManager.AllTypes)
     {
-      if (typeInfo.Name != typeInfo.OrigName)
+      if (typeInfo.Name != typeInfo.OriginalName)
       {
-        Writer.WriteLine($"{typeInfo.OrigName} --> {typeInfo.Name}");
+        Writer.WriteLine($"{typeInfo.OriginalName} --> {typeInfo.Name}");
       }
     }
   }

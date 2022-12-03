@@ -8,11 +8,13 @@ public enum DirectionKind
   /// <summary>
   /// Horizontal.
   /// </summary>
+  [XmlEnum("horz")]
   Horizontal,
   
   /// <summary>
   /// Vertical.
   /// </summary>
+  [XmlEnum("vert")]
   Vertical,
   
 }

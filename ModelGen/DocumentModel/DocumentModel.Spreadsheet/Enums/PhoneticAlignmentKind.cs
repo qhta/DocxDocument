@@ -8,21 +8,25 @@ public enum PhoneticAlignmentKind
   /// <summary>
   /// No Control.
   /// </summary>
+  [XmlEnum("noControl")]
   NoControl,
   
   /// <summary>
   /// Left Alignment.
   /// </summary>
+  [XmlEnum("left")]
   Left,
   
   /// <summary>
   /// Center Alignment.
   /// </summary>
+  [XmlEnum("center")]
   Center,
   
   /// <summary>
   /// Distributed.
   /// </summary>
+  [XmlEnum("distributed")]
   Distributed,
   
 }

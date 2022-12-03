@@ -8,16 +8,19 @@ public enum ScopeKind
   /// <summary>
   /// Selection.
   /// </summary>
+  [XmlEnum("selection")]
   Selection,
   
   /// <summary>
   /// Data Fields.
   /// </summary>
+  [XmlEnum("data")]
   Data,
   
   /// <summary>
   /// Field Intersections.
   /// </summary>
+  [XmlEnum("field")]
   Field,
   
 }
