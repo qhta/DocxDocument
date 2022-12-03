@@ -8,16 +8,19 @@ public enum NumberSpacingKind
   /// <summary>
   /// default.
   /// </summary>
+  [XmlEnum("default")]
   Default,
   
   /// <summary>
   /// proportional.
   /// </summary>
+  [XmlEnum("proportional")]
   Proportional,
   
   /// <summary>
   /// tabular.
   /// </summary>
+  [XmlEnum("tabular")]
   Tabular,
   
 }

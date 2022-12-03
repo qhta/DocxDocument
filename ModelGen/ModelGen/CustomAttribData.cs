@@ -13,14 +13,14 @@ public class CustomAttribData: IOwnedElement
   //public Type AttributeType => AttributeTypeInfo.Type;
   public TypeInfo AttributeType { get; }
 
-  public Collection<CustomAttribTypedArgument> ConstructorArguments { get; }
-  public Collection<CustomAttribNamedArgument> NamedArguments { get; set; }
+  public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
+  public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
   public CustomAttribData(Type attributeType)
   {
-    ConstructorArguments = new Collection<CustomAttribTypedArgument>(this);
-    NamedArguments = new Collection<CustomAttribNamedArgument>(this);
-    AttributeType = TypeManager.RegisterType(attributeType, this, Semantics.Attribute);
+    ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
+    NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
+    AttributeType = TypeManager.RegisterType(attributeType);
   }
 
   public CustomAttribData(Type attributeType, 

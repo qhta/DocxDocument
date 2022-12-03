@@ -1,0 +1,18 @@
+namespace DocumentModel.Presentation;
+
+/// <summary>
+/// Defines the MediaFade Class.
+/// </summary>
+public interface MediaFade // : System.Boolean
+{
+  /// <summary>
+  /// in, this property is only available in Office 2010 and later.
+  /// </summary>
+  public String? InDuration { get ; set; }
+  
+  /// <summary>
+  /// out, this property is only available in Office 2010 and later.
+  /// </summary>
+  public String? OutDuration { get ; set; }
+  
+}

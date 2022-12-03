@@ -1,0 +1,21 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the BubbleSerExtension Class.
+/// </summary>
+public interface BubbleSerExtension // : DocumentModel.BaseTypes.ModelElement
+{
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
+  public InvertSolidFillFormat? InvertSolidFillFormat { get ; set; }
+  
+  public FilteredCategoryTitle? FilteredCategoryTitle { get ; set; }
+  
+  public DataLabelsRange? DataLabelsRange { get ; set; }
+  
+  public CategoryFilterExceptions? CategoryFilterExceptions { get ; set; }
+  
+}

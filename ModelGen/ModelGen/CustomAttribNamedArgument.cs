@@ -27,13 +27,13 @@ public class CustomAttribNamedArgument: IOwnedElement
   public CustomAttribNamedArgument(MemberInfo memberInfo, CustomAttributeTypedArgument typedArgument)
   {
     MemberInfo = memberInfo;
-    TypedValue = new CustomAttribTypedArgument(typedArgument) { Owner = this };
+    TypedValue = new CustomAttribTypedArgument(typedArgument.Value) { Owner = this };
   }
 
   public CustomAttribNamedArgument(CustomAttributeNamedArgument namedArgument)
   {
     MemberInfo = namedArgument.MemberInfo ?? throw new ArgumentNullException(nameof(MemberInfo));
-    TypedValue = new CustomAttribTypedArgument(namedArgument.TypedValue);
+    TypedValue = new CustomAttribTypedArgument(namedArgument.TypedValue.Value);
   }
 
   public override string ToString()

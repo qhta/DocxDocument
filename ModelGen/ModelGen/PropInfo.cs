@@ -13,7 +13,7 @@ public class PropInfo: ModelElement
 
   public PropInfo(string name, Type type) : base(name)
   {
-    PropertyType = TypeManager.RegisterType(type, this, Semantics.Value);
+    PropertyType = TypeManager.RegisterType(type);
   }
 
   public PropInfo(PropertyInfo propertyInfo) : this(propertyInfo.Name, propertyInfo.PropertyType)

@@ -169,8 +169,6 @@ public class ModelCreator
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
-      if (typeInfo.Name == "RgbColorModelPercentage")
-        Debug.Assert(true);
       if (typeInfo.Namespace.StartsWith("System"))
         continue;
       if (typeInfo.Name.Contains('`'))

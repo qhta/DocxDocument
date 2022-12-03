@@ -8,11 +8,13 @@ public enum BehaviorAccumulateKind
   /// <summary>
   /// Accumulate Enum ( None ).
   /// </summary>
+  [XmlEnum("none")]
   None,
   
   /// <summary>
   /// Accumulate Enum ( Always ).
   /// </summary>
+  [XmlEnum("always")]
   Always,
   
 }

@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the ArtisticPhotocopy Class.
+/// </summary>
+public interface ArtisticPhotocopy // : System.Boolean
+{
+  /// <summary>
+  /// trans, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int32? Transparancy { get ; set; }
+  
+  /// <summary>
+  /// detail, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int32? Detail { get ; set; }
+  
+}

@@ -8,11 +8,13 @@ public enum TableWidthKind
   /// <summary>
   /// nil.
   /// </summary>
+  [XmlEnum("nil")]
   Nil,
   
   /// <summary>
   /// dxa.
   /// </summary>
+  [XmlEnum("dxa")]
   Dxa,
   
 }

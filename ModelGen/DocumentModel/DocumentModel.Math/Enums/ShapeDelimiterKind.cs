@@ -8,11 +8,13 @@ public enum ShapeDelimiterKind
   /// <summary>
   /// Centered (Delimiters).
   /// </summary>
+  [XmlEnum("centered")]
   Centered,
   
   /// <summary>
   /// Match.
   /// </summary>
+  [XmlEnum("match")]
   Match,
   
 }

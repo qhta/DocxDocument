@@ -21,7 +21,7 @@ public static class TypeManager
   private static BiDiDictionary<int, string> KnownNamespaces = new();
   private static IEnumerable<string> Namespaces = KnownNamespaces.Select(item => item.Item2);
 
-  private static List<TypeRelationship> Relationships = new();
+  //private static List<TypeRelationship> Relationships = new();
 
   public static int TotalTypesCount => KnownTypes.Count;
 
@@ -133,56 +133,53 @@ public static class TypeManager
     }
   }
 
-  public static TypeInfo RegisterType(Type type, object source, Semantics semantics)
+  public static TypeInfo RegisterType(Type type, Type source, Semantics semantics)
+  {
+    var result = RegisterType(type);
+    var sourceTypeInfo = RegisterType(source);
+    AddRelationship(sourceTypeInfo, result, semantics);
+    return result;
+  }
+
+  public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
     AddRelationship(source, result, semantics);
     return result;
   }
 
-  public static TypeRelationship AddRelationship(object source, TypeInfo type, Semantics semantics, int order = 0)
+  public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo target, Semantics semantics, int order = 0)
   {
     lock (RelationshipsLock)
     {
-      var rel = new TypeRelationship(source, type, semantics);
-      //if (!Relationships.Contains(rel))
-      Relationships.Add(rel);
-      return rel;
-    }
-  }
-
-  public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo type, Semantics semantics, int order = 0)
-  {
-    lock (RelationshipsLock)
-    {
-      var rel = new TypeRelationship(source, type, semantics);
-      //if (!Relationships.Contains(rel))
-      Relationships.Add(rel);
+      var rel = new TypeRelationship(source, target, semantics);
+      source.OutgoingRelationships.Add(rel);
+      target.IncomingRelationships.Add(rel);
       return rel;
     }
   }
   public static TypeRelationship[] GetIncomingRelationships(this TypeInfo typeInfo)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Target == typeInfo).ToArray();
+      return typeInfo.IncomingRelationships.ToArray();
   }
 
   public static TypeRelationship[] GetOutgoingRelationships(this TypeInfo typeInfo)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Source == typeInfo).ToArray();
+      return typeInfo.OutgoingRelationships.ToArray();
   }
 
   public static TypeRelationship[] GetOutgoingRelationships(this TypeInfo typeInfo, Semantics semantics)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).ToArray();
+      return typeInfo.OutgoingRelationships.Where(item => item.Semantics == semantics).ToArray();
   }
 
   public static TypeInfo[] GetRelatedTypes(this TypeInfo typeInfo, Semantics semantics)
   {
     lock (RelationshipsLock)
-      return Relationships.Where(item => item.Source == typeInfo && item.Semantics == semantics).Select(item => item.Target).ToArray();
+      return typeInfo.OutgoingRelationships.Where(item => item.Semantics == semantics).Select(item => item.Target).ToArray();
   }
 
 

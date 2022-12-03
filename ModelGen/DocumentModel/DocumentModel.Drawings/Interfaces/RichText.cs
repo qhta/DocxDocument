@@ -1,0 +1,14 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Rich Text.
+/// </summary>
+public interface RichText // : DocumentModel.Drawings.TextBodyType
+{
+  public BodyProperties? BodyProperties { get ; set; }
+  
+  public ListStyle? ListStyle { get ; set; }
+  
+  public Collection<Paragraph>? Paragraphs { get ; set; }
+  
+}

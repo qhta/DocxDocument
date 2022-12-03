@@ -1,0 +1,18 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the SingleDataSourceRecord Class.
+/// </summary>
+public interface SingleDataSourceRecord // : DocumentModel.BaseTypes.ModelElement
+{
+  /// <summary>
+  /// RecordIncluded.
+  /// </summary>
+  public Boolean? RecordIncluded { get ; set; }
+  
+  /// <summary>
+  /// RecordHashCode.
+  /// </summary>
+  public Int32? RecordHashCode { get ; set; }
+  
+}

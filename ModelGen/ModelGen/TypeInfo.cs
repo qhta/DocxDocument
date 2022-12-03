@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 
@@ -17,9 +18,9 @@ public class TypeInfo : ModelElement
   }
   public int NamespaceIndex { get; private set; }
 
-  public string OrigNamespace => Type.Namespace ?? "";
+  public string OriginalNamespace => Type.Namespace ?? "";
 
-  public string OrigName => Type.Name;
+  public string OriginalName => Type.Name;
 
   public bool IsReflected { get; internal set; }
   public bool IsGenericType => Type.IsGenericType;
@@ -30,8 +31,10 @@ public class TypeInfo : ModelElement
   public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
   public TypeKind TypeKind { get; set; }
-  public Collection<EnumInfo>? EnumValues { get; set; }
-  public Collection<PropInfo>? Properties { get; set; }
+  public OwnedCollection<EnumInfo>? EnumValues { get; set; }
+  public OwnedCollection<PropInfo>? Properties { get; set; }
+  public Collection<TypeRelationship> OutgoingRelationships { get; set; } = new();
+  public Collection<TypeRelationship> IncomingRelationships { get; set; } = new();
 
   public IEnumerable<PropInfo>? AcceptedProperties => Properties?.Where(item => item.IsAccepted != false);
 
@@ -63,7 +66,7 @@ public class TypeInfo : ModelElement
     string aNamespace;
     if (original)
     {
-      aNamespace = this.OrigNamespace;
+      aNamespace = this.OriginalNamespace;
     }
     else
     {
@@ -87,17 +90,17 @@ public class TypeInfo : ModelElement
     string aNamespace;
     if (original)
     {
-      aName = this.OrigName;
-      aNamespace = this.OrigNamespace;
+      aName = this.OriginalName;
+      aNamespace = this.OriginalNamespace;
     }
     else
     {
       aName = this.Name;
       aNamespace = this.Namespace;
-      if (asInterface && TypeKind == TypeKind.Class && !aName.StartsWith("I"))
-      {
-        aName = "I" + aName;
-      }
+      //if (asInterface && TypeKind == TypeKind.Class && !aName.StartsWith("I"))
+      //{
+      //  aName = aName;
+      //}
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (IsGenericTypeParameter)

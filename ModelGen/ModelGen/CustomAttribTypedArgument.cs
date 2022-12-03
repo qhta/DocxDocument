@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Reflection;
+using System.Text;
 
 namespace ModelGen;
 
@@ -15,15 +16,20 @@ public class CustomAttribTypedArgument: IOwnedElement
 
   public CustomAttribTypedArgument(Type argumentType, object? value)
   {
-    ArgumentTypeInfo = TypeManager.RegisterType(argumentType, this, Semantics.AttributeArg);
+    ArgumentTypeInfo = TypeManager.RegisterType(argumentType);
     Value = CanonicalizeValue(value);
   }
 
-  public CustomAttribTypedArgument(object value) : this(value.GetType(), value)
+  public CustomAttribTypedArgument(object? value) : this(value?.GetType() ?? typeof(object), value)
   {
   }
-  
+
+  public CustomAttribTypedArgument(CustomAttributeTypedArgument? value) : this(value?.ArgumentType ?? typeof(object), value?.Value)
+  {
+  }
+
   public override string ToString() => ToString(false);
+
   internal string ToString(bool typed)
   {
 
@@ -75,5 +81,18 @@ public class CustomAttribTypedArgument: IOwnedElement
   public override int GetHashCode() => base.GetHashCode();
   public override bool Equals(object? obj) => obj == (object)this;
 
-  private static object? CanonicalizeValue(object? value) => (value is Enum e) ? e : value;
+  private static object? CanonicalizeValue(object? value)
+  {
+    if (value == null)
+      return null;
+    if (value is string str)
+      return str;
+    if (value is Enum e) 
+      return e;
+    if (value is Type type)
+      return TypeManager.RegisterType(type);
+    //if (value.GetType().IsValueType)
+      return value;
+    //throw new NotSupportedException($"Value of type {value.GetType()} not supported as CustomAttribTypedArgument");
+  }
 }

@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the SVGBlip Class.
+/// </summary>
+public interface SVGBlip // : System.Boolean
+{
+  /// <summary>
+  /// Embedded Picture Reference
+  /// </summary>
+  public String? Embed { get ; set; }
+  
+  /// <summary>
+  /// Linked Picture Reference
+  /// </summary>
+  public String? Link { get ; set; }
+  
+}

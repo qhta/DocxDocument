@@ -8,11 +8,13 @@ public enum TransitionShredPatternKind
   /// <summary>
   /// strip.
   /// </summary>
+  [XmlEnum("strip")]
   Strip,
   
   /// <summary>
   /// rectangle.
   /// </summary>
+  [XmlEnum("rectangle")]
   Rectangle,
   
 }

@@ -8,11 +8,13 @@ public enum AnimateColorDirectionKind
   /// <summary>
   /// Direction Enum ( Clockwise ).
   /// </summary>
+  [XmlEnum("cw")]
   Clockwise,
   
   /// <summary>
   /// Counter-Clockwise.
   /// </summary>
+  [XmlEnum("ccw")]
   CounterClockwise,
   
 }

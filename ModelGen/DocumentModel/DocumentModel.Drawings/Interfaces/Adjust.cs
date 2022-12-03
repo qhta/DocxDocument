@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Shape Adjust.
+/// </summary>
+public interface Adjust // : System.Boolean
+{
+  /// <summary>
+  /// Adjust Handle Index
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
+  /// Value
+  /// </summary>
+  public Double? Val { get ; set; }
+  
+}
