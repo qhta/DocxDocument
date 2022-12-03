@@ -8,11 +8,13 @@ public enum TransitionLeftRightDirectionKind
   /// <summary>
   /// l.
   /// </summary>
+  [XmlEnum("l")]
   Left,
   
   /// <summary>
   /// r.
   /// </summary>
+  [XmlEnum("r")]
   Right,
   
 }

@@ -8,11 +8,13 @@ public enum InfoTextKind
   /// <summary>
   /// Literal Text.
   /// </summary>
+  [XmlEnum("text")]
   Text,
   
   /// <summary>
   /// Glossary Document Entry.
   /// </summary>
+  [XmlEnum("autoText")]
   AutoText,
   
 }

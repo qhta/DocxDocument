@@ -8,21 +8,25 @@ public enum FootnoteEndnoteKind
   /// <summary>
   /// Normal Footnote/Endnote.
   /// </summary>
+  [XmlEnum("normal")]
   Normal,
   
   /// <summary>
   /// Separator.
   /// </summary>
+  [XmlEnum("separator")]
   Separator,
   
   /// <summary>
   /// Continuation Separator.
   /// </summary>
+  [XmlEnum("continuationSeparator")]
   ContinuationSeparator,
   
   /// <summary>
   /// Continuation Notice Separator.
   /// </summary>
+  [XmlEnum("continuationNotice")]
   ContinuationNotice,
   
 }

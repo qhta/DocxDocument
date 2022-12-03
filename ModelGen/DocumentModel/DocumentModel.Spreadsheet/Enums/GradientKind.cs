@@ -8,11 +8,13 @@ public enum GradientKind
   /// <summary>
   /// Linear Gradient.
   /// </summary>
+  [XmlEnum("linear")]
   Linear,
   
   /// <summary>
   /// Path.
   /// </summary>
+  [XmlEnum("path")]
   Path,
   
 }

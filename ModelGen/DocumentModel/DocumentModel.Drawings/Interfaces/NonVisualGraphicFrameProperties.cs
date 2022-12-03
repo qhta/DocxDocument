@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Non-Visual Graphic Frame Properties.
+/// </summary>
+public interface NonVisualGraphicFrameProperties // : DocumentModel.BaseTypes.ModelElement
+{
+  /// <summary>
+  /// Non-Visual Drawing Properties.
+  /// </summary>
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  
+  /// <summary>
+  /// Non-Visual Graphic Frame Drawing Properties.
+  /// </summary>
+  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get ; set; }
+  
+}

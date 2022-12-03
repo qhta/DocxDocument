@@ -135,7 +135,7 @@ public static class ModelManager
     return false;
   }
 
-  public static CompoundName GetConvertedName(this TypeInfo typeInfo, bool asInterface, bool withNamespace)
+  public static CompoundName GetConvertedName(this TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
@@ -143,17 +143,13 @@ public static class ModelManager
     if (typeInfo.IsGenericTypeParameter)
       return new CompoundName(aName);
     string aNamespace = typeInfo.Namespace;
-    if (asInterface && typeInfo.TypeKind == TypeKind.Class
-        && !aNamespace.StartsWith("System") && !aNamespace.StartsWith("DocumentModel.BaseTypes"))
-    {
-      aName = "I" + aName;
-    }
+
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
     var apos = aName.IndexOf('`');
     if (apos >= 0)
       aName = aName.Substring(0, apos);
 
-    var result = new CompoundName(aName, (withNamespace && aNamespace != null) ? aNamespace : null);
+    var result = new CompoundName(aName, (aNamespace != null) ? aNamespace : null);
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
@@ -168,7 +164,7 @@ public static class ModelManager
       {
         result.ArgNames = new();
         foreach (var genericArg in genericArgs.ToList())
-          result.ArgNames.Add(GetConvertedName(genericArg, asInterface, withNamespace));
+          result.ArgNames.Add(GetConvertedName(genericArg));
       }
     }
     return result;

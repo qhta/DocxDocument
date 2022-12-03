@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Options to define how an element should be appeneded.
 /// </summary>
+[Obsolete("This is not used and will be removed in a future version.")]
 public enum AppendOption
 {
   /// <summary>

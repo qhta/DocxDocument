@@ -8,6 +8,7 @@ public enum AutomaticColorKind
   /// <summary>
   /// Automatically Determined Color.
   /// </summary>
+  [XmlEnum("auto")]
   Auto,
   
 }

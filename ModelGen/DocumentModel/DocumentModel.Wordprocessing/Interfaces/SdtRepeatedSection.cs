@@ -1,0 +1,18 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the SdtRepeatedSection Class.
+/// </summary>
+public interface SdtRepeatedSection // : DocumentModel.BaseTypes.ModelElement
+{
+  /// <summary>
+  /// SectionTitle.
+  /// </summary>
+  public String? SectionTitle { get ; set; }
+  
+  /// <summary>
+  /// DoNotAllowInsertDeleteSection.
+  /// </summary>
+  public Boolean? DoNotAllowInsertDeleteSection { get ; set; }
+  
+}

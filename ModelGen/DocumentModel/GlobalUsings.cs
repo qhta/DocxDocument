@@ -1,7 +1,11 @@
+global using DocumentModel.Attributes;
 global using DocumentModel.BaseTypes;
 global using System;
+global using System.CodeDom.Compiler;
 global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
 global using System.IO;
 global using System.IO.Packaging;
+global using System.Reflection;
 global using System.Xml;
+global using System.Xml.Serialization;

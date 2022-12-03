@@ -17,12 +17,12 @@ public class ModelElement: IOwnedElement
 
   public XElement? Documentation { get; set; }
 
-  public Collection<CustomAttribData> CustomAttributes { get; }
+  public OwnedCollection<CustomAttribData> CustomAttributes { get; }
 
   
   public ModelElement(string name)
   {
     Name = name;
-    CustomAttributes = new Collection<CustomAttribData>(this);
+    CustomAttributes = new OwnedCollection<CustomAttribData>(this);
   }
 }

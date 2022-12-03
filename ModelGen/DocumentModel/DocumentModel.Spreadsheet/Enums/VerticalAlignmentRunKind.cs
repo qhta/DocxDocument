@@ -8,16 +8,19 @@ public enum VerticalAlignmentRunKind
   /// <summary>
   /// Baseline.
   /// </summary>
+  [XmlEnum("baseline")]
   Baseline,
   
   /// <summary>
   /// Superscript.
   /// </summary>
+  [XmlEnum("superscript")]
   Superscript,
   
   /// <summary>
   /// Subscript.
   /// </summary>
+  [XmlEnum("subscript")]
   Subscript,
   
 }

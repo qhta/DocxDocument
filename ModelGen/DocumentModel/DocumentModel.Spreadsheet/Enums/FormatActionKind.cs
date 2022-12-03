@@ -8,11 +8,13 @@ public enum FormatActionKind
   /// <summary>
   /// Blank.
   /// </summary>
+  [XmlEnum("blank")]
   Blank,
   
   /// <summary>
   /// Formatting.
   /// </summary>
+  [XmlEnum("formatting")]
   Formatting,
   
 }

@@ -8,11 +8,13 @@ public enum TransitionPatternKind
   /// <summary>
   /// diamond.
   /// </summary>
+  [XmlEnum("diamond")]
   Diamond,
   
   /// <summary>
   /// hexagon.
   /// </summary>
+  [XmlEnum("hexagon")]
   Hexagon,
   
 }

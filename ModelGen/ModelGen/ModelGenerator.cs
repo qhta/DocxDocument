@@ -21,7 +21,7 @@ public class ModelGenerator
   public string ImplProjectName { get; private set; }
   public string ImplOutputPath { get; private set; }
 
-  public int GeneratedClassesCount { get; private set;}
+  public int GeneratedClassesCount { get; private set; }
   public int GeneratedInterfacesCount { get; private set; }
   public int GeneratedStructsCount { get; private set; }
   public int GeneratedEnumTypesCount { get; private set; }
@@ -68,7 +68,7 @@ public class ModelGenerator
     if (typeInfo.TypeKind == TypeKind.Class)
       GenerateClassType(typeInfo);
     else if (typeInfo.TypeKind == TypeKind.Enum)
-      GenEnumType(typeInfo);
+      GenerateEnumType(typeInfo);
   }
 
   #region Class type generation
@@ -78,7 +78,7 @@ public class ModelGenerator
     var typeName = type.Name;
     var aNamespace = type.Namespace;
     var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
-    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", "I" + typeName + ".cs"), true);
+    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", typeName + ".cs"), true);
     //var implOutputPath = Path.Combine(ImplOutputPath, aNamespace);
     //GenClassOrInterface(type, typeName, Path.Combine(implOutputPath, typeName + ".cs"), false);
   }
@@ -105,11 +105,11 @@ public class ModelGenerator
     }
 
     GenDocumentationComments(typeInfo, writer);
-    GenCustomAttributes(typeInfo.CustomAttributes, writer);
+    GenerateCustomAttributes(typeInfo.CustomAttributes, writer);
     if (toInterface)
-      writer.WriteLine($"public interface I{typeName} // : {typeInfo.BaseTypeInfo?.GetFullName(false, true)}");
+      writer.WriteLine($"public interface {typeName} // : {typeInfo.BaseTypeInfo?.GetConvertedName()}");
     else
-      writer.WriteLine($"public class {typeName}: I{typeName}");
+      writer.WriteLine($"public class {typeName}: {typeName}");
     writer.WriteLine("{");
     writer.Indent++;
     //if (type.Name == "AreaChartSeries")
@@ -130,27 +130,23 @@ public class ModelGenerator
 
   private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, bool toInterface)
   {
-    //if (prop.Name == "Index")
-    //  Debug.Assert(true);
     var propertyType = prop.PropertyType;
-    //if (propertyType.ToString() == "DocumentModel.Drawing.Charts.Index")
-    //  Debug.Assert(true);
-    CompoundName propertyTypeName = propertyType.GetConvertedName(true, true);
+    CompoundName propertyTypeName = propertyType.GetConvertedName();
     var namespaces = propertyTypeName.GetNamespaces();
     foreach (var ns in namespaces)
-      if (ns.StartsWith("System") || ns=="DocumentModel.BaseTypes")
+      if (ns.StartsWith("System") || ns == "DocumentModel.BaseTypes")
       {
         AddGlobalUsing(ns);
         propertyTypeName.RemoveNamespace(ns);
       }
       else
-      if (ns==InNamespace)
+      if (ns == InNamespace)
       {
         propertyTypeName.RemoveNamespace(ns);
       }
     var propTypeName = propertyTypeName.ToString();
     GenDocumentationComments(prop, writer);
-    GenCustomAttributes(prop.CustomAttributes, writer);
+    GenerateCustomAttributes(prop.CustomAttributes, writer);
     if (toInterface)
       writer.WriteLine($"public {propTypeName}? {prop.Name} {{ get ; set; }}");
     else
@@ -164,33 +160,31 @@ public class ModelGenerator
     writer.WriteLine();
     GeneratedPropertiesCount += 1;
   }
-
-
   #endregion
 
   #region Enum types generation
-  private void GenEnumType(TypeInfo type)
+  private void GenerateEnumType(TypeInfo type)
   {
     var outputPath = IntfOutputPath;
     var aNamespace = type.Namespace;
     outputPath = Path.Combine(outputPath, aNamespace);
     var typeName = type.Name;
     var fileName = ValidateFilename(typeName);
-    GenEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs"));
+    GenerateEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs"));
     GeneratedEnumTypesCount += 1;
   }
 
-  private void GenEnumType(TypeInfo type, string typeName, string filename)
+  private void GenerateEnumType(TypeInfo type, string typeName, string filename)
   {
     AssurePathExists(filename);
     using (var textWriter = File.CreateText(filename))
     using (var writer = new IndentedTextWriter(textWriter, "  "))
     {
-      GenEnumType(type, typeName, writer);
+      GenerateEnumType(type, typeName, writer);
     }
   }
 
-  private void GenEnumType(TypeInfo type, string typeName, IndentedTextWriter writer)
+  private void GenerateEnumType(TypeInfo type, string typeName, IndentedTextWriter writer)
   {
     var aNamespace = type.GetNamespace();
     if (aNamespace != null)
@@ -199,23 +193,23 @@ public class ModelGenerator
       writer.WriteLine();
     }
     GenDocumentationComments(type, writer);
-    GenCustomAttributes(type.CustomAttributes, writer);
+    GenerateCustomAttributes(type.CustomAttributes, writer);
     writer.WriteLine($"public enum {typeName}");
     writer.WriteLine("{");
     writer.Indent++;
     if (type.EnumValues != null)
       foreach (var field in type.EnumValues)
-        GenEnum(field, writer);
+        GenerateEnum(field, writer);
     writer.Indent--;
     writer.WriteLine("}");
   }
 
-  private void GenEnum(EnumInfo field, IndentedTextWriter writer)
+  private void GenerateEnum(EnumInfo field, IndentedTextWriter writer)
   {
     bool addEmptyLine = GenDocumentationComments(field, writer);
     if (field.CustomAttributes != null)
     {
-      GenCustomAttributes(field.CustomAttributes, writer);
+      GenerateCustomAttributes(field.CustomAttributes, writer);
       addEmptyLine = true;
     }
     writer.WriteLine($"{field.Name},");
@@ -227,42 +221,48 @@ public class ModelGenerator
 
   #region CustomAttributes generation
 
-  private bool GenCustomAttributes(IEnumerable<CustomAttribData>? attributes, IndentedTextWriter writer)
+  private bool GenerateCustomAttributes(IEnumerable<CustomAttribData>? attributes, IndentedTextWriter writer)
   {
-    //if (attributes?.Any() == true)
-    //{
-    //  foreach (var customAttrib in attributes)
-    //    GenCustomAttribute(customAttrib, writer);
-    //  AddGlobalUsing("DocumentModel.Attributes");
-    //  return true;
-    //}
+    if (attributes?.Any() == true)
+    {
+      bool generated = false;
+      foreach (var customAttrib in attributes)
+      {
+        if (GenerateCustomAttribute(customAttrib, writer))
+          generated = true;
+      }
+      return (generated);
+    }
     return false;
   }
 
-  private void GenCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
+  private bool GenerateCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
   {
     var attributeType = attrData.AttributeType;
-    //if (ModelFilter.AttributeConversionTable.TryGetValue(attributeType, out var altAttrType))
-    //  attributeType = altAttrType;
-    var attrTypeName = attributeType.Name;
+    var attributeTypeName = attributeType.GetConvertedName();
+    var attrTypeName = attributeTypeName.Name;
     if (attrTypeName.EndsWith("Attribute"))
       attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
+    if (attrTypeName == string.Empty)
+      return false;
     if (ModelData.ExcludedAttributes.Contains(attrTypeName))
-      return;
+      return false;
     var attrString = attrTypeName;
     if (attrData.ConstructorArguments?.Count + attrData.NamedArguments?.Count > 0)
     {
       var strList = new List<string>();
       if (attrData.ConstructorArguments != null)
         foreach (var arg in attrData.ConstructorArguments)
-          strList.Add(TypedValueLiteral(arg.ArgumentType, arg.Value));
+          strList.Add(GenerateTypedValueLiteral(arg));
       if (attrData.NamedArguments != null)
         foreach (var arg in attrData.NamedArguments)
-          strList.Add($"{arg.MemberName?.ToString() ?? String.Empty} =  {TypedValueLiteral(arg.TypedValue.ArgumentType, arg.TypedValue.Value)}");
+          strList.Add(GenerateTypedValueLiteral(arg));
       attrString += "(" + String.Join(", ", strList) + ")";
     }
     writer.WriteLine($"[{attrString}]");
-    AddGlobalUsing(attributeType.Namespace);
+    if (attributeTypeName.Namespace != null)
+      AddGlobalUsing(attributeTypeName.Namespace);
+    return true;
   }
   #endregion
 
@@ -333,6 +333,7 @@ public class ModelGenerator
 
   private void AddGlobalUsing(string aNamespace)
   {
+    Debug.Assert(aNamespace != "DocumentModel.Framework");
     if (aNamespace != String.Empty)
       if (!GlobalUsings.Contains(aNamespace))
         GlobalUsings.Add(aNamespace);
@@ -356,37 +357,43 @@ public class ModelGenerator
   #endregion
 
   #region Literals generation
-  private string TypedValueLiteral(Type type, object? value)
+  private string GenerateTypedValueLiteral(CustomAttribNamedArgument namedArgument)
   {
-    if (type == typeof(string))
+    return namedArgument.MemberName + "=" + GenerateTypedValueLiteral(namedArgument.TypedValue);
+  }
+
+  private string GenerateTypedValueLiteral(CustomAttribTypedArgument typedArgument)
+  {
+    return GenerateTypedValueLiteral(typedArgument.Value);
+  }
+
+  private string GenerateTypedValueLiteral(object? value)
+  {
+    if (value is string str)
     {
-      if (value is string str)
-        return $"\"{str}\"";
-      return "\"\"";
+      return $"\"{str}\"";
     }
     else if (value is TypeInfo aType)
     {
-      var aTypeName = "I" + aType.Name;
-      var aNamespace = aType.Namespace;
+      var typeName = aType.GetConvertedName();
+      var aTypeName = typeName.Name;
+      var aNamespace = typeName.Namespace;
       return ($"typeof({aNamespace}.{aTypeName})");
-
     }
     else if (value is bool bv)
       return bv.ToString().ToLower();
     else if (value != null)
     {
-      if (type.IsEnum)
+      var valueType = value.GetType();
+      if (valueType.IsEnum)
       {
-        var enumName = Enum.GetName(type, value);
-        enumName = type.Name + "." + enumName;
+        var enumName = Enum.GetName(valueType, value);
+        enumName = valueType.Name + "." + enumName;
         return enumName;
       }
-      else
-      {
-        return value.ToString() ?? "";
-      }
+      return value.ToString() ?? "null";
     }
-    return "";
+    return "null";
   }
   #endregion
 

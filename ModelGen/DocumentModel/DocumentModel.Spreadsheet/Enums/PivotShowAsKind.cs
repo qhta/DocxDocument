@@ -8,31 +8,37 @@ public enum PivotShowAsKind
   /// <summary>
   /// percentOfParent.
   /// </summary>
+  [XmlEnum("percentOfParent")]
   PercentOfParent,
   
   /// <summary>
   /// percentOfParentRow.
   /// </summary>
+  [XmlEnum("percentOfParentRow")]
   PercentOfParentRow,
   
   /// <summary>
   /// percentOfParentCol.
   /// </summary>
+  [XmlEnum("percentOfParentCol")]
   PercentOfParentColumn,
   
   /// <summary>
   /// percentOfRunningTotal.
   /// </summary>
+  [XmlEnum("percentOfRunningTotal")]
   PercentOfRunningTotal,
   
   /// <summary>
   /// rankAscending.
   /// </summary>
+  [XmlEnum("rankAscending")]
   RankAscending,
   
   /// <summary>
   /// rankDescending.
   /// </summary>
+  [XmlEnum("rankDescending")]
   RankDescending,
   
 }

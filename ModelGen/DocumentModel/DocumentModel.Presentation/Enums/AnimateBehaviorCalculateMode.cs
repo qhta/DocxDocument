@@ -8,16 +8,19 @@ public enum AnimateBehaviorCalculateMode
   /// <summary>
   /// Calc Mode Enum ( Discrete ).
   /// </summary>
+  [XmlEnum("discrete")]
   Discrete,
   
   /// <summary>
   /// Calc Mode Enum ( Linear ).
   /// </summary>
+  [XmlEnum("lin")]
   Linear,
   
   /// <summary>
   /// Calc Mode Enum ( Formula ).
   /// </summary>
+  [XmlEnum("fmla")]
   Formula,
   
 }
