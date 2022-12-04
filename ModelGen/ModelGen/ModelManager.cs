@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 using DocumentFormat.OpenXml;
 
@@ -55,9 +56,9 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (typeInfo.TypeKind == TypeKind.Class && typeInfo.Properties?.Count == 1)
+    if (typeInfo.AcceptedProperties?.Count() == 1)
     {
-      var firstProp = typeInfo.Properties?.FirstOrDefault();
+      var firstProp = typeInfo.AcceptedProperties?.FirstOrDefault();
       if (firstProp != null && firstProp.Name == "Val")
       {
         TypeManager.AddRelationship(typeInfo, firstProp.PropertyType, Semantics.TypeChange);
@@ -76,12 +77,6 @@ public static class ModelManager
 
   private static bool TryAddGenericTypeConversion(TypeInfo typeInfo, out TypeInfo? targetType)
   {
-    if (typeInfo.Name == "EnumValue`1")
-    {
-      //  ModelDisplay.ConsoleWriteSameLine($"{typeInfo}[{typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name}]\n");
-      //  if (typeInfo.Type.GetGenericArguments().FirstOrDefault()?.Name == "MultiLevelValues") 
-      //    Debug.Assert(true);
-    }
     targetType = null;
     if (typeInfo.IsConverted)
       return false;
@@ -187,6 +182,152 @@ public static class ModelManager
     }
     return result ?? typeInfo;
   }
+
+  #region Checking types
+
+  public static bool TryAcceptType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
+  {
+    typeInfo = null;
+    var typeName = type.ToString();
+    if (typeName.Contains('<') || typeName.Contains('+') || typeName.Contains('&'))
+      return false;
+    if (ModelData.IsExcluded(type))
+      return false;
+    typeInfo = TypeManager.RegisterType(type);
+    typeInfo.IsAccepted = true;
+    typeInfo.IsUsed = true;
+    return true;
+  }
+
+  public static bool CheckTypeUsage(TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  {
+    if (typeInfo.UsesEvaluated)
+      return typeInfo.IsUsed;
+    typeInfo.UsesEvaluated = true;
+
+    if (OnStartChecking != null)
+      OnStartChecking(typeInfo);
+    if (typeInfo.IsAccepted == false)
+      return false;
+    if (ModelData.IsExcluded(typeInfo.Type))
+      return false;
+    if (ModelData.ExcludedNamespaces.Contains(typeInfo.Namespace ?? ""))
+      return false;
+    typeInfo.IsUsed = true;
+
+    if (typeInfo.BaseTypeInfo != null)
+    {
+      var baseType = typeInfo.BaseTypeInfo.GetConversionTarget(true);
+      CheckTypeUsage(baseType, OnStartChecking);
+    }
+
+    if (typeInfo.Properties != null)
+      foreach (var prop in typeInfo.Properties.ToArray())
+      {
+        if (prop.IsAccepted is null or true)
+        {
+          var propType = prop.PropertyType.GetConversionTarget(true);
+          if (propType.IsAccepted is null or true)
+          {
+            prop.IsAccepted = CheckTypeUsage(propType, OnStartChecking);
+          }
+          else
+            prop.IsAccepted = false;
+        }
+      }
+
+    var interfaces = typeInfo.GetInterfaces();
+    if (interfaces.Any())
+      foreach (var intfType in interfaces.ToArray())
+      {
+        if (intfType.IsAccepted is null or true)
+        {
+          CheckTypeUsage(intfType, OnStartChecking);
+        }
+      }
+
+    //var customAttribs = typeInfo.CustomAttributes;
+    //if (customAttribs.Any())
+    //  foreach (var customAttrib in customAttribs.ToArray())
+    //  {
+    //    var customAttribType = customAttrib.AttributeType;
+    //    if (customAttribType.IsAccepted is null or true)
+    //    {
+    //      customAttrib.IsAccepted = CheckTypeUsage(customAttribType, OnStartChecking);
+    //    }
+    //    else
+    //      customAttrib.IsAccepted = false;
+    //  }
+
+    //var includedTypes = typeInfo.GetIncludedTypes();
+    //if (includedTypes.Any())
+    //  foreach (var inclType in includedTypes.ToArray())
+    //  {
+    //    if (inclType.IsAccepted != false)
+    //    {
+    //      CheckTypeUsage(inclType, OnStartChecking);
+    //    }
+    //  }
+    return typeInfo.IsUsed;
+  }
+
+  public static bool CheckPropertyOverride(TypeInfo thisTypeInfo)
+  {
+    var baseTypeInfo = thisTypeInfo.BaseTypeInfo?.GetConversionTarget(true);
+    if (thisTypeInfo.Name == "CategoryAxisData")
+      Debug.Assert(true);
+    if (baseTypeInfo != null && thisTypeInfo.Properties != null && baseTypeInfo.Properties != null)
+    {
+      var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAccepted != false).Select(item => item.Name).ToArray();
+      var basePropNames = baseTypeInfo.Properties.Where(item => item.IsAccepted != false).Select(item => item.Name).ToArray();
+      var commonPropNames = thisPropNames.Intersect(basePropNames).ToArray();
+      var hasSamePropNames = commonPropNames.Any();
+      if (hasSamePropNames)
+      {
+        foreach (var propName in commonPropNames)
+        {
+          var thisProperty = thisTypeInfo.Properties.Where(item=>item.Name == propName).First();
+          var baseProperty = baseTypeInfo.Properties.Where(item => item.Name == propName).First();
+          if (thisProperty.PropertyType == baseProperty.PropertyType)
+          {
+            thisProperty.IsOverriden = true;
+            if (!baseProperty.IsOverriden && !baseProperty.IsAbstract)
+              baseProperty.IsVirtual = true;
+          }
+          else
+          {
+            thisProperty.IsNew = true;
+          }
+        }
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static int CheckNamespaceDuplicatedTypes(string nspace)
+  {
+    var duplicatedTypesCount = 0;
+    var duplicatedTypesTypes = TypeManager.GetNamespaceTypes(nspace).GroupBy(item => item.Name);
+    foreach (var grouping in duplicatedTypesTypes)
+    {
+      var count = grouping.Count();
+      if (count > 1)
+      {
+        int cnt = 1;
+        foreach (var type in grouping)
+        {
+          type.Name += cnt.ToString();
+          cnt++;
+        }
+        duplicatedTypesCount++;
+      }
+    }
+    return duplicatedTypesCount;
+  }
+
+
+  #endregion
 
   #region Rename types
   public static bool RenameType(TypeInfo typeInfo)

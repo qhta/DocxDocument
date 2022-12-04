@@ -8,13 +8,11 @@ public enum IntervalClosedSide
   /// <summary>
   /// l.
   /// </summary>
-  [XmlEnum("l")]
   L,
   
   /// <summary>
   /// r.
   /// </summary>
-  [XmlEnum("r")]
   R,
   
 }

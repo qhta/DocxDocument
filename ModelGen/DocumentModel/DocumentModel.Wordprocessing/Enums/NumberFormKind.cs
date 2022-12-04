@@ -8,19 +8,16 @@ public enum NumberFormKind
   /// <summary>
   /// default.
   /// </summary>
-  [XmlEnum("default")]
   Default,
   
   /// <summary>
   /// lining.
   /// </summary>
-  [XmlEnum("lining")]
   Lining,
   
   /// <summary>
   /// oldStyle.
   /// </summary>
-  [XmlEnum("oldStyle")]
   OldStyle,
   
 }

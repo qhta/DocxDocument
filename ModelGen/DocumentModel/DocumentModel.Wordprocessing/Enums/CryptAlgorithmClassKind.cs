@@ -8,13 +8,11 @@ public enum CryptAlgorithmClassKind
   /// <summary>
   /// Hashing.
   /// </summary>
-  [XmlEnum("hash")]
   Hash,
   
   /// <summary>
   /// custom.
   /// </summary>
-  [XmlEnum("custom")]
   Custom,
   
 }

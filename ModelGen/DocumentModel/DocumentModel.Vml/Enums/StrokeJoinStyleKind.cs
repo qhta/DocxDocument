@@ -8,19 +8,16 @@ public enum StrokeJoinStyleKind
   /// <summary>
   /// Round Joint.
   /// </summary>
-  [XmlEnum("round")]
   Round,
   
   /// <summary>
   /// Bevel Joint.
   /// </summary>
-  [XmlEnum("bevel")]
   Bevel,
   
   /// <summary>
   /// Miter Joint.
   /// </summary>
-  [XmlEnum("miter")]
   Miter,
   
 }

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.BaseTypes;
+﻿namespace DocumentModel;
 
 public class ModelElement
 {

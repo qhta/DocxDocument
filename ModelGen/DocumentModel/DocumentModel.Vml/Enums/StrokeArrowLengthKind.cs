@@ -8,19 +8,16 @@ public enum StrokeArrowLengthKind
   /// <summary>
   /// Short Arrowhead.
   /// </summary>
-  [XmlEnum("short")]
   Short,
   
   /// <summary>
   /// Medium Arrowhead.
   /// </summary>
-  [XmlEnum("medium")]
   Medium,
   
   /// <summary>
   /// Long Arrowhead.
   /// </summary>
-  [XmlEnum("long")]
   Long,
   
 }

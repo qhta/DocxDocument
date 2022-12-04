@@ -1,0 +1,8 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the DocEvents Class.
+/// </summary>
+public class DocEvents
+{
+}

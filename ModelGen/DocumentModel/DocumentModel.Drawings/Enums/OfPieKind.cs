@@ -8,13 +8,11 @@ public enum OfPieKind
   /// <summary>
   /// Pie.
   /// </summary>
-  [XmlEnum("pie")]
   Pie,
   
   /// <summary>
   /// Bar.
   /// </summary>
-  [XmlEnum("bar")]
   Bar,
   
 }

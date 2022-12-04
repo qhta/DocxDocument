@@ -8,13 +8,11 @@ public enum ChildOrderKind
   /// <summary>
   /// Bottom.
   /// </summary>
-  [XmlEnum("b")]
   Bottom,
   
   /// <summary>
   /// Top.
   /// </summary>
-  [XmlEnum("t")]
   Top,
   
 }

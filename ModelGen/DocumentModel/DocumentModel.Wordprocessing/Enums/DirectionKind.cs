@@ -8,13 +8,11 @@ public enum DirectionKind
   /// <summary>
   /// ltr.
   /// </summary>
-  [XmlEnum("ltr")]
   Ltr,
   
   /// <summary>
   /// rtl.
   /// </summary>
-  [XmlEnum("rtl")]
   Rtl,
   
 }

@@ -29,8 +29,7 @@ public static class TypeManager
 
   public static IEnumerable<TypeInfo> AcceptedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
   public static IEnumerable<TypeInfo> ConvertedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsConverted == true);
-
-  public static IEnumerable<TypeInfo> UsedTypes => TypeManager.KnownTypes.Values.Where(item => item.UsageCount > 0);
+  public static IEnumerable<TypeInfo> UsedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsUsed==true);
 
   public static int RegisterNamespace(string nspace)
   {
@@ -74,9 +73,9 @@ public static class TypeManager
   public static IEnumerable<string> GetNamespaces(bool origin = false)
   {
     if (origin)
-      return KnownNamespaces.Select(item => item.Item2);
+      return KnownNamespaces.Select(item => item.Item2).Distinct();
     else
-      return KnownNamespaces.Select(item => TranslateNamespace(item.Item2));
+      return KnownNamespaces.Select(item => TranslateNamespace(item.Item2)).Distinct();
   }
 
   private static object KnownTypesLock = new object();
@@ -114,8 +113,6 @@ public static class TypeManager
 
   public static TypeInfo RegisterType(Type type)
   {
-    if (type.Name.Contains('&'))
-      Debug.Assert(true);
     lock (KnownTypesLock)
     {
       if (KnownTypes.TryGetValue(type, out var info))
@@ -158,6 +155,7 @@ public static class TypeManager
       return rel;
     }
   }
+
   public static TypeRelationship[] GetIncomingRelationships(this TypeInfo typeInfo)
   {
     lock (RelationshipsLock)

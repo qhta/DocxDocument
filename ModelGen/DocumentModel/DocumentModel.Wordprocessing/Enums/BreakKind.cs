@@ -8,19 +8,16 @@ public enum BreakKind
   /// <summary>
   /// Page Break.
   /// </summary>
-  [XmlEnum("page")]
   Page,
   
   /// <summary>
   /// Column Break.
   /// </summary>
-  [XmlEnum("column")]
   Column,
   
   /// <summary>
   /// Line Break.
   /// </summary>
-  [XmlEnum("textWrapping")]
   TextWrapping,
   
 }

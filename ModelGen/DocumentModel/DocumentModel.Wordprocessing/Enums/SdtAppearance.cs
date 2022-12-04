@@ -8,19 +8,16 @@ public enum SdtAppearance
   /// <summary>
   /// boundingBox.
   /// </summary>
-  [XmlEnum("boundingBox")]
   BoundingBox,
   
   /// <summary>
   /// tags.
   /// </summary>
-  [XmlEnum("tags")]
   Tags,
   
   /// <summary>
   /// hidden.
   /// </summary>
-  [XmlEnum("hidden")]
   Hidden,
   
 }

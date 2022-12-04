@@ -8,13 +8,11 @@ public enum STorageType
   /// <summary>
   /// sibTrans.
   /// </summary>
-  [XmlEnum("sibTrans")]
   SibTrans,
   
   /// <summary>
   /// parTrans.
   /// </summary>
-  [XmlEnum("parTrans")]
   ParTrans,
   
 }

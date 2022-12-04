@@ -1,0 +1,17 @@
+namespace DocumentModel.Math;
+
+/// <summary>
+/// Defines the OfficeMathArgumentType Class.
+/// </summary>
+public class OfficeMathArgumentType
+{
+  /// <summary>
+  /// Argument Properties.
+  /// </summary>
+  public virtual ArgumentProperties? ArgumentProperties
+  {
+    get;
+    set;
+  }
+  
+}

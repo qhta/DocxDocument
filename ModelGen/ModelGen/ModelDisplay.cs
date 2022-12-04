@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-
-using System.CodeDom.Compiler;
-using System.Diagnostics;
-using System.Reflection;
+﻿using System.CodeDom.Compiler;
 
 namespace ModelGen;
 
@@ -10,31 +6,34 @@ public static class ModelDisplay
 {
 
 
-  public static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
+  private static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
+  //private static int IndentLength = 2;
+  private static int LineLength = 0;
 
   public static void SetOutput(TextWriter textWriter)
   {
     Writer = new IndentedTextWriter(textWriter, "  ");
   }
 
-
-  public static void WriteSameLine(string? str)
-  {
-    String EmptyLine = new String(' ', Console.BufferWidth);
-    Writer.Write($"\r{EmptyLine}");
-    Writer.Write($"\r{str}");
-  }
-
-  public static void ConsoleWriteSameLine(string? str)
-  {
-    String EmptyLine = new String(' ', Console.BufferWidth);
-    Writer.Write($"\r{EmptyLine}");
-    Writer.Write($"\r{str}");
-  }
-
   public static void WriteLine(string? str)
   {
     Writer.WriteLine(str);
+    LineLength = (str?.Length ?? 0);
+  }
+  public static void WriteLine()
+  {
+    Writer.WriteLine();
+    LineLength = 0;
+  }
+
+  public static void WriteSameLine(string? str)
+  {
+    var l = str?.Length ?? 0;
+    int n = (l < LineLength) ? LineLength - l : 0;
+    Writer.Write($"\r{str}");
+    if (n>0)
+      Writer.Write(new String(' ',n));
+    LineLength = l;
   }
 
   public static void ShowNamespaces(bool original=false)
@@ -79,8 +78,6 @@ public static class ModelDisplay
 
   public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
-    if (nspace.StartsWith("DocumentFormat.OpenXml.Packaging"))
-      Debug.Assert(true);
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.AcceptedTypesOnly)
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
@@ -116,8 +113,8 @@ public static class ModelDisplay
     var changedToType = ModelManager.GetConversionTarget(typeInfo, false);
     if (changedToType != null)
       str += $" => {changedToType.GetFullName(options.OriginalNames)}";
-    else if (typeInfo.IsAccepted != null)
-      str += $" {{{Accepted(typeInfo.IsAccepted)}}}";
+    //else if (typeInfo.IsAccepted != null)
+    //  str += $" {{{Accepted(typeInfo.IsAccepted)}}}";
     Writer.WriteLine(str);
     if (options.HideUnacceptedTypeDetails && typeInfo.IsAccepted == false)
       return;
@@ -128,8 +125,8 @@ public static class ModelDisplay
       changedToType = ModelManager.GetConversionTarget(typeInfo.BaseTypeInfo, false);
       if (changedToType != null)
         str += $" => {changedToType.GetFullName(options.OriginalNames)}";
-      else if (typeInfo.BaseTypeInfo.IsAccepted != null)
-        str += $" {{{Accepted(typeInfo.BaseTypeInfo.IsAccepted)}}}";
+      //else if (typeInfo.BaseTypeInfo.IsAccepted != null)
+      //  str += $" {{{Accepted(typeInfo.BaseTypeInfo.IsAccepted)}}}";
       Writer.WriteLine(str);
     }
     if (options.ImplementedInterfaces)
@@ -284,8 +281,8 @@ public static class ModelDisplay
         var changedToType = ModelManager.GetConversionTarget(property.PropertyType, false);
         if (changedToType != null)
           str += $" => {changedToType.GetFullName(options.OriginalNames)}";
-        else if (property.PropertyType.IsAccepted != null)
-          str += $" {{{Accepted(property.PropertyType.IsAccepted)}}}";
+        //else if (property.PropertyType.IsAccepted != null)
+        //  str += $" {{{Accepted(property.PropertyType.IsAccepted)}}}";
         Writer.WriteLine(str);
         Writer.Indent--;
       }
@@ -318,23 +315,6 @@ public static class ModelDisplay
     }
   }
   
-
-  public static void ShowTypeUsage()
-  {
-    foreach (var typeInfo in TypeManager.AcceptedTypes)
-    {
-      Writer.WriteLine($"{typeInfo} used {typeInfo.UsageCount} {Multi(typeInfo.UsageCount,"time")}");
-    }
-  }
-
-  public static void ShowUnusedTypes()
-  {
-    foreach (var typeInfo in TypeManager.AcceptedTypes.Where(item => item.UsageCount == 0))
-    {
-      Writer.WriteLine($"{typeInfo} used {typeInfo.UsageCount} {Multi(typeInfo.UsageCount,"time")}");
-    }
-  }
-
   public static void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)

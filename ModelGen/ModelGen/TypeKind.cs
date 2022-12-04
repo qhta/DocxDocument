@@ -2,10 +2,10 @@
 
 public enum TypeKind
 {
-  Unknown,
-  Type,
-  Enum,
-  Struct,
-  Class,
-  Interface,
+  Type = 0,
+  Enum = 1,
+  Struct = 2,
+  Class = 4,
+  Interface = 8,
+  ClassOrInterface = 12,
 }
