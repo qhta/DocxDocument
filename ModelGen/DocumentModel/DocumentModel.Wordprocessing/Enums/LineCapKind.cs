@@ -8,19 +8,16 @@ public enum LineCapKind
   /// <summary>
   /// rnd.
   /// </summary>
-  [XmlEnum("rnd")]
   Round,
   
   /// <summary>
   /// sq.
   /// </summary>
-  [XmlEnum("sq")]
   Square,
   
   /// <summary>
   /// flat.
   /// </summary>
-  [XmlEnum("flat")]
   Flat,
   
 }

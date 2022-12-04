@@ -40,9 +40,11 @@ public class ModelCreator
 
     totalTime += AddTypeConversion();
 
-    //CheckTypeUsage();
+    totalTime += CheckTypeUsage();
 
     ////ShowNamespaceDetails();
+
+    totalTime += CheckTypeDefinition();
 
     totalTime += GenerateCode();
 
@@ -51,7 +53,7 @@ public class ModelCreator
 
   private void ShowNamespaceDetails()
   {
-    Console.WriteLine();
+    ModelDisplay.WriteLine();
     ModelDisplay.ShowNamespaceDetails(new ShowOptions
     {
       BaseTypes = true,
@@ -61,8 +63,8 @@ public class ModelCreator
 
   private void ShowNamespaces()
   {
-    Console.WriteLine();
-    Console.WriteLine($"Found {TypeManager.GetNamespaces(true).Count()} namespaces");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine($"Found {TypeManager.GetNamespaces(true).Count()} namespaces");
     ModelDisplay.ShowNamespaces();
   }
 
@@ -78,31 +80,60 @@ public class ModelCreator
       {
         //ModelMonitorDisplay.WriteSameLine(type.FullName);
         foundTypesCount++;
-        if (TryAcceptType(type, out var typeInfo))
+        if (ModelManager.TryAcceptType(type, out var typeInfo))
         {
           approvedTypesCount++;
         }
       }
     }
     TypeReflector.WaitDone();
-    Console.WriteLine();
+    ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    Console.WriteLine($"Scanning time {ts}");
-    Console.WriteLine($"Directly {foundTypesCount} types found, {approvedTypesCount} approved");
+    ModelDisplay.WriteLine($"Scanning time {ts}");
+    ModelDisplay.WriteLine($"Directly {foundTypesCount} types found, {approvedTypesCount} approved");
     var allTypesCount = TypeManager.AllTypes.Count();
     var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-    Console.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
-    Console.WriteLine($"Accepted {acceptedTypesCount} types");
+    ModelDisplay.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
+    ModelDisplay.WriteLine($"Accepted {acceptedTypesCount} types");
     return ts;
   }
 
+  private TimeSpan CheckTypeDefinition()
+  {
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine("Checking types");
+    DateTime t1 = DateTime.Now;
+    var checkedTypesCount = 0;
+    var checkedNamespacesCount = 0;
+    var invalidTypesCount = 0;
+    foreach (var typeInfo in TypeManager.AllTypes.ToArray())
+    {
+      ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
+      if (!ModelManager.CheckPropertyOverride(typeInfo))
+        invalidTypesCount++;
+    }
+    foreach (var nspace in TypeManager.GetNamespaces())
+    {
+      ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces. {nspace}");
+      int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
+      if (n>0)
+        invalidTypesCount+=n;
+    }
+    ModelDisplay.WriteLine();
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    ModelDisplay.WriteLine($"Checking time {ts}");
+    ModelDisplay.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
+    //ModelDisplay.ShowTypeRenames();
+    return ts;
+  }
 
   private TimeSpan RenameTypes()
   {
-    Console.WriteLine();
-    Console.WriteLine("Renaming types");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine("Renaming types");
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
     var renamedCount = 0;
@@ -112,19 +143,19 @@ public class ModelCreator
       if (ModelManager.RenameType(type))
         renamedCount++;
     }
-    Console.WriteLine();
+    ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    Console.WriteLine($"Renaming time {ts}");
-    Console.WriteLine($"Renamed {renamedCount} types");
+    ModelDisplay.WriteLine($"Renaming time {ts}");
+    ModelDisplay.WriteLine($"Renamed {renamedCount} types");
     //ModelDisplay.ShowTypeRenames();
     return ts;
   }
 
   private TimeSpan AddTypeConversion()
   {
-    Console.WriteLine();
-    Console.WriteLine("Converting types");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine("Converting types");
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
     foreach (var type in TypeManager.AllTypes.ToArray())
@@ -135,43 +166,50 @@ public class ModelCreator
     }
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    Console.WriteLine();
-    Console.WriteLine($"Converting time {ts}");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine($"Converting time {ts}");
     var convertedTypesCount = TypeManager.ConvertedTypes.Count();
-    Console.WriteLine($"Converted {convertedTypesCount} types");
+    ModelDisplay.WriteLine($"Converted {convertedTypesCount} types");
     //ModelDisplay.ShowTypeConversions();
     return ts;
   }
 
 
-  private void CheckTypeUsage()
+  private TimeSpan CheckTypeUsage()
   {
-    Console.WriteLine();
-    Console.WriteLine("Checking type usage");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine("Checking type usage");
+    DateTime t1 = DateTime.Now;
     var checkCount = 0;
     foreach (var type in TypeManager.AcceptedTypes.ToArray())
     {
-      CheckTypeUsage(type,
+      ModelManager.CheckTypeUsage(type,
         (item) => { ModelDisplay.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });
     }
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
     var usedCount = TypeManager.UsedTypes.Count();
     var acceptedCount = TypeManager.AcceptedTypes.Count();
-    Console.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
     //ModelMonitorDisplay.ShowUnusedTypes();
+    return ts;
   }
 
   private TimeSpan GenerateCode()
   {
-    Console.WriteLine();
+    ModelDisplay.WriteLine();
     ModelGenerator.PrepareProjects();
     int generatedCount = 0;
-    Console.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    ModelDisplay.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
       if (typeInfo.Namespace.StartsWith("System"))
         continue;
       if (typeInfo.Name.Contains('`'))
+        continue;
+      if (!typeInfo.IsUsed)
         continue;
       generatedCount++;
       ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false, true)}");
@@ -180,83 +218,14 @@ public class ModelCreator
     ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    Console.WriteLine();
-    Console.WriteLine($"Generating time {ts}");
-    Console.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
+    ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine($"Generating time {ts}");
+    ModelDisplay.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
                       $", {ModelGenerator.GeneratedStructsCount} structs, {ModelGenerator.GeneratedEnumTypesCount} enums");
-    Console.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
+    ModelDisplay.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
     return ts;
   }
 
-  #region Check types
-  private bool TryAcceptType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
-  {
-    typeInfo = null;
-    var typeName = type.ToString();
-    if (typeName.Contains('<') || typeName.Contains('+') || typeName.Contains('&'))
-      return false;
-    if (ModelData.IsExcluded(type))
-      return false;
-    typeInfo = TypeManager.RegisterType(type);
-    return true;
-  }
-
-  public void CheckTypeUsage(TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
-  {
-    if (typeInfo.UsesEvaluated)
-      return;
-    typeInfo.UsesEvaluated = true;
-    //Debug.WriteLine(typeInfo);
-    if (OnStartChecking != null)
-      OnStartChecking(typeInfo);
-    if (typeInfo.Name == "ModelElement")
-      Debug.Assert(true);
-
-    if (typeInfo.BaseTypeInfo != null)
-    {
-      var baseType = typeInfo.BaseTypeInfo.GetConversionTarget(true);
-      baseType.IsUsed = true;
-      CheckTypeUsage(baseType, OnStartChecking);
-    }
-
-    if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.ToArray())
-      {
-        if (prop.IsAccepted != false)
-        {
-          var propType = prop.PropertyType.GetConversionTarget(true);
-          if (propType.IsAccepted != false)
-          {
-            propType.IsUsed = true;
-            CheckTypeUsage(propType, OnStartChecking);
-          }
-        }
-      }
-
-    var interfaces = typeInfo.GetInterfaces();
-    if (interfaces.Any())
-      foreach (var intfType in interfaces.ToArray())
-      {
-        if (intfType.IsAccepted != false)
-        {
-          intfType.IsUsed = true;
-          CheckTypeUsage(intfType, OnStartChecking);
-        }
-      }
-
-    var includedTypes = typeInfo.GetIncludedTypes();
-    if (includedTypes.Any())
-      foreach (var inclType in includedTypes.ToArray())
-      {
-        if (inclType.IsAccepted != false)
-        {
-          inclType.IsUsed = true;
-          CheckTypeUsage(inclType, OnStartChecking);
-        }
-      }
-  }
-
-  #endregion
 
 
 

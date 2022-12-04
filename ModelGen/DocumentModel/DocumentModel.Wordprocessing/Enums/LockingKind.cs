@@ -8,25 +8,21 @@ public enum LockingKind
   /// <summary>
   /// SDT Cannot Be Deleted.
   /// </summary>
-  [XmlEnum("sdtLocked")]
   SdtLocked,
   
   /// <summary>
   /// Contents Cannot Be Edited At Runtime.
   /// </summary>
-  [XmlEnum("contentLocked")]
   ContentLocked,
   
   /// <summary>
   /// No Locking.
   /// </summary>
-  [XmlEnum("unlocked")]
   Unlocked,
   
   /// <summary>
   /// Contents Cannot Be Edited At Runtime And SDT Cannot Be Deleted.
   /// </summary>
-  [XmlEnum("sdtContentLocked")]
   SdtContentLocked,
   
 }

@@ -19,8 +19,6 @@ public static class TypeInspector
         if (element != null)
         {
           var elementMetadata = new ElementMetadataFactoryFeature().GetMetadata(element);
-          if (typeInfo.Type == typeof(DocumentFormat.OpenXml.Wordprocessing.Body))
-            Debug.Assert(true);
           var particle = elementMetadata.Particle?.Particle;
           if (particle != null) InspectParticle(typeInfo, particle, false);
           return elementMetadata;
@@ -43,6 +41,7 @@ public static class TypeInspector
     {
       var elementType = elementParticle.ElementType;
       var itemTypeInfo = TypeManager.RegisterType(elementType);
+      itemTypeInfo.IsAccepted = true;
       var itemTypeRelation = typeInfo.AddRelationship(itemTypeInfo, Semantics.Include);
       itemTypeRelation.IsMultiple = isMultiple;
     }

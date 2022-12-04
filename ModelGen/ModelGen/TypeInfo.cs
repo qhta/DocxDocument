@@ -22,6 +22,19 @@ public class TypeInfo : ModelElement
 
   public string OriginalName => Type.Name;
 
+  public new bool IsUsed
+  {
+    get => isUsed;
+    set
+    {
+      if (value && Name=="SR")
+        Debug.Assert(true);
+      isUsed= value;
+    }
+  }
+  private bool isUsed;
+
+
   public bool IsReflected { get; internal set; }
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
@@ -31,6 +44,10 @@ public class TypeInfo : ModelElement
   public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
   public TypeKind TypeKind { get; set; }
+
+  public bool IsInterface => TypeKind.HasFlag(TypeKind.Interface);
+  public bool IsClass => TypeKind.HasFlag(TypeKind.Class);
+
   public OwnedCollection<EnumInfo>? EnumValues { get; set; }
   public OwnedCollection<PropInfo>? Properties { get; set; }
   public Collection<TypeRelationship> OutgoingRelationships { get; set; } = new();
@@ -42,23 +59,25 @@ public class TypeInfo : ModelElement
 
   public Type Type { get; set; }
   public bool UsesEvaluated { get; set; }
-  public int UsageCount { get; set; }
   public int AcceptedPropsCount { get; set; }
 
   public TypeInfo(Type type) : base(type.Name)
   {
     Type = type;
     Namespace = type.Namespace ?? "";
-    var isAccepted = true;
-    if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
-      isAccepted = false;
-    if (ModelData.ExcludedTypes.Contains(type.Name))
-      isAccepted = false;
-    if (ModelData.IncludedTypes.Contains(type.Name))
-      isAccepted = true;
-    if (ModelData.TypeConversionTable.ContainsKey(type))
-      isAccepted = false;
-    IsAccepted = isAccepted;
+    if (IsAccepted == null)
+    {
+      var isAccepted = true;
+      if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
+        isAccepted = false;
+      if (ModelData.ExcludedTypes.Contains(type.Name))
+        isAccepted = false;
+      if (ModelData.IncludedTypes.Contains(type.Name))
+        isAccepted = true;
+      if (ModelData.TypeConversionTable.ContainsKey(type))
+        isAccepted = false;
+      IsAccepted = isAccepted;
+    }
   }
 
   public string GetNamespace(bool original = false)
@@ -84,8 +103,6 @@ public class TypeInfo : ModelElement
 
   public string GetFullName(bool original = false, bool asInterface = false, bool withNamespace = true)
   {
-    //if (Name.StartsWith("Dictionary"))
-    //  Debug.Assert(true);
     string aName;
     string aNamespace;
     if (original)
@@ -97,10 +114,6 @@ public class TypeInfo : ModelElement
     {
       aName = this.Name;
       aNamespace = this.Namespace;
-      //if (asInterface && TypeKind == TypeKind.Class && !aName.StartsWith("I"))
-      //{
-      //  aName = aName;
-      //}
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (IsGenericTypeParameter)

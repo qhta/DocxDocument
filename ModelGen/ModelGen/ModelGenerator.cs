@@ -1,6 +1,8 @@
 ﻿using System.CodeDom.Compiler;
 using System.Diagnostics;
 
+using DocumentFormat.OpenXml;
+
 using Namotion.Reflection;
 
 namespace ModelGen;
@@ -65,10 +67,10 @@ public class ModelGenerator
 
   public void GenerateTypeFile(TypeInfo typeInfo)
   {
-    if (typeInfo.TypeKind == TypeKind.Class)
-      GenerateClassType(typeInfo);
-    else if (typeInfo.TypeKind == TypeKind.Enum)
+    if (typeInfo.TypeKind == TypeKind.Enum)
       GenerateEnumType(typeInfo);
+    else if (!typeInfo.IsGenericTypeParameter)
+      GenerateClassType(typeInfo);
   }
 
   #region Class type generation
@@ -78,15 +80,13 @@ public class ModelGenerator
     var typeName = type.Name;
     var aNamespace = type.Namespace;
     var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
-    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", typeName + ".cs"), true);
+    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Classes", typeName + ".cs"), false);
     //var implOutputPath = Path.Combine(ImplOutputPath, aNamespace);
     //GenClassOrInterface(type, typeName, Path.Combine(implOutputPath, typeName + ".cs"), false);
   }
 
   private void GenerateClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
   {
-    if (typeName.EndsWith('&'))
-      Debug.Assert(true);
     AssurePathExists(filename);
     using (var textWriter = File.CreateText(filename))
     using (var writer = new IndentedTextWriter(textWriter, "  "))
@@ -106,18 +106,31 @@ public class ModelGenerator
 
     GenDocumentationComments(typeInfo, writer);
     GenerateCustomAttributes(typeInfo.CustomAttributes, writer);
+    string? baseStr = null;
+    if (typeInfo.BaseTypeInfo != null)
+    {
+      var baseTypeInfo = typeInfo.BaseTypeInfo.GetConversionTarget(true);
+      if (baseTypeInfo.IsInterface)
+      {
+        var baseInterfaceName = typeInfo.BaseTypeInfo.GetConvertedName();
+        baseStr = ": " + baseInterfaceName.ToString();
+      }
+    }
     if (toInterface)
-      writer.WriteLine($"public interface {typeName} // : {typeInfo.BaseTypeInfo?.GetConvertedName()}");
+    {
+      var str = $"public interface {typeName}"+baseStr;
+      writer.WriteLine(str);
+    }
     else
-      writer.WriteLine($"public class {typeName}: {typeName}");
+    {
+      var str = $"public class {typeName}" + baseStr;
+      writer.WriteLine(str);
+    }
     writer.WriteLine("{");
     writer.Indent++;
-    //if (type.Name == "AreaChartSeries")
-    //  Debug.Assert(true);
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
-        //if (!(ModelFilter.ExcludedProperties.Contains(prop.Name)) && !(ModelFilter.ExcludedTypes.Contains(prop.PropertyType.Namespace ?? "")))
-        GenerateProperty(prop, aNamespace, writer, toInterface);
+          GenerateProperty(prop, aNamespace, writer, toInterface);
     writer.Indent--;
     writer.WriteLine("}");
     if (toInterface)
@@ -130,6 +143,8 @@ public class ModelGenerator
 
   private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, bool toInterface)
   {
+    if (prop.Name == "MultiLevelStringReference" && prop.Owner is TypeInfo typeInfo && typeInfo.Name== "AxisDataSourceType")
+      Debug.Assert(true);
     var propertyType = prop.PropertyType;
     CompoundName propertyTypeName = propertyType.GetConvertedName();
     var namespaces = propertyTypeName.GetNamespaces();
@@ -151,7 +166,19 @@ public class ModelGenerator
       writer.WriteLine($"public {propTypeName}? {prop.Name} {{ get ; set; }}");
     else
     {
-      writer.WriteLine($"public {propTypeName}? {prop.Name}");
+      var str ="public ";
+      if (prop.IsStatic)
+        str += "static ";
+      if (prop.IsNew)
+        str += "new ";
+      if (prop.IsOverriden)
+        str += "override ";
+      if (prop.IsAbstract)
+        str += "abstract ";
+      if (prop.IsVirtual)
+        str += "virtual ";
+      str += $"{propTypeName}? {prop.Name}";
+      writer.WriteLine(str);
       writer.WriteLine($"{{");
       writer.WriteLine($"  get;");
       writer.WriteLine($"  set;");
@@ -228,8 +255,9 @@ public class ModelGenerator
       bool generated = false;
       foreach (var customAttrib in attributes)
       {
-        if (GenerateCustomAttribute(customAttrib, writer))
-          generated = true;
+        if (customAttrib.IsAccepted is true)
+          if (GenerateCustomAttribute(customAttrib, writer))
+            generated = true;
       }
       return (generated);
     }
@@ -333,7 +361,6 @@ public class ModelGenerator
 
   private void AddGlobalUsing(string aNamespace)
   {
-    Debug.Assert(aNamespace != "DocumentModel.Framework");
     if (aNamespace != String.Empty)
       if (!GlobalUsings.Contains(aNamespace))
         GlobalUsings.Add(aNamespace);

@@ -95,11 +95,9 @@ public static class TypeReflector
     lock (reflectedLock)
     {
       reflected++;
-      ModelDisplay.ConsoleWriteSameLine(
+      ModelDisplay.WriteSameLine(
         $"Total {TypeManager.TotalTypesCount} registered types, {reflected} reflected, {TypeQueue.Count} waiting. {typeInfo.OriginalNamespace}.{typeInfo.OriginalName}");
     }
-    //if (typeInfo.Name == "DataPart")
-    //  Debug.Assert(true);
     var type = typeInfo.Type;
     typeInfo.TypeKind = TypeKind.Type;
     if (type.IsEnum)
@@ -112,7 +110,10 @@ public static class TypeReflector
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
-      typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
+      if ((type.Namespace ?? "").StartsWith("DocumentFormat"))
+        typeInfo.TypeKind = TypeKind.Interface | TypeKind.Class;
+      else
+        typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
       if (typeInfo.Properties == null)
         typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
@@ -186,6 +187,8 @@ public static class TypeReflector
       if (includeRelationship.IsMultiple == true)
       {
         var propName = MultipleItemsPropName(includeRelationship.Target.Name);
+        if (typeInfo.Name == propName)
+          propName = "Items";
         if (!typeInfo.Properties.Any(item => item.Name == propName))
         {
           var propInfo = new PropInfo(includeRelationship.Target);

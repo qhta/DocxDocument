@@ -8,13 +8,11 @@ public enum AbsolutePositionTabPositioningBaseKind
   /// <summary>
   /// Relative To Text Margins.
   /// </summary>
-  [XmlEnum("margin")]
   Margin,
   
   /// <summary>
   /// Relative To Indents.
   /// </summary>
-  [XmlEnum("indent")]
   Indent,
   
 }

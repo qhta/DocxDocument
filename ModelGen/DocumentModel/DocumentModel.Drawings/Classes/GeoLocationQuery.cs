@@ -1,0 +1,17 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the GeoLocationQuery Class.
+/// </summary>
+public class GeoLocationQuery
+{
+  /// <summary>
+  /// entityType, this property is only available in Office 2016 and later.
+  /// </summary>
+  public EntityTypeEnum? EntityType
+  {
+    get;
+    set;
+  }
+  
+}

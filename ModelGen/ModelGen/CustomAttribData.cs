@@ -5,18 +5,15 @@ using DocumentFormat.OpenXml.Vml.Spreadsheet;
 
 namespace ModelGen;
 
-public class CustomAttribData: IOwnedElement
+public class CustomAttribData: ModelElement
 {
 
-  public object? Owner { get; set; }
-
-  //public Type AttributeType => AttributeTypeInfo.Type;
   public TypeInfo AttributeType { get; }
 
   public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
   public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
-  public CustomAttribData(Type attributeType)
+  public CustomAttribData(Type attributeType): base(attributeType.Name)
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
