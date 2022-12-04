@@ -8,6 +8,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;618</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PropKind.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Namotion.Reflection" Version="2.1.1" />
   </ItemGroup>

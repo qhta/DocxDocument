@@ -8,19 +8,16 @@ public enum PosAlign
   /// <summary>
   /// min.
   /// </summary>
-  [XmlEnum("min")]
   Min,
   
   /// <summary>
   /// ctr.
   /// </summary>
-  [XmlEnum("ctr")]
   Ctr,
   
   /// <summary>
   /// max.
   /// </summary>
-  [XmlEnum("max")]
   Max,
   
 }

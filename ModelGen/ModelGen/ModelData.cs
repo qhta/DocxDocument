@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml;
+﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml;
 
 using Qhta.Collections;
 
@@ -8,7 +10,21 @@ public static class ModelData
 {
 
   #region Namespaces
-  #endregion
+
+  public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
+  {
+    "DocumentFormat.OpenXml", "DocumentFormat.OpenXml.Wordprocessing"
+  };
+
+  public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
+  {
+    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", "System*",
+    "*Presentation*",
+    "*Spreadsheet*",
+    "*SpreadSheet*",
+    "*Excel*",
+    "*PowerPoint*",
+  };
 
   public static BiDiDictionary<string, string> Namespaces { get; } = new BiDiDictionary<string, string>()
   {
@@ -277,8 +293,9 @@ public static class ModelData
     {"DocumentFormat.OpenXml.Vml.Wordprocessing", "DocumentModel.Wordprocessing.Vml" },
     {"DocumentFormat.OpenXml.Wordprocessing", "DocumentModel.Wordprocessing" },
   };
+  #endregion
 
-  #region Exclusion/translation
+  #region Properties
 
   public static SortedStrings ExcludedProperties { get; } = new SortedStrings
   {
@@ -296,7 +313,9 @@ public static class ModelData
     "RootElementContext",
     "WebExtensions"
   };
+  #endregion
 
+  #region Types
   public static bool IsExcluded(Type type)
   {
     if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
@@ -304,24 +323,14 @@ public static class ModelData
     if (IncludedTypes.Contains(type.Name))
       return false;
     if (ExcludedTypes.Contains(type.Name))
-      return false;
+      return true;
     return false;
   }
-
-  public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
-  {
-    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", "System*"
-  };
-
-  public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
-  {
-    "DocumentFormat.OpenXml", /*"DocumentFormat.OpenXml.Packaging", */"DocumentFormat.OpenXml.Wordprocessing"
-  };
 
   public static SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
     "SR", /*"OpenXml*", */"*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
-    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer",
+    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", "HexWord",
   };
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
@@ -359,11 +368,17 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.DoubleValue), typeof(System.Double)},
     { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
     { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
-    { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.BaseTypes.ModelElement)},
+    { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.ModelElement)},
     { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
     { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
-    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.BaseTypes.HexWord)},
+    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.HexWord)},
     { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
+    { typeof(DocumentFormat.OpenXml.ThreadSafeAttribute), typeof(DocumentModel.Attributes.ThreadSafeAttribute) },
+    { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },
+    { typeof(DocumentFormat.OpenXml.KnownFeatureAttribute), typeof(DocumentModel.Attributes.KnownFeatureAttribute) },
+    { typeof(DocumentFormat.OpenXml.DelegatedFeatureAttribute), typeof(DocumentModel.Attributes.DelegatedFeatureAttribute) },
+    { typeof(DocumentFormat.OpenXml.ChildElementInfoAttribute), typeof(DocumentModel.Attributes.ChildElementInfoAttribute) },
+    { typeof(DocumentFormat.OpenXml.SchemaAttrAttribute), typeof(DocumentModel.Attributes.SchemaAttrAttribute) },
     { typeof(DocumentFormat.OpenXml.Framework.ContentTypeAttribute), typeof(DocumentModel.Attributes.ContentMimeAttribute) },
     { typeof(DocumentFormat.OpenXml.Framework.RelationshipTypeAttribute), typeof(DocumentModel.Attributes.RelationshipUriAttribute) },
     { typeof(DocumentFormat.OpenXml.Framework.PartConstraintAttribute), typeof(DocumentModel.Attributes.PartConstraintAttribute) },

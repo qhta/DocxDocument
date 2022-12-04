@@ -8,13 +8,11 @@ public enum QuartileMethod
   /// <summary>
   /// inclusive.
   /// </summary>
-  [XmlEnum("inclusive")]
   Inclusive,
   
   /// <summary>
   /// exclusive.
   /// </summary>
-  [XmlEnum("exclusive")]
   Exclusive,
   
 }

@@ -8,13 +8,11 @@ public enum ObjectDrawAspect
   /// <summary>
   /// content.
   /// </summary>
-  [XmlEnum("content")]
   content,
   
   /// <summary>
   /// icon.
   /// </summary>
-  [XmlEnum("icon")]
   icon,
   
 }

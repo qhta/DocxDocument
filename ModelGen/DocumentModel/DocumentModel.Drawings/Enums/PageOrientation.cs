@@ -8,19 +8,16 @@ public enum PageOrientation
   /// <summary>
   /// default.
   /// </summary>
-  [XmlEnum("default")]
   Default,
   
   /// <summary>
   /// portrait.
   /// </summary>
-  [XmlEnum("portrait")]
   Portrait,
   
   /// <summary>
   /// landscape.
   /// </summary>
-  [XmlEnum("landscape")]
   Landscape,
   
 }

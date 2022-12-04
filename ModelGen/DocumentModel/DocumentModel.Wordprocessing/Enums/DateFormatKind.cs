@@ -8,19 +8,16 @@ public enum DateFormatKind
   /// <summary>
   /// Same As Display.
   /// </summary>
-  [XmlEnum("text")]
   Text,
   
   /// <summary>
   /// XML Schema Date Format.
   /// </summary>
-  [XmlEnum("date")]
   Date,
   
   /// <summary>
   /// XML Schema DateTime Format.
   /// </summary>
-  [XmlEnum("dateTime")]
   DateTime,
   
 }

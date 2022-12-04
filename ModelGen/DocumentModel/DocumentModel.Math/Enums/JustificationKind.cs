@@ -8,25 +8,21 @@ public enum JustificationKind
   /// <summary>
   /// Left Justification.
   /// </summary>
-  [XmlEnum("left")]
   Left,
   
   /// <summary>
   /// Right.
   /// </summary>
-  [XmlEnum("right")]
   Right,
   
   /// <summary>
   /// Center (Equation).
   /// </summary>
-  [XmlEnum("center")]
   Center,
   
   /// <summary>
   /// Centered as Group (Equations).
   /// </summary>
-  [XmlEnum("centerGroup")]
   CenterGroup,
   
 }

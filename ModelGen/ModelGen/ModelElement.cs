@@ -10,7 +10,9 @@ public class ModelElement: IOwnedElement
   public string Name { get; set; }
 
   public bool? IsAccepted { get; set; }
-  public bool? IsUsed { get; set; }
+
+  public bool IsUsed { get; set;}
+
   public bool IsConverted { get; set; }
 
   public string? Summary { get; set; }

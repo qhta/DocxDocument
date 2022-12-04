@@ -8,25 +8,21 @@ public enum FractionKind
   /// <summary>
   /// Bar Fraction.
   /// </summary>
-  [XmlEnum("bar")]
   Bar,
   
   /// <summary>
   /// Skewed.
   /// </summary>
-  [XmlEnum("skw")]
   Skewed,
   
   /// <summary>
   /// Linear Fraction.
   /// </summary>
-  [XmlEnum("lin")]
   Linear,
   
   /// <summary>
   /// No-Bar Fraction (Stack).
   /// </summary>
-  [XmlEnum("noBar")]
   NoBar,
   
 }
