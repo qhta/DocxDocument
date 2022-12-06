@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public class ModelElement
+public interface ModelElement
 {
-  
+
 }

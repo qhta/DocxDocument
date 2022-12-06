@@ -8,8 +8,10 @@ namespace ModelGen;
 
 public static class TypeInspector
 {
-  internal static IElementMetadata? InspectType(TypeInfo typeInfo)
+  internal static IElementMetadata? InspectType(this TypeInfo typeInfo)
   {
+    if (typeInfo.Metadata != null)
+      return typeInfo.Metadata;
     var type = typeInfo.Type;
     if (type != null)
     {
@@ -19,6 +21,7 @@ public static class TypeInspector
         if (element != null)
         {
           var elementMetadata = new ElementMetadataFactoryFeature().GetMetadata(element);
+          typeInfo.Metadata = elementMetadata;
           var particle = elementMetadata.Particle?.Particle;
           if (particle != null) InspectParticle(typeInfo, particle, false);
           return elementMetadata;

@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 
-using DocumentFormat.OpenXml;
 
 using Qhta.Collections;
 
@@ -13,7 +12,8 @@ public static class ModelData
 
   public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
   {
-    "DocumentFormat.OpenXml", "DocumentFormat.OpenXml.Wordprocessing"
+    "DocumentFormat.OpenXml.VariantTypes"
+    //"DocumentFormat.OpenXml.Wordprocessing"
   };
 
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
@@ -329,17 +329,18 @@ public static class ModelData
 
   public static SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
-    "SR", /*"OpenXml*", */"*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
+    "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
     "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", "HexWord",
+    //"OpenXml*",
   };
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
   {
-    "CustomXmlAttribute", "BooleanFalse", "Wordprocessing*",
-    "OpenXmlSolidColorFillPropertiesElement",
-    "OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
-    "OpenXmlPartRootElement",
-    "OpenXmlFormulaElement",
+    //"CustomXmlAttribute", "Wordprocessing*",
+    //"OpenXmlSolidColorFillPropertiesElement",
+    //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
+    //"OpenXmlPartRootElement",
+    //"OpenXmlFormulaElement",
   };
 
   public static SortedStrings ExcludedAttributes { get; } = new SortedStrings
