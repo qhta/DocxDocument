@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
+using DocumentFormat.OpenXml.Framework.Metadata;
 
 namespace ModelGen;
 
@@ -27,8 +28,6 @@ public class TypeInfo : ModelElement
     get => isUsed;
     set
     {
-      if (value && Name=="SR")
-        Debug.Assert(true);
       isUsed= value;
     }
   }
@@ -58,6 +57,9 @@ public class TypeInfo : ModelElement
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public Type Type { get; set; }
+
+  internal IElementMetadata? Metadata { get; set;}
+
   public bool UsesEvaluated { get; set; }
   public int AcceptedPropsCount { get; set; }
 

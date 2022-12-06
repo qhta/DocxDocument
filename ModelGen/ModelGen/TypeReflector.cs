@@ -200,8 +200,15 @@ public static class TypeReflector
       }
       else
       {
-        if (!typeInfo.Properties.Any(item=>item.Name == includeRelationship.Target.Name))
-          typeInfo.Properties.Add(new PropInfo(includeRelationship.Target));
+        var propName = includeRelationship.Target.Name;
+        if (typeInfo.Name == propName)
+          propName = "Child"+propName;
+        if (!typeInfo.Properties.Any(item => item.Name == propName))
+        {
+          var propInfo = new PropInfo(includeRelationship.Target);
+          propInfo.Name = propName;
+          typeInfo.Properties.Add(propInfo);
+        }
       }
     }
 

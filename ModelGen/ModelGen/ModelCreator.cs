@@ -1,13 +1,5 @@
-﻿using System.CodeDom.Compiler;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-//using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
-using System.Xml.Linq;
-
-using DocumentFormat.OpenXml;
-
-using Namotion.Reflection;
 
 namespace ModelGen;
 
@@ -42,7 +34,7 @@ public class ModelCreator
 
     totalTime += CheckTypeUsage();
 
-    ////ShowNamespaceDetails();
+    //ShowNamespaceDetails();
 
     totalTime += CheckTypeDefinition();
 
@@ -76,9 +68,9 @@ public class ModelCreator
     var approvedTypesCount = 0;
     foreach (var type in assembly.GetTypes())
     {
-      if (ModelData.IncludedNamespaces.Count == 0 || ModelData.IncludedNamespaces.Contains(type.Namespace ?? ""))
+      if (ModelData.IncludedNamespaces.Count == 0 || ModelData.IncludedNamespaces.Contains(type.Namespace ?? "")
+          || ModelData.IncludedTypes.Contains(type.Name))
       {
-        //ModelMonitorDisplay.WriteSameLine(type.FullName);
         foundTypesCount++;
         if (ModelManager.TryAcceptType(type, out var typeInfo))
         {
