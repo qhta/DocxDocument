@@ -1,0 +1,17 @@
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.deps.json
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.BaseTypes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.csproj.CoreCompileInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.csproj.CopyComplete
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\obj\Debug\netstandard2.0\DocumentModel.BaseTypes.Impl.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.Attributes.pdb

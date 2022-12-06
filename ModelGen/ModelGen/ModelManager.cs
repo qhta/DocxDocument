@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 using DocumentFormat.OpenXml;
@@ -10,6 +11,8 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
+    //if (typeInfo.Name == "VTInt32")
+    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (!TryAddTypeTableConversion(typeInfo))
@@ -44,7 +47,7 @@ public static class ModelManager
       if (typeInfo.BaseTypeInfo != null)
       {
         TypeManager.AddRelationship(typeInfo, typeInfo.BaseTypeInfo, Semantics.TypeChange);
-        typeInfo.IsAccepted = false;
+        //typeInfo.IsAccepted = false;
         typeInfo.IsConverted = true;
         return true;
       }
@@ -130,7 +133,7 @@ public static class ModelManager
     return false;
   }
 
-  public static CompoundName GetConvertedName(this TypeInfo typeInfo)
+  public static CompoundName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
   {
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
@@ -143,7 +146,10 @@ public static class ModelManager
     var apos = aName.IndexOf('`');
     if (apos >= 0)
       aName = aName.Substring(0, apos);
-
+    if (kind == TypeKind.Class && typeInfo.TypeKind != TypeKind.Enum)
+    {
+      aName += "Impl";
+    }
     var result = new CompoundName(aName, (aNamespace != null) ? aNamespace : null);
     if (apos >= 0)
     {
@@ -159,7 +165,7 @@ public static class ModelManager
       {
         result.ArgNames = new();
         foreach (var genericArg in genericArgs.ToList())
-          result.ArgNames.Add(GetConvertedName(genericArg));
+          result.ArgNames.Add(GetConvertedName(genericArg, kind));
       }
     }
     return result;
@@ -201,6 +207,8 @@ public static class ModelManager
 
   public static bool CheckTypeUsage(TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
   {
+    //if (typeInfo.Name == "VTInt32")
+    //  Debug.Assert(true);
     if (typeInfo.UsesEvaluated)
       return typeInfo.IsUsed;
     typeInfo.UsesEvaluated = true;
@@ -308,19 +316,32 @@ public static class ModelManager
   public static int CheckNamespaceDuplicatedTypes(string nspace)
   {
     var duplicatedTypesCount = 0;
-    var duplicatedTypesTypes = TypeManager.GetNamespaceTypes(nspace).GroupBy(item => item.Name);
-    foreach (var grouping in duplicatedTypesTypes)
+    var namespaceTypes = TypeManager.GetNamespaceTypes(nspace).OrderBy(item=>item.Name).ToArray();
+    for (int i = 0; i < namespaceTypes.Count() - 1; i++)
     {
-      var count = grouping.Count();
-      if (count > 1)
+      var type1 = namespaceTypes[i];
+      var type2 = namespaceTypes[i+1];
+      if (type1.Name == type2.Name)
       {
-        int cnt = 1;
-        foreach (var type in grouping)
+        List <TypeInfo> duplicateTypes= new List <TypeInfo>();
+        duplicateTypes.Add(type1);
+        duplicateTypes.Add(type2);
+        for (int j = i + 2; j < namespaceTypes.Count(); j++)
         {
-          type.Name += cnt.ToString();
-          cnt++;
+          type2 = namespaceTypes[j];
+          if (type1.Name == type2.Name)
+            duplicateTypes.Add(type2);
+          else
+            break;
         }
-        duplicatedTypesCount++;
+        int cnt = 0;
+        foreach (var type in duplicateTypes)
+        {
+          cnt++;
+          type.Name += cnt.ToString();
+          i++;
+        }
+        duplicatedTypesCount +=cnt;
       }
     }
     return duplicatedTypesCount;

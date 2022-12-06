@@ -2,6 +2,7 @@
 using System.Diagnostics;
 
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Framework;
 
 using Namotion.Reflection;
 
@@ -80,22 +81,22 @@ public class ModelGenerator
     var typeName = type.Name;
     var aNamespace = type.Namespace;
     var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
-    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Classes", typeName + ".cs"), false);
-    //var implOutputPath = Path.Combine(ImplOutputPath, aNamespace);
-    //GenClassOrInterface(type, typeName, Path.Combine(implOutputPath, typeName + ".cs"), false);
+    GenerateClassOrInterface(type, typeName, Path.Combine(intfOutputPath, "Interfaces", typeName + ".cs"), TypeKind.Interface);
+    var implOutputPath = Path.Combine(ImplOutputPath, aNamespace);
+    GenerateClassOrInterface(type, typeName, Path.Combine(implOutputPath, "Classes", typeName + ".cs"), TypeKind.Class);
   }
 
-  private void GenerateClassOrInterface(TypeInfo type, string typeName, string filename, bool toInterface)
+  private void GenerateClassOrInterface(TypeInfo type, string typeName, string filename, TypeKind kind)
   {
     AssurePathExists(filename);
     using (var textWriter = File.CreateText(filename))
     using (var writer = new IndentedTextWriter(textWriter, "  "))
     {
-      GenerateClassOrInterface(type, typeName, writer, toInterface);
+      GenerateClassOrInterface(type, typeName, writer, kind);
     }
   }
 
-  private void GenerateClassOrInterface(TypeInfo typeInfo, string typeName, IndentedTextWriter writer, bool toInterface)
+  private void GenerateClassOrInterface(TypeInfo typeInfo, string typeName, IndentedTextWriter writer, TypeKind kind)
   {
     var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
@@ -106,47 +107,85 @@ public class ModelGenerator
 
     GenDocumentationComments(typeInfo, writer);
     GenerateCustomAttributes(typeInfo.CustomAttributes, writer);
-    string? baseStr = null;
-    if (typeInfo.BaseTypeInfo != null)
+
+    if (kind == TypeKind.Interface)
     {
-      var baseTypeInfo = typeInfo.BaseTypeInfo.GetConversionTarget(true);
-      if (baseTypeInfo.IsInterface)
-      {
-        var baseInterfaceName = typeInfo.BaseTypeInfo.GetConvertedName();
-        baseStr = ": " + baseInterfaceName.ToString();
-      }
-    }
-    if (toInterface)
-    {
-      var str = $"public interface {typeName}"+baseStr;
+      var str = $"public interface {typeName}";
       writer.WriteLine(str);
     }
-    else
+    else if (kind == TypeKind.Class)
     {
+      List<string> baseTypeNames = new();
+      if (typeInfo.BaseTypeInfo != null)
+      {
+        var baseTypeInfo = typeInfo.BaseTypeInfo.GetConversionTarget(true);
+        if (baseTypeInfo.IsInterface)
+        {
+          var baseInterfaceName = typeInfo.BaseTypeInfo.GetConvertedName(kind);
+          baseTypeNames.Add(baseInterfaceName.ToString());
+        }
+        else
+        {
+          if (typeInfo.BaseTypeInfo.Type == typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement))
+          {
+            var metadata = typeInfo.Metadata;
+            if (metadata == null)
+              metadata = typeInfo.InspectType();
+            if (metadata != null)
+            {
+              Debug.WriteLine(typeInfo.Name);
+              Debug.Indent();
+              foreach (var validator in metadata.Validators)
+              {
+                if (validator is NameProviderValidator nameProviderValidator)
+                {
+                  var other = nameProviderValidator._other;
+                  var otherValidatorType = other?.GetType();
+                  if (otherValidatorType != null && otherValidatorType.Name.StartsWith("SimpleTypeValidator`"))
+                    if (otherValidatorType.IsConstructedGenericType)
+                    {
+                      var argumentType = otherValidatorType.GetGenericArguments().FirstOrDefault();
+                      if (argumentType != null)
+                        Debug.WriteLine(argumentType);
+                    }
+                  //Type? valueType = null;
+                  //baseTypeNames.Add($"SimpleTypeModelElement<{valueType}, {typeInfo.GetFullName(true)}>");
+                }
+              }
+              Debug.Unindent();
+            }
+          }
+        }
+      }
+      if (baseTypeNames.Count == 0)
+        baseTypeNames.Add($"ModelElement<{typeInfo.GetFullName(true)}>");
+      baseTypeNames.Add(typeInfo.GetFullName(false, true, false));
+      var baseStr = baseTypeNames.Any() ? ": " + String.Join(", ", baseTypeNames) : String.Empty;
+      typeName += "Impl";
       var str = $"public class {typeName}" + baseStr;
       writer.WriteLine(str);
     }
+    else
+      throw new NotImplementedException($"GenerateClassOrInterface not implemented for kind {kind}");
     writer.WriteLine("{");
     writer.Indent++;
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
-          GenerateProperty(prop, aNamespace, writer, toInterface);
+        GenerateProperty(prop, aNamespace, writer, kind);
     writer.Indent--;
     writer.WriteLine("}");
-    if (toInterface)
+    if (kind == TypeKind.Interface)
       GeneratedInterfacesCount += 1;
-    else if (typeInfo.TypeKind == TypeKind.Struct)
-      GeneratedStructsCount += 1;
-    else
+    else if (kind == TypeKind.Class)
       GeneratedClassesCount += 1;
   }
 
-  private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, bool toInterface)
+  private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, TypeKind kind)
   {
-    if (prop.Name == "MultiLevelStringReference" && prop.Owner is TypeInfo typeInfo && typeInfo.Name== "AxisDataSourceType")
-      Debug.Assert(true);
-    var propertyType = prop.PropertyType;
-    CompoundName propertyTypeName = propertyType.GetConvertedName();
+    //if (prop.Name == "MultiLevelStringReference" && prop.Owner is TypeInfo typeInfo && typeInfo.Name == "AxisDataSourceType")
+    //  Debug.Assert(true);
+    var propertyType = prop.PropertyType.GetConversionTarget(true);
+    CompoundName propertyTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
     var namespaces = propertyTypeName.GetNamespaces();
     foreach (var ns in namespaces)
       if (ns.StartsWith("System") || ns == "DocumentModel.BaseTypes")
@@ -162,11 +201,11 @@ public class ModelGenerator
     var propTypeName = propertyTypeName.ToString();
     GenDocumentationComments(prop, writer);
     GenerateCustomAttributes(prop.CustomAttributes, writer);
-    if (toInterface)
+    if (kind == TypeKind.Interface)
       writer.WriteLine($"public {propTypeName}? {prop.Name} {{ get ; set; }}");
     else
     {
-      var str ="public ";
+      var str = "public ";
       if (prop.IsStatic)
         str += "static ";
       if (prop.IsNew)
@@ -180,8 +219,20 @@ public class ModelGenerator
       str += $"{propTypeName}? {prop.Name}";
       writer.WriteLine(str);
       writer.WriteLine($"{{");
-      writer.WriteLine($"  get;");
-      writer.WriteLine($"  set;");
+      if (propertyType.TypeKind == TypeKind.Enum)
+      {
+        writer.WriteLine($"  get => ({propertyType.Name}?)OpenXmlElement?.{prop.Name}?.Value;");
+        writer.WriteLine($"  set");
+        writer.WriteLine($"  {{");
+        writer.WriteLine($"    if (OpenXmlElement != null)"); 
+        writer.WriteLine($"      OpenXmlElement.{prop.Name} = ({propertyType.GetFullName(true)}?)value;");
+        writer.WriteLine($"  }}");
+      }
+      else
+      {
+        writer.WriteLine($"  get;");
+        writer.WriteLine($"  set;");
+      }
       writer.WriteLine($"}}");
     }
     writer.WriteLine();
@@ -266,8 +317,9 @@ public class ModelGenerator
 
   private bool GenerateCustomAttribute(CustomAttribData attrData, IndentedTextWriter writer)
   {
+    var kind = TypeKind.Type;
     var attributeType = attrData.AttributeType;
-    var attributeTypeName = attributeType.GetConvertedName();
+    var attributeTypeName = attributeType.GetConvertedName(kind);
     var attrTypeName = attributeTypeName.Name;
     if (attrTypeName.EndsWith("Attribute"))
       attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
@@ -281,10 +333,10 @@ public class ModelGenerator
       var strList = new List<string>();
       if (attrData.ConstructorArguments != null)
         foreach (var arg in attrData.ConstructorArguments)
-          strList.Add(GenerateTypedValueLiteral(arg));
+          strList.Add(GenerateTypedValueLiteral(arg, kind));
       if (attrData.NamedArguments != null)
         foreach (var arg in attrData.NamedArguments)
-          strList.Add(GenerateTypedValueLiteral(arg));
+          strList.Add(GenerateTypedValueLiteral(arg, kind));
       attrString += "(" + String.Join(", ", strList) + ")";
     }
     writer.WriteLine($"[{attrString}]");
@@ -384,17 +436,17 @@ public class ModelGenerator
   #endregion
 
   #region Literals generation
-  private string GenerateTypedValueLiteral(CustomAttribNamedArgument namedArgument)
+  private string GenerateTypedValueLiteral(CustomAttribNamedArgument namedArgument, TypeKind kind)
   {
-    return namedArgument.MemberName + "=" + GenerateTypedValueLiteral(namedArgument.TypedValue);
+    return namedArgument.MemberName + "=" + GenerateTypedValueLiteral(namedArgument.TypedValue, kind);
   }
 
-  private string GenerateTypedValueLiteral(CustomAttribTypedArgument typedArgument)
+  private string GenerateTypedValueLiteral(CustomAttribTypedArgument typedArgument, TypeKind kind)
   {
-    return GenerateTypedValueLiteral(typedArgument.Value);
+    return GenerateTypedValueLiteral(typedArgument.Value, kind);
   }
 
-  private string GenerateTypedValueLiteral(object? value)
+  private string GenerateTypedValueLiteral(object? value, TypeKind kind)
   {
     if (value is string str)
     {
@@ -402,7 +454,7 @@ public class ModelGenerator
     }
     else if (value is TypeInfo aType)
     {
-      var typeName = aType.GetConvertedName();
+      var typeName = aType.GetConvertedName(kind);
       var aTypeName = typeName.Name;
       var aNamespace = typeName.Namespace;
       return ($"typeof({aNamespace}.{aTypeName})");

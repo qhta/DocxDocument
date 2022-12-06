@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QuB0S+gLNg/eg6SEt5dZ/OVOW3QePeOcaxcu8zeLKDrCrL8lqpVc7zCjhgqb1rJSAMbOqdytxde0cjLQSr89WA==",
+  "success": true,
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.VariantTypes.Impl\\DocumentModel.VariantTypes.Impl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\7.0.0\\system.io.packaging.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
