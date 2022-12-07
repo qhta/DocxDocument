@@ -1,0 +1,33 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Theme.
+/// </summary>
+public interface Theme
+{
+  /// <summary>
+  /// ThemeElements.
+  /// </summary>
+  public ThemeElements? ThemeElements { get ; set; }
+  
+  /// <summary>
+  /// ObjectDefaults.
+  /// </summary>
+  public ObjectDefaults? ObjectDefaults { get ; set; }
+  
+  /// <summary>
+  /// ExtraColorSchemeList.
+  /// </summary>
+  public ExtraColorSchemeList? ExtraColorSchemeList { get ; set; }
+  
+  /// <summary>
+  /// CustomColorList.
+  /// </summary>
+  public CustomColorList? CustomColorList { get ; set; }
+  
+  /// <summary>
+  /// OfficeStyleSheetExtensionList.
+  /// </summary>
+  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get ; set; }
+  
+}

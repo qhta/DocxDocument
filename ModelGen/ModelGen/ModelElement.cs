@@ -15,6 +15,8 @@ public class ModelElement: IOwnedElement
 
   public bool IsConverted { get; set; }
 
+  public bool IsConvertedTo { get; set; }
+
   public string? Summary { get; set; }
 
   public XElement? Documentation { get; set; }

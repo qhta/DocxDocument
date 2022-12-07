@@ -1,0 +1,13 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+/// Defines the HeaderFooterReferenceType Class.
+/// </summary>
+public interface HeaderFooterReferenceType
+{
+  /// <summary>
+  /// type
+  /// </summary>
+  public HeaderFooterKind? Type { get ; set; }
+  
+}

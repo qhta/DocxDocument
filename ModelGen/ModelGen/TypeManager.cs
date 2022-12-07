@@ -17,11 +17,9 @@ namespace ModelGen;
 public static class TypeManager
 {
 
-  private static Dictionary<Type, TypeInfo> KnownTypes = new();
-  private static BiDiDictionary<int, string> KnownNamespaces = new();
-  private static IEnumerable<string> Namespaces = KnownNamespaces.Select(item => item.Item2);
-
-  //private static List<TypeRelationship> Relationships = new();
+  internal static Dictionary<Type, TypeInfo> KnownTypes = new();
+  internal static BiDiDictionary<int, string> KnownNamespaces = new();
+  internal static IEnumerable<string> Namespaces = KnownNamespaces.Select(item => item.Item2);
 
   public static int TotalTypesCount => KnownTypes.Count;
 

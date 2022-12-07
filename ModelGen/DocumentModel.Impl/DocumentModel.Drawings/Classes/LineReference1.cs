@@ -1,0 +1,50 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the LineReference Class.
+/// </summary>
+public class LineReference1Impl: DocumentModel.Drawings.StyleReferenceImpl, LineReference1
+{
+  public RgbColorModelPercentage? RgbColorModelPercentage
+  {
+    get;
+    set;
+  }
+  
+  public RgbColorModelHex? RgbColorModelHex
+  {
+    get;
+    set;
+  }
+  
+  public HslColor? HslColor
+  {
+    get;
+    set;
+  }
+  
+  public SystemColor? SystemColor
+  {
+    get;
+    set;
+  }
+  
+  public SchemeColor? SchemeColor
+  {
+    get;
+    set;
+  }
+  
+  public PresetColor? PresetColor
+  {
+    get;
+    set;
+  }
+  
+  public StyleColor? StyleColor
+  {
+    get;
+    set;
+  }
+  
+}

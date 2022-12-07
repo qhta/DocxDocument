@@ -27,3 +27,5 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentFormat.Op
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentFormat.OpenXml.xml
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.VariantTypes.pdb

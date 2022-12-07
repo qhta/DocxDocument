@@ -11,10 +11,12 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
-    //if (typeInfo.Name == "VTInt32")
+    //if (typeInfo.OriginalName == "ArrayBaseValues")
     //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
+    if (typeInfo.OriginalName == "ArrayBaseValues")
+      Debug.Assert(true);
     if (!TryAddTypeTableConversion(typeInfo))
       if (!TryAddBaseTypeConversion(typeInfo))
         if (!TryAddValTypeConversion(typeInfo))
@@ -28,10 +30,12 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
+    //if (typeInfo.OriginalName == "ArrayBaseValues")
+    //  Debug.Assert(true);
     if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var targetType))
     {
-      TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-      typeInfo.IsAccepted = false;
+      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+      targetTypeInfo.IsConvertedTo = true;
       typeInfo.IsConverted = true;
       return true;
     }
@@ -232,12 +236,14 @@ public static class ModelManager
     if (typeInfo.Properties != null)
       foreach (var prop in typeInfo.Properties.ToArray())
       {
+        //if (prop.Name == "RsidRoot")
+        //  Debug.Assert(true);
         if (prop.IsAccepted is null or true)
         {
           var propType = prop.PropertyType.GetConversionTarget(true);
           if (propType.IsAccepted is null or true)
           {
-            prop.IsAccepted = CheckTypeUsage(propType, OnStartChecking);
+            /*prop.IsAccepted = */CheckTypeUsage(propType, OnStartChecking);
           }
           else
             prop.IsAccepted = false;
