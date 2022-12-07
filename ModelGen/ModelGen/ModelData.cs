@@ -12,8 +12,8 @@ public static class ModelData
 
   public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
   {
-    "DocumentFormat.OpenXml.VariantTypes"
-    //"DocumentFormat.OpenXml.Wordprocessing"
+    //"DocumentFormat.OpenXml.VariantTypes"
+    "DocumentFormat.OpenXml.Wordprocessing"
   };
 
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
@@ -330,7 +330,10 @@ public static class ModelData
   public static SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
     "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
-    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", "HexWord",
+    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", /*"HexWord",*/
+    "OpenXmlElementContext",
+    "OpenXmlElementList",
+    "OpenXmlSimpleType",
     //"OpenXml*",
   };
 
@@ -384,6 +387,42 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.Framework.RelationshipTypeAttribute), typeof(DocumentModel.Attributes.RelationshipUriAttribute) },
     { typeof(DocumentFormat.OpenXml.Framework.PartConstraintAttribute), typeof(DocumentModel.Attributes.PartConstraintAttribute) },
     { typeof(DocumentFormat.OpenXml.Framework.DataPartConstraintAttribute), typeof(DocumentModel.Attributes.DataPartConstraintAttribute) },
+    { typeof(DocumentFormat.OpenXml.VariantTypes.ArrayBaseValues), typeof(DocumentModel.VariantTypes.ArrayBaseType)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues), typeof(DocumentModel.VariantTypes.VectorBaseType)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.Variant), typeof(DocumentModel.VariantTypes.Variant)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTArray), typeof(DocumentModel.VariantTypes.VTArray)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTBlob), typeof(DocumentModel.VariantTypes.VTBlob)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTBString), typeof(DocumentModel.VariantTypes.VTString)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTByte), typeof(DocumentModel.VariantTypes.VTSignedByte)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTClassId), typeof(DocumentModel.VariantTypes.VTClassId)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTClipboardData), typeof(DocumentModel.VariantTypes.VTClipboardData)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTCurrency), typeof(DocumentModel.VariantTypes.VTCurrency)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTDate), typeof(DocumentModel.VariantTypes.VTDate)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTDecimal), typeof(DocumentModel.VariantTypes.VTDecimal)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTDouble), typeof(DocumentModel.VariantTypes.VTDouble)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTEmpty), typeof(DocumentModel.VariantTypes.VTEmpty)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTError), typeof(DocumentModel.VariantTypes.VTError)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTFileTime), typeof(DocumentModel.VariantTypes.VTDateTime)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTFloat), typeof(DocumentModel.VariantTypes.VTFloat)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTInt32), typeof(DocumentModel.VariantTypes.VTInt32)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTInt64), typeof(DocumentModel.VariantTypes.VTInt64)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTInteger), typeof(DocumentModel.VariantTypes.VTInt64)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTLPSTR), typeof(DocumentModel.VariantTypes.VTString)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTLPWSTR), typeof(DocumentModel.VariantTypes.VTString)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTNull), typeof(DocumentModel.VariantTypes.VTNull)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTOBlob), typeof(DocumentModel.VariantTypes.VTBlob)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTOStorage), typeof(DocumentModel.VariantTypes.VTStorage)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTOStreamData), typeof(DocumentModel.VariantTypes.VTStream)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTShort), typeof(DocumentModel.VariantTypes.VTShort)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTStorage), typeof(DocumentModel.VariantTypes.VTStorage)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTStreamData), typeof(DocumentModel.VariantTypes.VTStream)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedByte), typeof(DocumentModel.VariantTypes.VTByte)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt32), typeof(DocumentModel.VariantTypes.VTUnsignedInt32)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt64), typeof(DocumentModel.VariantTypes.VTUnsignedInt64)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInteger), typeof(DocumentModel.VariantTypes.VTUnsignedInt64)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedShort), typeof(DocumentModel.VariantTypes.VTUnsignedShort)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VariantTypes.VTVector)},
+    { typeof(DocumentFormat.OpenXml.VariantTypes.VTVStreamData), typeof(DocumentModel.VariantTypes.VTVStream)},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

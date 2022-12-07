@@ -1,0 +1,14 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Defines the DisplayUnits Class.
+/// </summary>
+public interface DisplayUnits
+{
+  public BuiltInUnitKind? BuiltInUnit { get ; set; }
+  
+  public DisplayUnitsLabel? DisplayUnitsLabel { get ; set; }
+  
+  public ExtensionList4? ExtensionList { get ; set; }
+  
+}
