@@ -23,17 +23,6 @@ public class TypeInfo : ModelElement
 
   public string OriginalName => Type.Name;
 
-  public new bool IsUsed
-  {
-    get => isUsed;
-    set
-    {
-      isUsed= value;
-    }
-  }
-  private bool isUsed;
-
-
   public bool IsReflected { get; internal set; }
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;

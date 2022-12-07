@@ -24,8 +24,4 @@
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DocumentModel.VariantTypes\Classes\" />
-  </ItemGroup>
 </Project>

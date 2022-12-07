@@ -8,6 +8,7 @@ namespace ModelGen;
 
 public class PropInfo: ModelElement
 {
+  public PropertyInfo? PropertyInfo { get; set; }
   public TypeInfo PropertyType { get; set; }
   public bool IsStatic { get; set; }
   public bool IsAbstract { get; set; }
@@ -23,6 +24,7 @@ public class PropInfo: ModelElement
 
   public PropInfo(PropertyInfo propertyInfo) : this(propertyInfo.Name, propertyInfo.PropertyType)
   {
+    PropertyInfo = propertyInfo;
     //var getMethod = propertyInfo.GetMethod;
     //if (getMethod != null)
     //{

@@ -82,7 +82,7 @@ public class ModelCreator
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Scanning time {ts}");
+    ModelDisplay.WriteLine($"Scanning time is {ts}");
     ModelDisplay.WriteLine($"Directly {foundTypesCount} types found, {approvedTypesCount} approved");
     var allTypesCount = TypeManager.AllTypes.Count();
     var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
@@ -116,7 +116,7 @@ public class ModelCreator
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Checking time {ts}");
+    ModelDisplay.WriteLine($"Checking time is {ts}");
     ModelDisplay.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
     //ModelDisplay.ShowTypeRenames();
     return ts;
@@ -138,7 +138,7 @@ public class ModelCreator
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Renaming time {ts}");
+    ModelDisplay.WriteLine($"Renaming time is {ts}");
     ModelDisplay.WriteLine($"Renamed {renamedCount} types");
     //ModelDisplay.ShowTypeRenames();
     return ts;
@@ -159,7 +159,7 @@ public class ModelCreator
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Converting time {ts}");
+    ModelDisplay.WriteLine($"Converting time is {ts}");
     var convertedTypesCount = TypeManager.ConvertedTypes.Count();
     ModelDisplay.WriteLine($"Converted {convertedTypesCount} types");
     //ModelDisplay.ShowTypeConversions();
@@ -183,6 +183,7 @@ public class ModelCreator
     var usedCount = TypeManager.UsedTypes.Count();
     var acceptedCount = TypeManager.AcceptedTypes.Count();
     ModelDisplay.WriteLine();
+    ModelDisplay.WriteLine($"Checking time is {ts}");
     ModelDisplay.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
     //ModelMonitorDisplay.ShowUnusedTypes();
     return ts;
@@ -203,15 +204,15 @@ public class ModelCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      generatedCount++;
       ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false, true)}");
-      ModelGenerator.GenerateTypeFile(typeInfo);
+      if (ModelGenerator.GenerateTypeFile(typeInfo))
+        generatedCount++;
     }
     ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Generating time {ts}");
+    ModelDisplay.WriteLine($"Generating time is {ts}");
     ModelDisplay.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
                       $", {ModelGenerator.GeneratedStructsCount} structs, {ModelGenerator.GeneratedEnumTypesCount} enums");
     ModelDisplay.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
