@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ExtendedChartPart
 /// </summary>
-public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, ExtendedChartPart
+public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ExtendedChartPart
 {
+  public new DocumentFormat.OpenXml.Packaging.ExtendedChartPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.ExtendedChartPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the ChartColorStyleParts of the ExtendedChartPart
   /// </summary>
@@ -17,7 +23,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartContainer
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ChartSpace2? ChartSpace
+  public DocumentModel.Drawings.ChartSpace1? ChartSpace
   {
     get;
     set;
@@ -32,10 +38,22 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartContainer
     set;
   }
   
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the ExtendedChartPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

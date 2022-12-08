@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NonVisualPicturePropertiesExtensionList
 {
+  public Collection<NonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions { get ; set; }
+  
 }

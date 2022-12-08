@@ -3,8 +3,23 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Group-Character Properties.
 /// </summary>
-public class GroupCharPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.GroupCharProperties>, GroupCharProperties
+public class GroupCharPropertiesImpl: ModelElementImpl, GroupCharProperties
 {
+  public DocumentFormat.OpenXml.Math.GroupCharProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.GroupCharProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Group Character (Grouping Character).
+  /// </summary>
+  public String? AccentChar
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Position (Group Character).
   /// </summary>

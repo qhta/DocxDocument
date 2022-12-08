@@ -1,24 +1,96 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the CategoryAxis Class.
+/// Category Axis Data.
 /// </summary>
 public interface CategoryAxis1
 {
-  public LineReference1? LineReference { get ; set; }
+  /// <summary>
+  /// Axis ID.
+  /// </summary>
+  public UInt32? AxisId { get ; set; }
   
-  public FillReference1? FillReference { get ; set; }
+  /// <summary>
+  /// Scaling.
+  /// </summary>
+  public Scaling? Scaling { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
+  /// <summary>
+  /// Delete.
+  /// </summary>
+  public Boolean? Delete { get ; set; }
   
-  public FontReference1? FontReference { get ; set; }
+  /// <summary>
+  /// Axis Position.
+  /// </summary>
+  public AxisPositionKind? AxisPosition { get ; set; }
   
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  /// <summary>
+  /// Major Gridlines.
+  /// </summary>
+  public MajorGridlines? MajorGridlines { get ; set; }
   
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
+  /// <summary>
+  /// Minor Gridlines.
+  /// </summary>
+  public MinorGridlines? MinorGridlines { get ; set; }
   
-  public TextBodyProperties? TextBodyProperties { get ; set; }
+  /// <summary>
+  /// Title.
+  /// </summary>
+  public Title1? Title { get ; set; }
   
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  /// <summary>
+  /// Number Format.
+  /// </summary>
+  public NumberingFormat1? NumberingFormat { get ; set; }
+  
+  /// <summary>
+  /// Major Tick Mark.
+  /// </summary>
+  public TickMarkKind? MajorTickMark { get ; set; }
+  
+  /// <summary>
+  /// Minor Tick Mark.
+  /// </summary>
+  public TickMarkKind? MinorTickMark { get ; set; }
+  
+  /// <summary>
+  /// Tick Label Position.
+  /// </summary>
+  public TickLabelPositionKind? TickLabelPosition { get ; set; }
+  
+  /// <summary>
+  /// ChartShapeProperties.
+  /// </summary>
+  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  
+  /// <summary>
+  /// TextProperties.
+  /// </summary>
+  public TextProperties2? TextProperties { get ; set; }
+  
+  /// <summary>
+  /// Crossing Axis ID.
+  /// </summary>
+  public UInt32? CrossingAxis { get ; set; }
+  
+  public CrossesKind? Crosses { get ; set; }
+  
+  public Double? CrossesAt { get ; set; }
+  
+  public Boolean? AutoLabeled { get ; set; }
+  
+  public LabelAlignmentKind? LabelAlignment { get ; set; }
+  
+  public UInt16? LabelOffset { get ; set; }
+  
+  public Int32? TickLabelSkip { get ; set; }
+  
+  public Int32? TickMarkSkip { get ; set; }
+  
+  public Boolean? NoMultiLevelLabels { get ; set; }
+  
+  public CatAxExtensionList? CatAxExtensionList { get ; set; }
   
 }

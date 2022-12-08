@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Line Charts.
 /// </summary>
-public class LineChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.LineChart>, LineChart
+public class LineChartImpl: ModelElementImpl, LineChart
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.LineChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.LineChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Grouping.
   /// </summary>
@@ -43,7 +49,22 @@ public class LineChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.L
     }
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
+  {
+    get;
+    set;
+  }
+  
+  public Collection<LineChartSeries1>? LineChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;
@@ -62,6 +83,24 @@ public class LineChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.L
   }
   
   public UpDownBars? UpDownBars
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowMarker
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Smooth
+  {
+    get;
+    set;
+  }
+  
+  public Collection<UInt32>? AxisIds
   {
     get;
     set;

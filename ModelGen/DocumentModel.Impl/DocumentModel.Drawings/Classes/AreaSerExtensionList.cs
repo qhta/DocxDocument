@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AreaSerExtensionList Class.
 /// </summary>
-public class AreaSerExtensionListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList>, AreaSerExtensionList
+public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<AreaSerExtension>? AreaSerExtensions
+  {
+    get;
+    set;
+  }
+  
 }

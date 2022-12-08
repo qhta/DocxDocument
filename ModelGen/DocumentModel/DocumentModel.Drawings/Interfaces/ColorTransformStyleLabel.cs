@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ColorTransformStyleLabel
 {
   /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// Fill Color List.
   /// </summary>
   public FillColorList? FillColorList { get ; set; }

@@ -5,6 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface TableGrid
 {
+  public Collection<GridColumn>? GridColumns { get ; set; }
+  
   public TableGridChange? TableGridChange { get ; set; }
   
 }

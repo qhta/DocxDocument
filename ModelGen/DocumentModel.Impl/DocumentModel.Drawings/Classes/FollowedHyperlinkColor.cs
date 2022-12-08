@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class FollowedHyperlinkColorImpl: DocumentModel.Drawings.Color2TypeImpl, FollowedHyperlinkColor
 {
+  public new DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

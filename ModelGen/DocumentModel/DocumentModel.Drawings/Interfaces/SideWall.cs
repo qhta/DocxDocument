@@ -5,6 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface SideWall
 {
+  public Byte? Thickness { get ; set; }
+  
   public ShapeProperties1? ShapeProperties { get ; set; }
   
   public PictureOptions? PictureOptions { get ; set; }

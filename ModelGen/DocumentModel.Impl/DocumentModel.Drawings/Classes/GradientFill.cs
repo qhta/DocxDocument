@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GradientFill Class.
 /// </summary>
-public class GradientFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.GradientFill>, GradientFill
+public class GradientFillImpl: ModelElementImpl, GradientFill
 {
+  public DocumentFormat.OpenXml.Drawing.GradientFill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.GradientFill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Tile Flip
   /// </summary>
@@ -16,6 +22,15 @@ public class GradientFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Gradi
       if (OpenXmlElement != null)
         OpenXmlElement.Flip = (DocumentFormat.OpenXml.Drawing.TileFlipValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Rotate With Shape
+  /// </summary>
+  public Boolean? RotateWithShape
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -34,6 +49,12 @@ public class GradientFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Gradi
   }
   
   public PathGradientFill? PathGradientFill
+  {
+    get;
+    set;
+  }
+  
+  public RelativeRectangleType? TileRectangle
   {
     get;
     set;

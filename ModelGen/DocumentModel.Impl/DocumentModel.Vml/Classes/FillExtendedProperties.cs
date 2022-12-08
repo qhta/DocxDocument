@@ -3,8 +3,14 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Fill Extended Properties.
 /// </summary>
-public class FillExtendedPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>, FillExtendedProperties
+public class FillExtendedPropertiesImpl: ModelElementImpl, FillExtendedProperties
 {
+  public DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

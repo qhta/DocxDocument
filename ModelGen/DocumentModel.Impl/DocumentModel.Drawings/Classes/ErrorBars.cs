@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ErrorBars Class.
 /// </summary>
-public class ErrorBarsImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>, ErrorBars
+public class ErrorBarsImpl: ModelElementImpl, ErrorBars
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ErrorBars?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Error Bar Direction.
   /// </summary>
@@ -120,6 +126,15 @@ public class ErrorBarsImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.E
   }
   
   /// <summary>
+  /// No End Cap.
+  /// </summary>
+  public Boolean? NoEndCap
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Plus.
   /// </summary>
   public Plus? Plus
@@ -132,6 +147,15 @@ public class ErrorBarsImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.E
   /// Minus.
   /// </summary>
   public Minus? Minus
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Error Bar Value.
+  /// </summary>
+  public Double? ErrorBarValue
   {
     get;
     set;

@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface TableProperties
 {
   /// <summary>
+  /// TableStyle.
+  /// </summary>
+  public String? TableStyle { get ; set; }
+  
+  /// <summary>
   /// TablePositionProperties.
   /// </summary>
   public TablePositionProperties? TablePositionProperties { get ; set; }
@@ -64,6 +69,16 @@ public interface TableProperties
   /// TableLook.
   /// </summary>
   public TableLook? TableLook { get ; set; }
+  
+  /// <summary>
+  /// TableCaption, this property is only available in Office 2010 and later..
+  /// </summary>
+  public String? TableCaption { get ; set; }
+  
+  /// <summary>
+  /// TableDescription, this property is only available in Office 2010 and later..
+  /// </summary>
+  public String? TableDescription { get ; set; }
   
   /// <summary>
   /// Revision Information for Table Properties.

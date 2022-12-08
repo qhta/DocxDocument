@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the RadarChartSeries Class.
 /// </summary>
-public class RadarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.RadarChartSeries>, RadarChartSeries2
+public class RadarChartSeries2Impl: ModelElementImpl, RadarChartSeries2
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.RadarChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.RadarChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -41,7 +65,13 @@ public class RadarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office20
     set;
   }
   
-  public DataLabels1? DataLabels
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;

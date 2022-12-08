@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// External Data Source to Merge Field Mapping.
 /// </summary>
-public class FieldMapDataImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>, FieldMapData
+public class FieldMapDataImpl: ModelElementImpl, FieldMapData
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FieldMapData? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FieldMapData?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Merge Field Mapping.
   /// </summary>
@@ -41,6 +47,51 @@ public class FieldMapDataImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessin
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Data Source Name for Column.
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Predefined Merge Field Name.
+  /// </summary>
+  public String? MappedName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Index of Column Being Mapped.
+  /// </summary>
+  public UInt32? ColumnIndex
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Merge Field Name Language ID.
+  /// </summary>
+  public String? LanguageId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Use Country/Region-Based Address Field Ordering.
+  /// </summary>
+  public Boolean? DynamicAddress
+  {
+    get;
+    set;
   }
   
 }

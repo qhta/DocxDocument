@@ -3,12 +3,27 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Audio from CD.
 /// </summary>
-public class AudioFromCDImpl: ModelElement<DocumentFormat.OpenXml.Drawing.AudioFromCD>, AudioFromCD
+public class AudioFromCDImpl: ModelElementImpl, AudioFromCD
 {
+  public DocumentFormat.OpenXml.Drawing.AudioFromCD? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.AudioFromCD?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Audio Start Time.
   /// </summary>
-  public Boolean? StartTime
+  public AudioCDTimeType? StartTime
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Audio End Time.
+  /// </summary>
+  public AudioCDTimeType? EndTime
   {
     get;
     set;

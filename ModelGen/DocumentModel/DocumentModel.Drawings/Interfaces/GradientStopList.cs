@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GradientStopList
 {
+  public Collection<GradientStop>? GradientStops { get ; set; }
+  
 }

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface SerAxExtensionList
 {
+  public Collection<SerAxExtension>? SerAxExtensions { get ; set; }
+  
 }

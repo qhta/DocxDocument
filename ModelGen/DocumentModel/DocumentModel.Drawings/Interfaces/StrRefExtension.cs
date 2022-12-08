@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface StrRefExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public FullReference? FullReference { get ; set; }
   
   public LevelReference? LevelReference { get ; set; }

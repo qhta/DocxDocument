@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Bar3DChartExtensionList
 {
+  public Collection<Bar3DChartExtension>? Bar3DChartExtensions { get ; set; }
+  
 }

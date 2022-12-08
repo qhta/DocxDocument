@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Conditional Table Formatting Properties.
 /// </summary>
-public class TableStylePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties>, TableStyleProperties
+public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Table Style Conditional Formatting Type
   /// </summary>

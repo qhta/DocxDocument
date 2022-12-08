@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Category List.
 /// </summary>
-public class StyleDisplayCategoriesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>, StyleDisplayCategories
+public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategories
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<StyleDisplayCategory>? Items
+  {
+    get;
+    set;
+  }
+  
 }

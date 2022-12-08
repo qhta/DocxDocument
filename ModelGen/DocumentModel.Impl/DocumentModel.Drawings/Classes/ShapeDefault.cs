@@ -5,7 +5,13 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ShapeDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, ShapeDefault
 {
-  public override ShapeProperties6? ShapeProperties
+  public new DocumentFormat.OpenXml.Drawing.ShapeDefault? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ShapeDefault?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override ShapeProperties8? ShapeProperties
   {
     get;
     set;
@@ -23,7 +29,7 @@ public class ShapeDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionType
     set;
   }
   
-  public override ShapeStyle2? ShapeStyle
+  public override ShapeStyle1? ShapeStyle
   {
     get;
     set;

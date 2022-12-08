@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Definition.
 /// </summary>
-public class StyleImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Style>, Style
+public class StyleImpl: ModelElementImpl, Style
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Style? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Style?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Style Type
   /// </summary>
@@ -16,6 +22,78 @@ public class StyleImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Style
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Wordprocessing.StyleValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Style ID
+  /// </summary>
+  public String? StyleId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Default Style
+  /// </summary>
+  public Boolean? Default
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// User-Defined Style
+  /// </summary>
+  public Boolean? CustomStyle
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Primary Style Name.
+  /// </summary>
+  public String? StyleName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Alternate Style Names.
+  /// </summary>
+  public String? Aliases
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Parent Style ID.
+  /// </summary>
+  public String? BasedOn
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Style For Next Paragraph.
+  /// </summary>
+  public String? NextParagraphStyle
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Linked Style Reference.
+  /// </summary>
+  public String? LinkedStyle
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -92,6 +170,15 @@ public class StyleImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Style
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Optional User Interface Sorting Order.
+  /// </summary>
+  public Int32? UIPriority
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -409,6 +496,12 @@ public class StyleImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Style
   /// Style Table Cell Properties.
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties
+  {
+    get;
+    set;
+  }
+  
+  public Collection<TableStyleProperties>? TableStylePropertieses
   {
     get;
     set;

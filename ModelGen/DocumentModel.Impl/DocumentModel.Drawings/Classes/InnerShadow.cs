@@ -3,8 +3,41 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Inner Shadow Effect.
 /// </summary>
-public class InnerShadowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.InnerShadow>, InnerShadow
+public class InnerShadowImpl: ModelElementImpl, InnerShadow
 {
+  public DocumentFormat.OpenXml.Drawing.InnerShadow? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.InnerShadow?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Blur Radius
+  /// </summary>
+  public Int64? BlurRadius
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance
+  /// </summary>
+  public Int64? Distance
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Direction
+  /// </summary>
+  public Int32? Direction
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

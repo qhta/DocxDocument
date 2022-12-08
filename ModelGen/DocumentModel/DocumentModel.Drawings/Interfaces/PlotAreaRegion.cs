@@ -10,6 +10,8 @@ public interface PlotAreaRegion
   /// </summary>
   public PlotSurface? PlotSurface { get ; set; }
   
+  public Collection<Series>? Serieses { get ; set; }
+  
   public ExtensionList2? ExtensionList { get ; set; }
   
 }

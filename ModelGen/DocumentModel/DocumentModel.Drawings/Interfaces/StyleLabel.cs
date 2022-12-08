@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface StyleLabel
 {
   /// <summary>
+  /// Style Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// 3-D Scene.
   /// </summary>
   public Scene3D? Scene3D { get ; set; }
@@ -18,12 +23,12 @@ public interface StyleLabel
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style3? Style { get ; set; }
+  public Style1? Style { get ; set; }
   
   /// <summary>
   /// ExtensionList.

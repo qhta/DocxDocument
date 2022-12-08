@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Mcds
 {
+  public Collection<Mcd>? Items { get ; set; }
+  
 }

@@ -5,4 +5,9 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public interface SchemaReference
 {
+  /// <summary>
+  /// Target Namespace of Associated XML Schema
+  /// </summary>
+  public String? Uri { get ; set; }
+  
 }

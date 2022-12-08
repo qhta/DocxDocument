@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface PivotFormat
 {
   /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
   /// ShapeProperties.
   /// </summary>
   public ShapeProperties1? ShapeProperties { get ; set; }
@@ -18,7 +23,7 @@ public interface PivotFormat
   /// <summary>
   /// Data Label.
   /// </summary>
-  public DataLabel2? DataLabel { get ; set; }
+  public DataLabel3? DataLabel { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.

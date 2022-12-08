@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Format Scheme.
 /// </summary>
-public class FormatSchemeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FormatScheme>, FormatScheme
+public class FormatSchemeImpl: ModelElementImpl, FormatScheme
 {
+  public DocumentFormat.OpenXml.Drawing.FormatScheme? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FormatScheme?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Fill Style List.
   /// </summary>

@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BarSerExtensionList Class.
 /// </summary>
-public class BarSerExtensionListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList>, BarSerExtensionList
+public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<BarSerExtension>? BarSerExtensions
+  {
+    get;
+    set;
+  }
+  
 }

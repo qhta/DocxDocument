@@ -3,8 +3,41 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Revision Information for Table Row Properties.
 /// </summary>
-public class TableRowPropertiesChangeImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange>, TableRowPropertiesChange
+public class TableRowPropertiesChangeImpl: ModelElementImpl, TableRowPropertiesChange
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// author
+  /// </summary>
+  public String? Author
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// date
+  /// </summary>
+  public DateTime? Date
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Previous Table Row Properties.
   /// </summary>

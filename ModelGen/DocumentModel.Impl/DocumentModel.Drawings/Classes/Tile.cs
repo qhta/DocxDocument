@@ -3,8 +3,50 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tile.
 /// </summary>
-public class TileImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Tile>, Tile
+public class TileImpl: ModelElementImpl, Tile
 {
+  public DocumentFormat.OpenXml.Drawing.Tile? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Tile?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Horizontal Offset
+  /// </summary>
+  public Int64? HorizontalOffset
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Offset
+  /// </summary>
+  public Int64? VerticalOffset
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Horizontal Ratio
+  /// </summary>
+  public Int32? HorizontalRatio
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Ratio
+  /// </summary>
+  public Int32? VerticalRatio
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Tile Flipping
   /// </summary>

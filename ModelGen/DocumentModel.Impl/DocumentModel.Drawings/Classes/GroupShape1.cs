@@ -1,23 +1,59 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the GroupShape Class.
+/// Group Shape.
 /// </summary>
-public class GroupShape1Impl: DocumentModel.Drawings.GroupShapeTypeImpl, GroupShape1
+public class GroupShape1Impl: ModelElementImpl, GroupShape1
 {
-  public override GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Non-Visual Group Shape Properties.
+  /// </summary>
+  public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties
   {
     get;
     set;
   }
   
-  public override GroupShapeProperties1? GroupShapeProperties
+  /// <summary>
+  /// Group Shape Properties.
+  /// </summary>
+  public GroupShapeProperties1? GroupShapeProperties
   {
     get;
     set;
   }
   
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public Collection<Shape1>? Shapes
+  {
+    get;
+    set;
+  }
+  
+  public Collection<GroupShape1>? GroupShapes
+  {
+    get;
+    set;
+  }
+  
+  public Collection<GraphicFrame>? GraphicFrames
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ConnectionShape>? ConnectionShapes
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Picture>? Pictures
   {
     get;
     set;

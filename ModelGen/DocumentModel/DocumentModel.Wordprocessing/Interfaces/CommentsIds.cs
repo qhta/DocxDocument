@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface CommentsIds
 {
+  public Collection<CommentId>? CommentIds { get ; set; }
+  
 }

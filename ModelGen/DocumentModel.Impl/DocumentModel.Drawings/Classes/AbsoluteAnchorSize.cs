@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Absolute Anchor Shape Size.
 /// </summary>
-public class AbsoluteAnchorSizeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>, AbsoluteAnchorSize
+public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// FromAnchor.
   /// </summary>
@@ -23,13 +29,13 @@ public class AbsoluteAnchorSizeImpl: ModelElement<DocumentFormat.OpenXml.Drawing
     set;
   }
   
-  public Shape3? Shape
+  public Shape1? Shape
   {
     get;
     set;
   }
   
-  public GroupShape2? GroupShape
+  public GroupShape1? GroupShape
   {
     get;
     set;

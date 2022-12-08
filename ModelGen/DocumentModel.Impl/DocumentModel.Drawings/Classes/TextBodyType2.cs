@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TextBodyType Class.
 /// </summary>
-public class TextBodyType2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType>, TextBodyType2
+public class TextBodyType2Impl: ModelElementImpl, TextBodyType2
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Body Properties.
   /// </summary>

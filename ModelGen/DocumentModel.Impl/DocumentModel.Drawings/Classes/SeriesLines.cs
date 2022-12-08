@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class SeriesLinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, SeriesLines
 {
+  public new DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.SeriesLines?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override ChartShapeProperties? ChartShapeProperties
   {
     get;

@@ -14,4 +14,6 @@ public interface StringDimension
   
   public OpenXmlFormulaElement? NfFormula { get ; set; }
   
+  public Collection<StringLevel>? StringLevels { get ; set; }
+  
 }

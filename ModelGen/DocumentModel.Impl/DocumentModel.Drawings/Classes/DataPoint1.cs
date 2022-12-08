@@ -3,51 +3,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DataPoint Class.
 /// </summary>
-public class DataPoint1Impl: DocumentModel.Drawings.StyleEntryImpl, DataPoint1
+public class DataPoint1Impl: ModelElementImpl, DataPoint1
 {
-  public override LineReference1? LineReference
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataPoint? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataPoint?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;
   }
   
-  public override EffectReference1? EffectReference
-  {
-    get;
-    set;
-  }
-  
-  public override FontReference1? FontReference
-  {
-    get;
-    set;
-  }
-  
-  public override ShapeProperties3? ShapeProperties
-  {
-    get;
-    set;
-  }
-  
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
-  {
-    get;
-    set;
-  }
-  
-  public override TextBodyProperties? TextBodyProperties
-  {
-    get;
-    set;
-  }
-  
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList
   {
     get;
     set;

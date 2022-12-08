@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Effect
 {
+  /// <summary>
+  /// Reference
+  /// </summary>
+  public String? Reference { get ; set; }
+  
 }

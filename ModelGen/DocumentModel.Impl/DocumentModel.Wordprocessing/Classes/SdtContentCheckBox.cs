@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentCheckBox Class.
 /// </summary>
-public class SdtContentCheckBoxImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>, SdtContentCheckBox
+public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
 {
+  public DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Checked.
   /// </summary>
@@ -46,7 +52,16 @@ public class SdtContentCheckBoxImpl: ModelElement<DocumentFormat.OpenXml.Office2
   /// <summary>
   /// CheckedState.
   /// </summary>
-  public Boolean? CheckedState
+  public CheckBoxSymbolType? CheckedState
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// UncheckedState.
+  /// </summary>
+  public CheckBoxSymbolType? UncheckedState
   {
     get;
     set;

@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Upper-Limit Function.
 /// </summary>
-public class LimitUpperImpl: ModelElement<DocumentFormat.OpenXml.Math.LimitUpper>, LimitUpper
+public class LimitUpperImpl: ModelElementImpl, LimitUpper
 {
+  public DocumentFormat.OpenXml.Math.LimitUpper? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.LimitUpper?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Upper Limit Properties.
   /// </summary>

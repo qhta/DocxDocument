@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface OfficeStyleSheetExtensionList
 {
+  public Collection<OfficeStyleSheetExtension>? OfficeStyleSheetExtensions { get ; set; }
+  
 }

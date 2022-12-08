@@ -13,7 +13,7 @@ public interface AxisTitle2
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
   /// TxPrTextBody.

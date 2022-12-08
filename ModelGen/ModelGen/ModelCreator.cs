@@ -36,7 +36,7 @@ public class ModelCreator
 
     //ShowNamespaceDetails();
 
-    totalTime += CheckTypeDefinition();
+    totalTime += ValidatingTypes();
 
     totalTime += GenerateCode();
 
@@ -92,10 +92,10 @@ public class ModelCreator
     return ts;
   }
 
-  private TimeSpan CheckTypeDefinition()
+  private TimeSpan ValidatingTypes()
   {
     ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine("Checking types");
+    ModelDisplay.WriteLine("Validating types & namespaces");
     DateTime t1 = DateTime.Now;
     var checkedTypesCount = 0;
     var checkedNamespacesCount = 0;
@@ -103,12 +103,12 @@ public class ModelCreator
     foreach (var typeInfo in TypeManager.AllTypes.ToArray())
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
-      if (!ModelManager.CheckPropertyOverride(typeInfo))
+      if (!ModelManager.CheckPropertyOverrides(typeInfo))
         invalidTypesCount++;
     }
     foreach (var nspace in TypeManager.GetNamespaces())
     {
-      ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces. {nspace}");
+      ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
       int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
       if (n>0)
         invalidTypesCount+=n;
@@ -116,9 +116,8 @@ public class ModelCreator
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Checking time is {ts}");
+    ModelDisplay.WriteLine($"Validation time is {ts}");
     ModelDisplay.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
-    //ModelDisplay.ShowTypeRenames();
     return ts;
   }
 

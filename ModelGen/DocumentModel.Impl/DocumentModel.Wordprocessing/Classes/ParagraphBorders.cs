@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ParagraphBorders Class.
 /// </summary>
-public class ParagraphBordersImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>, ParagraphBorders
+public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
 {
+  public DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>

@@ -3,8 +3,20 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Background Formatting.
 /// </summary>
-public class BackgroundImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Background>, Background
+public class BackgroundImpl: ModelElementImpl, Background
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Background? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Background?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -17,13 +29,19 @@ public class BackgroundImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
     set;
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
   }
   
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? GroupFill
   {
     get;
     set;

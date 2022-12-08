@@ -1,14 +1,21 @@
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using DocumentFormat.OpenXml;
 
 namespace DocumentModel.VariantTypes;
 
 /// <summary>
 /// Vector variant implementation. Value is a collection of objects of any type.
 /// </summary>
-public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTVector>, VTVector
+public class VTVectorImpl : VariantImpl, VTVector
 {
+  public new DocumentFormat.OpenXml.VariantTypes.VTVector? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.VariantTypes.VTVector?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+
   public VTVectorImpl()
   {
     OpenXmlElement = new DocumentFormat.OpenXml.VariantTypes.VTVector();
@@ -18,21 +25,6 @@ public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTV
   {
     OpenXmlElement = element;
   }
-
-
-  /// <summary>
-  /// Vector Base Type
-  /// </summary>
-  public VectorBaseType? BaseType
-  {
-    get => (VectorBaseType?)OpenXmlElement?.BaseType?.Value;
-    set
-    {
-      if (OpenXmlElement != null)
-        OpenXmlElement.BaseType = (DocumentFormat.OpenXml.VariantTypes.VectorBaseValues?)value;
-    }
-  }
-
 
   private static Dictionary<VectorBaseType, Type> _itemTypes = new Dictionary<VectorBaseType, Type>
   {
@@ -47,17 +39,31 @@ public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTV
     { VectorBaseType.EightBytesUnsignedInteger, typeof(UInt64) },
     { VectorBaseType.FourBytesReal, typeof(Single) },
     { VectorBaseType.EightBytesReal, typeof(Double) },
+    { VectorBaseType.Bstr, typeof(String) },
     { VectorBaseType.Lpstr, typeof(String) },
     { VectorBaseType.Lpwstr, typeof(String) },
-    { VectorBaseType.Bstr, typeof(String) },
     { VectorBaseType.Date, typeof(DateTime) },
     { VectorBaseType.Filetime, typeof(DateTime) },
     { VectorBaseType.Bool, typeof(Boolean) },
     { VectorBaseType.Currency, typeof(Decimal) },
     { VectorBaseType.Error, typeof(HexInt) },
     { VectorBaseType.ClassId, typeof(Guid) },
-    { VectorBaseType.ClipboardData, typeof(object) },
+    { VectorBaseType.ClipboardData, typeof(byte[]) },
+    { VectorBaseType.Variant, typeof(object) },
   };
+
+  /// <summary>
+  /// Vector Base Type
+  /// </summary>
+  public VectorBaseType? BaseType
+  {
+    get => (VectorBaseType?)OpenXmlElement?.BaseType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BaseType = (DocumentFormat.OpenXml.VariantTypes.VectorBaseValues?)value;
+    }
+  }
 
   public IEnumerator<DocumentFormat.OpenXml.OpenXmlElement> GetOpenXmlElements()
   {
@@ -66,7 +72,7 @@ public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTV
     throw new InvalidOperationException("Can't enumerate Vector variant whith no OpenXmlElement");
   }
 
-  public object? Value
+  public override object? Value
   {
     get
     {
@@ -115,7 +121,7 @@ public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTV
             {
               var itemVariant = VariantImpl.CreateVariant(itemValue);
               itemVariant.Value = itemValue;
-              var openXmlElement = (itemVariant as DocumentModel.Impl.ModelElement)?.OpenXmlElement as DocumentFormat.OpenXml.OpenXmlElement;
+              var openXmlElement = (itemVariant as DocumentModel.Impl.ModelElementImpl)?._OpenXmlElement;
               if (openXmlElement != null)
                 OpenXmlElement.AppendChild(openXmlElement);
             }
@@ -127,102 +133,82 @@ public class VTVectorImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.VTV
   }
   private IList? _value;
 
-  public TypeCode GetTypeCode()
+  public override TypeCode GetTypeCode()
   {
     return TypeCode.Object;
   }
 
-  public object ToType(Type conversionType, IFormatProvider? provider)
-  {
-    if (conversionType == typeof(Boolean)) return ToBoolean(provider);
-    else if (conversionType == typeof(Byte)) return ToByte(provider);
-    else if (conversionType == typeof(Char)) return ToChar(provider);
-    else if (conversionType == typeof(DateTime)) return ToDateTime(provider);
-    else if (conversionType == typeof(Decimal)) return ToDecimal(provider);
-    else if (conversionType == typeof(Double)) return ToDouble(provider);
-    else if (conversionType == typeof(Int16)) return ToInt16(provider);
-    else if (conversionType == typeof(Int32)) return ToInt32(provider);
-    else if (conversionType == typeof(Int64)) return ToInt64(provider);
-    else if (conversionType == typeof(SByte)) return ToSByte(provider);
-    else if (conversionType == typeof(Single)) return ToSingle(provider);
-    else if (conversionType == typeof(String)) return ToString(provider);
-    else if (conversionType == typeof(UInt16)) return ToUInt16(provider);
-    else if (conversionType == typeof(UInt32)) return ToUInt32(provider);
-    else if (conversionType == typeof(UInt64)) return ToUInt64(provider);
-    throw new InvalidOperationException($"Can't convert Vector Variant to {conversionType} type");
-  }
-
-  public bool ToBoolean(IFormatProvider? provider)
+  public override bool ToBoolean(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Boolean");
   }
 
-  public byte ToByte(IFormatProvider? provider)
+  public override byte ToByte(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Byte");
   }
 
-  public char ToChar(IFormatProvider? provider)
+  public override char ToChar(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Char");
   }
 
-  public DateTime ToDateTime(IFormatProvider? provider)
+  public override DateTime ToDateTime(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to DateTime");
   }
 
-  public decimal ToDecimal(IFormatProvider? provider)
+  public override decimal ToDecimal(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Decimal");
   }
 
-  public double ToDouble(IFormatProvider? provider)
+  public override double ToDouble(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Double");
   }
 
-  public short ToInt16(IFormatProvider? provider)
+  public override short ToInt16(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Int16");
   }
 
-  public int ToInt32(IFormatProvider? provider)
+  public override int ToInt32(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Int32");
   }
 
-  public long ToInt64(IFormatProvider? provider)
+  public override long ToInt64(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Int64");
   }
 
-  public sbyte ToSByte(IFormatProvider? provider)
+  public override sbyte ToSByte(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to SByte");
   }
 
-  public float ToSingle(IFormatProvider? provider)
+  public override float ToSingle(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to Single");
   }
 
-  public string ToString(IFormatProvider? provider)
+  public override string ToString(IFormatProvider? provider)
   {
     return (Value is byte[] val) ? Convert.ToBase64String(val) : string.Empty;
   }
 
-  public ushort ToUInt16(IFormatProvider? provider)
+  public override ushort ToUInt16(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to UInt16");
   }
 
-  public uint ToUInt32(IFormatProvider? provider)
+  public override uint ToUInt32(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to UInt32");
   }
 
-  public ulong ToUInt64(IFormatProvider? provider)
+  public override ulong ToUInt64(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Vector variant to UInt64");
   }

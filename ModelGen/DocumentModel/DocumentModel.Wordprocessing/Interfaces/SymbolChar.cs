@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SymbolChar
 {
+  /// <summary>
+  /// Symbol Character Font
+  /// </summary>
+  public String? Font { get ; set; }
+  
+  /// <summary>
+  /// Symbol Character Code
+  /// </summary>
+  public DocumentModel.HexBinaryValue? Char { get ; set; }
+  
 }

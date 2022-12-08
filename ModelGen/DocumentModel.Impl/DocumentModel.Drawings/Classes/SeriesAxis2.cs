@@ -3,12 +3,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Series Axis.
 /// </summary>
-public class SeriesAxis2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis>, SeriesAxis2
+public class SeriesAxis2Impl: ModelElementImpl, SeriesAxis2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Axis ID.
+  /// </summary>
+  public UInt32? AxisId
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Scaling.
   /// </summary>
   public Scaling? Scaling
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Delete.
+  /// </summary>
+  public Boolean? Delete
   {
     get;
     set;
@@ -73,7 +97,7 @@ public class SeriesAxis2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts
   /// <summary>
   /// Title.
   /// </summary>
-  public Title2? Title
+  public Title1? Title
   {
     get;
     set;
@@ -214,7 +238,16 @@ public class SeriesAxis2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Crossing Axis ID.
+  /// </summary>
+  public UInt32? CrossingAxis
   {
     get;
     set;
@@ -253,6 +286,24 @@ public class SeriesAxis2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts
         }
       }
     }
+  }
+  
+  public Double? CrossesAt
+  {
+    get;
+    set;
+  }
+  
+  public Int32? TickLabelSkip
+  {
+    get;
+    set;
+  }
+  
+  public Int32? TickMarkSkip
+  {
+    get;
+    set;
   }
   
   public SerAxExtensionList? SerAxExtensionList

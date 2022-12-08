@@ -10,6 +10,13 @@ public interface Algorithm
   /// </summary>
   public AlgorithmKind? Type { get ; set; }
   
+  /// <summary>
+  /// Revision Number
+  /// </summary>
+  public UInt32? Revision { get ; set; }
+  
+  public Collection<Parameter>? Parameters { get ; set; }
+  
   public ExtensionList3? ExtensionList { get ; set; }
   
 }

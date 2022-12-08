@@ -5,4 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface WebExtensionReferenceList
 {
+  public Collection<WebExtensionStoreReference>? WebExtensionStoreReferences { get ; set; }
+  
 }

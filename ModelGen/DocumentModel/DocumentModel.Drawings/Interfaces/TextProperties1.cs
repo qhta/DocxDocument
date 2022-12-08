@@ -1,12 +1,18 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextProperties Class.
+/// Text Properties.
 /// </summary>
 public interface TextProperties1
 {
-  public BodyProperties? BodyProperties { get ; set; }
+  /// <summary>
+  /// Apply 3D shape properties.
+  /// </summary>
+  public Shape3DType? Shape3DType { get ; set; }
   
-  public ListStyle? ListStyle { get ; set; }
+  /// <summary>
+  /// No text in 3D scene.
+  /// </summary>
+  public FlatText? FlatText { get ; set; }
   
 }

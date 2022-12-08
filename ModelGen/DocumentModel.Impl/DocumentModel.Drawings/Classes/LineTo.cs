@@ -3,6 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Draw Line To.
 /// </summary>
-public class LineToImpl: ModelElement<DocumentFormat.OpenXml.Drawing.LineTo>, LineTo
+public class LineToImpl: ModelElementImpl, LineTo
 {
+  public DocumentFormat.OpenXml.Drawing.LineTo? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.LineTo?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Line end point.
+  /// </summary>
+  public AdjustPoint2DType? Point
+  {
+    get;
+    set;
+  }
+  
 }

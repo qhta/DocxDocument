@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ChartStyle
 {
   /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public UInt32? Id { get ; set; }
+  
+  /// <summary>
   /// AxisTitle.
   /// </summary>
   public AxisTitle1? AxisTitle { get ; set; }
@@ -13,7 +18,7 @@ public interface ChartStyle
   /// <summary>
   /// CategoryAxis.
   /// </summary>
-  public CategoryAxis1? CategoryAxis { get ; set; }
+  public CategoryAxis2? CategoryAxis { get ; set; }
   
   /// <summary>
   /// ChartArea.
@@ -23,7 +28,7 @@ public interface ChartStyle
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel1? DataLabel { get ; set; }
+  public DataLabel4? DataLabel { get ; set; }
   
   /// <summary>
   /// DataLabelCallout.
@@ -33,7 +38,7 @@ public interface ChartStyle
   /// <summary>
   /// DataPoint.
   /// </summary>
-  public DataPoint1? DataPoint { get ; set; }
+  public DataPoint3? DataPoint { get ; set; }
   
   /// <summary>
   /// DataPoint3D.
@@ -83,7 +88,7 @@ public interface ChartStyle
   /// <summary>
   /// Floor.
   /// </summary>
-  public Floor2? Floor { get ; set; }
+  public Floor1? Floor { get ; set; }
   
   /// <summary>
   /// GridlineMajor.
@@ -143,7 +148,7 @@ public interface ChartStyle
   /// <summary>
   /// TrendlineLabel.
   /// </summary>
-  public TrendlineLabel1? TrendlineLabel { get ; set; }
+  public TrendlineLabel2? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// UpBar.
@@ -153,7 +158,7 @@ public interface ChartStyle
   /// <summary>
   /// ValueAxis.
   /// </summary>
-  public ValueAxis1? ValueAxis { get ; set; }
+  public ValueAxis2? ValueAxis { get ; set; }
   
   /// <summary>
   /// Wall.
@@ -163,6 +168,6 @@ public interface ChartStyle
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

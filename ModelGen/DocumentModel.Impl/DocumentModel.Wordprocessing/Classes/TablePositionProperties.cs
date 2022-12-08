@@ -3,8 +3,50 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TablePositionProperties Class.
 /// </summary>
-public class TablePositionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>, TablePositionProperties
+public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Distance From Left of Table to Text
+  /// </summary>
+  public Int16? LeftFromText
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// (Distance From Right of Table to Text
+  /// </summary>
+  public Int16? RightFromText
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Top of Table to Text
+  /// </summary>
+  public Int16? TopFromText
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Bottom of Table to Text
+  /// </summary>
+  public Int16? BottomFromText
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Table Vertical Anchor
   /// </summary>
@@ -45,6 +87,15 @@ public class TablePositionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wo
   }
   
   /// <summary>
+  /// Absolute Horizontal Distance From Anchor
+  /// </summary>
+  public Int32? TablePositionX
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Relative Vertical Alignment from Anchor
   /// </summary>
   public VerticalAlignmentKind? TablePositionYAlignment
@@ -55,6 +106,15 @@ public class TablePositionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wo
       if (OpenXmlElement != null)
         OpenXmlElement.TablePositionYAlignment = (DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Absolute Vertical Distance From Anchor
+  /// </summary>
+  public Int32? TablePositionY
+  {
+    get;
+    set;
   }
   
 }

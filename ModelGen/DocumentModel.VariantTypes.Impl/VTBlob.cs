@@ -7,8 +7,14 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 /// Binary Blob variant implementation. Value is of Byte[] type.
 /// </summary>
-public class VTBlobImpl: ModelElement<DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement>, VTBlob
+public class VTBlobImpl: VariantImpl, VTBlob
 {
+  public new DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+
   public VTBlobImpl()
   {
     OpenXmlElement = new DocumentFormat.OpenXml.VariantTypes.VTBlob();
@@ -54,7 +60,7 @@ public class VTBlobImpl: ModelElement<DocumentFormat.OpenXml.TypedOpenXmlLeafTex
     OpenXmlElement = element;
   }
 
-  public object? Value
+  public override object? Value
   {
     get
     {
@@ -88,102 +94,82 @@ public class VTBlobImpl: ModelElement<DocumentFormat.OpenXml.TypedOpenXmlLeafTex
   }
   private byte[]? _value;
 
-  public TypeCode GetTypeCode()
+  public override TypeCode GetTypeCode()
   {
     return TypeCode.String;
   }
 
-  public object ToType(Type conversionType, IFormatProvider? provider)
-  {
-    if (conversionType == typeof(Boolean)) return ToBoolean(provider);
-    else if (conversionType == typeof(Byte)) return ToByte(provider);
-    else if (conversionType == typeof(Char)) return ToChar(provider);
-    else if (conversionType == typeof(DateTime)) return ToDateTime(provider);
-    else if (conversionType == typeof(Decimal)) return ToDecimal(provider);
-    else if (conversionType == typeof(Double)) return ToDouble(provider);
-    else if (conversionType == typeof(Int16)) return ToInt16(provider);
-    else if (conversionType == typeof(Int32)) return ToInt32(provider);
-    else if (conversionType == typeof(Int64)) return ToInt64(provider);
-    else if (conversionType == typeof(SByte)) return ToSByte(provider);
-    else if (conversionType == typeof(Single)) return ToSingle(provider);
-    else if (conversionType == typeof(String)) return ToString(provider);
-    else if (conversionType == typeof(UInt16)) return ToUInt16(provider);
-    else if (conversionType == typeof(UInt32)) return ToUInt32(provider);
-    else if (conversionType == typeof(UInt64)) return ToUInt64(provider);
-    throw new InvalidOperationException($"Can't convert Byte Variant to {conversionType} type");
-  }
-
-  public bool ToBoolean(IFormatProvider? provider)
+  public override bool ToBoolean(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Boolean");
   }
 
-  public byte ToByte(IFormatProvider? provider)
+  public override byte ToByte(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Byte");
   }
 
-  public char ToChar(IFormatProvider? provider)
+  public override char ToChar(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Char");
   }
 
-  public DateTime ToDateTime(IFormatProvider? provider)
+  public override DateTime ToDateTime(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to DateTime");
   }
 
-  public decimal ToDecimal(IFormatProvider? provider)
+  public override decimal ToDecimal(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Decimal");
   }
 
-  public double ToDouble(IFormatProvider? provider)
+  public override double ToDouble(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Double");
   }
 
-  public short ToInt16(IFormatProvider? provider)
+  public override short ToInt16(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Int16");
   }
 
-  public int ToInt32(IFormatProvider? provider)
+  public override int ToInt32(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Int32");
   }
 
-  public long ToInt64(IFormatProvider? provider)
+  public override long ToInt64(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Int64");
   }
 
-  public sbyte ToSByte(IFormatProvider? provider)
+  public override sbyte ToSByte(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to SByte");
   }
 
-  public float ToSingle(IFormatProvider? provider)
+  public override float ToSingle(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to Single");
   }
 
-  public string ToString(IFormatProvider? provider)
+  public override string ToString(IFormatProvider? provider)
   {
     return (Value is byte[] val) ? Convert.ToBase64String(val) : string.Empty;
   }
 
-  public ushort ToUInt16(IFormatProvider? provider)
+  public override ushort ToUInt16(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to UInt16");
   }
 
-  public uint ToUInt32(IFormatProvider? provider)
+  public override uint ToUInt32(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to UInt32");
   }
 
-  public ulong ToUInt64(IFormatProvider? provider)
+  public override ulong ToUInt64(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Blob variant to UInt64");
   }

@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table-Level Property Exceptions.
 /// </summary>
-public class TablePropertyExceptionsImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions>, TablePropertyExceptions
+public class TablePropertyExceptionsImpl: ModelElementImpl, TablePropertyExceptions
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>

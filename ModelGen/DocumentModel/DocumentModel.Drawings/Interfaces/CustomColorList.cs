@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CustomColorList
 {
+  public Collection<CustomColor>? CustomColors { get ; set; }
+  
 }

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Surface3DChartExtensionList
 {
+  public Collection<Surface3DChartExtension>? Surface3DChartExtensions { get ; set; }
+  
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ChartTitle Class.
 /// </summary>
-public class ChartTitleImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartTitle>, ChartTitle
+public class ChartTitleImpl: ModelElementImpl, ChartTitle
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartTitle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartTitle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// pos, this property is only available in Office 2016 and later.
   /// </summary>
@@ -32,6 +38,15 @@ public class ChartTitleImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Draw
   }
   
   /// <summary>
+  /// overlay, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Overlay
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Text.
   /// </summary>
   public Text1? Text
@@ -43,7 +58,7 @@ public class ChartTitleImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Draw
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;

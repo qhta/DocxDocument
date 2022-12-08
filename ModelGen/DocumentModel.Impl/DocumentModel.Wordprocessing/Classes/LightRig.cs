@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LightRig Class.
 /// </summary>
-public class LightRigImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Word.LightRig>, LightRig
+public class LightRigImpl: ModelElementImpl, LightRig
 {
+  public DocumentFormat.OpenXml.Office2010.Word.LightRig? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.LightRig?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// rig, this property is only available in Office 2010 and later.
   /// </summary>

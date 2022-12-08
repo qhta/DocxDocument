@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BubbleChartExtensionList
 {
+  public Collection<BubbleChartExtension>? BubbleChartExtensions { get ; set; }
+  
 }

@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Scaling.
 /// </summary>
-public class ScalingImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Scaling>, Scaling
+public class ScalingImpl: ModelElementImpl, Scaling
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.Scaling? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Scaling?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Logarithmic Base.
+  /// </summary>
+  public Double? LogBase
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Axis Orientation.
   /// </summary>
@@ -41,6 +56,24 @@ public class ScalingImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Sca
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Maximum.
+  /// </summary>
+  public Double? MaxAxisValue
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Minimum.
+  /// </summary>
+  public Double? MinAxisValue
+  {
+    get;
+    set;
   }
   
   /// <summary>

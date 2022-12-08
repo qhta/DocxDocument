@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ImageEffect Class.
 /// </summary>
-public class ImageEffectImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>, ImageEffect
+public class ImageEffectImpl: ModelElementImpl, ImageEffect
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// visible, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Boolean? Visible
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ArtisticBlur.
   /// </summary>
@@ -233,7 +248,7 @@ public class ImageEffectImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Dra
   /// <summary>
   /// Saturation.
   /// </summary>
-  public Saturation2? Saturation
+  public Saturation1? Saturation
   {
     get;
     set;

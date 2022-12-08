@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface StringDataType1
 {
+  /// <summary>
+  /// PointCount.
+  /// </summary>
+  public UInt32? PointCount { get ; set; }
+  
 }

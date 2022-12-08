@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Footnotes
 {
+  public Collection<Footnote>? Items { get ; set; }
+  
 }

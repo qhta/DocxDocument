@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Lower-Limit Function.
 /// </summary>
-public class LimitLowerImpl: ModelElement<DocumentFormat.OpenXml.Math.LimitLower>, LimitLower
+public class LimitLowerImpl: ModelElementImpl, LimitLower
 {
+  public DocumentFormat.OpenXml.Math.LimitLower? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.LimitLower?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Lower Limit Properties.
   /// </summary>

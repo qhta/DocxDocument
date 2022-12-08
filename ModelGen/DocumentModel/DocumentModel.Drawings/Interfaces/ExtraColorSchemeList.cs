@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ExtraColorSchemeList
 {
+  public Collection<ExtraColorScheme>? ExtraColorSchemes { get ; set; }
+  
 }

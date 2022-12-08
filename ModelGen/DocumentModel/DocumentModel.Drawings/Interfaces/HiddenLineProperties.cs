@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface HiddenLineProperties
 {
   /// <summary>
+  /// line width
+  /// </summary>
+  public Int32? Width { get ; set; }
+  
+  /// <summary>
   /// line cap
   /// </summary>
   public LineCapKind? CapType { get ; set; }
@@ -20,6 +25,8 @@ public interface HiddenLineProperties
   /// </summary>
   public PenAlignmentKind? Alignment { get ; set; }
   
+  public Boolean? NoFill { get ; set; }
+  
   public SolidFill? SolidFill { get ; set; }
   
   public GradientFill? GradientFill { get ; set; }
@@ -29,6 +36,10 @@ public interface HiddenLineProperties
   public PresetLineDashKind? PresetDash { get ; set; }
   
   public CustomDash? CustomDash { get ; set; }
+  
+  public Boolean? Round { get ; set; }
+  
+  public Boolean? LineJoinBevel { get ; set; }
   
   public Miter? Miter { get ; set; }
   

@@ -21,6 +21,11 @@ public interface ErrorBars
   public ErrorKind? ErrorBarValueType { get ; set; }
   
   /// <summary>
+  /// No End Cap.
+  /// </summary>
+  public Boolean? NoEndCap { get ; set; }
+  
+  /// <summary>
   /// Plus.
   /// </summary>
   public Plus? Plus { get ; set; }
@@ -29,6 +34,11 @@ public interface ErrorBars
   /// Minus.
   /// </summary>
   public Minus? Minus { get ; set; }
+  
+  /// <summary>
+  /// Error Bar Value.
+  /// </summary>
+  public Double? ErrorBarValue { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.

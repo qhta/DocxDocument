@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableCellMarginDefault Class.
 /// </summary>
-public class TableCellMarginDefaultImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>, TableCellMarginDefault
+public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefault
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Table Cell Top Margin Default.
   /// </summary>

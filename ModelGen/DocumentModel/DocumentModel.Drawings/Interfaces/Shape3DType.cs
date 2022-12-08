@@ -6,6 +6,21 @@ namespace DocumentModel.Drawings;
 public interface Shape3DType
 {
   /// <summary>
+  /// Shape Depth
+  /// </summary>
+  public Int64? Z { get ; set; }
+  
+  /// <summary>
+  /// Extrusion Height
+  /// </summary>
+  public Int64? ExtrusionHeight { get ; set; }
+  
+  /// <summary>
+  /// Contour Width
+  /// </summary>
+  public Int64? ContourWidth { get ; set; }
+  
+  /// <summary>
   /// Preset Material Type
   /// </summary>
   public PresetMaterialKind? PresetMaterial { get ; set; }

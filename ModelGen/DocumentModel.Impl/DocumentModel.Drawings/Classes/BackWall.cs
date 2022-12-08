@@ -5,6 +5,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class BackWallImpl: DocumentModel.Drawings.SurfaceTypeImpl, BackWall
 {
+  public new DocumentFormat.OpenXml.Drawing.Charts.BackWall? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.BackWall?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override Byte? Thickness
+  {
+    get;
+    set;
+  }
+  
   public override ShapeProperties1? ShapeProperties
   {
     get;

@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface TableStyleConditionalFormattingTableRowProperties
 {
+  public Collection<Boolean>? Hiddens { get ; set; }
+  
+  public Collection<OnOffOnlyKind>? CantSplits { get ; set; }
+  
+  public Collection<OnOffOnlyKind>? TableHeaders { get ; set; }
+  
+  public Collection<TableWidthType>? TableCellSpacings { get ; set; }
+  
+  public Collection<TableRowAlignmentKind>? TableJustifications { get ; set; }
+  
 }

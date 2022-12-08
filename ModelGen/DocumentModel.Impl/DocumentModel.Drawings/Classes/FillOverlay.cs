@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill Overlay Effect.
 /// </summary>
-public class FillOverlayImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FillOverlay>, FillOverlay
+public class FillOverlayImpl: ModelElementImpl, FillOverlay
 {
+  public DocumentFormat.OpenXml.Drawing.FillOverlay? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FillOverlay?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Blend
   /// </summary>
@@ -16,6 +22,15 @@ public class FillOverlayImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FillOv
       if (OpenXmlElement != null)
         OpenXmlElement.Blend = (DocumentFormat.OpenXml.Drawing.BlendModeValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// NoFill.
+  /// </summary>
+  public Boolean? NoFill
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -39,7 +54,7 @@ public class FillOverlayImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FillOv
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
@@ -49,6 +64,15 @@ public class FillOverlayImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FillOv
   /// Pattern Fill.
   /// </summary>
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Group Fill.
+  /// </summary>
+  public Boolean? GroupFill
   {
     get;
     set;

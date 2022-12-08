@@ -6,6 +6,11 @@ namespace DocumentModel.Math;
 public interface GroupCharProperties
 {
   /// <summary>
+  /// Group Character (Grouping Character).
+  /// </summary>
+  public String? AccentChar { get ; set; }
+  
+  /// <summary>
   /// Position (Group Character).
   /// </summary>
   public VerticalJustificationKind? Position { get ; set; }

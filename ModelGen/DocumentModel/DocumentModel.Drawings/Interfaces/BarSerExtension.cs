@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BarSerExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public InvertSolidFillFormat? InvertSolidFillFormat { get ; set; }
   
   public FilteredSeriesTitle? FilteredSeriesTitle { get ; set; }

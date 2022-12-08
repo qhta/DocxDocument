@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualGroupDrawingShapeProperties Class.
 /// </summary>
-public class NonVisualGroupDrawingShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties>, NonVisualGroupDrawingShapeProperties
+public class NonVisualGroupDrawingShapePropertiesImpl: ModelElementImpl, NonVisualGroupDrawingShapeProperties
 {
+  public DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// GroupShapeLocks.
   /// </summary>

@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Complex Field Character.
 /// </summary>
-public class FieldCharImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FieldChar>, FieldChar
+public class FieldCharImpl: ModelElementImpl, FieldChar
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FieldChar? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FieldChar?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Field Character Type
   /// </summary>
@@ -16,6 +22,33 @@ public class FieldCharImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.F
       if (OpenXmlElement != null)
         OpenXmlElement.FieldCharType = (DocumentFormat.OpenXml.Wordprocessing.FieldCharValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Field Should Not Be Recalculated
+  /// </summary>
+  public Boolean? FieldLock
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Field Result Invalidated
+  /// </summary>
+  public Boolean? Dirty
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Custom Field Data.
+  /// </summary>
+  public String? FieldData
+  {
+    get;
+    set;
   }
   
   /// <summary>

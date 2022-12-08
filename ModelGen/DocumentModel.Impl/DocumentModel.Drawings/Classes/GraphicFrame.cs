@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Frame.
 /// </summary>
-public class GraphicFrameImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>, GraphicFrame
+public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Reference to Custom Function
+  /// </summary>
+  public String? Macro
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Publish To Server
+  /// </summary>
+  public Boolean? Published
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Non-Visual Graphic Frame Properties.
   /// </summary>

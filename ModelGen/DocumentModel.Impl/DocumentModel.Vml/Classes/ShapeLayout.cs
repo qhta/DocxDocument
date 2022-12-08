@@ -3,8 +3,14 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Layout Properties.
 /// </summary>
-public class ShapeLayoutImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>, ShapeLayout
+public class ShapeLayoutImpl: ModelElementImpl, ShapeLayout
 {
+  public DocumentFormat.OpenXml.Vml.Office.ShapeLayout? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Office.ShapeLayout?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

@@ -5,4 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface FromAnchor
 {
+  public String? XPosition { get ; set; }
+  
+  public String? YPosition { get ; set; }
+  
 }

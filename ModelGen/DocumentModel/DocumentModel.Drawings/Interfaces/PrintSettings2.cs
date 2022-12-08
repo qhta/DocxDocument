@@ -13,11 +13,11 @@ public interface PrintSettings2
   /// <summary>
   /// PageMargins.
   /// </summary>
-  public PageMargins2? PageMargins { get ; set; }
+  public PageMargins1? PageMargins { get ; set; }
   
   /// <summary>
   /// PageSetup.
   /// </summary>
-  public PageSetup2? PageSetup { get ; set; }
+  public PageSetup1? PageSetup { get ; set; }
   
 }

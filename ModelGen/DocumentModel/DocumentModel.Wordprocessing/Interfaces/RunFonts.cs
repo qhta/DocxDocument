@@ -11,6 +11,26 @@ public interface RunFonts
   public FontTypeHintKind? Hint { get ; set; }
   
   /// <summary>
+  /// ASCII Font
+  /// </summary>
+  public String? Ascii { get ; set; }
+  
+  /// <summary>
+  /// High ANSI Font
+  /// </summary>
+  public String? HighAnsi { get ; set; }
+  
+  /// <summary>
+  /// East Asian Font
+  /// </summary>
+  public String? EastAsia { get ; set; }
+  
+  /// <summary>
+  /// Complex Script Font
+  /// </summary>
+  public String? ComplexScript { get ; set; }
+  
+  /// <summary>
   /// ASCII Theme Font
   /// </summary>
   public ThemeFontKind? AsciiTheme { get ; set; }

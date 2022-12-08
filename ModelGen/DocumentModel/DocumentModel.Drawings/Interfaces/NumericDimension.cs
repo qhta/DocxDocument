@@ -14,4 +14,6 @@ public interface NumericDimension
   
   public OpenXmlFormulaElement? NfFormula { get ; set; }
   
+  public Collection<NumericLevel>? NumericLevels { get ; set; }
+  
 }

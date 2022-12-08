@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Equation Array Properties.
 /// </summary>
-public class EquationArrayPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.EquationArrayProperties>, EquationArrayProperties
+public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayProperties
 {
+  public DocumentFormat.OpenXml.Math.EquationArrayProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.EquationArrayProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Equation Array Base Justification.
   /// </summary>
@@ -117,6 +123,24 @@ public class EquationArrayPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Ma
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Row Spacing Rule.
+  /// </summary>
+  public Int32? RowSpacingRule
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Row Spacing (Equation Array).
+  /// </summary>
+  public UInt16? RowSpacing
+  {
+    get;
+    set;
   }
   
   /// <summary>

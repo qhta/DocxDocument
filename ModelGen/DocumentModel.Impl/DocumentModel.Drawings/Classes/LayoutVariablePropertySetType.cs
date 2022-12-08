@@ -3,8 +3,50 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LayoutVariablePropertySetType Class.
 /// </summary>
-public class LayoutVariablePropertySetTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType>, LayoutVariablePropertySetType
+public class LayoutVariablePropertySetTypeImpl: ModelElementImpl, LayoutVariablePropertySetType
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Show Organization Chart User Interface.
+  /// </summary>
+  public virtual Boolean? OrganizationChart
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Maximum Children.
+  /// </summary>
+  public virtual Int32? MaxNumberOfChildren
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Preferred Number of Children.
+  /// </summary>
+  public virtual Int32? PreferredNumberOfChildren
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Show Insert Bullet.
+  /// </summary>
+  public virtual Boolean? BulletEnabled
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Diagram Direction.
   /// </summary>

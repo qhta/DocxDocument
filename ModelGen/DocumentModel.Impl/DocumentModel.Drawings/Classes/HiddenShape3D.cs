@@ -3,8 +3,41 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenShape3D Class.
 /// </summary>
-public class HiddenShape3DImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>, HiddenShape3D
+public class HiddenShape3DImpl: ModelElementImpl, HiddenShape3D
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Shape Depth
+  /// </summary>
+  public Int64? Z
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Extrusion Height
+  /// </summary>
+  public Int64? ExtrusionHeight
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Contour Width
+  /// </summary>
+  public Int64? ContourWidth
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Preset Material Type
   /// </summary>

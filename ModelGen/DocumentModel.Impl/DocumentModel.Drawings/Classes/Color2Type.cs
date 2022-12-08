@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Color2Type Class.
 /// </summary>
-public class Color2TypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Color2Type>, Color2Type
+public class Color2TypeImpl: ModelElementImpl, Color2Type
 {
+  public DocumentFormat.OpenXml.Drawing.Color2Type? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Color2Type?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

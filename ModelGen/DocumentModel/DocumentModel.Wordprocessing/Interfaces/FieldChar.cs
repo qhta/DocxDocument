@@ -11,6 +11,21 @@ public interface FieldChar
   public FieldCharKind? FieldCharType { get ; set; }
   
   /// <summary>
+  /// Field Should Not Be Recalculated
+  /// </summary>
+  public Boolean? FieldLock { get ; set; }
+  
+  /// <summary>
+  /// Field Result Invalidated
+  /// </summary>
+  public Boolean? Dirty { get ; set; }
+  
+  /// <summary>
+  /// Custom Field Data.
+  /// </summary>
+  public String? FieldData { get ; set; }
+  
+  /// <summary>
   /// Form Field Properties.
   /// </summary>
   public FormFieldData? FormFieldData { get ; set; }

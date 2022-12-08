@@ -8,7 +8,7 @@ public interface WordprocessingCommentsPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts { get ; set; }
+  public AlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the WordprocessingCommentsPart
@@ -19,6 +19,8 @@ public interface WordprocessingCommentsPart
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Wordprocessing.Comments? Comments { get ; set; }
+  
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the WordprocessingCommentsPart
@@ -53,12 +55,12 @@ public interface WordprocessingCommentsPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WordprocessingCommentsPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the WordprocessingCommentsPart
@@ -68,11 +70,13 @@ public interface WordprocessingCommentsPart
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
 }

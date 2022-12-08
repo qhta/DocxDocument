@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Table Cell Properties.
 /// </summary>
-public class StyleTableCellPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties>, StyleTableCellProperties
+public class StyleTableCellPropertiesImpl: ModelElementImpl, StyleTableCellProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Shading.
   /// </summary>

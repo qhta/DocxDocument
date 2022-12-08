@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Office Math Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.ParagraphProperties>, ParagraphProperties
+public class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
 {
+  public DocumentFormat.OpenXml.Math.ParagraphProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.ParagraphProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Justification.
   /// </summary>

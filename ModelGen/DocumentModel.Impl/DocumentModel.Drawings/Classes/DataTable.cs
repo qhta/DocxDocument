@@ -3,8 +3,50 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Data Table.
 /// </summary>
-public class DataTableImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DataTable>, DataTable
+public class DataTableImpl: ModelElementImpl, DataTable
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.DataTable? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.DataTable?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Show Horizontal Border.
+  /// </summary>
+  public Boolean? ShowHorizontalBorder
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Show Vertical Border.
+  /// </summary>
+  public Boolean? ShowVerticalBorder
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Show Outline Border.
+  /// </summary>
+  public Boolean? ShowOutlineBorder
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Show Legend Keys.
+  /// </summary>
+  public Boolean? ShowKeys
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
@@ -17,7 +59,7 @@ public class DataTableImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.D
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
   {
     get;
     set;

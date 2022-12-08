@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Phonetic Guide Properties.
 /// </summary>
-public class RubyPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>, RubyProperties
+public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.RubyProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.RubyProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Phonetic Guide Text Alignment.
   /// </summary>
@@ -41,6 +47,51 @@ public class RubyPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocess
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Phonetic Guide Text Font Size.
+  /// </summary>
+  public String? PhoneticGuideTextFontSize
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
+  /// </summary>
+  public Int16? PhoneticGuideRaise
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Phonetic Guide Base Text Font Size.
+  /// </summary>
+  public String? PhoneticGuideBaseTextSize
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Language ID for Phonetic Guide.
+  /// </summary>
+  public String? LanguageId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Invalidated Field Cache.
+  /// </summary>
+  public Boolean? Dirty
+  {
+    get;
+    set;
   }
   
 }

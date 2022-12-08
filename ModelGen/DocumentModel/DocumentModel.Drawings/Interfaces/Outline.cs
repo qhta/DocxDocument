@@ -5,6 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Outline
 {
+  public Boolean? NoFill { get ; set; }
+  
   public SolidFill? SolidFill { get ; set; }
   
   public GradientFill? GradientFill { get ; set; }
@@ -14,6 +16,10 @@ public interface Outline
   public PresetLineDashKind? PresetDash { get ; set; }
   
   public CustomDash? CustomDash { get ; set; }
+  
+  public Boolean? Round { get ; set; }
+  
+  public Boolean? LineJoinBevel { get ; set; }
   
   public Miter? Miter { get ; set; }
   

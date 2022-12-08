@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Point List.
 /// </summary>
-public class PointListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.PointList>, PointList
+public class PointListImpl: ModelElementImpl, PointList
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.PointList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.PointList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<Point1>? Points
+  {
+    get;
+    set;
+  }
+  
 }

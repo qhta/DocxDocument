@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Properties.
 /// </summary>
-public class ShapeProperties7Impl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>, ShapeProperties7
+public class ShapeProperties7Impl: ModelElementImpl, ShapeProperties7
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Black and White Mode
   /// </summary>
@@ -21,7 +27,7 @@ public class ShapeProperties7Impl: ModelElement<DocumentFormat.OpenXml.Drawing.C
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D1? Transform2D
+  public Transform2D3? Transform2D
   {
     get;
     set;
@@ -39,6 +45,12 @@ public class ShapeProperties7Impl: ModelElement<DocumentFormat.OpenXml.Drawing.C
     set;
   }
   
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -51,13 +63,19 @@ public class ShapeProperties7Impl: ModelElement<DocumentFormat.OpenXml.Drawing.C
     set;
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
   }
   
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? GroupFill
   {
     get;
     set;

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SeriesLayoutProperties Class.
 /// </summary>
-public class SeriesLayoutPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties>, SeriesLayoutProperties
+public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutProperties
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// ParentLabelLayout.
   /// </summary>
@@ -56,6 +62,12 @@ public class SeriesLayoutPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Off
   /// SeriesElementVisibilities.
   /// </summary>
   public SeriesElementVisibilities? SeriesElementVisibilities
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Aggregation
   {
     get;
     set;

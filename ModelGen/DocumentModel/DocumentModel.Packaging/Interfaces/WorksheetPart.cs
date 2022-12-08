@@ -5,20 +5,22 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface WorksheetPart
 {
+  public String? ContentType { get ; set; }
+  
   /// <summary>
   /// Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? ControlPropertiesParts { get ; set; }
+  public ControlPropertiesPart? ControlPropertiesParts { get ; set; }
   
   /// <summary>
   /// Gets the CustomPropertyParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? CustomPropertyParts { get ; set; }
+  public CustomPropertyPart? CustomPropertyParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
+  public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the WorksheetPart
@@ -28,47 +30,49 @@ public interface WorksheetPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
   
   /// <summary>
   /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? NamedSheetViewsParts { get ; set; }
+  public NamedSheetViewsPart? NamedSheetViewsParts { get ; set; }
   
   /// <summary>
   /// Gets the PivotTableParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? PivotTableParts { get ; set; }
+  public PivotTablePart? PivotTableParts { get ; set; }
   
   /// <summary>
   /// Gets the QueryTableParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? QueryTableParts { get ; set; }
+  public QueryTablePart? QueryTableParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the SlicersParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? SlicersParts { get ; set; }
+  public SlicersPart? SlicersParts { get ; set; }
   
   /// <summary>
   /// Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? SpreadsheetPrinterSettingsParts { get ; set; }
+  public SpreadsheetPrinterSettingsPart? SpreadsheetPrinterSettingsParts { get ; set; }
   
   /// <summary>
   /// Gets the TableDefinitionParts of the WorksheetPart
@@ -78,7 +82,7 @@ public interface WorksheetPart
   /// <summary>
   /// Gets the TimeLineParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? TimeLineParts { get ; set; }
+  public TimeLinePart? TimeLineParts { get ; set; }
   
   /// <summary>
   /// Gets the VmlDrawingParts of the WorksheetPart
@@ -88,6 +92,6 @@ public interface WorksheetPart
   /// <summary>
   /// Gets the WorksheetThreadedCommentsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? WorksheetThreadedCommentsParts { get ; set; }
+  public WorksheetThreadedCommentsPart? WorksheetThreadedCommentsParts { get ; set; }
   
 }

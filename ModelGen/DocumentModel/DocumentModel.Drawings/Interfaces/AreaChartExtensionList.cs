@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface AreaChartExtensionList
 {
+  public Collection<AreaChartExtension>? AreaChartExtensions { get ; set; }
+  
 }

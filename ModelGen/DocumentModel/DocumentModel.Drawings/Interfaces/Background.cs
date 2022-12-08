@@ -5,13 +5,17 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Background
 {
+  public Boolean? NoFill { get ; set; }
+  
   public SolidFill? SolidFill { get ; set; }
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill2? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
+  
+  public Boolean? GroupFill { get ; set; }
   
   public EffectList? EffectList { get ; set; }
   

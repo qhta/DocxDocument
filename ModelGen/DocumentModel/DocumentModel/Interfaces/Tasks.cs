@@ -5,6 +5,8 @@ namespace DocumentModel;
 /// </summary>
 public interface Tasks
 {
+  public Collection<Task>? Items { get ; set; }
+  
   public ExtensionList? ExtensionList { get ; set; }
   
 }

@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class MajorTickMarksTickMarksImpl: DocumentModel.Drawings.OpenXmlTickMarksElementImpl, MajorTickMarksTickMarks
 {
+  public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorTickMarksTickMarks? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorTickMarksTickMarks?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override ExtensionList2? ExtensionList
   {
     get;

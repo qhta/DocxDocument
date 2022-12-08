@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Square Wrapping.
 /// </summary>
-public class WrapSquareImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare>, WrapSquare
+public class WrapSquareImpl: ModelElementImpl, WrapSquare
 {
+  public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Text Wrapping Location
   /// </summary>
@@ -16,6 +22,42 @@ public class WrapSquareImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Wordpro
       if (OpenXmlElement != null)
         OpenXmlElement.WrapText = (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Distance From Text (Top)
+  /// </summary>
+  public UInt32? DistanceFromTop
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Bottom Edge
+  /// </summary>
+  public UInt32? DistanceFromBottom
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Left Edge
+  /// </summary>
+  public UInt32? DistanceFromLeft
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Right Edge
+  /// </summary>
+  public UInt32? DistanceFromRight
+  {
+    get;
+    set;
   }
   
   /// <summary>

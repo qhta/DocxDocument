@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Box Properties.
 /// </summary>
-public class BoxPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.BoxProperties>, BoxProperties
+public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
 {
+  public DocumentFormat.OpenXml.Math.BoxProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.BoxProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Operator Emulator.
   /// </summary>

@@ -10,4 +10,6 @@ public interface RegroupTable
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  public Collection<Entry>? Entries { get ; set; }
+  
 }

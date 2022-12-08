@@ -10,6 +10,11 @@ public interface FontReference1
   /// </summary>
   public FontCollectionIndexKind? Index { get ; set; }
   
+  /// <summary>
+  /// mods, this property is only available in Office 2013 and later.
+  /// </summary>
+  public List<String>? Modifiers { get ; set; }
+  
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
   public RgbColorModelHex? RgbColorModelHex { get ; set; }

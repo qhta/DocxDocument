@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Clear Class.
 /// </summary>
-public class ClearImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear>, Clear
+public class ClearImpl: ModelElementImpl, Clear
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// GeoLocationQueryResults.
   /// </summary>

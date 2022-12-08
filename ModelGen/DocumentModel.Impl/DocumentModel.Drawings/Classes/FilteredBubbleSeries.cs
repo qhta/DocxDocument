@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the FilteredBubbleSeries Class.
 /// </summary>
-public class FilteredBubbleSeriesImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>, FilteredBubbleSeries
+public class FilteredBubbleSeriesImpl: ModelElementImpl, FilteredBubbleSeries
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// BubbleChartSeries.
   /// </summary>
-  public BubbleChartSeries2? BubbleChartSeries
+  public BubbleChartSeries1? BubbleChartSeries
   {
     get;
     set;

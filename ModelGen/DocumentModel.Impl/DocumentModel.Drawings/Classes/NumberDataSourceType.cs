@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NumberDataSourceType Class.
 /// </summary>
-public class NumberDataSourceTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType>, NumberDataSourceType
+public class NumberDataSourceTypeImpl: ModelElementImpl, NumberDataSourceType
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Number Reference.
   /// </summary>

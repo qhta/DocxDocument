@@ -5,6 +5,8 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface DiagramDataPart
 {
+  public String? ContentType { get ; set; }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
@@ -13,7 +15,9 @@ public interface DiagramDataPart
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart

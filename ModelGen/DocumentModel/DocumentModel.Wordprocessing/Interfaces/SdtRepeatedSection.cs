@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SdtRepeatedSection
 {
+  /// <summary>
+  /// SectionTitle.
+  /// </summary>
+  public String? SectionTitle { get ; set; }
+  
+  /// <summary>
+  /// DoNotAllowInsertDeleteSection.
+  /// </summary>
+  public Boolean? DoNotAllowInsertDeleteSection { get ; set; }
+  
 }

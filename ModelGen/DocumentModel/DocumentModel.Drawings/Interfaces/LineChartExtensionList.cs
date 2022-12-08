@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineChartExtensionList
 {
+  public Collection<LineChartExtension>? LineChartExtensions { get ; set; }
+  
 }

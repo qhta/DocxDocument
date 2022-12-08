@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FrameProperties Class.
 /// </summary>
-public class FramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>, FrameProperties
+public class FramePropertiesImpl: ModelElementImpl, FrameProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FrameProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FrameProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Drop Cap Frame
   /// </summary>
@@ -16,6 +22,51 @@ public class FramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
       if (OpenXmlElement != null)
         OpenXmlElement.DropCap = (DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Drop Cap Vertical Height in Lines
+  /// </summary>
+  public Int32? Lines
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Frame Width
+  /// </summary>
+  public String? Width
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Frame Height
+  /// </summary>
+  public UInt32? Height
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Frame Padding
+  /// </summary>
+  public String? VerticalSpace
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Horizontal Frame Padding
+  /// </summary>
+  public String? HorizontalSpace
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -58,6 +109,15 @@ public class FramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
   }
   
   /// <summary>
+  /// Absolute Horizontal Position
+  /// </summary>
+  public String? X
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Relative Horizontal Position
   /// </summary>
   public HorizontalAlignmentKind? XAlign
@@ -68,6 +128,15 @@ public class FramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
       if (OpenXmlElement != null)
         OpenXmlElement.XAlign = (DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Absolute Vertical Position
+  /// </summary>
+  public String? Y
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -94,6 +163,15 @@ public class FramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
       if (OpenXmlElement != null)
         OpenXmlElement.HeightType = (DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Lock Frame Anchor to Paragraph
+  /// </summary>
+  public Boolean? AnchorLock
+  {
+    get;
+    set;
   }
   
 }

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CategoryList
 {
+  public Collection<Category>? Categories { get ; set; }
+  
 }

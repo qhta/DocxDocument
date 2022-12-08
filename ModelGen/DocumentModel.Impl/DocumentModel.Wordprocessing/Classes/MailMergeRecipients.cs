@@ -3,6 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines MailMergeRecipients.
 /// </summary>
-public class MailMergeRecipientsImpl: ModelElement<DocumentFormat.OpenXml.Office.Word.MailMergeRecipients>, MailMergeRecipients
+public class MailMergeRecipientsImpl: ModelElementImpl, MailMergeRecipients
 {
+  public DocumentFormat.OpenXml.Office.Word.MailMergeRecipients? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Word.MailMergeRecipients?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<SingleDataSourceRecord>? SingleDataSourceRecords
+  {
+    get;
+    set;
+  }
+  
 }

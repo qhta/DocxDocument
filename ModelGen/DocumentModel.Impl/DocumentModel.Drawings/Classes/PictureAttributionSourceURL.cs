@@ -3,6 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PictureAttributionSourceURL Class.
 /// </summary>
-public class PictureAttributionSourceURLImpl: ModelElement<DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL>, PictureAttributionSourceURL
+public class PictureAttributionSourceURLImpl: ModelElementImpl, PictureAttributionSourceURL
 {
+  public DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2019 and later.
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
 }

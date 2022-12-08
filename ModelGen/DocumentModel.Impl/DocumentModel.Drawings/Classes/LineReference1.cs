@@ -3,45 +3,45 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineReference Class.
 /// </summary>
-public class LineReference1Impl: DocumentModel.Drawings.StyleReferenceImpl, LineReference1
+public class LineReference1Impl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, LineReference1
 {
-  public RgbColorModelPercentage? RgbColorModelPercentage
+  public new DocumentFormat.OpenXml.Drawing.LineReference? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.LineReference?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;
     set;
   }
   
-  public RgbColorModelHex? RgbColorModelHex
+  public override RgbColorModelHex? RgbColorModelHex
   {
     get;
     set;
   }
   
-  public HslColor? HslColor
+  public override HslColor? HslColor
   {
     get;
     set;
   }
   
-  public SystemColor? SystemColor
+  public override SystemColor? SystemColor
   {
     get;
     set;
   }
   
-  public SchemeColor? SchemeColor
+  public override SchemeColor? SchemeColor
   {
     get;
     set;
   }
   
-  public PresetColor? PresetColor
-  {
-    get;
-    set;
-  }
-  
-  public StyleColor? StyleColor
+  public override PresetColor? PresetColor
   {
     get;
     set;

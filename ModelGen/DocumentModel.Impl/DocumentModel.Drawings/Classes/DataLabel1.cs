@@ -3,51 +3,85 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DataLabel Class.
 /// </summary>
-public class DataLabel1Impl: DocumentModel.Drawings.StyleEntryImpl, DataLabel1
+public class DataLabel1Impl: ModelElementImpl, DataLabel1
 {
-  public override LineReference1? LineReference
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos
+  {
+    get => (DataLabelPos?)OpenXmlElement?.Pos?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Pos = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos?)value;
+    }
+  }
+  
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat
   {
     get;
     set;
   }
   
-  public override EffectReference1? EffectReference
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;
   }
   
-  public override FontReference1? FontReference
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody
   {
     get;
     set;
   }
   
-  public override ShapeProperties3? ShapeProperties
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities
   {
     get;
     set;
   }
   
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring
   {
     get;
     set;
   }
   
-  public override TextBodyProperties? TextBodyProperties
-  {
-    get;
-    set;
-  }
-  
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList
   {
     get;
     set;

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset Color.
 /// </summary>
-public class PresetColorImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PresetColor>, PresetColor
+public class PresetColorImpl: ModelElementImpl, PresetColor
 {
+  public DocumentFormat.OpenXml.Drawing.PresetColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PresetColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Value
   /// </summary>
@@ -16,6 +22,174 @@ public class PresetColorImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Preset
       if (OpenXmlElement != null)
         OpenXmlElement.Val = (DocumentFormat.OpenXml.Drawing.PresetColorValues?)value;
     }
+  }
+  
+  public Collection<Int32>? Tints
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Shades
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Boolean>? Complements
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Boolean>? Inverses
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Boolean>? Graies
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Alphas
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? AlphaOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? AlphaModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Hues
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? HueOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? HueModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Saturations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? SaturationOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? SaturationModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Luminances
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? LuminanceOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? LuminanceModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Reds
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? RedOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? RedModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Greens
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? GreenOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? GreenModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? Blues
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? BlueOffsets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Int32>? BlueModulations
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Boolean>? Gammas
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Boolean>? InverseGammas
+  {
+    get;
+    set;
   }
   
 }

@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Glow Effect.
 /// </summary>
-public class GlowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Glow>, Glow
+public class GlowImpl: ModelElementImpl, Glow
 {
+  public DocumentFormat.OpenXml.Drawing.Glow? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Glow?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Radius
+  /// </summary>
+  public Int64? Radius
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

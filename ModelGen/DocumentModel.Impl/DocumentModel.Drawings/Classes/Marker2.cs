@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Marker Class.
 /// </summary>
-public class Marker2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker>, Marker2
+public class Marker2Impl: ModelElementImpl, Marker2
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Symbol.
   /// </summary>
@@ -41,6 +47,15 @@ public class Marker2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Size.
+  /// </summary>
+  public Byte? Size
+  {
+    get;
+    set;
   }
   
   /// <summary>

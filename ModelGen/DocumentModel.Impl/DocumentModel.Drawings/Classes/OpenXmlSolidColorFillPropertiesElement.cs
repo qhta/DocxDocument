@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the OpenXmlSolidColorFillPropertiesElement Class.
 /// </summary>
-public class OpenXmlSolidColorFillPropertiesElementImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement>, OpenXmlSolidColorFillPropertiesElement
+public class OpenXmlSolidColorFillPropertiesElementImpl: ModelElementImpl, OpenXmlSolidColorFillPropertiesElement
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

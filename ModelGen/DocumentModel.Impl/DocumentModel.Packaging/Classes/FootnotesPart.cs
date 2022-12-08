@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the FootnotesPart
 /// </summary>
-public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, FootnotesPart
+public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FootnotesPart
 {
+  public new DocumentFormat.OpenXml.Packaging.FootnotesPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.FootnotesPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the FootnotesPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -18,6 +24,12 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// Gets the ChartParts of the FootnotesPart
   /// </summary>
   public ChartPart? ChartParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the EmbeddedObjectParts of the FootnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the EmbeddedPackageParts of the FootnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the ImageParts of the FootnotesPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the FootnotesPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

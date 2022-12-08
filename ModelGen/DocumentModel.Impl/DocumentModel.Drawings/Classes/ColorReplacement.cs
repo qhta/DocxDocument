@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorReplacement Class.
 /// </summary>
-public class ColorReplacementImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ColorReplacement>, ColorReplacement
+public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
 {
+  public DocumentFormat.OpenXml.Drawing.ColorReplacement? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ColorReplacement?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

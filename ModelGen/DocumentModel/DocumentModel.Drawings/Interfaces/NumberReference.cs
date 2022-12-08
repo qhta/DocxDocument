@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface NumberReference
 {
   /// <summary>
+  /// Formula.
+  /// </summary>
+  public String? Formula { get ; set; }
+  
+  /// <summary>
   /// NumberingCache.
   /// </summary>
   public NumberingCache? NumberingCache { get ; set; }

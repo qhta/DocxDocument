@@ -6,6 +6,21 @@ namespace DocumentModel;
 public interface WebExtension
 {
   /// <summary>
+  /// Gets or sets the  value. It is only available for backwards compatibility
+  /// </summary>
+  public Boolean? Fronzen { get ; set; }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
+  /// frozen, this property is only available in Office 2013 and later.
+  /// </summary>
+  public Boolean? Frozen { get ; set; }
+  
+  /// <summary>
   /// WebExtensionStoreReference.
   /// </summary>
   public WebExtensionStoreReference? WebExtensionStoreReference { get ; set; }

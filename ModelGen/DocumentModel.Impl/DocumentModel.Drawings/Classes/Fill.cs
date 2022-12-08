@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill.
 /// </summary>
-public class FillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Fill>, Fill
+public class FillImpl: ModelElementImpl, Fill
 {
+  public DocumentFormat.OpenXml.Drawing.Fill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Fill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// NoFill.
+  /// </summary>
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// SolidFill.
   /// </summary>
@@ -26,7 +41,7 @@ public class FillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Fill>, Fill
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
@@ -36,6 +51,15 @@ public class FillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Fill>, Fill
   /// Pattern Fill.
   /// </summary>
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Group Fill.
+  /// </summary>
+  public Boolean? GroupFill
   {
     get;
     set;

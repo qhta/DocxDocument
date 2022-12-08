@@ -7,4 +7,6 @@ public interface TextData
 {
   public OpenXmlFormulaElement? Formula { get ; set; }
   
+  public String? VXsdstring { get ; set; }
+  
 }

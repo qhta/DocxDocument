@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ImageEffect
 {
   /// <summary>
+  /// visible, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Boolean? Visible { get ; set; }
+  
+  /// <summary>
   /// ArtisticBlur.
   /// </summary>
   public ArtisticBlur? ArtisticBlur { get ; set; }
@@ -133,7 +138,7 @@ public interface ImageEffect
   /// <summary>
   /// Saturation.
   /// </summary>
-  public Saturation2? Saturation { get ; set; }
+  public Saturation1? Saturation { get ; set; }
   
   /// <summary>
   /// SharpenSoften.

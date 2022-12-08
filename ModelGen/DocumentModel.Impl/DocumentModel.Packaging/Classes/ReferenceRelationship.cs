@@ -3,6 +3,48 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines a reference relationship. A reference relationship can be internal or external.
 /// </summary>
-public class ReferenceRelationshipImpl: ModelElement<DocumentFormat.OpenXml.Packaging.ReferenceRelationship>, ReferenceRelationship
+public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
 {
+  public DocumentFormat.OpenXml.Packaging.ReferenceRelationship? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.ReferenceRelationship?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Gets the relationship type.
+  /// </summary>
+  public virtual String? RelationshipType
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Gets a value indicating whether the target of the relationship is Internal or External to the .
+  /// </summary>
+  public Boolean? IsExternal
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Gets the relationship ID.
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Gets the target URI of the relationship.
+  /// </summary>
+  public Uri? Uri
+  {
+    get;
+    set;
+  }
+  
 }

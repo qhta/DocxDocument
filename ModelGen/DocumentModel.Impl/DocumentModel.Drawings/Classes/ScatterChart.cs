@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Scatter Charts.
 /// </summary>
-public class ScatterChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterChart>, ScatterChart
+public class ScatterChartImpl: ModelElementImpl, ScatterChart
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ScatterChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ScatterChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// ScatterStyle.
   /// </summary>
@@ -43,7 +49,28 @@ public class ScatterChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Chart
     }
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ScatterChartSeries2>? ScatterChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public Collection<UInt32>? AxisIds
   {
     get;
     set;

@@ -1,19 +1,19 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Plot data and formatting.
+/// Defines the PlotArea Class.
 /// </summary>
 public interface PlotArea1
 {
   /// <summary>
-  /// Layout.
+  /// PlotAreaRegion.
   /// </summary>
-  public Layout1? Layout { get ; set; }
+  public PlotAreaRegion? PlotAreaRegion { get ; set; }
   
-  public DataTable? DataTable { get ; set; }
+  public Collection<Axis>? Axises { get ; set; }
   
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

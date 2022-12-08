@@ -10,4 +10,8 @@ public interface ChartColorStylePart
   /// </summary>
   public DocumentModel.Drawings.ColorStyle? ColorStyle { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
+  
 }

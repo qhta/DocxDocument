@@ -5,20 +5,19 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataPoint1
 {
-  public LineReference1? LineReference { get ; set; }
+  /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx { get ; set; }
   
-  public FillReference1? FillReference { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
-  
-  public FontReference1? FontReference { get ; set; }
-  
-  public ShapeProperties3? ShapeProperties { get ; set; }
-  
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
-  
-  public TextBodyProperties? TextBodyProperties { get ; set; }
-  
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

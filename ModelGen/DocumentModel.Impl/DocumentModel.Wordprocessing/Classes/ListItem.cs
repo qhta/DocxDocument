@@ -3,6 +3,30 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Combo Box List Item.
 /// </summary>
-public class ListItemImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.ListItem>, ListItem
+public class ListItemImpl: ModelElementImpl, ListItem
 {
+  public DocumentFormat.OpenXml.Wordprocessing.ListItem? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.ListItem?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// List Entry Display Text
+  /// </summary>
+  public String? DisplayText
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// List Entry Value
+  /// </summary>
+  public String? Value
+  {
+    get;
+    set;
+  }
+  
 }

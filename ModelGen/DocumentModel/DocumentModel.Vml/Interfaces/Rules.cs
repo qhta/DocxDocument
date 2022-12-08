@@ -10,4 +10,6 @@ public interface Rules
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  public Collection<Rule>? Items { get ; set; }
+  
 }

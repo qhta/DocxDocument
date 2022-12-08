@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface Category
 {
   /// <summary>
+  /// Category Associated With Entry.
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// Gallery Associated With Entry.
   /// </summary>
   public DocPartGalleryKind? Gallery { get ; set; }

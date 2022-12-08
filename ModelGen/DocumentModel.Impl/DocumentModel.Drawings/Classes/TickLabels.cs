@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TickLabels Class.
 /// </summary>
-public class TickLabelsImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickLabels>, TickLabels
+public class TickLabelsImpl: ModelElementImpl, TickLabels
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickLabels? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickLabels?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// ExtensionList.
   /// </summary>

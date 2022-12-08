@@ -5,20 +5,44 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataLabel1
 {
-  public LineReference1? LineReference { get ; set; }
+  /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx { get ; set; }
   
-  public FillReference1? FillReference { get ; set; }
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat { get ; set; }
   
-  public FontReference1? FontReference { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody { get ; set; }
   
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities { get ; set; }
   
-  public TextBodyProperties? TextBodyProperties { get ; set; }
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring { get ; set; }
   
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

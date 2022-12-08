@@ -3,8 +3,32 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Properties3D Class.
 /// </summary>
-public class Properties3DImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Word.Properties3D>, Properties3D
+public class Properties3DImpl: ModelElementImpl, Properties3D
 {
+  public DocumentFormat.OpenXml.Office2010.Word.Properties3D? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.Properties3D?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// extrusionH, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int64? ExtrusionHeight
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// contourW, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int64? ContourWidth
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// prstMaterial, this property is only available in Office 2010 and later.
   /// </summary>

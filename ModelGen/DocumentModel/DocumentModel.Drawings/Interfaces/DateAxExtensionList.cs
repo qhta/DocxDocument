@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DateAxExtensionList
 {
+  public Collection<DateAxExtension>? DateAxExtensions { get ; set; }
+  
 }

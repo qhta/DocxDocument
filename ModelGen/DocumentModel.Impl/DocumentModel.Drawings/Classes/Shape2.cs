@@ -1,23 +1,74 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape.
+/// Defines the Shape Class.
 /// </summary>
-public class Shape2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>, Shape2
+public class Shape2Impl: ModelElementImpl, Shape2
 {
+  public DocumentFormat.OpenXml.Office.Drawing.Shape? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.Shape?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// Shape Adjust List.
+  /// modelId, this property is only available in Office 2010 and later.
   /// </summary>
-  public AdjustList? AdjustList
+  public String? ModelId
   {
     get;
     set;
   }
   
   /// <summary>
-  /// ExtensionList.
+  /// ShapeNonVisualProperties.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ShapeNonVisualProperties? ShapeNonVisualProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties2? ShapeProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// ShapeStyle.
+  /// </summary>
+  public ShapeStyle2? ShapeStyle
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TextBody.
+  /// </summary>
+  public TextBody2? TextBody
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Transform2D.
+  /// </summary>
+  public Transform2D2? Transform2D
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// OfficeArtExtensionList.
+  /// </summary>
+  public OfficeArtExtensionList5? OfficeArtExtensionList
   {
     get;
     set;

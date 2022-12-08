@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Copyrights
 {
+  public Collection<String>? CopyrightXsdstrings { get ; set; }
+  
 }

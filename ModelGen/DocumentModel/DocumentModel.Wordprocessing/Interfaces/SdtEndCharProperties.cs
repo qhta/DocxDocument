@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SdtEndCharProperties
 {
+  public Collection<RunProperties>? RunPropertieses { get ; set; }
+  
 }

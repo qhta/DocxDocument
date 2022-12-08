@@ -10,4 +10,9 @@ public interface ColorMostRecentlyUsed
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  /// <summary>
+  /// Recent colors
+  /// </summary>
+  public String? Colors { get ; set; }
+  
 }

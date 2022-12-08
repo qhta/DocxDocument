@@ -9,4 +9,6 @@ public interface TxPrTextBody
   
   public ListStyle? ListStyle { get ; set; }
   
+  public Collection<Paragraph>? Paragraphs { get ; set; }
+  
 }

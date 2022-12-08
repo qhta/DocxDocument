@@ -1,10 +1,34 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BarChartSeries Class.
+/// Bar Chart Series.
 /// </summary>
-public class BarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>, BarChartSeries2
+public class BarChartSeries2Impl: ModelElementImpl, BarChartSeries2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -24,6 +48,15 @@ public class BarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013
   }
   
   /// <summary>
+  /// InvertIfNegative.
+  /// </summary>
+  public Boolean? InvertIfNegative
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// PictureOptions.
   /// </summary>
   public PictureOptions? PictureOptions
@@ -32,7 +65,19 @@ public class BarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013
     set;
   }
   
-  public DataLabels1? DataLabels
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Trendline>? Trendlines
   {
     get;
     set;
@@ -56,14 +101,14 @@ public class BarChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013
     set;
   }
   
-  public ShapeKind2? Shape
+  public ShapeKind1? Shape
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Shape>();
-        return (ShapeKind2?)openXmlElement?.Val?.Value;
+        return (ShapeKind1?)openXmlElement?.Val?.Value;
       }
       return null;
     }

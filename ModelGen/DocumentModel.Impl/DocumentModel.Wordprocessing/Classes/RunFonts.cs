@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RunFonts Class.
 /// </summary>
-public class RunFontsImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.RunFonts>, RunFonts
+public class RunFontsImpl: ModelElementImpl, RunFonts
 {
+  public DocumentFormat.OpenXml.Wordprocessing.RunFonts? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.RunFonts?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Font Content Type
   /// </summary>
@@ -16,6 +22,42 @@ public class RunFontsImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Ru
       if (OpenXmlElement != null)
         OpenXmlElement.Hint = (DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// ASCII Font
+  /// </summary>
+  public String? Ascii
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// High ANSI Font
+  /// </summary>
+  public String? HighAnsi
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// East Asian Font
+  /// </summary>
+  public String? EastAsia
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Complex Script Font
+  /// </summary>
+  public String? ComplexScript
+  {
+    get;
+    set;
   }
   
   /// <summary>

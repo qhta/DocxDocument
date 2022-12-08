@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface StylisticSets
 {
+  public Collection<StyleSet>? StyleSets { get ; set; }
+  
 }
