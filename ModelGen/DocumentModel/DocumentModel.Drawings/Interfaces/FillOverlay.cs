@@ -11,6 +11,11 @@ public interface FillOverlay
   public BlendMode? Blend { get ; set; }
   
   /// <summary>
+  /// NoFill.
+  /// </summary>
+  public Boolean? NoFill { get ; set; }
+  
+  /// <summary>
   /// SolidFill.
   /// </summary>
   public SolidFill? SolidFill { get ; set; }
@@ -23,11 +28,16 @@ public interface FillOverlay
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill2? BlipFill { get ; set; }
   
   /// <summary>
   /// Pattern Fill.
   /// </summary>
   public PatternFill? PatternFill { get ; set; }
+  
+  /// <summary>
+  /// Group Fill.
+  /// </summary>
+  public Boolean? GroupFill { get ; set; }
   
 }

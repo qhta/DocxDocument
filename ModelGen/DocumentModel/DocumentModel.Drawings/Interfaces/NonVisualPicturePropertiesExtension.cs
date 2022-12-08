@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NonVisualPicturePropertiesExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public CameraTool? CameraTool { get ; set; }
   
   public SignatureLine? SignatureLine { get ; set; }

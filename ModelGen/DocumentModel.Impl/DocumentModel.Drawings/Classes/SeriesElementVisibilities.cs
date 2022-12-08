@@ -3,6 +3,57 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SeriesElementVisibilities Class.
 /// </summary>
-public class SeriesElementVisibilitiesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>, SeriesElementVisibilities
+public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisibilities
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// connectorLines, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? ConnectorLines
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// meanLine, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? MeanLine
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// meanMarker, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? MeanMarker
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// nonoutliers, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Nonoutliers
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// outliers, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Outliers
+  {
+    get;
+    set;
+  }
+  
 }

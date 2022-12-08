@@ -5,4 +5,9 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface VideoReferenceRelationship
 {
+  /// <summary>
+  /// Gets the relationship type for a video reference.
+  /// </summary>
+  public String? RelationshipType { get ; set; }
+  
 }

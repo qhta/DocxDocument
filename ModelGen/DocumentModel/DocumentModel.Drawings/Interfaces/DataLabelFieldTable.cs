@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataLabelFieldTable
 {
+  public Collection<DataLabelFieldTableEntry>? DataLabelFieldTableEntries { get ; set; }
+  
 }

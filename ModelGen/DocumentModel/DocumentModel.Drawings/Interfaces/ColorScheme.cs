@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ColorScheme
 {
   /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// Dark 1.
   /// </summary>
   public Dark1Color? Dark1Color { get ; set; }

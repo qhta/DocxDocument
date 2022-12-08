@@ -3,8 +3,41 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Apply 3D shape properties.
 /// </summary>
-public class Shape3DTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Shape3DType>, Shape3DType
+public class Shape3DTypeImpl: ModelElementImpl, Shape3DType
 {
+  public DocumentFormat.OpenXml.Drawing.Shape3DType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Shape3DType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Shape Depth
+  /// </summary>
+  public Int64? Z
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Extrusion Height
+  /// </summary>
+  public Int64? ExtrusionHeight
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Contour Width
+  /// </summary>
+  public Int64? ContourWidth
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Preset Material Type
   /// </summary>

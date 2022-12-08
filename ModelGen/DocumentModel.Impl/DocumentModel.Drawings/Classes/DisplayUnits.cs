@@ -3,8 +3,20 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DisplayUnits Class.
 /// </summary>
-public class DisplayUnitsImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits>, DisplayUnits
+public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Double? CustomDisplayUnit
+  {
+    get;
+    set;
+  }
+  
   public BuiltInUnitKind? BuiltInUnit
   {
     get

@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface FramesetSplitbar
 {
   /// <summary>
+  /// Frameset Splitter Width.
+  /// </summary>
+  public String? Width { get ; set; }
+  
+  /// <summary>
   /// Frameset Splitter Color.
   /// </summary>
   public Color? Color { get ; set; }

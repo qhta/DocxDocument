@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom color.
 /// </summary>
-public class CustomColorImpl: ModelElement<DocumentFormat.OpenXml.Drawing.CustomColor>, CustomColor
+public class CustomColorImpl: ModelElementImpl, CustomColor
 {
+  public DocumentFormat.OpenXml.Drawing.CustomColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.CustomColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

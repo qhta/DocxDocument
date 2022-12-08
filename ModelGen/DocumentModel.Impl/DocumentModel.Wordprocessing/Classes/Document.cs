@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document.
 /// </summary>
-public class DocumentImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Document>, Document
+public class DocumentImpl: ModelElementImpl, Document
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Document? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Document?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// conformance
   /// </summary>

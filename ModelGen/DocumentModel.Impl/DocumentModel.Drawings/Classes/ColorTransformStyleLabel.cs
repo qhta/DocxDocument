@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Style Label.
 /// </summary>
-public class ColorTransformStyleLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel>, ColorTransformStyleLabel
+public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyleLabel
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Fill Color List.
   /// </summary>

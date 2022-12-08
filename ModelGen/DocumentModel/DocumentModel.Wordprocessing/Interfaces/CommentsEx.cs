@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface CommentsEx
 {
+  public Collection<CommentEx>? CommentExs { get ; set; }
+  
 }

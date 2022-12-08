@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Subscript Function.
 /// </summary>
-public class SubscriptImpl: ModelElement<DocumentFormat.OpenXml.Math.Subscript>, Subscript
+public class SubscriptImpl: ModelElementImpl, Subscript
 {
+  public DocumentFormat.OpenXml.Math.Subscript? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.Subscript?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Subscript Properties.
   /// </summary>

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ValAxExtensionList
 {
+  public Collection<ValAxExtension>? ValAxExtensions { get ; set; }
+  
 }

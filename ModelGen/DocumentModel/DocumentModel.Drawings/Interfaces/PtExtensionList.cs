@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PtExtensionList
 {
+  public Collection<PtExtension>? PtExtensions { get ; set; }
+  
 }

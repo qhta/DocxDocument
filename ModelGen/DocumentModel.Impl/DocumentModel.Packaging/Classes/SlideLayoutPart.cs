@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SlideLayoutPart
 /// </summary>
-public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, SlideLayoutPart
+public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideLayoutPart
 {
+  public new DocumentFormat.OpenXml.Packaging.SlideLayoutPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.SlideLayoutPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the SlideLayoutPart
   /// </summary>
@@ -14,10 +20,16 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
     set;
   }
   
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the CustomXmlParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts
+  public CustomXmlPart? CustomXmlParts
   {
     get;
     set;
@@ -71,7 +83,7 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedControlPersistenceBinaryDataParts
+  public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedObjectParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -98,7 +110,7 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedPackageParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the ImageParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;
@@ -143,7 +161,7 @@ public class SlideLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the UserDefinedTagsParts of the SlideLayoutPart
   /// </summary>
-  public OpenXmlPartContainer? UserDefinedTagsParts
+  public UserDefinedTagsPart? UserDefinedTagsParts
   {
     get;
     set;

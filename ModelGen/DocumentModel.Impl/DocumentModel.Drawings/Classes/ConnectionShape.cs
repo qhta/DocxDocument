@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Connection Shape.
 /// </summary>
-public class ConnectionShapeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>, ConnectionShape
+public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Reference to Custom Function
+  /// </summary>
+  public String? Macro
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Publish to Server
+  /// </summary>
+  public Boolean? Published
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Connector Non Visual Properties.
   /// </summary>
@@ -26,7 +50,7 @@ public class ConnectionShapeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Ch
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style4? Style
+  public Style3? Style
   {
     get;
     set;

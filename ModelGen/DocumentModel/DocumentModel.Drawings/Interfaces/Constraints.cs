@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Constraints
 {
+  public Collection<Constraint>? Items { get ; set; }
+  
 }

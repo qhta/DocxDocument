@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class HighlightImpl: DocumentModel.Drawings.ColorTypeImpl, Highlight
 {
+  public new DocumentFormat.OpenXml.Drawing.Highlight? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Highlight?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

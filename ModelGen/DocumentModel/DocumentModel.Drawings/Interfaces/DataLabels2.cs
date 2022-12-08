@@ -1,35 +1,40 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the DataLabels Class.
+/// Data Labels.
 /// </summary>
 public interface DataLabels2
 {
-  /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DataLabelPos? Pos { get ; set; }
+  public Collection<DataLabel3>? Items { get ; set; }
   
-  /// <summary>
-  /// NumberFormat.
-  /// </summary>
-  public NumberFormat? NumberFormat { get ; set; }
+  public Boolean? Delete { get ; set; }
   
-  /// <summary>
-  /// ShapeProperties.
-  /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public NumberingFormat1? NumberingFormat { get ; set; }
   
-  /// <summary>
-  /// TxPrTextBody.
-  /// </summary>
-  public TxPrTextBody? TxPrTextBody { get ; set; }
+  public ChartShapeProperties? ChartShapeProperties { get ; set; }
   
-  /// <summary>
-  /// DataLabelVisibilities.
-  /// </summary>
-  public DataLabelVisibilities? DataLabelVisibilities { get ; set; }
+  public TextProperties2? TextProperties { get ; set; }
   
-  public ExtensionList2? ExtensionList { get ; set; }
+  public DataLabelPositionKind? DataLabelPosition { get ; set; }
+  
+  public Boolean? ShowLegendKey { get ; set; }
+  
+  public Boolean? ShowValue { get ; set; }
+  
+  public Boolean? ShowCategoryName { get ; set; }
+  
+  public Boolean? ShowSeriesName { get ; set; }
+  
+  public Boolean? ShowPercent { get ; set; }
+  
+  public Boolean? ShowBubbleSize { get ; set; }
+  
+  public String? Separator { get ; set; }
+  
+  public Boolean? ShowLeaderLines { get ; set; }
+  
+  public LeaderLines2? LeaderLines { get ; set; }
+  
+  public DLblsExtensionList? DLblsExtensionList { get ; set; }
   
 }

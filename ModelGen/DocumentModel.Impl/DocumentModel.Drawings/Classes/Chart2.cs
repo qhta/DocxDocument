@@ -1,44 +1,45 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Chart Class.
+/// Chart to Animate.
 /// </summary>
-public class Chart2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Chart>, Chart2
+public class Chart2Impl: ModelElementImpl, Chart2
 {
+  public DocumentFormat.OpenXml.Drawing.Chart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Chart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// ChartTitle.
+  /// Series Index
   /// </summary>
-  public ChartTitle? ChartTitle
+  public Int32? SeriesIndex
   {
     get;
     set;
   }
   
   /// <summary>
-  /// PlotArea.
+  /// Category Index
   /// </summary>
-  public PlotArea2? PlotArea
+  public Int32? CategoryIndex
   {
     get;
     set;
   }
   
   /// <summary>
-  /// Legend.
+  /// Animation Build Step
   /// </summary>
-  public Legend2? Legend
+  public ChartBuildStepKind? BuildStep
   {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList
-  {
-    get;
-    set;
+    get => (ChartBuildStepKind?)OpenXmlElement?.BuildStep?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BuildStep = (DocumentFormat.OpenXml.Drawing.ChartBuildStepValues?)value;
+    }
   }
   
 }

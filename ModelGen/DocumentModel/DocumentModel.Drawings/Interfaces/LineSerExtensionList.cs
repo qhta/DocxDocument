@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineSerExtensionList
 {
+  public Collection<LineSerExtension>? LineSerExtensions { get ; set; }
+  
 }

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface SurfaceChartExtensionList
 {
+  public Collection<SurfaceChartExtension>? SurfaceChartExtensions { get ; set; }
+  
 }

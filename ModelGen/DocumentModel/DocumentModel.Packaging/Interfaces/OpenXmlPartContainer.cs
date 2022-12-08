@@ -13,7 +13,7 @@ public interface OpenXmlPartContainer
   /// <summary>
   /// Gets all hyperlink relationships.
   /// </summary>
-  public ReferenceRelationship? HyperlinkRelationships { get ; set; }
+  public HyperlinkRelationship? HyperlinkRelationships { get ; set; }
   
   /// <summary>
   /// Gets all  relationships.

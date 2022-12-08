@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ProofError Class.
 /// </summary>
-public class ProofErrorImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>, ProofError
+public class ProofErrorImpl: ModelElementImpl, ProofError
 {
+  public DocumentFormat.OpenXml.Wordprocessing.ProofError? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.ProofError?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Proofing Error Anchor Type
   /// </summary>

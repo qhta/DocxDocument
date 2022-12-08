@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface NonVisualPictureDrawingProperties
 {
   /// <summary>
+  /// preferRelativeResize
+  /// </summary>
+  public Boolean? PreferRelativeResize { get ; set; }
+  
+  /// <summary>
   /// PictureLocks.
   /// </summary>
   public PictureLocks? PictureLocks { get ; set; }

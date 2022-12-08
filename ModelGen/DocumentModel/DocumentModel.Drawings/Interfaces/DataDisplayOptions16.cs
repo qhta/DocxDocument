@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataDisplayOptions16
 {
+  /// <summary>
+  /// BooleanFalse.
+  /// </summary>
+  public Boolean? BooleanFalse { get ; set; }
+  
 }

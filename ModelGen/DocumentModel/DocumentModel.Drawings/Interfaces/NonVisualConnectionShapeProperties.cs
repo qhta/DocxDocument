@@ -13,7 +13,12 @@ public interface NonVisualConnectionShapeProperties
   /// <summary>
   /// Connection Start.
   /// </summary>
-  public Boolean? StartConnection { get ; set; }
+  public ConnectionType? StartConnection { get ; set; }
+  
+  /// <summary>
+  /// Connection End.
+  /// </summary>
+  public ConnectionType? EndConnection { get ; set; }
   
   /// <summary>
   /// ExtensionList.

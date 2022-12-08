@@ -5,4 +5,19 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class AudioReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, AudioReferenceRelationship
 {
+  public new DocumentFormat.OpenXml.Packaging.AudioReferenceRelationship? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.AudioReferenceRelationship?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Gets the relationship type for an audio reference.
+  /// </summary>
+  public override String? RelationshipType
+  {
+    get;
+    set;
+  }
+  
 }

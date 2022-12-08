@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Backdrop Plane.
 /// </summary>
-public class BackdropImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Backdrop>, Backdrop
+public class BackdropImpl: ModelElementImpl, Backdrop
 {
+  public DocumentFormat.OpenXml.Drawing.Backdrop? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Backdrop?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Anchor Point.
   /// </summary>
@@ -17,7 +23,16 @@ public class BackdropImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Backdrop>
   /// <summary>
   /// Normal.
   /// </summary>
-  public Boolean? Normal
+  public Vector3DType? Normal
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Up Vector.
+  /// </summary>
+  public Vector3DType? UpVector
   {
     get;
     set;

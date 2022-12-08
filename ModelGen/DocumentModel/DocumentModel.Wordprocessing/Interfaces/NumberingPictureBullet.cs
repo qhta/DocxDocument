@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface NumberingPictureBullet
 {
   /// <summary>
+  /// numPicBulletId
+  /// </summary>
+  public Int32? NumberingPictureBulletId { get ; set; }
+  
+  /// <summary>
   /// PictureBulletBase.
   /// </summary>
   public PictureBulletBase? PictureBulletBase { get ; set; }

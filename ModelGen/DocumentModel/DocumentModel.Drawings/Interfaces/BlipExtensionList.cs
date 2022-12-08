@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BlipExtensionList
 {
+  public Collection<BlipExtension>? BlipExtensions { get ; set; }
+  
 }

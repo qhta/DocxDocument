@@ -10,4 +10,6 @@ public interface Rsids
   /// </summary>
   public DocumentModel.HexWord? RsidRoot { get ; set; }
   
+  public Collection<DocumentModel.HexWord>? Items { get ; set; }
+  
 }

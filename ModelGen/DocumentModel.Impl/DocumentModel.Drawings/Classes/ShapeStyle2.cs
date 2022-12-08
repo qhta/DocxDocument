@@ -1,14 +1,20 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Style.
+/// Defines the ShapeStyle Class.
 /// </summary>
-public class ShapeStyle2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.ShapeStyle>, ShapeStyle2
+public class ShapeStyle2Impl: ModelElementImpl, ShapeStyle2
 {
+  public DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.ShapeStyle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference2? LineReference
+  public LineReference1? LineReference
   {
     get;
     set;
@@ -17,7 +23,7 @@ public class ShapeStyle2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.ShapeS
   /// <summary>
   /// FillReference.
   /// </summary>
-  public FillReference2? FillReference
+  public FillReference1? FillReference
   {
     get;
     set;

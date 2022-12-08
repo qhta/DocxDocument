@@ -5,4 +5,6 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public interface SchemaReferences
 {
+  public Collection<SchemaReference>? Items { get ; set; }
+  
 }

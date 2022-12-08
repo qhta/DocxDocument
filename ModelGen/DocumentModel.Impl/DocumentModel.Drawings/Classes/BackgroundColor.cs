@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class BackgroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, BackgroundColor
 {
+  public new DocumentFormat.OpenXml.Drawing.BackgroundColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.BackgroundColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

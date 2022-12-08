@@ -1,10 +1,61 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the NonVisualDrawingProperties Class.
+/// Chart Non Visual Properties.
 /// </summary>
-public class NonVisualDrawingProperties3Impl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualDrawingProperties>, NonVisualDrawingProperties3
+public class NonVisualDrawingProperties3Impl: ModelElementImpl, NonVisualDrawingProperties3
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualDrawingProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualDrawingProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Application defined unique identifier.
+  /// </summary>
+  public UInt32? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Name compatible with Object Model (non-unique).
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Description of the drawing element.
+  /// </summary>
+  public String? Description
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Flag determining to show or hide this element.
+  /// </summary>
+  public Boolean? Hidden
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Title
+  /// </summary>
+  public String? Title
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>

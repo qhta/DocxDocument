@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Endnotes
 {
+  public Collection<Endnote>? Items { get ; set; }
+  
 }

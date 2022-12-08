@@ -5,6 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class ExtrusionColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ExtrusionColor
 {
+  public new DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelHex? RgbColorModelHex
   {
     get;

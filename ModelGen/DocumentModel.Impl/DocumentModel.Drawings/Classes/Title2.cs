@@ -3,48 +3,27 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Title.
 /// </summary>
-public class Title2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Title>, Title2
+public class Title2Impl: ModelElementImpl, Title2
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Title? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Title?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// Chart Text.
+  /// Language
   /// </summary>
-  public ChartText1? ChartText
+  public String? Language
   {
     get;
     set;
   }
   
   /// <summary>
-  /// Layout.
+  /// Value
   /// </summary>
-  public Layout1? Layout
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
-  public ChartShapeProperties? ChartShapeProperties
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// TextProperties.
-  /// </summary>
-  public TextProperties1? TextProperties
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// Chart Extensibility.
-  /// </summary>
-  public ExtensionList4? ExtensionList
+  public String? Val
   {
     get;
     set;

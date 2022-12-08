@@ -10,4 +10,6 @@ public interface Delimiter
   /// </summary>
   public DelimiterProperties? DelimiterProperties { get ; set; }
   
+  public Collection<Base>? Bases { get ; set; }
+  
 }

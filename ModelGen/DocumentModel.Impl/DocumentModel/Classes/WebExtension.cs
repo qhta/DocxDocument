@@ -3,8 +3,41 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the WebExtension Class.
 /// </summary>
-public class WebExtensionImpl: ModelElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension>, WebExtension
+public class WebExtensionImpl: ModelElementImpl, WebExtension
 {
+  public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Gets or sets the  value. It is only available for backwards compatibility
+  /// </summary>
+  public Boolean? Fronzen
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// frozen, this property is only available in Office 2013 and later.
+  /// </summary>
+  public Boolean? Frozen
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// WebExtensionStoreReference.
   /// </summary>

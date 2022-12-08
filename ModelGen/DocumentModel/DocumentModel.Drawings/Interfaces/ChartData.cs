@@ -8,7 +8,9 @@ public interface ChartData
   /// <summary>
   /// ExternalData.
   /// </summary>
-  public ExternalData2? ExternalData { get ; set; }
+  public ExternalData1? ExternalData { get ; set; }
+  
+  public Collection<Data1>? Datas { get ; set; }
   
   public ExtensionList2? ExtensionList { get ; set; }
   

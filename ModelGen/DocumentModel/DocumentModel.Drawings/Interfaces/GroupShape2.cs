@@ -1,18 +1,18 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Group Shape.
+/// Defines the GroupShape Class.
 /// </summary>
 public interface GroupShape2
 {
-  /// <summary>
-  /// Non-Visual Group Shape Properties.
-  /// </summary>
-  public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get ; set; }
+  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
   
-  /// <summary>
-  /// Group Shape Properties.
-  /// </summary>
   public GroupShapeProperties2? GroupShapeProperties { get ; set; }
+  
+  public Collection<Shape2>? Shapes { get ; set; }
+  
+  public Collection<GroupShape2>? GroupShapes { get ; set; }
+  
+  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
   
 }

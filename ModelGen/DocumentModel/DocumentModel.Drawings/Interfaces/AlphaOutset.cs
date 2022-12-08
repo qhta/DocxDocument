@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface AlphaOutset
 {
+  /// <summary>
+  /// Radius
+  /// </summary>
+  public Int64? Radius { get ; set; }
+  
 }

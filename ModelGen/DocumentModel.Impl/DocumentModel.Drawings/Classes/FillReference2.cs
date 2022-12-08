@@ -1,41 +1,53 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Fill Reference.
+/// Defines the FillReference Class.
 /// </summary>
-public class FillReference2Impl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, FillReference2
+public class FillReference2Impl: DocumentModel.Drawings.StyleReferenceImpl, FillReference2
 {
-  public override RgbColorModelPercentage? RgbColorModelPercentage
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;
     set;
   }
   
-  public override RgbColorModelHex? RgbColorModelHex
+  public RgbColorModelHex? RgbColorModelHex
   {
     get;
     set;
   }
   
-  public override HslColor? HslColor
+  public HslColor? HslColor
   {
     get;
     set;
   }
   
-  public override SystemColor? SystemColor
+  public SystemColor? SystemColor
   {
     get;
     set;
   }
   
-  public override SchemeColor? SchemeColor
+  public SchemeColor? SchemeColor
   {
     get;
     set;
   }
   
-  public override PresetColor? PresetColor
+  public PresetColor? PresetColor
+  {
+    get;
+    set;
+  }
+  
+  public StyleColor? StyleColor
   {
     get;
     set;

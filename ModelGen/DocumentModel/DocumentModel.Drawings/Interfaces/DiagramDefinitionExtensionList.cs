@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DiagramDefinitionExtensionList
 {
+  public Collection<DiagramDefinitionExtension>? DiagramDefinitionExtensions { get ; set; }
+  
 }

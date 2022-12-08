@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Parameter.
 /// </summary>
-public class ParameterImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Parameter>, Parameter
+public class ParameterImpl: ModelElementImpl, Parameter
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Parameter? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Parameter?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Parameter Type
   /// </summary>
@@ -16,6 +22,15 @@ public class ParameterImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Value
+  /// </summary>
+  public String? Val
+  {
+    get;
+    set;
   }
   
 }

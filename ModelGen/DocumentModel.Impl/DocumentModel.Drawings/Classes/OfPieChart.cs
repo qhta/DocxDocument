@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Pie of Pie or Bar of Pie Charts.
 /// </summary>
-public class OfPieChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.OfPieChart>, OfPieChart
+public class OfPieChartImpl: ModelElementImpl, OfPieChart
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.OfPieChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.OfPieChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Pie of Pie or Bar of Pie Type.
   /// </summary>
@@ -43,7 +49,28 @@ public class OfPieChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
     }
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
+  {
+    get;
+    set;
+  }
+  
+  public Collection<PieChartSeries1>? PieChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public UInt16? GapWidth
   {
     get;
     set;
@@ -84,7 +111,25 @@ public class OfPieChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
     }
   }
   
+  public Double? SplitPosition
+  {
+    get;
+    set;
+  }
+  
   public CustomSplit? CustomSplit
+  {
+    get;
+    set;
+  }
+  
+  public UInt16? SecondPieSize
+  {
+    get;
+    set;
+  }
+  
+  public Collection<SeriesLines>? SeriesLineses
   {
     get;
     set;

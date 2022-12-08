@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface FootnoteEndnoteReferenceType
 {
+  /// <summary>
+  /// Suppress Footnote/Endnote Reference Mark
+  /// </summary>
+  public Boolean? CustomMarkFollows { get ; set; }
+  
+  /// <summary>
+  /// Footnote/Endnote ID Reference
+  /// </summary>
+  public Int32? Id { get ; set; }
+  
 }

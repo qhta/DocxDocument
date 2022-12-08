@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Connector Non Visual Properties.
 /// </summary>
-public class NonVisualConnectorShapeDrawingPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectorShapeDrawingProperties>, NonVisualConnectorShapeDrawingProperties
+public class NonVisualConnectorShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualConnectorShapeDrawingProperties
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectorShapeDrawingProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectorShapeDrawingProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Chart Non Visual Properties.
   /// </summary>
-  public NonVisualDrawingProperties2? NonVisualDrawingProperties
+  public NonVisualDrawingProperties3? NonVisualDrawingProperties
   {
     get;
     set;

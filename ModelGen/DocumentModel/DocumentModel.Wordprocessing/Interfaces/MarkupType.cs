@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface MarkupType
 {
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

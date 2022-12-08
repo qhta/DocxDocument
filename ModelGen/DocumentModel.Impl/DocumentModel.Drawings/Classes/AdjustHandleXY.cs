@@ -3,12 +3,72 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// XY Adjust Handle.
 /// </summary>
-public class AdjustHandleXYImpl: ModelElement<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>, AdjustHandleXY
+public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
 {
+  public DocumentFormat.OpenXml.Drawing.AdjustHandleXY? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.AdjustHandleXY?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Horizontal Adjustment Guide
+  /// </summary>
+  public String? XAdjustmentGuide
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Minimum Horizontal Adjustment
+  /// </summary>
+  public String? MinX
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Maximum Horizontal Adjustment
+  /// </summary>
+  public String? MaxX
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Adjustment Guide
+  /// </summary>
+  public String? YAdjustmentGuide
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Minimum Vertical Adjustment
+  /// </summary>
+  public String? MinY
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Maximum Vertical Adjustment
+  /// </summary>
+  public String? MaxY
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Position.
   /// </summary>
-  public Boolean? Position
+  public AdjustPoint2DType? Position
   {
     get;
     set;

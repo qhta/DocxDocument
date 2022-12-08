@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TextType Class.
 /// </summary>
-public class TextTypeImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TextType>, TextType
+public class TextTypeImpl: ModelElementImpl, TextType
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TextType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TextType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// space
   /// </summary>

@@ -10,4 +10,9 @@ public interface ShapeIdMap
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  /// <summary>
+  /// Shape IDs
+  /// </summary>
+  public String? Data { get ; set; }
+  
 }

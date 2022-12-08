@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LinearShadeProperties Class.
 /// </summary>
-public class LinearShadePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>, LinearShadeProperties
+public class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
 {
+  public DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// ang, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int32? Angle
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// scaled, this property is only available in Office 2010 and later.
   /// </summary>

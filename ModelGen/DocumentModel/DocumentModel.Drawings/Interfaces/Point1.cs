@@ -6,9 +6,19 @@ namespace DocumentModel.Drawings;
 public interface Point1
 {
   /// <summary>
+  /// Model Identifier
+  /// </summary>
+  public String? ModelId { get ; set; }
+  
+  /// <summary>
   /// Point Type
   /// </summary>
   public PointKind? Type { get ; set; }
+  
+  /// <summary>
+  /// Connection Identifier
+  /// </summary>
+  public String? ConnectionId { get ; set; }
   
   /// <summary>
   /// Property Set.
@@ -18,7 +28,7 @@ public interface Point1
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public ShapeProperties4? ShapeProperties { get ; set; }
+  public ShapeProperties9? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Text Body.

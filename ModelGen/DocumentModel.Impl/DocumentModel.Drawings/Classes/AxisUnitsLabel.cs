@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AxisUnitsLabel Class.
 /// </summary>
-public class AxisUnitsLabelImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel>, AxisUnitsLabel
+public class AxisUnitsLabelImpl: ModelElementImpl, AxisUnitsLabel
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Text.
   /// </summary>
@@ -17,7 +23,7 @@ public class AxisUnitsLabelImpl: ModelElement<DocumentFormat.OpenXml.Office2016.
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;

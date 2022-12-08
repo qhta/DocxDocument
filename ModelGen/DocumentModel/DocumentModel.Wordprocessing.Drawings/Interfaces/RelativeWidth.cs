@@ -10,4 +10,9 @@ public interface RelativeWidth
   /// </summary>
   public SizeRelativeHorizontallyKind? ObjectId { get ; set; }
   
+  /// <summary>
+  /// PercentageWidth.
+  /// </summary>
+  public String? PercentageWidth { get ; set; }
+  
 }

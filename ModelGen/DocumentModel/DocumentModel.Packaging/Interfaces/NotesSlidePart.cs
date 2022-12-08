@@ -10,10 +10,12 @@ public interface NotesSlidePart
   /// </summary>
   public ChartPart? ChartParts { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
   /// <summary>
   /// Gets the CustomXmlParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts { get ; set; }
+  public CustomXmlPart? CustomXmlParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the NotesSlidePart
@@ -43,17 +45,17 @@ public interface NotesSlidePart
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
+  public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedObjectParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the NotesSlidePart
@@ -63,17 +65,19 @@ public interface NotesSlidePart
   /// <summary>
   /// Gets the ImageParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the UserDefinedTagsParts of the NotesSlidePart
   /// </summary>
-  public OpenXmlPartContainer? UserDefinedTagsParts { get ; set; }
+  public UserDefinedTagsPart? UserDefinedTagsParts { get ; set; }
   
   /// <summary>
   /// Gets the VmlDrawingParts of the NotesSlidePart

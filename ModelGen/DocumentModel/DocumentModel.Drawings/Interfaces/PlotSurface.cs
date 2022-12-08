@@ -8,7 +8,7 @@ public interface PlotSurface
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.

@@ -13,6 +13,6 @@ public interface PathGradientFill
   /// <summary>
   /// Fill To Rectangle.
   /// </summary>
-  public Boolean? FillToRectangle { get ; set; }
+  public RelativeRectangleType? FillToRectangle { get ; set; }
   
 }

@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ChartSpaceExtension Class.
 /// </summary>
-public class ChartSpaceExtensionImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>, ChartSpaceExtension
+public class ChartSpaceExtensionImpl: ModelElementImpl, ChartSpaceExtension
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get;
+    set;
+  }
+  
   public PivotOptions? PivotOptions
   {
     get;

@@ -5,7 +5,13 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class MajorGridlinesGridlinesImpl: DocumentModel.Drawings.OpenXmlGridlinesElementImpl, MajorGridlinesGridlines
 {
-  public override ShapeProperties2? ShapeProperties
+  public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorGridlinesGridlines? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorGridlinesGridlines?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override ShapeProperties6? ShapeProperties
   {
     get;
     set;

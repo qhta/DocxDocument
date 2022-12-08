@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SaveThroughXslt
 {
+  /// <summary>
+  /// XSL Transformation Location
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
+  /// Local Identifier for XSL Transform
+  /// </summary>
+  public String? SolutionId { get ; set; }
+  
 }

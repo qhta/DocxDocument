@@ -1,59 +1,83 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Shape Class.
+/// Shape Definition.
 /// </summary>
-public class Shape1Impl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.Shape>, Shape1
+public class Shape1Impl: ModelElementImpl, Shape1
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// ShapeNonVisualProperties.
+  /// Reference to Custom Function
   /// </summary>
-  public ShapeNonVisualProperties? ShapeNonVisualProperties
+  public String? Macro
   {
     get;
     set;
   }
   
   /// <summary>
-  /// ShapeProperties.
+  /// Text Link
   /// </summary>
-  public ShapeProperties5? ShapeProperties
+  public String? TextLink
   {
     get;
     set;
   }
   
   /// <summary>
-  /// ShapeStyle.
+  /// Lock Text
   /// </summary>
-  public ShapeStyle1? ShapeStyle
+  public Boolean? LockText
   {
     get;
     set;
   }
   
   /// <summary>
-  /// TextBody.
+  /// Publish to Server
   /// </summary>
-  public TextBody2? TextBody
+  public Boolean? Published
   {
     get;
     set;
   }
   
   /// <summary>
-  /// Transform2D.
+  /// Non-Visual Shape Properties.
   /// </summary>
-  public Transform2D2? Transform2D
+  public NonVisualShapeProperties? NonVisualShapeProperties
   {
     get;
     set;
   }
   
   /// <summary>
-  /// OfficeArtExtensionList.
+  /// Shape Properties.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public ShapeProperties7? ShapeProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shape Style.
+  /// </summary>
+  public Style3? Style
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shape Text Body.
+  /// </summary>
+  public TextBody3? TextBody
   {
     get;
     set;

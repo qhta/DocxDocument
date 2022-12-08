@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface FillTextEffect
 {
   /// <summary>
+  /// NoFillEmpty.
+  /// </summary>
+  public Boolean? NoFillEmpty { get ; set; }
+  
+  /// <summary>
   /// SolidColorFillProperties.
   /// </summary>
   public SolidColorFillProperties? SolidColorFillProperties { get ; set; }

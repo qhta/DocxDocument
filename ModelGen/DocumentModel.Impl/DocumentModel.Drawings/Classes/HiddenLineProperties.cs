@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenLineProperties Class.
 /// </summary>
-public class HiddenLinePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>, HiddenLineProperties
+public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// line width
+  /// </summary>
+  public Int32? Width
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// line cap
   /// </summary>
@@ -42,6 +57,12 @@ public class HiddenLinePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Offic
       if (OpenXmlElement != null)
         OpenXmlElement.Alignment = (DocumentFormat.OpenXml.Drawing.PenAlignmentValues?)value;
     }
+  }
+  
+  public Boolean? NoFill
+  {
+    get;
+    set;
   }
   
   public SolidFill? SolidFill
@@ -98,6 +119,18 @@ public class HiddenLinePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Offic
   }
   
   public CustomDash? CustomDash
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Round
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? LineJoinBevel
   {
     get;
     set;

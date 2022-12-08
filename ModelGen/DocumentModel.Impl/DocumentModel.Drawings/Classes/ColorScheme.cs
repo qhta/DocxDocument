@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorScheme Class.
 /// </summary>
-public class ColorSchemeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ColorScheme>, ColorScheme
+public class ColorSchemeImpl: ModelElementImpl, ColorScheme
 {
+  public DocumentFormat.OpenXml.Drawing.ColorScheme? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ColorScheme?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Dark 1.
   /// </summary>

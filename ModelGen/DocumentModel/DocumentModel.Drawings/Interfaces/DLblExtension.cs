@@ -5,10 +5,19 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DLblExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public DataLabelFieldTable? DataLabelFieldTable { get ; set; }
   
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public Boolean? ExceptionForSave { get ; set; }
   
-  public Layout2? Layout { get ; set; }
+  public Boolean? ShowDataLabelsRange { get ; set; }
+  
+  public ShapeProperties3? ShapeProperties { get ; set; }
+  
+  public Layout1? Layout { get ; set; }
   
 }

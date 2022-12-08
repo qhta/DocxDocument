@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Underline Class.
 /// </summary>
-public class UnderlineImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Underline>, Underline
+public class UnderlineImpl: ModelElementImpl, Underline
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Underline? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Underline?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Underline Style
   /// </summary>
@@ -19,6 +25,15 @@ public class UnderlineImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.U
   }
   
   /// <summary>
+  /// Underline Color
+  /// </summary>
+  public String? Color
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Underline Theme Color
   /// </summary>
   public ThemeColorKind? ThemeColor
@@ -29,6 +44,24 @@ public class UnderlineImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.U
       if (OpenXmlElement != null)
         OpenXmlElement.ThemeColor = (DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Underline Theme Color Tint
+  /// </summary>
+  public String? ThemeTint
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Underline Theme Color Shade
+  /// </summary>
+  public String? ThemeShade
+  {
+    get;
+    set;
   }
   
 }

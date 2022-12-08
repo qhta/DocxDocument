@@ -5,7 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LegendEntry
 {
-  public TextProperties1? TextProperties { get ; set; }
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  public Boolean? Delete { get ; set; }
+  
+  public TextProperties2? TextProperties { get ; set; }
   
   public ExtensionList4? ExtensionList { get ; set; }
   

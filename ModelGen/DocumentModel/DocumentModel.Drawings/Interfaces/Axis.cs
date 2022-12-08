@@ -5,6 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Axis
 {
+  /// <summary>
+  /// id, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Id { get ; set; }
+  
+  /// <summary>
+  /// hidden, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Hidden { get ; set; }
+  
   public CategoryAxisScaling? CategoryAxisScaling { get ; set; }
   
   public ValueAxisScaling? ValueAxisScaling { get ; set; }
@@ -25,7 +35,7 @@ public interface Axis
   
   public NumberFormat? NumberFormat { get ; set; }
   
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   public TxPrTextBody? TxPrTextBody { get ; set; }
   

@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface DataLabelsRange
 {
   /// <summary>
+  /// Formula.
+  /// </summary>
+  public String? Formula { get ; set; }
+  
+  /// <summary>
   /// DataLabelsRangeChache.
   /// </summary>
   public DataLabelsRangeChache? DataLabelsRangeChache { get ; set; }

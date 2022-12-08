@@ -3,8 +3,59 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Drawing Object Non-Visual Properties.
 /// </summary>
-public class DocPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>, DocProperties
+public class DocPropertiesImpl: ModelElementImpl, DocProperties
 {
+  public DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Application defined unique identifier.
+  /// </summary>
+  public UInt32? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Name compatible with Object Model (non-unique).
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Description of the drawing element.
+  /// </summary>
+  public String? Description
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Flag determining to show or hide this element.
+  /// </summary>
+  public Boolean? Hidden
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Title
+  /// </summary>
+  public String? Title
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>

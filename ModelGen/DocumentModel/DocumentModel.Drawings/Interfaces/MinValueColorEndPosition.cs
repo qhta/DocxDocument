@@ -5,4 +5,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface MinValueColorEndPosition
 {
+  public Boolean? ExtremeValueColorPosition { get ; set; }
+  
+  public Double? NumberColorPosition { get ; set; }
+  
+  public Double? PercentageColorPosition { get ; set; }
+  
 }

@@ -3,6 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MismatchedKeyMapCustomization Class.
 /// </summary>
-public class MismatchedKeyMapCustomizationImpl: ModelElement<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>, MismatchedKeyMapCustomization
+public class MismatchedKeyMapCustomizationImpl: ModelElementImpl, MismatchedKeyMapCustomization
 {
+  public DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<KeyMapEntry>? KeyMapEntries
+  {
+    get;
+    set;
+  }
+  
 }

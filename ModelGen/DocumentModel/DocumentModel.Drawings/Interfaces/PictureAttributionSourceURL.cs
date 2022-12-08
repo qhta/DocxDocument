@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PictureAttributionSourceURL
 {
+  /// <summary>
+  /// id, this property is only available in Office 2019 and later.
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

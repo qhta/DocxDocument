@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualContentPartProperties Class.
 /// </summary>
-public class NonVisualContentPartPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualContentPartProperties>, NonVisualContentPartProperties
+public class NonVisualContentPartPropertiesImpl: ModelElementImpl, NonVisualContentPartProperties
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualContentPartProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualContentPartProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties3? NonVisualDrawingProperties
+  public NonVisualDrawingProperties1? NonVisualDrawingProperties
   {
     get;
     set;

@@ -5,4 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Toolbars
 {
+  public Collection<AllocatedCommandManifest>? AllocatedCommandManifests { get ; set; }
+  
+  public Collection<ToolbarData>? ToolbarDatas { get ; set; }
+  
 }

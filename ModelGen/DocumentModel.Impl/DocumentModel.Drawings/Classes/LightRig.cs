@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Light Rig.
 /// </summary>
-public class LightRigImpl: ModelElement<DocumentFormat.OpenXml.Drawing.LightRig>, LightRig
+public class LightRigImpl: ModelElementImpl, LightRig
 {
+  public DocumentFormat.OpenXml.Drawing.LightRig? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.LightRig?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Rig Preset
   /// </summary>

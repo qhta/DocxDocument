@@ -1,10 +1,20 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the AreaChartSeries Class.
+/// Area Chart Series.
 /// </summary>
 public interface AreaChartSeries2
 {
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order { get ; set; }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -20,7 +30,13 @@ public interface AreaChartSeries2
   /// </summary>
   public PictureOptions? PictureOptions { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public Collection<DataPoint2>? DataPoints { get ; set; }
+  
+  public DataLabels2? DataLabels { get ; set; }
+  
+  public Collection<Trendline>? Trendlines { get ; set; }
+  
+  public Collection<ErrorBars>? ErrorBarses { get ; set; }
   
   public CategoryAxisData? CategoryAxisData { get ; set; }
   

@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface PivotSource2
 {
   /// <summary>
+  /// Pivot Name.
+  /// </summary>
+  public String? PivotTableName { get ; set; }
+  
+  /// <summary>
+  /// Format ID.
+  /// </summary>
+  public UInt32? FormatId { get ; set; }
+  
+  /// <summary>
   /// Chart Extensibility.
   /// </summary>
   public ExtensionList4? ExtensionList { get ; set; }

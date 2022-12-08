@@ -10,4 +10,9 @@ public interface Run
   /// </summary>
   public RunProperties? RunProperties { get ; set; }
   
+  /// <summary>
+  /// Text String.
+  /// </summary>
+  public String? Text { get ; set; }
+  
 }

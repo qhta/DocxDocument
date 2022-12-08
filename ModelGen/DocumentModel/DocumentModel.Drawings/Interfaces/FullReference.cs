@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface FullReference
 {
+  /// <summary>
+  /// SequenceOfReferences.
+  /// </summary>
+  public String? SequenceOfReferences { get ; set; }
+  
 }

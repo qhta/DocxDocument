@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the FontReference Class.
 /// </summary>
-public class FontReference2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.FontReference>, FontReference2
+public class FontReference2Impl: ModelElementImpl, FontReference2
 {
+  public DocumentFormat.OpenXml.Drawing.FontReference? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FontReference?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Identifier
   /// </summary>

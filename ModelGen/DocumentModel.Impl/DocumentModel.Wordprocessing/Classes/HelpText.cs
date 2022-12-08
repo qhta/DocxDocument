@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Associated Help Text.
 /// </summary>
-public class HelpTextImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.HelpText>, HelpText
+public class HelpTextImpl: ModelElementImpl, HelpText
 {
+  public DocumentFormat.OpenXml.Wordprocessing.HelpText? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.HelpText?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Help Text Type
   /// </summary>
@@ -16,6 +22,15 @@ public class HelpTextImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.He
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Wordprocessing.InfoTextValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Help Text Value
+  /// </summary>
+  public String? Val
+  {
+    get;
+    set;
   }
   
 }

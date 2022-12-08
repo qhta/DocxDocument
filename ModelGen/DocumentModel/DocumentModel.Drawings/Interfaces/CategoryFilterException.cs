@@ -6,9 +6,29 @@ namespace DocumentModel.Drawings;
 public interface CategoryFilterException
 {
   /// <summary>
+  /// SequenceOfReferences.
+  /// </summary>
+  public String? SequenceOfReferences { get ; set; }
+  
+  /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public ShapeProperties3? ShapeProperties { get ; set; }
+  
+  /// <summary>
+  /// Explosion.
+  /// </summary>
+  public UInt32? Explosion { get ; set; }
+  
+  /// <summary>
+  /// InvertIfNegativeBoolean.
+  /// </summary>
+  public Boolean? InvertIfNegativeBoolean { get ; set; }
+  
+  /// <summary>
+  /// Bubble3D.
+  /// </summary>
+  public Boolean? Bubble3D { get ; set; }
   
   /// <summary>
   /// Marker.
@@ -18,6 +38,6 @@ public interface CategoryFilterException
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel4? DataLabel { get ; set; }
+  public DataLabel2? DataLabel { get ; set; }
   
 }

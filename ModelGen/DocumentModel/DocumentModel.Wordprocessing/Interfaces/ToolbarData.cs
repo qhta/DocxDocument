@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ToolbarData
 {
+  /// <summary>
+  /// id
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

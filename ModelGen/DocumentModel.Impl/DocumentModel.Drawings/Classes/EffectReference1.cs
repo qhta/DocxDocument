@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class EffectReference1Impl: DocumentModel.Drawings.StyleReferenceImpl, EffectReference1
 {
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

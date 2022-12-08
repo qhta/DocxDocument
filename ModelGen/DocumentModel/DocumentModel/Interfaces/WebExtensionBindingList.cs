@@ -5,4 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface WebExtensionBindingList
 {
+  public Collection<WebExtensionBinding>? WebExtensionBindings { get ; set; }
+  
 }

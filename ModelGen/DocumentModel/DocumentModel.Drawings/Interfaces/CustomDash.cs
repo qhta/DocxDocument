@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CustomDash
 {
+  public Collection<DashStop>? DashStops { get ; set; }
+  
 }

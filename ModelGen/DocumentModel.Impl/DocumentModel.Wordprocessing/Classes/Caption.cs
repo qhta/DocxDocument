@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Single Caption Type Definition.
 /// </summary>
-public class CaptionImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Caption>, Caption
+public class CaptionImpl: ModelElementImpl, Caption
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Caption? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Caption?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Caption Type Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Automatic Caption Placement
   /// </summary>
@@ -16,6 +31,33 @@ public class CaptionImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Cap
       if (OpenXmlElement != null)
         OpenXmlElement.Position = (DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Include Chapter Number in Field for Caption
+  /// </summary>
+  public Boolean? ChapterNumber
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Style for Chapter Headings
+  /// </summary>
+  public Int32? Heading
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Do Not Include Name In Caption
+  /// </summary>
+  public Boolean? NoLabel
+  {
+    get;
+    set;
   }
   
   /// <summary>

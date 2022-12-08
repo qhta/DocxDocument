@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NumericDimension Class.
 /// </summary>
-public class NumericDimensionImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension>, NumericDimension
+public class NumericDimensionImpl: ModelElementImpl, NumericDimension
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
@@ -25,6 +31,12 @@ public class NumericDimensionImpl: ModelElement<DocumentFormat.OpenXml.Office201
   }
   
   public OpenXmlFormulaElement? NfFormula
+  {
+    get;
+    set;
+  }
+  
+  public Collection<NumericLevel>? NumericLevels
   {
     get;
     set;

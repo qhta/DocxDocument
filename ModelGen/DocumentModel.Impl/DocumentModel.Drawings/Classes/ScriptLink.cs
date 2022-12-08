@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ScriptLink Class.
 /// </summary>
-public class ScriptLinkImpl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink>, ScriptLink
+public class ScriptLinkImpl: ModelElementImpl, ScriptLink
 {
+  public DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// val, this property is only available in Microsoft365 and later.
+  /// </summary>
+  public String? Val
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>

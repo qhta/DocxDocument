@@ -15,4 +15,6 @@ public interface MailMergeRecipientDataPart
   /// </summary>
   public DocumentModel.Wordprocessing.MailMergeRecipients? MailMergeRecipients { get ; set; }
   
+  public String? RelationshipType { get ; set; }
+  
 }

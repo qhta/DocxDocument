@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Divs
 {
+  public Collection<Div>? Items { get ; set; }
+  
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Container.
 /// </summary>
-public class EffectListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.EffectList>, EffectList
+public class EffectListImpl: ModelElementImpl, EffectList
 {
+  public DocumentFormat.OpenXml.Drawing.EffectList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.EffectList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Blur Effect.
   /// </summary>

@@ -10,4 +10,9 @@ public interface HeaderFooterReferenceType
   /// </summary>
   public HeaderFooterKind? Type { get ; set; }
   
+  /// <summary>
+  /// Relationship to Part
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

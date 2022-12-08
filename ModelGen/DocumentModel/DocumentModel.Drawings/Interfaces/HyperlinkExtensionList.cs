@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface HyperlinkExtensionList
 {
+  public Collection<HyperlinkExtension>? HyperlinkExtensions { get ; set; }
+  
 }

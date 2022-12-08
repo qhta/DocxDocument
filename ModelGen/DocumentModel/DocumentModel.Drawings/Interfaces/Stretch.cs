@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Stretch
 {
+  /// <summary>
+  /// Fill Rectangle.
+  /// </summary>
+  public RelativeRectangleType? FillRectangle { get ; set; }
+  
 }

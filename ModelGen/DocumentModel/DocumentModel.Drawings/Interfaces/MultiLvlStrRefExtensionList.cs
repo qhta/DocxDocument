@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface MultiLvlStrRefExtensionList
 {
+  public Collection<MultiLvlStrRefExtension>? MultiLvlStrRefExtensions { get ; set; }
+  
 }

@@ -11,6 +11,46 @@ public interface Style
   public StyleKind? Type { get ; set; }
   
   /// <summary>
+  /// Style ID
+  /// </summary>
+  public String? StyleId { get ; set; }
+  
+  /// <summary>
+  /// Default Style
+  /// </summary>
+  public Boolean? Default { get ; set; }
+  
+  /// <summary>
+  /// User-Defined Style
+  /// </summary>
+  public Boolean? CustomStyle { get ; set; }
+  
+  /// <summary>
+  /// Primary Style Name.
+  /// </summary>
+  public String? StyleName { get ; set; }
+  
+  /// <summary>
+  /// Alternate Style Names.
+  /// </summary>
+  public String? Aliases { get ; set; }
+  
+  /// <summary>
+  /// Parent Style ID.
+  /// </summary>
+  public String? BasedOn { get ; set; }
+  
+  /// <summary>
+  /// Style For Next Paragraph.
+  /// </summary>
+  public String? NextParagraphStyle { get ; set; }
+  
+  /// <summary>
+  /// Linked Style Reference.
+  /// </summary>
+  public String? LinkedStyle { get ; set; }
+  
+  /// <summary>
   /// Automatically Merge User Formatting Into Style Definition.
   /// </summary>
   public OnOffOnlyKind? AutoRedefine { get ; set; }
@@ -19,6 +59,11 @@ public interface Style
   /// Hide Style From User Interface.
   /// </summary>
   public OnOffOnlyKind? StyleHidden { get ; set; }
+  
+  /// <summary>
+  /// Optional User Interface Sorting Order.
+  /// </summary>
+  public Int32? UIPriority { get ; set; }
   
   /// <summary>
   /// Hide Style From Main User Interface.
@@ -84,5 +129,7 @@ public interface Style
   /// Style Table Cell Properties.
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties { get ; set; }
+  
+  public Collection<TableStyleProperties>? TableStylePropertieses { get ; set; }
   
 }

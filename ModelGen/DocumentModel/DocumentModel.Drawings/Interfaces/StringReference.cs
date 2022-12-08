@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface StringReference
 {
   /// <summary>
+  /// Formula.
+  /// </summary>
+  public String? Formula { get ; set; }
+  
+  /// <summary>
   /// StringCache.
   /// </summary>
   public StringCache? StringCache { get ; set; }

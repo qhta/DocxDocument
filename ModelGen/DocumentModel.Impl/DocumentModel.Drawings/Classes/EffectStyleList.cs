@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Style List.
 /// </summary>
-public class EffectStyleListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.EffectStyleList>, EffectStyleList
+public class EffectStyleListImpl: ModelElementImpl, EffectStyleList
 {
+  public DocumentFormat.OpenXml.Drawing.EffectStyleList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.EffectStyleList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<EffectStyle>? EffectStyles
+  {
+    get;
+    set;
+  }
+  
 }

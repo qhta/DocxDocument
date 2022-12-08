@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PointList
 {
+  public Collection<Point1>? Points { get ; set; }
+  
 }

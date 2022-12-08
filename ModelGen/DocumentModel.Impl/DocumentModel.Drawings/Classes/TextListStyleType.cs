@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TextListStyleType Class.
 /// </summary>
-public class TextListStyleTypeImpl: ModelElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType>, TextListStyleType
+public class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
 {
+  public DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Default Paragraph Style.
   /// </summary>

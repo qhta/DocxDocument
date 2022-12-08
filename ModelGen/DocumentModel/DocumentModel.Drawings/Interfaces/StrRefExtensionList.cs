@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface StrRefExtensionList
 {
+  public Collection<StrRefExtension>? StrRefExtensions { get ; set; }
+  
 }

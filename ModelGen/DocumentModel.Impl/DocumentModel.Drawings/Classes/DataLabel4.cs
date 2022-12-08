@@ -3,74 +3,63 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DataLabel Class.
 /// </summary>
-public class DataLabel4Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel>, DataLabel4
+public class DataLabel4Impl: DocumentModel.Drawings.StyleEntryImpl, DataLabel4
 {
-  public Layout1? Layout
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override LineReference2? LineReference
   {
     get;
     set;
   }
   
-  public ChartText1? ChartText
+  public override String? LineWidthScale
   {
     get;
     set;
   }
   
-  public NumberingFormat1? NumberingFormat
+  public override FillReference2? FillReference
   {
     get;
     set;
   }
   
-  public ChartShapeProperties? ChartShapeProperties
+  public override EffectReference1? EffectReference
   {
     get;
     set;
   }
   
-  public TextProperties1? TextProperties
+  public override FontReference1? FontReference
   {
     get;
     set;
   }
   
-  public DataLabelPositionKind? DataLabelPosition
+  public override ShapeProperties4? ShapeProperties
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        return (DataLabelPositionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
+    get;
+    set;
   }
   
-  public DLblExtensionList? DLblExtensionList
+  public override TextCharacterPropertiesType2? TextCharacterPropertiesType
+  {
+    get;
+    set;
+  }
+  
+  public override TextBodyProperties? TextBodyProperties
+  {
+    get;
+    set;
+  }
+  
+  public override OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

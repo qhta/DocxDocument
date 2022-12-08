@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorMapOverride Class.
 /// </summary>
-public class ColorMapOverrideImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride>, ColorMapOverride
+public class ColorMapOverrideImpl: ModelElementImpl, ColorMapOverride
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Background 1
   /// </summary>

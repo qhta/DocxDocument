@@ -11,6 +11,26 @@ public interface Series
   public SeriesLayout? LayoutId { get ; set; }
   
   /// <summary>
+  /// hidden, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Hidden { get ; set; }
+  
+  /// <summary>
+  /// ownerIdx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? OwnerIdx { get ; set; }
+  
+  /// <summary>
+  /// uniqueId, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? UniqueId { get ; set; }
+  
+  /// <summary>
+  /// formatIdx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? FormatIdx { get ; set; }
+  
+  /// <summary>
   /// Text.
   /// </summary>
   public Text1? Text { get ; set; }
@@ -18,7 +38,7 @@ public interface Series
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ValueColors.
@@ -30,9 +50,15 @@ public interface Series
   /// </summary>
   public ValueColorPositions? ValueColorPositions { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public Collection<DataPoint1>? DataPoints { get ; set; }
+  
+  public DataLabels1? DataLabels { get ; set; }
+  
+  public UInt32? DataId { get ; set; }
   
   public SeriesLayoutProperties? SeriesLayoutProperties { get ; set; }
+  
+  public Collection<String>? AxisIds { get ; set; }
   
   public ExtensionList2? ExtensionList { get ; set; }
   

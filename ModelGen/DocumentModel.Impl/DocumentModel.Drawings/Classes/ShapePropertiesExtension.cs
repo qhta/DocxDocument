@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ShapePropertiesExtension Class.
 /// </summary>
-public class ShapePropertiesExtensionImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>, ShapePropertiesExtension
+public class ShapePropertiesExtensionImpl: ModelElementImpl, ShapePropertiesExtension
 {
+  public DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get;
+    set;
+  }
+  
   public HiddenFillProperties? HiddenFillProperties
   {
     get;
@@ -30,6 +45,12 @@ public class ShapePropertiesExtensionImpl: ModelElement<DocumentFormat.OpenXml.D
   }
   
   public HiddenShape3D? HiddenShape3D
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShadowObscured
   {
     get;
     set;

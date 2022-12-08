@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface Glow
 {
   /// <summary>
+  /// Radius
+  /// </summary>
+  public Int64? Radius { get ; set; }
+  
+  /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }

@@ -3,6 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ExtensionList Class.
 /// </summary>
-public class ExtensionListImpl: ModelElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>, ExtensionList
+public class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
+  public DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<Extension>? Extensions
+  {
+    get;
+    set;
+  }
+  
 }

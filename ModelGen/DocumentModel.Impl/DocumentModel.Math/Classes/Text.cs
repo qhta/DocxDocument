@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Text.
 /// </summary>
-public class TextImpl: ModelElement<DocumentFormat.OpenXml.Math.Text>, Text
+public class TextImpl: ModelElementImpl, Text
 {
+  public DocumentFormat.OpenXml.Math.Text? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.Text?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// space
   /// </summary>

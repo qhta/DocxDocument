@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Layout Node.
 /// </summary>
-public class LayoutNodeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>, LayoutNode
+public class LayoutNodeImpl: ModelElementImpl, LayoutNode
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Style Label
+  /// </summary>
+  public String? StyleLabel
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Child Order
   /// </summary>
@@ -16,6 +40,75 @@ public class LayoutNodeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
       if (OpenXmlElement != null)
         OpenXmlElement.ChildOrder = (DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Move With
+  /// </summary>
+  public String? MoveWith
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Algorithm>? Algorithms
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Shape4>? Shapes
+  {
+    get;
+    set;
+  }
+  
+  public Collection<PresentationOf>? PresentationOfs
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Constraints>? Constraintses
+  {
+    get;
+    set;
+  }
+  
+  public Collection<RuleList>? RuleLists
+  {
+    get;
+    set;
+  }
+  
+  public Collection<VariableList>? VariableLists
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ForEach>? ForEachs
+  {
+    get;
+    set;
+  }
+  
+  public Collection<LayoutNode>? LayoutNodes
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Choose>? Chooses
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ExtensionList3>? ExtensionLists
+  {
+    get;
+    set;
   }
   
 }

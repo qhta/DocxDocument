@@ -6,6 +6,26 @@ namespace DocumentModel.Drawings;
 public interface LayoutVariablePropertySetType
 {
   /// <summary>
+  /// Show Organization Chart User Interface.
+  /// </summary>
+  public Boolean? OrganizationChart { get ; set; }
+  
+  /// <summary>
+  /// Maximum Children.
+  /// </summary>
+  public Int32? MaxNumberOfChildren { get ; set; }
+  
+  /// <summary>
+  /// Preferred Number of Children.
+  /// </summary>
+  public Int32? PreferredNumberOfChildren { get ; set; }
+  
+  /// <summary>
+  /// Show Insert Bullet.
+  /// </summary>
+  public Boolean? BulletEnabled { get ; set; }
+  
+  /// <summary>
   /// Diagram Direction.
   /// </summary>
   public DirectionKind? Direction { get ; set; }

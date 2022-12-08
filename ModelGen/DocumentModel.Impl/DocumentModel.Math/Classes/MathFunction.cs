@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Function Apply Function.
 /// </summary>
-public class MathFunctionImpl: ModelElement<DocumentFormat.OpenXml.Math.MathFunction>, MathFunction
+public class MathFunctionImpl: ModelElementImpl, MathFunction
 {
+  public DocumentFormat.OpenXml.Math.MathFunction? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.MathFunction?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Function Properties.
   /// </summary>

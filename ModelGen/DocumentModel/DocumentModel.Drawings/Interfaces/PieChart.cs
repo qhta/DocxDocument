@@ -5,7 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PieChart
 {
-  public DataLabels1? DataLabels { get ; set; }
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors { get ; set; }
+  
+  public Collection<PieChartSeries1>? PieChartSerieses { get ; set; }
+  
+  public DataLabels2? DataLabels { get ; set; }
+  
+  public UInt16? FirstSliceAngle { get ; set; }
   
   public PieChartExtensionList? PieChartExtensionList { get ; set; }
   

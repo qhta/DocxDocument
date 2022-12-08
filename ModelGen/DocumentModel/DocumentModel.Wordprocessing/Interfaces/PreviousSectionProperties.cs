@@ -8,22 +8,22 @@ public interface PreviousSectionProperties
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public String? RsidRPr { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidRPr { get ; set; }
   
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public String? RsidDel { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidDel { get ; set; }
   
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public String? RsidR { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidR { get ; set; }
   
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public String? RsidSect { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidSect { get ; set; }
   
   /// <summary>
   /// FootnoteProperties.
@@ -76,9 +76,24 @@ public interface PreviousSectionProperties
   public Columns? Columns { get ; set; }
   
   /// <summary>
+  /// FormProtection.
+  /// </summary>
+  public Boolean? FormProtection { get ; set; }
+  
+  /// <summary>
   /// VerticalTextAlignmentOnPage.
   /// </summary>
   public VerticalJustificationKind? VerticalTextAlignmentOnPage { get ; set; }
+  
+  /// <summary>
+  /// NoEndnote.
+  /// </summary>
+  public Boolean? NoEndnote { get ; set; }
+  
+  /// <summary>
+  /// TitlePage.
+  /// </summary>
+  public Boolean? TitlePage { get ; set; }
   
   /// <summary>
   /// TextDirection.
@@ -86,8 +101,28 @@ public interface PreviousSectionProperties
   public TextDirectionKind? TextDirection { get ; set; }
   
   /// <summary>
+  /// BiDi.
+  /// </summary>
+  public Boolean? BiDi { get ; set; }
+  
+  /// <summary>
+  /// GutterOnRight.
+  /// </summary>
+  public Boolean? GutterOnRight { get ; set; }
+  
+  /// <summary>
   /// DocGrid.
   /// </summary>
   public DocGrid? DocGrid { get ; set; }
+  
+  /// <summary>
+  /// PrinterSettingsReference.
+  /// </summary>
+  public RelationshipType? PrinterSettingsReference { get ; set; }
+  
+  /// <summary>
+  /// FootnoteColumns, this property is only available in Office 2013 and later..
+  /// </summary>
+  public Int32? FootnoteColumns { get ; set; }
   
 }

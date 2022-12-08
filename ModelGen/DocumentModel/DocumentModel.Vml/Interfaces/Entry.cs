@@ -5,4 +5,14 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface Entry
 {
+  /// <summary>
+  /// New Group ID
+  /// </summary>
+  public Int32? New { get ; set; }
+  
+  /// <summary>
+  /// Old Group ID
+  /// </summary>
+  public Int32? Old { get ; set; }
+  
 }

@@ -3,12 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Section Properties.
 /// </summary>
-public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>, PreviousSectionProperties
+public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public String? RsidRPr
+  public DocumentModel.HexBinaryValue? RsidRPr
   {
     get;
     set;
@@ -17,7 +23,7 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public String? RsidDel
+  public DocumentModel.HexBinaryValue? RsidDel
   {
     get;
     set;
@@ -26,7 +32,7 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public String? RsidR
+  public DocumentModel.HexBinaryValue? RsidR
   {
     get;
     set;
@@ -35,7 +41,7 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public String? RsidSect
+  public DocumentModel.HexBinaryValue? RsidSect
   {
     get;
     set;
@@ -161,6 +167,15 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
   }
   
   /// <summary>
+  /// FormProtection.
+  /// </summary>
+  public Boolean? FormProtection
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// VerticalTextAlignmentOnPage.
   /// </summary>
   public VerticalJustificationKind? VerticalTextAlignmentOnPage
@@ -196,6 +211,24 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// NoEndnote.
+  /// </summary>
+  public Boolean? NoEndnote
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TitlePage.
+  /// </summary>
+  public Boolean? TitlePage
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -237,9 +270,45 @@ public class PreviousSectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.
   }
   
   /// <summary>
+  /// BiDi.
+  /// </summary>
+  public Boolean? BiDi
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// GutterOnRight.
+  /// </summary>
+  public Boolean? GutterOnRight
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// DocGrid.
   /// </summary>
   public DocGrid? DocGrid
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// PrinterSettingsReference.
+  /// </summary>
+  public RelationshipType? PrinterSettingsReference
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// FootnoteColumns, this property is only available in Office 2013 and later..
+  /// </summary>
+  public Int32? FootnoteColumns
   {
     get;
     set;

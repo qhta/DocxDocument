@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Pie3DChartExtensionList
 {
+  public Collection<Pie3DChartExtension>? Pie3DChartExtensions { get ; set; }
+  
 }

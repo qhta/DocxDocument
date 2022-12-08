@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Run Properties.
 /// </summary>
-public class RunPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.RunProperties>, RunProperties
+public class RunPropertiesImpl: ModelElementImpl, RunProperties
 {
+  public DocumentFormat.OpenXml.Math.RunProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.RunProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Literal.
   /// </summary>

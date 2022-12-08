@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Gradient stops.
 /// </summary>
-public class GradientStopImpl: ModelElement<DocumentFormat.OpenXml.Drawing.GradientStop>, GradientStop
+public class GradientStopImpl: ModelElementImpl, GradientStop
 {
+  public DocumentFormat.OpenXml.Drawing.GradientStop? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.GradientStop?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Position
+  /// </summary>
+  public Int32? Position
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

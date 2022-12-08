@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Blend Effect.
 /// </summary>
-public class BlendImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Blend>, Blend
+public class BlendImpl: ModelElementImpl, Blend
 {
+  public DocumentFormat.OpenXml.Drawing.Blend? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Blend?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Blend Mode
   /// </summary>

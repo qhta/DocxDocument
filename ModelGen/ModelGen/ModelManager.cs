@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-
+using System.Runtime.InteropServices.ComTypes;
 using DocumentFormat.OpenXml;
 
 namespace ModelGen;
@@ -11,12 +11,8 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
-    //if (typeInfo.OriginalName == "ArrayBaseValues")
-    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
-    if (typeInfo.OriginalName == "ArrayBaseValues")
-      Debug.Assert(true);
     if (!TryAddTypeTableConversion(typeInfo))
       if (!TryAddBaseTypeConversion(typeInfo))
         if (!TryAddValTypeConversion(typeInfo))
@@ -51,7 +47,6 @@ public static class ModelManager
       if (typeInfo.BaseTypeInfo != null)
       {
         TypeManager.AddRelationship(typeInfo, typeInfo.BaseTypeInfo, Semantics.TypeChange);
-        //typeInfo.IsAccepted = false;
         typeInfo.IsConverted = true;
         return true;
       }
@@ -69,7 +64,6 @@ public static class ModelManager
       if (firstProp != null && firstProp.Name == "Val")
       {
         TypeManager.AddRelationship(typeInfo, firstProp.PropertyType, Semantics.TypeChange);
-        typeInfo.IsAccepted = false;
         typeInfo.IsConverted = true;
         return true;
       }
@@ -97,7 +91,6 @@ public static class ModelManager
         if (sourceArgType != null)
         {
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsAccepted = false;
           typeInfo.IsConverted = true;
           return true;
         }
@@ -115,7 +108,6 @@ public static class ModelManager
             sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
           sourceArgType = typeof(List<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsAccepted = false;
           typeInfo.IsConverted = true;
           return true;
         }
@@ -128,7 +120,6 @@ public static class ModelManager
         if (sourceArgType != null)
         {
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsAccepted = false;
           typeInfo.IsConverted = true;
           return true;
         }
@@ -209,7 +200,7 @@ public static class ModelManager
     return true;
   }
 
-  public static bool CheckTypeUsage(TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  public static bool CheckTypeUsage(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
   {
     //if (typeInfo.Name == "VTInt32")
     //  Debug.Assert(true);
@@ -240,13 +231,16 @@ public static class ModelManager
         //  Debug.Assert(true);
         if (prop.IsAccepted is null or true)
         {
+          if (prop.Name == "NotesMaster")
+            Debug.Assert(true);
           var propType = prop.PropertyType.GetConversionTarget(true);
+          if (propType.HasExcludedNamespace())
+            prop.IsAccepted = false;
+          else
           if (propType.IsAccepted is null or true)
           {
-            /*prop.IsAccepted = */CheckTypeUsage(propType, OnStartChecking);
+            CheckTypeUsage(propType, OnStartChecking);
           }
-          else
-            prop.IsAccepted = false;
         }
       }
 
@@ -260,36 +254,40 @@ public static class ModelManager
         }
       }
 
-    //var customAttribs = typeInfo.CustomAttributes;
-    //if (customAttribs.Any())
-    //  foreach (var customAttrib in customAttribs.ToArray())
-    //  {
-    //    var customAttribType = customAttrib.AttributeType;
-    //    if (customAttribType.IsAccepted is null or true)
-    //    {
-    //      customAttrib.IsAccepted = CheckTypeUsage(customAttribType, OnStartChecking);
-    //    }
-    //    else
-    //      customAttrib.IsAccepted = false;
-    //  }
-
-    //var includedTypes = typeInfo.GetIncludedTypes();
-    //if (includedTypes.Any())
-    //  foreach (var inclType in includedTypes.ToArray())
-    //  {
-    //    if (inclType.IsAccepted != false)
-    //    {
-    //      CheckTypeUsage(inclType, OnStartChecking);
-    //    }
-    //  }
     return typeInfo.IsUsed;
   }
 
-  public static bool CheckPropertyOverride(TypeInfo thisTypeInfo)
+  private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
-    var baseTypeInfo = thisTypeInfo.BaseTypeInfo?.GetConversionTarget(true);
-    if (thisTypeInfo.Name == "CategoryAxisData")
-      Debug.Assert(true);
+    if (ModelData.ExcludedNamespaces.Contains(typeInfo.Namespace))
+      return true;
+    if (typeInfo.IsConstructedGenericType)
+    {
+      foreach (var arg in typeInfo.GetGenericArgTypes())
+      {
+        if (HasExcludedNamespace(arg)) 
+          return true;
+      }
+    }
+    return false;
+  }
+
+  public static bool CheckPropertyOverrides(this TypeInfo typeInfo)
+  {
+    var isValid = true;
+    var baseTypes = typeInfo.GetBaseTypes();
+    foreach (var baseType in baseTypes)
+    {
+      if (!CheckPropertyOverrides(typeInfo, baseType))
+        isValid = false;
+    }
+    return isValid;
+  }
+
+  public static bool CheckPropertyOverrides(this TypeInfo thisTypeInfo, TypeInfo baseTypeInfo)
+  {
+    //if (thisTypeInfo.Name == "CategoryAxisData")
+    //  Debug.Assert(true);
     if (baseTypeInfo != null && thisTypeInfo.Properties != null && baseTypeInfo.Properties != null)
     {
       var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAccepted != false).Select(item => item.Name).ToArray();
@@ -300,7 +298,7 @@ public static class ModelManager
       {
         foreach (var propName in commonPropNames)
         {
-          var thisProperty = thisTypeInfo.Properties.Where(item=>item.Name == propName).First();
+          var thisProperty = thisTypeInfo.Properties.Where(item => item.Name == propName).First();
           var baseProperty = baseTypeInfo.Properties.Where(item => item.Name == propName).First();
           if (thisProperty.PropertyType == baseProperty.PropertyType)
           {
@@ -319,17 +317,30 @@ public static class ModelManager
     return true;
   }
 
+  private static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
+  {
+    var result = new List<TypeInfo>();
+    var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTarget(true);
+    if (baseTypeInfo != null)
+    {
+      result.Add(baseTypeInfo);
+      result.AddRange(baseTypeInfo.GetBaseTypes());
+    }
+    return result;
+  }
+
   public static int CheckNamespaceDuplicatedTypes(string nspace)
   {
     var duplicatedTypesCount = 0;
-    var namespaceTypes = TypeManager.GetNamespaceTypes(nspace).OrderBy(item=>item.Name).ToArray();
+    var namespaceTypes = TypeManager.GetNamespaceTypes(nspace)/*.OrderBy(item => item.Name)*/.ToList();
+    namespaceTypes.Sort((type1, ITypeInfo2) => { return type1.Name.CompareTo(ITypeInfo2.Name);});
     for (int i = 0; i < namespaceTypes.Count() - 1; i++)
     {
       var type1 = namespaceTypes[i];
-      var type2 = namespaceTypes[i+1];
+      var type2 = namespaceTypes[i + 1];
       if (type1.Name == type2.Name)
       {
-        List <TypeInfo> duplicateTypes= new List <TypeInfo>();
+        List<TypeInfo> duplicateTypes = new List<TypeInfo>();
         duplicateTypes.Add(type1);
         duplicateTypes.Add(type2);
         for (int j = i + 2; j < namespaceTypes.Count(); j++)
@@ -347,7 +358,7 @@ public static class ModelManager
           type.Name += cnt.ToString();
           i++;
         }
-        duplicatedTypesCount +=cnt;
+        duplicatedTypesCount += cnt;
       }
     }
     return duplicatedTypesCount;

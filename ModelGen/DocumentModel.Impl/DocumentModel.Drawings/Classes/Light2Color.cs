@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Light2ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Light2Color
 {
+  public new DocumentFormat.OpenXml.Drawing.Light2Color? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Light2Color?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

@@ -10,4 +10,9 @@ public interface MarkerLayoutProperties
   /// </summary>
   public MarkerStyle? Symbol { get ; set; }
   
+  /// <summary>
+  /// size, this property is only available in Office 2013 and later.
+  /// </summary>
+  public Byte? Size { get ; set; }
+  
 }

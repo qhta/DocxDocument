@@ -3,12 +3,24 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Function.
 /// </summary>
-public class MatrixImpl: ModelElement<DocumentFormat.OpenXml.Math.Matrix>, Matrix
+public class MatrixImpl: ModelElementImpl, Matrix
 {
+  public DocumentFormat.OpenXml.Math.Matrix? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.Matrix?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Matrix Properties.
   /// </summary>
   public MatrixProperties? MatrixProperties
+  {
+    get;
+    set;
+  }
+  
+  public Collection<MatrixRow>? MatrixRows
   {
     get;
     set;

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ShapePropertiesExtensionList
 {
+  public Collection<ShapePropertiesExtension>? ShapePropertiesExtensions { get ; set; }
+  
 }

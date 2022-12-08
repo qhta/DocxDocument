@@ -3,64 +3,25 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Chart Class.
 /// </summary>
-public class Chart1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Chart>, Chart1
+public class Chart1Impl: ModelElementImpl, Chart1
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Chart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Chart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// Title data and formatting.
+  /// ChartTitle.
   /// </summary>
-  public Title2? Title
+  public ChartTitle? ChartTitle
   {
     get;
     set;
   }
   
   /// <summary>
-  /// pivot chart format persistence data.
-  /// </summary>
-  public PivotFormats? PivotFormats
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// 3D view settings.
-  /// </summary>
-  public View3D? View3D
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// 3D floor formatting.
-  /// </summary>
-  public Floor1? Floor
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// 3D side wall formatting.
-  /// </summary>
-  public SideWall? SideWall
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// 3D back wall formatting.
-  /// </summary>
-  public BackWall? BackWall
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// Plot data and formatting.
+  /// PlotArea.
   /// </summary>
   public PlotArea1? PlotArea
   {
@@ -69,7 +30,7 @@ public class Chart1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Char
   }
   
   /// <summary>
-  /// Legend data and formatting.
+  /// Legend.
   /// </summary>
   public Legend1? Legend
   {
@@ -78,47 +39,9 @@ public class Chart1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Char
   }
   
   /// <summary>
-  /// The way that blank cells are plotted on a chart..
+  /// ExtensionList.
   /// </summary>
-  public DisplayBlanksAsKind? DisplayBlanksAs
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs>();
-        return (DisplayBlanksAsKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs{ Val = (DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  /// <summary>
-  /// Extensibility container.
-  /// </summary>
-  public ChartExtensionList? ChartExtensionList
+  public ExtensionList2? ExtensionList
   {
     get;
     set;

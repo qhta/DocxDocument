@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom Split.
 /// </summary>
-public class CustomSplitImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>, CustomSplit
+public class CustomSplitImpl: ModelElementImpl, CustomSplit
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.CustomSplit?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<UInt32>? SecondPiePoints
+  {
+    get;
+    set;
+  }
+  
 }

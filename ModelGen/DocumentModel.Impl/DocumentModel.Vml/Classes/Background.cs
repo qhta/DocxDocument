@@ -3,8 +3,41 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Document Background.
 /// </summary>
-public class BackgroundImpl: ModelElement<DocumentFormat.OpenXml.Vml.Background>, Background
+public class BackgroundImpl: ModelElementImpl, Background
 {
+  public DocumentFormat.OpenXml.Vml.Background? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Background?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Unique Identifier
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shape Fill Toggle
+  /// </summary>
+  public Boolean? Filled
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Fill Color
+  /// </summary>
+  public String? Fillcolor
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Black-and-White Mode
   /// </summary>

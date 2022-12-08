@@ -5,4 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SdtContentComboBox
 {
+  /// <summary>
+  /// Combo Box Last Saved Value
+  /// </summary>
+  public String? LastValue { get ; set; }
+  
+  public Collection<ListItem>? ListItems { get ; set; }
+  
 }

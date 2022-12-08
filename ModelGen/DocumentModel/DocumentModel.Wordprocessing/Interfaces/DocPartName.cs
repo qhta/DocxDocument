@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface DocPartName
 {
+  /// <summary>
+  /// Name Value
+  /// </summary>
+  public String? Val { get ; set; }
+  
+  /// <summary>
+  /// Built-In Entry
+  /// </summary>
+  public Boolean? Decorated { get ; set; }
+  
 }

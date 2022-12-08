@@ -3,6 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SharpenSoften Class.
 /// </summary>
-public class SharpenSoftenImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften>, SharpenSoften
+public class SharpenSoftenImpl: ModelElementImpl, SharpenSoften
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// amount, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int32? Amount
+  {
+    get;
+    set;
+  }
+  
 }

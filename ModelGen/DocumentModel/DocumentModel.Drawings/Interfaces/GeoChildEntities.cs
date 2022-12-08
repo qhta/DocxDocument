@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GeoChildEntities
 {
+  public Collection<GeoHierarchyEntity>? GeoHierarchyEntities { get ; set; }
+  
 }

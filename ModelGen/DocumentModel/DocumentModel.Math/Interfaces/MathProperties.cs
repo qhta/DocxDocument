@@ -6,6 +6,11 @@ namespace DocumentModel.Math;
 public interface MathProperties
 {
   /// <summary>
+  /// Math Font.
+  /// </summary>
+  public String? MathFont { get ; set; }
+  
+  /// <summary>
   /// Break on Binary Operators.
   /// </summary>
   public BreakBinaryOperatorKind? BreakBinary { get ; set; }
@@ -26,9 +31,41 @@ public interface MathProperties
   public BooleanKind? DisplayDefaults { get ; set; }
   
   /// <summary>
+  /// Left Margin.
+  /// </summary>
+  public UInt32? LeftMargin { get ; set; }
+  
+  /// <summary>
+  /// Right Margin.
+  /// </summary>
+  public UInt32? RightMargin { get ; set; }
+  
+  /// <summary>
   /// Default Justification.
   /// </summary>
   public JustificationKind? DefaultJustification { get ; set; }
+  
+  /// <summary>
+  /// Pre-Equation Spacing.
+  /// </summary>
+  public UInt32? PreSpacing { get ; set; }
+  
+  /// <summary>
+  /// Post-Equation Spacing.
+  /// </summary>
+  public UInt32? PostSpacing { get ; set; }
+  
+  /// <summary>
+  /// Inter-Equation Spacing.
+  /// </summary>
+  public UInt32? InterSpacing { get ; set; }
+  
+  /// <summary>
+  /// Intra-Equation Spacing.
+  /// </summary>
+  public UInt32? IntraSpacing { get ; set; }
+  
+  public UInt32? WrapIndent { get ; set; }
   
   public BooleanKind? WrapRight { get ; set; }
   

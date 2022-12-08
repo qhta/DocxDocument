@@ -5,6 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface HyperlinkOnHover
 {
+  public EmbeddedWavAudioFileType? HyperlinkSound { get ; set; }
+  
   public HyperlinkExtensionList? HyperlinkExtensionList { get ; set; }
   
 }

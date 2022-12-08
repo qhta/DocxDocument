@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class YValuesImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, YValues
 {
+  public new DocumentFormat.OpenXml.Drawing.Charts.YValues? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.YValues?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override NumberReference? NumberReference
   {
     get;

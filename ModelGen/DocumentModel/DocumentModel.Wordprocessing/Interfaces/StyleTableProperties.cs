@@ -6,6 +6,16 @@ namespace DocumentModel.Wordprocessing;
 public interface StyleTableProperties
 {
   /// <summary>
+  /// TableStyleRowBandSize.
+  /// </summary>
+  public Int32? TableStyleRowBandSize { get ; set; }
+  
+  /// <summary>
+  /// TableStyleColumnBandSize.
+  /// </summary>
+  public Int32? TableStyleColumnBandSize { get ; set; }
+  
+  /// <summary>
   /// TableJustification.
   /// </summary>
   public TableRowAlignmentKind? TableJustification { get ; set; }

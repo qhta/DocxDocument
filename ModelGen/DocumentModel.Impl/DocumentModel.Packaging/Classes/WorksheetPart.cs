@@ -3,12 +3,24 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WorksheetPart
 /// </summary>
-public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, WorksheetPart
+public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetPart
 {
+  public new DocumentFormat.OpenXml.Packaging.WorksheetPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.WorksheetPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? ControlPropertiesParts
+  public ControlPropertiesPart? ControlPropertiesParts
   {
     get;
     set;
@@ -17,7 +29,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the CustomPropertyParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? CustomPropertyParts
+  public CustomPropertyPart? CustomPropertyParts
   {
     get;
     set;
@@ -26,7 +38,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedControlPersistenceBinaryDataParts
+  public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
     get;
     set;
@@ -44,7 +56,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -53,7 +65,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -62,7 +74,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -71,7 +83,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? NamedSheetViewsParts
+  public NamedSheetViewsPart? NamedSheetViewsParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the PivotTableParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? PivotTableParts
+  public PivotTablePart? PivotTableParts
   {
     get;
     set;
@@ -98,7 +110,13 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the QueryTableParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? QueryTableParts
+  public QueryTablePart? QueryTableParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;
@@ -107,7 +125,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the SlicersParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? SlicersParts
+  public SlicersPart? SlicersParts
   {
     get;
     set;
@@ -116,7 +134,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? SpreadsheetPrinterSettingsParts
+  public SpreadsheetPrinterSettingsPart? SpreadsheetPrinterSettingsParts
   {
     get;
     set;
@@ -134,7 +152,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the TimeLineParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? TimeLineParts
+  public TimeLinePart? TimeLineParts
   {
     get;
     set;
@@ -152,7 +170,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl
   /// <summary>
   /// Gets the WorksheetThreadedCommentsParts of the WorksheetPart
   /// </summary>
-  public OpenXmlPartContainer? WorksheetThreadedCommentsParts
+  public WorksheetThreadedCommentsPart? WorksheetThreadedCommentsParts
   {
     get;
     set;

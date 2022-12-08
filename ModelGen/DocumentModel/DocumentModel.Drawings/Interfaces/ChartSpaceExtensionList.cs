@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ChartSpaceExtensionList
 {
+  public Collection<ChartSpaceExtension>? ChartSpaceExtensions { get ; set; }
+  
 }

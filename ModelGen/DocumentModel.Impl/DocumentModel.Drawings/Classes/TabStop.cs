@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tab Stop.
 /// </summary>
-public class TabStopImpl: ModelElement<DocumentFormat.OpenXml.Drawing.TabStop>, TabStop
+public class TabStopImpl: ModelElementImpl, TabStop
 {
+  public DocumentFormat.OpenXml.Drawing.TabStop? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.TabStop?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Tab Position
+  /// </summary>
+  public Int32? Position
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Tab Alignment
   /// </summary>

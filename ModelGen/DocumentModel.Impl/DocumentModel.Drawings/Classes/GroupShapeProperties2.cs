@@ -1,10 +1,16 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Group Shape Properties.
+/// Defines the GroupShapeProperties Class.
 /// </summary>
-public class GroupShapeProperties2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>, GroupShapeProperties2
+public class GroupShapeProperties2Impl: ModelElementImpl, GroupShapeProperties2
 {
+  public DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Black and White Mode
   /// </summary>
@@ -27,6 +33,12 @@ public class GroupShapeProperties2Impl: ModelElement<DocumentFormat.OpenXml.Draw
     set;
   }
   
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -39,13 +51,19 @@ public class GroupShapeProperties2Impl: ModelElement<DocumentFormat.OpenXml.Draw
     set;
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
   }
   
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? GroupFill
   {
     get;
     set;

@@ -3,6 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CategoryAxisScaling Class.
 /// </summary>
-public class CategoryAxisScalingImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling>, CategoryAxisScaling
+public class CategoryAxisScalingImpl: ModelElementImpl, CategoryAxisScaling
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// gapWidth, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? GapWidth
+  {
+    get;
+    set;
+  }
+  
 }

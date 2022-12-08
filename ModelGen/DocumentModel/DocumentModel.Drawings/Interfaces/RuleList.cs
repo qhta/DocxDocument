@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface RuleList
 {
+  public Collection<Rule>? Rules { get ; set; }
+  
 }

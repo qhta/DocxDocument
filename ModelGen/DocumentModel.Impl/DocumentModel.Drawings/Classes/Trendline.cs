@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Trendline Class.
 /// </summary>
-public class TrendlineImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Trendline>, Trendline
+public class TrendlineImpl: ModelElementImpl, Trendline
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.Trendline? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Trendline?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Trendline Name.
+  /// </summary>
+  public String? TrendlineName
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
@@ -53,9 +68,72 @@ public class TrendlineImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.T
   }
   
   /// <summary>
+  /// Polynomial Trendline Order.
+  /// </summary>
+  public Byte? PolynomialOrder
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Period.
+  /// </summary>
+  public UInt32? Period
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Forward.
+  /// </summary>
+  public Double? Forward
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Backward.
+  /// </summary>
+  public Double? Backward
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Intercept.
+  /// </summary>
+  public Double? Intercept
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display R Squared Value.
+  /// </summary>
+  public Boolean? DisplayRSquaredValue
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display Equation.
+  /// </summary>
+  public Boolean? DisplayEquation
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Trendline Label.
   /// </summary>
-  public TrendlineLabel2? TrendlineLabel
+  public TrendlineLabel1? TrendlineLabel
   {
     get;
     set;

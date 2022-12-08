@@ -1,24 +1,38 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TrendlineLabel Class.
+/// Trendline Label.
 /// </summary>
 public interface TrendlineLabel1
 {
-  public LineReference1? LineReference { get ; set; }
+  /// <summary>
+  /// Layout.
+  /// </summary>
+  public Layout2? Layout { get ; set; }
   
-  public FillReference1? FillReference { get ; set; }
+  /// <summary>
+  /// ChartText.
+  /// </summary>
+  public ChartText1? ChartText { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
+  /// <summary>
+  /// Number Format.
+  /// </summary>
+  public NumberingFormat1? NumberingFormat { get ; set; }
   
-  public FontReference1? FontReference { get ; set; }
+  /// <summary>
+  /// ChartShapeProperties.
+  /// </summary>
+  public ChartShapeProperties? ChartShapeProperties { get ; set; }
   
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  /// <summary>
+  /// TextProperties.
+  /// </summary>
+  public TextProperties2? TextProperties { get ; set; }
   
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
-  
-  public TextBodyProperties? TextBodyProperties { get ; set; }
-  
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  /// <summary>
+  /// Chart Extensibility.
+  /// </summary>
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

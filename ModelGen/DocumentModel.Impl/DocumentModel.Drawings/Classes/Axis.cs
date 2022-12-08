@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Axis Class.
 /// </summary>
-public class AxisImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis>, Axis
+public class AxisImpl: ModelElementImpl, Axis
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// hidden, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Hidden
+  {
+    get;
+    set;
+  }
+  
   public CategoryAxisScaling? CategoryAxisScaling
   {
     get;
@@ -65,7 +89,7 @@ public class AxisImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.Ch
     set;
   }
   
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;

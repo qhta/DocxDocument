@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LiveFeedProperties Class.
 /// </summary>
-public class LiveFeedPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>, LiveFeedProperties
+public class LiveFeedPropertiesImpl: ModelElementImpl, LiveFeedProperties
 {
+  public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// LiveFeedBackgroundProperties.
   /// </summary>
@@ -17,7 +23,7 @@ public class LiveFeedPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList8? OfficeArtExtensionList
+  public OfficeArtExtensionList2? OfficeArtExtensionList
   {
     get;
     set;

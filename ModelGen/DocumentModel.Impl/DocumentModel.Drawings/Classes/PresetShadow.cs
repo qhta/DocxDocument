@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset Shadow.
 /// </summary>
-public class PresetShadowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PresetShadow>, PresetShadow
+public class PresetShadowImpl: ModelElementImpl, PresetShadow
 {
+  public DocumentFormat.OpenXml.Drawing.PresetShadow? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PresetShadow?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Preset Shadow
   /// </summary>
@@ -16,6 +22,24 @@ public class PresetShadowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Prese
       if (OpenXmlElement != null)
         OpenXmlElement.Preset = (DocumentFormat.OpenXml.Drawing.PresetShadowValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Distance
+  /// </summary>
+  public Int64? Distance
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Direction
+  /// </summary>
+  public Int32? Direction
+  {
+    get;
+    set;
   }
   
   /// <summary>

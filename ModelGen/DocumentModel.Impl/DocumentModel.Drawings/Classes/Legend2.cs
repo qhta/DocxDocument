@@ -1,58 +1,85 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Legend Class.
+/// Legend data and formatting.
 /// </summary>
-public class Legend2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend>, Legend2
+public class Legend2Impl: ModelElementImpl, Legend2
 {
-  /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public SidePos? Pos
+  public DocumentFormat.OpenXml.Drawing.Charts.Legend? OpenXmlElement
   {
-    get => (SidePos?)OpenXmlElement?.Pos?.Value;
-    set
-    {
-      if (OpenXmlElement != null)
-        OpenXmlElement.Pos = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos?)value;
-    }
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Legend?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// align, this property is only available in Office 2016 and later.
+  /// Legend Position.
   /// </summary>
-  public PosAlign? Align
+  public LegendPositionKind? LegendPosition
   {
-    get => (PosAlign?)OpenXmlElement?.Align?.Value;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LegendPosition>();
+        return (LegendPositionKind?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
     set
     {
       if (OpenXmlElement != null)
-        OpenXmlElement.Align = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign?)value;
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LegendPosition>();
+        if (openXmlElement != null)
+        {
+          if (value != null)
+            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value != null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.LegendPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
     }
   }
   
-  /// <summary>
-  /// ShapeProperties.
-  /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public Collection<LegendEntry>? LegendEntries
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// TxPrTextBody.
-  /// </summary>
-  public TxPrTextBody? TxPrTextBody
+  public Layout2? Layout
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList
+  public Boolean? Overlay
+  {
+    get;
+    set;
+  }
+  
+  public ChartShapeProperties? ChartShapeProperties
+  {
+    get;
+    set;
+  }
+  
+  public TextProperties2? TextProperties
+  {
+    get;
+    set;
+  }
+  
+  public ExtensionList4? ExtensionList
   {
     get;
     set;

@@ -6,6 +6,11 @@ namespace DocumentModel;
 public interface Task
 {
   /// <summary>
+  /// id, this property is only available in Office 2021 and later.
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
   /// TaskAnchor.
   /// </summary>
   public TaskAnchor? TaskAnchor { get ; set; }

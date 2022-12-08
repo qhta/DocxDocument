@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset Text Warp.
 /// </summary>
-public class PresetTextWrapImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PresetTextWrap>, PresetTextWrap
+public class PresetTextWrapImpl: ModelElementImpl, PresetTextWrap
 {
+  public DocumentFormat.OpenXml.Drawing.PresetTextWrap? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PresetTextWrap?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Preset Warp Shape
   /// </summary>

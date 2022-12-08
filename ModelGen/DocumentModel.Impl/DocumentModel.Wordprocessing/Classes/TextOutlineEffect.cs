@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TextOutlineEffect Class.
 /// </summary>
-public class TextOutlineEffectImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>, TextOutlineEffect
+public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
 {
+  public DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// w, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int32? LineWidth
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// cap, this property is only available in Office 2010 and later.
   /// </summary>
@@ -42,6 +57,12 @@ public class TextOutlineEffectImpl: ModelElement<DocumentFormat.OpenXml.Office20
       if (OpenXmlElement != null)
         OpenXmlElement.Alignment = (DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues?)value;
     }
+  }
+  
+  public Boolean? NoFillEmpty
+  {
+    get;
+    set;
   }
   
   public SolidColorFillProperties? SolidColorFillProperties
@@ -89,6 +110,18 @@ public class TextOutlineEffectImpl: ModelElement<DocumentFormat.OpenXml.Office20
         }
       }
     }
+  }
+  
+  public Boolean? RoundEmpty
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? BevelEmpty
+  {
+    get;
+    set;
   }
   
   public LineJoinMiterProperties? LineJoinMiterProperties

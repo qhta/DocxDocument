@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BandFormats
 {
+  public Collection<BandFormat>? Items { get ; set; }
+  
 }

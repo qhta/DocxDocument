@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Path Gradient.
 /// </summary>
-public class PathGradientFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PathGradientFill>, PathGradientFill
+public class PathGradientFillImpl: ModelElementImpl, PathGradientFill
 {
+  public DocumentFormat.OpenXml.Drawing.PathGradientFill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PathGradientFill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gradient Fill Path
   /// </summary>
@@ -21,7 +27,7 @@ public class PathGradientFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.P
   /// <summary>
   /// Fill To Rectangle.
   /// </summary>
-  public Boolean? FillToRectangle
+  public RelativeRectangleType? FillToRectangle
   {
     get;
     set;

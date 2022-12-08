@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Area Charts.
 /// </summary>
-public class AreaChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChart>, AreaChart
+public class AreaChartImpl: ModelElementImpl, AreaChart
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.AreaChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.AreaChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Grouping.
   /// </summary>
@@ -43,13 +49,34 @@ public class AreaChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.A
     }
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
+  {
+    get;
+    set;
+  }
+  
+  public Collection<AreaChartSeries2>? AreaChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;
   }
   
   public DropLines? DropLines
+  {
+    get;
+    set;
+  }
+  
+  public Collection<UInt32>? AxisIds
   {
     get;
     set;

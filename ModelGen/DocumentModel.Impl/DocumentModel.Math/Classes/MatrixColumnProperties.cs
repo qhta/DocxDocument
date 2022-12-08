@@ -3,8 +3,23 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Column Properties.
 /// </summary>
-public class MatrixColumnPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.MatrixColumnProperties>, MatrixColumnProperties
+public class MatrixColumnPropertiesImpl: ModelElementImpl, MatrixColumnProperties
 {
+  public DocumentFormat.OpenXml.Math.MatrixColumnProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.MatrixColumnProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Matrix Column Count.
+  /// </summary>
+  public Int32? MatrixColumnCount
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Matrix Column Justification.
   /// </summary>

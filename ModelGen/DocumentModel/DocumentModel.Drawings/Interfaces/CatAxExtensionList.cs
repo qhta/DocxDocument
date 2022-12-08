@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CatAxExtensionList
 {
+  public Collection<CatAxExtension>? CatAxExtensions { get ; set; }
+  
 }

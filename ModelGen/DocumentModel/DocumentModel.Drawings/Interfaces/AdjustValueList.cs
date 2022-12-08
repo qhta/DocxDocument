@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface AdjustValueList
 {
+  public Collection<ShapeGuide>? ShapeGuides { get ; set; }
+  
 }

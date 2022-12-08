@@ -6,9 +6,49 @@ namespace DocumentModel.Drawings;
 public interface OuterShadow
 {
   /// <summary>
+  /// Blur Radius
+  /// </summary>
+  public Int64? BlurRadius { get ; set; }
+  
+  /// <summary>
+  /// Shadow Offset Distance
+  /// </summary>
+  public Int64? Distance { get ; set; }
+  
+  /// <summary>
+  /// Shadow Direction
+  /// </summary>
+  public Int32? Direction { get ; set; }
+  
+  /// <summary>
+  /// Horizontal Scaling Factor
+  /// </summary>
+  public Int32? HorizontalRatio { get ; set; }
+  
+  /// <summary>
+  /// Vertical Scaling Factor
+  /// </summary>
+  public Int32? VerticalRatio { get ; set; }
+  
+  /// <summary>
+  /// Horizontal Skew
+  /// </summary>
+  public Int32? HorizontalSkew { get ; set; }
+  
+  /// <summary>
+  /// Vertical Skew
+  /// </summary>
+  public Int32? VerticalSkew { get ; set; }
+  
+  /// <summary>
   /// Shadow Alignment
   /// </summary>
   public RectangleAlignmentKind? Alignment { get ; set; }
+  
+  /// <summary>
+  /// Rotate With Shape
+  /// </summary>
+  public Boolean? RotateWithShape { get ; set; }
   
   /// <summary>
   /// RGB Color Model - Percentage Variant.

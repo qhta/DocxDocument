@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GroupShapeType Class.
 /// </summary>
-public class GroupShapeTypeImpl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.GroupShapeType>, GroupShapeType
+public class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
 {
+  public DocumentFormat.OpenXml.Office.Drawing.GroupShapeType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.GroupShapeType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// GroupShapeNonVisualProperties.
   /// </summary>
@@ -17,7 +23,7 @@ public class GroupShapeTypeImpl: ModelElement<DocumentFormat.OpenXml.Office.Draw
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public virtual GroupShapeProperties1? GroupShapeProperties
+  public virtual GroupShapeProperties2? GroupShapeProperties
   {
     get;
     set;

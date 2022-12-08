@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Dark1ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Dark1Color
 {
+  public new DocumentFormat.OpenXml.Drawing.Dark1Color? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Dark1Color?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

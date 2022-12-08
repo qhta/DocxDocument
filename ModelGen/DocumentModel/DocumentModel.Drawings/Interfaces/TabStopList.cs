@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface TabStopList
 {
+  public Collection<TabStop>? TabStops { get ; set; }
+  
 }

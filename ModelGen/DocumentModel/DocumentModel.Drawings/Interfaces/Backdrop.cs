@@ -13,7 +13,12 @@ public interface Backdrop
   /// <summary>
   /// Normal.
   /// </summary>
-  public Boolean? Normal { get ; set; }
+  public Vector3DType? Normal { get ; set; }
+  
+  /// <summary>
+  /// Up Vector.
+  /// </summary>
+  public Vector3DType? UpVector { get ; set; }
   
   /// <summary>
   /// ExtensionList.

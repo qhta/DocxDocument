@@ -3,8 +3,14 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Embedded OLE Object.
 /// </summary>
-public class OleObjectImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.OleObject>, OleObject
+public class OleObjectImpl: ModelElementImpl, OleObject
 {
+  public DocumentFormat.OpenXml.Vml.Office.OleObject? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Office.OleObject?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// OLE Object Type
   /// </summary>
@@ -16,6 +22,24 @@ public class OleObjectImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.OleOb
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Vml.Office.OleValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// OLE Object Application
+  /// </summary>
+  public String? ProgId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// OLE Object Shape
+  /// </summary>
+  public String? ShapeId
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -32,6 +56,24 @@ public class OleObjectImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.OleOb
   }
   
   /// <summary>
+  /// OLE Object Unique ID
+  /// </summary>
+  public String? ObjectId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Relationship
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// OLE Update Mode
   /// </summary>
   public OleUpdateMode? UpdateMode
@@ -42,6 +84,33 @@ public class OleObjectImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.OleOb
       if (OpenXmlElement != null)
         OpenXmlElement.UpdateMode = (DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Embedded Object Alternate Image Request.
+  /// </summary>
+  public String? LinkType
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Embedded Object Cannot Be Refreshed.
+  /// </summary>
+  public String? LockedField
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// WordprocessingML Field Switches.
+  /// </summary>
+  public String? FieldCodes
+  {
+    get;
+    set;
   }
   
 }

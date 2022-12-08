@@ -10,4 +10,9 @@ public interface RelativeHeight
   /// </summary>
   public SizeRelativeVerticallyKind? RelativeFrom { get ; set; }
   
+  /// <summary>
+  /// PercentageHeight.
+  /// </summary>
+  public String? PercentageHeight { get ; set; }
+  
 }

@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SingleDataSourceRecord
 {
+  /// <summary>
+  /// RecordIncluded.
+  /// </summary>
+  public Boolean? RecordIncluded { get ; set; }
+  
+  /// <summary>
+  /// RecordHashCode.
+  /// </summary>
+  public Int32? RecordHashCode { get ; set; }
+  
 }

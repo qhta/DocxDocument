@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Display Units Label.
 /// </summary>
-public class DisplayUnitsLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>, DisplayUnitsLabel
+public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout1? Layout
+  public Layout2? Layout
   {
     get;
     set;
@@ -35,7 +41,7 @@ public class DisplayUnitsLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
   {
     get;
     set;

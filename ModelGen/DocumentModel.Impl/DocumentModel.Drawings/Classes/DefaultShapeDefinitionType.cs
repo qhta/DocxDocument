@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DefaultShapeDefinitionType Class.
 /// </summary>
-public class DefaultShapeDefinitionTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType>, DefaultShapeDefinitionType
+public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefinitionType
 {
+  public DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public virtual ShapeProperties6? ShapeProperties
+  public virtual ShapeProperties8? ShapeProperties
   {
     get;
     set;
@@ -35,7 +41,7 @@ public class DefaultShapeDefinitionTypeImpl: ModelElement<DocumentFormat.OpenXml
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public virtual ShapeStyle2? ShapeStyle
+  public virtual ShapeStyle1? ShapeStyle
   {
     get;
     set;

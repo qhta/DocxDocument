@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GeoDataPointToEntityQuery Class.
 /// </summary>
-public class GeoDataPointToEntityQueryImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQuery>, GeoDataPointToEntityQuery
+public class GeoDataPointToEntityQueryImpl: ModelElementImpl, GeoDataPointToEntityQuery
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQuery? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQuery?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
@@ -16,6 +22,15 @@ public class GeoDataPointToEntityQueryImpl: ModelElement<DocumentFormat.OpenXml.
       if (OpenXmlElement != null)
         OpenXmlElement.EntityType = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum?)value;
     }
+  }
+  
+  /// <summary>
+  /// entityId, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? EntityId
+  {
+    get;
+    set;
   }
   
 }

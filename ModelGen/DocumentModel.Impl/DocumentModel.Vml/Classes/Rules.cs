@@ -3,8 +3,14 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Rule Set.
 /// </summary>
-public class RulesImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.Rules>, Rules
+public class RulesImpl: ModelElementImpl, Rules
 {
+  public DocumentFormat.OpenXml.Vml.Office.Rules? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Office.Rules?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
@@ -16,6 +22,12 @@ public class RulesImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.Rules>, R
       if (OpenXmlElement != null)
         OpenXmlElement.Extension = (DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues?)value;
     }
+  }
+  
+  public Collection<Rule>? Items
+  {
+    get;
+    set;
   }
   
 }

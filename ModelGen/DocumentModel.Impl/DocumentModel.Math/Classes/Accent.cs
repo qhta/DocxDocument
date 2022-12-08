@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Accent.
 /// </summary>
-public class AccentImpl: ModelElement<DocumentFormat.OpenXml.Math.Accent>, Accent
+public class AccentImpl: ModelElementImpl, Accent
 {
+  public DocumentFormat.OpenXml.Math.Accent? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.Accent?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Accent Properties.
   /// </summary>

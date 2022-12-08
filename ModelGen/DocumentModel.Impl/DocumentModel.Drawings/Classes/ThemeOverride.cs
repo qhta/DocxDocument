@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Theme Override.
 /// </summary>
-public class ThemeOverrideImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ThemeOverride>, ThemeOverride
+public class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
 {
+  public DocumentFormat.OpenXml.Drawing.ThemeOverride? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ThemeOverride?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Color Scheme.
   /// </summary>

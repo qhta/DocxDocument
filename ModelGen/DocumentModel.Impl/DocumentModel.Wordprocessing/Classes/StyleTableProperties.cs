@@ -3,8 +3,32 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Table Properties.
 /// </summary>
-public class StyleTablePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties>, StyleTableProperties
+public class StyleTablePropertiesImpl: ModelElementImpl, StyleTableProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// TableStyleRowBandSize.
+  /// </summary>
+  public Int32? TableStyleRowBandSize
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TableStyleColumnBandSize.
+  /// </summary>
+  public Int32? TableStyleColumnBandSize
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// TableJustification.
   /// </summary>

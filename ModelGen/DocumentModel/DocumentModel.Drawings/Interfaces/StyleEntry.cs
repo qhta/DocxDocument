@@ -6,14 +6,24 @@ namespace DocumentModel.Drawings;
 public interface StyleEntry
 {
   /// <summary>
+  /// mods, this property is only available in Office 2013 and later.
+  /// </summary>
+  public List<String>? Modifiers { get ; set; }
+  
+  /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference1? LineReference { get ; set; }
+  public LineReference2? LineReference { get ; set; }
+  
+  /// <summary>
+  /// LineWidthScale.
+  /// </summary>
+  public String? LineWidthScale { get ; set; }
   
   /// <summary>
   /// FillReference.
   /// </summary>
-  public FillReference1? FillReference { get ; set; }
+  public FillReference2? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.
@@ -28,12 +38,12 @@ public interface StyleEntry
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  public ShapeProperties4? ShapeProperties { get ; set; }
   
   /// <summary>
   /// TextCharacterPropertiesType.
   /// </summary>
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
+  public TextCharacterPropertiesType2? TextCharacterPropertiesType { get ; set; }
   
   /// <summary>
   /// TextBodyProperties.
@@ -43,6 +53,6 @@ public interface StyleEntry
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

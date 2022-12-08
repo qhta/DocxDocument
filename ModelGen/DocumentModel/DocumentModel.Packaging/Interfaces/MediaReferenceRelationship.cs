@@ -5,4 +5,9 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface MediaReferenceRelationship
 {
+  /// <summary>
+  /// Gets the relationship type for a media reference.
+  /// </summary>
+  public String? RelationshipType { get ; set; }
+  
 }

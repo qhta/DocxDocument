@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class HyperlinkImpl: DocumentModel.Drawings.Color2TypeImpl, Hyperlink
 {
+  public new DocumentFormat.OpenXml.Drawing.Hyperlink? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Hyperlink?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

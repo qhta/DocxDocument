@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SdtContentText
 {
+  /// <summary>
+  /// Allow Soft Line Breaks
+  /// </summary>
+  public Boolean? MultiLine { get ; set; }
+  
 }

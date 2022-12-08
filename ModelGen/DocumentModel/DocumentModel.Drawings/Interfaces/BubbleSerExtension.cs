@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BubbleSerExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public InvertSolidFillFormat? InvertSolidFillFormat { get ; set; }
   
   public FilteredCategoryTitle? FilteredCategoryTitle { get ; set; }

@@ -1,19 +1,19 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Style.
+/// Defines the ShapeStyle Class.
 /// </summary>
 public interface ShapeStyle2
 {
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference2? LineReference { get ; set; }
+  public LineReference1? LineReference { get ; set; }
   
   /// <summary>
   /// FillReference.
   /// </summary>
-  public FillReference2? FillReference { get ; set; }
+  public FillReference1? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.

@@ -3,8 +3,68 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Frame Locks.
 /// </summary>
-public class GraphicFrameLocksImpl: ModelElement<DocumentFormat.OpenXml.Drawing.GraphicFrameLocks>, GraphicFrameLocks
+public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
 {
+  public DocumentFormat.OpenXml.Drawing.GraphicFrameLocks? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.GraphicFrameLocks?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Grouping
+  /// </summary>
+  public Boolean? NoGrouping
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Selection of Child Shapes
+  /// </summary>
+  public Boolean? NoDrilldown
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Selection
+  /// </summary>
+  public Boolean? NoSelection
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Aspect Ratio Change
+  /// </summary>
+  public Boolean? NoChangeAspect
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Movement
+  /// </summary>
+  public Boolean? NoMove
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Resize
+  /// </summary>
+  public Boolean? NoResize
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ExtensionList.
   /// </summary>

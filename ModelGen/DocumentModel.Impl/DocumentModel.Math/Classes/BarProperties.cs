@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Bar Properties.
 /// </summary>
-public class BarPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.BarProperties>, BarProperties
+public class BarPropertiesImpl: ModelElementImpl, BarProperties
 {
+  public DocumentFormat.OpenXml.Math.BarProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.BarProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Position (Bar).
   /// </summary>

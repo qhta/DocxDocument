@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface PieChartSeries2
 {
   /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order { get ; set; }
+  
+  /// <summary>
   /// Series Text.
   /// </summary>
   public SeriesText? SeriesText { get ; set; }
@@ -20,7 +30,14 @@ public interface PieChartSeries2
   /// </summary>
   public PictureOptions? PictureOptions { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  /// <summary>
+  /// Explosion.
+  /// </summary>
+  public UInt32? Explosion { get ; set; }
+  
+  public Collection<DataPoint2>? DataPoints { get ; set; }
+  
+  public DataLabels2? DataLabels { get ; set; }
   
   public CategoryAxisData? CategoryAxisData { get ; set; }
   

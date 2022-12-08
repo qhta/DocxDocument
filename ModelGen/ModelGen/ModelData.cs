@@ -18,7 +18,7 @@ public static class ModelData
 
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
-    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", "System*",
+    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", 
     "*Presentation*",
     "*Spreadsheet*",
     "*SpreadSheet*",
@@ -339,7 +339,8 @@ public static class ModelData
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
   {
-    //"CustomXmlAttribute", "Wordprocessing*",
+    "CustomXmlAttribute",
+    //"Wordprocessing*",
     //"OpenXmlSolidColorFillPropertiesElement",
     //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
     //"OpenXmlPartRootElement",

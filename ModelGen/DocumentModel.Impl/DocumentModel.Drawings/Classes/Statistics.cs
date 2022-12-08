@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Statistics Class.
 /// </summary>
-public class StatisticsImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>, Statistics
+public class StatisticsImpl: ModelElementImpl, Statistics
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// quartileMethod, this property is only available in Office 2016 and later.
   /// </summary>

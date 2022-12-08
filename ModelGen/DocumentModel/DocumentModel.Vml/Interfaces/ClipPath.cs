@@ -5,4 +5,9 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface ClipPath
 {
+  /// <summary>
+  /// Path Definition
+  /// </summary>
+  public String? Value { get ; set; }
+  
 }

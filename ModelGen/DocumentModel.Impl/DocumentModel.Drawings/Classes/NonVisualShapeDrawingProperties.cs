@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Non-Visual Shape Drawing Properties.
 /// </summary>
-public class NonVisualShapeDrawingPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties>, NonVisualShapeDrawingProperties
+public class NonVisualShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualShapeDrawingProperties
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Text Box
+  /// </summary>
+  public Boolean? TextBox
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Shape Locks.
   /// </summary>

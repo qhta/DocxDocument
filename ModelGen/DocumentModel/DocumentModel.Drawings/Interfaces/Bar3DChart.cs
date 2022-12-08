@@ -15,9 +15,22 @@ public interface Bar3DChart
   /// </summary>
   public BarGroupingKind? BarGrouping { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors { get ; set; }
   
-  public ShapeKind2? Shape { get ; set; }
+  public Collection<BarChartSeries2>? BarChartSerieses { get ; set; }
+  
+  public DataLabels2? DataLabels { get ; set; }
+  
+  public UInt16? GapWidth { get ; set; }
+  
+  public UInt16? GapDepth { get ; set; }
+  
+  public ShapeKind1? Shape { get ; set; }
+  
+  public Collection<UInt32>? AxisIds { get ; set; }
   
   public Bar3DChartExtensionList? Bar3DChartExtensionList { get ; set; }
   

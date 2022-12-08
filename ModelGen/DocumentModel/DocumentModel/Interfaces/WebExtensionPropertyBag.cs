@@ -5,4 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface WebExtensionPropertyBag
 {
+  public Collection<WebExtensionProperty>? WebExtensionProperties { get ; set; }
+  
 }

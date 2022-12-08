@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class BulletColorImpl: DocumentModel.Drawings.ColorTypeImpl, BulletColor
 {
+  public new DocumentFormat.OpenXml.Drawing.BulletColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.BulletColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

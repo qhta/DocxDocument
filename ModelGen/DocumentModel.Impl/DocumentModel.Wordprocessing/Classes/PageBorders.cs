@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageBorders Class.
 /// </summary>
-public class PageBordersImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.PageBorders>, PageBorders
+public class PageBordersImpl: ModelElementImpl, PageBorders
 {
+  public DocumentFormat.OpenXml.Wordprocessing.PageBorders? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.PageBorders?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Z-Ordering of Page Border
   /// </summary>

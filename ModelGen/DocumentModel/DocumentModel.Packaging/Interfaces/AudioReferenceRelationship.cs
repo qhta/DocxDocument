@@ -5,4 +5,9 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface AudioReferenceRelationship
 {
+  /// <summary>
+  /// Gets the relationship type for an audio reference.
+  /// </summary>
+  public String? RelationshipType { get ; set; }
+  
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AxisDataSourceType Class.
 /// </summary>
-public class AxisDataSourceType2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType>, AxisDataSourceType2
+public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Multi Level String Reference.
   /// </summary>

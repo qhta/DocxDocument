@@ -3,12 +3,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the StyleEntry Class.
 /// </summary>
-public class StyleEntryImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry>, StyleEntry
+public class StyleEntryImpl: ModelElementImpl, StyleEntry
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// mods, this property is only available in Office 2013 and later.
+  /// </summary>
+  public List<String>? Modifiers
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// LineReference.
   /// </summary>
-  public virtual LineReference1? LineReference
+  public virtual LineReference2? LineReference
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// LineWidthScale.
+  /// </summary>
+  public virtual String? LineWidthScale
   {
     get;
     set;
@@ -17,7 +41,7 @@ public class StyleEntryImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// FillReference.
   /// </summary>
-  public virtual FillReference1? FillReference
+  public virtual FillReference2? FillReference
   {
     get;
     set;
@@ -44,7 +68,7 @@ public class StyleEntryImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties3? ShapeProperties
+  public virtual ShapeProperties4? ShapeProperties
   {
     get;
     set;
@@ -53,7 +77,7 @@ public class StyleEntryImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// TextCharacterPropertiesType.
   /// </summary>
-  public virtual TextCharacterPropertiesType1? TextCharacterPropertiesType
+  public virtual TextCharacterPropertiesType2? TextCharacterPropertiesType
   {
     get;
     set;
@@ -71,7 +95,7 @@ public class StyleEntryImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public virtual OfficeArtExtensionList1? OfficeArtExtensionList
+  public virtual OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

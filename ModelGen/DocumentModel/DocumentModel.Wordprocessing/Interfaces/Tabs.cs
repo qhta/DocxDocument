@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Tabs
 {
+  public Collection<TabStop>? TabStops { get ; set; }
+  
 }

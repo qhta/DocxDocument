@@ -8,12 +8,14 @@ public interface EndnotesPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts { get ; set; }
+  public AlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the EndnotesPart
   /// </summary>
   public ChartPart? ChartParts { get ; set; }
+  
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the EndnotesPart
@@ -48,12 +50,12 @@ public interface EndnotesPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -68,11 +70,13 @@ public interface EndnotesPart
   /// <summary>
   /// Gets the ImageParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
 }

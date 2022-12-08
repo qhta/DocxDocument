@@ -1,26 +1,48 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Chart Space.
+/// Defines the ChartSpace Class.
 /// </summary>
 public interface ChartSpace1
 {
-  public ColorMapOverride? ColorMapOverride { get ; set; }
+  /// <summary>
+  /// ChartData.
+  /// </summary>
+  public ChartData? ChartData { get ; set; }
   
-  public PivotSource1? PivotSource { get ; set; }
-  
-  public Protection? Protection { get ; set; }
-  
+  /// <summary>
+  /// Chart.
+  /// </summary>
   public Chart1? Chart { get ; set; }
   
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public TextProperties1? TextProperties { get ; set; }
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody { get ; set; }
   
-  public ExternalData1? ExternalData { get ; set; }
+  /// <summary>
+  /// ColorMappingType.
+  /// </summary>
+  public ColorMappingType2? ColorMappingType { get ; set; }
   
-  public PrintSettings1? PrintSettings { get ; set; }
+  /// <summary>
+  /// FormatOverrides.
+  /// </summary>
+  public FormatOverrides? FormatOverrides { get ; set; }
   
-  public ChartSpaceExtensionList? ChartSpaceExtensionList { get ; set; }
+  /// <summary>
+  /// PrintSettings.
+  /// </summary>
+  public PrintSettings2? PrintSettings { get ; set; }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

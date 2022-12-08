@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Control Properties.
 /// </summary>
-public class ControlPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.ControlProperties>, ControlProperties
+public class ControlPropertiesImpl: ModelElementImpl, ControlProperties
 {
+  public DocumentFormat.OpenXml.Math.ControlProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.ControlProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public DocumentModel.Wordprocessing.RunProperties? RunProperties
   {
     get;

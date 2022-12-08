@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface People
 {
+  public Collection<Person>? Persons { get ; set; }
+  
 }

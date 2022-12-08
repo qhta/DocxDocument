@@ -1,302 +1,65 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Value Axis.
+/// Defines the ValueAxis Class.
 /// </summary>
-public class ValueAxis2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ValueAxis>, ValueAxis2
+public class ValueAxis2Impl: DocumentModel.Drawings.StyleEntryImpl, ValueAxis2
 {
-  /// <summary>
-  /// Scaling.
-  /// </summary>
-  public Scaling? Scaling
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ValueAxis? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ValueAxis?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override LineReference2? LineReference
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// Axis Position.
-  /// </summary>
-  public AxisPositionKind? AxisPosition
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
-        return (AxisPositionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.AxisPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  /// <summary>
-  /// Major Gridlines.
-  /// </summary>
-  public MajorGridlines? MajorGridlines
+  public override String? LineWidthScale
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// Minor Gridlines.
-  /// </summary>
-  public MinorGridlines? MinorGridlines
+  public override FillReference2? FillReference
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// Title.
-  /// </summary>
-  public Title2? Title
+  public override EffectReference1? EffectReference
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// Number Format.
-  /// </summary>
-  public NumberingFormat1? NumberingFormat
+  public override FontReference1? FontReference
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// Major Tick Mark.
-  /// </summary>
-  public TickMarkKind? MajorTickMark
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
-        return (TickMarkKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark{ Val = (DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  /// <summary>
-  /// Minor Tick Mark.
-  /// </summary>
-  public TickMarkKind? MinorTickMark
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
-        return (TickMarkKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark{ Val = (DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  /// <summary>
-  /// Tick Label Position.
-  /// </summary>
-  public TickLabelPositionKind? TickLabelPosition
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
-        return (TickLabelPositionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
-  public ChartShapeProperties? ChartShapeProperties
+  public override ShapeProperties4? ShapeProperties
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// TextProperties.
-  /// </summary>
-  public TextProperties1? TextProperties
+  public override TextCharacterPropertiesType2? TextCharacterPropertiesType
   {
     get;
     set;
   }
   
-  public CrossesKind? Crosses
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
-        return (CrossesKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.CrossesValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Crosses{ Val = (DocumentFormat.OpenXml.Drawing.Charts.CrossesValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  public CrossBetweenKind? CrossBetween
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossBetween>();
-        return (CrossBetweenKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossBetween>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossBetween{ Val = (DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
-    }
-  }
-  
-  public DisplayUnits? DisplayUnits
+  public override TextBodyProperties? TextBodyProperties
   {
     get;
     set;
   }
   
-  public ValAxExtensionList? ValAxExtensionList
+  public override OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

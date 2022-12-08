@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ExtrusionColorImpl: DocumentModel.Drawings.ColorTypeImpl, ExtrusionColor
 {
+  public new DocumentFormat.OpenXml.Drawing.ExtrusionColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ExtrusionColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

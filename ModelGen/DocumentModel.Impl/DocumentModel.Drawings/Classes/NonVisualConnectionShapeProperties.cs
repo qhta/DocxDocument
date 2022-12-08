@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Non-Visual Connection Shape Drawing Properties.
 /// </summary>
-public class NonVisualConnectionShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties>, NonVisualConnectionShapeProperties
+public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisualConnectionShapeProperties
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Connection Shape Locks.
   /// </summary>
@@ -17,7 +23,16 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElement<DocumentFormat
   /// <summary>
   /// Connection Start.
   /// </summary>
-  public Boolean? StartConnection
+  public ConnectionType? StartConnection
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Connection End.
+  /// </summary>
+  public ConnectionType? EndConnection
   {
     get;
     set;

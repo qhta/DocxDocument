@@ -1,11 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Label.
+/// Defines the DataLabel Class.
 /// </summary>
-public class DataLabel2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabel>, DataLabel2
+public class DataLabel2Impl: ModelElementImpl, DataLabel2
 {
-  public Layout1? Layout
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Delete
+  {
+    get;
+    set;
+  }
+  
+  public Layout2? Layout
   {
     get;
     set;
@@ -29,7 +50,7 @@ public class DataLabel2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
     set;
   }
   
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
   {
     get;
     set;
@@ -68,6 +89,48 @@ public class DataLabel2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
         }
       }
     }
+  }
+  
+  public Boolean? ShowLegendKey
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowValue
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowCategoryName
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowSeriesName
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowPercent
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ShowBubbleSize
+  {
+    get;
+    set;
+  }
+  
+  public String? Separator
+  {
+    get;
+    set;
   }
   
   public DLblExtensionList? DLblExtensionList

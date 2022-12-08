@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Categorization.
 /// </summary>
-public class CategoryImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Category>, Category
+public class CategoryImpl: ModelElementImpl, Category
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Category? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Category?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Category Associated With Entry.
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gallery Associated With Entry.
   /// </summary>

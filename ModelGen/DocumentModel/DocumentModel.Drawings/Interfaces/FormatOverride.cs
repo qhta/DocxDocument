@@ -6,9 +6,14 @@ namespace DocumentModel.Drawings;
 public interface FormatOverride
 {
   /// <summary>
+  /// idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx { get ; set; }
+  
+  /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.

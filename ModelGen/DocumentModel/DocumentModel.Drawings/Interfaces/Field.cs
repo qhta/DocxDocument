@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface Field
 {
   /// <summary>
+  /// Field ID
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
+  /// Field Type
+  /// </summary>
+  public String? Type { get ; set; }
+  
+  /// <summary>
   /// Text Character Properties.
   /// </summary>
   public RunProperties? RunProperties { get ; set; }
@@ -14,5 +24,10 @@ public interface Field
   /// Text Paragraph Properties.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get ; set; }
+  
+  /// <summary>
+  /// Text.
+  /// </summary>
+  public String? Text { get ; set; }
   
 }

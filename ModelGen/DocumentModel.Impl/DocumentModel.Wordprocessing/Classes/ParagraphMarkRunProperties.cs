@@ -3,9 +3,63 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Run Properties for the Paragraph Mark.
 /// </summary>
-public class ParagraphMarkRunPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties>, ParagraphMarkRunProperties
+public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunProperties
 {
-  public Boolean? ConflictInsertion
+  public DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Inserted Paragraph.
+  /// </summary>
+  public TrackChangeType? Inserted
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Deleted Paragraph.
+  /// </summary>
+  public TrackChangeType? Deleted
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Move Source Paragraph.
+  /// </summary>
+  public TrackChangeType? MoveFrom
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Move Destination Paragraph.
+  /// </summary>
+  public TrackChangeType? MoveTo
+  {
+    get;
+    set;
+  }
+  
+  public TrackChangeType? ConflictInsertion
+  {
+    get;
+    set;
+  }
+  
+  public TrackChangeType? ConflictDeletion
+  {
+    get;
+    set;
+  }
+  
+  public String? RunStyle
   {
     get;
     set;
@@ -17,7 +71,139 @@ public class ParagraphMarkRunPropertiesImpl: ModelElement<DocumentFormat.OpenXml
     set;
   }
   
+  public Boolean? Bold
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? BoldComplexScript
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Italic
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ItalicComplexScript
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Caps
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? SmallCaps
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Strike
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? DoubleStrike
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Outline
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Shadow
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Emboss
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Imprint
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? NoProof
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? SnapToGrid
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Vanish
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? WebHidden
+  {
+    get;
+    set;
+  }
+  
   public Color? Color
+  {
+    get;
+    set;
+  }
+  
+  public Int32? Spacing
+  {
+    get;
+    set;
+  }
+  
+  public Int32? CharacterScale
+  {
+    get;
+    set;
+  }
+  
+  public UInt32? Kern
+  {
+    get;
+    set;
+  }
+  
+  public String? Position
+  {
+    get;
+    set;
+  }
+  
+  public String? FontSize
+  {
+    get;
+    set;
+  }
+  
+  public String? FontSizeComplexScript
   {
     get;
     set;
@@ -152,6 +338,18 @@ public class ParagraphMarkRunPropertiesImpl: ModelElement<DocumentFormat.OpenXml
     }
   }
   
+  public Boolean? RightToLeftText
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? ComplexScript
+  {
+    get;
+    set;
+  }
+  
   public EmphasisMarkKind? Emphasis
   {
     get
@@ -187,7 +385,19 @@ public class ParagraphMarkRunPropertiesImpl: ModelElement<DocumentFormat.OpenXml
     }
   }
   
+  public LanguageType? Languages
+  {
+    get;
+    set;
+  }
+  
   public EastAsianLayout? EastAsianLayout
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? SpecVanish
   {
     get;
     set;
@@ -373,6 +583,12 @@ public class ParagraphMarkRunPropertiesImpl: ModelElement<DocumentFormat.OpenXml
         }
       }
     }
+  }
+  
+  public Boolean? OfficeMath
+  {
+    get;
+    set;
   }
   
   public ParagraphMarkRunPropertiesChange? ParagraphMarkRunPropertiesChange

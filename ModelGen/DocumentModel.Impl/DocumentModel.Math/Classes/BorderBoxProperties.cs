@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Border Box Properties.
 /// </summary>
-public class BorderBoxPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>, BorderBoxProperties
+public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
 {
+  public DocumentFormat.OpenXml.Math.BorderBoxProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.BorderBoxProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Hide Top Edge.
   /// </summary>

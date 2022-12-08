@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Algorithm.
 /// </summary>
-public class AlgorithmImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>, Algorithm
+public class AlgorithmImpl: ModelElementImpl, Algorithm
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Algorithm Type
   /// </summary>
@@ -16,6 +22,21 @@ public class AlgorithmImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Revision Number
+  /// </summary>
+  public UInt32? Revision
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Parameter>? Parameters
+  {
+    get;
+    set;
   }
   
   public ExtensionList3? ExtensionList

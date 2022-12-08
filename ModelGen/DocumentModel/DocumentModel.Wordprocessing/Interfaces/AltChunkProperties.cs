@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface AltChunkProperties
 {
+  /// <summary>
+  /// Keep Source Formatting on Import.
+  /// </summary>
+  public Boolean? MatchSource { get ; set; }
+  
 }

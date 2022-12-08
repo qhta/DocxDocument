@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PtExtensionList Class.
 /// </summary>
-public class PtExtensionListImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>, PtExtensionList
+public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<PtExtension>? PtExtensions
+  {
+    get;
+    set;
+  }
+  
 }

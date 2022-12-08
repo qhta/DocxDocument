@@ -6,8 +6,14 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 /// Boolean.
 /// </summary>
-public class VTBoolImpl: ModelElement<DocumentFormat.OpenXml.VariantTypes.VTBool>, VTBool
+public class VTBoolImpl: VariantImpl, VTBool
 {
+  public new DocumentFormat.OpenXml.VariantTypes.VTBool? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.VariantTypes.VTBool?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+
   public VTBoolImpl()
   {
     OpenXmlElement = new DocumentFormat.OpenXml.VariantTypes.VTBool();
@@ -18,7 +24,7 @@ public class VTBoolImpl: ModelElement<DocumentFormat.OpenXml.VariantTypes.VTBool
     OpenXmlElement = element;
   }
 
-  public object? Value
+  public override object? Value
   {
     get
     {
@@ -46,102 +52,82 @@ public class VTBoolImpl: ModelElement<DocumentFormat.OpenXml.VariantTypes.VTBool
   }
   private Boolean? _value;
 
-  public TypeCode GetTypeCode()
+  public override TypeCode GetTypeCode()
   {
     return TypeCode.Boolean;
   }
 
-  public object ToType(Type conversionType, IFormatProvider? provider)
-  {
-    if (conversionType == typeof(Boolean)) return ToBoolean(provider);
-    else if (conversionType == typeof(Byte)) return ToByte(provider);
-    else if (conversionType == typeof(Char)) return ToChar(provider);
-    else if (conversionType == typeof(DateTime)) return ToDateTime(provider);
-    else if (conversionType == typeof(Decimal)) return ToDecimal(provider);
-    else if (conversionType == typeof(Double)) return ToDouble(provider);
-    else if (conversionType == typeof(Int16)) return ToInt16(provider);
-    else if (conversionType == typeof(Int32)) return ToInt32(provider);
-    else if (conversionType == typeof(Int64)) return ToInt64(provider);
-    else if (conversionType == typeof(SByte)) return ToSByte(provider);
-    else if (conversionType == typeof(Single)) return ToSingle(provider);
-    else if (conversionType == typeof(String)) return ToString(provider);
-    else if (conversionType == typeof(UInt16)) return ToUInt16(provider);
-    else if (conversionType == typeof(UInt32)) return ToUInt32(provider);
-    else if (conversionType == typeof(UInt64)) return ToUInt64(provider);
-    throw new InvalidOperationException($"Can't convert Boolean Variant to {conversionType} type");
-  }
-
-  public Boolean ToBoolean(IFormatProvider? provider)
+  public override bool ToBoolean(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? val : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public byte ToByte(IFormatProvider? provider)
+  public override byte ToByte(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Byte)1 : (Byte)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public char ToChar(IFormatProvider? provider)
+  public override char ToChar(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Boolean variant to Char");
   }
 
-  public DateTime ToDateTime(IFormatProvider? provider)
+  public override DateTime ToDateTime(IFormatProvider? provider)
   {
     throw new InvalidOperationException("Can't convert Boolean variant to DateTime");
   }
 
-  public decimal ToDecimal(IFormatProvider? provider)
+  public override decimal ToDecimal(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Decimal)1 : (Decimal)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public double ToDouble(IFormatProvider? provider)
+  public override double ToDouble(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Double)1 : (Double)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public short ToInt16(IFormatProvider? provider)
+  public override short ToInt16(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Int16)1 : (Int16)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public int ToInt32(IFormatProvider? provider)
+  public override int ToInt32(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Int32)1 : (Int32)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public long ToInt64(IFormatProvider? provider)
+  public override long ToInt64(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Int64)1 : (Int64)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public sbyte ToSByte(IFormatProvider? provider)
+  public override sbyte ToSByte(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (SByte)1 : (SByte)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public float ToSingle(IFormatProvider? provider)
+  public override float ToSingle(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (Single)1 : (Single)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public string ToString(IFormatProvider? provider)
+  public override string ToString(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? "true" : "false") : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public ushort ToUInt16(IFormatProvider? provider)
+  public override ushort ToUInt16(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (UInt16)1 : (UInt16)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public uint ToUInt32(IFormatProvider? provider)
+  public override uint ToUInt32(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (UInt32)1 : (UInt32)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }
 
-  public ulong ToUInt64(IFormatProvider? provider)
+  public override ulong ToUInt64(IFormatProvider? provider)
   {
     return (Value is Boolean val) ? (val ? (UInt64)1 : (UInt64)0) : throw new InvalidOperationException("Variant is empty but Boolean expected");
   }

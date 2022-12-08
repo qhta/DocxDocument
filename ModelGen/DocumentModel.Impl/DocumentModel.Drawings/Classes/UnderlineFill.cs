@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Underline Fill.
 /// </summary>
-public class UnderlineFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.UnderlineFill>, UnderlineFill
+public class UnderlineFillImpl: ModelElementImpl, UnderlineFill
 {
+  public DocumentFormat.OpenXml.Drawing.UnderlineFill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.UnderlineFill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// NoFill.
+  /// </summary>
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// SolidFill.
   /// </summary>
@@ -26,7 +41,7 @@ public class UnderlineFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Unde
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
@@ -36,6 +51,15 @@ public class UnderlineFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Unde
   /// Pattern Fill.
   /// </summary>
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Group Fill.
+  /// </summary>
+  public Boolean? GroupFill
   {
     get;
     set;

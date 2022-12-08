@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface AllocatedCommands
 {
+  public Collection<AllocatedCommand>? Items { get ; set; }
+  
 }

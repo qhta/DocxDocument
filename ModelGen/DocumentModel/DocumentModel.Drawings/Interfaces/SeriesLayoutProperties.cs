@@ -20,6 +20,8 @@ public interface SeriesLayoutProperties
   /// </summary>
   public SeriesElementVisibilities? SeriesElementVisibilities { get ; set; }
   
+  public Boolean? Aggregation { get ; set; }
+  
   public Binning? Binning { get ; set; }
   
   public Geography? Geography { get ; set; }

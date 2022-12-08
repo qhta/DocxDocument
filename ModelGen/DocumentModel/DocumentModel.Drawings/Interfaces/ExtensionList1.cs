@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ExtensionList1
 {
+  public Collection<Extension>? Extensions { get ; set; }
+  
 }

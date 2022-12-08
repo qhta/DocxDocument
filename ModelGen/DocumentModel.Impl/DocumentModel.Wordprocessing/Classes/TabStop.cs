@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Custom Tab Stop.
 /// </summary>
-public class TabStopImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TabStop>, TabStop
+public class TabStopImpl: ModelElementImpl, TabStop
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TabStop? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TabStop?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Tab Stop Type
   /// </summary>
@@ -29,6 +35,15 @@ public class TabStopImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Tab
       if (OpenXmlElement != null)
         OpenXmlElement.Leader = (DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Tab Stop Position
+  /// </summary>
+  public Int32? Position
+  {
+    get;
+    set;
   }
   
 }

@@ -5,6 +5,36 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class VariableListImpl: DocumentModel.Drawings.LayoutVariablePropertySetTypeImpl, VariableList
 {
+  public new DocumentFormat.OpenXml.Drawing.Diagrams.VariableList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.VariableList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override Boolean? OrganizationChart
+  {
+    get;
+    set;
+  }
+  
+  public override Int32? MaxNumberOfChildren
+  {
+    get;
+    set;
+  }
+  
+  public override Int32? PreferredNumberOfChildren
+  {
+    get;
+    set;
+  }
+  
+  public override Boolean? BulletEnabled
+  {
+    get;
+    set;
+  }
+  
   public override DirectionKind? Direction
   {
     get

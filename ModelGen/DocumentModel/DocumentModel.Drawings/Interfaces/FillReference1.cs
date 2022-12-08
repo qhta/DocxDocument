@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the FillReference Class.
+/// Fill Reference.
 /// </summary>
 public interface FillReference1
 {
@@ -16,7 +16,5 @@ public interface FillReference1
   public SchemeColor? SchemeColor { get ; set; }
   
   public PresetColor? PresetColor { get ; set; }
-  
-  public StyleColor? StyleColor { get ; set; }
   
 }

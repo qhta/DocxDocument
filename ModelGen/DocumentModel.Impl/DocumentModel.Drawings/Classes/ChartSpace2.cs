@@ -1,77 +1,104 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ChartSpace Class.
+/// Chart Space.
 /// </summary>
-public class ChartSpace2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace>, ChartSpace2
+public class ChartSpace2Impl: ModelElementImpl, ChartSpace2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ChartSpace?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
-  /// ChartData.
+  /// Date1904.
   /// </summary>
-  public ChartData? ChartData
+  public Boolean? Date1904
   {
     get;
     set;
   }
   
   /// <summary>
-  /// Chart.
+  /// EditingLanguage.
   /// </summary>
-  public Chart2? Chart
+  public String? EditingLanguage
   {
     get;
     set;
   }
   
   /// <summary>
-  /// ShapeProperties.
+  /// RoundedCorners.
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public Boolean? RoundedCorners
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// TxPrTextBody.
-  /// </summary>
-  public TxPrTextBody? TxPrTextBody
+  public Byte? Style
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// ColorMappingType.
-  /// </summary>
-  public ColorMappingType1? ColorMappingType
+  public ColorMapOverride? ColorMapOverride
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// FormatOverrides.
-  /// </summary>
-  public FormatOverrides? FormatOverrides
+  public PivotSource1? PivotSource
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// PrintSettings.
-  /// </summary>
-  public PrintSettings2? PrintSettings
+  public Protection? Protection
   {
     get;
     set;
   }
   
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList
+  public Chart3? Chart
+  {
+    get;
+    set;
+  }
+  
+  public ShapeProperties1? ShapeProperties
+  {
+    get;
+    set;
+  }
+  
+  public TextProperties2? TextProperties
+  {
+    get;
+    set;
+  }
+  
+  public ExternalData2? ExternalData
+  {
+    get;
+    set;
+  }
+  
+  public PrintSettings1? PrintSettings
+  {
+    get;
+    set;
+  }
+  
+  public RelationshipIdType? UserShapesReference
+  {
+    get;
+    set;
+  }
+  
+  public ChartSpaceExtensionList? ChartSpaceExtensionList
   {
     get;
     set;

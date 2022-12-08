@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineTo
 {
+  /// <summary>
+  /// Line end point.
+  /// </summary>
+  public AdjustPoint2DType? Point { get ; set; }
+  
 }

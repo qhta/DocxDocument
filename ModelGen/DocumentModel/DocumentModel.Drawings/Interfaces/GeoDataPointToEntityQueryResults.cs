@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GeoDataPointToEntityQueryResults
 {
+  public Collection<GeoDataPointToEntityQueryResult>? Items { get ; set; }
+  
 }

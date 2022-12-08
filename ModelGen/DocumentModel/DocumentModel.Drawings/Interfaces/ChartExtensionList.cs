@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ChartExtensionList
 {
+  public Collection<DataDisplayOptions16>? DataDisplayOptions16s { get ; set; }
+  
 }

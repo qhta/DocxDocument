@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Color Transform Category List.
 /// </summary>
-public class ColorTransformCategoriesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories>, ColorTransformCategories
+public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCategories
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<ColorTransformCategory>? Items
+  {
+    get;
+    set;
+  }
+  
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageNumberType Class.
 /// </summary>
-public class PageNumberTypeImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>, PageNumberType
+public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
 {
+  public DocumentFormat.OpenXml.Wordprocessing.PageNumberType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.PageNumberType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Page Number Format
   /// </summary>
@@ -16,6 +22,24 @@ public class PageNumberTypeImpl: ModelElement<DocumentFormat.OpenXml.Wordprocess
       if (OpenXmlElement != null)
         OpenXmlElement.Format = (DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Starting Page Number
+  /// </summary>
+  public Int32? Start
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Chapter Heading Style
+  /// </summary>
+  public Byte? ChapterStyle
+  {
+    get;
+    set;
   }
   
   /// <summary>

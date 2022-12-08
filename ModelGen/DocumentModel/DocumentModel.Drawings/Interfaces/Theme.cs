@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface Theme
 {
   /// <summary>
+  /// name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public String? ThemeId { get ; set; }
+  
+  /// <summary>
   /// ThemeElements.
   /// </summary>
   public ThemeElements? ThemeElements { get ; set; }

@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Inverse Effect.
 /// </summary>
-public class AlphaInverseImpl: ModelElement<DocumentFormat.OpenXml.Drawing.AlphaInverse>, AlphaInverse
+public class AlphaInverseImpl: ModelElementImpl, AlphaInverse
 {
+  public DocumentFormat.OpenXml.Drawing.AlphaInverse? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.AlphaInverse?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

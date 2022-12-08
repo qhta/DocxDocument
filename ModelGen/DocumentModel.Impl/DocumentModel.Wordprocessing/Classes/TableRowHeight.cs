@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableRowHeight Class.
 /// </summary>
-public class TableRowHeightImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TableRowHeight>, TableRowHeight
+public class TableRowHeightImpl: ModelElementImpl, TableRowHeight
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TableRowHeight?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Table Row Height
+  /// </summary>
+  public UInt32? Val
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Table Row Height Type
   /// </summary>

@@ -8,12 +8,14 @@ public interface GlossaryDocumentPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts { get ; set; }
+  public AlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the GlossaryDocumentPart
   /// </summary>
   public ChartPart? ChartParts { get ; set; }
+  
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the GlossaryDocumentPart
@@ -48,12 +50,12 @@ public interface GlossaryDocumentPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the GlossaryDocumentPart
@@ -78,16 +80,18 @@ public interface GlossaryDocumentPart
   /// <summary>
   /// Gets the ImageParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? WordprocessingPrinterSettingsParts { get ; set; }
+  public WordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts { get ; set; }
   
 }

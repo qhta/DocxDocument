@@ -15,4 +15,9 @@ public interface TabStop
   /// </summary>
   public TabStopLeaderCharKind? Leader { get ; set; }
   
+  /// <summary>
+  /// Tab Stop Position
+  /// </summary>
+  public Int32? Position { get ; set; }
+  
 }

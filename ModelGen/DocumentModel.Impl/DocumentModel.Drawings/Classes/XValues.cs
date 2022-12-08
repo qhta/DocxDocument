@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType1Impl, XValues
 {
+  public new DocumentFormat.OpenXml.Drawing.Charts.XValues? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.XValues?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override MultiLevelStringReference? MultiLevelStringReference
   {
     get;

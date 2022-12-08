@@ -1,20 +1,44 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Labels.
+/// Defines the DataLabels Class.
 /// </summary>
 public interface DataLabels1
 {
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos { get ; set; }
   
-  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat { get ; set; }
   
-  public TextProperties1? TextProperties { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public DataLabelPositionKind? DataLabelPosition { get ; set; }
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody { get ; set; }
   
-  public LeaderLines1? LeaderLines { get ; set; }
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities { get ; set; }
   
-  public DLblsExtensionList? DLblsExtensionList { get ; set; }
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring { get ; set; }
+  
+  public Collection<DataLabel1>? Items { get ; set; }
+  
+  public Collection<DataLabelHidden>? DataLabelHiddens { get ; set; }
+  
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

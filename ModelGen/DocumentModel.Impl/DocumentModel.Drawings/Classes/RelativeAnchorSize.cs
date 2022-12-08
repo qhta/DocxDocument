@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Relative Anchor Shape Size.
 /// </summary>
-public class RelativeAnchorSizeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>, RelativeAnchorSize
+public class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
@@ -23,13 +29,13 @@ public class RelativeAnchorSizeImpl: ModelElement<DocumentFormat.OpenXml.Drawing
     set;
   }
   
-  public Shape3? Shape
+  public Shape1? Shape
   {
     get;
     set;
   }
   
-  public GroupShape2? GroupShape
+  public GroupShape1? GroupShape
   {
     get;
     set;

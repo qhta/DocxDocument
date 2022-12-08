@@ -10,4 +10,14 @@ public interface BorderType
   /// </summary>
   public BorderKind? Type { get ; set; }
   
+  /// <summary>
+  /// Border Width
+  /// </summary>
+  public Int32? Width { get ; set; }
+  
+  /// <summary>
+  /// Border shadow
+  /// </summary>
+  public Boolean? Shadow { get ; set; }
+  
 }

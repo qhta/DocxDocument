@@ -10,4 +10,8 @@ public interface DiagramColorsPart
   /// </summary>
   public DocumentModel.Drawings.ColorsDefinition? ColorsDefinition { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
+  
 }

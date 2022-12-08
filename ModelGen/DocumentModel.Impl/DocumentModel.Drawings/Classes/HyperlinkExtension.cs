@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HyperlinkExtension Class.
 /// </summary>
-public class HyperlinkExtensionImpl: ModelElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>, HyperlinkExtension
+public class HyperlinkExtensionImpl: ModelElementImpl, HyperlinkExtension
 {
+  public DocumentFormat.OpenXml.Drawing.HyperlinkExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.HyperlinkExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get;
+    set;
+  }
+  
   public HyperlinkColorEnum? HyperlinkColor
   {
     get

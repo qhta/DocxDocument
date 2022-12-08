@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface Picture
 {
   /// <summary>
+  /// Reference to Custom Function
+  /// </summary>
+  public String? Macro { get ; set; }
+  
+  /// <summary>
+  /// Publish to Server
+  /// </summary>
+  public Boolean? Published { get ; set; }
+  
+  /// <summary>
   /// Non-Visual Picture Properties.
   /// </summary>
   public NonVisualPictureProperties? NonVisualPictureProperties { get ; set; }
@@ -13,7 +23,7 @@ public interface Picture
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public BlipFill2? BlipFill { get ; set; }
+  public BlipFill1? BlipFill { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
@@ -23,6 +33,6 @@ public interface Picture
   /// <summary>
   /// Style.
   /// </summary>
-  public Style4? Style { get ; set; }
+  public Style3? Style { get ; set; }
   
 }

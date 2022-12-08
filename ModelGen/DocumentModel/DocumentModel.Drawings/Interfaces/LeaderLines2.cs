@@ -1,13 +1,10 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LeaderLines Class.
+/// Leader Lines.
 /// </summary>
 public interface LeaderLines2
 {
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get ; set; }
   
 }

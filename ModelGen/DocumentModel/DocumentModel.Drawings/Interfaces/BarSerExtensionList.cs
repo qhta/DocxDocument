@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BarSerExtensionList
 {
+  public Collection<BarSerExtension>? BarSerExtensions { get ; set; }
+  
 }

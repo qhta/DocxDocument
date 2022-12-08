@@ -5,4 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface ThumbnailPart
 {
+  public String? RelationshipType { get ; set; }
+  
 }

@@ -5,18 +5,22 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataLabel4
 {
-  public Layout1? Layout { get ; set; }
+  public LineReference2? LineReference { get ; set; }
   
-  public ChartText1? ChartText { get ; set; }
+  public String? LineWidthScale { get ; set; }
   
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  public FillReference2? FillReference { get ; set; }
   
-  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  public EffectReference1? EffectReference { get ; set; }
   
-  public TextProperties1? TextProperties { get ; set; }
+  public FontReference1? FontReference { get ; set; }
   
-  public DataLabelPositionKind? DataLabelPosition { get ; set; }
+  public ShapeProperties4? ShapeProperties { get ; set; }
   
-  public DLblExtensionList? DLblExtensionList { get ; set; }
+  public TextCharacterPropertiesType2? TextCharacterPropertiesType { get ; set; }
+  
+  public TextBodyProperties? TextBodyProperties { get ; set; }
+  
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

@@ -3,8 +3,68 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Presentation Of.
 /// </summary>
-public class PresentationOfImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>, PresentationOf
+public class PresentationOfImpl: ModelElementImpl, PresentationOf
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Axis
+  /// </summary>
+  public List<AxisKind>? Axis
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Data Point Type
+  /// </summary>
+  public List<ElementKind>? PointType
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Hide Last Transition
+  /// </summary>
+  public List<Boolean>? HideLastTrans
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Start
+  /// </summary>
+  public List<Int32>? Start
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Count
+  /// </summary>
+  public List<UInt32>? Count
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Step
+  /// </summary>
+  public List<Int32>? Step
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ExtensionList.
   /// </summary>

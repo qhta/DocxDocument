@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ConnectionSiteList
 {
+  public Collection<ConnectionSite>? ConnectionSites { get ; set; }
+  
 }

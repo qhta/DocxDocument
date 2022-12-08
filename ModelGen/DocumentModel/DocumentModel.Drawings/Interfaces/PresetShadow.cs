@@ -11,6 +11,16 @@ public interface PresetShadow
   public PresetShadowKind? Preset { get ; set; }
   
   /// <summary>
+  /// Distance
+  /// </summary>
+  public Int64? Distance { get ; set; }
+  
+  /// <summary>
+  /// Direction
+  /// </summary>
+  public Int32? Direction { get ; set; }
+  
+  /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }

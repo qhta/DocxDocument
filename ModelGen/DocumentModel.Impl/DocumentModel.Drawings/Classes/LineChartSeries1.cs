@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineChartSeries Class.
 /// </summary>
-public class LineChartSeries1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries>, LineChartSeries1
+public class LineChartSeries1Impl: ModelElementImpl, LineChartSeries1
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -41,7 +65,19 @@ public class LineChartSeries1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.C
     set;
   }
   
-  public DataLabels1? DataLabels
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Trendline>? Trendlines
   {
     get;
     set;
@@ -60,6 +96,12 @@ public class LineChartSeries1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.C
   }
   
   public Values? Values
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Smooth
   {
     get;
     set;

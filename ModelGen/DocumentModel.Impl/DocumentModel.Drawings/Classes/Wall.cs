@@ -5,13 +5,25 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class WallImpl: DocumentModel.Drawings.StyleEntryImpl, Wall
 {
-  public override LineReference1? LineReference
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.Wall? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.Wall?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override LineReference2? LineReference
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  public override String? LineWidthScale
+  {
+    get;
+    set;
+  }
+  
+  public override FillReference2? FillReference
   {
     get;
     set;
@@ -29,13 +41,13 @@ public class WallImpl: DocumentModel.Drawings.StyleEntryImpl, Wall
     set;
   }
   
-  public override ShapeProperties3? ShapeProperties
+  public override ShapeProperties4? ShapeProperties
   {
     get;
     set;
   }
   
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
+  public override TextCharacterPropertiesType2? TextCharacterPropertiesType
   {
     get;
     set;
@@ -47,7 +59,7 @@ public class WallImpl: DocumentModel.Drawings.StyleEntryImpl, Wall
     set;
   }
   
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  public override OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

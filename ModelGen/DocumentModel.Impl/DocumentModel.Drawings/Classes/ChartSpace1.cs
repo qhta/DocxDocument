@@ -1,59 +1,83 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Chart Space.
+/// Defines the ChartSpace Class.
 /// </summary>
-public class ChartSpace1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpace>, ChartSpace1
+public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
 {
-  public ColorMapOverride? ColorMapOverride
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// ChartData.
+  /// </summary>
+  public ChartData? ChartData
   {
     get;
     set;
   }
   
-  public PivotSource1? PivotSource
-  {
-    get;
-    set;
-  }
-  
-  public Protection? Protection
-  {
-    get;
-    set;
-  }
-  
+  /// <summary>
+  /// Chart.
+  /// </summary>
   public Chart1? Chart
   {
     get;
     set;
   }
   
-  public ShapeProperties1? ShapeProperties
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;
   }
   
-  public TextProperties1? TextProperties
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody
   {
     get;
     set;
   }
   
-  public ExternalData1? ExternalData
+  /// <summary>
+  /// ColorMappingType.
+  /// </summary>
+  public ColorMappingType2? ColorMappingType
   {
     get;
     set;
   }
   
-  public PrintSettings1? PrintSettings
+  /// <summary>
+  /// FormatOverrides.
+  /// </summary>
+  public FormatOverrides? FormatOverrides
   {
     get;
     set;
   }
   
-  public ChartSpaceExtensionList? ChartSpaceExtensionList
+  /// <summary>
+  /// PrintSettings.
+  /// </summary>
+  public PrintSettings2? PrintSettings
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList
   {
     get;
     set;

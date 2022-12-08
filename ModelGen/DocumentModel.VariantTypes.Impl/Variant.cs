@@ -1,6 +1,5 @@
 using System;
-
-using DocumentFormat.OpenXml;
+using DocumentModel.Impl;
 
 namespace DocumentModel.VariantTypes;
 
@@ -8,8 +7,14 @@ namespace DocumentModel.VariantTypes;
 /// Variant implementation. Value is of any type.
 
 /// </summary>
-public class VariantImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.Variant>, Variant
+public class VariantImpl : ModelElementImpl, Variant
 {
+
+  public DocumentFormat.OpenXml.VariantTypes.Variant? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.VariantTypes.Variant?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
 
   public static Variant CreateVariant(DocumentFormat.OpenXml.OpenXmlElement openXmlElement)
   {
@@ -260,15 +265,15 @@ public class VariantImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.Vari
 
   public VariantImpl(DocumentFormat.OpenXml.VariantTypes.Variant element)
   {
-    OpenXmlElement = element;
+    _OpenXmlElement = element;
   }
 
-  public object? Value
+  public virtual object? Value
   {
     get; set;
   }
 
-  public TypeCode GetTypeCode()
+  public virtual TypeCode GetTypeCode()
   {
     if (Value is null)
       return TypeCode.Empty;
@@ -309,7 +314,7 @@ public class VariantImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.Vari
     return TypeCode.Object;
   }
 
-  public object ToType(Type conversionType, IFormatProvider? provider)
+  public virtual object ToType(Type conversionType, IFormatProvider? provider)
   {
     if (conversionType == typeof(Boolean)) return ToBoolean(provider);
     else if (conversionType == typeof(Byte)) return ToByte(provider);
@@ -326,80 +331,80 @@ public class VariantImpl : ModelElement<DocumentFormat.OpenXml.VariantTypes.Vari
     else if (conversionType == typeof(UInt16)) return ToUInt16(provider);
     else if (conversionType == typeof(UInt32)) return ToUInt32(provider);
     else if (conversionType == typeof(UInt64)) return ToUInt64(provider);
-    throw new InvalidOperationException($"Can't convert boolean Variant to {conversionType} type");
+    throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
 
-  public bool ToBoolean(IFormatProvider? provider)
+  public virtual bool ToBoolean(IFormatProvider? provider)
   {
     return Convert.ToBoolean(Value);
   }
 
-  public byte ToByte(IFormatProvider? provider)
+  public virtual byte ToByte(IFormatProvider? provider)
   {
     return Convert.ToByte(Value);
   }
 
-  public char ToChar(IFormatProvider? provider)
+  public virtual char ToChar(IFormatProvider? provider)
   {
     return Convert.ToChar(Value);
   }
 
-  public DateTime ToDateTime(IFormatProvider? provider)
+  public virtual DateTime ToDateTime(IFormatProvider? provider)
   {
     return Convert.ToDateTime(Value);
   }
 
-  public decimal ToDecimal(IFormatProvider? provider)
+  public virtual decimal ToDecimal(IFormatProvider? provider)
   {
     return Convert.ToDecimal(Value);
   }
 
-  public double ToDouble(IFormatProvider? provider)
+  public virtual double ToDouble(IFormatProvider? provider)
   {
     return Convert.ToDouble(Value);
   }
 
-  public short ToInt16(IFormatProvider? provider)
+  public virtual short ToInt16(IFormatProvider? provider)
   {
     return Convert.ToInt16(Value);
   }
 
-  public int ToInt32(IFormatProvider? provider)
+  public virtual int ToInt32(IFormatProvider? provider)
   {
     return Convert.ToInt32(Value);
   }
 
-  public long ToInt64(IFormatProvider? provider)
+  public virtual long ToInt64(IFormatProvider? provider)
   {
     return Convert.ToInt64(Value);
   }
 
-  public sbyte ToSByte(IFormatProvider? provider)
+  public virtual sbyte ToSByte(IFormatProvider? provider)
   {
     return Convert.ToSByte(Value);
   }
 
-  public float ToSingle(IFormatProvider? provider)
+  public virtual float ToSingle(IFormatProvider? provider)
   {
     return Convert.ToSingle(Value);
   }
 
-  public string ToString(IFormatProvider? provider)
+  public virtual string ToString(IFormatProvider? provider)
   {
     return Convert.ToString(Value) ?? "";
   }
 
-  public ushort ToUInt16(IFormatProvider? provider)
+  public virtual ushort ToUInt16(IFormatProvider? provider)
   {
     return Convert.ToUInt16(Value);
   }
 
-  public uint ToUInt32(IFormatProvider? provider)
+  public virtual uint ToUInt32(IFormatProvider? provider)
   {
     return Convert.ToUInt32(Value);
   }
 
-  public ulong ToUInt64(IFormatProvider? provider)
+  public virtual ulong ToUInt64(IFormatProvider? provider)
   {
     return Convert.ToUInt64(Value);
   }

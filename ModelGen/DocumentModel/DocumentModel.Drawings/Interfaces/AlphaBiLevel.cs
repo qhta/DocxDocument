@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface AlphaBiLevel
 {
+  /// <summary>
+  /// Threshold
+  /// </summary>
+  public Int32? Threshold { get ; set; }
+  
 }

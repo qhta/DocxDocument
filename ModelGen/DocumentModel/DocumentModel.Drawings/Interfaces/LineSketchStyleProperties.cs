@@ -5,12 +5,19 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineSketchStyleProperties
 {
+  /// <summary>
+  /// sd, this property is only available in Office 2021 and later.
+  /// </summary>
+  public UInt32? Sd { get ; set; }
+  
   public CustomGeometry? CustomGeometry { get ; set; }
   
   public PresetGeometry? PresetGeometry { get ; set; }
   
   public LineSketchTypeProperties? LineSketchTypeProperties { get ; set; }
   
-  public OfficeArtExtensionList6? OfficeArtExtensionList { get ; set; }
+  public String? LineSketchSeed { get ; set; }
+  
+  public OfficeArtExtensionList8? OfficeArtExtensionList { get ; set; }
   
 }

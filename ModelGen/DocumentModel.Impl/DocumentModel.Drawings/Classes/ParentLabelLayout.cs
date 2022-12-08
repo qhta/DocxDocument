@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ParentLabelLayout Class.
 /// </summary>
-public class ParentLabelLayoutImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>, ParentLabelLayout
+public class ParentLabelLayoutImpl: ModelElementImpl, ParentLabelLayout
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// val, this property is only available in Office 2016 and later.
   /// </summary>

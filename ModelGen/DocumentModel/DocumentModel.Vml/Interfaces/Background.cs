@@ -6,6 +6,21 @@ namespace DocumentModel.Vml;
 public interface Background
 {
   /// <summary>
+  /// Unique Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
+  /// Shape Fill Toggle
+  /// </summary>
+  public Boolean? Filled { get ; set; }
+  
+  /// <summary>
+  /// Fill Color
+  /// </summary>
+  public String? Fillcolor { get ; set; }
+  
+  /// <summary>
   /// Black-and-White Mode
   /// </summary>
   public BlackAndWhiteMode? BlackWhiteMode { get ; set; }

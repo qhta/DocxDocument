@@ -3,12 +3,24 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the VmlDrawingPart
 /// </summary>
-public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, VmlDrawingPart
+public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDrawingPart
 {
+  public new DocumentFormat.OpenXml.Packaging.VmlDrawingPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.VmlDrawingPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the VmlDrawingPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -17,7 +29,13 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// <summary>
   /// Gets the LegacyDiagramTextParts of the VmlDrawingPart
   /// </summary>
-  public OpenXmlPartContainer? LegacyDiagramTextParts
+  public LegacyDiagramTextPart? LegacyDiagramTextParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

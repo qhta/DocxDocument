@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface TableGridChange
 {
   /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
   /// Previous Table Grid.
   /// </summary>
   public PreviousTableGrid? PreviousTableGrid { get ; set; }

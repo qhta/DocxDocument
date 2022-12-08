@@ -5,4 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NumberDataType
 {
+  /// <summary>
+  /// Format Code.
+  /// </summary>
+  public String? FormatCode { get ; set; }
+  
+  /// <summary>
+  /// Point Count.
+  /// </summary>
+  public UInt32? PointCount { get ; set; }
+  
 }

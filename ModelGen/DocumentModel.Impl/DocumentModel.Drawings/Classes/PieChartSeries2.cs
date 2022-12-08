@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PieChartSeries Class.
 /// </summary>
-public class PieChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PieChartSeries>, PieChartSeries2
+public class PieChartSeries2Impl: ModelElementImpl, PieChartSeries2
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.PieChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.PieChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -32,7 +56,22 @@ public class PieChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013
     set;
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// Explosion.
+  /// </summary>
+  public UInt32? Explosion
+  {
+    get;
+    set;
+  }
+  
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;

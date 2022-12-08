@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class EffectReference2Impl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, EffectReference2
 {
+  public new DocumentFormat.OpenXml.Drawing.EffectReference? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.EffectReference?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

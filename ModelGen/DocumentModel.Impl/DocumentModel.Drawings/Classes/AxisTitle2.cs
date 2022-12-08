@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AxisTitle Class.
 /// </summary>
-public class AxisTitle2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisTitle>, AxisTitle2
+public class AxisTitle2Impl: ModelElementImpl, AxisTitle2
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisTitle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisTitle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Text.
   /// </summary>
@@ -17,7 +23,7 @@ public class AxisTitle2Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Draw
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;

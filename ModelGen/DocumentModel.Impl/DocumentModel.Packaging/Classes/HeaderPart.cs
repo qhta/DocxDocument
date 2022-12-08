@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the HeaderPart
 /// </summary>
-public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, HeaderPart
+public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
 {
+  public new DocumentFormat.OpenXml.Packaging.HeaderPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.HeaderPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the HeaderPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -18,6 +24,12 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, H
   /// Gets the ChartParts of the HeaderPart
   /// </summary>
   public ChartPart? ChartParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, H
   /// <summary>
   /// Gets the EmbeddedObjectParts of the HeaderPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, H
   /// <summary>
   /// Gets the EmbeddedPackageParts of the HeaderPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, H
   /// <summary>
   /// Gets the ImageParts of the HeaderPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, H
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

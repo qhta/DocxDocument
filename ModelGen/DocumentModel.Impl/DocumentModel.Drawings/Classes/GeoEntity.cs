@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GeoEntity Class.
 /// </summary>
-public class GeoEntityImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity>, GeoEntity
+public class GeoEntityImpl: ModelElementImpl, GeoEntity
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// entityName, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? EntityName
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>

@@ -31,6 +31,26 @@ public interface ManualLayout
   public LayoutMode? HeightMode { get ; set; }
   
   /// <summary>
+  /// Left.
+  /// </summary>
+  public Double? Left { get ; set; }
+  
+  /// <summary>
+  /// Top.
+  /// </summary>
+  public Double? Top { get ; set; }
+  
+  /// <summary>
+  /// Width.
+  /// </summary>
+  public Double? Width { get ; set; }
+  
+  /// <summary>
+  /// Height.
+  /// </summary>
+  public Double? Height { get ; set; }
+  
+  /// <summary>
   /// Chart Extensibility.
   /// </summary>
   public ExtensionList4? ExtensionList { get ; set; }

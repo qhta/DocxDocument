@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ColorChange
 {
   /// <summary>
+  /// Consider Alpha Values
+  /// </summary>
+  public Boolean? UseAlpha { get ; set; }
+  
+  /// <summary>
   /// Change Color From.
   /// </summary>
   public ColorFrom? ColorFrom { get ; set; }

@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the EndnoteProperties Class.
 /// </summary>
-public class EndnotePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>, EndnoteProperties
+public class EndnotePropertiesImpl: ModelElementImpl, EndnoteProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Endnote Placement.
   /// </summary>
@@ -47,6 +53,15 @@ public class EndnotePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
   /// Endnote Numbering Format.
   /// </summary>
   public NumberingFormat? NumberingFormat
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Footnote and Endnote Numbering Starting Value.
+  /// </summary>
+  public UInt16? NumberingStart
   {
     get;
     set;

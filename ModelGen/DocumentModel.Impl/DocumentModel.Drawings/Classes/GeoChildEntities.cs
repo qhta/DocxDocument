@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GeoChildEntities Class.
 /// </summary>
-public class GeoChildEntitiesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities>, GeoChildEntities
+public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<GeoHierarchyEntity>? GeoHierarchyEntities
+  {
+    get;
+    set;
+  }
+  
 }

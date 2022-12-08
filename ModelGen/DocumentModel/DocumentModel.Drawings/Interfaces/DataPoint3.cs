@@ -5,14 +5,22 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataPoint3
 {
-  /// <summary>
-  /// ShapeProperties.
-  /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public LineReference2? LineReference { get ; set; }
   
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList { get ; set; }
+  public String? LineWidthScale { get ; set; }
+  
+  public FillReference2? FillReference { get ; set; }
+  
+  public EffectReference1? EffectReference { get ; set; }
+  
+  public FontReference1? FontReference { get ; set; }
+  
+  public ShapeProperties4? ShapeProperties { get ; set; }
+  
+  public TextCharacterPropertiesType2? TextCharacterPropertiesType { get ; set; }
+  
+  public TextBodyProperties? TextBodyProperties { get ; set; }
+  
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

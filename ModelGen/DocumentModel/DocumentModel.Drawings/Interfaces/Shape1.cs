@@ -1,38 +1,48 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Shape Class.
+/// Shape Definition.
 /// </summary>
 public interface Shape1
 {
   /// <summary>
-  /// ShapeNonVisualProperties.
+  /// Reference to Custom Function
   /// </summary>
-  public ShapeNonVisualProperties? ShapeNonVisualProperties { get ; set; }
+  public String? Macro { get ; set; }
   
   /// <summary>
-  /// ShapeProperties.
+  /// Text Link
   /// </summary>
-  public ShapeProperties5? ShapeProperties { get ; set; }
+  public String? TextLink { get ; set; }
   
   /// <summary>
-  /// ShapeStyle.
+  /// Lock Text
   /// </summary>
-  public ShapeStyle1? ShapeStyle { get ; set; }
+  public Boolean? LockText { get ; set; }
   
   /// <summary>
-  /// TextBody.
+  /// Publish to Server
   /// </summary>
-  public TextBody2? TextBody { get ; set; }
+  public Boolean? Published { get ; set; }
   
   /// <summary>
-  /// Transform2D.
+  /// Non-Visual Shape Properties.
   /// </summary>
-  public Transform2D2? Transform2D { get ; set; }
+  public NonVisualShapeProperties? NonVisualShapeProperties { get ; set; }
   
   /// <summary>
-  /// OfficeArtExtensionList.
+  /// Shape Properties.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList { get ; set; }
+  public ShapeProperties7? ShapeProperties { get ; set; }
+  
+  /// <summary>
+  /// Shape Style.
+  /// </summary>
+  public Style3? Style { get ; set; }
+  
+  /// <summary>
+  /// Shape Text Body.
+  /// </summary>
+  public TextBody3? TextBody { get ; set; }
   
 }

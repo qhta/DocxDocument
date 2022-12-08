@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BubbleChartSeries Class.
 /// </summary>
-public class BubbleChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BubbleChartSeries>, BubbleChartSeries2
+public class BubbleChartSeries2Impl: ModelElementImpl, BubbleChartSeries2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -32,7 +56,34 @@ public class BubbleChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2
     set;
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// InvertIfNegative.
+  /// </summary>
+  public Boolean? InvertIfNegative
+  {
+    get;
+    set;
+  }
+  
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Trendline>? Trendlines
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ErrorBars>? ErrorBarses
   {
     get;
     set;
@@ -51,6 +102,12 @@ public class BubbleChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2
   }
   
   public BubbleSize? BubbleSize
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Bubble3D
   {
     get;
     set;

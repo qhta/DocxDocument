@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the StyleMatrixReferenceType Class.
 /// </summary>
-public class StyleMatrixReferenceTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType>, StyleMatrixReferenceType
+public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenceType
 {
+  public DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Style Matrix Index
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

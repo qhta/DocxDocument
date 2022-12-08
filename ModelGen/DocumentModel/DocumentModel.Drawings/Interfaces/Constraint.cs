@@ -16,6 +16,11 @@ public interface Constraint
   public ConstraintRelationshipKind? For { get ; set; }
   
   /// <summary>
+  /// For Name
+  /// </summary>
+  public String? ForName { get ; set; }
+  
+  /// <summary>
   /// Data Point Type
   /// </summary>
   public ElementKind? PointType { get ; set; }
@@ -31,6 +36,11 @@ public interface Constraint
   public ConstraintRelationshipKind? ReferenceFor { get ; set; }
   
   /// <summary>
+  /// Reference For Name
+  /// </summary>
+  public String? ReferenceForName { get ; set; }
+  
+  /// <summary>
   /// Reference Point Type
   /// </summary>
   public ElementKind? ReferencePointType { get ; set; }
@@ -39,6 +49,16 @@ public interface Constraint
   /// Operator
   /// </summary>
   public BoolOperatorKind? Operator { get ; set; }
+  
+  /// <summary>
+  /// Value
+  /// </summary>
+  public Double? Val { get ; set; }
+  
+  /// <summary>
+  /// Factor
+  /// </summary>
+  public Double? Fact { get ; set; }
   
   /// <summary>
   /// ExtensionList.

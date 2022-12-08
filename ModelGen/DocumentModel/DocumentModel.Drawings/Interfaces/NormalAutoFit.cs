@@ -5,4 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NormalAutoFit
 {
+  /// <summary>
+  /// Font Scale
+  /// </summary>
+  public Int32? FontScale { get ; set; }
+  
+  /// <summary>
+  /// Line Space Reduction
+  /// </summary>
+  public Int32? LineSpaceReduction { get ; set; }
+  
 }

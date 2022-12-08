@@ -5,4 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface ExtensionList
 {
+  public Collection<Extension>? Extensions { get ; set; }
+  
 }

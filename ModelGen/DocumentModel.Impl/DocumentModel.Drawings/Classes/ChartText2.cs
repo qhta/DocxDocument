@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ChartText Class.
 /// </summary>
-public class ChartText2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>, ChartText2
+public class ChartText2Impl: ModelElementImpl, ChartText2
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// String Reference.
   /// </summary>

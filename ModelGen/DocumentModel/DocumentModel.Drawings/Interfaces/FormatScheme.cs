@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface FormatScheme
 {
   /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// Fill Style List.
   /// </summary>
   public FillStyleList? FillStyleList { get ; set; }

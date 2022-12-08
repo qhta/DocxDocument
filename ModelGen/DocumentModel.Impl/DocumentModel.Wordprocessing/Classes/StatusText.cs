@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Associated Status Text.
 /// </summary>
-public class StatusTextImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.StatusText>, StatusText
+public class StatusTextImpl: ModelElementImpl, StatusText
 {
+  public DocumentFormat.OpenXml.Wordprocessing.StatusText? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.StatusText?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Status Text Type
   /// </summary>
@@ -16,6 +22,15 @@ public class StatusTextImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Wordprocessing.InfoTextValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Status Text Value
+  /// </summary>
+  public String? Val
+  {
+    get;
+    set;
   }
   
 }

@@ -3,6 +3,75 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageMargin Class.
 /// </summary>
-public class PageMarginImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.PageMargin>, PageMargin
+public class PageMarginImpl: ModelElementImpl, PageMargin
 {
+  public DocumentFormat.OpenXml.Wordprocessing.PageMargin? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.PageMargin?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Top Margin Spacing
+  /// </summary>
+  public Int32? Top
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Right Margin Spacing
+  /// </summary>
+  public UInt32? Right
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Page Bottom Spacing
+  /// </summary>
+  public Int32? Bottom
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Left Margin Spacing
+  /// </summary>
+  public UInt32? Left
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Spacing to Top of Header
+  /// </summary>
+  public UInt32? Header
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Spacing to Bottom of Footer
+  /// </summary>
+  public UInt32? Footer
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Page Gutter Spacing
+  /// </summary>
+  public UInt32? Gutter
+  {
+    get;
+    set;
+  }
+  
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Properties.
 /// </summary>
-public class MatrixPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.MatrixProperties>, MatrixProperties
+public class MatrixPropertiesImpl: ModelElementImpl, MatrixProperties
 {
+  public DocumentFormat.OpenXml.Math.MatrixProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.MatrixProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Matrix Base Justification.
   /// </summary>
@@ -79,6 +85,51 @@ public class MatrixPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.Matr
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Row Spacing Rule.
+  /// </summary>
+  public Int32? RowSpacingRule
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Matrix Column Gap Rule.
+  /// </summary>
+  public Int32? ColumnGapRule
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Row Spacing (Matrix).
+  /// </summary>
+  public UInt16? RowSpacing
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Matrix Column Spacing.
+  /// </summary>
+  public UInt32? ColumnSpacing
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Matrix Column Gap.
+  /// </summary>
+  public UInt16? ColumnGap
+  {
+    get;
+    set;
   }
   
   /// <summary>

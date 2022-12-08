@@ -10,4 +10,8 @@ public interface ChartStylePart
   /// </summary>
   public DocumentModel.Drawings.ChartStyle? ChartStyle { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
+  
 }

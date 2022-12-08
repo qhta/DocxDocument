@@ -3,12 +3,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Date Axis.
 /// </summary>
-public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DateAxis>, DateAxis
+public class DateAxisImpl: ModelElementImpl, DateAxis
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.DateAxis? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.DateAxis?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Axis ID.
+  /// </summary>
+  public UInt32? AxisId
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Scaling.
   /// </summary>
   public Scaling? Scaling
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Delete.
+  /// </summary>
+  public Boolean? Delete
   {
     get;
     set;
@@ -73,7 +97,7 @@ public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Da
   /// <summary>
   /// Title.
   /// </summary>
-  public Title2? Title
+  public Title1? Title
   {
     get;
     set;
@@ -214,7 +238,16 @@ public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Da
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Crossing Axis ID.
+  /// </summary>
+  public UInt32? CrossingAxis
   {
     get;
     set;
@@ -255,6 +288,24 @@ public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Da
     }
   }
   
+  public Double? CrossesAt
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? AutoLabeled
+  {
+    get;
+    set;
+  }
+  
+  public UInt16? LabelOffset
+  {
+    get;
+    set;
+  }
+  
   public TimeUnitKind? BaseTimeUnit
   {
     get
@@ -290,6 +341,12 @@ public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Da
     }
   }
   
+  public Double? MajorUnit
+  {
+    get;
+    set;
+  }
+  
   public TimeUnitKind? MajorTimeUnit
   {
     get
@@ -323,6 +380,12 @@ public class DateAxisImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Da
         }
       }
     }
+  }
+  
+  public Double? MinorUnit
+  {
+    get;
+    set;
   }
   
   public TimeUnitKind? MinorTimeUnit

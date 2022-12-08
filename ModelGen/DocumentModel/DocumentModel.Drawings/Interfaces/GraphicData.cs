@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GraphicData
 {
+  /// <summary>
+  /// Uniform Resource Identifier
+  /// </summary>
+  public String? Uri { get ; set; }
+  
 }

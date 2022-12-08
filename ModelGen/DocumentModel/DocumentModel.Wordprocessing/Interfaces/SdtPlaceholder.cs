@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface SdtPlaceholder
 {
+  /// <summary>
+  /// Document Part Reference.
+  /// </summary>
+  public String? DocPartReference { get ; set; }
+  
 }

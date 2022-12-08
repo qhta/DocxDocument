@@ -1,48 +1,45 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ChartSpace Class.
+/// Chart Space.
 /// </summary>
 public interface ChartSpace2
 {
   /// <summary>
-  /// ChartData.
+  /// Date1904.
   /// </summary>
-  public ChartData? ChartData { get ; set; }
+  public Boolean? Date1904 { get ; set; }
   
   /// <summary>
-  /// Chart.
+  /// EditingLanguage.
   /// </summary>
-  public Chart2? Chart { get ; set; }
+  public String? EditingLanguage { get ; set; }
   
   /// <summary>
-  /// ShapeProperties.
+  /// RoundedCorners.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public Boolean? RoundedCorners { get ; set; }
   
-  /// <summary>
-  /// TxPrTextBody.
-  /// </summary>
-  public TxPrTextBody? TxPrTextBody { get ; set; }
+  public Byte? Style { get ; set; }
   
-  /// <summary>
-  /// ColorMappingType.
-  /// </summary>
-  public ColorMappingType1? ColorMappingType { get ; set; }
+  public ColorMapOverride? ColorMapOverride { get ; set; }
   
-  /// <summary>
-  /// FormatOverrides.
-  /// </summary>
-  public FormatOverrides? FormatOverrides { get ; set; }
+  public PivotSource1? PivotSource { get ; set; }
   
-  /// <summary>
-  /// PrintSettings.
-  /// </summary>
-  public PrintSettings2? PrintSettings { get ; set; }
+  public Protection? Protection { get ; set; }
   
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList { get ; set; }
+  public Chart3? Chart { get ; set; }
+  
+  public ShapeProperties1? ShapeProperties { get ; set; }
+  
+  public TextProperties2? TextProperties { get ; set; }
+  
+  public ExternalData2? ExternalData { get ; set; }
+  
+  public PrintSettings1? PrintSettings { get ; set; }
+  
+  public RelationshipIdType? UserShapesReference { get ; set; }
+  
+  public ChartSpaceExtensionList? ChartSpaceExtensionList { get ; set; }
   
 }

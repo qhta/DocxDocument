@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the NotesMasterPart
 /// </summary>
-public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, NotesMasterPart
+public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesMasterPart
 {
+  public new DocumentFormat.OpenXml.Packaging.NotesMasterPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.NotesMasterPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the NotesMasterPart
   /// </summary>
@@ -14,10 +20,16 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
     set;
   }
   
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the CustomXmlParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts
+  public CustomXmlPart? CustomXmlParts
   {
     get;
     set;
@@ -71,7 +83,7 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedControlPersistenceBinaryDataParts
+  public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedObjectParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the EmbeddedPackageParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -107,7 +119,7 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the ImageParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -116,7 +128,13 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;
@@ -125,7 +143,7 @@ public class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerIm
   /// <summary>
   /// Gets the UserDefinedTagsParts of the NotesMasterPart
   /// </summary>
-  public OpenXmlPartContainer? UserDefinedTagsParts
+  public UserDefinedTagsPart? UserDefinedTagsParts
   {
     get;
     set;

@@ -8,6 +8,7 @@ namespace ModelGen;
 
 public class PropInfo: ModelElement
 {
+  public TypeInfo? DeclaringType => (TypeInfo?)Owner;
   public PropertyInfo? PropertyInfo { get; set; }
   public TypeInfo PropertyType { get; set; }
   public bool IsStatic { get; set; }

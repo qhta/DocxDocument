@@ -1,10 +1,20 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Surface Chart Series.
+/// Defines the SurfaceChartSeries Class.
 /// </summary>
 public interface SurfaceChartSeries1
 {
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order { get ; set; }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -29,6 +39,11 @@ public interface SurfaceChartSeries1
   /// Values.
   /// </summary>
   public Values? Values { get ; set; }
+  
+  /// <summary>
+  /// Bubble3D.
+  /// </summary>
+  public Boolean? Bubble3D { get ; set; }
   
   /// <summary>
   /// SurfaceSerExtensionList.

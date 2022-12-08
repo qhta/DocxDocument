@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// 3D Bar Charts.
 /// </summary>
-public class Bar3DChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart>, Bar3DChart
+public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Bar Direction.
   /// </summary>
@@ -81,20 +87,47 @@ public class Bar3DChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
     }
   }
   
-  public DataLabels1? DataLabels
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
   {
     get;
     set;
   }
   
-  public ShapeKind2? Shape
+  public Collection<BarChartSeries2>? BarChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public UInt16? GapWidth
+  {
+    get;
+    set;
+  }
+  
+  public UInt16? GapDepth
+  {
+    get;
+    set;
+  }
+  
+  public ShapeKind1? Shape
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Shape>();
-        return (ShapeKind2?)openXmlElement?.Val?.Value;
+        return (ShapeKind1?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -120,6 +153,12 @@ public class Bar3DChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
         }
       }
     }
+  }
+  
+  public Collection<UInt32>? AxisIds
+  {
+    get;
+    set;
   }
   
   public Bar3DChartExtensionList? Bar3DChartExtensionList

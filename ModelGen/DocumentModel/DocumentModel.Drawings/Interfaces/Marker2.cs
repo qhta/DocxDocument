@@ -11,6 +11,11 @@ public interface Marker2
   public MarkerStyleKind? Symbol { get ; set; }
   
   /// <summary>
+  /// Size.
+  /// </summary>
+  public Byte? Size { get ; set; }
+  
+  /// <summary>
   /// ChartShapeProperties.
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get ; set; }

@@ -6,9 +6,24 @@ namespace DocumentModel.Wordprocessing;
 public interface DocumentBackground
 {
   /// <summary>
+  /// color
+  /// </summary>
+  public String? Color { get ; set; }
+  
+  /// <summary>
   /// themeColor
   /// </summary>
   public ThemeColorKind? ThemeColor { get ; set; }
+  
+  /// <summary>
+  /// themeTint
+  /// </summary>
+  public String? ThemeTint { get ; set; }
+  
+  /// <summary>
+  /// themeShade
+  /// </summary>
+  public String? ThemeShade { get ; set; }
   
   /// <summary>
   /// Background.

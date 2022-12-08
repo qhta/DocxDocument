@@ -8,7 +8,7 @@ public interface MainDocumentPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts { get ; set; }
+  public AlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the MainDocumentPart
@@ -18,7 +18,7 @@ public interface MainDocumentPart
   /// <summary>
   /// Gets the CustomXmlParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts { get ; set; }
+  public CustomXmlPart? CustomXmlParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the MainDocumentPart
@@ -58,12 +58,12 @@ public interface MainDocumentPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the MainDocumentPart
@@ -83,16 +83,18 @@ public interface MainDocumentPart
   /// <summary>
   /// Gets the ImageParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? WordprocessingPrinterSettingsParts { get ; set; }
+  public WordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts { get ; set; }
   
 }

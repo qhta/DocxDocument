@@ -5,6 +5,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class UnderlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Underline
 {
+  public new DocumentFormat.OpenXml.Drawing.Underline? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Underline?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -59,6 +71,18 @@ public class UnderlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Under
   }
   
   public CustomDash? CustomDash
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Round
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? LineJoinBevel
   {
     get;
     set;

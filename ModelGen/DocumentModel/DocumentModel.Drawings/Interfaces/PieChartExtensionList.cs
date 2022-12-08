@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PieChartExtensionList
 {
+  public Collection<PieChartExtension>? PieChartExtensions { get ; set; }
+  
 }

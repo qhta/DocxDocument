@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// 3D Scene Properties.
 /// </summary>
-public class Scene3DTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Scene3DType>, Scene3DType
+public class Scene3DTypeImpl: ModelElementImpl, Scene3DType
 {
+  public DocumentFormat.OpenXml.Drawing.Scene3DType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Scene3DType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Camera.
   /// </summary>

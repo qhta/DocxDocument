@@ -6,9 +6,43 @@ namespace DocumentModel.Wordprocessing;
 public interface EmbeddedObject
 {
   /// <summary>
+  /// dxaOrig
+  /// </summary>
+  public String? DxaOriginal { get ; set; }
+  
+  /// <summary>
+  /// dyaOrig
+  /// </summary>
+  public String? DyaOriginal { get ; set; }
+  
+  /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AnchorId { get ; set; }
+  public DocumentModel.HexBinaryValue? AnchorId { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Group>? Groups { get ; set; }
+  
+  public Collection<DocumentModel.Vml.ImageFile>? ImageFiles { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Line>? Lines { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Oval>? Ovals { get ; set; }
+  
+  public Collection<DocumentModel.Vml.PolyLine>? PolyLines { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Rectangle>? Rectangles { get ; set; }
+  
+  public Collection<DocumentModel.Vml.RoundRectangle>? RoundRectangles { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Shape>? Shapes { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Shapetype>? Shapetypes { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Arc>? Arcs { get ; set; }
+  
+  public Collection<DocumentModel.Vml.Curve>? Curves { get ; set; }
+  
+  public Collection<DocumentModel.Vml.OleObject>? OleObjects { get ; set; }
   
   public Drawing? Drawing { get ; set; }
   

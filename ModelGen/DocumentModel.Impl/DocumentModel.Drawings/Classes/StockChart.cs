@@ -3,9 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Stock Charts.
 /// </summary>
-public class StockChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.StockChart>, StockChart
+public class StockChartImpl: ModelElementImpl, StockChart
 {
-  public DataLabels1? DataLabels
+  public DocumentFormat.OpenXml.Drawing.Charts.StockChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.StockChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<LineChartSeries1>? LineChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;
@@ -24,6 +36,12 @@ public class StockChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.
   }
   
   public UpDownBars? UpDownBars
+  {
+    get;
+    set;
+  }
+  
+  public Collection<UInt32>? AxisIds
   {
     get;
     set;

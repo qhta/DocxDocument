@@ -3,8 +3,41 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Delimiter Properties.
 /// </summary>
-public class DelimiterPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.DelimiterProperties>, DelimiterProperties
+public class DelimiterPropertiesImpl: ModelElementImpl, DelimiterProperties
 {
+  public DocumentFormat.OpenXml.Math.DelimiterProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.DelimiterProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Delimiter Beginning Character.
+  /// </summary>
+  public String? BeginChar
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Delimiter Separator Character.
+  /// </summary>
+  public String? SeparatorChar
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Delimiter Ending Character.
+  /// </summary>
+  public String? EndChar
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Delimiter Grow.
   /// </summary>

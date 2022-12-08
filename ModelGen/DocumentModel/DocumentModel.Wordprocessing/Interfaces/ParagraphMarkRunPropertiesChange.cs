@@ -6,6 +6,21 @@ namespace DocumentModel.Wordprocessing;
 public interface ParagraphMarkRunPropertiesChange
 {
   /// <summary>
+  /// author
+  /// </summary>
+  public String? Author { get ; set; }
+  
+  /// <summary>
+  /// date
+  /// </summary>
+  public DateTime? Date { get ; set; }
+  
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
+  /// <summary>
   /// Previous Run Properties for the Paragraph Mark.
   /// </summary>
   public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get ; set; }

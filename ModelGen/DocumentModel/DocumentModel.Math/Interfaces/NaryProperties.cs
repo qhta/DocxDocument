@@ -6,6 +6,11 @@ namespace DocumentModel.Math;
 public interface NaryProperties
 {
   /// <summary>
+  /// n-ary Operator Character.
+  /// </summary>
+  public String? AccentChar { get ; set; }
+  
+  /// <summary>
   /// n-ary Limit Location.
   /// </summary>
   public LimitLocationKind? LimitLocation { get ; set; }

@@ -5,4 +5,24 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ReadModeInkLockDown
 {
+  /// <summary>
+  /// Use Actual Pages, Not Virtual Pages
+  /// </summary>
+  public Boolean? UseActualPages { get ; set; }
+  
+  /// <summary>
+  /// Virtual Page Width
+  /// </summary>
+  public UInt32? Width { get ; set; }
+  
+  /// <summary>
+  /// Virtual Page Height
+  /// </summary>
+  public UInt32? Height { get ; set; }
+  
+  /// <summary>
+  /// Font Size Scaling
+  /// </summary>
+  public String? FontSize { get ; set; }
+  
 }

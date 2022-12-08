@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GeoChildEntitiesQueryResults
 {
+  public Collection<GeoChildEntitiesQueryResult>? Items { get ; set; }
+  
 }

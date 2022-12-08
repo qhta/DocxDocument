@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ShapeNonVisualProperties Class.
 /// </summary>
-public class ShapeNonVisualPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties>, ShapeNonVisualProperties
+public class ShapeNonVisualPropertiesImpl: ModelElementImpl, ShapeNonVisualProperties
 {
+  public DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties1? NonVisualDrawingProperties
+  public NonVisualDrawingProperties2? NonVisualDrawingProperties
   {
     get;
     set;

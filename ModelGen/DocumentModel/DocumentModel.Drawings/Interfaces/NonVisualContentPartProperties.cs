@@ -8,7 +8,7 @@ public interface NonVisualContentPartProperties
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties3? NonVisualDrawingProperties { get ; set; }
+  public NonVisualDrawingProperties1? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualInkContentPartProperties.

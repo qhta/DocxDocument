@@ -6,9 +6,29 @@ namespace DocumentModel.Drawings;
 public interface DataPoint2
 {
   /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
+  /// Invert if Negative.
+  /// </summary>
+  public Boolean? InvertIfNegative { get ; set; }
+  
+  /// <summary>
   /// Marker.
   /// </summary>
   public Marker1? Marker { get ; set; }
+  
+  /// <summary>
+  /// 3D Bubble.
+  /// </summary>
+  public Boolean? Bubble3D { get ; set; }
+  
+  /// <summary>
+  /// Explosion.
+  /// </summary>
+  public UInt32? Explosion { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.

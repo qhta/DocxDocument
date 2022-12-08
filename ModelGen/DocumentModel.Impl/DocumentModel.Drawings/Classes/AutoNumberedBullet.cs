@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Auto-Numbered Bullet.
 /// </summary>
-public class AutoNumberedBulletImpl: ModelElement<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>, AutoNumberedBullet
+public class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
 {
+  public DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.AutoNumberedBullet?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Bullet Autonumbering Type
   /// </summary>
@@ -16,6 +22,15 @@ public class AutoNumberedBulletImpl: ModelElement<DocumentFormat.OpenXml.Drawing
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Start Numbering At
+  /// </summary>
+  public Int32? StartAt
+  {
+    get;
+    set;
   }
   
 }

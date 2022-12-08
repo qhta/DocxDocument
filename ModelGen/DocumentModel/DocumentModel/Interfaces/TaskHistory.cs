@@ -5,4 +5,6 @@ namespace DocumentModel;
 /// </summary>
 public interface TaskHistory
 {
+  public Collection<TaskHistoryEvent>? TaskHistoryEvents { get ; set; }
+  
 }

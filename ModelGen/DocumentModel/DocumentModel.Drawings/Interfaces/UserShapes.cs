@@ -5,4 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface UserShapes
 {
+  public Collection<RelativeAnchorSize>? RelativeAnchorSizes { get ; set; }
+  
+  public Collection<AbsoluteAnchorSize>? AbsoluteAnchorSizes { get ; set; }
+  
 }

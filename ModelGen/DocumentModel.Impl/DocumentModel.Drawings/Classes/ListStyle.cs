@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ListStyle Class.
 /// </summary>
-public class ListStyleImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ListStyle>, ListStyle
+public class ListStyleImpl: ModelElementImpl, ListStyle
 {
+  public DocumentFormat.OpenXml.Drawing.ListStyle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ListStyle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Default Paragraph Style.
   /// </summary>

@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// n-ary Operator Function.
 /// </summary>
-public class NaryImpl: ModelElement<DocumentFormat.OpenXml.Math.Nary>, Nary
+public class NaryImpl: ModelElementImpl, Nary
 {
+  public DocumentFormat.OpenXml.Math.Nary? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.Nary?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// n-ary Properties.
   /// </summary>

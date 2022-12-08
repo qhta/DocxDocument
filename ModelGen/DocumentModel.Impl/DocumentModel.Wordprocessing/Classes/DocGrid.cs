@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the DocGrid Class.
 /// </summary>
-public class DocGridImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.DocGrid>, DocGrid
+public class DocGridImpl: ModelElementImpl, DocGrid
 {
+  public DocumentFormat.OpenXml.Wordprocessing.DocGrid? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.DocGrid?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Document Grid Type
   /// </summary>
@@ -16,6 +22,24 @@ public class DocGridImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Doc
       if (OpenXmlElement != null)
         OpenXmlElement.Type = (DocumentFormat.OpenXml.Wordprocessing.DocGridValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Document Grid Line Pitch
+  /// </summary>
+  public Int32? LinePitch
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Document Grid Character Pitch
+  /// </summary>
+  public Int32? CharacterSpace
+  {
+    get;
+    set;
   }
   
 }

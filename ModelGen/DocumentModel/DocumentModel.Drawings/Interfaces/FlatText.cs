@@ -5,4 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface FlatText
 {
+  /// <summary>
+  /// Z Coordinate
+  /// </summary>
+  public Int64? Z { get ; set; }
+  
 }

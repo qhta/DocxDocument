@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Level
 {
+  public Collection<StringPoint>? StringPoints { get ; set; }
+  
 }

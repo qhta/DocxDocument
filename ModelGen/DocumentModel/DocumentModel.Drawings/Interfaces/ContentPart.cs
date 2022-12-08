@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ContentPart
 {
   /// <summary>
+  /// id, this property is only available in Office 2010 and later.
+  /// </summary>
+  public String? RelationshipId { get ; set; }
+  
+  /// <summary>
   /// bwMode, this property is only available in Office 2010 and later.
   /// </summary>
   public BlackWhiteMode? BlackWhiteMode { get ; set; }
@@ -23,11 +28,11 @@ public interface ContentPart
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public Transform2D3? Transform2D { get ; set; }
+  public Transform2D1? Transform2D { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList7? OfficeArtExtensionList { get ; set; }
   
 }

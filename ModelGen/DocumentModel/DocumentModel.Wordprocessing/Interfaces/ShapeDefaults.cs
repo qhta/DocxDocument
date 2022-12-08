@@ -5,4 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ShapeDefaults
 {
+  public Collection<DocumentModel.Vml.ShapeDefaults>? ShapeDefaultses { get ; set; }
+  
+  public Collection<DocumentModel.Vml.ShapeLayout>? ShapeLayouts { get ; set; }
+  
 }

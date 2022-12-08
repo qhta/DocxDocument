@@ -3,12 +3,108 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ContentPartLocks Class.
 /// </summary>
-public class ContentPartLocksImpl: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>, ContentPartLocks
+public class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Grouping
+  /// </summary>
+  public Boolean? NoGrouping
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Selection
+  /// </summary>
+  public Boolean? NoSelection
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Rotation
+  /// </summary>
+  public Boolean? NoRotation
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Aspect Ratio Change
+  /// </summary>
+  public Boolean? NoChangeAspect
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Movement
+  /// </summary>
+  public Boolean? NoMove
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Resize
+  /// </summary>
+  public Boolean? NoResize
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Point Editing
+  /// </summary>
+  public Boolean? NoEditPoints
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Showing Adjust Handles
+  /// </summary>
+  public Boolean? NoAdjustHandles
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Arrowhead Changes
+  /// </summary>
+  public Boolean? NoChangeArrowheads
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Disallow Shape Type Change
+  /// </summary>
+  public Boolean? NoChangeShapeType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList
+  public OfficeArtExtensionList6? OfficeArtExtensionList
   {
     get;
     set;

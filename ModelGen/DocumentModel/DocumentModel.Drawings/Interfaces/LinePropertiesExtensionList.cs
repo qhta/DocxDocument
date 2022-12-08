@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LinePropertiesExtensionList
 {
+  public Collection<LinePropertiesExtension>? LinePropertiesExtensions { get ; set; }
+  
 }

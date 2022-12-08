@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document-Wide Endnote Properties.
 /// </summary>
-public class EndnoteDocumentWidePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties>, EndnoteDocumentWideProperties
+public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumentWideProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Endnote Placement.
   /// </summary>
@@ -53,6 +59,15 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElement<DocumentFormat.Open
   }
   
   /// <summary>
+  /// Footnote and Endnote Numbering Starting Value.
+  /// </summary>
+  public UInt16? NumberingStart
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Footnote and Endnote Numbering Restart Location.
   /// </summary>
   public RestartNumberKind? NumberingRestart
@@ -88,6 +103,12 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElement<DocumentFormat.Open
         }
       }
     }
+  }
+  
+  public Collection<FootnoteEndnoteSeparatorReferenceType>? EndnoteSpecialReferences
+  {
+    get;
+    set;
   }
   
 }

@@ -5,4 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface CheckBox
 {
+  public String? FormFieldSize { get ; set; }
+  
+  public Boolean? AutomaticallySizeFormField { get ; set; }
+  
+  public Boolean? DefaultCheckBoxFormFieldState { get ; set; }
+  
+  public Boolean? Checked { get ; set; }
+  
 }

@@ -10,4 +10,9 @@ public interface GlossaryDocument
   /// </summary>
   public DocumentBackground? DocumentBackground { get ; set; }
   
+  /// <summary>
+  /// List of Glossary Document Entries.
+  /// </summary>
+  public DocumentModel.ModelElement? DocParts { get ; set; }
+  
 }

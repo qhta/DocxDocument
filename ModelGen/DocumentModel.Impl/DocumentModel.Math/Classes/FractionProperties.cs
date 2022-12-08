@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Fraction Properties.
 /// </summary>
-public class FractionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.FractionProperties>, FractionProperties
+public class FractionPropertiesImpl: ModelElementImpl, FractionProperties
 {
+  public DocumentFormat.OpenXml.Math.FractionProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.FractionProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Fraction type.
   /// </summary>

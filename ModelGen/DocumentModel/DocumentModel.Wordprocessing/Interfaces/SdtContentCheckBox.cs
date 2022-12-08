@@ -13,6 +13,11 @@ public interface SdtContentCheckBox
   /// <summary>
   /// CheckedState.
   /// </summary>
-  public Boolean? CheckedState { get ; set; }
+  public CheckBoxSymbolType? CheckedState { get ; set; }
+  
+  /// <summary>
+  /// UncheckedState.
+  /// </summary>
+  public CheckBoxSymbolType? UncheckedState { get ; set; }
   
 }

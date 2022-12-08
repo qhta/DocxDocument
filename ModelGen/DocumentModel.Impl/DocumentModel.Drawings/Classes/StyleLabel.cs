@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Style Label.
 /// </summary>
-public class StyleLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>, StyleLabel
+public class StyleLabelImpl: ModelElementImpl, StyleLabel
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Style Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// 3-D Scene.
   /// </summary>
@@ -26,7 +41,7 @@ public class StyleLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties2? TextProperties
+  public TextProperties1? TextProperties
   {
     get;
     set;
@@ -35,7 +50,7 @@ public class StyleLabelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style3? Style
+  public Style1? Style
   {
     get;
     set;

@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface KeyMapCustomizations
 {
+  public Collection<KeyMapEntry>? KeyMapEntries { get ; set; }
+  
 }

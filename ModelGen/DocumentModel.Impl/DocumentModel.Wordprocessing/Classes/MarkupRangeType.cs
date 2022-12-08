@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MarkupRangeType Class.
 /// </summary>
-public class MarkupRangeTypeImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType>, MarkupRangeType
+public class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
 {
+  public DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
@@ -16,6 +22,15 @@ public class MarkupRangeTypeImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
       if (OpenXmlElement != null)
         OpenXmlElement.DisplacedByCustomXml = (DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
   }
   
 }

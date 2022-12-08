@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface Frameset
 {
   /// <summary>
+  /// Nested Frameset Size.
+  /// </summary>
+  public String? FrameSize { get ; set; }
+  
+  /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
   public FramesetSplitbar? FramesetSplitbar { get ; set; }
@@ -14,5 +19,9 @@ public interface Frameset
   /// Frameset Layout.
   /// </summary>
   public FrameLayoutKind? FrameLayout { get ; set; }
+  
+  public Collection<Frameset>? Framesets { get ; set; }
+  
+  public Collection<Frame>? Frames { get ; set; }
   
 }

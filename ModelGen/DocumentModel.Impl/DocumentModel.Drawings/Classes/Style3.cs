@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Style.
 /// </summary>
-public class Style3Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Style>, Style3
+public class Style3Impl: ModelElementImpl, Style3
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.Style? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Style?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference2? LineReference
+  public LineReference1? LineReference
   {
     get;
     set;
@@ -17,7 +23,7 @@ public class Style3Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.St
   /// <summary>
   /// FillReference.
   /// </summary>
-  public FillReference2? FillReference
+  public FillReference1? FillReference
   {
     get;
     set;
