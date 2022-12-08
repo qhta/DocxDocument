@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Theme.
 /// </summary>
-public class ThemeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Theme>, Theme
+public class ThemeImpl: ModelElementImpl, Theme
 {
+  public DocumentFormat.OpenXml.Drawing.Theme? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Theme?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public String? ThemeId
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ThemeElements.
   /// </summary>

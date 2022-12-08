@@ -3,6 +3,57 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Visibility of Annotation Types.
 /// </summary>
-public class RevisionViewImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.RevisionView>, RevisionView
+public class RevisionViewImpl: ModelElementImpl, RevisionView
 {
+  public DocumentFormat.OpenXml.Wordprocessing.RevisionView? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.RevisionView?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Display Visual Indicator Of Markup Area
+  /// </summary>
+  public Boolean? Markup
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display Comments
+  /// </summary>
+  public Boolean? Comments
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display Content Revisions
+  /// </summary>
+  public Boolean? DisplayRevision
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display Formatting Revisions
+  /// </summary>
+  public Boolean? Formatting
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Display Ink Annotations
+  /// </summary>
+  public Boolean? InkAnnotations
+  {
+    get;
+    set;
+  }
+  
 }

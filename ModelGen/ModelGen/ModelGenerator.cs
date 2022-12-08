@@ -1,9 +1,11 @@
 ﻿using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Reflection;
+
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Framework;
+using DocumentFormat.OpenXml.Packaging;
 
 using Namotion.Reflection;
 
@@ -116,6 +118,8 @@ public class ModelGenerator
     GenDocumentationComments(typeInfo, writer);
     GenerateCustomAttributes(typeInfo.CustomAttributes, writer);
 
+    bool newOpenXmlElementProperty = true;
+
     if (kind == TypeKind.Interface)
     {
       var str = $"public interface {typeName}";
@@ -132,41 +136,18 @@ public class ModelGenerator
           var baseInterfaceName = typeInfo.BaseTypeInfo.GetConvertedName(kind);
           baseTypeNames.Add(baseInterfaceName.ToString());
         }
-        else
-        {
-          if (typeInfo.BaseTypeInfo.Type == typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement))
-          {
-            var metadata = typeInfo.Metadata;
-            if (metadata == null)
-              metadata = typeInfo.InspectType();
-            if (metadata != null)
-            {
-              Debug.WriteLine(typeInfo.Name);
-              Debug.Indent();
-              foreach (var validator in metadata.Validators)
-              {
-                if (validator is NameProviderValidator nameProviderValidator)
-                {
-                  var other = nameProviderValidator._other;
-                  var otherValidatorType = other?.GetType();
-                  if (otherValidatorType != null && otherValidatorType.Name.StartsWith("SimpleTypeValidator`"))
-                    if (otherValidatorType.IsConstructedGenericType)
-                    {
-                      var argumentType = otherValidatorType.GetGenericArguments().FirstOrDefault();
-                      if (argumentType != null)
-                        Debug.WriteLine(argumentType);
-                    }
-                  //Type? valueType = null;
-                  //baseTypeNames.Add($"SimpleTypeModelElement<{valueType}, {typeInfo.GetFullName(true)}>");
-                }
-              }
-              Debug.Unindent();
-            }
-          }
-        }
       }
       if (baseTypeNames.Count == 0)
-        baseTypeNames.Add($"ModelElement<{typeInfo.GetFullName(true)}>");
+      {
+        if (typeInfo.Type.IsSubclassOf(typeof(DocumentFormat.OpenXml.OpenXmlElement)))
+          baseTypeNames.Add($"ModelElementImpl");
+        else
+        if (typeInfo.Type.IsSubclassOf(typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart)))
+          baseTypeNames.Add($"ModelPartImpl");
+        else
+          baseTypeNames.Add($"ModelObjectImpl");
+        newOpenXmlElementProperty = false;
+      }
       baseTypeNames.Add(typeInfo.GetFullName(false, true, false));
       var baseStr = baseTypeNames.Any() ? ": " + String.Join(", ", baseTypeNames) : String.Empty;
       typeName += "Impl";
@@ -177,6 +158,10 @@ public class ModelGenerator
       throw new NotImplementedException($"GenerateClassOrInterface not implemented for kind {kind}");
     writer.WriteLine("{");
     writer.Indent++;
+    if (kind == TypeKind.Class)
+    {
+      GenerateOpenXmlElementProperty(typeInfo.GetFullName(true), newOpenXmlElementProperty, writer);
+    }
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
         GenerateProperty(prop, aNamespace, writer, kind);
@@ -186,6 +171,17 @@ public class ModelGenerator
       GeneratedInterfacesCount += 1;
     else if (kind == TypeKind.Class)
       GeneratedClassesCount += 1;
+  }
+
+  private void GenerateOpenXmlElementProperty(string origModelElementTypeName, bool newProperty, IndentedTextWriter writer)
+  {
+    var newPropertyStr = newProperty ? "new " : String.Empty;
+    writer.WriteLine($"public {newPropertyStr}{origModelElementTypeName}? OpenXmlElement");
+    writer.WriteLine($"{{");
+    writer.WriteLine($"  get => ({origModelElementTypeName}?)_OpenXmlElement;");
+    writer.WriteLine($"  set => _OpenXmlElement = value;");
+    writer.WriteLine($"}}");
+    writer.WriteLine();
   }
 
   private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, TypeKind kind)
@@ -272,7 +268,7 @@ public class ModelGenerator
     writer.WriteLine($"  set => throw new NotImplementedException(\"Method not implemented\");");
   }
 
-  private void GenerateEnumPropAccessorsForDirectProperties(PropertyInfo propertyInfo, 
+  private void GenerateEnumPropAccessorsForDirectProperties(PropertyInfo propertyInfo,
     string genPropTypeName, string origPropName, string origTargetTypeName,
     IndentedTextWriter writer)
   {
@@ -484,20 +480,6 @@ public class ModelGenerator
         writer.WriteLine($"/// {summary}");
         writer.WriteLine("/// </summary>");
       }
-      //var childItemTypes = DocumentationReader.GetChildItemTypes(documentation, typeInfo.Type.Assembly);
-      //if (childItemTypes != null)
-      //{
-      //  foreach (var childItemType in childItemTypes)
-      //  {
-      //    if (typeInfo.CustomAttributes == null)
-      //    {
-      //      var childItemTypeInfo = TypeManager.RegisterType(childItemType, this, Semantics.Include);
-      //      var myCustomAttribute = new CustomAttribData(typeof(DocumentModel.Attributes.ChildElementInfoAttribute));
-      //      myCustomAttribute.ConstructorArguments.Add(new CustomAttribTypedArgument(childItemTypeInfo));
-      //      GenCustomAttribute(myCustomAttribute, writer);
-      //    }
-      //  }
-      //}
       return true;
     }
     return false;
@@ -546,6 +528,7 @@ public class ModelGenerator
   public void GenerateGlobalUsings()
   {
     GenerateGlobalUsings(Path.Combine(IntfOutputPath, "GlobalUsings.cs"));
+    AddGlobalUsing("DocumentModel.Impl");
     GenerateGlobalUsings(Path.Combine(ImplOutputPath, "GlobalUsings.cs"));
   }
 

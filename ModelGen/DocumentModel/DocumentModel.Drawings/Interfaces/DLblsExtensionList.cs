@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DLblsExtensionList
 {
+  public Collection<DLblsExtension>? DLblsExtensions { get ; set; }
+  
 }

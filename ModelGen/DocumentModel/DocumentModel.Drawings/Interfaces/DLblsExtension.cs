@@ -5,14 +5,23 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DLblsExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public ChartText2? ChartText { get ; set; }
   
   public DataLabelFieldTable? DataLabelFieldTable { get ; set; }
   
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public Layout2? Layout { get ; set; }
+  public ShapeProperties3? ShapeProperties { get ; set; }
   
-  public LeaderLines2? LeaderLines { get ; set; }
+  public Layout1? Layout { get ; set; }
+  
+  public Boolean? ShowLeaderLines { get ; set; }
+  
+  public LeaderLines1? LeaderLines { get ; set; }
   
 }

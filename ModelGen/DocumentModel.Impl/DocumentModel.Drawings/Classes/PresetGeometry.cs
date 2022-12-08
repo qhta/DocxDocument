@@ -3,14 +3,20 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset geometry.
 /// </summary>
-public class PresetGeometryImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PresetGeometry>, PresetGeometry
+public class PresetGeometryImpl: ModelElementImpl, PresetGeometry
 {
+  public DocumentFormat.OpenXml.Drawing.PresetGeometry? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PresetGeometry?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Preset Shape
   /// </summary>
-  public ShapeKind1? Preset
+  public ShapeKind2? Preset
   {
-    get => (ShapeKind1?)OpenXmlElement?.Preset?.Value;
+    get => (ShapeKind2?)OpenXmlElement?.Preset?.Value;
     set
     {
       if (OpenXmlElement != null)

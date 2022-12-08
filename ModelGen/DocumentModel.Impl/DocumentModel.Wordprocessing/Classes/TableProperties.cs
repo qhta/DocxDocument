@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table Properties.
 /// </summary>
-public class TablePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.TableProperties>, TableProperties
+public class TablePropertiesImpl: ModelElementImpl, TableProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.TableProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.TableProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// TableStyle.
+  /// </summary>
+  public String? TableStyle
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// TablePositionProperties.
   /// </summary>
@@ -195,6 +210,24 @@ public class TablePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproces
   /// TableLook.
   /// </summary>
   public TableLook? TableLook
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TableCaption, this property is only available in Office 2010 and later..
+  /// </summary>
+  public String? TableCaption
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TableDescription, this property is only available in Office 2010 and later..
+  /// </summary>
+  public String? TableDescription
   {
     get;
     set;

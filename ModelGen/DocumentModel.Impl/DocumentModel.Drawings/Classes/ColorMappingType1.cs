@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorMappingType Class.
 /// </summary>
-public class ColorMappingType1Impl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ColorMappingType>, ColorMappingType1
+public class ColorMappingType1Impl: ModelElementImpl, ColorMappingType1
 {
+  public DocumentFormat.OpenXml.Drawing.ColorMappingType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ColorMappingType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Background 1
   /// </summary>
@@ -164,7 +170,7 @@ public class ColorMappingType1Impl: ModelElement<DocumentFormat.OpenXml.Office20
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public virtual ExtensionList1? ExtensionList
   {
     get;
     set;

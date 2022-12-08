@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NumRefExtension Class.
 /// </summary>
-public class NumRefExtensionImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension>, NumRefExtension
+public class NumRefExtensionImpl: ModelElementImpl, NumRefExtension
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get;
+    set;
+  }
+  
   public FullReference? FullReference
   {
     get;

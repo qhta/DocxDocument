@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Series Class.
 /// </summary>
-public class SeriesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series>, Series
+public class SeriesImpl: ModelElementImpl, Series
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// layoutId, this property is only available in Office 2016 and later.
   /// </summary>
@@ -19,6 +25,42 @@ public class SeriesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.
   }
   
   /// <summary>
+  /// hidden, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Hidden
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// ownerIdx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? OwnerIdx
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// uniqueId, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? UniqueId
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// formatIdx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? FormatIdx
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Text.
   /// </summary>
   public Text1? Text
@@ -30,7 +72,7 @@ public class SeriesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties6? ShapeProperties
   {
     get;
     set;
@@ -54,13 +96,31 @@ public class SeriesImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.
     set;
   }
   
-  public DataLabels2? DataLabels
+  public Collection<DataPoint1>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels1? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public UInt32? DataId
   {
     get;
     set;
   }
   
   public SeriesLayoutProperties? SeriesLayoutProperties
+  {
+    get;
+    set;
+  }
+  
+  public Collection<String>? AxisIds
   {
     get;
     set;

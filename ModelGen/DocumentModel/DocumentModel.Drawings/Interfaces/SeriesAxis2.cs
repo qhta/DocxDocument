@@ -6,9 +6,19 @@ namespace DocumentModel.Drawings;
 public interface SeriesAxis2
 {
   /// <summary>
+  /// Axis ID.
+  /// </summary>
+  public UInt32? AxisId { get ; set; }
+  
+  /// <summary>
   /// Scaling.
   /// </summary>
   public Scaling? Scaling { get ; set; }
+  
+  /// <summary>
+  /// Delete.
+  /// </summary>
+  public Boolean? Delete { get ; set; }
   
   /// <summary>
   /// Axis Position.
@@ -28,7 +38,7 @@ public interface SeriesAxis2
   /// <summary>
   /// Title.
   /// </summary>
-  public Title2? Title { get ; set; }
+  public Title1? Title { get ; set; }
   
   /// <summary>
   /// Number Format.
@@ -58,9 +68,20 @@ public interface SeriesAxis2
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties { get ; set; }
+  public TextProperties2? TextProperties { get ; set; }
+  
+  /// <summary>
+  /// Crossing Axis ID.
+  /// </summary>
+  public UInt32? CrossingAxis { get ; set; }
   
   public CrossesKind? Crosses { get ; set; }
+  
+  public Double? CrossesAt { get ; set; }
+  
+  public Int32? TickLabelSkip { get ; set; }
+  
+  public Int32? TickMarkSkip { get ; set; }
   
   public SerAxExtensionList? SerAxExtensionList { get ; set; }
   

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CustomSplit
 {
+  public Collection<UInt32>? SecondPiePoints { get ; set; }
+  
 }

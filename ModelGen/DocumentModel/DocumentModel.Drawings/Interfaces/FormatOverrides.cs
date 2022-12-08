@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface FormatOverrides
 {
+  public Collection<FormatOverride>? Items { get ; set; }
+  
 }

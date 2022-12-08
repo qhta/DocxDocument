@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the StringDimension Class.
 /// </summary>
-public class StringDimensionImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension>, StringDimension
+public class StringDimensionImpl: ModelElementImpl, StringDimension
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
@@ -25,6 +31,12 @@ public class StringDimensionImpl: ModelElement<DocumentFormat.OpenXml.Office2016
   }
   
   public OpenXmlFormulaElement? NfFormula
+  {
+    get;
+    set;
+  }
+  
+  public Collection<StringLevel>? StringLevels
   {
     get;
     set;

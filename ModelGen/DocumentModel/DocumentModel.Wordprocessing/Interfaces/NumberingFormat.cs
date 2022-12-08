@@ -10,4 +10,9 @@ public interface NumberingFormat
   /// </summary>
   public NumberFormatKind? Val { get ; set; }
   
+  /// <summary>
+  /// format, this property is only available in Office 2010 and later.
+  /// </summary>
+  public String? Format { get ; set; }
+  
 }

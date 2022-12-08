@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface FontScheme
 {
   /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// Major Font.
   /// </summary>
   public MajorFont? MajorFont { get ; set; }

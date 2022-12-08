@@ -3,12 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Section Properties.
 /// </summary>
-public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.SectionProperties>, SectionProperties
+public class SectionPropertiesImpl: ModelElementImpl, SectionProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.SectionProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.SectionProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public String? RsidRPr
+  public DocumentModel.HexBinaryValue? RsidRPr
   {
     get;
     set;
@@ -17,7 +23,7 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public String? RsidDel
+  public DocumentModel.HexBinaryValue? RsidDel
   {
     get;
     set;
@@ -26,7 +32,7 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public String? RsidR
+  public DocumentModel.HexBinaryValue? RsidR
   {
     get;
     set;
@@ -35,7 +41,19 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public String? RsidSect
+  public DocumentModel.HexBinaryValue? RsidSect
+  {
+    get;
+    set;
+  }
+  
+  public Collection<HeaderFooterReferenceType>? HeaderReferences
+  {
+    get;
+    set;
+  }
+  
+  public Collection<HeaderFooterReferenceType>? FooterReferences
   {
     get;
     set;
@@ -130,6 +148,12 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
     set;
   }
   
+  public Boolean? FormProtection
+  {
+    get;
+    set;
+  }
+  
   public VerticalJustificationKind? VerticalTextAlignmentOnPage
   {
     get
@@ -163,6 +187,18 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
         }
       }
     }
+  }
+  
+  public Boolean? NoEndnote
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? TitlePage
+  {
+    get;
+    set;
   }
   
   public TextDirectionKind? TextDirection
@@ -200,7 +236,31 @@ public class SectionPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordproc
     }
   }
   
+  public Boolean? BiDi
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? GutterOnRight
+  {
+    get;
+    set;
+  }
+  
   public DocGrid? DocGrid
+  {
+    get;
+    set;
+  }
+  
+  public RelationshipType? PrinterSettingsReference
+  {
+    get;
+    set;
+  }
+  
+  public Int32? FootnoteColumns
   {
     get;
     set;

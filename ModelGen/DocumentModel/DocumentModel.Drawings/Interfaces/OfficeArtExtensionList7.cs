@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface OfficeArtExtensionList7
 {
+  public Collection<Extension>? Extensions { get ; set; }
+  
 }

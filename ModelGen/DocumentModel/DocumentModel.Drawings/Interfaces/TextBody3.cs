@@ -15,4 +15,6 @@ public interface TextBody3
   /// </summary>
   public ListStyle? ListStyle { get ; set; }
   
+  public Collection<Paragraph>? Paragraphs { get ; set; }
+  
 }

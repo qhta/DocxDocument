@@ -1,28 +1,23 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Chart Class.
+/// Chart to Animate.
 /// </summary>
 public interface Chart2
 {
   /// <summary>
-  /// ChartTitle.
+  /// Series Index
   /// </summary>
-  public ChartTitle? ChartTitle { get ; set; }
+  public Int32? SeriesIndex { get ; set; }
   
   /// <summary>
-  /// PlotArea.
+  /// Category Index
   /// </summary>
-  public PlotArea2? PlotArea { get ; set; }
+  public Int32? CategoryIndex { get ; set; }
   
   /// <summary>
-  /// Legend.
+  /// Animation Build Step
   /// </summary>
-  public Legend2? Legend { get ; set; }
-  
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList { get ; set; }
+  public ChartBuildStepKind? BuildStep { get ; set; }
   
 }

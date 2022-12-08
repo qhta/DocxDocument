@@ -3,8 +3,41 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Properties for a Single Font.
 /// </summary>
-public class FontImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Font>, Font
+public class FontImpl: ModelElementImpl, Font
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Font? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Font?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// AltName.
+  /// </summary>
+  public String? AltName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Panose1Number.
+  /// </summary>
+  public DocumentModel.HexBinaryValue? Panose1Number
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// FontCharSet.
   /// </summary>
@@ -53,6 +86,15 @@ public class FontImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Font>,
   }
   
   /// <summary>
+  /// NotTrueType.
+  /// </summary>
+  public Boolean? NotTrueType
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Pitch.
   /// </summary>
   public FontPitchKind? Pitch
@@ -94,6 +136,42 @@ public class FontImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Font>,
   /// FontSignature.
   /// </summary>
   public FontSignature? FontSignature
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// EmbedRegularFont.
+  /// </summary>
+  public FontRelationshipType? EmbedRegularFont
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// EmbedBoldFont.
+  /// </summary>
+  public FontRelationshipType? EmbedBoldFont
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// EmbedItalicFont.
+  /// </summary>
+  public FontRelationshipType? EmbedItalicFont
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// EmbedBoldItalicFont.
+  /// </summary>
+  public FontRelationshipType? EmbedBoldItalicFont
   {
     get;
     set;

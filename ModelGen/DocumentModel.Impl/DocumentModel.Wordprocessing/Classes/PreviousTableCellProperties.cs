@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Table Cell Properties.
 /// </summary>
-public class PreviousTableCellPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>, PreviousTableCellProperties
+public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCellProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// ConditionalFormatStyle.
   /// </summary>
@@ -18,6 +24,15 @@ public class PreviousTableCellPropertiesImpl: ModelElement<DocumentFormat.OpenXm
   /// TableCellWidth.
   /// </summary>
   public TableWidthType? TableCellWidth
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// GridSpan.
+  /// </summary>
+  public Int32? GridSpan
   {
     get;
     set;
@@ -314,6 +329,18 @@ public class PreviousTableCellPropertiesImpl: ModelElement<DocumentFormat.OpenXm
         }
       }
     }
+  }
+  
+  public TrackChangeType? CellInsertion
+  {
+    get;
+    set;
+  }
+  
+  public TrackChangeType? CellDeletion
+  {
+    get;
+    set;
   }
   
   public CellMerge? CellMerge

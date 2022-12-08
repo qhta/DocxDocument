@@ -1,10 +1,34 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the SurfaceChartSeries Class.
+/// Surface Chart Series.
 /// </summary>
-public class SurfaceChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries>, SurfaceChartSeries2
+public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -45,6 +69,15 @@ public class SurfaceChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office
   /// Values.
   /// </summary>
   public Values? Values
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Bubble3D.
+  /// </summary>
+  public Boolean? Bubble3D
   {
     get;
     set;

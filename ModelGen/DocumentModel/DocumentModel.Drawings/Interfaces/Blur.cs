@@ -5,4 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Blur
 {
+  /// <summary>
+  /// Radius
+  /// </summary>
+  public Int64? Radius { get ; set; }
+  
+  /// <summary>
+  /// Grow Bounds
+  /// </summary>
+  public Boolean? Grow { get ; set; }
+  
 }

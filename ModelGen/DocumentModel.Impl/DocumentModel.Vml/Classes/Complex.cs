@@ -3,8 +3,14 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Complex.
 /// </summary>
-public class ComplexImpl: ModelElement<DocumentFormat.OpenXml.Vml.Office.Complex>, Complex
+public class ComplexImpl: ModelElementImpl, Complex
 {
+  public DocumentFormat.OpenXml.Vml.Office.Complex? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Office.Complex?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

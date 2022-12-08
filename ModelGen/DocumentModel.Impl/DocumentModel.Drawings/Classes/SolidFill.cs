@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SolidFill Class.
 /// </summary>
-public class SolidFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.SolidFill>, SolidFill
+public class SolidFillImpl: ModelElementImpl, SolidFill
 {
+  public DocumentFormat.OpenXml.Drawing.SolidFill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.SolidFill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

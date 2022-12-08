@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Comments
 {
+  public Collection<Comment>? Items { get ; set; }
+  
 }

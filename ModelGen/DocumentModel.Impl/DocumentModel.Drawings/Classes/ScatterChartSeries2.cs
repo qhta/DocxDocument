@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ScatterChartSeries Class.
 /// </summary>
-public class ScatterChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>, ScatterChartSeries2
+public class ScatterChartSeries2Impl: ModelElementImpl, ScatterChartSeries2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Order.
+  /// </summary>
+  public UInt32? Order
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Series Text.
   /// </summary>
@@ -32,7 +56,25 @@ public class ScatterChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office
     set;
   }
   
-  public DataLabels1? DataLabels
+  public Collection<DataPoint2>? DataPoints
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Trendline>? Trendlines
+  {
+    get;
+    set;
+  }
+  
+  public Collection<ErrorBars>? ErrorBarses
   {
     get;
     set;
@@ -45,6 +87,12 @@ public class ScatterChartSeries2Impl: ModelElement<DocumentFormat.OpenXml.Office
   }
   
   public YValues? YValues
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Smooth
   {
     get;
     set;

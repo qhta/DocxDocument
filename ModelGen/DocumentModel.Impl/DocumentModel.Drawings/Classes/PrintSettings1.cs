@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PrintSettings Class.
 /// </summary>
-public class PrintSettings1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.PrintSettings>, PrintSettings1
+public class PrintSettings1Impl: ModelElementImpl, PrintSettings1
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.PrintSettings? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.PrintSettings?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Header and Footer.
   /// </summary>
@@ -17,7 +23,7 @@ public class PrintSettings1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Cha
   /// <summary>
   /// Page Margins.
   /// </summary>
-  public PageMargins1? PageMargins
+  public PageMargins2? PageMargins
   {
     get;
     set;
@@ -26,7 +32,7 @@ public class PrintSettings1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Cha
   /// <summary>
   /// Page Setup.
   /// </summary>
-  public PageSetup1? PageSetup
+  public PageSetup2? PageSetup
   {
     get;
     set;
@@ -35,7 +41,7 @@ public class PrintSettings1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Cha
   /// <summary>
   /// Legacy Drawing for Headers and Footers.
   /// </summary>
-  public Boolean? LegacyDrawingHeaderFooter
+  public RelationshipIdType? LegacyDrawingHeaderFooter
   {
     get;
     set;

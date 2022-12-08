@@ -5,4 +5,24 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineSketchTypeProperties
 {
+  /// <summary>
+  /// LineSketchNoneEmpty.
+  /// </summary>
+  public Boolean? LineSketchNoneEmpty { get ; set; }
+  
+  /// <summary>
+  /// LineSketchCurvedEmpty.
+  /// </summary>
+  public Boolean? LineSketchCurvedEmpty { get ; set; }
+  
+  /// <summary>
+  /// LineSketchFreehandEmpty.
+  /// </summary>
+  public Boolean? LineSketchFreehandEmpty { get ; set; }
+  
+  /// <summary>
+  /// LineSketchScribbleEmpty.
+  /// </summary>
+  public Boolean? LineSketchScribbleEmpty { get ; set; }
+  
 }

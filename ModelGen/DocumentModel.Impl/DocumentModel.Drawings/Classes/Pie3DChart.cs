@@ -3,9 +3,30 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// 3D Pie Charts.
 /// </summary>
-public class Pie3DChartImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart>, Pie3DChart
+public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
 {
-  public DataLabels1? DataLabels
+  public DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors
+  {
+    get;
+    set;
+  }
+  
+  public Collection<PieChartSeries1>? PieChartSerieses
+  {
+    get;
+    set;
+  }
+  
+  public DataLabels2? DataLabels
   {
     get;
     set;

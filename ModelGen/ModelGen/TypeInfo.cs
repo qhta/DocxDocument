@@ -24,6 +24,14 @@ public class TypeInfo : ModelElement
   public string OriginalName => Type.Name;
 
   public bool IsReflected { get; internal set; }
+
+  public new bool? IsAccepted
+  {
+    get; 
+    set;
+  }
+
+
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
   public bool IsConstructedGenericType => Type.IsConstructedGenericType;
@@ -59,6 +67,8 @@ public class TypeInfo : ModelElement
     if (IsAccepted == null)
     {
       var isAccepted = true;
+      //if (Name.StartsWith("Collection"))
+      //  Debug.Assert(true);
       if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
         isAccepted = false;
       if (ModelData.ExcludedTypes.Contains(type.Name))

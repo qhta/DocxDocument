@@ -10,4 +10,9 @@ public interface SeriesText
   /// </summary>
   public StringReference? StringReference { get ; set; }
   
+  /// <summary>
+  /// NumericValue.
+  /// </summary>
+  public String? NumericValue { get ; set; }
+  
 }

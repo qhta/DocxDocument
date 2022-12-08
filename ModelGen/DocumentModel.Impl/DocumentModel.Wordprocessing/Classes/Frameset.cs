@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Nested Frameset Definition.
 /// </summary>
-public class FramesetImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Frameset>, Frameset
+public class FramesetImpl: ModelElementImpl, Frameset
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Frameset? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Frameset?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Nested Frameset Size.
+  /// </summary>
+  public String? FrameSize
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
@@ -50,6 +65,18 @@ public class FramesetImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Fr
         }
       }
     }
+  }
+  
+  public Collection<Frameset>? Framesets
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Frame>? Frames
+  {
+    get;
+    set;
   }
   
 }

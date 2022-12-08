@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FontCharSet Class.
 /// </summary>
-public class FontCharSetImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>, FontCharSet
+public class FontCharSetImpl: ModelElementImpl, FontCharSet
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FontCharSet? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FontCharSet?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// val
+  /// </summary>
+  public String? Val
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// characterSet
   /// </summary>

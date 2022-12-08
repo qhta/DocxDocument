@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Radical Properties.
 /// </summary>
-public class RadicalPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.RadicalProperties>, RadicalProperties
+public class RadicalPropertiesImpl: ModelElementImpl, RadicalProperties
 {
+  public DocumentFormat.OpenXml.Math.RadicalProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.RadicalProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Hide Degree.
   /// </summary>

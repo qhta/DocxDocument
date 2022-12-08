@@ -5,4 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface NoLineBreaksAfterKinsoku
 {
+  /// <summary>
+  /// lang
+  /// </summary>
+  public String? Language { get ; set; }
+  
+  /// <summary>
+  /// val
+  /// </summary>
+  public String? Val { get ; set; }
+  
 }

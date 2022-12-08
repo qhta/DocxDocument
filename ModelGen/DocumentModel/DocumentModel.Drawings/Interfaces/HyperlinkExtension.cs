@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface HyperlinkExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public HyperlinkColorEnum? HyperlinkColor { get ; set; }
   
 }

@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Layout.
+/// Defines the Layout Class.
 /// </summary>
 public interface Layout1
 {

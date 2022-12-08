@@ -1,0 +1,23 @@
+namespace DocumentModel;
+
+/// <summary>
+/// Represent the xsd:hexBinary value for attributes.
+/// </summary>
+public class HexBinaryValueImpl: ModelObjectImpl, HexBinaryValue
+{
+  public DocumentFormat.OpenXml.HexBinaryValue? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.HexBinaryValue?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Gets or sets the hex binary value
+  /// </summary>
+  public String? Value
+  {
+    get;
+    set;
+  }
+  
+}

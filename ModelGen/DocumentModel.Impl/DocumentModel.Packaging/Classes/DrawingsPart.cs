@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DrawingsPart
 /// </summary>
-public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, DrawingsPart
+public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DrawingsPart
 {
+  public new DocumentFormat.OpenXml.Packaging.DrawingsPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.DrawingsPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the DrawingsPart
   /// </summary>
@@ -14,10 +20,16 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
     set;
   }
   
+  public override String? ContentType
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Gets the CustomXmlParts of the DrawingsPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts
+  public CustomXmlPart? CustomXmlParts
   {
     get;
     set;
@@ -80,7 +92,13 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// <summary>
   /// Gets the ImageParts of the DrawingsPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

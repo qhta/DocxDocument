@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface UpDownBars
 {
   /// <summary>
+  /// Gap Width.
+  /// </summary>
+  public UInt16? GapWidth { get ; set; }
+  
+  /// <summary>
   /// Up Bars.
   /// </summary>
   public UpBars? UpBars { get ; set; }

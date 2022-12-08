@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents markup compatibility processing settings.
 /// </summary>
-public class MarkupCompatibilityProcessSettingsImpl: ModelElement<DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings>, MarkupCompatibilityProcessSettings
+public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupCompatibilityProcessSettings
 {
+  public DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the markup compatibility process mode.
   /// </summary>

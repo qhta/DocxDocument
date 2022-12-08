@@ -1,53 +1,65 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TrendlineLabel Class.
+/// Trendline Label.
 /// </summary>
-public class TrendlineLabel1Impl: DocumentModel.Drawings.StyleEntryImpl, TrendlineLabel1
+public class TrendlineLabel1Impl: ModelElementImpl, TrendlineLabel1
 {
-  public override LineReference1? LineReference
+  public DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Layout.
+  /// </summary>
+  public Layout2? Layout
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  /// <summary>
+  /// ChartText.
+  /// </summary>
+  public ChartText1? ChartText
   {
     get;
     set;
   }
   
-  public override EffectReference1? EffectReference
+  /// <summary>
+  /// Number Format.
+  /// </summary>
+  public NumberingFormat1? NumberingFormat
   {
     get;
     set;
   }
   
-  public override FontReference1? FontReference
+  /// <summary>
+  /// ChartShapeProperties.
+  /// </summary>
+  public ChartShapeProperties? ChartShapeProperties
   {
     get;
     set;
   }
   
-  public override ShapeProperties3? ShapeProperties
+  /// <summary>
+  /// TextProperties.
+  /// </summary>
+  public TextProperties2? TextProperties
   {
     get;
     set;
   }
   
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
-  {
-    get;
-    set;
-  }
-  
-  public override TextBodyProperties? TextBodyProperties
-  {
-    get;
-    set;
-  }
-  
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  /// <summary>
+  /// Chart Extensibility.
+  /// </summary>
+  public ExtensionList4? ExtensionList
   {
     get;
     set;

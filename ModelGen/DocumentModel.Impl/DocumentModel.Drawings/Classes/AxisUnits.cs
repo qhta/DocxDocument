@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AxisUnits Class.
 /// </summary>
-public class AxisUnitsImpl: ModelElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnits>, AxisUnits
+public class AxisUnitsImpl: ModelElementImpl, AxisUnits
 {
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnits? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnits?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// unit, this property is only available in Office 2016 and later.
   /// </summary>

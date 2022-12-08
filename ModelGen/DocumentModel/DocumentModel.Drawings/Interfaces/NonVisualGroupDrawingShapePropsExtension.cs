@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NonVisualGroupDrawingShapePropsExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public NonVisualGroupProperties? NonVisualGroupProperties { get ; set; }
   
 }

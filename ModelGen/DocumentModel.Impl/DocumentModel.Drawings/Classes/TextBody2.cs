@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TextBody Class.
 /// </summary>
-public class TextBody2Impl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.TextBody>, TextBody2
+public class TextBody2Impl: ModelElementImpl, TextBody2
 {
+  public DocumentFormat.OpenXml.Office.Drawing.TextBody? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.TextBody?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Body Properties.
   /// </summary>
@@ -18,6 +24,12 @@ public class TextBody2Impl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.T
   /// Text List Styles.
   /// </summary>
   public ListStyle? ListStyle
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Paragraph>? Paragraphs
   {
     get;
     set;

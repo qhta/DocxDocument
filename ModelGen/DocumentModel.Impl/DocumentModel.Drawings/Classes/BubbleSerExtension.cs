@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BubbleSerExtension Class.
 /// </summary>
-public class BubbleSerExtensionImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension>, BubbleSerExtension
+public class BubbleSerExtensionImpl: ModelElementImpl, BubbleSerExtension
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get;
+    set;
+  }
+  
   public InvertSolidFillFormat? InvertSolidFillFormat
   {
     get;

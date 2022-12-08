@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface RadarSerExtensionList
 {
+  public Collection<RadarSerExtension>? RadarSerExtensions { get ; set; }
+  
 }

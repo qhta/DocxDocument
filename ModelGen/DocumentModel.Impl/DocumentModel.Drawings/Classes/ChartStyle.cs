@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ChartStyle Class.
 /// </summary>
-public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle>, ChartStyle
+public class ChartStyleImpl: ModelElementImpl, ChartStyle
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// id, this property is only available in Office 2013 and later.
+  /// </summary>
+  public UInt32? Id
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// AxisTitle.
   /// </summary>
@@ -17,7 +32,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// CategoryAxis.
   /// </summary>
-  public CategoryAxis1? CategoryAxis
+  public CategoryAxis2? CategoryAxis
   {
     get;
     set;
@@ -35,7 +50,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel1? DataLabel
+  public DataLabel4? DataLabel
   {
     get;
     set;
@@ -53,7 +68,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// DataPoint.
   /// </summary>
-  public DataPoint1? DataPoint
+  public DataPoint3? DataPoint
   {
     get;
     set;
@@ -143,7 +158,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// Floor.
   /// </summary>
-  public Floor2? Floor
+  public Floor1? Floor
   {
     get;
     set;
@@ -251,7 +266,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// TrendlineLabel.
   /// </summary>
-  public TrendlineLabel1? TrendlineLabel
+  public TrendlineLabel2? TrendlineLabel
   {
     get;
     set;
@@ -269,7 +284,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// ValueAxis.
   /// </summary>
-  public ValueAxis1? ValueAxis
+  public ValueAxis2? ValueAxis
   {
     get;
     set;
@@ -287,7 +302,7 @@ public class ChartStyleImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Draw
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList1? OfficeArtExtensionList
+  public OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

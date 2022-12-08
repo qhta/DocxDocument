@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface MultiLevelStringReference
 {
   /// <summary>
+  /// Formula.
+  /// </summary>
+  public String? Formula { get ; set; }
+  
+  /// <summary>
   /// MultiLevelStringCache.
   /// </summary>
   public MultiLevelStringCache? MultiLevelStringCache { get ; set; }

@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Defines the OfficeMathArgumentType Class.
 /// </summary>
-public class OfficeMathArgumentTypeImpl: ModelElement<DocumentFormat.OpenXml.Math.OfficeMathArgumentType>, OfficeMathArgumentType
+public class OfficeMathArgumentTypeImpl: ModelElementImpl, OfficeMathArgumentType
 {
+  public DocumentFormat.OpenXml.Math.OfficeMathArgumentType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.OfficeMathArgumentType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Argument Properties.
   /// </summary>

@@ -3,6 +3,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Mcds Class.
 /// </summary>
-public class McdsImpl: ModelElement<DocumentFormat.OpenXml.Office.Word.Mcds>, Mcds
+public class McdsImpl: ModelElementImpl, Mcds
 {
+  public DocumentFormat.OpenXml.Office.Word.Mcds? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Word.Mcds?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<Mcd>? Items
+  {
+    get;
+    set;
+  }
+  
 }

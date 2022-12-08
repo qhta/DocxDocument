@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Object.
 /// </summary>
-public class GraphicImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Graphic>, Graphic
+public class GraphicImpl: ModelElementImpl, Graphic
 {
+  public DocumentFormat.OpenXml.Drawing.Graphic? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Graphic?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Graphic Object Data.
   /// </summary>

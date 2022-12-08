@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface NonVisualInkContentPartProperties
 {
   /// <summary>
+  /// isComment, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Boolean? IsComment { get ; set; }
+  
+  /// <summary>
   /// ContentPartLocks.
   /// </summary>
   public ContentPartLocks? ContentPartLocks { get ; set; }
@@ -13,6 +18,6 @@ public interface NonVisualInkContentPartProperties
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList6? OfficeArtExtensionList { get ; set; }
   
 }

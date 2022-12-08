@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface GridColumn
 {
+  /// <summary>
+  /// Grid Column Width
+  /// </summary>
+  public String? Width { get ; set; }
+  
 }

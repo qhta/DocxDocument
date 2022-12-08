@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LinePropertiesType Class.
 /// </summary>
-public class LinePropertiesTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.LinePropertiesType>, LinePropertiesType
+public class LinePropertiesTypeImpl: ModelElementImpl, LinePropertiesType
 {
+  public DocumentFormat.OpenXml.Drawing.LinePropertiesType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.LinePropertiesType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// line width
+  /// </summary>
+  public Int32? Width
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// line cap
   /// </summary>

@@ -10,4 +10,6 @@ public interface RelationTable
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get ; set; }
   
+  public Collection<Relation>? Relations { get ; set; }
+  
 }

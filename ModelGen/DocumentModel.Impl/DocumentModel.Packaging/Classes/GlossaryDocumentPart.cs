@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the GlossaryDocumentPart
 /// </summary>
-public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, GlossaryDocumentPart
+public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, GlossaryDocumentPart
 {
+  public new DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -18,6 +24,12 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// Gets the ChartParts of the GlossaryDocumentPart
   /// </summary>
   public ChartPart? ChartParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// <summary>
   /// Gets the EmbeddedObjectParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// <summary>
   /// Gets the EmbeddedPackageParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -134,7 +146,7 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// <summary>
   /// Gets the ImageParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -143,7 +155,13 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;
@@ -152,7 +170,7 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContai
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? WordprocessingPrinterSettingsParts
+  public WordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts
   {
     get;
     set;

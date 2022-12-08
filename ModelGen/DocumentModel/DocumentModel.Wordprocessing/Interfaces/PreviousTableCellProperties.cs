@@ -16,6 +16,11 @@ public interface PreviousTableCellProperties
   public TableWidthType? TableCellWidth { get ; set; }
   
   /// <summary>
+  /// GridSpan.
+  /// </summary>
+  public Int32? GridSpan { get ; set; }
+  
+  /// <summary>
   /// HorizontalMerge.
   /// </summary>
   public MergedCellKind? HorizontalMerge { get ; set; }
@@ -64,6 +69,10 @@ public interface PreviousTableCellProperties
   /// HideMark.
   /// </summary>
   public OnOffOnlyKind? HideMark { get ; set; }
+  
+  public TrackChangeType? CellInsertion { get ; set; }
+  
+  public TrackChangeType? CellDeletion { get ; set; }
   
   public CellMerge? CellMerge { get ; set; }
   

@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the EndnotesPart
 /// </summary>
-public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, EndnotesPart
+public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EndnotesPart
 {
+  public new DocumentFormat.OpenXml.Packaging.EndnotesPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.EndnotesPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -18,6 +24,12 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// Gets the ChartParts of the EndnotesPart
   /// </summary>
   public ChartPart? ChartParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// <summary>
   /// Gets the EmbeddedObjectParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// <summary>
   /// Gets the EmbeddedPackageParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// <summary>
   /// Gets the ImageParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl,
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the EndnotesPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

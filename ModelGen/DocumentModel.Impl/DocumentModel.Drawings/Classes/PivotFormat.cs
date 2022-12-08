@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Pivot Format.
 /// </summary>
-public class PivotFormatImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.PivotFormat>, PivotFormat
+public class PivotFormatImpl: ModelElementImpl, PivotFormat
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.PivotFormat? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.PivotFormat?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// ShapeProperties.
   /// </summary>
@@ -26,7 +41,7 @@ public class PivotFormatImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts
   /// <summary>
   /// Data Label.
   /// </summary>
-  public DataLabel2? DataLabel
+  public DataLabel3? DataLabel
   {
     get;
     set;

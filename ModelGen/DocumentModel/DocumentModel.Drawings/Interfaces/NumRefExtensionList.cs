@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NumRefExtensionList
 {
+  public Collection<NumRefExtension>? NumRefExtensions { get ; set; }
+  
 }

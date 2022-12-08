@@ -10,4 +10,9 @@ public interface Zoom
   /// </summary>
   public PresetZoomKind? Val { get ; set; }
   
+  /// <summary>
+  /// Zoom Percentage
+  /// </summary>
+  public String? Percent { get ; set; }
+  
 }

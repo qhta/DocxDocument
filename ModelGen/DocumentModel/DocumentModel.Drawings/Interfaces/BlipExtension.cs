@@ -5,7 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BlipExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public ImageProperties? ImageProperties { get ; set; }
+  
+  public Boolean? UseLocalDpi { get ; set; }
   
   public DocumentModel.Wordprocessing.Drawings.WebVideoProperty? WebVideoProperty { get ; set; }
   

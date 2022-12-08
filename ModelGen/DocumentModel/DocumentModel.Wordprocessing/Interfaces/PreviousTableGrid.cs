@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface PreviousTableGrid
 {
+  public Collection<GridColumn>? GridColumns { get ; set; }
+  
 }

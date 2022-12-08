@@ -5,4 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface CustomXmlProperties
 {
+  /// <summary>
+  /// Custom XML Element Placeholder Text.
+  /// </summary>
+  public String? CustomXmlPlaceholder { get ; set; }
+  
+  public Collection<CustomXmlAttribute>? CustomXmlAttributes { get ; set; }
+  
 }

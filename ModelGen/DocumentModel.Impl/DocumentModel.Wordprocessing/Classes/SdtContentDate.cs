@@ -3,8 +3,41 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentDate Class.
 /// </summary>
-public class SdtContentDateImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>, SdtContentDate
+public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
 {
+  public DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentDate?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Last Known Date in XML Schema DateTime Format
+  /// </summary>
+  public DateTime? FullDate
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Date Display Mask.
+  /// </summary>
+  public String? DateFormat
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Date Picker Language ID.
+  /// </summary>
+  public String? LanguageId
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Custom XML Data Date Storage Format.
   /// </summary>

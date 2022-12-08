@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorsType Class.
 /// </summary>
-public class ColorsTypeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType>, ColorsType
+public class ColorsTypeImpl: ModelElementImpl, ColorsType
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Color Application Method Type
   /// </summary>

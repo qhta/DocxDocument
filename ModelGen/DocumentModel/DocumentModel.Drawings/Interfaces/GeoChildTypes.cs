@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GeoChildTypes
 {
+  public Collection<String>? EntityTypes { get ; set; }
+  
 }

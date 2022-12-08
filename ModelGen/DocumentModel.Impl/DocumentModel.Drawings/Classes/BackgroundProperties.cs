@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundProperties Class.
 /// </summary>
-public class BackgroundPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties>, BackgroundProperties
+public class BackgroundPropertiesImpl: ModelElementImpl, BackgroundProperties
 {
+  public DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// bwMode, this property is only available in Office 2013 and later.
   /// </summary>

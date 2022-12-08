@@ -6,6 +6,11 @@ namespace DocumentModel.Math;
 public interface AccentProperties
 {
   /// <summary>
+  /// Accent Character.
+  /// </summary>
+  public String? AccentChar { get ; set; }
+  
+  /// <summary>
   /// Control Properties.
   /// </summary>
   public ControlProperties? ControlProperties { get ; set; }

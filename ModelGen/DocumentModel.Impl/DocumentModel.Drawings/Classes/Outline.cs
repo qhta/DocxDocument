@@ -5,6 +5,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class OutlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Outline
 {
+  public new DocumentFormat.OpenXml.Drawing.Outline? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Outline?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -59,6 +71,18 @@ public class OutlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Outline
   }
   
   public CustomDash? CustomDash
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? Round
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? LineJoinBevel
   {
     get;
     set;

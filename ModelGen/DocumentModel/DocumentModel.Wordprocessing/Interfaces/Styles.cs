@@ -15,4 +15,6 @@ public interface Styles
   /// </summary>
   public LatentStyles? LatentStyles { get ; set; }
   
+  public Collection<Style>? Items { get ; set; }
+  
 }

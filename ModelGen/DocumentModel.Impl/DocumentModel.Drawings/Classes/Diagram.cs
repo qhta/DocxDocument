@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Diagram to Animate.
 /// </summary>
-public class DiagramImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram>, Diagram
+public class DiagramImpl: ModelElementImpl, Diagram
 {
+  public DocumentFormat.OpenXml.Drawing.Diagram? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagram?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Identifier
+  /// </summary>
+  public String? Id
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Animation Build Step
   /// </summary>

@@ -3,6 +3,30 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Guide.
 /// </summary>
-public class ShapeGuideImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ShapeGuide>, ShapeGuide
+public class ShapeGuideImpl: ModelElementImpl, ShapeGuide
 {
+  public DocumentFormat.OpenXml.Drawing.ShapeGuide? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ShapeGuide?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Shape Guide Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shape Guide Formula
+  /// </summary>
+  public String? Formula
+  {
+    get;
+    set;
+  }
+  
 }

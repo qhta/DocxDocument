@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ChartShapeProperties Class.
 /// </summary>
-public class ChartShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>, ChartShapeProperties
+public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Black and White Mode
   /// </summary>
@@ -21,7 +27,7 @@ public class ChartShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawi
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D1? Transform2D
+  public Transform2D3? Transform2D
   {
     get;
     set;
@@ -39,6 +45,12 @@ public class ChartShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawi
     set;
   }
   
+  public Boolean? NoFill
+  {
+    get;
+    set;
+  }
+  
   public SolidFill? SolidFill
   {
     get;
@@ -51,7 +63,7 @@ public class ChartShapePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawi
     set;
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;

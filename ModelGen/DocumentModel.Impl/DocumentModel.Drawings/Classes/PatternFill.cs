@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Pattern Fill.
 /// </summary>
-public class PatternFillImpl: ModelElement<DocumentFormat.OpenXml.Drawing.PatternFill>, PatternFill
+public class PatternFillImpl: ModelElementImpl, PatternFill
 {
+  public DocumentFormat.OpenXml.Drawing.PatternFill? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.PatternFill?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Preset Pattern
   /// </summary>

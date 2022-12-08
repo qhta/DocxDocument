@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface GeoLocationQueryResults
 {
+  public Collection<GeoLocationQueryResult>? Items { get ; set; }
+  
 }

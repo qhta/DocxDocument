@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Manual Layout.
 /// </summary>
-public class ManualLayoutImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.ManualLayout>, ManualLayout
+public class ManualLayoutImpl: ModelElementImpl, ManualLayout
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.ManualLayout?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Layout Target.
   /// </summary>
@@ -193,6 +199,42 @@ public class ManualLayoutImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Chart
         }
       }
     }
+  }
+  
+  /// <summary>
+  /// Left.
+  /// </summary>
+  public Double? Left
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Top.
+  /// </summary>
+  public Double? Top
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Width.
+  /// </summary>
+  public Double? Width
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Height.
+  /// </summary>
+  public Double? Height
+  {
+    get;
+    set;
   }
   
   /// <summary>

@@ -5,4 +5,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface FootnoteEndnoteSeparatorReferenceType
 {
+  /// <summary>
+  /// Footnote/Endnote ID
+  /// </summary>
+  public Int32? Id { get ; set; }
+  
 }

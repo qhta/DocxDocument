@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface SurfaceType
 {
   /// <summary>
+  /// Thickness.
+  /// </summary>
+  public Byte? Thickness { get ; set; }
+  
+  /// <summary>
   /// ShapeProperties.
   /// </summary>
   public ShapeProperties1? ShapeProperties { get ; set; }

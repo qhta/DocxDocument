@@ -10,4 +10,8 @@ public interface WordCommentsExtensiblePart
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsExtensible? CommentsExtensible { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
+  
 }

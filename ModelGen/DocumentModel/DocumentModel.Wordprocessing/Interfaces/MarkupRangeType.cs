@@ -10,4 +10,9 @@ public interface MarkupRangeType
   /// </summary>
   public DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
   
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

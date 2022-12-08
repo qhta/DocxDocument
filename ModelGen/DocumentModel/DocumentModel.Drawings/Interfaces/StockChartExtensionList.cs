@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface StockChartExtensionList
 {
+  public Collection<StockChartExtension>? StockChartExtensions { get ; set; }
+  
 }

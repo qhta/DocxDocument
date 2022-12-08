@@ -3,6 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the OfficeArtExtensionList Class.
 /// </summary>
-public class OfficeArtExtensionList6Impl: ModelElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>, OfficeArtExtensionList6
+public class OfficeArtExtensionList6Impl: ModelElementImpl, OfficeArtExtensionList6
 {
+  public DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Collection<Extension>? Extensions
+  {
+    get;
+    set;
+  }
+  
 }

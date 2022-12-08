@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the FooterPart
 /// </summary>
-public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, FooterPart
+public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FooterPart
 {
+  public new DocumentFormat.OpenXml.Packaging.FooterPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.FooterPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the FooterPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -18,6 +24,12 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, F
   /// Gets the ChartParts of the FooterPart
   /// </summary>
   public ChartPart? ChartParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -80,7 +92,7 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, F
   /// <summary>
   /// Gets the EmbeddedObjectParts of the FooterPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, F
   /// <summary>
   /// Gets the EmbeddedPackageParts of the FooterPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, F
   /// <summary>
   /// Gets the ImageParts of the FooterPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, F
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the FooterPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

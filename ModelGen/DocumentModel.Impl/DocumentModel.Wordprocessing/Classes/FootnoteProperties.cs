@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FootnoteProperties Class.
 /// </summary>
-public class FootnotePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>, FootnoteProperties
+public class FootnotePropertiesImpl: ModelElementImpl, FootnoteProperties
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Footnote Placement.
   /// </summary>
@@ -47,6 +53,15 @@ public class FootnotePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Wordpro
   /// Footnote Numbering Format.
   /// </summary>
   public NumberingFormat? NumberingFormat
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Footnote and Endnote Numbering Starting Value.
+  /// </summary>
+  public UInt16? NumberingStart
   {
     get;
     set;

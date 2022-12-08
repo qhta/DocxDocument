@@ -13,16 +13,16 @@ public interface PrintSettings1
   /// <summary>
   /// Page Margins.
   /// </summary>
-  public PageMargins1? PageMargins { get ; set; }
+  public PageMargins2? PageMargins { get ; set; }
   
   /// <summary>
   /// Page Setup.
   /// </summary>
-  public PageSetup1? PageSetup { get ; set; }
+  public PageSetup2? PageSetup { get ; set; }
   
   /// <summary>
   /// Legacy Drawing for Headers and Footers.
   /// </summary>
-  public Boolean? LegacyDrawingHeaderFooter { get ; set; }
+  public RelationshipIdType? LegacyDrawingHeaderFooter { get ; set; }
   
 }

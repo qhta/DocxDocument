@@ -10,10 +10,12 @@ public interface DrawingsPart
   /// </summary>
   public ChartPart? ChartParts { get ; set; }
   
+  public String? ContentType { get ; set; }
+  
   /// <summary>
   /// Gets the CustomXmlParts of the DrawingsPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts { get ; set; }
+  public CustomXmlPart? CustomXmlParts { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the DrawingsPart
@@ -48,7 +50,9 @@ public interface DrawingsPart
   /// <summary>
   /// Gets the ImageParts of the DrawingsPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the WebExtensionParts of the DrawingsPart

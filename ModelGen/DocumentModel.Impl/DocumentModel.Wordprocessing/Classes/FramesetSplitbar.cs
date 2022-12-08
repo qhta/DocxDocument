@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Frameset Splitter Properties.
 /// </summary>
-public class FramesetSplitbarImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>, FramesetSplitbar
+public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
 {
+  public DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Frameset Splitter Width.
+  /// </summary>
+  public String? Width
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Frameset Splitter Color.
   /// </summary>

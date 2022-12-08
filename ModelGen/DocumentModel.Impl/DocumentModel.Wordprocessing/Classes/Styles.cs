@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines Styles.
 /// </summary>
-public class StylesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Styles>, Styles
+public class StylesImpl: ModelElementImpl, Styles
 {
+  public DocumentFormat.OpenXml.Wordprocessing.Styles? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.Styles?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Document Default Paragraph and Run Properties.
   /// </summary>
@@ -18,6 +24,12 @@ public class StylesImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.Styl
   /// Latent Style Information.
   /// </summary>
   public LatentStyles? LatentStyles
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Style>? Items
   {
     get;
     set;

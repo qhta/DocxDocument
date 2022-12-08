@@ -1,71 +1,26 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Value Axis.
+/// Defines the ValueAxis Class.
 /// </summary>
 public interface ValueAxis2
 {
-  /// <summary>
-  /// Scaling.
-  /// </summary>
-  public Scaling? Scaling { get ; set; }
+  public LineReference2? LineReference { get ; set; }
   
-  /// <summary>
-  /// Axis Position.
-  /// </summary>
-  public AxisPositionKind? AxisPosition { get ; set; }
+  public String? LineWidthScale { get ; set; }
   
-  /// <summary>
-  /// Major Gridlines.
-  /// </summary>
-  public MajorGridlines? MajorGridlines { get ; set; }
+  public FillReference2? FillReference { get ; set; }
   
-  /// <summary>
-  /// Minor Gridlines.
-  /// </summary>
-  public MinorGridlines? MinorGridlines { get ; set; }
+  public EffectReference1? EffectReference { get ; set; }
   
-  /// <summary>
-  /// Title.
-  /// </summary>
-  public Title2? Title { get ; set; }
+  public FontReference1? FontReference { get ; set; }
   
-  /// <summary>
-  /// Number Format.
-  /// </summary>
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  public ShapeProperties4? ShapeProperties { get ; set; }
   
-  /// <summary>
-  /// Major Tick Mark.
-  /// </summary>
-  public TickMarkKind? MajorTickMark { get ; set; }
+  public TextCharacterPropertiesType2? TextCharacterPropertiesType { get ; set; }
   
-  /// <summary>
-  /// Minor Tick Mark.
-  /// </summary>
-  public TickMarkKind? MinorTickMark { get ; set; }
+  public TextBodyProperties? TextBodyProperties { get ; set; }
   
-  /// <summary>
-  /// Tick Label Position.
-  /// </summary>
-  public TickLabelPositionKind? TickLabelPosition { get ; set; }
-  
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
-  public ChartShapeProperties? ChartShapeProperties { get ; set; }
-  
-  /// <summary>
-  /// TextProperties.
-  /// </summary>
-  public TextProperties1? TextProperties { get ; set; }
-  
-  public CrossesKind? Crosses { get ; set; }
-  
-  public CrossBetweenKind? CrossBetween { get ; set; }
-  
-  public DisplayUnits? DisplayUnits { get ; set; }
-  
-  public ValAxExtensionList? ValAxExtensionList { get ; set; }
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

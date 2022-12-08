@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface OfficeStyleSheetExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public DocumentModel.ThemeFamily? ThemeFamily { get ; set; }
   
 }

@@ -3,8 +3,14 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Sub-Superscript Function.
 /// </summary>
-public class SubSuperscriptImpl: ModelElement<DocumentFormat.OpenXml.Math.SubSuperscript>, SubSuperscript
+public class SubSuperscriptImpl: ModelElementImpl, SubSuperscript
 {
+  public DocumentFormat.OpenXml.Math.SubSuperscript? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.SubSuperscript?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Sub-Superscript Properties.
   /// </summary>

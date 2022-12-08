@@ -6,6 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface TableWidthType
 {
   /// <summary>
+  /// Table Width Value
+  /// </summary>
+  public String? Width { get ; set; }
+  
+  /// <summary>
   /// Table Width Type
   /// </summary>
   public TableWidthUnitKind? Type { get ; set; }

@@ -10,4 +10,9 @@ public interface FootnoteEndnoteType
   /// </summary>
   public FootnoteEndnoteKind? Type { get ; set; }
   
+  /// <summary>
+  /// Footnote/Endnote ID
+  /// </summary>
+  public Int32? Id { get ; set; }
+  
 }

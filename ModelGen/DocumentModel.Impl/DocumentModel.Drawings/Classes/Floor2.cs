@@ -1,53 +1,35 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Floor Class.
+/// 3D floor formatting.
 /// </summary>
-public class Floor2Impl: DocumentModel.Drawings.StyleEntryImpl, Floor2
+public class Floor2Impl: DocumentModel.Drawings.SurfaceTypeImpl, Floor2
 {
-  public override LineReference1? LineReference
+  public new DocumentFormat.OpenXml.Drawing.Charts.Floor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Floor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override Byte? Thickness
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  public override ShapeProperties1? ShapeProperties
   {
     get;
     set;
   }
   
-  public override EffectReference1? EffectReference
+  public override PictureOptions? PictureOptions
   {
     get;
     set;
   }
   
-  public override FontReference1? FontReference
-  {
-    get;
-    set;
-  }
-  
-  public override ShapeProperties3? ShapeProperties
-  {
-    get;
-    set;
-  }
-  
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
-  {
-    get;
-    set;
-  }
-  
-  public override TextBodyProperties? TextBodyProperties
-  {
-    get;
-    set;
-  }
-  
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  public override ExtensionList4? ExtensionList
   {
     get;
     set;

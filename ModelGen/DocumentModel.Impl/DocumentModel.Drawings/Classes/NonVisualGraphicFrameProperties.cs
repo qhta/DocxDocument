@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Non-Visual Graphic Frame Properties.
 /// </summary>
-public class NonVisualGraphicFramePropertiesImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties>, NonVisualGraphicFrameProperties
+public class NonVisualGraphicFramePropertiesImpl: ModelElementImpl, NonVisualGraphicFrameProperties
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Non-Visual Drawing Properties.
   /// </summary>
-  public NonVisualDrawingProperties2? NonVisualDrawingProperties
+  public NonVisualDrawingProperties3? NonVisualDrawingProperties
   {
     get;
     set;

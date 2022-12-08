@@ -8,7 +8,7 @@ public interface WordprocessingCommentsIdsPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts { get ; set; }
+  public AlternativeFormatImportPart? AlternativeFormatImportParts { get ; set; }
   
   /// <summary>
   /// Gets the ChartParts of the WordprocessingCommentsIdsPart
@@ -19,6 +19,8 @@ public interface WordprocessingCommentsIdsPart
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsIds? CommentsIds { get ; set; }
+  
+  public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the DiagramColorsParts of the WordprocessingCommentsIdsPart
@@ -53,12 +55,12 @@ public interface WordprocessingCommentsIdsPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts { get ; set; }
+  public EmbeddedObjectPart? EmbeddedObjectParts { get ; set; }
   
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts { get ; set; }
+  public EmbeddedPackagePart? EmbeddedPackageParts { get ; set; }
   
   /// <summary>
   /// Gets the ExtendedChartParts of the WordprocessingCommentsIdsPart
@@ -68,11 +70,13 @@ public interface WordprocessingCommentsIdsPart
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts { get ; set; }
+  public ImagePart? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsIdsPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts { get ; set; }
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
 }

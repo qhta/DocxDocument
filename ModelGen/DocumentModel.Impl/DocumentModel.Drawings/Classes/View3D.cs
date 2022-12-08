@@ -3,8 +3,68 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// 3D view settings.
 /// </summary>
-public class View3DImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.View3D>, View3D
+public class View3DImpl: ModelElementImpl, View3D
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.View3D? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.View3D?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// X Rotation.
+  /// </summary>
+  public SByte? RotateX
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Height Percent.
+  /// </summary>
+  public UInt16? HeightPercent
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Y Rotation.
+  /// </summary>
+  public UInt16? RotateY
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Depth Percent.
+  /// </summary>
+  public UInt16? DepthPercent
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Right Angle Axes.
+  /// </summary>
+  public Boolean? RightAngleAxes
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Perspective.
+  /// </summary>
+  public Byte? Perspective
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Chart Extensibility.
   /// </summary>

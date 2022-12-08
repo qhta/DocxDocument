@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Rule.
 /// </summary>
-public class RuleImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>, Rule
+public class RuleImpl: ModelElementImpl, Rule
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Rule? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Rule?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Constraint Type
   /// </summary>
@@ -32,6 +38,15 @@ public class RuleImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule
   }
   
   /// <summary>
+  /// For Name
+  /// </summary>
+  public String? ForName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Data Point Type
   /// </summary>
   public ElementKind? PointType
@@ -42,6 +57,33 @@ public class RuleImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule
       if (OpenXmlElement != null)
         OpenXmlElement.PointType = (DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Value
+  /// </summary>
+  public Double? Val
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Factor
+  /// </summary>
+  public Double? Fact
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Max Value
+  /// </summary>
+  public Double? Max
+  {
+    get;
+    set;
   }
   
   /// <summary>

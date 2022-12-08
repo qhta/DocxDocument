@@ -1,10 +1,16 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Layout Class.
+/// Layout.
 /// </summary>
-public class Layout2Impl: ModelElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>, Layout2
+public class Layout2Impl: ModelElementImpl, Layout2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.Layout? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Layout?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Manual Layout.
   /// </summary>

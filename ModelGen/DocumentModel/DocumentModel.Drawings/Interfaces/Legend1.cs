@@ -1,21 +1,38 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Legend data and formatting.
+/// Defines the Legend Class.
 /// </summary>
 public interface Legend1
 {
   /// <summary>
-  /// Legend Position.
+  /// pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public LegendPositionKind? LegendPosition { get ; set; }
+  public SidePos? Pos { get ; set; }
   
-  public Layout1? Layout { get ; set; }
+  /// <summary>
+  /// align, this property is only available in Office 2016 and later.
+  /// </summary>
+  public PosAlign? Align { get ; set; }
   
-  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  /// <summary>
+  /// overlay, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Overlay { get ; set; }
   
-  public TextProperties1? TextProperties { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody { get ; set; }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

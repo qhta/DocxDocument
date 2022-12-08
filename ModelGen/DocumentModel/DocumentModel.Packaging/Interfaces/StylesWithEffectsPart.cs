@@ -5,4 +5,8 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface StylesWithEffectsPart
 {
+  public String? ContentType { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
+  
 }

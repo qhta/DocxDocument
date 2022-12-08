@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface StyleMatrixReferenceType
 {
   /// <summary>
+  /// Style Matrix Index
+  /// </summary>
+  public UInt32? Index { get ; set; }
+  
+  /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }

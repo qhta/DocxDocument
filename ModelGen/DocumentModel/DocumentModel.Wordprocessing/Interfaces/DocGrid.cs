@@ -10,4 +10,14 @@ public interface DocGrid
   /// </summary>
   public DocGridKind? Type { get ; set; }
   
+  /// <summary>
+  /// Document Grid Line Pitch
+  /// </summary>
+  public Int32? LinePitch { get ; set; }
+  
+  /// <summary>
+  /// Document Grid Character Pitch
+  /// </summary>
+  public Int32? CharacterSpace { get ; set; }
+  
 }

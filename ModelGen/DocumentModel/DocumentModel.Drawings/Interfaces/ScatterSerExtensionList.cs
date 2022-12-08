@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ScatterSerExtensionList
 {
+  public Collection<ScatterSerExtension>? ScatterSerExtensions { get ; set; }
+  
 }

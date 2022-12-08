@@ -16,6 +16,11 @@ public interface ChartTitle
   public PosAlign? Align { get ; set; }
   
   /// <summary>
+  /// overlay, this property is only available in Office 2016 and later.
+  /// </summary>
+  public Boolean? Overlay { get ; set; }
+  
+  /// <summary>
   /// Text.
   /// </summary>
   public Text1? Text { get ; set; }
@@ -23,7 +28,7 @@ public interface ChartTitle
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
   /// TxPrTextBody.

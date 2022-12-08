@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PivotFormats
 {
+  public Collection<PivotFormat>? Items { get ; set; }
+  
 }

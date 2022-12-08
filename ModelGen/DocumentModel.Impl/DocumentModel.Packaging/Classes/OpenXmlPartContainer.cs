@@ -3,8 +3,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the base class for OpenXmlPackage and OpenXmlPart.
 /// </summary>
-public class OpenXmlPartContainerImpl: ModelElement<DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer>, OpenXmlPartContainer
+public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
 {
+  public DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets all external relationships.
   /// </summary>
@@ -17,7 +23,7 @@ public class OpenXmlPartContainerImpl: ModelElement<DocumentFormat.OpenXml.Packa
   /// <summary>
   /// Gets all hyperlink relationships.
   /// </summary>
-  public ReferenceRelationship? HyperlinkRelationships
+  public HyperlinkRelationship? HyperlinkRelationships
   {
     get;
     set;

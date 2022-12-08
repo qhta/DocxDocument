@@ -15,4 +15,19 @@ public interface CellMerge
   /// </summary>
   public VerticalMergeRevisionKind? VerticalMergeOriginal { get ; set; }
   
+  /// <summary>
+  /// author
+  /// </summary>
+  public String? Author { get ; set; }
+  
+  /// <summary>
+  /// date
+  /// </summary>
+  public DateTime? Date { get ; set; }
+  
+  /// <summary>
+  /// Annotation Identifier
+  /// </summary>
+  public String? Id { get ; set; }
+  
 }

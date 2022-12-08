@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PathList
 {
+  public Collection<Path>? Paths { get ; set; }
+  
 }

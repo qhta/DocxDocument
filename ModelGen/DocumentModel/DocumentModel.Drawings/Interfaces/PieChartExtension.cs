@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PieChartExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public FilteredPieSeries? FilteredPieSeries { get ; set; }
   
 }

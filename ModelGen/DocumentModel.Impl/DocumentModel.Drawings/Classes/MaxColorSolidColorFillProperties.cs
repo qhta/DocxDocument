@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class MaxColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.OpenXmlSolidColorFillPropertiesElementImpl, MaxColorSolidColorFillProperties
 {
+  public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

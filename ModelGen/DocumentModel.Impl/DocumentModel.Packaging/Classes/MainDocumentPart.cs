@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the MainDocumentPart
 /// </summary>
-public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, MainDocumentPart
+public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, MainDocumentPart
 {
+  public new DocumentFormat.OpenXml.Packaging.MainDocumentPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.MainDocumentPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -26,7 +32,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the CustomXmlParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? CustomXmlParts
+  public CustomXmlPart? CustomXmlParts
   {
     get;
     set;
@@ -98,7 +104,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the EmbeddedObjectParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -107,7 +113,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the EmbeddedPackageParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -143,7 +149,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the ImageParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -152,7 +158,13 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;
@@ -161,7 +173,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartContainerI
   /// <summary>
   /// Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart
   /// </summary>
-  public OpenXmlPartContainer? WordprocessingPrinterSettingsParts
+  public WordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts
   {
     get;
     set;

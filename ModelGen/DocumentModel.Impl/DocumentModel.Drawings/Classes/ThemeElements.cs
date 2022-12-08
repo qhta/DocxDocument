@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ThemeElements Class.
 /// </summary>
-public class ThemeElementsImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ThemeElements>, ThemeElements
+public class ThemeElementsImpl: ModelElementImpl, ThemeElements
 {
+  public DocumentFormat.OpenXml.Drawing.ThemeElements? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ThemeElements?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// ColorScheme.
   /// </summary>

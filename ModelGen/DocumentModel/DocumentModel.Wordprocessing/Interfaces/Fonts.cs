@@ -5,4 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Fonts
 {
+  public Collection<Font>? Items { get ; set; }
+  
 }

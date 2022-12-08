@@ -15,7 +15,22 @@ public interface BarChart
   /// </summary>
   public BarGroupingKind? BarGrouping { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors { get ; set; }
+  
+  public Collection<BarChartSeries2>? BarChartSerieses { get ; set; }
+  
+  public DataLabels2? DataLabels { get ; set; }
+  
+  public UInt16? GapWidth { get ; set; }
+  
+  public SByte? Overlap { get ; set; }
+  
+  public Collection<SeriesLines>? SeriesLineses { get ; set; }
+  
+  public Collection<UInt32>? AxisIds { get ; set; }
   
   public BarChartExtensionList? BarChartExtensionList { get ; set; }
   

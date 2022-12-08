@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Level2ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level2ParagraphProperties
 {
+  public new DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override LineSpacing? LineSpacing
   {
     get;
@@ -23,7 +29,49 @@ public class Level2ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     set;
   }
   
+  public Boolean? BulletColorText
+  {
+    get;
+    set;
+  }
+  
   public BulletColor? BulletColor
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? BulletSizeText
+  {
+    get;
+    set;
+  }
+  
+  public Int32? BulletSizePercentage
+  {
+    get;
+    set;
+  }
+  
+  public Int32? BulletSizePoints
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? BulletFontText
+  {
+    get;
+    set;
+  }
+  
+  public TextFontType? BulletFont
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? NoBullet
   {
     get;
     set;

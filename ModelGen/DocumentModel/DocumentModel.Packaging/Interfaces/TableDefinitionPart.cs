@@ -5,9 +5,13 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface TableDefinitionPart
 {
+  public String? ContentType { get ; set; }
+  
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public OpenXmlPartContainer? QueryTableParts { get ; set; }
+  public QueryTablePart? QueryTableParts { get ; set; }
+  
+  public String? RelationshipType { get ; set; }
   
 }

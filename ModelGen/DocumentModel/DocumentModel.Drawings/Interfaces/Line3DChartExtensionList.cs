@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Line3DChartExtensionList
 {
+  public Collection<Line3DChartExtension>? Line3DChartExtensions { get ; set; }
+  
 }

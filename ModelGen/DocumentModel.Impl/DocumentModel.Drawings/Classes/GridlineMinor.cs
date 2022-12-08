@@ -5,13 +5,25 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class GridlineMinorImpl: DocumentModel.Drawings.StyleEntryImpl, GridlineMinor
 {
-  public override LineReference1? LineReference
+  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.GridlineMinor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.GridlineMinor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public override LineReference2? LineReference
   {
     get;
     set;
   }
   
-  public override FillReference1? FillReference
+  public override String? LineWidthScale
+  {
+    get;
+    set;
+  }
+  
+  public override FillReference2? FillReference
   {
     get;
     set;
@@ -29,13 +41,13 @@ public class GridlineMinorImpl: DocumentModel.Drawings.StyleEntryImpl, GridlineM
     set;
   }
   
-  public override ShapeProperties3? ShapeProperties
+  public override ShapeProperties4? ShapeProperties
   {
     get;
     set;
   }
   
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
+  public override TextCharacterPropertiesType2? TextCharacterPropertiesType
   {
     get;
     set;
@@ -47,7 +59,7 @@ public class GridlineMinorImpl: DocumentModel.Drawings.StyleEntryImpl, GridlineM
     set;
   }
   
-  public override OfficeArtExtensionList1? OfficeArtExtensionList
+  public override OfficeArtExtensionList4? OfficeArtExtensionList
   {
     get;
     set;

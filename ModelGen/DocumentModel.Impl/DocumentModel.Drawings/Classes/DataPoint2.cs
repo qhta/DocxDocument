@@ -3,12 +3,54 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DataPoint Class.
 /// </summary>
-public class DataPoint2Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>, DataPoint2
+public class DataPoint2Impl: ModelElementImpl, DataPoint2
 {
+  public DocumentFormat.OpenXml.Drawing.Charts.DataPoint? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.DataPoint?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Index.
+  /// </summary>
+  public UInt32? Index
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Invert if Negative.
+  /// </summary>
+  public Boolean? InvertIfNegative
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Marker.
   /// </summary>
   public Marker1? Marker
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// 3D Bubble.
+  /// </summary>
+  public Boolean? Bubble3D
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Explosion.
+  /// </summary>
+  public UInt32? Explosion
   {
     get;
     set;

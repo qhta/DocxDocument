@@ -8,6 +8,6 @@ public interface InvertSolidFillFormat
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties9? ShapeProperties { get ; set; }
+  public ShapeProperties5? ShapeProperties { get ; set; }
   
 }

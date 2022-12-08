@@ -3,12 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WordprocessingCommentsExPart
 /// </summary>
-public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, WordprocessingCommentsExPart
+public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingCommentsExPart
 {
+  public new DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsExPart
   /// </summary>
-  public OpenXmlPartContainer? AlternativeFormatImportParts
+  public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
     get;
     set;
@@ -27,6 +33,12 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsEx? CommentsEx
+  {
+    get;
+    set;
+  }
+  
+  public override String? ContentType
   {
     get;
     set;
@@ -89,7 +101,7 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsExPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedObjectParts
+  public EmbeddedObjectPart? EmbeddedObjectParts
   {
     get;
     set;
@@ -98,7 +110,7 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WordprocessingCommentsExPart
   /// </summary>
-  public OpenXmlPartContainer? EmbeddedPackageParts
+  public EmbeddedPackagePart? EmbeddedPackageParts
   {
     get;
     set;
@@ -116,7 +128,7 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsExPart
   /// </summary>
-  public OpenXmlPartContainer? ImageParts
+  public ImagePart? ImageParts
   {
     get;
     set;
@@ -125,7 +137,13 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsExPart
   /// </summary>
-  public OpenXmlPartContainer? Model3DReferenceRelationshipParts
+  public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  {
+    get;
+    set;
+  }
+  
+  public override String? RelationshipType
   {
     get;
     set;

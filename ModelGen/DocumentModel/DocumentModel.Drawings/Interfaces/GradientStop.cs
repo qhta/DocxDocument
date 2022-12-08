@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface GradientStop
 {
   /// <summary>
+  /// Position
+  /// </summary>
+  public Int32? Position { get ; set; }
+  
+  /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }

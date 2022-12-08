@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ColorFromImpl: DocumentModel.Drawings.ColorTypeImpl, ColorFrom
 {
+  public new DocumentFormat.OpenXml.Drawing.ColorFrom? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ColorFrom?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

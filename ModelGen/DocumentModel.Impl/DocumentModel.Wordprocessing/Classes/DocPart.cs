@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Glossary Document Entry.
 /// </summary>
-public class DocPartImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.DocPart>, DocPart
+public class DocPartImpl: ModelElementImpl, DocPart
 {
+  public DocumentFormat.OpenXml.Wordprocessing.DocPart? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.DocPart?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>

@@ -6,6 +6,16 @@ namespace DocumentModel.Drawings;
 public interface ConnectionShape
 {
   /// <summary>
+  /// Reference to Custom Function
+  /// </summary>
+  public String? Macro { get ; set; }
+  
+  /// <summary>
+  /// Publish to Server
+  /// </summary>
+  public Boolean? Published { get ; set; }
+  
+  /// <summary>
   /// Connector Non Visual Properties.
   /// </summary>
   public NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get ; set; }
@@ -18,6 +28,6 @@ public interface ConnectionShape
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style4? Style { get ; set; }
+  public Style3? Style { get ; set; }
   
 }

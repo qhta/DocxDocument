@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom geometry.
 /// </summary>
-public class CustomGeometryImpl: ModelElement<DocumentFormat.OpenXml.Drawing.CustomGeometry>, CustomGeometry
+public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
 {
+  public DocumentFormat.OpenXml.Drawing.CustomGeometry? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.CustomGeometry?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Adjust Value List.
   /// </summary>

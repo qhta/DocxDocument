@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface PieSerExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public FilteredSeriesTitle? FilteredSeriesTitle { get ; set; }
   
   public FilteredCategoryTitle? FilteredCategoryTitle { get ; set; }

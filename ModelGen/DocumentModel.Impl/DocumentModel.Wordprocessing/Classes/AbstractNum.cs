@@ -3,8 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Abstract Numbering Definition.
 /// </summary>
-public class AbstractNumImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing.AbstractNum>, AbstractNum
+public class AbstractNumImpl: ModelElementImpl, AbstractNum
 {
+  public DocumentFormat.OpenXml.Wordprocessing.AbstractNum? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Wordprocessing.AbstractNum?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Abstract Numbering Definition ID
+  /// </summary>
+  public Int32? AbstractNumberId
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Abstract Numbering Definition Identifier.
   /// </summary>
@@ -56,6 +71,39 @@ public class AbstractNumImpl: ModelElement<DocumentFormat.OpenXml.Wordprocessing
   /// Numbering Template Code.
   /// </summary>
   public DocumentModel.HexWord? TemplateCode
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Abstract Numbering Definition Name.
+  /// </summary>
+  public String? AbstractNumDefinitionName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Numbering Style Definition.
+  /// </summary>
+  public String? StyleLink
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Numbering Style Reference.
+  /// </summary>
+  public String? NumberingStyleLink
+  {
+    get;
+    set;
+  }
+  
+  public Collection<Level>? Levels
   {
     get;
     set;

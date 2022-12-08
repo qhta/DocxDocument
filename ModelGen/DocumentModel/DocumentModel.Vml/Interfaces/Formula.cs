@@ -5,4 +5,9 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface Formula
 {
+  /// <summary>
+  /// Equation
+  /// </summary>
+  public String? Equation { get ; set; }
+  
 }

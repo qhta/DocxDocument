@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ContourColorImpl: DocumentModel.Drawings.ColorTypeImpl, ContourColor
 {
+  public new DocumentFormat.OpenXml.Drawing.ContourColor? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ContourColor?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

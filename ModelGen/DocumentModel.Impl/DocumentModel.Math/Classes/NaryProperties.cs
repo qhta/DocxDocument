@@ -3,8 +3,23 @@ namespace DocumentModel.Math;
 /// <summary>
 /// n-ary Properties.
 /// </summary>
-public class NaryPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Math.NaryProperties>, NaryProperties
+public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
 {
+  public DocumentFormat.OpenXml.Math.NaryProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Math.NaryProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// n-ary Operator Character.
+  /// </summary>
+  public String? AccentChar
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// n-ary Limit Location.
   /// </summary>

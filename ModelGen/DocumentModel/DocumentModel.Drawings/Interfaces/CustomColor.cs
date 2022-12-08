@@ -6,6 +6,11 @@ namespace DocumentModel.Drawings;
 public interface CustomColor
 {
   /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name { get ; set; }
+  
+  /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }

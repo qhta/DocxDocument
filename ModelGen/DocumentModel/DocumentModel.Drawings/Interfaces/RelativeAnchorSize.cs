@@ -15,9 +15,9 @@ public interface RelativeAnchorSize
   /// </summary>
   public ToAnchor? ToAnchor { get ; set; }
   
-  public Shape3? Shape { get ; set; }
+  public Shape1? Shape { get ; set; }
   
-  public GroupShape2? GroupShape { get ; set; }
+  public GroupShape1? GroupShape { get ; set; }
   
   public GraphicFrame? GraphicFrame { get ; set; }
   

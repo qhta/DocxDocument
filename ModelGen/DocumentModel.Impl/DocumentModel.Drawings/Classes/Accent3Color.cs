@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Accent3ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent3Color
 {
+  public new DocumentFormat.OpenXml.Drawing.Accent3Color? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Accent3Color?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override RgbColorModelPercentage? RgbColorModelPercentage
   {
     get;

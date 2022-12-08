@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Constraint.
 /// </summary>
-public class ConstraintImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>, Constraint
+public class ConstraintImpl: ModelElementImpl, Constraint
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Constraint?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Constraint Type
   /// </summary>
@@ -29,6 +35,15 @@ public class ConstraintImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
       if (OpenXmlElement != null)
         OpenXmlElement.For = (DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// For Name
+  /// </summary>
+  public String? ForName
+  {
+    get;
+    set;
   }
   
   /// <summary>
@@ -71,6 +86,15 @@ public class ConstraintImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
   }
   
   /// <summary>
+  /// Reference For Name
+  /// </summary>
+  public String? ReferenceForName
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
   /// Reference Point Type
   /// </summary>
   public ElementKind? ReferencePointType
@@ -94,6 +118,24 @@ public class ConstraintImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagram
       if (OpenXmlElement != null)
         OpenXmlElement.Operator = (DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Value
+  /// </summary>
+  public Double? Val
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Factor
+  /// </summary>
+  public Double? Fact
+  {
+    get;
+    set;
   }
   
   /// <summary>

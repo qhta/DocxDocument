@@ -3,8 +3,77 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Outer Shadow Effect.
 /// </summary>
-public class OuterShadowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.OuterShadow>, OuterShadow
+public class OuterShadowImpl: ModelElementImpl, OuterShadow
 {
+  public DocumentFormat.OpenXml.Drawing.OuterShadow? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.OuterShadow?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Blur Radius
+  /// </summary>
+  public Int64? BlurRadius
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shadow Offset Distance
+  /// </summary>
+  public Int64? Distance
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Shadow Direction
+  /// </summary>
+  public Int32? Direction
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Horizontal Scaling Factor
+  /// </summary>
+  public Int32? HorizontalRatio
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Scaling Factor
+  /// </summary>
+  public Int32? VerticalRatio
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Horizontal Skew
+  /// </summary>
+  public Int32? HorizontalSkew
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Vertical Skew
+  /// </summary>
+  public Int32? VerticalSkew
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Shadow Alignment
   /// </summary>
@@ -16,6 +85,15 @@ public class OuterShadowImpl: ModelElement<DocumentFormat.OpenXml.Drawing.OuterS
       if (OpenXmlElement != null)
         OpenXmlElement.Alignment = (DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues?)value;
     }
+  }
+  
+  /// <summary>
+  /// Rotate With Shape
+  /// </summary>
+  public Boolean? RotateWithShape
+  {
+    get;
+    set;
   }
   
   /// <summary>

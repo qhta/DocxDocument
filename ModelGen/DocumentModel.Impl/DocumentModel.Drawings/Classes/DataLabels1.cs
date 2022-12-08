@@ -1,70 +1,87 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Labels.
+/// Defines the DataLabels Class.
 /// </summary>
-public class DataLabels1Impl: ModelElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>, DataLabels1
+public class DataLabels1Impl: ModelElementImpl, DataLabels1
 {
-  public NumberingFormat1? NumberingFormat
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabels? OpenXmlElement
   {
-    get;
-    set;
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabels?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
   }
   
-  public ChartShapeProperties? ChartShapeProperties
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos
   {
-    get;
-    set;
-  }
-  
-  public TextProperties1? TextProperties
-  {
-    get;
-    set;
-  }
-  
-  public DataLabelPositionKind? DataLabelPosition
-  {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        return (DataLabelPositionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DataLabelPos?)OpenXmlElement?.Pos?.Value;
     set
     {
       if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        if (openXmlElement != null)
-        {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value;
-          else
-            openXmlElement.Remove();
-        }
-        else
-        {
-          if (value != null)
-          {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
-          }
-        }
-      }
+        OpenXmlElement.Pos = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos?)value;
     }
   }
   
-  public LeaderLines1? LeaderLines
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat
   {
     get;
     set;
   }
   
-  public DLblsExtensionList? DLblsExtensionList
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties6? ShapeProperties
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring
+  {
+    get;
+    set;
+  }
+  
+  public Collection<DataLabel1>? Items
+  {
+    get;
+    set;
+  }
+  
+  public Collection<DataLabelHidden>? DataLabelHiddens
+  {
+    get;
+    set;
+  }
+  
+  public ExtensionList2? ExtensionList
   {
     get;
     set;

@@ -11,6 +11,31 @@ public interface FrameProperties
   public DropCapLocationKind? DropCap { get ; set; }
   
   /// <summary>
+  /// Drop Cap Vertical Height in Lines
+  /// </summary>
+  public Int32? Lines { get ; set; }
+  
+  /// <summary>
+  /// Frame Width
+  /// </summary>
+  public String? Width { get ; set; }
+  
+  /// <summary>
+  /// Frame Height
+  /// </summary>
+  public UInt32? Height { get ; set; }
+  
+  /// <summary>
+  /// Vertical Frame Padding
+  /// </summary>
+  public String? VerticalSpace { get ; set; }
+  
+  /// <summary>
+  /// Horizontal Frame Padding
+  /// </summary>
+  public String? HorizontalSpace { get ; set; }
+  
+  /// <summary>
   /// Text Wrapping Around Frame
   /// </summary>
   public TextWrappingKind? Wrap { get ; set; }
@@ -26,9 +51,19 @@ public interface FrameProperties
   public VerticalAnchorKind? VerticalPosition { get ; set; }
   
   /// <summary>
+  /// Absolute Horizontal Position
+  /// </summary>
+  public String? X { get ; set; }
+  
+  /// <summary>
   /// Relative Horizontal Position
   /// </summary>
   public HorizontalAlignmentKind? XAlign { get ; set; }
+  
+  /// <summary>
+  /// Absolute Vertical Position
+  /// </summary>
+  public String? Y { get ; set; }
   
   /// <summary>
   /// Relative Vertical Position
@@ -39,5 +74,10 @@ public interface FrameProperties
   /// Frame Height Type
   /// </summary>
   public HeightRuleKind? HeightType { get ; set; }
+  
+  /// <summary>
+  /// Lock Frame Anchor to Paragraph
+  /// </summary>
+  public Boolean? AnchorLock { get ; set; }
   
 }

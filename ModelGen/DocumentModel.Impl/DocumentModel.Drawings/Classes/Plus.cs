@@ -5,6 +5,12 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class PlusImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, Plus
 {
+  public new DocumentFormat.OpenXml.Drawing.Charts.Plus? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Charts.Plus?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override NumberReference? NumberReference
   {
     get;

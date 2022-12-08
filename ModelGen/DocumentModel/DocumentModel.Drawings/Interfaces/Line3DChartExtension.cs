@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface Line3DChartExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get ; set; }
   
 }

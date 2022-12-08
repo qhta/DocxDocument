@@ -3,12 +3,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GroupShapeNonVisualProperties Class.
 /// </summary>
-public class GroupShapeNonVisualPropertiesImpl: ModelElement<DocumentFormat.OpenXml.Office.Drawing.GroupShapeNonVisualProperties>, GroupShapeNonVisualProperties
+public class GroupShapeNonVisualPropertiesImpl: ModelElementImpl, GroupShapeNonVisualProperties
 {
+  public DocumentFormat.OpenXml.Office.Drawing.GroupShapeNonVisualProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office.Drawing.GroupShapeNonVisualProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties1? NonVisualDrawingProperties
+  public NonVisualDrawingProperties2? NonVisualDrawingProperties
   {
     get;
     set;

@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NumberDiagramInfoList
 {
+  public Collection<NumberDiagramInfo>? NumberDiagramInfos { get ; set; }
+  
 }

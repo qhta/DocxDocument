@@ -3,8 +3,32 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Picture Class.
 /// </summary>
-public class PictureImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>, Picture
+public class PictureImpl: ModelElementImpl, Picture
 {
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Reference to Custom Function
+  /// </summary>
+  public String? Macro
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Publish to Server
+  /// </summary>
+  public Boolean? Published
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Non-Visual Picture Properties.
   /// </summary>
@@ -17,7 +41,7 @@ public class PictureImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawi
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public BlipFill2? BlipFill
+  public BlipFill1? BlipFill
   {
     get;
     set;
@@ -35,7 +59,7 @@ public class PictureImpl: ModelElement<DocumentFormat.OpenXml.Drawing.ChartDrawi
   /// <summary>
   /// Style.
   /// </summary>
-  public Style4? Style
+  public Style3? Style
   {
     get;
     set;

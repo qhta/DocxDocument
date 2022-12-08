@@ -5,6 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface NonVisualDrawingPropertiesExtension
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri { get ; set; }
+  
   public CompatExtension? CompatExtension { get ; set; }
   
   public BackgroundProperties? BackgroundProperties { get ; set; }
@@ -12,6 +17,8 @@ public interface NonVisualDrawingPropertiesExtension
   public CreationId? CreationId { get ; set; }
   
   public PredecessorDrawingElementReference? PredecessorDrawingElementReference { get ; set; }
+  
+  public Boolean? Decorative { get ; set; }
   
   public ClassificationOutcome? ClassificationOutcome { get ; set; }
   

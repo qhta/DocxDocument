@@ -6,13 +6,28 @@ namespace DocumentModel.Drawings;
 public interface Transform2D1
 {
   /// <summary>
+  /// Rotation
+  /// </summary>
+  public Int32? Rotation { get ; set; }
+  
+  /// <summary>
+  /// Horizontal Flip
+  /// </summary>
+  public Boolean? HorizontalFlip { get ; set; }
+  
+  /// <summary>
+  /// Vertical Flip
+  /// </summary>
+  public Boolean? VerticalFlip { get ; set; }
+  
+  /// <summary>
   /// Offset.
   /// </summary>
-  public Boolean? Offset { get ; set; }
+  public Point2DType? Offset { get ; set; }
   
   /// <summary>
   /// Extents.
   /// </summary>
-  public Boolean? Extents { get ; set; }
+  public PositiveSize2DType? Extents { get ; set; }
   
 }

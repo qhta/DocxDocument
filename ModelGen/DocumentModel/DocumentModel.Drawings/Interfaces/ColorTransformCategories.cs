@@ -5,4 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ColorTransformCategories
 {
+  public Collection<ColorTransformCategory>? Items { get ; set; }
+  
 }

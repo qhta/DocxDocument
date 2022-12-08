@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Whole E2O Formatting.
 /// </summary>
-public class WholeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.Whole>, Whole
+public class WholeImpl: ModelElementImpl, Whole
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Whole? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Whole?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Outline.
   /// </summary>

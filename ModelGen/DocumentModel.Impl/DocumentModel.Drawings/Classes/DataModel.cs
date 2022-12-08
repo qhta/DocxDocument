@@ -3,8 +3,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Data Model.
 /// </summary>
-public class DataModelImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>, DataModel
+public class DataModelImpl: ModelElementImpl, DataModel
 {
+  public DocumentFormat.OpenXml.Drawing.Diagrams.DataModel? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.DataModel?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Point List.
   /// </summary>

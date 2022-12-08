@@ -10,4 +10,6 @@ public interface Matrix
   /// </summary>
   public MatrixProperties? MatrixProperties { get ; set; }
   
+  public Collection<MatrixRow>? MatrixRows { get ; set; }
+  
 }

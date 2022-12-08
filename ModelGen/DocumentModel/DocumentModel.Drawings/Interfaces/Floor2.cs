@@ -1,24 +1,16 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Floor Class.
+/// 3D floor formatting.
 /// </summary>
 public interface Floor2
 {
-  public LineReference1? LineReference { get ; set; }
+  public Byte? Thickness { get ; set; }
   
-  public FillReference1? FillReference { get ; set; }
+  public ShapeProperties1? ShapeProperties { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
+  public PictureOptions? PictureOptions { get ; set; }
   
-  public FontReference1? FontReference { get ; set; }
-  
-  public ShapeProperties3? ShapeProperties { get ; set; }
-  
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
-  
-  public TextBodyProperties? TextBodyProperties { get ; set; }
-  
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

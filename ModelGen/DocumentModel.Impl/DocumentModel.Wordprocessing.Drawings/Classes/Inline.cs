@@ -3,12 +3,54 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Inline DrawingML Object.
 /// </summary>
-public class InlineImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>, Inline
+public class InlineImpl: ModelElementImpl, Inline
 {
+  public DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Top Edge
+  /// </summary>
+  public UInt32? DistanceFromTop
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Bottom Edge
+  /// </summary>
+  public UInt32? DistanceFromBottom
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Left Edge
+  /// </summary>
+  public UInt32? DistanceFromLeft
+  {
+    get;
+    set;
+  }
+  
+  /// <summary>
+  /// Distance From Text on Right Edge
+  /// </summary>
+  public UInt32? DistanceFromRight
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AnchorId
+  public DocumentModel.HexBinaryValue? AnchorId
   {
     get;
     set;
@@ -17,7 +59,7 @@ public class InlineImpl: ModelElement<DocumentFormat.OpenXml.Drawing.Wordprocess
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? EditId
+  public DocumentModel.HexBinaryValue? EditId
   {
     get;
     set;

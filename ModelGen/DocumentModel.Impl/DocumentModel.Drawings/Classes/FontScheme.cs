@@ -3,8 +3,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Font Scheme.
 /// </summary>
-public class FontSchemeImpl: ModelElement<DocumentFormat.OpenXml.Drawing.FontScheme>, FontScheme
+public class FontSchemeImpl: ModelElementImpl, FontScheme
 {
+  public DocumentFormat.OpenXml.Drawing.FontScheme? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FontScheme?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get;
+    set;
+  }
+  
   /// <summary>
   /// Major Font.
   /// </summary>

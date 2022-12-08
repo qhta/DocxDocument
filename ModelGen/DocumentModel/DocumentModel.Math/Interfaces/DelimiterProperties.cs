@@ -6,6 +6,21 @@ namespace DocumentModel.Math;
 public interface DelimiterProperties
 {
   /// <summary>
+  /// Delimiter Beginning Character.
+  /// </summary>
+  public String? BeginChar { get ; set; }
+  
+  /// <summary>
+  /// Delimiter Separator Character.
+  /// </summary>
+  public String? SeparatorChar { get ; set; }
+  
+  /// <summary>
+  /// Delimiter Ending Character.
+  /// </summary>
+  public String? EndChar { get ; set; }
+  
+  /// <summary>
   /// Delimiter Grow.
   /// </summary>
   public BooleanKind? GrowOperators { get ; set; }

@@ -3,8 +3,14 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 /// Text Wrapping.
 /// </summary>
-public class TextWrapImpl: ModelElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>, TextWrap
+public class TextWrapImpl: ModelElementImpl, TextWrap
 {
+  public DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   /// <summary>
   /// Wrapping type
   /// </summary>

@@ -10,4 +10,9 @@ public interface AutoNumberedBullet
   /// </summary>
   public TextAutoNumberSchemeKind? Type { get ; set; }
   
+  /// <summary>
+  /// Start Numbering At
+  /// </summary>
+  public Int32? StartAt { get ; set; }
+  
 }

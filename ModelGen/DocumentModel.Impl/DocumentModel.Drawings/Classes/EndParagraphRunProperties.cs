@@ -3,9 +3,21 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// End Paragraph Run Properties.
 /// </summary>
-public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesType2Impl, EndParagraphRunProperties
+public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesType1Impl, EndParagraphRunProperties
 {
+  public new DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
   public override Outline? Outline
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? NoFill
   {
     get;
     set;
@@ -23,13 +35,19 @@ public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacter
     set;
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
     get;
     set;
   }
   
   public PatternFill? PatternFill
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? GroupFill
   {
     get;
     set;
@@ -53,13 +71,49 @@ public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacter
     set;
   }
   
+  public Boolean? UnderlineFollowsText
+  {
+    get;
+    set;
+  }
+  
   public new Underline? Underline
   {
     get;
     set;
   }
   
+  public Boolean? UnderlineFillText
+  {
+    get;
+    set;
+  }
+  
   public UnderlineFill? UnderlineFill
+  {
+    get;
+    set;
+  }
+  
+  public TextFontType? LatinFont
+  {
+    get;
+    set;
+  }
+  
+  public TextFontType? EastAsianFont
+  {
+    get;
+    set;
+  }
+  
+  public TextFontType? ComplexScriptFont
+  {
+    get;
+    set;
+  }
+  
+  public TextFontType? SymbolFont
   {
     get;
     set;
@@ -72,6 +126,12 @@ public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacter
   }
   
   public HyperlinkOnMouseOver? HyperlinkOnMouseOver
+  {
+    get;
+    set;
+  }
+  
+  public Boolean? RightToLeft
   {
     get;
     set;
