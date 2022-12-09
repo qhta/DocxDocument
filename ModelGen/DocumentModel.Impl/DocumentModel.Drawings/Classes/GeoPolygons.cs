@@ -13,8 +13,8 @@ public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
   
   public Collection<GeoPolygon>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

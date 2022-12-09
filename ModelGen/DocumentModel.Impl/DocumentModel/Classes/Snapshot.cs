@@ -16,8 +16,12 @@ public class SnapshotImpl: ModelElementImpl, Snapshot
   /// </summary>
   public String? Embed
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Embed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Embed = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SnapshotImpl: ModelElementImpl, Snapshot
   /// </summary>
   public String? Link
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Link?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Link = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -44,110 +52,110 @@ public class SnapshotImpl: ModelElementImpl, Snapshot
   
   public Collection<DocumentModel.Drawings.AlphaBiLevel>? AlphaBiLevels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? AlphaCeilings
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? AlphaFloors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.AlphaInverse>? AlphaInverses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.AlphaModulationEffect>? AlphaModulationEffects
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.AlphaModulationFixed>? AlphaModulationFixeds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.AlphaReplace>? AlphaReplaces
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.BiLevel>? BiLevels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.Blur>? Blurs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.ColorChange>? ColorChanges
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.ColorReplacement>? ColorReplacements
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.Duotone>? Duotones
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.FillOverlay>? FillOverlaies
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? Grayscales
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.Hsl>? Hsls
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.LuminanceEffect>? LuminanceEffects
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Drawings.TintEffect>? TintEffects
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Drawings.BlipExtensionList? BlipExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// </summary>
   public String? Element
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Element?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Element = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// </summary>
   public virtual CustomXmlProperties? CustomXmlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

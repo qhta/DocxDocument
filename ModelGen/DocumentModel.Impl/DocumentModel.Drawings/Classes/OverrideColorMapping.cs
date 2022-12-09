@@ -11,10 +11,10 @@ public class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingType1I
     set => _OpenXmlElement = value;
   }
   
-  public override ExtensionList1? ExtensionList
+  public override ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

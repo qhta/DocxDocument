@@ -16,8 +16,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public Boolean? Recommended
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Recommended?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Recommended = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -64,8 +68,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public Int32? CryptographicAlgorithmSid
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.CryptographicAlgorithmSid?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CryptographicAlgorithmSid = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -73,8 +81,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public UInt32? CryptographicSpinCount
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.CryptographicSpinCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CryptographicSpinCount = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -82,8 +94,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public String? CryptographicProvider
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CryptographicProvider?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CryptographicProvider = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -91,8 +107,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.HexBinaryValue? AlgorithmIdExtensibility
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -100,8 +116,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public String? AlgorithmIdExtensibilitySource
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlgorithmIdExtensibilitySource?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlgorithmIdExtensibilitySource = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -109,8 +129,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.HexBinaryValue? CryptographicProviderTypeExtensibility
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -118,8 +138,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public String? CryptographicProviderTypeExtSource
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CryptographicProviderTypeExtSource?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CryptographicProviderTypeExtSource = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -127,8 +151,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.Base64BinaryValue? Hash
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -136,8 +160,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.Base64BinaryValue? Salt
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -145,8 +169,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public String? AlgorithmName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlgorithmName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlgorithmName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -154,8 +182,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.Base64BinaryValue? HashValue
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -163,8 +191,8 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public DocumentModel.Base64BinaryValue? SaltValue
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -172,8 +200,12 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
   /// </summary>
   public Int32? SpinCount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.SpinCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SpinCount = (System.Int32?)value;
+    }
   }
   
 }

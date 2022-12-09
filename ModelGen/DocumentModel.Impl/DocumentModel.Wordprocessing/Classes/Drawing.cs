@@ -16,8 +16,8 @@ public class DrawingImpl: ModelElementImpl, Drawing
   /// </summary>
   public DocumentModel.Wordprocessing.Drawings.Anchor? Anchor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DrawingImpl: ModelElementImpl, Drawing
   /// </summary>
   public DocumentModel.Wordprocessing.Drawings.Inline? Inline
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

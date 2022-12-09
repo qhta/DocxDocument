@@ -1,48 +1,43 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the DataLabel Class.
+/// Data Label.
 /// </summary>
 public interface DataLabel1
 {
   /// <summary>
-  /// idx, this property is only available in Office 2016 and later.
+  /// Index.
   /// </summary>
-  public UInt32? Idx { get ; set; }
+  public UInt32? Index { get ; set; }
   
-  /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DataLabelPos? Pos { get ; set; }
+  public Boolean? Delete { get ; set; }
   
-  /// <summary>
-  /// NumberFormat.
-  /// </summary>
-  public NumberFormat? NumberFormat { get ; set; }
+  public Layout1? Layout { get ; set; }
   
-  /// <summary>
-  /// ShapeProperties.
-  /// </summary>
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ChartText1? ChartText { get ; set; }
   
-  /// <summary>
-  /// TxPrTextBody.
-  /// </summary>
-  public TxPrTextBody? TxPrTextBody { get ; set; }
+  public NumberingFormat2? NumberingFormat { get ; set; }
   
-  /// <summary>
-  /// DataLabelVisibilities.
-  /// </summary>
-  public DataLabelVisibilities? DataLabelVisibilities { get ; set; }
+  public ChartShapeProperties? ChartShapeProperties { get ; set; }
   
-  /// <summary>
-  /// SeparatorXsdstring.
-  /// </summary>
-  public String? SeparatorXsdstring { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList2? ExtensionList { get ; set; }
+  public DataLabelPositionKind? DataLabelPosition { get ; set; }
+  
+  public Boolean? ShowLegendKey { get ; set; }
+  
+  public Boolean? ShowValue { get ; set; }
+  
+  public Boolean? ShowCategoryName { get ; set; }
+  
+  public Boolean? ShowSeriesName { get ; set; }
+  
+  public Boolean? ShowPercent { get ; set; }
+  
+  public Boolean? ShowBubbleSize { get ; set; }
+  
+  public String? Separator { get ; set; }
+  
+  public DLblExtensionList? DLblExtensionList { get ; set; }
   
 }

@@ -16,8 +16,12 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public AxisTitle1? AxisTitle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public CategoryAxis2? CategoryAxis
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public ChartArea? ChartArea
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataLabel4? DataLabel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataLabelCallout? DataLabelCallout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataPoint3? DataPoint
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +83,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataPoint3D? DataPoint3D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +92,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataPointLine? DataPointLine
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +101,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataPointMarker? DataPointMarker
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -106,8 +110,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public MarkerLayoutProperties? MarkerLayoutProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -115,8 +119,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataPointWireframe? DataPointWireframe
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -124,8 +128,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DataTableStyle? DataTableStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -133,8 +137,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DownBar? DownBar
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -142,8 +146,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public DropLine? DropLine
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -151,8 +155,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public ErrorBar? ErrorBar
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -160,8 +164,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public Floor1? Floor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -169,8 +173,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public GridlineMajor? GridlineMajor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -178,8 +182,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public GridlineMinor? GridlineMinor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -187,8 +191,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public HiLoLine? HiLoLine
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -196,8 +200,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public LeaderLine? LeaderLine
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -205,8 +209,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public LegendStyle? LegendStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -214,8 +218,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public PlotArea3? PlotArea
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -223,8 +227,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public PlotArea3D? PlotArea3D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -232,8 +236,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public SeriesAxis1? SeriesAxis
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -241,8 +245,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public SeriesLine? SeriesLine
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -250,8 +254,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public TitleStyle? TitleStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -259,8 +263,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public TrendlineStyle? TrendlineStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -268,8 +272,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public TrendlineLabel2? TrendlineLabel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -277,8 +281,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public UpBar? UpBar
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -286,8 +290,8 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public ValueAxis2? ValueAxis
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -295,17 +299,17 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// </summary>
   public Wall? Wall
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList4? OfficeArtExtensionList
+  public OfficeArtExtensionList5? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

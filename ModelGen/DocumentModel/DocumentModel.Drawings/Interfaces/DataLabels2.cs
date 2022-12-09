@@ -1,40 +1,44 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Labels.
+/// Defines the DataLabels Class.
 /// </summary>
 public interface DataLabels2
 {
-  public Collection<DataLabel3>? Items { get ; set; }
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos { get ; set; }
   
-  public Boolean? Delete { get ; set; }
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat { get ; set; }
   
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
-  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody { get ; set; }
   
-  public TextProperties2? TextProperties { get ; set; }
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities { get ; set; }
   
-  public DataLabelPositionKind? DataLabelPosition { get ; set; }
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring { get ; set; }
   
-  public Boolean? ShowLegendKey { get ; set; }
+  public Collection<DataLabel2>? Items { get ; set; }
   
-  public Boolean? ShowValue { get ; set; }
+  public Collection<DataLabelHidden>? DataLabelHiddens { get ; set; }
   
-  public Boolean? ShowCategoryName { get ; set; }
-  
-  public Boolean? ShowSeriesName { get ; set; }
-  
-  public Boolean? ShowPercent { get ; set; }
-  
-  public Boolean? ShowBubbleSize { get ; set; }
-  
-  public String? Separator { get ; set; }
-  
-  public Boolean? ShowLeaderLines { get ; set; }
-  
-  public LeaderLines2? LeaderLines { get ; set; }
-  
-  public DLblsExtensionList? DLblsExtensionList { get ; set; }
+  public ExtensionList2? ExtensionList { get ; set; }
   
 }

@@ -13,8 +13,8 @@ public class ExtensionList2Impl: ModelElementImpl, ExtensionList2
   
   public Collection<Extension2>? Extension2s
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

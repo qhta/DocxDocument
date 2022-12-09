@@ -29,8 +29,12 @@ public class ColorMenuImpl: ModelElementImpl, ColorMenu
   /// </summary>
   public String? StrokeColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StrokeColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StrokeColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class ColorMenuImpl: ModelElementImpl, ColorMenu
   /// </summary>
   public String? FillColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FillColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FillColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class ColorMenuImpl: ModelElementImpl, ColorMenu
   /// </summary>
   public String? ShadowColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShadowColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShadowColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class ColorMenuImpl: ModelElementImpl, ColorMenu
   /// </summary>
   public String? ExtrusionColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ExtrusionColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ExtrusionColor = (System.String?)value;
+    }
   }
   
 }

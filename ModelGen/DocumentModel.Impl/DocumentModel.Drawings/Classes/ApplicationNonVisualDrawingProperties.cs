@@ -16,8 +16,12 @@ public class ApplicationNonVisualDrawingPropertiesImpl: ModelElementImpl, Applic
   /// </summary>
   public String? Macro
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Macro?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Macro = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ApplicationNonVisualDrawingPropertiesImpl: ModelElementImpl, Applic
   /// </summary>
   public Boolean? Published
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Published?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Published = (System.Boolean?)value;
+    }
   }
   
 }

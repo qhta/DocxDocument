@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the GroupShapeProperties Class.
+/// Group Shape Properties.
 /// </summary>
 public interface GroupShapeProperties2
 {
@@ -21,7 +21,7 @@ public interface GroupShapeProperties2
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill2? BlipFill { get ; set; }
+  public BlipFill1? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
   
@@ -33,6 +33,6 @@ public interface GroupShapeProperties2
   
   public Scene3DType? Scene3DType { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

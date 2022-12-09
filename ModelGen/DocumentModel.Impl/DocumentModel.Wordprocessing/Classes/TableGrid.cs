@@ -13,14 +13,14 @@ public class TableGridImpl: ModelElementImpl, TableGrid
   
   public Collection<GridColumn>? GridColumns
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public TableGridChange? TableGridChange
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

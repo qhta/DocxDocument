@@ -16,8 +16,12 @@ public class LevelTextImpl: ModelElementImpl, LevelText
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LevelTextImpl: ModelElementImpl, LevelText
   /// </summary>
   public Boolean? Null
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Null?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Null = (System.Boolean?)value;
+    }
   }
   
 }

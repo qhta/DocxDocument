@@ -16,17 +16,17 @@ public class LiveFeedPropertiesImpl: ModelElementImpl, LiveFeedProperties
   /// </summary>
   public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public OfficeArtExtensionList6? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

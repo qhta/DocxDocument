@@ -13,8 +13,8 @@ public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionLis
   
   public Collection<HyperlinkExtension>? HyperlinkExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

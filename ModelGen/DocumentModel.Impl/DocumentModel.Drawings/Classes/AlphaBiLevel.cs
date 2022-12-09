@@ -16,8 +16,12 @@ public class AlphaBiLevelImpl: ModelElementImpl, AlphaBiLevel
   /// </summary>
   public Int32? Threshold
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Threshold?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Threshold = (System.Int32?)value;
+    }
   }
   
 }

@@ -16,14 +16,18 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public ChartPart? ChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.SlideMasterPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -31,8 +35,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public CustomXmlPart? CustomXmlParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -40,8 +44,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public DiagramColorsPart? DiagramColorsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -49,8 +53,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public DiagramDataPart? DiagramDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -58,8 +62,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -67,8 +71,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public DiagramPersistLayoutPart? DiagramPersistLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -76,8 +80,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public DiagramStylePart? DiagramStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -85,8 +89,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -94,8 +98,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public EmbeddedControlPersistencePart? EmbeddedControlPersistenceParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -103,8 +107,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public EmbeddedObjectPart? EmbeddedObjectParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -112,8 +116,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public EmbeddedPackagePart? EmbeddedPackageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -121,8 +125,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public ExtendedChartPart? ExtendedChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -130,8 +134,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -139,14 +143,18 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.SlideMasterPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -154,8 +162,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public SlideLayoutPart? SlideLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -163,8 +171,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public SlidePart? SlideParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -172,8 +180,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public UserDefinedTagsPart? UserDefinedTagsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -181,8 +189,8 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
   /// </summary>
   public VmlDrawingPart? VmlDrawingParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

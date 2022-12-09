@@ -16,8 +16,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int16? LeftFromText
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.LeftFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeftFromText = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int16? RightFromText
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.RightFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightFromText = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int16? TopFromText
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.TopFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TopFromText = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int16? BottomFromText
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.BottomFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BottomFromText = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -91,8 +107,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int32? TablePositionX
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.TablePositionX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TablePositionX = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -113,8 +133,12 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
   /// </summary>
   public Int32? TablePositionY
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.TablePositionY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TablePositionY = (System.Int32?)value;
+    }
   }
   
 }

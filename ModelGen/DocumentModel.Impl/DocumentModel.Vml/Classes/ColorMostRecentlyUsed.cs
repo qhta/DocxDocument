@@ -29,8 +29,12 @@ public class ColorMostRecentlyUsedImpl: ModelElementImpl, ColorMostRecentlyUsed
   /// </summary>
   public String? Colors
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Colors?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Colors = (System.String?)value;
+    }
   }
   
 }

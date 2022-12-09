@@ -16,8 +16,12 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public Int64? Z
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Z?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Z = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public Int64? ExtrusionHeight
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.ExtrusionHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ExtrusionHeight = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public Int64? ContourWidth
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.ContourWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ContourWidth = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,8 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public BevelType? BevelTop
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -65,8 +77,8 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public BevelType? BevelBottom
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -74,8 +86,8 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public ExtrusionColor? ExtrusionColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -83,17 +95,17 @@ public class Shape3DImpl: ModelElementImpl, Shape3D
   /// </summary>
   public ContourColor? ContourColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

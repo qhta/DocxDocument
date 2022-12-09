@@ -16,8 +16,12 @@ public class ListItemImpl: ModelElementImpl, ListItem
   /// </summary>
   public String? DisplayText
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DisplayText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DisplayText = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ListItemImpl: ModelElementImpl, ListItem
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// </summary>
   public String? CommandName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CommandName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CommandName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// </summary>
   public DocumentModel.HexBinaryValue? CommandIndex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// </summary>
   public DocumentModel.HexBinaryValue? Argument
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

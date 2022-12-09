@@ -16,14 +16,18 @@ public class ImageLayerImpl: ModelElementImpl, ImageLayer
   /// </summary>
   public String? Embed
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Embed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Embed = (System.String?)value;
+    }
   }
   
   public Collection<ImageEffect>? ImageEffects
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

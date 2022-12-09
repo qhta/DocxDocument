@@ -8,6 +8,6 @@ public interface FilteredCategoryTitle
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  public AxisDataSourceType2? AxisDataSourceType { get ; set; }
+  public AxisDataSourceType1? AxisDataSourceType { get ; set; }
   
 }

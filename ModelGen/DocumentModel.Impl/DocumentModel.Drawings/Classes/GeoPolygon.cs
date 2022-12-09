@@ -16,8 +16,12 @@ public class GeoPolygonImpl: ModelElementImpl, GeoPolygon
   /// </summary>
   public String? PolygonId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PolygonId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PolygonId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GeoPolygonImpl: ModelElementImpl, GeoPolygon
   /// </summary>
   public Int32? NumPoints
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.NumPoints?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NumPoints = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class GeoPolygonImpl: ModelElementImpl, GeoPolygon
   /// </summary>
   public String? PcaRings
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PcaRings?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PcaRings = (System.String?)value;
+    }
   }
   
 }

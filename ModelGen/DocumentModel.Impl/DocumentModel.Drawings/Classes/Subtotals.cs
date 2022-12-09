@@ -13,8 +13,8 @@ public class SubtotalsImpl: ModelElementImpl, Subtotals
   
   public Collection<UInt32>? UnsignedIntegerTypes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

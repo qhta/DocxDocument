@@ -26,20 +26,20 @@ public class NumericDimensionImpl: ModelElementImpl, NumericDimension
   
   public OpenXmlFormulaElement? Formula
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public OpenXmlFormulaElement? NfFormula
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<NumericLevel>? NumericLevels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

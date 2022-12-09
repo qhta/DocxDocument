@@ -16,8 +16,12 @@ public class SVGBlipImpl: ModelElementImpl, SVGBlip
   /// </summary>
   public String? Embed
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Embed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Embed = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SVGBlipImpl: ModelElementImpl, SVGBlip
   /// </summary>
   public String? Link
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Link?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Link = (System.String?)value;
+    }
   }
   
 }

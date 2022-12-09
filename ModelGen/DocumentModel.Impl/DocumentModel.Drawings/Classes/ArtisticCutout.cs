@@ -16,8 +16,12 @@ public class ArtisticCutoutImpl: ModelElementImpl, ArtisticCutout
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticCutoutImpl: ModelElementImpl, ArtisticCutout
   /// </summary>
   public Int32? NumberOfShades
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.NumberOfShades?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NumberOfShades = (System.Int32?)value;
+    }
   }
   
 }

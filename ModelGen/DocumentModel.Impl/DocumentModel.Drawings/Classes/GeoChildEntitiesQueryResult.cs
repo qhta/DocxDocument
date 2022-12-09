@@ -16,8 +16,8 @@ public class GeoChildEntitiesQueryResultImpl: ModelElementImpl, GeoChildEntities
   /// </summary>
   public GeoChildEntitiesQuery? GeoChildEntitiesQuery
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class GeoChildEntitiesQueryResultImpl: ModelElementImpl, GeoChildEntities
   /// </summary>
   public GeoChildEntities? GeoChildEntities
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

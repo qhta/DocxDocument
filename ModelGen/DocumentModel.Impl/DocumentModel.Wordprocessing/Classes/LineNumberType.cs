@@ -16,8 +16,12 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public Int16? CountBy
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.CountBy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CountBy = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public Int16? Start
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.Start?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Start = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public String? Distance
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Distance?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Distance = (System.String?)value;
+    }
   }
   
   /// <summary>

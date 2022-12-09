@@ -16,8 +16,12 @@ public class SaveThroughXsltImpl: ModelElementImpl, SaveThroughXslt
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SaveThroughXsltImpl: ModelElementImpl, SaveThroughXslt
   /// </summary>
   public String? SolutionId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SolutionId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SolutionId = (System.String?)value;
+    }
   }
   
 }

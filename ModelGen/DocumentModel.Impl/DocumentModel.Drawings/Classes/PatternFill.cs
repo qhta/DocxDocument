@@ -29,8 +29,8 @@ public class PatternFillImpl: ModelElementImpl, PatternFill
   /// </summary>
   public ForegroundColor? ForegroundColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -38,8 +38,8 @@ public class PatternFillImpl: ModelElementImpl, PatternFill
   /// </summary>
   public BackgroundColor? BackgroundColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

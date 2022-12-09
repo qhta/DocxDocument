@@ -29,8 +29,12 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
   /// </summary>
   public UInt32? DistanceFromTop
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromTop = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
   /// </summary>
   public UInt32? DistanceFromBottom
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromBottom = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
   /// </summary>
   public UInt32? DistanceFromLeft
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromLeft = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
   /// </summary>
   public UInt32? DistanceFromRight
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromRight = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,8 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
   /// </summary>
   public EffectExtent? EffectExtent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

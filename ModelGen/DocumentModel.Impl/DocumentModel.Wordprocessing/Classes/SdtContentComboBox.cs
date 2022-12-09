@@ -16,14 +16,18 @@ public class SdtContentComboBoxImpl: ModelElementImpl, SdtContentComboBox
   /// </summary>
   public String? LastValue
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LastValue?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LastValue = (System.String?)value;
+    }
   }
   
   public Collection<ListItem>? ListItems
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

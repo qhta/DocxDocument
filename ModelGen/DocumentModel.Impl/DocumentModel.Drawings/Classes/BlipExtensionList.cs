@@ -13,8 +13,8 @@ public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
   
   public Collection<BlipExtension>? BlipExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -26,20 +26,20 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
   
   public OpenXmlFormulaElement? Formula
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public OpenXmlFormulaElement? NfFormula
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<StringLevel>? StringLevels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

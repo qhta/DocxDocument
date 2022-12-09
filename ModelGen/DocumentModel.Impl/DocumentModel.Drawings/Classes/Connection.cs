@@ -16,8 +16,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? ModelId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ModelId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ModelId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? SourceId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SourceId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SourceId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? DestinationId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DestinationId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DestinationId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public UInt32? SourcePosition
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.SourcePosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SourcePosition = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public UInt32? DestinationPosition
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DestinationPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DestinationPosition = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? ParentTransitionId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ParentTransitionId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ParentTransitionId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? SiblingTransitionId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SiblingTransitionId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SiblingTransitionId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -92,17 +120,21 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// </summary>
   public String? PresentationId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PresentationId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationId = (System.String?)value;
+    }
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

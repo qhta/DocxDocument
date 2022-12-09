@@ -16,8 +16,12 @@ public class SampleDataTypeImpl: ModelElementImpl, SampleDataType
   /// </summary>
   public Boolean? UseDefault
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UseDefault?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UseDefault = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class SampleDataTypeImpl: ModelElementImpl, SampleDataType
   /// </summary>
   public virtual DataModel? DataModel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

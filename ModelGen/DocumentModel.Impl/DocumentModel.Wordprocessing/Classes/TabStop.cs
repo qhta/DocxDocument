@@ -42,8 +42,12 @@ public class TabStopImpl: ModelElementImpl, TabStop
   /// </summary>
   public Int32? Position
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Position?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Position = (System.Int32?)value;
+    }
   }
   
 }

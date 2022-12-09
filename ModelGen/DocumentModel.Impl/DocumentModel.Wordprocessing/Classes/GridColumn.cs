@@ -16,8 +16,12 @@ public class GridColumnImpl: ModelElementImpl, GridColumn
   /// </summary>
   public String? Width
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.String?)value;
+    }
   }
   
 }

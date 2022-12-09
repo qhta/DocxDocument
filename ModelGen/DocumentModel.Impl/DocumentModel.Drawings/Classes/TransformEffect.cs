@@ -16,8 +16,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int32? HorizontalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int32? VerticalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int32? HorizontalSkew
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalSkew?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalSkew = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int32? VerticalSkew
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalSkew?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalSkew = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int64? HorizontalShift
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.HorizontalShift?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalShift = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
   /// </summary>
   public Int64? VerticalShift
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.VerticalShift?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalShift = (System.Int64?)value;
+    }
   }
   
 }

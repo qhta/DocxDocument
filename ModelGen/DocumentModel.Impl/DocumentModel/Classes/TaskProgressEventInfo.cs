@@ -16,8 +16,12 @@ public class TaskProgressEventInfoImpl: ModelElementImpl, TaskProgressEventInfo
   /// </summary>
   public Int32? PercentComplete
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.PercentComplete?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PercentComplete = (System.Int32?)value;
+    }
   }
   
 }

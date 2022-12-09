@@ -1,54 +1,76 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Labels.
+/// Defines the DataLabels Class.
 /// </summary>
 public class DataLabels2Impl: ModelElementImpl, DataLabels2
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.DataLabels? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabels? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.DataLabels?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabels?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
-  public Collection<DataLabel3>? Items
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos
   {
-    get;
-    set;
+    get => (DataLabelPos?)OpenXmlElement?.Pos?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Pos = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos?)value;
+    }
   }
   
-  public Boolean? Delete
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public NumberingFormat1? NumberingFormat
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ChartShapeProperties? ChartShapeProperties
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TextProperties2? TextProperties
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabelPositionKind? DataLabelPosition
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring
   {
     get
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        return (DataLabelPositionKind?)openXmlElement?.Val?.Value;
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
+        return openXmlElement?.Text;
       }
       return null;
     }
@@ -56,19 +78,19 @@ public class DataLabels2Impl: ModelElementImpl, DataLabels2
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
         if (openXmlElement != null)
         {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value;
+          if (value is not null)
+            openXmlElement.Text = value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value };
+            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring{ Text = value };
             OpenXmlElement.AddChild(openXmlElement);
           }
         }
@@ -76,64 +98,22 @@ public class DataLabels2Impl: ModelElementImpl, DataLabels2
     }
   }
   
-  public Boolean? ShowLegendKey
+  public Collection<DataLabel2>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Boolean? ShowValue
+  public Collection<DataLabelHidden>? DataLabelHiddens
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Boolean? ShowCategoryName
+  public ExtensionList2? ExtensionList
   {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowSeriesName
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowPercent
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowBubbleSize
-  {
-    get;
-    set;
-  }
-  
-  public String? Separator
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowLeaderLines
-  {
-    get;
-    set;
-  }
-  
-  public LeaderLines2? LeaderLines
-  {
-    get;
-    set;
-  }
-  
-  public DLblsExtensionList? DLblsExtensionList
-  {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

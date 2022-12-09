@@ -16,8 +16,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   /// </summary>
   public String? UniqueId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UniqueId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UniqueId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,38 +29,42 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   /// </summary>
   public String? MinVersion
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinVersion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinVersion = (System.String?)value;
+    }
   }
   
   public Collection<ColorDefinitionTitle>? ColorDefinitionTitles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ColorTransformDescription>? ColorTransformDescriptions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ColorTransformCategories? ColorTransformCategories
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ColorTransformStyleLabel>? ColorTransformStyleLabels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

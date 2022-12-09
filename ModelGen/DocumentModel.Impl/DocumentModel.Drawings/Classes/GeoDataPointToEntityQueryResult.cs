@@ -16,8 +16,8 @@ public class GeoDataPointToEntityQueryResultImpl: ModelElementImpl, GeoDataPoint
   /// </summary>
   public GeoDataPointQuery? GeoDataPointQuery
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class GeoDataPointToEntityQueryResultImpl: ModelElementImpl, GeoDataPoint
   /// </summary>
   public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

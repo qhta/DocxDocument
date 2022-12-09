@@ -5,16 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class OfficeArtExtensionList7Impl: ModelElementImpl, OfficeArtExtensionList7
 {
-  public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.OfficeArtExtensionList? OpenXmlElement
+  public DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OfficeArtExtensionList? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.OfficeArtExtensionList?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OfficeArtExtensionList?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public Collection<Extension>? Extensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

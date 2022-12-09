@@ -16,8 +16,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public String? Style
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public Boolean? FitShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FitShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FitShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public Boolean? FitPath
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FitPath?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FitPath = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public Boolean? Trim
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Trim?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Trim = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public Boolean? XScale
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.XScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.XScale = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class TextPathImpl: ModelElementImpl, TextPath
   /// </summary>
   public String? String
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.String?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.String = (System.String?)value;
+    }
   }
   
 }

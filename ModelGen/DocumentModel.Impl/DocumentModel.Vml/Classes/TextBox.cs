@@ -16,8 +16,12 @@ public class TextBoxImpl: ModelElementImpl, TextBox
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TextBoxImpl: ModelElementImpl, TextBox
   /// </summary>
   public String? Style
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TextBoxImpl: ModelElementImpl, TextBox
   /// </summary>
   public String? Inset
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Inset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Inset = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,14 +55,18 @@ public class TextBoxImpl: ModelElementImpl, TextBox
   /// </summary>
   public Boolean? SingleClick
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SingleClick?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SingleClick = (System.Boolean?)value;
+    }
   }
   
   public DocumentModel.Wordprocessing.TextBoxContent? TextBoxContent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

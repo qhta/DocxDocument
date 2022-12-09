@@ -16,8 +16,12 @@ public class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
   /// </summary>
   public String? Font
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Font?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Font = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
   /// </summary>
   public DocumentModel.HexBinaryValue? Val
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

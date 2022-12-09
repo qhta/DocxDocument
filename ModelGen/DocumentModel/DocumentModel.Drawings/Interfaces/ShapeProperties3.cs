@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ShapeProperties Class.
+/// Shape Properties.
 /// </summary>
 public interface ShapeProperties3
 {
@@ -13,7 +13,7 @@ public interface ShapeProperties3
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D3? Transform2D { get ; set; }
+  public Transform2D2? Transform2D { get ; set; }
   
   public CustomGeometry? CustomGeometry { get ; set; }
   
@@ -25,7 +25,7 @@ public interface ShapeProperties3
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill2? BlipFill { get ; set; }
+  public BlipFill1? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
   

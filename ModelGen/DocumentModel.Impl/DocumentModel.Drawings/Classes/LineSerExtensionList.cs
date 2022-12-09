@@ -13,8 +13,8 @@ public class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
   
   public Collection<LineSerExtension>? LineSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

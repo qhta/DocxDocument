@@ -16,8 +16,8 @@ public class DocDefaultsImpl: ModelElementImpl, DocDefaults
   /// </summary>
   public RunPropertiesDefault? RunPropertiesDefault
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DocDefaultsImpl: ModelElementImpl, DocDefaults
   /// </summary>
   public ParagraphPropertiesDefault? ParagraphPropertiesDefault
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

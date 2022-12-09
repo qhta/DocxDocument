@@ -1,95 +1,102 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape.
+/// Shape Definition.
 /// </summary>
 public class Shape4Impl: ModelElementImpl, Shape4
 {
-  public DocumentFormat.OpenXml.Drawing.Diagrams.Shape? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Shape?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// Rotation
+  /// Reference to Custom Function
   /// </summary>
-  public Double? Rotation
+  public String? Macro
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Macro?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Macro = (System.String?)value;
+    }
   }
   
   /// <summary>
-  /// Shape Type
+  /// Text Link
   /// </summary>
-  public String? Type
+  public String? TextLink
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.TextLink?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextLink = (System.String?)value;
+    }
   }
   
   /// <summary>
-  /// Relationship to Image Part
+  /// Lock Text
   /// </summary>
-  public String? Blip
+  public Boolean? LockText
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LockText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LockText = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
-  /// Z-Order Offset
+  /// Publish to Server
   /// </summary>
-  public Int32? ZOrderOffset
+  public Boolean? Published
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Published?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Published = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
-  /// Hide Geometry
+  /// Non-Visual Shape Properties.
   /// </summary>
-  public Boolean? HideGeometry
+  public NonVisualShapeProperties? NonVisualShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
-  /// Prevent Text Editing
+  /// Shape Properties.
   /// </summary>
-  public Boolean? LockedText
+  public ShapeProperties7? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
-  /// Image Placeholder
+  /// Shape Style.
   /// </summary>
-  public Boolean? BlipPlaceholder
+  public Style4? Style
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
-  /// Shape Adjust List.
+  /// Shape Text Body.
   /// </summary>
-  public AdjustList? AdjustList
+  public TextBody2? TextBody
   {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList3? ExtensionList
-  {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

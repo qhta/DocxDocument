@@ -16,20 +16,24 @@ public class GeoCacheImpl: ModelElementImpl, GeoCache
   /// </summary>
   public String? Provider
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Provider?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Provider = (System.String?)value;
+    }
   }
   
   public Collection<String>? Xsdbase64Binaries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Clear>? Clears
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

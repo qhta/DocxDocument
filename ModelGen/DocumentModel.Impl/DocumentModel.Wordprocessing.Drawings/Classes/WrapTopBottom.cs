@@ -16,8 +16,12 @@ public class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
   /// </summary>
   public UInt32? DistanceFromTop
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromTop = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
   /// </summary>
   public UInt32? DistanceFromBottom
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromBottom = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
   /// </summary>
   public EffectExtent? EffectExtent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

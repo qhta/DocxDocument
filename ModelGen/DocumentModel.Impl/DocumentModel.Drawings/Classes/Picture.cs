@@ -16,8 +16,12 @@ public class PictureImpl: ModelElementImpl, Picture
   /// </summary>
   public String? Macro
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Macro?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Macro = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PictureImpl: ModelElementImpl, Picture
   /// </summary>
   public Boolean? Published
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Published?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Published = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,17 +42,17 @@ public class PictureImpl: ModelElementImpl, Picture
   /// </summary>
   public NonVisualPictureProperties? NonVisualPictureProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public BlipFill1? BlipFill
+  public BlipFill2? BlipFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,17 +60,17 @@ public class PictureImpl: ModelElementImpl, Picture
   /// </summary>
   public ShapeProperties7? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Style.
   /// </summary>
-  public Style3? Style
+  public Style4? Style
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

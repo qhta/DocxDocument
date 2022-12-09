@@ -16,8 +16,8 @@ public class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
   /// </summary>
   public virtual TextFontType? LatinFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
   /// </summary>
   public virtual TextFontType? EastAsianFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
   /// </summary>
   public virtual TextFontType? ComplexScriptFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

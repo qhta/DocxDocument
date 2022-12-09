@@ -1,37 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the PageMargins Class.
+/// Page Margins.
 /// </summary>
 public interface PageMargins1
 {
   /// <summary>
-  /// l, this property is only available in Office 2016 and later.
+  /// Left
   /// </summary>
-  public Double? L { get ; set; }
+  public Double? Left { get ; set; }
   
   /// <summary>
-  /// r, this property is only available in Office 2016 and later.
+  /// Right
   /// </summary>
-  public Double? R { get ; set; }
+  public Double? Right { get ; set; }
   
   /// <summary>
-  /// t, this property is only available in Office 2016 and later.
+  /// Top
   /// </summary>
-  public Double? T { get ; set; }
+  public Double? Top { get ; set; }
   
   /// <summary>
-  /// b, this property is only available in Office 2016 and later.
+  /// Bottom
   /// </summary>
-  public Double? B { get ; set; }
+  public Double? Bottom { get ; set; }
   
   /// <summary>
-  /// header, this property is only available in Office 2016 and later.
+  /// Header
   /// </summary>
   public Double? Header { get ; set; }
   
   /// <summary>
-  /// footer, this property is only available in Office 2016 and later.
+  /// Footer
   /// </summary>
   public Double? Footer { get ; set; }
   

@@ -28,6 +28,6 @@ public interface ConnectionShape
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style3? Style { get ; set; }
+  public Style4? Style { get ; set; }
   
 }

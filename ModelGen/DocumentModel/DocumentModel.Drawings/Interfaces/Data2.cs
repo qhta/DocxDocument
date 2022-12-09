@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Data Class.
 /// </summary>
-public interface Data1
+public interface Data2
 {
   /// <summary>
   /// id, this property is only available in Office 2016 and later.

@@ -16,8 +16,12 @@ public class GeoChildEntitiesQueryImpl: ModelElementImpl, GeoChildEntitiesQuery
   /// </summary>
   public String? EntityId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class GeoChildEntitiesQueryImpl: ModelElementImpl, GeoChildEntitiesQuery
   /// </summary>
   public GeoChildTypes? GeoChildTypes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

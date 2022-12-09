@@ -29,8 +29,12 @@ public class WrapTightImpl: ModelElementImpl, WrapTight
   /// </summary>
   public UInt32? DistanceFromLeft
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromLeft = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class WrapTightImpl: ModelElementImpl, WrapTight
   /// </summary>
   public UInt32? DistanceFromRight
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromRight = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,8 @@ public class WrapTightImpl: ModelElementImpl, WrapTight
   /// </summary>
   public WrapPolygon? WrapPolygon
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

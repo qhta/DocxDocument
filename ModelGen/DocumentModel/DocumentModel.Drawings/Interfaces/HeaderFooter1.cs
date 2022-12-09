@@ -1,53 +1,53 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Header and Footer.
+/// Defines the HeaderFooter Class.
 /// </summary>
 public interface HeaderFooter1
 {
   /// <summary>
-  /// Align With Margins
+  /// alignWithMargins, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? AlignWithMargins { get ; set; }
   
   /// <summary>
-  /// Different Odd Even
+  /// differentOddEven, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? DifferentOddEven { get ; set; }
   
   /// <summary>
-  /// Different First
+  /// differentFirst, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? DifferentFirst { get ; set; }
   
   /// <summary>
-  /// Odd Header.
+  /// OddHeaderXsdstring.
   /// </summary>
-  public String? OddHeader { get ; set; }
+  public String? OddHeaderXsdstring { get ; set; }
   
   /// <summary>
-  /// Odd Footer.
+  /// OddFooterXsdstring.
   /// </summary>
-  public String? OddFooter { get ; set; }
+  public String? OddFooterXsdstring { get ; set; }
   
   /// <summary>
-  /// Even Header.
+  /// EvenHeaderXsdstring.
   /// </summary>
-  public String? EvenHeader { get ; set; }
+  public String? EvenHeaderXsdstring { get ; set; }
   
   /// <summary>
-  /// Even Footer.
+  /// EvenFooterXsdstring.
   /// </summary>
-  public String? EvenFooter { get ; set; }
+  public String? EvenFooterXsdstring { get ; set; }
   
   /// <summary>
-  /// First Header.
+  /// FirstHeaderXsdstring.
   /// </summary>
-  public String? FirstHeader { get ; set; }
+  public String? FirstHeaderXsdstring { get ; set; }
   
   /// <summary>
-  /// First Footer.
+  /// FirstFooterXsdstring.
   /// </summary>
-  public String? FirstFooter { get ; set; }
+  public String? FirstFooterXsdstring { get ; set; }
   
 }

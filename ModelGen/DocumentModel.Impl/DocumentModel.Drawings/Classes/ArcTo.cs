@@ -16,8 +16,12 @@ public class ArcToImpl: ModelElementImpl, ArcTo
   /// </summary>
   public String? WidthRadius
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.WidthRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.WidthRadius = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArcToImpl: ModelElementImpl, ArcTo
   /// </summary>
   public String? HeightRadius
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.HeightRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HeightRadius = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ArcToImpl: ModelElementImpl, ArcTo
   /// </summary>
   public String? StartAngle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StartAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartAngle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ArcToImpl: ModelElementImpl, ArcTo
   /// </summary>
   public String? SwingAngle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SwingAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SwingAngle = (System.String?)value;
+    }
   }
   
 }

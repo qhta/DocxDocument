@@ -16,8 +16,8 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   /// </summary>
   public Uri? Uri
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,12 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   /// </summary>
   public virtual String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -34,8 +38,12 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   /// </summary>
   public virtual String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

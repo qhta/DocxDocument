@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the XValues Class.
 /// </summary>
-public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType1Impl, XValues
+public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType2Impl, XValues
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.XValues? OpenXmlElement
   {
@@ -13,32 +13,32 @@ public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType1Impl, XValue
   
   public override MultiLevelStringReference? MultiLevelStringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override StringReference? StringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override StringLiteral? StringLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

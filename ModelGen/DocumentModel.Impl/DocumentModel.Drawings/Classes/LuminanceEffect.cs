@@ -16,8 +16,12 @@ public class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
   /// </summary>
   public Int32? Brightness
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Brightness?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Brightness = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
   /// </summary>
   public Int32? Contrast
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Contrast?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Contrast = (System.Int32?)value;
+    }
   }
   
 }

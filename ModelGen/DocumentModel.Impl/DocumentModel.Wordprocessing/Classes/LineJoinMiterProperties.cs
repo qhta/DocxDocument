@@ -16,8 +16,12 @@ public class LineJoinMiterPropertiesImpl: ModelElementImpl, LineJoinMiterPropert
   /// </summary>
   public Int32? Limit
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Limit?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Limit = (System.Int32?)value;
+    }
   }
   
 }

@@ -1,32 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Properties.
+/// Defines the TextProperties Class.
 /// </summary>
-public class TextProperties1Impl: ModelElementImpl, TextProperties1
+public class TextProperties1Impl: DocumentModel.Drawings.TextBodyType1Impl, TextProperties1
 {
-  public DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties? OpenXmlElement
+  public new DocumentFormat.OpenXml.Drawing.Charts.TextProperties? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Charts.TextProperties?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
-  /// <summary>
-  /// Apply 3D shape properties.
-  /// </summary>
-  public Shape3DType? Shape3DType
+  public override BodyProperties? BodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// No text in 3D scene.
-  /// </summary>
-  public FlatText? FlatText
+  public override ListStyle? ListStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public Collection<Paragraph>? Paragraphs
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

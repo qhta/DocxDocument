@@ -16,8 +16,8 @@ public class ValueColorsImpl: ModelElementImpl, ValueColors
   /// </summary>
   public MinColorSolidColorFillProperties? MinColorSolidColorFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ValueColorsImpl: ModelElementImpl, ValueColors
   /// </summary>
   public MidColorSolidColorFillProperties? MidColorSolidColorFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ValueColorsImpl: ModelElementImpl, ValueColors
   /// </summary>
   public MaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

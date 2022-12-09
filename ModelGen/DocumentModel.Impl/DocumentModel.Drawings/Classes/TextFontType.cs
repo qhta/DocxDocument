@@ -16,8 +16,12 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// </summary>
   public String? Typeface
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Typeface?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Typeface = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// </summary>
   public DocumentModel.HexBinaryValue? Panose
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,12 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// </summary>
   public SByte? PitchFamily
   {
-    get;
-    set;
+    get => (SByte?)OpenXmlElement?.PitchFamily?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PitchFamily = (System.SByte?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +51,12 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// </summary>
   public SByte? CharacterSet
   {
-    get;
-    set;
+    get => (SByte?)OpenXmlElement?.CharacterSet?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CharacterSet = (System.SByte?)value;
+    }
   }
   
 }

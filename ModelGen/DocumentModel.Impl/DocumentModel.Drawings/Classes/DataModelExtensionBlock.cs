@@ -16,8 +16,12 @@ public class DataModelExtensionBlockImpl: ModelElementImpl, DataModelExtensionBl
   /// </summary>
   public String? RelId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DataModelExtensionBlockImpl: ModelElementImpl, DataModelExtensionBl
   /// </summary>
   public String? MinVer
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinVer?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinVer = (System.String?)value;
+    }
   }
   
 }

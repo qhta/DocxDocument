@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CategoryAxisData Class.
 /// </summary>
-public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceType1Impl, CategoryAxisData
+public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceType2Impl, CategoryAxisData
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData? OpenXmlElement
   {
@@ -13,32 +13,32 @@ public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceType1Imp
   
   public override MultiLevelStringReference? MultiLevelStringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override StringReference? StringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override StringLiteral? StringLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

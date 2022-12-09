@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Data Label.
+/// Defines the DataLabel Class.
 /// </summary>
 public interface DataLabel3
 {
@@ -12,15 +12,15 @@ public interface DataLabel3
   
   public Boolean? Delete { get ; set; }
   
-  public Layout2? Layout { get ; set; }
+  public Layout1? Layout { get ; set; }
   
   public ChartText1? ChartText { get ; set; }
   
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  public NumberingFormat2? NumberingFormat { get ; set; }
   
   public ChartShapeProperties? ChartShapeProperties { get ; set; }
   
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
   public DataLabelPositionKind? DataLabelPosition { get ; set; }
   

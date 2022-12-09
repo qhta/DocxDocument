@@ -16,8 +16,12 @@ public class PaperSourceImpl: ModelElementImpl, PaperSource
   /// </summary>
   public UInt16? First
   {
-    get;
-    set;
+    get => (UInt16?)OpenXmlElement?.First?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.First = (System.UInt16?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PaperSourceImpl: ModelElementImpl, PaperSource
   /// </summary>
   public UInt16? Other
   {
-    get;
-    set;
+    get => (UInt16?)OpenXmlElement?.Other?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Other = (System.UInt16?)value;
+    }
   }
   
 }

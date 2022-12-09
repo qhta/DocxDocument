@@ -3,54 +3,48 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineReference Class.
 /// </summary>
-public class LineReference2Impl: DocumentModel.Drawings.StyleReferenceImpl, LineReference2
+public class LineReference2Impl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, LineReference2
 {
-  public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference? OpenXmlElement
+  public new DocumentFormat.OpenXml.Drawing.LineReference? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.LineReference?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
-  public RgbColorModelPercentage? RgbColorModelPercentage
+  public override RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public RgbColorModelHex? RgbColorModelHex
+  public override RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public HslColor? HslColor
+  public override HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public SystemColor? SystemColor
+  public override SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public SchemeColor? SchemeColor
+  public override SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PresetColor? PresetColor
+  public override PresetColor? PresetColor
   {
-    get;
-    set;
-  }
-  
-  public StyleColor? StyleColor
-  {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

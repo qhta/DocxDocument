@@ -13,8 +13,12 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ThemeOverridePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,14 +26,18 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ThemeOverridePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -37,8 +45,8 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
   /// </summary>
   public DocumentModel.Drawings.ThemeOverride? ThemeOverride
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

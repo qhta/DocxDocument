@@ -29,8 +29,8 @@ public class ShapeLayoutImpl: ModelElementImpl, ShapeLayout
   /// </summary>
   public ShapeIdMap? ShapeIdMap
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -38,8 +38,8 @@ public class ShapeLayoutImpl: ModelElementImpl, ShapeLayout
   /// </summary>
   public RegroupTable? RegroupTable
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -47,8 +47,8 @@ public class ShapeLayoutImpl: ModelElementImpl, ShapeLayout
   /// </summary>
   public Rules? Rules
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

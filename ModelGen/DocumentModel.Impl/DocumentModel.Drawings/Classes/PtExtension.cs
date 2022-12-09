@@ -16,14 +16,18 @@ public class PtExtensionImpl: ModelElementImpl, PtExtension
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
-  public NonVisualDrawingProperties4? NonVisualDrawingProperties
+  public NonVisualDrawingProperties1? NonVisualDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

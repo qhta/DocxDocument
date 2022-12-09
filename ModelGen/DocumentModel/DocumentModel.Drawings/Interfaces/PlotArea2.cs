@@ -8,7 +8,7 @@ public interface PlotArea2
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout2? Layout { get ; set; }
+  public Layout1? Layout { get ; set; }
   
   public Collection<AreaChart>? AreaCharts { get ; set; }
   
@@ -52,8 +52,8 @@ public interface PlotArea2
   
   public DataTable? DataTable { get ; set; }
   
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  public ShapeProperties5? ShapeProperties { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

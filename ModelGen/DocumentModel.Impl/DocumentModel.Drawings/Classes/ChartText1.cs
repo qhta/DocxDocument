@@ -16,8 +16,8 @@ public class ChartText1Impl: ModelElementImpl, ChartText1
   /// </summary>
   public StringReference? StringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ChartText1Impl: ModelElementImpl, ChartText1
   /// </summary>
   public RichText? RichText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ChartText1Impl: ModelElementImpl, ChartText1
   /// </summary>
   public StringLiteral? StringLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

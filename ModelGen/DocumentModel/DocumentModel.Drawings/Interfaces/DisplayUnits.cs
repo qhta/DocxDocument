@@ -11,6 +11,6 @@ public interface DisplayUnits
   
   public DisplayUnitsLabel? DisplayUnitsLabel { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

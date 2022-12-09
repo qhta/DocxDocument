@@ -16,8 +16,12 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoGrouping
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoGrouping?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoGrouping = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoDrilldown
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoDrilldown?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoDrilldown = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoSelection
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoSelection?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoSelection = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoChangeAspect
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoChangeAspect?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoChangeAspect = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoMove
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoMove?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoMove = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,17 +81,21 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// </summary>
   public Boolean? NoResize
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoResize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoResize = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

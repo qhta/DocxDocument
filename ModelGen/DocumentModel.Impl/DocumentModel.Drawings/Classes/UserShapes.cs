@@ -13,14 +13,14 @@ public class UserShapesImpl: ModelElementImpl, UserShapes
   
   public Collection<RelativeAnchorSize>? RelativeAnchorSizes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<AbsoluteAnchorSize>? AbsoluteAnchorSizes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

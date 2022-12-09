@@ -29,8 +29,12 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public Boolean? LockedField
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LockedField?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LockedField = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -51,8 +55,12 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -60,8 +68,12 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? ProgId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ProgId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ProgId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,12 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? ShapeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -78,8 +94,12 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? FieldCodes
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FieldCodes?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FieldCodes = (System.String?)value;
+    }
   }
   
 }

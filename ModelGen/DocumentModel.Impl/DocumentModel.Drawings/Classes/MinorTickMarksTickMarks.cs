@@ -13,8 +13,8 @@ public class MinorTickMarksTickMarksImpl: DocumentModel.Drawings.OpenXmlTickMark
   
   public override ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

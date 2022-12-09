@@ -16,8 +16,12 @@ public class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
   /// </summary>
   public String? SrcUrl
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SrcUrl?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SrcUrl = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,17 +29,21 @@ public class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
   /// </summary>
   public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList1? OfficeArtExtensionList
+  public OfficeArtExtensionList7? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

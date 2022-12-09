@@ -1,43 +1,53 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Shape Class.
+/// Shape.
 /// </summary>
 public interface Shape2
 {
   /// <summary>
-  /// modelId, this property is only available in Office 2010 and later.
+  /// Rotation
   /// </summary>
-  public String? ModelId { get ; set; }
+  public Double? Rotation { get ; set; }
   
   /// <summary>
-  /// ShapeNonVisualProperties.
+  /// Shape Type
   /// </summary>
-  public ShapeNonVisualProperties? ShapeNonVisualProperties { get ; set; }
+  public String? Type { get ; set; }
   
   /// <summary>
-  /// ShapeProperties.
+  /// Relationship to Image Part
   /// </summary>
-  public ShapeProperties2? ShapeProperties { get ; set; }
+  public String? Blip { get ; set; }
   
   /// <summary>
-  /// ShapeStyle.
+  /// Z-Order Offset
   /// </summary>
-  public ShapeStyle2? ShapeStyle { get ; set; }
+  public Int32? ZOrderOffset { get ; set; }
   
   /// <summary>
-  /// TextBody.
+  /// Hide Geometry
   /// </summary>
-  public TextBody2? TextBody { get ; set; }
+  public Boolean? HideGeometry { get ; set; }
   
   /// <summary>
-  /// Transform2D.
+  /// Prevent Text Editing
   /// </summary>
-  public Transform2D2? Transform2D { get ; set; }
+  public Boolean? LockedText { get ; set; }
   
   /// <summary>
-  /// OfficeArtExtensionList.
+  /// Image Placeholder
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
+  public Boolean? BlipPlaceholder { get ; set; }
+  
+  /// <summary>
+  /// Shape Adjust List.
+  /// </summary>
+  public AdjustList? AdjustList { get ; set; }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList1? ExtensionList { get ; set; }
   
 }

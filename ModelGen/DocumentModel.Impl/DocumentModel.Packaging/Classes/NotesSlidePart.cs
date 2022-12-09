@@ -16,14 +16,18 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public ChartPart? ChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.NotesSlidePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -31,8 +35,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public CustomXmlPart? CustomXmlParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -40,8 +44,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public DiagramColorsPart? DiagramColorsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -49,8 +53,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public DiagramDataPart? DiagramDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -58,8 +62,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -67,8 +71,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public DiagramPersistLayoutPart? DiagramPersistLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -76,8 +80,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public DiagramStylePart? DiagramStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -85,8 +89,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -94,8 +98,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public EmbeddedObjectPart? EmbeddedObjectParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -103,8 +107,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public EmbeddedPackagePart? EmbeddedPackageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -112,8 +116,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public ExtendedChartPart? ExtendedChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -121,8 +125,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -130,14 +134,18 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.NotesSlidePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -145,8 +153,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public UserDefinedTagsPart? UserDefinedTagsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -154,8 +162,8 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
   /// </summary>
   public VmlDrawingPart? VmlDrawingParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

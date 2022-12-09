@@ -5,14 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class FontReference2Impl: ModelElementImpl, FontReference2
 {
-  public DocumentFormat.OpenXml.Drawing.FontReference? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.FontReference?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// Identifier
+  /// idx, this property is only available in Office 2013 and later.
   /// </summary>
   public FontCollectionIndexKind? Index
   {
@@ -25,57 +25,54 @@ public class FontReference2Impl: ModelElementImpl, FontReference2
   }
   
   /// <summary>
-  /// RGB Color Model - Percentage Variant.
+  /// mods, this property is only available in Office 2013 and later.
   /// </summary>
+  public List<String>? Modifiers
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// RGB Color Model - Hex Variant.
-  /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// Hue, Saturation, Luminance Color Model.
-  /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// System Color.
-  /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// Scheme Color.
-  /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  /// <summary>
-  /// Preset Color.
-  /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public StyleColor? StyleColor
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

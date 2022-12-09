@@ -16,8 +16,12 @@ public class ConnectionSiteImpl: ModelElementImpl, ConnectionSite
   /// </summary>
   public String? Angle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Angle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Angle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ConnectionSiteImpl: ModelElementImpl, ConnectionSite
   /// </summary>
   public AdjustPoint2DType? Position
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -1,23 +1,23 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ShapeStyle Class.
+/// Style.
 /// </summary>
 public class ShapeStyle2Impl: ModelElementImpl, ShapeStyle2
 {
-  public DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.ShapeStyle? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office.Drawing.ShapeStyle?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.ShapeStyle?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference1? LineReference
+  public LineReference2? LineReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ShapeStyle2Impl: ModelElementImpl, ShapeStyle2
   /// </summary>
   public FillReference1? FillReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +34,17 @@ public class ShapeStyle2Impl: ModelElementImpl, ShapeStyle2
   /// </summary>
   public EffectReference2? EffectReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Font Reference.
   /// </summary>
-  public FontReference2? FontReference
+  public FontReference1? FontReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

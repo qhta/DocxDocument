@@ -14,19 +14,19 @@ public class AxisTitle2Impl: ModelElementImpl, AxisTitle2
   /// <summary>
   /// Text.
   /// </summary>
-  public Text1? Text
+  public Text2? Text
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class AxisTitle2Impl: ModelElementImpl, AxisTitle2
   /// </summary>
   public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class AxisTitle2Impl: ModelElementImpl, AxisTitle2
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

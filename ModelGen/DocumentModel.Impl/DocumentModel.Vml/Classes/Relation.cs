@@ -29,8 +29,12 @@ public class RelationImpl: ModelElementImpl, Relation
   /// </summary>
   public String? SourceId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SourceId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SourceId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class RelationImpl: ModelElementImpl, Relation
   /// </summary>
   public String? DestinationId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DestinationId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DestinationId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class RelationImpl: ModelElementImpl, Relation
   /// </summary>
   public String? CenterShapeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CenterShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CenterShapeId = (System.String?)value;
+    }
   }
   
 }

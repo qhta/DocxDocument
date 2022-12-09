@@ -29,8 +29,12 @@ public class SkewImpl: ModelElementImpl, Skew
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class SkewImpl: ModelElementImpl, Skew
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class SkewImpl: ModelElementImpl, Skew
   /// </summary>
   public String? Offset
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Offset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Offset = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class SkewImpl: ModelElementImpl, Skew
   /// </summary>
   public String? Origin
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Origin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Origin = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class SkewImpl: ModelElementImpl, Skew
   /// </summary>
   public String? Matrix
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Matrix?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Matrix = (System.String?)value;
+    }
   }
   
 }

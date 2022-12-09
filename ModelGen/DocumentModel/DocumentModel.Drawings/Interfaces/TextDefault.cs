@@ -5,14 +5,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface TextDefault
 {
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public ShapeProperties4? ShapeProperties { get ; set; }
   
   public BodyProperties? BodyProperties { get ; set; }
   
   public ListStyle? ListStyle { get ; set; }
   
-  public ShapeStyle1? ShapeStyle { get ; set; }
+  public ShapeStyle2? ShapeStyle { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

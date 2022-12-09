@@ -16,8 +16,12 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public String? Reference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Reference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Reference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<AxisKind>? Axis
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +51,8 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<ElementKind>? PointType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +60,8 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<Boolean>? HideLastTrans
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +69,8 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<Int32>? Start
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +78,8 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<UInt32>? Count
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,62 +87,62 @@ public class ForEachImpl: ModelElementImpl, ForEach
   /// </summary>
   public List<Int32>? Step
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Algorithm>? Algorithms
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape4>? Shapes
+  public Collection<Shape2>? Shapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<PresentationOf>? PresentationOfs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Constraints>? Constraintses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<RuleList>? RuleLists
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ForEach>? ForEachs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<LayoutNode>? LayoutNodes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Choose>? Chooses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ExtensionList3>? ExtensionLists
+  public Collection<ExtensionList1>? ExtensionLists
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

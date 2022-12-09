@@ -17,6 +17,6 @@ public interface Algorithm
   
   public Collection<Parameter>? Parameters { get ; set; }
   
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList1? ExtensionList { get ; set; }
   
 }

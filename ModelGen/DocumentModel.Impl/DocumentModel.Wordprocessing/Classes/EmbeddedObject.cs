@@ -16,8 +16,12 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// </summary>
   public String? DxaOriginal
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DxaOriginal?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DxaOriginal = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// </summary>
   public String? DyaOriginal
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DyaOriginal?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DyaOriginal = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,104 +42,104 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// </summary>
   public DocumentModel.HexBinaryValue? AnchorId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Group>? Groups
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.ImageFile>? ImageFiles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Line>? Lines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Oval>? Ovals
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.PolyLine>? PolyLines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Rectangle>? Rectangles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.RoundRectangle>? RoundRectangles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Shape>? Shapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Shapetype>? Shapetypes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Arc>? Arcs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.Curve>? Curves
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.OleObject>? OleObjects
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Drawing? Drawing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Control? Control
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ObjectEmbed? ObjectEmbed
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ObjectLink? ObjectLink
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

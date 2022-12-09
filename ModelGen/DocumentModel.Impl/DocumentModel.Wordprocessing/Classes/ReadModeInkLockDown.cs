@@ -16,8 +16,12 @@ public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
   /// </summary>
   public Boolean? UseActualPages
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UseActualPages?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UseActualPages = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
   /// </summary>
   public UInt32? Width
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
   /// </summary>
   public UInt32? Height
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
   /// </summary>
   public String? FontSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FontSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FontSize = (System.String?)value;
+    }
   }
   
 }

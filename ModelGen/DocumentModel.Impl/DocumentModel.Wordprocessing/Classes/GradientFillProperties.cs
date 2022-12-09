@@ -16,20 +16,20 @@ public class GradientFillPropertiesImpl: ModelElementImpl, GradientFillPropertie
   /// </summary>
   public GradientStopList? GradientStopList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public LinearShadeProperties? LinearShadeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PathShadeProperties? PathShadeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

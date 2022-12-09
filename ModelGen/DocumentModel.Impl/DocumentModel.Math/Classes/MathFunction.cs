@@ -16,8 +16,8 @@ public class MathFunctionImpl: ModelElementImpl, MathFunction
   /// </summary>
   public FunctionProperties? FunctionProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class MathFunctionImpl: ModelElementImpl, MathFunction
   /// </summary>
   public FunctionName? FunctionName
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class MathFunctionImpl: ModelElementImpl, MathFunction
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

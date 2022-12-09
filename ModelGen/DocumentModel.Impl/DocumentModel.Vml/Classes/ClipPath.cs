@@ -16,8 +16,12 @@ public class ClipPathImpl: ModelElementImpl, ClipPath
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,8 @@ public class NonVisualGroupDrawingShapePropertiesImpl: ModelElementImpl, NonVisu
   /// </summary>
   public GroupShapeLocks? GroupShapeLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NonVisualGroupDrawingShapePropertiesImpl: ModelElementImpl, NonVisu
   /// </summary>
   public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

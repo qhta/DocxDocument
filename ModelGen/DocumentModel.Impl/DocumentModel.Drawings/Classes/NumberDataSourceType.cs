@@ -16,8 +16,8 @@ public class NumberDataSourceTypeImpl: ModelElementImpl, NumberDataSourceType
   /// </summary>
   public virtual NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NumberDataSourceTypeImpl: ModelElementImpl, NumberDataSourceType
   /// </summary>
   public virtual NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

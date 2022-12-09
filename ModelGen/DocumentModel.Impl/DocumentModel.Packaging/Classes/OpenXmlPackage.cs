@@ -16,8 +16,12 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public Boolean? StrictRelationshipFound
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.StrictRelationshipFound;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPackage).GetProperty("StrictRelationshipFound").SetValue(OpenXmlElement, (System.Boolean?)value);
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public Package? Package
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -47,8 +51,8 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public PackageProperties? PackageProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -69,8 +73,8 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public Dictionary<String, String>? PartExtensionProvider
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -78,8 +82,8 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public DataPart? DataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -87,8 +91,8 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public MarkupCompatibilityProcessSettings? MarkupCompatibilityProcessSettings
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -96,8 +100,12 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public Boolean? AutoSave
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AutoSave;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPackage).GetProperty("AutoSave").SetValue(OpenXmlElement, (System.Boolean?)value);
+    }
   }
   
 }

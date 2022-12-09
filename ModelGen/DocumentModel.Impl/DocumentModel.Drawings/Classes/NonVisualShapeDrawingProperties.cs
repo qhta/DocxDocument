@@ -16,8 +16,12 @@ public class NonVisualShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualSha
   /// </summary>
   public Boolean? TextBox
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.TextBox?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextBox = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,17 +29,17 @@ public class NonVisualShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualSha
   /// </summary>
   public ShapeLocks? ShapeLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

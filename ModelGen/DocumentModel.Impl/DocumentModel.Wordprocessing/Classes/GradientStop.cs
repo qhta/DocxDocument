@@ -16,8 +16,12 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public Int32? StopPosition
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.StopPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StopPosition = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

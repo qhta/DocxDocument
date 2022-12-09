@@ -16,8 +16,12 @@ public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
   /// </summary>
   public String? Vid
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Vid?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Vid = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

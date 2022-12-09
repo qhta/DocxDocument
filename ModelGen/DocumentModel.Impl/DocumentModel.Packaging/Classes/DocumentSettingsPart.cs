@@ -13,8 +13,12 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,14 +26,18 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -37,8 +45,8 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   /// </summary>
   public DocumentModel.Wordprocessing.Settings? Settings
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

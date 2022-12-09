@@ -16,8 +16,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public UInt32? PaperSize
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.PaperSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PaperSize = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Int32? FirstPageNumber
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FirstPageNumber?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstPageNumber = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Boolean? BlackAndWhite
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BlackAndWhite?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlackAndWhite = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Boolean? Draft
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Draft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Draft = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Boolean? UseFirstPageNumber
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UseFirstPageNumber?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UseFirstPageNumber = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Int32? HorizontalDpi
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalDpi?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalDpi = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public Int32? VerticalDpi
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalDpi?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalDpi = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class PageSetup2Impl: ModelElementImpl, PageSetup2
   /// </summary>
   public UInt32? Copies
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Copies?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Copies = (System.UInt32?)value;
+    }
   }
   
 }

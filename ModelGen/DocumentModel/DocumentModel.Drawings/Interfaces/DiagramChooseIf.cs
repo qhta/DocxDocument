@@ -62,7 +62,7 @@ public interface DiagramChooseIf
   
   public Collection<Algorithm>? Algorithms { get ; set; }
   
-  public Collection<Shape4>? Shapes { get ; set; }
+  public Collection<Shape2>? Shapes { get ; set; }
   
   public Collection<PresentationOf>? PresentationOfs { get ; set; }
   
@@ -76,6 +76,6 @@ public interface DiagramChooseIf
   
   public Collection<Choose>? Chooses { get ; set; }
   
-  public Collection<ExtensionList3>? ExtensionLists { get ; set; }
+  public Collection<ExtensionList1>? ExtensionLists { get ; set; }
   
 }

@@ -14,10 +14,10 @@ public class Style1Impl: ModelElementImpl, Style1
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference1? LineReference
+  public LineReference2? LineReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class Style1Impl: ModelElementImpl, Style1
   /// </summary>
   public FillReference1? FillReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +34,17 @@ public class Style1Impl: ModelElementImpl, Style1
   /// </summary>
   public EffectReference2? EffectReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Font Reference.
   /// </summary>
-  public FontReference2? FontReference
+  public FontReference1? FontReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

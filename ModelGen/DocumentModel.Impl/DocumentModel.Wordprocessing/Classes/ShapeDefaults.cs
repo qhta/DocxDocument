@@ -13,14 +13,14 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   
   public Collection<DocumentModel.Vml.ShapeDefaults>? ShapeDefaultses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Vml.ShapeLayout>? ShapeLayouts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

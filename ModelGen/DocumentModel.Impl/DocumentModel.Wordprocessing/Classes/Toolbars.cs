@@ -13,14 +13,14 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
   
   public Collection<AllocatedCommandManifest>? AllocatedCommandManifests
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ToolbarData>? ToolbarDatas
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -1,68 +1,92 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the PageMargins Class.
+/// Page Margins.
 /// </summary>
 public class PageMargins1Impl: ModelElementImpl, PageMargins1
 {
-  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Charts.PageMargins? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Charts.PageMargins?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// l, this property is only available in Office 2016 and later.
+  /// Left
   /// </summary>
-  public Double? L
+  public Double? Left
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Left?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Left = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// r, this property is only available in Office 2016 and later.
+  /// Right
   /// </summary>
-  public Double? R
+  public Double? Right
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Right?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Right = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// t, this property is only available in Office 2016 and later.
+  /// Top
   /// </summary>
-  public Double? T
+  public Double? Top
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Top?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Top = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// b, this property is only available in Office 2016 and later.
+  /// Bottom
   /// </summary>
-  public Double? B
+  public Double? Bottom
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Bottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bottom = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// header, this property is only available in Office 2016 and later.
+  /// Header
   /// </summary>
   public Double? Header
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Header?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Header = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// footer, this property is only available in Office 2016 and later.
+  /// Footer
   /// </summary>
   public Double? Footer
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Footer?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Footer = (System.Double?)value;
+    }
   }
   
 }

@@ -22,7 +22,7 @@ public interface BarChart
   
   public Collection<BarChartSeries2>? BarChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public UInt16? GapWidth { get ; set; }
   

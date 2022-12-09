@@ -16,8 +16,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public String? EntityName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public String? EntityId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public Double? East
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.East?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.East = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public Double? West
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.West?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.West = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public Double? North
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.North?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.North = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public Double? South
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.South?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.South = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,8 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public GeoPolygons? GeoPolygons
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +103,8 @@ public class GeoDataImpl: ModelElementImpl, GeoData
   /// </summary>
   public Copyrights? Copyrights
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

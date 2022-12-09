@@ -16,8 +16,12 @@ public class TableGridChangeImpl: ModelElementImpl, TableGridChange
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class TableGridChangeImpl: ModelElementImpl, TableGridChange
   /// </summary>
   public PreviousTableGrid? PreviousTableGrid
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

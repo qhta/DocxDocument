@@ -17,7 +17,7 @@ public interface OfPieChart
   
   public Collection<PieChartSeries1>? PieChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public UInt16? GapWidth { get ; set; }
   
@@ -31,6 +31,6 @@ public interface OfPieChart
   
   public Collection<SeriesLines>? SeriesLineses { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

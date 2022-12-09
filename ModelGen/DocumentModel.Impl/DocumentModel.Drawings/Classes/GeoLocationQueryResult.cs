@@ -16,8 +16,8 @@ public class GeoLocationQueryResultImpl: ModelElementImpl, GeoLocationQueryResul
   /// </summary>
   public GeoLocationQuery? GeoLocationQuery
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class GeoLocationQueryResultImpl: ModelElementImpl, GeoLocationQueryResul
   /// </summary>
   public GeoLocations? GeoLocations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

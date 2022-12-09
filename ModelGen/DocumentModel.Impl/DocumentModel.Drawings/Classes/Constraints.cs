@@ -13,8 +13,8 @@ public class ConstraintsImpl: ModelElementImpl, Constraints
   
   public Collection<Constraint>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

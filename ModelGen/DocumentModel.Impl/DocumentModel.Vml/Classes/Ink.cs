@@ -16,8 +16,8 @@ public class InkImpl: ModelElementImpl, Ink
   /// </summary>
   public DocumentModel.Base64BinaryValue? InkData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,12 @@ public class InkImpl: ModelElementImpl, Ink
   /// </summary>
   public Boolean? AnnotationFlag
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AnnotationFlag?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AnnotationFlag = (System.Boolean?)value;
+    }
   }
   
 }

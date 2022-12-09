@@ -16,8 +16,12 @@ public class WrapPolygonImpl: ModelElementImpl, WrapPolygon
   /// </summary>
   public Boolean? Edited
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Edited?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Edited = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,14 +29,14 @@ public class WrapPolygonImpl: ModelElementImpl, WrapPolygon
   /// </summary>
   public Point2DType? StartPoint
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Point2DType>? LineTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

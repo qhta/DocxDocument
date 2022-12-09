@@ -16,8 +16,12 @@ public class ChartStringValueImpl: ModelElementImpl, ChartStringValue
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Index?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Index = (System.UInt32?)value;
+    }
   }
   
 }

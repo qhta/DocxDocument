@@ -8,7 +8,7 @@ public interface TrendlineLabel1
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout2? Layout { get ; set; }
+  public Layout1? Layout { get ; set; }
   
   /// <summary>
   /// ChartText.
@@ -18,7 +18,7 @@ public interface TrendlineLabel1
   /// <summary>
   /// Number Format.
   /// </summary>
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  public NumberingFormat2? NumberingFormat { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
@@ -28,11 +28,11 @@ public interface TrendlineLabel1
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

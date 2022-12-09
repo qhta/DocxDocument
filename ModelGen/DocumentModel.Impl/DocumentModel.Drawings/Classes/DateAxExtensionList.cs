@@ -13,8 +13,8 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
   
   public Collection<DateAxExtension>? DateAxExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

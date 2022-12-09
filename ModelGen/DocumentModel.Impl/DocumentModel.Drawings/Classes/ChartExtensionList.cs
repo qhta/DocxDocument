@@ -13,8 +13,8 @@ public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
   
   public Collection<DataDisplayOptions16>? DataDisplayOptions16s
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class ConnectionListImpl: ModelElementImpl, ConnectionList
   
   public Collection<Connection>? Connections
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

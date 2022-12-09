@@ -16,8 +16,8 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
   /// </summary>
   public ReferenceRelationship? ExternalRelationships
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
   /// </summary>
   public HyperlinkRelationship? HyperlinkRelationships
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
   /// </summary>
   public ReferenceRelationship? DataPartReferenceRelationships
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
   /// </summary>
   public IdPartPair? Parts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

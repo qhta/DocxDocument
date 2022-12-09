@@ -1,53 +1,48 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape.
+/// Shape Definition.
 /// </summary>
 public interface Shape4
 {
   /// <summary>
-  /// Rotation
+  /// Reference to Custom Function
   /// </summary>
-  public Double? Rotation { get ; set; }
+  public String? Macro { get ; set; }
   
   /// <summary>
-  /// Shape Type
+  /// Text Link
   /// </summary>
-  public String? Type { get ; set; }
+  public String? TextLink { get ; set; }
   
   /// <summary>
-  /// Relationship to Image Part
+  /// Lock Text
   /// </summary>
-  public String? Blip { get ; set; }
+  public Boolean? LockText { get ; set; }
   
   /// <summary>
-  /// Z-Order Offset
+  /// Publish to Server
   /// </summary>
-  public Int32? ZOrderOffset { get ; set; }
+  public Boolean? Published { get ; set; }
   
   /// <summary>
-  /// Hide Geometry
+  /// Non-Visual Shape Properties.
   /// </summary>
-  public Boolean? HideGeometry { get ; set; }
+  public NonVisualShapeProperties? NonVisualShapeProperties { get ; set; }
   
   /// <summary>
-  /// Prevent Text Editing
+  /// Shape Properties.
   /// </summary>
-  public Boolean? LockedText { get ; set; }
+  public ShapeProperties7? ShapeProperties { get ; set; }
   
   /// <summary>
-  /// Image Placeholder
+  /// Shape Style.
   /// </summary>
-  public Boolean? BlipPlaceholder { get ; set; }
+  public Style4? Style { get ; set; }
   
   /// <summary>
-  /// Shape Adjust List.
+  /// Shape Text Body.
   /// </summary>
-  public AdjustList? AdjustList { get ; set; }
-  
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public TextBody2? TextBody { get ; set; }
   
 }

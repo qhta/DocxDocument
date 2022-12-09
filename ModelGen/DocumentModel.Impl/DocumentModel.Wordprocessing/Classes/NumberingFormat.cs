@@ -29,8 +29,12 @@ public class NumberingFormatImpl: ModelElementImpl, NumberingFormat
   /// </summary>
   public String? Format
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Format?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Format = (System.String?)value;
+    }
   }
   
 }

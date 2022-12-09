@@ -16,8 +16,12 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public Int32? Position
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Position?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Position = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
   /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

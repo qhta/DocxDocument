@@ -33,12 +33,12 @@ public interface Series
   /// <summary>
   /// Text.
   /// </summary>
-  public Text1? Text { get ; set; }
+  public Text2? Text { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ValueColors.
@@ -52,7 +52,7 @@ public interface Series
   
   public Collection<DataPoint1>? DataPoints { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels2? DataLabels { get ; set; }
   
   public UInt32? DataId { get ; set; }
   

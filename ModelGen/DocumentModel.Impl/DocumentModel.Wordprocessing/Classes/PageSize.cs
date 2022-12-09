@@ -16,8 +16,12 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt32? Width
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt32? Height
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt16? Code
   {
-    get;
-    set;
+    get => (UInt16?)OpenXmlElement?.Code?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Code = (System.UInt16?)value;
+    }
   }
   
 }

@@ -13,14 +13,14 @@ public class AdjustHandleListImpl: ModelElementImpl, AdjustHandleList
   
   public Collection<AdjustHandleXY>? AdjustHandleXYs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<AdjustHandlePolar>? AdjustHandlePolars
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoGrouping
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoGrouping?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoGrouping = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoSelection
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoSelection?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoSelection = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoRotation
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoRotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoRotation = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoChangeAspect
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoChangeAspect?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoChangeAspect = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoMove
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoMove?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoMove = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoResize
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoResize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoResize = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoEditPoints
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoEditPoints?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoEditPoints = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoAdjustHandles
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoAdjustHandles?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoAdjustHandles = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoChangeArrowheads
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoChangeArrowheads?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoChangeArrowheads = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoChangeShapeType
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoChangeShapeType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoChangeShapeType = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -106,17 +146,21 @@ public class PictureLocksImpl: ModelElementImpl, PictureLocks
   /// </summary>
   public Boolean? NoCrop
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoCrop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoCrop = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

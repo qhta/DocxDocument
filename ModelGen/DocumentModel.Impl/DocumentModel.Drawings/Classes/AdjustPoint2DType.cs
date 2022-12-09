@@ -16,8 +16,12 @@ public class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
   /// </summary>
   public String? X
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.X?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.X = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
   /// </summary>
   public String? Y
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Y?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Y = (System.String?)value;
+    }
   }
   
 }

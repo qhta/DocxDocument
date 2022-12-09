@@ -16,8 +16,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public ChartData? ChartData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,17 +25,17 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public Chart1? Chart
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public ColorMappingType2? ColorMappingType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public FormatOverrides? FormatOverrides
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +70,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public PrintSettings2? PrintSettings
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +79,8 @@ public class ChartSpace1Impl: ModelElementImpl, ChartSpace1
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }
