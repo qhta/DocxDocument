@@ -5,16 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ExtensionList1Impl: ModelElementImpl, ExtensionList1
 {
-  public DocumentFormat.OpenXml.Drawing.ExtensionList? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.ExtensionList?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public Collection<Extension>? Extensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

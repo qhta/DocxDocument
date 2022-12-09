@@ -13,8 +13,12 @@ public class EmbeddedControlPersistenceBinaryDataPartImpl: DocumentModel.Packagi
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

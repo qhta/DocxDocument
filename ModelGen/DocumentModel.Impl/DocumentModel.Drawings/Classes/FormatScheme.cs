@@ -16,8 +16,12 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
   /// </summary>
   public FillStyleList? FillStyleList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
   /// </summary>
   public LineStyleList? LineStyleList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
   /// </summary>
   public EffectStyleList? EffectStyleList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
   /// </summary>
   public BackgroundFillStyleList? BackgroundFillStyleList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

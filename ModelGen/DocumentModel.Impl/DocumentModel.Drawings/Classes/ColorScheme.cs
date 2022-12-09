@@ -16,8 +16,12 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Dark1Color? Dark1Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Light1Color? Light1Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Dark2Color? Dark2Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Light2Color? Light2Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent1Color? Accent1Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent2Color? Accent2Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +83,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent3Color? Accent3Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +92,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent4Color? Accent4Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +101,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent5Color? Accent5Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -106,8 +110,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Accent6Color? Accent6Color
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -115,8 +119,8 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public Hyperlink? Hyperlink
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -124,17 +128,17 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// </summary>
   public FollowedHyperlinkColor? FollowedHyperlinkColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

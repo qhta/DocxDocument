@@ -13,8 +13,8 @@ public class EffectStyleListImpl: ModelElementImpl, EffectStyleList
   
   public Collection<EffectStyle>? EffectStyles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class CharacterBulletImpl: ModelElementImpl, CharacterBullet
   /// </summary>
   public String? Char
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Char?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Char = (System.String?)value;
+    }
   }
   
 }

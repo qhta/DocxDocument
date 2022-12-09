@@ -13,8 +13,12 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WebExtensionPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,14 +26,18 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WebExtensionPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -37,8 +45,8 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
   /// </summary>
   public DocumentModel.WebExtension? WebExtension
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

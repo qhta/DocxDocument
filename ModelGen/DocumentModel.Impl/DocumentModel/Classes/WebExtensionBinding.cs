@@ -16,8 +16,12 @@ public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
   /// </summary>
   public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
   /// </summary>
   public String? AppReference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AppReference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AppReference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

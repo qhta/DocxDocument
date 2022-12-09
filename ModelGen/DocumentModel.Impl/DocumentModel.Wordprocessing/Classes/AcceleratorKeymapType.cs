@@ -16,8 +16,12 @@ public class AcceleratorKeymapTypeImpl: ModelElementImpl, AcceleratorKeymapType
   /// </summary>
   public String? AcceleratorName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AcceleratorName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AcceleratorName = (System.String?)value;
+    }
   }
   
 }

@@ -168,6 +168,6 @@ public interface ChartStyle
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
   
 }

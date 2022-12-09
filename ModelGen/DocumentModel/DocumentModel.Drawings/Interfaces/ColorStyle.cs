@@ -29,6 +29,6 @@ public interface ColorStyle
   
   public Collection<ColorStyleVariation>? ColorStyleVariations { get ; set; }
   
-  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
   
 }

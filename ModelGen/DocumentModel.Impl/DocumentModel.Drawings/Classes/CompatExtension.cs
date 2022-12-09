@@ -16,8 +16,12 @@ public class CompatExtensionImpl: ModelElementImpl, CompatExtension
   /// </summary>
   public String? ShapeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeId = (System.String?)value;
+    }
   }
   
 }

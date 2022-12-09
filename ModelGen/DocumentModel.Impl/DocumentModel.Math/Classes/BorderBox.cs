@@ -16,8 +16,8 @@ public class BorderBoxImpl: ModelElementImpl, BorderBox
   /// </summary>
   public BorderBoxProperties? BorderBoxProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class BorderBoxImpl: ModelElementImpl, BorderBox
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

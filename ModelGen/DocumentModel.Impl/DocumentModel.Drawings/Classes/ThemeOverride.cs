@@ -16,8 +16,8 @@ public class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
   /// </summary>
   public ColorScheme? ColorScheme
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
   /// </summary>
   public FontScheme? FontScheme
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
   /// </summary>
   public FormatScheme? FormatScheme
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

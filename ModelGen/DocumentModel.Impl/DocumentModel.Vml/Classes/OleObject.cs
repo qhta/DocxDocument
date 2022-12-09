@@ -29,8 +29,12 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? ProgId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ProgId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ProgId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? ShapeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -60,8 +68,12 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? ObjectId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ObjectId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ObjectId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,12 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -91,8 +107,37 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? LinkType
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.LinkType{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -100,8 +145,37 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? LockedField
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.LockedField{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -109,8 +183,37 @@ public class OleObjectImpl: ModelElementImpl, OleObject
   /// </summary>
   public String? FieldCodes
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.FieldCodes{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
 }

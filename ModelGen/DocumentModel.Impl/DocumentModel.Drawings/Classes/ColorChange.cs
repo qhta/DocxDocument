@@ -16,8 +16,12 @@ public class ColorChangeImpl: ModelElementImpl, ColorChange
   /// </summary>
   public Boolean? UseAlpha
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UseAlpha?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UseAlpha = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ColorChangeImpl: ModelElementImpl, ColorChange
   /// </summary>
   public ColorFrom? ColorFrom
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ColorChangeImpl: ModelElementImpl, ColorChange
   /// </summary>
   public ColorTo? ColorTo
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class SdtContentTextImpl: ModelElementImpl, SdtContentText
   /// </summary>
   public Boolean? MultiLine
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.MultiLine?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MultiLine = (System.Boolean?)value;
+    }
   }
   
 }

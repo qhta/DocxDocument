@@ -16,8 +16,12 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public Int64? ExtrusionHeight
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.ExtrusionHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ExtrusionHeight = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public Int64? ContourWidth
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.ContourWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ContourWidth = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,8 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public BevelType? BevelTop
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -56,8 +64,8 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public BevelType? BevelBottom
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -65,8 +73,8 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public ExtrusionColor? ExtrusionColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -74,8 +82,8 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
   /// </summary>
   public ContourColor? ContourColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

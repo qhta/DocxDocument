@@ -13,8 +13,8 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
   
   public Collection<Line3DChartExtension>? Line3DChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

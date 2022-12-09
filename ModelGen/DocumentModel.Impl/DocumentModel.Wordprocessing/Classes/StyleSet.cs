@@ -16,8 +16,12 @@ public class StyleSetImpl: ModelElementImpl, StyleSet
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   /// <summary>

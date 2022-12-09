@@ -13,8 +13,8 @@ public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
   
   public Collection<CatAxExtension>? CatAxExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

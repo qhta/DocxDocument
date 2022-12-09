@@ -16,8 +16,8 @@ public class TextBodyType2Impl: ModelElementImpl, TextBodyType2
   /// </summary>
   public virtual BodyProperties? BodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class TextBodyType2Impl: ModelElementImpl, TextBodyType2
   /// </summary>
   public virtual ListStyle? ListStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionL
   
   public Collection<RadarChartExtension>? RadarChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class DashStopImpl: ModelElementImpl, DashStop
   /// </summary>
   public Int32? DashLength
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DashLength?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DashLength = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DashStopImpl: ModelElementImpl, DashStop
   /// </summary>
   public Int32? SpaceLength
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.SpaceLength?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SpaceLength = (System.Int32?)value;
+    }
   }
   
 }

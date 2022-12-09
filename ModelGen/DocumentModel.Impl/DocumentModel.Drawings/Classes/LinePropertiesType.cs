@@ -16,8 +16,12 @@ public class LinePropertiesTypeImpl: ModelElementImpl, LinePropertiesType
   /// </summary>
   public Int32? Width
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.Int32?)value;
+    }
   }
   
   /// <summary>

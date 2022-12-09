@@ -29,8 +29,12 @@ public class ShapeIdMapImpl: ModelElementImpl, ShapeIdMap
   /// </summary>
   public String? Data
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Data?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Data = (System.String?)value;
+    }
   }
   
 }

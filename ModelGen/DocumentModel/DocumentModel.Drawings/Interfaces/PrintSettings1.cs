@@ -8,12 +8,12 @@ public interface PrintSettings1
   /// <summary>
   /// Header and Footer.
   /// </summary>
-  public HeaderFooter1? HeaderFooter { get ; set; }
+  public HeaderFooter2? HeaderFooter { get ; set; }
   
   /// <summary>
   /// Page Margins.
   /// </summary>
-  public PageMargins2? PageMargins { get ; set; }
+  public PageMargins1? PageMargins { get ; set; }
   
   /// <summary>
   /// Page Setup.

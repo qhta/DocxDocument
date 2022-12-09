@@ -16,8 +16,12 @@ public class StyleDisplayCategoryImpl: ModelElementImpl, StyleDisplayCategory
   /// </summary>
   public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class StyleDisplayCategoryImpl: ModelElementImpl, StyleDisplayCategory
   /// </summary>
   public UInt32? Priority
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Priority?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Priority = (System.UInt32?)value;
+    }
   }
   
 }

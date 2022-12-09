@@ -13,8 +13,12 @@ public class EmbeddedPackagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, E
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

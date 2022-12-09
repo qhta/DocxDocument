@@ -16,8 +16,12 @@ public class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
   /// </summary>
   public Int32? Angle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Angle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Angle = (System.Int32?)value;
+    }
   }
   
   /// <summary>

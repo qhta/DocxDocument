@@ -13,8 +13,12 @@ public class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Thumbna
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ThumbnailPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

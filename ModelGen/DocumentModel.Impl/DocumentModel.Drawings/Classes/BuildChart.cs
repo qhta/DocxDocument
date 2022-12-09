@@ -16,8 +16,12 @@ public class BuildChartImpl: ModelElementImpl, BuildChart
   /// </summary>
   public String? Build
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Build?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Build = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BuildChartImpl: ModelElementImpl, BuildChart
   /// </summary>
   public Boolean? AnimateBackground
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AnimateBackground?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AnimateBackground = (System.Boolean?)value;
+    }
   }
   
 }

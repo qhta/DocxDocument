@@ -1,48 +1,43 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape Definition.
+/// Defines the Shape Class.
 /// </summary>
 public interface Shape1
 {
   /// <summary>
-  /// Reference to Custom Function
+  /// modelId, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Macro { get ; set; }
+  public String? ModelId { get ; set; }
   
   /// <summary>
-  /// Text Link
+  /// ShapeNonVisualProperties.
   /// </summary>
-  public String? TextLink { get ; set; }
+  public ShapeNonVisualProperties? ShapeNonVisualProperties { get ; set; }
   
   /// <summary>
-  /// Lock Text
+  /// ShapeProperties.
   /// </summary>
-  public Boolean? LockText { get ; set; }
+  public ShapeProperties6? ShapeProperties { get ; set; }
   
   /// <summary>
-  /// Publish to Server
+  /// ShapeStyle.
   /// </summary>
-  public Boolean? Published { get ; set; }
+  public ShapeStyle1? ShapeStyle { get ; set; }
   
   /// <summary>
-  /// Non-Visual Shape Properties.
-  /// </summary>
-  public NonVisualShapeProperties? NonVisualShapeProperties { get ; set; }
-  
-  /// <summary>
-  /// Shape Properties.
-  /// </summary>
-  public ShapeProperties7? ShapeProperties { get ; set; }
-  
-  /// <summary>
-  /// Shape Style.
-  /// </summary>
-  public Style3? Style { get ; set; }
-  
-  /// <summary>
-  /// Shape Text Body.
+  /// TextBody.
   /// </summary>
   public TextBody3? TextBody { get ; set; }
+  
+  /// <summary>
+  /// Transform2D.
+  /// </summary>
+  public Transform2D3? Transform2D { get ; set; }
+  
+  /// <summary>
+  /// OfficeArtExtensionList.
+  /// </summary>
+  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
   
 }

@@ -16,8 +16,12 @@ public class AxisImpl: ModelElementImpl, Axis
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,86 +29,90 @@ public class AxisImpl: ModelElementImpl, Axis
   /// </summary>
   public Boolean? Hidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Hidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hidden = (System.Boolean?)value;
+    }
   }
   
   public CategoryAxisScaling? CategoryAxisScaling
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ValueAxisScaling? ValueAxisScaling
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public AxisTitle2? AxisTitle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public AxisUnits? AxisUnits
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public MajorGridlinesGridlines? MajorGridlinesGridlines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public MinorGridlinesGridlines? MinorGridlinesGridlines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public MajorTickMarksTickMarks? MajorTickMarksTickMarks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public MinorTickMarksTickMarks? MinorTickMarksTickMarks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public TickLabels? TickLabels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public NumberFormat? NumberFormat
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

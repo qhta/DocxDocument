@@ -16,8 +16,12 @@ public class IdPartPairImpl: ModelObjectImpl, IdPartPair
   /// </summary>
   public String? RelationshipId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipId;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.IdPartPair).GetProperty("RelationshipId").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

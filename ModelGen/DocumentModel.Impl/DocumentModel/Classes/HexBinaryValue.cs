@@ -16,8 +16,12 @@ public class HexBinaryValueImpl: ModelObjectImpl, HexBinaryValue
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.HexBinaryValue).GetProperty("Value").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

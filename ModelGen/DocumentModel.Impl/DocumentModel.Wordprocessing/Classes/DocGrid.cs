@@ -29,8 +29,12 @@ public class DocGridImpl: ModelElementImpl, DocGrid
   /// </summary>
   public Int32? LinePitch
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LinePitch?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LinePitch = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class DocGridImpl: ModelElementImpl, DocGrid
   /// </summary>
   public Int32? CharacterSpace
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.CharacterSpace?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CharacterSpace = (System.Int32?)value;
+    }
   }
   
 }

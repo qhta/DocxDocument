@@ -16,8 +16,8 @@ public class LimitUpperImpl: ModelElementImpl, LimitUpper
   /// </summary>
   public LimitUpperProperties? LimitUpperProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class LimitUpperImpl: ModelElementImpl, LimitUpper
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class LimitUpperImpl: ModelElementImpl, LimitUpper
   /// </summary>
   public Limit? Limit
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

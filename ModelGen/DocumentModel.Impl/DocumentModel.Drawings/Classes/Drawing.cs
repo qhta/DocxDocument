@@ -16,8 +16,8 @@ public class DrawingImpl: ModelElementImpl, Drawing
   /// </summary>
   public ShapeTree? ShapeTree
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

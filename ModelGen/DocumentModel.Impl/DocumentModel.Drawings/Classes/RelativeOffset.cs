@@ -16,8 +16,12 @@ public class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
   /// </summary>
   public Int32? OffsetX
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.OffsetX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OffsetX = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
   /// </summary>
   public Int32? OffsetY
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.OffsetY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OffsetY = (System.Int32?)value;
+    }
   }
   
 }

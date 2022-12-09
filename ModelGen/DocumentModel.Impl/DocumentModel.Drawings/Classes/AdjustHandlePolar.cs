@@ -16,8 +16,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? RadialAdjustmentGuide
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RadialAdjustmentGuide?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RadialAdjustmentGuide = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? MinRadial
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinRadial?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinRadial = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? MaxRadial
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MaxRadial?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MaxRadial = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? AngleAdjustmentGuide
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AngleAdjustmentGuide?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AngleAdjustmentGuide = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? MinAngle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinAngle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public String? MaxAngle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MaxAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MaxAngle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,8 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
   /// </summary>
   public AdjustPoint2DType? Position
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

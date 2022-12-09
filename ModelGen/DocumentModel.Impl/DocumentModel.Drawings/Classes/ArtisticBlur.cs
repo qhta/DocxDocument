@@ -16,8 +16,12 @@ public class ArtisticBlurImpl: ModelElementImpl, ArtisticBlur
   /// </summary>
   public Int32? Radius
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Radius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Radius = (System.Int32?)value;
+    }
   }
   
 }

@@ -63,6 +63,6 @@ public interface Constraint
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList1? ExtensionList { get ; set; }
   
 }

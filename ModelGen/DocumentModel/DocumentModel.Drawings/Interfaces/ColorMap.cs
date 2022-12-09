@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface ColorMap
 {
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

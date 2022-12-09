@@ -5,9 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawingProperties4
 {
-  public DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties? OpenXmlElement
+  public DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,12 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public String? Description
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Description?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Description = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public Boolean? Hidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Hidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,8 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public HyperlinkOnClick? HyperlinkOnClick
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +90,8 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public HyperlinkOnHover? HyperlinkOnHover
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +99,8 @@ public class NonVisualDrawingProperties4Impl: ModelElementImpl, NonVisualDrawing
   /// </summary>
   public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -29,8 +29,12 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public String? Ed
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Ed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Ed = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? ColumnFirst
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnFirst?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnFirst = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? ColumnLast
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnLast?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnLast = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? Id
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.Int32?)value;
+    }
   }
   
   /// <summary>

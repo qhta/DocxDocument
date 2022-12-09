@@ -16,8 +16,12 @@ public class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelatio
   /// </summary>
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

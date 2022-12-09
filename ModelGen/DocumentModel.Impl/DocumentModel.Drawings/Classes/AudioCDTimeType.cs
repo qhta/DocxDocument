@@ -16,8 +16,12 @@ public class AudioCDTimeTypeImpl: ModelElementImpl, AudioCDTimeType
   /// </summary>
   public Byte? Track
   {
-    get;
-    set;
+    get => (Byte?)OpenXmlElement?.Track?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Track = (System.Byte?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AudioCDTimeTypeImpl: ModelElementImpl, AudioCDTimeType
   /// </summary>
   public UInt32? Time
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Time?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Time = (System.UInt32?)value;
+    }
   }
   
 }

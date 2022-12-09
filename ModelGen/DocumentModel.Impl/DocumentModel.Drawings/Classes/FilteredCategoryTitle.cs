@@ -14,10 +14,10 @@ public class FilteredCategoryTitleImpl: ModelElementImpl, FilteredCategoryTitle
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  public AxisDataSourceType2? AxisDataSourceType
+  public AxisDataSourceType1? AxisDataSourceType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

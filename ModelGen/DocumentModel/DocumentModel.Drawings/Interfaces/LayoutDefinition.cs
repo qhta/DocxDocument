@@ -20,7 +20,7 @@ public interface LayoutDefinition
   /// </summary>
   public String? DefaultStyle { get ; set; }
   
-  public Collection<Title2>? Titles { get ; set; }
+  public Collection<Title1>? Titles { get ; set; }
   
   public Collection<Description>? Descriptions { get ; set; }
   

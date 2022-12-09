@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Picture Fill.
+/// Defines the BlipFill Class.
 /// </summary>
 public interface BlipFill1
 {

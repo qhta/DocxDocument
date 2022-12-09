@@ -16,8 +16,12 @@ public class GlowImpl: ModelElementImpl, Glow
   /// </summary>
   public Int64? GlowRadius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.GlowRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.GlowRadius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class GlowImpl: ModelElementImpl, Glow
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class GlowImpl: ModelElementImpl, Glow
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

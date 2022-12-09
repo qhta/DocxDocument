@@ -13,8 +13,8 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
   
   public Collection<ConnectionSite>? ConnectionSites
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

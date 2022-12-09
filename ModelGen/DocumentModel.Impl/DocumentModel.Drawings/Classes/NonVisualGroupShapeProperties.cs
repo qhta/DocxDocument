@@ -16,8 +16,8 @@ public class NonVisualGroupShapePropertiesImpl: ModelElementImpl, NonVisualGroup
   /// </summary>
   public NonVisualDrawingProperties3? NonVisualDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NonVisualGroupShapePropertiesImpl: ModelElementImpl, NonVisualGroup
   /// </summary>
   public NonVisualGroupShapeDrawingProperties? NonVisualGroupShapeDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

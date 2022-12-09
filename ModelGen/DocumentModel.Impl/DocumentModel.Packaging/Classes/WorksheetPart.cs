@@ -13,8 +13,12 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WorksheetPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,8 +26,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public ControlPropertiesPart? ControlPropertiesParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -31,8 +35,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public CustomPropertyPart? CustomPropertyParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -40,8 +44,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -49,8 +53,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public EmbeddedControlPersistencePart? EmbeddedControlPersistenceParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -58,8 +62,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public EmbeddedObjectPart? EmbeddedObjectParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -67,8 +71,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public EmbeddedPackagePart? EmbeddedPackageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -76,8 +80,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -85,8 +89,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -94,8 +98,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public NamedSheetViewsPart? NamedSheetViewsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -103,8 +107,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public PivotTablePart? PivotTableParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -112,14 +116,18 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public QueryTablePart? QueryTableParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WorksheetPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -127,8 +135,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public SlicersPart? SlicersParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -136,8 +144,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public SpreadsheetPrinterSettingsPart? SpreadsheetPrinterSettingsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -145,8 +153,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public TableDefinitionPart? TableDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -154,8 +162,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public TimeLinePart? TimeLineParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -163,8 +171,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public VmlDrawingPart? VmlDrawingParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -172,8 +180,8 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
   /// </summary>
   public WorksheetThreadedCommentsPart? WorksheetThreadedCommentsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

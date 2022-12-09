@@ -13,8 +13,8 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
   
   public Collection<AreaSerExtension>? AreaSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

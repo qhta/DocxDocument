@@ -10,7 +10,7 @@ public interface SurfaceChart
   /// </summary>
   public Boolean? Wireframe { get ; set; }
   
-  public Collection<SurfaceChartSeries2>? SurfaceChartSerieses { get ; set; }
+  public Collection<SurfaceChartSeries1>? SurfaceChartSerieses { get ; set; }
   
   public BandFormats? BandFormats { get ; set; }
   

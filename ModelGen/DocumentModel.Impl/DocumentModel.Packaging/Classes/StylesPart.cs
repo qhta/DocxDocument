@@ -16,8 +16,8 @@ public class StylesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, StylesPart
   /// </summary>
   public DocumentModel.Wordprocessing.Styles? Styles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// </summary>
   public DocumentModel.HexBinaryValue? DurableId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,12 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// </summary>
   public DateTime? DateUtc
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.DateUtc?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DateUtc = (System.DateTime?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +38,12 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// </summary>
   public Boolean? IntelligentPlaceholder
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IntelligentPlaceholder?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IntelligentPlaceholder = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +51,8 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// </summary>
   public ExtensionList? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

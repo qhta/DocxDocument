@@ -16,8 +16,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? Position
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Position?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Position = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? Polar
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Polar?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Polar = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? Map
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Map?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Map = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public Boolean? InvertX
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.InvertX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InvertX = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public Boolean? InvertY
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.InvertY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InvertY = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public Boolean? Switch
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Switch?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Switch = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? XRange
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.XRange?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.XRange = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? YRange
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.YRange?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.YRange = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
   /// </summary>
   public String? RadiusRange
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RadiusRange?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RadiusRange = (System.String?)value;
+    }
   }
   
 }

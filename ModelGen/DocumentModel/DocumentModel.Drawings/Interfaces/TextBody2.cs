@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextBody Class.
+/// Shape Text Body.
 /// </summary>
 public interface TextBody2
 {

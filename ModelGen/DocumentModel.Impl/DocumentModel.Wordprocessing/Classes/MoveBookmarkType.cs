@@ -16,8 +16,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Author
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Author?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Author = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public DateTime? Date
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Date = (System.DateTime?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public Int32? ColumnFirst
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnFirst?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnFirst = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public Int32? ColumnLast
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnLast?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnLast = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
 }

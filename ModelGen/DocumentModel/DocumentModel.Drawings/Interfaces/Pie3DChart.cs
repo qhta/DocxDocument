@@ -12,7 +12,7 @@ public interface Pie3DChart
   
   public Collection<PieChartSeries1>? PieChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public Pie3DChartExtensionList? Pie3DChartExtensionList { get ; set; }
   

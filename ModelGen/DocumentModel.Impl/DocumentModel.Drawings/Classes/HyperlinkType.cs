@@ -16,8 +16,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public String? InvalidUrl
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.InvalidUrl?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InvalidUrl = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public String? Action
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Action?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Action = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public String? TargetFrame
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.TargetFrame?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TargetFrame = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public String? Tooltip
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Tooltip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Tooltip = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public Boolean? History
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.History?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.History = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public Boolean? HighlightClick
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HighlightClick?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HighlightClick = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public Boolean? EndSound
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.EndSound?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EndSound = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,8 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public virtual EmbeddedWavAudioFileType? HyperlinkSound
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +129,8 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
   /// </summary>
   public virtual HyperlinkExtensionList? HyperlinkExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

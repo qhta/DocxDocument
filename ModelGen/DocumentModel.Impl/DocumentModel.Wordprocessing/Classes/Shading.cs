@@ -29,8 +29,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -51,8 +55,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? ThemeTint
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeTint = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -60,8 +68,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? ThemeShade
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeShade = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? Fill
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Fill?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Fill = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -91,8 +107,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? ThemeFillTint
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeFillTint?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeFillTint = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -100,8 +120,12 @@ public class ShadingImpl: ModelElementImpl, Shading
   /// </summary>
   public String? ThemeFillShade
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeFillShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeFillShade = (System.String?)value;
+    }
   }
   
 }

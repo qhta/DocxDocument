@@ -16,8 +16,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public Blur? Blur
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public FillOverlay? FillOverlay
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public Glow? Glow
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public InnerShadow? InnerShadow
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public OuterShadow? OuterShadow
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public PresetShadow? PresetShadow
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +70,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public Reflection? Reflection
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +79,8 @@ public class EffectListImpl: ModelElementImpl, EffectList
   /// </summary>
   public SoftEdge? SoftEdge
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

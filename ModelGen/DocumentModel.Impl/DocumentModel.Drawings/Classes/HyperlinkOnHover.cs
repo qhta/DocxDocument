@@ -13,14 +13,14 @@ public class HyperlinkOnHoverImpl: DocumentModel.Drawings.HyperlinkTypeImpl, Hyp
   
   public override EmbeddedWavAudioFileType? HyperlinkSound
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override HyperlinkExtensionList? HyperlinkExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

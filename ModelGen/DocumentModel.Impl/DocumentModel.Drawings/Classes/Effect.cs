@@ -16,8 +16,12 @@ public class EffectImpl: ModelElementImpl, Effect
   /// </summary>
   public String? Reference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Reference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Reference = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class Point1Impl: ModelElementImpl, Point1
   /// </summary>
   public String? ModelId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ModelId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ModelId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class Point1Impl: ModelElementImpl, Point1
   /// </summary>
   public String? ConnectionId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ConnectionId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConnectionId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,17 +55,17 @@ public class Point1Impl: ModelElementImpl, Point1
   /// </summary>
   public PropertySet? PropertySet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public ShapeProperties9? ShapeProperties
+  public ShapeProperties3? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -65,8 +73,8 @@ public class Point1Impl: ModelElementImpl, Point1
   /// </summary>
   public TextBody1? TextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -74,8 +82,8 @@ public class Point1Impl: ModelElementImpl, Point1
   /// </summary>
   public PtExtensionList? PtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

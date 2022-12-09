@@ -29,8 +29,12 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// </summary>
   public Int32? Start
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Start?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Start = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// </summary>
   public Byte? ChapterStyle
   {
-    get;
-    set;
+    get => (Byte?)OpenXmlElement?.ChapterStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ChapterStyle = (System.Byte?)value;
+    }
   }
   
   /// <summary>

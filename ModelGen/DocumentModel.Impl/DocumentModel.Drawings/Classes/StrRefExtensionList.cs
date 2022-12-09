@@ -13,8 +13,8 @@ public class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
   
   public Collection<StrRefExtension>? StrRefExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

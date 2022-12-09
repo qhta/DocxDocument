@@ -16,8 +16,12 @@ public class GeoEntityImpl: ModelElementImpl, GeoEntity
   /// </summary>
   public String? EntityName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityName = (System.String?)value;
+    }
   }
   
   /// <summary>

@@ -16,8 +16,8 @@ public class AudioFromCDImpl: ModelElementImpl, AudioFromCD
   /// </summary>
   public AudioCDTimeType? StartTime
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,17 +25,17 @@ public class AudioFromCDImpl: ModelElementImpl, AudioFromCD
   /// </summary>
   public AudioCDTimeType? EndTime
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,25 @@ public class CategoryImpl: ModelElementImpl, Category
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (OpenXmlElement.Name != null)
+        {
+          if (value is not null)
+            OpenXmlElement.Name.Val = (System.String?)value;
+          else
+            OpenXmlElement.Name = null;
+        }
+        else
+        {
+          if (value is not null)
+            OpenXmlElement.Name = new DocumentFormat.OpenXml.Wordprocessing.Name{ Val = (System.String?)value };
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -41,14 +58,14 @@ public class CategoryImpl: ModelElementImpl, Category
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Gallery>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Gallery{ Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value };
             OpenXmlElement.AddChild(openXmlElement);

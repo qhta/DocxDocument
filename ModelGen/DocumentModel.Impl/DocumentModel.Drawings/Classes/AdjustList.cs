@@ -13,8 +13,8 @@ public class AdjustListImpl: ModelElementImpl, AdjustList
   
   public Collection<Adjust>? Adjusts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

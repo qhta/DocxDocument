@@ -16,8 +16,12 @@ public class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
   /// </summary>
   public Int32? Pressure
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Pressure?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Pressure = (System.Int32?)value;
+    }
   }
   
 }

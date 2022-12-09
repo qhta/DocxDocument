@@ -16,8 +16,12 @@ public class GeoHierarchyEntityImpl: ModelElementImpl, GeoHierarchyEntity
   /// </summary>
   public String? EntityName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GeoHierarchyEntityImpl: ModelElementImpl, GeoHierarchyEntity
   /// </summary>
   public String? EntityId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityId = (System.String?)value;
+    }
   }
   
   /// <summary>

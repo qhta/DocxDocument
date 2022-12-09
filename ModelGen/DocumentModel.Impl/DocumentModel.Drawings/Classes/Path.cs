@@ -16,8 +16,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Int64? Width
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Int64? Height
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? Stroke
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Stroke?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Stroke = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,44 +68,48 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? ExtrusionOk
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ExtrusionOk?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ExtrusionOk = (System.Boolean?)value;
+    }
   }
   
   public Collection<Boolean>? CloseShapePaths
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MoveTo>? MoveTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<LineTo>? LineTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ArcTo>? ArcTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<QuadraticBezierCurveTo>? QuadraticBezierCurveTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<CubicBezierCurveTo>? CubicBezierCurveTos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

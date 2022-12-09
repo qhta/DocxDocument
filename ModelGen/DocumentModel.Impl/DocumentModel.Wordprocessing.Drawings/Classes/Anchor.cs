@@ -16,8 +16,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public UInt32? DistanceFromTop
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromTop = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public UInt32? DistanceFromBottom
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromBottom = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public UInt32? DistanceFromLeft
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromLeft = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public UInt32? DistanceFromRight
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromRight = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? SimplePos
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SimplePos?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SimplePos = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public UInt32? RelativeHeight
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.RelativeHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelativeHeight = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? BehindDoc
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BehindDoc?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BehindDoc = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? Locked
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Locked?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Locked = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? LayoutInCell
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LayoutInCell?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LayoutInCell = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? Hidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Hidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Boolean? AllowOverlap
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowOverlap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowOverlap = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public DocumentModel.HexBinaryValue? EditId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -124,8 +168,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public DocumentModel.HexBinaryValue? AnchorId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -133,8 +177,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Point2DType? SimplePosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -142,8 +186,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public HorizontalPosition? HorizontalPosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -151,8 +195,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public VerticalPosition? VerticalPosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -160,8 +204,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public Extent? Extent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -169,62 +213,89 @@ public class AnchorImpl: ModelElementImpl, Anchor
   /// </summary>
   public EffectExtent? EffectExtent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? WrapNone
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public WrapSquare? WrapSquare
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public WrapTight? WrapTight
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public WrapThrough? WrapThrough
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public WrapTopBottom? WrapTopBottom
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocProperties? DocProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Drawings.Graphic? Graphic
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public RelativeWidth? RelativeWidth
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

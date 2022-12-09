@@ -13,8 +13,8 @@ public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
   
   public Collection<PieChartExtension>? PieChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

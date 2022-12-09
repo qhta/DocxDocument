@@ -16,8 +16,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? ChromAKey
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ChromAKey?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ChromAKey = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? CropLeft
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CropLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CropLeft = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? CropTop
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CropTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CropTop = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? CropRight
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CropRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CropRight = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? CropBottom
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CropBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CropBottom = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? Gain
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Gain?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Gain = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? BlackLevel
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BlackLevel?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlackLevel = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? Gamma
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Gamma?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Gamma = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public Boolean? Grayscale
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Grayscale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Grayscale = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public Boolean? BiLevel
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BiLevel?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BiLevel = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? EmbossColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EmbossColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EmbossColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -124,8 +172,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? RecolorTarget
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RecolorTarget?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RecolorTarget = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -133,8 +185,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -142,8 +198,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public Boolean? DetectMouseClick
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DetectMouseClick?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DetectMouseClick = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -151,8 +211,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? RelId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -160,8 +224,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? RelationshipId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelationshipId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -169,8 +237,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? Picture
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Picture?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Picture = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -178,8 +250,12 @@ public class ImageDataImpl: ModelElementImpl, ImageData
   /// </summary>
   public String? RelHref
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelHref?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelHref = (System.String?)value;
+    }
   }
   
 }

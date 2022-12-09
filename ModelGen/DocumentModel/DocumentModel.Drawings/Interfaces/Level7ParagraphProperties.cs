@@ -37,6 +37,6 @@ public interface Level7ParagraphProperties
   
   public DefaultRunProperties? DefaultRunProperties { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

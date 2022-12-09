@@ -16,14 +16,18 @@ public class DocPartTypesImpl: ModelElementImpl, DocPartTypes
   /// </summary>
   public Boolean? All
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.All?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.All = (System.Boolean?)value;
+    }
   }
   
   public Collection<DocPartKind>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class Scene3DImpl: ModelElementImpl, Scene3D
   /// </summary>
   public Camera? Camera
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class Scene3DImpl: ModelElementImpl, Scene3D
   /// </summary>
   public LightRig? LightRig
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

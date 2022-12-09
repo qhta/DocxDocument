@@ -16,8 +16,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int64? BlurRadius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.BlurRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlurRadius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int64? Distance
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Distance?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Distance = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int32? Direction
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Direction?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Direction = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int32? HorizontalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int32? VerticalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int32? HorizontalSkew
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalSkew?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalSkew = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Int32? VerticalSkew
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalSkew?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalSkew = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public Boolean? RotateWithShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.RotateWithShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RotateWithShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -101,8 +133,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -110,8 +142,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -119,8 +151,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -128,8 +160,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -137,8 +169,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -146,8 +178,8 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
   /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,14 +13,14 @@ public class CaptionsImpl: ModelElementImpl, Captions
   
   public Collection<Caption>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public AutoCaptions? AutoCaptions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

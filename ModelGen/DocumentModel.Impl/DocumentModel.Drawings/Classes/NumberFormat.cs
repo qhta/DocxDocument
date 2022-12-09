@@ -16,8 +16,12 @@ public class NumberFormatImpl: ModelElementImpl, NumberFormat
   /// </summary>
   public String? FormatCode
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FormatCode?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FormatCode = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class NumberFormatImpl: ModelElementImpl, NumberFormat
   /// </summary>
   public Boolean? SourceLinked
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SourceLinked?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SourceLinked = (System.Boolean?)value;
+    }
   }
   
 }

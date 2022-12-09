@@ -16,8 +16,8 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// </summary>
   public ChartColorStylePart? ChartColorStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// </summary>
   public DocumentModel.Drawings.ChartSpace2? ChartSpace
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,14 +34,18 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// </summary>
   public ChartStylePart? ChartStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ChartPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -49,14 +53,18 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ChartPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

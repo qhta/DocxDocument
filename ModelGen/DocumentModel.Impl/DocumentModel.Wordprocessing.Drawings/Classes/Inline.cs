@@ -16,8 +16,12 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public UInt32? DistanceFromTop
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromTop = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public UInt32? DistanceFromBottom
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromBottom = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public UInt32? DistanceFromLeft
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromLeft = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public UInt32? DistanceFromRight
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.DistanceFromRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromRight = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public DocumentModel.HexBinaryValue? AnchorId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +77,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public DocumentModel.HexBinaryValue? EditId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +86,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public Extent? Extent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +95,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public EffectExtent? EffectExtent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +104,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public DocProperties? DocProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +113,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -106,8 +122,8 @@ public class InlineImpl: ModelElementImpl, Inline
   /// </summary>
   public DocumentModel.Drawings.Graphic? Graphic
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

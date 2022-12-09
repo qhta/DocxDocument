@@ -16,8 +16,12 @@ public class BreakImpl: ModelElementImpl, Break
   /// </summary>
   public Int32? AlignAt
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.AlignAt?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlignAt = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BreakImpl: ModelElementImpl, Break
   /// </summary>
   public Int32? Val
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.Int32?)value;
+    }
   }
   
 }

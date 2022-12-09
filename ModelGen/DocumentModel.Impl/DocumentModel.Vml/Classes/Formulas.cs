@@ -13,8 +13,8 @@ public class FormulasImpl: ModelElementImpl, Formulas
   
   public Collection<Formula>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

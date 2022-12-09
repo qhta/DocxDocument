@@ -13,8 +13,8 @@ public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
   
   public Collection<ShapeGuide>? ShapeGuides
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -23,7 +23,7 @@ public interface UnderlineFill
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill2? BlipFill { get ; set; }
+  public BlipFill1? BlipFill { get ; set; }
   
   /// <summary>
   /// Pattern Fill.

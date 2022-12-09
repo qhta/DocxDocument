@@ -32,14 +32,14 @@ public class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptPrope
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AlignScripts>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.AlignScripts{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -54,8 +54,8 @@ public class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptPrope
   /// </summary>
   public ControlProperties? ControlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

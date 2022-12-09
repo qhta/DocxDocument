@@ -13,8 +13,8 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
   
   public Collection<ExtraColorScheme>? ExtraColorSchemes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

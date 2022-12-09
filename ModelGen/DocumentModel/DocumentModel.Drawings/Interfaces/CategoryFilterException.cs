@@ -13,7 +13,7 @@ public interface CategoryFilterException
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  public ShapeProperties2? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Explosion.
@@ -38,6 +38,6 @@ public interface CategoryFilterException
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel2? DataLabel { get ; set; }
+  public DataLabel3? DataLabel { get ; set; }
   
 }

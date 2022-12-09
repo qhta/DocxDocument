@@ -16,8 +16,12 @@ public class ExternalData1Impl: ModelElementImpl, ExternalData1
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ExternalData1Impl: ModelElementImpl, ExternalData1
   /// </summary>
   public Boolean? AutoUpdate
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AutoUpdate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AutoUpdate = (System.Boolean?)value;
+    }
   }
   
 }

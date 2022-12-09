@@ -16,8 +16,12 @@ public class TableWidthDxaNilTypeImpl: ModelElementImpl, TableWidthDxaNilType
   /// </summary>
   public Int16? Width
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.Int16?)value;
+    }
   }
   
   /// <summary>

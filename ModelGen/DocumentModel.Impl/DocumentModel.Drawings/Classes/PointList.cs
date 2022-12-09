@@ -13,8 +13,8 @@ public class PointListImpl: ModelElementImpl, PointList
   
   public Collection<Point1>? Points
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

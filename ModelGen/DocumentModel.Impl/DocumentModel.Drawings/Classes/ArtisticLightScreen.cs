@@ -16,8 +16,12 @@ public class ArtisticLightScreenImpl: ModelElementImpl, ArtisticLightScreen
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticLightScreenImpl: ModelElementImpl, ArtisticLightScreen
   /// </summary>
   public Int32? GridSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.GridSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.GridSize = (System.Int32?)value;
+    }
   }
   
 }

@@ -12,7 +12,7 @@ public interface BubbleChart
   
   public Collection<BubbleChartSeries2>? BubbleChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public Boolean? Bubble3D { get ; set; }
   

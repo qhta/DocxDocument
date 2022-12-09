@@ -42,8 +42,12 @@ public class RuleImpl: ModelElementImpl, Rule
   /// </summary>
   public String? ForName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ForName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -64,8 +68,12 @@ public class RuleImpl: ModelElementImpl, Rule
   /// </summary>
   public Double? Val
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -73,8 +81,12 @@ public class RuleImpl: ModelElementImpl, Rule
   /// </summary>
   public Double? Fact
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Fact?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Fact = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -82,17 +94,21 @@ public class RuleImpl: ModelElementImpl, Rule
   /// </summary>
   public Double? Max
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Max?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Max = (System.Double?)value;
+    }
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

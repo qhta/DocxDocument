@@ -16,8 +16,12 @@ public class TaskScheduleEventInfoImpl: ModelElementImpl, TaskScheduleEventInfo
   /// </summary>
   public DateTime? StartDate
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.StartDate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartDate = (System.DateTime?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TaskScheduleEventInfoImpl: ModelElementImpl, TaskScheduleEventInfo
   /// </summary>
   public DateTime? DueDate
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.DueDate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DueDate = (System.DateTime?)value;
+    }
   }
   
 }

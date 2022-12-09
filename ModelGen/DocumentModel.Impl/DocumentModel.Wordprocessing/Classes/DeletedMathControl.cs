@@ -16,8 +16,12 @@ public class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
   /// </summary>
   public String? Author
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Author?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Author = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
   /// </summary>
   public DateTime? Date
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Date = (System.DateTime?)value;
+    }
   }
   
   /// <summary>
@@ -34,14 +42,18 @@ public class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   public RunProperties? RunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

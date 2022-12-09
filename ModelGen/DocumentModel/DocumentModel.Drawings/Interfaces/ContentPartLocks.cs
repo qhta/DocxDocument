@@ -58,6 +58,6 @@ public interface ContentPartLocks
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList2? OfficeArtExtensionList { get ; set; }
   
 }

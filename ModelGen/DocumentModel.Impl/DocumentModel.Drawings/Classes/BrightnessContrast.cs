@@ -16,8 +16,12 @@ public class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
   /// </summary>
   public Int32? Bright
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Bright?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bright = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
   /// </summary>
   public Int32? Contrast
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Contrast?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Contrast = (System.Int32?)value;
+    }
   }
   
 }

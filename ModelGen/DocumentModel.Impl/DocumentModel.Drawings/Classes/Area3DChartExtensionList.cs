@@ -13,8 +13,8 @@ public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensio
   
   public Collection<Area3DChartExtension>? Area3DChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

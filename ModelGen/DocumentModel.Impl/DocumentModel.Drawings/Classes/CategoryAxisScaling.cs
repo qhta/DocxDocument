@@ -16,8 +16,12 @@ public class CategoryAxisScalingImpl: ModelElementImpl, CategoryAxisScaling
   /// </summary>
   public String? GapWidth
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.GapWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.GapWidth = (System.String?)value;
+    }
   }
   
 }

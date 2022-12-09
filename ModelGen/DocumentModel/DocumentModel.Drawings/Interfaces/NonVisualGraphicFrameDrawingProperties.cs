@@ -13,6 +13,6 @@ public interface NonVisualGraphicFrameDrawingProperties
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

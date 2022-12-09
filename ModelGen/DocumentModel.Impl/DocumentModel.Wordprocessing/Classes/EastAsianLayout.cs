@@ -16,8 +16,12 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Int32? Id
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? Combine
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Combine?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Combine = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? Vertical
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Vertical?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Vertical = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? VerticalCompress
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.VerticalCompress?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalCompress = (System.Boolean?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class ConnectionTypeImpl: ModelElementImpl, ConnectionType
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ConnectionTypeImpl: ModelElementImpl, ConnectionType
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Index?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Index = (System.UInt32?)value;
+    }
   }
   
 }

@@ -16,8 +16,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public DefaultParagraphProperties? DefaultParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level1ParagraphProperties? Level1ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level2ParagraphProperties? Level2ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level3ParagraphProperties? Level3ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level4ParagraphProperties? Level4ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level5ParagraphProperties? Level5ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +70,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level6ParagraphProperties? Level6ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +79,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level7ParagraphProperties? Level7ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +88,8 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level8ParagraphProperties? Level8ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,17 +97,17 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// </summary>
   public Level9ParagraphProperties? Level9ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class FormulaImpl: ModelElementImpl, Formula
   /// </summary>
   public String? Equation
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Equation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Equation = (System.String?)value;
+    }
   }
   
 }

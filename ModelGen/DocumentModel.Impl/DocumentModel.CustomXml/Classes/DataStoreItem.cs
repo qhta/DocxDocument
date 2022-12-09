@@ -16,8 +16,12 @@ public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
   /// </summary>
   public String? ItemId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ItemId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ItemId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
   /// </summary>
   public SchemaReferences? SchemaReferences
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

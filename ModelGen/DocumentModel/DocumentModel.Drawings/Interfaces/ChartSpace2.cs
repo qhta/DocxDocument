@@ -28,11 +28,11 @@ public interface ChartSpace2
   
   public Protection? Protection { get ; set; }
   
-  public Chart3? Chart { get ; set; }
+  public Chart2? Chart { get ; set; }
   
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  public ShapeProperties5? ShapeProperties { get ; set; }
   
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
   public ExternalData2? ExternalData { get ; set; }
   

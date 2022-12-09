@@ -16,8 +16,8 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// </summary>
   public DocumentModel.HexBinaryValue? ParaId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// </summary>
   public DocumentModel.HexBinaryValue? ParaIdParent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,12 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// </summary>
   public Boolean? Done
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Done?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Done = (System.Boolean?)value;
+    }
   }
   
 }

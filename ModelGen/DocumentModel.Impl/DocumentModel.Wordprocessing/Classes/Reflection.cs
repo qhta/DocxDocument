@@ -16,8 +16,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int64? BlurRadius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.BlurRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlurRadius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? StartingOpacity
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.StartingOpacity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartingOpacity = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? StartPosition
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.StartPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartPosition = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? EndingOpacity
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.EndingOpacity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EndingOpacity = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? EndPosition
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.EndPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EndPosition = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int64? DistanceFromText
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.DistanceFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromText = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? DirectionAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DirectionAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DirectionAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? FadeDirection
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FadeDirection?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FadeDirection = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? HorizontalScalingFactor
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalScalingFactor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalScalingFactor = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? VerticalScalingFactor
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalScalingFactor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalScalingFactor = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? HorizontalSkewAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalSkewAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalSkewAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class ReflectionImpl: ModelElementImpl, Reflection
   /// </summary>
   public Int32? VerticalSkewAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalSkewAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalSkewAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>

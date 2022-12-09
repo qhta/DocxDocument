@@ -14,10 +14,10 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public virtual ShapeProperties8? ShapeProperties
+  public virtual ShapeProperties4? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
   /// </summary>
   public virtual BodyProperties? BodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,26 +34,26 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
   /// </summary>
   public virtual ListStyle? ListStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public virtual ShapeStyle1? ShapeStyle
+  public virtual ShapeStyle2? ShapeStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public virtual ExtensionList1? ExtensionList
+  public virtual ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

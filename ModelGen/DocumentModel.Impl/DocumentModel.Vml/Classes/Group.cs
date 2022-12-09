@@ -16,8 +16,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Style
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Href
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Href?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Href = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Target
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Target?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Target = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Class
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Class?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Class = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? Alternate
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Alternate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Alternate = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? CoordinateSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CoordinateSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CoordinateSize = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? CoordinateOrigin
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CoordinateOrigin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CoordinateOrigin = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? WrapCoordinates
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.WrapCoordinates?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.WrapCoordinates = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? Print
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Print?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Print = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? OptionalString
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.OptionalString?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OptionalString = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -124,8 +172,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? Oned
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Oned?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Oned = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -133,8 +185,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Int32? RegroupId
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RegroupId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RegroupId = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -142,8 +198,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? DoubleClickNotify
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DoubleClickNotify?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DoubleClickNotify = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -151,8 +211,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? Button
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Button?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Button = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -160,8 +224,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? UserHidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UserHidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserHidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -169,8 +237,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? Bullet
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Bullet?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bullet = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -178,8 +250,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? Horizontal
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Horizontal?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Horizontal = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -187,8 +263,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? HorizontalStandard
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalStandard?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalStandard = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -196,8 +276,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? HorizontalNoShade
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalNoShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalNoShade = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -205,8 +289,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Single? HorizontalPercentage
   {
-    get;
-    set;
+    get => (Single?)OpenXmlElement?.HorizontalPercentage?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalPercentage = (System.Single?)value;
+    }
   }
   
   /// <summary>
@@ -227,8 +315,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? AllowInCell
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowInCell?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowInCell = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -236,8 +328,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? AllowOverlap
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowOverlap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowOverlap = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -245,8 +341,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Boolean? UserDrawn
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UserDrawn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserDrawn = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -254,8 +354,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Int32? DiagramLayout
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramLayout?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramLayout = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -263,8 +367,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Int32? DiagramNodeKind
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramNodeKind?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramNodeKind = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -272,8 +380,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public Int32? DiagramLayoutMostRecentUsed
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramLayoutMostRecentUsed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramLayoutMostRecentUsed = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -294,8 +406,8 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public DocumentModel.Base64BinaryValue? Gfxdata
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -316,8 +428,12 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? TableProperties
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.TableProperties?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TableProperties = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -325,104 +441,108 @@ public class GroupImpl: ModelElementImpl, Group
   /// </summary>
   public String? TableLimits
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.TableLimits?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TableLimits = (System.String?)value;
+    }
   }
   
   public Collection<Group>? Groups
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Shape>? Shapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Shapetype>? Shapetypes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Arc>? Arcs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Curve>? Curves
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ImageFile>? ImageFiles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Line>? Lines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Oval>? Ovals
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<PolyLine>? PolyLines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Rectangle>? Rectangles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<RoundRectangle>? RoundRectangles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Diagram>? Diagrams
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Lock>? Locks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ClipPath>? ClipPaths
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? AnchorLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

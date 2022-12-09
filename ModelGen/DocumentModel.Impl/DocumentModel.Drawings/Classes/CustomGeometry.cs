@@ -16,8 +16,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public AdjustValueList? AdjustValueList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public ShapeGuideList? ShapeGuideList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public AdjustHandleList? AdjustHandleList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public ConnectionSiteList? ConnectionSiteList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public Rectangle? Rectangle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
   /// </summary>
   public PathList? PathList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

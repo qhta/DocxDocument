@@ -16,8 +16,12 @@ public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
   /// </summary>
   public Int32? FirstXCoordinate
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FirstXCoordinate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstXCoordinate = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
   /// </summary>
   public Int32? FirstYCoordinate
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FirstYCoordinate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstYCoordinate = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
   /// </summary>
   public Int32? SecondXCoordinate
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.SecondXCoordinate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SecondXCoordinate = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
   /// </summary>
   public Int32? SecondYCoordinate
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.SecondYCoordinate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SecondYCoordinate = (System.Int32?)value;
+    }
   }
   
 }

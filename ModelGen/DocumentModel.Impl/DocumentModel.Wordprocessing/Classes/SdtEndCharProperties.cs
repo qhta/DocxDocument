@@ -13,8 +13,8 @@ public class SdtEndCharPropertiesImpl: ModelElementImpl, SdtEndCharProperties
   
   public Collection<RunProperties>? RunPropertieses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

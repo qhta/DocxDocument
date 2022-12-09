@@ -29,8 +29,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Int32? Style
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Boolean? AutoFormat
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AutoFormat?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AutoFormat = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Boolean? Reverse
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Reverse?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Reverse = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Boolean? AutoLayout
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AutoLayout?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AutoLayout = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Int32? ScaleX
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ScaleX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ScaleX = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Int32? ScaleY
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ScaleY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ScaleY = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Int32? FontSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FontSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FontSize = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public String? ConstrainBounds
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ConstrainBounds?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConstrainBounds = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -101,8 +133,12 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public Int32? BaseTextScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.BaseTextScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BaseTextScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -110,8 +146,8 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public RelationTable? RelationTable
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

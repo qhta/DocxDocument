@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices.ComTypes;
 using DocumentFormat.OpenXml;
+using Namotion.Reflection;
 
 namespace ModelGen;
 
@@ -329,6 +330,26 @@ public static class ModelManager
     return result;
   }
 
+  public static int CheckNamespacesDuplicatedTypesAsync(Action<int, int> OnDone)
+  {
+    var namespaces = TypeManager.GetNamespaces();
+    Task<int>[] tasks = new Task<int>[namespaces.Count()];
+    int i = 0;
+    foreach (var nspace in namespaces)
+    {
+      tasks[i] = new Task<int>(() =>
+      {
+        var repaired = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
+        OnDone(repaired, tasks.Count(item => item?.Status == TaskStatus.Running));
+        return repaired;
+      });
+      tasks[i].Start();
+      i++;
+    }
+    Task.WaitAll(tasks);
+    return tasks.Sum(item => item.Result);
+  }
+
   public static int CheckNamespaceDuplicatedTypes(string nspace)
   {
     var duplicatedTypesCount = 0;
@@ -420,5 +441,8 @@ public static class ModelManager
     }
     return count;
   }
-
+  public static bool HasProperty1(this Type aType, string name)
+  {
+    return aType.GetProperties().Any(item => item.Name == name);
+  }
 }

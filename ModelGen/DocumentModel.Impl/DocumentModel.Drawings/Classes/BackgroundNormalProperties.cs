@@ -14,10 +14,10 @@ public class BackgroundNormalPropertiesImpl: ModelElementImpl, BackgroundNormalP
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public OfficeArtExtensionList6? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

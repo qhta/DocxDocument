@@ -16,8 +16,8 @@ public class RunPropertiesDefaultImpl: ModelElementImpl, RunPropertiesDefault
   /// </summary>
   public RunPropertiesBaseStyle? RunPropertiesBaseStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

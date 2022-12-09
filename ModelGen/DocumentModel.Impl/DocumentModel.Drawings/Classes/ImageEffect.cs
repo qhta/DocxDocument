@@ -16,8 +16,12 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public Boolean? Visible
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Visible?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Visible = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticBlur? ArtisticBlur
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticCement? ArtisticCement
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticChalkSketch? ArtisticChalkSketch
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticCrisscrossEtching? ArtisticCrisscrossEtching
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticCutout? ArtisticCutout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticFilmGrain? ArtisticFilmGrain
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +83,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticGlass? ArtisticGlass
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +92,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticGlowDiffused? ArtisticGlowDiffused
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +101,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticGlowEdges? ArtisticGlowEdges
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -106,8 +110,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticLightScreen? ArtisticLightScreen
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -115,8 +119,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticLineDrawing? ArtisticLineDrawing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -124,8 +128,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticMarker? ArtisticMarker
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -133,8 +137,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticMosaicBubbles? ArtisticMosaicBubbles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -142,8 +146,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPaintStrokes? ArtisticPaintStrokes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -151,8 +155,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPaintBrush? ArtisticPaintBrush
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -160,8 +164,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPastelsSmooth? ArtisticPastelsSmooth
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -169,8 +173,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPencilGrayscale? ArtisticPencilGrayscale
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -178,8 +182,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPencilSketch? ArtisticPencilSketch
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -187,8 +191,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPhotocopy? ArtisticPhotocopy
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -196,8 +200,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticPlasticWrap? ArtisticPlasticWrap
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -205,8 +209,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticTexturizer? ArtisticTexturizer
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -214,8 +218,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ArtisticWatercolorSponge? ArtisticWatercolorSponge
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -223,8 +227,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public BackgroundRemoval? BackgroundRemoval
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -232,8 +236,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public BrightnessContrast? BrightnessContrast
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -241,8 +245,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public ColorTemperature? ColorTemperature
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -250,8 +254,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public Saturation1? Saturation
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -259,8 +263,8 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// </summary>
   public SharpenSoften? SharpenSoften
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

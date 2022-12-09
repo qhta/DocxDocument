@@ -16,8 +16,12 @@ public class ArtisticFilmGrainImpl: ModelElementImpl, ArtisticFilmGrain
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticFilmGrainImpl: ModelElementImpl, ArtisticFilmGrain
   /// </summary>
   public Int32? GrainSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.GrainSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.GrainSize = (System.Int32?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class ColorTemperatureImpl: ModelElementImpl, ColorTemperature
   /// </summary>
   public Int32? ColorTemperatureValue
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColorTemperatureValue?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColorTemperatureValue = (System.Int32?)value;
+    }
   }
   
 }

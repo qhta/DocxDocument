@@ -16,8 +16,8 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisual
   /// </summary>
   public ConnectionShapeLocks? ConnectionShapeLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisual
   /// </summary>
   public ConnectionType? StartConnection
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +34,17 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisual
   /// </summary>
   public ConnectionType? EndConnection
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

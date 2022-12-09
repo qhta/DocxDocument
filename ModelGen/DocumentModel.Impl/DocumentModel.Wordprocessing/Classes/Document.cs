@@ -29,8 +29,8 @@ public class DocumentImpl: ModelElementImpl, Document
   /// </summary>
   public DocumentBackground? DocumentBackground
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -38,8 +38,8 @@ public class DocumentImpl: ModelElementImpl, Document
   /// </summary>
   public Body? Body
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
   /// </summary>
   public Boolean? ConnectorLines
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ConnectorLines?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConnectorLines = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
   /// </summary>
   public Boolean? MeanLine
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.MeanLine?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MeanLine = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
   /// </summary>
   public Boolean? MeanMarker
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.MeanMarker?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MeanMarker = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
   /// </summary>
   public Boolean? Nonoutliers
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Nonoutliers?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Nonoutliers = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
   /// </summary>
   public Boolean? Outliers
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Outliers?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Outliers = (System.Boolean?)value;
+    }
   }
   
 }

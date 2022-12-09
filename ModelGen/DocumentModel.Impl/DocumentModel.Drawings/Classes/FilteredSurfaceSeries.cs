@@ -14,10 +14,10 @@ public class FilteredSurfaceSeriesImpl: ModelElementImpl, FilteredSurfaceSeries
   /// <summary>
   /// SurfaceChartSeries.
   /// </summary>
-  public SurfaceChartSeries1? SurfaceChartSeries
+  public SurfaceChartSeries2? SurfaceChartSeries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

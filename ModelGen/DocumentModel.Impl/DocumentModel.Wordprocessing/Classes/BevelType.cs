@@ -16,8 +16,12 @@ public class BevelTypeImpl: ModelElementImpl, BevelType
   /// </summary>
   public Int64? Width
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BevelTypeImpl: ModelElementImpl, BevelType
   /// </summary>
   public Int64? Height
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.Int64?)value;
+    }
   }
   
   /// <summary>

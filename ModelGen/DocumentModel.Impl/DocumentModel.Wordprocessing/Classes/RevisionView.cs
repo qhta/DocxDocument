@@ -16,8 +16,12 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Markup
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Markup?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Markup = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Comments
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Comments?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Comments = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? DisplayRevision
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DisplayRevision?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DisplayRevision = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Formatting
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Formatting?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Formatting = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? InkAnnotations
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.InkAnnotations?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InkAnnotations = (System.Boolean?)value;
+    }
   }
   
 }

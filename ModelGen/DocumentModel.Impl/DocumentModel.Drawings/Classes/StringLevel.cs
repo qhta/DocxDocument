@@ -16,8 +16,12 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
   /// </summary>
   public UInt32? PtCount
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.PtCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PtCount = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,14 +29,18 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   public Collection<ChartStringValue>? ChartStringValues
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
   /// </summary>
   public String? Max
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Max?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Max = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
   /// </summary>
   public String? Min
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Min?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Min = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
   /// </summary>
   public String? MajorUnit
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MajorUnit?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MajorUnit = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
   /// </summary>
   public String? MinorUnit
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinorUnit?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinorUnit = (System.String?)value;
+    }
   }
   
 }

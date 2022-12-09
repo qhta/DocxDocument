@@ -6,38 +6,27 @@ namespace DocumentModel.Drawings;
 public interface FontReference2
 {
   /// <summary>
-  /// Identifier
+  /// idx, this property is only available in Office 2013 and later.
   /// </summary>
   public FontCollectionIndexKind? Index { get ; set; }
   
   /// <summary>
-  /// RGB Color Model - Percentage Variant.
+  /// mods, this property is only available in Office 2013 and later.
   /// </summary>
+  public List<String>? Modifiers { get ; set; }
+  
   public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
-  /// <summary>
-  /// RGB Color Model - Hex Variant.
-  /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get ; set; }
   
-  /// <summary>
-  /// Hue, Saturation, Luminance Color Model.
-  /// </summary>
   public HslColor? HslColor { get ; set; }
   
-  /// <summary>
-  /// System Color.
-  /// </summary>
   public SystemColor? SystemColor { get ; set; }
   
-  /// <summary>
-  /// Scheme Color.
-  /// </summary>
   public SchemeColor? SchemeColor { get ; set; }
   
-  /// <summary>
-  /// Preset Color.
-  /// </summary>
   public PresetColor? PresetColor { get ; set; }
+  
+  public StyleColor? StyleColor { get ; set; }
   
 }

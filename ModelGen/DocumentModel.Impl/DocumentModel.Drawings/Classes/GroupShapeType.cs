@@ -16,17 +16,17 @@ public class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
   /// </summary>
   public virtual GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public virtual GroupShapeProperties2? GroupShapeProperties
+  public virtual GroupShapeProperties1? GroupShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

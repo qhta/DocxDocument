@@ -16,8 +16,12 @@ public class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.String?)value;
+    }
   }
   
 }

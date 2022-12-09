@@ -16,8 +16,12 @@ public class SupplementalFontImpl: ModelElementImpl, SupplementalFont
   /// </summary>
   public String? Script
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Script?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Script = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SupplementalFontImpl: ModelElementImpl, SupplementalFont
   /// </summary>
   public String? Typeface
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Typeface?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Typeface = (System.String?)value;
+    }
   }
   
 }

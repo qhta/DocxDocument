@@ -16,8 +16,12 @@ public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
   /// </summary>
   public Int32? Left
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Left?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Left = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
   /// </summary>
   public Int32? Top
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Top?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Top = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
   /// </summary>
   public Int32? Right
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Right?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Right = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
   /// </summary>
   public Int32? Bottom
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Bottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bottom = (System.Int32?)value;
+    }
   }
   
 }

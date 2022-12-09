@@ -14,10 +14,10 @@ public class NonVisualContentPartPropertiesImpl: ModelElementImpl, NonVisualCont
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties1? NonVisualDrawingProperties
+  public NonVisualDrawingProperties2? NonVisualDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NonVisualContentPartPropertiesImpl: ModelElementImpl, NonVisualCont
   /// </summary>
   public NonVisualInkContentPartProperties? NonVisualInkContentPartProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

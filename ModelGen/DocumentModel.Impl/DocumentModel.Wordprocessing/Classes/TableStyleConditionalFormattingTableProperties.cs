@@ -32,14 +32,14 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -54,8 +54,8 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
   /// </summary>
   public TableWidthType? TableCellSpacing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -63,8 +63,8 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
   /// </summary>
   public TableIndentation? TableIndentation
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -72,8 +72,8 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
   /// </summary>
   public TableBorders? TableBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -81,8 +81,8 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
   /// </summary>
   public Shading? Shading
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -90,8 +90,8 @@ public class TableStyleConditionalFormattingTablePropertiesImpl: ModelElementImp
   /// </summary>
   public TableCellMarginDefault? TableCellMarginDefault
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

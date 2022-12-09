@@ -16,8 +16,12 @@ public class AlphaModulationFixedImpl: ModelElementImpl, AlphaModulationFixed
   /// </summary>
   public Int32? Amount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Amount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Amount = (System.Int32?)value;
+    }
   }
   
 }

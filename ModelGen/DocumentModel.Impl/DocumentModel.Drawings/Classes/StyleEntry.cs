@@ -16,17 +16,17 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// </summary>
   public List<String>? Modifiers
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// LineReference.
   /// </summary>
-  public virtual LineReference2? LineReference
+  public virtual LineReference1? LineReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,37 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// </summary>
   public virtual String? LineWidthScale
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -43,8 +72,8 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// </summary>
   public virtual FillReference2? FillReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,35 +81,35 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// </summary>
   public virtual EffectReference1? EffectReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// FontReference.
   /// </summary>
-  public virtual FontReference1? FontReference
+  public virtual FontReference2? FontReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties4? ShapeProperties
+  public virtual ShapeProperties1? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// TextCharacterPropertiesType.
   /// </summary>
-  public virtual TextCharacterPropertiesType2? TextCharacterPropertiesType
+  public virtual TextCharacterPropertiesType1? TextCharacterPropertiesType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,17 +117,17 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// </summary>
   public virtual TextBodyProperties? TextBodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public virtual OfficeArtExtensionList4? OfficeArtExtensionList
+  public virtual OfficeArtExtensionList5? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

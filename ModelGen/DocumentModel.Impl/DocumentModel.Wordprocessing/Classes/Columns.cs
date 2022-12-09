@@ -16,8 +16,12 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Boolean? EqualWidth
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.EqualWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EqualWidth = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public String? Space
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Space?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Space = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Int16? ColumnCount
   {
-    get;
-    set;
+    get => (Int16?)OpenXmlElement?.ColumnCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnCount = (System.Int16?)value;
+    }
   }
   
   /// <summary>
@@ -43,14 +55,18 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Boolean? Separator
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Separator?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Separator = (System.Boolean?)value;
+    }
   }
   
   public Collection<Column>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

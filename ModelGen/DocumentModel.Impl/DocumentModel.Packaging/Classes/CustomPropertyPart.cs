@@ -13,8 +13,12 @@ public class CustomPropertyPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cu
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.CustomPropertyPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

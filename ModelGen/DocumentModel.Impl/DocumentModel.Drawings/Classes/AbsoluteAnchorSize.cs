@@ -16,8 +16,8 @@ public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
   /// </summary>
   public FromAnchor? FromAnchor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,38 +25,38 @@ public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
   /// </summary>
   public Extent? Extent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Shape1? Shape
+  public Shape4? Shape
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public GroupShape1? GroupShape
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public GraphicFrame? GraphicFrame
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ConnectionShape? ConnectionShape
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Picture? Picture
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

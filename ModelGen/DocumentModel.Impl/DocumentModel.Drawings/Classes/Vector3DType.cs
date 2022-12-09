@@ -16,8 +16,12 @@ public class Vector3DTypeImpl: ModelElementImpl, Vector3DType
   /// </summary>
   public Int64? Dx
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Dx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dx = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class Vector3DTypeImpl: ModelElementImpl, Vector3DType
   /// </summary>
   public Int64? Dy
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Dy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dy = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class Vector3DTypeImpl: ModelElementImpl, Vector3DType
   /// </summary>
   public Int64? Dz
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Dz?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dz = (System.Int64?)value;
+    }
   }
   
 }

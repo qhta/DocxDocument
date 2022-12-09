@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Layout Class.
+/// Layout.
 /// </summary>
 public interface Layout1
 {
@@ -13,6 +13,6 @@ public interface Layout1
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

@@ -16,8 +16,12 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public String? FontKey
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FontKey?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FontKey = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public Boolean? Subsetted
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Subsetted?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Subsetted = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
 }
