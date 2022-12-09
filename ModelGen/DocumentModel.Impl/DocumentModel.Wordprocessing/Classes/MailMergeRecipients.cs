@@ -13,8 +13,8 @@ public class MailMergeRecipientsImpl: ModelElementImpl, MailMergeRecipients
   
   public Collection<SingleDataSourceRecord>? SingleDataSourceRecords
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

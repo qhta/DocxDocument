@@ -29,8 +29,12 @@ public class ZoomImpl: ModelElementImpl, Zoom
   /// </summary>
   public String? Percent
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Percent?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Percent = (System.String?)value;
+    }
   }
   
 }

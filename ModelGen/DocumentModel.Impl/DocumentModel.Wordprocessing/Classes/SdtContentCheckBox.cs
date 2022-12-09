@@ -32,14 +32,14 @@ public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Checked>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.Checked{ Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -54,8 +54,8 @@ public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
   /// </summary>
   public CheckBoxSymbolType? CheckedState
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -63,8 +63,8 @@ public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
   /// </summary>
   public CheckBoxSymbolType? UncheckedState
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

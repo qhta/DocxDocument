@@ -16,8 +16,12 @@ public class Transform2D1Impl: ModelElementImpl, Transform2D1
   /// </summary>
   public Int32? Rotation
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Rotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotation = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class Transform2D1Impl: ModelElementImpl, Transform2D1
   /// </summary>
   public Boolean? HorizontalFlip
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalFlip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalFlip = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class Transform2D1Impl: ModelElementImpl, Transform2D1
   /// </summary>
   public Boolean? VerticalFlip
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.VerticalFlip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalFlip = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class Transform2D1Impl: ModelElementImpl, Transform2D1
   /// </summary>
   public Point2DType? Offset
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +64,8 @@ public class Transform2D1Impl: ModelElementImpl, Transform2D1
   /// </summary>
   public PositiveSize2DType? Extents
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

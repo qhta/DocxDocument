@@ -29,8 +29,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -64,8 +68,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? ViewpointOrigin
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ViewpointOrigin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ViewpointOrigin = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -73,8 +81,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Viewpoint
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Viewpoint?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Viewpoint = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -82,8 +94,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Single? SkewAngle
   {
-    get;
-    set;
+    get => (Single?)OpenXmlElement?.SkewAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SkewAngle = (System.Single?)value;
+    }
   }
   
   /// <summary>
@@ -91,8 +107,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? SkewAmount
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SkewAmount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SkewAmount = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -100,8 +120,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? ForceDepth
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ForceDepth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForceDepth = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -109,8 +133,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? BackDepth
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BackDepth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BackDepth = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -118,8 +146,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Orientation
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Orientation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Orientation = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -127,8 +159,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Single? OrientationAngle
   {
-    get;
-    set;
+    get => (Single?)OpenXmlElement?.OrientationAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OrientationAngle = (System.Single?)value;
+    }
   }
   
   /// <summary>
@@ -136,8 +172,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? LockRotationCenter
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LockRotationCenter?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LockRotationCenter = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -145,8 +185,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? AutoRotationCenter
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AutoRotationCenter?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AutoRotationCenter = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -154,8 +198,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? RotationCenter
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RotationCenter?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RotationCenter = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -163,8 +211,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? RotationAngle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RotationAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RotationAngle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -172,8 +224,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -181,8 +237,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Single? Shininess
   {
-    get;
-    set;
+    get => (Single?)OpenXmlElement?.Shininess?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Shininess = (System.Single?)value;
+    }
   }
   
   /// <summary>
@@ -190,8 +250,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Specularity
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Specularity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Specularity = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -199,8 +263,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Diffusity
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Diffusity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Diffusity = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -208,8 +276,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? Metal
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Metal?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Metal = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -217,8 +289,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Edge
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Edge?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Edge = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -226,8 +302,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Facet
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Facet?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Facet = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -235,8 +315,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? LightFace
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LightFace?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightFace = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -244,8 +328,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? Brightness
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Brightness?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Brightness = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -253,8 +341,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? LightPosition
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LightPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightPosition = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -262,8 +354,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? LightLevel
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LightLevel?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightLevel = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -271,8 +367,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? LightHarsh
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LightHarsh?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightHarsh = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -280,8 +380,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? LightPosition2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LightPosition2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightPosition2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -289,8 +393,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public String? LightLevel2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LightLevel2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightLevel2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -298,8 +406,12 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
   /// </summary>
   public Boolean? LightHarsh2
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LightHarsh2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LightHarsh2 = (System.Boolean?)value;
+    }
   }
   
 }

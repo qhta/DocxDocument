@@ -16,14 +16,14 @@ public class MatrixImpl: ModelElementImpl, Matrix
   /// </summary>
   public MatrixProperties? MatrixProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MatrixRow>? MatrixRows
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

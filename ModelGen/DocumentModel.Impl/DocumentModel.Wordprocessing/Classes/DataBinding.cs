@@ -16,8 +16,12 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? PrefixMappings
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PrefixMappings?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PrefixMappings = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? XPath
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.XPath?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.XPath = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? StoreItemId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StoreItemId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StoreItemId = (System.String?)value;
+    }
   }
   
 }

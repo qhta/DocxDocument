@@ -16,8 +16,8 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public DocumentModel.HexBinaryValue? Val
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? FirstRow
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FirstRow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstRow = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +38,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? LastRow
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LastRow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LastRow = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +51,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? FirstColumn
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FirstColumn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstColumn = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +64,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? LastColumn
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LastColumn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LastColumn = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +77,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? NoHorizontalBand
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoHorizontalBand?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoHorizontalBand = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +90,12 @@ public class TableLookImpl: ModelElementImpl, TableLook
   /// </summary>
   public Boolean? NoVerticalBand
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoVerticalBand?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoVerticalBand = (System.Boolean?)value;
+    }
   }
   
 }

@@ -16,8 +16,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? UnicodeSignature0
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? UnicodeSignature1
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? UnicodeSignature2
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? UnicodeSignature3
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? CodePageSignature0
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// </summary>
   public DocumentModel.HexBinaryValue? CodePageSignature1
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

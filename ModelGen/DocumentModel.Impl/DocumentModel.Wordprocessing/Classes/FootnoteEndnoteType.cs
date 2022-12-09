@@ -29,8 +29,12 @@ public class FootnoteEndnoteTypeImpl: ModelElementImpl, FootnoteEndnoteType
   /// </summary>
   public Int32? Id
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.Int32?)value;
+    }
   }
   
 }

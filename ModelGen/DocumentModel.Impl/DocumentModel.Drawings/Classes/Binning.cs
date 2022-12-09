@@ -29,8 +29,12 @@ public class BinningImpl: ModelElementImpl, Binning
   /// </summary>
   public String? Underflow
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Underflow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Underflow = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class BinningImpl: ModelElementImpl, Binning
   /// </summary>
   public String? Overflow
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Overflow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Overflow = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,37 @@ public class BinningImpl: ModelElementImpl, Binning
   /// </summary>
   public String? Xsddouble
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -56,8 +93,37 @@ public class BinningImpl: ModelElementImpl, Binning
   /// </summary>
   public String? BinCountXsdunsignedInt
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class NumberDiagramInfoImpl: ModelElementImpl, NumberDiagramInfo
   /// </summary>
   public UInt32? Lvl
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Lvl?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Lvl = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,8 @@ public class NumberDiagramInfoImpl: ModelElementImpl, NumberDiagramInfo
   /// </summary>
   public DiagramAutoBullet? DiagramAutoBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

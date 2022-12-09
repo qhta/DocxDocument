@@ -5,9 +5,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPropertiesType2
 {
-  public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? SmtClean
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SmtClean?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SmtClean = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public UInt32? SmtId
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.SmtId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SmtId = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? Kumimoji
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Kumimoji?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Kumimoji = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public String? Language
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Language?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Language = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public String? AlternativeLanguage
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlternativeLanguage?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlternativeLanguage = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Int32? FontSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FontSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FontSize = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? Bold
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Bold?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bold = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? Italic
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Italic?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Italic = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -114,8 +146,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Int32? Kerning
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Kerning?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Kerning = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -136,8 +172,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Int32? Spacing
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Spacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Spacing = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -145,8 +185,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? NormalizeHeight
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NormalizeHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NormalizeHeight = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -154,8 +198,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Int32? Baseline
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Baseline?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Baseline = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -163,8 +211,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? NoProof
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoProof?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoProof = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -172,8 +224,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? Dirty
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Dirty?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dirty = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -181,8 +237,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? SpellingError
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SpellingError?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SpellingError = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -190,8 +250,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public Boolean? SmartTagClean
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SmartTagClean?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SmartTagClean = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -199,8 +263,12 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public UInt32? SmartTagId
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.SmartTagId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SmartTagId = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -208,137 +276,21 @@ public class TextCharacterPropertiesType2Impl: ModelElementImpl, TextCharacterPr
   /// </summary>
   public String? Bookmark
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Bookmark?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bookmark = (System.String?)value;
+    }
   }
   
   /// <summary>
   /// Outline.
   /// </summary>
-  public Outline? Outline
+  public virtual Outline? Outline
   {
-    get;
-    set;
-  }
-  
-  public Boolean? NoFill
-  {
-    get;
-    set;
-  }
-  
-  public SolidFill? SolidFill
-  {
-    get;
-    set;
-  }
-  
-  public GradientFill? GradientFill
-  {
-    get;
-    set;
-  }
-  
-  public BlipFill2? BlipFill
-  {
-    get;
-    set;
-  }
-  
-  public PatternFill? PatternFill
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? GroupFill
-  {
-    get;
-    set;
-  }
-  
-  public EffectList? EffectList
-  {
-    get;
-    set;
-  }
-  
-  public EffectDag? EffectDag
-  {
-    get;
-    set;
-  }
-  
-  public Highlight? Highlight
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? UnderlineFollowsText
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? UnderlineFillText
-  {
-    get;
-    set;
-  }
-  
-  public UnderlineFill? UnderlineFill
-  {
-    get;
-    set;
-  }
-  
-  public TextFontType? LatinFont
-  {
-    get;
-    set;
-  }
-  
-  public TextFontType? EastAsianFont
-  {
-    get;
-    set;
-  }
-  
-  public TextFontType? ComplexScriptFont
-  {
-    get;
-    set;
-  }
-  
-  public TextFontType? SymbolFont
-  {
-    get;
-    set;
-  }
-  
-  public HyperlinkOnClick? HyperlinkOnClick
-  {
-    get;
-    set;
-  }
-  
-  public HyperlinkOnMouseOver? HyperlinkOnMouseOver
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? RightToLeft
-  {
-    get;
-    set;
-  }
-  
-  public ExtensionList1? ExtensionList
-  {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class ArtisticPaintStrokesImpl: ModelElementImpl, ArtisticPaintStrokes
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticPaintStrokesImpl: ModelElementImpl, ArtisticPaintStrokes
   /// </summary>
   public Int32? Intensity
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Intensity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Intensity = (System.Int32?)value;
+    }
   }
   
 }

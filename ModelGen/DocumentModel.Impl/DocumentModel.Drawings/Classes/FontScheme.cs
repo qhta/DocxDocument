@@ -16,8 +16,12 @@ public class FontSchemeImpl: ModelElementImpl, FontScheme
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class FontSchemeImpl: ModelElementImpl, FontScheme
   /// </summary>
   public MajorFont? MajorFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +38,17 @@ public class FontSchemeImpl: ModelElementImpl, FontScheme
   /// </summary>
   public MinorFont? MinorFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
   /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

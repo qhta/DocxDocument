@@ -16,8 +16,12 @@ public class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
   /// </summary>
   public Int32? FontScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FontScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FontScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
   /// </summary>
   public Int32? LineSpaceReduction
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LineSpaceReduction?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LineSpaceReduction = (System.Int32?)value;
+    }
   }
   
 }

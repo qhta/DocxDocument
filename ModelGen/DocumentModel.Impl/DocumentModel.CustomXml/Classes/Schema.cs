@@ -16,8 +16,12 @@ public class SchemaImpl: ModelElementImpl, Schema
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SchemaImpl: ModelElementImpl, Schema
   /// </summary>
   public String? ManifestLocation
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ManifestLocation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ManifestLocation = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class SchemaImpl: ModelElementImpl, Schema
   /// </summary>
   public String? SchemaLocation
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SchemaLocation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SchemaLocation = (System.String?)value;
+    }
   }
   
 }

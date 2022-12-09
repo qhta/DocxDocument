@@ -5,65 +5,85 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class DataLabel2Impl: ModelElementImpl, DataLabel2
 {
-  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// Index.
+  /// idx, this property is only available in Office 2016 and later.
   /// </summary>
-  public UInt32? Index
+  public UInt32? Idx
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Idx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Idx = (System.UInt32?)value;
+    }
   }
   
-  public Boolean? Delete
+  /// <summary>
+  /// pos, this property is only available in Office 2016 and later.
+  /// </summary>
+  public DataLabelPos? Pos
   {
-    get;
-    set;
+    get => (DataLabelPos?)OpenXmlElement?.Pos?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Pos = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos?)value;
+    }
   }
   
-  public Layout2? Layout
+  /// <summary>
+  /// NumberFormat.
+  /// </summary>
+  public NumberFormat? NumberFormat
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ChartText1? ChartText
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public NumberingFormat1? NumberingFormat
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ChartShapeProperties? ChartShapeProperties
+  /// <summary>
+  /// DataLabelVisibilities.
+  /// </summary>
+  public DataLabelVisibilities? DataLabelVisibilities
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TextProperties2? TextProperties
-  {
-    get;
-    set;
-  }
-  
-  public DataLabelPositionKind? DataLabelPosition
+  /// <summary>
+  /// SeparatorXsdstring.
+  /// </summary>
+  public String? SeparatorXsdstring
   {
     get
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
-        return (DataLabelPositionKind?)openXmlElement?.Val?.Value;
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
+        return openXmlElement?.Text;
       }
       return null;
     }
@@ -71,19 +91,19 @@ public class DataLabel2Impl: ModelElementImpl, DataLabel2
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition>();
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
         if (openXmlElement != null)
         {
-          if (value != null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value;
+          if (value is not null)
+            openXmlElement.Text = value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.DataLabelPosition{ Val = (DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues?)value };
+            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring{ Text = value };
             OpenXmlElement.AddChild(openXmlElement);
           }
         }
@@ -91,52 +111,13 @@ public class DataLabel2Impl: ModelElementImpl, DataLabel2
     }
   }
   
-  public Boolean? ShowLegendKey
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList2? ExtensionList
   {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowValue
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowCategoryName
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowSeriesName
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowPercent
-  {
-    get;
-    set;
-  }
-  
-  public Boolean? ShowBubbleSize
-  {
-    get;
-    set;
-  }
-  
-  public String? Separator
-  {
-    get;
-    set;
-  }
-  
-  public DLblExtensionList? DLblExtensionList
-  {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

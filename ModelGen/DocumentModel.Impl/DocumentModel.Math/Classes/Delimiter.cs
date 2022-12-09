@@ -16,14 +16,14 @@ public class DelimiterImpl: ModelElementImpl, Delimiter
   /// </summary>
   public DelimiterProperties? DelimiterProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Base>? Bases
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

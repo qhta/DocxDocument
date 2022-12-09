@@ -16,8 +16,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? TopBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? LeftBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? StartBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? BottomBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? RightBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? EndBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +70,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? InsideHorizontalBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +79,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? InsideVerticalBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +88,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? TopLeftToBottomRightCellBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +97,8 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
   /// </summary>
   public BorderType? TopRightToBottomLeftCellBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
   /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

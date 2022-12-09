@@ -37,7 +37,7 @@ public interface BubbleChartSeries1
   
   public Collection<DataPoint2>? DataPoints { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public Collection<Trendline>? Trendlines { get ; set; }
   

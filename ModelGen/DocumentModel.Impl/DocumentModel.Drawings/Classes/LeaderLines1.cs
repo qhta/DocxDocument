@@ -1,23 +1,20 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LeaderLines Class.
+/// Leader Lines.
 /// </summary>
-public class LeaderLines1Impl: ModelElementImpl, LeaderLines1
+public class LeaderLines1Impl: DocumentModel.Drawings.ChartLinesTypeImpl, LeaderLines1
 {
-  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines? OpenXmlElement
+  public new DocumentFormat.OpenXml.Drawing.Charts.LeaderLines? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Charts.LeaderLines?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
-  public ChartShapeProperties? ChartShapeProperties
+  public override ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

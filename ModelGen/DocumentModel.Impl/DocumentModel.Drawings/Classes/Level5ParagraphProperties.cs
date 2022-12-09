@@ -13,104 +13,270 @@ public class Level5ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
   
   public override LineSpacing? LineSpacing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override SpaceBefore? SpaceBefore
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override SpaceAfter? SpaceAfter
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? BulletColorText
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletColorText();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public BulletColor? BulletColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? BulletSizeText
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizeText();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Int32? BulletSizePercentage
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Int32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizePercentage{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Int32? BulletSizePoints
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Int32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizePoints{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Boolean? BulletFontText
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletFontText();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public TextFontType? BulletFont
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? NoBullet
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public AutoNumberedBullet? AutoNumberedBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public CharacterBullet? CharacterBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PictureBullet? PictureBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public TabStopList? TabStopList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DefaultRunProperties? DefaultRunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

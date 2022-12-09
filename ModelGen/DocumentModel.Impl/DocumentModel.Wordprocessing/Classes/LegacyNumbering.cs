@@ -16,8 +16,12 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public Boolean? Legacy
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Legacy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Legacy = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public String? LegacySpace
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LegacySpace?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LegacySpace = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public String? LegacyIndent
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LegacyIndent?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LegacyIndent = (System.String?)value;
+    }
   }
   
 }

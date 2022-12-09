@@ -6,13 +6,33 @@ namespace DocumentModel.Drawings;
 public interface Title2
 {
   /// <summary>
-  /// Language
+  /// Chart Text.
   /// </summary>
-  public String? Language { get ; set; }
+  public ChartText1? ChartText { get ; set; }
   
   /// <summary>
-  /// Value
+  /// Layout.
   /// </summary>
-  public String? Val { get ; set; }
+  public Layout1? Layout { get ; set; }
+  
+  /// <summary>
+  /// Overlay.
+  /// </summary>
+  public Boolean? Overlay { get ; set; }
+  
+  /// <summary>
+  /// ChartShapeProperties.
+  /// </summary>
+  public ChartShapeProperties? ChartShapeProperties { get ; set; }
+  
+  /// <summary>
+  /// TextProperties.
+  /// </summary>
+  public TextProperties1? TextProperties { get ; set; }
+  
+  /// <summary>
+  /// Chart Extensibility.
+  /// </summary>
+  public ExtensionList3? ExtensionList { get ; set; }
   
 }

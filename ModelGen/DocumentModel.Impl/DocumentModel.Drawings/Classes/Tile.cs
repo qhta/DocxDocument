@@ -16,8 +16,12 @@ public class TileImpl: ModelElementImpl, Tile
   /// </summary>
   public Int64? HorizontalOffset
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.HorizontalOffset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalOffset = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TileImpl: ModelElementImpl, Tile
   /// </summary>
   public Int64? VerticalOffset
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.VerticalOffset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalOffset = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TileImpl: ModelElementImpl, Tile
   /// </summary>
   public Int32? HorizontalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TileImpl: ModelElementImpl, Tile
   /// </summary>
   public Int32? VerticalRatio
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalRatio = (System.Int32?)value;
+    }
   }
   
   /// <summary>

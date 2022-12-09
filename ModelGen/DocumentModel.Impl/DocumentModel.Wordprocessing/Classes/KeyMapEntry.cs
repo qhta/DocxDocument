@@ -16,8 +16,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.HexBinaryValue? CharacterMapPrimary
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.HexBinaryValue? CharacterMapSecondary
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.HexBinaryValue? KeyCodePrimary
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.HexBinaryValue? KeyCodeSecondary
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,12 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public Boolean? Mask
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Mask?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Mask = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public FixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public MacroWllType? MacroKeyboardCustomization
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +83,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public AcceleratorKeymapType? AllocatedCommandKeyboardCustomization
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +92,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public MacroWllType? WllMacroKeyboardCustomization
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +101,8 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.HexBinaryValue? CharacterInsertion
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

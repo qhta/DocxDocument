@@ -16,8 +16,37 @@ public class FormulaReferenceImpl: ModelElementImpl, FormulaReference
   /// </summary>
   public String? SequenceOfReferences
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
 }

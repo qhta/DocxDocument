@@ -16,8 +16,8 @@ public class MatrixColumnImpl: ModelElementImpl, MatrixColumn
   /// </summary>
   public MatrixColumnProperties? MatrixColumnProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

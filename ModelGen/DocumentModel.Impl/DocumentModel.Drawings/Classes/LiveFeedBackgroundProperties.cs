@@ -13,32 +13,32 @@ public class LiveFeedBackgroundPropertiesImpl: ModelElementImpl, LiveFeedBackgro
   
   public BackgroundNormalProperties? BackgroundNormalProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public BackgroundRemovedProperties? BackgroundRemovedProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public BackgroundBlurProperties? BackgroundBlurProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public BackgroundCustomProperties? BackgroundCustomProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public OfficeArtExtensionList6? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

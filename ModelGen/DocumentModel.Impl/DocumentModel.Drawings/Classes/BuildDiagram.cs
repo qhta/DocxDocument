@@ -16,8 +16,12 @@ public class BuildDiagramImpl: ModelElementImpl, BuildDiagram
   /// </summary>
   public String? Build
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Build?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Build = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BuildDiagramImpl: ModelElementImpl, BuildDiagram
   /// </summary>
   public Boolean? ReverseAnimation
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ReverseAnimation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ReverseAnimation = (System.Boolean?)value;
+    }
   }
   
 }

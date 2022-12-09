@@ -16,8 +16,37 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +54,37 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public UInt32? Order
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Order{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -34,8 +92,8 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public SeriesText? SeriesText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +101,8 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +110,8 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public PictureOptions? PictureOptions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,38 +119,38 @@ public class RadarChartSeries1Impl: ModelElementImpl, RadarChartSeries1
   /// </summary>
   public Marker1? Marker
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DataPoint2>? DataPoints
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels2? DataLabels
+  public DataLabels1? DataLabels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public CategoryAxisData? CategoryAxisData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Values? Values
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public RadarSerExtensionList? RadarSerExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercent
   /// </summary>
   public Int32? RedPortion
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RedPortion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RedPortion = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercent
   /// </summary>
   public Int32? GreenPortion
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.GreenPortion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.GreenPortion = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,176 +42,180 @@ public class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercent
   /// </summary>
   public Int32? BluePortion
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.BluePortion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BluePortion = (System.Int32?)value;
+    }
   }
   
   public Collection<Int32>? Tints
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Shades
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? Complements
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? Inverses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? Graies
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Alphas
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? AlphaOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? AlphaModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Hues
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? HueOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? HueModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Saturations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? SaturationOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? SaturationModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Luminances
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? LuminanceOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? LuminanceModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Reds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? RedOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? RedModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Greens
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? GreenOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? GreenModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? Blues
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? BlueOffsets
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Int32>? BlueModulations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? Gammas
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? InverseGammas
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

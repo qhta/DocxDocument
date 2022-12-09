@@ -13,8 +13,8 @@ public class BehaviorsImpl: ModelElementImpl, Behaviors
   
   public Collection<DocPartBehaviorKind>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

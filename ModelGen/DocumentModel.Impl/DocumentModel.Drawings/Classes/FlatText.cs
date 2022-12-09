@@ -16,8 +16,12 @@ public class FlatTextImpl: ModelElementImpl, FlatText
   /// </summary>
   public Int64? Z
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Z?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Z = (System.Int64?)value;
+    }
   }
   
 }

@@ -5,64 +5,36 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Title1Impl: ModelElementImpl, Title1
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.Title? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Title? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.Title?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Title?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// Chart Text.
+  /// Language
   /// </summary>
-  public ChartText1? ChartText
+  public String? Language
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Language?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Language = (System.String?)value;
+    }
   }
   
   /// <summary>
-  /// Layout.
+  /// Value
   /// </summary>
-  public Layout2? Layout
+  public String? Val
   {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// Overlay.
-  /// </summary>
-  public Boolean? Overlay
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// ChartShapeProperties.
-  /// </summary>
-  public ChartShapeProperties? ChartShapeProperties
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// TextProperties.
-  /// </summary>
-  public TextProperties2? TextProperties
-  {
-    get;
-    set;
-  }
-  
-  /// <summary>
-  /// Chart Extensibility.
-  /// </summary>
-  public ExtensionList4? ExtensionList
-  {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
 }

@@ -14,10 +14,10 @@ public class FilteredScatterSeriesImpl: ModelElementImpl, FilteredScatterSeries
   /// <summary>
   /// ScatterChartSeries.
   /// </summary>
-  public ScatterChartSeries1? ScatterChartSeries
+  public ScatterChartSeries2? ScatterChartSeries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

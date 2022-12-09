@@ -16,8 +16,12 @@ public class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
   /// </summary>
   public Int32? Lattitude
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Lattitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Lattitude = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
   /// </summary>
   public Int32? Longitude
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Longitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Longitude = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
   /// </summary>
   public Int32? Revolution
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Revolution?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Revolution = (System.Int32?)value;
+    }
   }
   
 }

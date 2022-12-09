@@ -16,8 +16,8 @@ public class MoveToImpl: ModelElementImpl, MoveTo
   /// </summary>
   public AdjustPoint2DType? Point
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

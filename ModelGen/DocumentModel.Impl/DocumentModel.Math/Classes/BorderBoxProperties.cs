@@ -32,14 +32,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideTop>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideTop{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -70,14 +70,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideBottom>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideBottom{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -108,14 +108,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideLeft>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideLeft{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -146,14 +146,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideRight>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -184,14 +184,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeHorizontal>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.StrikeHorizontal{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -222,14 +222,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeVertical>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.StrikeVertical{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -260,14 +260,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -298,14 +298,14 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -320,8 +320,8 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
   /// </summary>
   public ControlProperties? ControlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class SubscriptImpl: ModelElementImpl, Subscript
   /// </summary>
   public SubscriptProperties? SubscriptProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class SubscriptImpl: ModelElementImpl, Subscript
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class SubscriptImpl: ModelElementImpl, Subscript
   /// </summary>
   public SubArgument? SubArgument
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

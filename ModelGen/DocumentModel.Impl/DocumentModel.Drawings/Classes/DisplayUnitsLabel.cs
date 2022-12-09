@@ -14,10 +14,10 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout2? Layout
+  public Layout1? Layout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
   /// </summary>
   public ChartText1? ChartText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +34,17 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties2? TextProperties
+  public TextProperties1? TextProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

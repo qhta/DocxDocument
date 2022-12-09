@@ -32,14 +32,14 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.OperatorEmulator>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.OperatorEmulator{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -70,14 +70,14 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NoBreak>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.NoBreak{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -108,14 +108,14 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Differential>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Differential{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -130,8 +130,8 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
   /// </summary>
   public Break? Break
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -155,14 +155,14 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Alignment{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -177,8 +177,8 @@ public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
   /// </summary>
   public ControlProperties? ControlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

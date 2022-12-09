@@ -13,8 +13,8 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
   
   public Collection<NumberDiagramInfo>? NumberDiagramInfos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

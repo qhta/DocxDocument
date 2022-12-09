@@ -32,14 +32,14 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Literal>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Literal{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -67,14 +67,14 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.NormalText{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -102,14 +102,14 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.ScriptValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Script{ Val = (DocumentFormat.OpenXml.Math.ScriptValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -137,14 +137,14 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.StyleValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Style{ Val = (DocumentFormat.OpenXml.Math.StyleValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -156,8 +156,8 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
   
   public Break? Break
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public BooleanKind? Alignment
@@ -178,14 +178,14 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.Alignment{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);

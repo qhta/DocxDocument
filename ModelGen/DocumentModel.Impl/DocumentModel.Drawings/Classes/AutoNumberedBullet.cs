@@ -29,8 +29,12 @@ public class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
   /// </summary>
   public Int32? StartAt
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.StartAt?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartAt = (System.Int32?)value;
+    }
   }
   
 }

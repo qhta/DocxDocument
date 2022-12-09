@@ -16,8 +16,37 @@ public class MatrixColumnPropertiesImpl: ModelElementImpl, MatrixColumnPropertie
   /// </summary>
   public Int32? MatrixColumnCount
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnCount>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnCount>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Int32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Math.MatrixColumnCount{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -41,14 +70,14 @@ public class MatrixColumnPropertiesImpl: ModelElementImpl, MatrixColumnPropertie
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnJustification>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.HorizontalAlignmentValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.MatrixColumnJustification{ Val = (DocumentFormat.OpenXml.Math.HorizontalAlignmentValues?)value };
             OpenXmlElement.AddChild(openXmlElement);

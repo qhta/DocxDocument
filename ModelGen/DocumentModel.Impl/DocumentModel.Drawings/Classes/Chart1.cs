@@ -16,8 +16,8 @@ public class Chart1Impl: ModelElementImpl, Chart1
   /// </summary>
   public ChartTitle? ChartTitle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class Chart1Impl: ModelElementImpl, Chart1
   /// </summary>
   public PlotArea1? PlotArea
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class Chart1Impl: ModelElementImpl, Chart1
   /// </summary>
   public Legend1? Legend
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class Chart1Impl: ModelElementImpl, Chart1
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

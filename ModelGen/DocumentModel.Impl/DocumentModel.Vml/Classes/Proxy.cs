@@ -16,8 +16,12 @@ public class ProxyImpl: ModelElementImpl, Proxy
   /// </summary>
   public Boolean? Start
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Start?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Start = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ProxyImpl: ModelElementImpl, Proxy
   /// </summary>
   public Boolean? End
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.End?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.End = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ProxyImpl: ModelElementImpl, Proxy
   /// </summary>
   public String? ShapeReference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShapeReference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeReference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ProxyImpl: ModelElementImpl, Proxy
   /// </summary>
   public Int32? ConnectionLocation
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ConnectionLocation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConnectionLocation = (System.Int32?)value;
+    }
   }
   
 }

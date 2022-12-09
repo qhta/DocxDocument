@@ -16,17 +16,21 @@ public class AudioFromFileImpl: ModelElementImpl, AudioFromFile
   /// </summary>
   public String? Link
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Link?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Link = (System.String?)value;
+    }
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

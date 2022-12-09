@@ -16,8 +16,12 @@ public class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
   /// </summary>
   public Int32? Scaling
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Scaling?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Scaling = (System.Int32?)value;
+    }
   }
   
 }

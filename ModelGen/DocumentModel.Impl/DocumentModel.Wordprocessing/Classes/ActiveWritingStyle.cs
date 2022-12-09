@@ -16,8 +16,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public String? Language
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Language?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Language = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public UInt16? VendorID
   {
-    get;
-    set;
+    get => (UInt16?)OpenXmlElement?.VendorID?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VendorID = (System.UInt16?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Int32? DllVersion
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DllVersion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DllVersion = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Boolean? NaturalLanguageGrammarCheck
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NaturalLanguageGrammarCheck?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NaturalLanguageGrammarCheck = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Boolean? CheckStyle
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.CheckStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CheckStyle = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public String? ApplicationName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ApplicationName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ApplicationName = (System.String?)value;
+    }
   }
   
 }

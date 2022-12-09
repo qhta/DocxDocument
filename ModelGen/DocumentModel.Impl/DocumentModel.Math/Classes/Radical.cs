@@ -16,8 +16,8 @@ public class RadicalImpl: ModelElementImpl, Radical
   /// </summary>
   public RadicalProperties? RadicalProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class RadicalImpl: ModelElementImpl, Radical
   /// </summary>
   public Degree? Degree
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class RadicalImpl: ModelElementImpl, Radical
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

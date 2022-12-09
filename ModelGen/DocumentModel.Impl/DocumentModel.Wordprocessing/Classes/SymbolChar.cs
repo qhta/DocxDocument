@@ -16,8 +16,12 @@ public class SymbolCharImpl: ModelElementImpl, SymbolChar
   /// </summary>
   public String? Font
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Font?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Font = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class SymbolCharImpl: ModelElementImpl, SymbolChar
   /// </summary>
   public DocumentModel.HexBinaryValue? Char
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

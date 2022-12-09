@@ -16,8 +16,12 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public Int64? BlurRadius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.BlurRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlurRadius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public Int64? Distance
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Distance?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Distance = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public Int32? Direction
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Direction?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Direction = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +64,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +73,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +82,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +91,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +100,8 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
   /// </summary>
   public PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

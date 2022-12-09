@@ -16,47 +16,47 @@ public class GroupShape1Impl: ModelElementImpl, GroupShape1
   /// </summary>
   public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Group Shape Properties.
   /// </summary>
-  public GroupShapeProperties1? GroupShapeProperties
+  public GroupShapeProperties2? GroupShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape1>? Shapes
+  public Collection<Shape4>? Shapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<GroupShape1>? GroupShapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<GraphicFrame>? GraphicFrames
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ConnectionShape>? ConnectionShapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Picture>? Pictures
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

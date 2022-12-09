@@ -16,14 +16,18 @@ public class LineChartExtensionImpl: ModelElementImpl, LineChartExtension
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   public FilteredLineSeriesExtension? FilteredLineSeriesExtension
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class TaskTitleEventInfoImpl: ModelElementImpl, TaskTitleEventInfo
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
 }

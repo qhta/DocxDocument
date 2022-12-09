@@ -15,7 +15,7 @@ public interface AbsoluteAnchorSize
   /// </summary>
   public Extent? Extent { get ; set; }
   
-  public Shape1? Shape { get ; set; }
+  public Shape4? Shape { get ; set; }
   
   public GroupShape1? GroupShape { get ; set; }
   

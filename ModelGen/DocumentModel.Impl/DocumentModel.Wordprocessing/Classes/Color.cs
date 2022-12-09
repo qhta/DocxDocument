@@ -16,8 +16,12 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? ThemeTint
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeTint = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? ThemeShade
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeShade = (System.String?)value;
+    }
   }
   
 }

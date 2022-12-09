@@ -8,12 +8,12 @@ public interface AxisUnitsLabel
   /// <summary>
   /// Text.
   /// </summary>
-  public Text1? Text { get ; set; }
+  public Text2? Text { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
   /// <summary>
   /// TxPrTextBody.

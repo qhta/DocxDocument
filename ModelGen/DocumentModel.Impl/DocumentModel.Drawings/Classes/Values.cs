@@ -13,14 +13,14 @@ public class ValuesImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, Values
   
   public override NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

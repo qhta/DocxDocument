@@ -13,8 +13,8 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
   
   public Collection<OfficeStyleSheetExtension>? OfficeStyleSheetExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

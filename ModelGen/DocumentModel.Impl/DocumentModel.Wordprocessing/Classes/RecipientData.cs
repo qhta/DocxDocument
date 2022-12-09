@@ -16,8 +16,37 @@ public class RecipientDataImpl: ModelElementImpl, RecipientData
   /// </summary>
   public Boolean? Active
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Active>();
+        return (Boolean?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Active>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Boolean?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Active{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +54,37 @@ public class RecipientDataImpl: ModelElementImpl, RecipientData
   /// </summary>
   public UInt32? ColumnIndex
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -34,8 +92,8 @@ public class RecipientDataImpl: ModelElementImpl, RecipientData
   /// </summary>
   public DocumentModel.Base64BinaryValue? UniqueTag
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

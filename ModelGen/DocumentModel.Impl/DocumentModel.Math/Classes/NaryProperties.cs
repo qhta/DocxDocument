@@ -16,8 +16,37 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
   /// </summary>
   public String? AccentChar
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Math.AccentChar{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -41,14 +70,14 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLocation>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.LimitLocation{ Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -79,14 +108,14 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.GrowOperators{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -117,14 +146,14 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSubArgument>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideSubArgument{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -155,14 +184,14 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSuperArgument>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.HideSuperArgument{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -177,8 +206,8 @@ public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
   /// </summary>
   public ControlProperties? ControlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

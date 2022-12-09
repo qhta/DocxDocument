@@ -16,8 +16,12 @@ public class AdjustImpl: ModelElementImpl, Adjust
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Index?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Index = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AdjustImpl: ModelElementImpl, Adjust
   /// </summary>
   public Double? Val
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.Double?)value;
+    }
   }
   
 }

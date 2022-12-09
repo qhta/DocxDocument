@@ -16,8 +16,12 @@ public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
   /// </summary>
   public Int32? Count
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Count?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Count = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
   /// </summary>
   public MinValueColorEndPosition? MinValueColorEndPosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
   /// </summary>
   public ValueColorMiddlePosition? ValueColorMiddlePosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
   /// </summary>
   public MaxValueColorEndPosition? MaxValueColorEndPosition
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

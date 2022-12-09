@@ -29,8 +29,12 @@ public class EffectContainerTypeImpl: ModelElementImpl, EffectContainerType
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
 }

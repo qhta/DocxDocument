@@ -16,8 +16,37 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public String? TableStyle
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyle>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyle>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableStyle{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +54,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TablePositionProperties? TablePositionProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -50,14 +79,14 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableOverlap>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableOverlap{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -88,14 +117,14 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDiVisual>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.BiDiVisual{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -110,8 +139,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableWidthType? TableWidth
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -135,14 +164,14 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -157,8 +186,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableWidthType? TableCellSpacing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -166,8 +195,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableIndentation? TableIndentation
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -175,8 +204,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableBorders? TableBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -184,8 +213,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public Shading? Shading
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -193,8 +222,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableLayout? TableLayout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -202,8 +231,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableCellMarginDefault? TableCellMarginDefault
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -211,8 +240,8 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public TableLook? TableLook
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -220,8 +249,37 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public String? TableCaption
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCaption>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCaption>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableCaption{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -229,8 +287,37 @@ public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTablePropert
   /// </summary>
   public String? TableDescription
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableDescription>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableDescription>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableDescription{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
 }

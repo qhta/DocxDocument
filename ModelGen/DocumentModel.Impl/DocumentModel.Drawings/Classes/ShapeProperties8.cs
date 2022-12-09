@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Visual Properties.
+/// Defines the ShapeProperties Class.
 /// </summary>
 public class ShapeProperties8Impl: ModelElementImpl, ShapeProperties8
 {
-  public DocumentFormat.OpenXml.Drawing.ShapeProperties? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.ShapeProperties?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -27,94 +27,148 @@ public class ShapeProperties8Impl: ModelElementImpl, ShapeProperties8
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D3? Transform2D
+  public Transform2D2? Transform2D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public CustomGeometry? CustomGeometry
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PresetGeometry? PresetGeometry
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? NoFill
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public SolidFill? SolidFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public GradientFill? GradientFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BlipFill2? BlipFill
+  public BlipFill1? BlipFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PatternFill? PatternFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? GroupFill
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Outline? Outline
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public EffectList? EffectList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public EffectDag? EffectDag
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Scene3DType? Scene3DType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Shape3DType? Shape3DType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ShapePropertiesExtensionList? ShapePropertiesExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

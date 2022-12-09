@@ -16,8 +16,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultLockedState
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DefaultLockedState?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultLockedState = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Int32? DefaultUiPriority
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DefaultUiPriority?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultUiPriority = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultSemiHidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DefaultSemiHidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultSemiHidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultUnhideWhenUsed
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DefaultUnhideWhenUsed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultUnhideWhenUsed = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultPrimaryStyle
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DefaultPrimaryStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultPrimaryStyle = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,14 +81,18 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Int32? Count
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Count?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Count = (System.Int32?)value;
+    }
   }
   
   public Collection<LatentStyleExceptionInfo>? LatentStyleExceptionInfos
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

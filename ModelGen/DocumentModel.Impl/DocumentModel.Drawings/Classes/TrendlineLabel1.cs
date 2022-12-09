@@ -14,10 +14,10 @@ public class TrendlineLabel1Impl: ModelElementImpl, TrendlineLabel1
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout2? Layout
+  public Layout1? Layout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,17 +25,17 @@ public class TrendlineLabel1Impl: ModelElementImpl, TrendlineLabel1
   /// </summary>
   public ChartText1? ChartText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Number Format.
   /// </summary>
-  public NumberingFormat1? NumberingFormat
+  public NumberingFormat2? NumberingFormat
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,26 +43,26 @@ public class TrendlineLabel1Impl: ModelElementImpl, TrendlineLabel1
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties2? TextProperties
+  public TextProperties1? TextProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList3? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

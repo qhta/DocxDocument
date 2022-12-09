@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Data Class.
 /// </summary>
-public class Data1Impl: ModelElementImpl, Data1
+public class Data2Impl: ModelElementImpl, Data2
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Data? OpenXmlElement
   {
@@ -16,26 +16,30 @@ public class Data1Impl: ModelElementImpl, Data1
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   public Collection<NumericDimension>? NumericDimensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<StringDimension>? StringDimensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
   /// </summary>
   public DocEvents? DocEvents
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
   /// </summary>
   public Mcds? Mcds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

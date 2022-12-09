@@ -16,8 +16,12 @@ public class GeoParentEntityImpl: ModelElementImpl, GeoParentEntity
   /// </summary>
   public String? EntityId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityId = (System.String?)value;
+    }
   }
   
 }

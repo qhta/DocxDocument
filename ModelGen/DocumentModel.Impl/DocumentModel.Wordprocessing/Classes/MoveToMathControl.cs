@@ -13,20 +13,20 @@ public class MoveToMathControlImpl: DocumentModel.Wordprocessing.MathControlMove
   
   public RunProperties? RunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public InsertedMathControl? InsertedMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DeletedMathControl? DeletedMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

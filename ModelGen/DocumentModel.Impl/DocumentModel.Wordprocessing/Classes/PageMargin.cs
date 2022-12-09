@@ -16,8 +16,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public Int32? Top
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Top?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Top = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Right
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Right?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Right = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public Int32? Bottom
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Bottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bottom = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Left
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Left?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Left = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Header
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Header?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Header = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Footer
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Footer?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Footer = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Gutter
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Gutter?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Gutter = (System.UInt32?)value;
+    }
   }
   
 }

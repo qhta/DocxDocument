@@ -106,12 +106,16 @@ public class ModelCreator
       if (!ModelManager.CheckPropertyOverrides(typeInfo))
         invalidTypesCount++;
     }
+    //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
+    //  =>
+    //  ModelDisplay.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
+    //  );
     foreach (var nspace in TypeManager.GetNamespaces())
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
       int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
-      if (n>0)
-        invalidTypesCount+=n;
+      if (n > 0)
+        invalidTypesCount += n;
     }
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;

@@ -16,8 +16,35 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
   /// </summary>
   public Boolean? NoFillEmpty
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +52,8 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
   /// </summary>
   public SolidColorFillProperties? SolidColorFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +61,8 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
   /// </summary>
   public GradientFillProperties? GradientFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

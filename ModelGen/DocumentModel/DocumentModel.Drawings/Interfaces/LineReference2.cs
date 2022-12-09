@@ -17,6 +17,4 @@ public interface LineReference2
   
   public PresetColor? PresetColor { get ; set; }
   
-  public StyleColor? StyleColor { get ; set; }
-  
 }

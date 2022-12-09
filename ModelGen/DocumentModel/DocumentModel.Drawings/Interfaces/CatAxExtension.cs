@@ -10,6 +10,6 @@ public interface CatAxExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public NumberingFormat2? NumberingFormat { get ; set; }
+  public NumberingFormat1? NumberingFormat { get ; set; }
   
 }

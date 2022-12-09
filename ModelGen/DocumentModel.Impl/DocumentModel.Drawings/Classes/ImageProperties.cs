@@ -16,8 +16,8 @@ public class ImagePropertiesImpl: ModelElementImpl, ImageProperties
   /// </summary>
   public ImageLayer? ImageLayer
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

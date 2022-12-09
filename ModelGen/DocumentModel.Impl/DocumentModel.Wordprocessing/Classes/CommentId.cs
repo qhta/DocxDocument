@@ -16,8 +16,8 @@ public class CommentIdImpl: ModelElementImpl, CommentId
   /// </summary>
   public DocumentModel.HexBinaryValue? ParaId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class CommentIdImpl: ModelElementImpl, CommentId
   /// </summary>
   public DocumentModel.HexBinaryValue? DurableId
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

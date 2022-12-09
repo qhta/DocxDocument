@@ -13,8 +13,8 @@ public class DropLinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, DropLines
   
   public override ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

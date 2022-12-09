@@ -16,14 +16,18 @@ public class Surface3DChartExtensionImpl: ModelElementImpl, Surface3DChartExtens
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   public FilteredSurfaceSeries? FilteredSurfaceSeries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

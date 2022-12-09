@@ -13,8 +13,8 @@ public class GradientStopListImpl: ModelElementImpl, GradientStopList
   
   public Collection<GradientStop>? GradientStops
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

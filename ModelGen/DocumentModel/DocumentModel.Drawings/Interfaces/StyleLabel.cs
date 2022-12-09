@@ -23,7 +23,7 @@ public interface StyleLabel
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties1? TextProperties { get ; set; }
+  public TextProperties2? TextProperties { get ; set; }
   
   /// <summary>
   /// Shape Style.
@@ -33,6 +33,6 @@ public interface StyleLabel
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList1? ExtensionList { get ; set; }
   
 }

@@ -16,8 +16,12 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// </summary>
   public Scene3D? Scene3D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,17 +38,17 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// </summary>
   public Shape3D? Shape3D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties2? TextProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,17 +56,17 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// </summary>
   public Style1? Style
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public Boolean? IsSignatureLine
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsSignatureLine?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsSignatureLine = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? ProviderId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ProviderId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ProviderId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public Boolean? SigningInstructionsSet
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SigningInstructionsSet?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SigningInstructionsSet = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public Boolean? AllowComments
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowComments?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowComments = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public Boolean? ShowSignDate
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ShowSignDate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShowSignDate = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? SuggestedSigner
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SuggestedSigner?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SuggestedSigner = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? SuggestedSigner2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SuggestedSigner2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SuggestedSigner2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? SuggestedSignerEmail
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SuggestedSignerEmail?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SuggestedSignerEmail = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? SigningInstructions
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SigningInstructions?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SigningInstructions = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? AdditionalXml
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AdditionalXml?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AdditionalXml = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
   /// </summary>
   public String? SignatureProviderUrl
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.SignatureProviderUrl?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SignatureProviderUrl = (System.String?)value;
+    }
   }
   
 }

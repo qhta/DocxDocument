@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface MinorGridlinesGridlines
 {
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
   public ExtensionList2? ExtensionList { get ; set; }
   

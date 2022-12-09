@@ -16,8 +16,12 @@ public class AlphaOutsetImpl: ModelElementImpl, AlphaOutset
   /// </summary>
   public Int64? Radius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Radius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Radius = (System.Int64?)value;
+    }
   }
   
 }

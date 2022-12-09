@@ -29,8 +29,8 @@ public class OpenXmlTickMarksElementImpl: ModelElementImpl, OpenXmlTickMarksElem
   /// </summary>
   public virtual ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

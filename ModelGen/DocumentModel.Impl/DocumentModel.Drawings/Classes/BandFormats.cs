@@ -13,8 +13,8 @@ public class BandFormatsImpl: ModelElementImpl, BandFormats
   
   public Collection<BandFormat>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

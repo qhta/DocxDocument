@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Surface Chart Series.
+/// Defines the SurfaceChartSeries Class.
 /// </summary>
 public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,37 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +54,37 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public UInt32? Order
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Order{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -34,8 +92,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public SeriesText? SeriesText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +101,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +110,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public PictureOptions? PictureOptions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +119,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public CategoryAxisData? CategoryAxisData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +128,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public Values? Values
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +137,37 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public Boolean? Bubble3D
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+        return (Boolean?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Boolean?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Bubble3D{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -88,8 +175,8 @@ public class SurfaceChartSeries2Impl: ModelElementImpl, SurfaceChartSeries2
   /// </summary>
   public SurfaceSerExtensionList? SurfaceSerExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class OfficeMathArgumentTypeImpl: ModelElementImpl, OfficeMathArgumentTyp
   /// </summary>
   public virtual ArgumentProperties? ArgumentProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

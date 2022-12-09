@@ -16,8 +16,12 @@ public class ColumnImpl: ModelElementImpl, Column
   /// </summary>
   public String? Width
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ColumnImpl: ModelElementImpl, Column
   /// </summary>
   public String? Space
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Space?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Space = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public Boolean? Fronzen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Fronzen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Fronzen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public Boolean? Frozen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Frozen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Frozen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public WebExtensionStoreReference? WebExtensionStoreReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +64,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public WebExtensionReferenceList? WebExtensionReferenceList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +73,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public WebExtensionPropertyBag? WebExtensionPropertyBag
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +82,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public WebExtensionBindingList? WebExtensionBindingList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +91,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public Snapshot? Snapshot
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +100,8 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

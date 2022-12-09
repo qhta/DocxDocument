@@ -16,8 +16,12 @@ public class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFil
   /// </summary>
   public String? Embed
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Embed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Embed = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFil
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFil
   /// </summary>
   public Boolean? BuiltIn
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BuiltIn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BuiltIn = (System.Boolean?)value;
+    }
   }
   
 }

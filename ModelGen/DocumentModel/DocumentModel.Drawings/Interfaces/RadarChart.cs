@@ -17,7 +17,7 @@ public interface RadarChart
   
   public Collection<RadarChartSeries1>? RadarChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public Collection<UInt32>? AxisIds { get ; set; }
   

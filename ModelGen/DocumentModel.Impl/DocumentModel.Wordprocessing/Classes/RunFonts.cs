@@ -29,8 +29,12 @@ public class RunFontsImpl: ModelElementImpl, RunFonts
   /// </summary>
   public String? Ascii
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Ascii?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Ascii = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class RunFontsImpl: ModelElementImpl, RunFonts
   /// </summary>
   public String? HighAnsi
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.HighAnsi?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HighAnsi = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class RunFontsImpl: ModelElementImpl, RunFonts
   /// </summary>
   public String? EastAsia
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EastAsia?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EastAsia = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class RunFontsImpl: ModelElementImpl, RunFonts
   /// </summary>
   public String? ComplexScript
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ComplexScript?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ComplexScript = (System.String?)value;
+    }
   }
   
   /// <summary>

@@ -16,8 +16,8 @@ public class AlphaModulationEffectImpl: ModelElementImpl, AlphaModulationEffect
   /// </summary>
   public EffectContainer? EffectContainer
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

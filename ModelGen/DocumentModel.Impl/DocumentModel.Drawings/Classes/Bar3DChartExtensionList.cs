@@ -13,8 +13,8 @@ public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionL
   
   public Collection<Bar3DChartExtension>? Bar3DChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

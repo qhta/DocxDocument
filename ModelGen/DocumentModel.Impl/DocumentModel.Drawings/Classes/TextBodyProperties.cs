@@ -16,8 +16,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? Rotation
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Rotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotation = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? UseParagraphSpacing
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UseParagraphSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UseParagraphSpacing = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -86,8 +94,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? LeftInset
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LeftInset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeftInset = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -95,8 +107,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? TopInset
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.TopInset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TopInset = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -104,8 +120,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? RightInset
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RightInset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightInset = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -113,8 +133,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? BottomInset
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.BottomInset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BottomInset = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -122,8 +146,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? ColumnCount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnCount = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -131,8 +159,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Int32? ColumnSpacing
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ColumnSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColumnSpacing = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -140,8 +172,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? RightToLeftColumns
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.RightToLeftColumns?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightToLeftColumns = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -149,8 +185,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? FromWordArt
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FromWordArt?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FromWordArt = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -171,8 +211,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? AnchorCenter
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AnchorCenter?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AnchorCenter = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -180,8 +224,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? ForceAntiAlias
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ForceAntiAlias?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForceAntiAlias = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -189,8 +237,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? UpRight
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UpRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UpRight = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -198,8 +250,12 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public Boolean? CompatibleLineSpacing
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.CompatibleLineSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CompatibleLineSpacing = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -207,50 +263,104 @@ public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
   /// </summary>
   public PresetTextWrap? PresetTextWrap
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? NoAutoFit
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoAutoFit();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public NormalAutoFit? NormalAutoFit
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Boolean? ShapeAutoFit
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.ShapeAutoFit();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Scene3DType? Scene3DType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Shape3DType? Shape3DType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public FlatText? FlatText
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

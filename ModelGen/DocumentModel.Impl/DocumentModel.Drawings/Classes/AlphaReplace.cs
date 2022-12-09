@@ -16,8 +16,12 @@ public class AlphaReplaceImpl: ModelElementImpl, AlphaReplace
   /// </summary>
   public Int32? Alpha
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Alpha?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Alpha = (System.Int32?)value;
+    }
   }
   
 }

@@ -13,8 +13,8 @@ public class SampleDataImpl: DocumentModel.Drawings.SampleDataTypeImpl, SampleDa
   
   public override DataModel? DataModel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

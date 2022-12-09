@@ -5,55 +5,55 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
 {
-  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
   /// Multi Level String Reference.
   /// </summary>
-  public MultiLevelStringReference? MultiLevelStringReference
+  public virtual MultiLevelStringReference? MultiLevelStringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Number Reference.
   /// </summary>
-  public NumberReference? NumberReference
+  public virtual NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public NumberLiteral? NumberLiteral
+  public virtual NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// StringReference.
   /// </summary>
-  public StringReference? StringReference
+  public virtual StringReference? StringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public StringLiteral? StringLiteral
+  public virtual StringLiteral? StringLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

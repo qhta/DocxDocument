@@ -16,8 +16,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? XAdjustmentGuide
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.XAdjustmentGuide?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.XAdjustmentGuide = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? MinX
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinX = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? MaxX
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MaxX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MaxX = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? YAdjustmentGuide
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.YAdjustmentGuide?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.YAdjustmentGuide = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? MinY
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MinY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinY = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public String? MaxY
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MaxY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MaxY = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,8 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
   /// </summary>
   public AdjustPoint2DType? Position
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

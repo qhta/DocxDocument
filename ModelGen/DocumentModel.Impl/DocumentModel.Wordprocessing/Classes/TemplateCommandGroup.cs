@@ -13,26 +13,26 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   
   public Collection<KeyMapCustomizations>? KeyMapCustomizationses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MismatchedKeyMapCustomization>? MismatchedKeyMapCustomizations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Toolbars? Toolbars
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<AllocatedCommands>? AllocatedCommandses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

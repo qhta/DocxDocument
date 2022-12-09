@@ -16,8 +16,8 @@ public class TextBody1Impl: ModelElementImpl, TextBody1
   /// </summary>
   public BodyProperties? BodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,14 +25,14 @@ public class TextBody1Impl: ModelElementImpl, TextBody1
   /// </summary>
   public ListStyle? ListStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Paragraph>? Paragraphs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

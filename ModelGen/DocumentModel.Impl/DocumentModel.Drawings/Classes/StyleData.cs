@@ -13,8 +13,8 @@ public class StyleDataImpl: DocumentModel.Drawings.SampleDataTypeImpl, StyleData
   
   public override DataModel? DataModel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

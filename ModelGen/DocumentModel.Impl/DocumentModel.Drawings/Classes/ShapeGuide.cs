@@ -16,8 +16,12 @@ public class ShapeGuideImpl: ModelElementImpl, ShapeGuide
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ShapeGuideImpl: ModelElementImpl, ShapeGuide
   /// </summary>
   public String? Formula
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Formula?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Formula = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class CommentImpl: ModelElementImpl, Comment
   /// </summary>
   public String? Initials
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Initials?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Initials = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class CommentImpl: ModelElementImpl, Comment
   /// </summary>
   public String? Author
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Author?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Author = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class CommentImpl: ModelElementImpl, Comment
   /// </summary>
   public DateTime? Date
   {
-    get;
-    set;
+    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Date = (System.DateTime?)value;
+    }
   }
   
   /// <summary>
@@ -43,80 +55,84 @@ public class CommentImpl: ModelElementImpl, Comment
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   public Collection<AltChunk>? AltChunks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<CustomXmlBlock>? CustomXmlBlocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<SdtBlock>? SdtBlocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Paragraph>? Paragraphs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Table>? Tables
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ProofError>? ProofErrors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<PermStart>? PermStarts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<PermEnd>? PermEnds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<BookmarkStart>? BookmarkStarts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MarkupRangeType>? BookmarkEnds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MarkupRangeType>? CommentRangeStarts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<MarkupRangeType>? CommentRangeEnds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

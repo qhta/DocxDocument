@@ -29,8 +29,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -51,8 +55,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? ThemeTint
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeTint = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -60,8 +68,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? ThemeShade
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeShade = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public UInt32? Size
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Size?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Size = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -78,8 +94,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public UInt32? Space
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Space?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Space = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -87,8 +107,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Boolean? Shadow
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Shadow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Shadow = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -96,8 +120,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Boolean? Frame
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Frame?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Frame = (System.Boolean?)value;
+    }
   }
   
 }

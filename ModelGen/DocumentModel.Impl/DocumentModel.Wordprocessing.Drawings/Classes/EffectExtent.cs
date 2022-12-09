@@ -16,8 +16,12 @@ public class EffectExtentImpl: ModelElementImpl, EffectExtent
   /// </summary>
   public Int64? LeftEdge
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.LeftEdge?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeftEdge = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class EffectExtentImpl: ModelElementImpl, EffectExtent
   /// </summary>
   public Int64? TopEdge
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.TopEdge?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TopEdge = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class EffectExtentImpl: ModelElementImpl, EffectExtent
   /// </summary>
   public Int64? RightEdge
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.RightEdge?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightEdge = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class EffectExtentImpl: ModelElementImpl, EffectExtent
   /// </summary>
   public Int64? BottomEdge
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.BottomEdge?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BottomEdge = (System.Int64?)value;
+    }
   }
   
 }

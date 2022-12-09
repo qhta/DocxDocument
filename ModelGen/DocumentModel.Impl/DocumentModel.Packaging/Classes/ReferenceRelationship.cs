@@ -16,8 +16,12 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
   /// </summary>
   public virtual String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
   /// </summary>
   public Boolean? IsExternal
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsExternal;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("IsExternal").SetValue(OpenXmlElement, (System.Boolean?)value);
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Id").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
   /// </summary>
   public Uri? Uri
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

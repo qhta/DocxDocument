@@ -5,55 +5,55 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class AxisDataSourceType1Impl: ModelElementImpl, AxisDataSourceType1
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
   /// Multi Level String Reference.
   /// </summary>
-  public virtual MultiLevelStringReference? MultiLevelStringReference
+  public MultiLevelStringReference? MultiLevelStringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Number Reference.
   /// </summary>
-  public virtual NumberReference? NumberReference
+  public NumberReference? NumberReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public virtual NumberLiteral? NumberLiteral
+  public NumberLiteral? NumberLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// StringReference.
   /// </summary>
-  public virtual StringReference? StringReference
+  public StringReference? StringReference
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public virtual StringLiteral? StringLiteral
+  public StringLiteral? StringLiteral
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

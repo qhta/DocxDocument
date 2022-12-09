@@ -16,8 +16,8 @@ public class SuperscriptImpl: ModelElementImpl, Superscript
   /// </summary>
   public SuperscriptProperties? SuperscriptProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class SuperscriptImpl: ModelElementImpl, Superscript
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class SuperscriptImpl: ModelElementImpl, Superscript
   /// </summary>
   public SuperArgument? SuperArgument
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

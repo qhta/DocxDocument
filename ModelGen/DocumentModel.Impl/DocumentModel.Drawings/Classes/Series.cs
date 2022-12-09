@@ -29,8 +29,12 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public Boolean? Hidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Hidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public UInt32? OwnerIdx
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.OwnerIdx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OwnerIdx = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public String? UniqueId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UniqueId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UniqueId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,26 +68,30 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public UInt32? FormatIdx
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.FormatIdx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FormatIdx = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
   /// Text.
   /// </summary>
-  public Text1? Text
+  public Text2? Text
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -83,8 +99,8 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public ValueColors? ValueColors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -92,44 +108,73 @@ public class SeriesImpl: ModelElementImpl, Series
   /// </summary>
   public ValueColorPositions? ValueColorPositions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DataPoint1>? DataPoints
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels1? DataLabels
+  public DataLabels2? DataLabels
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public UInt32? DataId
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.UInt32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public SeriesLayoutProperties? SeriesLayoutProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<String>? AxisIds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

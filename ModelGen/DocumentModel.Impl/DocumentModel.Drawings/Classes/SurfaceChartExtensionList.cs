@@ -13,8 +13,8 @@ public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtens
   
   public Collection<SurfaceChartExtension>? SurfaceChartExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

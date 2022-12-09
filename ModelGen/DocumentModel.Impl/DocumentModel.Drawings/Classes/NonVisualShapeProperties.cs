@@ -16,8 +16,8 @@ public class NonVisualShapePropertiesImpl: ModelElementImpl, NonVisualShapePrope
   /// </summary>
   public NonVisualDrawingProperties3? NonVisualDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class NonVisualShapePropertiesImpl: ModelElementImpl, NonVisualShapePrope
   /// </summary>
   public NonVisualShapeDrawingProperties? NonVisualShapeDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

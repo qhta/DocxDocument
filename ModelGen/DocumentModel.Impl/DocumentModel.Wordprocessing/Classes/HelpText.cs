@@ -29,8 +29,12 @@ public class HelpTextImpl: ModelElementImpl, HelpText
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
 }

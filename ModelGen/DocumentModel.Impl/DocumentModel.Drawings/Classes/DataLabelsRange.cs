@@ -16,8 +16,37 @@ public class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
   /// </summary>
   public String? Formula
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -25,8 +54,8 @@ public class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
   /// </summary>
   public DataLabelsRangeChache? DataLabelsRangeChache
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

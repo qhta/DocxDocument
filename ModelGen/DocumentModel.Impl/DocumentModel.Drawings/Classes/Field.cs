@@ -16,8 +16,12 @@ public class FieldImpl: ModelElementImpl, Field
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class FieldImpl: ModelElementImpl, Field
   /// </summary>
   public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class FieldImpl: ModelElementImpl, Field
   /// </summary>
   public RunProperties? RunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +51,8 @@ public class FieldImpl: ModelElementImpl, Field
   /// </summary>
   public ParagraphProperties? ParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +60,37 @@ public class FieldImpl: ModelElementImpl, Field
   /// </summary>
   public String? Text
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Text>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Text>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.Text{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
 }

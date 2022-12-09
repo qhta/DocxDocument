@@ -16,8 +16,12 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// </summary>
   public Int32? NumberingPictureBulletId
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.NumberingPictureBulletId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NumberingPictureBulletId = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// </summary>
   public PictureBulletBase? PictureBulletBase
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// </summary>
   public Drawing? Drawing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

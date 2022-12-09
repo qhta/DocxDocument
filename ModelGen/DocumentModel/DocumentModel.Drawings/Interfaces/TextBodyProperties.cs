@@ -117,6 +117,6 @@ public interface TextBodyProperties
   
   public FlatText? FlatText { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

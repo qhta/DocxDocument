@@ -16,8 +16,12 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
   /// </summary>
   public String? Method
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Method?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Method = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,56 +29,60 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
   /// </summary>
   public UInt32? Id
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.UInt32?)value;
+    }
   }
   
   public Collection<RgbColorModelPercentage>? RgbColorModelPercentages
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<RgbColorModelHex>? RgbColorModelHexs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<HslColor>? HslColors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<SystemColor>? SystemColors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<SchemeColor>? SchemeColors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<PresetColor>? PresetColors
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ColorStyleVariation>? ColorStyleVariations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public OfficeArtExtensionList4? OfficeArtExtensionList
+  public OfficeArtExtensionList5? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

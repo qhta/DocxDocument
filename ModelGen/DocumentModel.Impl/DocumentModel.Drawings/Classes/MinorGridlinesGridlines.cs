@@ -11,16 +11,16 @@ public class MinorGridlinesGridlinesImpl: DocumentModel.Drawings.OpenXmlGridline
     set => _OpenXmlElement = value;
   }
   
-  public override ShapeProperties6? ShapeProperties
+  public override ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

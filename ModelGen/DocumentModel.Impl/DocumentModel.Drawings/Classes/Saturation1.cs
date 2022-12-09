@@ -16,8 +16,12 @@ public class Saturation1Impl: ModelElementImpl, Saturation1
   /// </summary>
   public Int32? SaturationAmount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.SaturationAmount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SaturationAmount = (System.Int32?)value;
+    }
   }
   
 }

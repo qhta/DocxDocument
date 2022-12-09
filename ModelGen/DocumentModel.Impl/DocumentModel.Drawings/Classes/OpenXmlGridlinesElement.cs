@@ -14,10 +14,10 @@ public class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElem
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties6? ShapeProperties
+  public virtual ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElem
   /// </summary>
   public virtual ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

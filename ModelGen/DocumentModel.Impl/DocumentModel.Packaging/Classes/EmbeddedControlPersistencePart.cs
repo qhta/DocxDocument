@@ -16,14 +16,18 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
   /// </summary>
   public EmbeddedControlPersistenceBinaryDataPart? EmbeddedControlPersistenceBinaryDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

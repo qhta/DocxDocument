@@ -16,8 +16,8 @@ public class GroupCharImpl: ModelElementImpl, GroupChar
   /// </summary>
   public GroupCharProperties? GroupCharProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class GroupCharImpl: ModelElementImpl, GroupChar
   /// </summary>
   public Base? Base
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

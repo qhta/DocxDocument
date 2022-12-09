@@ -16,8 +16,12 @@ public class ArtisticWatercolorSpongeImpl: ModelElementImpl, ArtisticWatercolorS
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticWatercolorSpongeImpl: ModelElementImpl, ArtisticWatercolorS
   /// </summary>
   public Int32? BrushSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.BrushSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BrushSize = (System.Int32?)value;
+    }
   }
   
 }

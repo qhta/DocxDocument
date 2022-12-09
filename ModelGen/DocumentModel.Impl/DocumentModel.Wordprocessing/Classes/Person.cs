@@ -16,8 +16,12 @@ public class PersonImpl: ModelElementImpl, Person
   /// </summary>
   public String? Contact
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Contact?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Contact = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PersonImpl: ModelElementImpl, Person
   /// </summary>
   public String? Author
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Author?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Author = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class PersonImpl: ModelElementImpl, Person
   /// </summary>
   public PresenceInfo? PresenceInfo
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

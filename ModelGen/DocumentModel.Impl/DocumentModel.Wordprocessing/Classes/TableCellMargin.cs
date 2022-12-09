@@ -16,8 +16,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? TopMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? LeftMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? StartMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? BottomMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? RightMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
   /// </summary>
   public TableWidthType? EndMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

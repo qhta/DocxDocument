@@ -13,8 +13,8 @@ public class CopyrightsImpl: ModelElementImpl, Copyrights
   
   public Collection<String>? CopyrightXsdstrings
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

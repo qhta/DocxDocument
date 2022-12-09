@@ -16,20 +16,24 @@ public class DiagramDefinitionExtensionImpl: ModelElementImpl, DiagramDefinition
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   public NumberDiagramInfoList? NumberDiagramInfoList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public TextListStyleType? TextListStyleType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

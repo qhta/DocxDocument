@@ -16,8 +16,12 @@ public class OEmbedImpl: ModelElementImpl, OEmbed
   /// </summary>
   public String? OEmbedUrl
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.OEmbedUrl?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OEmbedUrl = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class OEmbedImpl: ModelElementImpl, OEmbed
   /// </summary>
   public String? MediaType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MediaType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MediaType = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class OEmbedImpl: ModelElementImpl, OEmbed
   /// </summary>
   public Boolean? PicLocksAutoForOEmbed
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.PicLocksAutoForOEmbed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PicLocksAutoForOEmbed = (System.Boolean?)value;
+    }
   }
   
 }

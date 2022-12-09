@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the SurfaceChartSeries Class.
+/// Surface Chart Series.
 /// </summary>
 public interface SurfaceChartSeries1
 {

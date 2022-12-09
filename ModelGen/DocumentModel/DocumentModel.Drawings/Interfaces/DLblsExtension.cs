@@ -16,12 +16,12 @@ public interface DLblsExtension
   
   public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  public ShapeProperties2? ShapeProperties { get ; set; }
   
-  public Layout1? Layout { get ; set; }
+  public Layout2? Layout { get ; set; }
   
   public Boolean? ShowLeaderLines { get ; set; }
   
-  public LeaderLines1? LeaderLines { get ; set; }
+  public LeaderLines2? LeaderLines { get ; set; }
   
 }

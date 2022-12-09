@@ -16,8 +16,8 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public RubyProperties? RubyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public RubyContent? RubyContent
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public RubyBase? RubyBase
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

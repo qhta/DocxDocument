@@ -38,12 +38,12 @@ public interface DateAxis
   /// <summary>
   /// Title.
   /// </summary>
-  public Title1? Title { get ; set; }
+  public Title2? Title { get ; set; }
   
   /// <summary>
   /// Number Format.
   /// </summary>
-  public NumberingFormat1? NumberingFormat { get ; set; }
+  public NumberingFormat2? NumberingFormat { get ; set; }
   
   /// <summary>
   /// Major Tick Mark.
@@ -68,7 +68,7 @@ public interface DateAxis
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties1? TextProperties { get ; set; }
   
   /// <summary>
   /// Crossing Axis ID.

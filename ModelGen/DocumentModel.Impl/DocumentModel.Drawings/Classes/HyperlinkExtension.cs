@@ -16,8 +16,12 @@ public class HyperlinkExtensionImpl: ModelElementImpl, HyperlinkExtension
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   public HyperlinkColorEnum? HyperlinkColor
@@ -38,14 +42,14 @@ public class HyperlinkExtensionImpl: ModelElementImpl, HyperlinkExtension
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor{ Val = (DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum?)value };
             OpenXmlElement.AddChild(openXmlElement);

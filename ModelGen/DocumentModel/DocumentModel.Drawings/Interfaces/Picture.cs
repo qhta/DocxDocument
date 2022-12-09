@@ -23,7 +23,7 @@ public interface Picture
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill2? BlipFill { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
@@ -33,6 +33,6 @@ public interface Picture
   /// <summary>
   /// Style.
   /// </summary>
-  public Style3? Style { get ; set; }
+  public Style4? Style { get ; set; }
   
 }

@@ -29,8 +29,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public String? Gap
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Gap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Gap = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? DropAuto
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DropAuto?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DropAuto = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -78,8 +94,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public String? Drop
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Drop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Drop = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -87,8 +107,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public String? Distance
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Distance?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Distance = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -96,8 +120,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? LengthSpecified
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LengthSpecified?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LengthSpecified = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -105,8 +133,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public String? Length
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Length?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Length = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -114,8 +146,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? AccentBar
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AccentBar?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AccentBar = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -123,8 +159,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? TextBorder
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.TextBorder?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextBorder = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -132,8 +172,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? MinusX
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.MinusX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinusX = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -141,8 +185,12 @@ public class CalloutImpl: ModelElementImpl, Callout
   /// </summary>
   public Boolean? MinusY
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.MinusY?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MinusY = (System.Boolean?)value;
+    }
   }
   
 }

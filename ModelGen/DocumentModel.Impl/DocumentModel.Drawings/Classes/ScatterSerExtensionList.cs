@@ -13,8 +13,8 @@ public class ScatterSerExtensionListImpl: ModelElementImpl, ScatterSerExtensionL
   
   public Collection<ScatterSerExtension>? ScatterSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

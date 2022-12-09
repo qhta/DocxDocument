@@ -16,8 +16,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Int32? LeftMargin
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LeftMargin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeftMargin = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Int32? RightMargin
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RightMargin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightMargin = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Int32? Level
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Level?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Level = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Int32? Indent
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Indent?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Indent = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Int32? DefaultTabSize
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DefaultTabSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DefaultTabSize = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Boolean? RightToLeft
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.RightToLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightToLeft = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Boolean? EastAsianLineBreak
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.EastAsianLineBreak?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EastAsianLineBreak = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -105,8 +133,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Boolean? LatinLineBreak
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LatinLineBreak?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LatinLineBreak = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -114,8 +146,12 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public Boolean? Height
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -123,8 +159,8 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public virtual LineSpacing? LineSpacing
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -132,8 +168,8 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public virtual SpaceBefore? SpaceBefore
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -141,8 +177,8 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
   /// </summary>
   public virtual SpaceAfter? SpaceAfter
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

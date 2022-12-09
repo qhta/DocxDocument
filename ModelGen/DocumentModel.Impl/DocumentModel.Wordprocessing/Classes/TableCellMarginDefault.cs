@@ -16,8 +16,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthType? TopMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthDxaNilType? TableCellLeftMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthType? StartMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthType? BottomMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthDxaNilType? TableCellRightMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefaul
   /// </summary>
   public TableWidthType? EndMargin
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

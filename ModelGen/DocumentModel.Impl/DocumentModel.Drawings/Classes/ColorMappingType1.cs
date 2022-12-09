@@ -170,10 +170,10 @@ public class ColorMappingType1Impl: ModelElementImpl, ColorMappingType1
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public virtual ExtensionList1? ExtensionList
+  public virtual ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

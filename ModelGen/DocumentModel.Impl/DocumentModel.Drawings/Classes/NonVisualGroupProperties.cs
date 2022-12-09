@@ -16,8 +16,12 @@ public class NonVisualGroupPropertiesImpl: ModelElementImpl, NonVisualGroupPrope
   /// </summary>
   public Boolean? IsLegacyGroup
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsLegacyGroup?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsLegacyGroup = (System.Boolean?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class ArtisticPhotocopyImpl: ModelElementImpl, ArtisticPhotocopy
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticPhotocopyImpl: ModelElementImpl, ArtisticPhotocopy
   /// </summary>
   public Int32? Detail
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Detail?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Detail = (System.Int32?)value;
+    }
   }
   
 }

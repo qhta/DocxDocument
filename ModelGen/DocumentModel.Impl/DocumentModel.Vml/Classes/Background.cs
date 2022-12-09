@@ -16,8 +16,12 @@ public class BackgroundImpl: ModelElementImpl, Background
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BackgroundImpl: ModelElementImpl, Background
   /// </summary>
   public Boolean? Filled
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Filled?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Filled = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class BackgroundImpl: ModelElementImpl, Background
   /// </summary>
   public String? Fillcolor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Fillcolor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Fillcolor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -95,8 +107,8 @@ public class BackgroundImpl: ModelElementImpl, Background
   /// </summary>
   public Fill? Fill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

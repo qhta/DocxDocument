@@ -16,8 +16,12 @@ public class McdImpl: ModelElementImpl, Mcd
   /// </summary>
   public String? MacroName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MacroName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MacroName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class McdImpl: ModelElementImpl, Mcd
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class McdImpl: ModelElementImpl, Mcd
   /// </summary>
   public String? MenuHelp
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MenuHelp?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MenuHelp = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,8 @@ public class McdImpl: ModelElementImpl, Mcd
   /// </summary>
   public DocumentModel.HexBinaryValue? BEncrypt
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +64,8 @@ public class McdImpl: ModelElementImpl, Mcd
   /// </summary>
   public DocumentModel.HexBinaryValue? Cmg
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

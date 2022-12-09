@@ -13,14 +13,22 @@ public class StylesWithEffectsPartImpl: DocumentModel.Packaging.StylesPartImpl, 
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

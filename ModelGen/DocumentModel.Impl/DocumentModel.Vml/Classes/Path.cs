@@ -16,8 +16,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? Limo
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Limo?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Limo = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? TextboxRectangle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.TextboxRectangle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextboxRectangle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowFill
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowFill?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowFill = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowStroke
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowStroke?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowStroke = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowShading
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowShading?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowShading = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? ShowArrowhead
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ShowArrowhead?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShowArrowhead = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowGradientShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowGradientShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowGradientShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowTextPath
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowTextPath?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowTextPath = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowInsetPen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowInsetPen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowInsetPen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -128,8 +172,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? ConnectionPoints
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ConnectionPoints?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConnectionPoints = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -137,8 +185,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public String? ConnectAngles
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ConnectAngles?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ConnectAngles = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -146,8 +198,12 @@ public class PathImpl: ModelElementImpl, Path
   /// </summary>
   public Boolean? AllowExtrusion
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowExtrusion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowExtrusion = (System.Boolean?)value;
+    }
   }
   
 }

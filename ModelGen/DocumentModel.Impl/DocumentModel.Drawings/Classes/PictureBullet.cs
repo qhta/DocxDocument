@@ -16,8 +16,8 @@ public class PictureBulletImpl: ModelElementImpl, PictureBullet
   /// </summary>
   public Blip? Blip
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

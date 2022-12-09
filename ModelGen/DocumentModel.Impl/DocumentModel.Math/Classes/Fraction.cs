@@ -16,8 +16,8 @@ public class FractionImpl: ModelElementImpl, Fraction
   /// </summary>
   public FractionProperties? FractionProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class FractionImpl: ModelElementImpl, Fraction
   /// </summary>
   public Numerator? Numerator
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class FractionImpl: ModelElementImpl, Fraction
   /// </summary>
   public Denominator? Denominator
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

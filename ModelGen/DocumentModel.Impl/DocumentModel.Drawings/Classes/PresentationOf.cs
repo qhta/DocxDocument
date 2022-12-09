@@ -16,8 +16,8 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<AxisKind>? Axis
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<ElementKind>? PointType
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<Boolean>? HideLastTrans
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<Int32>? Start
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<UInt32>? Count
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,17 +61,17 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// </summary>
   public List<Int32>? Step
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -42,17 +42,21 @@ public class Legend1Impl: ModelElementImpl, Legend1
   /// </summary>
   public Boolean? Overlay
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Overlay?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Overlay = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -60,8 +64,8 @@ public class Legend1Impl: ModelElementImpl, Legend1
   /// </summary>
   public TxPrTextBody? TxPrTextBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -69,8 +73,8 @@ public class Legend1Impl: ModelElementImpl, Legend1
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

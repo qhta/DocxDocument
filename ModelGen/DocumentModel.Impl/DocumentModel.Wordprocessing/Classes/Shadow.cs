@@ -16,8 +16,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int64? BlurRadius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.BlurRadius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlurRadius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int64? DistanceFromText
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.DistanceFromText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DistanceFromText = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int32? DirectionAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DirectionAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DirectionAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int32? HorizontalScalingFactor
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalScalingFactor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalScalingFactor = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int32? VerticalScalingFactor
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalScalingFactor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalScalingFactor = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int32? HorizontalSkewAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HorizontalSkewAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalSkewAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public Int32? VerticalSkewAngle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.VerticalSkewAngle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalSkewAngle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,8 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -101,8 +129,8 @@ public class ShadowImpl: ModelElementImpl, Shadow
   /// </summary>
   public SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

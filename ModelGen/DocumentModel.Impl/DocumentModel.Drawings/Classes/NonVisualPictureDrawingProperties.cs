@@ -16,8 +16,12 @@ public class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualP
   /// </summary>
   public Boolean? PreferRelativeResize
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.PreferRelativeResize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PreferRelativeResize = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualP
   /// </summary>
   public PictureLocks? PictureLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualP
   /// </summary>
   public NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

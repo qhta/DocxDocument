@@ -29,8 +29,12 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? StyleId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StyleId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StyleId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public Boolean? Default
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Default?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Default = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public Boolean? CustomStyle
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.CustomStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CustomStyle = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? StyleName
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleName>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleName>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.StyleName{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -65,8 +106,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? Aliases
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Aliases>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Aliases>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Aliases{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -74,8 +144,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? BasedOn
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BasedOn>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BasedOn>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.BasedOn{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -83,8 +182,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? NextParagraphStyle
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -92,8 +220,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public String? LinkedStyle
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkedStyle>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkedStyle>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.String?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.LinkedStyle{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -117,14 +274,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoRedefine>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.AutoRedefine{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -155,14 +312,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleHidden>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.StyleHidden{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -177,8 +334,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public Int32? UIPriority
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UIPriority>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UIPriority>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Int32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.UIPriority{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -202,14 +388,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SemiHidden>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.SemiHidden{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -240,14 +426,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -278,14 +464,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrimaryStyle>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PrimaryStyle{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -316,14 +502,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Locked>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Locked{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -354,14 +540,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Personal>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Personal{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -392,14 +578,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PersonalCompose>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PersonalCompose{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -430,14 +616,14 @@ public class StyleImpl: ModelElementImpl, Style
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PersonalReply>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PersonalReply{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -452,8 +638,37 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public DocumentModel.HexWord? Rsid
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+        return (DocumentModel.HexWord?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (string?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Rsid{ Val = (string?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -461,8 +676,8 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public StyleParagraphProperties? StyleParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -470,8 +685,8 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public StyleRunProperties? StyleRunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -479,8 +694,8 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public StyleTableProperties? StyleTableProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -488,8 +703,8 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -497,14 +712,14 @@ public class StyleImpl: ModelElementImpl, Style
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<TableStyleProperties>? TableStylePropertieses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

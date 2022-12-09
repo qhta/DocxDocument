@@ -33,6 +33,6 @@ public interface ContentPart
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList7? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
   
 }

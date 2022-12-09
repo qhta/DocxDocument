@@ -14,10 +14,10 @@ public class InvertSolidFillFormatImpl: ModelElementImpl, InvertSolidFillFormat
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties5? ShapeProperties
+  public ShapeProperties9? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

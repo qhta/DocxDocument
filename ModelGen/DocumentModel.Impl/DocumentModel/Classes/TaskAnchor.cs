@@ -16,8 +16,8 @@ public class TaskAnchorImpl: ModelElementImpl, TaskAnchor
   /// </summary>
   public CommentAnchor? CommentAnchor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class TaskAnchorImpl: ModelElementImpl, TaskAnchor
   /// </summary>
   public ExtensionList? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

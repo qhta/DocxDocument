@@ -16,8 +16,8 @@ public class ColorTypeImpl: ModelElementImpl, ColorType
   /// </summary>
   public virtual RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ColorTypeImpl: ModelElementImpl, ColorType
   /// </summary>
   public virtual SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

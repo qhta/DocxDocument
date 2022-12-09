@@ -16,8 +16,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Left
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Left?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Left = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Start
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Start?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Start = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? LeftChars
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LeftChars?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeftChars = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? StartCharacters
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.StartCharacters?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StartCharacters = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Right
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Right?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Right = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? End
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.End?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.End = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? RightChars
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RightChars?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RightChars = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? EndCharacters
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.EndCharacters?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EndCharacters = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Hanging
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Hanging?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hanging = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? HangingChars
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HangingChars?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HangingChars = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? FirstLine
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FirstLine?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstLine = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? FirstLineChars
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FirstLineChars?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FirstLineChars = (System.Int32?)value;
+    }
   }
   
 }

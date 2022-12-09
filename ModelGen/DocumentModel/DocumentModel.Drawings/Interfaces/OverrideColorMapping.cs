@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface OverrideColorMapping
 {
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

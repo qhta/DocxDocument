@@ -13,8 +13,12 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.VmlDrawingPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,8 +26,8 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -31,14 +35,18 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
   /// </summary>
   public LegacyDiagramTextPart? LegacyDiagramTextParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.VmlDrawingPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

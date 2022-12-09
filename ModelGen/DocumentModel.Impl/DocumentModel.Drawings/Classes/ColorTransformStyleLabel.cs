@@ -16,8 +16,12 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public FillColorList? FillColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public LineColorList? LineColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public EffectColorList? EffectColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public TextLineColorList? TextLineColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public TextFillColorList? TextFillColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,17 +74,17 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// </summary>
   public TextEffectColorList? TextEffectColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

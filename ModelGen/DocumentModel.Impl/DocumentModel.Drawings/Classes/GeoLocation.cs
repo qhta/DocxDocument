@@ -16,8 +16,12 @@ public class GeoLocationImpl: ModelElementImpl, GeoLocation
   /// </summary>
   public Double? Latitude
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Latitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Latitude = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GeoLocationImpl: ModelElementImpl, GeoLocation
   /// </summary>
   public Double? Longitude
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Longitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Longitude = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class GeoLocationImpl: ModelElementImpl, GeoLocation
   /// </summary>
   public String? EntityName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,8 @@ public class GeoLocationImpl: ModelElementImpl, GeoLocation
   /// </summary>
   public Address? Address
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

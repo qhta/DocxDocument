@@ -13,32 +13,32 @@ public class GroupShape2Impl: DocumentModel.Drawings.GroupShapeTypeImpl, GroupSh
   
   public override GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override GroupShapeProperties2? GroupShapeProperties
+  public override GroupShapeProperties1? GroupShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape2>? Shapes
+  public Collection<Shape1>? Shapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<GroupShape2>? GroupShapes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public OfficeArtExtensionList5? OfficeArtExtensionList
+  public OfficeArtExtensionList1? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

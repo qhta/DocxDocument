@@ -29,20 +29,24 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
   /// </summary>
   public UInt32? Revision
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Revision?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Revision = (System.UInt32?)value;
+    }
   }
   
   public Collection<Parameter>? Parameters
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList1? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

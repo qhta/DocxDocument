@@ -13,8 +13,8 @@ public class TaskHistoryImpl: ModelElementImpl, TaskHistory
   
   public Collection<TaskHistoryEvent>? TaskHistoryEvents
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

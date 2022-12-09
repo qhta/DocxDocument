@@ -16,8 +16,12 @@ public class LevelOverrideImpl: ModelElementImpl, LevelOverride
   /// </summary>
   public Int32? LevelIndex
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LevelIndex?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LevelIndex = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,37 @@ public class LevelOverrideImpl: ModelElementImpl, LevelOverride
   /// </summary>
   public Int32? StartOverrideNumberingValue
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Val = (System.Int32?)value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -34,8 +67,8 @@ public class LevelOverrideImpl: ModelElementImpl, LevelOverride
   /// </summary>
   public Level? Level
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

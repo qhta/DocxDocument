@@ -16,8 +16,12 @@ public class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualI
   /// </summary>
   public Boolean? IsComment
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsComment?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsComment = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,17 +29,17 @@ public class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualI
   /// </summary>
   public ContentPartLocks? ContentPartLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList
+  public OfficeArtExtensionList2? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

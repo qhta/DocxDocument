@@ -7,6 +7,11 @@ public struct HexWord
 
   public static implicit operator HexWord(string val) => new HexWord { value = ushort.Parse(val, NumberStyles.HexNumber) };
 
+  public static implicit operator HexWord?(string? val) =>
+    (val is not null) ? new HexWord { value = ushort.Parse(val, NumberStyles.HexNumber) } : (HexWord?)null;
+
+  public static implicit operator string(HexWord val) => val.value.ToString("X4");
+  public static implicit operator string?(HexWord? val) => val?.value.ToString("X4");
 
   public static implicit operator int(HexWord val) => val.value;
 

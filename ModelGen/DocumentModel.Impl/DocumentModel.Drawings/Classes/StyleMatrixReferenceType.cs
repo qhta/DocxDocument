@@ -16,8 +16,12 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Index?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Index = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual RgbColorModelHex? RgbColorModelHex
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +47,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual HslColor? HslColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +56,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual SystemColor? SystemColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +65,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual SchemeColor? SchemeColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +74,8 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
   /// </summary>
   public virtual PresetColor? PresetColor
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class PresenceInfoImpl: ModelElementImpl, PresenceInfo
   /// </summary>
   public String? ProviderId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ProviderId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ProviderId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PresenceInfoImpl: ModelElementImpl, PresenceInfo
   /// </summary>
   public String? UserId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UserId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserId = (System.String?)value;
+    }
   }
   
 }

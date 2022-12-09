@@ -7,7 +7,7 @@ public interface StockChart
 {
   public Collection<LineChartSeries1>? LineChartSerieses { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels1? DataLabels { get ; set; }
   
   public DropLines? DropLines { get ; set; }
   

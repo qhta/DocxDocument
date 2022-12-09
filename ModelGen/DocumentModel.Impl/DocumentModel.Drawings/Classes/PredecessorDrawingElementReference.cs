@@ -16,8 +16,12 @@ public class PredecessorDrawingElementReferenceImpl: ModelElementImpl, Predecess
   /// </summary>
   public String? Pred
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Pred?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Pred = (System.String?)value;
+    }
   }
   
 }

@@ -11,7 +11,7 @@ public interface Background
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill2? BlipFill { get ; set; }
+  public BlipFill1? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
   

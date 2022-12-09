@@ -16,8 +16,12 @@ public class EntryImpl: ModelElementImpl, Entry
   /// </summary>
   public Int32? New
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.New?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.New = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class EntryImpl: ModelElementImpl, Entry
   /// </summary>
   public Int32? Old
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Old?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Old = (System.Int32?)value;
+    }
   }
   
 }

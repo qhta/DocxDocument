@@ -13,9 +13,9 @@ public interface GroupShape1
   /// <summary>
   /// Group Shape Properties.
   /// </summary>
-  public GroupShapeProperties1? GroupShapeProperties { get ; set; }
+  public GroupShapeProperties2? GroupShapeProperties { get ; set; }
   
-  public Collection<Shape1>? Shapes { get ; set; }
+  public Collection<Shape4>? Shapes { get ; set; }
   
   public Collection<GroupShape1>? GroupShapes { get ; set; }
   

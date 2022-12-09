@@ -13,8 +13,8 @@ public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
   
   public Collection<BarSerExtension>? BarSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,17 +16,17 @@ public class NonVisualGraphicFrameDrawingPropertiesImpl: ModelElementImpl, NonVi
   /// </summary>
   public GraphicFrameLocks? GraphicFrameLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList4? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

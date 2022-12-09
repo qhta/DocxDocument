@@ -16,14 +16,18 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public ChartPart? ChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.DrawingsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -31,8 +35,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public CustomXmlPart? CustomXmlParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -40,8 +44,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public DiagramColorsPart? DiagramColorsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -49,8 +53,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public DiagramDataPart? DiagramDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -58,8 +62,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -67,8 +71,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public DiagramPersistLayoutPart? DiagramPersistLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -76,8 +80,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public DiagramStylePart? DiagramStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -85,8 +89,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public ExtendedChartPart? ExtendedChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -94,14 +98,18 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.DrawingsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -109,8 +117,8 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
   /// </summary>
   public WebExtensionPart? WebExtensionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

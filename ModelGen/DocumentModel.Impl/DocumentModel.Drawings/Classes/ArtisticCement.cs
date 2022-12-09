@@ -16,8 +16,12 @@ public class ArtisticCementImpl: ModelElementImpl, ArtisticCement
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticCementImpl: ModelElementImpl, ArtisticCement
   /// </summary>
   public Int32? CrackSpacing
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.CrackSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CrackSpacing = (System.Int32?)value;
+    }
   }
   
 }

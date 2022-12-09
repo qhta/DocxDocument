@@ -29,8 +29,12 @@ public class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterRefere
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
 }

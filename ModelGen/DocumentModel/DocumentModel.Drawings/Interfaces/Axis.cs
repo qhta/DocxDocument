@@ -35,7 +35,7 @@ public interface Axis
   
   public NumberFormat? NumberFormat { get ; set; }
   
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
   public TxPrTextBody? TxPrTextBody { get ; set; }
   

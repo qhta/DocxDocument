@@ -16,8 +16,12 @@ public class CameraToolImpl: ModelElementImpl, CameraTool
   /// </summary>
   public String? CellRange
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CellRange?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CellRange = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class CameraToolImpl: ModelElementImpl, CameraTool
   /// </summary>
   public String? ShapeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeId = (System.String?)value;
+    }
   }
   
 }

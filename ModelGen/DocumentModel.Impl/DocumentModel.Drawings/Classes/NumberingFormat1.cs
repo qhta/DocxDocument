@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Number Format.
+/// Defines the NumberingFormat Class.
 /// </summary>
 public class NumberingFormat1Impl: ModelElementImpl, NumberingFormat1
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,12 @@ public class NumberingFormat1Impl: ModelElementImpl, NumberingFormat1
   /// </summary>
   public String? FormatCode
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FormatCode?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FormatCode = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class NumberingFormat1Impl: ModelElementImpl, NumberingFormat1
   /// </summary>
   public Boolean? SourceLinked
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SourceLinked?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SourceLinked = (System.Boolean?)value;
+    }
   }
   
 }

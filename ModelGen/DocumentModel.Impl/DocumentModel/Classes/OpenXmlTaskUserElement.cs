@@ -16,8 +16,12 @@ public class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElemen
   /// </summary>
   public String? UserId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UserId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElemen
   /// </summary>
   public String? UserName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UserName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElemen
   /// </summary>
   public String? UserProvider
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.UserProvider?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserProvider = (System.String?)value;
+    }
   }
   
 }

@@ -13,8 +13,8 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
   
   public Collection<ShapeHandle>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

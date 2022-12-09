@@ -1,77 +1,123 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the Shape Class.
+/// Shape.
 /// </summary>
 public class Shape2Impl: ModelElementImpl, Shape2
 {
-  public DocumentFormat.OpenXml.Office.Drawing.Shape? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Diagrams.Shape? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office.Drawing.Shape?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Diagrams.Shape?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   /// <summary>
-  /// modelId, this property is only available in Office 2010 and later.
+  /// Rotation
   /// </summary>
-  public String? ModelId
+  public Double? Rotation
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Rotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotation = (System.Double?)value;
+    }
   }
   
   /// <summary>
-  /// ShapeNonVisualProperties.
+  /// Shape Type
   /// </summary>
-  public ShapeNonVisualProperties? ShapeNonVisualProperties
+  public String? Type
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Type?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Type = (System.String?)value;
+    }
   }
   
   /// <summary>
-  /// ShapeProperties.
+  /// Relationship to Image Part
   /// </summary>
-  public ShapeProperties2? ShapeProperties
+  public String? Blip
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Blip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Blip = (System.String?)value;
+    }
   }
   
   /// <summary>
-  /// ShapeStyle.
+  /// Z-Order Offset
   /// </summary>
-  public ShapeStyle2? ShapeStyle
+  public Int32? ZOrderOffset
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.ZOrderOffset?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ZOrderOffset = (System.Int32?)value;
+    }
   }
   
   /// <summary>
-  /// TextBody.
+  /// Hide Geometry
   /// </summary>
-  public TextBody2? TextBody
+  public Boolean? HideGeometry
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HideGeometry?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HideGeometry = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
-  /// Transform2D.
+  /// Prevent Text Editing
   /// </summary>
-  public Transform2D2? Transform2D
+  public Boolean? LockedText
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LockedText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LockedText = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
-  /// OfficeArtExtensionList.
+  /// Image Placeholder
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList
+  public Boolean? BlipPlaceholder
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BlipPlaceholder?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BlipPlaceholder = (System.Boolean?)value;
+    }
+  }
+  
+  /// <summary>
+  /// Shape Adjust List.
+  /// </summary>
+  public AdjustList? AdjustList
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public ExtensionList1? ExtensionList
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

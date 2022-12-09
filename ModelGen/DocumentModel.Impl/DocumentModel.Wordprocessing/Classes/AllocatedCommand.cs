@@ -16,8 +16,12 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// </summary>
   public String? ArgumentValue
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ArgumentValue?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ArgumentValue = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// </summary>
   public String? CommandBasedOn
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CommandBasedOn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CommandBasedOn = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// </summary>
   public DocumentModel.HexBinaryValue? CommandIndexBasedOn
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +51,12 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// </summary>
   public String? AcceleratorName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AcceleratorName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AcceleratorName = (System.String?)value;
+    }
   }
   
 }

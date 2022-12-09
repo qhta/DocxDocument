@@ -16,8 +16,12 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
   /// </summary>
   public Int32? LineWidth
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.LineWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LineWidth = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,20 +65,47 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
   
   public Boolean? NoFillEmpty
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public SolidColorFillProperties? SolidColorFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public GradientFillProperties? GradientFillProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PresetLineDashKind? PresetLineDashProperties
@@ -95,14 +126,14 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties{ Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -114,20 +145,74 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
   
   public Boolean? RoundEmpty
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.RoundEmpty();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public Boolean? BevelEmpty
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.BevelEmpty();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   public LineJoinMiterProperties? LineJoinMiterProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

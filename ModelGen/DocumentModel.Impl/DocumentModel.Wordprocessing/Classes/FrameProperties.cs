@@ -29,8 +29,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public Int32? Lines
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Lines?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Lines = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? Width
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public UInt32? Height
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? VerticalSpace
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.VerticalSpace?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalSpace = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? HorizontalSpace
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.HorizontalSpace?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalSpace = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -113,8 +133,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? X
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.X?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.X = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -135,8 +159,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? Y
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Y?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Y = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -170,8 +198,12 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public Boolean? AnchorLock
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AnchorLock?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AnchorLock = (System.Boolean?)value;
+    }
   }
   
 }

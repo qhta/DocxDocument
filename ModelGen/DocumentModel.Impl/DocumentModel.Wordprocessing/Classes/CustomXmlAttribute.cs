@@ -16,8 +16,12 @@ public class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
   /// </summary>
   public String? Uri
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
 }

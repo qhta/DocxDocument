@@ -13,8 +13,8 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
   
   public Collection<DocumentModel.Drawings.Extension>? Extensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

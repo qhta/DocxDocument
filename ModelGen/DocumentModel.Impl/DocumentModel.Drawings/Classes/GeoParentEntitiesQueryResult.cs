@@ -16,8 +16,8 @@ public class GeoParentEntitiesQueryResultImpl: ModelElementImpl, GeoParentEntiti
   /// </summary>
   public GeoParentEntitiesQuery? GeoParentEntitiesQuery
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class GeoParentEntitiesQueryResultImpl: ModelElementImpl, GeoParentEntiti
   /// </summary>
   public GeoEntity? GeoEntity
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class GeoParentEntitiesQueryResultImpl: ModelElementImpl, GeoParentEntiti
   /// </summary>
   public GeoParentEntity? GeoParentEntity
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

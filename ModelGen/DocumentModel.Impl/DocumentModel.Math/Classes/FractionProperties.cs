@@ -32,14 +32,14 @@ public class FractionPropertiesImpl: ModelElementImpl, FractionProperties
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
         if (openXmlElement != null)
         {
-          if (value != null)
+          if (value is not null)
             openXmlElement.Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value;
           else
             openXmlElement.Remove();
         }
         else
         {
-          if (value != null)
+          if (value is not null)
           {
             openXmlElement = new DocumentFormat.OpenXml.Math.FractionType{ Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value };
             OpenXmlElement.AddChild(openXmlElement);
@@ -54,8 +54,8 @@ public class FractionPropertiesImpl: ModelElementImpl, FractionProperties
   /// </summary>
   public ControlProperties? ControlProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Opacity
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Opacity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Opacity = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Color2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Source
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Source?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Source = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Href
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Href?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Href = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? AlternateImageReference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlternateImageReference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlternateImageReference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -101,8 +133,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Size
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Size?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Size = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -110,8 +146,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Origin
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Origin?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Origin = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -119,8 +159,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Position
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Position?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Position = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -141,8 +185,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Colors
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Colors?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Colors = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -150,8 +198,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Decimal? Angle
   {
-    get;
-    set;
+    get => (Decimal?)OpenXmlElement?.Angle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Angle = (System.Decimal?)value;
+    }
   }
   
   /// <summary>
@@ -159,8 +211,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Boolean? AlignShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AlignShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlignShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -168,8 +224,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Focus
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Focus?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Focus = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -177,8 +237,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? FocusSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FocusSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FocusSize = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -186,8 +250,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? FocusPosition
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FocusPosition?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FocusPosition = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -208,8 +276,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Boolean? DetectMouseClick
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DetectMouseClick?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DetectMouseClick = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -217,8 +289,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -226,8 +302,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? Opacity2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Opacity2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Opacity2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -235,8 +315,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Boolean? Recolor
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Recolor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Recolor = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -244,8 +328,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public Boolean? Rotate
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Rotate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotate = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -253,8 +341,12 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public String? RelationshipId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelationshipId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -262,8 +354,8 @@ public class FillImpl: ModelElementImpl, Fill
   /// </summary>
   public FillExtendedProperties? FillExtendedProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Style
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Href
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Href?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Href = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Target
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Target?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Target = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Class
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Class?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Class = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? Alternate
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Alternate?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Alternate = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? CoordinateSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CoordinateSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CoordinateSize = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? WrapCoordinates
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.WrapCoordinates?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.WrapCoordinates = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Print
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Print?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Print = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? OptionalString
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.OptionalString?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OptionalString = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Oned
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Oned?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Oned = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -124,8 +172,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Int32? RegroupId
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RegroupId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RegroupId = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -133,8 +185,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? DoubleClickNotify
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.DoubleClickNotify?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DoubleClickNotify = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -142,8 +198,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Button
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Button?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Button = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -151,8 +211,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? UserHidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UserHidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserHidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -160,8 +224,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Bullet
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Bullet?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bullet = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -169,8 +237,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Horizontal
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Horizontal?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Horizontal = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -178,8 +250,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? HorizontalStandard
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalStandard?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalStandard = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -187,8 +263,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? HorizontalNoShade
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalNoShade?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalNoShade = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -196,8 +276,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Single? HorizontalPercentage
   {
-    get;
-    set;
+    get => (Single?)OpenXmlElement?.HorizontalPercentage?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalPercentage = (System.Single?)value;
+    }
   }
   
   /// <summary>
@@ -218,8 +302,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? AllowInCell
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowInCell?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowInCell = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -227,8 +315,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? AllowOverlap
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowOverlap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowOverlap = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -236,8 +328,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? UserDrawn
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UserDrawn?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UserDrawn = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -245,8 +341,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? BorderTopColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BorderTopColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BorderTopColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -254,8 +354,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? BorderLeftColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BorderLeftColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BorderLeftColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -263,8 +367,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? BorderBottomColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BorderBottomColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BorderBottomColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -272,8 +380,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? BorderRightColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.BorderRightColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BorderRightColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -281,8 +393,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Int32? DiagramLayout
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramLayout?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramLayout = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -290,8 +406,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Int32? DiagramNodeKind
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramNodeKind?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramNodeKind = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -299,8 +419,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Int32? DiagramLayoutMostRecentUsed
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.DiagramLayoutMostRecentUsed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DiagramLayoutMostRecentUsed = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -321,8 +445,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Filled
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Filled?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Filled = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -330,8 +458,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? FillColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FillColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FillColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -339,8 +471,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Stroked
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Stroked?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Stroked = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -348,8 +484,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? StrokeColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StrokeColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StrokeColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -357,8 +497,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? StrokeWeight
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StrokeWeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StrokeWeight = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -366,8 +510,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? InsetPen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.InsetPen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InsetPen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -375,8 +523,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Int32? OptionalNumber
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.OptionalNumber?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OptionalNumber = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -436,8 +588,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? ForceDash
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ForceDash?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForceDash = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -445,8 +601,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? OleIcon
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.OleIcon?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.OleIcon = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -454,8 +614,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Ole
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Ole?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Ole = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -463,8 +627,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? PreferRelative
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.PreferRelative?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PreferRelative = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -472,8 +640,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? ClipToWrap
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ClipToWrap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ClipToWrap = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -481,8 +653,12 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public Boolean? Clip
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Clip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Clip = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -490,8 +666,8 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public DocumentModel.Base64BinaryValue? Gfxdata
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -499,134 +675,138 @@ public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
   /// </summary>
   public String? ArcSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ArcSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ArcSize = (System.String?)value;
+    }
   }
   
   public Collection<Path>? Paths
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Formulas>? Formulases
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ShapeHandles>? ShapeHandleses
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Fill>? Fills
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Stroke>? Strokes
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Shadow>? Shadows
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<TextBox>? TextBoxs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<TextPath>? TextPaths
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ImageData>? ImageDatas
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Skew>? Skews
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Extrusion>? Extrusions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Callout>? Callouts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Lock>? Locks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<ClipPath>? ClipPaths
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<SignatureLine>? SignatureLines
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Boolean>? AnchorLocks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? TopBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? BottomBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? LeftBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? RightBorders
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

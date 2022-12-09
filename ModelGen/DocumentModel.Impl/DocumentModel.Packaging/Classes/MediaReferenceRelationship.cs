@@ -16,8 +16,12 @@ public class MediaReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRe
   /// </summary>
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.MediaReferenceRelationship).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

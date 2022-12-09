@@ -16,8 +16,12 @@ public class HslImpl: ModelElementImpl, Hsl
   /// </summary>
   public Int32? Hue
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Hue?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hue = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class HslImpl: ModelElementImpl, Hsl
   /// </summary>
   public Int32? Saturation
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Saturation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Saturation = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class HslImpl: ModelElementImpl, Hsl
   /// </summary>
   public Int32? Luminance
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Luminance?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Luminance = (System.Int32?)value;
+    }
   }
   
 }

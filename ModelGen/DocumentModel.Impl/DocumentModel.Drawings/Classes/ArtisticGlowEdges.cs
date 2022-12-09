@@ -16,8 +16,12 @@ public class ArtisticGlowEdgesImpl: ModelElementImpl, ArtisticGlowEdges
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticGlowEdgesImpl: ModelElementImpl, ArtisticGlowEdges
   /// </summary>
   public Int32? Smoothness
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Smoothness?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Smoothness = (System.Int32?)value;
+    }
   }
   
 }

@@ -29,8 +29,8 @@ public class AxisUnitsImpl: ModelElementImpl, AxisUnits
   /// </summary>
   public AxisUnitsLabel? AxisUnitsLabel
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -38,8 +38,8 @@ public class AxisUnitsImpl: ModelElementImpl, AxisUnits
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class ScriptLinkImpl: ModelElementImpl, ScriptLink
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class ScriptLinkImpl: ModelElementImpl, ScriptLink
   /// </summary>
   public OfficeArtExtensionList3? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

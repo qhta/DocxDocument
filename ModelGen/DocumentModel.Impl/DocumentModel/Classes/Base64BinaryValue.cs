@@ -16,8 +16,12 @@ public class Base64BinaryValueImpl: ModelObjectImpl, Base64BinaryValue
   /// </summary>
   public String? Value
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Base64BinaryValue).GetProperty("Value").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

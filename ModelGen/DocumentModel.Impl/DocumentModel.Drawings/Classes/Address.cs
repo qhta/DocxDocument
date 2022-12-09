@@ -16,8 +16,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? Address1
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Address1?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Address1 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? CountryRegion
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CountryRegion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CountryRegion = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? AdminDistrict1
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AdminDistrict1?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AdminDistrict1 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? AdminDistrict2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AdminDistrict2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AdminDistrict2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? PostalCode
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PostalCode?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PostalCode = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? Locality
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Locality?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Locality = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class AddressImpl: ModelElementImpl, Address
   /// </summary>
   public String? IsoCountryCode
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.IsoCountryCode?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsoCountryCode = (System.String?)value;
+    }
   }
   
 }

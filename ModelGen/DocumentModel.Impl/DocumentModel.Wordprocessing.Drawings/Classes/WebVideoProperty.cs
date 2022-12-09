@@ -16,8 +16,12 @@ public class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
   /// </summary>
   public String? EmbeddedHtml
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EmbeddedHtml?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EmbeddedHtml = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
   /// </summary>
   public UInt32? Height
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Height = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
   /// </summary>
   public UInt32? Width
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.UInt32?)value;
+    }
   }
   
 }

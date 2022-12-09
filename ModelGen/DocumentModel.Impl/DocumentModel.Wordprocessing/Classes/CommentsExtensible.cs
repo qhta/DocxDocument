@@ -13,14 +13,14 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
   
   public Collection<CommentExtensible>? CommentExtensibles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public ExtensionList? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

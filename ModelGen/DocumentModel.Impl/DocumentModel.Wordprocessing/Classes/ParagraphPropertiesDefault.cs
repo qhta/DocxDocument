@@ -16,8 +16,8 @@ public class ParagraphPropertiesDefaultImpl: ModelElementImpl, ParagraphProperti
   /// </summary>
   public ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

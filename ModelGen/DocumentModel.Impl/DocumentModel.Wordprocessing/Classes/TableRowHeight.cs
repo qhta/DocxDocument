@@ -16,8 +16,12 @@ public class TableRowHeightImpl: ModelElementImpl, TableRowHeight
   /// </summary>
   public UInt32? Val
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.UInt32?)value;
+    }
   }
   
   /// <summary>

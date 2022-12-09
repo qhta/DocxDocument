@@ -13,8 +13,8 @@ public class CommentsIdsImpl: ModelElementImpl, CommentsIds
   
   public Collection<CommentId>? CommentIds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

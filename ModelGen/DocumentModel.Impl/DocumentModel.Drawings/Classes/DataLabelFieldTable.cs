@@ -13,8 +13,8 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
   
   public Collection<DataLabelFieldTableEntry>? DataLabelFieldTableEntries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

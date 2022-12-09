@@ -13,8 +13,8 @@ public class GeoChildEntitiesQueryResultsImpl: ModelElementImpl, GeoChildEntitie
   
   public Collection<GeoChildEntitiesQueryResult>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,7 +13,7 @@ public interface DataPoint1
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties { get ; set; }
+  public ShapeProperties8? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ExtensionList.

@@ -16,8 +16,12 @@ public class StyleLabelDescriptionImpl: ModelElementImpl, StyleLabelDescription
   /// </summary>
   public String? Language
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Language?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Language = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class StyleLabelDescriptionImpl: ModelElementImpl, StyleLabelDescription
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
   /// </summary>
   public String? Macro
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Macro?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Macro = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
   /// </summary>
   public Boolean? Published
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Published?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Published = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
   /// </summary>
   public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +51,8 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
   /// </summary>
   public Transform? Transform
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +60,8 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
   /// </summary>
   public Graphic? Graphic
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
   
   public Collection<ConnectorLockingExtension>? ConnectorLockingExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

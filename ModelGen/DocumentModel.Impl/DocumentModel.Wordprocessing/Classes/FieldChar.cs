@@ -29,8 +29,12 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public Boolean? FieldLock
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.FieldLock?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FieldLock = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public Boolean? Dirty
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Dirty?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dirty = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,37 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public String? FieldData
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+        return openXmlElement?.Text;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+        if (openXmlElement != null)
+        {
+          if (value is not null)
+            openXmlElement.Text = value;
+          else
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -56,8 +93,8 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public FormFieldData? FormFieldData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -65,8 +102,8 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public NumberingChange? NumberingChange
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

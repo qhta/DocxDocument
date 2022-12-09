@@ -16,8 +16,12 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Boolean? ChapterNumber
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ChapterNumber?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ChapterNumber = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Int32? Heading
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Heading?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Heading = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Boolean? NoLabel
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.NoLabel?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NoLabel = (System.Boolean?)value;
+    }
   }
   
   /// <summary>

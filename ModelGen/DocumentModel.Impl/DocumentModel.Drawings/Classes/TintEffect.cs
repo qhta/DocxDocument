@@ -16,8 +16,12 @@ public class TintEffectImpl: ModelElementImpl, TintEffect
   /// </summary>
   public Int32? Hue
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Hue?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Hue = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class TintEffectImpl: ModelElementImpl, TintEffect
   /// </summary>
   public Int32? Amount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Amount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Amount = (System.Int32?)value;
+    }
   }
   
 }

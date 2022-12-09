@@ -16,8 +16,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public ChartPart? ChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public CustomXmlPart? CustomXmlParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DiagramColorsPart? DiagramColorsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DiagramDataPart? DiagramDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +70,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DiagramPersistLayoutPart? DiagramPersistLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -79,8 +79,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DiagramStylePart? DiagramStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -88,8 +88,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DocumentModel.Wordprocessing.Document? Document
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -97,8 +97,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public EmbeddedControlPersistencePart? EmbeddedControlPersistenceParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -106,8 +106,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public EmbeddedObjectPart? EmbeddedObjectParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -115,8 +115,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public EmbeddedPackagePart? EmbeddedPackageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -124,8 +124,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public ExtendedChartPart? ExtendedChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -133,8 +133,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public FooterPart? FooterParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -142,8 +142,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public HeaderPart? HeaderParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -151,8 +151,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -160,14 +160,18 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.MainDocumentPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -175,8 +179,8 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public WordprocessingPrinterSettingsPart? WordprocessingPrinterSettingsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

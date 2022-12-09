@@ -16,8 +16,8 @@ public interface DLblExtension
   
   public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public ShapeProperties3? ShapeProperties { get ; set; }
+  public ShapeProperties2? ShapeProperties { get ; set; }
   
-  public Layout1? Layout { get ; set; }
+  public Layout2? Layout { get ; set; }
   
 }

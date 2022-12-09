@@ -16,8 +16,12 @@ public class DocPartNameImpl: ModelElementImpl, DocPartName
   /// </summary>
   public String? Val
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Val?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Val = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DocPartNameImpl: ModelElementImpl, DocPartName
   /// </summary>
   public Boolean? Decorated
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Decorated?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Decorated = (System.Boolean?)value;
+    }
   }
   
 }

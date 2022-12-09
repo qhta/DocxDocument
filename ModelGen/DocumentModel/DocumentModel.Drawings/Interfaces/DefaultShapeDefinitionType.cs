@@ -8,7 +8,7 @@ public interface DefaultShapeDefinitionType
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public ShapeProperties4? ShapeProperties { get ; set; }
   
   /// <summary>
   /// BodyProperties.
@@ -23,11 +23,11 @@ public interface DefaultShapeDefinitionType
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public ShapeStyle1? ShapeStyle { get ; set; }
+  public ShapeStyle2? ShapeStyle { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList4? ExtensionList { get ; set; }
   
 }

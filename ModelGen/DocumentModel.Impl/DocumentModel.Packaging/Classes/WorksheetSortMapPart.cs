@@ -13,14 +13,22 @@ public class WorksheetSortMapPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

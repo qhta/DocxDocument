@@ -16,8 +16,12 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public String? ThemeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ThemeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ThemeId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public ThemeElements? ThemeElements
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +51,8 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public ObjectDefaults? ObjectDefaults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +60,8 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public ExtraColorSchemeList? ExtraColorSchemeList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +69,8 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public CustomColorList? CustomColorList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -70,8 +78,8 @@ public class ThemeImpl: ModelElementImpl, Theme
   /// </summary>
   public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

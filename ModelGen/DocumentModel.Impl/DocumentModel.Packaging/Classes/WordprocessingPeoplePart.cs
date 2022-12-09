@@ -13,8 +13,12 @@ public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartIm
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -22,14 +26,18 @@ public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// </summary>
   public DocumentModel.Wordprocessing.People? People
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

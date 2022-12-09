@@ -29,8 +29,12 @@ public class GeoDataEntityQueryImpl: ModelElementImpl, GeoDataEntityQuery
   /// </summary>
   public String? EntityId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.EntityId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.EntityId = (System.String?)value;
+    }
   }
   
 }

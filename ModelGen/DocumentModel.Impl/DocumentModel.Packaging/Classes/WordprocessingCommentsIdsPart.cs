@@ -16,8 +16,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public AlternativeFormatImportPart? AlternativeFormatImportParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public ChartPart? ChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,14 +34,18 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsIds? CommentsIds
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsIdsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
   /// <summary>
@@ -49,8 +53,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DiagramColorsPart? DiagramColorsParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -58,8 +62,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DiagramDataPart? DiagramDataParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -67,8 +71,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -76,8 +80,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DiagramPersistLayoutPart? DiagramPersistLayoutParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -85,8 +89,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public DiagramStylePart? DiagramStyleParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -94,8 +98,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public EmbeddedControlPersistencePart? EmbeddedControlPersistenceParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -103,8 +107,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public EmbeddedObjectPart? EmbeddedObjectParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -112,8 +116,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public EmbeddedPackagePart? EmbeddedPackageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -121,8 +125,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public ExtendedChartPart? ExtendedChartParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -130,8 +134,8 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public ImagePart? ImageParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -139,14 +143,18 @@ public class WordprocessingCommentsIdsPartImpl: DocumentModel.Packaging.OpenXmlP
   /// </summary>
   public Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public override String? RelationshipType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsIdsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

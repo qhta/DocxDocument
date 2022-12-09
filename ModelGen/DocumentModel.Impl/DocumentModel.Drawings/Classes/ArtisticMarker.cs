@@ -16,8 +16,12 @@ public class ArtisticMarkerImpl: ModelElementImpl, ArtisticMarker
   /// </summary>
   public Int32? Transparancy
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Transparancy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Transparancy = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ArtisticMarkerImpl: ModelElementImpl, ArtisticMarker
   /// </summary>
   public Int32? Size
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Size?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Size = (System.Int32?)value;
+    }
   }
   
 }

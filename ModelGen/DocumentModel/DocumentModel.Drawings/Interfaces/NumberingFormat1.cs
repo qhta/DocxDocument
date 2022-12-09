@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Number Format.
+/// Defines the NumberingFormat Class.
 /// </summary>
 public interface NumberingFormat1
 {

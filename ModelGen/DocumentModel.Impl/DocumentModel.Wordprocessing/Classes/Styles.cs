@@ -16,8 +16,8 @@ public class StylesImpl: ModelElementImpl, Styles
   /// </summary>
   public DocDefaults? DocDefaults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,14 +25,14 @@ public class StylesImpl: ModelElementImpl, Styles
   /// </summary>
   public LatentStyles? LatentStyles
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Style>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

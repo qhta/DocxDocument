@@ -42,8 +42,12 @@ public class GeographyImpl: ModelElementImpl, Geography
   /// </summary>
   public String? CultureLanguage
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CultureLanguage?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CultureLanguage = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -51,8 +55,12 @@ public class GeographyImpl: ModelElementImpl, Geography
   /// </summary>
   public String? CultureRegion
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.CultureRegion?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CultureRegion = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -60,8 +68,12 @@ public class GeographyImpl: ModelElementImpl, Geography
   /// </summary>
   public String? Attribution
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Attribution?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Attribution = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -69,8 +81,8 @@ public class GeographyImpl: ModelElementImpl, Geography
   /// </summary>
   public GeoCache? GeoCache
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

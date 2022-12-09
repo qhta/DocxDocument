@@ -16,8 +16,12 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// </summary>
   public String? Macro
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Macro?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Macro = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// </summary>
   public Boolean? Published
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Published?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Published = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// </summary>
   public NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,17 +51,17 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// </summary>
   public ShapeProperties7? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style3? Style
+  public Style4? Style
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

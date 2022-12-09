@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape Text Body.
+/// Defines the TextBody Class.
 /// </summary>
 public class TextBody3Impl: ModelElementImpl, TextBody3
 {
-  public DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody? OpenXmlElement
+  public DocumentFormat.OpenXml.Office.Drawing.TextBody? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office.Drawing.TextBody?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,8 @@ public class TextBody3Impl: ModelElementImpl, TextBody3
   /// </summary>
   public BodyProperties? BodyProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,14 +25,14 @@ public class TextBody3Impl: ModelElementImpl, TextBody3
   /// </summary>
   public ListStyle? ListStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<Paragraph>? Paragraphs
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

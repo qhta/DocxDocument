@@ -16,8 +16,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public String? Before
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Before?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Before = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public Int32? BeforeLines
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.BeforeLines?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BeforeLines = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public Boolean? BeforeAutoSpacing
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BeforeAutoSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BeforeAutoSpacing = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public String? After
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.After?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.After = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public Int32? AfterLines
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.AfterLines?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AfterLines = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public Boolean? AfterAutoSpacing
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AfterAutoSpacing?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AfterAutoSpacing = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
   /// </summary>
   public String? Line
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Line?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Line = (System.String?)value;
+    }
   }
   
   /// <summary>

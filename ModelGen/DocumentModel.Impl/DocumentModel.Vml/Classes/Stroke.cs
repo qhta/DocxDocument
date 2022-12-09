@@ -16,8 +16,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Weight
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Weight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Weight = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Opacity
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Opacity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Opacity = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Miterlimit
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Miterlimit?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Miterlimit = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -109,8 +133,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? DashStyle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DashStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DashStyle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -131,8 +159,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Source
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Source?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Source = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -153,8 +185,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? ImageSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ImageSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ImageSize = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -162,8 +198,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public Boolean? ImageAlignShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ImageAlignShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ImageAlignShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -171,8 +211,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Color2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -258,8 +302,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Href
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Href?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Href = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -267,8 +315,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? AlternateImageReference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlternateImageReference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlternateImageReference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -276,8 +328,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -285,8 +341,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public Boolean? ForceDash
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ForceDash?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForceDash = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -294,8 +354,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public String? RelationshipId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelationshipId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -303,8 +367,12 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public Boolean? Insetpen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Insetpen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Insetpen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -312,8 +380,8 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public StrokeChildType? LeftStroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -321,8 +389,8 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public StrokeChildType? TopStroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -330,8 +398,8 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public StrokeChildType? RightStroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -339,8 +407,8 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public StrokeChildType? BottomStroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -348,8 +416,8 @@ public class StrokeImpl: ModelElementImpl, Stroke
   /// </summary>
   public StrokeChildType? ColumnStroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

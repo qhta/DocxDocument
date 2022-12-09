@@ -16,8 +16,12 @@ public class BlurImpl: ModelElementImpl, Blur
   /// </summary>
   public Int64? Radius
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Radius?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Radius = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BlurImpl: ModelElementImpl, Blur
   /// </summary>
   public Boolean? Grow
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Grow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Grow = (System.Boolean?)value;
+    }
   }
   
 }

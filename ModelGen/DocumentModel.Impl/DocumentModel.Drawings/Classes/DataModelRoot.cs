@@ -16,8 +16,8 @@ public class DataModelRootImpl: ModelElementImpl, DataModelRoot
   /// </summary>
   public PointList? PointList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DataModelRootImpl: ModelElementImpl, DataModelRoot
   /// </summary>
   public ConnectionList? ConnectionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class DataModelRootImpl: ModelElementImpl, DataModelRoot
   /// </summary>
   public Background? Background
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class DataModelRootImpl: ModelElementImpl, DataModelRoot
   /// </summary>
   public Whole? Whole
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class DataModelRootImpl: ModelElementImpl, DataModelRoot
   /// </summary>
   public DataModelExtensionList? DataModelExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

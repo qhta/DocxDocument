@@ -13,8 +13,8 @@ public class LevelImpl: ModelElementImpl, Level
   
   public Collection<StringPoint>? StringPoints
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -29,8 +29,12 @@ public class MarkerLayoutPropertiesImpl: ModelElementImpl, MarkerLayoutPropertie
   /// </summary>
   public Byte? Size
   {
-    get;
-    set;
+    get => (Byte?)OpenXmlElement?.Size?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Size = (System.Byte?)value;
+    }
   }
   
 }

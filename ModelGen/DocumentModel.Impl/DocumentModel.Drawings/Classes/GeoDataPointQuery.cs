@@ -29,8 +29,12 @@ public class GeoDataPointQueryImpl: ModelElementImpl, GeoDataPointQuery
   /// </summary>
   public Double? Latitude
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Latitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Latitude = (System.Double?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class GeoDataPointQueryImpl: ModelElementImpl, GeoDataPointQuery
   /// </summary>
   public Double? Longitude
   {
-    get;
-    set;
+    get => (Double?)OpenXmlElement?.Longitude?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Longitude = (System.Double?)value;
+    }
   }
   
 }

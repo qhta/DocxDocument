@@ -14,19 +14,19 @@ public class PrintSettings1Impl: ModelElementImpl, PrintSettings1
   /// <summary>
   /// Header and Footer.
   /// </summary>
-  public HeaderFooter1? HeaderFooter
+  public HeaderFooter2? HeaderFooter
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// Page Margins.
   /// </summary>
-  public PageMargins2? PageMargins
+  public PageMargins1? PageMargins
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class PrintSettings1Impl: ModelElementImpl, PrintSettings1
   /// </summary>
   public PageSetup2? PageSetup
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class PrintSettings1Impl: ModelElementImpl, PrintSettings1
   /// </summary>
   public RelationshipIdType? LegacyDrawingHeaderFooter
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

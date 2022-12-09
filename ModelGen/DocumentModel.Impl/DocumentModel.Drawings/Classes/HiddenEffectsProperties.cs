@@ -16,8 +16,8 @@ public class HiddenEffectsPropertiesImpl: ModelElementImpl, HiddenEffectsPropert
   /// </summary>
   public EffectList? EffectList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class HiddenEffectsPropertiesImpl: ModelElementImpl, HiddenEffectsPropert
   /// </summary>
   public EffectDag? EffectDag
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class SurfaceSerExtensionListImpl: ModelElementImpl, SurfaceSerExtensionL
   
   public Collection<SurfaceSerExtension>? SurfaceSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

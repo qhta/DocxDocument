@@ -29,8 +29,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public Boolean? On
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.On?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.On = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Weight
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Weight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Weight = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Color
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Color2
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Color2?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Color2 = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Opacity
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Opacity?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Opacity = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -87,8 +107,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public Decimal? MiterLimit
   {
-    get;
-    set;
+    get => (Decimal?)OpenXmlElement?.MiterLimit?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MiterLimit = (System.Decimal?)value;
+    }
   }
   
   /// <summary>
@@ -122,8 +146,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? DashStyle
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.DashStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.DashStyle = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -131,8 +159,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public Boolean? InsetPen
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.InsetPen?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.InsetPen = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -153,8 +185,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Source
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Source?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Source = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -175,8 +211,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? ImageSize
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ImageSize?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ImageSize = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -184,8 +224,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public Boolean? ImageAlignShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ImageAlignShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ImageAlignShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -271,8 +315,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Href
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Href?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Href = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -280,8 +328,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? AlternateImageReference
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AlternateImageReference?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AlternateImageReference = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -289,8 +341,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public String? Title
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Title?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Title = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -298,8 +354,12 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
   /// </summary>
   public Boolean? ForceDash
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ForceDash?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ForceDash = (System.Boolean?)value;
+    }
   }
   
 }

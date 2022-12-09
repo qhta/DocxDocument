@@ -16,8 +16,12 @@ public class AutoCaptionImpl: ModelElementImpl, AutoCaption
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class AutoCaptionImpl: ModelElementImpl, AutoCaption
   /// </summary>
   public String? Caption
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Caption?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Caption = (System.String?)value;
+    }
   }
   
 }

@@ -16,8 +16,8 @@ public class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
   /// </summary>
   public ColorScheme? ColorScheme
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
   /// </summary>
   public ColorMap? ColorMap
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

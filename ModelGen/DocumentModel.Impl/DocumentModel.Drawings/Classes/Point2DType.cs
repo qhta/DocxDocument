@@ -16,8 +16,12 @@ public class Point2DTypeImpl: ModelElementImpl, Point2DType
   /// </summary>
   public Int64? X
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.X?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.X = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class Point2DTypeImpl: ModelElementImpl, Point2DType
   /// </summary>
   public Int64? Y
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Y?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Y = (System.Int64?)value;
+    }
   }
   
 }

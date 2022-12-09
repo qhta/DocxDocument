@@ -29,8 +29,8 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
   /// </summary>
   public StyleParagraphProperties? StyleParagraphProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -38,8 +38,8 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
   /// </summary>
   public RunPropertiesBaseStyle? RunPropertiesBaseStyle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -47,8 +47,8 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
   /// </summary>
   public TableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -56,8 +56,8 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
   /// </summary>
   public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -65,8 +65,8 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
   /// </summary>
   public TableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

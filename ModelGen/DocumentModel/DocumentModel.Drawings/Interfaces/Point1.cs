@@ -28,7 +28,7 @@ public interface Point1
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public ShapeProperties9? ShapeProperties { get ; set; }
+  public ShapeProperties3? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Text Body.

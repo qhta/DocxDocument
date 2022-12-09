@@ -11,7 +11,7 @@ public interface BackgroundFillStyleList
   
   public Collection<GradientFill>? GradientFills { get ; set; }
   
-  public Collection<BlipFill2>? BlipFills { get ; set; }
+  public Collection<BlipFill1>? BlipFills { get ; set; }
   
   public Collection<PatternFill>? PatternFills { get ; set; }
   

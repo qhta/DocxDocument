@@ -16,8 +16,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? PresentationElementId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PresentationElementId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationElementId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? PresentationName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PresentationName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationName = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? PresentationStyleLabel
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PresentationStyleLabel?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationStyleLabel = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? PresentationStyleIndex
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.PresentationStyleIndex?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationStyleIndex = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? PresentationStyleCount
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.PresentationStyleCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PresentationStyleCount = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? LayoutTypeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LayoutTypeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LayoutTypeId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -70,8 +94,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? LayoutCategoryId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LayoutCategoryId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LayoutCategoryId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -79,8 +107,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? QuickStyleTypeId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.QuickStyleTypeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.QuickStyleTypeId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -88,8 +120,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? QuickStyleCategoryId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.QuickStyleCategoryId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.QuickStyleCategoryId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -97,8 +133,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? ColorType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ColorType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColorType = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -106,8 +146,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? ColorCategoryId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ColorCategoryId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ColorCategoryId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -115,8 +159,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Boolean? Coherent3D
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Coherent3D?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Coherent3D = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -124,8 +172,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public String? PlaceholderText
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.PlaceholderText?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PlaceholderText = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -133,8 +185,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Boolean? Placeholder
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Placeholder?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Placeholder = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -142,8 +198,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? Rotation
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Rotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotation = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -151,8 +211,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Boolean? VerticalFlip
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.VerticalFlip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.VerticalFlip = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -160,8 +224,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Boolean? HorizontalFlip
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.HorizontalFlip?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HorizontalFlip = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -169,8 +237,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? FixedWidthOverride
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FixedWidthOverride?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FixedWidthOverride = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -178,8 +250,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? FixedHeightOverride
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FixedHeightOverride?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FixedHeightOverride = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -187,8 +263,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? WidthScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.WidthScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.WidthScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -196,8 +276,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? HightScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.HightScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.HightScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -205,8 +289,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Boolean? TextChanged
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.TextChanged?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextChanged = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -214,8 +302,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? FactorWidth
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FactorWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FactorWidth = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -223,8 +315,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? FactorHeight
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FactorHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FactorHeight = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -232,8 +328,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? NeighborOffsetWidth
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.NeighborOffsetWidth?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NeighborOffsetWidth = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -241,8 +341,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? NeighborOffsetHeight
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.NeighborOffsetHeight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.NeighborOffsetHeight = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -250,8 +354,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? RadiusScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.RadiusScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RadiusScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -259,8 +367,12 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Int32? IncludeAngleScale
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.IncludeAngleScale?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IncludeAngleScale = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -268,8 +380,8 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public PresentationLayoutVariables? PresentationLayoutVariables
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -277,8 +389,8 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// </summary>
   public Style1? Style
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

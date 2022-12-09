@@ -13,8 +13,8 @@ public class CustomSplitImpl: ModelElementImpl, CustomSplit
   
   public Collection<UInt32>? SecondPiePoints
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

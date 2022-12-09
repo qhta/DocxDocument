@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BlipFill Class.
+/// Picture Fill.
 /// </summary>
 public class BlipFill2Impl: ModelElementImpl, BlipFill2
 {
-  public DocumentFormat.OpenXml.Drawing.BlipFill? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.BlipFill?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
@@ -16,8 +16,12 @@ public class BlipFill2Impl: ModelElementImpl, BlipFill2
   /// </summary>
   public UInt32? Dpi
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Dpi?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Dpi = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BlipFill2Impl: ModelElementImpl, BlipFill2
   /// </summary>
   public Boolean? RotateWithShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.RotateWithShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RotateWithShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,8 @@ public class BlipFill2Impl: ModelElementImpl, BlipFill2
   /// </summary>
   public Blip? Blip
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,20 +51,20 @@ public class BlipFill2Impl: ModelElementImpl, BlipFill2
   /// </summary>
   public RelativeRectangleType? SourceRectangle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Tile? Tile
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Stretch? Stretch
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? TopBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? LeftBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? BottomBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? RightBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? BetweenBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +61,8 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// </summary>
   public BorderType? BarBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

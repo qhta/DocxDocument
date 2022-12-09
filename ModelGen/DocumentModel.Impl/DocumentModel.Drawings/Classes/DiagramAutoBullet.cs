@@ -16,8 +16,12 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public String? AutoBulletPrefix
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.AutoBulletPrefix?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AutoBulletPrefix = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public Boolean? LeadZeros
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.LeadZeros?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LeadZeros = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,35 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public Boolean? NoBullet
   {
-    get;
-    set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        return openXmlElement != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        if (openXmlElement != null)
+        {
+          if (value == false)
+            openXmlElement.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
+            OpenXmlElement.AddChild(openXmlElement);
+          }
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -43,8 +78,8 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public AutoNumberedBullet? AutoNumberedBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +87,8 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public CharacterBullet? CharacterBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -61,8 +96,8 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
   /// </summary>
   public PictureBullet? PictureBullet
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

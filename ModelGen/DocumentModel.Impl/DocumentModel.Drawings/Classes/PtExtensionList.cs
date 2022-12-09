@@ -13,8 +13,8 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
   
   public Collection<PtExtension>? PtExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

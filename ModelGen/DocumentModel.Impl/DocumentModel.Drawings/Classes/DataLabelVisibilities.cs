@@ -16,8 +16,12 @@ public class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
   /// </summary>
   public Boolean? SeriesName
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SeriesName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SeriesName = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
   /// </summary>
   public Boolean? CategoryName
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.CategoryName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.CategoryName = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
   /// </summary>
   public Boolean? Value
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.Boolean?)value;
+    }
   }
   
 }

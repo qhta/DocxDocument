@@ -16,8 +16,12 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public String? RelationshipId
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.RelationshipId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RelationshipId = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,8 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public NonVisualContentPartProperties? NonVisualContentPartProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -47,8 +51,8 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public ApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -56,17 +60,17 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public Transform2D1? Transform2D
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList7? OfficeArtExtensionList
+  public OfficeArtExtensionList4? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

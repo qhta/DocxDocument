@@ -13,8 +13,8 @@ public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
   
   public Collection<SerAxExtension>? SerAxExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class NumericValue2Impl: ModelElementImpl, NumericValue2
   /// </summary>
   public UInt32? Idx
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Idx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Idx = (System.UInt32?)value;
+    }
   }
   
 }

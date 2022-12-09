@@ -16,8 +16,12 @@ public class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
   /// </summary>
   public Int64? Cx
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Cx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Cx = (System.Int64?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
   /// </summary>
   public Int64? Cy
   {
-    get;
-    set;
+    get => (Int64?)OpenXmlElement?.Cy?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Cy = (System.Int64?)value;
+    }
   }
   
 }

@@ -13,8 +13,8 @@ public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonV
   
   public Collection<NonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

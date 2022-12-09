@@ -29,8 +29,12 @@ public class GradientFillImpl: ModelElementImpl, GradientFill
   /// </summary>
   public Boolean? RotateWithShape
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.RotateWithShape?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.RotateWithShape = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,26 +42,26 @@ public class GradientFillImpl: ModelElementImpl, GradientFill
   /// </summary>
   public GradientStopList? GradientStopList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public LinearGradientFill? LinearGradientFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public PathGradientFill? PathGradientFill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public RelativeRectangleType? TileRectangle
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

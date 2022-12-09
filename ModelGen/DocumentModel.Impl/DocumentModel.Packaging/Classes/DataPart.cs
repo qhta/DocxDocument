@@ -16,8 +16,8 @@ public class DataPartImpl: ModelObjectImpl, DataPart
   /// </summary>
   public Uri? Uri
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,12 @@ public class DataPartImpl: ModelObjectImpl, DataPart
   /// </summary>
   public String? ContentType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.ContentType;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.DataPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+    }
   }
   
 }

@@ -16,8 +16,12 @@ public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStore
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStore
   /// </summary>
   public String? Version
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Version?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Version = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStore
   /// </summary>
   public String? Store
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Store?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Store = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStore
   /// </summary>
   public String? StoreType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StoreType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StoreType = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,8 @@ public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStore
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
   
   public Collection<KeyMapEntry>? KeyMapEntries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

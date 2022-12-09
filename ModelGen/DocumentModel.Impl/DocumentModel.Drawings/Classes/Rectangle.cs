@@ -16,8 +16,12 @@ public class RectangleImpl: ModelElementImpl, Rectangle
   /// </summary>
   public String? Left
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Left?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Left = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class RectangleImpl: ModelElementImpl, Rectangle
   /// </summary>
   public String? Top
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Top?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Top = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class RectangleImpl: ModelElementImpl, Rectangle
   /// </summary>
   public String? Right
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Right?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Right = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class RectangleImpl: ModelElementImpl, Rectangle
   /// </summary>
   public String? Bottom
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Bottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Bottom = (System.String?)value;
+    }
   }
   
 }

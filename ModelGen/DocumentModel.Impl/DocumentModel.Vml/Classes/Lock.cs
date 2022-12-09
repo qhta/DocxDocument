@@ -29,8 +29,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Position
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Position?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Position = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Selection
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Selection?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Selection = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Grouping
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Grouping?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Grouping = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Ungrouping
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Ungrouping?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Ungrouping = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Rotation
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Rotation?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Rotation = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Cropping
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Cropping?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Cropping = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? Verticies
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Verticies?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Verticies = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? AdjustHandles
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AdjustHandles?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AdjustHandles = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -101,8 +133,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? TextLock
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.TextLock?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.TextLock = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -110,8 +146,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? AspectRatio
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AspectRatio?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AspectRatio = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -119,8 +159,12 @@ public class LockImpl: ModelElementImpl, Lock
   /// </summary>
   public Boolean? ShapeType
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.ShapeType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.ShapeType = (System.Boolean?)value;
+    }
   }
   
 }

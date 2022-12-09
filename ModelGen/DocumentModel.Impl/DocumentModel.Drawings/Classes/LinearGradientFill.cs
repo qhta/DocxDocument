@@ -16,8 +16,12 @@ public class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
   /// </summary>
   public Int32? Angle
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Angle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Angle = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
   /// </summary>
   public Boolean? Scaled
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Scaled?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Scaled = (System.Boolean?)value;
+    }
   }
   
 }

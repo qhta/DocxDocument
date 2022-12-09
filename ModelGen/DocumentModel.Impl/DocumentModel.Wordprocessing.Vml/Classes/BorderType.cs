@@ -29,8 +29,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Int32? Width
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Width?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Width = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Boolean? Shadow
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Shadow?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Shadow = (System.Boolean?)value;
+    }
   }
   
 }

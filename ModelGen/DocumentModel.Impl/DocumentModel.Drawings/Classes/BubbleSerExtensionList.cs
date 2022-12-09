@@ -13,8 +13,8 @@ public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionLis
   
   public Collection<BubbleSerExtension>? BubbleSerExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

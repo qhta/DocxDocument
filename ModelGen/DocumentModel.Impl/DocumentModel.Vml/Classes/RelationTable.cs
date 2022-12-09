@@ -26,8 +26,8 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
   
   public Collection<Relation>? Relations
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? Locked
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.Locked?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Locked = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Int32? UiPriority
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.UiPriority?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UiPriority = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,8 +55,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? SemiHidden
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.SemiHidden?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.SemiHidden = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -52,8 +68,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? UnhideWhenUsed
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.UnhideWhenUsed?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.UnhideWhenUsed = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -61,8 +81,12 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? PrimaryStyle
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.PrimaryStyle?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PrimaryStyle = (System.Boolean?)value;
+    }
   }
   
 }

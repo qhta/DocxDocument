@@ -16,8 +16,8 @@ public class FilteredLineSeriesExtensionImpl: ModelElementImpl, FilteredLineSeri
   /// </summary>
   public LineChartSeries2? LineChartSeries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

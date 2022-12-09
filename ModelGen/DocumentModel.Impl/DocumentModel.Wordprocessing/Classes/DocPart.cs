@@ -16,8 +16,8 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// </summary>
   public DocPartProperties? DocPartProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// </summary>
   public DocPartBody? DocPartBody
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

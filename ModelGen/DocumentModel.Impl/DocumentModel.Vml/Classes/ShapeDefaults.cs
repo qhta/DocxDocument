@@ -29,8 +29,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Int32? MaxShapeId
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.MaxShapeId?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MaxShapeId = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public String? Style
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Style?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Style = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Boolean? BeFilled
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.BeFilled?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.BeFilled = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -56,8 +68,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public String? FillColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FillColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FillColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -65,8 +81,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Boolean? IsStroke
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsStroke?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsStroke = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -74,8 +94,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public String? StrokeColor
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.StrokeColor?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.StrokeColor = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -83,8 +107,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Boolean? AllowInCell
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowInCell?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowInCell = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -92,8 +120,12 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Boolean? AllowOverlap
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.AllowOverlap?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.AllowOverlap = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -114,8 +146,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Fill? Fill
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -123,8 +155,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public ImageData? ImageData
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -132,8 +164,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Stroke? Stroke
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -141,8 +173,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public TextBox? TextBox
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -150,8 +182,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Shadow? Shadow
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -159,8 +191,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Skew? Skew
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -168,8 +200,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Extrusion? Extrusion
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -177,8 +209,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Callout? Callout
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -186,8 +218,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public Lock? Lock
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -195,8 +227,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public ColorMostRecentlyUsed? ColorMostRecentlyUsed
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -204,8 +236,8 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
   /// </summary>
   public ColorMenu? ColorMenu
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

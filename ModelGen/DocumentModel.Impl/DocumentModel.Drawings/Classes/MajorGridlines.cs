@@ -13,8 +13,8 @@ public class MajorGridlinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, Majo
   
   public override ChartShapeProperties? ChartShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

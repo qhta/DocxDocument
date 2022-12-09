@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Text Class.
 /// </summary>
-public interface Text1
+public interface Text2
 {
   /// <summary>
   /// TextData.

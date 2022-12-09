@@ -16,8 +16,8 @@ public class ClearImpl: ModelElementImpl, Clear
   /// </summary>
   public GeoLocationQueryResults? GeoLocationQueryResults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -25,8 +25,8 @@ public class ClearImpl: ModelElementImpl, Clear
   /// </summary>
   public GeoDataEntityQueryResults? GeoDataEntityQueryResults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +34,8 @@ public class ClearImpl: ModelElementImpl, Clear
   /// </summary>
   public GeoDataPointToEntityQueryResults? GeoDataPointToEntityQueryResults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -43,8 +43,8 @@ public class ClearImpl: ModelElementImpl, Clear
   /// </summary>
   public GeoChildEntitiesQueryResults? GeoChildEntitiesQueryResults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -52,8 +52,8 @@ public class ClearImpl: ModelElementImpl, Clear
   /// </summary>
   public GeoParentEntitiesQueryResults? GeoParentEntitiesQueryResults
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -16,8 +16,12 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   /// </summary>
   public Int32? MarqueeTop
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.MarqueeTop?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MarqueeTop = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   /// </summary>
   public Int32? MarqueeBottom
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.MarqueeBottom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MarqueeBottom = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   /// </summary>
   public Int32? MarqueeLeft
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.MarqueeLeft?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MarqueeLeft = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -43,20 +55,24 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   /// </summary>
   public Int32? MarqueeRight
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.MarqueeRight?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MarqueeRight = (System.Int32?)value;
+    }
   }
   
   public Collection<ForegroundMark>? ForegroundMarks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public Collection<BackgroundMark>? BackgroundMarks
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

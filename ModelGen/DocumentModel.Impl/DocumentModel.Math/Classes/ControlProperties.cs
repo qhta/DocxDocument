@@ -13,32 +13,32 @@ public class ControlPropertiesImpl: ModelElementImpl, ControlProperties
   
   public DocumentModel.Wordprocessing.RunProperties? RunProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Wordprocessing.MoveFromMathControl? MoveFromMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   public DocumentModel.Wordprocessing.MoveToMathControl? MoveToMathControl
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

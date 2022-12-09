@@ -16,8 +16,12 @@ public class TaskPriorityEventInfoImpl: ModelElementImpl, TaskPriorityEventInfo
   /// </summary>
   public Int32? Value
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Value?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Value = (System.Int32?)value;
+    }
   }
   
 }

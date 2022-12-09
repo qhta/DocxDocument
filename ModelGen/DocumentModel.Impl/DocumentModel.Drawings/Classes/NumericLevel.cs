@@ -16,8 +16,12 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
   /// </summary>
   public UInt32? PtCount
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.PtCount?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.PtCount = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
   /// </summary>
   public String? FormatCode
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.FormatCode?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FormatCode = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -34,14 +42,18 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
   /// </summary>
   public String? Name
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
   }
   
   public Collection<NumericValue2>? NumericValues
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

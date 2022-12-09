@@ -13,8 +13,8 @@ public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionL
   
   public Collection<ChartSpaceExtension>? ChartSpaceExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

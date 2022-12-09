@@ -16,8 +16,12 @@ public class StyleReferenceImpl: ModelElementImpl, StyleReference
   /// </summary>
   public UInt32? Index
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Index?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Index = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,8 @@ public class StyleReferenceImpl: ModelElementImpl, StyleReference
   /// </summary>
   public List<String>? Modifiers
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

@@ -13,8 +13,8 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
   
   public Collection<DiagramDefinitionExtension>? DiagramDefinitionExtensions
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

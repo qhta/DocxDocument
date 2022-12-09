@@ -8,6 +8,6 @@ public interface FilteredSurfaceSeries
   /// <summary>
   /// SurfaceChartSeries.
   /// </summary>
-  public SurfaceChartSeries1? SurfaceChartSeries { get ; set; }
+  public SurfaceChartSeries2? SurfaceChartSeries { get ; set; }
   
 }

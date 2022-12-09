@@ -16,17 +16,21 @@ public class FormatOverrideImpl: ModelElementImpl, FormatOverride
   /// </summary>
   public UInt32? Idx
   {
-    get;
-    set;
+    get => (UInt32?)OpenXmlElement?.Idx?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Idx = (System.UInt32?)value;
+    }
   }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties6? ShapeProperties
+  public ShapeProperties8? ShapeProperties
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -34,8 +38,8 @@ public class FormatOverrideImpl: ModelElementImpl, FormatOverride
   /// </summary>
   public ExtensionList2? ExtensionList
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

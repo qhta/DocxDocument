@@ -16,8 +16,12 @@ public class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
   /// </summary>
   public String? Id
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.Id?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Id = (System.String?)value;
+    }
   }
   
   /// <summary>
@@ -25,8 +29,12 @@ public class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
   /// </summary>
   public Boolean? IsActiveX
   {
-    get;
-    set;
+    get => (Boolean?)OpenXmlElement?.IsActiveX?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.IsActiveX = (System.Boolean?)value;
+    }
   }
   
   /// <summary>
@@ -34,8 +42,12 @@ public class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
   /// </summary>
   public String? LinkType
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.LinkType?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.LinkType = (System.String?)value;
+    }
   }
   
 }

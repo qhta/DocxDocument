@@ -16,8 +16,8 @@ public class FilteredRadarSeriesImpl: ModelElementImpl, FilteredRadarSeries
   /// </summary>
   public RadarChartSeries2? RadarChartSeries
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

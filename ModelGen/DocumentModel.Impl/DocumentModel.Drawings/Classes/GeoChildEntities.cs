@@ -13,8 +13,8 @@ public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
   
   public Collection<GeoHierarchyEntity>? GeoHierarchyEntities
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

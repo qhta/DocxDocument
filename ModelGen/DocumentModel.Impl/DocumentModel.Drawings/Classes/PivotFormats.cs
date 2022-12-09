@@ -13,8 +13,8 @@ public class PivotFormatsImpl: ModelElementImpl, PivotFormats
   
   public Collection<PivotFormat>? Items
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

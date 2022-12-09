@@ -29,8 +29,12 @@ public class CameraImpl: ModelElementImpl, Camera
   /// </summary>
   public Int32? FieldOfView
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.FieldOfView?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.FieldOfView = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -38,8 +42,12 @@ public class CameraImpl: ModelElementImpl, Camera
   /// </summary>
   public Int32? Zoom
   {
-    get;
-    set;
+    get => (Int32?)OpenXmlElement?.Zoom?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Zoom = (System.Int32?)value;
+    }
   }
   
   /// <summary>
@@ -47,8 +55,8 @@ public class CameraImpl: ModelElementImpl, Camera
   /// </summary>
   public Rotation? Rotation
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }

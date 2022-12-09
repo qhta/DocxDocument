@@ -16,8 +16,12 @@ public class MacroWllTypeImpl: ModelElementImpl, MacroWllType
   /// </summary>
   public String? MacroName
   {
-    get;
-    set;
+    get => (String?)OpenXmlElement?.MacroName?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.MacroName = (System.String?)value;
+    }
   }
   
 }

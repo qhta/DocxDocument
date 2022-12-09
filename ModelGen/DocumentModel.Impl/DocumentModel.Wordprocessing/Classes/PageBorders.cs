@@ -55,8 +55,8 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// </summary>
   public BorderType? TopBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -64,8 +64,8 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// </summary>
   public BorderType? LeftBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -73,8 +73,8 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// </summary>
   public BorderType? BottomBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
   /// <summary>
@@ -82,8 +82,8 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// </summary>
   public BorderType? RightBorder
   {
-    get;
-    set;
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
   }
   
 }
