@@ -11,6 +11,13 @@ public class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
     set => _OpenXmlElement = value;
   }
   
+  public RelativeAnchorSizeImpl(): base() {}
+  
+  public RelativeAnchorSizeImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
@@ -29,13 +36,13 @@ public class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Shape4? Shape
+  public Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public GroupShape1? GroupShape
+  public GroupShape? GroupShape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

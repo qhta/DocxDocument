@@ -11,6 +11,13 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
     set => _OpenXmlElement = value;
   }
   
+  public WordprocessingCommentsExPartImpl(): base() {}
+  
+  public WordprocessingCommentsExPartImpl(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsExPart
   /// </summary>
@@ -38,7 +45,7 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

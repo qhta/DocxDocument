@@ -10,8 +10,8 @@ public interface GeoCache
   /// </summary>
   public String? Provider { get ; set; }
   
-  public Collection<String>? Xsdbase64Binaries { get ; set; }
+  public String? Xsdbase64Binary { get ; set; }
   
-  public Collection<Clear>? Clears { get ; set; }
+  public Clear? Clear { get ; set; }
   
 }

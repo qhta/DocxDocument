@@ -11,6 +11,13 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
     set => _OpenXmlElement = value;
   }
   
+  public CommentsExtensibleImpl(): base() {}
+  
+  public CommentsExtensibleImpl(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<CommentExtensible>? CommentExtensibles
   {
     get => throw new NotImplementedException("Method not implemented");

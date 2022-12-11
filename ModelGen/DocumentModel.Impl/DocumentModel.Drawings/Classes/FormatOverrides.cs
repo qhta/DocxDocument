@@ -11,6 +11,13 @@ public class FormatOverridesImpl: ModelElementImpl, FormatOverrides
     set => _OpenXmlElement = value;
   }
   
+  public FormatOverridesImpl(): base() {}
+  
+  public FormatOverridesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<FormatOverride>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

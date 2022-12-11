@@ -11,6 +11,13 @@ public class ColorDefinitionTitleImpl: ModelElementImpl, ColorDefinitionTitle
     set => _OpenXmlElement = value;
   }
   
+  public ColorDefinitionTitleImpl(): base() {}
+  
+  public ColorDefinitionTitleImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Language
   /// </summary>

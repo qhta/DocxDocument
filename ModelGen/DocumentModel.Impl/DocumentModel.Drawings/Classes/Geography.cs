@@ -11,6 +11,13 @@ public class GeographyImpl: ModelElementImpl, Geography
     set => _OpenXmlElement = value;
   }
   
+  public GeographyImpl(): base() {}
+  
+  public GeographyImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// projectionType, this property is only available in Office 2016 and later.
   /// </summary>

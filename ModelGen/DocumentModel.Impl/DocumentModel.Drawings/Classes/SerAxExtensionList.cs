@@ -11,6 +11,13 @@ public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public SerAxExtensionListImpl(): base() {}
+  
+  public SerAxExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<SerAxExtension>? SerAxExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -8,6 +8,6 @@ public interface FilteredLineSeriesExtension
   /// <summary>
   /// LineChartSeries.
   /// </summary>
-  public LineChartSeries2? LineChartSeries { get ; set; }
+  public LineChartSeries? LineChartSeries { get ; set; }
   
 }

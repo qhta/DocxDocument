@@ -11,7 +11,14 @@ public class EmbeddedControlPersistenceBinaryDataPartImpl: DocumentModel.Packagi
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public EmbeddedControlPersistenceBinaryDataPartImpl(): base() {}
+  
+  public EmbeddedControlPersistenceBinaryDataPartImpl(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

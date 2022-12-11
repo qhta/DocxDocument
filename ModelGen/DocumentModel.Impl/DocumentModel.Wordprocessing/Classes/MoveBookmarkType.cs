@@ -11,6 +11,13 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
     set => _OpenXmlElement = value;
   }
   
+  public MoveBookmarkTypeImpl(): base() {}
+  
+  public MoveBookmarkTypeImpl(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

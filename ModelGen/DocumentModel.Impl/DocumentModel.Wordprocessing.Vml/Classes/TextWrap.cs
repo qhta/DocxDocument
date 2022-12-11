@@ -11,6 +11,13 @@ public class TextWrapImpl: ModelElementImpl, TextWrap
     set => _OpenXmlElement = value;
   }
   
+  public TextWrapImpl(): base() {}
+  
+  public TextWrapImpl(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Wrapping type
   /// </summary>

@@ -11,6 +11,13 @@ public class AccentImpl: ModelElementImpl, Accent
     set => _OpenXmlElement = value;
   }
   
+  public AccentImpl(): base() {}
+  
+  public AccentImpl(DocumentFormat.OpenXml.Math.Accent openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Accent Properties.
   /// </summary>

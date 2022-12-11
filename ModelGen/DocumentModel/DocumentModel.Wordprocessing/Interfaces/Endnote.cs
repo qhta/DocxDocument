@@ -7,70 +7,70 @@ public interface Endnote
 {
   public Collection<AltChunk>? AltChunks { get ; set; }
   
-  public Collection<CustomXmlBlock>? CustomXmlBlocks { get ; set; }
+  public CustomXmlBlock? CustomXmlBlock { get ; set; }
   
-  public Collection<SdtBlock>? SdtBlocks { get ; set; }
+  public SdtBlock? SdtBlock { get ; set; }
   
   public Collection<Paragraph>? Paragraphs { get ; set; }
   
   public Collection<Table>? Tables { get ; set; }
   
-  public Collection<ProofError>? ProofErrors { get ; set; }
+  public ProofError? ProofError { get ; set; }
   
-  public Collection<PermStart>? PermStarts { get ; set; }
+  public PermStart? PermStart { get ; set; }
   
-  public Collection<PermEnd>? PermEnds { get ; set; }
+  public PermEnd? PermEnd { get ; set; }
   
-  public Collection<BookmarkStart>? BookmarkStarts { get ; set; }
+  public BookmarkStart? BookmarkStart { get ; set; }
   
-  public Collection<MarkupRangeType>? BookmarkEnds { get ; set; }
+  public MarkupRangeType? BookmarkEnd { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts { get ; set; }
+  public MarkupRangeType? CommentRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds { get ; set; }
+  public MarkupRangeType? CommentRangeEnd { get ; set; }
   
-  public Collection<MoveBookmarkType>? MoveFromRangeStarts { get ; set; }
+  public MoveBookmarkType? MoveFromRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? MoveFromRangeEnds { get ; set; }
+  public MarkupRangeType? MoveFromRangeEnd { get ; set; }
   
-  public Collection<MoveBookmarkType>? MoveToRangeStarts { get ; set; }
+  public MoveBookmarkType? MoveToRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? MoveToRangeEnds { get ; set; }
+  public MarkupRangeType? MoveToRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlInsRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlInsRangeEnds { get ; set; }
+  public MarkupType? CustomXmlInsRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlDelRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlDelRangeEnds { get ; set; }
+  public MarkupType? CustomXmlDelRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
+  public MarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
+  public MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
+  public MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
+  public MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
-  public Collection<InsertedRun>? InsertedRuns { get ; set; }
+  public InsertedRun? InsertedRun { get ; set; }
   
-  public Collection<DeletedRun>? DeletedRuns { get ; set; }
+  public DeletedRun? DeletedRun { get ; set; }
   
-  public Collection<MoveFromRun>? MoveFromRuns { get ; set; }
+  public MoveFromRun? MoveFromRun { get ; set; }
   
-  public Collection<MoveToRun>? MoveToRuns { get ; set; }
+  public MoveToRun? MoveToRun { get ; set; }
   
-  public Collection<RunConflictInsertion>? RunConflictInsertions { get ; set; }
+  public RunConflictInsertion? RunConflictInsertion { get ; set; }
   
-  public Collection<RunConflictDeletion>? RunConflictDeletions { get ; set; }
+  public RunConflictDeletion? RunConflictDeletion { get ; set; }
   
 }

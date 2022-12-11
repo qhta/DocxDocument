@@ -11,6 +11,13 @@ public class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionPropertyImpl(): base() {}
+  
+  public WebExtensionPropertyImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>

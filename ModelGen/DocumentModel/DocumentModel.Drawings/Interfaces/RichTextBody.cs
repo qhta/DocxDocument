@@ -9,6 +9,6 @@ public interface RichTextBody
   
   public ListStyle? ListStyle { get ; set; }
   
-  public Collection<Paragraph>? Paragraphs { get ; set; }
+  public Paragraph? Paragraph { get ; set; }
   
 }

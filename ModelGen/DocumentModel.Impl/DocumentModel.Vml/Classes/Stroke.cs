@@ -11,6 +11,13 @@ public class StrokeImpl: ModelElementImpl, Stroke
     set => _OpenXmlElement = value;
   }
   
+  public StrokeImpl(): base() {}
+  
+  public StrokeImpl(DocumentFormat.OpenXml.Vml.Stroke openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

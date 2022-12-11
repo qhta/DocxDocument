@@ -11,6 +11,13 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
     set => _OpenXmlElement = value;
   }
   
+  public DiagramAutoBulletImpl(): base() {}
+  
+  public DiagramAutoBulletImpl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// prefix, this property is only available in Office 2019 and later.
   /// </summary>
@@ -46,8 +53,8 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        return item != null;
       }
       return null;
     }
@@ -55,18 +62,18 @@ public class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoBullet();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

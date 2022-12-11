@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Recipients
 {
-  public Collection<RecipientData>? RecipientDatas { get ; set; }
+  public RecipientData? RecipientData { get ; set; }
   
 }

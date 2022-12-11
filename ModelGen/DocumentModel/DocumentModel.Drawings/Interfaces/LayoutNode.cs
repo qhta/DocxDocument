@@ -25,24 +25,24 @@ public interface LayoutNode
   /// </summary>
   public String? MoveWith { get ; set; }
   
-  public Collection<Algorithm>? Algorithms { get ; set; }
+  public Algorithm? Algorithm { get ; set; }
   
-  public Collection<Shape2>? Shapes { get ; set; }
+  public Shape? Shape { get ; set; }
   
-  public Collection<PresentationOf>? PresentationOfs { get ; set; }
+  public PresentationOf? PresentationOf { get ; set; }
   
-  public Collection<Constraints>? Constraintses { get ; set; }
+  public Constraints? Constraints { get ; set; }
   
-  public Collection<RuleList>? RuleLists { get ; set; }
+  public RuleList? RuleList { get ; set; }
   
-  public Collection<VariableList>? VariableLists { get ; set; }
+  public VariableList? VariableList { get ; set; }
   
-  public Collection<ForEach>? ForEachs { get ; set; }
+  public ForEach? ForEach { get ; set; }
   
-  public Collection<LayoutNode>? LayoutNodes { get ; set; }
+  public LayoutNode? ChildLayoutNode { get ; set; }
   
-  public Collection<Choose>? Chooses { get ; set; }
+  public Choose? Choose { get ; set; }
   
-  public Collection<ExtensionList1>? ExtensionLists { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

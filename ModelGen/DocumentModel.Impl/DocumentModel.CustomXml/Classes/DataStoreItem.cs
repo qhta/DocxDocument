@@ -11,6 +11,13 @@ public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
     set => _OpenXmlElement = value;
   }
   
+  public DataStoreItemImpl(): base() {}
+  
+  public DataStoreItemImpl(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Custom XML Data ID
   /// </summary>

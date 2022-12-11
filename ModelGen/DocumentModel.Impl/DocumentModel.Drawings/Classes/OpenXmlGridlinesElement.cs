@@ -11,10 +11,17 @@ public class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElem
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlGridlinesElementImpl(): base() {}
+  
+  public OpenXmlGridlinesElementImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties8? ShapeProperties
+  public virtual ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,7 +30,7 @@ public class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElem
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public virtual ExtensionList2? ExtensionList
+  public virtual ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -8,7 +8,7 @@ public interface GroupShapeNonVisualProperties
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties4? NonVisualDrawingProperties { get ; set; }
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// NonVisualGroupDrawingShapeProperties.

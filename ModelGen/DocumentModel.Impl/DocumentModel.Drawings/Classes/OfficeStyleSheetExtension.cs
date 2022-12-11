@@ -11,6 +11,13 @@ public class OfficeStyleSheetExtensionImpl: ModelElementImpl, OfficeStyleSheetEx
     set => _OpenXmlElement = value;
   }
   
+  public OfficeStyleSheetExtensionImpl(): base() {}
+  
+  public OfficeStyleSheetExtensionImpl(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

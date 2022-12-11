@@ -11,6 +11,13 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionBindingListImpl(): base() {}
+  
+  public WebExtensionBindingListImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<WebExtensionBinding>? WebExtensionBindings
   {
     get => throw new NotImplementedException("Method not implemented");

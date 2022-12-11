@@ -11,6 +11,13 @@ public class TransformImpl: ModelElementImpl, Transform
     set => _OpenXmlElement = value;
   }
   
+  public TransformImpl(): base() {}
+  
+  public TransformImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Rotation
   /// </summary>

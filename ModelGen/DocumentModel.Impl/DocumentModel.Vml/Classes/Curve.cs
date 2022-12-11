@@ -11,6 +11,13 @@ public class CurveImpl: ModelElementImpl, Curve
     set => _OpenXmlElement = value;
   }
   
+  public CurveImpl(): base() {}
+  
+  public CurveImpl(DocumentFormat.OpenXml.Vml.Curve openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>
@@ -735,127 +742,154 @@ public class CurveImpl: ModelElementImpl, Curve
     }
   }
   
-  public Collection<Path>? Paths
+  public Path? Path
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Formulas>? Formulases
+  public Formulas? Formulas
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ShapeHandles>? ShapeHandleses
+  public ShapeHandles? ShapeHandles
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Fill>? Fills
+  public Fill? Fill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Stroke>? Strokes
+  public Stroke? Stroke
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shadow>? Shadows
+  public Shadow? Shadow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TextBox>? TextBoxs
+  public TextBox? TextBox
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TextPath>? TextPaths
+  public TextPath? TextPath
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ImageData>? ImageDatas
+  public ImageData? ImageData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Skew>? Skews
+  public Skew? Skew
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Extrusion>? Extrusions
+  public Extrusion? Extrusion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Callout>? Callouts
+  public Callout? Callout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Lock>? Locks
+  public Lock? Lock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ClipPath>? ClipPaths
+  public ClipPath? ClipPath
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SignatureLine>? SignatureLines
+  public SignatureLine? SignatureLine
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps
+  public DocumentModel.Wordprocessing.Vml.TextWrap? TextWrap
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AnchorLocks
+  public Boolean? AnchorLock
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Wordprocessing.Vml.BorderType? TopBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? TopBorders
+  public DocumentModel.Wordprocessing.Vml.BorderType? BottomBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? BottomBorders
+  public DocumentModel.Wordprocessing.Vml.BorderType? LeftBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? LeftBorders
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? RightBorders
+  public DocumentModel.Wordprocessing.Vml.BorderType? RightBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

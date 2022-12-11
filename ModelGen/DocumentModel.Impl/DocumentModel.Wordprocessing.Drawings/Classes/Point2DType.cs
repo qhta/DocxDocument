@@ -11,6 +11,13 @@ public class Point2DTypeImpl: ModelElementImpl, Point2DType
     set => _OpenXmlElement = value;
   }
   
+  public Point2DTypeImpl(): base() {}
+  
+  public Point2DTypeImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// X-Axis Coordinate
   /// </summary>

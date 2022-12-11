@@ -11,6 +11,13 @@ public class CommentExImpl: ModelElementImpl, CommentEx
     set => _OpenXmlElement = value;
   }
   
+  public CommentExImpl(): base() {}
+  
+  public CommentExImpl(DocumentFormat.OpenXml.Office2013.Word.CommentEx openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>

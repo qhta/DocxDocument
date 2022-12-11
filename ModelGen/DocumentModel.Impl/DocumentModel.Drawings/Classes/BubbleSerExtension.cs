@@ -11,6 +11,13 @@ public class BubbleSerExtensionImpl: ModelElementImpl, BubbleSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public BubbleSerExtensionImpl(): base() {}
+  
+  public BubbleSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

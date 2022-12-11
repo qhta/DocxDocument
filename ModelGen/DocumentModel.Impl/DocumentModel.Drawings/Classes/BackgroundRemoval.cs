@@ -11,6 +11,13 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundRemovalImpl(): base() {}
+  
+  public BackgroundRemovalImpl(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// t, this property is only available in Office 2010 and later.
   /// </summary>

@@ -11,7 +11,14 @@ public class MatrixRowImpl: ModelElementImpl, MatrixRow
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Base>? Bases
+  public MatrixRowImpl(): base() {}
+  
+  public MatrixRowImpl(DocumentFormat.OpenXml.Math.MatrixRow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Base? Base
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

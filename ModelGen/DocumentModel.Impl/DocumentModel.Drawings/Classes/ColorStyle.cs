@@ -11,6 +11,13 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
     set => _OpenXmlElement = value;
   }
   
+  public ColorStyleImpl(): base() {}
+  
+  public ColorStyleImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// meth, this property is only available in Office 2013 and later.
   /// </summary>
@@ -37,37 +44,37 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
     }
   }
   
-  public Collection<RgbColorModelPercentage>? RgbColorModelPercentages
+  public RgbColorModelPercentage? RgbColorModelPercentage
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RgbColorModelHex>? RgbColorModelHexs
+  public RgbColorModelHex? RgbColorModelHex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<HslColor>? HslColors
+  public HslColor? HslColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SystemColor>? SystemColors
+  public SystemColor? SystemColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SchemeColor>? SchemeColors
+  public SchemeColor? SchemeColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PresetColor>? PresetColors
+  public PresetColor? PresetColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -79,7 +86,7 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public OfficeArtExtensionList5? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

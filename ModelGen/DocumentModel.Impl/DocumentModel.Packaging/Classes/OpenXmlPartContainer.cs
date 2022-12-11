@@ -11,6 +11,13 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlPartContainerImpl(): base() {}
+  
+  public OpenXmlPartContainerImpl(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets all external relationships.
   /// </summary>

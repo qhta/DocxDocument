@@ -11,6 +11,13 @@ public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public HyperlinkExtensionListImpl(): base() {}
+  
+  public HyperlinkExtensionListImpl(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<HyperlinkExtension>? HyperlinkExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

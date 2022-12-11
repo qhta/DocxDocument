@@ -11,6 +11,13 @@ public class OEmbedImpl: ModelElementImpl, OEmbed
     set => _OpenXmlElement = value;
   }
   
+  public OEmbedImpl(): base() {}
+  
+  public OEmbedImpl(DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// oEmbedUrl, this property is only available in Microsoft365 and later.
   /// </summary>

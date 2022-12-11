@@ -11,7 +11,14 @@ public class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Thumbna
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public ThumbnailPartImpl(): base() {}
+  
+  public ThumbnailPartImpl(DocumentFormat.OpenXml.Packaging.ThumbnailPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

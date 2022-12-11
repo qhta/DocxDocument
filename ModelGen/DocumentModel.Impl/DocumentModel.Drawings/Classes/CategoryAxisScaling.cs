@@ -11,6 +11,13 @@ public class CategoryAxisScalingImpl: ModelElementImpl, CategoryAxisScaling
     set => _OpenXmlElement = value;
   }
   
+  public CategoryAxisScalingImpl(): base() {}
+  
+  public CategoryAxisScalingImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// gapWidth, this property is only available in Office 2016 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class McdImpl: ModelElementImpl, Mcd
     set => _OpenXmlElement = value;
   }
   
+  public McdImpl(): base() {}
+  
+  public McdImpl(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// macroName
   /// </summary>

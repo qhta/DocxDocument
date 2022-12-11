@@ -11,6 +11,13 @@ public class TableWidthDxaNilTypeImpl: ModelElementImpl, TableWidthDxaNilType
     set => _OpenXmlElement = value;
   }
   
+  public TableWidthDxaNilTypeImpl(): base() {}
+  
+  public TableWidthDxaNilTypeImpl(DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// w
   /// </summary>

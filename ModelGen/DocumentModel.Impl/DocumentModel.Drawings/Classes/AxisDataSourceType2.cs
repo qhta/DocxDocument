@@ -5,16 +5,23 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
 {
-  public DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
+  }
+  
+  public AxisDataSourceType2Impl(): base() {}
+  
+  public AxisDataSourceType2Impl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
   }
   
   /// <summary>
   /// Multi Level String Reference.
   /// </summary>
-  public virtual MultiLevelStringReference? MultiLevelStringReference
+  public MultiLevelStringReference? MultiLevelStringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,7 +30,7 @@ public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
   /// <summary>
   /// Number Reference.
   /// </summary>
-  public virtual NumberReference? NumberReference
+  public NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -32,7 +39,7 @@ public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
   /// <summary>
   /// Number Literal.
   /// </summary>
-  public virtual NumberLiteral? NumberLiteral
+  public NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -41,7 +48,7 @@ public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
   /// <summary>
   /// StringReference.
   /// </summary>
-  public virtual StringReference? StringReference
+  public StringReference? StringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -50,7 +57,7 @@ public class AxisDataSourceType2Impl: ModelElementImpl, AxisDataSourceType2
   /// <summary>
   /// String Literal.
   /// </summary>
-  public virtual StringLiteral? StringLiteral
+  public StringLiteral? StringLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

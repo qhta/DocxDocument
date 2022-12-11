@@ -13,7 +13,7 @@ public interface StyleEntry
   /// <summary>
   /// LineReference.
   /// </summary>
-  public LineReference1? LineReference { get ; set; }
+  public LineReference? LineReference { get ; set; }
   
   /// <summary>
   /// LineWidthScale.
@@ -23,27 +23,27 @@ public interface StyleEntry
   /// <summary>
   /// FillReference.
   /// </summary>
-  public FillReference2? FillReference { get ; set; }
+  public FillReference? FillReference { get ; set; }
   
   /// <summary>
   /// EffectReference.
   /// </summary>
-  public EffectReference1? EffectReference { get ; set; }
+  public EffectReference? EffectReference { get ; set; }
   
   /// <summary>
   /// FontReference.
   /// </summary>
-  public FontReference2? FontReference { get ; set; }
+  public FontReference? FontReference { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// TextCharacterPropertiesType.
   /// </summary>
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
+  public TextCharacterPropertiesType? TextCharacterPropertiesType { get ; set; }
   
   /// <summary>
   /// TextBodyProperties.
@@ -53,6 +53,6 @@ public interface StyleEntry
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

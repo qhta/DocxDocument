@@ -11,6 +11,13 @@ public class AcceleratorKeymapTypeImpl: ModelElementImpl, AcceleratorKeymapType
     set => _OpenXmlElement = value;
   }
   
+  public AcceleratorKeymapTypeImpl(): base() {}
+  
+  public AcceleratorKeymapTypeImpl(DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// acdName
   /// </summary>

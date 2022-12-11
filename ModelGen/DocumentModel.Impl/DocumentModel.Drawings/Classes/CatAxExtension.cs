@@ -11,6 +11,13 @@ public class CatAxExtensionImpl: ModelElementImpl, CatAxExtension
     set => _OpenXmlElement = value;
   }
   
+  public CatAxExtensionImpl(): base() {}
+  
+  public CatAxExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.CatAxExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class CatAxExtensionImpl: ModelElementImpl, CatAxExtension
     }
   }
   
-  public NumberingFormat1? NumberingFormat
+  public NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

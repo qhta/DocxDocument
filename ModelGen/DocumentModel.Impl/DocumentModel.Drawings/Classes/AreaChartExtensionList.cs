@@ -11,6 +11,13 @@ public class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public AreaChartExtensionListImpl(): base() {}
+  
+  public AreaChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<AreaChartExtension>? AreaChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class SnapshotImpl: ModelElementImpl, Snapshot
     set => _OpenXmlElement = value;
   }
   
+  public SnapshotImpl(): base() {}
+  
+  public SnapshotImpl(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
@@ -50,103 +57,184 @@ public class SnapshotImpl: ModelElementImpl, Snapshot
     }
   }
   
-  public Collection<DocumentModel.Drawings.AlphaBiLevel>? AlphaBiLevels
+  public DocumentModel.Drawings.AlphaBiLevel? AlphaBiLevel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AlphaCeilings
+  public Boolean? AlphaCeiling
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaCeiling();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public Boolean? AlphaFloor
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaFloor();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Drawings.AlphaInverse? AlphaInverse
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AlphaFloors
+  public DocumentModel.Drawings.AlphaModulationEffect? AlphaModulationEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.AlphaInverse>? AlphaInverses
+  public DocumentModel.Drawings.AlphaModulationFixed? AlphaModulationFixed
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.AlphaModulationEffect>? AlphaModulationEffects
+  public DocumentModel.Drawings.AlphaReplace? AlphaReplace
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.AlphaModulationFixed>? AlphaModulationFixeds
+  public DocumentModel.Drawings.BiLevel? BiLevel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.AlphaReplace>? AlphaReplaces
+  public DocumentModel.Drawings.Blur? Blur
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.BiLevel>? BiLevels
+  public DocumentModel.Drawings.ColorChange? ColorChange
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.Blur>? Blurs
+  public DocumentModel.Drawings.ColorReplacement? ColorReplacement
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.ColorChange>? ColorChanges
+  public DocumentModel.Drawings.Duotone? Duotone
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.ColorReplacement>? ColorReplacements
+  public DocumentModel.Drawings.FillOverlay? FillOverlay
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.Duotone>? Duotones
+  public Boolean? Grayscale
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Grayscale();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Drawings.Hsl? Hsl
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Drawings.FillOverlay>? FillOverlaies
+  public DocumentModel.Drawings.LuminanceEffect? LuminanceEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? Grayscales
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<DocumentModel.Drawings.Hsl>? Hsls
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<DocumentModel.Drawings.LuminanceEffect>? LuminanceEffects
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<DocumentModel.Drawings.TintEffect>? TintEffects
+  public DocumentModel.Drawings.TintEffect? TintEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

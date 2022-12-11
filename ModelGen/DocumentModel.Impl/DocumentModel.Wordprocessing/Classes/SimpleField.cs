@@ -11,6 +11,13 @@ public class SimpleFieldImpl: ModelElementImpl, SimpleField
     set => _OpenXmlElement = value;
   }
   
+  public SimpleFieldImpl(): base() {}
+  
+  public SimpleFieldImpl(DocumentFormat.OpenXml.Wordprocessing.SimpleField openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Field Codes
   /// </summary>
@@ -68,27 +75,27 @@ public class SimpleFieldImpl: ModelElementImpl, SimpleField
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<CustomXmlRun>? CustomXmlRuns
+  public CustomXmlRun? CustomXmlRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -100,337 +107,337 @@ public class SimpleFieldImpl: ModelElementImpl, SimpleField
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Hyperlink>? Hyperlinks
+  public Hyperlink? Hyperlink
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SdtRun>? SdtRuns
+  public SdtRun? SdtRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ProofError>? ProofErrors
+  public ProofError? ProofError
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PermStart>? PermStarts
+  public PermStart? PermStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PermEnd>? PermEnds
+  public PermEnd? PermEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BookmarkStart>? BookmarkStarts
+  public BookmarkStart? BookmarkStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? BookmarkEnds
+  public MarkupRangeType? BookmarkEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts
+  public MarkupRangeType? CommentRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds
+  public MarkupRangeType? CommentRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveBookmarkType>? MoveFromRangeStarts
+  public MoveBookmarkType? MoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? MoveFromRangeEnds
+  public MarkupRangeType? MoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveBookmarkType>? MoveToRangeStarts
+  public MoveBookmarkType? MoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? MoveToRangeEnds
+  public MarkupRangeType? MoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlInsRangeStarts
+  public TrackChangeType? CustomXmlInsRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlInsRangeEnds
+  public MarkupType? CustomXmlInsRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlDelRangeStarts
+  public TrackChangeType? CustomXmlDelRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlDelRangeEnds
+  public MarkupType? CustomXmlDelRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlMoveFromRangeStarts
+  public TrackChangeType? CustomXmlMoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlMoveFromRangeEnds
+  public MarkupType? CustomXmlMoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlMoveToRangeStarts
+  public TrackChangeType? CustomXmlMoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlMoveToRangeEnds
+  public MarkupType? CustomXmlMoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlConflictInsertionRangeStarts
+  public TrackChangeType? CustomXmlConflictInsertionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlConflictInsertionRangeEnds
+  public MarkupType? CustomXmlConflictInsertionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlConflictDeletionRangeStarts
+  public TrackChangeType? CustomXmlConflictDeletionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlConflictDeletionRangeEnds
+  public MarkupType? CustomXmlConflictDeletionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<InsertedRun>? InsertedRuns
+  public InsertedRun? InsertedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DeletedRun>? DeletedRuns
+  public DeletedRun? DeletedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveFromRun>? MoveFromRuns
+  public MoveFromRun? MoveFromRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveToRun>? MoveToRuns
+  public MoveToRun? MoveToRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RunConflictInsertion>? RunConflictInsertions
+  public RunConflictInsertion? RunConflictInsertion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RunConflictDeletion>? RunConflictDeletions
+  public RunConflictDeletion? RunConflictDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Paragraph>? Paragraphs
+  public DocumentModel.Math.Paragraph? Paragraph
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.OfficeMath>? OfficeMaths
+  public DocumentModel.Math.OfficeMath? OfficeMath
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Accent>? Accents
+  public DocumentModel.Math.Accent? Accent
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Bar>? Bars
+  public DocumentModel.Math.Bar? Bar
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Box>? Boxs
+  public DocumentModel.Math.Box? Box
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.BorderBox>? BorderBoxs
+  public DocumentModel.Math.BorderBox? BorderBox
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Delimiter>? Delimiters
+  public DocumentModel.Math.Delimiter? Delimiter
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.EquationArray>? EquationArraies
+  public DocumentModel.Math.EquationArray? EquationArray
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Fraction>? Fractions
+  public DocumentModel.Math.Fraction? Fraction
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.MathFunction>? MathFunctions
+  public DocumentModel.Math.MathFunction? MathFunction
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.GroupChar>? GroupChars
+  public DocumentModel.Math.GroupChar? GroupChar
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.LimitLower>? LimitLowers
+  public DocumentModel.Math.LimitLower? LimitLower
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.LimitUpper>? LimitUppers
+  public DocumentModel.Math.LimitUpper? LimitUpper
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Matrix>? Matrixs
+  public DocumentModel.Math.Matrix? Matrix
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Nary>? Naries
+  public DocumentModel.Math.Nary? Nary
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Phantom>? Phantoms
+  public DocumentModel.Math.Phantom? Phantom
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Radical>? Radicals
+  public DocumentModel.Math.Radical? Radical
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.PreSubSuper>? PreSubSupers
+  public DocumentModel.Math.PreSubSuper? PreSubSuper
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Subscript>? Subscripts
+  public DocumentModel.Math.Subscript? Subscript
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.SubSuperscript>? SubSuperscripts
+  public DocumentModel.Math.SubSuperscript? SubSuperscript
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Superscript>? Superscripts
+  public DocumentModel.Math.Superscript? Superscript
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Math.Run>? Runs
+  public DocumentModel.Math.Run? Run
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BidirectionalOverride>? BidirectionalOverrides
+  public BidirectionalOverride? BidirectionalOverride
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BidirectionalEmbedding>? BidirectionalEmbeddings
+  public BidirectionalEmbedding? BidirectionalEmbedding
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RelationshipType>? SubDocumentReferences
+  public RelationshipType? SubDocumentReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

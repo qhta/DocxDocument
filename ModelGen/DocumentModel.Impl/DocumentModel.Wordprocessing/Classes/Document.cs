@@ -11,6 +11,13 @@ public class DocumentImpl: ModelElementImpl, Document
     set => _OpenXmlElement = value;
   }
   
+  public DocumentImpl(): base() {}
+  
+  public DocumentImpl(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// conformance
   /// </summary>

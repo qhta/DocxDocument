@@ -11,6 +11,13 @@ public class NonVisualGraphicFrameDrawingPropertiesImpl: ModelElementImpl, NonVi
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGraphicFrameDrawingPropertiesImpl(): base() {}
+  
+  public NonVisualGraphicFrameDrawingPropertiesImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameDrawingProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Graphic Frame Locks.
   /// </summary>
@@ -23,7 +30,7 @@ public class NonVisualGraphicFrameDrawingPropertiesImpl: ModelElementImpl, NonVi
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

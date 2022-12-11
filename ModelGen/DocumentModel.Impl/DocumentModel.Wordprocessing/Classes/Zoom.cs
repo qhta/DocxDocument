@@ -11,6 +11,13 @@ public class ZoomImpl: ModelElementImpl, Zoom
     set => _OpenXmlElement = value;
   }
   
+  public ZoomImpl(): base() {}
+  
+  public ZoomImpl(DocumentFormat.OpenXml.Wordprocessing.Zoom openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Zoom Type
   /// </summary>

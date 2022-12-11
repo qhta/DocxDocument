@@ -11,6 +11,13 @@ public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
     set => _OpenXmlElement = value;
   }
   
+  public ThemeFamilyImpl(): base() {}
+  
+  public ThemeFamilyImpl(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>

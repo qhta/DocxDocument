@@ -11,6 +11,13 @@ public class BorderBoxImpl: ModelElementImpl, BorderBox
     set => _OpenXmlElement = value;
   }
   
+  public BorderBoxImpl(): base() {}
+  
+  public BorderBoxImpl(DocumentFormat.OpenXml.Math.BorderBox openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Border Box Properties.
   /// </summary>

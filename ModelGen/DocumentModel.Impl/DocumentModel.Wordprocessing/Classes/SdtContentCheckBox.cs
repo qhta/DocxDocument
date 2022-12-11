@@ -11,6 +11,13 @@ public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
     set => _OpenXmlElement = value;
   }
   
+  public SdtContentCheckBoxImpl(): base() {}
+  
+  public SdtContentCheckBoxImpl(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Checked.
   /// </summary>
@@ -29,20 +36,20 @@ public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Checked>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Checked>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.Checked{ Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.Checked{ Val = (DocumentFormat.OpenXml.Office2010.Word.OnOffValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

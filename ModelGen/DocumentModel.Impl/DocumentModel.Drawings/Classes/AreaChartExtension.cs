@@ -11,6 +11,13 @@ public class AreaChartExtensionImpl: ModelElementImpl, AreaChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public AreaChartExtensionImpl(): base() {}
+  
+  public AreaChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

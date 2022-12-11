@@ -11,6 +11,13 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
     set => _OpenXmlElement = value;
   }
   
+  public StringLevelImpl(): base() {}
+  
+  public StringLevelImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>

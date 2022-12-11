@@ -11,6 +11,13 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
     set => _OpenXmlElement = value;
   }
   
+  public ToolbarsImpl(): base() {}
+  
+  public ToolbarsImpl(DocumentFormat.OpenXml.Office.Word.Toolbars openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<AllocatedCommandManifest>? AllocatedCommandManifests
   {
     get => throw new NotImplementedException("Method not implemented");

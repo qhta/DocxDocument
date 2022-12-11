@@ -11,6 +11,13 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
     set => _OpenXmlElement = value;
   }
   
+  public BookmarkStartImpl(): base() {}
+  
+  public BookmarkStartImpl(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// name
   /// </summary>

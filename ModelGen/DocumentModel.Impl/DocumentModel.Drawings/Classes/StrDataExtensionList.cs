@@ -11,6 +11,13 @@ public class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public StrDataExtensionListImpl(): base() {}
+  
+  public StrDataExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<StrDataExtension>? StrDataExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

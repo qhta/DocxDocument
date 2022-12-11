@@ -11,6 +11,13 @@ public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
     set => _OpenXmlElement = value;
   }
   
+  public ValueColorPositionsImpl(): base() {}
+  
+  public ValueColorPositionsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// count, this property is only available in Office 2016 and later.
   /// </summary>

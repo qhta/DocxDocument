@@ -5,64 +5,64 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface EffectDag
 {
-  public Collection<EffectContainer>? EffectContainers { get ; set; }
+  public EffectContainer? EffectContainer { get ; set; }
   
-  public Collection<Effect>? Effects { get ; set; }
+  public Effect? Effect { get ; set; }
   
-  public Collection<AlphaBiLevel>? AlphaBiLevels { get ; set; }
+  public AlphaBiLevel? AlphaBiLevel { get ; set; }
   
-  public Collection<Boolean>? AlphaCeilings { get ; set; }
+  public Boolean? AlphaCeiling { get ; set; }
   
-  public Collection<Boolean>? AlphaFloors { get ; set; }
+  public Boolean? AlphaFloor { get ; set; }
   
-  public Collection<AlphaInverse>? AlphaInverses { get ; set; }
+  public AlphaInverse? AlphaInverse { get ; set; }
   
-  public Collection<AlphaModulationEffect>? AlphaModulationEffects { get ; set; }
+  public AlphaModulationEffect? AlphaModulationEffect { get ; set; }
   
-  public Collection<AlphaModulationFixed>? AlphaModulationFixeds { get ; set; }
+  public AlphaModulationFixed? AlphaModulationFixed { get ; set; }
   
-  public Collection<AlphaOutset>? AlphaOutsets { get ; set; }
+  public AlphaOutset? AlphaOutset { get ; set; }
   
-  public Collection<AlphaReplace>? AlphaReplaces { get ; set; }
+  public AlphaReplace? AlphaReplace { get ; set; }
   
-  public Collection<BiLevel>? BiLevels { get ; set; }
+  public BiLevel? BiLevel { get ; set; }
   
-  public Collection<Blend>? Blends { get ; set; }
+  public Blend? Blend { get ; set; }
   
-  public Collection<Blur>? Blurs { get ; set; }
+  public Blur? Blur { get ; set; }
   
-  public Collection<ColorChange>? ColorChanges { get ; set; }
+  public ColorChange? ColorChange { get ; set; }
   
-  public Collection<ColorReplacement>? ColorReplacements { get ; set; }
+  public ColorReplacement? ColorReplacement { get ; set; }
   
-  public Collection<Duotone>? Duotones { get ; set; }
+  public Duotone? Duotone { get ; set; }
   
-  public Collection<Fill>? Fills { get ; set; }
+  public Fill? Fill { get ; set; }
   
-  public Collection<FillOverlay>? FillOverlaies { get ; set; }
+  public FillOverlay? FillOverlay { get ; set; }
   
-  public Collection<Glow>? Glows { get ; set; }
+  public Glow? Glow { get ; set; }
   
-  public Collection<Boolean>? Grayscales { get ; set; }
+  public Boolean? Grayscale { get ; set; }
   
-  public Collection<Hsl>? Hsls { get ; set; }
+  public Hsl? Hsl { get ; set; }
   
-  public Collection<InnerShadow>? InnerShadows { get ; set; }
+  public InnerShadow? InnerShadow { get ; set; }
   
-  public Collection<LuminanceEffect>? LuminanceEffects { get ; set; }
+  public LuminanceEffect? LuminanceEffect { get ; set; }
   
-  public Collection<OuterShadow>? OuterShadows { get ; set; }
+  public OuterShadow? OuterShadow { get ; set; }
   
-  public Collection<PresetShadow>? PresetShadows { get ; set; }
+  public PresetShadow? PresetShadow { get ; set; }
   
-  public Collection<Reflection>? Reflections { get ; set; }
+  public Reflection? Reflection { get ; set; }
   
-  public Collection<RelativeOffset>? RelativeOffsets { get ; set; }
+  public RelativeOffset? RelativeOffset { get ; set; }
   
-  public Collection<SoftEdge>? SoftEdges { get ; set; }
+  public SoftEdge? SoftEdge { get ; set; }
   
-  public Collection<TintEffect>? TintEffects { get ; set; }
+  public TintEffect? TintEffect { get ; set; }
   
-  public Collection<TransformEffect>? TransformEffects { get ; set; }
+  public TransformEffect? TransformEffect { get ; set; }
   
 }

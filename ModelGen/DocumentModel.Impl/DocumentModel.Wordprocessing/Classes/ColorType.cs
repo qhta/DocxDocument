@@ -11,6 +11,13 @@ public class ColorTypeImpl: ModelElementImpl, ColorType
     set => _OpenXmlElement = value;
   }
   
+  public ColorTypeImpl(): base() {}
+  
+  public ColorTypeImpl(DocumentFormat.OpenXml.Office2010.Word.ColorType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>

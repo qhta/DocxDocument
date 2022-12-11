@@ -11,6 +11,13 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
     set => _OpenXmlElement = value;
   }
   
+  public ChartStyleImpl(): base() {}
+  
+  public ChartStyleImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
@@ -27,7 +34,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// AxisTitle.
   /// </summary>
-  public AxisTitle1? AxisTitle
+  public AxisTitle? AxisTitle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -36,7 +43,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// CategoryAxis.
   /// </summary>
-  public CategoryAxis2? CategoryAxis
+  public CategoryAxis? CategoryAxis
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -54,7 +61,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel4? DataLabel
+  public DataLabel? DataLabel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -72,7 +79,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// DataPoint.
   /// </summary>
-  public DataPoint3? DataPoint
+  public DataPoint? DataPoint
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -162,7 +169,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// Floor.
   /// </summary>
-  public Floor1? Floor
+  public Floor? Floor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -216,7 +223,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// PlotArea.
   /// </summary>
-  public PlotArea3? PlotArea
+  public PlotArea? PlotArea
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -234,7 +241,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// SeriesAxis.
   /// </summary>
-  public SeriesAxis1? SeriesAxis
+  public SeriesAxis? SeriesAxis
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -270,7 +277,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// TrendlineLabel.
   /// </summary>
-  public TrendlineLabel2? TrendlineLabel
+  public TrendlineLabel? TrendlineLabel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -288,7 +295,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// ValueAxis.
   /// </summary>
-  public ValueAxis2? ValueAxis
+  public ValueAxis? ValueAxis
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -306,7 +313,7 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

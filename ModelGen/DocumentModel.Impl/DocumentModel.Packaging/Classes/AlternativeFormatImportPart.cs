@@ -11,7 +11,14 @@ public class AlternativeFormatImportPartImpl: DocumentModel.Packaging.OpenXmlPar
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public AlternativeFormatImportPartImpl(): base() {}
+  
+  public AlternativeFormatImportPartImpl(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

@@ -11,6 +11,13 @@ public class OfficeMathArgumentTypeImpl: ModelElementImpl, OfficeMathArgumentTyp
     set => _OpenXmlElement = value;
   }
   
+  public OfficeMathArgumentTypeImpl(): base() {}
+  
+  public OfficeMathArgumentTypeImpl(DocumentFormat.OpenXml.Math.OfficeMathArgumentType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Argument Properties.
   /// </summary>

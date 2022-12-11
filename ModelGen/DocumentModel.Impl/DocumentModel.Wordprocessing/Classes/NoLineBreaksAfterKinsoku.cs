@@ -11,6 +11,13 @@ public class NoLineBreaksAfterKinsokuImpl: ModelElementImpl, NoLineBreaksAfterKi
     set => _OpenXmlElement = value;
   }
   
+  public NoLineBreaksAfterKinsokuImpl(): base() {}
+  
+  public NoLineBreaksAfterKinsokuImpl(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// lang
   /// </summary>

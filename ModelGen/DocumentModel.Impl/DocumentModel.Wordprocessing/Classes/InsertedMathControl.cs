@@ -11,6 +11,13 @@ public class InsertedMathControlImpl: ModelElementImpl, InsertedMathControl
     set => _OpenXmlElement = value;
   }
   
+  public InsertedMathControlImpl(): base() {}
+  
+  public InsertedMathControlImpl(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

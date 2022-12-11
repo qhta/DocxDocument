@@ -11,19 +11,26 @@ public class RichTextBodyImpl: DocumentModel.Drawings.TextBodyType2Impl, RichTex
     set => _OpenXmlElement = value;
   }
   
-  public override BodyProperties? BodyProperties
+  public RichTextBodyImpl(): base() {}
+  
+  public RichTextBodyImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RichTextBody openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new BodyProperties? BodyProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ListStyle? ListStyle
+  public new ListStyle? ListStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Paragraph>? Paragraphs
+  public Paragraph? Paragraph
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

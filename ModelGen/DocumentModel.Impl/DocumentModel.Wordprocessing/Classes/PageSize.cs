@@ -11,6 +11,13 @@ public class PageSizeImpl: ModelElementImpl, PageSize
     set => _OpenXmlElement = value;
   }
   
+  public PageSizeImpl(): base() {}
+  
+  public PageSizeImpl(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Page Width
   /// </summary>

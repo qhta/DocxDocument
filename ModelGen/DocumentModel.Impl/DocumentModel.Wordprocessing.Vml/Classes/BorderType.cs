@@ -11,6 +11,13 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
     set => _OpenXmlElement = value;
   }
   
+  public BorderTypeImpl(): base() {}
+  
+  public BorderTypeImpl(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Border Style
   /// </summary>

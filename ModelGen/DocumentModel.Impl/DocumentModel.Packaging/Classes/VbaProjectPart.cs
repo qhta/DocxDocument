@@ -11,7 +11,14 @@ public class VbaProjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaPro
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public VbaProjectPartImpl(): base() {}
+  
+  public VbaProjectPartImpl(DocumentFormat.OpenXml.Packaging.VbaProjectPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class VbaProjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaPro
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

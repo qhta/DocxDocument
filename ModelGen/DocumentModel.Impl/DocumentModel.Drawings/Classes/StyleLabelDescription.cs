@@ -11,6 +11,13 @@ public class StyleLabelDescriptionImpl: ModelElementImpl, StyleLabelDescription
     set => _OpenXmlElement = value;
   }
   
+  public StyleLabelDescriptionImpl(): base() {}
+  
+  public StyleLabelDescriptionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Natural Language
   /// </summary>

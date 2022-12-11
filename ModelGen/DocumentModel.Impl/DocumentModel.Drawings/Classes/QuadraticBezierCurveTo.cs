@@ -11,7 +11,14 @@ public class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveT
     set => _OpenXmlElement = value;
   }
   
-  public Collection<AdjustPoint2DType>? Points
+  public QuadraticBezierCurveToImpl(): base() {}
+  
+  public QuadraticBezierCurveToImpl(DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public AdjustPoint2DType? Point
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

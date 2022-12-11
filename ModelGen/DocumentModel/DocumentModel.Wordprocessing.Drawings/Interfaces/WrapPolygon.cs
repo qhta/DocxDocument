@@ -15,6 +15,6 @@ public interface WrapPolygon
   /// </summary>
   public Point2DType? StartPoint { get ; set; }
   
-  public Collection<Point2DType>? LineTos { get ; set; }
+  public Point2DType? LineTo { get ; set; }
   
 }

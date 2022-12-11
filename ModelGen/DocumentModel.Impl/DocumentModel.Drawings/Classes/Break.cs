@@ -11,6 +11,13 @@ public class BreakImpl: ModelElementImpl, Break
     set => _OpenXmlElement = value;
   }
   
+  public BreakImpl(): base() {}
+  
+  public BreakImpl(DocumentFormat.OpenXml.Drawing.Break openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Run Properties.
   /// </summary>

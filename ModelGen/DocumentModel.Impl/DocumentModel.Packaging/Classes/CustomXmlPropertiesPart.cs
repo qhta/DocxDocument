@@ -11,7 +11,14 @@ public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImp
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public CustomXmlPropertiesPartImpl(): base() {}
+  
+  public CustomXmlPropertiesPartImpl(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImp
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

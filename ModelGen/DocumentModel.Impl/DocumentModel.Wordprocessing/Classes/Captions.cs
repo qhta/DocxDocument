@@ -11,7 +11,14 @@ public class CaptionsImpl: ModelElementImpl, Captions
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Caption>? Items
+  public CaptionsImpl(): base() {}
+  
+  public CaptionsImpl(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Caption? Caption
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

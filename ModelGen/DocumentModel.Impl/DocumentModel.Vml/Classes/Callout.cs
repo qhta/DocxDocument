@@ -11,6 +11,13 @@ public class CalloutImpl: ModelElementImpl, Callout
     set => _OpenXmlElement = value;
   }
   
+  public CalloutImpl(): base() {}
+  
+  public CalloutImpl(DocumentFormat.OpenXml.Vml.Office.Callout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

@@ -11,6 +11,13 @@ public class GeoLocationImpl: ModelElementImpl, GeoLocation
     set => _OpenXmlElement = value;
   }
   
+  public GeoLocationImpl(): base() {}
+  
+  public GeoLocationImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// latitude, this property is only available in Office 2016 and later.
   /// </summary>

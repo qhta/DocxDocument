@@ -11,6 +11,13 @@ public class ParameterImpl: ModelElementImpl, Parameter
     set => _OpenXmlElement = value;
   }
   
+  public ParameterImpl(): base() {}
+  
+  public ParameterImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Parameter Type
   /// </summary>

@@ -11,6 +11,13 @@ public class TextDataImpl: ModelElementImpl, TextData
     set => _OpenXmlElement = value;
   }
   
+  public TextDataImpl(): base() {}
+  
+  public TextDataImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public OpenXmlFormulaElement? Formula
   {
     get => throw new NotImplementedException("Method not implemented");
@@ -32,20 +39,20 @@ public class TextDataImpl: ModelElementImpl, TextData
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

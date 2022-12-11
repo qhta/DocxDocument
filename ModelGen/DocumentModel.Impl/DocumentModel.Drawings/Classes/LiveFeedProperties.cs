@@ -11,6 +11,13 @@ public class LiveFeedPropertiesImpl: ModelElementImpl, LiveFeedProperties
     set => _OpenXmlElement = value;
   }
   
+  public LiveFeedPropertiesImpl(): base() {}
+  
+  public LiveFeedPropertiesImpl(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// LiveFeedBackgroundProperties.
   /// </summary>
@@ -23,7 +30,7 @@ public class LiveFeedPropertiesImpl: ModelElementImpl, LiveFeedProperties
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

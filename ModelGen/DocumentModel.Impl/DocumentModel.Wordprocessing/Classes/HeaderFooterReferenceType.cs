@@ -11,6 +11,13 @@ public class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterRefere
     set => _OpenXmlElement = value;
   }
   
+  public HeaderFooterReferenceTypeImpl(): base() {}
+  
+  public HeaderFooterReferenceTypeImpl(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// type
   /// </summary>

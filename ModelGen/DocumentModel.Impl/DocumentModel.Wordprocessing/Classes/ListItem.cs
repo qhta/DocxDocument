@@ -11,6 +11,13 @@ public class ListItemImpl: ModelElementImpl, ListItem
     set => _OpenXmlElement = value;
   }
   
+  public ListItemImpl(): base() {}
+  
+  public ListItemImpl(DocumentFormat.OpenXml.Wordprocessing.ListItem openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// List Entry Display Text
   /// </summary>

@@ -11,6 +11,13 @@ public class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public PieSerExtensionListImpl(): base() {}
+  
+  public PieSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.PieSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<PieSerExtension>? PieSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

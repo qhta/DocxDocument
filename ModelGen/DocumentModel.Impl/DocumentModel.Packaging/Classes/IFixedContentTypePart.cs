@@ -11,4 +11,11 @@ public class IFixedContentTypePartImpl: ModelObjectImpl, IFixedContentTypePart
     set => _OpenXmlElement = value;
   }
   
+  public IFixedContentTypePartImpl(): base() {}
+  
+  public IFixedContentTypePartImpl(DocumentFormat.OpenXml.Packaging.IFixedContentTypePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
 }

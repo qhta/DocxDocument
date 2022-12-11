@@ -11,7 +11,14 @@ public class CategoryFilterExceptionsImpl: ModelElementImpl, CategoryFilterExcep
     set => _OpenXmlElement = value;
   }
   
-  public Collection<CategoryFilterException>? Items
+  public CategoryFilterExceptionsImpl(): base() {}
+  
+  public CategoryFilterExceptionsImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public CategoryFilterException? CategoryFilterException
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

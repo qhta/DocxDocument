@@ -11,6 +11,13 @@ public class TextTypeImpl: ModelElementImpl, TextType
     set => _OpenXmlElement = value;
   }
   
+  public TextTypeImpl(): base() {}
+  
+  public TextTypeImpl(DocumentFormat.OpenXml.Wordprocessing.TextType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// space
   /// </summary>

@@ -11,6 +11,13 @@ public class WrapTightImpl: ModelElementImpl, WrapTight
     set => _OpenXmlElement = value;
   }
   
+  public WrapTightImpl(): base() {}
+  
+  public WrapTightImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Wrapping Location
   /// </summary>

@@ -27,26 +27,26 @@ public interface Comment
   
   public Collection<AltChunk>? AltChunks { get ; set; }
   
-  public Collection<CustomXmlBlock>? CustomXmlBlocks { get ; set; }
+  public CustomXmlBlock? CustomXmlBlock { get ; set; }
   
-  public Collection<SdtBlock>? SdtBlocks { get ; set; }
+  public SdtBlock? SdtBlock { get ; set; }
   
   public Collection<Paragraph>? Paragraphs { get ; set; }
   
   public Collection<Table>? Tables { get ; set; }
   
-  public Collection<ProofError>? ProofErrors { get ; set; }
+  public ProofError? ProofError { get ; set; }
   
-  public Collection<PermStart>? PermStarts { get ; set; }
+  public PermStart? PermStart { get ; set; }
   
-  public Collection<PermEnd>? PermEnds { get ; set; }
+  public PermEnd? PermEnd { get ; set; }
   
-  public Collection<BookmarkStart>? BookmarkStarts { get ; set; }
+  public BookmarkStart? BookmarkStart { get ; set; }
   
-  public Collection<MarkupRangeType>? BookmarkEnds { get ; set; }
+  public MarkupRangeType? BookmarkEnd { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts { get ; set; }
+  public MarkupRangeType? CommentRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds { get ; set; }
+  public MarkupRangeType? CommentRangeEnd { get ; set; }
   
 }

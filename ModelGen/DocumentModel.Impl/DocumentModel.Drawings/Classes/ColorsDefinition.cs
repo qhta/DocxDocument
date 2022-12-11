@@ -11,6 +11,13 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
     set => _OpenXmlElement = value;
   }
   
+  public ColorsDefinitionImpl(): base() {}
+  
+  public ColorsDefinitionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique ID
   /// </summary>
@@ -61,7 +68,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

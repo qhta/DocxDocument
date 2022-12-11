@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface DivsChild
 {
-  public Collection<Div>? Divs { get ; set; }
+  public Div? Div { get ; set; }
   
 }

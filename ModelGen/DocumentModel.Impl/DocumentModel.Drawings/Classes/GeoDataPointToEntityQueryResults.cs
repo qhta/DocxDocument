@@ -11,6 +11,13 @@ public class GeoDataPointToEntityQueryResultsImpl: ModelElementImpl, GeoDataPoin
     set => _OpenXmlElement = value;
   }
   
+  public GeoDataPointToEntityQueryResultsImpl(): base() {}
+  
+  public GeoDataPointToEntityQueryResultsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQueryResults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<GeoDataPointToEntityQueryResult>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

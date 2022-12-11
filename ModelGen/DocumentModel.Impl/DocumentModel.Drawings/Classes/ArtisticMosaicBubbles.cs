@@ -11,6 +11,13 @@ public class ArtisticMosaicBubblesImpl: ModelElementImpl, ArtisticMosaicBubbles
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticMosaicBubblesImpl(): base() {}
+  
+  public ArtisticMosaicBubblesImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

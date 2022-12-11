@@ -11,6 +11,13 @@ public class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl,
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGroupDrawingShapePropsExtensionListImpl(): base() {}
+  
+  public NonVisualGroupDrawingShapePropsExtensionListImpl(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<NonVisualGroupDrawingShapePropsExtension>? NonVisualGroupDrawingShapePropsExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

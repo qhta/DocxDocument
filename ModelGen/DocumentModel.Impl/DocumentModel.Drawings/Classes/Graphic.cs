@@ -11,6 +11,13 @@ public class GraphicImpl: ModelElementImpl, Graphic
     set => _OpenXmlElement = value;
   }
   
+  public GraphicImpl(): base() {}
+  
+  public GraphicImpl(DocumentFormat.OpenXml.Drawing.Graphic openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Graphic Object Data.
   /// </summary>

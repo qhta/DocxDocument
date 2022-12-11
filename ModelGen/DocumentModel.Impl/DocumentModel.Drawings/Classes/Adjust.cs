@@ -11,6 +11,13 @@ public class AdjustImpl: ModelElementImpl, Adjust
     set => _OpenXmlElement = value;
   }
   
+  public AdjustImpl(): base() {}
+  
+  public AdjustImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Adjust Handle Index
   /// </summary>

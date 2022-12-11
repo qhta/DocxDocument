@@ -11,7 +11,14 @@ public class StylesWithEffectsPartImpl: DocumentModel.Packaging.StylesPartImpl, 
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public StylesWithEffectsPartImpl(): base() {}
+  
+  public StylesWithEffectsPartImpl(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class StylesWithEffectsPartImpl: DocumentModel.Packaging.StylesPartImpl, 
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

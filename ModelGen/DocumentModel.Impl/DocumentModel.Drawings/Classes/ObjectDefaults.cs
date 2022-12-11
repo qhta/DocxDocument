@@ -11,6 +11,13 @@ public class ObjectDefaultsImpl: ModelElementImpl, ObjectDefaults
     set => _OpenXmlElement = value;
   }
   
+  public ObjectDefaultsImpl(): base() {}
+  
+  public ObjectDefaultsImpl(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Shape Default.
   /// </summary>
@@ -41,7 +48,7 @@ public class ObjectDefaultsImpl: ModelElementImpl, ObjectDefaults
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

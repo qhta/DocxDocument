@@ -11,6 +11,13 @@ public class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
     set => _OpenXmlElement = value;
   }
   
+  public FontCollectionTypeImpl(): base() {}
+  
+  public FontCollectionTypeImpl(DocumentFormat.OpenXml.Drawing.FontCollectionType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Latin Font.
   /// </summary>

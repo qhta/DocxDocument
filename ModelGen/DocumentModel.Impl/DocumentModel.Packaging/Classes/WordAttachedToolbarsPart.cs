@@ -11,7 +11,14 @@ public class WordAttachedToolbarsPartImpl: DocumentModel.Packaging.OpenXmlPartIm
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public WordAttachedToolbarsPartImpl(): base() {}
+  
+  public WordAttachedToolbarsPartImpl(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class WordAttachedToolbarsPartImpl: DocumentModel.Packaging.OpenXmlPartIm
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

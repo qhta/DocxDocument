@@ -11,6 +11,13 @@ public class ScriptLinkImpl: ModelElementImpl, ScriptLink
     set => _OpenXmlElement = value;
   }
   
+  public ScriptLinkImpl(): base() {}
+  
+  public ScriptLinkImpl(DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// val, this property is only available in Microsoft365 and later.
   /// </summary>
@@ -27,7 +34,7 @@ public class ScriptLinkImpl: ModelElementImpl, ScriptLink
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList3? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

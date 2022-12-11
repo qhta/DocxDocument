@@ -11,6 +11,13 @@ public class ChartStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartS
     set => _OpenXmlElement = value;
   }
   
+  public ChartStylePartImpl(): base() {}
+  
+  public ChartStylePartImpl(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
@@ -20,7 +27,7 @@ public class ChartStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartS
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class ChartStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartS
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

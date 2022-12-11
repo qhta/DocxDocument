@@ -8,4 +8,5 @@ public enum TypeKind
   Class = 4,
   Interface = 8,
   ClassOrInterface = 12,
+  EmbeddedClass = 16,
 }

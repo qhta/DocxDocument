@@ -11,6 +11,13 @@ public class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
     set => _OpenXmlElement = value;
   }
   
+  public AllocatedCommandsImpl(): base() {}
+  
+  public AllocatedCommandsImpl(DocumentFormat.OpenXml.Office.Word.AllocatedCommands openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<AllocatedCommand>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

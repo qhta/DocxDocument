@@ -11,7 +11,14 @@ public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Doc
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public DocumentTasksPartImpl(): base() {}
+  
+  public DocumentTasksPartImpl(DocumentFormat.OpenXml.Packaging.DocumentTasksPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Doc
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

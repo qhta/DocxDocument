@@ -11,6 +11,13 @@ public class AccentPropertiesImpl: ModelElementImpl, AccentProperties
     set => _OpenXmlElement = value;
   }
   
+  public AccentPropertiesImpl(): base() {}
+  
+  public AccentPropertiesImpl(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Accent Character.
   /// </summary>
@@ -29,20 +36,20 @@ public class AccentPropertiesImpl: ModelElementImpl, AccentProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.AccentChar{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.AccentChar{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

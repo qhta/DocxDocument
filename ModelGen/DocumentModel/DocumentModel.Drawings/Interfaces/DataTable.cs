@@ -33,11 +33,11 @@ public interface DataTable
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties1? TextProperties { get ; set; }
+  public TextProperties? TextProperties { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

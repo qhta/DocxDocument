@@ -11,6 +11,13 @@ public class EffectExtentImpl: ModelElementImpl, EffectExtent
     set => _OpenXmlElement = value;
   }
   
+  public EffectExtentImpl(): base() {}
+  
+  public EffectExtentImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Additional Extent on Left Edge
   /// </summary>

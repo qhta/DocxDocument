@@ -11,6 +11,13 @@ public class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public LineChartExtensionListImpl(): base() {}
+  
+  public LineChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<LineChartExtension>? LineChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

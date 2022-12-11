@@ -11,6 +11,13 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     set => _OpenXmlElement = value;
   }
   
+  public TaskHistoryEventImpl(): base() {}
+  
+  public TaskHistoryEventImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// time, this property is only available in Office 2021 and later.
   /// </summary>
@@ -73,8 +80,8 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo>();
+        return item != null;
       }
       return null;
     }
@@ -82,18 +89,18 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskCreateEventInfo();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -130,8 +137,8 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo>();
+        return item != null;
       }
       return null;
     }
@@ -139,18 +146,18 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskDeleteEventInfo();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -163,8 +170,8 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo>();
+        return item != null;
       }
       return null;
     }
@@ -172,18 +179,18 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndeleteEventInfo();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -196,8 +203,8 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll>();
+        return item != null;
       }
       return null;
     }
@@ -205,18 +212,18 @@ public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUnassignAll();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

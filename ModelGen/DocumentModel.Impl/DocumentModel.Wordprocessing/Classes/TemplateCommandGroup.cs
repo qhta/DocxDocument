@@ -11,6 +11,13 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
     set => _OpenXmlElement = value;
   }
   
+  public TemplateCommandGroupImpl(): base() {}
+  
+  public TemplateCommandGroupImpl(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<KeyMapCustomizations>? KeyMapCustomizationses
   {
     get => throw new NotImplementedException("Method not implemented");

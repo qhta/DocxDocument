@@ -11,6 +11,13 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
     set => _OpenXmlElement = value;
   }
   
+  public GradientStopImpl(): base() {}
+  
+  public GradientStopImpl(DocumentFormat.OpenXml.Drawing.GradientStop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Position
   /// </summary>

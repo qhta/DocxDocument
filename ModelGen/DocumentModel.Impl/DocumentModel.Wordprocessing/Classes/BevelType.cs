@@ -11,6 +11,13 @@ public class BevelTypeImpl: ModelElementImpl, BevelType
     set => _OpenXmlElement = value;
   }
   
+  public BevelTypeImpl(): base() {}
+  
+  public BevelTypeImpl(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// w, this property is only available in Office 2010 and later.
   /// </summary>

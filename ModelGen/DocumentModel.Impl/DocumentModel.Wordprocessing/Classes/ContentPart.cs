@@ -11,6 +11,13 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
     set => _OpenXmlElement = value;
   }
   
+  public ContentPartImpl(): base() {}
+  
+  public ContentPartImpl(DocumentFormat.OpenXml.Wordprocessing.ContentPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id
   /// </summary>

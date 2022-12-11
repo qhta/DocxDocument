@@ -11,6 +11,13 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
     set => _OpenXmlElement = value;
   }
   
+  public EmbeddedControlPersistencePartImpl(): base() {}
+  
+  public EmbeddedControlPersistencePartImpl(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
   /// </summary>
@@ -20,7 +27,7 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

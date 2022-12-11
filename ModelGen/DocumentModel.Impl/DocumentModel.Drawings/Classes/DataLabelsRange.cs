@@ -11,6 +11,13 @@ public class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
     set => _OpenXmlElement = value;
   }
   
+  public DataLabelsRangeImpl(): base() {}
+  
+  public DataLabelsRangeImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Formula.
   /// </summary>
@@ -29,20 +36,20 @@ public class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

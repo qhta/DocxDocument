@@ -11,6 +11,13 @@ public class LightRigImpl: ModelElementImpl, LightRig
     set => _OpenXmlElement = value;
   }
   
+  public LightRigImpl(): base() {}
+  
+  public LightRigImpl(DocumentFormat.OpenXml.Drawing.LightRig openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Rig Preset
   /// </summary>

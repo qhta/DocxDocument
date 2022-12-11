@@ -11,6 +11,13 @@ public class RelationshipTypeImpl: ModelElementImpl, RelationshipType
     set => _OpenXmlElement = value;
   }
   
+  public RelationshipTypeImpl(): base() {}
+  
+  public RelationshipTypeImpl(DocumentFormat.OpenXml.Wordprocessing.RelationshipType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Relationship to Part
   /// </summary>

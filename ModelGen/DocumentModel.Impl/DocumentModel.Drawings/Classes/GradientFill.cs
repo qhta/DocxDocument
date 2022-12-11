@@ -11,6 +11,13 @@ public class GradientFillImpl: ModelElementImpl, GradientFill
     set => _OpenXmlElement = value;
   }
   
+  public GradientFillImpl(): base() {}
+  
+  public GradientFillImpl(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Tile Flip
   /// </summary>

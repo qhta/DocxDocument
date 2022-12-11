@@ -30,16 +30,16 @@ public interface Path
   /// </summary>
   public Boolean? ExtrusionOk { get ; set; }
   
-  public Collection<Boolean>? CloseShapePaths { get ; set; }
+  public Boolean? CloseShapePath { get ; set; }
   
-  public Collection<MoveTo>? MoveTos { get ; set; }
+  public MoveTo? MoveTo { get ; set; }
   
-  public Collection<LineTo>? LineTos { get ; set; }
+  public LineTo? LineTo { get ; set; }
   
-  public Collection<ArcTo>? ArcTos { get ; set; }
+  public ArcTo? ArcTo { get ; set; }
   
-  public Collection<QuadraticBezierCurveTo>? QuadraticBezierCurveTos { get ; set; }
+  public QuadraticBezierCurveTo? QuadraticBezierCurveTo { get ; set; }
   
-  public Collection<CubicBezierCurveTo>? CubicBezierCurveTos { get ; set; }
+  public CubicBezierCurveTo? CubicBezierCurveTo { get ; set; }
   
 }

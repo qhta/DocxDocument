@@ -11,6 +11,13 @@ public class FontSchemeImpl: ModelElementImpl, FontScheme
     set => _OpenXmlElement = value;
   }
   
+  public FontSchemeImpl(): base() {}
+  
+  public FontSchemeImpl(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>
@@ -45,7 +52,7 @@ public class FontSchemeImpl: ModelElementImpl, FontScheme
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

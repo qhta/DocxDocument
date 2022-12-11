@@ -11,6 +11,13 @@ public class BarSerExtensionImpl: ModelElementImpl, BarSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public BarSerExtensionImpl(): base() {}
+  
+  public BarSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

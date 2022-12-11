@@ -11,6 +11,13 @@ public class SaveThroughXsltImpl: ModelElementImpl, SaveThroughXslt
     set => _OpenXmlElement = value;
   }
   
+  public SaveThroughXsltImpl(): base() {}
+  
+  public SaveThroughXsltImpl(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// XSL Transformation Location
   /// </summary>

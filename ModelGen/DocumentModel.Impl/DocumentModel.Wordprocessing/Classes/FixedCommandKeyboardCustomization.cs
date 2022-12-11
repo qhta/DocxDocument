@@ -11,6 +11,13 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
     set => _OpenXmlElement = value;
   }
   
+  public FixedCommandKeyboardCustomizationImpl(): base() {}
+  
+  public FixedCommandKeyboardCustomizationImpl(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// fciName
   /// </summary>

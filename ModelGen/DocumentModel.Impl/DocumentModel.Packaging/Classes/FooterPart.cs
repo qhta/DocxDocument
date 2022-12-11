@@ -11,6 +11,13 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FooterPart
     set => _OpenXmlElement = value;
   }
   
+  public FooterPartImpl(): base() {}
+  
+  public FooterPartImpl(DocumentFormat.OpenXml.Packaging.FooterPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the FooterPart
   /// </summary>
@@ -29,7 +36,7 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FooterPart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FooterPart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

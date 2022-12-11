@@ -11,10 +11,17 @@ public class PlotSurfaceImpl: ModelElementImpl, PlotSurface
     set => _OpenXmlElement = value;
   }
   
+  public PlotSurfaceImpl(): base() {}
+  
+  public PlotSurfaceImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotSurface openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,7 +30,7 @@ public class PlotSurfaceImpl: ModelElementImpl, PlotSurface
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

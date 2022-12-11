@@ -11,6 +11,13 @@ public class SdtContentComboBoxImpl: ModelElementImpl, SdtContentComboBox
     set => _OpenXmlElement = value;
   }
   
+  public SdtContentComboBoxImpl(): base() {}
+  
+  public SdtContentComboBoxImpl(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Combo Box Last Saved Value
   /// </summary>

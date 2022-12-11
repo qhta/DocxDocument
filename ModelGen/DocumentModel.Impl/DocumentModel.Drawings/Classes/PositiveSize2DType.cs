@@ -11,6 +11,13 @@ public class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
     set => _OpenXmlElement = value;
   }
   
+  public PositiveSize2DTypeImpl(): base() {}
+  
+  public PositiveSize2DTypeImpl(DocumentFormat.OpenXml.Drawing.PositiveSize2DType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Extent Length
   /// </summary>

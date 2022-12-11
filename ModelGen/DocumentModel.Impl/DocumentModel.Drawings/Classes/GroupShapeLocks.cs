@@ -11,6 +11,13 @@ public class GroupShapeLocksImpl: ModelElementImpl, GroupShapeLocks
     set => _OpenXmlElement = value;
   }
   
+  public GroupShapeLocksImpl(): base() {}
+  
+  public GroupShapeLocksImpl(DocumentFormat.OpenXml.Drawing.GroupShapeLocks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
@@ -105,7 +112,7 @@ public class GroupShapeLocksImpl: ModelElementImpl, GroupShapeLocks
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

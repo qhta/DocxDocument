@@ -11,6 +11,13 @@ public class ChartSpaceExtensionImpl: ModelElementImpl, ChartSpaceExtension
     set => _OpenXmlElement = value;
   }
   
+  public ChartSpaceExtensionImpl(): base() {}
+  
+  public ChartSpaceExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -36,7 +43,7 @@ public class ChartSpaceExtensionImpl: ModelElementImpl, ChartSpaceExtension
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PivotSource2? PivotSource
+  public PivotSource? PivotSource
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

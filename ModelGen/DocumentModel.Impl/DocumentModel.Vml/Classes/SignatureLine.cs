@@ -11,6 +11,13 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
     set => _OpenXmlElement = value;
   }
   
+  public SignatureLineImpl(): base() {}
+  
+  public SignatureLineImpl(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

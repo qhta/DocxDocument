@@ -11,6 +11,13 @@ public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundMarkImpl(): base() {}
+  
+  public BackgroundMarkImpl(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// x1, this property is only available in Office 2010 and later.
   /// </summary>

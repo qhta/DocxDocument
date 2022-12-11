@@ -11,6 +11,13 @@ public class PictureImpl: ModelElementImpl, Picture
     set => _OpenXmlElement = value;
   }
   
+  public PictureImpl(): base() {}
+  
+  public PictureImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
@@ -49,7 +56,7 @@ public class PictureImpl: ModelElementImpl, Picture
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  public BlipFill2? BlipFill
+  public BlipFill? BlipFill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -58,7 +65,7 @@ public class PictureImpl: ModelElementImpl, Picture
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties7? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -67,7 +74,7 @@ public class PictureImpl: ModelElementImpl, Picture
   /// <summary>
   /// Style.
   /// </summary>
-  public Style4? Style
+  public Style? Style
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

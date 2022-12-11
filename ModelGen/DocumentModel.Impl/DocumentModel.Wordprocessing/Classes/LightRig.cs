@@ -11,6 +11,13 @@ public class LightRigImpl: ModelElementImpl, LightRig
     set => _OpenXmlElement = value;
   }
   
+  public LightRigImpl(): base() {}
+  
+  public LightRigImpl(DocumentFormat.OpenXml.Office2010.Word.LightRig openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// rig, this property is only available in Office 2010 and later.
   /// </summary>

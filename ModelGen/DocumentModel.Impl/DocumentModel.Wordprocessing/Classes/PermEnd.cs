@@ -11,6 +11,13 @@ public class PermEndImpl: ModelElementImpl, PermEnd
     set => _OpenXmlElement = value;
   }
   
+  public PermEndImpl(): base() {}
+  
+  public PermEndImpl(DocumentFormat.OpenXml.Wordprocessing.PermEnd openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Annotation ID
   /// </summary>

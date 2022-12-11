@@ -11,6 +11,13 @@ public class ScatterSerExtensionImpl: ModelElementImpl, ScatterSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public ScatterSerExtensionImpl(): base() {}
+  
+  public ScatterSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.ScatterSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

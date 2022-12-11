@@ -11,6 +11,13 @@ public class LinePropertiesExtensionImpl: ModelElementImpl, LinePropertiesExtens
     set => _OpenXmlElement = value;
   }
   
+  public LinePropertiesExtensionImpl(): base() {}
+  
+  public LinePropertiesExtensionImpl(DocumentFormat.OpenXml.Drawing.LinePropertiesExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

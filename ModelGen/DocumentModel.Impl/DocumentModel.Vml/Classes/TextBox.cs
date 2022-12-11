@@ -11,6 +11,13 @@ public class TextBoxImpl: ModelElementImpl, TextBox
     set => _OpenXmlElement = value;
   }
   
+  public TextBoxImpl(): base() {}
+  
+  public TextBoxImpl(DocumentFormat.OpenXml.Vml.TextBox openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

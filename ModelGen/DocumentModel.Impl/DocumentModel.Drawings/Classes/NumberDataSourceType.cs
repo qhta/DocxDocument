@@ -11,6 +11,13 @@ public class NumberDataSourceTypeImpl: ModelElementImpl, NumberDataSourceType
     set => _OpenXmlElement = value;
   }
   
+  public NumberDataSourceTypeImpl(): base() {}
+  
+  public NumberDataSourceTypeImpl(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Number Reference.
   /// </summary>

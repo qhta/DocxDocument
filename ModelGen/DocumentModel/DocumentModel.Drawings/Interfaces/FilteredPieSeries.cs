@@ -8,6 +8,6 @@ public interface FilteredPieSeries
   /// <summary>
   /// PieChartSeries.
   /// </summary>
-  public PieChartSeries2? PieChartSeries { get ; set; }
+  public PieChartSeries? PieChartSeries { get ; set; }
   
 }

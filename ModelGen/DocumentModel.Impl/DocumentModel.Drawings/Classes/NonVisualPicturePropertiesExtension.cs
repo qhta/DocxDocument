@@ -11,6 +11,13 @@ public class NonVisualPicturePropertiesExtensionImpl: ModelElementImpl, NonVisua
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualPicturePropertiesExtensionImpl(): base() {}
+  
+  public NonVisualPicturePropertiesExtensionImpl(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

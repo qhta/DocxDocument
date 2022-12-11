@@ -11,6 +11,13 @@ public class MarkupTypeImpl: ModelElementImpl, MarkupType
     set => _OpenXmlElement = value;
   }
   
+  public MarkupTypeImpl(): base() {}
+  
+  public MarkupTypeImpl(DocumentFormat.OpenXml.Office2010.Word.MarkupType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Annotation Identifier
   /// </summary>

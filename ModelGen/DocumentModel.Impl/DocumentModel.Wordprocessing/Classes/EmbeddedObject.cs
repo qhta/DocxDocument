@@ -11,6 +11,13 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
     set => _OpenXmlElement = value;
   }
   
+  public EmbeddedObjectImpl(): base() {}
+  
+  public EmbeddedObjectImpl(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// dxaOrig
   /// </summary>
@@ -46,73 +53,73 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Group>? Groups
+  public DocumentModel.Vml.Group? Group
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.ImageFile>? ImageFiles
+  public DocumentModel.Vml.ImageFile? ImageFile
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Line>? Lines
+  public DocumentModel.Vml.Line? Line
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Oval>? Ovals
+  public DocumentModel.Vml.Oval? Oval
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.PolyLine>? PolyLines
+  public DocumentModel.Vml.PolyLine? PolyLine
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Rectangle>? Rectangles
+  public DocumentModel.Vml.Rectangle? Rectangle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.RoundRectangle>? RoundRectangles
+  public DocumentModel.Vml.RoundRectangle? RoundRectangle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Shape>? Shapes
+  public DocumentModel.Vml.Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Shapetype>? Shapetypes
+  public DocumentModel.Vml.Shapetype? Shapetype
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Arc>? Arcs
+  public DocumentModel.Vml.Arc? Arc
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.Curve>? Curves
+  public DocumentModel.Vml.Curve? Curve
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.OleObject>? OleObjects
+  public DocumentModel.Vml.OleObject? OleObject
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

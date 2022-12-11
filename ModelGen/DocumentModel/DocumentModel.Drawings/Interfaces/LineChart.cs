@@ -15,9 +15,9 @@ public interface LineChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<LineChartSeries1>? LineChartSerieses { get ; set; }
+  public Collection<LineChartSeries>? LineChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public DropLines? DropLines { get ; set; }
   
@@ -29,7 +29,7 @@ public interface LineChart
   
   public Boolean? Smooth { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public LineChartExtensionList? LineChartExtensionList { get ; set; }
   

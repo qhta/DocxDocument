@@ -11,6 +11,13 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphBordersImpl(): base() {}
+  
+  public ParagraphBordersImpl(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>

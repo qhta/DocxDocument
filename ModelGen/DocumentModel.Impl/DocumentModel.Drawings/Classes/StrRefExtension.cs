@@ -11,6 +11,13 @@ public class StrRefExtensionImpl: ModelElementImpl, StrRefExtension
     set => _OpenXmlElement = value;
   }
   
+  public StrRefExtensionImpl(): base() {}
+  
+  public StrRefExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.StrRefExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

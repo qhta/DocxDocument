@@ -11,6 +11,13 @@ public class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
     set => _OpenXmlElement = value;
   }
   
+  public ContentPartLocksImpl(): base() {}
+  
+  public ContentPartLocksImpl(DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
@@ -144,7 +151,7 @@ public class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

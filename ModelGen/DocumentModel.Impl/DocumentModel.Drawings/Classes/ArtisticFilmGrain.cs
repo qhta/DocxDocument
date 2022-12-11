@@ -11,6 +11,13 @@ public class ArtisticFilmGrainImpl: ModelElementImpl, ArtisticFilmGrain
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticFilmGrainImpl(): base() {}
+  
+  public ArtisticFilmGrainImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

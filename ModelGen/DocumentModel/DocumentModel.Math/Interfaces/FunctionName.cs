@@ -7,115 +7,115 @@ public interface FunctionName
 {
   public ArgumentProperties? ArgumentProperties { get ; set; }
   
-  public Collection<Accent>? Accents { get ; set; }
+  public Accent? Accent { get ; set; }
   
-  public Collection<Bar>? Bars { get ; set; }
+  public Bar? Bar { get ; set; }
   
-  public Collection<Box>? Boxs { get ; set; }
+  public Box? Box { get ; set; }
   
-  public Collection<BorderBox>? BorderBoxs { get ; set; }
+  public BorderBox? BorderBox { get ; set; }
   
-  public Collection<Delimiter>? Delimiters { get ; set; }
+  public Delimiter? Delimiter { get ; set; }
   
-  public Collection<EquationArray>? EquationArraies { get ; set; }
+  public EquationArray? EquationArray { get ; set; }
   
-  public Collection<Fraction>? Fractions { get ; set; }
+  public Fraction? Fraction { get ; set; }
   
-  public Collection<MathFunction>? MathFunctions { get ; set; }
+  public MathFunction? MathFunction { get ; set; }
   
-  public Collection<GroupChar>? GroupChars { get ; set; }
+  public GroupChar? GroupChar { get ; set; }
   
-  public Collection<LimitLower>? LimitLowers { get ; set; }
+  public LimitLower? LimitLower { get ; set; }
   
-  public Collection<LimitUpper>? LimitUppers { get ; set; }
+  public LimitUpper? LimitUpper { get ; set; }
   
-  public Collection<Matrix>? Matrixs { get ; set; }
+  public Matrix? Matrix { get ; set; }
   
-  public Collection<Nary>? Naries { get ; set; }
+  public Nary? Nary { get ; set; }
   
-  public Collection<Phantom>? Phantoms { get ; set; }
+  public Phantom? Phantom { get ; set; }
   
-  public Collection<Radical>? Radicals { get ; set; }
+  public Radical? Radical { get ; set; }
   
-  public Collection<PreSubSuper>? PreSubSupers { get ; set; }
+  public PreSubSuper? PreSubSuper { get ; set; }
   
-  public Collection<Subscript>? Subscripts { get ; set; }
+  public Subscript? Subscript { get ; set; }
   
-  public Collection<SubSuperscript>? SubSuperscripts { get ; set; }
+  public SubSuperscript? SubSuperscript { get ; set; }
   
-  public Collection<Superscript>? Superscripts { get ; set; }
+  public Superscript? Superscript { get ; set; }
   
-  public Collection<Run>? Runs { get ; set; }
+  public Run? Run { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.CustomXmlRun>? CustomXmlRuns { get ; set; }
+  public DocumentModel.Wordprocessing.CustomXmlRun? CustomXmlRun { get ; set; }
   
   public Collection<DocumentModel.Wordprocessing.SimpleField>? SimpleFields { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Hyperlink>? Hyperlinks { get ; set; }
+  public DocumentModel.Wordprocessing.Hyperlink? Hyperlink { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.SdtRun>? SdtRuns { get ; set; }
+  public DocumentModel.Wordprocessing.SdtRun? SdtRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.ProofError>? ProofErrors { get ; set; }
+  public DocumentModel.Wordprocessing.ProofError? ProofError { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.PermStart>? PermStarts { get ; set; }
+  public DocumentModel.Wordprocessing.PermStart? PermStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.PermEnd>? PermEnds { get ; set; }
+  public DocumentModel.Wordprocessing.PermEnd? PermEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.BookmarkStart>? BookmarkStarts { get ; set; }
+  public DocumentModel.Wordprocessing.BookmarkStart? BookmarkStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? BookmarkEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? BookmarkEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? CommentRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? CommentRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveBookmarkType>? MoveFromRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveFromRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? MoveFromRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveFromRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveBookmarkType>? MoveToRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveToRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? MoveToRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveToRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlInsRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlInsRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlInsRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlDelRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlDelRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlDelRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.InsertedRun>? InsertedRuns { get ; set; }
+  public DocumentModel.Wordprocessing.InsertedRun? InsertedRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.DeletedRun>? DeletedRuns { get ; set; }
+  public DocumentModel.Wordprocessing.DeletedRun? DeletedRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveFromRun>? MoveFromRuns { get ; set; }
+  public DocumentModel.Wordprocessing.MoveFromRun? MoveFromRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveToRun>? MoveToRuns { get ; set; }
+  public DocumentModel.Wordprocessing.MoveToRun? MoveToRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.RunConflictInsertion>? RunConflictInsertions { get ; set; }
+  public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.RunConflictDeletion>? RunConflictDeletions { get ; set; }
+  public DocumentModel.Wordprocessing.RunConflictDeletion? RunConflictDeletion { get ; set; }
   
-  public Collection<Paragraph>? Paragraphs { get ; set; }
+  public Paragraph? Paragraph { get ; set; }
   
-  public Collection<OfficeMath>? OfficeMaths { get ; set; }
+  public OfficeMath? OfficeMath { get ; set; }
   
   public ControlProperties? ControlProperties { get ; set; }
   

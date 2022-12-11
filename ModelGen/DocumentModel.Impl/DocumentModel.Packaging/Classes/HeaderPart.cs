@@ -11,6 +11,13 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
     set => _OpenXmlElement = value;
   }
   
+  public HeaderPartImpl(): base() {}
+  
+  public HeaderPartImpl(DocumentFormat.OpenXml.Packaging.HeaderPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the HeaderPart
   /// </summary>
@@ -29,7 +36,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

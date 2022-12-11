@@ -5,16 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface FillStyleList
 {
-  public Collection<Boolean>? NoFills { get ; set; }
+  public Boolean? NoFill { get ; set; }
   
-  public Collection<SolidFill>? SolidFills { get ; set; }
+  public SolidFill? SolidFill { get ; set; }
   
-  public Collection<GradientFill>? GradientFills { get ; set; }
+  public GradientFill? GradientFill { get ; set; }
   
-  public Collection<BlipFill1>? BlipFills { get ; set; }
+  public BlipFill? BlipFill { get ; set; }
   
-  public Collection<PatternFill>? PatternFills { get ; set; }
+  public PatternFill? PatternFill { get ; set; }
   
-  public Collection<Boolean>? GroupFills { get ; set; }
+  public Boolean? GroupFill { get ; set; }
   
 }

@@ -11,6 +11,13 @@ public class ArcToImpl: ModelElementImpl, ArcTo
     set => _OpenXmlElement = value;
   }
   
+  public ArcToImpl(): base() {}
+  
+  public ArcToImpl(DocumentFormat.OpenXml.Drawing.ArcTo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Shape Arc Width Radius
   /// </summary>

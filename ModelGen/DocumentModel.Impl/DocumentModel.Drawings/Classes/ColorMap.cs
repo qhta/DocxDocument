@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorMap Class.
 /// </summary>
-public class ColorMapImpl: DocumentModel.Drawings.ColorMappingType1Impl, ColorMap
+public class ColorMapImpl: DocumentModel.Drawings.ColorMappingTypeImpl, ColorMap
 {
   public new DocumentFormat.OpenXml.Drawing.ColorMap? OpenXmlElement
   {
@@ -11,7 +11,14 @@ public class ColorMapImpl: DocumentModel.Drawings.ColorMappingType1Impl, ColorMa
     set => _OpenXmlElement = value;
   }
   
-  public override ExtensionList4? ExtensionList
+  public ColorMapImpl(): base() {}
+  
+  public ColorMapImpl(DocumentFormat.OpenXml.Drawing.ColorMap openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

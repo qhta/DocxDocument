@@ -11,6 +11,13 @@ public class WrapPolygonImpl: ModelElementImpl, WrapPolygon
     set => _OpenXmlElement = value;
   }
   
+  public WrapPolygonImpl(): base() {}
+  
+  public WrapPolygonImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Wrapping Points Modified
   /// </summary>
@@ -33,7 +40,7 @@ public class WrapPolygonImpl: ModelElementImpl, WrapPolygon
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Point2DType>? LineTos
+  public Point2DType? LineTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

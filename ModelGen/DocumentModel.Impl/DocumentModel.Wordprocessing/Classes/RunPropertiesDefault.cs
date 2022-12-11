@@ -11,6 +11,13 @@ public class RunPropertiesDefaultImpl: ModelElementImpl, RunPropertiesDefault
     set => _OpenXmlElement = value;
   }
   
+  public RunPropertiesDefaultImpl(): base() {}
+  
+  public RunPropertiesDefaultImpl(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Run Properties.
   /// </summary>

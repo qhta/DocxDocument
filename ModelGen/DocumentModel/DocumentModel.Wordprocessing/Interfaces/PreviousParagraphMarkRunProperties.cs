@@ -29,104 +29,104 @@ public interface PreviousParagraphMarkRunProperties
   
   public TrackChangeType? ConflictDeletion { get ; set; }
   
-  public Collection<String>? RunStyles { get ; set; }
+  public String? RunStyle { get ; set; }
   
-  public Collection<RunFonts>? RunFontses { get ; set; }
+  public RunFonts? RunFonts { get ; set; }
   
-  public Collection<Boolean>? Bolds { get ; set; }
+  public Boolean? Bold { get ; set; }
   
-  public Collection<Boolean>? BoldComplexScripts { get ; set; }
+  public Boolean? BoldComplexScript { get ; set; }
   
-  public Collection<Boolean>? Italics { get ; set; }
+  public Boolean? Italic { get ; set; }
   
-  public Collection<Boolean>? ItalicComplexScripts { get ; set; }
+  public Boolean? ItalicComplexScript { get ; set; }
   
-  public Collection<Boolean>? Capses { get ; set; }
+  public Boolean? Caps { get ; set; }
   
-  public Collection<Boolean>? SmallCapses { get ; set; }
+  public Boolean? SmallCaps { get ; set; }
   
-  public Collection<Boolean>? Strikes { get ; set; }
+  public Boolean? Strike { get ; set; }
   
-  public Collection<Boolean>? DoubleStrikes { get ; set; }
+  public Boolean? DoubleStrike { get ; set; }
   
-  public Collection<Boolean>? Outlines { get ; set; }
+  public Boolean? Outline { get ; set; }
   
-  public Collection<Boolean>? Shadows { get ; set; }
+  public Boolean? Shadow { get ; set; }
   
-  public Collection<Boolean>? Embosses { get ; set; }
+  public Boolean? Emboss { get ; set; }
   
-  public Collection<Boolean>? Imprints { get ; set; }
+  public Boolean? Imprint { get ; set; }
   
-  public Collection<Boolean>? NoProofs { get ; set; }
+  public Boolean? NoProof { get ; set; }
   
-  public Collection<Boolean>? SnapToGrids { get ; set; }
+  public Boolean? SnapToGrid { get ; set; }
   
-  public Collection<Boolean>? Vanishs { get ; set; }
+  public Boolean? Vanish { get ; set; }
   
-  public Collection<Boolean>? WebHiddens { get ; set; }
+  public Boolean? WebHidden { get ; set; }
   
-  public Collection<Color>? Colors { get ; set; }
+  public Color? Color { get ; set; }
   
-  public Collection<Int32>? Spacings { get ; set; }
+  public Int32? Spacing { get ; set; }
   
-  public Collection<Int32>? CharacterScales { get ; set; }
+  public Int32? CharacterScale { get ; set; }
   
-  public Collection<UInt32>? Kerns { get ; set; }
+  public UInt32? Kern { get ; set; }
   
-  public Collection<String>? Positions { get ; set; }
+  public String? Position { get ; set; }
   
-  public Collection<String>? FontSizes { get ; set; }
+  public String? FontSize { get ; set; }
   
-  public Collection<String>? FontSizeComplexScripts { get ; set; }
+  public String? FontSizeComplexScript { get ; set; }
   
-  public Collection<HighlightColorKind>? Highlights { get ; set; }
+  public HighlightColorKind? Highlight { get ; set; }
   
-  public Collection<Underline>? Underlines { get ; set; }
+  public Underline? Underline { get ; set; }
   
-  public Collection<TextEffectKind>? TextEffects { get ; set; }
+  public TextEffectKind? TextEffect { get ; set; }
   
-  public Collection<BorderType>? Borders { get ; set; }
+  public BorderType? Border { get ; set; }
   
-  public Collection<Shading>? Shadings { get ; set; }
+  public Shading? Shading { get ; set; }
   
-  public Collection<FitText>? FitTexts { get ; set; }
+  public FitText? FitText { get ; set; }
   
-  public Collection<VerticalPositionKind>? VerticalTextAlignments { get ; set; }
+  public VerticalPositionKind? VerticalTextAlignment { get ; set; }
   
-  public Collection<Boolean>? RightToLeftTexts { get ; set; }
+  public Boolean? RightToLeftText { get ; set; }
   
-  public Collection<Boolean>? ComplexScripts { get ; set; }
+  public Boolean? ComplexScript { get ; set; }
   
-  public Collection<EmphasisMarkKind>? Emphasises { get ; set; }
+  public EmphasisMarkKind? Emphasis { get ; set; }
   
-  public Collection<LanguageType>? Languageses { get ; set; }
+  public LanguageType? Languages { get ; set; }
   
-  public Collection<EastAsianLayout>? EastAsianLayouts { get ; set; }
+  public EastAsianLayout? EastAsianLayout { get ; set; }
   
-  public Collection<Boolean>? SpecVanishs { get ; set; }
+  public Boolean? SpecVanish { get ; set; }
   
-  public Collection<Glow>? Glows { get ; set; }
+  public Glow? Glow { get ; set; }
   
-  public Collection<Reflection>? Reflections { get ; set; }
+  public Reflection? Reflection { get ; set; }
   
-  public Collection<TextOutlineEffect>? TextOutlineEffects { get ; set; }
+  public TextOutlineEffect? TextOutlineEffect { get ; set; }
   
-  public Collection<FillTextEffect>? FillTextEffects { get ; set; }
+  public FillTextEffect? FillTextEffect { get ; set; }
   
-  public Collection<Scene3D>? Scene3Ds { get ; set; }
+  public Scene3D? Scene3D { get ; set; }
   
-  public Collection<Properties3D>? Properties3Ds { get ; set; }
+  public Properties3D? Properties3D { get ; set; }
   
-  public Collection<LigaturesKind>? Ligatureses { get ; set; }
+  public LigaturesKind? Ligatures { get ; set; }
   
-  public Collection<NumberFormKind>? NumberingFormats { get ; set; }
+  public NumberFormKind? NumberingFormat { get ; set; }
   
-  public Collection<NumberSpacingKind>? NumberSpacings { get ; set; }
+  public NumberSpacingKind? NumberSpacing { get ; set; }
   
-  public Collection<StylisticSets>? StylisticSetses { get ; set; }
+  public StylisticSets? StylisticSets { get ; set; }
   
-  public Collection<OnOffKind>? ContextualAlternativeses { get ; set; }
+  public OnOffKind? ContextualAlternatives { get ; set; }
   
-  public Collection<Boolean>? OfficeMaths { get ; set; }
+  public Boolean? OfficeMath { get ; set; }
   
 }

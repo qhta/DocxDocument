@@ -11,6 +11,13 @@ public class SolidColorFillPropertiesImpl: ModelElementImpl, SolidColorFillPrope
     set => _OpenXmlElement = value;
   }
   
+  public SolidColorFillPropertiesImpl(): base() {}
+  
+  public SolidColorFillPropertiesImpl(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>

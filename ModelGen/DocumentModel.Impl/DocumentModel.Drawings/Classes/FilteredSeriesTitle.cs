@@ -11,10 +11,17 @@ public class FilteredSeriesTitleImpl: ModelElementImpl, FilteredSeriesTitle
     set => _OpenXmlElement = value;
   }
   
+  public FilteredSeriesTitleImpl(): base() {}
+  
+  public FilteredSeriesTitleImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ChartText.
   /// </summary>
-  public ChartText2? ChartText
+  public ChartText? ChartText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

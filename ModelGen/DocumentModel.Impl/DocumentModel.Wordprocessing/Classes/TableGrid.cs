@@ -11,6 +11,13 @@ public class TableGridImpl: ModelElementImpl, TableGrid
     set => _OpenXmlElement = value;
   }
   
+  public TableGridImpl(): base() {}
+  
+  public TableGridImpl(DocumentFormat.OpenXml.Wordprocessing.TableGrid openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<GridColumn>? GridColumns
   {
     get => throw new NotImplementedException("Method not implemented");

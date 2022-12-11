@@ -11,6 +11,13 @@ public class FootnoteEndnoteSeparatorReferenceTypeImpl: ModelElementImpl, Footno
     set => _OpenXmlElement = value;
   }
   
+  public FootnoteEndnoteSeparatorReferenceTypeImpl(): base() {}
+  
+  public FootnoteEndnoteSeparatorReferenceTypeImpl(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>

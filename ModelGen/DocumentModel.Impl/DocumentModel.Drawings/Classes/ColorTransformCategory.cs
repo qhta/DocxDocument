@@ -11,6 +11,13 @@ public class ColorTransformCategoryImpl: ModelElementImpl, ColorTransformCategor
     set => _OpenXmlElement = value;
   }
   
+  public ColorTransformCategoryImpl(): base() {}
+  
+  public ColorTransformCategoryImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Category Type
   /// </summary>

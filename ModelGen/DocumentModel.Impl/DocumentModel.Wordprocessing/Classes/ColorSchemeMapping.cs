@@ -11,6 +11,13 @@ public class ColorSchemeMappingImpl: ModelElementImpl, ColorSchemeMapping
     set => _OpenXmlElement = value;
   }
   
+  public ColorSchemeMappingImpl(): base() {}
+  
+  public ColorSchemeMappingImpl(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Background 1 Theme Color Mapping
   /// </summary>

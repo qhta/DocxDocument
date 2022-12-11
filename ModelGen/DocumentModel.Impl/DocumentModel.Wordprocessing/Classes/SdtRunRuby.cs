@@ -11,6 +11,13 @@ public class SdtRunRubyImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRun
     set => _OpenXmlElement = value;
   }
   
+  public SdtRunRubyImpl(): base() {}
+  
+  public SdtRunRubyImpl(DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// SdtContentRunRuby.
   /// </summary>
@@ -20,133 +27,133 @@ public class SdtRunRubyImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRun
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SdtProperties? SdtProperties
+  public new SdtProperties? SdtProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SdtEndCharProperties? SdtEndCharProperties
+  public new SdtEndCharProperties? SdtEndCharProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BookmarkStart>? BookmarkStarts
+  public BookmarkStart? BookmarkStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? BookmarkEnds
+  public MarkupRangeType? BookmarkEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts
+  public MarkupRangeType? CommentRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds
+  public MarkupRangeType? CommentRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveBookmarkType>? MoveFromRangeStarts
+  public MoveBookmarkType? MoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? MoveFromRangeEnds
+  public MarkupRangeType? MoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveBookmarkType>? MoveToRangeStarts
+  public MoveBookmarkType? MoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? MoveToRangeEnds
+  public MarkupRangeType? MoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlInsRangeStarts
+  public TrackChangeType? CustomXmlInsRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlInsRangeEnds
+  public MarkupType? CustomXmlInsRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlDelRangeStarts
+  public TrackChangeType? CustomXmlDelRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlDelRangeEnds
+  public MarkupType? CustomXmlDelRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlMoveFromRangeStarts
+  public TrackChangeType? CustomXmlMoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlMoveFromRangeEnds
+  public MarkupType? CustomXmlMoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlMoveToRangeStarts
+  public TrackChangeType? CustomXmlMoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlMoveToRangeEnds
+  public MarkupType? CustomXmlMoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlConflictInsertionRangeStarts
+  public TrackChangeType? CustomXmlConflictInsertionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlConflictInsertionRangeEnds
+  public MarkupType? CustomXmlConflictInsertionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<TrackChangeType>? CustomXmlConflictDeletionRangeStarts
+  public TrackChangeType? CustomXmlConflictDeletionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupType>? CustomXmlConflictDeletionRangeEnds
+  public MarkupType? CustomXmlConflictDeletionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

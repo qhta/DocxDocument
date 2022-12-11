@@ -11,6 +11,13 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
     set => _OpenXmlElement = value;
   }
   
+  public GlossaryDocumentImpl(): base() {}
+  
+  public GlossaryDocumentImpl(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Background.
   /// </summary>

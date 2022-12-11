@@ -11,10 +11,17 @@ public class FilteredBarSeriesImpl: ModelElementImpl, FilteredBarSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredBarSeriesImpl(): base() {}
+  
+  public FilteredBarSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// BarChartSeries.
   /// </summary>
-  public BarChartSeries1? BarChartSeries
+  public BarChartSeries? BarChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

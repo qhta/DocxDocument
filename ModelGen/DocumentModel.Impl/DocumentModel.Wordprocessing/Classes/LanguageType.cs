@@ -11,6 +11,13 @@ public class LanguageTypeImpl: ModelElementImpl, LanguageType
     set => _OpenXmlElement = value;
   }
   
+  public LanguageTypeImpl(): base() {}
+  
+  public LanguageTypeImpl(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Latin Language
   /// </summary>

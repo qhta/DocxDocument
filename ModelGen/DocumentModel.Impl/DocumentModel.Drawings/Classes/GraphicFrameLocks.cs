@@ -11,6 +11,13 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
     set => _OpenXmlElement = value;
   }
   
+  public GraphicFrameLocksImpl(): base() {}
+  
+  public GraphicFrameLocksImpl(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
@@ -92,7 +99,7 @@ public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class ArtisticPencilSketchImpl: ModelElementImpl, ArtisticPencilSketch
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPencilSketchImpl(): base() {}
+  
+  public ArtisticPencilSketchImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

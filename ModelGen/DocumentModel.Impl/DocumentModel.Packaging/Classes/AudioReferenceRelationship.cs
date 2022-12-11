@@ -11,10 +11,17 @@ public class AudioReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRe
     set => _OpenXmlElement = value;
   }
   
+  public AudioReferenceRelationshipImpl(): base() {}
+  
+  public AudioReferenceRelationshipImpl(DocumentFormat.OpenXml.Packaging.AudioReferenceRelationship openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the relationship type for an audio reference.
   /// </summary>
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

@@ -11,6 +11,13 @@ public class PaperSourceImpl: ModelElementImpl, PaperSource
     set => _OpenXmlElement = value;
   }
   
+  public PaperSourceImpl(): base() {}
+  
+  public PaperSourceImpl(DocumentFormat.OpenXml.Wordprocessing.PaperSource openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// First Page Printer Tray Code
   /// </summary>

@@ -11,6 +11,13 @@ public class CommentIdImpl: ModelElementImpl, CommentId
     set => _OpenXmlElement = value;
   }
   
+  public CommentIdImpl(): base() {}
+  
+  public CommentIdImpl(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// paraId, this property is only available in Office 2019 and later.
   /// </summary>

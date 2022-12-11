@@ -11,6 +11,13 @@ public class Base64BinaryValueImpl: ModelObjectImpl, Base64BinaryValue
     set => _OpenXmlElement = value;
   }
   
+  public Base64BinaryValueImpl(): base() {}
+  
+  public Base64BinaryValueImpl(DocumentFormat.OpenXml.Base64BinaryValue openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the Base64 binary string value.
   /// </summary>

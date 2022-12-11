@@ -11,7 +11,14 @@ public class MailMergeRecipientsImpl: ModelElementImpl, MailMergeRecipients
     set => _OpenXmlElement = value;
   }
   
-  public Collection<SingleDataSourceRecord>? SingleDataSourceRecords
+  public MailMergeRecipientsImpl(): base() {}
+  
+  public MailMergeRecipientsImpl(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public SingleDataSourceRecord? SingleDataSourceRecord
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

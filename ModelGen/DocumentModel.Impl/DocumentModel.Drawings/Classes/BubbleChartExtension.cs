@@ -11,6 +11,13 @@ public class BubbleChartExtensionImpl: ModelElementImpl, BubbleChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public BubbleChartExtensionImpl(): base() {}
+  
+  public BubbleChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

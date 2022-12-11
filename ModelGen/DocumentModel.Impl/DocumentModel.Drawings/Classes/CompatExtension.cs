@@ -11,6 +11,13 @@ public class CompatExtensionImpl: ModelElementImpl, CompatExtension
     set => _OpenXmlElement = value;
   }
   
+  public CompatExtensionImpl(): base() {}
+  
+  public CompatExtensionImpl(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// spid, this property is only available in Office 2010 and later.
   /// </summary>

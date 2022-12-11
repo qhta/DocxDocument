@@ -11,6 +11,13 @@ public class ClassificationOutcomeImpl: ModelElementImpl, ClassificationOutcome
     set => _OpenXmlElement = value;
   }
   
+  public ClassificationOutcomeImpl(): base() {}
+  
+  public ClassificationOutcomeImpl(DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// classificationOutcomeType, this property is only available in Office 2021 and later.
   /// </summary>

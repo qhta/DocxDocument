@@ -11,6 +11,13 @@ public class BuildChartImpl: ModelElementImpl, BuildChart
     set => _OpenXmlElement = value;
   }
   
+  public BuildChartImpl(): base() {}
+  
+  public BuildChartImpl(DocumentFormat.OpenXml.Drawing.BuildChart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Build
   /// </summary>

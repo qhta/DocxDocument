@@ -11,6 +11,13 @@ public class CommentAnchorImpl: ModelElementImpl, CommentAnchor
     set => _OpenXmlElement = value;
   }
   
+  public CommentAnchorImpl(): base() {}
+  
+  public CommentAnchorImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>

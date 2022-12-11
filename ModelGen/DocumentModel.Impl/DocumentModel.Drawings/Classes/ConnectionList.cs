@@ -11,6 +11,13 @@ public class ConnectionListImpl: ModelElementImpl, ConnectionList
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionListImpl(): base() {}
+  
+  public ConnectionListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Connection>? Connections
   {
     get => throw new NotImplementedException("Method not implemented");

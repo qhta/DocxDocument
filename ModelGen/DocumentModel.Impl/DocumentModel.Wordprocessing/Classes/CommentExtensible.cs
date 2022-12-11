@@ -11,6 +11,13 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
     set => _OpenXmlElement = value;
   }
   
+  public CommentExtensibleImpl(): base() {}
+  
+  public CommentExtensibleImpl(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>

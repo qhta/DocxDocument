@@ -11,13 +11,20 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
     set => _OpenXmlElement = value;
   }
   
-  public Collection<DocumentModel.Vml.ShapeDefaults>? ShapeDefaultses
+  public ShapeDefaultsImpl(): base() {}
+  
+  public ShapeDefaultsImpl(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public DocumentModel.Vml.ShapeDefaults? ChildShapeDefaults
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.ShapeLayout>? ShapeLayouts
+  public DocumentModel.Vml.ShapeLayout? ShapeLayout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class CustomSplitImpl: ModelElementImpl, CustomSplit
     set => _OpenXmlElement = value;
   }
   
+  public CustomSplitImpl(): base() {}
+  
+  public CustomSplitImpl(DocumentFormat.OpenXml.Drawing.Charts.CustomSplit openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<UInt32>? SecondPiePoints
   {
     get => throw new NotImplementedException("Method not implemented");

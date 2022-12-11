@@ -11,22 +11,29 @@ public class ChartDataImpl: ModelElementImpl, ChartData
     set => _OpenXmlElement = value;
   }
   
+  public ChartDataImpl(): base() {}
+  
+  public ChartDataImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ExternalData.
   /// </summary>
-  public ExternalData1? ExternalData
+  public ExternalData? ExternalData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Data2>? Datas
+  public Data? Data
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

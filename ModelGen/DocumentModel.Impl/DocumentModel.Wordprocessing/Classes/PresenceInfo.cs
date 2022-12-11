@@ -11,6 +11,13 @@ public class PresenceInfoImpl: ModelElementImpl, PresenceInfo
     set => _OpenXmlElement = value;
   }
   
+  public PresenceInfoImpl(): base() {}
+  
+  public PresenceInfoImpl(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// providerId, this property is only available in Office 2013 and later.
   /// </summary>

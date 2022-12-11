@@ -11,6 +11,13 @@ public class CommentsExImpl: ModelElementImpl, CommentsEx
     set => _OpenXmlElement = value;
   }
   
+  public CommentsExImpl(): base() {}
+  
+  public CommentsExImpl(DocumentFormat.OpenXml.Office2013.Word.CommentsEx openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<CommentEx>? CommentExs
   {
     get => throw new NotImplementedException("Method not implemented");

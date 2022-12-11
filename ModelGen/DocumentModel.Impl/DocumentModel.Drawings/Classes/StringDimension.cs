@@ -11,6 +11,13 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
     set => _OpenXmlElement = value;
   }
   
+  public StringDimensionImpl(): base() {}
+  
+  public StringDimensionImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
@@ -37,6 +44,12 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
   }
   
   public Collection<StringLevel>? StringLevels
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public StringLevel? StringLevel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

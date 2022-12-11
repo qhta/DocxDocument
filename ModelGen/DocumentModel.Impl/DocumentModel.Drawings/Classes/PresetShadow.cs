@@ -11,6 +11,13 @@ public class PresetShadowImpl: ModelElementImpl, PresetShadow
     set => _OpenXmlElement = value;
   }
   
+  public PresetShadowImpl(): base() {}
+  
+  public PresetShadowImpl(DocumentFormat.OpenXml.Drawing.PresetShadow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preset Shadow
   /// </summary>

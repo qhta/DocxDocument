@@ -11,6 +11,13 @@ public class RotationImpl: ModelElementImpl, Rotation
     set => _OpenXmlElement = value;
   }
   
+  public RotationImpl(): base() {}
+  
+  public RotationImpl(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Latitude
   /// </summary>

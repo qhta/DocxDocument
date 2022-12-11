@@ -11,6 +11,13 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     set => _OpenXmlElement = value;
   }
   
+  public BodyPropertiesImpl(): base() {}
+  
+  public BodyPropertiesImpl(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Rotation
   /// </summary>
@@ -273,8 +280,8 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+        return item != null;
       }
       return null;
     }
@@ -282,18 +289,18 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoAutoFit();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoAutoFit();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -312,8 +319,8 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+        return item != null;
       }
       return null;
     }
@@ -321,18 +328,18 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.ShapeAutoFit();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.ShapeAutoFit();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -357,7 +364,7 @@ public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

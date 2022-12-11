@@ -11,6 +11,13 @@ public class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public StockChartExtensionListImpl(): base() {}
+  
+  public StockChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<StockChartExtension>? StockChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

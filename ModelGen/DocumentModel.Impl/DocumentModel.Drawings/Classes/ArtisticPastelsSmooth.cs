@@ -11,6 +11,13 @@ public class ArtisticPastelsSmoothImpl: ModelElementImpl, ArtisticPastelsSmooth
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPastelsSmoothImpl(): base() {}
+  
+  public ArtisticPastelsSmoothImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

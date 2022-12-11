@@ -11,10 +11,17 @@ public class TickLabelsImpl: ModelElementImpl, TickLabels
     set => _OpenXmlElement = value;
   }
   
+  public TickLabelsImpl(): base() {}
+  
+  public TickLabelsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickLabels openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

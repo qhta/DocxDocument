@@ -11,6 +11,13 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
     set => _OpenXmlElement = value;
   }
   
+  public OfficeStyleSheetExtensionListImpl(): base() {}
+  
+  public OfficeStyleSheetExtensionListImpl(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<OfficeStyleSheetExtension>? OfficeStyleSheetExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

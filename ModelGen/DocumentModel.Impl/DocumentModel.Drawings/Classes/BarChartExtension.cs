@@ -11,6 +11,13 @@ public class BarChartExtensionImpl: ModelElementImpl, BarChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public BarChartExtensionImpl(): base() {}
+  
+  public BarChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

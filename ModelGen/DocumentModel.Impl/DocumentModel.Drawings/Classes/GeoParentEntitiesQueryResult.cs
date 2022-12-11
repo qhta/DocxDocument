@@ -11,6 +11,13 @@ public class GeoParentEntitiesQueryResultImpl: ModelElementImpl, GeoParentEntiti
     set => _OpenXmlElement = value;
   }
   
+  public GeoParentEntitiesQueryResultImpl(): base() {}
+  
+  public GeoParentEntitiesQueryResultImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GeoParentEntitiesQuery.
   /// </summary>

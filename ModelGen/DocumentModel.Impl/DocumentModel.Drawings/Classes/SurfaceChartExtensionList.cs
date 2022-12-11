@@ -11,6 +11,13 @@ public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtens
     set => _OpenXmlElement = value;
   }
   
+  public SurfaceChartExtensionListImpl(): base() {}
+  
+  public SurfaceChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<SurfaceChartExtension>? SurfaceChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

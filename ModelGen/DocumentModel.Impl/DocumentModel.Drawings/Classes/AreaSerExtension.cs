@@ -11,6 +11,13 @@ public class AreaSerExtensionImpl: ModelElementImpl, AreaSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public AreaSerExtensionImpl(): base() {}
+  
+  public AreaSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

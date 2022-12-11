@@ -11,7 +11,14 @@ public class DivsImpl: ModelElementImpl, Divs
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Div>? Items
+  public DivsImpl(): base() {}
+  
+  public DivsImpl(DocumentFormat.OpenXml.Wordprocessing.Divs openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Div? Div
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

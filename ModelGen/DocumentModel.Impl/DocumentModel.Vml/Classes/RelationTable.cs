@@ -11,6 +11,13 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
     set => _OpenXmlElement = value;
   }
   
+  public RelationTableImpl(): base() {}
+  
+  public RelationTableImpl(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

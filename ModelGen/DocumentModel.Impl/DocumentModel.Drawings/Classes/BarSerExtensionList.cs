@@ -11,6 +11,13 @@ public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public BarSerExtensionListImpl(): base() {}
+  
+  public BarSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BarSerExtension>? BarSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

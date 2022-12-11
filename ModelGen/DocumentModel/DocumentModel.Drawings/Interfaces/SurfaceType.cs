@@ -13,7 +13,7 @@ public interface SurfaceType
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties5? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Picture Options.
@@ -23,6 +23,6 @@ public interface SurfaceType
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

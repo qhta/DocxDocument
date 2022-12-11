@@ -11,6 +11,13 @@ public class TintEffectImpl: ModelElementImpl, TintEffect
     set => _OpenXmlElement = value;
   }
   
+  public TintEffectImpl(): base() {}
+  
+  public TintEffectImpl(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Hue
   /// </summary>

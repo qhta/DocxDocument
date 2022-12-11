@@ -11,6 +11,13 @@ public class RelationImpl: ModelElementImpl, Relation
     set => _OpenXmlElement = value;
   }
   
+  public RelationImpl(): base() {}
+  
+  public RelationImpl(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

@@ -16,4 +16,6 @@ public interface NumericDimension
   
   public Collection<NumericLevel>? NumericLevels { get ; set; }
   
+  public NumericLevel? NumericLevel { get ; set; }
+  
 }

@@ -11,6 +11,13 @@ public class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
     set => _OpenXmlElement = value;
   }
   
+  public SchemaReferencesImpl(): base() {}
+  
+  public SchemaReferencesImpl(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<SchemaReference>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

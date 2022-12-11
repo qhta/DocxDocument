@@ -11,6 +11,13 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Footnot
     set => _OpenXmlElement = value;
   }
   
+  public FootnotesPartImpl(): base() {}
+  
+  public FootnotesPartImpl(DocumentFormat.OpenXml.Packaging.FootnotesPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the FootnotesPart
   /// </summary>
@@ -29,7 +36,7 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Footnot
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Footnot
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

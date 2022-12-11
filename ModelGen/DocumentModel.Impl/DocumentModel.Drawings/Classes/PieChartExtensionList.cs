@@ -11,6 +11,13 @@ public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public PieChartExtensionListImpl(): base() {}
+  
+  public PieChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.PieChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<PieChartExtension>? PieChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

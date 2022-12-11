@@ -23,7 +23,8 @@ public static class TypeInspector
           var elementMetadata = new ElementMetadataFactoryFeature().GetMetadata(element);
           typeInfo.Metadata = elementMetadata;
           var particle = elementMetadata.Particle?.Particle;
-          if (particle != null) InspectParticle(typeInfo, particle, false);
+          if (particle != null) 
+            typeInfo.ItemsConstraint = InspectParticle(typeInfo, particle, false);
           return elementMetadata;
         }
       }
@@ -31,22 +32,43 @@ public static class TypeInspector
     return null;
   }
 
-  internal static void InspectParticle(TypeInfo typeInfo, ParticleConstraint particle, bool multiple)
+  internal static ItemsConstraint? InspectParticle(TypeInfo typeInfo, ParticleConstraint particle, bool multiple)
   {
+    //if (typeInfo.Name=="Rsids")
+    //  Debug.Assert(true);
     var isMultiple = multiple || particle.CanOccursMoreThanOne;
+    ItemsConstraint? itemsConstraint = null;
     if (particle is CompositeParticle compositeParticle)
     {
+      itemsConstraint = new ItemsCompoundConstraint
+      {
+        ConstraintType = (ConstraintType)particle.ParticleType,
+        IsRequired = particle.MinOccurs > 0,
+        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0),
+      };
       foreach (var childParticle in compositeParticle.ChildrenParticles)
-        InspectParticle(typeInfo, childParticle, isMultiple);
+      {
+        var itemConstraint = InspectParticle(typeInfo, childParticle, isMultiple);
+        if (itemConstraint!=null)
+          ((ItemsCompoundConstraint)itemsConstraint).Items.Add(itemConstraint);
+      }
     }
     else 
     if (particle is ElementParticle elementParticle)
     {
+      itemsConstraint = new ItemTypeConstraint
+      {
+        ConstraintType = (ConstraintType)particle.ParticleType,
+        IsRequired = particle.MinOccurs > 0,
+        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0),
+      };
       var elementType = elementParticle.ElementType;
       var itemTypeInfo = TypeManager.RegisterType(elementType);
       itemTypeInfo.IsAccepted = true;
       var itemTypeRelation = typeInfo.AddRelationship(itemTypeInfo, Semantics.Include);
       itemTypeRelation.IsMultiple = isMultiple;
+      ((ItemTypeConstraint)itemsConstraint).ItemType = itemTypeInfo;
     }
+    return itemsConstraint;
   }
 }

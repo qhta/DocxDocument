@@ -11,6 +11,13 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
     set => _OpenXmlElement = value;
   }
   
+  public PresentationOfImpl(): base() {}
+  
+  public PresentationOfImpl(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Axis
   /// </summary>
@@ -68,7 +75,7 @@ public class PresentationOfImpl: ModelElementImpl, PresentationOf
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

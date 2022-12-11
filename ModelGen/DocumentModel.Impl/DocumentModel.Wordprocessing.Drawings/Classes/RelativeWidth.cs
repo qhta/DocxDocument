@@ -11,6 +11,13 @@ public class RelativeWidthImpl: ModelElementImpl, RelativeWidth
     set => _OpenXmlElement = value;
   }
   
+  public RelativeWidthImpl(): base() {}
+  
+  public RelativeWidthImpl(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
@@ -42,20 +49,20 @@ public class RelativeWidthImpl: ModelElementImpl, RelativeWidth
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

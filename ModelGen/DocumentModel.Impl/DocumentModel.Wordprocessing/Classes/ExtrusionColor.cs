@@ -11,13 +11,20 @@ public class ExtrusionColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, Ext
     set => _OpenXmlElement = value;
   }
   
-  public override RgbColorModelHex? RgbColorModelHex
+  public ExtrusionColorImpl(): base() {}
+  
+  public ExtrusionColorImpl(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new RgbColorModelHex? RgbColorModelHex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SchemeColor? SchemeColor
+  public new SchemeColor? SchemeColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class EffectContainerTypeImpl: ModelElementImpl, EffectContainerType
     set => _OpenXmlElement = value;
   }
   
+  public EffectContainerTypeImpl(): base() {}
+  
+  public EffectContainerTypeImpl(DocumentFormat.OpenXml.Drawing.EffectContainerType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Effect Container Type
   /// </summary>

@@ -11,6 +11,13 @@ public class TaskUndoImpl: ModelElementImpl, TaskUndo
     set => _OpenXmlElement = value;
   }
   
+  public TaskUndoImpl(): base() {}
+  
+  public TaskUndoImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>

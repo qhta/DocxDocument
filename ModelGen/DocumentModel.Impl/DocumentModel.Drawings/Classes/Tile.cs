@@ -11,6 +11,13 @@ public class TileImpl: ModelElementImpl, Tile
     set => _OpenXmlElement = value;
   }
   
+  public TileImpl(): base() {}
+  
+  public TileImpl(DocumentFormat.OpenXml.Drawing.Tile openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Horizontal Offset
   /// </summary>

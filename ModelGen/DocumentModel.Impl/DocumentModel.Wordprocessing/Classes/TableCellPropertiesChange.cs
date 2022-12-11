@@ -11,6 +11,13 @@ public class TableCellPropertiesChangeImpl: ModelElementImpl, TableCellPropertie
     set => _OpenXmlElement = value;
   }
   
+  public TableCellPropertiesChangeImpl(): base() {}
+  
+  public TableCellPropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

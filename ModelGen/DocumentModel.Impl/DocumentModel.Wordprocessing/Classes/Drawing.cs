@@ -11,6 +11,13 @@ public class DrawingImpl: ModelElementImpl, Drawing
     set => _OpenXmlElement = value;
   }
   
+  public DrawingImpl(): base() {}
+  
+  public DrawingImpl(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Drawing Element Anchor.
   /// </summary>

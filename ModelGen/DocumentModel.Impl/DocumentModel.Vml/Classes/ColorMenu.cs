@@ -11,6 +11,13 @@ public class ColorMenuImpl: ModelElementImpl, ColorMenu
     set => _OpenXmlElement = value;
   }
   
+  public ColorMenuImpl(): base() {}
+  
+  public ColorMenuImpl(DocumentFormat.OpenXml.Vml.Office.ColorMenu openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

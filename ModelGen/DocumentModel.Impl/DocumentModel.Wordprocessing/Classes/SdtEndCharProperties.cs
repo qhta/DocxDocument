@@ -11,7 +11,14 @@ public class SdtEndCharPropertiesImpl: ModelElementImpl, SdtEndCharProperties
     set => _OpenXmlElement = value;
   }
   
-  public Collection<RunProperties>? RunPropertieses
+  public SdtEndCharPropertiesImpl(): base() {}
+  
+  public SdtEndCharPropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public RunProperties? RunProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
