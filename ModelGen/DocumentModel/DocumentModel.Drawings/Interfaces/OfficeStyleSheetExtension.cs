@@ -10,6 +10,6 @@ public interface OfficeStyleSheetExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.ThemeFamily? ThemeFamily { get ; set; }
+  public ThemeFamily? ThemeFamily { get ; set; }
   
 }

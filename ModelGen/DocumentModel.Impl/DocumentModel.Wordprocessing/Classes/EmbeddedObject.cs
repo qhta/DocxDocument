@@ -47,7 +47,7 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? AnchorId
+  public HexBinaryValue? AnchorId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -138,7 +138,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public DocumentModel.HexBinaryValue? AlgorithmIdExtensibility
+  public HexBinaryValue? AlgorithmIdExtensibility
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -160,7 +160,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public DocumentModel.HexBinaryValue? CryptographicProviderTypeExtensibility
+  public HexBinaryValue? CryptographicProviderTypeExtensibility
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -182,7 +182,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Password Hash
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Hash
+  public Base64BinaryValue? Hash
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -191,7 +191,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Salt
+  public Base64BinaryValue? Salt
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -213,7 +213,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? HashValue
+  public Base64BinaryValue? HashValue
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -222,7 +222,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? SaltValue
+  public Base64BinaryValue? SaltValue
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

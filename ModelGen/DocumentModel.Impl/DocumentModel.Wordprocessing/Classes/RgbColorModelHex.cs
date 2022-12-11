@@ -21,7 +21,7 @@ public class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Val
+  public HexBinaryValue? Val
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

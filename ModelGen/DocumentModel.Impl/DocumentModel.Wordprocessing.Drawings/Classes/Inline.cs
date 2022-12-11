@@ -73,7 +73,7 @@ public class InlineImpl: ModelElementImpl, Inline
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? AnchorId
+  public HexBinaryValue? AnchorId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -82,7 +82,7 @@ public class InlineImpl: ModelElementImpl, Inline
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? EditId
+  public HexBinaryValue? EditId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

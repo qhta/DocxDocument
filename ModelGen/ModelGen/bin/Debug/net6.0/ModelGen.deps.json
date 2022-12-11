@@ -14,6 +14,7 @@
           "DocumentModel.VariantTypes": "1.0.0",
           "Namotion.Reflection": "2.1.1",
           "Qhta.Collections": "1.0.0.0",
+          "Qhta.TextUtils": "2.3.0.0",
           "Qhta.TypeUtils": "1.2.1.0"
         },
         "runtime": {
@@ -292,6 +293,14 @@
           }
         }
       },
+      "Qhta.TextUtils/2.3.0.0": {
+        "runtime": {
+          "Qhta.TextUtils.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
+        }
+      },
       "Qhta.TypeUtils/1.2.1.0": {
         "runtime": {
           "Qhta.TypeUtils.dll": {
@@ -525,6 +534,11 @@
       "sha512": ""
     },
     "Qhta.Collections/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Qhta.TextUtils/2.3.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

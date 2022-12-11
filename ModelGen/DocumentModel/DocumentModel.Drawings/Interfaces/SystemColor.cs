@@ -13,7 +13,7 @@ public interface SystemColor
   /// <summary>
   /// Last Color
   /// </summary>
-  public DocumentModel.HexBinaryValue? LastColor { get ; set; }
+  public HexBinaryValue? LastColor { get ; set; }
   
   public Int32? Tint { get ; set; }
   

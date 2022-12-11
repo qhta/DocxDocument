@@ -207,7 +207,7 @@ public class ModelCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false, true)}");
+      ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
       if (ModelGenerator.GenerateTypeFile(typeInfo))
         generatedCount++;
     }

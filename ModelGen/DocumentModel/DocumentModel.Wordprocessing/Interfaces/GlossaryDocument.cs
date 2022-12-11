@@ -13,6 +13,6 @@ public interface GlossaryDocument
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public DocumentModel.ModelElement? DocParts { get ; set; }
+  public ModelElement? DocParts { get ; set; }
   
 }

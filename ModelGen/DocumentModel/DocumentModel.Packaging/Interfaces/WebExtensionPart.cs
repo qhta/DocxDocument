@@ -17,6 +17,6 @@ public interface WebExtensionPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.WebExtension? WebExtension { get ; set; }
+  public WebExtension? WebExtension { get ; set; }
   
 }

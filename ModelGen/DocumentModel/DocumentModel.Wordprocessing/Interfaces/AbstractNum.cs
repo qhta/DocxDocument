@@ -13,7 +13,7 @@ public interface AbstractNum
   /// <summary>
   /// Abstract Numbering Definition Identifier.
   /// </summary>
-  public DocumentModel.HexWord? Nsid { get ; set; }
+  public HexWord? Nsid { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Type.
@@ -23,7 +23,7 @@ public interface AbstractNum
   /// <summary>
   /// Numbering Template Code.
   /// </summary>
-  public DocumentModel.HexWord? TemplateCode { get ; set; }
+  public HexWord? TemplateCode { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Name.

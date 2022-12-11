@@ -21,7 +21,7 @@ public class InkImpl: ModelElementImpl, Ink
   /// <summary>
   /// Ink Data
   /// </summary>
-  public DocumentModel.Base64BinaryValue? InkData
+  public Base64BinaryValue? InkData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

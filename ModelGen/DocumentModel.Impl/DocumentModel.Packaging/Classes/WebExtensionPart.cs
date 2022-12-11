@@ -50,7 +50,7 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.WebExtension? WebExtension
+  public WebExtension? WebExtension
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

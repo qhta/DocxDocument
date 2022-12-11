@@ -411,7 +411,7 @@ public class GroupImpl: ModelElementImpl, Group
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Gfxdata
+  public Base64BinaryValue? Gfxdata
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
