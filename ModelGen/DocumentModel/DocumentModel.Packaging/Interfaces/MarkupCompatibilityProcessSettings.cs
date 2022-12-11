@@ -13,6 +13,6 @@ public interface MarkupCompatibilityProcessSettings
   /// <summary>
   /// Gets the target file format versions.
   /// </summary>
-  public DocumentModel.FileFormatVersions? TargetFileFormatVersions { get ; set; }
+  public FileFormatVersions? TargetFileFormatVersions { get ; set; }
   
 }

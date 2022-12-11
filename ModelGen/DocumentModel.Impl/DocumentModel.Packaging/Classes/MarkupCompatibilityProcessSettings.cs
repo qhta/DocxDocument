@@ -34,9 +34,9 @@ public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupComp
   /// <summary>
   /// Gets the target file format versions.
   /// </summary>
-  public DocumentModel.FileFormatVersions? TargetFileFormatVersions
+  public FileFormatVersions? TargetFileFormatVersions
   {
-    get => (DocumentModel.FileFormatVersions?)OpenXmlElement?.TargetFileFormatVersions;
+    get => (FileFormatVersions?)OpenXmlElement?.TargetFileFormatVersions;
     set
     {
       if (OpenXmlElement != null)

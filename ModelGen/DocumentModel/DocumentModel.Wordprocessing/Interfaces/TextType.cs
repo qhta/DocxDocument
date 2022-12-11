@@ -8,6 +8,6 @@ public interface TextType
   /// <summary>
   /// space
   /// </summary>
-  public DocumentModel.SpaceProcessingMode? Space { get ; set; }
+  public SpaceProcessingMode? Space { get ; set; }
   
 }

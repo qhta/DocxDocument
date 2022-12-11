@@ -8,32 +8,32 @@ public interface TableRow
   /// <summary>
   /// Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowMarkRevision { get ; set; }
+  public HexBinaryValue? RsidTableRowMarkRevision { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowAddition { get ; set; }
+  public HexBinaryValue? RsidTableRowAddition { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowDeletion { get ; set; }
+  public HexBinaryValue? RsidTableRowDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowProperties { get ; set; }
+  public HexBinaryValue? RsidTableRowProperties { get ; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId { get ; set; }
+  public HexBinaryValue? ParagraphId { get ; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId { get ; set; }
+  public HexBinaryValue? TextId { get ; set; }
   
   /// <summary>
   /// Table-Level Property Exceptions.

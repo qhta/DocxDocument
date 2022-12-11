@@ -28,12 +28,12 @@ public interface Inline
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? AnchorId { get ; set; }
+  public HexBinaryValue? AnchorId { get ; set; }
   
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? EditId { get ; set; }
+  public HexBinaryValue? EditId { get ; set; }
   
   /// <summary>
   /// Drawing Object Size.

@@ -8,22 +8,22 @@ public interface SectionProperties
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRPr { get ; set; }
+  public HexBinaryValue? RsidRPr { get ; set; }
   
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidDel { get ; set; }
+  public HexBinaryValue? RsidDel { get ; set; }
   
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidR { get ; set; }
+  public HexBinaryValue? RsidR { get ; set; }
   
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidSect { get ; set; }
+  public HexBinaryValue? RsidSect { get ; set; }
   
   public HeaderFooterReferenceType? HeaderReference { get ; set; }
   

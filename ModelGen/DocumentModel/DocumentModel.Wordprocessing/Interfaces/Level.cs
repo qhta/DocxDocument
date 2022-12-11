@@ -13,7 +13,7 @@ public interface Level
   /// <summary>
   /// Template Code
   /// </summary>
-  public DocumentModel.HexBinaryValue? TemplateCode { get ; set; }
+  public HexBinaryValue? TemplateCode { get ; set; }
   
   /// <summary>
   /// Tentative Numbering

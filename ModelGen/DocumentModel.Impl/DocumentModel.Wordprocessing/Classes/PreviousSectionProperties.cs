@@ -21,7 +21,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRPr
+  public HexBinaryValue? RsidRPr
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidDel
+  public HexBinaryValue? RsidDel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidR
+  public HexBinaryValue? RsidR
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidSect
+  public HexBinaryValue? RsidSect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

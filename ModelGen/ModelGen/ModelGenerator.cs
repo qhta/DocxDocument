@@ -1,4 +1,6 @@
 ﻿using System.CodeDom.Compiler;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Linq;
@@ -7,6 +9,8 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Framework;
 using DocumentFormat.OpenXml.Packaging;
+
+using DocumentModel;
 
 using Namotion.Reflection;
 
@@ -149,7 +153,9 @@ public class ModelGenerator
           baseTypeNames.Add($"ModelObjectImpl");
         newOpenXmlElementProperty = false;
       }
-      baseTypeNames.Add(typeInfo.GetFullName(false, true, false));
+      var baseTypeName = typeInfo.GetFullName(false);
+      baseTypeName.Namespace = null;
+      baseTypeNames.Add(baseTypeName);
       var baseStr = baseTypeNames.Any() ? ": " + String.Join(", ", baseTypeNames) : String.Empty;
       typeName += "Impl";
       var str = $"public class {typeName}" + baseStr;
@@ -300,7 +306,7 @@ public class ModelGenerator
     //if (prop.Name == "MultiLevelStringReference" && prop.Owner is TypeInfo typeInfo && typeInfo.Name == "AxisDataSourceType")
     //  Debug.Assert(true);
     var targetPropType = prop.PropertyType.GetConversionTarget(true);
-    QualifiedName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
+    FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
     var namespaces = targetPropTypeName.GetNamespaces();
     foreach (var ns in namespaces)
     {
@@ -313,9 +319,8 @@ public class ModelGenerator
       {
         targetPropTypeName.RemoveNamespace(ns);
       }
-      //if (inNamespace != null)
-      //  propertyTypeName.TrimNamespace(inNamespace);
     }
+    targetPropTypeName.RemoveNamespace("DocumentModel");
     var propTypeName = targetPropTypeName.ToString();
     GenDocumentationComments(prop, writer);
     GenerateCustomAttributes(prop.CustomAttributes, writer);
@@ -340,7 +345,9 @@ public class ModelGenerator
       str += $"{propTypeName}? {prop.Name}";
       writer.WriteLine(str);
       string? fieldName = null;
-      string? fieldTypeName = null;
+      FullTypeName? propItemTypeName = null;
+      FullTypeName? origItemTypeName = null;
+      FullTypeName? castItemTypeName = null;
       writer.WriteLine($"{{");
       if (targetPropType.TypeKind == TypeKind.Enum)
         GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
@@ -348,22 +355,28 @@ public class ModelGenerator
       {
         if (targetPropType.IsValueType)
           GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
-        //else if (targetPropType.Name.StartsWith("Collection`"))
-        //{
-        //  var propItemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
-        //  if (propItemType != null)
-        //  {
-        //    fieldName = "_Items";
-        //    fieldTypeName = $"ObservableCollection<{propItemType}>";
-        //  }
-        //  GenerateCollectionTypeAccessors(prop, targetPropType, writer);
-        //}
+        else if (targetPropType.Name.StartsWith("Collection`") && (prop.Owner as TypeInfo)?.Name=="Rsids")
+        {
+          propItemTypeName = targetPropTypeName.ArgNames?.FirstOrDefault();
+          if (propItemTypeName != null)
+          {
+            fieldName = "_Items";
+            origItemTypeName = targetPropType.GetFullName(true).ArgNames?.FirstOrDefault();
+            if (origItemTypeName != null)
+            {
+              castItemTypeName = new FullTypeName("string");
+              GenerateCollectionTypeAccessors(prop, propItemTypeName, origItemTypeName, castItemTypeName, writer);
+            }
+            else
+              GeneratePropAccessorsNotImplemented(writer);
+          }
+        }
         else
           GeneratePropAccessorsNotImplemented(writer);
       }
       writer.WriteLine($"}}");
-      if (fieldName != null && fieldTypeName != null)
-        writer.WriteLine($"private {fieldTypeName}? {fieldName};");
+      if (fieldName != null && propItemTypeName != null)
+        GenerateCollectionField(fieldName, propItemTypeName, origItemTypeName, castItemTypeName, writer);
     }
     writer.WriteLine();
     GeneratedPropertiesCount += 1;
@@ -539,54 +552,99 @@ public class ModelGenerator
     writer.WriteLine($"  }}");
   }
 
-  private void GenerateCollectionTypeAccessors(PropInfo prop, TypeInfo targetPropType, IndentedTextWriter writer)
+  private void GenerateCollectionTypeAccessors(PropInfo prop, 
+    FullTypeName propItemTypeName, FullTypeName origItemTypeName, FullTypeName castItemTypeName, IndentedTextWriter writer)
   {
-    //var origPropTypeName = prop.PropertyType.GetFullName(true);
-    //var origPropName = prop.Name;
-    //var origTargetTypeName = targetPropType.GetFullName(true);
-    var propItemType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
-    if (propItemType != null)
-    {
-      var propItemTypeName = propItemType?.GetFullName() ?? "";
-      var origItemTypeName = propItemType?.GetFullName(true) ?? "";
-      var castItemTypeName = propItemTypeName;
-      if (castItemTypeName == "DocumentModel.HexInt")
-        castItemTypeName = "string";
-      GenerateIncludedElementCollectionAccessors(propItemTypeName, origItemTypeName,
-        castItemTypeName, writer);
-    }
-    else
-      GeneratePropAccessorsNotImplemented(writer);
+    //var propItemTypeName = propItemType.GetFullName();
+    //var targetItemTypeName = propItemType.GetFullName(true);
+    GenerateIncludedElementCollectionAccessors(prop, propItemTypeName, origItemTypeName, castItemTypeName, writer);
   }
-  private void GenerateIncludedElementCollectionAccessors(string propItemTypeName,
+  private void GenerateIncludedElementCollectionAccessors(PropInfo prop,
+    string propItemTypeName,
     string origItemTypeName,
     string castItemTypeName,
     IndentedTextWriter writer)
   {
+    var propName = prop.Name;
+    var fieldName = "_" + propName;
     writer.WriteLine($"  get");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if (_Items != null)");
+    writer.WriteLine($"    if ({fieldName} != null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"      _Items = new ObservableCollection<{propItemTypeName}>(");
-    writer.WriteLine($"        OpenXmlElement.Elements<{origItemTypeName}>()");
-    writer.WriteLine($"        .Select(item => new {propItemTypeName}(item?.Val?.Value??string.Empty).ToList());");
+    writer.WriteLine($"      if (OpenXmlElement != null)");
+    writer.WriteLine($"      {{");
+    writer.WriteLine($"        var items = OpenXmlElement.Elements<{origItemTypeName}>()");
+    //writer.WriteLine($"          .Where(item => item.Val?.Value != null)");
+    writer.WriteLine($"          .Select(item => new {propItemTypeName}(item.Val?.Value??\"0000\")).ToList();");
+    writer.WriteLine($"        {fieldName} = new ObservableCollection<{propItemTypeName}>(items);");
+    writer.WriteLine($"      }}");
+    writer.WriteLine($"      else");
+    writer.WriteLine($"        {fieldName} = new ObservableCollection<{propItemTypeName}>();");
+    writer.WriteLine($"      {fieldName}.CollectionChanged += {fieldName}_CollectionChanged;");
     writer.WriteLine($"    }}");
-    writer.WriteLine($"    return _Items;");
+    writer.WriteLine($"    return {fieldName};");
     writer.WriteLine($"  }}");
     writer.WriteLine($"  set");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if (value != _Items)");
+    writer.WriteLine($"    if (value != null && value != _Items && OpenXmlElement!=null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"       OpenXmlElement.RemoveAllChildren<{origItemTypeName}>()");
-    writer.WriteLine($"      if (value != null)");
+    writer.WriteLine($"      OpenXmlElement.RemoveAllChildren<{origItemTypeName}>();");
+    writer.WriteLine($"      foreach (var val in value)");
     writer.WriteLine($"      {{");
-    writer.WriteLine($"        if (value is not null)");
-    writer.WriteLine($"        {{");
-    writer.WriteLine($"          var item = new {origItemTypeName}( Val = {castItemTypeName}?)value;");
-    writer.WriteLine($"        }}");
+    writer.WriteLine($"        var item = new {origItemTypeName}{{ Val = ({castItemTypeName}?)val }};");
+    writer.WriteLine($"        OpenXmlElement.AddChild(item);");
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");
+    writer.WriteLine($"    if (value is ObservableCollection<{propItemTypeName}> observableCollection)");
+    writer.WriteLine($"      {fieldName} = observableCollection;");
+    writer.WriteLine($"    else if (value != null)");
+    writer.WriteLine($"      {fieldName} = new ObservableCollection<{propItemTypeName}>(value);");
+    writer.WriteLine($"    else");
+    writer.WriteLine($"     {fieldName} = null;");
     writer.WriteLine($"  }}");
+    AddGlobalUsing("System.Linq");
+  }
+
+  private void GenerateCollectionField(string fieldName, 
+    FullTypeName propItemTypeName,
+    FullTypeName origItemTypeName,
+    FullTypeName castItemTypeName,
+    IndentedTextWriter writer)
+  {
+    writer.WriteLine($"private ObservableCollection<{propItemTypeName}>? {fieldName};");
+    writer.WriteLine();
+    writer.WriteLine($"private void {fieldName}_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)");
+    writer.WriteLine($"{{");
+    writer.WriteLine($"  if (OpenXmlElement != null)");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    switch (args.Action)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Reset:");
+    writer.WriteLine($"        OpenXmlElement.RemoveAllChildren<{origItemTypeName}>();");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Add:");
+    writer.WriteLine($"        foreach (var val in args.NewItems)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"          var newItem = new {origItemTypeName} {{ Val = ({castItemTypeName}?)val }};");
+    writer.WriteLine($"          OpenXmlElement.AddChild(newItem);");
+    writer.WriteLine($"        }}");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Remove:");
+    writer.WriteLine($"        foreach (var val in args.OldItems)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
+    writer.WriteLine($"                        .FirstOrDefault(anItem => anItem.Val == ({castItemTypeName}?)val);");
+    writer.WriteLine($"          if (oldItem != null)");
+    writer.WriteLine($"            oldItem.Remove();");
+    writer.WriteLine($"        }}");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      default:");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"  }}");
+    writer.WriteLine($"}}");
+    writer.WriteLine();
+    AddGlobalUsing("System.Collections.Specialized");
   }
 
   private void GenerateIncludedStringPropAccessors(string origPropTypeName, IndentedTextWriter writer)

@@ -21,7 +21,7 @@ public class RunImpl: ModelElementImpl, Run
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunProperties
+  public HexBinaryValue? RsidRunProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class RunImpl: ModelElementImpl, Run
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunDeletion
+  public HexBinaryValue? RsidRunDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class RunImpl: ModelElementImpl, Run
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunAddition
+  public HexBinaryValue? RsidRunAddition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

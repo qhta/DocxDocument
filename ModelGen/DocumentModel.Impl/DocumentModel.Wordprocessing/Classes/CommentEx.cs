@@ -21,7 +21,7 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaId
+  public HexBinaryValue? ParaId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// <summary>
   /// paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaIdParent
+  public HexBinaryValue? ParaIdParent
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

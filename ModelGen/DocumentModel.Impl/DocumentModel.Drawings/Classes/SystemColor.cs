@@ -34,7 +34,7 @@ public class SystemColorImpl: ModelElementImpl, SystemColor
   /// <summary>
   /// Last Color
   /// </summary>
-  public DocumentModel.HexBinaryValue? LastColor
+  public HexBinaryValue? LastColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -34,7 +34,7 @@ public class SymbolCharImpl: ModelElementImpl, SymbolChar
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public DocumentModel.HexBinaryValue? Char
+  public HexBinaryValue? Char
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

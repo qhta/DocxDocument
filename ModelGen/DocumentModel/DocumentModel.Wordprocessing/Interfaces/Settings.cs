@@ -258,7 +258,7 @@ public interface Settings
   
   public String? ListSeparator { get ; set; }
   
-  public DocumentModel.HexBinaryValue? DocumentId { get ; set; }
+  public HexBinaryValue? DocumentId { get ; set; }
   
   public OnOffKind? DiscardImageEditingData { get ; set; }
   

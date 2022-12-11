@@ -41,7 +41,7 @@ public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Doc
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Tasks? Tasks
+  public Tasks? Tasks
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

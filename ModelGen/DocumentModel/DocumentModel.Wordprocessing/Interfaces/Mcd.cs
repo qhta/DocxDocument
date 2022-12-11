@@ -23,11 +23,11 @@ public interface Mcd
   /// <summary>
   /// bEncrypt
   /// </summary>
-  public DocumentModel.HexBinaryValue? BEncrypt { get ; set; }
+  public HexBinaryValue? BEncrypt { get ; set; }
   
   /// <summary>
   /// cmg
   /// </summary>
-  public DocumentModel.HexBinaryValue? Cmg { get ; set; }
+  public HexBinaryValue? Cmg { get ; set; }
   
 }

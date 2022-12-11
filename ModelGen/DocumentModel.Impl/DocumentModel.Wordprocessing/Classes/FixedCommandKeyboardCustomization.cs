@@ -34,7 +34,7 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// <summary>
   /// fciIndex
   /// </summary>
-  public DocumentModel.HexBinaryValue? CommandIndex
+  public HexBinaryValue? CommandIndex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -43,7 +43,7 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// <summary>
   /// swArg
   /// </summary>
-  public DocumentModel.HexBinaryValue? Argument
+  public HexBinaryValue? Argument
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
