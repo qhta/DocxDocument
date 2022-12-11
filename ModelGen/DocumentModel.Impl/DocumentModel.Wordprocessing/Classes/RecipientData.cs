@@ -97,7 +97,7 @@ public class RecipientDataImpl: ModelElementImpl, RecipientData
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? UniqueTag
+  public Base64BinaryValue? UniqueTag
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

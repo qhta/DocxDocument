@@ -13,6 +13,6 @@ public interface CheckBoxSymbolType
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Val { get ; set; }
+  public HexBinaryValue? Val { get ; set; }
   
 }

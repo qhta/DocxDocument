@@ -35,6 +35,9 @@
     <Reference Include="Qhta.Collections">
       <HintPath>..\..\..\MyLib\bin\Qhta.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Qhta.TextUtils">
+      <HintPath>..\..\..\MyLib\bin\Qhta.TextUtils.dll</HintPath>
+    </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\..\MyLib\bin\Qhta.TypeUtils.dll</HintPath>
     </Reference>

@@ -34,7 +34,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Template Code
   /// </summary>
-  public DocumentModel.HexBinaryValue? TemplateCode
+  public HexBinaryValue? TemplateCode
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -34,7 +34,7 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose
+  public HexBinaryValue? Panose
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

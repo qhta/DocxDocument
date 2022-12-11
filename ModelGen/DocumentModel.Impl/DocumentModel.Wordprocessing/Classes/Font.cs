@@ -72,7 +72,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose1Number
+  public HexBinaryValue? Panose1Number
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

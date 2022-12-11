@@ -105,7 +105,7 @@ public class TypeInfo : ModelElement
     return aNamespace;
   }
 
-  public string GetFullName(bool original = false, bool asInterface = false, bool withNamespace = true)
+  public FullTypeName GetFullName(bool original = false/*, bool asInterface = false, bool withNamespace = true*/)
   {
     string aName;
     string aNamespace;
@@ -121,33 +121,32 @@ public class TypeInfo : ModelElement
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (IsGenericTypeParameter)
-      return Name;
+      return new FullTypeName(Name, null);
+    var result = new FullTypeName(aName, aNamespace);
     var apos = aName.IndexOf('`');
     if (apos >= 0)
     {
+
       var genericParams = this.GetGenericParamTypes();
       var genericArgs = this.GetGenericArgTypes();
-      var ls = new List<String>();
+      var argNames = new List<FullTypeName>();
       if (genericParams.Any())
         foreach (var genericParam in genericParams.ToList())
         {
-          ls.Add(genericParam.Name);
+          argNames.Add(new FullTypeName(genericParam.Name, null));
         }
       else if (genericArgs.Any())
         foreach (var genericArg in genericArgs.ToList())
         {
-          ls.Add(genericArg.GetFullName(true, false, asInterface));
+          argNames.Add(genericArg.GetFullName(original));
         }
-      if (ls.Count > 0)
+      if (argNames.Count > 0)
       {
-        aName = aName.Substring(0, apos);
-        aName += $"<{String.Join(",", ls)}>";
+        result.Name = aName.Substring(0, apos);
+        result.ArgNames = argNames;
       }
     }
-
-    if (withNamespace && aNamespace != null)
-      return aNamespace + "." + aName;
-    return aName;
+    return result;
   }
 
   public override string ToString() => $"{Namespace}.{Name}";

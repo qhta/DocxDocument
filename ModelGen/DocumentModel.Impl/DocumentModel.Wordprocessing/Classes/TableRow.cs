@@ -21,7 +21,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowMarkRevision
+  public HexBinaryValue? RsidTableRowMarkRevision
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// Revision Identifier for Table Row
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowAddition
+  public HexBinaryValue? RsidTableRowAddition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// Revision Identifier for Table Row Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowDeletion
+  public HexBinaryValue? RsidTableRowDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// Revision Identifier for Table Row Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowProperties
+  public HexBinaryValue? RsidTableRowProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId
+  public HexBinaryValue? ParagraphId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class TableRowImpl: ModelElementImpl, TableRow
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId
+  public HexBinaryValue? TextId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

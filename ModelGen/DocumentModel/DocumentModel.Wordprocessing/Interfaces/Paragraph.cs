@@ -8,37 +8,37 @@ public interface Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphMarkRevision { get ; set; }
+  public HexBinaryValue? RsidParagraphMarkRevision { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphAddition { get ; set; }
+  public HexBinaryValue? RsidParagraphAddition { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphDeletion { get ; set; }
+  public HexBinaryValue? RsidParagraphDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphProperties { get ; set; }
+  public HexBinaryValue? RsidParagraphProperties { get ; set; }
   
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunAdditionDefault { get ; set; }
+  public HexBinaryValue? RsidRunAdditionDefault { get ; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId { get ; set; }
+  public HexBinaryValue? ParagraphId { get ; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId { get ; set; }
+  public HexBinaryValue? TextId { get ; set; }
   
   /// <summary>
   /// noSpellErr, this property is only available in Office 2010 and later.

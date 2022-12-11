@@ -21,7 +21,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphMarkRevision
+  public HexBinaryValue? RsidParagraphMarkRevision
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphAddition
+  public HexBinaryValue? RsidParagraphAddition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphDeletion
+  public HexBinaryValue? RsidParagraphDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphProperties
+  public HexBinaryValue? RsidParagraphProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunAdditionDefault
+  public HexBinaryValue? RsidRunAdditionDefault
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId
+  public HexBinaryValue? ParagraphId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -75,7 +75,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId
+  public HexBinaryValue? TextId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

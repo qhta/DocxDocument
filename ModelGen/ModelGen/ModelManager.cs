@@ -131,13 +131,13 @@ public static class ModelManager
     return false;
   }
 
-  public static QualifiedName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
+  public static FullTypeName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
   {
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
-      return new QualifiedName(aName, null);
+      return new FullTypeName(aName, null);
     string aNamespace = typeInfo.Namespace;
 
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
@@ -148,7 +148,7 @@ public static class ModelManager
     {
       aName += "Impl";
     }
-    var result = new QualifiedName(aName, (aNamespace != null) ? aNamespace : null);
+    var result = new FullTypeName(aName, (aNamespace != null) ? aNamespace : null);
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
@@ -157,7 +157,7 @@ public static class ModelManager
       {
         result.ArgNames = new();
         foreach (var genericParam in genericParams.ToList())
-          result.ArgNames.Add(new QualifiedName(genericParam.Name, null));
+          result.ArgNames.Add(new FullTypeName(genericParam.Name, null));
       }
       else if (genericArgs.Any())
       {
@@ -406,7 +406,7 @@ public static class ModelManager
     {
       if (ModelData.TypeNameConversion.TryGetValue(typeInfo.GetFullName(true), out var newName))
       {
-        var qualifiedName = new QualifiedName(newName);
+        var qualifiedName = new FullTypeName(newName);
         typeInfo.Name = qualifiedName.Name;
       }
     }

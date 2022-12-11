@@ -278,7 +278,7 @@ public interface Shape
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64BinaryValue? EncodedPackage { get ; set; }
+  public Base64BinaryValue? EncodedPackage { get ; set; }
   
   /// <summary>
   /// Storage for Alternate Math Content

@@ -2,5 +2,7 @@ global using DocumentModel.Impl;
 global using System;
 global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
+global using System.Collections.Specialized;
 global using System.IO;
 global using System.IO.Packaging;
+global using System.Linq;

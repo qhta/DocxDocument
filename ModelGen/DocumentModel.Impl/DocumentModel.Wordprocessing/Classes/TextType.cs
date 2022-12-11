@@ -21,9 +21,9 @@ public class TextTypeImpl: ModelElementImpl, TextType
   /// <summary>
   /// space
   /// </summary>
-  public DocumentModel.SpaceProcessingMode? Space
+  public SpaceProcessingMode? Space
   {
-    get => (DocumentModel.SpaceProcessingMode?)OpenXmlElement?.Space?.Value;
+    get => (SpaceProcessingMode?)OpenXmlElement?.Space?.Value;
     set
     {
       if (OpenXmlElement != null)

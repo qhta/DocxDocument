@@ -47,7 +47,7 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  public DocumentModel.HexBinaryValue? CommandIndexBasedOn
+  public HexBinaryValue? CommandIndexBasedOn
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

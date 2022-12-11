@@ -21,7 +21,7 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// chmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapPrimary
+  public HexBinaryValue? CharacterMapPrimary
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// chmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapSecondary
+  public HexBinaryValue? CharacterMapSecondary
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// kcmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodePrimary
+  public HexBinaryValue? KeyCodePrimary
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// kcmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodeSecondary
+  public HexBinaryValue? KeyCodeSecondary
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -106,7 +106,7 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterInsertion
+  public HexBinaryValue? CharacterInsertion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -103,7 +103,7 @@ public interface Style
   /// <summary>
   /// Revision Identifier for Style Definition.
   /// </summary>
-  public DocumentModel.HexWord? Rsid { get ; set; }
+  public HexWord? Rsid { get ; set; }
   
   /// <summary>
   /// Style Paragraph Properties.

@@ -31,7 +31,7 @@ public class OfficeStyleSheetExtensionImpl: ModelElementImpl, OfficeStyleSheetEx
     }
   }
   
-  public DocumentModel.ThemeFamily? ThemeFamily
+  public ThemeFamily? ThemeFamily
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

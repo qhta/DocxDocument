@@ -8,7 +8,7 @@ public interface CommentExtensible
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? DurableId { get ; set; }
+  public HexBinaryValue? DurableId { get ; set; }
   
   /// <summary>
   /// dateUtc, this property is only available in Office 2021 and later.

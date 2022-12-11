@@ -21,7 +21,7 @@ public class StylePaneFormatFilterImpl: ModelElementImpl, StylePaneFormatFilter
   /// <summary>
   /// val
   /// </summary>
-  public DocumentModel.HexBinaryValue? Val
+  public HexBinaryValue? Val
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

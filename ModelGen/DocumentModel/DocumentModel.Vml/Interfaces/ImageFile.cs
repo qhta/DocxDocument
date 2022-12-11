@@ -308,7 +308,7 @@ public interface ImageFile
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Gfxdata { get ; set; }
+  public Base64BinaryValue? Gfxdata { get ; set; }
   
   public Path? Path { get ; set; }
   

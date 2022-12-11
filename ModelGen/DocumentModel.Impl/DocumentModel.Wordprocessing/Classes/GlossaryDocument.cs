@@ -30,7 +30,7 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public DocumentModel.ModelElement? DocParts
+  public ModelElement? DocParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -21,7 +21,7 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? DurableId
+  public HexBinaryValue? DurableId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

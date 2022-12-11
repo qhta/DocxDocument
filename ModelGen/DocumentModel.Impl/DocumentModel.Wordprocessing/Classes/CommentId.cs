@@ -21,7 +21,7 @@ public class CommentIdImpl: ModelElementImpl, CommentId
   /// <summary>
   /// paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaId
+  public HexBinaryValue? ParaId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class CommentIdImpl: ModelElementImpl, CommentId
   /// <summary>
   /// durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? DurableId
+  public HexBinaryValue? DurableId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

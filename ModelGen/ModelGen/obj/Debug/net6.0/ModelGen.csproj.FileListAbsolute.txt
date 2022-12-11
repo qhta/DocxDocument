@@ -32,3 +32,5 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Var
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.TypeUtils.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.TypeUtils.pdb
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.TypeUtils.xml
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.TextUtils.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.TextUtils.pdb

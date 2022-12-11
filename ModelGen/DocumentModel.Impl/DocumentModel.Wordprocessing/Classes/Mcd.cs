@@ -60,7 +60,7 @@ public class McdImpl: ModelElementImpl, Mcd
   /// <summary>
   /// bEncrypt
   /// </summary>
-  public DocumentModel.HexBinaryValue? BEncrypt
+  public HexBinaryValue? BEncrypt
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -69,7 +69,7 @@ public class McdImpl: ModelElementImpl, Mcd
   /// <summary>
   /// cmg
   /// </summary>
-  public DocumentModel.HexBinaryValue? Cmg
+  public HexBinaryValue? Cmg
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

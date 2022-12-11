@@ -258,7 +258,7 @@ public interface RoundRectangle
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Gfxdata { get ; set; }
+  public Base64BinaryValue? Gfxdata { get ; set; }
   
   /// <summary>
   /// Rounded Corner Arc Size

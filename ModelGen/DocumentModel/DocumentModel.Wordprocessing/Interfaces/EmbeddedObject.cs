@@ -18,7 +18,7 @@ public interface EmbeddedObject
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? AnchorId { get ; set; }
+  public HexBinaryValue? AnchorId { get ; set; }
   
   public DocumentModel.Vml.Group? Group { get ; set; }
   

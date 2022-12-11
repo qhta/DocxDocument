@@ -34,14 +34,14 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
   /// <summary>
   /// Abstract Numbering Definition Identifier.
   /// </summary>
-  public DocumentModel.HexWord? Nsid
+  public HexWord? Nsid
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Nsid>();
-        return (DocumentModel.HexWord?)openXmlElement?.Val?.Value;
+        return (HexWord?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -110,14 +110,14 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
   /// <summary>
   /// Numbering Template Code.
   /// </summary>
-  public DocumentModel.HexWord? TemplateCode
+  public HexWord? TemplateCode
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TemplateCode>();
-        return (DocumentModel.HexWord?)openXmlElement?.Val?.Value;
+        return (HexWord?)openXmlElement?.Val?.Value;
       }
       return null;
     }

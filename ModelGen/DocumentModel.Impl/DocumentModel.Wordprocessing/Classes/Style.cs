@@ -643,14 +643,14 @@ public class StyleImpl: ModelElementImpl, Style
   /// <summary>
   /// Revision Identifier for Style Definition.
   /// </summary>
-  public DocumentModel.HexWord? Rsid
+  public HexWord? Rsid
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
-        return (DocumentModel.HexWord?)openXmlElement?.Val?.Value;
+        return (HexWord?)openXmlElement?.Val?.Value;
       }
       return null;
     }

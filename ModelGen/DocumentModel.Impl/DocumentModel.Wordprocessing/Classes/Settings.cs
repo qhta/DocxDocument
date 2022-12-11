@@ -2650,7 +2650,7 @@ public class SettingsImpl: ModelElementImpl, Settings
     }
   }
   
-  public DocumentModel.HexBinaryValue? DocumentId
+  public HexBinaryValue? DocumentId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
