@@ -11,6 +11,13 @@ public class ConnectionImpl: ModelElementImpl, Connection
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionImpl(): base() {}
+  
+  public ConnectionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Model Identifier
   /// </summary>
@@ -131,7 +138,7 @@ public class ConnectionImpl: ModelElementImpl, Connection
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

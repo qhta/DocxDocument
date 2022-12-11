@@ -11,6 +11,13 @@ public class CommentImpl: ModelElementImpl, Comment
     set => _OpenXmlElement = value;
   }
   
+  public CommentImpl(): base() {}
+  
+  public CommentImpl(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// initials
   /// </summary>
@@ -69,13 +76,13 @@ public class CommentImpl: ModelElementImpl, Comment
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<CustomXmlBlock>? CustomXmlBlocks
+  public CustomXmlBlock? CustomXmlBlock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SdtBlock>? SdtBlocks
+  public SdtBlock? SdtBlock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -93,43 +100,43 @@ public class CommentImpl: ModelElementImpl, Comment
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ProofError>? ProofErrors
+  public ProofError? ProofError
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PermStart>? PermStarts
+  public PermStart? PermStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PermEnd>? PermEnds
+  public PermEnd? PermEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BookmarkStart>? BookmarkStarts
+  public BookmarkStart? BookmarkStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? BookmarkEnds
+  public MarkupRangeType? BookmarkEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts
+  public MarkupRangeType? CommentRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds
+  public MarkupRangeType? CommentRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

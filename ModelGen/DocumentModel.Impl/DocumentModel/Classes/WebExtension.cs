@@ -11,6 +11,13 @@ public class WebExtensionImpl: ModelElementImpl, WebExtension
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionImpl(): base() {}
+  
+  public WebExtensionImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>

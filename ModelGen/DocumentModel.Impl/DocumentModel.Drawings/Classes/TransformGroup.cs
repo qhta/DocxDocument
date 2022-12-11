@@ -11,6 +11,13 @@ public class TransformGroupImpl: ModelElementImpl, TransformGroup
     set => _OpenXmlElement = value;
   }
   
+  public TransformGroupImpl(): base() {}
+  
+  public TransformGroupImpl(DocumentFormat.OpenXml.Drawing.TransformGroup openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Rotation
   /// </summary>

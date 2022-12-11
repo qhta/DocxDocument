@@ -11,6 +11,13 @@ public class SupplementalFontImpl: ModelElementImpl, SupplementalFont
     set => _OpenXmlElement = value;
   }
   
+  public SupplementalFontImpl(): base() {}
+  
+  public SupplementalFontImpl(DocumentFormat.OpenXml.Drawing.SupplementalFont openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Script
   /// </summary>

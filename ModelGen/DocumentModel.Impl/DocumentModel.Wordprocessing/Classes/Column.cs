@@ -11,6 +11,13 @@ public class ColumnImpl: ModelElementImpl, Column
     set => _OpenXmlElement = value;
   }
   
+  public ColumnImpl(): base() {}
+  
+  public ColumnImpl(DocumentFormat.OpenXml.Wordprocessing.Column openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Column Width
   /// </summary>

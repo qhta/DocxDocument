@@ -11,6 +11,13 @@ public class SurfaceSerExtensionImpl: ModelElementImpl, SurfaceSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public SurfaceSerExtensionImpl(): base() {}
+  
+  public SurfaceSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

@@ -11,10 +11,17 @@ public class FilteredPieSeriesImpl: ModelElementImpl, FilteredPieSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredPieSeriesImpl(): base() {}
+  
+  public FilteredPieSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// PieChartSeries.
   /// </summary>
-  public PieChartSeries2? PieChartSeries
+  public PieChartSeries? PieChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

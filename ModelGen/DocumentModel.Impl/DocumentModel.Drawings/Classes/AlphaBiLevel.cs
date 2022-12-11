@@ -11,6 +11,13 @@ public class AlphaBiLevelImpl: ModelElementImpl, AlphaBiLevel
     set => _OpenXmlElement = value;
   }
   
+  public AlphaBiLevelImpl(): base() {}
+  
+  public AlphaBiLevelImpl(DocumentFormat.OpenXml.Drawing.AlphaBiLevel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Threshold
   /// </summary>

@@ -11,31 +11,38 @@ public class ShapeTreeImpl: DocumentModel.Drawings.GroupShapeTypeImpl, ShapeTree
     set => _OpenXmlElement = value;
   }
   
-  public override GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
+  public ShapeTreeImpl(): base() {}
+  
+  public ShapeTreeImpl(DocumentFormat.OpenXml.Office.Drawing.ShapeTree openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override GroupShapeProperties1? GroupShapeProperties
+  public new GroupShapeProperties? GroupShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape1>? Shapes
+  public Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<GroupShape2>? GroupShapes
+  public GroupShape? GroupShape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public OfficeArtExtensionList1? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

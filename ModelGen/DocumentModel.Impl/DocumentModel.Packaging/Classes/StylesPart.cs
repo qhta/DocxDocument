@@ -11,6 +11,13 @@ public class StylesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, StylesPart
     set => _OpenXmlElement = value;
   }
   
+  public StylesPartImpl(): base() {}
+  
+  public StylesPartImpl(DocumentFormat.OpenXml.Packaging.StylesPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>

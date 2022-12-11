@@ -11,7 +11,14 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public ChartDrawingPartImpl(): base() {}
+  
+  public ChartDrawingPartImpl(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

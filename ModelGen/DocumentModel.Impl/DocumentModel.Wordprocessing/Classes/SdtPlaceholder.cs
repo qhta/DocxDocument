@@ -11,6 +11,13 @@ public class SdtPlaceholderImpl: ModelElementImpl, SdtPlaceholder
     set => _OpenXmlElement = value;
   }
   
+  public SdtPlaceholderImpl(): base() {}
+  
+  public SdtPlaceholderImpl(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Part Reference.
   /// </summary>
@@ -29,20 +36,20 @@ public class SdtPlaceholderImpl: ModelElementImpl, SdtPlaceholder
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartReference{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.DocPartReference{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

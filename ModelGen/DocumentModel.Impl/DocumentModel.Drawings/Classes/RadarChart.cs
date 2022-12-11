@@ -11,6 +11,13 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
     set => _OpenXmlElement = value;
   }
   
+  public RadarChartImpl(): base() {}
+  
+  public RadarChartImpl(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RadarStyle.
   /// </summary>
@@ -29,20 +36,20 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarStyle>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarStyle>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.RadarStyle{ Val = (DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.RadarStyle{ Val = (DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,42 +74,71 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<RadarChartSeries1>? RadarChartSerieses
+  public Collection<RadarChartSeries>? RadarChartSerieses
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels1? DataLabels
+  public DataLabels? DataLabels
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<UInt32>? AxisIds
+  public UInt32? AxisId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.UInt32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Charts.AxisId{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
   public RadarChartExtensionList? RadarChartExtensionList

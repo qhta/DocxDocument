@@ -25,6 +25,6 @@ public interface FootnoteDocumentWideProperties
   /// </summary>
   public RestartNumberKind? NumberingRestart { get ; set; }
   
-  public Collection<FootnoteEndnoteSeparatorReferenceType>? FootnoteSpecialReferences { get ; set; }
+  public FootnoteEndnoteSeparatorReferenceType? FootnoteSpecialReference { get ; set; }
   
 }

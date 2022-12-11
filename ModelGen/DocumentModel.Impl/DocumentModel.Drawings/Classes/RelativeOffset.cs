@@ -11,6 +11,13 @@ public class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
     set => _OpenXmlElement = value;
   }
   
+  public RelativeOffsetImpl(): base() {}
+  
+  public RelativeOffsetImpl(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Offset X
   /// </summary>

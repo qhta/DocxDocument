@@ -11,6 +11,13 @@ public class SampleDataTypeImpl: ModelElementImpl, SampleDataType
     set => _OpenXmlElement = value;
   }
   
+  public SampleDataTypeImpl(): base() {}
+  
+  public SampleDataTypeImpl(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Use Default
   /// </summary>

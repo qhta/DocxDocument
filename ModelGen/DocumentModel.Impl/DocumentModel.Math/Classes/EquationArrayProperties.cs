@@ -11,6 +11,13 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     set => _OpenXmlElement = value;
   }
   
+  public EquationArrayPropertiesImpl(): base() {}
+  
+  public EquationArrayPropertiesImpl(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Equation Array Base Justification.
   /// </summary>
@@ -29,20 +36,20 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BaseJustification>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BaseJustification>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.VerticalAlignmentValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.VerticalAlignmentValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.BaseJustification{ Val = (DocumentFormat.OpenXml.Math.VerticalAlignmentValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.BaseJustification{ Val = (DocumentFormat.OpenXml.Math.VerticalAlignmentValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MaxDistribution>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MaxDistribution>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.MaxDistribution{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.MaxDistribution{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -105,20 +112,20 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ObjectDistribution>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ObjectDistribution>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ObjectDistribution{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ObjectDistribution{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -143,20 +150,20 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.RowSpacingRule{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.RowSpacingRule{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -181,20 +188,20 @@ public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayPropert
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt16?)value;
+            item.Val = (System.UInt16?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.RowSpacing{ Val = (System.UInt16?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.RowSpacing{ Val = (System.UInt16?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

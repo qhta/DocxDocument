@@ -11,19 +11,26 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     set => _OpenXmlElement = value;
   }
   
-  public override LineSpacing? LineSpacing
+  public Level4ParagraphPropertiesImpl(): base() {}
+  
+  public Level4ParagraphPropertiesImpl(DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new LineSpacing? LineSpacing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SpaceBefore? SpaceBefore
+  public new SpaceBefore? SpaceBefore
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SpaceAfter? SpaceAfter
+  public new SpaceAfter? SpaceAfter
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -35,8 +42,8 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+        return item != null;
       }
       return null;
     }
@@ -44,18 +51,18 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletColorText();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.BulletColorText();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -74,8 +81,8 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+        return item != null;
       }
       return null;
     }
@@ -83,18 +90,18 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizeText();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.BulletSizeText();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -116,20 +123,20 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizePercentage{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.BulletSizePercentage{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -151,20 +158,20 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletSizePoints{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.BulletSizePoints{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -177,8 +184,8 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+        return item != null;
       }
       return null;
     }
@@ -186,18 +193,18 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.BulletFontText();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.BulletFontText();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -216,8 +223,8 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        return item != null;
       }
       return null;
     }
@@ -225,18 +232,18 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoBullet();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -273,7 +280,7 @@ public class Level4ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraph
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

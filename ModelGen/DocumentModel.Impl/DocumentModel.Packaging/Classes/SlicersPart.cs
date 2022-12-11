@@ -11,7 +11,14 @@ public class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPa
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public SlicersPartImpl(): base() {}
+  
+  public SlicersPartImpl(DocumentFormat.OpenXml.Packaging.SlicersPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPa
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

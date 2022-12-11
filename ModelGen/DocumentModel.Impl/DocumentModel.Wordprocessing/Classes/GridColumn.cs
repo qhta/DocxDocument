@@ -11,6 +11,13 @@ public class GridColumnImpl: ModelElementImpl, GridColumn
     set => _OpenXmlElement = value;
   }
   
+  public GridColumnImpl(): base() {}
+  
+  public GridColumnImpl(DocumentFormat.OpenXml.Wordprocessing.GridColumn openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Grid Column Width
   /// </summary>

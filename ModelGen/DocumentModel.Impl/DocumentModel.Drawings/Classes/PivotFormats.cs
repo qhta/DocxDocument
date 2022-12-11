@@ -11,6 +11,13 @@ public class PivotFormatsImpl: ModelElementImpl, PivotFormats
     set => _OpenXmlElement = value;
   }
   
+  public PivotFormatsImpl(): base() {}
+  
+  public PivotFormatsImpl(DocumentFormat.OpenXml.Drawing.Charts.PivotFormats openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<PivotFormat>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

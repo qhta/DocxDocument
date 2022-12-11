@@ -11,6 +11,13 @@ public class Scene3DImpl: ModelElementImpl, Scene3D
     set => _OpenXmlElement = value;
   }
   
+  public Scene3DImpl(): base() {}
+  
+  public Scene3DImpl(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Camera.
   /// </summary>

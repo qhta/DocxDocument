@@ -11,6 +11,13 @@ public class AlphaModulationEffectImpl: ModelElementImpl, AlphaModulationEffect
     set => _OpenXmlElement = value;
   }
   
+  public AlphaModulationEffectImpl(): base() {}
+  
+  public AlphaModulationEffectImpl(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// EffectContainer.
   /// </summary>

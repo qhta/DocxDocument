@@ -11,6 +11,13 @@ public class MiterImpl: ModelElementImpl, Miter
     set => _OpenXmlElement = value;
   }
   
+  public MiterImpl(): base() {}
+  
+  public MiterImpl(DocumentFormat.OpenXml.Drawing.Miter openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Miter Join Limit
   /// </summary>

@@ -11,6 +11,13 @@ public class ToolbarDataImpl: ModelElementImpl, ToolbarData
     set => _OpenXmlElement = value;
   }
   
+  public ToolbarDataImpl(): base() {}
+  
+  public ToolbarDataImpl(DocumentFormat.OpenXml.Office.Word.ToolbarData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id
   /// </summary>

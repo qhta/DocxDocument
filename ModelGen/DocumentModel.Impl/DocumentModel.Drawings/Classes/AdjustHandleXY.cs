@@ -11,6 +11,13 @@ public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
     set => _OpenXmlElement = value;
   }
   
+  public AdjustHandleXYImpl(): base() {}
+  
+  public AdjustHandleXYImpl(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Horizontal Adjustment Guide
   /// </summary>

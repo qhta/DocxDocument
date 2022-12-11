@@ -11,6 +11,13 @@ public class AnchorImpl: ModelElementImpl, Anchor
     set => _OpenXmlElement = value;
   }
   
+  public AnchorImpl(): base() {}
+  
+  public AnchorImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>
@@ -223,8 +230,8 @@ public class AnchorImpl: ModelElementImpl, Anchor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+        return item != null;
       }
       return null;
     }
@@ -232,18 +239,18 @@ public class AnchorImpl: ModelElementImpl, Anchor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

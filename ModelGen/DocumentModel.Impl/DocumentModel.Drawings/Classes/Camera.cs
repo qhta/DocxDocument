@@ -11,6 +11,13 @@ public class CameraImpl: ModelElementImpl, Camera
     set => _OpenXmlElement = value;
   }
   
+  public CameraImpl(): base() {}
+  
+  public CameraImpl(DocumentFormat.OpenXml.Drawing.Camera openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preset Camera Type
   /// </summary>

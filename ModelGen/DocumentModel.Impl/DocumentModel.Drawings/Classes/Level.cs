@@ -11,6 +11,13 @@ public class LevelImpl: ModelElementImpl, Level
     set => _OpenXmlElement = value;
   }
   
+  public LevelImpl(): base() {}
+  
+  public LevelImpl(DocumentFormat.OpenXml.Drawing.Charts.Level openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<StringPoint>? StringPoints
   {
     get => throw new NotImplementedException("Method not implemented");

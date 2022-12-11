@@ -11,6 +11,13 @@ public class FootnoteEndnoteReferenceTypeImpl: ModelElementImpl, FootnoteEndnote
     set => _OpenXmlElement = value;
   }
   
+  public FootnoteEndnoteReferenceTypeImpl(): base() {}
+  
+  public FootnoteEndnoteReferenceTypeImpl(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Suppress Footnote/Endnote Reference Mark
   /// </summary>

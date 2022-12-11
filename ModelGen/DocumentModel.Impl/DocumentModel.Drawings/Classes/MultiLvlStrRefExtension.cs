@@ -11,6 +11,13 @@ public class MultiLvlStrRefExtensionImpl: ModelElementImpl, MultiLvlStrRefExtens
     set => _OpenXmlElement = value;
   }
   
+  public MultiLvlStrRefExtensionImpl(): base() {}
+  
+  public MultiLvlStrRefExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

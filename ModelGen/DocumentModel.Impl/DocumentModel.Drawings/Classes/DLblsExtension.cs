@@ -11,6 +11,13 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     set => _OpenXmlElement = value;
   }
   
+  public DLblsExtensionImpl(): base() {}
+  
+  public DLblsExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     }
   }
   
-  public ChartText2? ChartText
+  public ChartText? ChartText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -51,33 +58,33 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public ShapeProperties2? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Layout2? Layout
+  public Layout? Layout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -98,27 +105,27 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public LeaderLines2? LeaderLines
+  public LeaderLines? LeaderLines
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

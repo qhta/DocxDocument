@@ -6,6 +6,7 @@ using Namotion.Reflection;
 
 using System.Diagnostics;
 using System.Reflection;
+using DocumentFormat.OpenXml.Validation.Schema;
 
 namespace ModelGen;
 
@@ -46,7 +47,7 @@ public static class TypeReflector
             TypeInfo? typeInfo = null;
             lock (TypeQueue)
             {
-              if (TypeQueue.Count>0)
+              if (TypeQueue.Count > 0)
                 typeInfo = TypeQueue.Dequeue();
               else
               {
@@ -77,7 +78,7 @@ public static class TypeReflector
   public static void WaitForReflection(this TypeInfo typeInfo)
   {
     int count = 10;
-    while (typeInfo.IsReflected == false && (count--)>0)
+    while (typeInfo.IsReflected == false && (count--) > 0)
     {
       Thread.Sleep(10);
     }
@@ -85,7 +86,7 @@ public static class TypeReflector
       ReflectType(typeInfo);
   }
 
-  public static object reflectedLock = new ();
+  public static object reflectedLock = new();
   public static int reflected;
   public static void ReflectType(this TypeInfo typeInfo)
   {
@@ -177,47 +178,116 @@ public static class TypeReflector
       //  foreach (var childItemType in childItemTypes)
       //    TypeManager.RegisterType(childItemType, typeInfo, Semantics.Include);
       //}
-
     }
+
     TypeInspector.InspectType(typeInfo);
-    foreach (var includeRelationship in typeInfo.GetOutgoingRelationships(Semantics.Include))
+    
+    if (typeInfo.ItemsConstraint != null)
+       IncludeProperties(typeInfo, typeInfo.ItemsConstraint);
+    /*
+    else
     {
-      if (typeInfo.Properties == null)
-        typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
-      if (includeRelationship.IsMultiple == true)
+      foreach (var includeRelationship in typeInfo.GetOutgoingRelationships(Semantics.Include))
       {
-        var propName = MultipleItemsPropName(includeRelationship.Target.Name);
-        if (typeInfo.Name == propName)
-          propName = "Items";
-        if (!typeInfo.Properties.Any(item => item.Name == propName))
+        if (typeInfo.Properties == null)
+          typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
+        if (includeRelationship.IsMultiple == true)
         {
-          var propInfo = new PropInfo(includeRelationship.Target);
-          propInfo.Name = propName;
-          Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { includeRelationship.Target.Type });
-          propInfo.PropertyType = TypeManager.RegisterType(propertyType);
-          typeInfo.Properties.Add(propInfo);
+          var propName = MultipleItemsPropName(includeRelationship.Target.Name);
+          if (typeInfo.Name == propName)
+            propName = "Items";
+          if (!typeInfo.Properties.Any(item => item.Name == propName))
+          {
+            var propInfo = new PropInfo(includeRelationship.Target);
+            propInfo.Name = propName;
+            Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { includeRelationship.Target.Type });
+            propInfo.PropertyType = TypeManager.RegisterType(propertyType);
+            typeInfo.Properties.Add(propInfo);
+          }
         }
-      }
-      else
-      {
-        var propName = includeRelationship.Target.Name;
-        if (typeInfo.Name == propName)
-          propName = "Child"+propName;
-        if (!typeInfo.Properties.Any(item => item.Name == propName))
+        else
         {
-          var propInfo = new PropInfo(includeRelationship.Target);
-          propInfo.Name = propName;
-          typeInfo.Properties.Add(propInfo);
+          var propName = includeRelationship.Target.Name;
+          if (typeInfo.Name == propName)
+            propName = "Child" + propName;
+          if (!typeInfo.Properties.Any(item => item.Name == propName))
+          {
+            var propInfo = new PropInfo(includeRelationship.Target);
+            propInfo.Name = propName;
+            typeInfo.Properties.Add(propInfo);
+          }
         }
       }
     }
-
-
+*/
     foreach (var item in type.CustomAttributes)
       typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
-  private static string MultipleItemsPropName(string aName)
+  public static void IncludeProperties(this TypeInfo typeInfo, ItemsConstraint constraint)
+  {
+    //if (typeInfo.Name == "Rsids")
+    //  Debug.Assert(true);
+    if (constraint is ItemTypeConstraint typeConstraint)
+    {
+      typeConstraint.AccessProperty = CreateProperty(typeInfo, typeConstraint);
+    }
+    else if (constraint is ItemsCompoundConstraint compoundConstraint)
+      foreach (var itemConstraint in compoundConstraint.Items)
+        IncludeProperties(typeInfo, itemConstraint);
+  }
+
+  public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemTypeConstraint constraint)
+  {
+    if (typeInfo.Properties == null)
+      typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
+    var targetType = constraint.ItemType;
+    if (constraint.IsMultiple)
+    {
+      var propName = MultipleItemsPropName(targetType.Name);
+      if (typeInfo.Name == propName)
+        propName = "Items";
+      var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
+      if (existingProp == null)
+      {
+        var propInfo = new PropInfo(targetType);
+        propInfo.Name = propName;
+        Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
+        propInfo.PropertyType = TypeManager.RegisterType(propertyType);
+        propInfo.IsConstrained = true;
+        typeInfo.Properties.Add(propInfo);
+        return propInfo;
+      }
+      else
+      {
+        existingProp.IsConstrained = true;
+        return existingProp;
+      }
+    }
+    else
+    {
+      var propName = targetType.Name;
+      if (typeInfo.Name == propName)
+        propName = "Child" + propName;
+      var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
+      if (existingProp == null)
+      {
+        var propInfo = new PropInfo(targetType);
+        propInfo.Name = propName;
+        propInfo.IsConstrained = true;
+        typeInfo.Properties.Add(propInfo);
+        return propInfo;
+      }
+      else
+      {
+        existingProp.IsConstrained = true;
+        return existingProp;
+      }
+    }
+    //return null;
+  }
+  
+public static string MultipleItemsPropName(string aName)
   {
     if (aName.EndsWith('y'))
       return aName.Substring(0, aName.Length - 1) + "ies";

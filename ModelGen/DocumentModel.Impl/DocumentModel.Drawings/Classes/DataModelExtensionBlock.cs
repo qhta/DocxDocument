@@ -11,6 +11,13 @@ public class DataModelExtensionBlockImpl: ModelElementImpl, DataModelExtensionBl
     set => _OpenXmlElement = value;
   }
   
+  public DataModelExtensionBlockImpl(): base() {}
+  
+  public DataModelExtensionBlockImpl(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// relId, this property is only available in Office 2010 and later.
   /// </summary>

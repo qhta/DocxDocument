@@ -11,6 +11,13 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
     set => _OpenXmlElement = value;
   }
   
+  public LineNumberTypeImpl(): base() {}
+  
+  public LineNumberTypeImpl(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Line Number Increments to Display
   /// </summary>

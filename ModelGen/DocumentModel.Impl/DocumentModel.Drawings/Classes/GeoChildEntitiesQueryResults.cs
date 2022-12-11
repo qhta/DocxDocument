@@ -11,6 +11,13 @@ public class GeoChildEntitiesQueryResultsImpl: ModelElementImpl, GeoChildEntitie
     set => _OpenXmlElement = value;
   }
   
+  public GeoChildEntitiesQueryResultsImpl(): base() {}
+  
+  public GeoChildEntitiesQueryResultsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<GeoChildEntitiesQueryResult>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

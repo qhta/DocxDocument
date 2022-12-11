@@ -11,6 +11,13 @@ public class RuleListImpl: ModelElementImpl, RuleList
     set => _OpenXmlElement = value;
   }
   
+  public RuleListImpl(): base() {}
+  
+  public RuleListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Rule>? Rules
   {
     get => throw new NotImplementedException("Method not implemented");

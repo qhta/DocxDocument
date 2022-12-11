@@ -11,6 +11,13 @@ public class LevelOverrideImpl: ModelElementImpl, LevelOverride
     set => _OpenXmlElement = value;
   }
   
+  public LevelOverrideImpl(): base() {}
+  
+  public LevelOverrideImpl(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Numbering Level ID
   /// </summary>
@@ -42,20 +49,20 @@ public class LevelOverrideImpl: ModelElementImpl, LevelOverride
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,6 +11,13 @@ public class StockChartExtensionImpl: ModelElementImpl, StockChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public StockChartExtensionImpl(): base() {}
+  
+  public StockChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

@@ -25,9 +25,9 @@ public interface SectionProperties
   /// </summary>
   public DocumentModel.HexBinaryValue? RsidSect { get ; set; }
   
-  public Collection<HeaderFooterReferenceType>? HeaderReferences { get ; set; }
+  public HeaderFooterReferenceType? HeaderReference { get ; set; }
   
-  public Collection<HeaderFooterReferenceType>? FooterReferences { get ; set; }
+  public HeaderFooterReferenceType? FooterReference { get ; set; }
   
   public FootnoteProperties? FootnoteProperties { get ; set; }
   

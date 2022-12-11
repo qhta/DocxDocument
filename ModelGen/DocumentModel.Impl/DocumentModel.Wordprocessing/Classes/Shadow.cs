@@ -11,6 +11,13 @@ public class ShadowImpl: ModelElementImpl, Shadow
     set => _OpenXmlElement = value;
   }
   
+  public ShadowImpl(): base() {}
+  
+  public ShadowImpl(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// blurRad, this property is only available in Office 2010 and later.
   /// </summary>

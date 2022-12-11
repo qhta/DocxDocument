@@ -11,6 +11,13 @@ public class RsidsImpl: ModelElementImpl, Rsids
     set => _OpenXmlElement = value;
   }
   
+  public RsidsImpl(): base() {}
+  
+  public RsidsImpl(DocumentFormat.OpenXml.Wordprocessing.Rsids openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
@@ -29,20 +36,20 @@ public class RsidsImpl: ModelElementImpl, Rsids
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RsidRoot>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RsidRoot>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (string?)value;
+            item.Val = (string?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.RsidRoot{ Val = (string?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.RsidRoot{ Val = (string?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

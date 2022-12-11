@@ -11,6 +11,13 @@ public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
     set => _OpenXmlElement = value;
   }
   
+  public ShapeGuideListImpl(): base() {}
+  
+  public ShapeGuideListImpl(DocumentFormat.OpenXml.Drawing.ShapeGuideList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ShapeGuide>? ShapeGuides
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -11,7 +11,14 @@ public class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public SlideSyncDataPartImpl(): base() {}
+  
+  public SlideSyncDataPartImpl(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

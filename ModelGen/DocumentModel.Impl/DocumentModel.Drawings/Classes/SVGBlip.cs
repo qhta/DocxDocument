@@ -11,6 +11,13 @@ public class SVGBlipImpl: ModelElementImpl, SVGBlip
     set => _OpenXmlElement = value;
   }
   
+  public SVGBlipImpl(): base() {}
+  
+  public SVGBlipImpl(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>

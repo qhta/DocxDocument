@@ -11,13 +11,20 @@ public class ValuesImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, Values
     set => _OpenXmlElement = value;
   }
   
-  public override NumberReference? NumberReference
+  public ValuesImpl(): base() {}
+  
+  public ValuesImpl(DocumentFormat.OpenXml.Drawing.Charts.Values openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

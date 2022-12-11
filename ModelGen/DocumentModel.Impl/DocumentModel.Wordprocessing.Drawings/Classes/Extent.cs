@@ -11,6 +11,13 @@ public class ExtentImpl: ModelElementImpl, Extent
     set => _OpenXmlElement = value;
   }
   
+  public ExtentImpl(): base() {}
+  
+  public ExtentImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Extent Length
   /// </summary>

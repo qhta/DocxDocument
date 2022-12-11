@@ -11,6 +11,13 @@ public class StyleDefinitionTitleImpl: ModelElementImpl, StyleDefinitionTitle
     set => _OpenXmlElement = value;
   }
   
+  public StyleDefinitionTitleImpl(): base() {}
+  
+  public StyleDefinitionTitleImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Natural Language
   /// </summary>

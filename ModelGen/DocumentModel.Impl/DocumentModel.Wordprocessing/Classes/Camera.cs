@@ -11,6 +11,13 @@ public class CameraImpl: ModelElementImpl, Camera
     set => _OpenXmlElement = value;
   }
   
+  public CameraImpl(): base() {}
+  
+  public CameraImpl(DocumentFormat.OpenXml.Office2010.Word.Camera openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// prst, this property is only available in Office 2010 and later.
   /// </summary>

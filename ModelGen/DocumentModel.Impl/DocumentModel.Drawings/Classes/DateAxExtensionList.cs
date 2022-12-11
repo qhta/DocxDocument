@@ -11,6 +11,13 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public DateAxExtensionListImpl(): base() {}
+  
+  public DateAxExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DateAxExtension>? DateAxExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

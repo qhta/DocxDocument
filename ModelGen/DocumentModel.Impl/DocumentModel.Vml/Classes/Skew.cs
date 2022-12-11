@@ -11,6 +11,13 @@ public class SkewImpl: ModelElementImpl, Skew
     set => _OpenXmlElement = value;
   }
   
+  public SkewImpl(): base() {}
+  
+  public SkewImpl(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

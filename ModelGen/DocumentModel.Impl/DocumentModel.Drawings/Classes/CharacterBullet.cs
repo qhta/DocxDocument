@@ -11,6 +11,13 @@ public class CharacterBulletImpl: ModelElementImpl, CharacterBullet
     set => _OpenXmlElement = value;
   }
   
+  public CharacterBulletImpl(): base() {}
+  
+  public CharacterBulletImpl(DocumentFormat.OpenXml.Drawing.CharacterBullet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Bullet Character
   /// </summary>

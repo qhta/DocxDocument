@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CategoryAxisData Class.
 /// </summary>
-public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceType2Impl, CategoryAxisData
+public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceTypeImpl, CategoryAxisData
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData? OpenXmlElement
   {
@@ -11,31 +11,38 @@ public class CategoryAxisDataImpl: DocumentModel.Drawings.AxisDataSourceType2Imp
     set => _OpenXmlElement = value;
   }
   
-  public override MultiLevelStringReference? MultiLevelStringReference
+  public CategoryAxisDataImpl(): base() {}
+  
+  public CategoryAxisDataImpl(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new MultiLevelStringReference? MultiLevelStringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberReference? NumberReference
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override StringReference? StringReference
+  public new StringReference? StringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override StringLiteral? StringLiteral
+  public new StringLiteral? StringLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

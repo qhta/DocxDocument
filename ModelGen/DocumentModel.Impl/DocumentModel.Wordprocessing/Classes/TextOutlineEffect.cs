@@ -11,6 +11,13 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     set => _OpenXmlElement = value;
   }
   
+  public TextOutlineEffectImpl(): base() {}
+  
+  public TextOutlineEffectImpl(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// w, this property is only available in Office 2010 and later.
   /// </summary>
@@ -69,8 +76,8 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        return item != null;
       }
       return null;
     }
@@ -78,18 +85,18 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -123,20 +130,20 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties{ Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties{ Val = (DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -149,8 +156,8 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+        return item != null;
       }
       return null;
     }
@@ -158,18 +165,18 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.RoundEmpty();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.RoundEmpty();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -182,8 +189,8 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+        return item != null;
       }
       return null;
     }
@@ -191,18 +198,18 @@ public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.BevelEmpty();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.BevelEmpty();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

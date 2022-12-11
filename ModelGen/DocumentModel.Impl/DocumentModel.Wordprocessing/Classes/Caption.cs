@@ -11,6 +11,13 @@ public class CaptionImpl: ModelElementImpl, Caption
     set => _OpenXmlElement = value;
   }
   
+  public CaptionImpl(): base() {}
+  
+  public CaptionImpl(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Caption Type Name
   /// </summary>

@@ -11,6 +11,13 @@ public class ScatterSerExtensionListImpl: ModelElementImpl, ScatterSerExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public ScatterSerExtensionListImpl(): base() {}
+  
+  public ScatterSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.ScatterSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ScatterSerExtension>? ScatterSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

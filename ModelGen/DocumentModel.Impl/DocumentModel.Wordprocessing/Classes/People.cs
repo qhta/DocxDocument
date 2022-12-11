@@ -11,6 +11,13 @@ public class PeopleImpl: ModelElementImpl, People
     set => _OpenXmlElement = value;
   }
   
+  public PeopleImpl(): base() {}
+  
+  public PeopleImpl(DocumentFormat.OpenXml.Office2013.Word.People openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Person>? Persons
   {
     get => throw new NotImplementedException("Method not implemented");

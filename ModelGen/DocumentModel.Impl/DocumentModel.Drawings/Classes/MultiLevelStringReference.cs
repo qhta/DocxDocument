@@ -11,6 +11,13 @@ public class MultiLevelStringReferenceImpl: ModelElementImpl, MultiLevelStringRe
     set => _OpenXmlElement = value;
   }
   
+  public MultiLevelStringReferenceImpl(): base() {}
+  
+  public MultiLevelStringReferenceImpl(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Formula.
   /// </summary>
@@ -29,20 +36,20 @@ public class MultiLevelStringReferenceImpl: ModelElementImpl, MultiLevelStringRe
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Formula{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Formula{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

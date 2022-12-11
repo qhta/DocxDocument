@@ -11,6 +11,13 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
     set => _OpenXmlElement = value;
   }
   
+  public CustomXmlElementImpl(): base() {}
+  
+  public CustomXmlElementImpl(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the custom XML Markup Namespace.
   /// </summary>

@@ -11,6 +11,13 @@ public class LegendEntryImpl: ModelElementImpl, LegendEntry
     set => _OpenXmlElement = value;
   }
   
+  public LegendEntryImpl(): base() {}
+  
+  public LegendEntryImpl(DocumentFormat.OpenXml.Drawing.Charts.LegendEntry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Index.
   /// </summary>
@@ -29,20 +36,20 @@ public class LegendEntryImpl: ModelElementImpl, LegendEntry
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -64,33 +71,33 @@ public class LegendEntryImpl: ModelElementImpl, LegendEntry
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Delete{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Delete{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public TextProperties1? TextProperties
+  public TextProperties? TextProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

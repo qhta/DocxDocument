@@ -11,7 +11,14 @@ public class EmbeddedObjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Em
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public EmbeddedObjectPartImpl(): base() {}
+  
+  public EmbeddedObjectPartImpl(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

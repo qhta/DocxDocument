@@ -11,6 +11,13 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
     set => _OpenXmlElement = value;
   }
   
+  public StyleLabelImpl(): base() {}
+  
+  public StyleLabelImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Style Name
   /// </summary>
@@ -45,7 +52,7 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties2? TextProperties
+  public TextProperties? TextProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -54,7 +61,7 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style1? Style
+  public Style? Style
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -63,7 +70,7 @@ public class StyleLabelImpl: ModelElementImpl, StyleLabel
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

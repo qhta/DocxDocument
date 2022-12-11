@@ -11,6 +11,13 @@ public class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
     set => _OpenXmlElement = value;
   }
   
+  public OEmbedSharedImpl(): base() {}
+  
+  public OEmbedSharedImpl(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// srcUrl, this property is only available in Microsoft365 and later.
   /// </summary>
@@ -40,7 +47,7 @@ public class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList7? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

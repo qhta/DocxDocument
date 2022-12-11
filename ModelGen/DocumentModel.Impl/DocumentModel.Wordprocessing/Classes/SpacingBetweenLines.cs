@@ -11,6 +11,13 @@ public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
     set => _OpenXmlElement = value;
   }
   
+  public SpacingBetweenLinesImpl(): base() {}
+  
+  public SpacingBetweenLinesImpl(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Spacing Above Paragraph
   /// </summary>

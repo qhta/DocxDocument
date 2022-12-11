@@ -11,6 +11,13 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     set => _OpenXmlElement = value;
   }
   
+  public PhantomPropertiesImpl(): base() {}
+  
+  public PhantomPropertiesImpl(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Phantom Show.
   /// </summary>
@@ -29,20 +36,20 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ShowPhantom>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ShowPhantom>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ShowPhantom{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ShowPhantom{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroWidth>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroWidth>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ZeroWidth{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ZeroWidth{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -105,20 +112,20 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroAscent>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroAscent>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ZeroAscent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ZeroAscent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -143,20 +150,20 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroDescent>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroDescent>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ZeroDescent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ZeroDescent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -181,20 +188,20 @@ public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Transparent>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Transparent>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.Transparent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.Transparent{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

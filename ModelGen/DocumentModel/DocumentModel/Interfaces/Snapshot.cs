@@ -20,39 +20,39 @@ public interface Snapshot
   /// </summary>
   public DocumentModel.Drawings.BlipCompressionKind? CompressionState { get ; set; }
   
-  public Collection<DocumentModel.Drawings.AlphaBiLevel>? AlphaBiLevels { get ; set; }
+  public DocumentModel.Drawings.AlphaBiLevel? AlphaBiLevel { get ; set; }
   
-  public Collection<Boolean>? AlphaCeilings { get ; set; }
+  public Boolean? AlphaCeiling { get ; set; }
   
-  public Collection<Boolean>? AlphaFloors { get ; set; }
+  public Boolean? AlphaFloor { get ; set; }
   
-  public Collection<DocumentModel.Drawings.AlphaInverse>? AlphaInverses { get ; set; }
+  public DocumentModel.Drawings.AlphaInverse? AlphaInverse { get ; set; }
   
-  public Collection<DocumentModel.Drawings.AlphaModulationEffect>? AlphaModulationEffects { get ; set; }
+  public DocumentModel.Drawings.AlphaModulationEffect? AlphaModulationEffect { get ; set; }
   
-  public Collection<DocumentModel.Drawings.AlphaModulationFixed>? AlphaModulationFixeds { get ; set; }
+  public DocumentModel.Drawings.AlphaModulationFixed? AlphaModulationFixed { get ; set; }
   
-  public Collection<DocumentModel.Drawings.AlphaReplace>? AlphaReplaces { get ; set; }
+  public DocumentModel.Drawings.AlphaReplace? AlphaReplace { get ; set; }
   
-  public Collection<DocumentModel.Drawings.BiLevel>? BiLevels { get ; set; }
+  public DocumentModel.Drawings.BiLevel? BiLevel { get ; set; }
   
-  public Collection<DocumentModel.Drawings.Blur>? Blurs { get ; set; }
+  public DocumentModel.Drawings.Blur? Blur { get ; set; }
   
-  public Collection<DocumentModel.Drawings.ColorChange>? ColorChanges { get ; set; }
+  public DocumentModel.Drawings.ColorChange? ColorChange { get ; set; }
   
-  public Collection<DocumentModel.Drawings.ColorReplacement>? ColorReplacements { get ; set; }
+  public DocumentModel.Drawings.ColorReplacement? ColorReplacement { get ; set; }
   
-  public Collection<DocumentModel.Drawings.Duotone>? Duotones { get ; set; }
+  public DocumentModel.Drawings.Duotone? Duotone { get ; set; }
   
-  public Collection<DocumentModel.Drawings.FillOverlay>? FillOverlaies { get ; set; }
+  public DocumentModel.Drawings.FillOverlay? FillOverlay { get ; set; }
   
-  public Collection<Boolean>? Grayscales { get ; set; }
+  public Boolean? Grayscale { get ; set; }
   
-  public Collection<DocumentModel.Drawings.Hsl>? Hsls { get ; set; }
+  public DocumentModel.Drawings.Hsl? Hsl { get ; set; }
   
-  public Collection<DocumentModel.Drawings.LuminanceEffect>? LuminanceEffects { get ; set; }
+  public DocumentModel.Drawings.LuminanceEffect? LuminanceEffect { get ; set; }
   
-  public Collection<DocumentModel.Drawings.TintEffect>? TintEffects { get ; set; }
+  public DocumentModel.Drawings.TintEffect? TintEffect { get ; set; }
   
   public DocumentModel.Drawings.BlipExtensionList? BlipExtensionList { get ; set; }
   

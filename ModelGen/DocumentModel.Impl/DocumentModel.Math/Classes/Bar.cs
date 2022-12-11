@@ -11,6 +11,13 @@ public class BarImpl: ModelElementImpl, Bar
     set => _OpenXmlElement = value;
   }
   
+  public BarImpl(): base() {}
+  
+  public BarImpl(DocumentFormat.OpenXml.Math.Bar openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Bar Properties.
   /// </summary>

@@ -11,6 +11,13 @@ public class ArtisticPlasticWrapImpl: ModelElementImpl, ArtisticPlasticWrap
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPlasticWrapImpl(): base() {}
+  
+  public ArtisticPlasticWrapImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

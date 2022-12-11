@@ -11,7 +11,14 @@ public class PowerPointCommentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public PowerPointCommentPartImpl(): base() {}
+  
+  public PowerPointCommentPartImpl(DocumentFormat.OpenXml.Packaging.PowerPointCommentPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class PowerPointCommentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

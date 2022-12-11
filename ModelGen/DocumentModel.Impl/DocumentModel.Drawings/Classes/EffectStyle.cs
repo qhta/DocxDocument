@@ -11,6 +11,13 @@ public class EffectStyleImpl: ModelElementImpl, EffectStyle
     set => _OpenXmlElement = value;
   }
   
+  public EffectStyleImpl(): base() {}
+  
+  public EffectStyleImpl(DocumentFormat.OpenXml.Drawing.EffectStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public EffectList? EffectList
   {
     get => throw new NotImplementedException("Method not implemented");

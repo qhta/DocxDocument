@@ -11,10 +11,17 @@ public class InvertSolidFillFormatImpl: ModelElementImpl, InvertSolidFillFormat
     set => _OpenXmlElement = value;
   }
   
+  public InvertSolidFillFormatImpl(): base() {}
+  
+  public InvertSolidFillFormatImpl(DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties9? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

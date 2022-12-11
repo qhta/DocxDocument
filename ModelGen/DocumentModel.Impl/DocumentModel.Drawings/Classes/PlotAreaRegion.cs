@@ -11,6 +11,13 @@ public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
     set => _OpenXmlElement = value;
   }
   
+  public PlotAreaRegionImpl(): base() {}
+  
+  public PlotAreaRegionImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// PlotSurface.
   /// </summary>
@@ -26,7 +33,7 @@ public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,7 +11,14 @@ public class Model3DReferenceRelationshipPartImpl: DocumentModel.Packaging.OpenX
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public Model3DReferenceRelationshipPartImpl(): base() {}
+  
+  public Model3DReferenceRelationshipPartImpl(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class Model3DReferenceRelationshipPartImpl: DocumentModel.Packaging.OpenX
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

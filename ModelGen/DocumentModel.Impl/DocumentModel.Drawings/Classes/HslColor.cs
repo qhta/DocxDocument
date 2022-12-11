@@ -11,6 +11,13 @@ public class HslColorImpl: ModelElementImpl, HslColor
     set => _OpenXmlElement = value;
   }
   
+  public HslColorImpl(): base() {}
+  
+  public HslColorImpl(DocumentFormat.OpenXml.Drawing.HslColor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Hue
   /// </summary>
@@ -50,172 +57,974 @@ public class HslColorImpl: ModelElementImpl, HslColor
     }
   }
   
-  public Collection<Int32>? Tints
+  public Int32? Tint
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Tint{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Shades
+  public Int32? Shade
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Shade{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Boolean>? Complements
+  public Boolean? Complement
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Complement();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Boolean>? Inverses
+  public Boolean? Inverse
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Inverse();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Boolean>? Graies
+  public Boolean? Gray
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Gray();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Alphas
+  public Int32? Alpha
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Alpha{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? AlphaOffsets
+  public Int32? AlphaOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? AlphaModulations
+  public Int32? AlphaModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Hues
+  public Int32? Hue
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Hue{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? HueOffsets
+  public Int32? HueOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.HueOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? HueModulations
+  public Int32? HueModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.HueModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Saturations
+  public Int32? Saturation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Saturation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? SaturationOffsets
+  public Int32? SaturationOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.SaturationOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? SaturationModulations
+  public Int32? SaturationModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.SaturationModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Luminances
+  public Int32? Luminance
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Luminance{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? LuminanceOffsets
+  public Int32? LuminanceOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.LuminanceOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? LuminanceModulations
+  public Int32? LuminanceModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.LuminanceModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Reds
+  public Int32? Red
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Red{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? RedOffsets
+  public Int32? RedOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.RedOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? RedModulations
+  public Int32? RedModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.RedModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Greens
+  public Int32? Green
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Green{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? GreenOffsets
+  public Int32? GreenOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.GreenOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? GreenModulations
+  public Int32? GreenModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.GreenModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? Blues
+  public Int32? Blue
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Blue{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? BlueOffsets
+  public Int32? BlueOffset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.BlueOffset{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Int32>? BlueModulations
+  public Int32? BlueModulation
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+        return (Int32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Int32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.BlueModulation{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Boolean>? Gammas
+  public Boolean? Gamma
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Gamma();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
-  public Collection<Boolean>? InverseGammas
+  public Boolean? InverseGamma
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.InverseGamma();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
 }

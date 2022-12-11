@@ -13,6 +13,6 @@ public interface GroupShapeType
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public GroupShapeProperties1? GroupShapeProperties { get ; set; }
+  public GroupShapeProperties? GroupShapeProperties { get ; set; }
   
 }

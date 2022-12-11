@@ -11,6 +11,13 @@ public class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
     set => _OpenXmlElement = value;
   }
   
+  public LinearShadePropertiesImpl(): base() {}
+  
+  public LinearShadePropertiesImpl(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ang, this property is only available in Office 2010 and later.
   /// </summary>

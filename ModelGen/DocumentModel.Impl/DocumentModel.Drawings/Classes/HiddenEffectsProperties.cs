@@ -11,6 +11,13 @@ public class HiddenEffectsPropertiesImpl: ModelElementImpl, HiddenEffectsPropert
     set => _OpenXmlElement = value;
   }
   
+  public HiddenEffectsPropertiesImpl(): base() {}
+  
+  public HiddenEffectsPropertiesImpl(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Effect Container.
   /// </summary>

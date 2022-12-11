@@ -10,7 +10,7 @@ public interface Choose
   /// </summary>
   public String? Name { get ; set; }
   
-  public Collection<DiagramChooseIf>? DiagramChooseIfs { get ; set; }
+  public DiagramChooseIf? DiagramChooseIf { get ; set; }
   
   public DiagramChooseElse? DiagramChooseElse { get ; set; }
   

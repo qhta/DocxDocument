@@ -11,6 +11,13 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public DataModelExtensionListImpl(): base() {}
+  
+  public DataModelExtensionListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DataModelExtension>? DataModelExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

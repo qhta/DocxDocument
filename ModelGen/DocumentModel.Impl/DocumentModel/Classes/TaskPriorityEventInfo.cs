@@ -11,6 +11,13 @@ public class TaskPriorityEventInfoImpl: ModelElementImpl, TaskPriorityEventInfo
     set => _OpenXmlElement = value;
   }
   
+  public TaskPriorityEventInfoImpl(): base() {}
+  
+  public TaskPriorityEventInfoImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// value, this property is only available in Office 2021 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class NaryImpl: ModelElementImpl, Nary
     set => _OpenXmlElement = value;
   }
   
+  public NaryImpl(): base() {}
+  
+  public NaryImpl(DocumentFormat.OpenXml.Math.Nary openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// n-ary Properties.
   /// </summary>

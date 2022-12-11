@@ -11,6 +11,13 @@ public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCateg
     set => _OpenXmlElement = value;
   }
   
+  public ColorTransformCategoriesImpl(): base() {}
+  
+  public ColorTransformCategoriesImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ColorTransformCategory>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

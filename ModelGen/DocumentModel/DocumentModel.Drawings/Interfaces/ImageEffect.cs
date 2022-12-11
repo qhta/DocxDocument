@@ -138,7 +138,7 @@ public interface ImageEffect
   /// <summary>
   /// Saturation.
   /// </summary>
-  public Saturation1? Saturation { get ; set; }
+  public Saturation? Saturation { get ; set; }
   
   /// <summary>
   /// SharpenSoften.

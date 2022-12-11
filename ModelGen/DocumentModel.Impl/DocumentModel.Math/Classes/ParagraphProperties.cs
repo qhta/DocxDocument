@@ -11,6 +11,13 @@ public class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphPropertiesImpl(): base() {}
+  
+  public ParagraphPropertiesImpl(DocumentFormat.OpenXml.Math.ParagraphProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Justification.
   /// </summary>
@@ -29,20 +36,20 @@ public class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Justification>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Justification>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.Justification{ Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.Justification{ Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,10 +11,17 @@ public class FilteredLineSeriesExtensionImpl: ModelElementImpl, FilteredLineSeri
     set => _OpenXmlElement = value;
   }
   
+  public FilteredLineSeriesExtensionImpl(): base() {}
+  
+  public FilteredLineSeriesExtensionImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// LineChartSeries.
   /// </summary>
-  public LineChartSeries2? LineChartSeries
+  public LineChartSeries? LineChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

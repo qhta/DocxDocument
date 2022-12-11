@@ -11,6 +11,13 @@ public class StretchImpl: ModelElementImpl, Stretch
     set => _OpenXmlElement = value;
   }
   
+  public StretchImpl(): base() {}
+  
+  public StretchImpl(DocumentFormat.OpenXml.Drawing.Stretch openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Fill Rectangle.
   /// </summary>

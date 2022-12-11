@@ -11,6 +11,13 @@ public class ThemeElementsImpl: ModelElementImpl, ThemeElements
     set => _OpenXmlElement = value;
   }
   
+  public ThemeElementsImpl(): base() {}
+  
+  public ThemeElementsImpl(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ColorScheme.
   /// </summary>
@@ -41,7 +48,7 @@ public class ThemeElementsImpl: ModelElementImpl, ThemeElements
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

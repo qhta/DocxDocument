@@ -11,6 +11,13 @@ public class LineSerExtensionImpl: ModelElementImpl, LineSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public LineSerExtensionImpl(): base() {}
+  
+  public LineSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

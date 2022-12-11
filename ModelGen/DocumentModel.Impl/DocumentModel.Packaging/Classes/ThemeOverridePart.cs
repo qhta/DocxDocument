@@ -11,7 +11,14 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public ThemeOverridePartImpl(): base() {}
+  
+  public ThemeOverridePartImpl(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

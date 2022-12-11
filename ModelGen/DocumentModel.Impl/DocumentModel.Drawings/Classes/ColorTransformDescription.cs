@@ -11,6 +11,13 @@ public class ColorTransformDescriptionImpl: ModelElementImpl, ColorTransformDesc
     set => _OpenXmlElement = value;
   }
   
+  public ColorTransformDescriptionImpl(): base() {}
+  
+  public ColorTransformDescriptionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Language
   /// </summary>

@@ -11,6 +11,13 @@ public class AltChunkImpl: ModelElementImpl, AltChunk
     set => _OpenXmlElement = value;
   }
   
+  public AltChunkImpl(): base() {}
+  
+  public AltChunkImpl(DocumentFormat.OpenXml.Wordprocessing.AltChunk openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Relationship to Part
   /// </summary>

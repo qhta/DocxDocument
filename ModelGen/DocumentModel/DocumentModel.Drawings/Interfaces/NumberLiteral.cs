@@ -11,6 +11,6 @@ public interface NumberLiteral
   
   public Collection<NumericPoint>? NumericPoints { get ; set; }
   
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

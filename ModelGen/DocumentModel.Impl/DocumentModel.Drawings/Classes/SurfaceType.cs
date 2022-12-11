@@ -11,6 +11,13 @@ public class SurfaceTypeImpl: ModelElementImpl, SurfaceType
     set => _OpenXmlElement = value;
   }
   
+  public SurfaceTypeImpl(): base() {}
+  
+  public SurfaceTypeImpl(DocumentFormat.OpenXml.Drawing.Charts.SurfaceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Thickness.
   /// </summary>
@@ -29,20 +36,20 @@ public class SurfaceTypeImpl: ModelElementImpl, SurfaceType
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Byte?)value;
+            item.Val = (System.Byte?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = (System.Byte?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = (System.Byte?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -52,7 +59,7 @@ public class SurfaceTypeImpl: ModelElementImpl, SurfaceType
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties5? ShapeProperties
+  public virtual ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -70,7 +77,7 @@ public class SurfaceTypeImpl: ModelElementImpl, SurfaceType
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public virtual ExtensionList3? ExtensionList
+  public virtual ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

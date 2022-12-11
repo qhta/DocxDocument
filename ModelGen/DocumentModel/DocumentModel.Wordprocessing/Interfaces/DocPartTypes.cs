@@ -10,6 +10,6 @@ public interface DocPartTypes
   /// </summary>
   public Boolean? All { get ; set; }
   
-  public Collection<DocPartKind>? Items { get ; set; }
+  public DocPartKind? DocPartType { get ; set; }
   
 }

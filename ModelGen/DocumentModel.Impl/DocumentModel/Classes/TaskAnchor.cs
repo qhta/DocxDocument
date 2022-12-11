@@ -11,6 +11,13 @@ public class TaskAnchorImpl: ModelElementImpl, TaskAnchor
     set => _OpenXmlElement = value;
   }
   
+  public TaskAnchorImpl(): base() {}
+  
+  public TaskAnchorImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// CommentAnchor.
   /// </summary>

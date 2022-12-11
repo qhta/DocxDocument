@@ -11,6 +11,13 @@ public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
     set => _OpenXmlElement = value;
   }
   
+  public HyperlinkTypeImpl(): base() {}
+  
+  public HyperlinkTypeImpl(DocumentFormat.OpenXml.Drawing.HyperlinkType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// relationship identifier to find target URI
   /// </summary>

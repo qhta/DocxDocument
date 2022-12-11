@@ -11,6 +11,13 @@ public class StylisticSetsImpl: ModelElementImpl, StylisticSets
     set => _OpenXmlElement = value;
   }
   
+  public StylisticSetsImpl(): base() {}
+  
+  public StylisticSetsImpl(DocumentFormat.OpenXml.Office2010.Word.StylisticSets openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<StyleSet>? StyleSets
   {
     get => throw new NotImplementedException("Method not implemented");

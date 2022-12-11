@@ -11,6 +11,13 @@ public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
     set => _OpenXmlElement = value;
   }
   
+  public FillToRectangleImpl(): base() {}
+  
+  public FillToRectangleImpl(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// l, this property is only available in Office 2010 and later.
   /// </summary>

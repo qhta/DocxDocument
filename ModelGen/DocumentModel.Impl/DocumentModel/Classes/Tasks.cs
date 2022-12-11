@@ -11,6 +11,13 @@ public class TasksImpl: ModelElementImpl, Tasks
     set => _OpenXmlElement = value;
   }
   
+  public TasksImpl(): base() {}
+  
+  public TasksImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Task>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

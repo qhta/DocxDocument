@@ -11,6 +11,13 @@ public class ImageDataImpl: ModelElementImpl, ImageData
     set => _OpenXmlElement = value;
   }
   
+  public ImageDataImpl(): base() {}
+  
+  public ImageDataImpl(DocumentFormat.OpenXml.Vml.ImageData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

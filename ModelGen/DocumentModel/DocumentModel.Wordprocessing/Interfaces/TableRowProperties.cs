@@ -5,29 +5,29 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface TableRowProperties
 {
-  public Collection<ConditionalFormatStyle>? ConditionalFormatStyles { get ; set; }
+  public ConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
   
-  public Collection<String>? DivIds { get ; set; }
+  public String? DivId { get ; set; }
   
-  public Collection<Int32>? GridBefores { get ; set; }
+  public Int32? GridBefore { get ; set; }
   
-  public Collection<Int32>? GridAfters { get ; set; }
+  public Int32? GridAfter { get ; set; }
   
-  public Collection<TableWidthType>? WidthBeforeTableRows { get ; set; }
+  public TableWidthType? WidthBeforeTableRow { get ; set; }
   
-  public Collection<TableWidthType>? WidthAfterTableRows { get ; set; }
+  public TableWidthType? WidthAfterTableRow { get ; set; }
   
-  public Collection<TableRowHeight>? TableRowHeights { get ; set; }
+  public TableRowHeight? TableRowHeight { get ; set; }
   
-  public Collection<Boolean>? Hiddens { get ; set; }
+  public Boolean? Hidden { get ; set; }
   
-  public Collection<OnOffOnlyKind>? CantSplits { get ; set; }
+  public OnOffOnlyKind? CantSplit { get ; set; }
   
-  public Collection<OnOffOnlyKind>? TableHeaders { get ; set; }
+  public OnOffOnlyKind? TableHeader { get ; set; }
   
-  public Collection<TableWidthType>? TableCellSpacings { get ; set; }
+  public TableWidthType? TableCellSpacing { get ; set; }
   
-  public Collection<TableRowAlignmentKind>? TableJustifications { get ; set; }
+  public TableRowAlignmentKind? TableJustification { get ; set; }
   
   public TrackChangeType? Inserted { get ; set; }
   

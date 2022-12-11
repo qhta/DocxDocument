@@ -11,6 +11,13 @@ public class SeriesImpl: ModelElementImpl, Series
     set => _OpenXmlElement = value;
   }
   
+  public SeriesImpl(): base() {}
+  
+  public SeriesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// layoutId, this property is only available in Office 2016 and later.
   /// </summary>
@@ -79,7 +86,7 @@ public class SeriesImpl: ModelElementImpl, Series
   /// <summary>
   /// Text.
   /// </summary>
-  public Text2? Text
+  public Text? Text
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -88,7 +95,7 @@ public class SeriesImpl: ModelElementImpl, Series
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -112,13 +119,13 @@ public class SeriesImpl: ModelElementImpl, Series
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DataPoint1>? DataPoints
+  public Collection<DataPoint>? DataPoints
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels2? DataLabels
+  public DataLabels? DataLabels
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -139,20 +146,20 @@ public class SeriesImpl: ModelElementImpl, Series
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -171,7 +178,7 @@ public class SeriesImpl: ModelElementImpl, Series
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

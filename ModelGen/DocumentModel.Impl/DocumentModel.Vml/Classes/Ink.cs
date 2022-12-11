@@ -11,6 +11,13 @@ public class InkImpl: ModelElementImpl, Ink
     set => _OpenXmlElement = value;
   }
   
+  public InkImpl(): base() {}
+  
+  public InkImpl(DocumentFormat.OpenXml.Vml.Office.Ink openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Ink Data
   /// </summary>

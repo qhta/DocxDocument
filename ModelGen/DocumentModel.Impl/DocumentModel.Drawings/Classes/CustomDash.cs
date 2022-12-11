@@ -11,6 +11,13 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
     set => _OpenXmlElement = value;
   }
   
+  public CustomDashImpl(): base() {}
+  
+  public CustomDashImpl(DocumentFormat.OpenXml.Drawing.CustomDash openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DashStop>? DashStops
   {
     get => throw new NotImplementedException("Method not implemented");

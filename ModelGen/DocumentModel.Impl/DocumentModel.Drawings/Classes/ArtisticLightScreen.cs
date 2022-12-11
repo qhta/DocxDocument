@@ -11,6 +11,13 @@ public class ArtisticLightScreenImpl: ModelElementImpl, ArtisticLightScreen
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticLightScreenImpl(): base() {}
+  
+  public ArtisticLightScreenImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     set => _OpenXmlElement = value;
   }
   
+  public MathPropertiesImpl(): base() {}
+  
+  public MathPropertiesImpl(DocumentFormat.OpenXml.Math.MathProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Math Font.
   /// </summary>
@@ -29,20 +36,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.MathFont{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.MathFont{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinary>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinary>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.BreakBinary{ Val = (DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.BreakBinary{ Val = (DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -105,20 +112,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinarySubtraction>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinarySubtraction>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.BreakBinarySubtraction{ Val = (DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.BreakBinarySubtraction{ Val = (DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -143,20 +150,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SmallFraction>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SmallFraction>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.SmallFraction{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.SmallFraction{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -181,20 +188,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DisplayDefaults>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DisplayDefaults>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.DisplayDefaults{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.DisplayDefaults{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -219,20 +226,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.LeftMargin{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.LeftMargin{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -257,20 +264,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.RightMargin{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.RightMargin{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -295,20 +302,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DefaultJustification>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DefaultJustification>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.DefaultJustification{ Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.DefaultJustification{ Val = (DocumentFormat.OpenXml.Math.JustificationValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -333,20 +340,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.PreSpacing{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.PreSpacing{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -371,20 +378,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.PostSpacing{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.PostSpacing{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -409,20 +416,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.InterSpacing{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.InterSpacing{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -447,20 +454,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.IntraSpacing{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.IntraSpacing{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -482,20 +489,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.WrapIndent{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.WrapIndent{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -517,20 +524,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.WrapRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.WrapRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -552,20 +559,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.IntegralLimitLocation{ Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.IntegralLimitLocation{ Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -587,20 +594,20 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.NaryLimitLocation{ Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.NaryLimitLocation{ Val = (DocumentFormat.OpenXml.Math.LimitLocationValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

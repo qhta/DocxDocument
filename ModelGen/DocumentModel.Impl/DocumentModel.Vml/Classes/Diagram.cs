@@ -11,6 +11,13 @@ public class DiagramImpl: ModelElementImpl, Diagram
     set => _OpenXmlElement = value;
   }
   
+  public DiagramImpl(): base() {}
+  
+  public DiagramImpl(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

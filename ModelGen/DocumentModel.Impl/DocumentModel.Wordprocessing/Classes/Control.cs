@@ -11,6 +11,13 @@ public class ControlImpl: ModelElementImpl, Control
     set => _OpenXmlElement = value;
   }
   
+  public ControlImpl(): base() {}
+  
+  public ControlImpl(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Name for Embedded Control
   /// </summary>

@@ -11,6 +11,13 @@ public class PieSerExtensionImpl: ModelElementImpl, PieSerExtension
     set => _OpenXmlElement = value;
   }
   
+  public PieSerExtensionImpl(): base() {}
+  
+  public PieSerExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.PieSerExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

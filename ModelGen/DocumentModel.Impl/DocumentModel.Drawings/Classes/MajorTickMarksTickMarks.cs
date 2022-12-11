@@ -11,7 +11,14 @@ public class MajorTickMarksTickMarksImpl: DocumentModel.Drawings.OpenXmlTickMark
     set => _OpenXmlElement = value;
   }
   
-  public override ExtensionList2? ExtensionList
+  public MajorTickMarksTickMarksImpl(): base() {}
+  
+  public MajorTickMarksTickMarksImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorTickMarksTickMarks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

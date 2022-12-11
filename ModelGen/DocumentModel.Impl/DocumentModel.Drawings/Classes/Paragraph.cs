@@ -11,6 +11,13 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphImpl(): base() {}
+  
+  public ParagraphImpl(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
@@ -20,28 +27,55 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Run>? Runs
+  public Run? Run
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Break>? Breaks
+  public Break? Break
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Field>? Fields
+  public Field? Field
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? TextMaths
+  public Boolean? TextMath
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.TextMath>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.TextMath>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Office2010.Drawing.TextMath();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
   public EndParagraphRunProperties? EndParagraphRunProperties

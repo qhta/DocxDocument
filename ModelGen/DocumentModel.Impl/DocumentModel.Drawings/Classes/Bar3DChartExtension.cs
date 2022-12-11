@@ -11,6 +11,13 @@ public class Bar3DChartExtensionImpl: ModelElementImpl, Bar3DChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public Bar3DChartExtensionImpl(): base() {}
+  
+  public Bar3DChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

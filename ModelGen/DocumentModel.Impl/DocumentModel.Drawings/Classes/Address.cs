@@ -11,6 +11,13 @@ public class AddressImpl: ModelElementImpl, Address
     set => _OpenXmlElement = value;
   }
   
+  public AddressImpl(): base() {}
+  
+  public AddressImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// address1, this property is only available in Office 2016 and later.
   /// </summary>

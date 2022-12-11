@@ -11,6 +11,13 @@ public class CategoryImpl: ModelElementImpl, Category
     set => _OpenXmlElement = value;
   }
   
+  public CategoryImpl(): base() {}
+  
+  public CategoryImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Category openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Category Type
   /// </summary>

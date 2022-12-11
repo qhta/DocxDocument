@@ -11,6 +11,13 @@ public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
     set => _OpenXmlElement = value;
   }
   
+  public AdjustHandlePolarImpl(): base() {}
+  
+  public AdjustHandlePolarImpl(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radial Adjustment Guide
   /// </summary>

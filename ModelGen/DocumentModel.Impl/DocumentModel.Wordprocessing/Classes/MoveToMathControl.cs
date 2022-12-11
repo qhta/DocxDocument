@@ -11,6 +11,13 @@ public class MoveToMathControlImpl: DocumentModel.Wordprocessing.MathControlMove
     set => _OpenXmlElement = value;
   }
   
+  public MoveToMathControlImpl(): base() {}
+  
+  public MoveToMathControlImpl(DocumentFormat.OpenXml.Wordprocessing.MoveToMathControl openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public RunProperties? RunProperties
   {
     get => throw new NotImplementedException("Method not implemented");

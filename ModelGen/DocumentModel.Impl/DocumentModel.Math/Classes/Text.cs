@@ -11,6 +11,13 @@ public class TextImpl: ModelElementImpl, Text
     set => _OpenXmlElement = value;
   }
   
+  public TextImpl(): base() {}
+  
+  public TextImpl(DocumentFormat.OpenXml.Math.Text openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// space
   /// </summary>

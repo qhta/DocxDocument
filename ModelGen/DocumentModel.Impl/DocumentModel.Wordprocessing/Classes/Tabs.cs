@@ -11,7 +11,14 @@ public class TabsImpl: ModelElementImpl, Tabs
     set => _OpenXmlElement = value;
   }
   
-  public Collection<TabStop>? TabStops
+  public TabsImpl(): base() {}
+  
+  public TabsImpl(DocumentFormat.OpenXml.Wordprocessing.Tabs openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public TabStop? TabStop
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

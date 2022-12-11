@@ -11,6 +11,13 @@ public class FontsImpl: ModelElementImpl, Fonts
     set => _OpenXmlElement = value;
   }
   
+  public FontsImpl(): base() {}
+  
+  public FontsImpl(DocumentFormat.OpenXml.Wordprocessing.Fonts openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Font>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

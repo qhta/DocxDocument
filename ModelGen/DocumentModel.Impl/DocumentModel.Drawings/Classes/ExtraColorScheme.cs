@@ -11,6 +11,13 @@ public class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
     set => _OpenXmlElement = value;
   }
   
+  public ExtraColorSchemeImpl(): base() {}
+  
+  public ExtraColorSchemeImpl(DocumentFormat.OpenXml.Drawing.ExtraColorScheme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ColorScheme.
   /// </summary>

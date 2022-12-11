@@ -11,6 +11,13 @@ public class HslImpl: ModelElementImpl, Hsl
     set => _OpenXmlElement = value;
   }
   
+  public HslImpl(): base() {}
+  
+  public HslImpl(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Hue
   /// </summary>

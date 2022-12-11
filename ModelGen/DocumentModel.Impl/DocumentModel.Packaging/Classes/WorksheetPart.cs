@@ -11,7 +11,14 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public WorksheetPartImpl(): base() {}
+  
+  public WorksheetPartImpl(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -120,7 +127,7 @@ public class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Workshe
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

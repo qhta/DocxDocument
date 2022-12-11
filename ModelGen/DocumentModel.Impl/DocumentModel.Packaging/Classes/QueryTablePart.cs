@@ -11,7 +11,14 @@ public class QueryTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, QueryT
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public QueryTablePartImpl(): base() {}
+  
+  public QueryTablePartImpl(DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class QueryTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, QueryT
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

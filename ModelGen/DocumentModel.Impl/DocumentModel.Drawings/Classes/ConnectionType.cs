@@ -11,6 +11,13 @@ public class ConnectionTypeImpl: ModelElementImpl, ConnectionType
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionTypeImpl(): base() {}
+  
+  public ConnectionTypeImpl(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Identifier
   /// </summary>

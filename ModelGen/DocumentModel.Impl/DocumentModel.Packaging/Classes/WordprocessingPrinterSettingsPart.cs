@@ -11,7 +11,14 @@ public class WordprocessingPrinterSettingsPartImpl: DocumentModel.Packaging.Open
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public WordprocessingPrinterSettingsPartImpl(): base() {}
+  
+  public WordprocessingPrinterSettingsPartImpl(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class WordprocessingPrinterSettingsPartImpl: DocumentModel.Packaging.Open
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

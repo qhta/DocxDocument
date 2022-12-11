@@ -11,6 +11,13 @@ public class ArtisticCutoutImpl: ModelElementImpl, ArtisticCutout
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticCutoutImpl(): base() {}
+  
+  public ArtisticCutoutImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

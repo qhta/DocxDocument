@@ -11,7 +11,14 @@ public class ImagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ImagePart
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public ImagePartImpl(): base() {}
+  
+  public ImagePartImpl(DocumentFormat.OpenXml.Packaging.ImagePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

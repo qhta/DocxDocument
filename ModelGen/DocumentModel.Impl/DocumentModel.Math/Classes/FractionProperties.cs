@@ -11,6 +11,13 @@ public class FractionPropertiesImpl: ModelElementImpl, FractionProperties
     set => _OpenXmlElement = value;
   }
   
+  public FractionPropertiesImpl(): base() {}
+  
+  public FractionPropertiesImpl(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Fraction type.
   /// </summary>
@@ -29,20 +36,20 @@ public class FractionPropertiesImpl: ModelElementImpl, FractionProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.FractionType{ Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.FractionType{ Val = (DocumentFormat.OpenXml.Math.FractionTypeValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

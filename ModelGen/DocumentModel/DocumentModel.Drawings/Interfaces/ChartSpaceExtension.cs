@@ -14,6 +14,6 @@ public interface ChartSpaceExtension
   
   public SketchOptions? SketchOptions { get ; set; }
   
-  public PivotSource2? PivotSource { get ; set; }
+  public PivotSource? PivotSource { get ; set; }
   
 }

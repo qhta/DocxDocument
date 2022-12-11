@@ -11,6 +11,13 @@ public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenc
     set => _OpenXmlElement = value;
   }
   
+  public StyleMatrixReferenceTypeImpl(): base() {}
+  
+  public StyleMatrixReferenceTypeImpl(DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Style Matrix Index
   /// </summary>

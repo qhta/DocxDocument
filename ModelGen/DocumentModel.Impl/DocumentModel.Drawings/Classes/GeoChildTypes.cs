@@ -11,6 +11,13 @@ public class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
     set => _OpenXmlElement = value;
   }
   
+  public GeoChildTypesImpl(): base() {}
+  
+  public GeoChildTypesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<String>? EntityTypes
   {
     get => throw new NotImplementedException("Method not implemented");

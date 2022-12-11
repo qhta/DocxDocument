@@ -11,6 +11,13 @@ public class AudioFromCDImpl: ModelElementImpl, AudioFromCD
     set => _OpenXmlElement = value;
   }
   
+  public AudioFromCDImpl(): base() {}
+  
+  public AudioFromCDImpl(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Audio Start Time.
   /// </summary>
@@ -32,7 +39,7 @@ public class AudioFromCDImpl: ModelElementImpl, AudioFromCD
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

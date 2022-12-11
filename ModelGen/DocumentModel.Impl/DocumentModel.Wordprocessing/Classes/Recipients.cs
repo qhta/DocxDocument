@@ -11,7 +11,14 @@ public class RecipientsImpl: ModelElementImpl, Recipients
     set => _OpenXmlElement = value;
   }
   
-  public Collection<RecipientData>? RecipientDatas
+  public RecipientsImpl(): base() {}
+  
+  public RecipientsImpl(DocumentFormat.OpenXml.Wordprocessing.Recipients openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public RecipientData? RecipientData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

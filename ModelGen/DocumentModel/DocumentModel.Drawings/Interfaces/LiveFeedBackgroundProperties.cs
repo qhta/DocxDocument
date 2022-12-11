@@ -13,6 +13,6 @@ public interface LiveFeedBackgroundProperties
   
   public BackgroundCustomProperties? BackgroundCustomProperties { get ; set; }
   
-  public OfficeArtExtensionList6? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

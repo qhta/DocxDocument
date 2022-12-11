@@ -11,6 +11,13 @@ public class Pie3DChartExtensionImpl: ModelElementImpl, Pie3DChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public Pie3DChartExtensionImpl(): base() {}
+  
+  public Pie3DChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

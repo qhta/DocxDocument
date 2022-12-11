@@ -10,6 +10,6 @@ public interface EquationArray
   /// </summary>
   public EquationArrayProperties? EquationArrayProperties { get ; set; }
   
-  public Collection<Base>? Bases { get ; set; }
+  public Base? Base { get ; set; }
   
 }

@@ -11,6 +11,13 @@ public class ColorTemperatureImpl: ModelElementImpl, ColorTemperature
     set => _OpenXmlElement = value;
   }
   
+  public ColorTemperatureImpl(): base() {}
+  
+  public ColorTemperatureImpl(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// colorTemp, this property is only available in Office 2010 and later.
   /// </summary>

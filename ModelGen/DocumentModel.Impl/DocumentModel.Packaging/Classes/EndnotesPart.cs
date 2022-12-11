@@ -11,6 +11,13 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Endnotes
     set => _OpenXmlElement = value;
   }
   
+  public EndnotesPartImpl(): base() {}
+  
+  public EndnotesPartImpl(DocumentFormat.OpenXml.Packaging.EndnotesPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the EndnotesPart
   /// </summary>
@@ -29,7 +36,7 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Endnotes
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Endnotes
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

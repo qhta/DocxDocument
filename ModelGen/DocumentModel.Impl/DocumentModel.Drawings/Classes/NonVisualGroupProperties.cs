@@ -11,6 +11,13 @@ public class NonVisualGroupPropertiesImpl: ModelElementImpl, NonVisualGroupPrope
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGroupPropertiesImpl(): base() {}
+  
+  public NonVisualGroupPropertiesImpl(DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// isLegacyGroup, this property is only available in Office 2013 and later.
   /// </summary>

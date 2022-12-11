@@ -11,6 +11,13 @@ public class ChartTitleImpl: ModelElementImpl, ChartTitle
     set => _OpenXmlElement = value;
   }
   
+  public ChartTitleImpl(): base() {}
+  
+  public ChartTitleImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// pos, this property is only available in Office 2016 and later.
   /// </summary>
@@ -53,7 +60,7 @@ public class ChartTitleImpl: ModelElementImpl, ChartTitle
   /// <summary>
   /// Text.
   /// </summary>
-  public Text2? Text
+  public Text? Text
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -62,7 +69,7 @@ public class ChartTitleImpl: ModelElementImpl, ChartTitle
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -80,7 +87,7 @@ public class ChartTitleImpl: ModelElementImpl, ChartTitle
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

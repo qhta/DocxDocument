@@ -11,6 +11,13 @@ public class AlphaInverseImpl: ModelElementImpl, AlphaInverse
     set => _OpenXmlElement = value;
   }
   
+  public AlphaInverseImpl(): base() {}
+  
+  public AlphaInverseImpl(DocumentFormat.OpenXml.Drawing.AlphaInverse openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

@@ -11,13 +11,20 @@ public class HyperlinkOnMouseOverImpl: DocumentModel.Drawings.HyperlinkTypeImpl,
     set => _OpenXmlElement = value;
   }
   
-  public override EmbeddedWavAudioFileType? HyperlinkSound
+  public HyperlinkOnMouseOverImpl(): base() {}
+  
+  public HyperlinkOnMouseOverImpl(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new EmbeddedWavAudioFileType? HyperlinkSound
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override HyperlinkExtensionList? HyperlinkExtensionList
+  public new HyperlinkExtensionList? HyperlinkExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

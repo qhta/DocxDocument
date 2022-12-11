@@ -11,6 +11,13 @@ public class ShadowImpl: ModelElementImpl, Shadow
     set => _OpenXmlElement = value;
   }
   
+  public ShadowImpl(): base() {}
+  
+  public ShadowImpl(DocumentFormat.OpenXml.Vml.Shadow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

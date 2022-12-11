@@ -11,6 +11,13 @@ public class MarkerLayoutPropertiesImpl: ModelElementImpl, MarkerLayoutPropertie
     set => _OpenXmlElement = value;
   }
   
+  public MarkerLayoutPropertiesImpl(): base() {}
+  
+  public MarkerLayoutPropertiesImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// symbol, this property is only available in Office 2013 and later.
   /// </summary>

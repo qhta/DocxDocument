@@ -11,6 +11,13 @@ public class RelationshipIdTypeImpl: ModelElementImpl, RelationshipIdType
     set => _OpenXmlElement = value;
   }
   
+  public RelationshipIdTypeImpl(): base() {}
+  
+  public RelationshipIdTypeImpl(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Relationship Reference
   /// </summary>

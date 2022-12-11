@@ -11,6 +11,13 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
     set => _OpenXmlElement = value;
   }
   
+  public SurfaceChartImpl(): base() {}
+  
+  public SurfaceChartImpl(DocumentFormat.OpenXml.Drawing.Charts.SurfaceChart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Wireframe.
   /// </summary>
@@ -29,27 +36,27 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Wireframe>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Wireframe>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Wireframe{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Wireframe{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<SurfaceChartSeries1>? SurfaceChartSerieses
+  public Collection<SurfaceChartSeries>? SurfaceChartSerieses
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -61,10 +68,39 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<UInt32>? AxisIds
+  public UInt32? AxisId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+        return (UInt32?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.UInt32?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Charts.AxisId{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
   public SurfaceChartExtensionList? SurfaceChartExtensionList

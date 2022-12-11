@@ -11,6 +11,13 @@ public class SubSuperscriptImpl: ModelElementImpl, SubSuperscript
     set => _OpenXmlElement = value;
   }
   
+  public SubSuperscriptImpl(): base() {}
+  
+  public SubSuperscriptImpl(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Sub-Superscript Properties.
   /// </summary>

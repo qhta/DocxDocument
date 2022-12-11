@@ -11,7 +11,14 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     set => _OpenXmlElement = value;
   }
   
-  public override Boolean? OrganizationChart
+  public PresentationLayoutVariablesImpl(): base() {}
+  
+  public PresentationLayoutVariablesImpl(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new Boolean? OrganizationChart
   {
     get
     {
@@ -26,27 +33,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Int32? MaxNumberOfChildren
+  public new Int32? MaxNumberOfChildren
   {
     get
     {
@@ -61,27 +68,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Int32? PreferredNumberOfChildren
+  public new Int32? PreferredNumberOfChildren
   {
     get
     {
@@ -96,27 +103,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Boolean? BulletEnabled
+  public new Boolean? BulletEnabled
   {
     get
     {
@@ -131,27 +138,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override DirectionKind? Direction
+  public new DirectionKind? Direction
   {
     get
     {
@@ -166,27 +173,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Direction>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Direction>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.Direction{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.Direction{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override HierarchyBranchStyleKind? HierarchyBranch
+  public new HierarchyBranchStyleKind? HierarchyBranch
   {
     get
     {
@@ -201,27 +208,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranch>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranch>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranch{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranch{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override AnimateOneByOneKind? AnimateOneByOne
+  public new AnimateOneByOneKind? AnimateOneByOne
   {
     get
     {
@@ -236,27 +243,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOne>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOne>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOne{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOne{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override AnimationLevelStringKind? AnimationLevel
+  public new AnimationLevelStringKind? AnimationLevel
   {
     get
     {
@@ -271,27 +278,27 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevel>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevel>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevel{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevel{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override ResizeHandlesStringKind? ResizeHandles
+  public new ResizeHandlesStringKind? ResizeHandles
   {
     get
     {
@@ -306,20 +313,20 @@ public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.LayoutVaria
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandles>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandles>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandles{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandles{ Val = (DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

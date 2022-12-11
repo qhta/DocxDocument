@@ -11,6 +11,13 @@ public class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Dia
     set => _OpenXmlElement = value;
   }
   
+  public DiagramColorsPartImpl(): base() {}
+  
+  public DiagramColorsPartImpl(DocumentFormat.OpenXml.Packaging.DiagramColorsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
@@ -20,7 +27,7 @@ public class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Dia
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Dia
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

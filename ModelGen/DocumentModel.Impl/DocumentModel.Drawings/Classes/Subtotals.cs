@@ -11,6 +11,13 @@ public class SubtotalsImpl: ModelElementImpl, Subtotals
     set => _OpenXmlElement = value;
   }
   
+  public SubtotalsImpl(): base() {}
+  
+  public SubtotalsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<UInt32>? UnsignedIntegerTypes
   {
     get => throw new NotImplementedException("Method not implemented");

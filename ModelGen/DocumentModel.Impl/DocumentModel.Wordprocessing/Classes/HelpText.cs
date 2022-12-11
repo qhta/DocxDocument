@@ -11,6 +11,13 @@ public class HelpTextImpl: ModelElementImpl, HelpText
     set => _OpenXmlElement = value;
   }
   
+  public HelpTextImpl(): base() {}
+  
+  public HelpTextImpl(DocumentFormat.OpenXml.Wordprocessing.HelpText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Help Text Type
   /// </summary>

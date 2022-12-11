@@ -8,6 +8,6 @@ public interface FilteredBarSeries
   /// <summary>
   /// BarChartSeries.
   /// </summary>
-  public BarChartSeries1? BarChartSeries { get ; set; }
+  public BarChartSeries? BarChartSeries { get ; set; }
   
 }

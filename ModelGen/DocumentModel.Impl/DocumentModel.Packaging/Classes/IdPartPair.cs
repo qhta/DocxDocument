@@ -11,6 +11,13 @@ public class IdPartPairImpl: ModelObjectImpl, IdPartPair
     set => _OpenXmlElement = value;
   }
   
+  public IdPartPairImpl(): base() {}
+  
+  public IdPartPairImpl(DocumentFormat.OpenXml.Packaging.IdPartPair openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the relationship ID in the pair.
   /// </summary>

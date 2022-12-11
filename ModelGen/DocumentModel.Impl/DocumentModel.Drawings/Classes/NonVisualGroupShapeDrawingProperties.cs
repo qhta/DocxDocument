@@ -11,6 +11,13 @@ public class NonVisualGroupShapeDrawingPropertiesImpl: ModelElementImpl, NonVisu
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGroupShapeDrawingPropertiesImpl(): base() {}
+  
+  public NonVisualGroupShapeDrawingPropertiesImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GroupShapeLocks.
   /// </summary>

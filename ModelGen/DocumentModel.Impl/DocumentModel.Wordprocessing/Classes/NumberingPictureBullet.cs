@@ -11,6 +11,13 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
     set => _OpenXmlElement = value;
   }
   
+  public NumberingPictureBulletImpl(): base() {}
+  
+  public NumberingPictureBulletImpl(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// numPicBulletId
   /// </summary>

@@ -11,6 +11,13 @@ public class NumberingFormatImpl: ModelElementImpl, NumberingFormat
     set => _OpenXmlElement = value;
   }
   
+  public NumberingFormatImpl(): base() {}
+  
+  public NumberingFormatImpl(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Numbering Format Type
   /// </summary>

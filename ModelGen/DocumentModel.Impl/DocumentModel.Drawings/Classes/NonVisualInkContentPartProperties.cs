@@ -11,6 +11,13 @@ public class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualI
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualInkContentPartPropertiesImpl(): base() {}
+  
+  public NonVisualInkContentPartPropertiesImpl(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// isComment, this property is only available in Office 2010 and later.
   /// </summary>
@@ -36,7 +43,7 @@ public class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualI
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList2? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

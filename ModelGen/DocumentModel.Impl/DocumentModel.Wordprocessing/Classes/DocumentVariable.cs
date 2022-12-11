@@ -11,6 +11,13 @@ public class DocumentVariableImpl: ModelElementImpl, DocumentVariable
     set => _OpenXmlElement = value;
   }
   
+  public DocumentVariableImpl(): base() {}
+  
+  public DocumentVariableImpl(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Variable Name
   /// </summary>

@@ -11,6 +11,13 @@ public class LineToImpl: ModelElementImpl, LineTo
     set => _OpenXmlElement = value;
   }
   
+  public LineToImpl(): base() {}
+  
+  public LineToImpl(DocumentFormat.OpenXml.Drawing.LineTo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Line end point.
   /// </summary>

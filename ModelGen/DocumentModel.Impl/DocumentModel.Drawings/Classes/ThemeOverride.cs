@@ -11,6 +11,13 @@ public class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
     set => _OpenXmlElement = value;
   }
   
+  public ThemeOverrideImpl(): base() {}
+  
+  public ThemeOverrideImpl(DocumentFormat.OpenXml.Drawing.ThemeOverride openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Color Scheme.
   /// </summary>

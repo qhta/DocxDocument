@@ -11,7 +11,14 @@ public class NumberingCacheImpl: DocumentModel.Drawings.NumberDataTypeImpl, Numb
     set => _OpenXmlElement = value;
   }
   
-  public override String? FormatCode
+  public NumberingCacheImpl(): base() {}
+  
+  public NumberingCacheImpl(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? FormatCode
   {
     get
     {
@@ -26,27 +33,27 @@ public class NumberingCacheImpl: DocumentModel.Drawings.NumberDataTypeImpl, Numb
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override UInt32? PointCount
+  public new UInt32? PointCount
   {
     get
     {
@@ -61,20 +68,20 @@ public class NumberingCacheImpl: DocumentModel.Drawings.NumberDataTypeImpl, Numb
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -87,7 +94,7 @@ public class NumberingCacheImpl: DocumentModel.Drawings.NumberDataTypeImpl, Numb
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

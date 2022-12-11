@@ -11,6 +11,13 @@ public class AudioFromFileImpl: ModelElementImpl, AudioFromFile
     set => _OpenXmlElement = value;
   }
   
+  public AudioFromFileImpl(): base() {}
+  
+  public AudioFromFileImpl(DocumentFormat.OpenXml.Drawing.AudioFromFile openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
@@ -27,7 +34,7 @@ public class AudioFromFileImpl: ModelElementImpl, AudioFromFile
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

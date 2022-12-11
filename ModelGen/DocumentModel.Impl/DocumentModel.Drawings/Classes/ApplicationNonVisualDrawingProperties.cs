@@ -11,6 +11,13 @@ public class ApplicationNonVisualDrawingPropertiesImpl: ModelElementImpl, Applic
     set => _OpenXmlElement = value;
   }
   
+  public ApplicationNonVisualDrawingPropertiesImpl(): base() {}
+  
+  public ApplicationNonVisualDrawingPropertiesImpl(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// macro, this property is only available in Office 2010 and later.
   /// </summary>

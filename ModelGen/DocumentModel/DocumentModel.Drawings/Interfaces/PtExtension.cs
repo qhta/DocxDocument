@@ -10,6 +10,6 @@ public interface PtExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public NonVisualDrawingProperties1? NonVisualDrawingProperties { get ; set; }
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
 }

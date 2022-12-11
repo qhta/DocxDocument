@@ -11,6 +11,13 @@ public class GlowImpl: ModelElementImpl, Glow
     set => _OpenXmlElement = value;
   }
   
+  public GlowImpl(): base() {}
+  
+  public GlowImpl(DocumentFormat.OpenXml.Drawing.Glow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radius
   /// </summary>

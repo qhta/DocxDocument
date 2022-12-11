@@ -11,6 +11,13 @@ public class OpenXmlSolidColorFillPropertiesElementImpl: ModelElementImpl, OpenX
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlSolidColorFillPropertiesElementImpl(): base() {}
+  
+  public OpenXmlSolidColorFillPropertiesElementImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

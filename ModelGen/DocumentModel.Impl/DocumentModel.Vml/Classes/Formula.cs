@@ -11,6 +11,13 @@ public class FormulaImpl: ModelElementImpl, Formula
     set => _OpenXmlElement = value;
   }
   
+  public FormulaImpl(): base() {}
+  
+  public FormulaImpl(DocumentFormat.OpenXml.Vml.Formula openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Equation
   /// </summary>

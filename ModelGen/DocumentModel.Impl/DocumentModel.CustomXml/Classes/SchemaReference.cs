@@ -11,6 +11,13 @@ public class SchemaReferenceImpl: ModelElementImpl, SchemaReference
     set => _OpenXmlElement = value;
   }
   
+  public SchemaReferenceImpl(): base() {}
+  
+  public SchemaReferenceImpl(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Target Namespace of Associated XML Schema
   /// </summary>

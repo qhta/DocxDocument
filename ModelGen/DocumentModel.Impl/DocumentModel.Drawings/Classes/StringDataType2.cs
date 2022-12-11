@@ -11,6 +11,13 @@ public class StringDataType2Impl: ModelElementImpl, StringDataType2
     set => _OpenXmlElement = value;
   }
   
+  public StringDataType2Impl(): base() {}
+  
+  public StringDataType2Impl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// PointCount.
   /// </summary>
@@ -29,20 +36,20 @@ public class StringDataType2Impl: ModelElementImpl, StringDataType2
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

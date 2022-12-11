@@ -11,6 +11,13 @@ public class FormatSchemeImpl: ModelElementImpl, FormatScheme
     set => _OpenXmlElement = value;
   }
   
+  public FormatSchemeImpl(): base() {}
+  
+  public FormatSchemeImpl(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>

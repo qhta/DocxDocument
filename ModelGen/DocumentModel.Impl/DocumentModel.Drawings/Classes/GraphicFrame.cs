@@ -11,6 +11,13 @@ public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
     set => _OpenXmlElement = value;
   }
   
+  public GraphicFrameImpl(): base() {}
+  
+  public GraphicFrameImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Reference to Custom Function
   /// </summary>

@@ -11,10 +11,17 @@ public class ShapeNonVisualPropertiesImpl: ModelElementImpl, ShapeNonVisualPrope
     set => _OpenXmlElement = value;
   }
   
+  public ShapeNonVisualPropertiesImpl(): base() {}
+  
+  public ShapeNonVisualPropertiesImpl(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties4? NonVisualDrawingProperties
+  public NonVisualDrawingProperties? NonVisualDrawingProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

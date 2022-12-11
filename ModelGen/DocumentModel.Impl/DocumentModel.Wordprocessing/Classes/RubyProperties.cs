@@ -11,6 +11,13 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     set => _OpenXmlElement = value;
   }
   
+  public RubyPropertiesImpl(): base() {}
+  
+  public RubyPropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Phonetic Guide Text Alignment.
   /// </summary>
@@ -29,20 +36,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.RubyAlign{ Val = (DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.RubyAlign{ Val = (DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -105,20 +112,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int16?)value;
+            item.Val = (System.Int16?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise{ Val = (System.Int16?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise{ Val = (System.Int16?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -143,20 +150,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -181,20 +188,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -219,20 +226,20 @@ public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Dirty{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.Dirty{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

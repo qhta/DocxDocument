@@ -178,20 +178,24 @@ public static class TypeManager
       return typeInfo.OutgoingRelationships.Where(item => item.Semantics == semantics).Select(item => item.Target).ToArray();
   }
 
-
   public static TypeInfo[] GetNamespaceTypes(string nspace)
   {
     lock (KnownTypesLock)
     {
+      return KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value).ToArray();
+    }
+  }
+
+  public static TypeInfo[] GetOriginalNamespaceTypes(string nspace)
+  {
+    lock (KnownTypesLock)
+    {
       int nspaceIndex = -1;
-      var originalNamespace = TranslateNamespaceBack(nspace);
-      if (KnownNamespaces.TryGetValue1(originalNamespace, out var ns))
-        nspaceIndex = ns;
-      else if (KnownNamespaces.TryGetValue1(nspace, out ns))
+      if (KnownNamespaces.TryGetValue1(nspace, out var ns))
         nspaceIndex = ns;
       if (nspaceIndex != -1)
         return KnownTypes.Where(item => item.Value.NamespaceIndex == nspaceIndex).Select(item => item.Value).ToArray();
-      return KnownTypes.Where(item => item.Value.Namespace == nspace).Select(item => item.Value).ToArray();
+      return KnownTypes.Where(item => item.Value.OriginalNamespace == nspace).Select(item => item.Value).ToArray();
     }
   }
 

@@ -11,7 +11,14 @@ public class PointListImpl: ModelElementImpl, PointList
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Point1>? Points
+  public PointListImpl(): base() {}
+  
+  public PointListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.PointList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Collection<Point>? Points
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

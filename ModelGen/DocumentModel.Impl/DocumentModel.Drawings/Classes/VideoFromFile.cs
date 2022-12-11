@@ -11,6 +11,13 @@ public class VideoFromFileImpl: ModelElementImpl, VideoFromFile
     set => _OpenXmlElement = value;
   }
   
+  public VideoFromFileImpl(): base() {}
+  
+  public VideoFromFileImpl(DocumentFormat.OpenXml.Drawing.VideoFromFile openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
@@ -27,7 +34,7 @@ public class VideoFromFileImpl: ModelElementImpl, VideoFromFile
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

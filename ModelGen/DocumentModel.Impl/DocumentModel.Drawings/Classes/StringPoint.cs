@@ -11,6 +11,13 @@ public class StringPointImpl: ModelElementImpl, StringPoint
     set => _OpenXmlElement = value;
   }
   
+  public StringPointImpl(): base() {}
+  
+  public StringPointImpl(DocumentFormat.OpenXml.Drawing.Charts.StringPoint openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Index
   /// </summary>
@@ -42,20 +49,20 @@ public class StringPointImpl: ModelElementImpl, StringPoint
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

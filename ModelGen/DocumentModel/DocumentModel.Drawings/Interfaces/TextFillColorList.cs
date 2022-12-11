@@ -5,16 +5,16 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface TextFillColorList
 {
-  public Collection<RgbColorModelPercentage>? RgbColorModelPercentages { get ; set; }
+  public RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   
-  public Collection<RgbColorModelHex>? RgbColorModelHexs { get ; set; }
+  public RgbColorModelHex? RgbColorModelHex { get ; set; }
   
-  public Collection<HslColor>? HslColors { get ; set; }
+  public HslColor? HslColor { get ; set; }
   
-  public Collection<SystemColor>? SystemColors { get ; set; }
+  public SystemColor? SystemColor { get ; set; }
   
-  public Collection<SchemeColor>? SchemeColors { get ; set; }
+  public SchemeColor? SchemeColor { get ; set; }
   
-  public Collection<PresetColor>? PresetColors { get ; set; }
+  public PresetColor? PresetColor { get ; set; }
   
 }

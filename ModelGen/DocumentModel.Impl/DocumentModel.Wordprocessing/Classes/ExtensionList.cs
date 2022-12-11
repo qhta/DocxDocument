@@ -11,6 +11,13 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public ExtensionListImpl(): base() {}
+  
+  public ExtensionListImpl(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Extension>? Extensions
   {
     get => throw new NotImplementedException("Method not implemented");

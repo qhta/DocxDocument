@@ -11,7 +11,14 @@ public class LineStyleListImpl: ModelElementImpl, LineStyleList
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Outline>? Outlines
+  public LineStyleListImpl(): base() {}
+  
+  public LineStyleListImpl(DocumentFormat.OpenXml.Drawing.LineStyleList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Outline? Outline
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

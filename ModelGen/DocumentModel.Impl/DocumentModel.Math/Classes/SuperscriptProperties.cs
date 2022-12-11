@@ -11,6 +11,13 @@ public class SuperscriptPropertiesImpl: ModelElementImpl, SuperscriptProperties
     set => _OpenXmlElement = value;
   }
   
+  public SuperscriptPropertiesImpl(): base() {}
+  
+  public SuperscriptPropertiesImpl(DocumentFormat.OpenXml.Math.SuperscriptProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ControlProperties.
   /// </summary>

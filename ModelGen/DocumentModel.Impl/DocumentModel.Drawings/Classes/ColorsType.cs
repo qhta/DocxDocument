@@ -11,6 +11,13 @@ public class ColorsTypeImpl: ModelElementImpl, ColorsType
     set => _OpenXmlElement = value;
   }
   
+  public ColorsTypeImpl(): base() {}
+  
+  public ColorsTypeImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Color Application Method Type
   /// </summary>

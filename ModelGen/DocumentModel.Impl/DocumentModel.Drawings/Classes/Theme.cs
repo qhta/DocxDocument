@@ -11,6 +11,13 @@ public class ThemeImpl: ModelElementImpl, Theme
     set => _OpenXmlElement = value;
   }
   
+  public ThemeImpl(): base() {}
+  
+  public ThemeImpl(DocumentFormat.OpenXml.Drawing.Theme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// name
   /// </summary>

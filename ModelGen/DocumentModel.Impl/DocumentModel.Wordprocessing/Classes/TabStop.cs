@@ -11,6 +11,13 @@ public class TabStopImpl: ModelElementImpl, TabStop
     set => _OpenXmlElement = value;
   }
   
+  public TabStopImpl(): base() {}
+  
+  public TabStopImpl(DocumentFormat.OpenXml.Wordprocessing.TabStop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Tab Stop Type
   /// </summary>

@@ -11,6 +11,13 @@ public class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
     set => _OpenXmlElement = value;
   }
   
+  public VbaSuppDataImpl(): base() {}
+  
+  public VbaSuppDataImpl(DocumentFormat.OpenXml.Office.Word.VbaSuppData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// DocEvents.
   /// </summary>

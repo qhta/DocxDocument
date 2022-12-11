@@ -11,6 +11,13 @@ public class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public RadarSerExtensionListImpl(): base() {}
+  
+  public RadarSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<RadarSerExtension>? RadarSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

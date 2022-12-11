@@ -11,6 +11,13 @@ public class ParentLabelLayoutImpl: ModelElementImpl, ParentLabelLayout
     set => _OpenXmlElement = value;
   }
   
+  public ParentLabelLayoutImpl(): base() {}
+  
+  public ParentLabelLayoutImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// val, this property is only available in Office 2016 and later.
   /// </summary>

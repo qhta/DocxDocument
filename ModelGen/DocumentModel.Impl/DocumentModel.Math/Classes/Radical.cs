@@ -11,6 +11,13 @@ public class RadicalImpl: ModelElementImpl, Radical
     set => _OpenXmlElement = value;
   }
   
+  public RadicalImpl(): base() {}
+  
+  public RadicalImpl(DocumentFormat.OpenXml.Math.Radical openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radical Properties.
   /// </summary>

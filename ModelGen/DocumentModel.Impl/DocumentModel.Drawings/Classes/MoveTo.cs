@@ -11,6 +11,13 @@ public class MoveToImpl: ModelElementImpl, MoveTo
     set => _OpenXmlElement = value;
   }
   
+  public MoveToImpl(): base() {}
+  
+  public MoveToImpl(DocumentFormat.OpenXml.Drawing.MoveTo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Move end point.
   /// </summary>

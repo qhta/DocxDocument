@@ -11,6 +11,13 @@ public class FillExtendedPropertiesImpl: ModelElementImpl, FillExtendedPropertie
     set => _OpenXmlElement = value;
   }
   
+  public FillExtendedPropertiesImpl(): base() {}
+  
+  public FillExtendedPropertiesImpl(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

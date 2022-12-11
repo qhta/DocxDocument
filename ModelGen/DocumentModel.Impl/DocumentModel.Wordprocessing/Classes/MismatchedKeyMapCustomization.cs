@@ -11,6 +11,13 @@ public class MismatchedKeyMapCustomizationImpl: ModelElementImpl, MismatchedKeyM
     set => _OpenXmlElement = value;
   }
   
+  public MismatchedKeyMapCustomizationImpl(): base() {}
+  
+  public MismatchedKeyMapCustomizationImpl(DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<KeyMapEntry>? KeyMapEntries
   {
     get => throw new NotImplementedException("Method not implemented");

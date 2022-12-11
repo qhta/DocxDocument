@@ -11,6 +11,13 @@ public class DiagramDefinitionExtensionImpl: ModelElementImpl, DiagramDefinition
     set => _OpenXmlElement = value;
   }
   
+  public DiagramDefinitionExtensionImpl(): base() {}
+  
+  public DiagramDefinitionExtensionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

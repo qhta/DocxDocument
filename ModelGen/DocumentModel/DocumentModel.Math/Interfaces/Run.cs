@@ -15,68 +15,68 @@ public interface Run
   /// </summary>
   public DocumentModel.Wordprocessing.RunProperties? RunProperties { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Break>? Breaks { get ; set; }
+  public DocumentModel.Wordprocessing.Break? Break { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TextType>? Texts { get ; set; }
+  public DocumentModel.Wordprocessing.TextType? Text { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TextType>? DeletedTexts { get ; set; }
+  public DocumentModel.Wordprocessing.TextType? DeletedText { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TextType>? FieldCodes { get ; set; }
+  public DocumentModel.Wordprocessing.TextType? FieldCode { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TextType>? DeletedFieldCodes { get ; set; }
+  public DocumentModel.Wordprocessing.TextType? DeletedFieldCode { get ; set; }
   
-  public Collection<Boolean>? NoBreakHyphens { get ; set; }
+  public Boolean? NoBreakHyphen { get ; set; }
   
-  public Collection<Boolean>? SoftHyphens { get ; set; }
+  public Boolean? SoftHyphen { get ; set; }
   
-  public Collection<Boolean>? DayShorts { get ; set; }
+  public Boolean? DayShort { get ; set; }
   
-  public Collection<Boolean>? MonthShorts { get ; set; }
+  public Boolean? MonthShort { get ; set; }
   
-  public Collection<Boolean>? YearShorts { get ; set; }
+  public Boolean? YearShort { get ; set; }
   
-  public Collection<Boolean>? DayLongs { get ; set; }
+  public Boolean? DayLong { get ; set; }
   
-  public Collection<Boolean>? MonthLongs { get ; set; }
+  public Boolean? MonthLong { get ; set; }
   
-  public Collection<Boolean>? YearLongs { get ; set; }
+  public Boolean? YearLong { get ; set; }
   
-  public Collection<Boolean>? AnnotationReferenceMarks { get ; set; }
+  public Boolean? AnnotationReferenceMark { get ; set; }
   
-  public Collection<Boolean>? FootnoteReferenceMarks { get ; set; }
+  public Boolean? FootnoteReferenceMark { get ; set; }
   
-  public Collection<Boolean>? EndnoteReferenceMarks { get ; set; }
+  public Boolean? EndnoteReferenceMark { get ; set; }
   
-  public Collection<Boolean>? SeparatorMarks { get ; set; }
+  public Boolean? SeparatorMark { get ; set; }
   
-  public Collection<Boolean>? ContinuationSeparatorMarks { get ; set; }
+  public Boolean? ContinuationSeparatorMark { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.SymbolChar>? SymbolChars { get ; set; }
+  public DocumentModel.Wordprocessing.SymbolChar? SymbolChar { get ; set; }
   
-  public Collection<Boolean>? PageNumbers { get ; set; }
+  public Boolean? PageNumber { get ; set; }
   
-  public Collection<Boolean>? CarriageReturns { get ; set; }
+  public Boolean? CarriageReturn { get ; set; }
   
-  public Collection<Boolean>? TabChars { get ; set; }
+  public Boolean? TabChar { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.EmbeddedObject>? EmbeddedObjects { get ; set; }
+  public DocumentModel.Wordprocessing.EmbeddedObject? EmbeddedObject { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Picture>? Pictures { get ; set; }
+  public DocumentModel.Wordprocessing.Picture? Picture { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.FieldChar>? FieldChars { get ; set; }
+  public DocumentModel.Wordprocessing.FieldChar? FieldChar { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Ruby>? Rubies { get ; set; }
+  public DocumentModel.Wordprocessing.Ruby? Ruby { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType>? FootnoteReferences { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? FootnoteReference { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType>? EndnoteReferences { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? EndnoteReference { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CommentReferences { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CommentReference { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Drawing>? Drawings { get ; set; }
+  public DocumentModel.Wordprocessing.Drawing? Drawing { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.PositionalTab>? PositionalTabs { get ; set; }
+  public DocumentModel.Wordprocessing.PositionalTab? PositionalTab { get ; set; }
   
-  public Collection<Boolean>? LastRenderedPageBreaks { get ; set; }
+  public Boolean? LastRenderedPageBreak { get ; set; }
   
 }

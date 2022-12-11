@@ -11,6 +11,13 @@ public class FillImpl: ModelElementImpl, Fill
     set => _OpenXmlElement = value;
   }
   
+  public FillImpl(): base() {}
+  
+  public FillImpl(DocumentFormat.OpenXml.Drawing.Fill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// NoFill.
   /// </summary>
@@ -20,8 +27,8 @@ public class FillImpl: ModelElementImpl, Fill
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return item != null;
       }
       return null;
     }
@@ -29,18 +36,18 @@ public class FillImpl: ModelElementImpl, Fill
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -68,7 +75,7 @@ public class FillImpl: ModelElementImpl, Fill
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill
+  public BlipFill? BlipFill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -92,8 +99,8 @@ public class FillImpl: ModelElementImpl, Fill
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        return item != null;
       }
       return null;
     }
@@ -101,18 +108,18 @@ public class FillImpl: ModelElementImpl, Fill
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.GroupFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

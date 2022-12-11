@@ -11,6 +11,13 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
     set => _OpenXmlElement = value;
   }
   
+  public AlgorithmImpl(): base() {}
+  
+  public AlgorithmImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Algorithm Type
   /// </summary>
@@ -43,7 +50,7 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

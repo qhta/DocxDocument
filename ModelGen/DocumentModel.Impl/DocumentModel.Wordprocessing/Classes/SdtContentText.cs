@@ -11,6 +11,13 @@ public class SdtContentTextImpl: ModelElementImpl, SdtContentText
     set => _OpenXmlElement = value;
   }
   
+  public SdtContentTextImpl(): base() {}
+  
+  public SdtContentTextImpl(DocumentFormat.OpenXml.Wordprocessing.SdtContentText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Allow Soft Line Breaks
   /// </summary>

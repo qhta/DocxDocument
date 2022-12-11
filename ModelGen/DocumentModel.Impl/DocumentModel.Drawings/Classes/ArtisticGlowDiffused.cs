@@ -11,6 +11,13 @@ public class ArtisticGlowDiffusedImpl: ModelElementImpl, ArtisticGlowDiffused
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticGlowDiffusedImpl(): base() {}
+  
+  public ArtisticGlowDiffusedImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

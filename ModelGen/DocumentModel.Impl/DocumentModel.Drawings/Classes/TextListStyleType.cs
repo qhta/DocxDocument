@@ -11,6 +11,13 @@ public class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
     set => _OpenXmlElement = value;
   }
   
+  public TextListStyleTypeImpl(): base() {}
+  
+  public TextListStyleTypeImpl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Default Paragraph Style.
   /// </summary>
@@ -104,7 +111,7 @@ public class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

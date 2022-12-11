@@ -2,7 +2,9 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
 using DocumentFormat.OpenXml;
+
 using Namotion.Reflection;
 
 namespace ModelGen;
@@ -129,13 +131,13 @@ public static class ModelManager
     return false;
   }
 
-  public static CompoundName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
+  public static QualifiedName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
   {
     if (typeInfo.IsConverted)
       typeInfo = typeInfo.GetConversionTarget(true);
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
-      return new CompoundName(aName);
+      return new QualifiedName(aName, null);
     string aNamespace = typeInfo.Namespace;
 
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
@@ -146,7 +148,7 @@ public static class ModelManager
     {
       aName += "Impl";
     }
-    var result = new CompoundName(aName, (aNamespace != null) ? aNamespace : null);
+    var result = new QualifiedName(aName, (aNamespace != null) ? aNamespace : null);
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
@@ -155,7 +157,7 @@ public static class ModelManager
       {
         result.ArgNames = new();
         foreach (var genericParam in genericParams.ToList())
-          result.ArgNames.Add(new CompoundName(genericParam.Name));
+          result.ArgNames.Add(new QualifiedName(genericParam.Name, null));
       }
       else if (genericArgs.Any())
       {
@@ -266,7 +268,7 @@ public static class ModelManager
     {
       foreach (var arg in typeInfo.GetGenericArgTypes())
       {
-        if (HasExcludedNamespace(arg)) 
+        if (HasExcludedNamespace(arg))
           return true;
       }
     }
@@ -353,8 +355,8 @@ public static class ModelManager
   public static int CheckNamespaceDuplicatedTypes(string nspace)
   {
     var duplicatedTypesCount = 0;
-    var namespaceTypes = TypeManager.GetNamespaceTypes(nspace)/*.OrderBy(item => item.Name)*/.ToList();
-    namespaceTypes.Sort((type1, ITypeInfo2) => { return type1.Name.CompareTo(ITypeInfo2.Name);});
+    var namespaceTypes = TypeManager.GetOriginalNamespaceTypes(nspace)/*.OrderBy(item => item.Name)*/.ToList();
+    namespaceTypes.Sort((type1, ITypeInfo2) => { return type1.Name.CompareTo(ITypeInfo2.Name); });
     for (int i = 0; i < namespaceTypes.Count() - 1; i++)
     {
       var type1 = namespaceTypes[i];
@@ -400,6 +402,24 @@ public static class ModelManager
         return true;
       }
     }
+    else
+    {
+      if (ModelData.TypeNameConversion.TryGetValue(typeInfo.GetFullName(true), out var newName))
+      {
+        var qualifiedName = new QualifiedName(newName);
+        typeInfo.Name = qualifiedName.Name;
+      }
+    }
+    //else
+    //{
+    //  if (HasDuplicatesInNamespace(typeInfo))
+    //  {
+    //    var duplicatedTypes = GetDuplicatesInNamespace(typeInfo).ToList();
+    //    duplicatedTypes.Sort((t1, t2)=> t1.Name.Length.CompareTo(t2.Name.Length));
+    //    for (int i = 1; i < duplicatedTypes.Count(); i++)
+    //      duplicatedTypes[i].Name += (i + 1).ToString();
+    //  }
+    //}
     return false;
   }
 
@@ -424,11 +444,16 @@ public static class ModelManager
   }
   #endregion
 
-  public static bool HasDuplicatesInName(this TypeInfo type)
+  public static bool HasDuplicatesInNamespace(this TypeInfo type)
   {
     if (type.Name.Contains('`'))
       return false;
-    return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).Any();
+    return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).Count() > 1;
+  }
+
+  public static TypeInfo[] GetDuplicatesInNamespace(this TypeInfo type)
+  {
+    return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).ToArray();
   }
 
   public static int ReflectRemainingTypes()

@@ -11,6 +11,13 @@ public class TaskTitleEventInfoImpl: ModelElementImpl, TaskTitleEventInfo
     set => _OpenXmlElement = value;
   }
   
+  public TaskTitleEventInfoImpl(): base() {}
+  
+  public TaskTitleEventInfoImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// title, this property is only available in Office 2021 and later.
   /// </summary>

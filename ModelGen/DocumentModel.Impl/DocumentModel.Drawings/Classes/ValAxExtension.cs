@@ -11,6 +11,13 @@ public class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
     set => _OpenXmlElement = value;
   }
   
+  public ValAxExtensionImpl(): base() {}
+  
+  public ValAxExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
     }
   }
   
-  public NumberingFormat1? NumberingFormat
+  public NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

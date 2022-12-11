@@ -10,9 +10,9 @@ public interface PieChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<PieChartSeries1>? PieChartSerieses { get ; set; }
+  public Collection<PieChartSeries>? PieChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public UInt16? FirstSliceAngle { get ; set; }
   

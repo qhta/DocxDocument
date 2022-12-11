@@ -11,6 +11,13 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
     set => _OpenXmlElement = value;
   }
   
+  public TextFontTypeImpl(): base() {}
+  
+  public TextFontTypeImpl(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Typeface
   /// </summary>

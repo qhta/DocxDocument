@@ -14,44 +14,44 @@ public interface SdtCell
   
   public SdtEndCharProperties? SdtEndCharProperties { get ; set; }
   
-  public Collection<BookmarkStart>? BookmarkStarts { get ; set; }
+  public BookmarkStart? BookmarkStart { get ; set; }
   
-  public Collection<MarkupRangeType>? BookmarkEnds { get ; set; }
+  public MarkupRangeType? BookmarkEnd { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeStarts { get ; set; }
+  public MarkupRangeType? CommentRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? CommentRangeEnds { get ; set; }
+  public MarkupRangeType? CommentRangeEnd { get ; set; }
   
-  public Collection<MoveBookmarkType>? MoveFromRangeStarts { get ; set; }
+  public MoveBookmarkType? MoveFromRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? MoveFromRangeEnds { get ; set; }
+  public MarkupRangeType? MoveFromRangeEnd { get ; set; }
   
-  public Collection<MoveBookmarkType>? MoveToRangeStarts { get ; set; }
+  public MoveBookmarkType? MoveToRangeStart { get ; set; }
   
-  public Collection<MarkupRangeType>? MoveToRangeEnds { get ; set; }
+  public MarkupRangeType? MoveToRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlInsRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlInsRangeEnds { get ; set; }
+  public MarkupType? CustomXmlInsRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlDelRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlDelRangeEnds { get ; set; }
+  public MarkupType? CustomXmlDelRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
+  public MarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
+  public MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
+  public MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public Collection<TrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
+  public TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public Collection<MarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
+  public MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
 }

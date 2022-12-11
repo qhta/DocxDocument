@@ -11,6 +11,13 @@ public class ControlPropertiesImpl: ModelElementImpl, ControlProperties
     set => _OpenXmlElement = value;
   }
   
+  public ControlPropertiesImpl(): base() {}
+  
+  public ControlPropertiesImpl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public DocumentModel.Wordprocessing.RunProperties? RunProperties
   {
     get => throw new NotImplementedException("Method not implemented");

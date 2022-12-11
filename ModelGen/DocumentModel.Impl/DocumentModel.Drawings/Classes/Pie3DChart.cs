@@ -11,6 +11,13 @@ public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
     set => _OpenXmlElement = value;
   }
   
+  public Pie3DChartImpl(): base() {}
+  
+  public Pie3DChartImpl(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VaryColors.
   /// </summary>
@@ -29,33 +36,33 @@ public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<PieChartSeries1>? PieChartSerieses
+  public Collection<PieChartSeries>? PieChartSerieses
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels1? DataLabels
+  public DataLabels? DataLabels
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

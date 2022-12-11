@@ -11,10 +11,17 @@ public class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelatio
     set => _OpenXmlElement = value;
   }
   
+  public HyperlinkRelationshipImpl(): base() {}
+  
+  public HyperlinkRelationshipImpl(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the relationship type.
   /// </summary>
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

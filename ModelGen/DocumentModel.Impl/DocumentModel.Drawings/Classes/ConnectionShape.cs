@@ -11,6 +11,13 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionShapeImpl(): base() {}
+  
+  public ConnectionShapeImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
@@ -49,7 +56,7 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public ShapeProperties7? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -58,7 +65,7 @@ public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style4? Style
+  public Style? Style
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

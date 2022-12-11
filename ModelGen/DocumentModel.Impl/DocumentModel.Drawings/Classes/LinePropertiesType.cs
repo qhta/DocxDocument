@@ -11,6 +11,13 @@ public class LinePropertiesTypeImpl: ModelElementImpl, LinePropertiesType
     set => _OpenXmlElement = value;
   }
   
+  public LinePropertiesTypeImpl(): base() {}
+  
+  public LinePropertiesTypeImpl(DocumentFormat.OpenXml.Drawing.LinePropertiesType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// line width
   /// </summary>

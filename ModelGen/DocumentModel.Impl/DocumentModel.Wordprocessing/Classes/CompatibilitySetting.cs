@@ -11,6 +11,13 @@ public class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
     set => _OpenXmlElement = value;
   }
   
+  public CompatibilitySettingImpl(): base() {}
+  
+  public CompatibilitySettingImpl(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// name
   /// </summary>

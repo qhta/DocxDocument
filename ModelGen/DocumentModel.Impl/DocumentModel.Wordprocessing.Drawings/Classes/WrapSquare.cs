@@ -11,6 +11,13 @@ public class WrapSquareImpl: ModelElementImpl, WrapSquare
     set => _OpenXmlElement = value;
   }
   
+  public WrapSquareImpl(): base() {}
+  
+  public WrapSquareImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Wrapping Location
   /// </summary>

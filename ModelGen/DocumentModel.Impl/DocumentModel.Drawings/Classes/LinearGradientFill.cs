@@ -11,6 +11,13 @@ public class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
     set => _OpenXmlElement = value;
   }
   
+  public LinearGradientFillImpl(): base() {}
+  
+  public LinearGradientFillImpl(DocumentFormat.OpenXml.Drawing.LinearGradientFill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Angle
   /// </summary>

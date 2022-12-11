@@ -11,6 +11,13 @@ public class BuildDiagramImpl: ModelElementImpl, BuildDiagram
     set => _OpenXmlElement = value;
   }
   
+  public BuildDiagramImpl(): base() {}
+  
+  public BuildDiagramImpl(DocumentFormat.OpenXml.Drawing.BuildDiagram openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Build
   /// </summary>

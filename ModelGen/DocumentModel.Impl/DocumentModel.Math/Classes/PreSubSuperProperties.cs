@@ -11,6 +11,13 @@ public class PreSubSuperPropertiesImpl: ModelElementImpl, PreSubSuperProperties
     set => _OpenXmlElement = value;
   }
   
+  public PreSubSuperPropertiesImpl(): base() {}
+  
+  public PreSubSuperPropertiesImpl(DocumentFormat.OpenXml.Math.PreSubSuperProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ControlProperties.
   /// </summary>

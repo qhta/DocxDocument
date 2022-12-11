@@ -11,6 +11,13 @@ public class GroupCharImpl: ModelElementImpl, GroupChar
     set => _OpenXmlElement = value;
   }
   
+  public GroupCharImpl(): base() {}
+  
+  public GroupCharImpl(DocumentFormat.OpenXml.Math.GroupChar openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Group-Character Properties.
   /// </summary>

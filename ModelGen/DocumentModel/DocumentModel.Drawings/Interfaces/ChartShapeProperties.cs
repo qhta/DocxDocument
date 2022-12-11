@@ -13,7 +13,7 @@ public interface ChartShapeProperties
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D2? Transform2D { get ; set; }
+  public Transform2D? Transform2D { get ; set; }
   
   public CustomGeometry? CustomGeometry { get ; set; }
   
@@ -25,7 +25,7 @@ public interface ChartShapeProperties
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
   
@@ -39,6 +39,6 @@ public interface ChartShapeProperties
   
   public Shape3DType? Shape3DType { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

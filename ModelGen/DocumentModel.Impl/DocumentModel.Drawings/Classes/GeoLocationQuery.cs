@@ -11,6 +11,13 @@ public class GeoLocationQueryImpl: ModelElementImpl, GeoLocationQuery
     set => _OpenXmlElement = value;
   }
   
+  public GeoLocationQueryImpl(): base() {}
+  
+  public GeoLocationQueryImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// countryRegion, this property is only available in Office 2016 and later.
   /// </summary>

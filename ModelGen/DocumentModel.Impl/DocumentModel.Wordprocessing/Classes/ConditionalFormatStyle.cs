@@ -11,6 +11,13 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
     set => _OpenXmlElement = value;
   }
   
+  public ConditionalFormatStyleImpl(): base() {}
+  
+  public ConditionalFormatStyleImpl(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Conditional Formatting Bit Mask
   /// </summary>

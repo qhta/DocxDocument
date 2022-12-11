@@ -23,11 +23,11 @@ public interface ConnectionShape
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public ShapeProperties7? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Connection Shape Style.
   /// </summary>
-  public Style4? Style { get ; set; }
+  public Style? Style { get ; set; }
   
 }

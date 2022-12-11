@@ -11,6 +11,13 @@ public class AxisUnitsImpl: ModelElementImpl, AxisUnits
     set => _OpenXmlElement = value;
   }
   
+  public AxisUnitsImpl(): base() {}
+  
+  public AxisUnitsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnits openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// unit, this property is only available in Office 2016 and later.
   /// </summary>
@@ -36,7 +43,7 @@ public class AxisUnitsImpl: ModelElementImpl, AxisUnits
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

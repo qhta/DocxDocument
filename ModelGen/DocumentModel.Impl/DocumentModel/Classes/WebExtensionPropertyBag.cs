@@ -11,6 +11,13 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionPropertyBagImpl(): base() {}
+  
+  public WebExtensionPropertyBagImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<WebExtensionProperty>? WebExtensionProperties
   {
     get => throw new NotImplementedException("Method not implemented");

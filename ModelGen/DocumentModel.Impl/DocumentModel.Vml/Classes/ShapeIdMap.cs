@@ -11,6 +11,13 @@ public class ShapeIdMapImpl: ModelElementImpl, ShapeIdMap
     set => _OpenXmlElement = value;
   }
   
+  public ShapeIdMapImpl(): base() {}
+  
+  public ShapeIdMapImpl(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
