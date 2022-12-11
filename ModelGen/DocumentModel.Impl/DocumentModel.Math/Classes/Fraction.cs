@@ -11,6 +11,13 @@ public class FractionImpl: ModelElementImpl, Fraction
     set => _OpenXmlElement = value;
   }
   
+  public FractionImpl(): base() {}
+  
+  public FractionImpl(DocumentFormat.OpenXml.Math.Fraction openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Fraction Properties.
   /// </summary>

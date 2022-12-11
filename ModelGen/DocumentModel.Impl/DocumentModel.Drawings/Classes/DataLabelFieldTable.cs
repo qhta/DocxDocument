@@ -11,6 +11,13 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
     set => _OpenXmlElement = value;
   }
   
+  public DataLabelFieldTableImpl(): base() {}
+  
+  public DataLabelFieldTableImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DataLabelFieldTableEntry>? DataLabelFieldTableEntries
   {
     get => throw new NotImplementedException("Method not implemented");

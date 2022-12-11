@@ -11,6 +11,13 @@ public class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
     set => _OpenXmlElement = value;
   }
   
+  public BrightnessContrastImpl(): base() {}
+  
+  public BrightnessContrastImpl(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// bright, this property is only available in Office 2010 and later.
   /// </summary>

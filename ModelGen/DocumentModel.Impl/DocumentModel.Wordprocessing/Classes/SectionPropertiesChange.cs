@@ -11,6 +11,13 @@ public class SectionPropertiesChangeImpl: ModelElementImpl, SectionPropertiesCha
     set => _OpenXmlElement = value;
   }
   
+  public SectionPropertiesChangeImpl(): base() {}
+  
+  public SectionPropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

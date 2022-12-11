@@ -11,6 +11,13 @@ public class ColorImpl: ModelElementImpl, Color
     set => _OpenXmlElement = value;
   }
   
+  public ColorImpl(): base() {}
+  
+  public ColorImpl(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Run Content Color
   /// </summary>

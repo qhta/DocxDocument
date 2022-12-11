@@ -11,6 +11,13 @@ public class InlineImpl: ModelElementImpl, Inline
     set => _OpenXmlElement = value;
   }
   
+  public InlineImpl(): base() {}
+  
+  public InlineImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>

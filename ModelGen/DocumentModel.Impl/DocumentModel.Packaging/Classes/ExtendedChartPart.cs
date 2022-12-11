@@ -11,6 +11,13 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
     set => _OpenXmlElement = value;
   }
   
+  public ExtendedChartPartImpl(): base() {}
+  
+  public ExtendedChartPartImpl(DocumentFormat.OpenXml.Packaging.ExtendedChartPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the ChartColorStyleParts of the ExtendedChartPart
   /// </summary>
@@ -23,7 +30,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ChartSpace1? ChartSpace
+  public DocumentModel.Drawings.ChartSpace? ChartSpace
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -38,7 +45,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -57,7 +64,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

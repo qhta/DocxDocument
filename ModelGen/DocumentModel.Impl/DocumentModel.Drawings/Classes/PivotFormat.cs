@@ -11,6 +11,13 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
     set => _OpenXmlElement = value;
   }
   
+  public PivotFormatImpl(): base() {}
+  
+  public PivotFormatImpl(DocumentFormat.OpenXml.Drawing.Charts.PivotFormat openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Index.
   /// </summary>
@@ -29,20 +36,20 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -52,7 +59,7 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties5? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -61,7 +68,7 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
   /// <summary>
   /// Marker.
   /// </summary>
-  public Marker1? Marker
+  public Marker? Marker
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -70,7 +77,7 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
   /// <summary>
   /// Data Label.
   /// </summary>
-  public DataLabel1? DataLabel
+  public DataLabel? DataLabel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -79,7 +86,7 @@ public class PivotFormatImpl: ModelElementImpl, PivotFormat
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

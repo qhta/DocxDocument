@@ -11,19 +11,26 @@ public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, Minor
     set => _OpenXmlElement = value;
   }
   
-  public override TextFontType? LatinFont
+  public MinorFontImpl(): base() {}
+  
+  public MinorFontImpl(DocumentFormat.OpenXml.Drawing.MinorFont openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new TextFontType? LatinFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override TextFontType? EastAsianFont
+  public new TextFontType? EastAsianFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override TextFontType? ComplexScriptFont
+  public new TextFontType? ComplexScriptFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -35,7 +42,7 @@ public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, Minor
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

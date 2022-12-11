@@ -11,6 +11,13 @@ public class ArtisticMarkerImpl: ModelElementImpl, ArtisticMarker
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticMarkerImpl(): base() {}
+  
+  public ArtisticMarkerImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

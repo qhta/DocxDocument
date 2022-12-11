@@ -11,6 +11,13 @@ public class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
     set => _OpenXmlElement = value;
   }
   
+  public WebVideoPropertyImpl(): base() {}
+  
+  public WebVideoPropertyImpl(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// embeddedHtml, this property is only available in Office 2013 and later.
   /// </summary>

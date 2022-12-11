@@ -11,6 +11,13 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
     set => _OpenXmlElement = value;
   }
   
+  public ListStyleImpl(): base() {}
+  
+  public ListStyleImpl(DocumentFormat.OpenXml.Drawing.ListStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Default Paragraph Style.
   /// </summary>
@@ -104,7 +111,7 @@ public class ListStyleImpl: ModelElementImpl, ListStyle
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

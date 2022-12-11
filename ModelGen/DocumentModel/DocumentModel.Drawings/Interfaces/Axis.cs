@@ -19,7 +19,7 @@ public interface Axis
   
   public ValueAxisScaling? ValueAxisScaling { get ; set; }
   
-  public AxisTitle2? AxisTitle { get ; set; }
+  public AxisTitle? AxisTitle { get ; set; }
   
   public AxisUnits? AxisUnits { get ; set; }
   
@@ -35,10 +35,10 @@ public interface Axis
   
   public NumberFormat? NumberFormat { get ; set; }
   
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   public TxPrTextBody? TxPrTextBody { get ; set; }
   
-  public ExtensionList2? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

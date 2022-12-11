@@ -11,6 +11,13 @@ public class TaskHistoryImpl: ModelElementImpl, TaskHistory
     set => _OpenXmlElement = value;
   }
   
+  public TaskHistoryImpl(): base() {}
+  
+  public TaskHistoryImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<TaskHistoryEvent>? TaskHistoryEvents
   {
     get => throw new NotImplementedException("Method not implemented");

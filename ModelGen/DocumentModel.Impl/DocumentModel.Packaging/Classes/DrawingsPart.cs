@@ -11,6 +11,13 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
     set => _OpenXmlElement = value;
   }
   
+  public DrawingsPartImpl(): base() {}
+  
+  public DrawingsPartImpl(DocumentFormat.OpenXml.Packaging.DrawingsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the DrawingsPart
   /// </summary>
@@ -20,7 +27,7 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -102,7 +109,7 @@ public class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Drawings
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

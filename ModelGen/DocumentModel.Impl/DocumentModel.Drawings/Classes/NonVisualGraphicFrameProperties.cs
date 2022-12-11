@@ -11,10 +11,17 @@ public class NonVisualGraphicFramePropertiesImpl: ModelElementImpl, NonVisualGra
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGraphicFramePropertiesImpl(): base() {}
+  
+  public NonVisualGraphicFramePropertiesImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Non-Visual Drawing Properties.
   /// </summary>
-  public NonVisualDrawingProperties3? NonVisualDrawingProperties
+  public NonVisualDrawingProperties? NonVisualDrawingProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

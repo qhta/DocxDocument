@@ -11,6 +11,13 @@ public class EffectImpl: ModelElementImpl, Effect
     set => _OpenXmlElement = value;
   }
   
+  public EffectImpl(): base() {}
+  
+  public EffectImpl(DocumentFormat.OpenXml.Drawing.Effect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Reference
   /// </summary>

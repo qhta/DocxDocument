@@ -16,4 +16,6 @@ public interface StringDimension
   
   public Collection<StringLevel>? StringLevels { get ; set; }
   
+  public StringLevel? StringLevel { get ; set; }
+  
 }

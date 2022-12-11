@@ -11,6 +11,13 @@ public class MacroWllTypeImpl: ModelElementImpl, MacroWllType
     set => _OpenXmlElement = value;
   }
   
+  public MacroWllTypeImpl(): base() {}
+  
+  public MacroWllTypeImpl(DocumentFormat.OpenXml.Office.Word.MacroWllType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// macroName
   /// </summary>

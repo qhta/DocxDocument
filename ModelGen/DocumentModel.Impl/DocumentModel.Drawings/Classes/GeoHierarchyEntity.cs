@@ -11,6 +11,13 @@ public class GeoHierarchyEntityImpl: ModelElementImpl, GeoHierarchyEntity
     set => _OpenXmlElement = value;
   }
   
+  public GeoHierarchyEntityImpl(): base() {}
+  
+  public GeoHierarchyEntityImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// entityName, this property is only available in Office 2016 and later.
   /// </summary>

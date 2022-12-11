@@ -11,6 +11,13 @@ public class ArtisticPencilGrayscaleImpl: ModelElementImpl, ArtisticPencilGraysc
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPencilGrayscaleImpl(): base() {}
+  
+  public ArtisticPencilGrayscaleImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

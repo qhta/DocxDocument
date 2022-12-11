@@ -11,7 +11,14 @@ public class CubicBezierCurveToImpl: ModelElementImpl, CubicBezierCurveTo
     set => _OpenXmlElement = value;
   }
   
-  public Collection<AdjustPoint2DType>? Points
+  public CubicBezierCurveToImpl(): base() {}
+  
+  public CubicBezierCurveToImpl(DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public AdjustPoint2DType? Point
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

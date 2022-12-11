@@ -11,6 +11,13 @@ public class SignatureLineImpl: ModelElementImpl, SignatureLine
     set => _OpenXmlElement = value;
   }
   
+  public SignatureLineImpl(): base() {}
+  
+  public SignatureLineImpl(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// isSignatureLine, this property is only available in Office 2013 and later.
   /// </summary>

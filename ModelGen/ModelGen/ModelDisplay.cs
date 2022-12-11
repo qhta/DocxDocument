@@ -47,7 +47,7 @@ public static class ModelDisplay
         var aSpace = nspace;
         if (aSpace.Length < maxNamespaceLength)
           aSpace = aSpace + new string(' ', maxNamespaceLength - aSpace.Length);
-        var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToArray();
+        var nSpaceTypes = TypeManager.GetOriginalNamespaceTypes(nspace).ToArray();
         var nSpaceTypesCount = nSpaceTypes.Count();
         var nSpaceAcceptedCount = nSpaceTypes.Count(item => item.IsAccepted == true);
         var nSpaceClassesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
@@ -78,7 +78,9 @@ public static class ModelDisplay
 
   public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
-    var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
+    var nSpaceTypes = options.OriginalNames
+      ? TypeManager.GetOriginalNamespaceTypes(nspace).ToList()
+      : TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.AcceptedTypesOnly)
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
     if (nSpaceTypes.Count > 0)

@@ -11,6 +11,13 @@ public class ProxyImpl: ModelElementImpl, Proxy
     set => _OpenXmlElement = value;
   }
   
+  public ProxyImpl(): base() {}
+  
+  public ProxyImpl(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Start Point Connection Flag
   /// </summary>

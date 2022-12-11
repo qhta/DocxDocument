@@ -11,6 +11,13 @@ public class TableBordersImpl: ModelElementImpl, TableBorders
     set => _OpenXmlElement = value;
   }
   
+  public TableBordersImpl(): base() {}
+  
+  public TableBordersImpl(DocumentFormat.OpenXml.Wordprocessing.TableBorders openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Top Border.
   /// </summary>

@@ -11,6 +11,13 @@ public class LimitLowerImpl: ModelElementImpl, LimitLower
     set => _OpenXmlElement = value;
   }
   
+  public LimitLowerImpl(): base() {}
+  
+  public LimitLowerImpl(DocumentFormat.OpenXml.Math.LimitLower openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Lower Limit Properties.
   /// </summary>

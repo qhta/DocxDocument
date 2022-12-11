@@ -11,6 +11,13 @@ public class PermStartImpl: ModelElementImpl, PermStart
     set => _OpenXmlElement = value;
   }
   
+  public PermStartImpl(): base() {}
+  
+  public PermStartImpl(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// edGrp
   /// </summary>

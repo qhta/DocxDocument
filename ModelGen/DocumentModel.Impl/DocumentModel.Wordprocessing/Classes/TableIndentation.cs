@@ -11,6 +11,13 @@ public class TableIndentationImpl: ModelElementImpl, TableIndentation
     set => _OpenXmlElement = value;
   }
   
+  public TableIndentationImpl(): base() {}
+  
+  public TableIndentationImpl(DocumentFormat.OpenXml.Wordprocessing.TableIndentation openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// w
   /// </summary>

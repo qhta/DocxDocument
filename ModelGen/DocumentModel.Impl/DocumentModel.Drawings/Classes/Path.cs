@@ -11,6 +11,13 @@ public class PathImpl: ModelElementImpl, Path
     set => _OpenXmlElement = value;
   }
   
+  public PathImpl(): base() {}
+  
+  public PathImpl(DocumentFormat.OpenXml.Drawing.Path openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Path Width
   /// </summary>
@@ -76,37 +83,64 @@ public class PathImpl: ModelElementImpl, Path
     }
   }
   
-  public Collection<Boolean>? CloseShapePaths
+  public Boolean? CloseShapePath
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CloseShapePath>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CloseShapePath>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.CloseShapePath();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public MoveTo? MoveTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<MoveTo>? MoveTos
+  public LineTo? LineTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<LineTo>? LineTos
+  public ArcTo? ArcTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ArcTo>? ArcTos
+  public QuadraticBezierCurveTo? QuadraticBezierCurveTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<QuadraticBezierCurveTo>? QuadraticBezierCurveTos
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<CubicBezierCurveTo>? CubicBezierCurveTos
+  public CubicBezierCurveTo? CubicBezierCurveTo
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

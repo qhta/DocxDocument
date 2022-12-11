@@ -11,6 +11,13 @@ public class ComplexImpl: ModelElementImpl, Complex
     set => _OpenXmlElement = value;
   }
   
+  public ComplexImpl(): base() {}
+  
+  public ComplexImpl(DocumentFormat.OpenXml.Vml.Office.Complex openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

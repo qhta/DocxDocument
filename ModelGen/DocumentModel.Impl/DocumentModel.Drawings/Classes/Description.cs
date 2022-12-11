@@ -11,6 +11,13 @@ public class DescriptionImpl: ModelElementImpl, Description
     set => _OpenXmlElement = value;
   }
   
+  public DescriptionImpl(): base() {}
+  
+  public DescriptionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Description openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Language
   /// </summary>

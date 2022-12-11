@@ -11,7 +11,14 @@ public class FootnotesImpl: ModelElementImpl, Footnotes
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Footnote>? Items
+  public FootnotesImpl(): base() {}
+  
+  public FootnotesImpl(DocumentFormat.OpenXml.Wordprocessing.Footnotes openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Footnote? Footnote
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

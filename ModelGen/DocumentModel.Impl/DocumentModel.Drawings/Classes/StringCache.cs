@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the StringCache Class.
 /// </summary>
-public class StringCacheImpl: DocumentModel.Drawings.StringDataType1Impl, StringCache
+public class StringCacheImpl: DocumentModel.Drawings.StringDataTypeImpl, StringCache
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.StringCache? OpenXmlElement
   {
@@ -11,7 +11,14 @@ public class StringCacheImpl: DocumentModel.Drawings.StringDataType1Impl, String
     set => _OpenXmlElement = value;
   }
   
-  public override UInt32? PointCount
+  public StringCacheImpl(): base() {}
+  
+  public StringCacheImpl(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new UInt32? PointCount
   {
     get
     {
@@ -26,20 +33,20 @@ public class StringCacheImpl: DocumentModel.Drawings.StringDataType1Impl, String
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

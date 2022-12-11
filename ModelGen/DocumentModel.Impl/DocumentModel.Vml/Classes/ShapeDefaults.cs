@@ -11,6 +11,13 @@ public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
     set => _OpenXmlElement = value;
   }
   
+  public ShapeDefaultsImpl(): base() {}
+  
+  public ShapeDefaultsImpl(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

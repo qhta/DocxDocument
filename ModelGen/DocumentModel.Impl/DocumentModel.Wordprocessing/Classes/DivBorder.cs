@@ -11,6 +11,13 @@ public class DivBorderImpl: ModelElementImpl, DivBorder
     set => _OpenXmlElement = value;
   }
   
+  public DivBorderImpl(): base() {}
+  
+  public DivBorderImpl(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Top Border for HTML div.
   /// </summary>

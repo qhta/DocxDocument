@@ -11,6 +11,13 @@ public class QuickTimeFromFileImpl: ModelElementImpl, QuickTimeFromFile
     set => _OpenXmlElement = value;
   }
   
+  public QuickTimeFromFileImpl(): base() {}
+  
+  public QuickTimeFromFileImpl(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
@@ -27,7 +34,7 @@ public class QuickTimeFromFileImpl: ModelElementImpl, QuickTimeFromFile
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

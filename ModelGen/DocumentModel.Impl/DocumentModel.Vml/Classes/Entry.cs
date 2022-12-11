@@ -11,6 +11,13 @@ public class EntryImpl: ModelElementImpl, Entry
     set => _OpenXmlElement = value;
   }
   
+  public EntryImpl(): base() {}
+  
+  public EntryImpl(DocumentFormat.OpenXml.Vml.Office.Entry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// New Group ID
   /// </summary>

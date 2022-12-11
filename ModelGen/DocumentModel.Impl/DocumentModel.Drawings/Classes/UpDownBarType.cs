@@ -11,6 +11,13 @@ public class UpDownBarTypeImpl: ModelElementImpl, UpDownBarType
     set => _OpenXmlElement = value;
   }
   
+  public UpDownBarTypeImpl(): base() {}
+  
+  public UpDownBarTypeImpl(DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>

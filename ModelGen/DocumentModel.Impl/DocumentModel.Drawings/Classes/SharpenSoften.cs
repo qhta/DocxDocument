@@ -11,6 +11,13 @@ public class SharpenSoftenImpl: ModelElementImpl, SharpenSoften
     set => _OpenXmlElement = value;
   }
   
+  public SharpenSoftenImpl(): base() {}
+  
+  public SharpenSoftenImpl(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// amount, this property is only available in Office 2010 and later.
   /// </summary>

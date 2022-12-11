@@ -11,6 +11,13 @@ public class DataDisplayOptions16Impl: ModelElementImpl, DataDisplayOptions16
     set => _OpenXmlElement = value;
   }
   
+  public DataDisplayOptions16Impl(): base() {}
+  
+  public DataDisplayOptions16Impl(DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16 openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// BooleanFalse.
   /// </summary>
@@ -29,20 +36,20 @@ public class DataDisplayOptions16Impl: ModelElementImpl, DataDisplayOptions16
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

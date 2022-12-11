@@ -11,6 +11,13 @@ public class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualP
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualPictureDrawingPropertiesImpl(): base() {}
+  
+  public NonVisualPictureDrawingPropertiesImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// preferRelativeResize
   /// </summary>

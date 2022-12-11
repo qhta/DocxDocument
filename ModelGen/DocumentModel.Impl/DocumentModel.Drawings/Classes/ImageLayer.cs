@@ -11,6 +11,13 @@ public class ImageLayerImpl: ModelElementImpl, ImageLayer
     set => _OpenXmlElement = value;
   }
   
+  public ImageLayerImpl(): base() {}
+  
+  public ImageLayerImpl(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// embed, this property is only available in Office 2010 and later.
   /// </summary>

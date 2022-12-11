@@ -11,6 +11,13 @@ public class ImagePropertiesImpl: ModelElementImpl, ImageProperties
     set => _OpenXmlElement = value;
   }
   
+  public ImagePropertiesImpl(): base() {}
+  
+  public ImagePropertiesImpl(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ImageLayer.
   /// </summary>

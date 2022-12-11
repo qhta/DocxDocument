@@ -11,6 +11,13 @@ public class BarPropertiesImpl: ModelElementImpl, BarProperties
     set => _OpenXmlElement = value;
   }
   
+  public BarPropertiesImpl(): base() {}
+  
+  public BarPropertiesImpl(DocumentFormat.OpenXml.Math.BarProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Position (Bar).
   /// </summary>
@@ -29,20 +36,20 @@ public class BarPropertiesImpl: ModelElementImpl, BarProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.VerticalJustificationValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.VerticalJustificationValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.Position{ Val = (DocumentFormat.OpenXml.Math.VerticalJustificationValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.Position{ Val = (DocumentFormat.OpenXml.Math.VerticalJustificationValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

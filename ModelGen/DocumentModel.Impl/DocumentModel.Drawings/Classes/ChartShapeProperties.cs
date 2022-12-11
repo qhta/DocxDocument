@@ -11,6 +11,13 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
     set => _OpenXmlElement = value;
   }
   
+  public ChartShapePropertiesImpl(): base() {}
+  
+  public ChartShapePropertiesImpl(DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Black and White Mode
   /// </summary>
@@ -27,7 +34,7 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  public Transform2D2? Transform2D
+  public Transform2D? Transform2D
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -51,8 +58,8 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return item != null;
       }
       return null;
     }
@@ -60,18 +67,18 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -90,7 +97,7 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill? BlipFill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -132,7 +139,7 @@ public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

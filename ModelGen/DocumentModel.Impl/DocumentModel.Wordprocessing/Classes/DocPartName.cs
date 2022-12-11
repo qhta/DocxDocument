@@ -11,6 +11,13 @@ public class DocPartNameImpl: ModelElementImpl, DocPartName
     set => _OpenXmlElement = value;
   }
   
+  public DocPartNameImpl(): base() {}
+  
+  public DocPartNameImpl(DocumentFormat.OpenXml.Wordprocessing.DocPartName openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name Value
   /// </summary>

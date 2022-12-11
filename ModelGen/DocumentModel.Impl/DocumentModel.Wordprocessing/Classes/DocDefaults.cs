@@ -11,6 +11,13 @@ public class DocDefaultsImpl: ModelElementImpl, DocDefaults
     set => _OpenXmlElement = value;
   }
   
+  public DocDefaultsImpl(): base() {}
+  
+  public DocDefaultsImpl(DocumentFormat.OpenXml.Wordprocessing.DocDefaults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Default Run Properties.
   /// </summary>

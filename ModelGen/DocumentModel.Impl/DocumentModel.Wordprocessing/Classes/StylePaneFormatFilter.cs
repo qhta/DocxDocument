@@ -11,6 +11,13 @@ public class StylePaneFormatFilterImpl: ModelElementImpl, StylePaneFormatFilter
     set => _OpenXmlElement = value;
   }
   
+  public StylePaneFormatFilterImpl(): base() {}
+  
+  public StylePaneFormatFilterImpl(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// val
   /// </summary>

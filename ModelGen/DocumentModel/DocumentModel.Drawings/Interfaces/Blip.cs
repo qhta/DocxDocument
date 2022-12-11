@@ -20,39 +20,39 @@ public interface Blip
   /// </summary>
   public BlipCompressionKind? CompressionState { get ; set; }
   
-  public Collection<AlphaBiLevel>? AlphaBiLevels { get ; set; }
+  public AlphaBiLevel? AlphaBiLevel { get ; set; }
   
-  public Collection<Boolean>? AlphaCeilings { get ; set; }
+  public Boolean? AlphaCeiling { get ; set; }
   
-  public Collection<Boolean>? AlphaFloors { get ; set; }
+  public Boolean? AlphaFloor { get ; set; }
   
-  public Collection<AlphaInverse>? AlphaInverses { get ; set; }
+  public AlphaInverse? AlphaInverse { get ; set; }
   
-  public Collection<AlphaModulationEffect>? AlphaModulationEffects { get ; set; }
+  public AlphaModulationEffect? AlphaModulationEffect { get ; set; }
   
-  public Collection<AlphaModulationFixed>? AlphaModulationFixeds { get ; set; }
+  public AlphaModulationFixed? AlphaModulationFixed { get ; set; }
   
-  public Collection<AlphaReplace>? AlphaReplaces { get ; set; }
+  public AlphaReplace? AlphaReplace { get ; set; }
   
-  public Collection<BiLevel>? BiLevels { get ; set; }
+  public BiLevel? BiLevel { get ; set; }
   
-  public Collection<Blur>? Blurs { get ; set; }
+  public Blur? Blur { get ; set; }
   
-  public Collection<ColorChange>? ColorChanges { get ; set; }
+  public ColorChange? ColorChange { get ; set; }
   
-  public Collection<ColorReplacement>? ColorReplacements { get ; set; }
+  public ColorReplacement? ColorReplacement { get ; set; }
   
-  public Collection<Duotone>? Duotones { get ; set; }
+  public Duotone? Duotone { get ; set; }
   
-  public Collection<FillOverlay>? FillOverlaies { get ; set; }
+  public FillOverlay? FillOverlay { get ; set; }
   
-  public Collection<Boolean>? Grayscales { get ; set; }
+  public Boolean? Grayscale { get ; set; }
   
-  public Collection<Hsl>? Hsls { get ; set; }
+  public Hsl? Hsl { get ; set; }
   
-  public Collection<LuminanceEffect>? LuminanceEffects { get ; set; }
+  public LuminanceEffect? LuminanceEffect { get ; set; }
   
-  public Collection<TintEffect>? TintEffects { get ; set; }
+  public TintEffect? TintEffect { get ; set; }
   
   public BlipExtensionList? BlipExtensionList { get ; set; }
   

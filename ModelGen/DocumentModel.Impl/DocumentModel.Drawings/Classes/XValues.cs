@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the XValues Class.
 /// </summary>
-public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType2Impl, XValues
+public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceTypeImpl, XValues
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.XValues? OpenXmlElement
   {
@@ -11,31 +11,38 @@ public class XValuesImpl: DocumentModel.Drawings.AxisDataSourceType2Impl, XValue
     set => _OpenXmlElement = value;
   }
   
-  public override MultiLevelStringReference? MultiLevelStringReference
+  public XValuesImpl(): base() {}
+  
+  public XValuesImpl(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new MultiLevelStringReference? MultiLevelStringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberReference? NumberReference
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override StringReference? StringReference
+  public new StringReference? StringReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override StringLiteral? StringLiteral
+  public new StringLiteral? StringLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,13 +11,20 @@ public class MinusImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, Minus
     set => _OpenXmlElement = value;
   }
   
-  public override NumberReference? NumberReference
+  public MinusImpl(): base() {}
+  
+  public MinusImpl(DocumentFormat.OpenXml.Drawing.Charts.Minus openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

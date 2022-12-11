@@ -11,6 +11,13 @@ public class AutoCaptionImpl: ModelElementImpl, AutoCaption
     set => _OpenXmlElement = value;
   }
   
+  public AutoCaptionImpl(): base() {}
+  
+  public AutoCaptionImpl(DocumentFormat.OpenXml.Wordprocessing.AutoCaption openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Identifier of Object to be Automatically Captioned
   /// </summary>

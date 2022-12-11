@@ -11,6 +11,13 @@ public class FieldImpl: ModelElementImpl, Field
     set => _OpenXmlElement = value;
   }
   
+  public FieldImpl(): base() {}
+  
+  public FieldImpl(DocumentFormat.OpenXml.Drawing.Field openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Field ID
   /// </summary>
@@ -73,20 +80,20 @@ public class FieldImpl: ModelElementImpl, Field
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Text>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Text>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Text{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Text{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

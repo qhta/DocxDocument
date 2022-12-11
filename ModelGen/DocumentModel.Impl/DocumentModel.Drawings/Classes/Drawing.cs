@@ -11,6 +11,13 @@ public class DrawingImpl: ModelElementImpl, Drawing
     set => _OpenXmlElement = value;
   }
   
+  public DrawingImpl(): base() {}
+  
+  public DrawingImpl(DocumentFormat.OpenXml.Office.Drawing.Drawing openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ShapeTree.
   /// </summary>

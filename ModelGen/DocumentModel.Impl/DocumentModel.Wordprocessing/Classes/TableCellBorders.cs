@@ -11,6 +11,13 @@ public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
     set => _OpenXmlElement = value;
   }
   
+  public TableCellBordersImpl(): base() {}
+  
+  public TableCellBordersImpl(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Cell Top Border.
   /// </summary>

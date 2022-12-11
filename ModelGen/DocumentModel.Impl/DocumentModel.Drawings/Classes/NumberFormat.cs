@@ -11,6 +11,13 @@ public class NumberFormatImpl: ModelElementImpl, NumberFormat
     set => _OpenXmlElement = value;
   }
   
+  public NumberFormatImpl(): base() {}
+  
+  public NumberFormatImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberFormat openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// formatCode, this property is only available in Office 2016 and later.
   /// </summary>

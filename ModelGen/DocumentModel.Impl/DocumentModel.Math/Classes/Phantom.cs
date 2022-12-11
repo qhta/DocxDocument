@@ -11,6 +11,13 @@ public class PhantomImpl: ModelElementImpl, Phantom
     set => _OpenXmlElement = value;
   }
   
+  public PhantomImpl(): base() {}
+  
+  public PhantomImpl(DocumentFormat.OpenXml.Math.Phantom openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Phantom Properties.
   /// </summary>

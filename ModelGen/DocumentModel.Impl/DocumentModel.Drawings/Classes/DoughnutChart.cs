@@ -11,6 +11,13 @@ public class DoughnutChartImpl: ModelElementImpl, DoughnutChart
     set => _OpenXmlElement = value;
   }
   
+  public DoughnutChartImpl(): base() {}
+  
+  public DoughnutChartImpl(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VaryColors.
   /// </summary>
@@ -29,33 +36,33 @@ public class DoughnutChartImpl: ModelElementImpl, DoughnutChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<PieChartSeries1>? PieChartSerieses
+  public Collection<PieChartSeries>? PieChartSerieses
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DataLabels1? DataLabels
+  public DataLabels? DataLabels
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -76,20 +83,20 @@ public class DoughnutChartImpl: ModelElementImpl, DoughnutChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt16?)value;
+            item.Val = (System.UInt16?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle{ Val = (System.UInt16?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle{ Val = (System.UInt16?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -111,27 +118,27 @@ public class DoughnutChartImpl: ModelElementImpl, DoughnutChart
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Byte?)value;
+            item.Val = (System.Byte?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.HoleSize{ Val = (System.Byte?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.HoleSize{ Val = (System.Byte?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

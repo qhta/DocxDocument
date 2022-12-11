@@ -11,6 +11,13 @@ public class DateAxExtensionImpl: ModelElementImpl, DateAxExtension
     set => _OpenXmlElement = value;
   }
   
+  public DateAxExtensionImpl(): base() {}
+  
+  public DateAxExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class DateAxExtensionImpl: ModelElementImpl, DateAxExtension
     }
   }
   
-  public NumberingFormat1? NumberingFormat
+  public NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

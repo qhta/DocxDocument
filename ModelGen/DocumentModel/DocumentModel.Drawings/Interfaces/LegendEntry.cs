@@ -12,8 +12,8 @@ public interface LegendEntry
   
   public Boolean? Delete { get ; set; }
   
-  public TextProperties1? TextProperties { get ; set; }
+  public TextProperties? TextProperties { get ; set; }
   
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

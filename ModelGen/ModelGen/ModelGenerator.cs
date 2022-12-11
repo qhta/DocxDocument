@@ -1,6 +1,7 @@
 ﻿using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Reflection;
+using System.Xml.Linq;
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Bibliography;
@@ -158,13 +159,24 @@ public class ModelGenerator
       throw new NotImplementedException($"GenerateClassOrInterface not implemented for kind {kind}");
     writer.WriteLine("{");
     writer.Indent++;
+
+    var subclasses = new List<string>();
+
     if (kind == TypeKind.Class)
     {
       GenerateOpenXmlElementProperty(typeInfo.GetFullName(true), newOpenXmlElementProperty, writer);
     }
-    if (typeInfo.AcceptedProperties != null)
-      foreach (var prop in typeInfo.AcceptedProperties)
-        GenerateProperty(prop, aNamespace, writer, kind);
+    //if (kind != TypeKind.Interface && typeInfo.ItemsConstraint != null)
+    //  if (typeInfo.Name == "Rsids")
+    //    GenerateItemsProperties(typeInfo, typeInfo.ItemsConstraint, typeInfo.Name, aNamespace, subclasses, writer, TypeKind.EmbeddedClass);
+
+    if (kind == TypeKind.Class)
+    {
+      GenerateClassConstructor(typeName, writer);
+      GenerateClassConstructor(typeName, typeInfo.GetFullName(true), subclasses, writer);
+    }
+
+    GenerateAcceptedProperties(typeInfo, aNamespace, writer, kind);
     writer.Indent--;
     writer.WriteLine("}");
     if (kind == TypeKind.Interface)
@@ -184,25 +196,127 @@ public class ModelGenerator
     writer.WriteLine();
   }
 
-  private void GenerateProperty(PropInfo prop, string? InNamespace, IndentedTextWriter writer, TypeKind kind)
+  private void GenerateAcceptedProperties(TypeInfo typeInfo, string? inNamespace, IndentedTextWriter writer, TypeKind kind)
+  {
+    if (typeInfo.AcceptedProperties != null)
+      foreach (var prop in typeInfo.AcceptedProperties)
+        //if (kind == TypeKind.Interface || !prop.IsConstrained)
+        GenerateProperty(prop, inNamespace, writer, kind);
+  }
+
+  private void GenerateItemsProperties(TypeInfo typeInfo, ItemsConstraint constraint, string fromClassName, string? inNamespace,
+    List<string> subclassesTypeNames, IndentedTextWriter writer, TypeKind kind)
+  {
+    if (constraint is ItemTypeConstraint itemTypeConstraint)
+    {
+      var prop = itemTypeConstraint.AccessProperty;
+      if (prop != null)
+        GenerateProperty(prop, inNamespace, writer, kind);
+    }
+    else
+    if (constraint is ItemsCompoundConstraint itemsCompoundConstraint)
+    {
+      var constraintClassName = fromClassName + constraint.ConstraintType.ToString();
+      subclassesTypeNames.Add(constraintClassName);
+      if (constraint.ConstraintType == ConstraintType.Group && !constraint.IsRequired && !constraint.IsMultiple)
+      {
+        foreach (var itemConstraint in itemsCompoundConstraint.Items)
+        {
+          GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames, writer, TypeKind.EmbeddedClass);
+        }
+      }
+      else
+      {
+        GenerateSubclass(typeInfo, itemsCompoundConstraint, constraintClassName, inNamespace, subclassesTypeNames, writer, TypeKind.EmbeddedClass);
+      }
+    }
+  }
+
+  private void GenerateSubclass(TypeInfo typeInfo, ItemsCompoundConstraint constraint, string constraintClassName, string? inNamespace,
+    List<string> subclassesTypeNames, IndentedTextWriter writer, TypeKind kind)
+  {
+    var constraintsStrs = new List<string>();
+    if (constraint.IsRequired)
+      constraintsStrs.Add("required");
+    if (constraint.IsMultiple)
+      constraintsStrs.Add("multiple");
+    string str = $"public class {constraintClassName}";
+    if (constraintsStrs.Count > 0)
+      str += " // " + String.Join(", ", constraintsStrs);
+    writer.WriteLine(str);
+    writer.WriteLine($"{{");
+    writer.Indent++;
+
+    GenerateClassHeading(constraintClassName, "DocumentFormat.OpenXml.OpenXmlCompositeElement", null, writer);
+
+    foreach (var itemConstraint in constraint.Items)
+      GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames, writer, TypeKind.EmbeddedClass);
+
+    writer.Indent--;
+    writer.WriteLine($"}} // {constraintClassName}");
+    writer.WriteLine();
+    if (constraint.IsRequired)
+      writer.WriteLine($"private {constraintClassName} _{constraintClassName} = null!;");
+    else
+      writer.WriteLine($"private {constraintClassName}? _{constraintClassName};");
+    writer.WriteLine();
+  }
+
+  private void GenerateClassHeading(string className, string openXmlTypeName, List<string>? subclassesTypeNames, IndentedTextWriter writer)
+  {
+    writer.WriteLine();
+    writer.WriteLine($"public {openXmlTypeName} OpenXmlElement {{ get; set; }}");
+    writer.WriteLine();
+    writer.WriteLine($"public {className}({openXmlTypeName} openXmlElement)");
+    writer.WriteLine($"{{");
+    writer.Indent++;
+    writer.WriteLine($"OpenXmlElement = openXmlElement;");
+    writer.Indent--;
+    writer.WriteLine($"}}");
+  }
+
+  private void GenerateClassConstructor(string className, IndentedTextWriter writer)
+  {
+    writer.WriteLine($"public {className}(): base() {{}}");
+    writer.WriteLine();
+  }
+
+  private void GenerateClassConstructor(string className, string openXmlTypeName, List<string>? subclassesTypeNames, IndentedTextWriter writer)
+  {
+    writer.WriteLine($"public {className}({openXmlTypeName} openXmlElement): base(openXmlElement)");
+    writer.WriteLine($"{{");
+    writer.Indent++;
+    writer.WriteLine($"OpenXmlElement = openXmlElement;");
+    if (subclassesTypeNames != null)
+      foreach (var subclass in subclassesTypeNames)
+        writer.WriteLine($"{subclass} _{subclass} = new {subclass}(openXmlElement);");
+    writer.Indent--;
+    writer.WriteLine($"}}");
+    writer.WriteLine();
+  }
+
+  private void GenerateProperty(PropInfo prop, string? inNamespace, IndentedTextWriter writer, TypeKind kind)
   {
     //if (prop.Name == "MultiLevelStringReference" && prop.Owner is TypeInfo typeInfo && typeInfo.Name == "AxisDataSourceType")
     //  Debug.Assert(true);
     var targetPropType = prop.PropertyType.GetConversionTarget(true);
-    CompoundName propertyTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
-    var namespaces = propertyTypeName.GetNamespaces();
+    QualifiedName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
+    var namespaces = targetPropTypeName.GetNamespaces();
     foreach (var ns in namespaces)
+    {
       if (ns.StartsWith("System") || ns == "DocumentModel.BaseTypes")
       {
         AddGlobalUsing(ns);
-        propertyTypeName.RemoveNamespace(ns);
+        targetPropTypeName.RemoveNamespace(ns);
       }
-      else
-      if (ns == InNamespace)
+      else if (ns == inNamespace)
       {
-        propertyTypeName.RemoveNamespace(ns);
+        targetPropTypeName.RemoveNamespace(ns);
       }
-    var propTypeName = propertyTypeName.ToString();
+      //if (inNamespace != null)
+      //  propertyTypeName.TrimNamespace(inNamespace);
+    }
+    var propTypeName = targetPropTypeName.ToString();
     GenDocumentationComments(prop, writer);
     GenerateCustomAttributes(prop.CustomAttributes, writer);
     if (kind == TypeKind.Interface)
@@ -210,34 +324,46 @@ public class ModelGenerator
     else
     {
       var str = "public ";
-      if (prop.IsStatic)
-        str += "static ";
-      if (prop.IsNew)
-        str += "new ";
-      if (prop.IsOverriden)
-        str += "override ";
-      if (prop.IsAbstract)
-        str += "abstract ";
-      if (prop.IsVirtual)
-        str += "virtual ";
+      if (kind != TypeKind.EmbeddedClass)
+      {
+        if (prop.IsStatic)
+          str += "static ";
+        if (prop.IsNew)
+          str += "new ";
+        if (prop.IsOverriden)
+          str += "new ";
+        if (prop.IsAbstract)
+          str += "abstract ";
+        if (prop.IsVirtual)
+          str += "virtual ";
+      }
       str += $"{propTypeName}? {prop.Name}";
       writer.WriteLine(str);
+      string? fieldName = null;
+      string? fieldTypeName = null;
       writer.WriteLine($"{{");
       if (targetPropType.TypeKind == TypeKind.Enum)
         GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
       else
       {
-        if (targetPropType != null && targetPropType.IsValueType 
-            //                       &&
-            //(targetPropType.Type == typeof(String)
-            // || targetPropType.Type == typeof(Boolean)
-            // || targetPropType.Type == typeof(Int32))
-            )
+        if (targetPropType.IsValueType)
           GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
+        //else if (targetPropType.Name.StartsWith("Collection`"))
+        //{
+        //  var propItemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
+        //  if (propItemType != null)
+        //  {
+        //    fieldName = "_Items";
+        //    fieldTypeName = $"ObservableCollection<{propItemType}>";
+        //  }
+        //  GenerateCollectionTypeAccessors(prop, targetPropType, writer);
+        //}
         else
           GeneratePropAccessorsNotImplemented(writer);
       }
       writer.WriteLine($"}}");
+      if (fieldName != null && fieldTypeName != null)
+        writer.WriteLine($"private {fieldTypeName}? {fieldName};");
     }
     writer.WriteLine();
     GeneratedPropertiesCount += 1;
@@ -290,32 +416,6 @@ public class ModelGenerator
       return GetTypeWithBaseOf(thisType.BaseType, baseType);
     return null;
   }
-
-  //private void GenerateEnumPropAccessors(PropInfo prop, TypeInfo targetPropType, string genPropTypeName, IndentedTextWriter writer)
-  //{
-  //  var origPropTypeName = prop.PropertyType.GetFullName(true);
-  //  var origPropName = prop.Name;
-  //  var origTargetTypeName = targetPropType.GetFullName(true);
-
-  //  if (prop.PropertyInfo != null && prop.PropertyInfo.PropertyType == targetPropType.Type)
-  //    GenerateDirectPropAccessors(prop.PropertyInfo, genPropTypeName, origPropName, origTargetTypeName, writer);
-
-  //  else
-  //  if (prop.PropertyType.Type.Name.StartsWith("EnumValue`"))
-  //    GenerateSimpleValuePropAccessors(genPropTypeName, origPropName, origTargetTypeName, writer);
-
-  //  else if (prop.PropertyType.Type.BaseType == typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafElement)
-  //           || prop.PropertyType.Type.BaseType?.BaseType == typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafElement))
-  //  {
-  //    if (prop.PropertyInfo != null && prop.PropertyInfo.DeclaringType.HasProperty(prop.Name))
-  //      GenerateObjectPropAccessors(genPropTypeName, origPropName, origTargetTypeName, origPropTypeName, writer);
-  //    else
-  //      GenerateIncludedElementPropAccessors(genPropTypeName, origPropTypeName, origTargetTypeName, writer);
-  //  }
-
-  //  else
-  //    GeneratePropAccessorsNotImplemented(writer);
-  //}
 
   private void GeneratePropAccessorsNotImplemented(IndentedTextWriter writer)
   {
@@ -419,20 +519,70 @@ public class ModelGenerator
     writer.WriteLine($"  {{");
     writer.WriteLine($"    if (OpenXmlElement != null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"      var openXmlElement = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
-    writer.WriteLine($"      if (openXmlElement != null)");
+    writer.WriteLine($"      var item = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
+    writer.WriteLine($"      if (item != null)");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value is not null)");
-    writer.WriteLine($"          openXmlElement.Val = ({origTargetTypeName}?)value;");
+    writer.WriteLine($"          item.Val = ({origTargetTypeName}?)value;");
     writer.WriteLine($"        else");
-    writer.WriteLine($"          openXmlElement.Remove();");
+    writer.WriteLine($"          item.Remove();");
     writer.WriteLine($"      }}");
     writer.WriteLine($"      else");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value is not null)");
     writer.WriteLine($"        {{");
-    writer.WriteLine($"          openXmlElement = new {origPropTypeName}{{ Val = ({origTargetTypeName}?)value }};");
-    writer.WriteLine($"          OpenXmlElement.AddChild(openXmlElement);");
+    writer.WriteLine($"          item = new {origPropTypeName}{{ Val = ({origTargetTypeName}?)value }};");
+    writer.WriteLine($"          OpenXmlElement.AddChild(item);");
+    writer.WriteLine($"        }}");
+    writer.WriteLine($"      }}");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"  }}");
+  }
+
+  private void GenerateCollectionTypeAccessors(PropInfo prop, TypeInfo targetPropType, IndentedTextWriter writer)
+  {
+    //var origPropTypeName = prop.PropertyType.GetFullName(true);
+    //var origPropName = prop.Name;
+    //var origTargetTypeName = targetPropType.GetFullName(true);
+    var propItemType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
+    if (propItemType != null)
+    {
+      var propItemTypeName = propItemType?.GetFullName() ?? "";
+      var origItemTypeName = propItemType?.GetFullName(true) ?? "";
+      var castItemTypeName = propItemTypeName;
+      if (castItemTypeName == "DocumentModel.HexInt")
+        castItemTypeName = "string";
+      GenerateIncludedElementCollectionAccessors(propItemTypeName, origItemTypeName,
+        castItemTypeName, writer);
+    }
+    else
+      GeneratePropAccessorsNotImplemented(writer);
+  }
+  private void GenerateIncludedElementCollectionAccessors(string propItemTypeName,
+    string origItemTypeName,
+    string castItemTypeName,
+    IndentedTextWriter writer)
+  {
+    writer.WriteLine($"  get");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if (_Items != null)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"      _Items = new ObservableCollection<{propItemTypeName}>(");
+    writer.WriteLine($"        OpenXmlElement.Elements<{origItemTypeName}>()");
+    writer.WriteLine($"        .Select(item => new {propItemTypeName}(item?.Val?.Value??string.Empty).ToList());");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"    return _Items;");
+    writer.WriteLine($"  }}");
+    writer.WriteLine($"  set");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if (value != _Items)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"       OpenXmlElement.RemoveAllChildren<{origItemTypeName}>()");
+    writer.WriteLine($"      if (value != null)");
+    writer.WriteLine($"      {{");
+    writer.WriteLine($"        if (value is not null)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"          var item = new {origItemTypeName}( Val = {castItemTypeName}?)value;");
     writer.WriteLine($"        }}");
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");
@@ -454,20 +604,20 @@ public class ModelGenerator
     writer.WriteLine($"  {{");
     writer.WriteLine($"    if (OpenXmlElement != null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"      var openXmlElement = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
-    writer.WriteLine($"      if (openXmlElement != null)");
+    writer.WriteLine($"      var item = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
+    writer.WriteLine($"      if (item != null)");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value is not null)");
-    writer.WriteLine($"          openXmlElement.Text = value;");
+    writer.WriteLine($"          item.Text = value;");
     writer.WriteLine($"        else");
-    writer.WriteLine($"          openXmlElement.Remove();");
+    writer.WriteLine($"          item.Remove();");
     writer.WriteLine($"      }}");
     writer.WriteLine($"      else");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value is not null)");
     writer.WriteLine($"        {{");
-    writer.WriteLine($"          openXmlElement = new {origPropTypeName}{{ Text = value }};");
-    writer.WriteLine($"          OpenXmlElement.AddChild(openXmlElement);");
+    writer.WriteLine($"          item = new {origPropTypeName}{{ Text = value }};");
+    writer.WriteLine($"          OpenXmlElement.AddChild(item);");
     writer.WriteLine($"        }}");
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");
@@ -480,8 +630,8 @@ public class ModelGenerator
     writer.WriteLine($"  {{");
     writer.WriteLine($"    if (OpenXmlElement != null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"      var openXmlElement = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
-    writer.WriteLine($"      return openXmlElement != null;");
+    writer.WriteLine($"      var item = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
+    writer.WriteLine($"      return item != null;");
     writer.WriteLine($"    }}");
     writer.WriteLine($"    return null;");
     writer.WriteLine($"  }}");
@@ -489,18 +639,18 @@ public class ModelGenerator
     writer.WriteLine($"  {{");
     writer.WriteLine($"    if (OpenXmlElement != null)");
     writer.WriteLine($"    {{");
-    writer.WriteLine($"      var openXmlElement = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
-    writer.WriteLine($"      if (openXmlElement != null)");
+    writer.WriteLine($"      var item = OpenXmlElement.GetFirstChild<{origPropTypeName}>();");
+    writer.WriteLine($"      if (item != null)");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value == false)");
-    writer.WriteLine($"          openXmlElement.Remove();");
+    writer.WriteLine($"          item.Remove();");
     writer.WriteLine($"      }}");
     writer.WriteLine($"      else");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        if (value == true)");
     writer.WriteLine($"        {{");
-    writer.WriteLine($"          openXmlElement = new {origPropTypeName}();");
-    writer.WriteLine($"          OpenXmlElement.AddChild(openXmlElement);");
+    writer.WriteLine($"          item = new {origPropTypeName}();");
+    writer.WriteLine($"          OpenXmlElement.AddChild(item);");
     writer.WriteLine($"        }}");
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");

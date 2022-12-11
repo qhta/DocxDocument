@@ -11,6 +11,13 @@ public class RelativeRectangleTypeImpl: ModelElementImpl, RelativeRectangleType
     set => _OpenXmlElement = value;
   }
   
+  public RelativeRectangleTypeImpl(): base() {}
+  
+  public RelativeRectangleTypeImpl(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Left Offset
   /// </summary>

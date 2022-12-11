@@ -11,6 +11,13 @@ public class Surface3DChartExtensionImpl: ModelElementImpl, Surface3DChartExtens
     set => _OpenXmlElement = value;
   }
   
+  public Surface3DChartExtensionImpl(): base() {}
+  
+  public Surface3DChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

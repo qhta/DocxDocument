@@ -11,6 +11,13 @@ public class TableLayoutImpl: ModelElementImpl, TableLayout
     set => _OpenXmlElement = value;
   }
   
+  public TableLayoutImpl(): base() {}
+  
+  public TableLayoutImpl(DocumentFormat.OpenXml.Wordprocessing.TableLayout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Layout Setting
   /// </summary>

@@ -11,31 +11,38 @@ public class Accent5ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent5Col
     set => _OpenXmlElement = value;
   }
   
-  public override RgbColorModelPercentage? RgbColorModelPercentage
+  public Accent5ColorImpl(): base() {}
+  
+  public Accent5ColorImpl(DocumentFormat.OpenXml.Drawing.Accent5Color openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new RgbColorModelPercentage? RgbColorModelPercentage
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override RgbColorModelHex? RgbColorModelHex
+  public new RgbColorModelHex? RgbColorModelHex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override HslColor? HslColor
+  public new HslColor? HslColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SystemColor? SystemColor
+  public new SystemColor? SystemColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override PresetColor? PresetColor
+  public new PresetColor? PresetColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

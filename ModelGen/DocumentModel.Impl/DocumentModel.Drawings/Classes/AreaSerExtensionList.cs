@@ -11,6 +11,13 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public AreaSerExtensionListImpl(): base() {}
+  
+  public AreaSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<AreaSerExtension>? AreaSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

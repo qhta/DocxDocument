@@ -11,6 +11,13 @@ public class ColumnsImpl: ModelElementImpl, Columns
     set => _OpenXmlElement = value;
   }
   
+  public ColumnsImpl(): base() {}
+  
+  public ColumnsImpl(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Equal Column Widths
   /// </summary>
@@ -63,7 +70,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
     }
   }
   
-  public Collection<Column>? Items
+  public Column? Column
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

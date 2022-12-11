@@ -11,13 +11,20 @@ public class HeaderShapeDefaultsImpl: ModelElementImpl, HeaderShapeDefaults
     set => _OpenXmlElement = value;
   }
   
-  public Collection<DocumentModel.Vml.ShapeDefaults>? ShapeDefaultses
+  public HeaderShapeDefaultsImpl(): base() {}
+  
+  public HeaderShapeDefaultsImpl(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public DocumentModel.Vml.ShapeDefaults? ShapeDefaults
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Vml.ShapeLayout>? ShapeLayouts
+  public DocumentModel.Vml.ShapeLayout? ShapeLayout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

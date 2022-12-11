@@ -11,7 +11,14 @@ public class DropLinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, DropLines
     set => _OpenXmlElement = value;
   }
   
-  public override ChartShapeProperties? ChartShapeProperties
+  public DropLinesImpl(): base() {}
+  
+  public DropLinesImpl(DocumentFormat.OpenXml.Drawing.Charts.DropLines openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ChartShapeProperties? ChartShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

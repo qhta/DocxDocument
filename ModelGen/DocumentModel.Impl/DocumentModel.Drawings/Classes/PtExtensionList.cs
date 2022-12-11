@@ -11,6 +11,13 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public PtExtensionListImpl(): base() {}
+  
+  public PtExtensionListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<PtExtension>? PtExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

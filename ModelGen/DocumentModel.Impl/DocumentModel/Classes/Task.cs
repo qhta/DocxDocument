@@ -11,6 +11,13 @@ public class TaskImpl: ModelElementImpl, Task
     set => _OpenXmlElement = value;
   }
   
+  public TaskImpl(): base() {}
+  
+  public TaskImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>

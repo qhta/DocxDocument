@@ -153,6 +153,6 @@ public interface PropertySet
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style1? Style { get ; set; }
+  public Style? Style { get ; set; }
   
 }

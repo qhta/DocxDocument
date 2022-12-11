@@ -11,6 +11,13 @@ public class NumberingChangeImpl: ModelElementImpl, NumberingChange
     set => _OpenXmlElement = value;
   }
   
+  public NumberingChangeImpl(): base() {}
+  
+  public NumberingChangeImpl(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// original
   /// </summary>

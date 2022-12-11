@@ -11,6 +11,13 @@ public class ArtisticWatercolorSpongeImpl: ModelElementImpl, ArtisticWatercolorS
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticWatercolorSpongeImpl(): base() {}
+  
+  public ArtisticWatercolorSpongeImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

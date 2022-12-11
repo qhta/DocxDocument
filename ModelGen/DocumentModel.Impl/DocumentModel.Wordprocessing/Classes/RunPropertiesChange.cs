@@ -11,6 +11,13 @@ public class RunPropertiesChangeImpl: ModelElementImpl, RunPropertiesChange
     set => _OpenXmlElement = value;
   }
   
+  public RunPropertiesChangeImpl(): base() {}
+  
+  public RunPropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

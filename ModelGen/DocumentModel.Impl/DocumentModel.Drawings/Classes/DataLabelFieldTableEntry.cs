@@ -11,6 +11,13 @@ public class DataLabelFieldTableEntryImpl: ModelElementImpl, DataLabelFieldTable
     set => _OpenXmlElement = value;
   }
   
+  public DataLabelFieldTableEntryImpl(): base() {}
+  
+  public DataLabelFieldTableEntryImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// TextFieldGuid.
   /// </summary>
@@ -29,20 +36,20 @@ public class DataLabelFieldTableEntryImpl: ModelElementImpl, DataLabelFieldTable
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class DataLabelFieldTableEntryImpl: ModelElementImpl, DataLabelFieldTable
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,6 +11,13 @@ public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public CatAxExtensionListImpl(): base() {}
+  
+  public CatAxExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.CatAxExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<CatAxExtension>? CatAxExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

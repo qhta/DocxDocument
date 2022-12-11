@@ -11,6 +11,13 @@ public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionPropert
     set => _OpenXmlElement = value;
   }
   
+  public TablePositionPropertiesImpl(): base() {}
+  
+  public TablePositionPropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Distance From Left of Table to Text
   /// </summary>

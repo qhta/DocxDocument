@@ -11,6 +11,13 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     set => _OpenXmlElement = value;
   }
   
+  public BorderBoxPropertiesImpl(): base() {}
+  
+  public BorderBoxPropertiesImpl(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Hide Top Edge.
   /// </summary>
@@ -29,20 +36,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideTop>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideTop>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.HideTop{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.HideTop{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideBottom>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideBottom>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.HideBottom{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.HideBottom{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -105,20 +112,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideLeft>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideLeft>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.HideLeft{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.HideLeft{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -143,20 +150,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideRight>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideRight>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.HideRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.HideRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -181,20 +188,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeHorizontal>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeHorizontal>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.StrikeHorizontal{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.StrikeHorizontal{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -219,20 +226,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeVertical>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeVertical>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.StrikeVertical{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.StrikeVertical{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -257,20 +264,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -295,20 +302,20 @@ public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

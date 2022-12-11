@@ -11,6 +11,13 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
     set => _OpenXmlElement = value;
   }
   
+  public CustomXmlPropertiesImpl(): base() {}
+  
+  public CustomXmlPropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Custom XML Element Placeholder Text.
   /// </summary>
@@ -29,20 +36,20 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,6 +11,13 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
     set => _OpenXmlElement = value;
   }
   
+  public DocumentVariablesImpl(): base() {}
+  
+  public DocumentVariablesImpl(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DocumentVariable>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

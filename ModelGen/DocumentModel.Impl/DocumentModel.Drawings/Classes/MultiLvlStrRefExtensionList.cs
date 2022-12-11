@@ -11,6 +11,13 @@ public class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefEx
     set => _OpenXmlElement = value;
   }
   
+  public MultiLvlStrRefExtensionListImpl(): base() {}
+  
+  public MultiLvlStrRefExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<MultiLvlStrRefExtension>? MultiLvlStrRefExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

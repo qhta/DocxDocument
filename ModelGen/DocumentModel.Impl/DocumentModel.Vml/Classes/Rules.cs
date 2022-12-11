@@ -11,6 +11,13 @@ public class RulesImpl: ModelElementImpl, Rules
     set => _OpenXmlElement = value;
   }
   
+  public RulesImpl(): base() {}
+  
+  public RulesImpl(DocumentFormat.OpenXml.Vml.Office.Rules openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

@@ -11,6 +11,13 @@ public class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
     set => _OpenXmlElement = value;
   }
   
+  public DeletedMathControlImpl(): base() {}
+  
+  public DeletedMathControlImpl(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

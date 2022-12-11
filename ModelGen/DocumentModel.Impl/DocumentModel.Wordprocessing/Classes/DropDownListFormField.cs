@@ -11,6 +11,13 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
     set => _OpenXmlElement = value;
   }
   
+  public DropDownListFormFieldImpl(): base() {}
+  
+  public DropDownListFormFieldImpl(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Drop-Down List Selection.
   /// </summary>
@@ -29,20 +36,20 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,30 +74,59 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public Collection<String>? ListEntryFormFields
+  public String? ListEntryFormField
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
+        return (String?)openXmlElement?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.String?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
 }

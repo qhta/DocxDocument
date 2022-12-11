@@ -11,7 +11,14 @@ public class SeriesLinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, SeriesL
     set => _OpenXmlElement = value;
   }
   
-  public override ChartShapeProperties? ChartShapeProperties
+  public SeriesLinesImpl(): base() {}
+  
+  public SeriesLinesImpl(DocumentFormat.OpenXml.Drawing.Charts.SeriesLines openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ChartShapeProperties? ChartShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

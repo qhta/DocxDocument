@@ -11,6 +11,13 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
     set => _OpenXmlElement = value;
   }
   
+  public ObjectEmbedImpl(): base() {}
+  
+  public ObjectEmbedImpl(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// drawAspect
   /// </summary>

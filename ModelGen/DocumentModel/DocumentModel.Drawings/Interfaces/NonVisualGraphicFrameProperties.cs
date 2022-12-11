@@ -8,7 +8,7 @@ public interface NonVisualGraphicFrameProperties
   /// <summary>
   /// Non-Visual Drawing Properties.
   /// </summary>
-  public NonVisualDrawingProperties3? NonVisualDrawingProperties { get ; set; }
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Graphic Frame Drawing Properties.

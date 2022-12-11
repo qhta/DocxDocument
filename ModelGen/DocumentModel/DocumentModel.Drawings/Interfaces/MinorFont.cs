@@ -13,6 +13,6 @@ public interface MinorFont
   
   public Collection<SupplementalFont>? SupplementalFonts { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

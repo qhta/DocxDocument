@@ -11,6 +11,13 @@ public class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
     set => _OpenXmlElement = value;
   }
   
+  public NormalAutoFitImpl(): base() {}
+  
+  public NormalAutoFitImpl(DocumentFormat.OpenXml.Drawing.NormalAutoFit openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Font Scale
   /// </summary>

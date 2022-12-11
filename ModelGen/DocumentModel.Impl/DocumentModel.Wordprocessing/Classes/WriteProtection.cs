@@ -11,6 +11,13 @@ public class WriteProtectionImpl: ModelElementImpl, WriteProtection
     set => _OpenXmlElement = value;
   }
   
+  public WriteProtectionImpl(): base() {}
+  
+  public WriteProtectionImpl(DocumentFormat.OpenXml.Wordprocessing.WriteProtection openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Recommend Write Protection in User Interface
   /// </summary>

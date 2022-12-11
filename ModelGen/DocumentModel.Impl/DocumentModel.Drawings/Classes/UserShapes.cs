@@ -11,13 +11,20 @@ public class UserShapesImpl: ModelElementImpl, UserShapes
     set => _OpenXmlElement = value;
   }
   
-  public Collection<RelativeAnchorSize>? RelativeAnchorSizes
+  public UserShapesImpl(): base() {}
+  
+  public UserShapesImpl(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public RelativeAnchorSize? RelativeAnchorSize
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AbsoluteAnchorSize>? AbsoluteAnchorSizes
+  public AbsoluteAnchorSize? AbsoluteAnchorSize
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

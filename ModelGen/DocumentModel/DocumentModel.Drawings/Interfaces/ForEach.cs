@@ -45,22 +45,22 @@ public interface ForEach
   /// </summary>
   public List<Int32>? Step { get ; set; }
   
-  public Collection<Algorithm>? Algorithms { get ; set; }
+  public Algorithm? Algorithm { get ; set; }
   
-  public Collection<Shape2>? Shapes { get ; set; }
+  public Shape? Shape { get ; set; }
   
-  public Collection<PresentationOf>? PresentationOfs { get ; set; }
+  public PresentationOf? PresentationOf { get ; set; }
   
-  public Collection<Constraints>? Constraintses { get ; set; }
+  public Constraints? Constraints { get ; set; }
   
-  public Collection<RuleList>? RuleLists { get ; set; }
+  public RuleList? RuleList { get ; set; }
   
-  public Collection<ForEach>? ForEachs { get ; set; }
+  public ForEach? ChildForEach { get ; set; }
   
-  public Collection<LayoutNode>? LayoutNodes { get ; set; }
+  public LayoutNode? LayoutNode { get ; set; }
   
-  public Collection<Choose>? Chooses { get ; set; }
+  public Choose? Choose { get ; set; }
   
-  public Collection<ExtensionList1>? ExtensionLists { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

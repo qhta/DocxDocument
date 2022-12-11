@@ -11,6 +11,13 @@ public class DocGridImpl: ModelElementImpl, DocGrid
     set => _OpenXmlElement = value;
   }
   
+  public DocGridImpl(): base() {}
+  
+  public DocGridImpl(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Grid Type
   /// </summary>

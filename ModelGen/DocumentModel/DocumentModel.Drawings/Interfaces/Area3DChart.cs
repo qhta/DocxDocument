@@ -15,15 +15,15 @@ public interface Area3DChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<AreaChartSeries2>? AreaChartSerieses { get ; set; }
+  public Collection<AreaChartSeries>? AreaChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public DropLines? DropLines { get ; set; }
   
   public UInt16? GapDepth { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public Area3DChartExtensionList? Area3DChartExtensionList { get ; set; }
   

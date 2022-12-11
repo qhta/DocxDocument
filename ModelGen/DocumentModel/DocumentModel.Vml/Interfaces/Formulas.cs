@@ -5,6 +5,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface Formulas
 {
-  public Collection<Formula>? Items { get ; set; }
+  public Formula? Formula { get ; set; }
   
 }

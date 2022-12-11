@@ -11,6 +11,13 @@ public class TablePropertyExceptionsImpl: ModelElementImpl, TablePropertyExcepti
     set => _OpenXmlElement = value;
   }
   
+  public TablePropertyExceptionsImpl(): base() {}
+  
+  public TablePropertyExceptionsImpl(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>
@@ -38,20 +45,20 @@ public class TablePropertyExceptionsImpl: ModelElementImpl, TablePropertyExcepti
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

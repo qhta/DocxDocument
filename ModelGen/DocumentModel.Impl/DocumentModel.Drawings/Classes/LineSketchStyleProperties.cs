@@ -11,6 +11,13 @@ public class LineSketchStylePropertiesImpl: ModelElementImpl, LineSketchStylePro
     set => _OpenXmlElement = value;
   }
   
+  public LineSketchStylePropertiesImpl(): base() {}
+  
+  public LineSketchStylePropertiesImpl(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// sd, this property is only available in Office 2021 and later.
   /// </summary>
@@ -57,27 +64,27 @@ public class LineSketchStylePropertiesImpl: ModelElementImpl, LineSketchStylePro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public OfficeArtExtensionList8? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

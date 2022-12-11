@@ -11,6 +11,13 @@ public class AlphaOutsetImpl: ModelElementImpl, AlphaOutset
     set => _OpenXmlElement = value;
   }
   
+  public AlphaOutsetImpl(): base() {}
+  
+  public AlphaOutsetImpl(DocumentFormat.OpenXml.Drawing.AlphaOutset openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radius
   /// </summary>

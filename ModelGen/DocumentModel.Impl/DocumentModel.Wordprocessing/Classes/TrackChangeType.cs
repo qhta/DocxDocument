@@ -11,6 +11,13 @@ public class TrackChangeTypeImpl: ModelElementImpl, TrackChangeType
     set => _OpenXmlElement = value;
   }
   
+  public TrackChangeTypeImpl(): base() {}
+  
+  public TrackChangeTypeImpl(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

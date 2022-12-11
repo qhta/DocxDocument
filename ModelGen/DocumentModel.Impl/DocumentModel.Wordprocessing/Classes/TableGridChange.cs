@@ -11,6 +11,13 @@ public class TableGridChangeImpl: ModelElementImpl, TableGridChange
     set => _OpenXmlElement = value;
   }
   
+  public TableGridChangeImpl(): base() {}
+  
+  public TableGridChangeImpl(DocumentFormat.OpenXml.Wordprocessing.TableGridChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Annotation Identifier
   /// </summary>

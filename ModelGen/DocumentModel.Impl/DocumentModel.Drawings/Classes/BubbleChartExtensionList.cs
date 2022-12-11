@@ -11,6 +11,13 @@ public class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensio
     set => _OpenXmlElement = value;
   }
   
+  public BubbleChartExtensionListImpl(): base() {}
+  
+  public BubbleChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BubbleChartExtension>? BubbleChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

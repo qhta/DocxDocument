@@ -11,6 +11,13 @@ public class DataLabelHiddenImpl: ModelElementImpl, DataLabelHidden
     set => _OpenXmlElement = value;
   }
   
+  public DataLabelHiddenImpl(): base() {}
+  
+  public DataLabelHiddenImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class BlipExtensionImpl: ModelElementImpl, BlipExtension
     set => _OpenXmlElement = value;
   }
   
+  public BlipExtensionImpl(): base() {}
+  
+  public BlipExtensionImpl(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -45,20 +52,20 @@ public class BlipExtensionImpl: ModelElementImpl, BlipExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

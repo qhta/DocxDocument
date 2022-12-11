@@ -11,31 +11,38 @@ public class ShapeDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionType
     set => _OpenXmlElement = value;
   }
   
-  public override ShapeProperties4? ShapeProperties
+  public ShapeDefaultImpl(): base() {}
+  
+  public ShapeDefaultImpl(DocumentFormat.OpenXml.Drawing.ShapeDefault openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override BodyProperties? BodyProperties
+  public new BodyProperties? BodyProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ListStyle? ListStyle
+  public new ListStyle? ListStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ShapeStyle2? ShapeStyle
+  public new ShapeStyle? ShapeStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ExtensionList4? ExtensionList
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

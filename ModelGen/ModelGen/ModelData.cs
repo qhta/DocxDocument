@@ -353,6 +353,13 @@ public static class ModelData
     "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant", "EditorBrowsable",
   };
 
+  public static Dictionary<string, string> TypeNameConversion { get; } = new Dictionary<string, string>
+  {
+    { "DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType", "DocumentModel.Wordprocessing.RunTrackChangeType2"},
+    { "DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType", "DocumentModel.Drawings.AxisDataSourceType2"},
+    { "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType", "DocumentModel.Drawings.TextBodyType2"},
+    { "DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType", "DocumentModel.Drawings.StringDataType2"},
+  };
   public static Dictionary<Type, Type> TypeConversionTable { get; } = new Dictionary<Type, Type>
   {
     { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},

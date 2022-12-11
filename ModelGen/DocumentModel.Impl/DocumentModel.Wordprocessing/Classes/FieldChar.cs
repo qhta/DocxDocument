@@ -11,6 +11,13 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
     set => _OpenXmlElement = value;
   }
   
+  public FieldCharImpl(): base() {}
+  
+  public FieldCharImpl(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Field Character Type
   /// </summary>
@@ -68,20 +75,20 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

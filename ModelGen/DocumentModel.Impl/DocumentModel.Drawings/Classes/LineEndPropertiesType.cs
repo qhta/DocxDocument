@@ -11,6 +11,13 @@ public class LineEndPropertiesTypeImpl: ModelElementImpl, LineEndPropertiesType
     set => _OpenXmlElement = value;
   }
   
+  public LineEndPropertiesTypeImpl(): base() {}
+  
+  public LineEndPropertiesTypeImpl(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Line Head/End Type
   /// </summary>

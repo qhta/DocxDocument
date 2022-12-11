@@ -11,6 +11,13 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
     set => _OpenXmlElement = value;
   }
   
+  public ObjectLinkImpl(): base() {}
+  
+  public ObjectLinkImpl(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// updateMode
   /// </summary>

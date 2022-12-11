@@ -5,6 +5,6 @@ namespace DocumentModel.Math;
 /// </summary>
 public interface MatrixRow
 {
-  public Collection<Base>? Bases { get ; set; }
+  public Base? Base { get ; set; }
   
 }

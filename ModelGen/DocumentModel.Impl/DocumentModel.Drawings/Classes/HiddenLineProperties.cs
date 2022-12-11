@@ -11,6 +11,13 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     set => _OpenXmlElement = value;
   }
   
+  public HiddenLinePropertiesImpl(): base() {}
+  
+  public HiddenLinePropertiesImpl(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// line width
   /// </summary>
@@ -69,8 +76,8 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return item != null;
       }
       return null;
     }
@@ -78,18 +85,18 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -129,20 +136,20 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.PresetLineDashValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.PresetLineDashValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.PresetDash{ Val = (DocumentFormat.OpenXml.Drawing.PresetLineDashValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.PresetDash{ Val = (DocumentFormat.OpenXml.Drawing.PresetLineDashValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -161,8 +168,8 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
+        return item != null;
       }
       return null;
     }
@@ -170,18 +177,18 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Round();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Round();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -194,8 +201,8 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+        return item != null;
       }
       return null;
     }
@@ -203,18 +210,18 @@ public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.LineJoinBevel();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.LineJoinBevel();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

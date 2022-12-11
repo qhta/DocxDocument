@@ -11,7 +11,14 @@ public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diag
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public DiagramStylePartImpl(): base() {}
+  
+  public DiagramStylePartImpl(DocumentFormat.OpenXml.Packaging.DiagramStylePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diag
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

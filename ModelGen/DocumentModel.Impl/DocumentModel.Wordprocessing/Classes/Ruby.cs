@@ -11,6 +11,13 @@ public class RubyImpl: ModelElementImpl, Ruby
     set => _OpenXmlElement = value;
   }
   
+  public RubyImpl(): base() {}
+  
+  public RubyImpl(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Phonetic Guide Properties.
   /// </summary>

@@ -11,13 +11,20 @@ public class YValuesImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, YValu
     set => _OpenXmlElement = value;
   }
   
-  public override NumberReference? NumberReference
+  public YValuesImpl(): base() {}
+  
+  public YValuesImpl(DocumentFormat.OpenXml.Drawing.Charts.YValues openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

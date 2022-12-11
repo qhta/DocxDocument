@@ -11,6 +11,13 @@ public class ConstraintsImpl: ModelElementImpl, Constraints
     set => _OpenXmlElement = value;
   }
   
+  public ConstraintsImpl(): base() {}
+  
+  public ConstraintsImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Constraints openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Constraint>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

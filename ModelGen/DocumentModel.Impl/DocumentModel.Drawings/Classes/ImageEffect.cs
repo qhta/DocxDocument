@@ -11,6 +11,13 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
     set => _OpenXmlElement = value;
   }
   
+  public ImageEffectImpl(): base() {}
+  
+  public ImageEffectImpl(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
@@ -252,7 +259,7 @@ public class ImageEffectImpl: ModelElementImpl, ImageEffect
   /// <summary>
   /// Saturation.
   /// </summary>
-  public Saturation1? Saturation
+  public Saturation? Saturation
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

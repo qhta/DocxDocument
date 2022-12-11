@@ -8,6 +8,6 @@ public interface BackgroundCustomProperties
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

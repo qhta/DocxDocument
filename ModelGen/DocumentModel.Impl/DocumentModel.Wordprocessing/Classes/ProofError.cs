@@ -11,6 +11,13 @@ public class ProofErrorImpl: ModelElementImpl, ProofError
     set => _OpenXmlElement = value;
   }
   
+  public ProofErrorImpl(): base() {}
+  
+  public ProofErrorImpl(DocumentFormat.OpenXml.Wordprocessing.ProofError openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Proofing Error Anchor Type
   /// </summary>

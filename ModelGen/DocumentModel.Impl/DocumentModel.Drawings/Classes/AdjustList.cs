@@ -11,6 +11,13 @@ public class AdjustListImpl: ModelElementImpl, AdjustList
     set => _OpenXmlElement = value;
   }
   
+  public AdjustListImpl(): base() {}
+  
+  public AdjustListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Adjust>? Adjusts
   {
     get => throw new NotImplementedException("Method not implemented");

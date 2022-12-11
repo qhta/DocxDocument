@@ -11,6 +11,13 @@ public class DocPartImpl: ModelElementImpl, DocPart
     set => _OpenXmlElement = value;
   }
   
+  public DocPartImpl(): base() {}
+  
+  public DocPartImpl(DocumentFormat.OpenXml.Wordprocessing.DocPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>

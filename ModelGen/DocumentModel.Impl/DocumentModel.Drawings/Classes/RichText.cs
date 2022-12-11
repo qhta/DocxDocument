@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Rich Text.
 /// </summary>
-public class RichTextImpl: DocumentModel.Drawings.TextBodyType1Impl, RichText
+public class RichTextImpl: DocumentModel.Drawings.TextBodyTypeImpl, RichText
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.RichText? OpenXmlElement
   {
@@ -11,19 +11,26 @@ public class RichTextImpl: DocumentModel.Drawings.TextBodyType1Impl, RichText
     set => _OpenXmlElement = value;
   }
   
-  public override BodyProperties? BodyProperties
+  public RichTextImpl(): base() {}
+  
+  public RichTextImpl(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new BodyProperties? BodyProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ListStyle? ListStyle
+  public new ListStyle? ListStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Paragraph>? Paragraphs
+  public Paragraph? Paragraph
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

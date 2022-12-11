@@ -11,6 +11,13 @@ public class ParagraphPropertiesDefaultImpl: ModelElementImpl, ParagraphProperti
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphPropertiesDefaultImpl(): base() {}
+  
+  public ParagraphPropertiesDefaultImpl(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Paragraph Properties.
   /// </summary>

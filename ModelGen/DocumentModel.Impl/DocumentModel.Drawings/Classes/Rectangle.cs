@@ -11,6 +11,13 @@ public class RectangleImpl: ModelElementImpl, Rectangle
     set => _OpenXmlElement = value;
   }
   
+  public RectangleImpl(): base() {}
+  
+  public RectangleImpl(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Left
   /// </summary>

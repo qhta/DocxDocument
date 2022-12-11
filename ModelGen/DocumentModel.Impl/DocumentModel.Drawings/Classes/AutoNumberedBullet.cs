@@ -11,6 +11,13 @@ public class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
     set => _OpenXmlElement = value;
   }
   
+  public AutoNumberedBulletImpl(): base() {}
+  
+  public AutoNumberedBulletImpl(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Bullet Autonumbering Type
   /// </summary>

@@ -11,6 +11,13 @@ public class SurfaceSerExtensionListImpl: ModelElementImpl, SurfaceSerExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public SurfaceSerExtensionListImpl(): base() {}
+  
+  public SurfaceSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<SurfaceSerExtension>? SurfaceSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

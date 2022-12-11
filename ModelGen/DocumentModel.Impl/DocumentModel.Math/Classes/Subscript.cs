@@ -11,6 +11,13 @@ public class SubscriptImpl: ModelElementImpl, Subscript
     set => _OpenXmlElement = value;
   }
   
+  public SubscriptImpl(): base() {}
+  
+  public SubscriptImpl(DocumentFormat.OpenXml.Math.Subscript openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Subscript Properties.
   /// </summary>

@@ -11,6 +11,13 @@ public class ValueColorsImpl: ModelElementImpl, ValueColors
     set => _OpenXmlElement = value;
   }
   
+  public ValueColorsImpl(): base() {}
+  
+  public ValueColorsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// MinColorSolidColorFillProperties.
   /// </summary>

@@ -11,7 +11,14 @@ public class ToAnchorImpl: DocumentModel.Drawings.MarkerTypeImpl, ToAnchor
     set => _OpenXmlElement = value;
   }
   
-  public override String? XPosition
+  public ToAnchorImpl(): base() {}
+  
+  public ToAnchorImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? XPosition
   {
     get
     {
@@ -26,27 +33,27 @@ public class ToAnchorImpl: DocumentModel.Drawings.MarkerTypeImpl, ToAnchor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override String? YPosition
+  public new String? YPosition
   {
     get
     {
@@ -61,20 +68,20 @@ public class ToAnchorImpl: DocumentModel.Drawings.MarkerTypeImpl, ToAnchor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

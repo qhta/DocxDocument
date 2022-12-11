@@ -11,6 +11,13 @@ public class ClipPathImpl: ModelElementImpl, ClipPath
     set => _OpenXmlElement = value;
   }
   
+  public ClipPathImpl(): base() {}
+  
+  public ClipPathImpl(DocumentFormat.OpenXml.Vml.Office.ClipPath openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Path Definition
   /// </summary>

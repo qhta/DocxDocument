@@ -11,6 +11,13 @@ public class SoftEdgeImpl: ModelElementImpl, SoftEdge
     set => _OpenXmlElement = value;
   }
   
+  public SoftEdgeImpl(): base() {}
+  
+  public SoftEdgeImpl(DocumentFormat.OpenXml.Drawing.SoftEdge openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radius
   /// </summary>

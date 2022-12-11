@@ -11,6 +11,13 @@ public class OleObjectImpl: ModelElementImpl, OleObject
     set => _OpenXmlElement = value;
   }
   
+  public OleObjectImpl(): base() {}
+  
+  public OleObjectImpl(DocumentFormat.OpenXml.Vml.Office.OleObject openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// OLE Object Type
   /// </summary>
@@ -120,20 +127,20 @@ public class OleObjectImpl: ModelElementImpl, OleObject
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.LinkType{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Vml.Office.LinkType{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -158,20 +165,20 @@ public class OleObjectImpl: ModelElementImpl, OleObject
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.LockedField{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Vml.Office.LockedField{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -196,20 +203,20 @@ public class OleObjectImpl: ModelElementImpl, OleObject
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Vml.Office.FieldCodes{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Vml.Office.FieldCodes{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -8,7 +8,7 @@ public interface PresetGeometry
   /// <summary>
   /// Preset Shape
   /// </summary>
-  public ShapeKind2? Preset { get ; set; }
+  public ShapeKind? Preset { get ; set; }
   
   /// <summary>
   /// List of Shape Adjust Values.

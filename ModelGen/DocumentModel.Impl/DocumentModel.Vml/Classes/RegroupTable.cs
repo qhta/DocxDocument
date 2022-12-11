@@ -11,6 +11,13 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
     set => _OpenXmlElement = value;
   }
   
+  public RegroupTableImpl(): base() {}
+  
+  public RegroupTableImpl(DocumentFormat.OpenXml.Vml.Office.RegroupTable openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

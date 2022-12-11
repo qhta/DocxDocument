@@ -11,10 +11,17 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
     set => _OpenXmlElement = value;
   }
   
+  public DisplayUnitsLabelImpl(): base() {}
+  
+  public DisplayUnitsLabelImpl(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout1? Layout
+  public Layout? Layout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,7 +30,7 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
   /// <summary>
   /// ChartText.
   /// </summary>
-  public ChartText1? ChartText
+  public ChartText? ChartText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -41,7 +48,7 @@ public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties
+  public TextProperties? TextProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

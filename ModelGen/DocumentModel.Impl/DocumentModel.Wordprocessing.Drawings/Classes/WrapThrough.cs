@@ -11,6 +11,13 @@ public class WrapThroughImpl: ModelElementImpl, WrapThrough
     set => _OpenXmlElement = value;
   }
   
+  public WrapThroughImpl(): base() {}
+  
+  public WrapThroughImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Wrapping Location
   /// </summary>

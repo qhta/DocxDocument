@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface MailMergeRecipients
 {
-  public Collection<SingleDataSourceRecord>? SingleDataSourceRecords { get ; set; }
+  public SingleDataSourceRecord? SingleDataSourceRecord { get ; set; }
   
 }

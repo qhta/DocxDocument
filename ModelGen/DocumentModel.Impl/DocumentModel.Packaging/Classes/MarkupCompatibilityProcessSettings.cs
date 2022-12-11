@@ -11,6 +11,13 @@ public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupComp
     set => _OpenXmlElement = value;
   }
   
+  public MarkupCompatibilityProcessSettingsImpl(): base() {}
+  
+  public MarkupCompatibilityProcessSettingsImpl(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the markup compatibility process mode.
   /// </summary>

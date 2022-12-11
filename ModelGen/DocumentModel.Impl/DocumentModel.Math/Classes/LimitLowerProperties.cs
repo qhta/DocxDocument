@@ -11,6 +11,13 @@ public class LimitLowerPropertiesImpl: ModelElementImpl, LimitLowerProperties
     set => _OpenXmlElement = value;
   }
   
+  public LimitLowerPropertiesImpl(): base() {}
+  
+  public LimitLowerPropertiesImpl(DocumentFormat.OpenXml.Math.LimitLowerProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ControlProperties.
   /// </summary>

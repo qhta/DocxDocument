@@ -11,6 +11,13 @@ public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPart
     set => _OpenXmlElement = value;
   }
   
+  public MailMergeRecipientDataPartImpl(): base() {}
+  
+  public MailMergeRecipientDataPartImpl(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the part's root element when the part's content type is MailMergeRecipientDataPartType.OpenXmlMailMergeRecipientData.
   /// </summary>
@@ -29,7 +36,7 @@ public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPart
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

@@ -11,6 +11,13 @@ public class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
     set => _OpenXmlElement = value;
   }
   
+  public ObjectPropertiesImpl(): base() {}
+  
+  public ObjectPropertiesImpl(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// objectId, this property is only available in Office 2013 and later.
   /// </summary>

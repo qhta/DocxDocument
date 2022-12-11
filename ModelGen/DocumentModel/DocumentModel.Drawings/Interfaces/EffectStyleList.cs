@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface EffectStyleList
 {
-  public Collection<EffectStyle>? EffectStyles { get ; set; }
+  public EffectStyle? EffectStyle { get ; set; }
   
 }

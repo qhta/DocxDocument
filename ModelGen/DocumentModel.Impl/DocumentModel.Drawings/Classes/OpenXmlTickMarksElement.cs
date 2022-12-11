@@ -11,6 +11,13 @@ public class OpenXmlTickMarksElementImpl: ModelElementImpl, OpenXmlTickMarksElem
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlTickMarksElementImpl(): base() {}
+  
+  public OpenXmlTickMarksElementImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// type, this property is only available in Office 2016 and later.
   /// </summary>
@@ -27,7 +34,7 @@ public class OpenXmlTickMarksElementImpl: ModelElementImpl, OpenXmlTickMarksElem
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public virtual ExtensionList2? ExtensionList
+  public virtual ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

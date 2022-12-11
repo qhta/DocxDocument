@@ -20,9 +20,9 @@ public interface BarChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<BarChartSeries2>? BarChartSerieses { get ; set; }
+  public Collection<BarChartSeries>? BarChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public UInt16? GapWidth { get ; set; }
   
@@ -30,7 +30,7 @@ public interface BarChart
   
   public Collection<SeriesLines>? SeriesLineses { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public BarChartExtensionList? BarChartExtensionList { get ; set; }
   

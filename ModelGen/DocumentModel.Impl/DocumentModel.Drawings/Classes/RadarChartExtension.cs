@@ -11,6 +11,13 @@ public class RadarChartExtensionImpl: ModelElementImpl, RadarChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public RadarChartExtensionImpl(): base() {}
+  
+  public RadarChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

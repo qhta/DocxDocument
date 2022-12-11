@@ -11,6 +11,13 @@ public class BiLevelImpl: ModelElementImpl, BiLevel
     set => _OpenXmlElement = value;
   }
   
+  public BiLevelImpl(): base() {}
+  
+  public BiLevelImpl(DocumentFormat.OpenXml.Drawing.BiLevel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Threshold
   /// </summary>

@@ -11,6 +11,13 @@ public class UpDownBarsImpl: ModelElementImpl, UpDownBars
     set => _OpenXmlElement = value;
   }
   
+  public UpDownBarsImpl(): base() {}
+  
+  public UpDownBarsImpl(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gap Width.
   /// </summary>
@@ -29,20 +36,20 @@ public class UpDownBarsImpl: ModelElementImpl, UpDownBars
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt16?)value;
+            item.Val = (System.UInt16?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.GapWidth{ Val = (System.UInt16?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.GapWidth{ Val = (System.UInt16?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -70,7 +77,7 @@ public class UpDownBarsImpl: ModelElementImpl, UpDownBars
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

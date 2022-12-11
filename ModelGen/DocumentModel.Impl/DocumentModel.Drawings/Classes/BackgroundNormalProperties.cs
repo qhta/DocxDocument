@@ -11,10 +11,17 @@ public class BackgroundNormalPropertiesImpl: ModelElementImpl, BackgroundNormalP
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundNormalPropertiesImpl(): base() {}
+  
+  public BackgroundNormalPropertiesImpl(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundNormalProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -20,6 +20,6 @@ public interface NumericLevel
   /// </summary>
   public String? Name { get ; set; }
   
-  public Collection<NumericValue2>? NumericValues { get ; set; }
+  public Collection<NumericValue>? NumericValues { get ; set; }
   
 }

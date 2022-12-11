@@ -11,6 +11,13 @@ public class BlurImpl: ModelElementImpl, Blur
     set => _OpenXmlElement = value;
   }
   
+  public BlurImpl(): base() {}
+  
+  public BlurImpl(DocumentFormat.OpenXml.Drawing.Blur openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Radius
   /// </summary>

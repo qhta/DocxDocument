@@ -11,7 +11,14 @@ public class SampleDataImpl: DocumentModel.Drawings.SampleDataTypeImpl, SampleDa
     set => _OpenXmlElement = value;
   }
   
-  public override DataModel? DataModel
+  public SampleDataImpl(): base() {}
+  
+  public SampleDataImpl(DocumentFormat.OpenXml.Drawing.Diagrams.SampleData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new DataModel? DataModel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

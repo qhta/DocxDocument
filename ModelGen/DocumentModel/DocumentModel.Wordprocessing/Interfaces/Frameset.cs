@@ -20,8 +20,8 @@ public interface Frameset
   /// </summary>
   public FrameLayoutKind? FrameLayout { get ; set; }
   
-  public Collection<Frameset>? Framesets { get ; set; }
+  public Frameset? ChildFrameset { get ; set; }
   
-  public Collection<Frame>? Frames { get ; set; }
+  public Frame? Frame { get ; set; }
   
 }

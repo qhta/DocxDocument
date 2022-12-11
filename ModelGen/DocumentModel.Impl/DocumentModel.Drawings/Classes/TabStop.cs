@@ -11,6 +11,13 @@ public class TabStopImpl: ModelElementImpl, TabStop
     set => _OpenXmlElement = value;
   }
   
+  public TabStopImpl(): base() {}
+  
+  public TabStopImpl(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Tab Position
   /// </summary>

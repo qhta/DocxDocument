@@ -11,6 +11,13 @@ public class MatrixColumnImpl: ModelElementImpl, MatrixColumn
     set => _OpenXmlElement = value;
   }
   
+  public MatrixColumnImpl(): base() {}
+  
+  public MatrixColumnImpl(DocumentFormat.OpenXml.Math.MatrixColumn openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Matrix Column Properties.
   /// </summary>

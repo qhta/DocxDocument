@@ -11,6 +11,13 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
     set => _OpenXmlElement = value;
   }
   
+  public NotesSlidePartImpl(): base() {}
+  
+  public NotesSlidePartImpl(DocumentFormat.OpenXml.Packaging.NotesSlidePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the NotesSlidePart
   /// </summary>
@@ -20,7 +27,7 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -138,7 +145,7 @@ public class NotesSlidePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesS
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

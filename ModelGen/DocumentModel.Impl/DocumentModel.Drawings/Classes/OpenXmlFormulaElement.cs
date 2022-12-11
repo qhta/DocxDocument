@@ -11,6 +11,13 @@ public class OpenXmlFormulaElementImpl: ModelElementImpl, OpenXmlFormulaElement
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlFormulaElementImpl(): base() {}
+  
+  public OpenXmlFormulaElementImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// dir, this property is only available in Office 2016 and later.
   /// </summary>

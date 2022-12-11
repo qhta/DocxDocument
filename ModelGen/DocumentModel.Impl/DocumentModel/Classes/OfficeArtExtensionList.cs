@@ -11,6 +11,13 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public OfficeArtExtensionListImpl(): base() {}
+  
+  public OfficeArtExtensionListImpl(DocumentFormat.OpenXml.Office2013.Theme.OfficeArtExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DocumentModel.Drawings.Extension>? Extensions
   {
     get => throw new NotImplementedException("Method not implemented");

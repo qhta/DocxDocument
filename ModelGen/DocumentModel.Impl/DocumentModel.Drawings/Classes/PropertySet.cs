@@ -11,6 +11,13 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
     set => _OpenXmlElement = value;
   }
   
+  public PropertySetImpl(): base() {}
+  
+  public PropertySetImpl(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Presentation Element Identifier
   /// </summary>
@@ -387,7 +394,7 @@ public class PropertySetImpl: ModelElementImpl, PropertySet
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style1? Style
+  public Style? Style
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

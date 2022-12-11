@@ -11,6 +11,13 @@ public class CategoryImpl: ModelElementImpl, Category
     set => _OpenXmlElement = value;
   }
   
+  public CategoryImpl(): base() {}
+  
+  public CategoryImpl(DocumentFormat.OpenXml.Wordprocessing.Category openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Category Associated With Entry.
   /// </summary>
@@ -55,20 +62,20 @@ public class CategoryImpl: ModelElementImpl, Category
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Gallery>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Gallery>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Gallery{ Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.Gallery{ Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

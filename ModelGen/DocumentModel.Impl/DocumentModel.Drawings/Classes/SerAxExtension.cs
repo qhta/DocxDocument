@@ -11,6 +11,13 @@ public class SerAxExtensionImpl: ModelElementImpl, SerAxExtension
     set => _OpenXmlElement = value;
   }
   
+  public SerAxExtensionImpl(): base() {}
+  
+  public SerAxExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class SerAxExtensionImpl: ModelElementImpl, SerAxExtension
     }
   }
   
-  public NumberingFormat1? NumberingFormat
+  public NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

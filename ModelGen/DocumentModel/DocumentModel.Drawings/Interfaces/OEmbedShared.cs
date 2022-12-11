@@ -18,6 +18,6 @@ public interface OEmbedShared
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList7? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

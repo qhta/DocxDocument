@@ -13,6 +13,6 @@ public interface VideoFromFile
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

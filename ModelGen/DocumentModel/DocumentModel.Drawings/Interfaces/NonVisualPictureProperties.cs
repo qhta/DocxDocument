@@ -8,7 +8,7 @@ public interface NonVisualPictureProperties
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public NonVisualDrawingProperties3? NonVisualDrawingProperties { get ; set; }
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
   
   /// <summary>
   /// Non-Visual Picture Drawing Properties.

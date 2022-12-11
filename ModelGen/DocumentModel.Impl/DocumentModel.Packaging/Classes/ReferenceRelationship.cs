@@ -11,6 +11,13 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
     set => _OpenXmlElement = value;
   }
   
+  public ReferenceRelationshipImpl(): base() {}
+  
+  public ReferenceRelationshipImpl(DocumentFormat.OpenXml.Packaging.ReferenceRelationship openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the relationship type.
   /// </summary>

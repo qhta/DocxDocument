@@ -11,14 +11,21 @@ public class MinValueColorEndPositionImpl: DocumentModel.Drawings.OpenXmlValueCo
     set => _OpenXmlElement = value;
   }
   
-  public override Boolean? ExtremeValueColorPosition
+  public MinValueColorEndPositionImpl(): base() {}
+  
+  public MinValueColorEndPositionImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new Boolean? ExtremeValueColorPosition
   {
     get
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+        return item != null;
       }
       return null;
     }
@@ -26,25 +33,25 @@ public class MinValueColorEndPositionImpl: DocumentModel.Drawings.OpenXmlValueCo
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Double? NumberColorPosition
+  public new Double? NumberColorPosition
   {
     get
     {
@@ -59,27 +66,27 @@ public class MinValueColorEndPositionImpl: DocumentModel.Drawings.OpenXmlValueCo
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Double?)value;
+            item.Val = (System.Double?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition{ Val = (System.Double?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition{ Val = (System.Double?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Double? PercentageColorPosition
+  public new Double? PercentageColorPosition
   {
     get
     {
@@ -94,20 +101,20 @@ public class MinValueColorEndPositionImpl: DocumentModel.Drawings.OpenXmlValueCo
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Double?)value;
+            item.Val = (System.Double?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition{ Val = (System.Double?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition{ Val = (System.Double?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

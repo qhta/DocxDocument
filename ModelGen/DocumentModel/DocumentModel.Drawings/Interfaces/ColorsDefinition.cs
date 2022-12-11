@@ -23,6 +23,6 @@ public interface ColorsDefinition
   
   public Collection<ColorTransformStyleLabel>? ColorTransformStyleLabels { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

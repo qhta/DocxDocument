@@ -11,6 +11,13 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
     set => _OpenXmlElement = value;
   }
   
+  public KeyMapEntryImpl(): base() {}
+  
+  public KeyMapEntryImpl(DocumentFormat.OpenXml.Office.Word.KeyMapEntry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// chmPrimary
   /// </summary>

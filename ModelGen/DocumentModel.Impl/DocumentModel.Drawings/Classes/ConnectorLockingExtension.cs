@@ -11,6 +11,13 @@ public class ConnectorLockingExtensionImpl: ModelElementImpl, ConnectorLockingEx
     set => _OpenXmlElement = value;
   }
   
+  public ConnectorLockingExtensionImpl(): base() {}
+  
+  public ConnectorLockingExtensionImpl(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

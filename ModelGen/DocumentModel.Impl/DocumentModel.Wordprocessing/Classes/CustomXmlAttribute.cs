@@ -11,6 +11,13 @@ public class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
     set => _OpenXmlElement = value;
   }
   
+  public CustomXmlAttributeImpl(): base() {}
+  
+  public CustomXmlAttributeImpl(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// uri
   /// </summary>

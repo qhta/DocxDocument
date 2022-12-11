@@ -11,13 +11,20 @@ public class BubbleSizeImpl: DocumentModel.Drawings.NumberDataSourceTypeImpl, Bu
     set => _OpenXmlElement = value;
   }
   
-  public override NumberReference? NumberReference
+  public BubbleSizeImpl(): base() {}
+  
+  public BubbleSizeImpl(DocumentFormat.OpenXml.Drawing.Charts.BubbleSize openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new NumberReference? NumberReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override NumberLiteral? NumberLiteral
+  public new NumberLiteral? NumberLiteral
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
     set => _OpenXmlElement = value;
   }
   
+  public SdtContentDropDownListImpl(): base() {}
+  
+  public SdtContentDropDownListImpl(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Drop-down List Last Saved Value
   /// </summary>

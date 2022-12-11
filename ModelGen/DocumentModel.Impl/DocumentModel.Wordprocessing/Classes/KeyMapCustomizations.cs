@@ -11,6 +11,13 @@ public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
     set => _OpenXmlElement = value;
   }
   
+  public KeyMapCustomizationsImpl(): base() {}
+  
+  public KeyMapCustomizationsImpl(DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<KeyMapEntry>? KeyMapEntries
   {
     get => throw new NotImplementedException("Method not implemented");

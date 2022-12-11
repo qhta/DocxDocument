@@ -11,6 +11,13 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
     set => _OpenXmlElement = value;
   }
   
+  public ExtraColorSchemeListImpl(): base() {}
+  
+  public ExtraColorSchemeListImpl(DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ExtraColorScheme>? ExtraColorSchemes
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -10,9 +10,9 @@ public interface BubbleChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<BubbleChartSeries2>? BubbleChartSerieses { get ; set; }
+  public Collection<BubbleChartSeries>? BubbleChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public Boolean? Bubble3D { get ; set; }
   
@@ -22,7 +22,7 @@ public interface BubbleChart
   
   public SizeRepresentsKind? SizeRepresents { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public BubbleChartExtensionList? BubbleChartExtensionList { get ; set; }
   

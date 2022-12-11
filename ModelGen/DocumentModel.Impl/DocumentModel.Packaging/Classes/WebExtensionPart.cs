@@ -11,7 +11,14 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public WebExtensionPartImpl(): base() {}
+  
+  public WebExtensionPartImpl(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

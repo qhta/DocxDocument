@@ -11,6 +11,13 @@ public class BinningImpl: ModelElementImpl, Binning
     set => _OpenXmlElement = value;
   }
   
+  public BinningImpl(): base() {}
+  
+  public BinningImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// intervalClosed, this property is only available in Office 2016 and later.
   /// </summary>
@@ -68,20 +75,20 @@ public class BinningImpl: ModelElementImpl, Binning
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -106,20 +113,20 @@ public class BinningImpl: ModelElementImpl, Binning
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

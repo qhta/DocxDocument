@@ -11,6 +11,13 @@ public class LimitUpperImpl: ModelElementImpl, LimitUpper
     set => _OpenXmlElement = value;
   }
   
+  public LimitUpperImpl(): base() {}
+  
+  public LimitUpperImpl(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Upper Limit Properties.
   /// </summary>

@@ -11,6 +11,13 @@ public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
     set => _OpenXmlElement = value;
   }
   
+  public StrokeChildTypeImpl(): base() {}
+  
+  public StrokeChildTypeImpl(DocumentFormat.OpenXml.Vml.Office.StrokeChildType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

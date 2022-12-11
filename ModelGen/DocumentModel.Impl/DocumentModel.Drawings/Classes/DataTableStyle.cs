@@ -11,13 +11,20 @@ public class DataTableStyleImpl: DocumentModel.Drawings.StyleEntryImpl, DataTabl
     set => _OpenXmlElement = value;
   }
   
-  public override LineReference1? LineReference
+  public DataTableStyleImpl(): base() {}
+  
+  public DataTableStyleImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataTableStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new LineReference? LineReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? LineWidthScale
+  public new String? LineWidthScale
   {
     get
     {
@@ -32,63 +39,63 @@ public class DataTableStyleImpl: DocumentModel.Drawings.StyleEntryImpl, DataTabl
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override FillReference2? FillReference
+  public new FillReference? FillReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override EffectReference1? EffectReference
+  public new EffectReference? EffectReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override FontReference2? FontReference
+  public new FontReference? FontReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ShapeProperties1? ShapeProperties
+  public new ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override TextCharacterPropertiesType1? TextCharacterPropertiesType
+  public new TextCharacterPropertiesType? TextCharacterPropertiesType
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override TextBodyProperties? TextBodyProperties
+  public new TextBodyProperties? TextBodyProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override OfficeArtExtensionList5? OfficeArtExtensionList
+  public new OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

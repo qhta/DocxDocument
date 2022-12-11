@@ -11,6 +11,13 @@ public class FitTextImpl: ModelElementImpl, FitText
     set => _OpenXmlElement = value;
   }
   
+  public FitTextImpl(): base() {}
+  
+  public FitTextImpl(DocumentFormat.OpenXml.Wordprocessing.FitText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Value
   /// </summary>

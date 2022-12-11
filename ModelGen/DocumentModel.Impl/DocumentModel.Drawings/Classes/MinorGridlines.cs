@@ -11,7 +11,14 @@ public class MinorGridlinesImpl: DocumentModel.Drawings.ChartLinesTypeImpl, Mino
     set => _OpenXmlElement = value;
   }
   
-  public override ChartShapeProperties? ChartShapeProperties
+  public MinorGridlinesImpl(): base() {}
+  
+  public MinorGridlinesImpl(DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ChartShapeProperties? ChartShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

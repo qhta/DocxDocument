@@ -11,6 +11,13 @@ public class ConnectionShapeLocksImpl: ModelElementImpl, ConnectionShapeLocks
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionShapeLocksImpl(): base() {}
+  
+  public ConnectionShapeLocksImpl(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>

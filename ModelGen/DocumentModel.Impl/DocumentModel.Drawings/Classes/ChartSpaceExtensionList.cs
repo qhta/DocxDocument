@@ -11,6 +11,13 @@ public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public ChartSpaceExtensionListImpl(): base() {}
+  
+  public ChartSpaceExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ChartSpaceExtension>? ChartSpaceExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

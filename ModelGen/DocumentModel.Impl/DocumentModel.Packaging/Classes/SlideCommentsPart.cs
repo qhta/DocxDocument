@@ -11,7 +11,14 @@ public class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public SlideCommentsPartImpl(): base() {}
+  
+  public SlideCommentsPartImpl(DocumentFormat.OpenXml.Packaging.SlideCommentsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

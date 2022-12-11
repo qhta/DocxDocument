@@ -11,14 +11,21 @@ public class BackgroundImpl: ModelElementImpl, Background
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundImpl(): base() {}
+  
+  public BackgroundImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Background openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Boolean? NoFill
   {
     get
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return item != null;
       }
       return null;
     }
@@ -26,18 +33,18 @@ public class BackgroundImpl: ModelElementImpl, Background
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -56,7 +63,7 @@ public class BackgroundImpl: ModelElementImpl, Background
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill? BlipFill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -74,8 +81,8 @@ public class BackgroundImpl: ModelElementImpl, Background
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        return item != null;
       }
       return null;
     }
@@ -83,18 +90,18 @@ public class BackgroundImpl: ModelElementImpl, Background
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.GroupFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,6 +11,13 @@ public class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResu
     set => _OpenXmlElement = value;
   }
   
+  public GeoLocationQueryResultsImpl(): base() {}
+  
+  public GeoLocationQueryResultsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResults openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<GeoLocationQueryResult>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

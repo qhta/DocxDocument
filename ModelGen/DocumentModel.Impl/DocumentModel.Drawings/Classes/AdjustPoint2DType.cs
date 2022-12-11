@@ -11,6 +11,13 @@ public class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
     set => _OpenXmlElement = value;
   }
   
+  public AdjustPoint2DTypeImpl(): base() {}
+  
+  public AdjustPoint2DTypeImpl(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// X-Coordinate
   /// </summary>

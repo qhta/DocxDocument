@@ -11,6 +11,13 @@ public class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticTexturizerImpl(): base() {}
+  
+  public ArtisticTexturizerImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class SingleDataSourceRecordImpl: ModelElementImpl, SingleDataSourceRecor
     set => _OpenXmlElement = value;
   }
   
+  public SingleDataSourceRecordImpl(): base() {}
+  
+  public SingleDataSourceRecordImpl(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RecordIncluded.
   /// </summary>
@@ -29,20 +36,20 @@ public class SingleDataSourceRecordImpl: ModelElementImpl, SingleDataSourceRecor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office.Word.RecordIncluded{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office.Word.RecordIncluded{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -67,20 +74,20 @@ public class SingleDataSourceRecordImpl: ModelElementImpl, SingleDataSourceRecor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

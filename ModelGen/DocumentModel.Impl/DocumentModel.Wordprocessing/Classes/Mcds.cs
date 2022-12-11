@@ -11,6 +11,13 @@ public class McdsImpl: ModelElementImpl, Mcds
     set => _OpenXmlElement = value;
   }
   
+  public McdsImpl(): base() {}
+  
+  public McdsImpl(DocumentFormat.OpenXml.Office.Word.Mcds openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Mcd>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

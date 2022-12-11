@@ -11,6 +11,13 @@ public class TableCellMarginImpl: ModelElementImpl, TableCellMargin
     set => _OpenXmlElement = value;
   }
   
+  public TableCellMarginImpl(): base() {}
+  
+  public TableCellMarginImpl(DocumentFormat.OpenXml.Wordprocessing.TableCellMargin openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Cell Top Margin Exception.
   /// </summary>

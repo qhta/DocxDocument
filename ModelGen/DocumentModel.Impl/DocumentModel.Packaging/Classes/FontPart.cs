@@ -11,7 +11,14 @@ public class FontPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontPart
     set => _OpenXmlElement = value;
   }
   
-  public override String? RelationshipType
+  public FontPartImpl(): base() {}
+  
+  public FontPartImpl(DocumentFormat.OpenXml.Packaging.FontPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

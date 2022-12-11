@@ -11,6 +11,13 @@ public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
     set => _OpenXmlElement = value;
   }
   
+  public AbsoluteAnchorSizeImpl(): base() {}
+  
+  public AbsoluteAnchorSizeImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// FromAnchor.
   /// </summary>
@@ -29,13 +36,13 @@ public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Shape4? Shape
+  public Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public GroupShape1? GroupShape
+  public GroupShape? GroupShape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

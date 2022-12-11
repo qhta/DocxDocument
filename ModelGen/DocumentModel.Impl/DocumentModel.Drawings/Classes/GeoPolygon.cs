@@ -11,6 +11,13 @@ public class GeoPolygonImpl: ModelElementImpl, GeoPolygon
     set => _OpenXmlElement = value;
   }
   
+  public GeoPolygonImpl(): base() {}
+  
+  public GeoPolygonImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// polygonId, this property is only available in Office 2016 and later.
   /// </summary>

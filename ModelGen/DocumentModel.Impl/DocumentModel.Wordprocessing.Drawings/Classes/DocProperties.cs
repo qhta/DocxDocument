@@ -11,6 +11,13 @@ public class DocPropertiesImpl: ModelElementImpl, DocProperties
     set => _OpenXmlElement = value;
   }
   
+  public DocPropertiesImpl(): base() {}
+  
+  public DocPropertiesImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Application defined unique identifier.
   /// </summary>

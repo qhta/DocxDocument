@@ -11,6 +11,13 @@ public class ColorTypeImpl: ModelElementImpl, ColorType
     set => _OpenXmlElement = value;
   }
   
+  public ColorTypeImpl(): base() {}
+  
+  public ColorTypeImpl(DocumentFormat.OpenXml.Drawing.ColorType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

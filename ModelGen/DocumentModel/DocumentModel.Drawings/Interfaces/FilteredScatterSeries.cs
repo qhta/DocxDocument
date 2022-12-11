@@ -8,6 +8,6 @@ public interface FilteredScatterSeries
   /// <summary>
   /// ScatterChartSeries.
   /// </summary>
-  public ScatterChartSeries2? ScatterChartSeries { get ; set; }
+  public ScatterChartSeries? ScatterChartSeries { get ; set; }
   
 }

@@ -11,6 +11,13 @@ public class AlphaModulationFixedImpl: ModelElementImpl, AlphaModulationFixed
     set => _OpenXmlElement = value;
   }
   
+  public AlphaModulationFixedImpl(): base() {}
+  
+  public AlphaModulationFixedImpl(DocumentFormat.OpenXml.Drawing.AlphaModulationFixed openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Amount
   /// </summary>

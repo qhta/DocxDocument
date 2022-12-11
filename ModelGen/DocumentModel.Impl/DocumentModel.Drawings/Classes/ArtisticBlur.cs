@@ -11,6 +11,13 @@ public class ArtisticBlurImpl: ModelElementImpl, ArtisticBlur
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticBlurImpl(): base() {}
+  
+  public ArtisticBlurImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// radius, this property is only available in Office 2010 and later.
   /// </summary>

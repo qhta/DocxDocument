@@ -15,11 +15,11 @@ public interface Surface3DChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<SurfaceChartSeries1>? SurfaceChartSerieses { get ; set; }
+  public Collection<SurfaceChartSeries>? SurfaceChartSerieses { get ; set; }
   
   public BandFormats? BandFormats { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public Surface3DChartExtensionList? Surface3DChartExtensionList { get ; set; }
   

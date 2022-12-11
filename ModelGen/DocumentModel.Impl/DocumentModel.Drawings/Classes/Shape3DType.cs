@@ -11,6 +11,13 @@ public class Shape3DTypeImpl: ModelElementImpl, Shape3DType
     set => _OpenXmlElement = value;
   }
   
+  public Shape3DTypeImpl(): base() {}
+  
+  public Shape3DTypeImpl(DocumentFormat.OpenXml.Drawing.Shape3DType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Shape Depth
   /// </summary>
@@ -102,7 +109,7 @@ public class Shape3DTypeImpl: ModelElementImpl, Shape3DType
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

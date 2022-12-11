@@ -11,6 +11,13 @@ public class PictureAttributionSourceURLImpl: ModelElementImpl, PictureAttributi
     set => _OpenXmlElement = value;
   }
   
+  public PictureAttributionSourceURLImpl(): base() {}
+  
+  public PictureAttributionSourceURLImpl(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2019 and later.
   /// </summary>

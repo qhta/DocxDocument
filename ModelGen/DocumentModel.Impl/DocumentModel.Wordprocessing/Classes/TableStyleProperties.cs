@@ -11,6 +11,13 @@ public class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
     set => _OpenXmlElement = value;
   }
   
+  public TableStylePropertiesImpl(): base() {}
+  
+  public TableStylePropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Style Conditional Formatting Type
   /// </summary>

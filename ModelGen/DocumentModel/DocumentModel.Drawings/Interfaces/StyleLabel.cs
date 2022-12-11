@@ -23,16 +23,16 @@ public interface StyleLabel
   /// <summary>
   /// Text Properties.
   /// </summary>
-  public TextProperties2? TextProperties { get ; set; }
+  public TextProperties? TextProperties { get ; set; }
   
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public Style1? Style { get ; set; }
+  public Style? Style { get ; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

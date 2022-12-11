@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// String Literal.
 /// </summary>
-public class StringLiteralImpl: DocumentModel.Drawings.StringDataType1Impl, StringLiteral
+public class StringLiteralImpl: DocumentModel.Drawings.StringDataTypeImpl, StringLiteral
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.StringLiteral? OpenXmlElement
   {
@@ -11,7 +11,14 @@ public class StringLiteralImpl: DocumentModel.Drawings.StringDataType1Impl, Stri
     set => _OpenXmlElement = value;
   }
   
-  public override UInt32? PointCount
+  public StringLiteralImpl(): base() {}
+  
+  public StringLiteralImpl(DocumentFormat.OpenXml.Drawing.Charts.StringLiteral openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new UInt32? PointCount
   {
     get
     {
@@ -26,20 +33,20 @@ public class StringLiteralImpl: DocumentModel.Drawings.StringDataType1Impl, Stri
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

@@ -11,181 +11,269 @@ public class EffectContainerImpl: DocumentModel.Drawings.EffectContainerTypeImpl
     set => _OpenXmlElement = value;
   }
   
-  public Collection<EffectContainer>? EffectContainers
+  public EffectContainerImpl(): base() {}
+  
+  public EffectContainerImpl(DocumentFormat.OpenXml.Drawing.EffectContainer openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public EffectContainer? ChildEffectContainer
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Effect>? Effects
+  public Effect? Effect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaBiLevel>? AlphaBiLevels
+  public AlphaBiLevel? AlphaBiLevel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AlphaCeilings
+  public Boolean? AlphaCeiling
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaCeiling();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public Boolean? AlphaFloor
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.AlphaFloor();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public AlphaInverse? AlphaInverse
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AlphaFloors
+  public AlphaModulationEffect? AlphaModulationEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaInverse>? AlphaInverses
+  public AlphaModulationFixed? AlphaModulationFixed
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaModulationEffect>? AlphaModulationEffects
+  public AlphaOutset? AlphaOutset
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaModulationFixed>? AlphaModulationFixeds
+  public AlphaReplace? AlphaReplace
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaOutset>? AlphaOutsets
+  public BiLevel? BiLevel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AlphaReplace>? AlphaReplaces
+  public Blend? Blend
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<BiLevel>? BiLevels
+  public Blur? Blur
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Blend>? Blends
+  public ColorChange? ColorChange
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Blur>? Blurs
+  public ColorReplacement? ColorReplacement
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ColorChange>? ColorChanges
+  public Duotone? Duotone
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ColorReplacement>? ColorReplacements
+  public Fill? Fill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Duotone>? Duotones
+  public FillOverlay? FillOverlay
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Fill>? Fills
+  public Glow? Glow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<FillOverlay>? FillOverlaies
+  public Boolean? Grayscale
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Drawing.Grayscale();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public Hsl? Hsl
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Glow>? Glows
+  public InnerShadow? InnerShadow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? Grayscales
+  public LuminanceEffect? LuminanceEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Hsl>? Hsls
+  public OuterShadow? OuterShadow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<InnerShadow>? InnerShadows
+  public PresetShadow? PresetShadow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<LuminanceEffect>? LuminanceEffects
+  public Reflection? Reflection
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<OuterShadow>? OuterShadows
+  public RelativeOffset? RelativeOffset
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PresetShadow>? PresetShadows
+  public SoftEdge? SoftEdge
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Reflection>? Reflections
+  public TintEffect? TintEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RelativeOffset>? RelativeOffsets
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<SoftEdge>? SoftEdges
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<TintEffect>? TintEffects
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public Collection<TransformEffect>? TransformEffects
+  public TransformEffect? TransformEffect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

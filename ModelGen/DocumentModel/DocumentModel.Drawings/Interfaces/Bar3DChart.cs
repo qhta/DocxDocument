@@ -20,17 +20,17 @@ public interface Bar3DChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<BarChartSeries2>? BarChartSerieses { get ; set; }
+  public Collection<BarChartSeries>? BarChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public UInt16? GapWidth { get ; set; }
   
   public UInt16? GapDepth { get ; set; }
   
-  public ShapeKind1? Shape { get ; set; }
+  public ShapeKind? Shape { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public Bar3DChartExtensionList? Bar3DChartExtensionList { get ; set; }
   

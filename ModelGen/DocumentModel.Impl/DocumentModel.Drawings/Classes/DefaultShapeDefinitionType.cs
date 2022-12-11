@@ -11,10 +11,17 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
     set => _OpenXmlElement = value;
   }
   
+  public DefaultShapeDefinitionTypeImpl(): base() {}
+  
+  public DefaultShapeDefinitionTypeImpl(DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Visual Properties.
   /// </summary>
-  public virtual ShapeProperties4? ShapeProperties
+  public virtual ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -41,7 +48,7 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
   /// <summary>
   /// ShapeStyle.
   /// </summary>
-  public virtual ShapeStyle2? ShapeStyle
+  public virtual ShapeStyle? ShapeStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -50,7 +57,7 @@ public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefin
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public virtual ExtensionList4? ExtensionList
+  public virtual ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

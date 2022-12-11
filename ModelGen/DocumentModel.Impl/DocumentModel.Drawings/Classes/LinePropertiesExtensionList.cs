@@ -11,6 +11,13 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
     set => _OpenXmlElement = value;
   }
   
+  public LinePropertiesExtensionListImpl(): base() {}
+  
+  public LinePropertiesExtensionListImpl(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<LinePropertiesExtension>? LinePropertiesExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

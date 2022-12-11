@@ -11,6 +11,13 @@ public class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
     set => _OpenXmlElement = value;
   }
   
+  public CheckBoxSymbolTypeImpl(): base() {}
+  
+  public CheckBoxSymbolTypeImpl(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// font, this property is only available in Office 2010 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
     set => _OpenXmlElement = value;
   }
   
+  public EastAsianLayoutImpl(): base() {}
+  
+  public EastAsianLayoutImpl(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// East Asian Typography Run ID
   /// </summary>

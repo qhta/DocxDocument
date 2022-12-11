@@ -11,6 +11,13 @@ public class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
     set => _OpenXmlElement = value;
   }
   
+  public MarkupRangeTypeImpl(): base() {}
+  
+  public MarkupRangeTypeImpl(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// displacedByCustomXml
   /// </summary>

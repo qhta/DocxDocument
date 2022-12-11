@@ -11,7 +11,14 @@ public class GradientStopListImpl: ModelElementImpl, GradientStopList
     set => _OpenXmlElement = value;
   }
   
-  public Collection<GradientStop>? GradientStops
+  public GradientStopListImpl(): base() {}
+  
+  public GradientStopListImpl(DocumentFormat.OpenXml.Office2010.Word.GradientStopList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public GradientStop? GradientStop
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

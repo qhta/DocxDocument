@@ -11,6 +11,13 @@ public class GeoDataEntityQueryImpl: ModelElementImpl, GeoDataEntityQuery
     set => _OpenXmlElement = value;
   }
   
+  public GeoDataEntityQueryImpl(): base() {}
+  
+  public GeoDataEntityQueryImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>

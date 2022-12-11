@@ -13,12 +13,12 @@ public interface ChartStyle
   /// <summary>
   /// AxisTitle.
   /// </summary>
-  public AxisTitle1? AxisTitle { get ; set; }
+  public AxisTitle? AxisTitle { get ; set; }
   
   /// <summary>
   /// CategoryAxis.
   /// </summary>
-  public CategoryAxis2? CategoryAxis { get ; set; }
+  public CategoryAxis? CategoryAxis { get ; set; }
   
   /// <summary>
   /// ChartArea.
@@ -28,7 +28,7 @@ public interface ChartStyle
   /// <summary>
   /// DataLabel.
   /// </summary>
-  public DataLabel4? DataLabel { get ; set; }
+  public DataLabel? DataLabel { get ; set; }
   
   /// <summary>
   /// DataLabelCallout.
@@ -38,7 +38,7 @@ public interface ChartStyle
   /// <summary>
   /// DataPoint.
   /// </summary>
-  public DataPoint3? DataPoint { get ; set; }
+  public DataPoint? DataPoint { get ; set; }
   
   /// <summary>
   /// DataPoint3D.
@@ -88,7 +88,7 @@ public interface ChartStyle
   /// <summary>
   /// Floor.
   /// </summary>
-  public Floor1? Floor { get ; set; }
+  public Floor? Floor { get ; set; }
   
   /// <summary>
   /// GridlineMajor.
@@ -118,7 +118,7 @@ public interface ChartStyle
   /// <summary>
   /// PlotArea.
   /// </summary>
-  public PlotArea3? PlotArea { get ; set; }
+  public PlotArea? PlotArea { get ; set; }
   
   /// <summary>
   /// PlotArea3D.
@@ -128,7 +128,7 @@ public interface ChartStyle
   /// <summary>
   /// SeriesAxis.
   /// </summary>
-  public SeriesAxis1? SeriesAxis { get ; set; }
+  public SeriesAxis? SeriesAxis { get ; set; }
   
   /// <summary>
   /// SeriesLine.
@@ -148,7 +148,7 @@ public interface ChartStyle
   /// <summary>
   /// TrendlineLabel.
   /// </summary>
-  public TrendlineLabel2? TrendlineLabel { get ; set; }
+  public TrendlineLabel? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// UpBar.
@@ -158,7 +158,7 @@ public interface ChartStyle
   /// <summary>
   /// ValueAxis.
   /// </summary>
-  public ValueAxis2? ValueAxis { get ; set; }
+  public ValueAxis? ValueAxis { get ; set; }
   
   /// <summary>
   /// Wall.
@@ -168,6 +168,6 @@ public interface ChartStyle
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

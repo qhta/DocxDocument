@@ -28,7 +28,7 @@ public interface FillOverlay
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill? BlipFill { get ; set; }
   
   /// <summary>
   /// Pattern Fill.

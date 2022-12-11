@@ -11,6 +11,13 @@ public class AudioCDTimeTypeImpl: ModelElementImpl, AudioCDTimeType
     set => _OpenXmlElement = value;
   }
   
+  public AudioCDTimeTypeImpl(): base() {}
+  
+  public AudioCDTimeTypeImpl(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Track
   /// </summary>

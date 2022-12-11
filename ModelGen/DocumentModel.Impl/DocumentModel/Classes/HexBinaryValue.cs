@@ -11,6 +11,13 @@ public class HexBinaryValueImpl: ModelObjectImpl, HexBinaryValue
     set => _OpenXmlElement = value;
   }
   
+  public HexBinaryValueImpl(): base() {}
+  
+  public HexBinaryValueImpl(DocumentFormat.OpenXml.HexBinaryValue openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the hex binary value
   /// </summary>

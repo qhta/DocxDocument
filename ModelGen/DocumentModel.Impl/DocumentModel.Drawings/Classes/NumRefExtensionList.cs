@@ -11,6 +11,13 @@ public class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public NumRefExtensionListImpl(): base() {}
+  
+  public NumRefExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<NumRefExtension>? NumRefExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

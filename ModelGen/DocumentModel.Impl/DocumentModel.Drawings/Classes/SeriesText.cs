@@ -11,6 +11,13 @@ public class SeriesTextImpl: ModelElementImpl, SeriesText
     set => _OpenXmlElement = value;
   }
   
+  public SeriesTextImpl(): base() {}
+  
+  public SeriesTextImpl(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// StringReference.
   /// </summary>
@@ -38,20 +45,20 @@ public class SeriesTextImpl: ModelElementImpl, SeriesText
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

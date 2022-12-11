@@ -11,6 +11,13 @@ public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategorie
     set => _OpenXmlElement = value;
   }
   
+  public StyleDisplayCategoriesImpl(): base() {}
+  
+  public StyleDisplayCategoriesImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<StyleDisplayCategory>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

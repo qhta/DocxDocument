@@ -11,6 +11,13 @@ public class StyleSetImpl: ModelElementImpl, StyleSet
     set => _OpenXmlElement = value;
   }
   
+  public StyleSetImpl(): base() {}
+  
+  public StyleSetImpl(DocumentFormat.OpenXml.Office2010.Word.StyleSet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>

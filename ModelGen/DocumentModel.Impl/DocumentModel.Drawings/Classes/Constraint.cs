@@ -11,6 +11,13 @@ public class ConstraintImpl: ModelElementImpl, Constraint
     set => _OpenXmlElement = value;
   }
   
+  public ConstraintImpl(): base() {}
+  
+  public ConstraintImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Constraint Type
   /// </summary>
@@ -157,7 +164,7 @@ public class ConstraintImpl: ModelElementImpl, Constraint
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

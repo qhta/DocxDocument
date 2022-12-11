@@ -11,10 +11,17 @@ public class FilteredCategoryTitleImpl: ModelElementImpl, FilteredCategoryTitle
     set => _OpenXmlElement = value;
   }
   
+  public FilteredCategoryTitleImpl(): base() {}
+  
+  public FilteredCategoryTitleImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  public AxisDataSourceType1? AxisDataSourceType
+  public AxisDataSourceType2? AxisDataSourceType
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
     set => _OpenXmlElement = value;
   }
   
+  public LegacyNumberingImpl(): base() {}
+  
+  public LegacyNumberingImpl(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Use Legacy Numbering Properties
   /// </summary>

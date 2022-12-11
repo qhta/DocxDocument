@@ -11,6 +11,13 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
     set => _OpenXmlElement = value;
   }
   
+  public ContentPartImpl(): base() {}
+  
+  public ContentPartImpl(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
@@ -58,7 +65,7 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public Transform2D1? Transform2D
+  public Transform2D? Transform2D
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -67,7 +74,7 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList4? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

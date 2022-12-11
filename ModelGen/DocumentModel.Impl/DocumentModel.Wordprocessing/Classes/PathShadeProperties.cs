@@ -11,6 +11,13 @@ public class PathShadePropertiesImpl: ModelElementImpl, PathShadeProperties
     set => _OpenXmlElement = value;
   }
   
+  public PathShadePropertiesImpl(): base() {}
+  
+  public PathShadePropertiesImpl(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// path, this property is only available in Office 2010 and later.
   /// </summary>

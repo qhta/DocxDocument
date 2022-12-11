@@ -11,6 +11,13 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
     set => _OpenXmlElement = value;
   }
   
+  public ActiveWritingStyleImpl(): base() {}
+  
+  public ActiveWritingStyleImpl(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Writing Style Language
   /// </summary>

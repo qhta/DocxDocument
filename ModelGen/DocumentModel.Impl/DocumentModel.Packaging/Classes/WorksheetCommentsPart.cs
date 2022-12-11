@@ -11,7 +11,14 @@ public class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public WorksheetCommentsPartImpl(): base() {}
+  
+  public WorksheetCommentsPartImpl(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

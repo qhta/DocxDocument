@@ -11,6 +11,13 @@ public class TablePropertyExceptionsChangeImpl: ModelElementImpl, TablePropertyE
     set => _OpenXmlElement = value;
   }
   
+  public TablePropertyExceptionsChangeImpl(): base() {}
+  
+  public TablePropertyExceptionsChangeImpl(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

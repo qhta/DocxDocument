@@ -11,6 +11,13 @@ public class GeoLocationsImpl: ModelElementImpl, GeoLocations
     set => _OpenXmlElement = value;
   }
   
+  public GeoLocationsImpl(): base() {}
+  
+  public GeoLocationsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GeoLocation.
   /// </summary>

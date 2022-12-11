@@ -11,6 +11,13 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
     set => _OpenXmlElement = value;
   }
   
+  public PageMarginImpl(): base() {}
+  
+  public PageMarginImpl(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Top Margin Spacing
   /// </summary>

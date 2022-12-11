@@ -11,6 +11,13 @@ public class GeoLocationQueryResultImpl: ModelElementImpl, GeoLocationQueryResul
     set => _OpenXmlElement = value;
   }
   
+  public GeoLocationQueryResultImpl(): base() {}
+  
+  public GeoLocationQueryResultImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GeoLocationQuery.
   /// </summary>

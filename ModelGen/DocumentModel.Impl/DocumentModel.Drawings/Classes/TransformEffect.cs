@@ -11,6 +11,13 @@ public class TransformEffectImpl: ModelElementImpl, TransformEffect
     set => _OpenXmlElement = value;
   }
   
+  public TransformEffectImpl(): base() {}
+  
+  public TransformEffectImpl(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Horizontal Ratio
   /// </summary>

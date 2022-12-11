@@ -11,6 +11,13 @@ public class NonVisualDrawingShapePropertiesImpl: ModelElementImpl, NonVisualDra
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualDrawingShapePropertiesImpl(): base() {}
+  
+  public NonVisualDrawingShapePropertiesImpl(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text Box
   /// </summary>
@@ -36,7 +43,7 @@ public class NonVisualDrawingShapePropertiesImpl: ModelElementImpl, NonVisualDra
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

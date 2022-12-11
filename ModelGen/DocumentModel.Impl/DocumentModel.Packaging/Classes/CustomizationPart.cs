@@ -11,7 +11,14 @@ public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cus
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public CustomizationPartImpl(): base() {}
+  
+  public CustomizationPartImpl(DocumentFormat.OpenXml.Packaging.CustomizationPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cus
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

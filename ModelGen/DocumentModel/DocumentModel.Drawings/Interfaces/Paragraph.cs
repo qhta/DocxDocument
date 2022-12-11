@@ -10,13 +10,13 @@ public interface Paragraph
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get ; set; }
   
-  public Collection<Run>? Runs { get ; set; }
+  public Run? Run { get ; set; }
   
-  public Collection<Break>? Breaks { get ; set; }
+  public Break? Break { get ; set; }
   
-  public Collection<Field>? Fields { get ; set; }
+  public Field? Field { get ; set; }
   
-  public Collection<Boolean>? TextMaths { get ; set; }
+  public Boolean? TextMath { get ; set; }
   
   public EndParagraphRunProperties? EndParagraphRunProperties { get ; set; }
   

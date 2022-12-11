@@ -12,6 +12,6 @@ public interface PlotAreaRegion
   
   public Collection<Series>? Serieses { get ; set; }
   
-  public ExtensionList2? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

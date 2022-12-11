@@ -11,6 +11,13 @@ public class GlowImpl: ModelElementImpl, Glow
     set => _OpenXmlElement = value;
   }
   
+  public GlowImpl(): base() {}
+  
+  public GlowImpl(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// rad, this property is only available in Office 2010 and later.
   /// </summary>

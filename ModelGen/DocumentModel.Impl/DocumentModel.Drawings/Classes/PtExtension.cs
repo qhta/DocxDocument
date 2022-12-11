@@ -11,6 +11,13 @@ public class PtExtensionImpl: ModelElementImpl, PtExtension
     set => _OpenXmlElement = value;
   }
   
+  public PtExtensionImpl(): base() {}
+  
+  public PtExtensionImpl(DocumentFormat.OpenXml.Drawing.PtExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -24,7 +31,7 @@ public class PtExtensionImpl: ModelElementImpl, PtExtension
     }
   }
   
-  public NonVisualDrawingProperties1? NonVisualDrawingProperties
+  public NonVisualDrawingProperties? NonVisualDrawingProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

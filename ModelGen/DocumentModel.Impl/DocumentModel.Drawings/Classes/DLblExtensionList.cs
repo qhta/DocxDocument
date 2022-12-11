@@ -11,6 +11,13 @@ public class DLblExtensionListImpl: ModelElementImpl, DLblExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public DLblExtensionListImpl(): base() {}
+  
+  public DLblExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.DLblExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DLblExtension>? DLblExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

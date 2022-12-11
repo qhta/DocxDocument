@@ -23,8 +23,8 @@ public interface StyleDefinition
   
   public Scene3D? Scene3D { get ; set; }
   
-  public Collection<StyleLabel>? StyleLabels { get ; set; }
+  public StyleLabel? StyleLabel { get ; set; }
   
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

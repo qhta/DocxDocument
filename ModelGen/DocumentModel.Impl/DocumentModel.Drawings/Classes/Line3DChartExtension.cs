@@ -11,6 +11,13 @@ public class Line3DChartExtensionImpl: ModelElementImpl, Line3DChartExtension
     set => _OpenXmlElement = value;
   }
   
+  public Line3DChartExtensionImpl(): base() {}
+  
+  public Line3DChartExtensionImpl(DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

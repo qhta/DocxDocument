@@ -11,6 +11,13 @@ public class BandFormatsImpl: ModelElementImpl, BandFormats
     set => _OpenXmlElement = value;
   }
   
+  public BandFormatsImpl(): base() {}
+  
+  public BandFormatsImpl(DocumentFormat.OpenXml.Drawing.Charts.BandFormats openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BandFormat>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

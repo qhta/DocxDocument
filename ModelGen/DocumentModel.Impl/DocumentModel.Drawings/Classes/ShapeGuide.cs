@@ -11,6 +11,13 @@ public class ShapeGuideImpl: ModelElementImpl, ShapeGuide
     set => _OpenXmlElement = value;
   }
   
+  public ShapeGuideImpl(): base() {}
+  
+  public ShapeGuideImpl(DocumentFormat.OpenXml.Drawing.ShapeGuide openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Shape Guide Name
   /// </summary>

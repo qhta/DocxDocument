@@ -11,6 +11,13 @@ public class DiagramChooseIfImpl: ModelElementImpl, DiagramChooseIf
     set => _OpenXmlElement = value;
   }
   
+  public DiagramChooseIfImpl(): base() {}
+  
+  public DiagramChooseIfImpl(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>
@@ -130,55 +137,55 @@ public class DiagramChooseIfImpl: ModelElementImpl, DiagramChooseIf
     }
   }
   
-  public Collection<Algorithm>? Algorithms
+  public Algorithm? Algorithm
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape2>? Shapes
+  public Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PresentationOf>? PresentationOfs
+  public PresentationOf? PresentationOf
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Constraints>? Constraintses
+  public Constraints? Constraints
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RuleList>? RuleLists
+  public RuleList? RuleList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ForEach>? ForEachs
+  public ForEach? ForEach
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<LayoutNode>? LayoutNodes
+  public LayoutNode? LayoutNode
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Choose>? Chooses
+  public Choose? Choose
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ExtensionList1>? ExtensionLists
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

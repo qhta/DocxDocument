@@ -11,10 +11,17 @@ public class BackgroundCustomPropertiesImpl: ModelElementImpl, BackgroundCustomP
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundCustomPropertiesImpl(): base() {}
+  
+  public BackgroundCustomPropertiesImpl(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundCustomProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList6? OfficeArtExtensionList
+  public OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

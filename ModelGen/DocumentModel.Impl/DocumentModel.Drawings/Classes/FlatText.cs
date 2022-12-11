@@ -11,6 +11,13 @@ public class FlatTextImpl: ModelElementImpl, FlatText
     set => _OpenXmlElement = value;
   }
   
+  public FlatTextImpl(): base() {}
+  
+  public FlatTextImpl(DocumentFormat.OpenXml.Drawing.FlatText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Z Coordinate
   /// </summary>

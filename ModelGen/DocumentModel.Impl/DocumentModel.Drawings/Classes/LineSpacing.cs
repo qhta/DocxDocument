@@ -11,7 +11,14 @@ public class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSp
     set => _OpenXmlElement = value;
   }
   
-  public override Int32? SpacingPercent
+  public LineSpacingImpl(): base() {}
+  
+  public LineSpacingImpl(DocumentFormat.OpenXml.Drawing.LineSpacing openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new Int32? SpacingPercent
   {
     get
     {
@@ -26,27 +33,27 @@ public class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSp
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override Int32? SpacingPoints
+  public new Int32? SpacingPoints
   {
     get
     {
@@ -61,20 +68,20 @@ public class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSp
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

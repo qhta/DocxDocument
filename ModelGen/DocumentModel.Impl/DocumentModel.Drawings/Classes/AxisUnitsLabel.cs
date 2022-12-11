@@ -11,10 +11,17 @@ public class AxisUnitsLabelImpl: ModelElementImpl, AxisUnitsLabel
     set => _OpenXmlElement = value;
   }
   
+  public AxisUnitsLabelImpl(): base() {}
+  
+  public AxisUnitsLabelImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Text.
   /// </summary>
-  public Text2? Text
+  public Text? Text
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,7 +30,7 @@ public class AxisUnitsLabelImpl: ModelElementImpl, AxisUnitsLabel
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -41,7 +48,7 @@ public class AxisUnitsLabelImpl: ModelElementImpl, AxisUnitsLabel
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

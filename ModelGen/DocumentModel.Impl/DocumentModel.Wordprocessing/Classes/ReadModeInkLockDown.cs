@@ -11,6 +11,13 @@ public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
     set => _OpenXmlElement = value;
   }
   
+  public ReadModeInkLockDownImpl(): base() {}
+  
+  public ReadModeInkLockDownImpl(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Use Actual Pages, Not Virtual Pages
   /// </summary>

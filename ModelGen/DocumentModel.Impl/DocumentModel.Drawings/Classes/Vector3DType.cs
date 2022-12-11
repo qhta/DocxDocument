@@ -11,6 +11,13 @@ public class Vector3DTypeImpl: ModelElementImpl, Vector3DType
     set => _OpenXmlElement = value;
   }
   
+  public Vector3DTypeImpl(): base() {}
+  
+  public Vector3DTypeImpl(DocumentFormat.OpenXml.Drawing.Vector3DType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Distance along X-axis in 3D
   /// </summary>

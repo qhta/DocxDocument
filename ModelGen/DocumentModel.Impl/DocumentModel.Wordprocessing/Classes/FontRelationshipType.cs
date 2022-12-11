@@ -11,6 +11,13 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
     set => _OpenXmlElement = value;
   }
   
+  public FontRelationshipTypeImpl(): base() {}
+  
+  public FontRelationshipTypeImpl(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// fontKey
   /// </summary>

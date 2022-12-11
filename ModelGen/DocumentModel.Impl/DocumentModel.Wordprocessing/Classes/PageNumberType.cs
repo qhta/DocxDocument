@@ -11,6 +11,13 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
     set => _OpenXmlElement = value;
   }
   
+  public PageNumberTypeImpl(): base() {}
+  
+  public PageNumberTypeImpl(DocumentFormat.OpenXml.Wordprocessing.PageNumberType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Page Number Format
   /// </summary>

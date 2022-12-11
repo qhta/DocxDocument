@@ -8,6 +8,6 @@ public interface FilteredSeriesTitle
   /// <summary>
   /// ChartText.
   /// </summary>
-  public ChartText2? ChartText { get ; set; }
+  public ChartText? ChartText { get ; set; }
   
 }

@@ -11,6 +11,13 @@ public class NumberDiagramInfoImpl: ModelElementImpl, NumberDiagramInfo
     set => _OpenXmlElement = value;
   }
   
+  public NumberDiagramInfoImpl(): base() {}
+  
+  public NumberDiagramInfoImpl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// lvl, this property is only available in Office 2019 and later.
   /// </summary>

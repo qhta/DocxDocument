@@ -11,6 +11,13 @@ public class BevelTypeImpl: ModelElementImpl, BevelType
     set => _OpenXmlElement = value;
   }
   
+  public BevelTypeImpl(): base() {}
+  
+  public BevelTypeImpl(DocumentFormat.OpenXml.Drawing.BevelType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Width
   /// </summary>

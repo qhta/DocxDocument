@@ -11,7 +11,14 @@ public class FormulasImpl: ModelElementImpl, Formulas
     set => _OpenXmlElement = value;
   }
   
-  public Collection<Formula>? Items
+  public FormulasImpl(): base() {}
+  
+  public FormulasImpl(DocumentFormat.OpenXml.Vml.Formulas openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public Formula? Formula
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

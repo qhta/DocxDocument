@@ -11,10 +11,17 @@ public class FilteredScatterSeriesImpl: ModelElementImpl, FilteredScatterSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredScatterSeriesImpl(): base() {}
+  
+  public FilteredScatterSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ScatterChartSeries.
   /// </summary>
-  public ScatterChartSeries2? ScatterChartSeries
+  public ScatterChartSeries? ScatterChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class LockImpl: ModelElementImpl, Lock
     set => _OpenXmlElement = value;
   }
   
+  public LockImpl(): base() {}
+  
+  public LockImpl(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

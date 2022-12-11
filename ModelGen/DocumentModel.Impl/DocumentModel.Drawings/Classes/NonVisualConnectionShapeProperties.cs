@@ -11,6 +11,13 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisual
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualConnectionShapePropertiesImpl(): base() {}
+  
+  public NonVisualConnectionShapePropertiesImpl(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Connection Shape Locks.
   /// </summary>
@@ -41,7 +48,7 @@ public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisual
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

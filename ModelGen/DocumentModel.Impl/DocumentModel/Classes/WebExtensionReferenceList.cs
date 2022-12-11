@@ -11,6 +11,13 @@ public class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionRefere
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionReferenceListImpl(): base() {}
+  
+  public WebExtensionReferenceListImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<WebExtensionStoreReference>? WebExtensionStoreReferences
   {
     get => throw new NotImplementedException("Method not implemented");

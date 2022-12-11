@@ -11,6 +11,13 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
     set => _OpenXmlElement = value;
   }
   
+  public LatentStylesImpl(): base() {}
+  
+  public LatentStylesImpl(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Default Style Locking Setting
   /// </summary>

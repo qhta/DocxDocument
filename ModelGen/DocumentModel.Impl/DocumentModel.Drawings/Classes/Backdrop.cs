@@ -11,6 +11,13 @@ public class BackdropImpl: ModelElementImpl, Backdrop
     set => _OpenXmlElement = value;
   }
   
+  public BackdropImpl(): base() {}
+  
+  public BackdropImpl(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Anchor Point.
   /// </summary>
@@ -41,7 +48,7 @@ public class BackdropImpl: ModelElementImpl, Backdrop
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

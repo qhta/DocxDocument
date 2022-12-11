@@ -175,36 +175,36 @@ public interface Group
   /// </summary>
   public String? TableLimits { get ; set; }
   
-  public Collection<Group>? Groups { get ; set; }
+  public Group? ChildGroup { get ; set; }
   
-  public Collection<Shape>? Shapes { get ; set; }
+  public Shape? Shape { get ; set; }
   
-  public Collection<Shapetype>? Shapetypes { get ; set; }
+  public Shapetype? Shapetype { get ; set; }
   
-  public Collection<Arc>? Arcs { get ; set; }
+  public Arc? Arc { get ; set; }
   
-  public Collection<Curve>? Curves { get ; set; }
+  public Curve? Curve { get ; set; }
   
-  public Collection<ImageFile>? ImageFiles { get ; set; }
+  public ImageFile? ImageFile { get ; set; }
   
-  public Collection<Line>? Lines { get ; set; }
+  public Line? Line { get ; set; }
   
-  public Collection<Oval>? Ovals { get ; set; }
+  public Oval? Oval { get ; set; }
   
-  public Collection<PolyLine>? PolyLines { get ; set; }
+  public PolyLine? PolyLine { get ; set; }
   
-  public Collection<Rectangle>? Rectangles { get ; set; }
+  public Rectangle? Rectangle { get ; set; }
   
-  public Collection<RoundRectangle>? RoundRectangles { get ; set; }
+  public RoundRectangle? RoundRectangle { get ; set; }
   
-  public Collection<Diagram>? Diagrams { get ; set; }
+  public Diagram? Diagram { get ; set; }
   
-  public Collection<Lock>? Locks { get ; set; }
+  public Lock? Lock { get ; set; }
   
-  public Collection<ClipPath>? ClipPaths { get ; set; }
+  public ClipPath? ClipPath { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.TextWrap? TextWrap { get ; set; }
   
-  public Collection<Boolean>? AnchorLocks { get ; set; }
+  public Boolean? AnchorLock { get ; set; }
   
 }

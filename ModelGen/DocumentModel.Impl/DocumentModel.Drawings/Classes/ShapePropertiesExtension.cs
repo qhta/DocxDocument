@@ -11,6 +11,13 @@ public class ShapePropertiesExtensionImpl: ModelElementImpl, ShapePropertiesExte
     set => _OpenXmlElement = value;
   }
   
+  public ShapePropertiesExtensionImpl(): base() {}
+  
+  public ShapePropertiesExtensionImpl(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>
@@ -69,20 +76,20 @@ public class ShapePropertiesExtensionImpl: ModelElementImpl, ShapePropertiesExte
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

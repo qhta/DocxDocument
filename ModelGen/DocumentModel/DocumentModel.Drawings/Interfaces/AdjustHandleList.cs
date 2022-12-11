@@ -5,8 +5,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface AdjustHandleList
 {
-  public Collection<AdjustHandleXY>? AdjustHandleXYs { get ; set; }
+  public AdjustHandleXY? AdjustHandleXY { get ; set; }
   
-  public Collection<AdjustHandlePolar>? AdjustHandlePolars { get ; set; }
+  public AdjustHandlePolar? AdjustHandlePolar { get ; set; }
   
 }

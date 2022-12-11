@@ -7,12 +7,12 @@ public interface ShapeTree
 {
   public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get ; set; }
   
-  public GroupShapeProperties1? GroupShapeProperties { get ; set; }
+  public GroupShapeProperties? GroupShapeProperties { get ; set; }
   
-  public Collection<Shape1>? Shapes { get ; set; }
+  public Shape? Shape { get ; set; }
   
-  public Collection<GroupShape2>? GroupShapes { get ; set; }
+  public GroupShape? GroupShape { get ; set; }
   
-  public OfficeArtExtensionList1? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

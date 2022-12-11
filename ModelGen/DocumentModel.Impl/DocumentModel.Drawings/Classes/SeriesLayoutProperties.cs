@@ -11,6 +11,13 @@ public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutPropertie
     set => _OpenXmlElement = value;
   }
   
+  public SeriesLayoutPropertiesImpl(): base() {}
+  
+  public SeriesLayoutPropertiesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ParentLabelLayout.
   /// </summary>
@@ -38,20 +45,20 @@ public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutPropertie
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum?)value;
+            item.Val = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout{ Val = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout{ Val = (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -73,8 +80,8 @@ public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutPropertie
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+        return item != null;
       }
       return null;
     }
@@ -82,18 +89,18 @@ public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutPropertie
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -124,7 +131,7 @@ public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutPropertie
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

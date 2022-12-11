@@ -11,7 +11,14 @@ public class ColorDataImpl: DocumentModel.Drawings.SampleDataTypeImpl, ColorData
     set => _OpenXmlElement = value;
   }
   
-  public override DataModel? DataModel
+  public ColorDataImpl(): base() {}
+  
+  public ColorDataImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorData openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new DataModel? DataModel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

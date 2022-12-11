@@ -11,6 +11,13 @@ public class DataModelImpl: ModelElementImpl, DataModel
     set => _OpenXmlElement = value;
   }
   
+  public DataModelImpl(): base() {}
+  
+  public DataModelImpl(DocumentFormat.OpenXml.Drawing.Diagrams.DataModel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Point List.
   /// </summary>

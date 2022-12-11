@@ -11,6 +11,13 @@ public class PathGradientFillImpl: ModelElementImpl, PathGradientFill
     set => _OpenXmlElement = value;
   }
   
+  public PathGradientFillImpl(): base() {}
+  
+  public PathGradientFillImpl(DocumentFormat.OpenXml.Drawing.PathGradientFill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gradient Fill Path
   /// </summary>

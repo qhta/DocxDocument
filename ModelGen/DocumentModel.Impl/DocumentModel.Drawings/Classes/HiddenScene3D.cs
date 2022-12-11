@@ -11,6 +11,13 @@ public class HiddenScene3DImpl: ModelElementImpl, HiddenScene3D
     set => _OpenXmlElement = value;
   }
   
+  public HiddenScene3DImpl(): base() {}
+  
+  public HiddenScene3DImpl(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Camera.
   /// </summary>
@@ -41,7 +48,7 @@ public class HiddenScene3DImpl: ModelElementImpl, HiddenScene3D
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

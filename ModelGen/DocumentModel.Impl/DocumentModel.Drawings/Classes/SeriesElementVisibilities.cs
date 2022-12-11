@@ -11,6 +11,13 @@ public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisib
     set => _OpenXmlElement = value;
   }
   
+  public SeriesElementVisibilitiesImpl(): base() {}
+  
+  public SeriesElementVisibilitiesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// connectorLines, this property is only available in Office 2016 and later.
   /// </summary>

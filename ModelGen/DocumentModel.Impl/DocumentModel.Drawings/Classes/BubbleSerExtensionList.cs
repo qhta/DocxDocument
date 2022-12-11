@@ -11,6 +11,13 @@ public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionLis
     set => _OpenXmlElement = value;
   }
   
+  public BubbleSerExtensionListImpl(): base() {}
+  
+  public BubbleSerExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BubbleSerExtension>? BubbleSerExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

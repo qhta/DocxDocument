@@ -11,6 +11,13 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
     set => _OpenXmlElement = value;
   }
   
+  public PageBordersImpl(): base() {}
+  
+  public PageBordersImpl(DocumentFormat.OpenXml.Wordprocessing.PageBorders openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Z-Ordering of Page Border
   /// </summary>

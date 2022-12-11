@@ -11,6 +11,13 @@ public class BlendImpl: ModelElementImpl, Blend
     set => _OpenXmlElement = value;
   }
   
+  public BlendImpl(): base() {}
+  
+  public BlendImpl(DocumentFormat.OpenXml.Drawing.Blend openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blend Mode
   /// </summary>

@@ -11,6 +11,13 @@ public class TablePropertiesChangeImpl: ModelElementImpl, TablePropertiesChange
     set => _OpenXmlElement = value;
   }
   
+  public TablePropertiesChangeImpl(): base() {}
+  
+  public TablePropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.TablePropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

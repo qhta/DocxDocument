@@ -11,7 +11,14 @@ public class PivotTableCacheDefinitionPartImpl: DocumentModel.Packaging.OpenXmlP
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public PivotTableCacheDefinitionPartImpl(): base() {}
+  
+  public PivotTableCacheDefinitionPartImpl(DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class PivotTableCacheDefinitionPartImpl: DocumentModel.Packaging.OpenXmlP
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

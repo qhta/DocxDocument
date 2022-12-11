@@ -11,6 +11,13 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
     set => _OpenXmlElement = value;
   }
   
+  public NumericLevelImpl(): base() {}
+  
+  public NumericLevelImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>
@@ -50,7 +57,7 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
     }
   }
   
-  public Collection<NumericValue2>? NumericValues
+  public Collection<NumericValue>? NumericValues
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

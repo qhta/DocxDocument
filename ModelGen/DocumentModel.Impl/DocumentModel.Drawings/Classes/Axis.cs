@@ -11,6 +11,13 @@ public class AxisImpl: ModelElementImpl, Axis
     set => _OpenXmlElement = value;
   }
   
+  public AxisImpl(): base() {}
+  
+  public AxisImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
@@ -49,7 +56,7 @@ public class AxisImpl: ModelElementImpl, Axis
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public AxisTitle2? AxisTitle
+  public AxisTitle? AxisTitle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -97,7 +104,7 @@ public class AxisImpl: ModelElementImpl, Axis
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -109,7 +116,7 @@ public class AxisImpl: ModelElementImpl, Axis
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

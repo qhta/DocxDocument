@@ -11,6 +11,13 @@ public class StatisticsImpl: ModelElementImpl, Statistics
     set => _OpenXmlElement = value;
   }
   
+  public StatisticsImpl(): base() {}
+  
+  public StatisticsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// quartileMethod, this property is only available in Office 2016 and later.
   /// </summary>

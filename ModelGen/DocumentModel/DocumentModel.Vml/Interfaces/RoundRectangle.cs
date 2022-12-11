@@ -265,46 +265,46 @@ public interface RoundRectangle
   /// </summary>
   public String? ArcSize { get ; set; }
   
-  public Collection<Path>? Paths { get ; set; }
+  public Path? Path { get ; set; }
   
-  public Collection<Formulas>? Formulases { get ; set; }
+  public Formulas? Formulas { get ; set; }
   
-  public Collection<ShapeHandles>? ShapeHandleses { get ; set; }
+  public ShapeHandles? ShapeHandles { get ; set; }
   
-  public Collection<Fill>? Fills { get ; set; }
+  public Fill? Fill { get ; set; }
   
-  public Collection<Stroke>? Strokes { get ; set; }
+  public Stroke? Stroke { get ; set; }
   
-  public Collection<Shadow>? Shadows { get ; set; }
+  public Shadow? Shadow { get ; set; }
   
-  public Collection<TextBox>? TextBoxs { get ; set; }
+  public TextBox? TextBox { get ; set; }
   
-  public Collection<TextPath>? TextPaths { get ; set; }
+  public TextPath? TextPath { get ; set; }
   
-  public Collection<ImageData>? ImageDatas { get ; set; }
+  public ImageData? ImageData { get ; set; }
   
-  public Collection<Skew>? Skews { get ; set; }
+  public Skew? Skew { get ; set; }
   
-  public Collection<Extrusion>? Extrusions { get ; set; }
+  public Extrusion? Extrusion { get ; set; }
   
-  public Collection<Callout>? Callouts { get ; set; }
+  public Callout? Callout { get ; set; }
   
-  public Collection<Lock>? Locks { get ; set; }
+  public Lock? Lock { get ; set; }
   
-  public Collection<ClipPath>? ClipPaths { get ; set; }
+  public ClipPath? ClipPath { get ; set; }
   
-  public Collection<SignatureLine>? SignatureLines { get ; set; }
+  public SignatureLine? SignatureLine { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.TextWrap? TextWrap { get ; set; }
   
-  public Collection<Boolean>? AnchorLocks { get ; set; }
+  public Boolean? AnchorLock { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? TopBorders { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.BorderType? TopBorder { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? BottomBorders { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.BorderType? BottomBorder { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? LeftBorders { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.BorderType? LeftBorder { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.BorderType>? RightBorders { get ; set; }
+  public DocumentModel.Wordprocessing.Vml.BorderType? RightBorder { get ; set; }
   
 }

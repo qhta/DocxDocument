@@ -11,10 +11,17 @@ public class FilteredRadarSeriesImpl: ModelElementImpl, FilteredRadarSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredRadarSeriesImpl(): base() {}
+  
+  public FilteredRadarSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RadarChartSeries.
   /// </summary>
-  public RadarChartSeries2? RadarChartSeries
+  public RadarChartSeries? RadarChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

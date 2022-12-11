@@ -11,6 +11,13 @@ public class CustomColorImpl: ModelElementImpl, CustomColor
     set => _OpenXmlElement = value;
   }
   
+  public CustomColorImpl(): base() {}
+  
+  public CustomColorImpl(DocumentFormat.OpenXml.Drawing.CustomColor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>

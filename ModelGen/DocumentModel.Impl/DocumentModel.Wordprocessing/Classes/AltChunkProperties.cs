@@ -11,6 +11,13 @@ public class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
     set => _OpenXmlElement = value;
   }
   
+  public AltChunkPropertiesImpl(): base() {}
+  
+  public AltChunkPropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Keep Source Formatting on Import.
   /// </summary>
@@ -29,20 +36,20 @@ public class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.MatchSource{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.MatchSource{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

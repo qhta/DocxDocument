@@ -11,6 +11,13 @@ public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
     set => _OpenXmlElement = value;
   }
   
+  public DocumentBackgroundImpl(): base() {}
+  
+  public DocumentBackgroundImpl(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// color
   /// </summary>

@@ -8,6 +8,6 @@ public interface FilteredAreaSeries
   /// <summary>
   /// AreaChartSeries.
   /// </summary>
-  public AreaChartSeries1? AreaChartSeries { get ; set; }
+  public AreaChartSeries? AreaChartSeries { get ; set; }
   
 }

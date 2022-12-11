@@ -11,6 +11,13 @@ public class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
     set => _OpenXmlElement = value;
   }
   
+  public DataLabelVisibilitiesImpl(): base() {}
+  
+  public DataLabelVisibilitiesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// seriesName, this property is only available in Office 2016 and later.
   /// </summary>

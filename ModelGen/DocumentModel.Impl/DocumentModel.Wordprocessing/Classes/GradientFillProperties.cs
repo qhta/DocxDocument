@@ -11,6 +11,13 @@ public class GradientFillPropertiesImpl: ModelElementImpl, GradientFillPropertie
     set => _OpenXmlElement = value;
   }
   
+  public GradientFillPropertiesImpl(): base() {}
+  
+  public GradientFillPropertiesImpl(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GradientStopList.
   /// </summary>

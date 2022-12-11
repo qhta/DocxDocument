@@ -11,6 +11,13 @@ public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public RadarChartExtensionListImpl(): base() {}
+  
+  public RadarChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<RadarChartExtension>? RadarChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

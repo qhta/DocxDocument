@@ -11,6 +11,13 @@ public class FullReferenceImpl: ModelElementImpl, FullReference
     set => _OpenXmlElement = value;
   }
   
+  public FullReferenceImpl(): base() {}
+  
+  public FullReferenceImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
@@ -29,20 +36,20 @@ public class FullReferenceImpl: ModelElementImpl, FullReference
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

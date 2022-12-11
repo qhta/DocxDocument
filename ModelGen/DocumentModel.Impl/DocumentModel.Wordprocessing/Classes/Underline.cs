@@ -11,6 +11,13 @@ public class UnderlineImpl: ModelElementImpl, Underline
     set => _OpenXmlElement = value;
   }
   
+  public UnderlineImpl(): base() {}
+  
+  public UnderlineImpl(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Underline Style
   /// </summary>

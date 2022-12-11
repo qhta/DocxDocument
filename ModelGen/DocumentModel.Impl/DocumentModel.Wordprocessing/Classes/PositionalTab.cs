@@ -11,6 +11,13 @@ public class PositionalTabImpl: ModelElementImpl, PositionalTab
     set => _OpenXmlElement = value;
   }
   
+  public PositionalTabImpl(): base() {}
+  
+  public PositionalTabImpl(DocumentFormat.OpenXml.Wordprocessing.PositionalTab openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Positional Tab Stop Alignment
   /// </summary>

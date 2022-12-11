@@ -11,6 +11,13 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
     set => _OpenXmlElement = value;
   }
   
+  public DataBindingImpl(): base() {}
+  
+  public DataBindingImpl(DocumentFormat.OpenXml.Office2013.Word.DataBinding openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// XML Namespace Prefix Mappings
   /// </summary>

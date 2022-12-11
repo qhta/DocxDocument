@@ -11,6 +11,13 @@ public class CategoryListImpl: ModelElementImpl, CategoryList
     set => _OpenXmlElement = value;
   }
   
+  public CategoryListImpl(): base() {}
+  
+  public CategoryListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Category>? Categories
   {
     get => throw new NotImplementedException("Method not implemented");

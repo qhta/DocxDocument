@@ -11,7 +11,14 @@ public class UserDefinedTagsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, U
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public UserDefinedTagsPartImpl(): base() {}
+  
+  public UserDefinedTagsPartImpl(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class UserDefinedTagsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, U
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

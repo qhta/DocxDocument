@@ -18,6 +18,6 @@ public interface AxisUnits
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

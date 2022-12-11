@@ -11,6 +11,13 @@ public class StyleDisplayCategoryImpl: ModelElementImpl, StyleDisplayCategory
     set => _OpenXmlElement = value;
   }
   
+  public StyleDisplayCategoryImpl(): base() {}
+  
+  public StyleDisplayCategoryImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Category Type
   /// </summary>

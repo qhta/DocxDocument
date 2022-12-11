@@ -11,6 +11,13 @@ public class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public ValAxExtensionListImpl(): base() {}
+  
+  public ValAxExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ValAxExtension>? ValAxExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -58,11 +58,11 @@ public interface Trendline
   /// <summary>
   /// Trendline Label.
   /// </summary>
-  public TrendlineLabel1? TrendlineLabel { get ; set; }
+  public TrendlineLabel? TrendlineLabel { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

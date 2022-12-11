@@ -11,6 +11,13 @@ public class DiagramImpl: ModelElementImpl, Diagram
     set => _OpenXmlElement = value;
   }
   
+  public DiagramImpl(): base() {}
+  
+  public DiagramImpl(DocumentFormat.OpenXml.Drawing.Diagram openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Identifier
   /// </summary>

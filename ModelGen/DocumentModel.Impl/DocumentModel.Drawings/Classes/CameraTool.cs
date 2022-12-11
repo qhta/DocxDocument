@@ -11,6 +11,13 @@ public class CameraToolImpl: ModelElementImpl, CameraTool
     set => _OpenXmlElement = value;
   }
   
+  public CameraToolImpl(): base() {}
+  
+  public CameraToolImpl(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// cellRange, this property is only available in Office 2010 and later.
   /// </summary>

@@ -11,6 +11,13 @@ public class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
     set => _OpenXmlElement = value;
   }
   
+  public SphereCoordinatesImpl(): base() {}
+  
+  public SphereCoordinatesImpl(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// lat, this property is only available in Office 2010 and later.
   /// </summary>

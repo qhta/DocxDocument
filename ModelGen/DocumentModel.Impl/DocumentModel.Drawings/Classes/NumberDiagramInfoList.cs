@@ -11,6 +11,13 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
     set => _OpenXmlElement = value;
   }
   
+  public NumberDiagramInfoListImpl(): base() {}
+  
+  public NumberDiagramInfoListImpl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<NumberDiagramInfo>? NumberDiagramInfos
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class PathImpl: ModelElementImpl, Path
     set => _OpenXmlElement = value;
   }
   
+  public PathImpl(): base() {}
+  
+  public PathImpl(DocumentFormat.OpenXml.Vml.Path openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

@@ -11,6 +11,13 @@ public class TableLookImpl: ModelElementImpl, TableLook
     set => _OpenXmlElement = value;
   }
   
+  public TableLookImpl(): base() {}
+  
+  public TableLookImpl(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// val
   /// </summary>

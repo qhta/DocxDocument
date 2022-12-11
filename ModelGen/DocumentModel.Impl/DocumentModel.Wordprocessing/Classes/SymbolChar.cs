@@ -11,6 +11,13 @@ public class SymbolCharImpl: ModelElementImpl, SymbolChar
     set => _OpenXmlElement = value;
   }
   
+  public SymbolCharImpl(): base() {}
+  
+  public SymbolCharImpl(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Symbol Character Font
   /// </summary>

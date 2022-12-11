@@ -11,6 +11,13 @@ public class IndentationImpl: ModelElementImpl, Indentation
     set => _OpenXmlElement = value;
   }
   
+  public IndentationImpl(): base() {}
+  
+  public IndentationImpl(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Left Indentation
   /// </summary>

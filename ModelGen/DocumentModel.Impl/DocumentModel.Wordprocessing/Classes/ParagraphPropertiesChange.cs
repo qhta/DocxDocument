@@ -11,6 +11,13 @@ public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertie
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphPropertiesChangeImpl(): base() {}
+  
+  public ParagraphPropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

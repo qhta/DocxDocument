@@ -11,6 +11,13 @@ public class ArtisticPaintBrushImpl: ModelElementImpl, ArtisticPaintBrush
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPaintBrushImpl(): base() {}
+  
+  public ArtisticPaintBrushImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

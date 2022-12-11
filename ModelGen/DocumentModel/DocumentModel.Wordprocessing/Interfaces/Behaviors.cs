@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Behaviors
 {
-  public Collection<DocPartBehaviorKind>? Items { get ; set; }
+  public DocPartBehaviorKind? Behavior { get ; set; }
   
 }

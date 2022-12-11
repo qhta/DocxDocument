@@ -11,6 +11,13 @@ public class GradientStopImpl: ModelElementImpl, GradientStop
     set => _OpenXmlElement = value;
   }
   
+  public GradientStopImpl(): base() {}
+  
+  public GradientStopImpl(DocumentFormat.OpenXml.Office2010.Word.GradientStop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// pos, this property is only available in Office 2010 and later.
   /// </summary>

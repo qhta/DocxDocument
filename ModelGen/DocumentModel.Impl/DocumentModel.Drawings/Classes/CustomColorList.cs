@@ -11,6 +11,13 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
     set => _OpenXmlElement = value;
   }
   
+  public CustomColorListImpl(): base() {}
+  
+  public CustomColorListImpl(DocumentFormat.OpenXml.Drawing.CustomColorList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<CustomColor>? CustomColors
   {
     get => throw new NotImplementedException("Method not implemented");

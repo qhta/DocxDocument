@@ -11,31 +11,38 @@ public class HyperlinkImpl: DocumentModel.Drawings.Color2TypeImpl, Hyperlink
     set => _OpenXmlElement = value;
   }
   
-  public override RgbColorModelPercentage? RgbColorModelPercentage
+  public HyperlinkImpl(): base() {}
+  
+  public HyperlinkImpl(DocumentFormat.OpenXml.Drawing.Hyperlink openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new RgbColorModelPercentage? RgbColorModelPercentage
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override RgbColorModelHex? RgbColorModelHex
+  public new RgbColorModelHex? RgbColorModelHex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override HslColor? HslColor
+  public new HslColor? HslColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override SystemColor? SystemColor
+  public new SystemColor? SystemColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override PresetColor? PresetColor
+  public new PresetColor? PresetColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

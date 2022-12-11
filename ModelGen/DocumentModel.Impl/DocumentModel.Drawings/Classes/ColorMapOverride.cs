@@ -11,6 +11,13 @@ public class ColorMapOverrideImpl: ModelElementImpl, ColorMapOverride
     set => _OpenXmlElement = value;
   }
   
+  public ColorMapOverrideImpl(): base() {}
+  
+  public ColorMapOverrideImpl(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Background 1
   /// </summary>
@@ -170,7 +177,7 @@ public class ColorMapOverrideImpl: ModelElementImpl, ColorMapOverride
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

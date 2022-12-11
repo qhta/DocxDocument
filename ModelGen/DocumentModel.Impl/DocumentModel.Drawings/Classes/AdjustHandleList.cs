@@ -11,13 +11,20 @@ public class AdjustHandleListImpl: ModelElementImpl, AdjustHandleList
     set => _OpenXmlElement = value;
   }
   
-  public Collection<AdjustHandleXY>? AdjustHandleXYs
+  public AdjustHandleListImpl(): base() {}
+  
+  public AdjustHandleListImpl(DocumentFormat.OpenXml.Drawing.AdjustHandleList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public AdjustHandleXY? AdjustHandleXY
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<AdjustHandlePolar>? AdjustHandlePolars
+  public AdjustHandlePolar? AdjustHandlePolar
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

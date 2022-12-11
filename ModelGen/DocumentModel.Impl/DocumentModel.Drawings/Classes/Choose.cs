@@ -11,6 +11,13 @@ public class ChooseImpl: ModelElementImpl, Choose
     set => _OpenXmlElement = value;
   }
   
+  public ChooseImpl(): base() {}
+  
+  public ChooseImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Choose openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>
@@ -24,7 +31,7 @@ public class ChooseImpl: ModelElementImpl, Choose
     }
   }
   
-  public Collection<DiagramChooseIf>? DiagramChooseIfs
+  public DiagramChooseIf? DiagramChooseIf
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

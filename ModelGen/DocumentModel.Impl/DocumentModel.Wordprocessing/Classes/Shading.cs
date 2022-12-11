@@ -11,6 +11,13 @@ public class ShadingImpl: ModelElementImpl, Shading
     set => _OpenXmlElement = value;
   }
   
+  public ShadingImpl(): base() {}
+  
+  public ShadingImpl(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Shading Pattern
   /// </summary>

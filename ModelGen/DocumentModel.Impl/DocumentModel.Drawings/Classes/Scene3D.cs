@@ -11,6 +11,13 @@ public class Scene3DImpl: ModelElementImpl, Scene3D
     set => _OpenXmlElement = value;
   }
   
+  public Scene3DImpl(): base() {}
+  
+  public Scene3DImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Camera.
   /// </summary>
@@ -41,7 +48,7 @@ public class Scene3DImpl: ModelElementImpl, Scene3D
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

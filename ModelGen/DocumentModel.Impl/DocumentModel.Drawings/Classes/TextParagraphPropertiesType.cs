@@ -11,6 +11,13 @@ public class TextParagraphPropertiesTypeImpl: ModelElementImpl, TextParagraphPro
     set => _OpenXmlElement = value;
   }
   
+  public TextParagraphPropertiesTypeImpl(): base() {}
+  
+  public TextParagraphPropertiesTypeImpl(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Left Margin
   /// </summary>

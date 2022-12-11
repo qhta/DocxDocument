@@ -11,6 +11,13 @@ public class NonVisualGroupDrawingShapePropsExtensionImpl: ModelElementImpl, Non
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualGroupDrawingShapePropsExtensionImpl(): base() {}
+  
+  public NonVisualGroupDrawingShapePropsExtensionImpl(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// URI
   /// </summary>

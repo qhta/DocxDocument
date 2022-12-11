@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Default Text Run Properties.
 /// </summary>
-public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesType2Impl, DefaultRunProperties
+public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, DefaultRunProperties
 {
   public new DocumentFormat.OpenXml.Drawing.DefaultRunProperties? OpenXmlElement
   {
@@ -11,7 +11,14 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     set => _OpenXmlElement = value;
   }
   
-  public override Outline? Outline
+  public DefaultRunPropertiesImpl(): base() {}
+  
+  public DefaultRunPropertiesImpl(DocumentFormat.OpenXml.Drawing.DefaultRunProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new Outline? Outline
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -23,8 +30,8 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        return item != null;
       }
       return null;
     }
@@ -32,18 +39,18 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.NoFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.NoFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -62,7 +69,7 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BlipFill1? BlipFill
+  public BlipFill? BlipFill
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -80,8 +87,8 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        return item != null;
       }
       return null;
     }
@@ -89,18 +96,18 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.GroupFill();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -131,8 +138,8 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
+        return item != null;
       }
       return null;
     }
@@ -140,18 +147,18 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.UnderlineFollowsText();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.UnderlineFollowsText();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -170,8 +177,8 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
+        return item != null;
       }
       return null;
     }
@@ -179,18 +186,18 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.UnderlineFillText();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.UnderlineFillText();
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -254,27 +261,27 @@ public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Boolean?)value;
+            item.Val = (System.Boolean?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.RightToLeft{ Val = (System.Boolean?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.RightToLeft{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class ColorMostRecentlyUsedImpl: ModelElementImpl, ColorMostRecentlyUsed
     set => _OpenXmlElement = value;
   }
   
+  public ColorMostRecentlyUsedImpl(): base() {}
+  
+  public ColorMostRecentlyUsedImpl(DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

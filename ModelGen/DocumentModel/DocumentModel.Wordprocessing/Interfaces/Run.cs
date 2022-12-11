@@ -25,68 +25,68 @@ public interface Run
   /// </summary>
   public RunProperties? RunProperties { get ; set; }
   
-  public Collection<Break>? Breaks { get ; set; }
+  public Break? Break { get ; set; }
   
-  public Collection<TextType>? Texts { get ; set; }
+  public TextType? Text { get ; set; }
   
-  public Collection<TextType>? DeletedTexts { get ; set; }
+  public TextType? DeletedText { get ; set; }
   
-  public Collection<TextType>? FieldCodes { get ; set; }
+  public TextType? FieldCode { get ; set; }
   
-  public Collection<TextType>? DeletedFieldCodes { get ; set; }
+  public TextType? DeletedFieldCode { get ; set; }
   
-  public Collection<Boolean>? NoBreakHyphens { get ; set; }
+  public Boolean? NoBreakHyphen { get ; set; }
   
-  public Collection<Boolean>? SoftHyphens { get ; set; }
+  public Boolean? SoftHyphen { get ; set; }
   
-  public Collection<Boolean>? DayShorts { get ; set; }
+  public Boolean? DayShort { get ; set; }
   
-  public Collection<Boolean>? MonthShorts { get ; set; }
+  public Boolean? MonthShort { get ; set; }
   
-  public Collection<Boolean>? YearShorts { get ; set; }
+  public Boolean? YearShort { get ; set; }
   
-  public Collection<Boolean>? DayLongs { get ; set; }
+  public Boolean? DayLong { get ; set; }
   
-  public Collection<Boolean>? MonthLongs { get ; set; }
+  public Boolean? MonthLong { get ; set; }
   
-  public Collection<Boolean>? YearLongs { get ; set; }
+  public Boolean? YearLong { get ; set; }
   
-  public Collection<Boolean>? AnnotationReferenceMarks { get ; set; }
+  public Boolean? AnnotationReferenceMark { get ; set; }
   
-  public Collection<Boolean>? FootnoteReferenceMarks { get ; set; }
+  public Boolean? FootnoteReferenceMark { get ; set; }
   
-  public Collection<Boolean>? EndnoteReferenceMarks { get ; set; }
+  public Boolean? EndnoteReferenceMark { get ; set; }
   
-  public Collection<Boolean>? SeparatorMarks { get ; set; }
+  public Boolean? SeparatorMark { get ; set; }
   
-  public Collection<Boolean>? ContinuationSeparatorMarks { get ; set; }
+  public Boolean? ContinuationSeparatorMark { get ; set; }
   
-  public Collection<SymbolChar>? SymbolChars { get ; set; }
+  public SymbolChar? SymbolChar { get ; set; }
   
-  public Collection<Boolean>? PageNumbers { get ; set; }
+  public Boolean? PageNumber { get ; set; }
   
-  public Collection<Boolean>? CarriageReturns { get ; set; }
+  public Boolean? CarriageReturn { get ; set; }
   
-  public Collection<Boolean>? TabChars { get ; set; }
+  public Boolean? TabChar { get ; set; }
   
-  public Collection<EmbeddedObject>? EmbeddedObjects { get ; set; }
+  public EmbeddedObject? EmbeddedObject { get ; set; }
   
-  public Collection<Picture>? Pictures { get ; set; }
+  public Picture? Picture { get ; set; }
   
-  public Collection<FieldChar>? FieldChars { get ; set; }
+  public FieldChar? FieldChar { get ; set; }
   
-  public Collection<Ruby>? Rubies { get ; set; }
+  public Ruby? Ruby { get ; set; }
   
-  public Collection<FootnoteEndnoteReferenceType>? FootnoteReferences { get ; set; }
+  public FootnoteEndnoteReferenceType? FootnoteReference { get ; set; }
   
-  public Collection<FootnoteEndnoteReferenceType>? EndnoteReferences { get ; set; }
+  public FootnoteEndnoteReferenceType? EndnoteReference { get ; set; }
   
-  public Collection<MarkupType>? CommentReferences { get ; set; }
+  public MarkupType? CommentReference { get ; set; }
   
-  public Collection<Drawing>? Drawings { get ; set; }
+  public Drawing? Drawing { get ; set; }
   
-  public Collection<PositionalTab>? PositionalTabs { get ; set; }
+  public PositionalTab? PositionalTab { get ; set; }
   
-  public Collection<Boolean>? LastRenderedPageBreaks { get ; set; }
+  public Boolean? LastRenderedPageBreak { get ; set; }
   
 }

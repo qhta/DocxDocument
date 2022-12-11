@@ -11,10 +11,17 @@ public class FilteredAreaSeriesImpl: ModelElementImpl, FilteredAreaSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredAreaSeriesImpl(): base() {}
+  
+  public FilteredAreaSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// AreaChartSeries.
   /// </summary>
-  public AreaChartSeries1? AreaChartSeries
+  public AreaChartSeries? AreaChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

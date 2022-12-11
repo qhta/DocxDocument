@@ -13,7 +13,7 @@ public interface DefaultRunProperties
   
   public GradientFill? GradientFill { get ; set; }
   
-  public BlipFill1? BlipFill { get ; set; }
+  public BlipFill? BlipFill { get ; set; }
   
   public PatternFill? PatternFill { get ; set; }
   
@@ -47,6 +47,6 @@ public interface DefaultRunProperties
   
   public Boolean? RightToLeft { get ; set; }
   
-  public ExtensionList4? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

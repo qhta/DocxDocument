@@ -18,6 +18,6 @@ public interface LineSketchStyleProperties
   
   public String? LineSketchSeed { get ; set; }
   
-  public OfficeArtExtensionList8? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

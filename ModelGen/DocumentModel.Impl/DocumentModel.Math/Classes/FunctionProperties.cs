@@ -11,6 +11,13 @@ public class FunctionPropertiesImpl: ModelElementImpl, FunctionProperties
     set => _OpenXmlElement = value;
   }
   
+  public FunctionPropertiesImpl(): base() {}
+  
+  public FunctionPropertiesImpl(DocumentFormat.OpenXml.Math.FunctionProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ControlProperties.
   /// </summary>

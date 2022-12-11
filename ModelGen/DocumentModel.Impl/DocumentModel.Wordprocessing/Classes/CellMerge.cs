@@ -11,6 +11,13 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
     set => _OpenXmlElement = value;
   }
   
+  public CellMergeImpl(): base() {}
+  
+  public CellMergeImpl(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// vMerge
   /// </summary>

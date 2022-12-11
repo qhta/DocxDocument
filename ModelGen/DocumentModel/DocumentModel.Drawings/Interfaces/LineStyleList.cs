@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface LineStyleList
 {
-  public Collection<Outline>? Outlines { get ; set; }
+  public Outline? Outline { get ; set; }
   
 }

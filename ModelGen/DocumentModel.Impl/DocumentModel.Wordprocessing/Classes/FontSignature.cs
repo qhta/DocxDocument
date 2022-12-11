@@ -11,6 +11,13 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
     set => _OpenXmlElement = value;
   }
   
+  public FontSignatureImpl(): base() {}
+  
+  public FontSignatureImpl(DocumentFormat.OpenXml.Wordprocessing.FontSignature openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// First 32 Bits of Unicode Subset Bitfield
   /// </summary>

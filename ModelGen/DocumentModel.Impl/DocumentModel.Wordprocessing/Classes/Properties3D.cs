@@ -11,6 +11,13 @@ public class Properties3DImpl: ModelElementImpl, Properties3D
     set => _OpenXmlElement = value;
   }
   
+  public Properties3DImpl(): base() {}
+  
+  public Properties3DImpl(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// extrusionH, this property is only available in Office 2010 and later.
   /// </summary>

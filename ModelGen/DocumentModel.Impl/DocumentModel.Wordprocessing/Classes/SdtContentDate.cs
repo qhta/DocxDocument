@@ -11,6 +11,13 @@ public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
     set => _OpenXmlElement = value;
   }
   
+  public SdtContentDateImpl(): base() {}
+  
+  public SdtContentDateImpl(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Last Known Date in XML Schema DateTime Format
   /// </summary>
@@ -42,20 +49,20 @@ public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.DateFormat{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.DateFormat{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -80,20 +87,20 @@ public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.String?)value;
+            item.Val = (System.String?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -118,20 +125,20 @@ public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.DateFormatValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Wordprocessing.DateFormatValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType{ Val = (DocumentFormat.OpenXml.Wordprocessing.DateFormatValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType{ Val = (DocumentFormat.OpenXml.Wordprocessing.DateFormatValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -156,20 +163,20 @@ public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Calendar>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Calendar>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Wordprocessing.CalendarValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Wordprocessing.CalendarValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.Calendar{ Val = (DocumentFormat.OpenXml.Wordprocessing.CalendarValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.Calendar{ Val = (DocumentFormat.OpenXml.Wordprocessing.CalendarValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

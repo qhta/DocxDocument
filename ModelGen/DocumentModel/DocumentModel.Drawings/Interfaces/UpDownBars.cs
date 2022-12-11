@@ -23,6 +23,6 @@ public interface UpDownBars
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

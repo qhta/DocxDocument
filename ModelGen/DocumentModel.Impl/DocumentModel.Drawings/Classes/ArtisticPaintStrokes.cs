@@ -11,6 +11,13 @@ public class ArtisticPaintStrokesImpl: ModelElementImpl, ArtisticPaintStrokes
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticPaintStrokesImpl(): base() {}
+  
+  public ArtisticPaintStrokesImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

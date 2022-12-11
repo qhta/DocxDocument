@@ -11,6 +11,13 @@ public class GeoEntityImpl: ModelElementImpl, GeoEntity
     set => _OpenXmlElement = value;
   }
   
+  public GeoEntityImpl(): base() {}
+  
+  public GeoEntityImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// entityName, this property is only available in Office 2016 and later.
   /// </summary>

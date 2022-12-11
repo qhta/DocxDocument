@@ -11,6 +11,13 @@ public class CreationIdImpl: ModelElementImpl, CreationId
     set => _OpenXmlElement = value;
   }
   
+  public CreationIdImpl(): base() {}
+  
+  public CreationIdImpl(DocumentFormat.OpenXml.Office2016.Drawing.CreationId openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>

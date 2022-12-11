@@ -11,6 +11,13 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
     set => _OpenXmlElement = value;
   }
   
+  public AllocatedCommandManifestImpl(): base() {}
+  
+  public AllocatedCommandManifestImpl(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<AcceleratorKeymapType>? AllocatedCommandManifestEntries
   {
     get => throw new NotImplementedException("Method not implemented");

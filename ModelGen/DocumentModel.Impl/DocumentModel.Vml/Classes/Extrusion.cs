@@ -11,6 +11,13 @@ public class ExtrusionImpl: ModelElementImpl, Extrusion
     set => _OpenXmlElement = value;
   }
   
+  public ExtrusionImpl(): base() {}
+  
+  public ExtrusionImpl(DocumentFormat.OpenXml.Vml.Office.Extrusion openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

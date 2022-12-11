@@ -11,6 +11,13 @@ public class DelimiterImpl: ModelElementImpl, Delimiter
     set => _OpenXmlElement = value;
   }
   
+  public DelimiterImpl(): base() {}
+  
+  public DelimiterImpl(DocumentFormat.OpenXml.Math.Delimiter openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Delimiter Properties.
   /// </summary>
@@ -20,7 +27,7 @@ public class DelimiterImpl: ModelElementImpl, Delimiter
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Base>? Bases
+  public Base? Base
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class MathControlMoveTypeImpl: ModelElementImpl, MathControlMoveType
     set => _OpenXmlElement = value;
   }
   
+  public MathControlMoveTypeImpl(): base() {}
+  
+  public MathControlMoveTypeImpl(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

@@ -11,7 +11,14 @@ public class DownBarsImpl: DocumentModel.Drawings.UpDownBarTypeImpl, DownBars
     set => _OpenXmlElement = value;
   }
   
-  public override ChartShapeProperties? ChartShapeProperties
+  public DownBarsImpl(): base() {}
+  
+  public DownBarsImpl(DocumentFormat.OpenXml.Drawing.Charts.DownBars openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ChartShapeProperties? ChartShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

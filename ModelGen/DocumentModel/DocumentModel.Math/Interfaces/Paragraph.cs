@@ -10,66 +10,66 @@ public interface Paragraph
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get ; set; }
   
-  public Collection<OfficeMath>? OfficeMaths { get ; set; }
+  public OfficeMath? OfficeMath { get ; set; }
   
-  public Collection<Run>? Runs { get ; set; }
+  public Run? Run { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.ProofError>? ProofErrors { get ; set; }
+  public DocumentModel.Wordprocessing.ProofError? ProofError { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.PermStart>? PermStarts { get ; set; }
+  public DocumentModel.Wordprocessing.PermStart? PermStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.PermEnd>? PermEnds { get ; set; }
+  public DocumentModel.Wordprocessing.PermEnd? PermEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.BookmarkStart>? BookmarkStarts { get ; set; }
+  public DocumentModel.Wordprocessing.BookmarkStart? BookmarkStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? BookmarkEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? BookmarkEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? CommentRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? CommentRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveBookmarkType>? MoveFromRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveFromRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? MoveFromRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveFromRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveBookmarkType>? MoveToRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveToRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupRangeType>? MoveToRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveToRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlInsRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlInsRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlInsRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlInsRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlDelRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlDelRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlDelRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlDelRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlMoveFromRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveFromRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlMoveFromRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveFromRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlMoveToRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveToRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlMoveToRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlConflictInsertionRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlConflictInsertionRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.TrackChangeType>? CustomXmlConflictDeletionRangeStarts { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MarkupType>? CustomXmlConflictDeletionRangeEnds { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.InsertedRun>? InsertedRuns { get ; set; }
+  public DocumentModel.Wordprocessing.InsertedRun? InsertedRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.DeletedRun>? DeletedRuns { get ; set; }
+  public DocumentModel.Wordprocessing.DeletedRun? DeletedRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveFromRun>? MoveFromRuns { get ; set; }
+  public DocumentModel.Wordprocessing.MoveFromRun? MoveFromRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.MoveToRun>? MoveToRuns { get ; set; }
+  public DocumentModel.Wordprocessing.MoveToRun? MoveToRun { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.RunConflictInsertion>? RunConflictInsertions { get ; set; }
+  public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion { get ; set; }
   
-  public Collection<DocumentModel.Wordprocessing.RunConflictDeletion>? RunConflictDeletions { get ; set; }
+  public DocumentModel.Wordprocessing.RunConflictDeletion? RunConflictDeletion { get ; set; }
   
 }

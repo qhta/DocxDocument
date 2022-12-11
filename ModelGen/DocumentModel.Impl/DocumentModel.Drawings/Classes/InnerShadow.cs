@@ -11,6 +11,13 @@ public class InnerShadowImpl: ModelElementImpl, InnerShadow
     set => _OpenXmlElement = value;
   }
   
+  public InnerShadowImpl(): base() {}
+  
+  public InnerShadowImpl(DocumentFormat.OpenXml.Drawing.InnerShadow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blur Radius
   /// </summary>

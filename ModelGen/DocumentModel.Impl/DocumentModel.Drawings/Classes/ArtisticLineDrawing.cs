@@ -11,6 +11,13 @@ public class ArtisticLineDrawingImpl: ModelElementImpl, ArtisticLineDrawing
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticLineDrawingImpl(): base() {}
+  
+  public ArtisticLineDrawingImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

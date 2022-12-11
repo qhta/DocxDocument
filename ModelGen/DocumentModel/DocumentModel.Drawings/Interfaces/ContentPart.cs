@@ -28,11 +28,11 @@ public interface ContentPart
   /// <summary>
   /// Transform2D.
   /// </summary>
-  public Transform2D1? Transform2D { get ; set; }
+  public Transform2D? Transform2D { get ; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList4? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

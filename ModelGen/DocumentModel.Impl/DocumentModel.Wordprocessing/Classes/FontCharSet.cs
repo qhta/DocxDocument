@@ -11,6 +11,13 @@ public class FontCharSetImpl: ModelElementImpl, FontCharSet
     set => _OpenXmlElement = value;
   }
   
+  public FontCharSetImpl(): base() {}
+  
+  public FontCharSetImpl(DocumentFormat.OpenXml.Wordprocessing.FontCharSet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// val
   /// </summary>

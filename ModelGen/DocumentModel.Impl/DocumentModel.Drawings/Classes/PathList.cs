@@ -11,6 +11,13 @@ public class PathListImpl: ModelElementImpl, PathList
     set => _OpenXmlElement = value;
   }
   
+  public PathListImpl(): base() {}
+  
+  public PathListImpl(DocumentFormat.OpenXml.Drawing.PathList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Path>? Paths
   {
     get => throw new NotImplementedException("Method not implemented");

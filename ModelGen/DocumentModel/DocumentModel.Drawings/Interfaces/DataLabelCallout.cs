@@ -5,22 +5,22 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface DataLabelCallout
 {
-  public LineReference1? LineReference { get ; set; }
+  public LineReference? LineReference { get ; set; }
   
   public String? LineWidthScale { get ; set; }
   
-  public FillReference2? FillReference { get ; set; }
+  public FillReference? FillReference { get ; set; }
   
-  public EffectReference1? EffectReference { get ; set; }
+  public EffectReference? EffectReference { get ; set; }
   
-  public FontReference2? FontReference { get ; set; }
+  public FontReference? FontReference { get ; set; }
   
-  public ShapeProperties1? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
-  public TextCharacterPropertiesType1? TextCharacterPropertiesType { get ; set; }
+  public TextCharacterPropertiesType? TextCharacterPropertiesType { get ; set; }
   
   public TextBodyProperties? TextBodyProperties { get ; set; }
   
-  public OfficeArtExtensionList5? OfficeArtExtensionList { get ; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
   
 }

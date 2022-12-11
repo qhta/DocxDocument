@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface QuadraticBezierCurveTo
 {
-  public Collection<AdjustPoint2DType>? Points { get ; set; }
+  public AdjustPoint2DType? Point { get ; set; }
   
 }

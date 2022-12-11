@@ -11,6 +11,13 @@ public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
     set => _OpenXmlElement = value;
   }
   
+  public CustomGeometryImpl(): base() {}
+  
+  public CustomGeometryImpl(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Adjust Value List.
   /// </summary>

@@ -11,6 +11,13 @@ public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
     set => _OpenXmlElement = value;
   }
   
+  public ValueAxisScalingImpl(): base() {}
+  
+  public ValueAxisScalingImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// max, this property is only available in Office 2016 and later.
   /// </summary>

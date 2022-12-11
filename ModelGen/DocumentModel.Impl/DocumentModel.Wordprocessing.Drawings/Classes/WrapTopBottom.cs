@@ -11,6 +11,13 @@ public class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
     set => _OpenXmlElement = value;
   }
   
+  public WrapTopBottomImpl(): base() {}
+  
+  public WrapTopBottomImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>

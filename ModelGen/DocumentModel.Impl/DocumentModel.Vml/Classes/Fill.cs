@@ -11,6 +11,13 @@ public class FillImpl: ModelElementImpl, Fill
     set => _OpenXmlElement = value;
   }
   
+  public FillImpl(): base() {}
+  
+  public FillImpl(DocumentFormat.OpenXml.Vml.Fill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

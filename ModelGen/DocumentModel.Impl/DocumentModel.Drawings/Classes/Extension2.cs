@@ -11,6 +11,13 @@ public class Extension2Impl: ModelElementImpl, Extension2
     set => _OpenXmlElement = value;
   }
   
+  public Extension2Impl(): base() {}
+  
+  public Extension2Impl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Extension2 openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// uri, this property is only available in Office 2016 and later.
   /// </summary>

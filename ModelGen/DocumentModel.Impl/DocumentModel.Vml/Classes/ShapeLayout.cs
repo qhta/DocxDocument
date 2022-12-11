@@ -11,6 +11,13 @@ public class ShapeLayoutImpl: ModelElementImpl, ShapeLayout
     set => _OpenXmlElement = value;
   }
   
+  public ShapeLayoutImpl(): base() {}
+  
+  public ShapeLayoutImpl(DocumentFormat.OpenXml.Vml.Office.ShapeLayout openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>

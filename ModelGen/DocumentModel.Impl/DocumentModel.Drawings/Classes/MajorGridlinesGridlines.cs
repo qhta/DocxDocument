@@ -11,13 +11,20 @@ public class MajorGridlinesGridlinesImpl: DocumentModel.Drawings.OpenXmlGridline
     set => _OpenXmlElement = value;
   }
   
-  public override ShapeProperties8? ShapeProperties
+  public MajorGridlinesGridlinesImpl(): base() {}
+  
+  public MajorGridlinesGridlinesImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MajorGridlinesGridlines openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ExtensionList2? ExtensionList
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

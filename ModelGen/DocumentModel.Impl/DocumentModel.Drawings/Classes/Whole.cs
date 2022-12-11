@@ -11,6 +11,13 @@ public class WholeImpl: ModelElementImpl, Whole
     set => _OpenXmlElement = value;
   }
   
+  public WholeImpl(): base() {}
+  
+  public WholeImpl(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Outline.
   /// </summary>

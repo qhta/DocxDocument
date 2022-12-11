@@ -11,7 +11,14 @@ public class BackWallImpl: DocumentModel.Drawings.SurfaceTypeImpl, BackWall
     set => _OpenXmlElement = value;
   }
   
-  public override Byte? Thickness
+  public BackWallImpl(): base() {}
+  
+  public BackWallImpl(DocumentFormat.OpenXml.Drawing.Charts.BackWall openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new Byte? Thickness
   {
     get
     {
@@ -26,39 +33,39 @@ public class BackWallImpl: DocumentModel.Drawings.SurfaceTypeImpl, BackWall
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Byte?)value;
+            item.Val = (System.Byte?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = (System.Byte?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = (System.Byte?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
     }
   }
   
-  public override ShapeProperties5? ShapeProperties
+  public new ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override PictureOptions? PictureOptions
+  public new PictureOptions? PictureOptions
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ExtensionList3? ExtensionList
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

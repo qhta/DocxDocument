@@ -11,6 +11,13 @@ public class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
     set => _OpenXmlElement = value;
   }
   
+  public HorizontalPositionImpl(): base() {}
+  
+  public HorizontalPositionImpl(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Horizontal Position Relative Base
   /// </summary>
@@ -42,20 +49,20 @@ public class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -80,20 +87,20 @@ public class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -118,20 +125,20 @@ public class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

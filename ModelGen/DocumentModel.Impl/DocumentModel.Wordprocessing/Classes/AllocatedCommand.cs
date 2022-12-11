@@ -11,6 +11,13 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
     set => _OpenXmlElement = value;
   }
   
+  public AllocatedCommandImpl(): base() {}
+  
+  public AllocatedCommandImpl(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// argValue
   /// </summary>

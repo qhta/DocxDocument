@@ -11,6 +11,13 @@ public class PatternFillImpl: ModelElementImpl, PatternFill
     set => _OpenXmlElement = value;
   }
   
+  public PatternFillImpl(): base() {}
+  
+  public PatternFillImpl(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preset Pattern
   /// </summary>

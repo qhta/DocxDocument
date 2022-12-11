@@ -11,6 +11,13 @@ public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public ChartExtensionListImpl(): base() {}
+  
+  public ChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DataDisplayOptions16>? DataDisplayOptions16s
   {
     get => throw new NotImplementedException("Method not implemented");

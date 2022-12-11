@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 
 using DocumentFormat.OpenXml.Bibliography;
-
+using DocumentFormat.OpenXml.Validation.Schema;
 using Namotion.Reflection;
 
 namespace ModelGen;
@@ -17,6 +17,9 @@ public class PropInfo: ModelElement
   public bool IsOverriden { get; set; }
   public bool IsNew { get; set;}
 
+  public bool IsConstrained { get; set; }
+
+  internal ParticleConstraint? ParticleConstraint { get; set; }
 
   public PropInfo(string name, Type type) : base(name)
   {

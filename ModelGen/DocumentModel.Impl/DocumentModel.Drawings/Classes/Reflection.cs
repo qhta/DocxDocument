@@ -11,6 +11,13 @@ public class ReflectionImpl: ModelElementImpl, Reflection
     set => _OpenXmlElement = value;
   }
   
+  public ReflectionImpl(): base() {}
+  
+  public ReflectionImpl(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blur Radius
   /// </summary>

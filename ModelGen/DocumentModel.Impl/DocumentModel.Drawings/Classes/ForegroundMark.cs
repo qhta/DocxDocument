@@ -11,6 +11,13 @@ public class ForegroundMarkImpl: ModelElementImpl, ForegroundMark
     set => _OpenXmlElement = value;
   }
   
+  public ForegroundMarkImpl(): base() {}
+  
+  public ForegroundMarkImpl(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// x1, this property is only available in Office 2010 and later.
   /// </summary>

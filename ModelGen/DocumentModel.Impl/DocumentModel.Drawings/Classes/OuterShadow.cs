@@ -11,6 +11,13 @@ public class OuterShadowImpl: ModelElementImpl, OuterShadow
     set => _OpenXmlElement = value;
   }
   
+  public OuterShadowImpl(): base() {}
+  
+  public OuterShadowImpl(DocumentFormat.OpenXml.Drawing.OuterShadow openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blur Radius
   /// </summary>

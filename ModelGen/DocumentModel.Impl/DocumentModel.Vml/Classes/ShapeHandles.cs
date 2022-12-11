@@ -11,7 +11,14 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
     set => _OpenXmlElement = value;
   }
   
-  public Collection<ShapeHandle>? Items
+  public ShapeHandlesImpl(): base() {}
+  
+  public ShapeHandlesImpl(DocumentFormat.OpenXml.Vml.ShapeHandles openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public ShapeHandle? ShapeHandle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

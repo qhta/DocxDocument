@@ -11,6 +11,13 @@ public class RunFontsImpl: ModelElementImpl, RunFonts
     set => _OpenXmlElement = value;
   }
   
+  public RunFontsImpl(): base() {}
+  
+  public RunFontsImpl(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Font Content Type
   /// </summary>

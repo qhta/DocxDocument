@@ -11,6 +11,13 @@ public class ColorChangeImpl: ModelElementImpl, ColorChange
     set => _OpenXmlElement = value;
   }
   
+  public ColorChangeImpl(): base() {}
+  
+  public ColorChangeImpl(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Consider Alpha Values
   /// </summary>

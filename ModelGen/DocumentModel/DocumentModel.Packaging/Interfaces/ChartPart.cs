@@ -13,7 +13,7 @@ public interface ChartPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ChartSpace2? ChartSpace { get ; set; }
+  public DocumentModel.Drawings.ChartSpace? ChartSpace { get ; set; }
   
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart

@@ -11,6 +11,13 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
     set => _OpenXmlElement = value;
   }
   
+  public ColorTransformStyleLabelImpl(): base() {}
+  
+  public ColorTransformStyleLabelImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>
@@ -81,7 +88,7 @@ public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyle
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

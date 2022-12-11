@@ -11,6 +11,13 @@ public class TaskProgressEventInfoImpl: ModelElementImpl, TaskProgressEventInfo
     set => _OpenXmlElement = value;
   }
   
+  public TaskProgressEventInfoImpl(): base() {}
+  
+  public TaskProgressEventInfoImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// percentComplete, this property is only available in Office 2021 and later.
   /// </summary>

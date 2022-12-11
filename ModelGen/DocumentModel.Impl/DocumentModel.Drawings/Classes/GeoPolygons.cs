@@ -11,6 +11,13 @@ public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
     set => _OpenXmlElement = value;
   }
   
+  public GeoPolygonsImpl(): base() {}
+  
+  public GeoPolygonsImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygons openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<GeoPolygon>? Items
   {
     get => throw new NotImplementedException("Method not implemented");

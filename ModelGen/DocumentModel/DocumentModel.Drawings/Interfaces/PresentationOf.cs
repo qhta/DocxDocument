@@ -38,6 +38,6 @@ public interface PresentationOf
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList1? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

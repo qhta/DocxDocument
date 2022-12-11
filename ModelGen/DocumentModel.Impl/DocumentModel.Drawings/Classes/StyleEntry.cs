@@ -11,6 +11,13 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
     set => _OpenXmlElement = value;
   }
   
+  public StyleEntryImpl(): base() {}
+  
+  public StyleEntryImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// mods, this property is only available in Office 2013 and later.
   /// </summary>
@@ -23,7 +30,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// LineReference.
   /// </summary>
-  public virtual LineReference1? LineReference
+  public virtual LineReference? LineReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -47,20 +54,20 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -70,7 +77,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// FillReference.
   /// </summary>
-  public virtual FillReference2? FillReference
+  public virtual FillReference? FillReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -79,7 +86,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// EffectReference.
   /// </summary>
-  public virtual EffectReference1? EffectReference
+  public virtual EffectReference? EffectReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -88,7 +95,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// FontReference.
   /// </summary>
-  public virtual FontReference2? FontReference
+  public virtual FontReference? FontReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -97,7 +104,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public virtual ShapeProperties1? ShapeProperties
+  public virtual ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -106,7 +113,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// TextCharacterPropertiesType.
   /// </summary>
-  public virtual TextCharacterPropertiesType1? TextCharacterPropertiesType
+  public virtual TextCharacterPropertiesType? TextCharacterPropertiesType
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -124,7 +131,7 @@ public class StyleEntryImpl: ModelElementImpl, StyleEntry
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public virtual OfficeArtExtensionList5? OfficeArtExtensionList
+  public virtual OfficeArtExtensionList? OfficeArtExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

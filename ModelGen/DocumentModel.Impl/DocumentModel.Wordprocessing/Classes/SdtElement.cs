@@ -11,6 +11,13 @@ public class SdtElementImpl: ModelElementImpl, SdtElement
     set => _OpenXmlElement = value;
   }
   
+  public SdtElementImpl(): base() {}
+  
+  public SdtElementImpl(DocumentFormat.OpenXml.Wordprocessing.SdtElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the SdtProperties.
   /// </summary>

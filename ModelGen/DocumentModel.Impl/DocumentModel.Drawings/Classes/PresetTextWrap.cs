@@ -11,6 +11,13 @@ public class PresetTextWrapImpl: ModelElementImpl, PresetTextWrap
     set => _OpenXmlElement = value;
   }
   
+  public PresetTextWrapImpl(): base() {}
+  
+  public PresetTextWrapImpl(DocumentFormat.OpenXml.Drawing.PresetTextWrap openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preset Warp Shape
   /// </summary>

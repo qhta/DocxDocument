@@ -11,6 +11,13 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
     set => _OpenXmlElement = value;
   }
   
+  public SlideMasterPartImpl(): base() {}
+  
+  public SlideMasterPartImpl(DocumentFormat.OpenXml.Packaging.SlideMasterPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the SlideMasterPart
   /// </summary>
@@ -20,7 +27,7 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? ContentType
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -147,7 +154,7 @@ public class SlideMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Slide
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

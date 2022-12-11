@@ -11,6 +11,13 @@ public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionL
     set => _OpenXmlElement = value;
   }
   
+  public Bar3DChartExtensionListImpl(): base() {}
+  
+  public Bar3DChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<Bar3DChartExtension>? Bar3DChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

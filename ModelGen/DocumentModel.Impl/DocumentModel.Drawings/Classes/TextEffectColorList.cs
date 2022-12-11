@@ -11,37 +11,44 @@ public class TextEffectColorListImpl: DocumentModel.Drawings.ColorsTypeImpl, Tex
     set => _OpenXmlElement = value;
   }
   
-  public Collection<RgbColorModelPercentage>? RgbColorModelPercentages
+  public TextEffectColorListImpl(): base() {}
+  
+  public TextEffectColorListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public RgbColorModelPercentage? RgbColorModelPercentage
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RgbColorModelHex>? RgbColorModelHexs
+  public RgbColorModelHex? RgbColorModelHex
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<HslColor>? HslColors
+  public HslColor? HslColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SystemColor>? SystemColors
+  public SystemColor? SystemColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SchemeColor>? SchemeColors
+  public SchemeColor? SchemeColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PresetColor>? PresetColors
+  public PresetColor? PresetColor
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -11,7 +11,14 @@ public class AutoCaptionsImpl: ModelElementImpl, AutoCaptions
     set => _OpenXmlElement = value;
   }
   
-  public Collection<AutoCaption>? Items
+  public AutoCaptionsImpl(): base() {}
+  
+  public AutoCaptionsImpl(DocumentFormat.OpenXml.Wordprocessing.AutoCaptions openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public AutoCaption? AutoCaption
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

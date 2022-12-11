@@ -11,6 +11,13 @@ public class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
     set => _OpenXmlElement = value;
   }
   
+  public GroupShapeTypeImpl(): base() {}
+  
+  public GroupShapeTypeImpl(DocumentFormat.OpenXml.Office.Drawing.GroupShapeType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GroupShapeNonVisualProperties.
   /// </summary>
@@ -23,7 +30,7 @@ public class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
   /// <summary>
   /// GroupShapeProperties.
   /// </summary>
-  public virtual GroupShapeProperties1? GroupShapeProperties
+  public virtual GroupShapeProperties? GroupShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

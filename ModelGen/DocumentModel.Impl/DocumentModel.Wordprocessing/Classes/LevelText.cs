@@ -11,6 +11,13 @@ public class LevelTextImpl: ModelElementImpl, LevelText
     set => _OpenXmlElement = value;
   }
   
+  public LevelTextImpl(): base() {}
+  
+  public LevelTextImpl(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Level Text
   /// </summary>

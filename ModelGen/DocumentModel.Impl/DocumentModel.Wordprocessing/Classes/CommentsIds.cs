@@ -11,6 +11,13 @@ public class CommentsIdsImpl: ModelElementImpl, CommentsIds
     set => _OpenXmlElement = value;
   }
   
+  public CommentsIdsImpl(): base() {}
+  
+  public CommentsIdsImpl(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<CommentId>? CommentIds
   {
     get => throw new NotImplementedException("Method not implemented");

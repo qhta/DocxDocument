@@ -11,6 +11,13 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
     set => _OpenXmlElement = value;
   }
   
+  public DocumentProtectionImpl(): base() {}
+  
+  public DocumentProtectionImpl(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>

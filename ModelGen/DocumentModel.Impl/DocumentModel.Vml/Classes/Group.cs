@@ -11,6 +11,13 @@ public class GroupImpl: ModelElementImpl, Group
     set => _OpenXmlElement = value;
   }
   
+  public GroupImpl(): base() {}
+  
+  public GroupImpl(DocumentFormat.OpenXml.Vml.Group openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>
@@ -449,100 +456,127 @@ public class GroupImpl: ModelElementImpl, Group
     }
   }
   
-  public Collection<Group>? Groups
+  public Group? ChildGroup
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shape>? Shapes
+  public Shape? Shape
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Shapetype>? Shapetypes
+  public Shapetype? Shapetype
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Arc>? Arcs
+  public Arc? Arc
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Curve>? Curves
+  public Curve? Curve
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ImageFile>? ImageFiles
+  public ImageFile? ImageFile
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Line>? Lines
+  public Line? Line
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Oval>? Ovals
+  public Oval? Oval
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<PolyLine>? PolyLines
+  public PolyLine? PolyLine
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Rectangle>? Rectangles
+  public Rectangle? Rectangle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<RoundRectangle>? RoundRectangles
+  public RoundRectangle? RoundRectangle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Diagram>? Diagrams
+  public Diagram? Diagram
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Lock>? Locks
+  public Lock? Lock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<ClipPath>? ClipPaths
+  public ClipPath? ClipPath
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DocumentModel.Wordprocessing.Vml.TextWrap>? TextWraps
+  public DocumentModel.Wordprocessing.Vml.TextWrap? TextWrap
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Boolean>? AnchorLocks
+  public Boolean? AnchorLock
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        return item != null;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        if (item != null)
+        {
+          if (value == false)
+            item.Remove();
+        }
+        else
+        {
+          if (value == true)
+          {
+            item = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
   }
   
 }

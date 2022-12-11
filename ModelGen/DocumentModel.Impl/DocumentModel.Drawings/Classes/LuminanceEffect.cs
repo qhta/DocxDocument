@@ -11,6 +11,13 @@ public class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
     set => _OpenXmlElement = value;
   }
   
+  public LuminanceEffectImpl(): base() {}
+  
+  public LuminanceEffectImpl(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Brightness
   /// </summary>

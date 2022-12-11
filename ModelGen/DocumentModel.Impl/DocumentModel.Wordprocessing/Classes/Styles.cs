@@ -11,6 +11,13 @@ public class StylesImpl: ModelElementImpl, Styles
     set => _OpenXmlElement = value;
   }
   
+  public StylesImpl(): base() {}
+  
+  public StylesImpl(DocumentFormat.OpenXml.Wordprocessing.Styles openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Document Default Paragraph and Run Properties.
   /// </summary>

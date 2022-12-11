@@ -11,6 +11,13 @@ public class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public BarChartExtensionListImpl(): base() {}
+  
+  public BarChartExtensionListImpl(DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BarChartExtension>? BarChartExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

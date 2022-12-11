@@ -11,6 +11,13 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
     set => _OpenXmlElement = value;
   }
   
+  public LayoutDefinitionImpl(): base() {}
+  
+  public LayoutDefinitionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// uniqueId
   /// </summary>
@@ -50,7 +57,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
     }
   }
   
-  public Collection<Title1>? Titles
+  public Collection<Title>? Titles
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

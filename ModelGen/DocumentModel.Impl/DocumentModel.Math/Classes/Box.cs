@@ -11,6 +11,13 @@ public class BoxImpl: ModelElementImpl, Box
     set => _OpenXmlElement = value;
   }
   
+  public BoxImpl(): base() {}
+  
+  public BoxImpl(DocumentFormat.OpenXml.Math.Box openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Box Properties.
   /// </summary>

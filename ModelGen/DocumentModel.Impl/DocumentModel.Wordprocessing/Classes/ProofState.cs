@@ -11,6 +11,13 @@ public class ProofStateImpl: ModelElementImpl, ProofState
     set => _OpenXmlElement = value;
   }
   
+  public ProofStateImpl(): base() {}
+  
+  public ProofStateImpl(DocumentFormat.OpenXml.Wordprocessing.ProofState openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Spell Checking State
   /// </summary>

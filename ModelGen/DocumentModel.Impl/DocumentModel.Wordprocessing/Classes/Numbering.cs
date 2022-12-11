@@ -11,6 +11,13 @@ public class NumberingImpl: ModelElementImpl, Numbering
     set => _OpenXmlElement = value;
   }
   
+  public NumberingImpl(): base() {}
+  
+  public NumberingImpl(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<NumberingPictureBullet>? NumberingPictureBullets
   {
     get => throw new NotImplementedException("Method not implemented");
@@ -44,20 +51,20 @@ public class NumberingImpl: ModelElementImpl, Numbering
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

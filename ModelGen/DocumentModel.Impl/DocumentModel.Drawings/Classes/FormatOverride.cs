@@ -11,6 +11,13 @@ public class FormatOverrideImpl: ModelElementImpl, FormatOverride
     set => _OpenXmlElement = value;
   }
   
+  public FormatOverrideImpl(): base() {}
+  
+  public FormatOverrideImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>
@@ -27,7 +34,7 @@ public class FormatOverrideImpl: ModelElementImpl, FormatOverride
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties
+  public ShapeProperties? ShapeProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -36,7 +43,7 @@ public class FormatOverrideImpl: ModelElementImpl, FormatOverride
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList2? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

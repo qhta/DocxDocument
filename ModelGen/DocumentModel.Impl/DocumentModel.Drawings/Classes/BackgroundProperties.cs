@@ -11,6 +11,13 @@ public class BackgroundPropertiesImpl: ModelElementImpl, BackgroundProperties
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundPropertiesImpl(): base() {}
+  
+  public BackgroundPropertiesImpl(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// bwMode, this property is only available in Office 2013 and later.
   /// </summary>

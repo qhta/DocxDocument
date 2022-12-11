@@ -11,6 +11,13 @@ public class ConnectionSiteImpl: ModelElementImpl, ConnectionSite
     set => _OpenXmlElement = value;
   }
   
+  public ConnectionSiteImpl(): base() {}
+  
+  public ConnectionSiteImpl(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Connection Site Angle
   /// </summary>

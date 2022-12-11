@@ -11,6 +11,13 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlPartImpl(): base() {}
+  
+  public OpenXmlPartImpl(DocumentFormat.OpenXml.Packaging.OpenXmlPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the internal part path in the package.
   /// </summary>

@@ -11,6 +11,13 @@ public class ClearImpl: ModelElementImpl, Clear
     set => _OpenXmlElement = value;
   }
   
+  public ClearImpl(): base() {}
+  
+  public ClearImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GeoLocationQueryResults.
   /// </summary>

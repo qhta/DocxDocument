@@ -11,6 +11,13 @@ public class TableWidthTypeImpl: ModelElementImpl, TableWidthType
     set => _OpenXmlElement = value;
   }
   
+  public TableWidthTypeImpl(): base() {}
+  
+  public TableWidthTypeImpl(DocumentFormat.OpenXml.Wordprocessing.TableWidthType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Width Value
   /// </summary>

@@ -11,6 +11,13 @@ public class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticChalkSketchImpl(): base() {}
+  
+  public ArtisticChalkSketchImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

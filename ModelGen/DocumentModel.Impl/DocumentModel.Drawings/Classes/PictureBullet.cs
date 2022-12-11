@@ -11,6 +11,13 @@ public class PictureBulletImpl: ModelElementImpl, PictureBullet
     set => _OpenXmlElement = value;
   }
   
+  public PictureBulletImpl(): base() {}
+  
+  public PictureBulletImpl(DocumentFormat.OpenXml.Drawing.PictureBullet openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blip.
   /// </summary>

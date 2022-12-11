@@ -11,10 +11,17 @@ public class VideoReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRe
     set => _OpenXmlElement = value;
   }
   
+  public VideoReferenceRelationshipImpl(): base() {}
+  
+  public VideoReferenceRelationshipImpl(DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the relationship type for a video reference.
   /// </summary>
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

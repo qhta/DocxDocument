@@ -11,6 +11,13 @@ public class GeoDataPointToEntityQueryResultImpl: ModelElementImpl, GeoDataPoint
     set => _OpenXmlElement = value;
   }
   
+  public GeoDataPointToEntityQueryResultImpl(): base() {}
+  
+  public GeoDataPointToEntityQueryResultImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQueryResult openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// GeoDataPointQuery.
   /// </summary>

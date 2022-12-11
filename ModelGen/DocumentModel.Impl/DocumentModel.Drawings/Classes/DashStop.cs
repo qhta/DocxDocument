@@ -11,6 +11,13 @@ public class DashStopImpl: ModelElementImpl, DashStop
     set => _OpenXmlElement = value;
   }
   
+  public DashStopImpl(): base() {}
+  
+  public DashStopImpl(DocumentFormat.OpenXml.Drawing.DashStop openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Dash Length
   /// </summary>

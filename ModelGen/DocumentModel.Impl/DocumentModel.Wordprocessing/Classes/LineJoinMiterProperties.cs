@@ -11,6 +11,13 @@ public class LineJoinMiterPropertiesImpl: ModelElementImpl, LineJoinMiterPropert
     set => _OpenXmlElement = value;
   }
   
+  public LineJoinMiterPropertiesImpl(): base() {}
+  
+  public LineJoinMiterPropertiesImpl(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// lim, this property is only available in Office 2010 and later.
   /// </summary>

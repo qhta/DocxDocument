@@ -11,6 +11,13 @@ public class NumericPointImpl: ModelElementImpl, NumericPoint
     set => _OpenXmlElement = value;
   }
   
+  public NumericPointImpl(): base() {}
+  
+  public NumericPointImpl(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Index
   /// </summary>
@@ -55,20 +62,20 @@ public class NumericPointImpl: ModelElementImpl, NumericPoint
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

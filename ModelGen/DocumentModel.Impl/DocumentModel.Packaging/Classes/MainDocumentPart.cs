@@ -11,6 +11,13 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
     set => _OpenXmlElement = value;
   }
   
+  public MainDocumentPartImpl(): base() {}
+  
+  public MainDocumentPartImpl(DocumentFormat.OpenXml.Packaging.MainDocumentPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the MainDocumentPart
   /// </summary>
@@ -164,7 +171,7 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

@@ -11,6 +11,13 @@ public class AnchorImpl: ModelElementImpl, Anchor
     set => _OpenXmlElement = value;
   }
   
+  public AnchorImpl(): base() {}
+  
+  public AnchorImpl(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// X-Coordinate in 3D
   /// </summary>

@@ -11,6 +11,13 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
     set => _OpenXmlElement = value;
   }
   
+  public LatentStyleExceptionInfoImpl(): base() {}
+  
+  public LatentStyleExceptionInfoImpl(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Primary Style Name
   /// </summary>

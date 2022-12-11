@@ -11,6 +11,13 @@ public class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFil
     set => _OpenXmlElement = value;
   }
   
+  public EmbeddedWavAudioFileTypeImpl(): base() {}
+  
+  public EmbeddedWavAudioFileTypeImpl(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Embedded Audio File Relationship ID
   /// </summary>

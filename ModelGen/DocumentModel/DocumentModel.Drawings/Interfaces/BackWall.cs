@@ -7,10 +7,10 @@ public interface BackWall
 {
   public Byte? Thickness { get ; set; }
   
-  public ShapeProperties5? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   public PictureOptions? PictureOptions { get ; set; }
   
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

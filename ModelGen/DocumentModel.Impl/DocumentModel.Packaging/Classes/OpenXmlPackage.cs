@@ -11,6 +11,13 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlPackageImpl(): base() {}
+  
+  public OpenXmlPackageImpl(DocumentFormat.OpenXml.Packaging.OpenXmlPackage openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets a value indicating whether this package contains Transitional relationships converted from Strict.
   /// </summary>

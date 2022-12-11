@@ -13,21 +13,21 @@ public interface PivotFormat
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties5? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// Marker.
   /// </summary>
-  public Marker1? Marker { get ; set; }
+  public Marker? Marker { get ; set; }
   
   /// <summary>
   /// Data Label.
   /// </summary>
-  public DataLabel1? DataLabel { get ; set; }
+  public DataLabel? DataLabel { get ; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public ExtensionList3? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

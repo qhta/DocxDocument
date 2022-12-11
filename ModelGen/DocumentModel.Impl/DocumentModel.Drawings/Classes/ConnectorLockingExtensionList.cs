@@ -11,6 +11,13 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
     set => _OpenXmlElement = value;
   }
   
+  public ConnectorLockingExtensionListImpl(): base() {}
+  
+  public ConnectorLockingExtensionListImpl(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<ConnectorLockingExtension>? ConnectorLockingExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

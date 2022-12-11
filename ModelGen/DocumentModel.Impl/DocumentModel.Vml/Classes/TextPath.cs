@@ -11,6 +11,13 @@ public class TextPathImpl: ModelElementImpl, TextPath
     set => _OpenXmlElement = value;
   }
   
+  public TextPathImpl(): base() {}
+  
+  public TextPathImpl(DocumentFormat.OpenXml.Vml.TextPath openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

@@ -11,6 +11,13 @@ public class TextBodyType2Impl: ModelElementImpl, TextBodyType2
     set => _OpenXmlElement = value;
   }
   
+  public TextBodyType2Impl(): base() {}
+  
+  public TextBodyType2Impl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Body Properties.
   /// </summary>

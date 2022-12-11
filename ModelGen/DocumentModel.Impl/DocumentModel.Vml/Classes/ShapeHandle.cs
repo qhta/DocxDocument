@@ -11,6 +11,13 @@ public class ShapeHandleImpl: ModelElementImpl, ShapeHandle
     set => _OpenXmlElement = value;
   }
   
+  public ShapeHandleImpl(): base() {}
+  
+  public ShapeHandleImpl(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Handle Position
   /// </summary>

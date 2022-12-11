@@ -11,6 +11,13 @@ public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
     set => _OpenXmlElement = value;
   }
   
+  public WebExtensionBindingImpl(): base() {}
+  
+  public WebExtensionBindingImpl(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>

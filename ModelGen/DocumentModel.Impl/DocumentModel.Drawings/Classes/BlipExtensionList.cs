@@ -11,6 +11,13 @@ public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
     set => _OpenXmlElement = value;
   }
   
+  public BlipExtensionListImpl(): base() {}
+  
+  public BlipExtensionListImpl(DocumentFormat.OpenXml.Drawing.BlipExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<BlipExtension>? BlipExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

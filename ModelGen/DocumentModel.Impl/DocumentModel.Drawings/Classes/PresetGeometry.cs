@@ -11,12 +11,19 @@ public class PresetGeometryImpl: ModelElementImpl, PresetGeometry
     set => _OpenXmlElement = value;
   }
   
+  public PresetGeometryImpl(): base() {}
+  
+  public PresetGeometryImpl(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Preset Shape
   /// </summary>
-  public ShapeKind2? Preset
+  public ShapeKind? Preset
   {
-    get => (ShapeKind2?)OpenXmlElement?.Preset?.Value;
+    get => (ShapeKind?)OpenXmlElement?.Preset?.Value;
     set
     {
       if (OpenXmlElement != null)

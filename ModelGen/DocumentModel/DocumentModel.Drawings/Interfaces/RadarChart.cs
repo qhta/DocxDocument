@@ -15,11 +15,11 @@ public interface RadarChart
   /// </summary>
   public Boolean? VaryColors { get ; set; }
   
-  public Collection<RadarChartSeries1>? RadarChartSerieses { get ; set; }
+  public Collection<RadarChartSeries>? RadarChartSerieses { get ; set; }
   
-  public DataLabels1? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
-  public Collection<UInt32>? AxisIds { get ; set; }
+  public UInt32? AxisId { get ; set; }
   
   public RadarChartExtensionList? RadarChartExtensionList { get ; set; }
   

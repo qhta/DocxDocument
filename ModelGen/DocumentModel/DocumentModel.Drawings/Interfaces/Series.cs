@@ -33,12 +33,12 @@ public interface Series
   /// <summary>
   /// Text.
   /// </summary>
-  public Text2? Text { get ; set; }
+  public Text? Text { get ; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public ShapeProperties8? ShapeProperties { get ; set; }
+  public ShapeProperties? ShapeProperties { get ; set; }
   
   /// <summary>
   /// ValueColors.
@@ -50,9 +50,9 @@ public interface Series
   /// </summary>
   public ValueColorPositions? ValueColorPositions { get ; set; }
   
-  public Collection<DataPoint1>? DataPoints { get ; set; }
+  public Collection<DataPoint>? DataPoints { get ; set; }
   
-  public DataLabels2? DataLabels { get ; set; }
+  public DataLabels? DataLabels { get ; set; }
   
   public UInt32? DataId { get ; set; }
   
@@ -60,6 +60,6 @@ public interface Series
   
   public Collection<String>? AxisIds { get ; set; }
   
-  public ExtensionList2? ExtensionList { get ; set; }
+  public ExtensionList? ExtensionList { get ; set; }
   
 }

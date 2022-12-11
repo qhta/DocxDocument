@@ -11,6 +11,13 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
     set => _OpenXmlElement = value;
   }
   
+  public RevisionViewImpl(): base() {}
+  
+  public RevisionViewImpl(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Display Visual Indicator Of Markup Area
   /// </summary>

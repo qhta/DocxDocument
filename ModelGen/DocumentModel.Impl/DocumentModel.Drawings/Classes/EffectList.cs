@@ -11,6 +11,13 @@ public class EffectListImpl: ModelElementImpl, EffectList
     set => _OpenXmlElement = value;
   }
   
+  public EffectListImpl(): base() {}
+  
+  public EffectListImpl(DocumentFormat.OpenXml.Drawing.EffectList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Blur Effect.
   /// </summary>

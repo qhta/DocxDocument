@@ -11,6 +11,13 @@ public class PersonImpl: ModelElementImpl, Person
     set => _OpenXmlElement = value;
   }
   
+  public PersonImpl(): base() {}
+  
+  public PersonImpl(DocumentFormat.OpenXml.Office2013.Word.Person openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>

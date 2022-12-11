@@ -8,6 +8,6 @@ public interface FilteredBubbleSeries
   /// <summary>
   /// BubbleChartSeries.
   /// </summary>
-  public BubbleChartSeries1? BubbleChartSeries { get ; set; }
+  public BubbleChartSeries? BubbleChartSeries { get ; set; }
   
 }

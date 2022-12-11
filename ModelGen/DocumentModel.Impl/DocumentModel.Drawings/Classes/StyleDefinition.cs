@@ -11,6 +11,13 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
     set => _OpenXmlElement = value;
   }
   
+  public StyleDefinitionImpl(): base() {}
+  
+  public StyleDefinitionImpl(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Style ID
   /// </summary>
@@ -61,13 +68,13 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<StyleLabel>? StyleLabels
+  public StyleLabel? StyleLabel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList1? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

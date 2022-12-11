@@ -11,6 +11,13 @@ public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
     set => _OpenXmlElement = value;
   }
   
+  public DisplayUnitsImpl(): base() {}
+  
+  public DisplayUnitsImpl(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Double? CustomDisplayUnit
   {
     get
@@ -26,20 +33,20 @@ public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Double?)value;
+            item.Val = (System.Double?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit{ Val = (System.Double?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit{ Val = (System.Double?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -61,20 +68,20 @@ public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit{ Val = (DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit{ Val = (DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -87,7 +94,7 @@ public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

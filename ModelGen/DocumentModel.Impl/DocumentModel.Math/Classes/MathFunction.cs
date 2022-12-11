@@ -11,6 +11,13 @@ public class MathFunctionImpl: ModelElementImpl, MathFunction
     set => _OpenXmlElement = value;
   }
   
+  public MathFunctionImpl(): base() {}
+  
+  public MathFunctionImpl(DocumentFormat.OpenXml.Math.MathFunction openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Function Properties.
   /// </summary>

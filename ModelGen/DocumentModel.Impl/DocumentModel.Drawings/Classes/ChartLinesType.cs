@@ -11,6 +11,13 @@ public class ChartLinesTypeImpl: ModelElementImpl, ChartLinesType
     set => _OpenXmlElement = value;
   }
   
+  public ChartLinesTypeImpl(): base() {}
+  
+  public ChartLinesTypeImpl(DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>

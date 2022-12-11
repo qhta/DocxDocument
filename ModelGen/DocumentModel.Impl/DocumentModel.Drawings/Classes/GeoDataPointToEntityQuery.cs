@@ -11,6 +11,13 @@ public class GeoDataPointToEntityQueryImpl: ModelElementImpl, GeoDataPointToEnti
     set => _OpenXmlElement = value;
   }
   
+  public GeoDataPointToEntityQueryImpl(): base() {}
+  
+  public GeoDataPointToEntityQueryImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQuery openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>

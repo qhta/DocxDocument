@@ -11,10 +11,17 @@ public class FilteredSurfaceSeriesImpl: ModelElementImpl, FilteredSurfaceSeries
     set => _OpenXmlElement = value;
   }
   
+  public FilteredSurfaceSeriesImpl(): base() {}
+  
+  public FilteredSurfaceSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// SurfaceChartSeries.
   /// </summary>
-  public SurfaceChartSeries2? SurfaceChartSeries
+  public SurfaceChartSeries? SurfaceChartSeries
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

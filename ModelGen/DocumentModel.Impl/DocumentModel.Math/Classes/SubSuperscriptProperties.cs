@@ -11,6 +11,13 @@ public class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptPrope
     set => _OpenXmlElement = value;
   }
   
+  public SubSuperscriptPropertiesImpl(): base() {}
+  
+  public SubSuperscriptPropertiesImpl(DocumentFormat.OpenXml.Math.SubSuperscriptProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Align Scripts.
   /// </summary>
@@ -29,20 +36,20 @@ public class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptPrope
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AlignScripts>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AlignScripts>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
+            item.Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.AlignScripts{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.AlignScripts{ Val = (DocumentFormat.OpenXml.Math.BooleanValues?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

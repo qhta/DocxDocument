@@ -11,7 +11,14 @@ public class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotT
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public PivotTablePartImpl(): base() {}
+  
+  public PivotTablePartImpl(DocumentFormat.OpenXml.Packaging.PivotTablePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -21,7 +28,7 @@ public class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotT
     }
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

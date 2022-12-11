@@ -11,7 +11,14 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public TableDefinitionPartImpl(): base() {}
+  
+  public TableDefinitionPartImpl(DocumentFormat.OpenXml.Packaging.TableDefinitionPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -30,7 +37,7 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

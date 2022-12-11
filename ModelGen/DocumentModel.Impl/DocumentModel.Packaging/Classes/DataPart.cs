@@ -11,6 +11,13 @@ public class DataPartImpl: ModelObjectImpl, DataPart
     set => _OpenXmlElement = value;
   }
   
+  public DataPartImpl(): base() {}
+  
+  public DataPartImpl(DocumentFormat.OpenXml.Packaging.DataPart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the internal part path in the package.
   /// </summary>

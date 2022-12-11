@@ -11,6 +11,13 @@ public class AlphaReplaceImpl: ModelElementImpl, AlphaReplace
     set => _OpenXmlElement = value;
   }
   
+  public AlphaReplaceImpl(): base() {}
+  
+  public AlphaReplaceImpl(DocumentFormat.OpenXml.Drawing.AlphaReplace openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Alpha
   /// </summary>

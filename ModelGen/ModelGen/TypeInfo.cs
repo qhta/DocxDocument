@@ -58,6 +58,8 @@ public class TypeInfo : ModelElement
 
   internal IElementMetadata? Metadata { get; set;}
 
+  public ItemsConstraint? ItemsConstraint { get; set; }
+
   public bool UsesEvaluated { get; set; }
   public int AcceptedPropsCount { get; set; }
 

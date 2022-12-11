@@ -11,19 +11,26 @@ public class TxPrTextBodyImpl: DocumentModel.Drawings.TextBodyType2Impl, TxPrTex
     set => _OpenXmlElement = value;
   }
   
-  public override BodyProperties? BodyProperties
+  public TxPrTextBodyImpl(): base() {}
+  
+  public TxPrTextBodyImpl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new BodyProperties? BodyProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override ListStyle? ListStyle
+  public new ListStyle? ListStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Paragraph>? Paragraphs
+  public Paragraph? Paragraph
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

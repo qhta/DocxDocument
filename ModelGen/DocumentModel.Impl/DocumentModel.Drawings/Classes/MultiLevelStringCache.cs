@@ -11,6 +11,13 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
     set => _OpenXmlElement = value;
   }
   
+  public MultiLevelStringCacheImpl(): base() {}
+  
+  public MultiLevelStringCacheImpl(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// PointCount.
   /// </summary>
@@ -29,20 +36,20 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.UInt32?)value;
+            item.Val = (System.UInt32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = (System.UInt32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }
@@ -55,7 +62,7 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ExtensionList3? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

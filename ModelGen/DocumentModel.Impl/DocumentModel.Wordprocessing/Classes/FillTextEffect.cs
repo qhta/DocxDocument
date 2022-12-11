@@ -11,6 +11,13 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
     set => _OpenXmlElement = value;
   }
   
+  public FillTextEffectImpl(): base() {}
+  
+  public FillTextEffectImpl(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// NoFillEmpty.
   /// </summary>
@@ -20,8 +27,8 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
-        return openXmlElement != null;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        return item != null;
       }
       return null;
     }
@@ -29,18 +36,18 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        if (item != null)
         {
           if (value == false)
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value == true)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+            OpenXmlElement.AddChild(item);
           }
         }
       }

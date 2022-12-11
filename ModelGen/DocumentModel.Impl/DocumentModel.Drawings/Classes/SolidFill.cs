@@ -11,6 +11,13 @@ public class SolidFillImpl: ModelElementImpl, SolidFill
     set => _OpenXmlElement = value;
   }
   
+  public SolidFillImpl(): base() {}
+  
+  public SolidFillImpl(DocumentFormat.OpenXml.Drawing.SolidFill openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

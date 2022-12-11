@@ -11,6 +11,13 @@ public class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElemen
     set => _OpenXmlElement = value;
   }
   
+  public OpenXmlTaskUserElementImpl(): base() {}
+  
+  public OpenXmlTaskUserElementImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// userId, this property is only available in Office 2021 and later.
   /// </summary>

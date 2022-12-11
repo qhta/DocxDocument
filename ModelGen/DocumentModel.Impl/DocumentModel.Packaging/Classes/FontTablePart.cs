@@ -11,7 +11,14 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
     set => _OpenXmlElement = value;
   }
   
-  public override String? ContentType
+  public FontTablePartImpl(): base() {}
+  
+  public FontTablePartImpl(DocumentFormat.OpenXml.Packaging.FontTablePart openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new String? ContentType
   {
     get => (String?)OpenXmlElement?.ContentType;
     set
@@ -39,7 +46,7 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

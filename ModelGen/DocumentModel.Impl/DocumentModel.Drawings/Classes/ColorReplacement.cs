@@ -11,6 +11,13 @@ public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
     set => _OpenXmlElement = value;
   }
   
+  public ColorReplacementImpl(): base() {}
+  
+  public ColorReplacementImpl(DocumentFormat.OpenXml.Drawing.ColorReplacement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>

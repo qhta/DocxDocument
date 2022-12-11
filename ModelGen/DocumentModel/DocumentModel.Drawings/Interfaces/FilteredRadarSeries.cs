@@ -8,6 +8,6 @@ public interface FilteredRadarSeries
   /// <summary>
   /// RadarChartSeries.
   /// </summary>
-  public RadarChartSeries2? RadarChartSeries { get ; set; }
+  public RadarChartSeries? RadarChartSeries { get ; set; }
   
 }

@@ -11,6 +11,13 @@ public class ArtisticCementImpl: ModelElementImpl, ArtisticCement
     set => _OpenXmlElement = value;
   }
   
+  public ArtisticCementImpl(): base() {}
+  
+  public ArtisticCementImpl(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>

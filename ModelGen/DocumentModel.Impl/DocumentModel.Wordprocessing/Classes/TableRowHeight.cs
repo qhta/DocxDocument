@@ -11,6 +11,13 @@ public class TableRowHeightImpl: ModelElementImpl, TableRowHeight
     set => _OpenXmlElement = value;
   }
   
+  public TableRowHeightImpl(): base() {}
+  
+  public TableRowHeightImpl(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Table Row Height
   /// </summary>

@@ -11,6 +11,13 @@ public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonV
     set => _OpenXmlElement = value;
   }
   
+  public NonVisualPicturePropertiesExtensionListImpl(): base() {}
+  
+  public NonVisualPicturePropertiesExtensionListImpl(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<NonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

@@ -11,6 +11,13 @@ public class StyleReferenceImpl: ModelElementImpl, StyleReference
     set => _OpenXmlElement = value;
   }
   
+  public StyleReferenceImpl(): base() {}
+  
+  public StyleReferenceImpl(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// idx, this property is only available in Office 2013 and later.
   /// </summary>

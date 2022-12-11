@@ -8,12 +8,12 @@ public interface DisplayUnitsLabel
   /// <summary>
   /// Layout.
   /// </summary>
-  public Layout1? Layout { get ; set; }
+  public Layout? Layout { get ; set; }
   
   /// <summary>
   /// ChartText.
   /// </summary>
-  public ChartText1? ChartText { get ; set; }
+  public ChartText? ChartText { get ; set; }
   
   /// <summary>
   /// ChartShapeProperties.
@@ -23,6 +23,6 @@ public interface DisplayUnitsLabel
   /// <summary>
   /// TextProperties.
   /// </summary>
-  public TextProperties1? TextProperties { get ; set; }
+  public TextProperties? TextProperties { get ; set; }
   
 }

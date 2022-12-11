@@ -11,6 +11,13 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
     set => _OpenXmlElement = value;
   }
   
+  public ColorSchemeImpl(): base() {}
+  
+  public ColorSchemeImpl(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Name
   /// </summary>
@@ -135,7 +142,7 @@ public class ColorSchemeImpl: ModelElementImpl, ColorScheme
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public ExtensionList4? ExtensionList
+  public ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

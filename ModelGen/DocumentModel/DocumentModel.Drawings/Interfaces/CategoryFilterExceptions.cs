@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface CategoryFilterExceptions
 {
-  public Collection<CategoryFilterException>? Items { get ; set; }
+  public CategoryFilterException? CategoryFilterException { get ; set; }
   
 }

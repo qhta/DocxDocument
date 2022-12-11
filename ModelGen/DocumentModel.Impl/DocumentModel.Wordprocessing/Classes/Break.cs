@@ -11,6 +11,13 @@ public class BreakImpl: ModelElementImpl, Break
     set => _OpenXmlElement = value;
   }
   
+  public BreakImpl(): base() {}
+  
+  public BreakImpl(DocumentFormat.OpenXml.Wordprocessing.Break openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Break Type
   /// </summary>

@@ -11,6 +11,13 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
     set => _OpenXmlElement = value;
   }
   
+  public FramePropertiesImpl(): base() {}
+  
+  public FramePropertiesImpl(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Drop Cap Frame
   /// </summary>

@@ -11,6 +11,13 @@ public class RelativeHeightImpl: ModelElementImpl, RelativeHeight
     set => _OpenXmlElement = value;
   }
   
+  public RelativeHeightImpl(): base() {}
+  
+  public RelativeHeightImpl(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
@@ -42,20 +49,20 @@ public class RelativeHeightImpl: ModelElementImpl, RelativeHeight
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Text = value;
+            item.Text = value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight{ Text = value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight{ Text = value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

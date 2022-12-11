@@ -11,10 +11,17 @@ public class MediaReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRe
     set => _OpenXmlElement = value;
   }
   
+  public MediaReferenceRelationshipImpl(): base() {}
+  
+  public MediaReferenceRelationshipImpl(DocumentFormat.OpenXml.Packaging.MediaReferenceRelationship openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Gets the relationship type for a media reference.
   /// </summary>
-  public override String? RelationshipType
+  public new String? RelationshipType
   {
     get => (String?)OpenXmlElement?.RelationshipType;
     set

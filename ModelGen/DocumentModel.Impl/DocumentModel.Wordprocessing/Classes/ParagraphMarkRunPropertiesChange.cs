@@ -11,6 +11,13 @@ public class ParagraphMarkRunPropertiesChangeImpl: ModelElementImpl, ParagraphMa
     set => _OpenXmlElement = value;
   }
   
+  public ParagraphMarkRunPropertiesChangeImpl(): base() {}
+  
+  public ParagraphMarkRunPropertiesChangeImpl(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// author
   /// </summary>

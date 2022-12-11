@@ -11,7 +11,14 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
     set => _OpenXmlElement = value;
   }
   
-  public Collection<TabStop>? TabStops
+  public TabStopListImpl(): base() {}
+  
+  public TabStopListImpl(DocumentFormat.OpenXml.Drawing.TabStopList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public TabStop? TabStop
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

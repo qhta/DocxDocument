@@ -11,6 +11,13 @@ public class ArgumentPropertiesImpl: ModelElementImpl, ArgumentProperties
     set => _OpenXmlElement = value;
   }
   
+  public ArgumentPropertiesImpl(): base() {}
+  
+  public ArgumentPropertiesImpl(DocumentFormat.OpenXml.Math.ArgumentProperties openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Argument Size.
   /// </summary>
@@ -29,20 +36,20 @@ public class ArgumentPropertiesImpl: ModelElementImpl, ArgumentProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
-        if (openXmlElement != null)
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
+        if (item != null)
         {
           if (value is not null)
-            openXmlElement.Val = (System.Int32?)value;
+            item.Val = (System.Int32?)value;
           else
-            openXmlElement.Remove();
+            item.Remove();
         }
         else
         {
           if (value is not null)
           {
-            openXmlElement = new DocumentFormat.OpenXml.Math.ArgumentSize{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(openXmlElement);
+            item = new DocumentFormat.OpenXml.Math.ArgumentSize{ Val = (System.Int32?)value };
+            OpenXmlElement.AddChild(item);
           }
         }
       }

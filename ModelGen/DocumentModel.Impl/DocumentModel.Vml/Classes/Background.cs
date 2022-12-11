@@ -11,6 +11,13 @@ public class BackgroundImpl: ModelElementImpl, Background
     set => _OpenXmlElement = value;
   }
   
+  public BackgroundImpl(): base() {}
+  
+  public BackgroundImpl(DocumentFormat.OpenXml.Vml.Background openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   /// <summary>
   /// Unique Identifier
   /// </summary>

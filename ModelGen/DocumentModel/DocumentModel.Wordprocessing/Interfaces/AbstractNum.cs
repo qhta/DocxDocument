@@ -40,6 +40,6 @@ public interface AbstractNum
   /// </summary>
   public String? NumberingStyleLink { get ; set; }
   
-  public Collection<Level>? Levels { get ; set; }
+  public Level? Level { get ; set; }
   
 }

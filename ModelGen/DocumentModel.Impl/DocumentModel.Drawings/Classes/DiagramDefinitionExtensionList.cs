@@ -11,6 +11,13 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
     set => _OpenXmlElement = value;
   }
   
+  public DiagramDefinitionExtensionListImpl(): base() {}
+  
+  public DiagramDefinitionExtensionListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
   public Collection<DiagramDefinitionExtension>? DiagramDefinitionExtensions
   {
     get => throw new NotImplementedException("Method not implemented");

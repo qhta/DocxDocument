@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Override Color Mapping.
 /// </summary>
-public class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingType1Impl, OverrideColorMapping
+public class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingTypeImpl, OverrideColorMapping
 {
   public new DocumentFormat.OpenXml.Drawing.OverrideColorMapping? OpenXmlElement
   {
@@ -11,7 +11,14 @@ public class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingType1I
     set => _OpenXmlElement = value;
   }
   
-  public override ExtensionList4? ExtensionList
+  public OverrideColorMappingImpl(): base() {}
+  
+  public OverrideColorMappingImpl(DocumentFormat.OpenXml.Drawing.OverrideColorMapping openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new ExtensionList? ExtensionList
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

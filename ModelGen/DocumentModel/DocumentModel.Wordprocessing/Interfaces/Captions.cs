@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Captions
 {
-  public Collection<Caption>? Items { get ; set; }
+  public Caption? Caption { get ; set; }
   
   public AutoCaptions? AutoCaptions { get ; set; }
   
