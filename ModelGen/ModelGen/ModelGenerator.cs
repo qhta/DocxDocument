@@ -2,13 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Framework;
-using DocumentFormat.OpenXml.Packaging;
 
 using DocumentModel;
 
@@ -44,13 +42,13 @@ public class ModelGenerator
     if (!Directory.Exists(IntfOutputPath))
       Directory.CreateDirectory(IntfOutputPath);
     ClearProjectFolder(IntfOutputPath);
-    GenerateProjectFile(IntfProjectName, Path.Combine(IntfOutputPath, IntfProjectName + ".csproj"));
+    GenerateProjectFile(IntfProjectName, System.IO.Path.Combine(IntfOutputPath, IntfProjectName + ".csproj"));
 
 
     if (!Directory.Exists(ImplOutputPath))
       Directory.CreateDirectory(ImplOutputPath);
     ClearProjectFolder(ImplOutputPath);
-    GenerateProjectFile(ImplProjectName, Path.Combine(ImplOutputPath, ImplProjectName + ".csproj"));
+    GenerateProjectFile(ImplProjectName, System.IO.Path.Combine(ImplOutputPath, ImplProjectName + ".csproj"));
   }
 
   private void ClearProjectFolder(string projectPath)
@@ -345,9 +343,7 @@ public class ModelGenerator
       str += $"{propTypeName}? {prop.Name}";
       writer.WriteLine(str);
       string? fieldName = null;
-      FullTypeName? propItemTypeName = null;
-      FullTypeName? origItemTypeName = null;
-      FullTypeName? castItemTypeName = null;
+      TypeInfo? propItemType = null;
       writer.WriteLine($"{{");
       if (targetPropType.TypeKind == TypeKind.Enum)
         GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
@@ -357,26 +353,21 @@ public class ModelGenerator
           GenerateValueTypeAccessors(prop, targetPropType, propTypeName, writer);
         else if (targetPropType.Name.StartsWith("Collection`") && (prop.Owner as TypeInfo)?.Name=="Rsids")
         {
-          propItemTypeName = targetPropTypeName.ArgNames?.FirstOrDefault();
-          if (propItemTypeName != null)
+          propItemType = targetPropType.GetGenericArgTypes()?.FirstOrDefault();
+          if (propItemType != null)
           {
-            fieldName = "_Items";
-            origItemTypeName = targetPropType.GetFullName(true).ArgNames?.FirstOrDefault();
-            if (origItemTypeName != null)
-            {
-              castItemTypeName = new FullTypeName("string");
-              GenerateCollectionTypeAccessors(prop, propItemTypeName, origItemTypeName, castItemTypeName, writer);
-            }
-            else
-              GeneratePropAccessorsNotImplemented(writer);
+            fieldName = "_"+prop.Name;
+            GenerateCollectionTypeAccessors(prop, propItemType, writer);
           }
+          else
+            GeneratePropAccessorsNotImplemented(writer);
         }
         else
           GeneratePropAccessorsNotImplemented(writer);
       }
       writer.WriteLine($"}}");
-      if (fieldName != null && propItemTypeName != null)
-        GenerateCollectionField(fieldName, propItemTypeName, origItemTypeName, castItemTypeName, writer);
+      if (fieldName != null && propItemType != null)
+        GenerateCollectionField(fieldName, propItemType, writer);
     }
     writer.WriteLine();
     GeneratedPropertiesCount += 1;
@@ -553,18 +544,11 @@ public class ModelGenerator
   }
 
   private void GenerateCollectionTypeAccessors(PropInfo prop, 
-    FullTypeName propItemTypeName, FullTypeName origItemTypeName, FullTypeName castItemTypeName, IndentedTextWriter writer)
-  {
-    //var propItemTypeName = propItemType.GetFullName();
-    //var targetItemTypeName = propItemType.GetFullName(true);
-    GenerateIncludedElementCollectionAccessors(prop, propItemTypeName, origItemTypeName, castItemTypeName, writer);
-  }
-  private void GenerateIncludedElementCollectionAccessors(PropInfo prop,
-    string propItemTypeName,
-    string origItemTypeName,
-    string castItemTypeName,
+    TypeInfo propItemType,
     IndentedTextWriter writer)
   {
+    string propItemTypeName = propItemType.GetFullName();
+    string origItemTypeName = propItemType.GetFullName(true);
     var propName = prop.Name;
     var fieldName = "_" + propName;
     writer.WriteLine($"  get");
@@ -574,8 +558,14 @@ public class ModelGenerator
     writer.WriteLine($"      if (OpenXmlElement != null)");
     writer.WriteLine($"      {{");
     writer.WriteLine($"        var items = OpenXmlElement.Elements<{origItemTypeName}>()");
-    //writer.WriteLine($"          .Where(item => item.Val?.Value != null)");
-    writer.WriteLine($"          .Select(item => new {propItemTypeName}(item.Val?.Value??\"0000\")).ToList();");
+    if (propItemTypeName=="HexWord")
+      writer.WriteLine($"          .Select(item => new {propItemTypeName}(item.Val?.Value ?? \"0000\")).ToList();");
+    else if (propItemTypeName.Equals("string", StringComparison.InvariantCultureIgnoreCase))
+      writer.WriteLine($"          .Select(item => item.Text).ToList();");
+    else if (ModelData.SimpleTypeNames.Contains(propItemTypeName))
+      writer.WriteLine($"          .Select(item => item.Val?.Value ?? default).ToList();");
+    else
+      writer.WriteLine($"          .Select(item => new {propItemTypeName}Impl(item)).ToList();");
     writer.WriteLine($"        {fieldName} = new ObservableCollection<{propItemTypeName}>(items);");
     writer.WriteLine($"      }}");
     writer.WriteLine($"      else");
@@ -586,13 +576,38 @@ public class ModelGenerator
     writer.WriteLine($"  }}");
     writer.WriteLine($"  set");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if (value != null && value != _Items && OpenXmlElement!=null)");
+    writer.WriteLine($"    if (value != null && value != {fieldName} && OpenXmlElement!=null)");
     writer.WriteLine($"    {{");
     writer.WriteLine($"      OpenXmlElement.RemoveAllChildren<{origItemTypeName}>();");
     writer.WriteLine($"      foreach (var val in value)");
     writer.WriteLine($"      {{");
-    writer.WriteLine($"        var item = new {origItemTypeName}{{ Val = ({castItemTypeName}?)val }};");
-    writer.WriteLine($"        OpenXmlElement.AddChild(item);");
+    if (propItemTypeName == "HexWord")
+    {
+      writer.WriteLine($"        var item = new {origItemTypeName}{{ Val = (string?)val }};");
+      writer.WriteLine($"        OpenXmlElement.AddChild(item);");
+    }
+    else if (propItemTypeName.Equals("string", StringComparison.InvariantCultureIgnoreCase))
+    {
+      writer.WriteLine($"      if (val is string str)");
+      writer.WriteLine($"      {{");
+      writer.WriteLine($"        var item = new {origItemTypeName}{{ Text = str }};");
+      writer.WriteLine($"        OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"      }};");
+    }
+    else if (ModelData.SimpleTypeNames.Contains(propItemTypeName))
+    {
+      writer.WriteLine($"        var item = new {origItemTypeName}{{ Val = val }};");
+      writer.WriteLine($"        OpenXmlElement.AddChild(item);");
+    }
+    else
+    {
+      writer.WriteLine($"      if (val is {propItemTypeName}Impl valImpl)");
+      writer.WriteLine($"      {{");
+      writer.WriteLine($"        var item = valImpl.OpenXmlElement;");
+      writer.WriteLine($"        if (item != null)");
+      writer.WriteLine($"          OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"      }};");
+    }
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");
     writer.WriteLine($"    if (value is ObservableCollection<{propItemTypeName}> observableCollection)");
@@ -606,11 +621,11 @@ public class ModelGenerator
   }
 
   private void GenerateCollectionField(string fieldName, 
-    FullTypeName propItemTypeName,
-    FullTypeName origItemTypeName,
-    FullTypeName castItemTypeName,
+    TypeInfo propItemType,
     IndentedTextWriter writer)
   {
+    string propItemTypeName = propItemType.GetFullName();
+    string origItemTypeName = propItemType.GetFullName(true);
     writer.WriteLine($"private ObservableCollection<{propItemTypeName}>? {fieldName};");
     writer.WriteLine();
     writer.WriteLine($"private void {fieldName}_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)");
@@ -625,17 +640,72 @@ public class ModelGenerator
     writer.WriteLine($"      case NotifyCollectionChangedAction.Add:");
     writer.WriteLine($"        foreach (var val in args.NewItems)");
     writer.WriteLine($"        {{");
-    writer.WriteLine($"          var newItem = new {origItemTypeName} {{ Val = ({castItemTypeName}?)val }};");
-    writer.WriteLine($"          OpenXmlElement.AddChild(newItem);");
+    if (propItemTypeName == "HexWord")
+    {
+      writer.WriteLine($"          var newItem = new {origItemTypeName} {{ Val = (string?)val }};");
+      writer.WriteLine($"          OpenXmlElement.AddChild(newItem);");
+    }
+    else if (propItemTypeName.Equals("string", StringComparison.InvariantCultureIgnoreCase))
+    {
+      writer.WriteLine($"        if (val is string str)");
+      writer.WriteLine($"        {{");
+      writer.WriteLine($"        var newItem = new {origItemTypeName} {{ Text = val }};");
+      writer.WriteLine($"          OpenXmlElement.AddChild(newItem);");
+      writer.WriteLine($"        }};");
+    }
+    else if (ModelData.SimpleTypeNames.Contains(propItemTypeName))
+    {
+      writer.WriteLine($"          var newItem = new {origItemTypeName} {{ Val = val }};");
+      writer.WriteLine($"          OpenXmlElement.AddChild(newItem);");
+    }
+    else
+    {
+      writer.WriteLine($"        if (val is {propItemTypeName}Impl valImpl)");
+      writer.WriteLine($"        {{");
+      writer.WriteLine($"          var item = valImpl.OpenXmlElement;");
+      writer.WriteLine($"          if (item != null)");
+      writer.WriteLine($"            OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"        }};");
+    }
     writer.WriteLine($"        }}");
     writer.WriteLine($"        break;");
     writer.WriteLine($"      case NotifyCollectionChangedAction.Remove:");
     writer.WriteLine($"        foreach (var val in args.OldItems)");
     writer.WriteLine($"        {{");
-    writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
-    writer.WriteLine($"                        .FirstOrDefault(anItem => anItem.Val == ({castItemTypeName}?)val);");
-    writer.WriteLine($"          if (oldItem != null)");
-    writer.WriteLine($"            oldItem.Remove();");
+    if (propItemTypeName == "HexWord")
+    {
+      writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
+      writer.WriteLine($"                        .FirstOrDefault(anItem => anItem.Val == (string?)val);");
+      writer.WriteLine($"          if (oldItem != null)");
+      writer.WriteLine($"            oldItem.Remove();");
+    }
+    else if (propItemTypeName.Equals("string",StringComparison.InvariantCultureIgnoreCase))
+    {
+      writer.WriteLine($"      if (val is string str)");
+      writer.WriteLine($"      {{");
+      writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
+      writer.WriteLine($"                        .FirstOrDefault(anItem => anItem.Text == str);");
+      writer.WriteLine($"          if (oldItem != null)");
+      writer.WriteLine($"            oldItem.Remove();");
+      writer.WriteLine($"      }};");
+    }
+    else if (ModelData.SimpleTypeNames.Contains(propItemTypeName))
+    {
+      writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
+      writer.WriteLine($"                        .FirstOrDefault(anItem => anItem.Val == val);");
+      writer.WriteLine($"          if (oldItem != null)");
+      writer.WriteLine($"            oldItem.Remove();");
+    }
+    else
+    {
+      writer.WriteLine($"      if (val is {propItemTypeName}Impl valImpl)");
+      writer.WriteLine($"      {{");
+      writer.WriteLine($"          var oldItem = OpenXmlElement.Elements<{origItemTypeName}>()");
+      writer.WriteLine($"                        .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);");
+      writer.WriteLine($"          if (oldItem != null)");
+      writer.WriteLine($"            oldItem.Remove();");
+      writer.WriteLine($"      }};");
+    }
     writer.WriteLine($"        }}");
     writer.WriteLine($"        break;");
     writer.WriteLine($"      default:");
