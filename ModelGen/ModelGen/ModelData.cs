@@ -450,5 +450,23 @@ public static class ModelData
     { typeof(System.Double), "double" },
     { typeof(System.Decimal), "decimal" },
   };
-  #endregion  
+
+  public static string[] SimpleTypeNames { get; } = new string[]
+  {
+    nameof(System.String),
+    nameof(System.Boolean),
+    nameof(System.Int32),
+    nameof(System.UInt32),
+    nameof(System.Int16),
+    nameof(System.UInt16),
+    nameof(System.Int64),
+    nameof(System.UInt64),
+    nameof(System.Byte),
+    nameof(System.SByte),
+    nameof(System.Single),
+    nameof(System.Double),
+    nameof(System.Decimal),
+  };
+
+  #endregion
 }

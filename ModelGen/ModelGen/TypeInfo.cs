@@ -17,6 +17,7 @@ public class TypeInfo : ModelElement
         NamespaceIndex = TypeManager.RegisterNamespace(value);
     }
   }
+  // Tu jest błąd. Zbyt szybko nastepuje konwersja przestrzeni nazw elementów
   public int NamespaceIndex { get; private set; }
 
   public string OriginalNamespace => Type.Namespace ?? "";
@@ -105,7 +106,7 @@ public class TypeInfo : ModelElement
     return aNamespace;
   }
 
-  public FullTypeName GetFullName(bool original = false/*, bool asInterface = false, bool withNamespace = true*/)
+  public FullTypeName GetFullName(bool original = false)
   {
     string aName;
     string aNamespace;

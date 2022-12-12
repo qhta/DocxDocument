@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class DataBindingImpl: ModelElementImpl, DataBinding
 {
-  public DocumentFormat.OpenXml.Office2013.Word.DataBinding? OpenXmlElement
+  public DocumentFormat.OpenXml.Wordprocessing.DataBinding? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Word.DataBinding?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Wordprocessing.DataBinding?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public DataBindingImpl(): base() {}
   
-  public DataBindingImpl(DocumentFormat.OpenXml.Office2013.Word.DataBinding openXmlElement): base(openXmlElement)
+  public DataBindingImpl(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
