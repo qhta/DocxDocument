@@ -8,7 +8,7 @@ public interface FootnoteEndnoteType
   /// <summary>
   /// Footnote/Endnote Type
   /// </summary>
-  public FootnoteEndnoteKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteKind? Type { get ; set; }
   
   /// <summary>
   /// Footnote/Endnote ID

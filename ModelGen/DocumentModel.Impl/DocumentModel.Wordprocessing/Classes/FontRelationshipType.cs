@@ -23,7 +23,7 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public String? FontKey
   {
-    get => (String?)OpenXmlElement?.FontKey?.Value;
+    get => (System.String?)OpenXmlElement?.FontKey?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public Boolean? Subsetted
   {
-    get => (Boolean?)OpenXmlElement?.Subsetted?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Subsetted?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

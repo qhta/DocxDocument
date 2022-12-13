@@ -8,7 +8,7 @@ public interface CompatibilitySetting
   /// <summary>
   /// name
   /// </summary>
-  public CompatSettingNameKind? Name { get ; set; }
+  public DocumentModel.Wordprocessing.CompatSettingNameKind? Name { get ; set; }
   
   /// <summary>
   /// uri

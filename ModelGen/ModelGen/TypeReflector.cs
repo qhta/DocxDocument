@@ -7,6 +7,7 @@ using Namotion.Reflection;
 using System.Diagnostics;
 using System.Reflection;
 using DocumentFormat.OpenXml.Validation.Schema;
+using System.CodeDom.Compiler;
 
 namespace ModelGen;
 
@@ -71,7 +72,7 @@ public static class TypeReflector
 
   public static void WaitDone()
   {
-    if (ReflectionTasks is not null)
+    if (ReflectionTasks is not null && TypeQueue.Count>0)
       Task.WaitAll(ReflectionTasks);
   }
 
@@ -181,9 +182,9 @@ public static class TypeReflector
     }
 
     TypeInspector.InspectType(typeInfo);
-    
+
     if (typeInfo.ItemsConstraint != null)
-       IncludeProperties(typeInfo, typeInfo.ItemsConstraint);
+      IncludeProperties(typeInfo, typeInfo.ItemsConstraint);
     /*
     else
     {
@@ -286,13 +287,24 @@ public static class TypeReflector
     }
     //return null;
   }
-  
-public static string MultipleItemsPropName(string aName)
+
+  public static string MultipleItemsPropName(string aName)
   {
     if (aName.EndsWith('y'))
       return aName.Substring(0, aName.Length - 1) + "ies";
     else if (aName.EndsWith('s'))
       return aName + "es";
     return aName + "s";
+  }
+  private static bool GenDocumentationComments(TypeInfo typeInfo)
+  {
+    var documentation = typeInfo.Type.GetXmlDocsElement();
+    if (documentation != null)
+    {
+      var summary = DocumentationReader.GetSummaryFirstPara(documentation);
+      typeInfo.Summary = summary;
+      return true;
+    }
+    return false;
   }
 }

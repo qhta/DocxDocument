@@ -1,0 +1,51 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Accent 3.
+/// </summary>
+public class Accent3ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent3Color
+{
+  public new DocumentFormat.OpenXml.Drawing.Accent3Color? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Accent3Color?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public Accent3ColorImpl(): base() {}
+  
+  public Accent3ColorImpl(DocumentFormat.OpenXml.Drawing.Accent3Color openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public new DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public new DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public new DocumentModel.Drawings.HslColor? HslColor
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public new DocumentModel.Drawings.SystemColor? SystemColor
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  public new DocumentModel.Drawings.PresetColor? PresetColor
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

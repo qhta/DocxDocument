@@ -23,7 +23,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Left
   {
-    get => (String?)OpenXmlElement?.Left?.Value;
+    get => (System.String?)OpenXmlElement?.Left?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Start
   {
-    get => (String?)OpenXmlElement?.Start?.Value;
+    get => (System.String?)OpenXmlElement?.Start?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? LeftChars
   {
-    get => (Int32?)OpenXmlElement?.LeftChars?.Value;
+    get => (System.Int32?)OpenXmlElement?.LeftChars?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? StartCharacters
   {
-    get => (Int32?)OpenXmlElement?.StartCharacters?.Value;
+    get => (System.Int32?)OpenXmlElement?.StartCharacters?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Right
   {
-    get => (String?)OpenXmlElement?.Right?.Value;
+    get => (System.String?)OpenXmlElement?.Right?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? End
   {
-    get => (String?)OpenXmlElement?.End?.Value;
+    get => (System.String?)OpenXmlElement?.End?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? RightChars
   {
-    get => (Int32?)OpenXmlElement?.RightChars?.Value;
+    get => (System.Int32?)OpenXmlElement?.RightChars?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -114,7 +114,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? EndCharacters
   {
-    get => (Int32?)OpenXmlElement?.EndCharacters?.Value;
+    get => (System.Int32?)OpenXmlElement?.EndCharacters?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -127,7 +127,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? Hanging
   {
-    get => (String?)OpenXmlElement?.Hanging?.Value;
+    get => (System.String?)OpenXmlElement?.Hanging?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -140,7 +140,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? HangingChars
   {
-    get => (Int32?)OpenXmlElement?.HangingChars?.Value;
+    get => (System.Int32?)OpenXmlElement?.HangingChars?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -153,7 +153,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public String? FirstLine
   {
-    get => (String?)OpenXmlElement?.FirstLine?.Value;
+    get => (System.String?)OpenXmlElement?.FirstLine?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -166,7 +166,7 @@ public class IndentationImpl: ModelElementImpl, Indentation
   /// </summary>
   public Int32? FirstLineChars
   {
-    get => (Int32?)OpenXmlElement?.FirstLineChars?.Value;
+    get => (System.Int32?)OpenXmlElement?.FirstLineChars?.Value;
     set
     {
       if (OpenXmlElement != null)

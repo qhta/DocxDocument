@@ -8,11 +8,11 @@ public interface Break
   /// <summary>
   /// Break Type
   /// </summary>
-  public BreakKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.BreakKind? Type { get ; set; }
   
   /// <summary>
   /// Restart Location For Text Wrapping Break
   /// </summary>
-  public BreakTextRestartLocationKind? Clear { get ; set; }
+  public DocumentModel.Wordprocessing.BreakTextRestartLocationKind? Clear { get ; set; }
   
 }

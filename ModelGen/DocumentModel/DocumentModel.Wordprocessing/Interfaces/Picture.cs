@@ -8,7 +8,7 @@ public interface Picture
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinaryValue? AnchorId { get ; set; }
+  public DocumentModel.HexBinaryValue? AnchorId { get ; set; }
   
   public DocumentModel.Vml.Group? Group { get ; set; }
   
@@ -34,8 +34,8 @@ public interface Picture
   
   public DocumentModel.Vml.OleObject? OleObject { get ; set; }
   
-  public RelationshipType? MovieReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? MovieReference { get ; set; }
   
-  public Control? Control { get ; set; }
+  public DocumentModel.Wordprocessing.Control? Control { get ; set; }
   
 }

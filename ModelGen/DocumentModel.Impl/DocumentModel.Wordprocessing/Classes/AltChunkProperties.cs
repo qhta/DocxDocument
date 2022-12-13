@@ -27,8 +27,8 @@ public class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
+        return item != null;
       }
       return null;
     }
@@ -39,16 +39,14 @@ public class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MatchSource{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.MatchSource();
             OpenXmlElement.AddChild(item);
           }
         }

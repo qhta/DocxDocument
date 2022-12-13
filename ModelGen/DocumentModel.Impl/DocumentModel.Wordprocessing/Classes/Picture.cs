@@ -21,7 +21,7 @@ public class PictureImpl: ModelElementImpl, Picture
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinaryValue? AnchorId
+  public DocumentModel.HexBinaryValue? AnchorId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -99,13 +99,13 @@ public class PictureImpl: ModelElementImpl, Picture
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public RelationshipType? MovieReference
+  public DocumentModel.Wordprocessing.RelationshipType? MovieReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Control? Control
+  public DocumentModel.Wordprocessing.Control? Control
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

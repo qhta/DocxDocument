@@ -23,7 +23,7 @@ public class FontCharSetImpl: ModelElementImpl, FontCharSet
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class FontCharSetImpl: ModelElementImpl, FontCharSet
   /// <summary>
   /// characterSet
   /// </summary>
-  public StrictCharacterSet? StrictCharacterSet
+  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet
   {
-    get => (StrictCharacterSet?)OpenXmlElement?.StrictCharacterSet?.Value;
+    get => (DocumentModel.Wordprocessing.StrictCharacterSet?)OpenXmlElement?.StrictCharacterSet?.Value;
     set
     {
       if (OpenXmlElement != null)

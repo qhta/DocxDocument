@@ -21,9 +21,9 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// <summary>
   /// edGrp
   /// </summary>
-  public RangePermissionEditingGroupKind? EditorGroup
+  public DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? EditorGroup
   {
-    get => (RangePermissionEditingGroupKind?)OpenXmlElement?.EditorGroup?.Value;
+    get => (DocumentModel.Wordprocessing.RangePermissionEditingGroupKind?)OpenXmlElement?.EditorGroup?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public String? Ed
   {
-    get => (String?)OpenXmlElement?.Ed?.Value;
+    get => (System.String?)OpenXmlElement?.Ed?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? ColumnFirst
   {
-    get => (Int32?)OpenXmlElement?.ColumnFirst?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnFirst?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? ColumnLast
   {
-    get => (Int32?)OpenXmlElement?.ColumnLast?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnLast?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -86,9 +86,9 @@ public class PermStartImpl: ModelElementImpl, PermStart
   /// <summary>
   /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml
   {
-    get => (DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
+    get => (DocumentModel.Wordprocessing.DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
     set
     {
       if (OpenXmlElement != null)

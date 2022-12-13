@@ -18,7 +18,7 @@ public interface Frame
   /// <summary>
   /// Source File for Frame.
   /// </summary>
-  public RelationshipType? SourceFileReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? SourceFileReference { get ; set; }
   
   /// <summary>
   /// Left and Right Margin for Frame.
@@ -33,16 +33,16 @@ public interface Frame
   /// <summary>
   /// Scrollbar Display Option.
   /// </summary>
-  public FrameScrollbarVisibilityKind? ScrollbarVisibility { get ; set; }
+  public DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind? ScrollbarVisibility { get ; set; }
   
   /// <summary>
   /// Frame Cannot Be Resized.
   /// </summary>
-  public OnOffOnlyKind? NoResizeAllowed { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoResizeAllowed { get ; set; }
   
   /// <summary>
   /// Maintain Link to Existing File.
   /// </summary>
-  public OnOffOnlyKind? LinkedToFile { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? LinkedToFile { get ; set; }
   
 }

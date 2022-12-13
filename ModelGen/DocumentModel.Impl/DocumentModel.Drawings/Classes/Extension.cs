@@ -1,0 +1,34 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Extension.
+/// </summary>
+public class ExtensionImpl: ModelElementImpl, Extension
+{
+  public DocumentFormat.OpenXml.Drawing.Extension? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.Extension?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public ExtensionImpl(): base() {}
+  
+  public ExtensionImpl(DocumentFormat.OpenXml.Drawing.Extension openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// URI
+  /// </summary>
+  public String? Uri
+  {
+    get => (System.String?)OpenXmlElement?.Uri?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Uri = (System.String?)value;
+    }
+  }
+  
+}

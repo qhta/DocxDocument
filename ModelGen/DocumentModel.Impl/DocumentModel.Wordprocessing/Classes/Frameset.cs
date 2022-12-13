@@ -23,34 +23,22 @@ public class FramesetImpl: ModelElementImpl, Frameset
   /// </summary>
   public String? FrameSize
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.FrameSize?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
-        if (item != null)
+        if (OpenXmlElement.FrameSize != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.FrameSize.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.FrameSize = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FrameSize{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FrameSize = new DocumentFormat.OpenXml.Wordprocessing.FrameSize{ Val = (System.String?)value };
         }
       }
     }
@@ -59,7 +47,7 @@ public class FramesetImpl: ModelElementImpl, Frameset
   /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
-  public FramesetSplitbar? FramesetSplitbar
+  public DocumentModel.Wordprocessing.FramesetSplitbar? FramesetSplitbar
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -68,48 +56,36 @@ public class FramesetImpl: ModelElementImpl, Frameset
   /// <summary>
   /// Frameset Layout.
   /// </summary>
-  public FrameLayoutKind? FrameLayout
+  public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
-        return (FrameLayoutKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.FrameLayoutKind?)OpenXmlElement?.FrameLayout?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
-        if (item != null)
+        if (OpenXmlElement.FrameLayout != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues?)value;
+            OpenXmlElement.FrameLayout.Val = (DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.FrameLayout = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FrameLayout{ Val = (DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FrameLayout = new DocumentFormat.OpenXml.Wordprocessing.FrameLayout{ Val = (DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues?)value };
         }
       }
     }
   }
   
-  public Frameset? ChildFrameset
+  public DocumentModel.Wordprocessing.Frameset? ChildFrameset
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Frame? Frame
+  public DocumentModel.Wordprocessing.Frame? Frame
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -85,7 +85,7 @@ public class ModelCreator
     ModelDisplay.WriteLine($"Scanning time is {ts}");
     ModelDisplay.WriteLine($"Directly {foundTypesCount} types found, {approvedTypesCount} approved");
     var allTypesCount = TypeManager.AllTypes.Count();
-    var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
+    var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).ToArray().Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
     ModelDisplay.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
     ModelDisplay.WriteLine($"Accepted {acceptedTypesCount} types");

@@ -21,9 +21,9 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
   /// <summary>
   /// drawAspect
   /// </summary>
-  public ObjectDrawAspect? drawAspect
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect
   {
-    get => (ObjectDrawAspect?)OpenXmlElement?.drawAspect?.Value;
+    get => (DocumentModel.Wordprocessing.ObjectDrawAspect?)OpenXmlElement?.drawAspect?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
   /// </summary>
   public String? ProgId
   {
-    get => (String?)OpenXmlElement?.ProgId?.Value;
+    get => (System.String?)OpenXmlElement?.ProgId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
   /// </summary>
   public String? ShapeId
   {
-    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    get => (System.String?)OpenXmlElement?.ShapeId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
   /// </summary>
   public String? FieldCodes
   {
-    get => (String?)OpenXmlElement?.FieldCodes?.Value;
+    get => (System.String?)OpenXmlElement?.FieldCodes?.Value;
     set
     {
       if (OpenXmlElement != null)

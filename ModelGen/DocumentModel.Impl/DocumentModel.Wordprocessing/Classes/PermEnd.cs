@@ -23,7 +23,7 @@ public class PermEndImpl: ModelElementImpl, PermEnd
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class PermEndImpl: ModelElementImpl, PermEnd
   /// <summary>
   /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml
   {
-    get => (DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
+    get => (DocumentModel.Wordprocessing.DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
     set
     {
       if (OpenXmlElement != null)

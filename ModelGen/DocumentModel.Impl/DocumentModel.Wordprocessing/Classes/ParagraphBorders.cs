@@ -21,7 +21,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public BorderType? TopBorder
+  public DocumentModel.Wordprocessing.BorderType? TopBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Left Paragraph Border.
   /// </summary>
-  public BorderType? LeftBorder
+  public DocumentModel.Wordprocessing.BorderType? LeftBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BottomBorder
+  public DocumentModel.Wordprocessing.BorderType? BottomBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Right Paragraph Border.
   /// </summary>
-  public BorderType? RightBorder
+  public DocumentModel.Wordprocessing.BorderType? RightBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BetweenBorder
+  public DocumentModel.Wordprocessing.BorderType? BetweenBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
   /// <summary>
   /// Paragraph Border Between Facing Pages.
   /// </summary>
-  public BorderType? BarBorder
+  public DocumentModel.Wordprocessing.BorderType? BarBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

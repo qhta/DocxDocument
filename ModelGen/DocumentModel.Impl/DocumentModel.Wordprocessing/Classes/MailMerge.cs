@@ -21,36 +21,24 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Source Document Type.
   /// </summary>
-  public MailMergeDocumentKind? MainDocumentType
+  public DocumentModel.Wordprocessing.MailMergeDocumentKind? MainDocumentType
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MainDocumentType>();
-        return (MailMergeDocumentKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MailMergeDocumentKind?)OpenXmlElement?.MainDocumentType?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MainDocumentType>();
-        if (item != null)
+        if (OpenXmlElement.MainDocumentType != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues?)value;
+            OpenXmlElement.MainDocumentType.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.MainDocumentType = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MainDocumentType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MainDocumentType = new DocumentFormat.OpenXml.Wordprocessing.MainDocumentType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues?)value };
         }
       }
     }
@@ -65,8 +53,8 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkToQuery>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkToQuery>();
+        return item != null;
       }
       return null;
     }
@@ -77,16 +65,14 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkToQuery>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LinkToQuery{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.LinkToQuery();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -97,36 +83,24 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Data Source Type.
   /// </summary>
-  public MailMergeDataKind? DataType
+  public DocumentModel.Wordprocessing.MailMergeDataKind? DataType
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataType>();
-        return (MailMergeDataKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MailMergeDataKind?)OpenXmlElement?.DataType?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataType>();
-        if (item != null)
+        if (OpenXmlElement.DataType != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues?)value;
+            OpenXmlElement.DataType.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.DataType = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DataType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.DataType = new DocumentFormat.OpenXml.Wordprocessing.DataType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues?)value };
         }
       }
     }
@@ -137,34 +111,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public String? ConnectString
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConnectString>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.ConnectString?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConnectString>();
-        if (item != null)
+        if (OpenXmlElement.ConnectString != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.ConnectString.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.ConnectString = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ConnectString{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ConnectString = new DocumentFormat.OpenXml.Wordprocessing.ConnectString{ Val = (System.String?)value };
         }
       }
     }
@@ -175,34 +137,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public String? Query
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Query>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.Query?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Query>();
-        if (item != null)
+        if (OpenXmlElement.Query != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.Query.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.Query = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Query{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Query = new DocumentFormat.OpenXml.Wordprocessing.Query{ Val = (System.String?)value };
         }
       }
     }
@@ -211,7 +161,7 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Data Source File Path.
   /// </summary>
-  public RelationshipType? DataSourceReference
+  public DocumentModel.Wordprocessing.RelationshipType? DataSourceReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -220,7 +170,7 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Header Definition File Path.
   /// </summary>
-  public RelationshipType? HeaderSource
+  public DocumentModel.Wordprocessing.RelationshipType? HeaderSource
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -235,8 +185,8 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines>();
+        return item != null;
       }
       return null;
     }
@@ -247,16 +197,14 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -267,36 +215,24 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Merged Document Destination.
   /// </summary>
-  public MailMergeDestinationKind? Destination
+  public DocumentModel.Wordprocessing.MailMergeDestinationKind? Destination
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Destination>();
-        return (MailMergeDestinationKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MailMergeDestinationKind?)OpenXmlElement?.Destination?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Destination>();
-        if (item != null)
+        if (OpenXmlElement.Destination != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues?)value;
+            OpenXmlElement.Destination.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.Destination = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Destination{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Destination = new DocumentFormat.OpenXml.Wordprocessing.Destination{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues?)value };
         }
       }
     }
@@ -307,34 +243,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public String? AddressFieldName
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AddressFieldName>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.AddressFieldName?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AddressFieldName>();
-        if (item != null)
+        if (OpenXmlElement.AddressFieldName != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.AddressFieldName.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.AddressFieldName = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AddressFieldName{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.AddressFieldName = new DocumentFormat.OpenXml.Wordprocessing.AddressFieldName{ Val = (System.String?)value };
         }
       }
     }
@@ -345,34 +269,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public String? MailSubject
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailSubject>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.MailSubject?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailSubject>();
-        if (item != null)
+        if (OpenXmlElement.MailSubject != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.MailSubject.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.MailSubject = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MailSubject{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MailSubject = new DocumentFormat.OpenXml.Wordprocessing.MailSubject{ Val = (System.String?)value };
         }
       }
     }
@@ -387,8 +299,8 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment>();
+        return item != null;
       }
       return null;
     }
@@ -399,16 +311,14 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -425,8 +335,8 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ViewMergedData>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ViewMergedData>();
+        return item != null;
       }
       return null;
     }
@@ -437,16 +347,14 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ViewMergedData>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ViewMergedData{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ViewMergedData();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -459,34 +367,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public Int32? ActiveRecord
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ActiveRecord>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.ActiveRecord?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ActiveRecord>();
-        if (item != null)
+        if (OpenXmlElement.ActiveRecord != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.ActiveRecord.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.ActiveRecord = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ActiveRecord{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ActiveRecord = new DocumentFormat.OpenXml.Wordprocessing.ActiveRecord{ Val = (System.Int32?)value };
         }
       }
     }
@@ -497,34 +393,22 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// </summary>
   public Int32? CheckErrors
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CheckErrors>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.CheckErrors?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CheckErrors>();
-        if (item != null)
+        if (OpenXmlElement.CheckErrors != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.CheckErrors.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.CheckErrors = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.CheckErrors{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.CheckErrors = new DocumentFormat.OpenXml.Wordprocessing.CheckErrors{ Val = (System.Int32?)value };
         }
       }
     }
@@ -533,7 +417,7 @@ public class MailMergeImpl: ModelElementImpl, MailMerge
   /// <summary>
   /// Office Data Source Object Settings.
   /// </summary>
-  public DataSourceObject? DataSourceObject
+  public DocumentModel.Wordprocessing.DataSourceObject? DataSourceObject
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

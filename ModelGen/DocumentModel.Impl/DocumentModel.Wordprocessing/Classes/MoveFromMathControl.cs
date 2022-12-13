@@ -18,19 +18,19 @@ public class MoveFromMathControlImpl: DocumentModel.Wordprocessing.MathControlMo
     OpenXmlElement = openXmlElement;
   }
   
-  public RunProperties? RunProperties
+  public DocumentModel.Wordprocessing.RunProperties? RunProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public InsertedMathControl? InsertedMathControl
+  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DeletedMathControl? DeletedMathControl
+  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

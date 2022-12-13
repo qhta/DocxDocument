@@ -18,7 +18,7 @@ public class EndnotesImpl: ModelElementImpl, Endnotes
     OpenXmlElement = openXmlElement;
   }
   
-  public Endnote? Endnote
+  public DocumentModel.Wordprocessing.Endnote? Endnote
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

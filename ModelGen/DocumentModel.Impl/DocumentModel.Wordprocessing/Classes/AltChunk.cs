@@ -23,7 +23,7 @@ public class AltChunkImpl: ModelElementImpl, AltChunk
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,7 +34,7 @@ public class AltChunkImpl: ModelElementImpl, AltChunk
   /// <summary>
   /// External Content Import Properties.
   /// </summary>
-  public AltChunkProperties? AltChunkProperties
+  public DocumentModel.Wordprocessing.AltChunkProperties? AltChunkProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

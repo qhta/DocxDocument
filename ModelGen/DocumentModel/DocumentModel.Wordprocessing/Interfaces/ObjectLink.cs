@@ -8,7 +8,7 @@ public interface ObjectLink
   /// <summary>
   /// updateMode
   /// </summary>
-  public ObjectUpdateMode? UpdateMode { get ; set; }
+  public DocumentModel.Wordprocessing.ObjectUpdateMode? UpdateMode { get ; set; }
   
   /// <summary>
   /// lockedField
@@ -18,7 +18,7 @@ public interface ObjectLink
   /// <summary>
   /// drawAspect
   /// </summary>
-  public ObjectDrawAspect? drawAspect { get ; set; }
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get ; set; }
   
   /// <summary>
   /// id

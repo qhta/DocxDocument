@@ -18,7 +18,7 @@ public class DivsChildImpl: ModelElementImpl, DivsChild
     OpenXmlElement = openXmlElement;
   }
   
-  public Div? Div
+  public DocumentModel.Wordprocessing.Div? Div
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

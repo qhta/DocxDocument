@@ -21,7 +21,7 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// <summary>
   /// Entry Name.
   /// </summary>
-  public DocPartName? DocPartName
+  public DocumentModel.Wordprocessing.DocPartName? DocPartName
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -32,34 +32,22 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// </summary>
   public String? StyleId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleId>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.StyleId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleId>();
-        if (item != null)
+        if (OpenXmlElement.StyleId != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.StyleId.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.StyleId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.StyleId{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.StyleId = new DocumentFormat.OpenXml.Wordprocessing.StyleId{ Val = (System.String?)value };
         }
       }
     }
@@ -68,7 +56,7 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// <summary>
   /// Entry Categorization.
   /// </summary>
-  public Category? Category
+  public DocumentModel.Wordprocessing.Category? Category
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -77,7 +65,7 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// <summary>
   /// Entry Types.
   /// </summary>
-  public DocPartTypes? DocPartTypes
+  public DocumentModel.Wordprocessing.DocPartTypes? DocPartTypes
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -86,7 +74,7 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// <summary>
   /// Entry Insertion Behaviors.
   /// </summary>
-  public Behaviors? Behaviors
+  public DocumentModel.Wordprocessing.Behaviors? Behaviors
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -97,34 +85,22 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// </summary>
   public String? Description
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Description>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.Description?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Description>();
-        if (item != null)
+        if (OpenXmlElement.Description != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.Description.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.Description = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Description{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Description = new DocumentFormat.OpenXml.Wordprocessing.Description{ Val = (System.String?)value };
         }
       }
     }
@@ -135,34 +111,22 @@ public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
   /// </summary>
   public String? DocPartId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartId>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.DocPartId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartId>();
-        if (item != null)
+        if (OpenXmlElement.DocPartId != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.DocPartId.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.DocPartId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DocPartId{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.DocPartId = new DocumentFormat.OpenXml.Wordprocessing.DocPartId{ Val = (System.String?)value };
         }
       }
     }

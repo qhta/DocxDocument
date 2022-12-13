@@ -13,6 +13,6 @@ public interface FontCharSet
   /// <summary>
   /// characterSet
   /// </summary>
-  public StrictCharacterSet? StrictCharacterSet { get ; set; }
+  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet { get ; set; }
   
 }

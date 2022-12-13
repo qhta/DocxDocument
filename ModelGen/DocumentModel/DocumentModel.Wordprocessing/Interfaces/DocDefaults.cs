@@ -8,11 +8,11 @@ public interface DocDefaults
   /// <summary>
   /// Default Run Properties.
   /// </summary>
-  public RunPropertiesDefault? RunPropertiesDefault { get ; set; }
+  public DocumentModel.Wordprocessing.RunPropertiesDefault? RunPropertiesDefault { get ; set; }
   
   /// <summary>
   /// Default Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesDefault? ParagraphPropertiesDefault { get ; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesDefault? ParagraphPropertiesDefault { get ; set; }
   
 }

@@ -23,6 +23,6 @@ public interface LineNumberType
   /// <summary>
   /// Line Numbering Restart Setting
   /// </summary>
-  public LineNumberRestartKind? Restart { get ; set; }
+  public DocumentModel.Wordprocessing.LineNumberRestartKind? Restart { get ; set; }
   
 }

@@ -21,7 +21,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>
-  public TableWidthType? TableWidth
+  public DocumentModel.Wordprocessing.TableWidthType? TableWidth
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,36 +30,24 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Alignment Exception.
   /// </summary>
-  public TableRowAlignmentKind? TableJustification
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-        return (TableRowAlignmentKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.TableRowAlignmentKind?)OpenXmlElement?.TableJustification?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-        if (item != null)
+        if (OpenXmlElement.TableJustification != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
+            OpenXmlElement.TableJustification.Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.TableJustification = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TableJustification = new DocumentFormat.OpenXml.Wordprocessing.TableJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues?)value };
         }
       }
     }
@@ -68,7 +56,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Cell Spacing Exception.
   /// </summary>
-  public TableWidthType? TableCellSpacing
+  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -77,7 +65,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Indent from Leading Margin Exception.
   /// </summary>
-  public TableIndentation? TableIndentation
+  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -86,7 +74,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Borders Exceptions.
   /// </summary>
-  public TableBorders? TableBorders
+  public DocumentModel.Wordprocessing.TableBorders? TableBorders
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -95,7 +83,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Shading Exception.
   /// </summary>
-  public Shading? Shading
+  public DocumentModel.Wordprocessing.Shading? Shading
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -104,7 +92,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Layout Exception.
   /// </summary>
-  public TableLayout? TableLayout
+  public DocumentModel.Wordprocessing.TableLayout? TableLayout
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -113,7 +101,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Cell Margin Exceptions.
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault
+  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -122,7 +110,7 @@ public class PreviousTablePropertyExceptionsImpl: ModelElementImpl, PreviousTabl
   /// <summary>
   /// Table Style Conditional Formatting Settings Exception.
   /// </summary>
-  public TableLook? TableLook
+  public DocumentModel.Wordprocessing.TableLook? TableLook
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface AutoCaptions
 {
-  public AutoCaption? AutoCaption { get ; set; }
+  public DocumentModel.Wordprocessing.AutoCaption? AutoCaption { get ; set; }
   
 }

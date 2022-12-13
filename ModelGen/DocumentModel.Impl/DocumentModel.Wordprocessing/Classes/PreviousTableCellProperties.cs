@@ -21,7 +21,7 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// ConditionalFormatStyle.
   /// </summary>
-  public ConditionalFormatStyle? ConditionalFormatStyle
+  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TableCellWidth.
   /// </summary>
-  public TableWidthType? TableCellWidth
+  public DocumentModel.Wordprocessing.TableWidthType? TableCellWidth
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -41,34 +41,22 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// </summary>
   public Int32? GridSpan
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.GridSpan?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
-        if (item != null)
+        if (OpenXmlElement.GridSpan != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.GridSpan.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.GridSpan = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.GridSpan{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.GridSpan = new DocumentFormat.OpenXml.Wordprocessing.GridSpan{ Val = (System.Int32?)value };
         }
       }
     }
@@ -77,36 +65,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// HorizontalMerge.
   /// </summary>
-  public MergedCellKind? HorizontalMerge
+  public DocumentModel.Wordprocessing.MergedCellKind? HorizontalMerge
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
-        return (MergedCellKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MergedCellKind?)OpenXmlElement?.HorizontalMerge?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
-        if (item != null)
+        if (OpenXmlElement.HorizontalMerge != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value;
+            OpenXmlElement.HorizontalMerge.Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.HorizontalMerge = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge{ Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.HorizontalMerge = new DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge{ Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value };
         }
       }
     }
@@ -115,36 +91,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// VerticalMerge.
   /// </summary>
-  public MergedCellKind? VerticalMerge
+  public DocumentModel.Wordprocessing.MergedCellKind? VerticalMerge
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
-        return (MergedCellKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MergedCellKind?)OpenXmlElement?.VerticalMerge?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
-        if (item != null)
+        if (OpenXmlElement.VerticalMerge != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value;
+            OpenXmlElement.VerticalMerge.Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.VerticalMerge = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.VerticalMerge{ Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.VerticalMerge = new DocumentFormat.OpenXml.Wordprocessing.VerticalMerge{ Val = (DocumentFormat.OpenXml.Wordprocessing.MergedCellValues?)value };
         }
       }
     }
@@ -153,7 +117,7 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TableCellBorders.
   /// </summary>
-  public TableCellBorders? TableCellBorders
+  public DocumentModel.Wordprocessing.TableCellBorders? TableCellBorders
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -162,7 +126,7 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// Shading.
   /// </summary>
-  public Shading? Shading
+  public DocumentModel.Wordprocessing.Shading? Shading
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -171,36 +135,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// NoWrap.
   /// </summary>
-  public OnOffOnlyKind? NoWrap
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoWrap
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.NoWrap?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
-        if (item != null)
+        if (OpenXmlElement.NoWrap != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.NoWrap.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.NoWrap = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoWrap{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NoWrap = new DocumentFormat.OpenXml.Wordprocessing.NoWrap{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }
@@ -209,7 +161,7 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TableCellMargin.
   /// </summary>
-  public TableCellMargin? TableCellMargin
+  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -218,36 +170,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
-        return (TextDirectionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.TextDirectionKind?)OpenXmlElement?.TextDirection?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
-        if (item != null)
+        if (OpenXmlElement.TextDirection != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value;
+            OpenXmlElement.TextDirection.Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.TextDirection = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TextDirection{ Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TextDirection = new DocumentFormat.OpenXml.Wordprocessing.TextDirection{ Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value };
         }
       }
     }
@@ -256,36 +196,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TableCellFitText.
   /// </summary>
-  public OnOffOnlyKind? TableCellFitText
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableCellFitText
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.TableCellFitText?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
-        if (item != null)
+        if (OpenXmlElement.TableCellFitText != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.TableCellFitText.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.TableCellFitText = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TableCellFitText{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TableCellFitText = new DocumentFormat.OpenXml.Wordprocessing.TableCellFitText{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }
@@ -294,36 +222,24 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
-  public TableVerticalAlignmentKind? TableCellVerticalAlignment
+  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
-        return (TableVerticalAlignmentKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.TableVerticalAlignmentKind?)OpenXmlElement?.TableCellVerticalAlignment?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
-        if (item != null)
+        if (OpenXmlElement.TableCellVerticalAlignment != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues?)value;
+            OpenXmlElement.TableCellVerticalAlignment.Val = (DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.TableCellVerticalAlignment = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TableCellVerticalAlignment = new DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment{ Val = (DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues?)value };
         }
       }
     }
@@ -332,54 +248,42 @@ public class PreviousTableCellPropertiesImpl: ModelElementImpl, PreviousTableCel
   /// <summary>
   /// HideMark.
   /// </summary>
-  public OnOffOnlyKind? HideMark
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? HideMark
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.HideMark?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
-        if (item != null)
+        if (OpenXmlElement.HideMark != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.HideMark.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.HideMark = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.HideMark{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.HideMark = new DocumentFormat.OpenXml.Wordprocessing.HideMark{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }
   }
   
-  public TrackChangeType? CellInsertion
+  public DocumentModel.Wordprocessing.TrackChangeType? CellInsertion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CellDeletion
+  public DocumentModel.Wordprocessing.TrackChangeType? CellDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public CellMerge? CellMerge
+  public DocumentModel.Wordprocessing.CellMerge? CellMerge
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

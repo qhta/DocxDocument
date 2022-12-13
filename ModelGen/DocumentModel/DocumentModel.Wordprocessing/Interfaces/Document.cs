@@ -8,16 +8,16 @@ public interface Document
   /// <summary>
   /// conformance
   /// </summary>
-  public DocumentConformance? Conformance { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get ; set; }
   
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentBackground? DocumentBackground { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get ; set; }
   
   /// <summary>
   /// Body.
   /// </summary>
-  public Body? Body { get ; set; }
+  public DocumentModel.Wordprocessing.Body? Body { get ; set; }
   
 }

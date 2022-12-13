@@ -23,7 +23,7 @@ public class NoLineBreaksAfterKinsokuImpl: ModelElementImpl, NoLineBreaksAfterKi
   /// </summary>
   public String? Language
   {
-    get => (String?)OpenXmlElement?.Language?.Value;
+    get => (System.String?)OpenXmlElement?.Language?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class NoLineBreaksAfterKinsokuImpl: ModelElementImpl, NoLineBreaksAfterKi
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)

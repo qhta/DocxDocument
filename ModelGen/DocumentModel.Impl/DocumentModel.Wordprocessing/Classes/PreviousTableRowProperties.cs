@@ -18,7 +18,7 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
     OpenXmlElement = openXmlElement;
   }
   
-  public ConditionalFormatStyle? ConditionalFormatStyle
+  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -31,7 +31,7 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DivId>();
-        return (String?)openXmlElement?.Val?.Value;
+        return (System.String?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -66,7 +66,7 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridBefore>();
-        return (Int32?)openXmlElement?.Val?.Value;
+        return (System.Int32?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -101,7 +101,7 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridAfter>();
-        return (Int32?)openXmlElement?.Val?.Value;
+        return (System.Int32?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -129,19 +129,19 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
     }
   }
   
-  public TableWidthType? WidthBeforeTableRow
+  public DocumentModel.Wordprocessing.TableWidthType? WidthBeforeTableRow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TableWidthType? WidthAfterTableRow
+  public DocumentModel.Wordprocessing.TableWidthType? WidthAfterTableRow
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TableRowHeight? TableRowHeight
+  public DocumentModel.Wordprocessing.TableRowHeight? TableRowHeight
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -154,7 +154,7 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -182,14 +182,14 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
     }
   }
   
-  public OnOffOnlyKind? CantSplit
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? CantSplit
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CantSplit>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
+        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -217,14 +217,14 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
     }
   }
   
-  public OnOffOnlyKind? TableHeader
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableHeader
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableHeader>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
+        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -252,20 +252,20 @@ public class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowP
     }
   }
   
-  public TableWidthType? TableCellSpacing
+  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TableRowAlignmentKind? TableJustification
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-        return (TableRowAlignmentKind?)openXmlElement?.Val?.Value;
+        return (DocumentModel.Wordprocessing.TableRowAlignmentKind?)openXmlElement?.Val?.Value;
       }
       return null;
     }

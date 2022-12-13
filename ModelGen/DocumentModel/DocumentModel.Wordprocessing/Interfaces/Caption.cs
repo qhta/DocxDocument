@@ -13,7 +13,7 @@ public interface Caption
   /// <summary>
   /// Automatic Caption Placement
   /// </summary>
-  public CaptionPositionKind? Position { get ; set; }
+  public DocumentModel.Wordprocessing.CaptionPositionKind? Position { get ; set; }
   
   /// <summary>
   /// Include Chapter Number in Field for Caption
@@ -33,11 +33,11 @@ public interface Caption
   /// <summary>
   /// Caption Numbering Format
   /// </summary>
-  public NumberFormatKind? NumberFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormatKind? NumberFormat { get ; set; }
   
   /// <summary>
   /// Chapter Number/Item Index Separator
   /// </summary>
-  public ChapterSeparatorKind? Separator { get ; set; }
+  public DocumentModel.Wordprocessing.ChapterSeparatorKind? Separator { get ; set; }
   
 }

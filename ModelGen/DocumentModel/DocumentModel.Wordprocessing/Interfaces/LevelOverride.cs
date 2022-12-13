@@ -18,6 +18,6 @@ public interface LevelOverride
   /// <summary>
   /// Numbering Level Override Definition.
   /// </summary>
-  public Level? Level { get ; set; }
+  public DocumentModel.Wordprocessing.Level? Level { get ; set; }
   
 }

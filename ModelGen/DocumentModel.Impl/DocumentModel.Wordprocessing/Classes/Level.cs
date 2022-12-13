@@ -23,7 +23,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public Int32? LevelIndex
   {
-    get => (Int32?)OpenXmlElement?.LevelIndex?.Value;
+    get => (System.Int32?)OpenXmlElement?.LevelIndex?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,7 +34,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Template Code
   /// </summary>
-  public HexBinaryValue? TemplateCode
+  public DocumentModel.HexBinaryValue? TemplateCode
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -45,7 +45,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public Boolean? Tentative
   {
-    get => (Boolean?)OpenXmlElement?.Tentative?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Tentative?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -58,34 +58,22 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public Int32? StartNumberingValue
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.StartNumberingValue?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
-        if (item != null)
+        if (OpenXmlElement.StartNumberingValue != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.StartNumberingValue.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.StartNumberingValue = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.StartNumberingValue = new DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue{ Val = (System.Int32?)value };
         }
       }
     }
@@ -94,7 +82,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -105,34 +93,22 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public Int32? LevelRestart
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.LevelRestart?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
-        if (item != null)
+        if (OpenXmlElement.LevelRestart != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.LevelRestart.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.LevelRestart = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LevelRestart{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LevelRestart = new DocumentFormat.OpenXml.Wordprocessing.LevelRestart{ Val = (System.Int32?)value };
         }
       }
     }
@@ -143,34 +119,22 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public String? ParagraphStyleIdInLevel
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.ParagraphStyleIdInLevel?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
-        if (item != null)
+        if (OpenXmlElement.ParagraphStyleIdInLevel != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.ParagraphStyleIdInLevel.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.ParagraphStyleIdInLevel = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ParagraphStyleIdInLevel = new DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel{ Val = (System.String?)value };
         }
       }
     }
@@ -185,8 +149,8 @@ public class LevelImpl: ModelElementImpl, Level
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
+        return item != null;
       }
       return null;
     }
@@ -197,16 +161,14 @@ public class LevelImpl: ModelElementImpl, Level
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -217,36 +179,24 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public LevelSuffixKind? LevelSuffix
+  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
-        return (LevelSuffixKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.LevelSuffixKind?)OpenXmlElement?.LevelSuffix?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
-        if (item != null)
+        if (OpenXmlElement.LevelSuffix != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues?)value;
+            OpenXmlElement.LevelSuffix.Val = (DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.LevelSuffix = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LevelSuffix{ Val = (DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LevelSuffix = new DocumentFormat.OpenXml.Wordprocessing.LevelSuffix{ Val = (DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues?)value };
         }
       }
     }
@@ -255,7 +205,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Numbering Level Text.
   /// </summary>
-  public LevelText? LevelText
+  public DocumentModel.Wordprocessing.LevelText? LevelText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -266,34 +216,22 @@ public class LevelImpl: ModelElementImpl, Level
   /// </summary>
   public Int32? LevelPictureBulletId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.LevelPictureBulletId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
-        if (item != null)
+        if (OpenXmlElement.LevelPictureBulletId != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.LevelPictureBulletId.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.LevelPictureBulletId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LevelPictureBulletId = new DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId{ Val = (System.Int32?)value };
         }
       }
     }
@@ -302,7 +240,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Legacy Numbering Level Properties.
   /// </summary>
-  public LegacyNumbering? LegacyNumbering
+  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -311,36 +249,24 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Justification.
   /// </summary>
-  public LevelJustificationKind? LevelJustification
+  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
-        return (LevelJustificationKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.LevelJustificationKind?)OpenXmlElement?.LevelJustification?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
-        if (item != null)
+        if (OpenXmlElement.LevelJustification != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues?)value;
+            OpenXmlElement.LevelJustification.Val = (DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.LevelJustification = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LevelJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LevelJustification = new DocumentFormat.OpenXml.Wordprocessing.LevelJustification{ Val = (DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues?)value };
         }
       }
     }
@@ -349,7 +275,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public PreviousParagraphProperties? PreviousParagraphProperties
+  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -358,7 +284,7 @@ public class LevelImpl: ModelElementImpl, Level
   /// <summary>
   /// Numbering Symbol Run Properties.
   /// </summary>
-  public NumberingSymbolRunProperties? NumberingSymbolRunProperties
+  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

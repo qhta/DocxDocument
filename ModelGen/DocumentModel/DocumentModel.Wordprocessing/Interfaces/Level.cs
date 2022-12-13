@@ -13,7 +13,7 @@ public interface Level
   /// <summary>
   /// Template Code
   /// </summary>
-  public HexBinaryValue? TemplateCode { get ; set; }
+  public DocumentModel.HexBinaryValue? TemplateCode { get ; set; }
   
   /// <summary>
   /// Tentative Numbering
@@ -28,7 +28,7 @@ public interface Level
   /// <summary>
   /// Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get ; set; }
   
   /// <summary>
   /// Restart Numbering Level Symbol.
@@ -48,12 +48,12 @@ public interface Level
   /// <summary>
   /// Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public LevelSuffixKind? LevelSuffix { get ; set; }
+  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix { get ; set; }
   
   /// <summary>
   /// Numbering Level Text.
   /// </summary>
-  public LevelText? LevelText { get ; set; }
+  public DocumentModel.Wordprocessing.LevelText? LevelText { get ; set; }
   
   /// <summary>
   /// Picture Numbering Symbol Definition Reference.
@@ -63,21 +63,21 @@ public interface Level
   /// <summary>
   /// Legacy Numbering Level Properties.
   /// </summary>
-  public LegacyNumbering? LegacyNumbering { get ; set; }
+  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering { get ; set; }
   
   /// <summary>
   /// Justification.
   /// </summary>
-  public LevelJustificationKind? LevelJustification { get ; set; }
+  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification { get ; set; }
   
   /// <summary>
   /// Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public PreviousParagraphProperties? PreviousParagraphProperties { get ; set; }
+  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties { get ; set; }
   
   /// <summary>
   /// Numbering Symbol Run Properties.
   /// </summary>
-  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get ; set; }
   
 }

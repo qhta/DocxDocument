@@ -23,7 +23,7 @@ public class DocumentVariableImpl: ModelElementImpl, DocumentVariable
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class DocumentVariableImpl: ModelElementImpl, DocumentVariable
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)

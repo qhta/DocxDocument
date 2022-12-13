@@ -1,0 +1,27 @@
+namespace DocumentModel.Vml;
+
+/// <summary>
+/// Defines the Formulas Class.
+/// </summary>
+public class FormulasImpl: ModelElementImpl, Formulas
+{
+  public DocumentFormat.OpenXml.Vml.Formulas? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Vml.Formulas?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public FormulasImpl(): base() {}
+  
+  public FormulasImpl(DocumentFormat.OpenXml.Vml.Formulas openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  public DocumentModel.Vml.Formula? Formula
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

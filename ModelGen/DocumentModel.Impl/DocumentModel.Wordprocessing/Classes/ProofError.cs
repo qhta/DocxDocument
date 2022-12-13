@@ -21,9 +21,9 @@ public class ProofErrorImpl: ModelElementImpl, ProofError
   /// <summary>
   /// Proofing Error Anchor Type
   /// </summary>
-  public ProofingErrorKind? Type
+  public DocumentModel.Wordprocessing.ProofingErrorKind? Type
   {
-    get => (ProofingErrorKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.ProofingErrorKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)

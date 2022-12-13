@@ -8,7 +8,7 @@ public interface MailMerge
   /// <summary>
   /// Source Document Type.
   /// </summary>
-  public MailMergeDocumentKind? MainDocumentType { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeDocumentKind? MainDocumentType { get ; set; }
   
   /// <summary>
   /// Query Contains Link to External Query File.
@@ -18,7 +18,7 @@ public interface MailMerge
   /// <summary>
   /// Data Source Type.
   /// </summary>
-  public MailMergeDataKind? DataType { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeDataKind? DataType { get ; set; }
   
   /// <summary>
   /// Data Source Connection String.
@@ -33,12 +33,12 @@ public interface MailMerge
   /// <summary>
   /// Data Source File Path.
   /// </summary>
-  public RelationshipType? DataSourceReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? DataSourceReference { get ; set; }
   
   /// <summary>
   /// Header Definition File Path.
   /// </summary>
-  public RelationshipType? HeaderSource { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? HeaderSource { get ; set; }
   
   /// <summary>
   /// Remove Blank Lines from Merged Documents.
@@ -48,7 +48,7 @@ public interface MailMerge
   /// <summary>
   /// Merged Document Destination.
   /// </summary>
-  public MailMergeDestinationKind? Destination { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeDestinationKind? Destination { get ; set; }
   
   /// <summary>
   /// Column Containing E-mail Address.
@@ -83,6 +83,6 @@ public interface MailMerge
   /// <summary>
   /// Office Data Source Object Settings.
   /// </summary>
-  public DataSourceObject? DataSourceObject { get ; set; }
+  public DocumentModel.Wordprocessing.DataSourceObject? DataSourceObject { get ; set; }
   
 }

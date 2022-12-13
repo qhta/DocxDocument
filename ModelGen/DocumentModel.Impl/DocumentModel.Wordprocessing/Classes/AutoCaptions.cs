@@ -18,7 +18,7 @@ public class AutoCaptionsImpl: ModelElementImpl, AutoCaptions
     OpenXmlElement = openXmlElement;
   }
   
-  public AutoCaption? AutoCaption
+  public DocumentModel.Wordprocessing.AutoCaption? AutoCaption
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

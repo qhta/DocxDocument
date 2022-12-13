@@ -23,7 +23,7 @@ public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
   /// </summary>
   public String? Color
   {
-    get => (String?)OpenXmlElement?.Color?.Value;
+    get => (System.String?)OpenXmlElement?.Color?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
   /// <summary>
   /// themeColor
   /// </summary>
-  public ThemeColorKind? ThemeColor
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor
   {
-    get => (ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
+    get => (DocumentModel.Wordprocessing.ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
   /// </summary>
   public String? ThemeTint
   {
-    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeTint?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
   /// </summary>
   public String? ThemeShade
   {
-    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeShade?.Value;
     set
     {
       if (OpenXmlElement != null)

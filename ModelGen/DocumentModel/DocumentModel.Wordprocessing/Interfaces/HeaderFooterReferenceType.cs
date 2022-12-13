@@ -8,7 +8,7 @@ public interface HeaderFooterReferenceType
   /// <summary>
   /// type
   /// </summary>
-  public HeaderFooterKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.HeaderFooterKind? Type { get ; set; }
   
   /// <summary>
   /// Relationship to Part

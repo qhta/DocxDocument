@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class DataBindingImpl: ModelElementImpl, DataBinding
 {
-  public DocumentFormat.OpenXml.Wordprocessing.DataBinding? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Word.DataBinding? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Wordprocessing.DataBinding?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Word.DataBinding?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public DataBindingImpl(): base() {}
   
-  public DataBindingImpl(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement): base(openXmlElement)
+  public DataBindingImpl(DocumentFormat.OpenXml.Office2013.Word.DataBinding openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
@@ -23,7 +23,7 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? PrefixMappings
   {
-    get => (String?)OpenXmlElement?.PrefixMappings?.Value;
+    get => (System.String?)OpenXmlElement?.PrefixMappings?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? XPath
   {
-    get => (String?)OpenXmlElement?.XPath?.Value;
+    get => (System.String?)OpenXmlElement?.XPath?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class DataBindingImpl: ModelElementImpl, DataBinding
   /// </summary>
   public String? StoreItemId
   {
-    get => (String?)OpenXmlElement?.StoreItemId?.Value;
+    get => (System.String?)OpenXmlElement?.StoreItemId?.Value;
     set
     {
       if (OpenXmlElement != null)

@@ -13,6 +13,6 @@ public interface AltChunk
   /// <summary>
   /// External Content Import Properties.
   /// </summary>
-  public AltChunkProperties? AltChunkProperties { get ; set; }
+  public DocumentModel.Wordprocessing.AltChunkProperties? AltChunkProperties { get ; set; }
   
 }
