@@ -21,36 +21,24 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
   /// <summary>
   /// Merge Field Mapping.
   /// </summary>
-  public MailMergeOdsoFieldKind? MailMergeFieldType
+  public DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? MailMergeFieldType
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
-        return (MailMergeOdsoFieldKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MailMergeOdsoFieldKind?)OpenXmlElement?.MailMergeFieldType?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
-        if (item != null)
+        if (OpenXmlElement.MailMergeFieldType != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues?)value;
+            OpenXmlElement.MailMergeFieldType.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.MailMergeFieldType = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MailMergeFieldType = new DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues?)value };
         }
       }
     }
@@ -61,7 +49,7 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -87,34 +75,22 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
   /// </summary>
   public String? MappedName
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.MappedName?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
-        if (item != null)
+        if (OpenXmlElement.MappedName != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.MappedName.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.MappedName = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MappedName{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MappedName = new DocumentFormat.OpenXml.Wordprocessing.MappedName{ Val = (System.String?)value };
         }
       }
     }
@@ -125,34 +101,22 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
   /// </summary>
   public UInt32? ColumnIndex
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
-        return (UInt32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.UInt32?)OpenXmlElement?.ColumnIndex?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
-        if (item != null)
+        if (OpenXmlElement.ColumnIndex != null)
         {
           if (value is not null)
-            item.Val = (System.UInt32?)value;
+            OpenXmlElement.ColumnIndex.Val = (System.UInt32?)value;
           else
-            item.Remove();
+            OpenXmlElement.ColumnIndex = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ColumnIndex = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = (System.UInt32?)value };
         }
       }
     }
@@ -163,34 +127,22 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
   /// </summary>
   public String? LanguageId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.LanguageId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
-        if (item != null)
+        if (OpenXmlElement.LanguageId != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.LanguageId.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.LanguageId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LanguageId = new DocumentFormat.OpenXml.Wordprocessing.LanguageId{ Val = (System.String?)value };
         }
       }
     }
@@ -205,8 +157,8 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+        return item != null;
       }
       return null;
     }
@@ -217,16 +169,14 @@ public class FieldMapDataImpl: ModelElementImpl, FieldMapData
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DynamicAddress{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DynamicAddress();
             OpenXmlElement.AddChild(item);
           }
         }

@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class ColorImpl: ModelElementImpl, Color
 {
-  public DocumentFormat.OpenXml.Wordprocessing.Color? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2013.Word.Color? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Wordprocessing.Color?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2013.Word.Color?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public ColorImpl(): base() {}
   
-  public ColorImpl(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement): base(openXmlElement)
+  public ColorImpl(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
@@ -23,7 +23,7 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class ColorImpl: ModelElementImpl, Color
   /// <summary>
   /// Run Content Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor
   {
-    get => (ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
+    get => (DocumentModel.Wordprocessing.ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? ThemeTint
   {
-    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeTint?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ColorImpl: ModelElementImpl, Color
   /// </summary>
   public String? ThemeShade
   {
-    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeShade?.Value;
     set
     {
       if (OpenXmlElement != null)

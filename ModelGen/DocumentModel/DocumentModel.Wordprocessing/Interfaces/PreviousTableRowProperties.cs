@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface PreviousTableRowProperties
 {
-  public ConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
+  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle { get ; set; }
   
   public String? DivId { get ; set; }
   
@@ -13,20 +13,20 @@ public interface PreviousTableRowProperties
   
   public Int32? GridAfter { get ; set; }
   
-  public TableWidthType? WidthBeforeTableRow { get ; set; }
+  public DocumentModel.Wordprocessing.TableWidthType? WidthBeforeTableRow { get ; set; }
   
-  public TableWidthType? WidthAfterTableRow { get ; set; }
+  public DocumentModel.Wordprocessing.TableWidthType? WidthAfterTableRow { get ; set; }
   
-  public TableRowHeight? TableRowHeight { get ; set; }
+  public DocumentModel.Wordprocessing.TableRowHeight? TableRowHeight { get ; set; }
   
   public Boolean? Hidden { get ; set; }
   
-  public OnOffOnlyKind? CantSplit { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? CantSplit { get ; set; }
   
-  public OnOffOnlyKind? TableHeader { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableHeader { get ; set; }
   
-  public TableWidthType? TableCellSpacing { get ; set; }
+  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing { get ; set; }
   
-  public TableRowAlignmentKind? TableJustification { get ; set; }
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get ; set; }
   
 }

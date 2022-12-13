@@ -23,7 +23,7 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public Int16? CountBy
   {
-    get => (Int16?)OpenXmlElement?.CountBy?.Value;
+    get => (System.Int16?)OpenXmlElement?.CountBy?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public Int16? Start
   {
-    get => (Int16?)OpenXmlElement?.Start?.Value;
+    get => (System.Int16?)OpenXmlElement?.Start?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// </summary>
   public String? Distance
   {
-    get => (String?)OpenXmlElement?.Distance?.Value;
+    get => (System.String?)OpenXmlElement?.Distance?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,9 +60,9 @@ public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
   /// <summary>
   /// Line Numbering Restart Setting
   /// </summary>
-  public LineNumberRestartKind? Restart
+  public DocumentModel.Wordprocessing.LineNumberRestartKind? Restart
   {
-    get => (LineNumberRestartKind?)OpenXmlElement?.Restart?.Value;
+    get => (DocumentModel.Wordprocessing.LineNumberRestartKind?)OpenXmlElement?.Restart?.Value;
     set
     {
       if (OpenXmlElement != null)

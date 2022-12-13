@@ -8,7 +8,7 @@ public interface PermStart
   /// <summary>
   /// edGrp
   /// </summary>
-  public RangePermissionEditingGroupKind? EditorGroup { get ; set; }
+  public DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? EditorGroup { get ; set; }
   
   /// <summary>
   /// ed
@@ -33,6 +33,6 @@ public interface PermStart
   /// <summary>
   /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get ; set; }
   
 }

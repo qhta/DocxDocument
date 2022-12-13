@@ -23,7 +23,7 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// </summary>
   public String? DxaOriginal
   {
-    get => (String?)OpenXmlElement?.DxaOriginal?.Value;
+    get => (System.String?)OpenXmlElement?.DxaOriginal?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// </summary>
   public String? DyaOriginal
   {
-    get => (String?)OpenXmlElement?.DyaOriginal?.Value;
+    get => (System.String?)OpenXmlElement?.DyaOriginal?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,7 +47,7 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinaryValue? AnchorId
+  public DocumentModel.HexBinaryValue? AnchorId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -125,25 +125,25 @@ public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Drawing? Drawing
+  public DocumentModel.Wordprocessing.Drawing? Drawing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Control? Control
+  public DocumentModel.Wordprocessing.Control? Control
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ObjectEmbed? ObjectEmbed
+  public DocumentModel.Wordprocessing.ObjectEmbed? ObjectEmbed
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ObjectLink? ObjectLink
+  public DocumentModel.Wordprocessing.ObjectLink? ObjectLink
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

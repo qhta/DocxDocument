@@ -23,7 +23,7 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
   /// </summary>
   public Int32? NumberID
   {
-    get => (Int32?)OpenXmlElement?.NumberID?.Value;
+    get => (System.Int32?)OpenXmlElement?.NumberID?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
   /// </summary>
   public Int32? DurableId
   {
-    get => (Int32?)OpenXmlElement?.DurableId?.Value;
+    get => (System.Int32?)OpenXmlElement?.DurableId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,40 +49,28 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
   /// </summary>
   public Int32? AbstractNumId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.AbstractNumId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
-        if (item != null)
+        if (OpenXmlElement.AbstractNumId != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.AbstractNumId.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.AbstractNumId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AbstractNumId{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.AbstractNumId = new DocumentFormat.OpenXml.Wordprocessing.AbstractNumId{ Val = (System.Int32?)value };
         }
       }
     }
   }
   
-  public LevelOverride? LevelOverride
+  public DocumentModel.Wordprocessing.LevelOverride? LevelOverride
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

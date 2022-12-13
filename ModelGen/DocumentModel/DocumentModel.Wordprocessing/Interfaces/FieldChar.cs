@@ -8,7 +8,7 @@ public interface FieldChar
   /// <summary>
   /// Field Character Type
   /// </summary>
-  public FieldCharKind? FieldCharType { get ; set; }
+  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType { get ; set; }
   
   /// <summary>
   /// Field Should Not Be Recalculated
@@ -28,11 +28,11 @@ public interface FieldChar
   /// <summary>
   /// Form Field Properties.
   /// </summary>
-  public FormFieldData? FormFieldData { get ; set; }
+  public DocumentModel.Wordprocessing.FormFieldData? FormFieldData { get ; set; }
   
   /// <summary>
   /// Previous Numbering Field Properties.
   /// </summary>
-  public NumberingChange? NumberingChange { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get ; set; }
   
 }

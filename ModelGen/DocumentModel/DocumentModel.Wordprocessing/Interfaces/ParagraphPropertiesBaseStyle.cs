@@ -23,7 +23,7 @@ public interface ParagraphPropertiesBaseStyle
   /// <summary>
   /// FrameProperties.
   /// </summary>
-  public FrameProperties? FrameProperties { get ; set; }
+  public DocumentModel.Wordprocessing.FrameProperties? FrameProperties { get ; set; }
   
   /// <summary>
   /// WidowControl.
@@ -33,7 +33,7 @@ public interface ParagraphPropertiesBaseStyle
   /// <summary>
   /// NumberingProperties.
   /// </summary>
-  public NumberingProperties? NumberingProperties { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingProperties? NumberingProperties { get ; set; }
   
   /// <summary>
   /// SuppressLineNumbers.
@@ -43,17 +43,17 @@ public interface ParagraphPropertiesBaseStyle
   /// <summary>
   /// ParagraphBorders.
   /// </summary>
-  public ParagraphBorders? ParagraphBorders { get ; set; }
+  public DocumentModel.Wordprocessing.ParagraphBorders? ParagraphBorders { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public Shading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get ; set; }
   
   /// <summary>
   /// Tabs.
   /// </summary>
-  public Tabs? Tabs { get ; set; }
+  public DocumentModel.Wordprocessing.Tabs? Tabs { get ; set; }
   
   /// <summary>
   /// SuppressAutoHyphens.
@@ -108,12 +108,12 @@ public interface ParagraphPropertiesBaseStyle
   /// <summary>
   /// SpacingBetweenLines.
   /// </summary>
-  public SpacingBetweenLines? SpacingBetweenLines { get ; set; }
+  public DocumentModel.Wordprocessing.SpacingBetweenLines? SpacingBetweenLines { get ; set; }
   
   /// <summary>
   /// Indentation.
   /// </summary>
-  public Indentation? Indentation { get ; set; }
+  public DocumentModel.Wordprocessing.Indentation? Indentation { get ; set; }
   
   /// <summary>
   /// ContextualSpacing.
@@ -133,22 +133,22 @@ public interface ParagraphPropertiesBaseStyle
   /// <summary>
   /// Justification.
   /// </summary>
-  public JustificationKind? Justification { get ; set; }
+  public DocumentModel.Wordprocessing.JustificationKind? Justification { get ; set; }
   
   /// <summary>
   /// TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection { get ; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get ; set; }
   
   /// <summary>
   /// TextAlignment.
   /// </summary>
-  public VerticalTextAlignmentKind? TextAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalTextAlignmentKind? TextAlignment { get ; set; }
   
   /// <summary>
   /// TextBoxTightWrap.
   /// </summary>
-  public TextBoxTightWrapKind? TextBoxTightWrap { get ; set; }
+  public DocumentModel.Wordprocessing.TextBoxTightWrapKind? TextBoxTightWrap { get ; set; }
   
   /// <summary>
   /// OutlineLevel.

@@ -1,0 +1,39 @@
+namespace DocumentModel.Drawings16.Charts;
+
+/// <summary>
+/// Defines the TextBodyType Class.
+/// </summary>
+public class TextBodyType2Impl: ModelElementImpl, TextBodyType2
+{
+  public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public TextBodyType2Impl(): base() {}
+  
+  public TextBodyType2Impl(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Body Properties.
+  /// </summary>
+  public virtual DocumentModel.Drawings.BodyProperties? BodyProperties
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  /// <summary>
+  /// Text List Styles.
+  /// </summary>
+  public virtual DocumentModel.Drawings.ListStyle? ListStyle
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

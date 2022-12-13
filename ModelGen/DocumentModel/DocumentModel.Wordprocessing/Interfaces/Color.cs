@@ -13,7 +13,7 @@ public interface Color
   /// <summary>
   /// Run Content Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// Run Content Theme Color Tint

@@ -21,9 +21,9 @@ public class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
   /// <summary>
   /// name
   /// </summary>
-  public CompatSettingNameKind? Name
+  public DocumentModel.Wordprocessing.CompatSettingNameKind? Name
   {
-    get => (CompatSettingNameKind?)OpenXmlElement?.Name?.Value;
+    get => (DocumentModel.Wordprocessing.CompatSettingNameKind?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
   /// </summary>
   public String? Uri
   {
-    get => (String?)OpenXmlElement?.Uri?.Value;
+    get => (System.String?)OpenXmlElement?.Uri?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)

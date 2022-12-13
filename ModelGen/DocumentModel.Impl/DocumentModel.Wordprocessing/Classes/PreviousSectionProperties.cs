@@ -21,7 +21,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public HexBinaryValue? RsidRPr
+  public DocumentModel.HexBinaryValue? RsidRPr
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public HexBinaryValue? RsidDel
+  public DocumentModel.HexBinaryValue? RsidDel
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public HexBinaryValue? RsidR
+  public DocumentModel.HexBinaryValue? RsidR
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public HexBinaryValue? RsidSect
+  public DocumentModel.HexBinaryValue? RsidSect
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// FootnoteProperties.
   /// </summary>
-  public FootnoteProperties? FootnoteProperties
+  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// EndnoteProperties.
   /// </summary>
-  public EndnoteProperties? EndnoteProperties
+  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -75,36 +75,24 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// SectionType.
   /// </summary>
-  public SectionMarkKind? SectionType
+  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
-        return (SectionMarkKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.SectionMarkKind?)OpenXmlElement?.SectionType?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
-        if (item != null)
+        if (OpenXmlElement.SectionType != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues?)value;
+            OpenXmlElement.SectionType.Val = (DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.SectionType = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SectionType{ Val = (DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.SectionType = new DocumentFormat.OpenXml.Wordprocessing.SectionType{ Val = (DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues?)value };
         }
       }
     }
@@ -113,7 +101,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PageSize.
   /// </summary>
-  public PageSize? PageSize
+  public DocumentModel.Wordprocessing.PageSize? PageSize
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -122,7 +110,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PageMargin.
   /// </summary>
-  public PageMargin? PageMargin
+  public DocumentModel.Wordprocessing.PageMargin? PageMargin
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -131,7 +119,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PaperSource.
   /// </summary>
-  public PaperSource? PaperSource
+  public DocumentModel.Wordprocessing.PaperSource? PaperSource
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -140,7 +128,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PageBorders.
   /// </summary>
-  public PageBorders? PageBorders
+  public DocumentModel.Wordprocessing.PageBorders? PageBorders
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -149,7 +137,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// LineNumberType.
   /// </summary>
-  public LineNumberType? LineNumberType
+  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -158,7 +146,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PageNumberType.
   /// </summary>
-  public PageNumberType? PageNumberType
+  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -167,7 +155,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// Columns.
   /// </summary>
-  public Columns? Columns
+  public DocumentModel.Wordprocessing.Columns? Columns
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -182,8 +170,8 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+        return item != null;
       }
       return null;
     }
@@ -194,16 +182,14 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FormProtection{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.FormProtection();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -214,36 +200,24 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// VerticalTextAlignmentOnPage.
   /// </summary>
-  public VerticalJustificationKind? VerticalTextAlignmentOnPage
+  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
-        return (VerticalJustificationKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.VerticalJustificationKind?)OpenXmlElement?.VerticalTextAlignmentOnPage?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
-        if (item != null)
+        if (OpenXmlElement.VerticalTextAlignmentOnPage != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues?)value;
+            OpenXmlElement.VerticalTextAlignmentOnPage.Val = (DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.VerticalTextAlignmentOnPage = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage{ Val = (DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.VerticalTextAlignmentOnPage = new DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage{ Val = (DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues?)value };
         }
       }
     }
@@ -258,8 +232,8 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+        return item != null;
       }
       return null;
     }
@@ -270,16 +244,14 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoEndnote{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoEndnote();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -296,8 +268,8 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+        return item != null;
       }
       return null;
     }
@@ -308,16 +280,14 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TitlePage{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.TitlePage();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -328,36 +298,24 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
-        return (TextDirectionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.TextDirectionKind?)OpenXmlElement?.TextDirection?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
-        if (item != null)
+        if (OpenXmlElement.TextDirection != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value;
+            OpenXmlElement.TextDirection.Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.TextDirection = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TextDirection{ Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TextDirection = new DocumentFormat.OpenXml.Wordprocessing.TextDirection{ Val = (DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues?)value };
         }
       }
     }
@@ -372,8 +330,8 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+        return item != null;
       }
       return null;
     }
@@ -384,16 +342,14 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.BiDi{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.BiDi();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -410,8 +366,8 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+        return item != null;
       }
       return null;
     }
@@ -422,16 +378,14 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.GutterOnRight{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.GutterOnRight();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -442,7 +396,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// DocGrid.
   /// </summary>
-  public DocGrid? DocGrid
+  public DocumentModel.Wordprocessing.DocGrid? DocGrid
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -451,7 +405,7 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// <summary>
   /// PrinterSettingsReference.
   /// </summary>
-  public RelationshipType? PrinterSettingsReference
+  public DocumentModel.Wordprocessing.RelationshipType? PrinterSettingsReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -462,34 +416,22 @@ public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionPro
   /// </summary>
   public Int32? FootnoteColumns
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.FootnoteColumns?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
-        if (item != null)
+        if (OpenXmlElement.FootnoteColumns != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.FootnoteColumns.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.FootnoteColumns = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FootnoteColumns = new DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns{ Val = (System.Int32?)value };
         }
       }
     }

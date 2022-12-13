@@ -8,7 +8,7 @@ public interface ObjectEmbed
   /// <summary>
   /// drawAspect
   /// </summary>
-  public ObjectDrawAspect? drawAspect { get ; set; }
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get ; set; }
   
   /// <summary>
   /// id

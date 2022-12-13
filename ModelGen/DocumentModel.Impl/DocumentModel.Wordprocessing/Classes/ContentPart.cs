@@ -23,7 +23,7 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

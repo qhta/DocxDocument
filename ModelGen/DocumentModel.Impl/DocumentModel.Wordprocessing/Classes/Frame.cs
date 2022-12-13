@@ -23,34 +23,22 @@ public class FrameImpl: ModelElementImpl, Frame
   /// </summary>
   public String? FrameSize
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.FrameSize?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
-        if (item != null)
+        if (OpenXmlElement.FrameSize != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.FrameSize.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.FrameSize = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FrameSize{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FrameSize = new DocumentFormat.OpenXml.Wordprocessing.FrameSize{ Val = (System.String?)value };
         }
       }
     }
@@ -61,34 +49,22 @@ public class FrameImpl: ModelElementImpl, Frame
   /// </summary>
   public String? FrameName
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameName>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.FrameName?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameName>();
-        if (item != null)
+        if (OpenXmlElement.FrameName != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.FrameName.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.FrameName = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FrameName{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FrameName = new DocumentFormat.OpenXml.Wordprocessing.FrameName{ Val = (System.String?)value };
         }
       }
     }
@@ -97,7 +73,7 @@ public class FrameImpl: ModelElementImpl, Frame
   /// <summary>
   /// Source File for Frame.
   /// </summary>
-  public RelationshipType? SourceFileReference
+  public DocumentModel.Wordprocessing.RelationshipType? SourceFileReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -108,34 +84,22 @@ public class FrameImpl: ModelElementImpl, Frame
   /// </summary>
   public UInt32? MarginWidth
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginWidth>();
-        return (UInt32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.UInt32?)OpenXmlElement?.MarginWidth?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginWidth>();
-        if (item != null)
+        if (OpenXmlElement.MarginWidth != null)
         {
           if (value is not null)
-            item.Val = (System.UInt32?)value;
+            OpenXmlElement.MarginWidth.Val = (System.UInt32?)value;
           else
-            item.Remove();
+            OpenXmlElement.MarginWidth = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MarginWidth{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MarginWidth = new DocumentFormat.OpenXml.Wordprocessing.MarginWidth{ Val = (System.UInt32?)value };
         }
       }
     }
@@ -146,34 +110,22 @@ public class FrameImpl: ModelElementImpl, Frame
   /// </summary>
   public UInt32? MarginHeight
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginHeight>();
-        return (UInt32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.UInt32?)OpenXmlElement?.MarginHeight?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginHeight>();
-        if (item != null)
+        if (OpenXmlElement.MarginHeight != null)
         {
           if (value is not null)
-            item.Val = (System.UInt32?)value;
+            OpenXmlElement.MarginHeight.Val = (System.UInt32?)value;
           else
-            item.Remove();
+            OpenXmlElement.MarginHeight = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MarginHeight{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MarginHeight = new DocumentFormat.OpenXml.Wordprocessing.MarginHeight{ Val = (System.UInt32?)value };
         }
       }
     }
@@ -182,36 +134,24 @@ public class FrameImpl: ModelElementImpl, Frame
   /// <summary>
   /// Scrollbar Display Option.
   /// </summary>
-  public FrameScrollbarVisibilityKind? ScrollbarVisibility
+  public DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind? ScrollbarVisibility
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility>();
-        return (FrameScrollbarVisibilityKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind?)OpenXmlElement?.ScrollbarVisibility?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility>();
-        if (item != null)
+        if (OpenXmlElement.ScrollbarVisibility != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues?)value;
+            OpenXmlElement.ScrollbarVisibility.Val = (DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.ScrollbarVisibility = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility{ Val = (DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ScrollbarVisibility = new DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility{ Val = (DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues?)value };
         }
       }
     }
@@ -220,36 +160,24 @@ public class FrameImpl: ModelElementImpl, Frame
   /// <summary>
   /// Frame Cannot Be Resized.
   /// </summary>
-  public OnOffOnlyKind? NoResizeAllowed
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoResizeAllowed
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.NoResizeAllowed?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed>();
-        if (item != null)
+        if (OpenXmlElement.NoResizeAllowed != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.NoResizeAllowed.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.NoResizeAllowed = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NoResizeAllowed = new DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }
@@ -258,36 +186,24 @@ public class FrameImpl: ModelElementImpl, Frame
   /// <summary>
   /// Maintain Link to Existing File.
   /// </summary>
-  public OnOffOnlyKind? LinkedToFile
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? LinkedToFile
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkedToFile>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.LinkedToFile?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkedToFile>();
-        if (item != null)
+        if (OpenXmlElement.LinkedToFile != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.LinkedToFile.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.LinkedToFile = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LinkedToFile{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LinkedToFile = new DocumentFormat.OpenXml.Wordprocessing.LinkedToFile{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }

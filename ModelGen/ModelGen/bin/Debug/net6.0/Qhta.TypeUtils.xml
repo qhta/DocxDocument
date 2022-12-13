@@ -53,7 +53,7 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:Qhta.TypeUtils.EnumTypeConverter.TryDecode``1(System.String,``0@)">
+        <member name="M:Qhta.TypeUtils.EnumTypeConverter.TryDecode``1(System.String,System.Nullable{``0}@)">
             <summary>
             Trying translating string value to enum value
             </summary>
@@ -62,7 +62,7 @@
             <param name="result"></param>
             <returns></returns>
         </member>
-        <member name="M:Qhta.TypeUtils.EnumTypeConverter.TryDecode``1(System.String,``0@,System.String@)">
+        <member name="M:Qhta.TypeUtils.EnumTypeConverter.TryDecode``1(System.String,System.Nullable{``0}@,System.String@)">
             <summary>
             Trying translating string value to enum value
             </summary>
@@ -116,6 +116,50 @@
             </summary>
             <param name="property"></param>
             <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.TypeUtils.NonComparableAttribute">
+            <summary>
+             Attribute to set at non-comparable property.
+            </summary>
+        </member>
+        <member name="T:Qhta.TypeUtils.CompareResult">
+            <summary>
+            The result of object comparison
+            </summary>
+        </member>
+        <member name="P:Qhta.TypeUtils.CompareResult.AreEqual">
+            <summary>
+            Indicates if objects are equal
+            </summary>
+        </member>
+        <member name="P:Qhta.TypeUtils.CompareResult.DiffPath">
+            <summary>
+            If objects are not equal then this value holds the property path to first different properties
+            </summary>
+        </member>
+        <member name="T:Qhta.TypeUtils.ObjectComparer">
+            <summary>
+            Utility class to object deep comparison
+            </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.ObjectComparer.AreEqual(System.Object,System.Object)">
+            <summary>
+            Compares two objects in deep. All public read/write properties are compared
+            except those marked with NonComparable attribute.
+            If objects are different then diffPath is returned with a property path to first different properties.
+            If objects are of different type then diffPath is "@Type".
+            </summary>
+            <param name="this"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.ObjectComparer.AreEqualAsync(System.Object,System.Object)">
+            <summary>
+            Asynchronous object comparison
+            </summary>
+            <param name="this"></param>
+            <param name="other"></param>
             <returns></returns>
         </member>
         <member name="T:Qhta.TypeUtils.ObjectCopier">
@@ -443,36 +487,231 @@
             <summary>
             Categorization of a type
             </summary>
-            <param name="type"></param>
-            <returns></returns>
+            <param name="aType">checked type</param>
+            <returns>a <see cref="T:Qhta.TypeUtils.TypeCategory"/> of a type or 0 if not known</returns>
         </member>
         <member name="M:Qhta.TypeUtils.TypeCategorization.IsSimple(System.Type)">
             <summary>
-            Is it a simple type
+            Is a type a simple type? A simple type is string, char, boolean, all numeral types, date/time, time span and guid type.
+            Also an enum type is a simple type.
             </summary>
-            <param name="type"></param>
-            <returns></returns>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a simple type</returns>
         </member>
-        <member name="M:Qhta.TypeUtils.TypeCategorization.IsNullable(System.Type,System.Type@)">
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsTextual(System.Type)">
             <summary>
-            Is it a nullable type of some specific base type
+            Is a type a textual type, i.e. string or char type
             </summary>
-            <param name="type"></param>
-            <param name="baseType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Qhta.TypeUtils.TypeCategorization.IsNullable(System.Type)">
-            <summary>
-            Is it a nullable type
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a textual type</returns>
         </member>
         <member name="M:Qhta.TypeUtils.TypeCategorization.IsNumeral(System.Type)">
             <summary>
-            Is it a numeral type
+            Is a type a numeral type, i.e. integer or float or decimal type
             </summary>
-            <param name="type"></param>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a numeral type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsNullable(System.Type)">
+            <summary>
+            Is a type a nullable type, i.e. it's name starts with "Nullable`1".
+            </summary>
+            <returns>true if a type is a nullable type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsNullable(System.Type,System.Type@)">
+            <summary>
+            Checks if a type is a nullable type, i.e. it's name starts with "Nullable`1"
+            and returns it's base type
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="baseType">based type of the nullable type</param>
+            <returns>true if a type is a nullable type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsArray(System.Type)">
+            <summary>
+            Is a type an array type.
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is an array type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsArray(System.Type,System.Type@)">
+            <summary>
+            Is a type an array type.
+            If so it returns the item type of the array.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">returned item type if a type is an array</param>
+            <returns>true if a type is an array type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsArray(System.Type,System.Type)">
+            <summary>
+            Is a type an array type.
+            If so it check the item type of the array.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">checked item type if a type is an array</param>
+            <returns>true if a type is an array type of item Type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsList(System.Type)">
+            <summary>
+            Is a type a list type, i.e. it's name starts with "List`1"
+            or if it is a defined type which implements a IList`1 interface.
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a list type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsList(System.Type,System.Type@)">
+            <summary>
+            Checks if a type a list type, i.e. it's name starts with "List`1"
+            or if it is a defined type which implements a IList`1 interface.
+            If so it returns the item type of the list.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">returned item type if a type is a list</param>
+            <returns>true if a type is a list type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsList(System.Type,System.Type)">
+            <summary>
+            Is a type an list type, i.e. it's name starts with "List`1"
+            or if it is a defined type which implements a IList`1 interface.
+            If so it check the item type of the collection.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">checked item type if a type is a list</param>
+            <returns>true if a type is an enumerable type of item Type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsCollection(System.Type)">
+            <summary>
+            Is a type a collection type, i.e. it's name starts with "Collection`1"
+            or if it is a defined type which implements a ICollection`1 interface.
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a collection type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsCollection(System.Type,System.Type@)">
+            <summary>
+            Is a type a collection type, i.e. it's name starts with "Collection`1"
+            or if it is a defined type which implements a ICollection`1 interface.
+            If so it returns the item type of the collection.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">returned item type if a type is a collection</param>
+            <returns>true if a type is a collection type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsCollection(System.Type,System.Type)">
+            <summary>
+            Is a type a collection type, i.e. it's name starts with "Collection`1"
+            or if it is a defined type which implements a ICollection`1 interface.
+            If so it checks the item type of the collection.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">checked item type if a type is a collection</param>
+            <returns>true if a type is a collection type of item type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsEnumerable(System.Type)">
+            <summary>
+            Is a type an enumerable type, i.e. it's name starts with "Enumerable`1"
+            or if it is a defined type which implements a IEnumerable`1 interface.
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is an enumerable type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsEnumerable(System.Type,System.Type@)">
+            <summary>
+            Is a type an enumerable type, i.e. it's name starts with "Enumerable`1"
+            or if it is a defined type which implements a IEnumerable`1 interface.
+            If so it returns the item type of the collection.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">returned item type if a type is an enumerable</param>
+            <returns>true if a type is an enumerable type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsEnumerable(System.Type,System.Type)">
+            <summary>
+            Is a type an enumerable type, i.e. it's name starts with "Enumerable`1"
+            or if it is a defined type which implements a IEnumerable`1 interface.
+            If so it check the item type of the collection.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="itemType">checked item type if a type is an enumerable</param>
+            <returns>true if a type is an enumerable type of item Type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsDictionary(System.Type)">
+            <summary>
+            Is a type a dictionary type, i.e. it's name starts with "Dictionary`2"
+            or if it is a defined type which implements a IDictionary`2 interface.
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a dictionary type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsDictionary(System.Type,System.Type@,System.Type@)">
+            <summary>
+            Is a type a dictionary type, i.e. it's name starts with "Dictionary`2"
+            or if it is a defined type which implements a IDictionary`2 interface.
+            If so it returns the key type and the value type of the dictionary.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="keyType">returned key type if a type is a dictionary</param>
+            <param name="valueType">returned value type if a type is a dictionary</param>
+            <returns>true if a type is a dictionary type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsDictionary(System.Type,System.Type,System.Type)">
+            <summary>
+            Is a type a dictionary type, i.e. it's name starts with "Dictionary`2"
+            or if it is a defined type which implements a IDictionary`2 interface.
+            If so it checks the key type and the value type of the dictionary.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="keyType">checked key type if a type is a dictionary</param>
+            <param name="valueType">checked value type if a type is a dictionary</param>
+            <returns>true if a type is a dictionary type of key and value type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsKeyValuePair(System.Type)">
+            <summary>
+            Is a type a key value pair type, i.e. it's name starts with "KeyValuePair`2"
+            </summary>
+            <param name="aType">checked type</param>
+            <returns>true if a type is a key value pair type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsKeyValuePair(System.Type,System.Type@,System.Type@)">
+            <summary>
+            Is a type a key value pair  type, i.e. it's name starts with  "KeyValuePair`2"
+            If so it returns the key type and the value type of the pair.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="keyType">returned key type if a type is a key value pair</param>
+            <param name="valueType">returned value type if a type is a key value pair</param>
+            <returns>true if a type is a key value pair type</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsKeyValuePair(System.Type,System.Type,System.Type)">
+            <summary>
+            Is a type a key value pair  type, i.e. it's name starts with "KeyValuePair`2"
+            If so it checks the key type and the value type of the pair.
+            </summary>
+            <param name="aType">checked type</param>
+            <param name="keyType">checked item type if a type is a key value pair </param>
+            <param name="valueType">checked item type if a type is a key value pair </param>
+            <returns>true if a type is a key value pair type  of key and value type</returns>
+        </member>
+        <member name="F:Qhta.TypeUtils.TypeCategorization.NumericSupertypes">
+            <summary>
+            Mapping from a numeric type to possible numeric supertype
+            </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsNumericSupertypeOf(System.Type,System.Type)">
+            <summary>
+            Check if this type can be a supertype of other type
+            </summary>
+            <param name="thisType"></param>
+            <param name="otherType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeCategorization.IsEqualOrSubclassOf(System.Type,System.Type)">
+            <summary>
+            Shortcut of type equality comparison or IsSubclassOf function
+            </summary>
+            <param name="thisType"></param>
+            <param name="otherType"></param>
             <returns></returns>
         </member>
         <member name="T:Qhta.TypeUtils.TypeNaming">
@@ -487,22 +726,171 @@
             <param name="type"></param>
             <returns></returns>
         </member>
+        <member name="T:Qhta.TypeUtils.TypeReflectionByInheritance">
+            <summary>
+            Extension methods for getting members in order of inheritance
+            </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMembersByInheritance(System.Type)">
+            <summary>
+              Replacement for a <c>Type.GetMembers</c> method.
+              The members are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMembersByInheritance(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetMembers</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then members are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodsByInheritance(System.Type)">
+            <summary>
+              Replacement for a <c>Type.GetMethods</c> method.
+              The methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodsByInheritance(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetMethods(BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodByInheritance(System.Type,System.String)">
+            <summary>
+              Replacement for a <c>Type.GetMethod(string)</c> method.
+              The methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodByInheritance(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetMethod(string, BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodByInheritance(System.Type,System.String,System.Type[])">
+            <summary>
+              Replacement for a <c>Type.GetMethod(string, Type[])</c> method.
+              The methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetMethodByInheritance(System.Type,System.String,System.Reflection.BindingFlags,System.Type[])">
+            <summary>
+              Replacement for a <c>Type.GetMethod(string, BindingFlags, Type[])</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then methods are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetPropertiesByInheritance(System.Type)">
+            <summary>
+              Replacement for a <c>Type.GetProperties</c> method.
+              The properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetPropertiesByInheritance(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetProperties(BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetPropertyByInheritance(System.Type,System.String)">
+            <summary>
+              Replacement for a <c>Type.GetProperty(string)</c> method.
+              The properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetPropertyByInheritance(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetProperty(string, BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetFieldsByInheritance(System.Type)">
+            <summary>
+              Replacement for a <c>Type.GetFields</c> method.
+              The properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetFieldsByInheritance(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetFields(BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetFieldByInheritance(System.Type,System.String)">
+            <summary>
+              Replacement for a <c>Type.GetField(string)</c> method.
+              The properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetFieldByInheritance(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+              Replacement for a <c>Type.GetField(string, BindingFlags)</c> method in case
+              when a <paramref name="flags"/> parameter does not have option
+              <c>BindingFlags.DeclaredOnly</c>. Then properties are taken also from superclasses,
+              but are also ordered with inheritance order (from top superclass first).
+             </summary>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetCustomAttibutesByInheritance(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+              Replacement for a <c>Type.GetCustomAttributes</c> method in case
+              when an <paramref name="inherit"/> parameter is set for <c>true</c>
+              Then attributes are taken also from superclasses,
+              but are also ordered with inheritance order.
+            </summary>
+            <param name="aType">A type which attributes are searched</param>
+            <param name="inherit">Search in superclasses?</param>
+            <param name="inheritedFirst">Should inherited attributes be ordered first?</param>
+            <returns>A table of attributes</returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeReflectionByInheritance.GetCustomAttibutesByInheritance``1(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+              Replacement for a <c>Type.GetCustomAttributes</c> method in case
+              when an <paramref name="inherit"/> parameter is set for <c>true</c>
+              Then attributes are taken also from superclasses,
+              but are also ordered with inheritance order.
+              Only attributes of a specified type are returned.
+            </summary>
+            <typeparam name="TAttribute">A type of searched attributes</typeparam>
+            <param name="aType">A type which attributes are searched</param>
+            <param name="inherit">Search in superclasses?</param>
+            <param name="inheritedFirst">Should inherited attributes be ordered first?</param>
+            <returns>A table of attributes</returns>
+        </member>
         <member name="T:Qhta.TypeUtils.TypeUtils">
             <summary>
             Helper functions that operate on types and supplement <c>System.Reflection</c> library
             </summary>
         </member>
-        <member name="F:Qhta.TypeUtils.TypeUtils.NumericSupertypes">
+        <member name="M:Qhta.TypeUtils.TypeUtils.GetTopmostMethod(System.Type,System.String)">
             <summary>
-            Mapping from a numeric type to possible numeric supertype
+            When a class defines a new method with the same name as an inherited method,
+            a "GetMethod" function return an error. 
+            This "GetTopmostMethod" method searches the original class first 
+            and if it will not find a method, then searches the base class recursively.
             </summary>
-        </member>
-        <member name="M:Qhta.TypeUtils.TypeUtils.IsNumericSupertypeOf(System.Type,System.Type)">
-            <summary>
-            Check if this type can be a supertype of other type
-            </summary>
-            <param name="thisType"></param>
-            <param name="otherType"></param>
+            <param name="aType"></param>
+            <param name="methodName"></param>
             <returns></returns>
         </member>
         <member name="M:Qhta.TypeUtils.TypeUtils.IsDefaultValue(System.Type,System.Object)">
@@ -570,6 +958,51 @@
             with <see cref="M:System.Type.GetInterfaces"/>
             </summary>
         </member>
+        <member name="M:Qhta.TypeUtils.TypeUtils.HasProperty(System.Type,System.String)">
+            <summary>
+              Determine if a type has property with a specified name.
+              Equivalent to <c>type.GetProperty(name) != null</c>.
+            </summary>
+            <param name="type"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeUtils.HasProperty(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+              Determine if a type has property with a specified name using BindingFlags.
+              Equivalent to <c>type.GetProperty(name, flags) != null</c>.
+            </summary>
+            <param name="type"></param>
+            <param name="name"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeUtils.GetValueType(System.Reflection.MemberInfo)">
+            <summary>
+            If memberInfo is PropertyInfo it returns PropertyType.
+            Either if memberInfo is FieldInfo it returns FieldType.
+            Otherwise it returns null.
+            </summary>
+            <param name="memberInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeUtils.CanWrite(System.Reflection.MemberInfo)">
+            <summary>
+            If memberInfo is PropertyInfo it returns PropertyInfo.CanWrite.
+            Either if memberInfo is FieldInfo it returns negated FieldInfo.IsInitOnly.
+            Otherwise it returns null.
+            </summary>
+            <param name="memberInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TypeUtils.TypeUtils.IsIndexer(System.Reflection.MemberInfo)">
+            <summary>
+            If memberInfo is PropertyInfo it checks if it is indeksed property
+            Otherwise it returns false.
+            </summary>
+            <param name="memberInfo"></param>
+            <returns></returns>
+        </member>
         <member name="M:Qhta.TypeUtils.TypeUtils.Redefines(System.Reflection.MemberInfo,System.Reflection.MemberInfo)">
             <summary>
             Checking in a <paramref name="aInfo"/> member redefinines a <paramref name="bInfo"/> member.
@@ -597,40 +1030,6 @@
             </summary>
             <param name="aInfo">info of a method that redefines</param>
             <param name="bInfo">info of a method that is redefined</param>
-        </member>
-        <member name="M:Qhta.TypeUtils.TypeUtils.GetMembersByInheritance(System.Type,System.Reflection.BindingFlags)">
-            <summary>
-              Replacement for a <c>Type.GetMembers</c> method in case
-              when a <paramref name="Flags"/> parameter does not have option
-              <c>BindingFlags.DeclaredOnly</c>. Then methods are taken also from superclasses,
-              but are also ordered with inheritance order (from top superclass first).
-             </summary>
-        </member>
-        <member name="M:Qhta.TypeUtils.TypeUtils.GetCustomAttibutesByInheritance(System.Type,System.Boolean,System.Boolean)">
-            <summary>
-              Replacement for a <c>Type.GetCustomAttributes</c> method in case
-              when an <paramref name="inherit"/> parameter is set for <c>true</c>
-              Then attributes are taken also from superclasses,
-              but are also ordered with inheritance order.
-            </summary>
-            <param name="aType">A type which attributes are searched</param>
-            <param name="inherit">Search in superclasses?</param>
-            <param name="inheritedFirst">Should inherited attributes be ordered first?</param>
-            <returns>A table of attributes</returns>
-        </member>
-        <member name="M:Qhta.TypeUtils.TypeUtils.GetCustomAttibutesByInheritance``1(System.Type,System.Boolean,System.Boolean)">
-            <summary>
-              Replacement for a <c>Type.GetCustomAttributes</c> method in case
-              when an <paramref name="inherit"/> parameter is set for <c>true</c>
-              Then attributes are taken also from superclasses,
-              but are also ordered with inheritance order.
-              Only attributes of a specified type are returned.
-            </summary>
-            <typeparam name="TAttribute">A type of searched attributes</typeparam>
-            <param name="aType">A type which attributes are searched</param>
-            <param name="inherit">Search in superclasses?</param>
-            <param name="inheritedFirst">Should inherited attributes be ordered first?</param>
-            <returns>A table of attributes</returns>
         </member>
         <member name="M:Qhta.TypeUtils.TypeUtils.CopyProperties(System.Object,System.Object,System.Boolean)">
             <summary>

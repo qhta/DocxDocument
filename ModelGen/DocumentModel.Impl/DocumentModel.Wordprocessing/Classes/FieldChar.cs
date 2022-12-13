@@ -21,9 +21,9 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// <summary>
   /// Field Character Type
   /// </summary>
-  public FieldCharKind? FieldCharType
+  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType
   {
-    get => (FieldCharKind?)OpenXmlElement?.FieldCharType?.Value;
+    get => (DocumentModel.Wordprocessing.FieldCharKind?)OpenXmlElement?.FieldCharType?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public Boolean? FieldLock
   {
-    get => (Boolean?)OpenXmlElement?.FieldLock?.Value;
+    get => (System.Boolean?)OpenXmlElement?.FieldLock?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public Boolean? Dirty
   {
-    get => (Boolean?)OpenXmlElement?.Dirty?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Dirty?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,34 +62,22 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// </summary>
   public String? FieldData
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
-        return openXmlElement?.Text;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.FieldData?.Text;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
-        if (item != null)
+        if (OpenXmlElement.FieldData != null)
         {
           if (value is not null)
-            item.Text = value;
+            OpenXmlElement.FieldData.Text = value;
           else
-            item.Remove();
+            OpenXmlElement.FieldData = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FieldData = new DocumentFormat.OpenXml.Wordprocessing.FieldData{ Text = value };
         }
       }
     }
@@ -98,7 +86,7 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// <summary>
   /// Form Field Properties.
   /// </summary>
-  public FormFieldData? FormFieldData
+  public DocumentModel.Wordprocessing.FormFieldData? FormFieldData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -107,7 +95,7 @@ public class FieldCharImpl: ModelElementImpl, FieldChar
   /// <summary>
   /// Previous Numbering Field Properties.
   /// </summary>
-  public NumberingChange? NumberingChange
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

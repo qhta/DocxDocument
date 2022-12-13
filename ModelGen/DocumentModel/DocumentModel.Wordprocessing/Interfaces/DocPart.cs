@@ -8,11 +8,11 @@ public interface DocPart
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>
-  public DocPartProperties? DocPartProperties { get ; set; }
+  public DocumentModel.Wordprocessing.DocPartProperties? DocPartProperties { get ; set; }
   
   /// <summary>
   /// Contents of Glossary Document Entry.
   /// </summary>
-  public DocPartBody? DocPartBody { get ; set; }
+  public DocumentModel.Wordprocessing.DocPartBody? DocPartBody { get ; set; }
   
 }

@@ -23,7 +23,7 @@ public class CategoryImpl: ModelElementImpl, Category
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,36 +47,24 @@ public class CategoryImpl: ModelElementImpl, Category
   /// <summary>
   /// Gallery Associated With Entry.
   /// </summary>
-  public DocPartGalleryKind? Gallery
+  public DocumentModel.Wordprocessing.DocPartGalleryKind? Gallery
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Gallery>();
-        return (DocPartGalleryKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.DocPartGalleryKind?)OpenXmlElement?.Gallery?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Gallery>();
-        if (item != null)
+        if (OpenXmlElement.Gallery != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value;
+            OpenXmlElement.Gallery.Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.Gallery = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Gallery{ Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Gallery = new DocumentFormat.OpenXml.Wordprocessing.Gallery{ Val = (DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues?)value };
         }
       }
     }

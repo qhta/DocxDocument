@@ -43,8 +43,8 @@ public interface Div
   /// <summary>
   /// Set of Borders for HTML div.
   /// </summary>
-  public DivBorder? DivBorder { get ; set; }
+  public DocumentModel.Wordprocessing.DivBorder? DivBorder { get ; set; }
   
-  public Collection<DivsChild>? DivsChilds { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.DivsChild>? DivsChilds { get ; set; }
   
 }

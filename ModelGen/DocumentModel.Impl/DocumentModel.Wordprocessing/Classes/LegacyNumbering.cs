@@ -23,7 +23,7 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public Boolean? Legacy
   {
-    get => (Boolean?)OpenXmlElement?.Legacy?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Legacy?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public String? LegacySpace
   {
-    get => (String?)OpenXmlElement?.LegacySpace?.Value;
+    get => (System.String?)OpenXmlElement?.LegacySpace?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
   /// </summary>
   public String? LegacyIndent
   {
-    get => (String?)OpenXmlElement?.LegacyIndent?.Value;
+    get => (System.String?)OpenXmlElement?.LegacyIndent?.Value;
     set
     {
       if (OpenXmlElement != null)

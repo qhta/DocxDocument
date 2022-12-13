@@ -23,34 +23,22 @@ public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
   /// </summary>
   public String? Width
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Width>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.Width?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Width>();
-        if (item != null)
+        if (OpenXmlElement.Width != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.Width.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.Width = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Width{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Width = new DocumentFormat.OpenXml.Wordprocessing.Width{ Val = (System.String?)value };
         }
       }
     }
@@ -59,7 +47,7 @@ public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
   /// <summary>
   /// Frameset Splitter Color.
   /// </summary>
-  public Color? Color
+  public DocumentModel.Wordprocessing.Color? Color
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -68,36 +56,24 @@ public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
   /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
-  public OnOffOnlyKind? NoBorder
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoBorder
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoBorder>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.NoBorder?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoBorder>();
-        if (item != null)
+        if (OpenXmlElement.NoBorder != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.NoBorder.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.NoBorder = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoBorder{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NoBorder = new DocumentFormat.OpenXml.Wordprocessing.NoBorder{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }
@@ -106,36 +82,24 @@ public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
   /// <summary>
   /// Frameset Splitter Border Style.
   /// </summary>
-  public OnOffOnlyKind? FlatBorders
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? FlatBorders
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FlatBorders>();
-        return (OnOffOnlyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.OnOffOnlyKind?)OpenXmlElement?.FlatBorders?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FlatBorders>();
-        if (item != null)
+        if (OpenXmlElement.FlatBorders != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
+            OpenXmlElement.FlatBorders.Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.FlatBorders = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FlatBorders{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FlatBorders = new DocumentFormat.OpenXml.Wordprocessing.FlatBorders{ Val = (DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues?)value };
         }
       }
     }

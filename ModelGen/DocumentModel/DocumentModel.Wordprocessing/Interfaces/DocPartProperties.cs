@@ -8,7 +8,7 @@ public interface DocPartProperties
   /// <summary>
   /// Entry Name.
   /// </summary>
-  public DocPartName? DocPartName { get ; set; }
+  public DocumentModel.Wordprocessing.DocPartName? DocPartName { get ; set; }
   
   /// <summary>
   /// Associated Paragraph Style Name.
@@ -18,17 +18,17 @@ public interface DocPartProperties
   /// <summary>
   /// Entry Categorization.
   /// </summary>
-  public Category? Category { get ; set; }
+  public DocumentModel.Wordprocessing.Category? Category { get ; set; }
   
   /// <summary>
   /// Entry Types.
   /// </summary>
-  public DocPartTypes? DocPartTypes { get ; set; }
+  public DocumentModel.Wordprocessing.DocPartTypes? DocPartTypes { get ; set; }
   
   /// <summary>
   /// Entry Insertion Behaviors.
   /// </summary>
-  public Behaviors? Behaviors { get ; set; }
+  public DocumentModel.Wordprocessing.Behaviors? Behaviors { get ; set; }
   
   /// <summary>
   /// Description for Entry.

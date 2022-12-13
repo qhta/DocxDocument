@@ -18,6 +18,6 @@ public interface CustomXmlElement
   /// <summary>
   /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  public CustomXmlProperties? CustomXmlProperties { get ; set; }
+  public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get ; set; }
   
 }

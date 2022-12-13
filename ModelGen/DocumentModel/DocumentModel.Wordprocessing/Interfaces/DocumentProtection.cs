@@ -8,7 +8,7 @@ public interface DocumentProtection
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>
-  public DocumentProtectionKind? Edit { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit { get ; set; }
   
   /// <summary>
   /// Only Allow Formatting With Unlocked Styles
@@ -23,17 +23,17 @@ public interface DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type
   /// </summary>
-  public CryptProviderKind? CryptographicProviderType { get ; set; }
+  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Class
   /// </summary>
-  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
+  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get ; set; }
   
   /// <summary>
   /// Cryptographic Algorithm Type
   /// </summary>
-  public CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
+  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get ; set; }
   
   /// <summary>
   /// Cryptographic Hashing Algorithm
@@ -53,7 +53,7 @@ public interface DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public HexBinaryValue? AlgorithmIdExtensibility { get ; set; }
+  public DocumentModel.HexBinaryValue? AlgorithmIdExtensibility { get ; set; }
   
   /// <summary>
   /// Algorithm Extensibility Source
@@ -63,7 +63,7 @@ public interface DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public HexBinaryValue? CryptographicProviderTypeExtensibility { get ; set; }
+  public DocumentModel.HexBinaryValue? CryptographicProviderTypeExtensibility { get ; set; }
   
   /// <summary>
   /// Provider Type Extensibility Source
@@ -73,12 +73,12 @@ public interface DocumentProtection
   /// <summary>
   /// Password Hash
   /// </summary>
-  public Base64BinaryValue? Hash { get ; set; }
+  public DocumentModel.Base64BinaryValue? Hash { get ; set; }
   
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public Base64BinaryValue? Salt { get ; set; }
+  public DocumentModel.Base64BinaryValue? Salt { get ; set; }
   
   /// <summary>
   /// algorithmName, this property is only available in Office 2010 and later.
@@ -88,12 +88,12 @@ public interface DocumentProtection
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Base64BinaryValue? HashValue { get ; set; }
+  public DocumentModel.Base64BinaryValue? HashValue { get ; set; }
   
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Base64BinaryValue? SaltValue { get ; set; }
+  public DocumentModel.Base64BinaryValue? SaltValue { get ; set; }
   
   /// <summary>
   /// spinCount, this property is only available in Office 2010 and later.

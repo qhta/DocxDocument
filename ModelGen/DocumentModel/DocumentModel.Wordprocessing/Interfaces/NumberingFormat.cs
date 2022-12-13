@@ -8,7 +8,7 @@ public interface NumberingFormat
   /// <summary>
   /// Numbering Format Type
   /// </summary>
-  public NumberFormatKind? Val { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormatKind? Val { get ; set; }
   
   /// <summary>
   /// format, this property is only available in Office 2010 and later.

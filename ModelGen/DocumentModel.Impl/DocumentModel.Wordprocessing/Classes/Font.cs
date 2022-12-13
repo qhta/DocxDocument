@@ -23,7 +23,7 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,34 +36,22 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public String? AltName
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltName>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.AltName?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltName>();
-        if (item != null)
+        if (OpenXmlElement.AltName != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.AltName.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.AltName = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AltName{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.AltName = new DocumentFormat.OpenXml.Wordprocessing.AltName{ Val = (System.String?)value };
         }
       }
     }
@@ -72,7 +60,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public HexBinaryValue? Panose1Number
+  public DocumentModel.HexBinaryValue? Panose1Number
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -81,7 +69,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// FontCharSet.
   /// </summary>
-  public FontCharSet? FontCharSet
+  public DocumentModel.Wordprocessing.FontCharSet? FontCharSet
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -90,36 +78,24 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// FontFamily.
   /// </summary>
-  public FontFamilyKind? FontFamily
+  public DocumentModel.Wordprocessing.FontFamilyKind? FontFamily
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontFamily>();
-        return (FontFamilyKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.FontFamilyKind?)OpenXmlElement?.FontFamily?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontFamily>();
-        if (item != null)
+        if (OpenXmlElement.FontFamily != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues?)value;
+            OpenXmlElement.FontFamily.Val = (DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.FontFamily = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FontFamily{ Val = (DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.FontFamily = new DocumentFormat.OpenXml.Wordprocessing.FontFamily{ Val = (DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues?)value };
         }
       }
     }
@@ -134,8 +110,8 @@ public class FontImpl: ModelElementImpl, Font
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
+        return item != null;
       }
       return null;
     }
@@ -146,16 +122,14 @@ public class FontImpl: ModelElementImpl, Font
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NotTrueType{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NotTrueType();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -166,36 +140,24 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// Pitch.
   /// </summary>
-  public FontPitchKind? Pitch
+  public DocumentModel.Wordprocessing.FontPitchKind? Pitch
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Pitch>();
-        return (FontPitchKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.FontPitchKind?)OpenXmlElement?.Pitch?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Pitch>();
-        if (item != null)
+        if (OpenXmlElement.Pitch != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.FontPitchValues?)value;
+            OpenXmlElement.Pitch.Val = (DocumentFormat.OpenXml.Wordprocessing.FontPitchValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.Pitch = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.Pitch{ Val = (DocumentFormat.OpenXml.Wordprocessing.FontPitchValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.Pitch = new DocumentFormat.OpenXml.Wordprocessing.Pitch{ Val = (DocumentFormat.OpenXml.Wordprocessing.FontPitchValues?)value };
         }
       }
     }
@@ -204,7 +166,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// FontSignature.
   /// </summary>
-  public FontSignature? FontSignature
+  public DocumentModel.Wordprocessing.FontSignature? FontSignature
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -213,7 +175,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// EmbedRegularFont.
   /// </summary>
-  public FontRelationshipType? EmbedRegularFont
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedRegularFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -222,7 +184,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// EmbedBoldFont.
   /// </summary>
-  public FontRelationshipType? EmbedBoldFont
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -231,7 +193,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// EmbedItalicFont.
   /// </summary>
-  public FontRelationshipType? EmbedItalicFont
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedItalicFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -240,7 +202,7 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// EmbedBoldItalicFont.
   /// </summary>
-  public FontRelationshipType? EmbedBoldItalicFont
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldItalicFont
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

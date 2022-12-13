@@ -40,49 +40,14 @@ public class FullTypeName
     return namespaces.ToArray();
   }
 
-  public void RemoveNamespace(string nspace)
-  {
-    if (nspace == Namespace)
-      Namespace = null;
-    if (ArgNames != null)
-      foreach (var arg in ArgNames)
-        arg.RemoveNamespace(nspace);
-  }
-
-  public void TrimNamespace(string nspace)
-  {
-    if (Namespace != null)
-    {
-      //  var thisNsSegments = Namespace.Split('.').ToList();
-      //  var nspaceSegments = nspace.Split(".");
-      //  int k;
-      //  for (k = 0; k < thisNsSegments.Count() && k < nspaceSegments.Count(); k++)
-      //  {
-      //    if (thisNsSegments[k] != nspaceSegments[k])
-      //      break;
-      //  }
-      //  if (k > 0)
-      //  {
-      //    nspace = string.Empty;
-      //    for (int i = k; i < thisNsSegments.Count(); i++)
-      //    {
-      //      if (nspace != string.Empty)
-      //        nspace += ".";
-      //      nspace = thisNsSegments[i];
-      //    }
-      //    Namespace = nspace;
-      //  }
-      //}
-      if (!nspace.EndsWith('.'))
-        nspace = nspace + ".";
-      if (Namespace.StartsWith(nspace))
-        Namespace = Namespace.Substring(nspace.Length);
-      if (ArgNames != null)
-        foreach (var arg in ArgNames)
-          arg.TrimNamespace(nspace);
-    }
-  }
-
+  //public void RemoveNamespace(string nspace)
+  //{
+  //  if (nspace == Namespace)
+  //    Namespace = null;
+  //  if (ArgNames != null)
+  //    foreach (var arg in ArgNames)
+  //      arg.RemoveNamespace(nspace);
+  //}
 
   public override string ToString()
   {

@@ -23,7 +23,7 @@ public class ControlImpl: ModelElementImpl, Control
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ControlImpl: ModelElementImpl, Control
   /// </summary>
   public String? ShapeId
   {
-    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    get => (System.String?)OpenXmlElement?.ShapeId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ControlImpl: ModelElementImpl, Control
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

@@ -20,6 +20,6 @@ public interface NumberingInstance
   /// </summary>
   public Int32? AbstractNumId { get ; set; }
   
-  public LevelOverride? LevelOverride { get ; set; }
+  public DocumentModel.Wordprocessing.LevelOverride? LevelOverride { get ; set; }
   
 }

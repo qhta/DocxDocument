@@ -21,7 +21,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// First 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public HexBinaryValue? UnicodeSignature0
+  public DocumentModel.HexBinaryValue? UnicodeSignature0
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// Second 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public HexBinaryValue? UnicodeSignature1
+  public DocumentModel.HexBinaryValue? UnicodeSignature1
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// Third 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public HexBinaryValue? UnicodeSignature2
+  public DocumentModel.HexBinaryValue? UnicodeSignature2
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// Fourth 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public HexBinaryValue? UnicodeSignature3
+  public DocumentModel.HexBinaryValue? UnicodeSignature3
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// Lower 32 Bits of Code Page Bit Field
   /// </summary>
-  public HexBinaryValue? CodePageSignature0
+  public DocumentModel.HexBinaryValue? CodePageSignature0
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class FontSignatureImpl: ModelElementImpl, FontSignature
   /// <summary>
   /// Upper 32 Bits of Code Page Bit Field
   /// </summary>
-  public HexBinaryValue? CodePageSignature1
+  public DocumentModel.HexBinaryValue? CodePageSignature1
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

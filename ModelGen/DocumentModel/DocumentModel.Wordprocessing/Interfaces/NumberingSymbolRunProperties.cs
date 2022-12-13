@@ -8,7 +8,7 @@ public interface NumberingSymbolRunProperties
   /// <summary>
   /// RunFonts.
   /// </summary>
-  public RunFonts? RunFonts { get ; set; }
+  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get ; set; }
   
   /// <summary>
   /// Bold.
@@ -93,7 +93,7 @@ public interface NumberingSymbolRunProperties
   /// <summary>
   /// Color.
   /// </summary>
-  public Color? Color { get ; set; }
+  public DocumentModel.Wordprocessing.Color? Color { get ; set; }
   
   /// <summary>
   /// Spacing.
@@ -128,32 +128,32 @@ public interface NumberingSymbolRunProperties
   /// <summary>
   /// Underline.
   /// </summary>
-  public Underline? Underline { get ; set; }
+  public DocumentModel.Wordprocessing.Underline? Underline { get ; set; }
   
   /// <summary>
   /// TextEffect.
   /// </summary>
-  public TextEffectKind? TextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get ; set; }
   
   /// <summary>
   /// Border.
   /// </summary>
-  public BorderType? Border { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? Border { get ; set; }
   
   /// <summary>
   /// Shading.
   /// </summary>
-  public Shading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get ; set; }
   
   /// <summary>
   /// FitText.
   /// </summary>
-  public FitText? FitText { get ; set; }
+  public DocumentModel.Wordprocessing.FitText? FitText { get ; set; }
   
   /// <summary>
   /// VerticalTextAlignment.
   /// </summary>
-  public VerticalPositionKind? VerticalTextAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get ; set; }
   
   /// <summary>
   /// RightToLeftText.
@@ -168,17 +168,17 @@ public interface NumberingSymbolRunProperties
   /// <summary>
   /// Emphasis.
   /// </summary>
-  public EmphasisMarkKind? Emphasis { get ; set; }
+  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get ; set; }
   
   /// <summary>
   /// Languages.
   /// </summary>
-  public LanguageType? Languages { get ; set; }
+  public DocumentModel.Wordprocessing.LanguageType? Languages { get ; set; }
   
   /// <summary>
   /// EastAsianLayout.
   /// </summary>
-  public EastAsianLayout? EastAsianLayout { get ; set; }
+  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get ; set; }
   
   /// <summary>
   /// SpecVanish.

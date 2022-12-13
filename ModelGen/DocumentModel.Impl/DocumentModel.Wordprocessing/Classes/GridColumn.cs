@@ -23,7 +23,7 @@ public class GridColumnImpl: ModelElementImpl, GridColumn
   /// </summary>
   public String? Width
   {
-    get => (String?)OpenXmlElement?.Width?.Value;
+    get => (System.String?)OpenXmlElement?.Width?.Value;
     set
     {
       if (OpenXmlElement != null)

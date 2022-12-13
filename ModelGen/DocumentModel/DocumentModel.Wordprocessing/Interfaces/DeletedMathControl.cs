@@ -20,6 +20,6 @@ public interface DeletedMathControl
   /// </summary>
   public String? Id { get ; set; }
   
-  public RunProperties? RunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get ; set; }
   
 }

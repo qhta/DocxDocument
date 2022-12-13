@@ -18,7 +18,7 @@ public interface PageSize
   /// <summary>
   /// Page Orientation
   /// </summary>
-  public PageOrientationKind? Orient { get ; set; }
+  public DocumentModel.Wordprocessing.PageOrientationKind? Orient { get ; set; }
   
   /// <summary>
   /// Printer Paper Code

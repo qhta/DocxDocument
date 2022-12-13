@@ -21,7 +21,7 @@ public class DivBorderImpl: ModelElementImpl, DivBorder
   /// <summary>
   /// Top Border for HTML div.
   /// </summary>
-  public BorderType? TopBorder
+  public DocumentModel.Wordprocessing.BorderType? TopBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class DivBorderImpl: ModelElementImpl, DivBorder
   /// <summary>
   /// Left Border for HTML div.
   /// </summary>
-  public BorderType? LeftBorder
+  public DocumentModel.Wordprocessing.BorderType? LeftBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class DivBorderImpl: ModelElementImpl, DivBorder
   /// <summary>
   /// Bottom Border for HTML div.
   /// </summary>
-  public BorderType? BottomBorder
+  public DocumentModel.Wordprocessing.BorderType? BottomBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class DivBorderImpl: ModelElementImpl, DivBorder
   /// <summary>
   /// Right Border for HTML div.
   /// </summary>
-  public BorderType? RightBorder
+  public DocumentModel.Wordprocessing.BorderType? RightBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

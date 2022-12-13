@@ -23,7 +23,7 @@ public class DocPartTypesImpl: ModelElementImpl, DocPartTypes
   /// </summary>
   public Boolean? All
   {
-    get => (Boolean?)OpenXmlElement?.All?.Value;
+    get => (System.Boolean?)OpenXmlElement?.All?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -31,14 +31,14 @@ public class DocPartTypesImpl: ModelElementImpl, DocPartTypes
     }
   }
   
-  public DocPartKind? DocPartType
+  public DocumentModel.Wordprocessing.DocPartKind? DocPartType
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartType>();
-        return (DocPartKind?)openXmlElement?.Val?.Value;
+        return (DocumentModel.Wordprocessing.DocPartKind?)openXmlElement?.Val?.Value;
       }
       return null;
     }

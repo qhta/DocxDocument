@@ -23,7 +23,7 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// </summary>
   public Int32? NumberingPictureBulletId
   {
-    get => (Int32?)OpenXmlElement?.NumberingPictureBulletId?.Value;
+    get => (System.Int32?)OpenXmlElement?.NumberingPictureBulletId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,7 +34,7 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// <summary>
   /// PictureBulletBase.
   /// </summary>
-  public PictureBulletBase? PictureBulletBase
+  public DocumentModel.Wordprocessing.PictureBulletBase? PictureBulletBase
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -43,7 +43,7 @@ public class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBulle
   /// <summary>
   /// Drawing.
   /// </summary>
-  public Drawing? Drawing
+  public DocumentModel.Wordprocessing.Drawing? Drawing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

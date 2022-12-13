@@ -23,7 +23,7 @@ public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertie
   /// </summary>
   public String? Author
   {
-    get => (String?)OpenXmlElement?.Author?.Value;
+    get => (System.String?)OpenXmlElement?.Author?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertie
   /// </summary>
   public DateTime? Date
   {
-    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    get => (System.DateTime?)OpenXmlElement?.Date?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertie
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,7 +60,7 @@ public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertie
   /// <summary>
   /// Previous Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesExtended? ParagraphPropertiesExtended
+  public DocumentModel.Wordprocessing.ParagraphPropertiesExtended? ParagraphPropertiesExtended
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

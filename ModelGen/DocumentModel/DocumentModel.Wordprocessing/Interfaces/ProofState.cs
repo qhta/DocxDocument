@@ -8,11 +8,11 @@ public interface ProofState
   /// <summary>
   /// Spell Checking State
   /// </summary>
-  public ProofingStateKind? Spelling { get ; set; }
+  public DocumentModel.Wordprocessing.ProofingStateKind? Spelling { get ; set; }
   
   /// <summary>
   /// Grammatical Checking State
   /// </summary>
-  public ProofingStateKind? Grammar { get ; set; }
+  public DocumentModel.Wordprocessing.ProofingStateKind? Grammar { get ; set; }
   
 }

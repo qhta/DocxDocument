@@ -8,72 +8,72 @@ public interface PreviousSectionProperties
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public HexBinaryValue? RsidRPr { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidRPr { get ; set; }
   
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public HexBinaryValue? RsidDel { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidDel { get ; set; }
   
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public HexBinaryValue? RsidR { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidR { get ; set; }
   
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public HexBinaryValue? RsidSect { get ; set; }
+  public DocumentModel.HexBinaryValue? RsidSect { get ; set; }
   
   /// <summary>
   /// FootnoteProperties.
   /// </summary>
-  public FootnoteProperties? FootnoteProperties { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties { get ; set; }
   
   /// <summary>
   /// EndnoteProperties.
   /// </summary>
-  public EndnoteProperties? EndnoteProperties { get ; set; }
+  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties { get ; set; }
   
   /// <summary>
   /// SectionType.
   /// </summary>
-  public SectionMarkKind? SectionType { get ; set; }
+  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType { get ; set; }
   
   /// <summary>
   /// PageSize.
   /// </summary>
-  public PageSize? PageSize { get ; set; }
+  public DocumentModel.Wordprocessing.PageSize? PageSize { get ; set; }
   
   /// <summary>
   /// PageMargin.
   /// </summary>
-  public PageMargin? PageMargin { get ; set; }
+  public DocumentModel.Wordprocessing.PageMargin? PageMargin { get ; set; }
   
   /// <summary>
   /// PaperSource.
   /// </summary>
-  public PaperSource? PaperSource { get ; set; }
+  public DocumentModel.Wordprocessing.PaperSource? PaperSource { get ; set; }
   
   /// <summary>
   /// PageBorders.
   /// </summary>
-  public PageBorders? PageBorders { get ; set; }
+  public DocumentModel.Wordprocessing.PageBorders? PageBorders { get ; set; }
   
   /// <summary>
   /// LineNumberType.
   /// </summary>
-  public LineNumberType? LineNumberType { get ; set; }
+  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType { get ; set; }
   
   /// <summary>
   /// PageNumberType.
   /// </summary>
-  public PageNumberType? PageNumberType { get ; set; }
+  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType { get ; set; }
   
   /// <summary>
   /// Columns.
   /// </summary>
-  public Columns? Columns { get ; set; }
+  public DocumentModel.Wordprocessing.Columns? Columns { get ; set; }
   
   /// <summary>
   /// FormProtection.
@@ -83,7 +83,7 @@ public interface PreviousSectionProperties
   /// <summary>
   /// VerticalTextAlignmentOnPage.
   /// </summary>
-  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage { get ; set; }
   
   /// <summary>
   /// NoEndnote.
@@ -98,7 +98,7 @@ public interface PreviousSectionProperties
   /// <summary>
   /// TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection { get ; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get ; set; }
   
   /// <summary>
   /// BiDi.
@@ -113,12 +113,12 @@ public interface PreviousSectionProperties
   /// <summary>
   /// DocGrid.
   /// </summary>
-  public DocGrid? DocGrid { get ; set; }
+  public DocumentModel.Wordprocessing.DocGrid? DocGrid { get ; set; }
   
   /// <summary>
   /// PrinterSettingsReference.
   /// </summary>
-  public RelationshipType? PrinterSettingsReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? PrinterSettingsReference { get ; set; }
   
   /// <summary>
   /// FootnoteColumns, this property is only available in Office 2013 and later..

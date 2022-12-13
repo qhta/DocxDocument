@@ -25,7 +25,7 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldName>();
-        return (String?)openXmlElement?.Val?.Value;
+        return (System.String?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -60,7 +60,7 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Enabled>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -95,7 +95,7 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -130,7 +130,7 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EntryMacro>();
-        return (String?)openXmlElement?.Val?.Value;
+        return (System.String?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -165,7 +165,7 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ExitMacro>();
-        return (String?)openXmlElement?.Val?.Value;
+        return (System.String?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -193,31 +193,31 @@ public class FormFieldDataImpl: ModelElementImpl, FormFieldData
     }
   }
   
-  public HelpText? HelpText
+  public DocumentModel.Wordprocessing.HelpText? HelpText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public StatusText? StatusText
+  public DocumentModel.Wordprocessing.StatusText? StatusText
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public CheckBox? CheckBox
+  public DocumentModel.Wordprocessing.CheckBox? CheckBox
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DropDownListFormField? DropDownListFormField
+  public DocumentModel.Wordprocessing.DropDownListFormField? DropDownListFormField
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TextInput? TextInput
+  public DocumentModel.Wordprocessing.TextInput? TextInput
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -21,9 +21,9 @@ public class HelpTextImpl: ModelElementImpl, HelpText
   /// <summary>
   /// Help Text Type
   /// </summary>
-  public InfoTextKind? Type
+  public DocumentModel.Wordprocessing.InfoTextKind? Type
   {
-    get => (InfoTextKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.InfoTextKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class HelpTextImpl: ModelElementImpl, HelpText
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)

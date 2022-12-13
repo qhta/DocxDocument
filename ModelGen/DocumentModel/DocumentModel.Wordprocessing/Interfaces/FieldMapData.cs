@@ -8,7 +8,7 @@ public interface FieldMapData
   /// <summary>
   /// Merge Field Mapping.
   /// </summary>
-  public MailMergeOdsoFieldKind? MailMergeFieldType { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? MailMergeFieldType { get ; set; }
   
   /// <summary>
   /// Data Source Name for Column.

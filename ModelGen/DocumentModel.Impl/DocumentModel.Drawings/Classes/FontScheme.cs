@@ -1,0 +1,61 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+/// Font Scheme.
+/// </summary>
+public class FontSchemeImpl: ModelElementImpl, FontScheme
+{
+  public DocumentFormat.OpenXml.Drawing.FontScheme? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Drawing.FontScheme?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public FontSchemeImpl(): base() {}
+  
+  public FontSchemeImpl(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Name
+  /// </summary>
+  public String? Name
+  {
+    get => (System.String?)OpenXmlElement?.Name?.Value;
+    set
+    {
+      if (OpenXmlElement != null)
+        OpenXmlElement.Name = (System.String?)value;
+    }
+  }
+  
+  /// <summary>
+  /// Major Font.
+  /// </summary>
+  public DocumentModel.Drawings.MajorFont? MajorFont
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  /// <summary>
+  /// Minor fonts.
+  /// </summary>
+  public DocumentModel.Drawings.MinorFont? MinorFont
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public DocumentModel.Drawings.ExtensionList? ExtensionList
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

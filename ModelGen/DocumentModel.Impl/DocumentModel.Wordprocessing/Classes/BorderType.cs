@@ -21,9 +21,9 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// <summary>
   /// Border Style
   /// </summary>
-  public BorderKind? Val
+  public DocumentModel.Wordprocessing.BorderKind? Val
   {
-    get => (BorderKind?)OpenXmlElement?.Val?.Value;
+    get => (DocumentModel.Wordprocessing.BorderKind?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? Color
   {
-    get => (String?)OpenXmlElement?.Color?.Value;
+    get => (System.String?)OpenXmlElement?.Color?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// <summary>
   /// Border Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor
   {
-    get => (ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
+    get => (DocumentModel.Wordprocessing.ThemeColorKind?)OpenXmlElement?.ThemeColor?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? ThemeTint
   {
-    get => (String?)OpenXmlElement?.ThemeTint?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeTint?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public String? ThemeShade
   {
-    get => (String?)OpenXmlElement?.ThemeShade?.Value;
+    get => (System.String?)OpenXmlElement?.ThemeShade?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public UInt32? Size
   {
-    get => (UInt32?)OpenXmlElement?.Size?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Size?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public UInt32? Space
   {
-    get => (UInt32?)OpenXmlElement?.Space?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Space?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -114,7 +114,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Boolean? Shadow
   {
-    get => (Boolean?)OpenXmlElement?.Shadow?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Shadow?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -127,7 +127,7 @@ public class BorderTypeImpl: ModelElementImpl, BorderType
   /// </summary>
   public Boolean? Frame
   {
-    get => (Boolean?)OpenXmlElement?.Frame?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Frame?.Value;
     set
     {
       if (OpenXmlElement != null)

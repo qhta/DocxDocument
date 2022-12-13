@@ -13,15 +13,15 @@ public interface Frameset
   /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
-  public FramesetSplitbar? FramesetSplitbar { get ; set; }
+  public DocumentModel.Wordprocessing.FramesetSplitbar? FramesetSplitbar { get ; set; }
   
   /// <summary>
   /// Frameset Layout.
   /// </summary>
-  public FrameLayoutKind? FrameLayout { get ; set; }
+  public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout { get ; set; }
   
-  public Frameset? ChildFrameset { get ; set; }
+  public DocumentModel.Wordprocessing.Frameset? ChildFrameset { get ; set; }
   
-  public Frame? Frame { get ; set; }
+  public DocumentModel.Wordprocessing.Frame? Frame { get ; set; }
   
 }
