@@ -21,9 +21,9 @@ public class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterRefere
   /// <summary>
   /// type
   /// </summary>
-  public HeaderFooterKind? Type
+  public DocumentModel.Wordprocessing.HeaderFooterKind? Type
   {
-    get => (HeaderFooterKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.HeaderFooterKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterRefere
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

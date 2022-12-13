@@ -8,11 +8,11 @@ public interface GlossaryDocument
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentBackground? DocumentBackground { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get ; set; }
   
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public ModelElement? DocParts { get ; set; }
+  public DocumentModel.ModelElement? DocParts { get ; set; }
   
 }

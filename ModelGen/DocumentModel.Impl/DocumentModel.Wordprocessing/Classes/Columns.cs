@@ -23,7 +23,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Boolean? EqualWidth
   {
-    get => (Boolean?)OpenXmlElement?.EqualWidth?.Value;
+    get => (System.Boolean?)OpenXmlElement?.EqualWidth?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public String? Space
   {
-    get => (String?)OpenXmlElement?.Space?.Value;
+    get => (System.String?)OpenXmlElement?.Space?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Int16? ColumnCount
   {
-    get => (Int16?)OpenXmlElement?.ColumnCount?.Value;
+    get => (System.Int16?)OpenXmlElement?.ColumnCount?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
   /// </summary>
   public Boolean? Separator
   {
-    get => (Boolean?)OpenXmlElement?.Separator?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Separator?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -70,7 +70,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
     }
   }
   
-  public Column? Column
+  public DocumentModel.Wordprocessing.Column? Column
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

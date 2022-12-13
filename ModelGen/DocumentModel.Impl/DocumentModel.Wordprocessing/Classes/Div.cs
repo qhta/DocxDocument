@@ -23,7 +23,7 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -40,8 +40,8 @@ public class DivImpl: ModelElementImpl, Div
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
+        return item != null;
       }
       return null;
     }
@@ -52,16 +52,14 @@ public class DivImpl: ModelElementImpl, Div
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.BlockQuote{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.BlockQuote();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -78,8 +76,8 @@ public class DivImpl: ModelElementImpl, Div
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
+        return item != null;
       }
       return null;
     }
@@ -90,16 +88,14 @@ public class DivImpl: ModelElementImpl, Div
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.BodyDiv{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.BodyDiv();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -112,34 +108,22 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public String? LeftMarginDiv
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.LeftMarginDiv?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv>();
-        if (item != null)
+        if (OpenXmlElement.LeftMarginDiv != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.LeftMarginDiv.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.LeftMarginDiv = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.LeftMarginDiv = new DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv{ Val = (System.String?)value };
         }
       }
     }
@@ -150,34 +134,22 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public String? RightMarginDiv
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.RightMarginDiv?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv>();
-        if (item != null)
+        if (OpenXmlElement.RightMarginDiv != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.RightMarginDiv.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.RightMarginDiv = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.RightMarginDiv = new DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv{ Val = (System.String?)value };
         }
       }
     }
@@ -188,34 +160,22 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public String? TopMarginDiv
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.TopMarginDiv?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv>();
-        if (item != null)
+        if (OpenXmlElement.TopMarginDiv != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.TopMarginDiv.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.TopMarginDiv = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.TopMarginDiv = new DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv{ Val = (System.String?)value };
         }
       }
     }
@@ -226,34 +186,22 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public String? BottomMarginDiv
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.BottomMarginDiv?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv>();
-        if (item != null)
+        if (OpenXmlElement.BottomMarginDiv != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.BottomMarginDiv.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.BottomMarginDiv = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.BottomMarginDiv = new DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv{ Val = (System.String?)value };
         }
       }
     }
@@ -262,16 +210,92 @@ public class DivImpl: ModelElementImpl, Div
   /// <summary>
   /// Set of Borders for HTML div.
   /// </summary>
-  public DivBorder? DivBorder
+  public DocumentModel.Wordprocessing.DivBorder? DivBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<DivsChild>? DivsChilds
+  public Collection<DocumentModel.Wordprocessing.DivsChild>? DivsChilds
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_DivsChilds != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DivsChild>()
+            .Select(item => new DocumentModel.Wordprocessing.DivsChildImpl(item)).ToList();
+          _DivsChilds = new ObservableCollection<DocumentModel.Wordprocessing.DivsChild>(items);
+        }
+        else
+          _DivsChilds = new ObservableCollection<DocumentModel.Wordprocessing.DivsChild>();
+        _DivsChilds.CollectionChanged += _DivsChilds_CollectionChanged;
+      }
+      return _DivsChilds;
+    }
+    set
+    {
+      if (value != null && value != _DivsChilds && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DivsChild>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.DivsChildImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.DivsChild> observableCollection)
+        _DivsChilds = observableCollection;
+      else if (value != null)
+        _DivsChilds = new ObservableCollection<DocumentModel.Wordprocessing.DivsChild>(value);
+      else
+       _DivsChilds = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.DivsChild>? _DivsChilds;
+  
+  private void _DivsChilds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DivsChild>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.DivsChildImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.DivsChildImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DivsChild>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

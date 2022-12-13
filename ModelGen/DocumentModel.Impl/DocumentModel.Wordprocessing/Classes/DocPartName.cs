@@ -23,7 +23,7 @@ public class DocPartNameImpl: ModelElementImpl, DocPartName
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class DocPartNameImpl: ModelElementImpl, DocPartName
   /// </summary>
   public Boolean? Decorated
   {
-    get => (Boolean?)OpenXmlElement?.Decorated?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Decorated?.Value;
     set
     {
       if (OpenXmlElement != null)

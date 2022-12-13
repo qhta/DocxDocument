@@ -18,205 +18,357 @@ public class CustomXmlBlockImpl: DocumentModel.Wordprocessing.CustomXmlElementIm
     OpenXmlElement = openXmlElement;
   }
   
-  public new CustomXmlProperties? CustomXmlProperties
+  public new DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public CustomXmlBlock? ChildCustomXmlBlock
+  public DocumentModel.Wordprocessing.CustomXmlBlock? ChildCustomXmlBlock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public SdtBlock? SdtBlock
+  public DocumentModel.Wordprocessing.SdtBlock? SdtBlock
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Paragraph>? Paragraphs
+  public Collection<DocumentModel.Wordprocessing.Paragraph>? Paragraphs
+  {
+    get
+    {
+      if (_Paragraphs != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>()
+            .Select(item => new DocumentModel.Wordprocessing.ParagraphImpl(item)).ToList();
+          _Paragraphs = new ObservableCollection<DocumentModel.Wordprocessing.Paragraph>(items);
+        }
+        else
+          _Paragraphs = new ObservableCollection<DocumentModel.Wordprocessing.Paragraph>();
+        _Paragraphs.CollectionChanged += _Paragraphs_CollectionChanged;
+      }
+      return _Paragraphs;
+    }
+    set
+    {
+      if (value != null && value != _Paragraphs && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.Paragraph> observableCollection)
+        _Paragraphs = observableCollection;
+      else if (value != null)
+        _Paragraphs = new ObservableCollection<DocumentModel.Wordprocessing.Paragraph>(value);
+      else
+       _Paragraphs = null;
+    }
+  }
+  private ObservableCollection<DocumentModel.Wordprocessing.Paragraph>? _Paragraphs;
+  
+  private void _Paragraphs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
+  
+  public Collection<DocumentModel.Wordprocessing.Table>? Tables
+  {
+    get
+    {
+      if (_Tables != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Table>()
+            .Select(item => new DocumentModel.Wordprocessing.TableImpl(item)).ToList();
+          _Tables = new ObservableCollection<DocumentModel.Wordprocessing.Table>(items);
+        }
+        else
+          _Tables = new ObservableCollection<DocumentModel.Wordprocessing.Table>();
+        _Tables.CollectionChanged += _Tables_CollectionChanged;
+      }
+      return _Tables;
+    }
+    set
+    {
+      if (value != null && value != _Tables && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.Table> observableCollection)
+        _Tables = observableCollection;
+      else if (value != null)
+        _Tables = new ObservableCollection<DocumentModel.Wordprocessing.Table>(value);
+      else
+       _Tables = null;
+    }
+  }
+  private ObservableCollection<DocumentModel.Wordprocessing.Table>? _Tables;
+  
+  private void _Tables_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Table>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
+  
+  public DocumentModel.Wordprocessing.ProofError? ProofError
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<Table>? Tables
+  public DocumentModel.Wordprocessing.PermStart? PermStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ProofError? ProofError
+  public DocumentModel.Wordprocessing.PermEnd? PermEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PermStart? PermStart
+  public DocumentModel.Wordprocessing.BookmarkStart? BookmarkStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PermEnd? PermEnd
+  public DocumentModel.Wordprocessing.MarkupRangeType? BookmarkEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BookmarkStart? BookmarkStart
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? BookmarkEnd
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? CommentRangeStart
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? CommentRangeEnd
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveBookmarkType? MoveFromRangeStart
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? MoveFromRangeEnd
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveBookmarkType? MoveToRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlInsRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? MoveToRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlInsRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlInsRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlDelRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlInsRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlDelRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlDelRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlDelRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlMoveFromRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlMoveFromRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlMoveToRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlMoveToRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlConflictInsertionRangeStart
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlConflictInsertionRangeEnd
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlConflictDeletionRangeStart
+  public DocumentModel.Wordprocessing.InsertedRun? InsertedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlConflictDeletionRangeEnd
+  public DocumentModel.Wordprocessing.DeletedRun? DeletedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public InsertedRun? InsertedRun
+  public DocumentModel.Wordprocessing.MoveFromRun? MoveFromRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DeletedRun? DeletedRun
+  public DocumentModel.Wordprocessing.MoveToRun? MoveToRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveFromRun? MoveFromRun
+  public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveToRun? MoveToRun
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public RunConflictInsertion? RunConflictInsertion
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public RunConflictDeletion? RunConflictDeletion
+  public DocumentModel.Wordprocessing.RunConflictDeletion? RunConflictDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -18,7 +18,7 @@ public interface DataSourceObject
   /// <summary>
   /// ODSO Data Source File Path.
   /// </summary>
-  public RelationshipType? SourceReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? SourceReference { get ; set; }
   
   /// <summary>
   /// Column Delimiter for Data Source.
@@ -28,15 +28,15 @@ public interface DataSourceObject
   /// <summary>
   /// ODSO Data Source Type.
   /// </summary>
-  public MailMergeSourceKind? MailMergeSource { get ; set; }
+  public DocumentModel.Wordprocessing.MailMergeSourceKind? MailMergeSource { get ; set; }
   
   /// <summary>
   /// First Row of Data Source Contains Column Names.
   /// </summary>
   public Boolean? FirstRowHeader { get ; set; }
   
-  public Collection<FieldMapData>? FieldMapDatas { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.FieldMapData>? FieldMapDatas { get ; set; }
   
-  public RelationshipType? RecipientDataReference { get ; set; }
+  public DocumentModel.Wordprocessing.RelationshipType? RecipientDataReference { get ; set; }
   
 }

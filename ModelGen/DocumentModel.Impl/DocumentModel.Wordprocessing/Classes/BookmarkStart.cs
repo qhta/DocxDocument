@@ -23,7 +23,7 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
   /// </summary>
   public Int32? ColumnFirst
   {
-    get => (Int32?)OpenXmlElement?.ColumnFirst?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnFirst?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
   /// </summary>
   public Int32? ColumnLast
   {
-    get => (Int32?)OpenXmlElement?.ColumnLast?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnLast?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,9 +60,9 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml
   {
-    get => (DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
+    get => (DocumentModel.Wordprocessing.DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

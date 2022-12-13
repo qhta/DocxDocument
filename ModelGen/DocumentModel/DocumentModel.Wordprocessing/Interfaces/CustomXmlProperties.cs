@@ -10,6 +10,6 @@ public interface CustomXmlProperties
   /// </summary>
   public String? CustomXmlPlaceholder { get ; set; }
   
-  public Collection<CustomXmlAttribute>? CustomXmlAttributes { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? CustomXmlAttributes { get ; set; }
   
 }

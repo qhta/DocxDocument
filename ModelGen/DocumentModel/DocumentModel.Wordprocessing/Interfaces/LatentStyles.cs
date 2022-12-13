@@ -35,6 +35,6 @@ public interface LatentStyles
   /// </summary>
   public Int32? Count { get ; set; }
   
-  public Collection<LatentStyleExceptionInfo>? LatentStyleExceptionInfos { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>? LatentStyleExceptionInfos { get ; set; }
   
 }

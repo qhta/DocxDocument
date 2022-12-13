@@ -8,7 +8,7 @@ public interface BorderType
   /// <summary>
   /// Border Style
   /// </summary>
-  public BorderKind? Val { get ; set; }
+  public DocumentModel.Wordprocessing.BorderKind? Val { get ; set; }
   
   /// <summary>
   /// Border Color
@@ -18,7 +18,7 @@ public interface BorderType
   /// <summary>
   /// Border Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
   
   /// <summary>
   /// Border Theme Color Tint

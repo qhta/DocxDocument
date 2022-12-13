@@ -330,6 +330,6 @@ public interface Compatibility
   /// </summary>
   public Boolean? CachedColumnBalance { get ; set; }
   
-  public Collection<CompatibilitySetting>? CompatibilitySettings { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.CompatibilitySetting>? CompatibilitySettings { get ; set; }
   
 }

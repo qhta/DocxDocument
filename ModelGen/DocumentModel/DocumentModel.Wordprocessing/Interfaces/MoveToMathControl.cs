@@ -5,10 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface MoveToMathControl
 {
-  public RunProperties? RunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get ; set; }
   
-  public InsertedMathControl? InsertedMathControl { get ; set; }
+  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl { get ; set; }
   
-  public DeletedMathControl? DeletedMathControl { get ; set; }
+  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get ; set; }
   
 }

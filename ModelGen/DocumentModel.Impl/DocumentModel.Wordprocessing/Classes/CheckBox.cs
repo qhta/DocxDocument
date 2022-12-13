@@ -25,7 +25,7 @@ public class CheckBoxImpl: ModelElementImpl, CheckBox
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
-        return (String?)openXmlElement?.Val?.Value;
+        return (System.String?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -60,7 +60,7 @@ public class CheckBoxImpl: ModelElementImpl, CheckBox
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -95,7 +95,7 @@ public class CheckBoxImpl: ModelElementImpl, CheckBox
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }
@@ -130,7 +130,7 @@ public class CheckBoxImpl: ModelElementImpl, CheckBox
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        return (System.Boolean?)openXmlElement?.Val?.Value;
       }
       return null;
     }

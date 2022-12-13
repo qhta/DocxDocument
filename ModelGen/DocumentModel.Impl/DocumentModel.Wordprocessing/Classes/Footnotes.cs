@@ -18,7 +18,7 @@ public class FootnotesImpl: ModelElementImpl, Footnotes
     OpenXmlElement = openXmlElement;
   }
   
-  public Footnote? Footnote
+  public DocumentModel.Wordprocessing.Footnote? Footnote
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

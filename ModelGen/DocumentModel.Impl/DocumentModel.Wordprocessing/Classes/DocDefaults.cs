@@ -21,7 +21,7 @@ public class DocDefaultsImpl: ModelElementImpl, DocDefaults
   /// <summary>
   /// Default Run Properties.
   /// </summary>
-  public RunPropertiesDefault? RunPropertiesDefault
+  public DocumentModel.Wordprocessing.RunPropertiesDefault? RunPropertiesDefault
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class DocDefaultsImpl: ModelElementImpl, DocDefaults
   /// <summary>
   /// Default Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesDefault? ParagraphPropertiesDefault
+  public DocumentModel.Wordprocessing.ParagraphPropertiesDefault? ParagraphPropertiesDefault
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

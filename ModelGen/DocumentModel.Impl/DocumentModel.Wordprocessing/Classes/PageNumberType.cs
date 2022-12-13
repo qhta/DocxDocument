@@ -21,9 +21,9 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// <summary>
   /// Page Number Format
   /// </summary>
-  public NumberFormatKind? Format
+  public DocumentModel.Wordprocessing.NumberFormatKind? Format
   {
-    get => (NumberFormatKind?)OpenXmlElement?.Format?.Value;
+    get => (DocumentModel.Wordprocessing.NumberFormatKind?)OpenXmlElement?.Format?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// </summary>
   public Int32? Start
   {
-    get => (Int32?)OpenXmlElement?.Start?.Value;
+    get => (System.Int32?)OpenXmlElement?.Start?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// </summary>
   public Byte? ChapterStyle
   {
-    get => (Byte?)OpenXmlElement?.ChapterStyle?.Value;
+    get => (System.Byte?)OpenXmlElement?.ChapterStyle?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,9 +60,9 @@ public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
   /// <summary>
   /// Chapter Separator Character
   /// </summary>
-  public ChapterSeparatorKind? ChapterSeparator
+  public DocumentModel.Wordprocessing.ChapterSeparatorKind? ChapterSeparator
   {
-    get => (ChapterSeparatorKind?)OpenXmlElement?.ChapterSeparator?.Value;
+    get => (DocumentModel.Wordprocessing.ChapterSeparatorKind?)OpenXmlElement?.ChapterSeparator?.Value;
     set
     {
       if (OpenXmlElement != null)

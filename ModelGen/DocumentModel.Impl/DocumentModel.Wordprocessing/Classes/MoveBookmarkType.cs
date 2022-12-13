@@ -23,7 +23,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Author
   {
-    get => (String?)OpenXmlElement?.Author?.Value;
+    get => (System.String?)OpenXmlElement?.Author?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public DateTime? Date
   {
-    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    get => (System.DateTime?)OpenXmlElement?.Date?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public Int32? ColumnFirst
   {
-    get => (Int32?)OpenXmlElement?.ColumnFirst?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnFirst?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public Int32? ColumnLast
   {
-    get => (Int32?)OpenXmlElement?.ColumnLast?.Value;
+    get => (System.Int32?)OpenXmlElement?.ColumnLast?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -86,9 +86,9 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml
   {
-    get => (DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
+    get => (DocumentModel.Wordprocessing.DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

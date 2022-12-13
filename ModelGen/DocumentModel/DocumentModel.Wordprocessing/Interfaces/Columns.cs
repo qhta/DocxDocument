@@ -25,6 +25,6 @@ public interface Columns
   /// </summary>
   public Boolean? Separator { get ; set; }
   
-  public Column? Column { get ; set; }
+  public DocumentModel.Wordprocessing.Column? Column { get ; set; }
   
 }

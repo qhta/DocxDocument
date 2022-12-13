@@ -21,7 +21,7 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>
-  public DocPartProperties? DocPartProperties
+  public DocumentModel.Wordprocessing.DocPartProperties? DocPartProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// <summary>
   /// Contents of Glossary Document Entry.
   /// </summary>
-  public DocPartBody? DocPartBody
+  public DocumentModel.Wordprocessing.DocPartBody? DocPartBody
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -23,7 +23,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? Locked
   {
-    get => (Boolean?)OpenXmlElement?.Locked?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Locked?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Int32? UiPriority
   {
-    get => (Int32?)OpenXmlElement?.UiPriority?.Value;
+    get => (System.Int32?)OpenXmlElement?.UiPriority?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? SemiHidden
   {
-    get => (Boolean?)OpenXmlElement?.SemiHidden?.Value;
+    get => (System.Boolean?)OpenXmlElement?.SemiHidden?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? UnhideWhenUsed
   {
-    get => (Boolean?)OpenXmlElement?.UnhideWhenUsed?.Value;
+    get => (System.Boolean?)OpenXmlElement?.UnhideWhenUsed?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptio
   /// </summary>
   public Boolean? PrimaryStyle
   {
-    get => (Boolean?)OpenXmlElement?.PrimaryStyle?.Value;
+    get => (System.Boolean?)OpenXmlElement?.PrimaryStyle?.Value;
     set
     {
       if (OpenXmlElement != null)

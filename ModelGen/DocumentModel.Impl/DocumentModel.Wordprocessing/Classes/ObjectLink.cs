@@ -21,9 +21,9 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// <summary>
   /// updateMode
   /// </summary>
-  public ObjectUpdateMode? UpdateMode
+  public DocumentModel.Wordprocessing.ObjectUpdateMode? UpdateMode
   {
-    get => (ObjectUpdateMode?)OpenXmlElement?.UpdateMode?.Value;
+    get => (DocumentModel.Wordprocessing.ObjectUpdateMode?)OpenXmlElement?.UpdateMode?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public Boolean? LockedField
   {
-    get => (Boolean?)OpenXmlElement?.LockedField?.Value;
+    get => (System.Boolean?)OpenXmlElement?.LockedField?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// <summary>
   /// drawAspect
   /// </summary>
-  public ObjectDrawAspect? drawAspect
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect
   {
-    get => (ObjectDrawAspect?)OpenXmlElement?.drawAspect?.Value;
+    get => (DocumentModel.Wordprocessing.ObjectDrawAspect?)OpenXmlElement?.drawAspect?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? ProgId
   {
-    get => (String?)OpenXmlElement?.ProgId?.Value;
+    get => (System.String?)OpenXmlElement?.ProgId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? ShapeId
   {
-    get => (String?)OpenXmlElement?.ShapeId?.Value;
+    get => (System.String?)OpenXmlElement?.ShapeId?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class ObjectLinkImpl: ModelElementImpl, ObjectLink
   /// </summary>
   public String? FieldCodes
   {
-    get => (String?)OpenXmlElement?.FieldCodes?.Value;
+    get => (System.String?)OpenXmlElement?.FieldCodes?.Value;
     set
     {
       if (OpenXmlElement != null)

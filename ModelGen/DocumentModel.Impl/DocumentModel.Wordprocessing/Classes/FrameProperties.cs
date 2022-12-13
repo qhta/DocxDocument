@@ -21,9 +21,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Drop Cap Frame
   /// </summary>
-  public DropCapLocationKind? DropCap
+  public DocumentModel.Wordprocessing.DropCapLocationKind? DropCap
   {
-    get => (DropCapLocationKind?)OpenXmlElement?.DropCap?.Value;
+    get => (DocumentModel.Wordprocessing.DropCapLocationKind?)OpenXmlElement?.DropCap?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public Int32? Lines
   {
-    get => (Int32?)OpenXmlElement?.Lines?.Value;
+    get => (System.Int32?)OpenXmlElement?.Lines?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? Width
   {
-    get => (String?)OpenXmlElement?.Width?.Value;
+    get => (System.String?)OpenXmlElement?.Width?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public UInt32? Height
   {
-    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Height?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? VerticalSpace
   {
-    get => (String?)OpenXmlElement?.VerticalSpace?.Value;
+    get => (System.String?)OpenXmlElement?.VerticalSpace?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? HorizontalSpace
   {
-    get => (String?)OpenXmlElement?.HorizontalSpace?.Value;
+    get => (System.String?)OpenXmlElement?.HorizontalSpace?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -99,9 +99,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Text Wrapping Around Frame
   /// </summary>
-  public TextWrappingKind? Wrap
+  public DocumentModel.Wordprocessing.TextWrappingKind? Wrap
   {
-    get => (TextWrappingKind?)OpenXmlElement?.Wrap?.Value;
+    get => (DocumentModel.Wordprocessing.TextWrappingKind?)OpenXmlElement?.Wrap?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -112,9 +112,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Frame Horizontal Positioning Base
   /// </summary>
-  public HorizontalAnchorKind? HorizontalPosition
+  public DocumentModel.Wordprocessing.HorizontalAnchorKind? HorizontalPosition
   {
-    get => (HorizontalAnchorKind?)OpenXmlElement?.HorizontalPosition?.Value;
+    get => (DocumentModel.Wordprocessing.HorizontalAnchorKind?)OpenXmlElement?.HorizontalPosition?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -125,9 +125,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Frame Vertical Positioning Base
   /// </summary>
-  public VerticalAnchorKind? VerticalPosition
+  public DocumentModel.Wordprocessing.VerticalAnchorKind? VerticalPosition
   {
-    get => (VerticalAnchorKind?)OpenXmlElement?.VerticalPosition?.Value;
+    get => (DocumentModel.Wordprocessing.VerticalAnchorKind?)OpenXmlElement?.VerticalPosition?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -140,7 +140,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? X
   {
-    get => (String?)OpenXmlElement?.X?.Value;
+    get => (System.String?)OpenXmlElement?.X?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -151,9 +151,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Relative Horizontal Position
   /// </summary>
-  public HorizontalAlignmentKind? XAlign
+  public DocumentModel.Wordprocessing.HorizontalAlignmentKind? XAlign
   {
-    get => (HorizontalAlignmentKind?)OpenXmlElement?.XAlign?.Value;
+    get => (DocumentModel.Wordprocessing.HorizontalAlignmentKind?)OpenXmlElement?.XAlign?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -166,7 +166,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public String? Y
   {
-    get => (String?)OpenXmlElement?.Y?.Value;
+    get => (System.String?)OpenXmlElement?.Y?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -177,9 +177,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Relative Vertical Position
   /// </summary>
-  public VerticalAlignmentKind? YAlign
+  public DocumentModel.Wordprocessing.VerticalAlignmentKind? YAlign
   {
-    get => (VerticalAlignmentKind?)OpenXmlElement?.YAlign?.Value;
+    get => (DocumentModel.Wordprocessing.VerticalAlignmentKind?)OpenXmlElement?.YAlign?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -190,9 +190,9 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// <summary>
   /// Frame Height Type
   /// </summary>
-  public HeightRuleKind? HeightType
+  public DocumentModel.Wordprocessing.HeightRuleKind? HeightType
   {
-    get => (HeightRuleKind?)OpenXmlElement?.HeightType?.Value;
+    get => (DocumentModel.Wordprocessing.HeightRuleKind?)OpenXmlElement?.HeightType?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -205,7 +205,7 @@ public class FramePropertiesImpl: ModelElementImpl, FrameProperties
   /// </summary>
   public Boolean? AnchorLock
   {
-    get => (Boolean?)OpenXmlElement?.AnchorLock?.Value;
+    get => (System.Boolean?)OpenXmlElement?.AnchorLock?.Value;
     set
     {
       if (OpenXmlElement != null)

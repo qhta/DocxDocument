@@ -1,0 +1,30 @@
+namespace DocumentModel.Drawings13.Charts;
+
+/// <summary>
+/// Defines the FilteredCategoryTitle Class.
+/// </summary>
+public class FilteredCategoryTitleImpl: ModelElementImpl, FilteredCategoryTitle
+{
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public FilteredCategoryTitleImpl(): base() {}
+  
+  public FilteredCategoryTitleImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// AxisDataSourceType.
+  /// </summary>
+  public DocumentModel.Drawings13.Charts.AxisDataSourceType2? AxisDataSourceType
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

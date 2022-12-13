@@ -23,7 +23,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public String? Language
   {
-    get => (String?)OpenXmlElement?.Language?.Value;
+    get => (System.String?)OpenXmlElement?.Language?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public UInt16? VendorID
   {
-    get => (UInt16?)OpenXmlElement?.VendorID?.Value;
+    get => (System.UInt16?)OpenXmlElement?.VendorID?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Int32? DllVersion
   {
-    get => (Int32?)OpenXmlElement?.DllVersion?.Value;
+    get => (System.Int32?)OpenXmlElement?.DllVersion?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Boolean? NaturalLanguageGrammarCheck
   {
-    get => (Boolean?)OpenXmlElement?.NaturalLanguageGrammarCheck?.Value;
+    get => (System.Boolean?)OpenXmlElement?.NaturalLanguageGrammarCheck?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public Boolean? CheckStyle
   {
-    get => (Boolean?)OpenXmlElement?.CheckStyle?.Value;
+    get => (System.Boolean?)OpenXmlElement?.CheckStyle?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
   /// </summary>
   public String? ApplicationName
   {
-    get => (String?)OpenXmlElement?.ApplicationName?.Value;
+    get => (System.String?)OpenXmlElement?.ApplicationName?.Value;
     set
     {
       if (OpenXmlElement != null)

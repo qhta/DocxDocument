@@ -23,7 +23,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultLockedState
   {
-    get => (Boolean?)OpenXmlElement?.DefaultLockedState?.Value;
+    get => (System.Boolean?)OpenXmlElement?.DefaultLockedState?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Int32? DefaultUiPriority
   {
-    get => (Int32?)OpenXmlElement?.DefaultUiPriority?.Value;
+    get => (System.Int32?)OpenXmlElement?.DefaultUiPriority?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultSemiHidden
   {
-    get => (Boolean?)OpenXmlElement?.DefaultSemiHidden?.Value;
+    get => (System.Boolean?)OpenXmlElement?.DefaultSemiHidden?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultUnhideWhenUsed
   {
-    get => (Boolean?)OpenXmlElement?.DefaultUnhideWhenUsed?.Value;
+    get => (System.Boolean?)OpenXmlElement?.DefaultUnhideWhenUsed?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Boolean? DefaultPrimaryStyle
   {
-    get => (Boolean?)OpenXmlElement?.DefaultPrimaryStyle?.Value;
+    get => (System.Boolean?)OpenXmlElement?.DefaultPrimaryStyle?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   /// </summary>
   public Int32? Count
   {
-    get => (Int32?)OpenXmlElement?.Count?.Value;
+    get => (System.Int32?)OpenXmlElement?.Count?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -96,10 +96,86 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
     }
   }
   
-  public Collection<LatentStyleExceptionInfo>? LatentStyleExceptionInfos
+  public Collection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>? LatentStyleExceptionInfos
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_LatentStyleExceptionInfos != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>()
+            .Select(item => new DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl(item)).ToList();
+          _LatentStyleExceptionInfos = new ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>(items);
+        }
+        else
+          _LatentStyleExceptionInfos = new ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>();
+        _LatentStyleExceptionInfos.CollectionChanged += _LatentStyleExceptionInfos_CollectionChanged;
+      }
+      return _LatentStyleExceptionInfos;
+    }
+    set
+    {
+      if (value != null && value != _LatentStyleExceptionInfos && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo> observableCollection)
+        _LatentStyleExceptionInfos = observableCollection;
+      else if (value != null)
+        _LatentStyleExceptionInfos = new ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>(value);
+      else
+       _LatentStyleExceptionInfos = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>? _LatentStyleExceptionInfos;
+  
+  private void _LatentStyleExceptionInfos_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

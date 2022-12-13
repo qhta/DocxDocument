@@ -21,9 +21,9 @@ public class ProofStateImpl: ModelElementImpl, ProofState
   /// <summary>
   /// Spell Checking State
   /// </summary>
-  public ProofingStateKind? Spelling
+  public DocumentModel.Wordprocessing.ProofingStateKind? Spelling
   {
-    get => (ProofingStateKind?)OpenXmlElement?.Spelling?.Value;
+    get => (DocumentModel.Wordprocessing.ProofingStateKind?)OpenXmlElement?.Spelling?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class ProofStateImpl: ModelElementImpl, ProofState
   /// <summary>
   /// Grammatical Checking State
   /// </summary>
-  public ProofingStateKind? Grammar
+  public DocumentModel.Wordprocessing.ProofingStateKind? Grammar
   {
-    get => (ProofingStateKind?)OpenXmlElement?.Grammar?.Value;
+    get => (DocumentModel.Wordprocessing.ProofingStateKind?)OpenXmlElement?.Grammar?.Value;
     set
     {
       if (OpenXmlElement != null)

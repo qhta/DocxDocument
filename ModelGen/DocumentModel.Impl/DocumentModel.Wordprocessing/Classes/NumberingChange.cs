@@ -23,7 +23,7 @@ public class NumberingChangeImpl: ModelElementImpl, NumberingChange
   /// </summary>
   public String? Original
   {
-    get => (String?)OpenXmlElement?.Original?.Value;
+    get => (System.String?)OpenXmlElement?.Original?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class NumberingChangeImpl: ModelElementImpl, NumberingChange
   /// </summary>
   public String? Author
   {
-    get => (String?)OpenXmlElement?.Author?.Value;
+    get => (System.String?)OpenXmlElement?.Author?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class NumberingChangeImpl: ModelElementImpl, NumberingChange
   /// </summary>
   public DateTime? Date
   {
-    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    get => (System.DateTime?)OpenXmlElement?.Date?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class NumberingChangeImpl: ModelElementImpl, NumberingChange
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

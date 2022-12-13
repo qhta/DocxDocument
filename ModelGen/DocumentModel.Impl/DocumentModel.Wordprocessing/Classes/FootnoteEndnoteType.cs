@@ -21,9 +21,9 @@ public class FootnoteEndnoteTypeImpl: ModelElementImpl, FootnoteEndnoteType
   /// <summary>
   /// Footnote/Endnote Type
   /// </summary>
-  public FootnoteEndnoteKind? Type
+  public DocumentModel.Wordprocessing.FootnoteEndnoteKind? Type
   {
-    get => (FootnoteEndnoteKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.FootnoteEndnoteKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FootnoteEndnoteTypeImpl: ModelElementImpl, FootnoteEndnoteType
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

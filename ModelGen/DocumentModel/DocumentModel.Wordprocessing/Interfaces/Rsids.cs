@@ -8,8 +8,8 @@ public interface Rsids
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
-  public HexWord? RsidRoot { get ; set; }
+  public DocumentModel.HexWord? RsidRoot { get ; set; }
   
-  public Collection<HexWord>? Items { get ; set; }
+  public Collection<DocumentModel.HexWord>? Items { get ; set; }
   
 }

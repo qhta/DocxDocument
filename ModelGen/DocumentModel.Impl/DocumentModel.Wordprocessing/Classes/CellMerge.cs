@@ -21,9 +21,9 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
   /// <summary>
   /// vMerge
   /// </summary>
-  public VerticalMergeRevisionKind? VerticalMerge
+  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMerge
   {
-    get => (VerticalMergeRevisionKind?)OpenXmlElement?.VerticalMerge?.Value;
+    get => (DocumentModel.Wordprocessing.VerticalMergeRevisionKind?)OpenXmlElement?.VerticalMerge?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
   /// <summary>
   /// vMergeOrig
   /// </summary>
-  public VerticalMergeRevisionKind? VerticalMergeOriginal
+  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMergeOriginal
   {
-    get => (VerticalMergeRevisionKind?)OpenXmlElement?.VerticalMergeOriginal?.Value;
+    get => (DocumentModel.Wordprocessing.VerticalMergeRevisionKind?)OpenXmlElement?.VerticalMergeOriginal?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
   /// </summary>
   public String? Author
   {
-    get => (String?)OpenXmlElement?.Author?.Value;
+    get => (System.String?)OpenXmlElement?.Author?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
   /// </summary>
   public DateTime? Date
   {
-    get => (DateTime?)OpenXmlElement?.Date?.Value;
+    get => (System.DateTime?)OpenXmlElement?.Date?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class CellMergeImpl: ModelElementImpl, CellMerge
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

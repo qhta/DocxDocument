@@ -23,7 +23,7 @@ public class ListItemImpl: ModelElementImpl, ListItem
   /// </summary>
   public String? DisplayText
   {
-    get => (String?)OpenXmlElement?.DisplayText?.Value;
+    get => (System.String?)OpenXmlElement?.DisplayText?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ListItemImpl: ModelElementImpl, ListItem
   /// </summary>
   public String? Value
   {
-    get => (String?)OpenXmlElement?.Value?.Value;
+    get => (System.String?)OpenXmlElement?.Value?.Value;
     set
     {
       if (OpenXmlElement != null)

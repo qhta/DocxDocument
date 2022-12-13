@@ -23,43 +23,107 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
   /// </summary>
   public String? CustomXmlPlaceholder
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.CustomXmlPlaceholder?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
-        if (item != null)
+        if (OpenXmlElement.CustomXmlPlaceholder != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.CustomXmlPlaceholder.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.CustomXmlPlaceholder = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.CustomXmlPlaceholder = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder{ Val = (System.String?)value };
         }
       }
     }
   }
   
-  public Collection<CustomXmlAttribute>? CustomXmlAttributes
+  public Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? CustomXmlAttributes
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_CustomXmlAttributes != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>()
+            .Select(item => new DocumentModel.Wordprocessing.CustomXmlAttributeImpl(item)).ToList();
+          _CustomXmlAttributes = new ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute>(items);
+        }
+        else
+          _CustomXmlAttributes = new ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute>();
+        _CustomXmlAttributes.CollectionChanged += _CustomXmlAttributes_CollectionChanged;
+      }
+      return _CustomXmlAttributes;
+    }
+    set
+    {
+      if (value != null && value != _CustomXmlAttributes && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.CustomXmlAttributeImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute> observableCollection)
+        _CustomXmlAttributes = observableCollection;
+      else if (value != null)
+        _CustomXmlAttributes = new ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute>(value);
+      else
+       _CustomXmlAttributes = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute>? _CustomXmlAttributes;
+  
+  private void _CustomXmlAttributes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.CustomXmlAttributeImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.CustomXmlAttributeImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

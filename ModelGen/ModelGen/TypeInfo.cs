@@ -15,8 +15,12 @@ public class TypeInfo : ModelElement
     {
       if (value != Namespace)
         NamespaceIndex = TypeManager.RegisterNamespace(value);
+      _Namespace = value;
     }
   }
+
+  private string _Namespace = string.Empty;
+
   // Tu jest błąd. Zbyt szybko nastepuje konwersja przestrzeni nazw elementów
   public int NamespaceIndex { get; private set; }
 

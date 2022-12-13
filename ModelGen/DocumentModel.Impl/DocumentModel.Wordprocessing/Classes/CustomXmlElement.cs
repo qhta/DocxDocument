@@ -23,7 +23,7 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// </summary>
   public String? Uri
   {
-    get => (String?)OpenXmlElement?.Uri?.Value;
+    get => (System.String?)OpenXmlElement?.Uri?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// </summary>
   public String? Element
   {
-    get => (String?)OpenXmlElement?.Element?.Value;
+    get => (System.String?)OpenXmlElement?.Element?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,7 +47,7 @@ public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
   /// <summary>
   /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  public virtual CustomXmlProperties? CustomXmlProperties
+  public virtual DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

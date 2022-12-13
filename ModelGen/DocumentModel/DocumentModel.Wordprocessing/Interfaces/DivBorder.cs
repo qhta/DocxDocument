@@ -8,21 +8,21 @@ public interface DivBorder
   /// <summary>
   /// Top Border for HTML div.
   /// </summary>
-  public BorderType? TopBorder { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? TopBorder { get ; set; }
   
   /// <summary>
   /// Left Border for HTML div.
   /// </summary>
-  public BorderType? LeftBorder { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? LeftBorder { get ; set; }
   
   /// <summary>
   /// Bottom Border for HTML div.
   /// </summary>
-  public BorderType? BottomBorder { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? BottomBorder { get ; set; }
   
   /// <summary>
   /// Right Border for HTML div.
   /// </summary>
-  public BorderType? RightBorder { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? RightBorder { get ; set; }
   
 }

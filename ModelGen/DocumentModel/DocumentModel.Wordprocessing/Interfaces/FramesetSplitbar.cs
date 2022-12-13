@@ -13,16 +13,16 @@ public interface FramesetSplitbar
   /// <summary>
   /// Frameset Splitter Color.
   /// </summary>
-  public Color? Color { get ; set; }
+  public DocumentModel.Wordprocessing.Color? Color { get ; set; }
   
   /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
-  public OnOffOnlyKind? NoBorder { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoBorder { get ; set; }
   
   /// <summary>
   /// Frameset Splitter Border Style.
   /// </summary>
-  public OnOffOnlyKind? FlatBorders { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffOnlyKind? FlatBorders { get ; set; }
   
 }

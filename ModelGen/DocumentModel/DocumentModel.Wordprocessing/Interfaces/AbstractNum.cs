@@ -13,17 +13,17 @@ public interface AbstractNum
   /// <summary>
   /// Abstract Numbering Definition Identifier.
   /// </summary>
-  public HexWord? Nsid { get ; set; }
+  public DocumentModel.HexWord? Nsid { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Type.
   /// </summary>
-  public MultiLevelKind? MultiLevelType { get ; set; }
+  public DocumentModel.Wordprocessing.MultiLevelKind? MultiLevelType { get ; set; }
   
   /// <summary>
   /// Numbering Template Code.
   /// </summary>
-  public HexWord? TemplateCode { get ; set; }
+  public DocumentModel.HexWord? TemplateCode { get ; set; }
   
   /// <summary>
   /// Abstract Numbering Definition Name.
@@ -40,6 +40,6 @@ public interface AbstractNum
   /// </summary>
   public String? NumberingStyleLink { get ; set; }
   
-  public Level? Level { get ; set; }
+  public DocumentModel.Wordprocessing.Level? Level { get ; set; }
   
 }

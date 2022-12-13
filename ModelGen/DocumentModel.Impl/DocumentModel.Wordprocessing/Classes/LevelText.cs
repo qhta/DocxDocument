@@ -23,7 +23,7 @@ public class LevelTextImpl: ModelElementImpl, LevelText
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LevelTextImpl: ModelElementImpl, LevelText
   /// </summary>
   public Boolean? Null
   {
-    get => (Boolean?)OpenXmlElement?.Null?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Null?.Value;
     set
     {
       if (OpenXmlElement != null)

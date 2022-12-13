@@ -18,17 +18,17 @@ public interface Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public HexBinaryValue? Panose1Number { get ; set; }
+  public DocumentModel.HexBinaryValue? Panose1Number { get ; set; }
   
   /// <summary>
   /// FontCharSet.
   /// </summary>
-  public FontCharSet? FontCharSet { get ; set; }
+  public DocumentModel.Wordprocessing.FontCharSet? FontCharSet { get ; set; }
   
   /// <summary>
   /// FontFamily.
   /// </summary>
-  public FontFamilyKind? FontFamily { get ; set; }
+  public DocumentModel.Wordprocessing.FontFamilyKind? FontFamily { get ; set; }
   
   /// <summary>
   /// NotTrueType.
@@ -38,31 +38,31 @@ public interface Font
   /// <summary>
   /// Pitch.
   /// </summary>
-  public FontPitchKind? Pitch { get ; set; }
+  public DocumentModel.Wordprocessing.FontPitchKind? Pitch { get ; set; }
   
   /// <summary>
   /// FontSignature.
   /// </summary>
-  public FontSignature? FontSignature { get ; set; }
+  public DocumentModel.Wordprocessing.FontSignature? FontSignature { get ; set; }
   
   /// <summary>
   /// EmbedRegularFont.
   /// </summary>
-  public FontRelationshipType? EmbedRegularFont { get ; set; }
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedRegularFont { get ; set; }
   
   /// <summary>
   /// EmbedBoldFont.
   /// </summary>
-  public FontRelationshipType? EmbedBoldFont { get ; set; }
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldFont { get ; set; }
   
   /// <summary>
   /// EmbedItalicFont.
   /// </summary>
-  public FontRelationshipType? EmbedItalicFont { get ; set; }
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedItalicFont { get ; set; }
   
   /// <summary>
   /// EmbedBoldItalicFont.
   /// </summary>
-  public FontRelationshipType? EmbedBoldItalicFont { get ; set; }
+  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldItalicFont { get ; set; }
   
 }

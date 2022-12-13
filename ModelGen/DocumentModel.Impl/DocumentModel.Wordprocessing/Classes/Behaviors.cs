@@ -18,14 +18,14 @@ public class BehaviorsImpl: ModelElementImpl, Behaviors
     OpenXmlElement = openXmlElement;
   }
   
-  public DocPartBehaviorKind? Behavior
+  public DocumentModel.Wordprocessing.DocPartBehaviorKind? Behavior
   {
     get
     {
       if (OpenXmlElement != null)
       {
         var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
-        return (DocPartBehaviorKind?)openXmlElement?.Val?.Value;
+        return (DocumentModel.Wordprocessing.DocPartBehaviorKind?)openXmlElement?.Val?.Value;
       }
       return null;
     }

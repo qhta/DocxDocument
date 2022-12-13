@@ -23,7 +23,7 @@ public class FootnoteEndnoteReferenceTypeImpl: ModelElementImpl, FootnoteEndnote
   /// </summary>
   public Boolean? CustomMarkFollows
   {
-    get => (Boolean?)OpenXmlElement?.CustomMarkFollows?.Value;
+    get => (System.Boolean?)OpenXmlElement?.CustomMarkFollows?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FootnoteEndnoteReferenceTypeImpl: ModelElementImpl, FootnoteEndnote
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

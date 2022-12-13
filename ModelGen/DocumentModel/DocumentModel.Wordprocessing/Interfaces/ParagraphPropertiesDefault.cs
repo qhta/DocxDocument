@@ -8,6 +8,6 @@ public interface ParagraphPropertiesDefault
   /// <summary>
   /// Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get ; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get ; set; }
   
 }

@@ -21,9 +21,9 @@ public class DocumentImpl: ModelElementImpl, Document
   /// <summary>
   /// conformance
   /// </summary>
-  public DocumentConformance? Conformance
+  public DocumentModel.Wordprocessing.DocumentConformance? Conformance
   {
-    get => (DocumentConformance?)OpenXmlElement?.Conformance?.Value;
+    get => (DocumentModel.Wordprocessing.DocumentConformance?)OpenXmlElement?.Conformance?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,7 +34,7 @@ public class DocumentImpl: ModelElementImpl, Document
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentBackground? DocumentBackground
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -43,7 +43,7 @@ public class DocumentImpl: ModelElementImpl, Document
   /// <summary>
   /// Body.
   /// </summary>
-  public Body? Body
+  public DocumentModel.Wordprocessing.Body? Body
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

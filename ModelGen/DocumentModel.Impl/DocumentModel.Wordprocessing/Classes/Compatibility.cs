@@ -27,8 +27,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells>();
+        return item != null;
       }
       return null;
     }
@@ -39,16 +39,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -65,8 +63,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification>();
+        return item != null;
       }
       return null;
     }
@@ -77,16 +75,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -103,8 +99,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent>();
+        return item != null;
       }
       return null;
     }
@@ -115,16 +111,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -141,8 +135,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoLeading>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoLeading>();
+        return item != null;
       }
       return null;
     }
@@ -153,16 +147,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoLeading>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoLeading{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoLeading();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -179,8 +171,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline>();
+        return item != null;
       }
       return null;
     }
@@ -191,16 +183,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -217,8 +207,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance>();
+        return item != null;
       }
       return null;
     }
@@ -229,16 +219,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -255,8 +243,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth>();
+        return item != null;
       }
       return null;
     }
@@ -267,16 +255,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -293,8 +279,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing>();
+        return item != null;
       }
       return null;
     }
@@ -305,16 +291,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -331,8 +315,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone>();
+        return item != null;
       }
       return null;
     }
@@ -343,16 +327,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -369,8 +351,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces>();
+        return item != null;
       }
       return null;
     }
@@ -381,16 +363,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -407,8 +387,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn>();
+        return item != null;
       }
       return null;
     }
@@ -419,16 +399,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -445,8 +423,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints>();
+        return item != null;
       }
       return null;
     }
@@ -457,16 +435,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -483,8 +459,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6>();
+        return item != null;
       }
       return null;
     }
@@ -495,16 +471,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -521,8 +495,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader>();
+        return item != null;
       }
       return null;
     }
@@ -533,16 +507,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -559,8 +531,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite>();
+        return item != null;
       }
       return null;
     }
@@ -571,16 +543,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -597,8 +567,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth>();
+        return item != null;
       }
       return null;
     }
@@ -609,16 +579,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -635,8 +603,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames>();
+        return item != null;
       }
       return null;
     }
@@ -647,16 +615,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -673,8 +639,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubFontBySize>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubFontBySize>();
+        return item != null;
       }
       return null;
     }
@@ -685,16 +651,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubFontBySize>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SubFontBySize{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SubFontBySize();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -711,8 +675,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing>();
+        return item != null;
       }
       return null;
     }
@@ -723,16 +687,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -749,8 +711,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing>();
+        return item != null;
       }
       return null;
     }
@@ -761,16 +723,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -787,8 +747,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage>();
+        return item != null;
       }
       return null;
     }
@@ -799,16 +759,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -825,8 +783,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect>();
+        return item != null;
       }
       return null;
     }
@@ -837,16 +795,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -863,8 +819,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak>();
+        return item != null;
       }
       return null;
     }
@@ -875,16 +831,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -901,8 +855,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages>();
+        return item != null;
       }
       return null;
     }
@@ -913,16 +867,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -939,8 +891,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape>();
+        return item != null;
       }
       return null;
     }
@@ -951,16 +903,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -977,8 +927,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect>();
+        return item != null;
       }
       return null;
     }
@@ -989,16 +939,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1015,8 +963,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps>();
+        return item != null;
       }
       return null;
     }
@@ -1027,16 +975,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1053,8 +999,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics>();
+        return item != null;
       }
       return null;
     }
@@ -1065,16 +1011,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1091,8 +1035,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders>();
+        return item != null;
       }
       return null;
     }
@@ -1103,16 +1047,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1129,8 +1071,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces>();
+        return item != null;
       }
       return null;
     }
@@ -1141,16 +1083,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1167,8 +1107,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8>();
+        return item != null;
       }
       return null;
     }
@@ -1179,16 +1119,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1205,8 +1143,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8>();
+        return item != null;
       }
       return null;
     }
@@ -1217,16 +1155,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1243,8 +1179,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow>();
+        return item != null;
       }
       return null;
     }
@@ -1255,16 +1191,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1281,8 +1215,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment>();
+        return item != null;
       }
       return null;
     }
@@ -1293,16 +1227,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1319,8 +1251,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable>();
+        return item != null;
       }
       return null;
     }
@@ -1331,16 +1263,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1357,8 +1287,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95>();
+        return item != null;
       }
       return null;
     }
@@ -1369,16 +1299,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1395,8 +1323,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower>();
+        return item != null;
       }
       return null;
     }
@@ -1407,16 +1335,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1433,8 +1359,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing>();
+        return item != null;
       }
       return null;
     }
@@ -1445,16 +1371,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1471,8 +1395,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth>();
+        return item != null;
       }
       return null;
     }
@@ -1483,16 +1407,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1509,8 +1431,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart>();
+        return item != null;
       }
       return null;
     }
@@ -1521,16 +1443,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1547,8 +1467,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules>();
+        return item != null;
       }
       return null;
     }
@@ -1559,16 +1479,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1585,8 +1503,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables>();
+        return item != null;
       }
       return null;
     }
@@ -1597,16 +1515,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1623,8 +1539,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell>();
+        return item != null;
       }
       return null;
     }
@@ -1635,16 +1551,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1661,8 +1575,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar>();
+        return item != null;
       }
       return null;
     }
@@ -1673,16 +1587,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1699,8 +1611,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules>();
+        return item != null;
       }
       return null;
     }
@@ -1711,16 +1623,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1737,8 +1647,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation>();
+        return item != null;
       }
       return null;
     }
@@ -1749,16 +1659,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1775,8 +1683,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules>();
+        return item != null;
       }
       return null;
     }
@@ -1787,16 +1695,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1813,8 +1719,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules>();
+        return item != null;
       }
       return null;
     }
@@ -1825,16 +1731,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1851,8 +1755,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GrowAutofit>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GrowAutofit>();
+        return item != null;
       }
       return null;
     }
@@ -1863,16 +1767,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GrowAutofit>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.GrowAutofit{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.GrowAutofit();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1889,8 +1791,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout>();
+        return item != null;
       }
       return null;
     }
@@ -1901,16 +1803,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1927,8 +1827,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList>();
+        return item != null;
       }
       return null;
     }
@@ -1939,16 +1839,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -1965,8 +1863,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop>();
+        return item != null;
       }
       return null;
     }
@@ -1977,16 +1875,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2003,8 +1899,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules>();
+        return item != null;
       }
       return null;
     }
@@ -2015,16 +1911,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2041,8 +1935,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable>();
+        return item != null;
       }
       return null;
     }
@@ -2053,16 +1947,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2079,8 +1971,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation>();
+        return item != null;
       }
       return null;
     }
@@ -2091,16 +1983,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2117,8 +2007,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables>();
+        return item != null;
       }
       return null;
     }
@@ -2129,16 +2019,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2155,8 +2043,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell>();
+        return item != null;
       }
       return null;
     }
@@ -2167,16 +2055,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2193,8 +2079,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList>();
+        return item != null;
       }
       return null;
     }
@@ -2205,16 +2091,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2231,8 +2115,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth>();
+        return item != null;
       }
       return null;
     }
@@ -2243,16 +2127,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2269,8 +2151,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark>();
+        return item != null;
       }
       return null;
     }
@@ -2281,16 +2163,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2307,8 +2187,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape>();
+        return item != null;
       }
       return null;
     }
@@ -2319,16 +2199,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2345,8 +2223,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable>();
+        return item != null;
       }
       return null;
     }
@@ -2357,16 +2235,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2383,8 +2259,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox>();
+        return item != null;
       }
       return null;
     }
@@ -2395,16 +2271,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2421,8 +2295,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs>();
+        return item != null;
       }
       return null;
     }
@@ -2433,16 +2307,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2459,8 +2331,8 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance>();
+        return item != null;
       }
       return null;
     }
@@ -2471,16 +2343,14 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2488,10 +2358,86 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
     }
   }
   
-  public Collection<CompatibilitySetting>? CompatibilitySettings
+  public Collection<DocumentModel.Wordprocessing.CompatibilitySetting>? CompatibilitySettings
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_CompatibilitySettings != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>()
+            .Select(item => new DocumentModel.Wordprocessing.CompatibilitySettingImpl(item)).ToList();
+          _CompatibilitySettings = new ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting>(items);
+        }
+        else
+          _CompatibilitySettings = new ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting>();
+        _CompatibilitySettings.CollectionChanged += _CompatibilitySettings_CollectionChanged;
+      }
+      return _CompatibilitySettings;
+    }
+    set
+    {
+      if (value != null && value != _CompatibilitySettings && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting> observableCollection)
+        _CompatibilitySettings = observableCollection;
+      else if (value != null)
+        _CompatibilitySettings = new ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting>(value);
+      else
+       _CompatibilitySettings = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting>? _CompatibilitySettings;
+  
+  private void _CompatibilitySettings_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

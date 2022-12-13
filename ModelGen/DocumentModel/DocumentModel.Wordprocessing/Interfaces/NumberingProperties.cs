@@ -18,11 +18,11 @@ public interface NumberingProperties
   /// <summary>
   /// Previous Paragraph Numbering Properties.
   /// </summary>
-  public NumberingChange? NumberingChange { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get ; set; }
   
   /// <summary>
   /// Inserted Numbering Properties.
   /// </summary>
-  public TrackChangeType? Inserted { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType? Inserted { get ; set; }
   
 }

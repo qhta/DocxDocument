@@ -23,34 +23,22 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// </summary>
   public String? UdlConnectionString
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.UdlConnectionString?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString>();
-        if (item != null)
+        if (OpenXmlElement.UdlConnectionString != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.UdlConnectionString.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.UdlConnectionString = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.UdlConnectionString = new DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString{ Val = (System.String?)value };
         }
       }
     }
@@ -61,34 +49,22 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// </summary>
   public String? DataSourceTableName
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName>();
-        return (String?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.String?)OpenXmlElement?.DataSourceTableName?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName>();
-        if (item != null)
+        if (OpenXmlElement.DataSourceTableName != null)
         {
           if (value is not null)
-            item.Val = (System.String?)value;
+            OpenXmlElement.DataSourceTableName.Val = (System.String?)value;
           else
-            item.Remove();
+            OpenXmlElement.DataSourceTableName = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.DataSourceTableName = new DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName{ Val = (System.String?)value };
         }
       }
     }
@@ -97,7 +73,7 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// <summary>
   /// ODSO Data Source File Path.
   /// </summary>
-  public RelationshipType? SourceReference
+  public DocumentModel.Wordprocessing.RelationshipType? SourceReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -108,34 +84,22 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// </summary>
   public UInt32? ColumnDelimiter
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter>();
-        return (UInt32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.UInt32?)OpenXmlElement?.ColumnDelimiter?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter>();
-        if (item != null)
+        if (OpenXmlElement.ColumnDelimiter != null)
         {
           if (value is not null)
-            item.Val = (System.UInt32?)value;
+            OpenXmlElement.ColumnDelimiter.Val = (System.UInt32?)value;
           else
-            item.Remove();
+            OpenXmlElement.ColumnDelimiter = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter{ Val = (System.UInt32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.ColumnDelimiter = new DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter{ Val = (System.UInt32?)value };
         }
       }
     }
@@ -144,36 +108,24 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// <summary>
   /// ODSO Data Source Type.
   /// </summary>
-  public MailMergeSourceKind? MailMergeSource
+  public DocumentModel.Wordprocessing.MailMergeSourceKind? MailMergeSource
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeSource>();
-        return (MailMergeSourceKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.MailMergeSourceKind?)OpenXmlElement?.MailMergeSource?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeSource>();
-        if (item != null)
+        if (OpenXmlElement.MailMergeSource != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues?)value;
+            OpenXmlElement.MailMergeSource.Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.MailMergeSource = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.MailMergeSource{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.MailMergeSource = new DocumentFormat.OpenXml.Wordprocessing.MailMergeSource{ Val = (DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues?)value };
         }
       }
     }
@@ -188,8 +140,8 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
-        return (Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
+        return item != null;
       }
       return null;
     }
@@ -200,16 +152,14 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
         if (item != null)
         {
-          if (value is not null)
-            item.Val = (System.Boolean?)value;
-          else
+          if (value == false)
             item.Remove();
         }
         else
         {
-          if (value is not null)
+          if (value == true)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader{ Val = (System.Boolean?)value };
+            item = new DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader();
             OpenXmlElement.AddChild(item);
           }
         }
@@ -217,13 +167,89 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
     }
   }
   
-  public Collection<FieldMapData>? FieldMapDatas
+  public Collection<DocumentModel.Wordprocessing.FieldMapData>? FieldMapDatas
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_FieldMapDatas != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>()
+            .Select(item => new DocumentModel.Wordprocessing.FieldMapDataImpl(item)).ToList();
+          _FieldMapDatas = new ObservableCollection<DocumentModel.Wordprocessing.FieldMapData>(items);
+        }
+        else
+          _FieldMapDatas = new ObservableCollection<DocumentModel.Wordprocessing.FieldMapData>();
+        _FieldMapDatas.CollectionChanged += _FieldMapDatas_CollectionChanged;
+      }
+      return _FieldMapDatas;
+    }
+    set
+    {
+      if (value != null && value != _FieldMapDatas && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.FieldMapDataImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.FieldMapData> observableCollection)
+        _FieldMapDatas = observableCollection;
+      else if (value != null)
+        _FieldMapDatas = new ObservableCollection<DocumentModel.Wordprocessing.FieldMapData>(value);
+      else
+       _FieldMapDatas = null;
+    }
+  }
+  private ObservableCollection<DocumentModel.Wordprocessing.FieldMapData>? _FieldMapDatas;
+  
+  private void _FieldMapDatas_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.FieldMapDataImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.FieldMapDataImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
   }
   
-  public RelationshipType? RecipientDataReference
+  
+  public DocumentModel.Wordprocessing.RelationshipType? RecipientDataReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

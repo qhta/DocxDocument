@@ -1,0 +1,36 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+/// Line Charts.
+/// </summary>
+public interface LineChart
+{
+  /// <summary>
+  /// Grouping.
+  /// </summary>
+  public DocumentModel.Drawings.Charts.GroupingKind? Grouping { get ; set; }
+  
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public Boolean? VaryColors { get ; set; }
+  
+  public Collection<DocumentModel.Drawings.Charts.LineChartSeries>? LineChartSerieses { get ; set; }
+  
+  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get ; set; }
+  
+  public DocumentModel.Drawings.Charts.DropLines? DropLines { get ; set; }
+  
+  public DocumentModel.Drawings.Charts.HighLowLines? HighLowLines { get ; set; }
+  
+  public DocumentModel.Drawings.Charts.UpDownBars? UpDownBars { get ; set; }
+  
+  public Boolean? ShowMarker { get ; set; }
+  
+  public Boolean? Smooth { get ; set; }
+  
+  public UInt32? AxisId { get ; set; }
+  
+  public DocumentModel.Drawings.Charts.LineChartExtensionList? LineChartExtensionList { get ; set; }
+  
+}

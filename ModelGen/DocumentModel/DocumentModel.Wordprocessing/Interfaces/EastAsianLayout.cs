@@ -18,7 +18,7 @@ public interface EastAsianLayout
   /// <summary>
   /// Display Brackets Around Two Lines in One
   /// </summary>
-  public CombineBracketKind? CombineBrackets { get ; set; }
+  public DocumentModel.Wordprocessing.CombineBracketKind? CombineBrackets { get ; set; }
   
   /// <summary>
   /// Horizontal in Vertical (Rotate Text)

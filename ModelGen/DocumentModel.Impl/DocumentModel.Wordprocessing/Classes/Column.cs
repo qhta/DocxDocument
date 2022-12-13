@@ -23,7 +23,7 @@ public class ColumnImpl: ModelElementImpl, Column
   /// </summary>
   public String? Width
   {
-    get => (String?)OpenXmlElement?.Width?.Value;
+    get => (System.String?)OpenXmlElement?.Width?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ColumnImpl: ModelElementImpl, Column
   /// </summary>
   public String? Space
   {
-    get => (String?)OpenXmlElement?.Space?.Value;
+    get => (System.String?)OpenXmlElement?.Space?.Value;
     set
     {
       if (OpenXmlElement != null)

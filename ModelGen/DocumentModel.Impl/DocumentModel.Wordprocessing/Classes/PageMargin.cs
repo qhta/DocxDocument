@@ -23,7 +23,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public Int32? Top
   {
-    get => (Int32?)OpenXmlElement?.Top?.Value;
+    get => (System.Int32?)OpenXmlElement?.Top?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Right
   {
-    get => (UInt32?)OpenXmlElement?.Right?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Right?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public Int32? Bottom
   {
-    get => (Int32?)OpenXmlElement?.Bottom?.Value;
+    get => (System.Int32?)OpenXmlElement?.Bottom?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Left
   {
-    get => (UInt32?)OpenXmlElement?.Left?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Left?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Header
   {
-    get => (UInt32?)OpenXmlElement?.Header?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Header?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Footer
   {
-    get => (UInt32?)OpenXmlElement?.Footer?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Footer?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class PageMarginImpl: ModelElementImpl, PageMargin
   /// </summary>
   public UInt32? Gutter
   {
-    get => (UInt32?)OpenXmlElement?.Gutter?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Gutter?.Value;
     set
     {
       if (OpenXmlElement != null)

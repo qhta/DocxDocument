@@ -21,9 +21,9 @@ public class DocGridImpl: ModelElementImpl, DocGrid
   /// <summary>
   /// Document Grid Type
   /// </summary>
-  public DocGridKind? Type
+  public DocumentModel.Wordprocessing.DocGridKind? Type
   {
-    get => (DocGridKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.DocGridKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class DocGridImpl: ModelElementImpl, DocGrid
   /// </summary>
   public Int32? LinePitch
   {
-    get => (Int32?)OpenXmlElement?.LinePitch?.Value;
+    get => (System.Int32?)OpenXmlElement?.LinePitch?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class DocGridImpl: ModelElementImpl, DocGrid
   /// </summary>
   public Int32? CharacterSpace
   {
-    get => (Int32?)OpenXmlElement?.CharacterSpace?.Value;
+    get => (System.Int32?)OpenXmlElement?.CharacterSpace?.Value;
     set
     {
       if (OpenXmlElement != null)

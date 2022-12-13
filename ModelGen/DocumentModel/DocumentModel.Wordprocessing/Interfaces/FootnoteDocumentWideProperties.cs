@@ -8,12 +8,12 @@ public interface FootnoteDocumentWideProperties
   /// <summary>
   /// Footnote Placement.
   /// </summary>
-  public FootnotePositionKind? FootnotePosition { get ; set; }
+  public DocumentModel.Wordprocessing.FootnotePositionKind? FootnotePosition { get ; set; }
   
   /// <summary>
   /// Footnote Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get ; set; }
   
   /// <summary>
   /// Footnote and Endnote Numbering Starting Value.
@@ -23,8 +23,8 @@ public interface FootnoteDocumentWideProperties
   /// <summary>
   /// Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public RestartNumberKind? NumberingRestart { get ; set; }
+  public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get ; set; }
   
-  public FootnoteEndnoteSeparatorReferenceType? FootnoteSpecialReference { get ; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? FootnoteSpecialReference { get ; set; }
   
 }

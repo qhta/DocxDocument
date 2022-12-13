@@ -8,12 +8,12 @@ public interface CellMerge
   /// <summary>
   /// vMerge
   /// </summary>
-  public VerticalMergeRevisionKind? VerticalMerge { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMerge { get ; set; }
   
   /// <summary>
   /// vMergeOrig
   /// </summary>
-  public VerticalMergeRevisionKind? VerticalMergeOriginal { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMergeOriginal { get ; set; }
   
   /// <summary>
   /// author

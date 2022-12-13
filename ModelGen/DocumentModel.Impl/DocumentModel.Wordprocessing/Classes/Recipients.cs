@@ -18,7 +18,7 @@ public class RecipientsImpl: ModelElementImpl, Recipients
     OpenXmlElement = openXmlElement;
   }
   
-  public RecipientData? RecipientData
+  public DocumentModel.Wordprocessing.RecipientData? RecipientData
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

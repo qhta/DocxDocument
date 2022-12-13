@@ -23,7 +23,7 @@ public class LanguageTypeImpl: ModelElementImpl, LanguageType
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class LanguageTypeImpl: ModelElementImpl, LanguageType
   /// </summary>
   public String? EastAsia
   {
-    get => (String?)OpenXmlElement?.EastAsia?.Value;
+    get => (System.String?)OpenXmlElement?.EastAsia?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class LanguageTypeImpl: ModelElementImpl, LanguageType
   /// </summary>
   public String? Bidi
   {
-    get => (String?)OpenXmlElement?.Bidi?.Value;
+    get => (System.String?)OpenXmlElement?.Bidi?.Value;
     set
     {
       if (OpenXmlElement != null)

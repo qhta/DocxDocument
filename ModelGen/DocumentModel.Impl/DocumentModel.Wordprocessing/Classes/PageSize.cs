@@ -23,7 +23,7 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt32? Width
   {
-    get => (UInt32?)OpenXmlElement?.Width?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Width?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt32? Height
   {
-    get => (UInt32?)OpenXmlElement?.Height?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Height?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// <summary>
   /// Page Orientation
   /// </summary>
-  public PageOrientationKind? Orient
+  public DocumentModel.Wordprocessing.PageOrientationKind? Orient
   {
-    get => (PageOrientationKind?)OpenXmlElement?.Orient?.Value;
+    get => (DocumentModel.Wordprocessing.PageOrientationKind?)OpenXmlElement?.Orient?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class PageSizeImpl: ModelElementImpl, PageSize
   /// </summary>
   public UInt16? Code
   {
-    get => (UInt16?)OpenXmlElement?.Code?.Value;
+    get => (System.UInt16?)OpenXmlElement?.Code?.Value;
     set
     {
       if (OpenXmlElement != null)

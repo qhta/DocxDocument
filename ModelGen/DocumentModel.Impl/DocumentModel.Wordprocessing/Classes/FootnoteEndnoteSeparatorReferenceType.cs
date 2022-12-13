@@ -23,7 +23,7 @@ public class FootnoteEndnoteSeparatorReferenceTypeImpl: ModelElementImpl, Footno
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

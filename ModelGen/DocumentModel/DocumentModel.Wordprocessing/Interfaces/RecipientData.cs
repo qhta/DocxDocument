@@ -18,6 +18,6 @@ public interface RecipientData
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  public Base64BinaryValue? UniqueTag { get ; set; }
+  public DocumentModel.Base64BinaryValue? UniqueTag { get ; set; }
   
 }

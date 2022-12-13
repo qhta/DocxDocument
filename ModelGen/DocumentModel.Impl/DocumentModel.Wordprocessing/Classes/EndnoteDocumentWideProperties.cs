@@ -21,36 +21,24 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   /// <summary>
   /// Endnote Placement.
   /// </summary>
-  public EndnotePositionKind? EndnotePosition
+  public DocumentModel.Wordprocessing.EndnotePositionKind? EndnotePosition
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnotePosition>();
-        return (EndnotePositionKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.EndnotePositionKind?)OpenXmlElement?.EndnotePosition?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnotePosition>();
-        if (item != null)
+        if (OpenXmlElement.EndnotePosition != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues?)value;
+            OpenXmlElement.EndnotePosition.Val = (DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.EndnotePosition = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.EndnotePosition{ Val = (DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.EndnotePosition = new DocumentFormat.OpenXml.Wordprocessing.EndnotePosition{ Val = (DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues?)value };
         }
       }
     }
@@ -59,7 +47,7 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   /// <summary>
   /// Endnote Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -70,34 +58,22 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   /// </summary>
   public UInt16? NumberingStart
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
-        return (UInt16?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.UInt16?)OpenXmlElement?.NumberingStart?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
-        if (item != null)
+        if (OpenXmlElement.NumberingStart != null)
         {
           if (value is not null)
-            item.Val = (System.UInt16?)value;
+            OpenXmlElement.NumberingStart.Val = (System.UInt16?)value;
           else
-            item.Remove();
+            OpenXmlElement.NumberingStart = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NumberingStart{ Val = (System.UInt16?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NumberingStart = new DocumentFormat.OpenXml.Wordprocessing.NumberingStart{ Val = (System.UInt16?)value };
         }
       }
     }
@@ -106,42 +82,30 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   /// <summary>
   /// Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public RestartNumberKind? NumberingRestart
+  public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
-        return (RestartNumberKind?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (DocumentModel.Wordprocessing.RestartNumberKind?)OpenXmlElement?.NumberingRestart?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
-        if (item != null)
+        if (OpenXmlElement.NumberingRestart != null)
         {
           if (value is not null)
-            item.Val = (DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues?)value;
+            OpenXmlElement.NumberingRestart.Val = (DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues?)value;
           else
-            item.Remove();
+            OpenXmlElement.NumberingRestart = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NumberingRestart{ Val = (DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NumberingRestart = new DocumentFormat.OpenXml.Wordprocessing.NumberingRestart{ Val = (DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues?)value };
         }
       }
     }
   }
   
-  public FootnoteEndnoteSeparatorReferenceType? EndnoteSpecialReference
+  public DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? EndnoteSpecialReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

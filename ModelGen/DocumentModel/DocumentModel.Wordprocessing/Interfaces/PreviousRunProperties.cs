@@ -7,7 +7,7 @@ public interface PreviousRunProperties
 {
   public String? RunStyle { get ; set; }
   
-  public RunFonts? RunFonts { get ; set; }
+  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get ; set; }
   
   public Boolean? Bold { get ; set; }
   
@@ -41,7 +41,7 @@ public interface PreviousRunProperties
   
   public Boolean? WebHidden { get ; set; }
   
-  public Color? Color { get ; set; }
+  public DocumentModel.Wordprocessing.Color? Color { get ; set; }
   
   public Int32? Spacing { get ; set; }
   
@@ -55,52 +55,52 @@ public interface PreviousRunProperties
   
   public String? FontSizeComplexScript { get ; set; }
   
-  public HighlightColorKind? Highlight { get ; set; }
+  public DocumentModel.Wordprocessing.HighlightColorKind? Highlight { get ; set; }
   
-  public Underline? Underline { get ; set; }
+  public DocumentModel.Wordprocessing.Underline? Underline { get ; set; }
   
-  public TextEffectKind? TextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get ; set; }
   
-  public BorderType? Border { get ; set; }
+  public DocumentModel.Wordprocessing.BorderType? Border { get ; set; }
   
-  public Shading? Shading { get ; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get ; set; }
   
-  public FitText? FitText { get ; set; }
+  public DocumentModel.Wordprocessing.FitText? FitText { get ; set; }
   
-  public VerticalPositionKind? VerticalTextAlignment { get ; set; }
+  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get ; set; }
   
   public Boolean? RightToLeftText { get ; set; }
   
   public Boolean? ComplexScript { get ; set; }
   
-  public EmphasisMarkKind? Emphasis { get ; set; }
+  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get ; set; }
   
-  public LanguageType? Languages { get ; set; }
+  public DocumentModel.Wordprocessing.LanguageType? Languages { get ; set; }
   
-  public EastAsianLayout? EastAsianLayout { get ; set; }
+  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get ; set; }
   
   public Boolean? SpecVanish { get ; set; }
   
-  public Glow? Glow { get ; set; }
+  public DocumentModel.Wordprocessing.Glow? Glow { get ; set; }
   
-  public Reflection? Reflection { get ; set; }
+  public DocumentModel.Wordprocessing.Reflection? Reflection { get ; set; }
   
-  public TextOutlineEffect? TextOutlineEffect { get ; set; }
+  public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect { get ; set; }
   
-  public FillTextEffect? FillTextEffect { get ; set; }
+  public DocumentModel.Wordprocessing.FillTextEffect? FillTextEffect { get ; set; }
   
-  public Scene3D? Scene3D { get ; set; }
+  public DocumentModel.Wordprocessing.Scene3D? Scene3D { get ; set; }
   
-  public Properties3D? Properties3D { get ; set; }
+  public DocumentModel.Wordprocessing.Properties3D? Properties3D { get ; set; }
   
-  public LigaturesKind? Ligatures { get ; set; }
+  public DocumentModel.Wordprocessing.LigaturesKind? Ligatures { get ; set; }
   
-  public NumberFormKind? NumberingFormat { get ; set; }
+  public DocumentModel.Wordprocessing.NumberFormKind? NumberingFormat { get ; set; }
   
-  public NumberSpacingKind? NumberSpacing { get ; set; }
+  public DocumentModel.Wordprocessing.NumberSpacingKind? NumberSpacing { get ; set; }
   
-  public StylisticSets? StylisticSets { get ; set; }
+  public DocumentModel.Wordprocessing.StylisticSets? StylisticSets { get ; set; }
   
-  public OnOffKind? ContextualAlternatives { get ; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives { get ; set; }
   
 }

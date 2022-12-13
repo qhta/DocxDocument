@@ -21,7 +21,7 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentBackground? DocumentBackground
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public ModelElement? DocParts
+  public DocumentModel.ModelElement? DocParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

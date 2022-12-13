@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class MarkupTypeImpl: ModelElementImpl, MarkupType
 {
-  public DocumentFormat.OpenXml.Wordprocessing.MarkupType? OpenXmlElement
+  public DocumentFormat.OpenXml.Office2010.Word.MarkupType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Wordprocessing.MarkupType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Office2010.Word.MarkupType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public MarkupTypeImpl(): base() {}
   
-  public MarkupTypeImpl(DocumentFormat.OpenXml.Wordprocessing.MarkupType openXmlElement): base(openXmlElement)
+  public MarkupTypeImpl(DocumentFormat.OpenXml.Office2010.Word.MarkupType openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
@@ -23,7 +23,7 @@ public class MarkupTypeImpl: ModelElementImpl, MarkupType
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

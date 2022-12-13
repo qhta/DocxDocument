@@ -1,0 +1,18 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+/// Defines the ApplicationNonVisualDrawingProperties Class.
+/// </summary>
+public interface ApplicationNonVisualDrawingProperties
+{
+  /// <summary>
+  /// macro, this property is only available in Office 2010 and later.
+  /// </summary>
+  public String? Macro { get ; set; }
+  
+  /// <summary>
+  /// fPublished, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Boolean? Published { get ; set; }
+  
+}

@@ -23,7 +23,7 @@ public class AutoCaptionImpl: ModelElementImpl, AutoCaption
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class AutoCaptionImpl: ModelElementImpl, AutoCaption
   /// </summary>
   public String? Caption
   {
-    get => (String?)OpenXmlElement?.Caption?.Value;
+    get => (System.String?)OpenXmlElement?.Caption?.Value;
     set
     {
       if (OpenXmlElement != null)

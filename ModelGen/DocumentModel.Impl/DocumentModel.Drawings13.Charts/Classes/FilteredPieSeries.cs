@@ -1,0 +1,30 @@
+namespace DocumentModel.Drawings13.Charts;
+
+/// <summary>
+/// Defines the FilteredPieSeries Class.
+/// </summary>
+public class FilteredPieSeriesImpl: ModelElementImpl, FilteredPieSeries
+{
+  public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries? OpenXmlElement
+  {
+    get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries?)_OpenXmlElement;
+    set => _OpenXmlElement = value;
+  }
+  
+  public FilteredPieSeriesImpl(): base() {}
+  
+  public FilteredPieSeriesImpl(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries openXmlElement): base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// PieChartSeries.
+  /// </summary>
+  public DocumentModel.Drawings13.Charts.PieChartSeries? PieChartSeries
+  {
+    get => throw new NotImplementedException("Method not implemented");
+    set => throw new NotImplementedException("Method not implemented");
+  }
+  
+}

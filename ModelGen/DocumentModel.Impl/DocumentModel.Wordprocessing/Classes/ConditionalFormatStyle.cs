@@ -23,7 +23,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public String? Val
   {
-    get => (String?)OpenXmlElement?.Val?.Value;
+    get => (System.String?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? FirstRow
   {
-    get => (Boolean?)OpenXmlElement?.FirstRow?.Value;
+    get => (System.Boolean?)OpenXmlElement?.FirstRow?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? LastRow
   {
-    get => (Boolean?)OpenXmlElement?.LastRow?.Value;
+    get => (System.Boolean?)OpenXmlElement?.LastRow?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? FirstColumn
   {
-    get => (Boolean?)OpenXmlElement?.FirstColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.FirstColumn?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? LastColumn
   {
-    get => (Boolean?)OpenXmlElement?.LastColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.LastColumn?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -88,7 +88,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? OddVerticalBand
   {
-    get => (Boolean?)OpenXmlElement?.OddVerticalBand?.Value;
+    get => (System.Boolean?)OpenXmlElement?.OddVerticalBand?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? EvenVerticalBand
   {
-    get => (Boolean?)OpenXmlElement?.EvenVerticalBand?.Value;
+    get => (System.Boolean?)OpenXmlElement?.EvenVerticalBand?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -114,7 +114,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? OddHorizontalBand
   {
-    get => (Boolean?)OpenXmlElement?.OddHorizontalBand?.Value;
+    get => (System.Boolean?)OpenXmlElement?.OddHorizontalBand?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -127,7 +127,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? EvenHorizontalBand
   {
-    get => (Boolean?)OpenXmlElement?.EvenHorizontalBand?.Value;
+    get => (System.Boolean?)OpenXmlElement?.EvenHorizontalBand?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -140,7 +140,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? FirstRowFirstColumn
   {
-    get => (Boolean?)OpenXmlElement?.FirstRowFirstColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.FirstRowFirstColumn?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -153,7 +153,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? FirstRowLastColumn
   {
-    get => (Boolean?)OpenXmlElement?.FirstRowLastColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.FirstRowLastColumn?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -166,7 +166,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? LastRowFirstColumn
   {
-    get => (Boolean?)OpenXmlElement?.LastRowFirstColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.LastRowFirstColumn?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -179,7 +179,7 @@ public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyl
   /// </summary>
   public Boolean? LastRowLastColumn
   {
-    get => (Boolean?)OpenXmlElement?.LastRowLastColumn?.Value;
+    get => (System.Boolean?)OpenXmlElement?.LastRowLastColumn?.Value;
     set
     {
       if (OpenXmlElement != null)

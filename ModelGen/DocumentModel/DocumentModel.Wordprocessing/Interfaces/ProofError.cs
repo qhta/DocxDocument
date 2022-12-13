@@ -8,6 +8,6 @@ public interface ProofError
   /// <summary>
   /// Proofing Error Anchor Type
   /// </summary>
-  public ProofingErrorKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.ProofingErrorKind? Type { get ; set; }
   
 }

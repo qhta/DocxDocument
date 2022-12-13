@@ -21,9 +21,9 @@ public class PositionalTabImpl: ModelElementImpl, PositionalTab
   /// <summary>
   /// Positional Tab Stop Alignment
   /// </summary>
-  public AbsolutePositionTabAlignmentKind? Alignment
+  public DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind? Alignment
   {
-    get => (AbsolutePositionTabAlignmentKind?)OpenXmlElement?.Alignment?.Value;
+    get => (DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind?)OpenXmlElement?.Alignment?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class PositionalTabImpl: ModelElementImpl, PositionalTab
   /// <summary>
   /// Positional Tab Base
   /// </summary>
-  public AbsolutePositionTabPositioningBaseKind? RelativeTo
+  public DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind? RelativeTo
   {
-    get => (AbsolutePositionTabPositioningBaseKind?)OpenXmlElement?.RelativeTo?.Value;
+    get => (DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind?)OpenXmlElement?.RelativeTo?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class PositionalTabImpl: ModelElementImpl, PositionalTab
   /// <summary>
   /// Tab Leader Character
   /// </summary>
-  public AbsolutePositionTabLeaderCharKind? Leader
+  public DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind? Leader
   {
-    get => (AbsolutePositionTabLeaderCharKind?)OpenXmlElement?.Leader?.Value;
+    get => (DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind?)OpenXmlElement?.Leader?.Value;
     set
     {
       if (OpenXmlElement != null)

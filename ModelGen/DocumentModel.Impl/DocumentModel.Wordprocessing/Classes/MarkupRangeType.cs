@@ -21,9 +21,9 @@ public class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml
   {
-    get => (DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
+    get => (DocumentModel.Wordprocessing.DisplacedByCustomXmlKind?)OpenXmlElement?.DisplacedByCustomXml?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
   /// </summary>
   public String? Id
   {
-    get => (String?)OpenXmlElement?.Id?.Value;
+    get => (System.String?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

@@ -23,7 +23,7 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? Combine
   {
-    get => (Boolean?)OpenXmlElement?.Combine?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Combine?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// <summary>
   /// Display Brackets Around Two Lines in One
   /// </summary>
-  public CombineBracketKind? CombineBrackets
+  public DocumentModel.Wordprocessing.CombineBracketKind? CombineBrackets
   {
-    get => (CombineBracketKind?)OpenXmlElement?.CombineBrackets?.Value;
+    get => (DocumentModel.Wordprocessing.CombineBracketKind?)OpenXmlElement?.CombineBrackets?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? Vertical
   {
-    get => (Boolean?)OpenXmlElement?.Vertical?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Vertical?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
   /// </summary>
   public Boolean? VerticalCompress
   {
-    get => (Boolean?)OpenXmlElement?.VerticalCompress?.Value;
+    get => (System.Boolean?)OpenXmlElement?.VerticalCompress?.Value;
     set
     {
       if (OpenXmlElement != null)

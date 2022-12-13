@@ -10,6 +10,6 @@ public interface DocPartTypes
   /// </summary>
   public Boolean? All { get ; set; }
   
-  public DocPartKind? DocPartType { get ; set; }
+  public DocumentModel.Wordprocessing.DocPartKind? DocPartType { get ; set; }
   
 }

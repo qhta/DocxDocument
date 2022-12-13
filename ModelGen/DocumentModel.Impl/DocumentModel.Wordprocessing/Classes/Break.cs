@@ -21,9 +21,9 @@ public class BreakImpl: ModelElementImpl, Break
   /// <summary>
   /// Break Type
   /// </summary>
-  public BreakKind? Type
+  public DocumentModel.Wordprocessing.BreakKind? Type
   {
-    get => (BreakKind?)OpenXmlElement?.Type?.Value;
+    get => (DocumentModel.Wordprocessing.BreakKind?)OpenXmlElement?.Type?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class BreakImpl: ModelElementImpl, Break
   /// <summary>
   /// Restart Location For Text Wrapping Break
   /// </summary>
-  public BreakTextRestartLocationKind? Clear
+  public DocumentModel.Wordprocessing.BreakTextRestartLocationKind? Clear
   {
-    get => (BreakTextRestartLocationKind?)OpenXmlElement?.Clear?.Value;
+    get => (DocumentModel.Wordprocessing.BreakTextRestartLocationKind?)OpenXmlElement?.Clear?.Value;
     set
     {
       if (OpenXmlElement != null)

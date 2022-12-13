@@ -23,34 +23,22 @@ public class NumberingPropertiesImpl: ModelElementImpl, NumberingProperties
   /// </summary>
   public Int32? NumberingLevelReference
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.NumberingLevelReference?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
-        if (item != null)
+        if (OpenXmlElement.NumberingLevelReference != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.NumberingLevelReference.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.NumberingLevelReference = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NumberingLevelReference = new DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference{ Val = (System.Int32?)value };
         }
       }
     }
@@ -61,34 +49,22 @@ public class NumberingPropertiesImpl: ModelElementImpl, NumberingProperties
   /// </summary>
   public Int32? NumberingId
   {
-    get
-    {
-      if (OpenXmlElement != null)
-      {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
-        return (Int32?)openXmlElement?.Val?.Value;
-      }
-      return null;
-    }
+    get => (System.Int32?)OpenXmlElement?.NumberingId?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
-        if (item != null)
+        if (OpenXmlElement.NumberingId != null)
         {
           if (value is not null)
-            item.Val = (System.Int32?)value;
+            OpenXmlElement.NumberingId.Val = (System.Int32?)value;
           else
-            item.Remove();
+            OpenXmlElement.NumberingId = null;
         }
         else
         {
           if (value is not null)
-          {
-            item = new DocumentFormat.OpenXml.Wordprocessing.NumberingId{ Val = (System.Int32?)value };
-            OpenXmlElement.AddChild(item);
-          }
+            OpenXmlElement.NumberingId = new DocumentFormat.OpenXml.Wordprocessing.NumberingId{ Val = (System.Int32?)value };
         }
       }
     }
@@ -97,7 +73,7 @@ public class NumberingPropertiesImpl: ModelElementImpl, NumberingProperties
   /// <summary>
   /// Previous Paragraph Numbering Properties.
   /// </summary>
-  public NumberingChange? NumberingChange
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -106,7 +82,7 @@ public class NumberingPropertiesImpl: ModelElementImpl, NumberingProperties
   /// <summary>
   /// Inserted Numbering Properties.
   /// </summary>
-  public TrackChangeType? Inserted
+  public DocumentModel.Wordprocessing.TrackChangeType? Inserted
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

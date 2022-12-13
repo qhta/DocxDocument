@@ -21,9 +21,9 @@ public class NumberingFormatImpl: ModelElementImpl, NumberingFormat
   /// <summary>
   /// Numbering Format Type
   /// </summary>
-  public NumberFormatKind? Val
+  public DocumentModel.Wordprocessing.NumberFormatKind? Val
   {
-    get => (NumberFormatKind?)OpenXmlElement?.Val?.Value;
+    get => (DocumentModel.Wordprocessing.NumberFormatKind?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class NumberingFormatImpl: ModelElementImpl, NumberingFormat
   /// </summary>
   public String? Format
   {
-    get => (String?)OpenXmlElement?.Format?.Value;
+    get => (System.String?)OpenXmlElement?.Format?.Value;
     set
     {
       if (OpenXmlElement != null)

@@ -21,9 +21,9 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>
-  public DocumentProtectionKind? Edit
+  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit
   {
-    get => (DocumentProtectionKind?)OpenXmlElement?.Edit?.Value;
+    get => (DocumentModel.Wordprocessing.DocumentProtectionKind?)OpenXmlElement?.Edit?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public Boolean? Formatting
   {
-    get => (Boolean?)OpenXmlElement?.Formatting?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Formatting?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public Boolean? Enforcement
   {
-    get => (Boolean?)OpenXmlElement?.Enforcement?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Enforcement?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,9 +60,9 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type
   /// </summary>
-  public CryptProviderKind? CryptographicProviderType
+  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType
   {
-    get => (CryptProviderKind?)OpenXmlElement?.CryptographicProviderType?.Value;
+    get => (DocumentModel.Wordprocessing.CryptProviderKind?)OpenXmlElement?.CryptographicProviderType?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -73,9 +73,9 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Class
   /// </summary>
-  public CryptAlgorithmClassKind? CryptographicAlgorithmClass
+  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
-    get => (CryptAlgorithmClassKind?)OpenXmlElement?.CryptographicAlgorithmClass?.Value;
+    get => (DocumentModel.Wordprocessing.CryptAlgorithmClassKind?)OpenXmlElement?.CryptographicAlgorithmClass?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -86,9 +86,9 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Type
   /// </summary>
-  public CryptAlgorithmKind? CryptographicAlgorithmType
+  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType
   {
-    get => (CryptAlgorithmKind?)OpenXmlElement?.CryptographicAlgorithmType?.Value;
+    get => (DocumentModel.Wordprocessing.CryptAlgorithmKind?)OpenXmlElement?.CryptographicAlgorithmType?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -101,7 +101,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public Int32? CryptographicAlgorithmSid
   {
-    get => (Int32?)OpenXmlElement?.CryptographicAlgorithmSid?.Value;
+    get => (System.Int32?)OpenXmlElement?.CryptographicAlgorithmSid?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -114,7 +114,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public UInt32? CryptographicSpinCount
   {
-    get => (UInt32?)OpenXmlElement?.CryptographicSpinCount?.Value;
+    get => (System.UInt32?)OpenXmlElement?.CryptographicSpinCount?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -127,7 +127,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public String? CryptographicProvider
   {
-    get => (String?)OpenXmlElement?.CryptographicProvider?.Value;
+    get => (System.String?)OpenXmlElement?.CryptographicProvider?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -138,7 +138,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public HexBinaryValue? AlgorithmIdExtensibility
+  public DocumentModel.HexBinaryValue? AlgorithmIdExtensibility
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -149,7 +149,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public String? AlgorithmIdExtensibilitySource
   {
-    get => (String?)OpenXmlElement?.AlgorithmIdExtensibilitySource?.Value;
+    get => (System.String?)OpenXmlElement?.AlgorithmIdExtensibilitySource?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -160,7 +160,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public HexBinaryValue? CryptographicProviderTypeExtensibility
+  public DocumentModel.HexBinaryValue? CryptographicProviderTypeExtensibility
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -171,7 +171,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public String? CryptographicProviderTypeExtSource
   {
-    get => (String?)OpenXmlElement?.CryptographicProviderTypeExtSource?.Value;
+    get => (System.String?)OpenXmlElement?.CryptographicProviderTypeExtSource?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -182,7 +182,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Password Hash
   /// </summary>
-  public Base64BinaryValue? Hash
+  public DocumentModel.Base64BinaryValue? Hash
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -191,7 +191,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public Base64BinaryValue? Salt
+  public DocumentModel.Base64BinaryValue? Salt
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -202,7 +202,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public String? AlgorithmName
   {
-    get => (String?)OpenXmlElement?.AlgorithmName?.Value;
+    get => (System.String?)OpenXmlElement?.AlgorithmName?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -213,7 +213,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Base64BinaryValue? HashValue
+  public DocumentModel.Base64BinaryValue? HashValue
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -222,7 +222,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Base64BinaryValue? SaltValue
+  public DocumentModel.Base64BinaryValue? SaltValue
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -233,7 +233,7 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// </summary>
   public Int32? SpinCount
   {
-    get => (Int32?)OpenXmlElement?.SpinCount?.Value;
+    get => (System.Int32?)OpenXmlElement?.SpinCount?.Value;
     set
     {
       if (OpenXmlElement != null)

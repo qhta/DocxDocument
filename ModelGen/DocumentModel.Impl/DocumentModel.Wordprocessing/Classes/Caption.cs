@@ -23,7 +23,7 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public String? Name
   {
-    get => (String?)OpenXmlElement?.Name?.Value;
+    get => (System.String?)OpenXmlElement?.Name?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// <summary>
   /// Automatic Caption Placement
   /// </summary>
-  public CaptionPositionKind? Position
+  public DocumentModel.Wordprocessing.CaptionPositionKind? Position
   {
-    get => (CaptionPositionKind?)OpenXmlElement?.Position?.Value;
+    get => (DocumentModel.Wordprocessing.CaptionPositionKind?)OpenXmlElement?.Position?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Boolean? ChapterNumber
   {
-    get => (Boolean?)OpenXmlElement?.ChapterNumber?.Value;
+    get => (System.Boolean?)OpenXmlElement?.ChapterNumber?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Int32? Heading
   {
-    get => (Int32?)OpenXmlElement?.Heading?.Value;
+    get => (System.Int32?)OpenXmlElement?.Heading?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// </summary>
   public Boolean? NoLabel
   {
-    get => (Boolean?)OpenXmlElement?.NoLabel?.Value;
+    get => (System.Boolean?)OpenXmlElement?.NoLabel?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -86,9 +86,9 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// <summary>
   /// Caption Numbering Format
   /// </summary>
-  public NumberFormatKind? NumberFormat
+  public DocumentModel.Wordprocessing.NumberFormatKind? NumberFormat
   {
-    get => (NumberFormatKind?)OpenXmlElement?.NumberFormat?.Value;
+    get => (DocumentModel.Wordprocessing.NumberFormatKind?)OpenXmlElement?.NumberFormat?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -99,9 +99,9 @@ public class CaptionImpl: ModelElementImpl, Caption
   /// <summary>
   /// Chapter Number/Item Index Separator
   /// </summary>
-  public ChapterSeparatorKind? Separator
+  public DocumentModel.Wordprocessing.ChapterSeparatorKind? Separator
   {
-    get => (ChapterSeparatorKind?)OpenXmlElement?.Separator?.Value;
+    get => (DocumentModel.Wordprocessing.ChapterSeparatorKind?)OpenXmlElement?.Separator?.Value;
     set
     {
       if (OpenXmlElement != null)

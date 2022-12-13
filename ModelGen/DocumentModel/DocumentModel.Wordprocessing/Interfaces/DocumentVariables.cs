@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface DocumentVariables
 {
-  public Collection<DocumentVariable>? Items { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.DocumentVariable>? Items { get ; set; }
   
 }

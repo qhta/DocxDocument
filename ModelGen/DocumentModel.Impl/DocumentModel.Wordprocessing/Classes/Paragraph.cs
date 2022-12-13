@@ -21,7 +21,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public HexBinaryValue? RsidParagraphMarkRevision
+  public DocumentModel.HexBinaryValue? RsidParagraphMarkRevision
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public HexBinaryValue? RsidParagraphAddition
+  public DocumentModel.HexBinaryValue? RsidParagraphAddition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -39,7 +39,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public HexBinaryValue? RsidParagraphDeletion
+  public DocumentModel.HexBinaryValue? RsidParagraphDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -48,7 +48,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public HexBinaryValue? RsidParagraphProperties
+  public DocumentModel.HexBinaryValue? RsidParagraphProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -57,7 +57,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public HexBinaryValue? RsidRunAdditionDefault
+  public DocumentModel.HexBinaryValue? RsidRunAdditionDefault
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -66,7 +66,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinaryValue? ParagraphId
+  public DocumentModel.HexBinaryValue? ParagraphId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -75,7 +75,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinaryValue? TextId
+  public DocumentModel.HexBinaryValue? TextId
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -86,7 +86,7 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// </summary>
   public Boolean? NoSpellError
   {
-    get => (Boolean?)OpenXmlElement?.NoSpellError?.Value;
+    get => (System.Boolean?)OpenXmlElement?.NoSpellError?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -97,205 +97,281 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
   /// <summary>
   /// Paragraph Properties.
   /// </summary>
-  public ParagraphProperties? ParagraphProperties
+  public DocumentModel.Wordprocessing.ParagraphProperties? ParagraphProperties
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public CustomXmlRun? CustomXmlRun
+  public DocumentModel.Wordprocessing.CustomXmlRun? CustomXmlRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Collection<SimpleField>? SimpleFields
+  public Collection<DocumentModel.Wordprocessing.SimpleField>? SimpleFields
+  {
+    get
+    {
+      if (_SimpleFields != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.SimpleField>()
+            .Select(item => new DocumentModel.Wordprocessing.SimpleFieldImpl(item)).ToList();
+          _SimpleFields = new ObservableCollection<DocumentModel.Wordprocessing.SimpleField>(items);
+        }
+        else
+          _SimpleFields = new ObservableCollection<DocumentModel.Wordprocessing.SimpleField>();
+        _SimpleFields.CollectionChanged += _SimpleFields_CollectionChanged;
+      }
+      return _SimpleFields;
+    }
+    set
+    {
+      if (value != null && value != _SimpleFields && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.SimpleField>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.SimpleField> observableCollection)
+        _SimpleFields = observableCollection;
+      else if (value != null)
+        _SimpleFields = new ObservableCollection<DocumentModel.Wordprocessing.SimpleField>(value);
+      else
+       _SimpleFields = null;
+    }
+  }
+  private ObservableCollection<DocumentModel.Wordprocessing.SimpleField>? _SimpleFields;
+  
+  private void _SimpleFields_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.SimpleField>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.SimpleField>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
+  
+  public DocumentModel.Wordprocessing.Hyperlink? Hyperlink
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public Hyperlink? Hyperlink
+  public DocumentModel.Wordprocessing.SdtRun? SdtRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public SdtRun? SdtRun
+  public DocumentModel.Wordprocessing.ProofError? ProofError
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public ProofError? ProofError
+  public DocumentModel.Wordprocessing.PermStart? PermStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PermStart? PermStart
+  public DocumentModel.Wordprocessing.PermEnd? PermEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public PermEnd? PermEnd
+  public DocumentModel.Wordprocessing.BookmarkStart? BookmarkStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BookmarkStart? BookmarkStart
+  public DocumentModel.Wordprocessing.MarkupRangeType? BookmarkEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? BookmarkEnd
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? CommentRangeStart
+  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? CommentRangeEnd
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveBookmarkType? MoveFromRangeStart
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? MoveFromRangeEnd
+  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveBookmarkType? MoveToRangeStart
+  public DocumentModel.Wordprocessing.MarkupRangeType? MoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupRangeType? MoveToRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlInsRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlInsRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlInsRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlInsRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlDelRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlDelRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlDelRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlDelRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveFromRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlMoveFromRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveFromRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlMoveFromRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveToRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlMoveToRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlMoveToRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlConflictInsertionRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlConflictInsertionRangeEnd
+  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public TrackChangeType? CustomXmlConflictDeletionRangeStart
+  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MarkupType? CustomXmlConflictDeletionRangeEnd
+  public DocumentModel.Wordprocessing.InsertedRun? InsertedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public InsertedRun? InsertedRun
+  public DocumentModel.Wordprocessing.DeletedRun? DeletedRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public DeletedRun? DeletedRun
+  public DocumentModel.Wordprocessing.MoveFromRun? MoveFromRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveFromRun? MoveFromRun
+  public DocumentModel.Wordprocessing.MoveToRun? MoveToRun
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public MoveToRun? MoveToRun
+  public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public RunConflictInsertion? RunConflictInsertion
-  {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
-  }
-  
-  public RunConflictDeletion? RunConflictDeletion
+  public DocumentModel.Wordprocessing.RunConflictDeletion? RunConflictDeletion
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -433,19 +509,19 @@ public class ParagraphImpl: ModelElementImpl, Paragraph
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BidirectionalOverride? BidirectionalOverride
+  public DocumentModel.Wordprocessing.BidirectionalOverride? BidirectionalOverride
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public BidirectionalEmbedding? BidirectionalEmbedding
+  public DocumentModel.Wordprocessing.BidirectionalEmbedding? BidirectionalEmbedding
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
   }
   
-  public RelationshipType? SubDocumentReference
+  public DocumentModel.Wordprocessing.RelationshipType? SubDocumentReference
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

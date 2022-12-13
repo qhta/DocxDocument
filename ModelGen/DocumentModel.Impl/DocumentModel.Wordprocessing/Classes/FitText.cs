@@ -23,7 +23,7 @@ public class FitTextImpl: ModelElementImpl, FitText
   /// </summary>
   public UInt32? Val
   {
-    get => (UInt32?)OpenXmlElement?.Val?.Value;
+    get => (System.UInt32?)OpenXmlElement?.Val?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class FitTextImpl: ModelElementImpl, FitText
   /// </summary>
   public Int32? Id
   {
-    get => (Int32?)OpenXmlElement?.Id?.Value;
+    get => (System.Int32?)OpenXmlElement?.Id?.Value;
     set
     {
       if (OpenXmlElement != null)

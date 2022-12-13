@@ -23,7 +23,7 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Markup
   {
-    get => (Boolean?)OpenXmlElement?.Markup?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Markup?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -36,7 +36,7 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Comments
   {
-    get => (Boolean?)OpenXmlElement?.Comments?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Comments?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -49,7 +49,7 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? DisplayRevision
   {
-    get => (Boolean?)OpenXmlElement?.DisplayRevision?.Value;
+    get => (System.Boolean?)OpenXmlElement?.DisplayRevision?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -62,7 +62,7 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? Formatting
   {
-    get => (Boolean?)OpenXmlElement?.Formatting?.Value;
+    get => (System.Boolean?)OpenXmlElement?.Formatting?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -75,7 +75,7 @@ public class RevisionViewImpl: ModelElementImpl, RevisionView
   /// </summary>
   public Boolean? InkAnnotations
   {
-    get => (Boolean?)OpenXmlElement?.InkAnnotations?.Value;
+    get => (System.Boolean?)OpenXmlElement?.InkAnnotations?.Value;
     set
     {
       if (OpenXmlElement != null)

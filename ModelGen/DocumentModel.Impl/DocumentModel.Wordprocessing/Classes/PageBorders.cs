@@ -21,9 +21,9 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Z-Ordering of Page Border
   /// </summary>
-  public PageBorderZOrderKind? ZOrder
+  public DocumentModel.Wordprocessing.PageBorderZOrderKind? ZOrder
   {
-    get => (PageBorderZOrderKind?)OpenXmlElement?.ZOrder?.Value;
+    get => (DocumentModel.Wordprocessing.PageBorderZOrderKind?)OpenXmlElement?.ZOrder?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -34,9 +34,9 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Pages to Display Page Borders
   /// </summary>
-  public PageBorderDisplayKind? Display
+  public DocumentModel.Wordprocessing.PageBorderDisplayKind? Display
   {
-    get => (PageBorderDisplayKind?)OpenXmlElement?.Display?.Value;
+    get => (DocumentModel.Wordprocessing.PageBorderDisplayKind?)OpenXmlElement?.Display?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -47,9 +47,9 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Page Border Positioning
   /// </summary>
-  public PageBorderOffsetKind? OffsetFrom
+  public DocumentModel.Wordprocessing.PageBorderOffsetKind? OffsetFrom
   {
-    get => (PageBorderOffsetKind?)OpenXmlElement?.OffsetFrom?.Value;
+    get => (DocumentModel.Wordprocessing.PageBorderOffsetKind?)OpenXmlElement?.OffsetFrom?.Value;
     set
     {
       if (OpenXmlElement != null)
@@ -60,7 +60,7 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Top Border.
   /// </summary>
-  public BorderType? TopBorder
+  public DocumentModel.Wordprocessing.BorderType? TopBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -69,7 +69,7 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Left Border.
   /// </summary>
-  public BorderType? LeftBorder
+  public DocumentModel.Wordprocessing.BorderType? LeftBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -78,7 +78,7 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Bottom Border.
   /// </summary>
-  public BorderType? BottomBorder
+  public DocumentModel.Wordprocessing.BorderType? BottomBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -87,7 +87,7 @@ public class PageBordersImpl: ModelElementImpl, PageBorders
   /// <summary>
   /// Right Border.
   /// </summary>
-  public BorderType? RightBorder
+  public DocumentModel.Wordprocessing.BorderType? RightBorder
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

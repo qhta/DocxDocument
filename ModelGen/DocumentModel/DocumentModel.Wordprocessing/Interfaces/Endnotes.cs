@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Endnotes
 {
-  public Endnote? Endnote { get ; set; }
+  public DocumentModel.Wordprocessing.Endnote? Endnote { get ; set; }
   
 }
