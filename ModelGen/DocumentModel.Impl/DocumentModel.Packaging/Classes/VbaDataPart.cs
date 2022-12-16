@@ -43,8 +43,19 @@ public class VbaDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaDataPa
   /// </summary>
   public DocumentModel.Wordprocessing.VbaSuppData? VbaSuppData
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.VbaSuppData != null)
+        return new DocumentModel.Wordprocessing.VbaSuppDataImpl(OpenXmlElement.VbaSuppData);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.VbaSuppDataImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.VbaSuppData = valueImpl.OpenXmlElement;
+    }
   }
   
 }

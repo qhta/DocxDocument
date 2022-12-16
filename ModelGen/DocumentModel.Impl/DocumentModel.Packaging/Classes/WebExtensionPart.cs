@@ -52,8 +52,19 @@ public class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebE
   /// </summary>
   public DocumentModel.WebExtensions.WebExtension? WebExtension
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.WebExtension != null)
+        return new DocumentModel.WebExtensions.WebExtensionImpl(OpenXmlElement.WebExtension);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.WebExtensions.WebExtensionImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.WebExtension = valueImpl.OpenXmlElement;
+    }
   }
   
 }

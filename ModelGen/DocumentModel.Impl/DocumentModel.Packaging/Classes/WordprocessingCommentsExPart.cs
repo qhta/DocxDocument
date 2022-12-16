@@ -41,8 +41,19 @@ public class WordprocessingCommentsExPartImpl: DocumentModel.Packaging.OpenXmlPa
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsEx? CommentsEx
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CommentsEx != null)
+        return new DocumentModel.Wordprocessing.CommentsExImpl(OpenXmlElement.CommentsEx);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.CommentsExImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.CommentsEx = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? ContentType

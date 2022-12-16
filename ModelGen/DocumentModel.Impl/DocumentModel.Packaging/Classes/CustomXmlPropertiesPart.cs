@@ -33,8 +33,19 @@ public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   /// </summary>
   public DocumentModel.CustomXml.DataStoreItem? DataStoreItem
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DataStoreItem != null)
+        return new DocumentModel.CustomXml.DataStoreItemImpl(OpenXmlElement.DataStoreItem);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.CustomXml.DataStoreItemImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.DataStoreItem = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType

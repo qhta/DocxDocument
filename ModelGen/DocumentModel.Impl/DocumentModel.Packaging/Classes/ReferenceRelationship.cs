@@ -62,8 +62,12 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
   /// </summary>
   public Uri? Uri
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get => (System.Uri?)OpenXmlElement?.Uri;
+    set
+    {
+      if (OpenXmlElement != null)
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Uri").SetValue(OpenXmlElement, (System.Uri?)value);
+    }
   }
   
 }

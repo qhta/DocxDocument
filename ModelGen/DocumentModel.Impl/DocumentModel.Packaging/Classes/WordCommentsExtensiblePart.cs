@@ -23,8 +23,19 @@ public class WordCommentsExtensiblePartImpl: DocumentModel.Packaging.OpenXmlPart
   /// </summary>
   public DocumentModel.Wordprocessing.CommentsExtensible? CommentsExtensible
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CommentsExtensible != null)
+        return new DocumentModel.Wordprocessing.CommentsExtensibleImpl(OpenXmlElement.CommentsExtensible);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.CommentsExtensibleImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.CommentsExtensible = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? ContentType

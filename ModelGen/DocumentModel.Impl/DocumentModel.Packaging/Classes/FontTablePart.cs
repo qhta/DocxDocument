@@ -42,8 +42,19 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
   /// </summary>
   public DocumentModel.Wordprocessing.Fonts? Fonts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Fonts != null)
+        return new DocumentModel.Wordprocessing.FontsImpl(OpenXmlElement.Fonts);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.FontsImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Fonts = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType

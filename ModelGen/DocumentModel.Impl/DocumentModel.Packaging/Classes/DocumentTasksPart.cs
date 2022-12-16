@@ -43,8 +43,19 @@ public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Doc
   /// </summary>
   public DocumentModel.Tasks? Tasks
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Tasks != null)
+        return new DocumentModel.TasksImpl(OpenXmlElement.Tasks);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.TasksImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Tasks = valueImpl.OpenXmlElement;
+    }
   }
   
 }

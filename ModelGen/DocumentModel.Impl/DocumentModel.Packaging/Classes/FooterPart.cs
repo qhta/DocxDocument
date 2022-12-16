@@ -132,8 +132,19 @@ public class FooterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FooterPart
   /// </summary>
   public DocumentModel.Wordprocessing.Footer? Footer
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Footer != null)
+        return new DocumentModel.Wordprocessing.FooterImpl(OpenXmlElement.Footer);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.FooterImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Footer = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

@@ -52,8 +52,19 @@ public class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
   /// </summary>
   public DocumentModel.Drawings.ThemeOverride? ThemeOverride
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ThemeOverride != null)
+        return new DocumentModel.Drawings.ThemeOverrideImpl(OpenXmlElement.ThemeOverride);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ThemeOverrideImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.ThemeOverride = valueImpl.OpenXmlElement;
+    }
   }
   
 }

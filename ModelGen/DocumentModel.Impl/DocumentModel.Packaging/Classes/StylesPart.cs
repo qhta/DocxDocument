@@ -23,8 +23,19 @@ public class StylesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, StylesPart
   /// </summary>
   public DocumentModel.Wordprocessing.Styles? Styles
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Styles != null)
+        return new DocumentModel.Wordprocessing.StylesImpl(OpenXmlElement.Styles);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.StylesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Styles = valueImpl.OpenXmlElement;
+    }
   }
   
 }

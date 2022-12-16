@@ -52,8 +52,19 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   /// </summary>
   public DocumentModel.Wordprocessing.Settings? Settings
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Settings != null)
+        return new DocumentModel.Wordprocessing.SettingsImpl(OpenXmlElement.Settings);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.SettingsImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Settings = valueImpl.OpenXmlElement;
+    }
   }
   
 }

@@ -33,8 +33,19 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   /// </summary>
   public DocumentModel.Drawings.Diagrams.DataModelRoot? DataModelRoot
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DataModelRoot != null)
+        return new DocumentModel.Drawings.Diagrams.DataModelRootImpl(OpenXmlElement.DataModelRoot);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Diagrams.DataModelRootImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.DataModelRoot = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

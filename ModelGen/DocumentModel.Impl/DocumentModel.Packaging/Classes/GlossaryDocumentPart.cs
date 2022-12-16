@@ -141,8 +141,19 @@ public class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   /// </summary>
   public DocumentModel.Wordprocessing.GlossaryDocument? GlossaryDocument
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.GlossaryDocument != null)
+        return new DocumentModel.Wordprocessing.GlossaryDocumentImpl(OpenXmlElement.GlossaryDocument);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.GlossaryDocumentImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.GlossaryDocument = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

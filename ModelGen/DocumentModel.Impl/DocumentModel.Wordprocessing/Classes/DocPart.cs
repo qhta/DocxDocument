@@ -23,8 +23,19 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// </summary>
   public DocumentModel.Wordprocessing.DocPartProperties? DocPartProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DocPartProperties != null)
+        return new DocumentModel.Wordprocessing.DocPartPropertiesImpl(OpenXmlElement.DocPartProperties);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.DocPartPropertiesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.DocPartProperties = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
@@ -32,8 +43,19 @@ public class DocPartImpl: ModelElementImpl, DocPart
   /// </summary>
   public DocumentModel.Wordprocessing.DocPartBody? DocPartBody
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DocPartBody != null)
+        return new DocumentModel.Wordprocessing.DocPartBodyImpl(OpenXmlElement.DocPartBody);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.DocPartBodyImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.DocPartBody = valueImpl.OpenXmlElement;
+    }
   }
   
 }

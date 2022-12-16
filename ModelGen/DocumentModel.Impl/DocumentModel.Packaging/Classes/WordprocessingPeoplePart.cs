@@ -33,8 +33,19 @@ public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// </summary>
   public DocumentModel.Wordprocessing.People? People
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.People != null)
+        return new DocumentModel.Wordprocessing.PeopleImpl(OpenXmlElement.People);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.PeopleImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.People = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType

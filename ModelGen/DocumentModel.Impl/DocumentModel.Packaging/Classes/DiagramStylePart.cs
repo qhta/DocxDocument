@@ -43,8 +43,19 @@ public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diag
   /// </summary>
   public DocumentModel.Drawings.Diagrams.StyleDefinition? StyleDefinition
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.StyleDefinition != null)
+        return new DocumentModel.Drawings.Diagrams.StyleDefinitionImpl(OpenXmlElement.StyleDefinition);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Diagrams.StyleDefinitionImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.StyleDefinition = valueImpl.OpenXmlElement;
+    }
   }
   
 }

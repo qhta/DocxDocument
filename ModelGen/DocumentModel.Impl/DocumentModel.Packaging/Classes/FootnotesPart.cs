@@ -132,8 +132,19 @@ public class FootnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Footnot
   /// </summary>
   public DocumentModel.Wordprocessing.Footnotes? Footnotes
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Footnotes != null)
+        return new DocumentModel.Wordprocessing.FootnotesImpl(OpenXmlElement.Footnotes);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.FootnotesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Footnotes = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

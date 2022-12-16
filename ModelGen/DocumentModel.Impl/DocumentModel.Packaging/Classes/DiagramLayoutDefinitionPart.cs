@@ -42,8 +42,19 @@ public class DiagramLayoutDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPar
   /// </summary>
   public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.LayoutDefinition != null)
+        return new DocumentModel.Drawings.Diagrams.LayoutDefinitionImpl(OpenXmlElement.LayoutDefinition);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Diagrams.LayoutDefinitionImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.LayoutDefinition = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType

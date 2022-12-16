@@ -32,8 +32,19 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// </summary>
   public DocumentModel.Drawings.Charts.ChartSpace? ChartSpace
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ChartSpace != null)
+        return new DocumentModel.Drawings.Charts.ChartSpaceImpl(OpenXmlElement.ChartSpace);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Charts.ChartSpaceImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.ChartSpace = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
