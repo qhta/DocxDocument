@@ -49,8 +49,19 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.NonVisualContentPartProperties? NonVisualContentPartProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.NonVisualContentPartProperties != null)
+        return new DocumentModel.Drawings.ChartDrawings.NonVisualContentPartPropertiesImpl(OpenXmlElement.NonVisualContentPartProperties);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ChartDrawings.NonVisualContentPartPropertiesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.NonVisualContentPartProperties = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
@@ -58,8 +69,19 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ApplicationNonVisualDrawingProperties != null)
+        return new DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingPropertiesImpl(OpenXmlElement.ApplicationNonVisualDrawingProperties);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingPropertiesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.ApplicationNonVisualDrawingProperties = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
@@ -67,8 +89,19 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.Transform2D? Transform2D
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Transform2D != null)
+        return new DocumentModel.Drawings.ChartDrawings.Transform2DImpl(OpenXmlElement.Transform2D);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ChartDrawings.Transform2DImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Transform2D = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
@@ -76,8 +109,19 @@ public class ContentPartImpl: ModelElementImpl, ContentPart
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.OfficeArtExtensionList != null)
+        return new DocumentModel.Drawings.ChartDrawings.OfficeArtExtensionListImpl(OpenXmlElement.OfficeArtExtensionList);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ChartDrawings.OfficeArtExtensionListImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.OfficeArtExtensionList = valueImpl.OpenXmlElement;
+    }
   }
   
 }

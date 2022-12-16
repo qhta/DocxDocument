@@ -42,8 +42,19 @@ public class NumberingDefinitionsPartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// </summary>
   public DocumentModel.Wordprocessing.Numbering? Numbering
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Numbering != null)
+        return new DocumentModel.Wordprocessing.NumberingImpl(OpenXmlElement.Numbering);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.NumberingImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Numbering = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType

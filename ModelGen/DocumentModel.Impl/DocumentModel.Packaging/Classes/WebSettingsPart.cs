@@ -43,8 +43,19 @@ public class WebSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebSe
   /// </summary>
   public DocumentModel.Wordprocessing.WebSettings? WebSettings
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.WebSettings != null)
+        return new DocumentModel.Wordprocessing.WebSettingsImpl(OpenXmlElement.WebSettings);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.WebSettingsImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.WebSettings = valueImpl.OpenXmlElement;
+    }
   }
   
 }

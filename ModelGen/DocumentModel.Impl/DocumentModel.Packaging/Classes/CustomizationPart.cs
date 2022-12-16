@@ -43,8 +43,19 @@ public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cus
   /// </summary>
   public DocumentModel.Wordprocessing.TemplateCommandGroup? TemplateCommandGroup
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.TemplateCommandGroup != null)
+        return new DocumentModel.Wordprocessing.TemplateCommandGroupImpl(OpenXmlElement.TemplateCommandGroup);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.TemplateCommandGroupImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.TemplateCommandGroup = valueImpl.OpenXmlElement;
+    }
   }
   
 }

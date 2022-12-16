@@ -23,8 +23,19 @@ public class ChartStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartS
   /// </summary>
   public DocumentModel.Drawings.ChartsStyle.ChartStyle? ChartStyle
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ChartStyle != null)
+        return new DocumentModel.Drawings.ChartsStyle.ChartStyleImpl(OpenXmlElement.ChartStyle);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ChartsStyle.ChartStyleImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.ChartStyle = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? ContentType

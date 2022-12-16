@@ -95,8 +95,19 @@ public class MainDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Main
   /// </summary>
   public DocumentModel.Wordprocessing.Document? Document
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Document != null)
+        return new DocumentModel.Wordprocessing.DocumentImpl(OpenXmlElement.Document);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.DocumentImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Document = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

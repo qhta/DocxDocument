@@ -23,8 +23,19 @@ public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPart
   /// </summary>
   public DocumentModel.Wordprocessing.Recipients? Recipients
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Recipients != null)
+        return new DocumentModel.Wordprocessing.RecipientsImpl(OpenXmlElement.Recipients);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.RecipientsImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Recipients = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>
@@ -32,8 +43,19 @@ public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPart
   /// </summary>
   public DocumentModel.Wordprocessing.MailMergeRecipients? MailMergeRecipients
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.MailMergeRecipients != null)
+        return new DocumentModel.Wordprocessing.MailMergeRecipientsImpl(OpenXmlElement.MailMergeRecipients);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.MailMergeRecipientsImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.MailMergeRecipients = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? RelationshipType
