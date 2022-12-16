@@ -123,8 +123,19 @@ public class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Endnotes
   /// </summary>
   public DocumentModel.Wordprocessing.Endnotes? Endnotes
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Endnotes != null)
+        return new DocumentModel.Wordprocessing.EndnotesImpl(OpenXmlElement.Endnotes);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.EndnotesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Endnotes = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

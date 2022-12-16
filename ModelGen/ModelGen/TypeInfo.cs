@@ -35,7 +35,7 @@ public class TypeInfo : ModelElement
     set;
   }
 
-  public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string);
+  public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string) || Type == typeof(System.Uri);
 
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;

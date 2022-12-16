@@ -52,8 +52,19 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
   /// </summary>
   public DocumentModel.Drawings.Charts.UserShapes? UserShapes
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.UserShapes != null)
+        return new DocumentModel.Drawings.Charts.UserShapesImpl(OpenXmlElement.UserShapes);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Charts.UserShapesImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.UserShapes = valueImpl.OpenXmlElement;
+    }
   }
   
 }

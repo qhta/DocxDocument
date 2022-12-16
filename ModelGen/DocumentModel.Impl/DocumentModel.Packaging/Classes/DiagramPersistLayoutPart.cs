@@ -33,8 +33,19 @@ public class DiagramPersistLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// </summary>
   public DocumentModel.Drawings.Office.Drawing? Drawing
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Drawing != null)
+        return new DocumentModel.Drawings.Office.DrawingImpl(OpenXmlElement.Drawing);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Office.DrawingImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Drawing = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

@@ -23,8 +23,19 @@ public class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Dia
   /// </summary>
   public DocumentModel.Drawings.Diagrams.ColorsDefinition? ColorsDefinition
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ColorsDefinition != null)
+        return new DocumentModel.Drawings.Diagrams.ColorsDefinitionImpl(OpenXmlElement.ColorsDefinition);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.Diagrams.ColorsDefinitionImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.ColorsDefinition = valueImpl.OpenXmlElement;
+    }
   }
   
   public new String? ContentType

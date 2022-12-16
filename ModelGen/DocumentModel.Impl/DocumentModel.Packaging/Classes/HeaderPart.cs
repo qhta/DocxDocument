@@ -132,8 +132,19 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// </summary>
   public DocumentModel.Wordprocessing.Header? Header
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Header != null)
+        return new DocumentModel.Wordprocessing.HeaderImpl(OpenXmlElement.Header);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Wordprocessing.HeaderImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Header = valueImpl.OpenXmlElement;
+    }
   }
   
   /// <summary>

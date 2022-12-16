@@ -52,8 +52,19 @@ public class ThemePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThemePart
   /// </summary>
   public DocumentModel.Drawings.Theme? Theme
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Theme != null)
+        return new DocumentModel.Drawings.ThemeImpl(OpenXmlElement.Theme);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      if (value is DocumentModel.Drawings.ThemeImpl valueImpl)
+        if (valueImpl.OpenXmlElement != null)
+            OpenXmlElement.Theme = valueImpl.OpenXmlElement;
+    }
   }
   
 }
