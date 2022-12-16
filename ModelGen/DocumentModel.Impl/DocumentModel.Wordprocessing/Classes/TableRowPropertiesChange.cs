@@ -62,8 +62,31 @@ public class TableRowPropertiesChangeImpl: ModelElementImpl, TableRowPropertiesC
   /// </summary>
   public DocumentModel.Wordprocessing.PreviousTableRowProperties? PreviousTableRowProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.PreviousTableRowPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.PreviousTableRowPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

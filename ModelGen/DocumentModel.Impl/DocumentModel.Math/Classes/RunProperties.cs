@@ -50,8 +50,8 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
-        return (DocumentModel.Math.BooleanKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
+        return (DocumentModel.Math.BooleanKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -85,8 +85,8 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
-        return (DocumentModel.Math.ScriptKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
+        return (DocumentModel.Math.ScriptKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -120,8 +120,8 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
-        return (DocumentModel.Math.StyleKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
+        return (DocumentModel.Math.StyleKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -151,8 +151,31 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
   
   public DocumentModel.Math.Break? Break
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+        if (item != null)
+          return new DocumentModel.Math.BreakImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Math.BreakImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Math.BooleanKind? Alignment
@@ -161,8 +184,8 @@ public class RunPropertiesImpl: ModelElementImpl, RunProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
-        return (DocumentModel.Math.BooleanKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
+        return (DocumentModel.Math.BooleanKind?)item?.Val?.Value;
       }
       return null;
     }

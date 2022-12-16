@@ -44,7 +44,9 @@ public static class TypeInspector
       {
         ConstraintType = (ConstraintType)particle.ParticleType,
         IsRequired = particle.MinOccurs > 0,
-        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0),
+        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0) || particle.MaxOccurs>1,
+        MinCount = (particle.MinOccurs > 0) ? particle.MinOccurs : null,
+        MaxCount = (particle.MaxOccurs > 0) ? particle.MaxOccurs : null,
       };
       foreach (var childParticle in compositeParticle.ChildrenParticles)
       {
@@ -60,9 +62,13 @@ public static class TypeInspector
       {
         ConstraintType = (ConstraintType)particle.ParticleType,
         IsRequired = particle.MinOccurs > 0,
-        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0),
+        IsMultiple = (particle.MinOccurs == 0 && particle.MaxOccurs == 0) || particle.MaxOccurs > 1,
+        MinCount = (particle.MinOccurs > 0) ? particle.MinOccurs : null,
+        MaxCount = (particle.MaxOccurs > 0) ? particle.MaxOccurs : null,
       };
       var elementType = elementParticle.ElementType;
+      //if (elementType.Name == "Point")
+      //  Debug.Assert(true);
       var itemTypeInfo = TypeManager.RegisterType(elementType);
       itemTypeInfo.IsAccepted = true;
       var itemTypeRelation = typeInfo.AddRelationship(itemTypeInfo, Semantics.Include);

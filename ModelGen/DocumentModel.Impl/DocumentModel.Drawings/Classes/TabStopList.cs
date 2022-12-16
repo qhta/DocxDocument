@@ -18,10 +18,86 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
     OpenXmlElement = openXmlElement;
   }
   
-  public DocumentModel.Drawings.TabStop? TabStop
+  public Collection<DocumentModel.Drawings.TabStop>? TabStops
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_TabStops != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.TabStop>()
+            .Select(item => new DocumentModel.Drawings.TabStopImpl(item)).ToList();
+          _TabStops = new ObservableCollection<DocumentModel.Drawings.TabStop>(items);
+        }
+        else
+          _TabStops = new ObservableCollection<DocumentModel.Drawings.TabStop>();
+        _TabStops.CollectionChanged += _TabStops_CollectionChanged;
+      }
+      return _TabStops;
+    }
+    set
+    {
+      if (value != null && value != _TabStops && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.TabStop>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Drawings.TabStopImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Drawings.TabStop> observableCollection)
+        _TabStops = observableCollection;
+      else if (value != null)
+        _TabStops = new ObservableCollection<DocumentModel.Drawings.TabStop>(value);
+      else
+       _TabStops = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Drawings.TabStop>? _TabStops;
+  
+  private void _TabStops_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.TabStop>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Drawings.TabStopImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Drawings.TabStopImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.TabStop>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

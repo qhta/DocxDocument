@@ -10,6 +10,6 @@ public interface BarChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredBarSeries? FilteredBarSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredBarSeries? FilteredBarSeries { get ; set; }
   
 }

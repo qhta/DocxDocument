@@ -62,8 +62,31 @@ public class ParagraphMarkRunPropertiesChangeImpl: ModelElementImpl, ParagraphMa
   /// </summary>
   public DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.PreviousParagraphMarkRunPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.PreviousParagraphMarkRunPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

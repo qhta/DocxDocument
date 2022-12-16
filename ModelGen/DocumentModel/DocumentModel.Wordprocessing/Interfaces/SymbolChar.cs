@@ -13,6 +13,6 @@ public interface SymbolChar
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public DocumentModel.HexBinaryValue? Char { get ; set; }
+  public DocumentModel.HexBinary? Char { get ; set; }
   
 }

@@ -10,6 +10,6 @@ public interface ScatterChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredScatterSeries? FilteredScatterSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredScatterSeries? FilteredScatterSeries { get ; set; }
   
 }

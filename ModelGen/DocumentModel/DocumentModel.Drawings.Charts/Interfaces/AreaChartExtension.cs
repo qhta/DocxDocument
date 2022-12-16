@@ -10,6 +10,6 @@ public interface AreaChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredAreaSeries? FilteredAreaSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredAreaSeries? FilteredAreaSeries { get ; set; }
   
 }

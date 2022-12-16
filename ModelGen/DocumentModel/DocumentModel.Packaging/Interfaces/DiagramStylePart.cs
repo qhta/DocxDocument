@@ -12,6 +12,6 @@ public interface DiagramStylePart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.StyleDefinition? StyleDefinition { get ; set; }
+  public DocumentModel.Drawings.Diagrams.StyleDefinition? StyleDefinition { get ; set; }
   
 }

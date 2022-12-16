@@ -31,7 +31,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.DataModelRoot? DataModelRoot
+  public DocumentModel.Drawings.Diagrams.DataModelRoot? DataModelRoot
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

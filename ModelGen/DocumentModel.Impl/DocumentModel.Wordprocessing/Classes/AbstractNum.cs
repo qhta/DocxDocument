@@ -187,10 +187,86 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
     }
   }
   
-  public DocumentModel.Wordprocessing.Level? Level
+  public Collection<DocumentModel.Wordprocessing.Level>? Levels
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_Levels != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Level>()
+            .Select(item => new DocumentModel.Wordprocessing.LevelImpl(item)).ToList();
+          _Levels = new ObservableCollection<DocumentModel.Wordprocessing.Level>(items);
+        }
+        else
+          _Levels = new ObservableCollection<DocumentModel.Wordprocessing.Level>();
+        _Levels.CollectionChanged += _Levels_CollectionChanged;
+      }
+      return _Levels;
+    }
+    set
+    {
+      if (value != null && value != _Levels && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Level>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.LevelImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.Level> observableCollection)
+        _Levels = observableCollection;
+      else if (value != null)
+        _Levels = new ObservableCollection<DocumentModel.Wordprocessing.Level>(value);
+      else
+       _Levels = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.Level>? _Levels;
+  
+  private void _Levels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Level>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.LevelImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.LevelImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Level>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

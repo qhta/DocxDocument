@@ -8,7 +8,7 @@ public interface StylePaneFormatFilter
   /// <summary>
   /// val
   /// </summary>
-  public DocumentModel.HexBinaryValue? Val { get ; set; }
+  public DocumentModel.HexBinary? Val { get ; set; }
   
   /// <summary>
   /// allStyles, this property is only available in Office 2010 and later.

@@ -31,10 +31,33 @@ public class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.NumberingFormat? NumberingFormat
+  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.NumberingFormat3Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.NumberingFormat3Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

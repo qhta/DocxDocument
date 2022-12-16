@@ -10,14 +10,14 @@ public interface DLblExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.DataLabelFieldTable? DataLabelFieldTable { get ; set; }
+  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable { get ; set; }
   
   public Boolean? ExceptionForSave { get ; set; }
   
   public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ShapeProperties3? ShapeProperties { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.Layout? Layout { get ; set; }
+  public DocumentModel.Drawings.Charts.Layout3? Layout { get ; set; }
   
 }

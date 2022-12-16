@@ -25,6 +25,6 @@ public interface EndnoteDocumentWideProperties
   /// </summary>
   public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get ; set; }
   
-  public DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? EndnoteSpecialReference { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? EndnoteSpecialReferences { get ; set; }
   
 }

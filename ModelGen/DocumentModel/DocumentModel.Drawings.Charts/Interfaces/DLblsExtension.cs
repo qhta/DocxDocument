@@ -10,18 +10,18 @@ public interface DLblsExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.ChartText? ChartText { get ; set; }
+  public DocumentModel.Drawings.Charts.ChartText3? ChartText { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.DataLabelFieldTable? DataLabelFieldTable { get ; set; }
+  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable { get ; set; }
   
   public Boolean? ShowDataLabelsRange { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ShapeProperties3? ShapeProperties { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.Layout? Layout { get ; set; }
+  public DocumentModel.Drawings.Charts.Layout3? Layout { get ; set; }
   
   public Boolean? ShowLeaderLines { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.LeaderLines? LeaderLines { get ; set; }
+  public DocumentModel.Drawings.Charts.LeaderLines3? LeaderLines { get ; set; }
   
 }

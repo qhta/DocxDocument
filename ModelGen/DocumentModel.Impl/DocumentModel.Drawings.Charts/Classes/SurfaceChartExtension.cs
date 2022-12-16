@@ -31,10 +31,33 @@ public class SurfaceChartExtensionImpl: ModelElementImpl, SurfaceChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredSurfaceSeries? FilteredSurfaceSeries
+  public DocumentModel.Drawings.Charts.FilteredSurfaceSeries? FilteredSurfaceSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredSurfaceSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredSurfaceSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

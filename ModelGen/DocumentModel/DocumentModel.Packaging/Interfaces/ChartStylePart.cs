@@ -8,7 +8,7 @@ public interface ChartStylePart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings13.Charts.ChartStyle? ChartStyle { get ; set; }
+  public DocumentModel.Drawings.ChartsStyle.ChartStyle? ChartStyle { get ; set; }
   
   public String? ContentType { get ; set; }
   

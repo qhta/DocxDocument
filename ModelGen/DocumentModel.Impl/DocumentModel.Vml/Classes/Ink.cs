@@ -21,10 +21,24 @@ public class InkImpl: ModelElementImpl, Ink
   /// <summary>
   /// Ink Data
   /// </summary>
-  public DocumentModel.Base64BinaryValue? InkData
+  public DocumentModel.Base64Binary? InkData
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.InkData?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.InkData.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.InkData = new DocumentFormat.OpenXml.Base64BinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.InkData = null;
+      }
+    }
   }
   
   /// <summary>

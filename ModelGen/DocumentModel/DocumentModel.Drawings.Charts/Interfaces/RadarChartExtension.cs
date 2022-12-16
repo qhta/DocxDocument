@@ -10,6 +10,6 @@ public interface RadarChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredRadarSeries? FilteredRadarSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredRadarSeries? FilteredRadarSeries { get ; set; }
   
 }

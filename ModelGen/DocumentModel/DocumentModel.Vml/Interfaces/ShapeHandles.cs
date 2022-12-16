@@ -5,6 +5,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public interface ShapeHandles
 {
-  public DocumentModel.Vml.ShapeHandle? ShapeHandle { get ; set; }
+  public Collection<DocumentModel.Vml.ShapeHandle>? Items { get ; set; }
   
 }

@@ -23,7 +23,7 @@ public interface Line3DChart
   
   public UInt16? GapDepth { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.Line3DChartExtensionList? Line3DChartExtensionList { get ; set; }
   

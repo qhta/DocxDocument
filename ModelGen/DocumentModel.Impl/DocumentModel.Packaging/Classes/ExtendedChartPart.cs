@@ -30,7 +30,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings16.Charts.ChartSpace? ChartSpace
+  public DocumentModel.Drawings.ChartDrawings.ChartSpace? ChartSpace
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

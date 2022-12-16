@@ -23,14 +23,37 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
   /// </summary>
   public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.DocumentBackgroundImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.DocumentBackgroundImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  public DocumentModel.ModelElement? DocParts
+  public DocumentModel.Wordprocessing.DocParts? DocParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

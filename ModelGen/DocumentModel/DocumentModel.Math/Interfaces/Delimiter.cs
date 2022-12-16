@@ -10,6 +10,6 @@ public interface Delimiter
   /// </summary>
   public DocumentModel.Math.DelimiterProperties? DelimiterProperties { get ; set; }
   
-  public DocumentModel.Math.Base? Base { get ; set; }
+  public Collection<DocumentModel.Math.Base>? Bases { get ; set; }
   
 }
