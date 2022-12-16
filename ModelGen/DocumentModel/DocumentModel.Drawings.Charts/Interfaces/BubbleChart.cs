@@ -22,7 +22,7 @@ public interface BubbleChart
   
   public DocumentModel.Drawings.Charts.SizeRepresentsKind? SizeRepresents { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.BubbleChartExtensionList? BubbleChartExtensionList { get ; set; }
   

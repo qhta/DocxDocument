@@ -8,17 +8,17 @@ public interface Run
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunProperties { get ; set; }
+  public DocumentModel.HexBinary? RsidRunProperties { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunDeletion { get ; set; }
+  public DocumentModel.HexBinary? RsidRunDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunAddition { get ; set; }
+  public DocumentModel.HexBinary? RsidRunAddition { get ; set; }
   
   /// <summary>
   /// Run Properties.

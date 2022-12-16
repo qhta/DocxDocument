@@ -41,7 +41,7 @@ public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diag
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.StyleDefinition? StyleDefinition
+  public DocumentModel.Drawings.Diagrams.StyleDefinition? StyleDefinition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

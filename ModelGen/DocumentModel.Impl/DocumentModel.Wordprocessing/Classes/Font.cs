@@ -60,10 +60,24 @@ public class FontImpl: ModelElementImpl, Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose1Number
+  public DocumentModel.HexBinary? Panose1Number
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Panose1Number?.Val?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Panose1Number.Val.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Panose1Number = new DocumentFormat.OpenXml.Wordprocessing.Panose1Number{ Val = value.ToString() };
+        else
+          OpenXmlElement.Panose1Number = null;
+      }
+    }
   }
   
   /// <summary>
@@ -71,8 +85,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontCharSet? FontCharSet
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontCharSetImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontCharSetImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -168,8 +205,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontSignature? FontSignature
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSignature>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontSignatureImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSignature>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontSignatureImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -177,8 +237,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontRelationshipType? EmbedRegularFont
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontRelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontRelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -186,8 +269,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldFont
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontRelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontRelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -195,8 +301,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontRelationshipType? EmbedItalicFont
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontRelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontRelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -204,8 +333,31 @@ public class FontImpl: ModelElementImpl, Font
   /// </summary>
   public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldItalicFont
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FontRelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FontRelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

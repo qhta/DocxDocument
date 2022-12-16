@@ -60,19 +60,47 @@ public class McdImpl: ModelElementImpl, Mcd
   /// <summary>
   /// bEncrypt
   /// </summary>
-  public DocumentModel.HexBinaryValue? BEncrypt
+  public DocumentModel.HexBinary? BEncrypt
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.BEncrypt?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.BEncrypt.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.BEncrypt = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.BEncrypt = null;
+      }
+    }
   }
   
   /// <summary>
   /// cmg
   /// </summary>
-  public DocumentModel.HexBinaryValue? Cmg
+  public DocumentModel.HexBinary? Cmg
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Cmg?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Cmg.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Cmg = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Cmg = null;
+      }
+    }
   }
   
 }

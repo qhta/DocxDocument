@@ -41,7 +41,7 @@ public interface BubbleChartSeries
   
   public Collection<DocumentModel.Drawings.Charts.Trendline>? Trendlines { get ; set; }
   
-  public DocumentModel.Drawings.Charts.ErrorBars? ErrorBars { get ; set; }
+  public Collection<DocumentModel.Drawings.Charts.ErrorBars>? ErrorBarses { get ; set; }
   
   public DocumentModel.Drawings.Charts.XValues? XValues { get ; set; }
   

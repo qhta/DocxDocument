@@ -58,6 +58,6 @@ public interface ContentPartLocks
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Drawings.OfficeArtExtensionList2? OfficeArtExtensionList { get ; set; }
   
 }

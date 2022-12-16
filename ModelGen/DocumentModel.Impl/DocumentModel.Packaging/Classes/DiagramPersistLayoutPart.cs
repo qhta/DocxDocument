@@ -31,7 +31,7 @@ public class DiagramPersistLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Drawing? Drawing
+  public DocumentModel.Drawings.Office.Drawing? Drawing
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

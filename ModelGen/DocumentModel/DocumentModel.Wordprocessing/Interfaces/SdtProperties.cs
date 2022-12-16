@@ -23,7 +23,7 @@ public interface SdtProperties
   
   public String? Tag { get ; set; }
   
-  public DocumentModel.Wordprocessing.Color? Color { get ; set; }
+  public DocumentModel.Wordprocessing.Color3? Color { get ; set; }
   
   public DocumentModel.Wordprocessing.SdtAppearance? Appearance { get ; set; }
   

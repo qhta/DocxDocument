@@ -13,7 +13,7 @@ public interface TextFontType
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose { get ; set; }
+  public DocumentModel.HexBinary? Panose { get ; set; }
   
   /// <summary>
   /// Similar Font Family

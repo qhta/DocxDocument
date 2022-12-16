@@ -34,19 +34,47 @@ public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedComma
   /// <summary>
   /// fciIndex
   /// </summary>
-  public DocumentModel.HexBinaryValue? CommandIndex
+  public DocumentModel.HexBinary? CommandIndex
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CommandIndex?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CommandIndex.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CommandIndex = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.CommandIndex = null;
+      }
+    }
   }
   
   /// <summary>
   /// swArg
   /// </summary>
-  public DocumentModel.HexBinaryValue? Argument
+  public DocumentModel.HexBinary? Argument
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Argument?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Argument.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Argument = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Argument = null;
+      }
+    }
   }
   
 }

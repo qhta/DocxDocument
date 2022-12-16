@@ -31,10 +31,33 @@ public class AreaChartExtensionImpl: ModelElementImpl, AreaChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredAreaSeries? FilteredAreaSeries
+  public DocumentModel.Drawings.Charts.FilteredAreaSeries? FilteredAreaSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredAreaSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredAreaSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

@@ -8,32 +8,32 @@ public interface TableRow
   /// <summary>
   /// Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowMarkRevision { get ; set; }
+  public DocumentModel.HexBinary? RsidTableRowMarkRevision { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowAddition { get ; set; }
+  public DocumentModel.HexBinary? RsidTableRowAddition { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowDeletion { get ; set; }
+  public DocumentModel.HexBinary? RsidTableRowDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidTableRowProperties { get ; set; }
+  public DocumentModel.HexBinary? RsidTableRowProperties { get ; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId { get ; set; }
+  public DocumentModel.HexBinary? ParagraphId { get ; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId { get ; set; }
+  public DocumentModel.HexBinary? TextId { get ; set; }
   
   /// <summary>
   /// Table-Level Property Exceptions.
@@ -89,13 +89,13 @@ public interface TableRow
   
   public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
   public DocumentModel.Wordprocessing.InsertedRun? InsertedRun { get ; set; }
   

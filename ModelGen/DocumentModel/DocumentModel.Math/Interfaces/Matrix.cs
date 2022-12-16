@@ -10,6 +10,6 @@ public interface Matrix
   /// </summary>
   public DocumentModel.Math.MatrixProperties? MatrixProperties { get ; set; }
   
-  public DocumentModel.Math.MatrixRow? MatrixRow { get ; set; }
+  public Collection<DocumentModel.Math.MatrixRow>? MatrixRows { get ; set; }
   
 }

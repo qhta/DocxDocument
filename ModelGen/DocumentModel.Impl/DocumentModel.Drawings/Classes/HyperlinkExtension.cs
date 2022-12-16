@@ -37,8 +37,8 @@ public class HyperlinkExtensionImpl: ModelElementImpl, HyperlinkExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor>();
-        return (DocumentModel.Drawings.HyperlinkColorEnum?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor>();
+        return (DocumentModel.Drawings.HyperlinkColorEnum?)item?.Val?.Value;
       }
       return null;
     }

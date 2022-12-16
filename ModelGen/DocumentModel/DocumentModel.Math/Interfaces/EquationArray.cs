@@ -10,6 +10,6 @@ public interface EquationArray
   /// </summary>
   public DocumentModel.Math.EquationArrayProperties? EquationArrayProperties { get ; set; }
   
-  public DocumentModel.Math.Base? Base { get ; set; }
+  public Collection<DocumentModel.Math.Base>? Bases { get ; set; }
   
 }

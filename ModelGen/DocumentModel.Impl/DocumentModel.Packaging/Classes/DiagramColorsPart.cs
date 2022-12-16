@@ -21,7 +21,7 @@ public class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Dia
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ColorsDefinition? ColorsDefinition
+  public DocumentModel.Drawings.Diagrams.ColorsDefinition? ColorsDefinition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

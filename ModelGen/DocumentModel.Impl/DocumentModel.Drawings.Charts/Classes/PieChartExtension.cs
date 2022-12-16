@@ -31,10 +31,33 @@ public class PieChartExtensionImpl: ModelElementImpl, PieChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredPieSeries? FilteredPieSeries
+  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredPieSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredPieSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

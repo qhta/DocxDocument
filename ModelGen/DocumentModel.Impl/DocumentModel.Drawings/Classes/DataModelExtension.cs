@@ -31,10 +31,33 @@ public class DataModelExtensionImpl: ModelElementImpl, DataModelExtension
     }
   }
   
-  public DocumentModel.Drawings.DataModelExtensionBlock? DataModelExtensionBlock
+  public DocumentModel.Drawings.Office.DataModelExtensionBlock? DataModelExtensionBlock
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock>();
+        if (item != null)
+          return new DocumentModel.Drawings.Office.DataModelExtensionBlockImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Office.DataModelExtensionBlockImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Boolean? RecolorImages
@@ -43,8 +66,8 @@ public class DataModelExtensionImpl: ModelElementImpl, DataModelExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.RecolorImages>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.RecolorImages>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }

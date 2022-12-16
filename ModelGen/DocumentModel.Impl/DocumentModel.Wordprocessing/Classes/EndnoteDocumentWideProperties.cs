@@ -49,8 +49,31 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   /// </summary>
   public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.NumberingFormatImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.NumberingFormatImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -105,10 +128,86 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
     }
   }
   
-  public DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? EndnoteSpecialReference
+  public Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? EndnoteSpecialReferences
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_EndnoteSpecialReferences != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>()
+            .Select(item => new DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl(item)).ToList();
+          _EndnoteSpecialReferences = new ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>(items);
+        }
+        else
+          _EndnoteSpecialReferences = new ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>();
+        _EndnoteSpecialReferences.CollectionChanged += _EndnoteSpecialReferences_CollectionChanged;
+      }
+      return _EndnoteSpecialReferences;
+    }
+    set
+    {
+      if (value != null && value != _EndnoteSpecialReferences && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType> observableCollection)
+        _EndnoteSpecialReferences = observableCollection;
+      else if (value != null)
+        _EndnoteSpecialReferences = new ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>(value);
+      else
+       _EndnoteSpecialReferences = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? _EndnoteSpecialReferences;
+  
+  private void _EndnoteSpecialReferences_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

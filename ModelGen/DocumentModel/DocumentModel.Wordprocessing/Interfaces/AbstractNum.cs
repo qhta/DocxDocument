@@ -40,6 +40,6 @@ public interface AbstractNum
   /// </summary>
   public String? NumberingStyleLink { get ; set; }
   
-  public DocumentModel.Wordprocessing.Level? Level { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.Level>? Levels { get ; set; }
   
 }

@@ -47,10 +47,24 @@ public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  public DocumentModel.HexBinaryValue? CommandIndexBasedOn
+  public DocumentModel.HexBinary? CommandIndexBasedOn
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CommandIndexBasedOn?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CommandIndexBasedOn.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CommandIndexBasedOn = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.CommandIndexBasedOn = null;
+      }
+    }
   }
   
   /// <summary>

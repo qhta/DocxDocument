@@ -70,10 +70,86 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
     }
   }
   
-  public DocumentModel.Wordprocessing.LevelOverride? LevelOverride
+  public Collection<DocumentModel.Wordprocessing.LevelOverride>? LevelOverrides
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_LevelOverrides != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>()
+            .Select(item => new DocumentModel.Wordprocessing.LevelOverrideImpl(item)).ToList();
+          _LevelOverrides = new ObservableCollection<DocumentModel.Wordprocessing.LevelOverride>(items);
+        }
+        else
+          _LevelOverrides = new ObservableCollection<DocumentModel.Wordprocessing.LevelOverride>();
+        _LevelOverrides.CollectionChanged += _LevelOverrides_CollectionChanged;
+      }
+      return _LevelOverrides;
+    }
+    set
+    {
+      if (value != null && value != _LevelOverrides && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
+        foreach (var val in value)
+        {
+        if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
+        {
+          var item = valImpl.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.LevelOverride> observableCollection)
+        _LevelOverrides = observableCollection;
+      else if (value != null)
+        _LevelOverrides = new ObservableCollection<DocumentModel.Wordprocessing.LevelOverride>(value);
+      else
+       _LevelOverrides = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Wordprocessing.LevelOverride>? _LevelOverrides;
+  
+  private void _LevelOverrides_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+          if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>()
+                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
 }

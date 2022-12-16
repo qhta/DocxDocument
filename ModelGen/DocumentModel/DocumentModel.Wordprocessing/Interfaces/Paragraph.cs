@@ -8,37 +8,37 @@ public interface Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphMarkRevision { get ; set; }
+  public DocumentModel.HexBinary? RsidParagraphMarkRevision { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphAddition { get ; set; }
+  public DocumentModel.HexBinary? RsidParagraphAddition { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphDeletion { get ; set; }
+  public DocumentModel.HexBinary? RsidParagraphDeletion { get ; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidParagraphProperties { get ; set; }
+  public DocumentModel.HexBinary? RsidParagraphProperties { get ; set; }
   
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public DocumentModel.HexBinaryValue? RsidRunAdditionDefault { get ; set; }
+  public DocumentModel.HexBinary? RsidRunAdditionDefault { get ; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParagraphId { get ; set; }
+  public DocumentModel.HexBinary? ParagraphId { get ; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? TextId { get ; set; }
+  public DocumentModel.HexBinary? TextId { get ; set; }
   
   /// <summary>
   /// noSpellErr, this property is only available in Office 2010 and later.
@@ -96,13 +96,13 @@ public interface Paragraph
   
   public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictInsertionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictInsertionRangeStart { get ; set; }
   
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictInsertionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictInsertionRangeEnd { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlConflictDeletionRangeStart { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictDeletionRangeStart { get ; set; }
   
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlConflictDeletionRangeEnd { get ; set; }
+  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictDeletionRangeEnd { get ; set; }
   
   public DocumentModel.Wordprocessing.InsertedRun? InsertedRun { get ; set; }
   

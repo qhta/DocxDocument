@@ -14,14 +14,14 @@ public interface BlipExtension
   
   public Boolean? UseLocalDpi { get ; set; }
   
-  public DocumentModel.Wordprocessing.Drawings.WebVideoProperty? WebVideoProperty { get ; set; }
+  public DocumentModel.Drawings.Wordprocessing.WebVideoProperty? WebVideoProperty { get ; set; }
   
-  public DocumentModel.Drawings.SVGBlip? SVGBlip { get ; set; }
+  public DocumentModel.Drawings.SVG.SVGBlip? SVGBlip { get ; set; }
   
   public DocumentModel.Drawings.PictureAttributionSourceURL? PictureAttributionSourceURL { get ; set; }
   
-  public DocumentModel.Wordprocessing.OEmbed? OEmbed { get ; set; }
+  public DocumentModel.Wordprocessing.OEmbed.OEmbed? OEmbed { get ; set; }
   
-  public DocumentModel.Drawings.OEmbedShared? OEmbedShared { get ; set; }
+  public DocumentModel.Drawings.Office.OEmbed.OEmbedShared? OEmbedShared { get ; set; }
   
 }

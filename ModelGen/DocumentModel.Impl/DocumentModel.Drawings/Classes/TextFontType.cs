@@ -34,10 +34,24 @@ public class TextFontTypeImpl: ModelElementImpl, TextFontType
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose
+  public DocumentModel.HexBinary? Panose
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Panose?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Panose.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Panose = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Panose = null;
+      }
+    }
   }
   
   /// <summary>

@@ -10,10 +10,10 @@ public interface MultiLvlStrRefExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FullReference? FullReference { get ; set; }
+  public DocumentModel.Drawings.Charts.FullReference? FullReference { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.LevelReference? LevelReference { get ; set; }
+  public DocumentModel.Drawings.Charts.LevelReference? LevelReference { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FormulaReference? FormulaReference { get ; set; }
+  public DocumentModel.Drawings.Charts.FormulaReference? FormulaReference { get ; set; }
   
 }

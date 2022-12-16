@@ -21,37 +21,93 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// <summary>
   /// chmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapPrimary
+  public DocumentModel.HexBinary? CharacterMapPrimary
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CharacterMapPrimary?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CharacterMapPrimary.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CharacterMapPrimary = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.CharacterMapPrimary = null;
+      }
+    }
   }
   
   /// <summary>
   /// chmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapSecondary
+  public DocumentModel.HexBinary? CharacterMapSecondary
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CharacterMapSecondary?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CharacterMapSecondary.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CharacterMapSecondary = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.CharacterMapSecondary = null;
+      }
+    }
   }
   
   /// <summary>
   /// kcmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodePrimary
+  public DocumentModel.HexBinary? KeyCodePrimary
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.KeyCodePrimary?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.KeyCodePrimary.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.KeyCodePrimary = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.KeyCodePrimary = null;
+      }
+    }
   }
   
   /// <summary>
   /// kcmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodeSecondary
+  public DocumentModel.HexBinary? KeyCodeSecondary
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.KeyCodeSecondary?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.KeyCodeSecondary.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.KeyCodeSecondary = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.KeyCodeSecondary = null;
+      }
+    }
   }
   
   /// <summary>
@@ -72,8 +128,31 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FixedCommandKeyboardCustomizationImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FixedCommandKeyboardCustomizationImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -81,8 +160,31 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.Wordprocessing.MacroWllType? MacroKeyboardCustomization
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroWllType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.MacroWllTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroWllType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.MacroWllTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -90,8 +192,31 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.Wordprocessing.AcceleratorKeymapType? AllocatedCommandKeyboardCustomization
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -99,17 +224,54 @@ public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
   /// </summary>
   public DocumentModel.Wordprocessing.MacroWllType? WllMacroKeyboardCustomization
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroWllType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.MacroWllTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroWllType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.MacroWllTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterInsertion
+  public DocumentModel.HexBinary? CharacterInsertion
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CharacterInsertion?.Val?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CharacterInsertion.Val.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CharacterInsertion = new DocumentFormat.OpenXml.Office.Word.CharacterInsertion{ Val = value.ToString() };
+        else
+          OpenXmlElement.CharacterInsertion = null;
+      }
+    }
   }
   
 }

@@ -24,8 +24,8 @@ public class SdtContentDocPartListImpl: DocumentModel.Wordprocessing.SdtDocPartT
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -59,8 +59,8 @@ public class SdtContentDocPartListImpl: DocumentModel.Wordprocessing.SdtDocPartT
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -94,8 +94,8 @@ public class SdtContentDocPartListImpl: DocumentModel.Wordprocessing.SdtDocPartT
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartUnique>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartUnique>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }

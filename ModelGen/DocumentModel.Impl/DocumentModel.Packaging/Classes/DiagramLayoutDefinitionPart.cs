@@ -40,7 +40,7 @@ public class DiagramLayoutDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPar
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.LayoutDefinition? LayoutDefinition
+  public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

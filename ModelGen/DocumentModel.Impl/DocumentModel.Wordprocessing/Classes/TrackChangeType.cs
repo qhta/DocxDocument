@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class TrackChangeTypeImpl: ModelElementImpl, TrackChangeType
 {
-  public DocumentFormat.OpenXml.Office2010.Word.TrackChangeType? OpenXmlElement
+  public DocumentFormat.OpenXml.Wordprocessing.TrackChangeType? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2010.Word.TrackChangeType?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Wordprocessing.TrackChangeType?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public TrackChangeTypeImpl(): base() {}
   
-  public TrackChangeTypeImpl(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement): base(openXmlElement)
+  public TrackChangeTypeImpl(DocumentFormat.OpenXml.Wordprocessing.TrackChangeType openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }

@@ -5,15 +5,15 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Transform2DImpl: ModelElementImpl, Transform2D
 {
-  public DocumentFormat.OpenXml.Office.Drawing.Transform2D? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.Transform2D? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office.Drawing.Transform2D?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.Transform2D?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public Transform2DImpl(): base() {}
   
-  public Transform2DImpl(DocumentFormat.OpenXml.Office.Drawing.Transform2D openXmlElement): base(openXmlElement)
+  public Transform2DImpl(DocumentFormat.OpenXml.Drawing.Transform2D openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
@@ -62,8 +62,31 @@ public class Transform2DImpl: ModelElementImpl, Transform2D
   /// </summary>
   public DocumentModel.Drawings.Point2DType? Offset
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point2DType>();
+        if (item != null)
+          return new DocumentModel.Drawings.Point2DTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point2DType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Point2DTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -71,8 +94,31 @@ public class Transform2DImpl: ModelElementImpl, Transform2D
   /// </summary>
   public DocumentModel.Drawings.PositiveSize2DType? Extents
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PositiveSize2DType>();
+        if (item != null)
+          return new DocumentModel.Drawings.PositiveSize2DTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PositiveSize2DType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.PositiveSize2DTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

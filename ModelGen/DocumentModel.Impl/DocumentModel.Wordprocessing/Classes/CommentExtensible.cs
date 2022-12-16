@@ -21,10 +21,24 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? DurableId
+  public DocumentModel.HexBinary? DurableId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DurableId?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.DurableId.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.DurableId = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.DurableId = null;
+      }
+    }
   }
   
   /// <summary>
@@ -58,8 +72,31 @@ public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
   /// </summary>
   public DocumentModel.Wordprocessing.ExtensionList? ExtensionList
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ExtensionListImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ExtensionListImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

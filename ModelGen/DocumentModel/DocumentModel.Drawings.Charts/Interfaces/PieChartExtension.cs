@@ -10,6 +10,6 @@ public interface PieChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredPieSeries? FilteredPieSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries { get ; set; }
   
 }

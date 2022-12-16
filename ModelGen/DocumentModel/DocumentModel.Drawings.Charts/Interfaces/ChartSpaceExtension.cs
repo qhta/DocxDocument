@@ -14,6 +14,6 @@ public interface ChartSpaceExtension
   
   public DocumentModel.Drawings.Charts.SketchOptions? SketchOptions { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.PivotSource? PivotSource { get ; set; }
+  public DocumentModel.Drawings.Charts.PivotSource3? PivotSource { get ; set; }
   
 }

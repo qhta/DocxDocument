@@ -70,39 +70,84 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
     }
   }
   
-  public String? ListEntryFormField
+  public Collection<System.String>? ListEntryFormFields
   {
     get
     {
-      if (OpenXmlElement != null)
+      if (_ListEntryFormFields != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>()
+            .Select(item => item.Val?.Value ?? "").ToList();
+          _ListEntryFormFields = new ObservableCollection<System.String>(items);
+        }
+        else
+          _ListEntryFormFields = new ObservableCollection<System.String>();
+        _ListEntryFormFields.CollectionChanged += _ListEntryFormFields_CollectionChanged;
       }
-      return null;
+      return _ListEntryFormFields;
     }
     set
     {
-      if (OpenXmlElement != null)
+      if (value != null && value != _ListEntryFormFields && OpenXmlElement!=null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
-        if (item != null)
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
+        foreach (var val in value)
         {
-          if (value is not null)
-            item.Val = (System.String?)value;
-          else
-            item.Remove();
+        if (val is string str)
+        {
+          var item = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = str };
+          OpenXmlElement.AddChild(item);
+        };
         }
-        else
-        {
-          if (value is not null)
+      }
+      if (value is ObservableCollection<System.String> observableCollection)
+        _ListEntryFormFields = observableCollection;
+      else if (value != null)
+        _ListEntryFormFields = new ObservableCollection<System.String>(value);
+      else
+       _ListEntryFormFields = null;
+    }
+  }
+  private ObservableCollection<System.String>? _ListEntryFormFields;
+  
+  private void _ListEntryFormFields_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
           {
-            item = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = (System.String?)value };
-            OpenXmlElement.AddChild(item);
+          if (val is string str)
+          {
+            var newItem = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = str };
+            OpenXmlElement.AddChild(newItem);
+          };
           }
-        }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+        if (val is string str)
+        {
+            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>()
+                          .FirstOrDefault(anItem => anItem.Val == str);
+            if (oldItem != null)
+              oldItem.Remove();
+        };
+          }
+          break;
+        default:
+          break;
       }
     }
   }
+  
   
 }

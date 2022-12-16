@@ -30,7 +30,7 @@ public interface Bar3DChart
   
   public DocumentModel.Drawings.Charts.ShapeKind? Shape { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.Bar3DChartExtensionList? Bar3DChartExtensionList { get ; set; }
   

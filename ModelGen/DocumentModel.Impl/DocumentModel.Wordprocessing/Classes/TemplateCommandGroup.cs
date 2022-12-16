@@ -184,8 +184,31 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   
   public DocumentModel.Wordprocessing.Toolbars? Toolbars
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Toolbars>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ToolbarsImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Toolbars>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ToolbarsImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.AllocatedCommands>? AllocatedCommandses

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
+
 using DocumentFormat.OpenXml;
 
 using Namotion.Reflection;
@@ -29,8 +30,6 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    //if (typeInfo.OriginalName == "ArrayBaseValues")
-    //  Debug.Assert(true);
     if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var targetType))
     {
       var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
@@ -45,7 +44,7 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (typeInfo.AcceptedProperties?.Any() != true)
+    if (typeInfo.AcceptedProperties?.Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
     {
       if (typeInfo.BaseTypeInfo != null)
       {
@@ -171,7 +170,6 @@ public static class ModelManager
 
   public static TypeInfo GetConversionTarget(this TypeInfo typeInfo, bool finalTarget)
   {
-    //DocumentFormat.OpenXml.OpenXmlSimpleValue<
     if (!typeInfo.IsConverted)
       return typeInfo;
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
@@ -334,7 +332,7 @@ public static class ModelManager
 
   public static int CheckNamespacesDuplicatedTypesAsync(Action<int, int> OnDone)
   {
-    var namespaces = TypeManager.GetNamespaces();
+    var namespaces = TypeManager.GetNamespaces(OTS.Target);
     Task<int>[] tasks = new Task<int>[namespaces.Count()];
     int i = 0;
     foreach (var nspace in namespaces)
@@ -355,8 +353,7 @@ public static class ModelManager
   public static int CheckNamespaceDuplicatedTypes(string nspace)
   {
     var duplicatedTypesCount = 0;
-    var namespaceTypes = TypeManager.GetOriginalNamespaceTypes(nspace)/*.OrderBy(item => item.Name)*/.ToList();
-    namespaceTypes.Sort((type1, ITypeInfo2) => { return type1.Name.CompareTo(ITypeInfo2.Name); });
+    var namespaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     for (int i = 0; i < namespaceTypes.Count() - 1; i++)
     {
       var type1 = namespaceTypes[i];
@@ -391,8 +388,23 @@ public static class ModelManager
   #endregion
 
   #region Rename types
+
   public static bool RenameType(TypeInfo typeInfo)
   {
+    var aNamespace = TypeManager.TranslateNamespace(typeInfo.Namespace);
+    if (aNamespace != typeInfo.Namespace)
+    {
+      TypeManager.RegisterNamespace(aNamespace);
+      typeInfo.Namespace = aNamespace;
+      var namespaces = TypeManager.GetNamespaceDictionary(aNamespace);
+      if (namespaces.TryGetTypesWithSameName(typeInfo, out var otherTypes))
+      {
+        foreach (var sameNameType in otherTypes)
+          RenameTypeWithNamespace(sameNameType);
+        RenameTypeWithNamespace(typeInfo);
+      }
+      namespaces.Add(typeInfo);
+    }
     if (typeInfo.TypeKind == TypeKind.Enum)
     {
       var newName = NewEnumTypeName(typeInfo.Type);
@@ -421,6 +433,32 @@ public static class ModelManager
     //  }
     //}
     return false;
+  }
+
+  private static void RenameTypeWithNamespace(TypeInfo typeInfo)
+  {
+    var origNamespace = typeInfo.OriginalNamespace;
+    if (typeInfo.Name.EndsWith("ShapeProperties"))
+    {
+      var aName = origNamespace.Replace("DocumentForma.OpenXml.","");
+    }
+    if (origNamespace.Contains("2010"))
+      typeInfo.Name += "2";
+    else
+    if (origNamespace.Contains("2013"))
+      typeInfo.Name += "3";
+    else
+    if (origNamespace.Contains("2016"))
+      typeInfo.Name += "4";
+    else
+    if (origNamespace.Contains("2019"))
+      typeInfo.Name += "5";
+    else
+    if (origNamespace.Contains("2021"))
+      typeInfo.Name += "6";
+    else
+    if (origNamespace.Contains("2022"))
+      typeInfo.Name += "7";
   }
 
   private static string NewEnumTypeName(Type type)
@@ -466,8 +504,5 @@ public static class ModelManager
     }
     return count;
   }
-  public static bool HasProperty1(this Type aType, string name)
-  {
-    return aType.GetProperties().Any(item => item.Name == name);
-  }
+
 }

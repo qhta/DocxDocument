@@ -21,7 +21,7 @@ public class ChartColorStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, C
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings13.Charts.ColorStyle? ColorStyle
+  public DocumentModel.Drawings.ChartsStyle.ColorStyle? ColorStyle
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

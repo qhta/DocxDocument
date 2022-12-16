@@ -20,8 +20,31 @@ public class MailMergeRecipientsImpl: ModelElementImpl, MailMergeRecipients
   
   public DocumentModel.Wordprocessing.SingleDataSourceRecord? SingleDataSourceRecord
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.SingleDataSourceRecordImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.SingleDataSourceRecordImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

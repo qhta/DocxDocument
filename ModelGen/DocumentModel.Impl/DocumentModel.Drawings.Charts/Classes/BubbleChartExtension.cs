@@ -31,10 +31,33 @@ public class BubbleChartExtensionImpl: ModelElementImpl, BubbleChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredBubbleSeries? FilteredBubbleSeries
+  public DocumentModel.Drawings.Charts.FilteredBubbleSeries? FilteredBubbleSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredBubbleSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredBubbleSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

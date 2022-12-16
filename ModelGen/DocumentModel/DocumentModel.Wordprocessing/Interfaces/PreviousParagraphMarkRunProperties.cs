@@ -25,9 +25,9 @@ public interface PreviousParagraphMarkRunProperties
   /// </summary>
   public DocumentModel.Wordprocessing.TrackChangeType? MoveTo { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? ConflictInsertion { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictInsertion { get ; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? ConflictDeletion { get ; set; }
+  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictDeletion { get ; set; }
   
   public String? RunStyle { get ; set; }
   

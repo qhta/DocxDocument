@@ -30,6 +30,8 @@ public class ModelCreator
 
     totalTime += RenameTypes();
 
+    //ShowNamespaces(OTS.Target);
+
     totalTime += AddTypeConversion();
 
     totalTime += CheckTypeUsage();
@@ -43,21 +45,21 @@ public class ModelCreator
     ModelDisplay.WriteLine($"Total time = {totalTime}");
   }
 
-  private void ShowNamespaceDetails()
+  private void ShowNamespaceDetails(OTS filter)
   {
     ModelDisplay.WriteLine();
-    ModelDisplay.ShowNamespaceDetails(new ShowOptions
+    ModelDisplay.ShowNamespaceDetails(filter, new ShowOptions
     {
       BaseTypes = true,
       Properties = true,
     });
   }
 
-  private void ShowNamespaces()
+  private void ShowNamespaces(OTS filter)
   {
     ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Found {TypeManager.GetNamespaces(true).Count()} namespaces");
-    ModelDisplay.ShowNamespaces();
+    ModelDisplay.WriteLine($"Found {TypeManager.GetNamespaces(filter).Count()} namespaces");
+    ModelDisplay.ShowNamespaces(filter);
   }
 
   private TimeSpan ScanTypes(Assembly assembly)
@@ -110,7 +112,7 @@ public class ModelCreator
     //  =>
     //  ModelDisplay.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
     //  );
-    foreach (var nspace in TypeManager.GetNamespaces())
+    foreach (var nspace in TypeManager.GetNamespaces(OTS.Target))
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
       int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
@@ -132,7 +134,7 @@ public class ModelCreator
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
     var renamedCount = 0;
-    foreach (var type in TypeManager.AllTypes. ToArray())
+    foreach (var type in TypeManager.AllTypes.ToArray())
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");
       if (ModelManager.RenameType(type))

@@ -1,0 +1,28 @@
+namespace DocumentModel.Drawings.ChartDrawings;
+
+/// <summary>
+/// Defines the AxisTitle Class.
+/// </summary>
+public interface AxisTitle
+{
+  /// <summary>
+  /// Text.
+  /// </summary>
+  public DocumentModel.Drawings.ChartDrawings.Text? Text { get ; set; }
+  
+  /// <summary>
+  /// ShapeProperties.
+  /// </summary>
+  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get ; set; }
+  
+  /// <summary>
+  /// TxPrTextBody.
+  /// </summary>
+  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get ; set; }
+  
+  /// <summary>
+  /// ExtensionList.
+  /// </summary>
+  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get ; set; }
+  
+}

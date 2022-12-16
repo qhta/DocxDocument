@@ -37,8 +37,8 @@ public class DocPartTypesImpl: ModelElementImpl, DocPartTypes
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartType>();
-        return (DocumentModel.Wordprocessing.DocPartKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartType>();
+        return (DocumentModel.Wordprocessing.DocPartKind?)item?.Val?.Value;
       }
       return null;
     }

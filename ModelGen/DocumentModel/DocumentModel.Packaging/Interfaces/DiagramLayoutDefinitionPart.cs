@@ -15,7 +15,7 @@ public interface DiagramLayoutDefinitionPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.LayoutDefinition? LayoutDefinition { get ; set; }
+  public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition { get ; set; }
   
   public String? RelationshipType { get ; set; }
   

@@ -13,6 +13,17 @@ public class CustomAttribData: ModelElement
   public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
   public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
+  public CustomAttribData(Attribute attribute) : base(attribute.GetType().Name)
+  {
+    AttributeType = TypeManager.RegisterType(attribute.GetType());
+    ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
+    NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
+    foreach (var prop in attribute.GetType().GetProperties())
+    {
+      NamedArguments.Add(new CustomAttribNamedArgument(prop, prop.GetValue(attribute)));
+    }
+  }
+
   public CustomAttribData(Type attributeType): base(attributeType.Name)
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);

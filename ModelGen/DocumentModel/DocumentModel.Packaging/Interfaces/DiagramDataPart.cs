@@ -10,7 +10,7 @@ public interface DiagramDataPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.DataModelRoot? DataModelRoot { get ; set; }
+  public DocumentModel.Drawings.Diagrams.DataModelRoot? DataModelRoot { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart

@@ -18,7 +18,7 @@ public interface AllocatedCommand
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  public DocumentModel.HexBinaryValue? CommandIndexBasedOn { get ; set; }
+  public DocumentModel.HexBinary? CommandIndexBasedOn { get ; set; }
   
   /// <summary>
   /// acdName

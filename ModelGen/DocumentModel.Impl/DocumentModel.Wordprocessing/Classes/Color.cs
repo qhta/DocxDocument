@@ -5,15 +5,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class ColorImpl: ModelElementImpl, Color
 {
-  public DocumentFormat.OpenXml.Office2013.Word.Color? OpenXmlElement
+  public DocumentFormat.OpenXml.Wordprocessing.Color? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Office2013.Word.Color?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Wordprocessing.Color?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public ColorImpl(): base() {}
   
-  public ColorImpl(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement): base(openXmlElement)
+  public ColorImpl(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }

@@ -30,7 +30,7 @@ public interface BarChart
   
   public Collection<DocumentModel.Drawings.Charts.SeriesLines>? SeriesLineses { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.BarChartExtensionList? BarChartExtensionList { get ; set; }
   

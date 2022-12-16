@@ -8,7 +8,7 @@ public interface Ink
   /// <summary>
   /// Ink Data
   /// </summary>
-  public DocumentModel.Base64BinaryValue? InkData { get ; set; }
+  public DocumentModel.Base64Binary? InkData { get ; set; }
   
   /// <summary>
   /// Annotation Flag

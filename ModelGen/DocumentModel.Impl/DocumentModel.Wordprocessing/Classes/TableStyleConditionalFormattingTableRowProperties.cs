@@ -24,8 +24,8 @@ public class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElement
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -59,8 +59,8 @@ public class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElement
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CantSplit>();
-        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CantSplit>();
+        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -94,8 +94,8 @@ public class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElement
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableHeader>();
-        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableHeader>();
+        return (DocumentModel.Wordprocessing.OnOffOnlyKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -125,8 +125,31 @@ public class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElement
   
   public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidthType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TableWidthTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidthType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TableWidthTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification
@@ -135,8 +158,8 @@ public class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElement
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-        return (DocumentModel.Wordprocessing.TableRowAlignmentKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+        return (DocumentModel.Wordprocessing.TableRowAlignmentKind?)item?.Val?.Value;
       }
       return null;
     }

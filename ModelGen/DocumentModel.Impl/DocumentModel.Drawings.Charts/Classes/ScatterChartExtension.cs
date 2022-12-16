@@ -31,10 +31,33 @@ public class ScatterChartExtensionImpl: ModelElementImpl, ScatterChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredScatterSeries? FilteredScatterSeries
+  public DocumentModel.Drawings.Charts.FilteredScatterSeries? FilteredScatterSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredScatterSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredScatterSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

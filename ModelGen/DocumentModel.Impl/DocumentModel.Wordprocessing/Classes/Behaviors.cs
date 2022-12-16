@@ -24,8 +24,8 @@ public class BehaviorsImpl: ModelElementImpl, Behaviors
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
-        return (DocumentModel.Wordprocessing.DocPartBehaviorKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
+        return (DocumentModel.Wordprocessing.DocPartBehaviorKind?)item?.Val?.Value;
       }
       return null;
     }

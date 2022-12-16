@@ -336,8 +336,8 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
-        return (System.UInt32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+        return (System.UInt32?)item?.Val?.Value;
       }
       return null;
     }
@@ -371,8 +371,8 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
-        return (DocumentModel.Math.BooleanKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
+        return (DocumentModel.Math.BooleanKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -406,8 +406,8 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
-        return (DocumentModel.Math.LimitLocationKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
+        return (DocumentModel.Math.LimitLocationKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -441,8 +441,8 @@ public class MathPropertiesImpl: ModelElementImpl, MathProperties
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
-        return (DocumentModel.Math.LimitLocationKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
+        return (DocumentModel.Math.LimitLocationKind?)item?.Val?.Value;
       }
       return null;
     }

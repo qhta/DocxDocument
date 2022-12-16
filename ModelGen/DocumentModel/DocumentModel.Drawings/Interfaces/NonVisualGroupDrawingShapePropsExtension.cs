@@ -10,6 +10,6 @@ public interface NonVisualGroupDrawingShapePropsExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.NonVisualGroupProperties? NonVisualGroupProperties { get ; set; }
+  public DocumentModel.Drawings.NonVisualGroupProperties? NonVisualGroupProperties { get ; set; }
   
 }

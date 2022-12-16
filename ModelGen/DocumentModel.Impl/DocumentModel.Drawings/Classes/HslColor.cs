@@ -63,8 +63,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -98,8 +98,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -232,8 +232,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -267,8 +267,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -302,8 +302,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -337,8 +337,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -372,8 +372,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -407,8 +407,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -442,8 +442,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -477,8 +477,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -512,8 +512,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -547,8 +547,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -582,8 +582,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -617,8 +617,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -652,8 +652,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -687,8 +687,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -722,8 +722,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -757,8 +757,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -792,8 +792,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -827,8 +827,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -862,8 +862,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -897,8 +897,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -932,8 +932,8 @@ public class HslColorImpl: ModelElementImpl, HslColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }

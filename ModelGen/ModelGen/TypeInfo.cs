@@ -8,21 +8,20 @@ namespace ModelGen;
 
 public class TypeInfo : ModelElement
 {
-  public string Namespace
-  {
-    get => TypeManager.GetNamespace(NamespaceIndex);
-    set
-    {
-      if (value != Namespace)
-        NamespaceIndex = TypeManager.RegisterNamespace(value);
-      _Namespace = value;
-    }
-  }
+  public string Namespace { get; set; } = String.Empty;
+  //{
+  //  get => _Namespace;
+  //  set
+  //  {
+  //    if (value != _Namespace)
+  //    {
+  //      TypeManager.RegisterNamespace(value);
+  //      _Namespace = value;
+  //    }
+  //  }
+  //}
 
   private string _Namespace = string.Empty;
-
-  // Tu jest błąd. Zbyt szybko nastepuje konwersja przestrzeni nazw elementów
-  public int NamespaceIndex { get; private set; }
 
   public string OriginalNamespace => Type.Namespace ?? "";
 
@@ -36,7 +35,7 @@ public class TypeInfo : ModelElement
     set;
   }
 
-  public bool IsValueType => Type.IsValueType || Type == typeof(string);
+  public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string);
 
   public bool IsGenericType => Type.IsGenericType;
   public bool IsGenericTypeDefinition => Type.IsGenericTypeDefinition;
