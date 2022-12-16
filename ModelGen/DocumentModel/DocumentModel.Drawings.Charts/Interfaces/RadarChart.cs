@@ -19,7 +19,7 @@ public interface RadarChart
   
   public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.RadarChartExtensionList? RadarChartExtensionList { get ; set; }
   

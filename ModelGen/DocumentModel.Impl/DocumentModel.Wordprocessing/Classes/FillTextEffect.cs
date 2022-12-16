@@ -59,8 +59,31 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
   /// </summary>
   public DocumentModel.Wordprocessing.SolidColorFillProperties? SolidColorFillProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.SolidColorFillPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.SolidColorFillPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -68,8 +91,31 @@ public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
   /// </summary>
   public DocumentModel.Wordprocessing.GradientFillProperties? GradientFillProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.GradientFillPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.GradientFillPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

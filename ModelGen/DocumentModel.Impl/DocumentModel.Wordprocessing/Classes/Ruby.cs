@@ -23,8 +23,31 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public DocumentModel.Wordprocessing.RubyProperties? RubyProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RubyPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RubyPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -32,8 +55,31 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public DocumentModel.Wordprocessing.RubyContent? RubyContent
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyContent>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RubyContentImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyContent>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RubyContentImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -41,8 +87,31 @@ public class RubyImpl: ModelElementImpl, Ruby
   /// </summary>
   public DocumentModel.Wordprocessing.RubyBase? RubyBase
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyBase>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RubyBaseImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyBase>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RubyBaseImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

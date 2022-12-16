@@ -23,8 +23,31 @@ public class ImagePropertiesImpl: ModelElementImpl, ImageProperties
   /// </summary>
   public DocumentModel.Drawings.ImageLayer? ImageLayer
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+        if (item != null)
+          return new DocumentModel.Drawings.ImageLayerImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.ImageLayerImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface GradientStopList
 {
-  public DocumentModel.Wordprocessing.GradientStop? GradientStop { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.GradientStop>? GradientStops { get ; set; }
   
 }

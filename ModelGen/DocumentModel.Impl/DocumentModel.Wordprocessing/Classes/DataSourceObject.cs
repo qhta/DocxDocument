@@ -75,8 +75,31 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   /// </summary>
   public DocumentModel.Wordprocessing.RelationshipType? SourceReference
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -251,8 +274,31 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   
   public DocumentModel.Wordprocessing.RelationshipType? RecipientDataReference
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelationshipType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RelationshipTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelationshipType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RelationshipTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

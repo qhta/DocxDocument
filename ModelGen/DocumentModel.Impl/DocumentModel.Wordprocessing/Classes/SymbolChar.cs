@@ -34,10 +34,24 @@ public class SymbolCharImpl: ModelElementImpl, SymbolChar
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public DocumentModel.HexBinaryValue? Char
+  public DocumentModel.HexBinary? Char
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Char?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Char.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Char = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Char = null;
+      }
+    }
   }
   
 }

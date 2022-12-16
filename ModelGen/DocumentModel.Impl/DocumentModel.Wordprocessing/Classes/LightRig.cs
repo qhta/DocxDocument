@@ -49,8 +49,31 @@ public class LightRigImpl: ModelElementImpl, LightRig
   /// </summary>
   public DocumentModel.Wordprocessing.SphereCoordinates? SphereCoordinates
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.SphereCoordinatesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.SphereCoordinatesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

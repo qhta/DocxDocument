@@ -83,10 +83,24 @@ public class RecipientDataImpl: ModelElementImpl, RecipientData
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? UniqueTag
+  public DocumentModel.Base64Binary? UniqueTag
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.UniqueTag?.Val?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.UniqueTag.Val.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.UniqueTag = new DocumentFormat.OpenXml.Wordprocessing.UniqueTag{ Val = value.ToString() };
+        else
+          OpenXmlElement.UniqueTag = null;
+      }
+    }
   }
   
 }

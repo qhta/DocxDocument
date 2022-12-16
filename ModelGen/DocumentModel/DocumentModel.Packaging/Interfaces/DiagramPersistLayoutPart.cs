@@ -10,7 +10,7 @@ public interface DiagramPersistLayoutPart
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Drawing? Drawing { get ; set; }
+  public DocumentModel.Drawings.Office.Drawing? Drawing { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart

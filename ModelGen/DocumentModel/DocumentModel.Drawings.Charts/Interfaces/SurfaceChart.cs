@@ -14,7 +14,7 @@ public interface SurfaceChart
   
   public DocumentModel.Drawings.Charts.BandFormats? BandFormats { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.SurfaceChartExtensionList? SurfaceChartExtensionList { get ; set; }
   

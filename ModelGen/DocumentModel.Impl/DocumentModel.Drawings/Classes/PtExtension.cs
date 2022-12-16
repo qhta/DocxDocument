@@ -31,10 +31,33 @@ public class PtExtensionImpl: ModelElementImpl, PtExtension
     }
   }
   
-  public DocumentModel.Drawings.NonVisualDrawingProperties? NonVisualDrawingProperties
+  public DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? NonVisualDrawingProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>();
+        if (item != null)
+          return new DocumentModel.Drawings.Diagrams.NonVisualDrawingPropertiesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Diagrams.NonVisualDrawingPropertiesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

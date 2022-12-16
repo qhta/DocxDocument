@@ -10,6 +10,6 @@ public interface Surface3DChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredSurfaceSeries? FilteredSurfaceSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredSurfaceSeries? FilteredSurfaceSeries { get ; set; }
   
 }

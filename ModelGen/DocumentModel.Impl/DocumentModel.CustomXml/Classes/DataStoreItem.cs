@@ -36,8 +36,31 @@ public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
   /// </summary>
   public DocumentModel.CustomXml.SchemaReferences? SchemaReferences
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>();
+        if (item != null)
+          return new DocumentModel.CustomXml.SchemaReferencesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.CustomXml.SchemaReferencesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

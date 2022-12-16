@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public interface StockChart
 {
-  public DocumentModel.Drawings.Charts.LineChartSeries? LineChartSeries { get ; set; }
+  public Collection<DocumentModel.Drawings.Charts.LineChartSeries>? LineChartSerieses { get ; set; }
   
   public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get ; set; }
   
@@ -15,7 +15,7 @@ public interface StockChart
   
   public DocumentModel.Drawings.Charts.UpDownBars? UpDownBars { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.StockChartExtensionList? StockChartExtensionList { get ; set; }
   

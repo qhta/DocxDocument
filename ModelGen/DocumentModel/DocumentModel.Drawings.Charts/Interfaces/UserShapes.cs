@@ -5,8 +5,8 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public interface UserShapes
 {
-  public DocumentModel.Drawings.Charts.RelativeAnchorSize? RelativeAnchorSize { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? RelativeAnchorSize { get ; set; }
   
-  public DocumentModel.Drawings.Charts.AbsoluteAnchorSize? AbsoluteAnchorSize { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? AbsoluteAnchorSize { get ; set; }
   
 }

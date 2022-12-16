@@ -8,22 +8,22 @@ public interface KeyMapEntry
   /// <summary>
   /// chmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapPrimary { get ; set; }
+  public DocumentModel.HexBinary? CharacterMapPrimary { get ; set; }
   
   /// <summary>
   /// chmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterMapSecondary { get ; set; }
+  public DocumentModel.HexBinary? CharacterMapSecondary { get ; set; }
   
   /// <summary>
   /// kcmPrimary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodePrimary { get ; set; }
+  public DocumentModel.HexBinary? KeyCodePrimary { get ; set; }
   
   /// <summary>
   /// kcmSecondary
   /// </summary>
-  public DocumentModel.HexBinaryValue? KeyCodeSecondary { get ; set; }
+  public DocumentModel.HexBinary? KeyCodeSecondary { get ; set; }
   
   /// <summary>
   /// mask
@@ -53,6 +53,6 @@ public interface KeyMapEntry
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  public DocumentModel.HexBinaryValue? CharacterInsertion { get ; set; }
+  public DocumentModel.HexBinary? CharacterInsertion { get ; set; }
   
 }

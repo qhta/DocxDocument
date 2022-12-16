@@ -18,7 +18,7 @@ public interface Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose1Number { get ; set; }
+  public DocumentModel.HexBinary? Panose1Number { get ; set; }
   
   /// <summary>
   /// FontCharSet.

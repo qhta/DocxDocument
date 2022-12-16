@@ -5,15 +5,15 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
-  public DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList? OpenXmlElement
+  public DocumentFormat.OpenXml.Drawing.ExtensionList? OpenXmlElement
   {
-    get => (DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList?)_OpenXmlElement;
+    get => (DocumentFormat.OpenXml.Drawing.ExtensionList?)_OpenXmlElement;
     set => _OpenXmlElement = value;
   }
   
   public ExtensionListImpl(): base() {}
   
-  public ExtensionListImpl(DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList openXmlElement): base(openXmlElement)
+  public ExtensionListImpl(DocumentFormat.OpenXml.Drawing.ExtensionList openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }

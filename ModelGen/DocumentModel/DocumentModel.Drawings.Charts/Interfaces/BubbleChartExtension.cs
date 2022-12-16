@@ -10,6 +10,6 @@ public interface BubbleChartExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.FilteredBubbleSeries? FilteredBubbleSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredBubbleSeries? FilteredBubbleSeries { get ; set; }
   
 }

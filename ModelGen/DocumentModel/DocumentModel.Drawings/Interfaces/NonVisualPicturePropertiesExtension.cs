@@ -12,9 +12,9 @@ public interface NonVisualPicturePropertiesExtension
   
   public DocumentModel.Drawings.CameraTool? CameraTool { get ; set; }
   
-  public DocumentModel.Drawings13.SignatureLine? SignatureLine { get ; set; }
+  public DocumentModel.Drawings.SignatureLine? SignatureLine { get ; set; }
   
-  public DocumentModel.Drawings13.ObjectProperties? ObjectProperties { get ; set; }
+  public DocumentModel.Drawings.ObjectProperties? ObjectProperties { get ; set; }
   
   public DocumentModel.Drawings.LiveFeedProperties? LiveFeedProperties { get ; set; }
   

@@ -138,7 +138,7 @@ public interface ImageEffect
   /// <summary>
   /// Saturation.
   /// </summary>
-  public DocumentModel.Drawings.Saturation? Saturation { get ; set; }
+  public DocumentModel.Drawings.Saturation2? Saturation { get ; set; }
   
   /// <summary>
   /// SharpenSoften.

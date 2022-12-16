@@ -21,10 +21,33 @@ public class InvertSolidFillFormatImpl: ModelElementImpl, InvertSolidFillFormat
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties
+  public DocumentModel.Drawings.Charts.ShapeProperties2? ShapeProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.ShapeProperties2Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.ShapeProperties2Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

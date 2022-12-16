@@ -5,6 +5,6 @@ namespace DocumentModel.Math;
 /// </summary>
 public interface MatrixColumns
 {
-  public DocumentModel.Math.MatrixColumn? MatrixColumn { get ; set; }
+  public Collection<DocumentModel.Math.MatrixColumn>? Items { get ; set; }
   
 }

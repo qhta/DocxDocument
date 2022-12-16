@@ -36,9 +36,9 @@ public static class ModelDisplay
     LineLength = l;
   }
 
-  public static void ShowNamespaces(bool original=false)
+  public static void ShowNamespaces(OTS filter)
   {
-    var namespaces = TypeManager.GetNamespaces(original);
+    var namespaces = TypeManager.GetNamespaces(filter);
     if (namespaces.Any())
     {
       var maxNamespaceLength = namespaces.Max(item => item.Length);
@@ -47,7 +47,7 @@ public static class ModelDisplay
         var aSpace = nspace;
         if (aSpace.Length < maxNamespaceLength)
           aSpace = aSpace + new string(' ', maxNamespaceLength - aSpace.Length);
-        var nSpaceTypes = TypeManager.GetOriginalNamespaceTypes(nspace).ToArray();
+        var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToArray();
         var nSpaceTypesCount = nSpaceTypes.Count();
         var nSpaceAcceptedCount = nSpaceTypes.Count(item => item.IsAccepted == true);
         var nSpaceClassesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
@@ -66,9 +66,9 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowNamespaceDetails(ShowOptions options)
+  public static void ShowNamespaceDetails(OTS filter, ShowOptions options)
   {
-    foreach (var nspace in TypeManager.GetNamespaces(options.OriginalNames).ToList())
+    foreach (var nspace in TypeManager.GetNamespaces(filter).ToList())
     {
       Writer.Indent++;
       ShowNamespaceDetails(nspace, options);
@@ -78,12 +78,10 @@ public static class ModelDisplay
 
   public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
-    var nSpaceTypes = options.OriginalNames
-      ? TypeManager.GetOriginalNamespaceTypes(nspace).ToList()
-      : TypeManager.GetNamespaceTypes(nspace).ToList();
+    var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.AcceptedTypesOnly)
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
-    if (nSpaceTypes.Count > 0)
+    if (nSpaceTypes.Count() > 0)
     {
       Writer.WriteLine();
       Writer.WriteLine($"namespace {nspace}");
@@ -107,8 +105,18 @@ public static class ModelDisplay
     "new()"
   };
 
-  public static void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowTypes(string nspace, string name)
   {
+    var types = TypeManager.GetNamespaceDictionary(nspace).Where(item => item.Name.StartsWith(name));
+    foreach (var type in types)
+    {
+      ShowTypeInfo(type);
+    }
+  }
+
+  public static void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options = null!, Semantics[]? semanticsFilter = null)
+  {
+    if (options == null) options = new();
     if (!typeInfo.IsReflected)
       typeInfo.WaitForReflection();
     var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.OriginalNames)}";

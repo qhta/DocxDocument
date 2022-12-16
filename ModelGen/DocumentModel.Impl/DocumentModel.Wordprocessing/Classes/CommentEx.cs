@@ -21,19 +21,47 @@ public class CommentExImpl: ModelElementImpl, CommentEx
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaId
+  public DocumentModel.HexBinary? ParaId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ParaId?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.ParaId.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.ParaId = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.ParaId = null;
+      }
+    }
   }
   
   /// <summary>
   /// paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaIdParent
+  public DocumentModel.HexBinary? ParaIdParent
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ParaIdParent?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.ParaIdParent.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.ParaIdParent = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.ParaIdParent = null;
+      }
+    }
   }
   
   /// <summary>

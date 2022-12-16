@@ -29,7 +29,7 @@ public interface LineChart
   
   public Boolean? Smooth { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.LineChartExtensionList? LineChartExtensionList { get ; set; }
   

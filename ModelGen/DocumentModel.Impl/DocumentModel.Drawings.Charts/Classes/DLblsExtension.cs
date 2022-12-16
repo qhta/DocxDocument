@@ -31,16 +31,62 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.ChartText? ChartText
+  public DocumentModel.Drawings.Charts.ChartText3? ChartText
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.ChartText3Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.ChartText3Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
-  public DocumentModel.Drawings13.Charts.DataLabelFieldTable? DataLabelFieldTable
+  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.DataLabelFieldTableImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.DataLabelFieldTableImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Boolean? ShowDataLabelsRange
@@ -49,8 +95,8 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -78,16 +124,62 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.ShapeProperties? ShapeProperties
+  public DocumentModel.Drawings.Charts.ShapeProperties3? ShapeProperties
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.ShapeProperties3Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.ShapeProperties3Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
-  public DocumentModel.Drawings13.Charts.Layout? Layout
+  public DocumentModel.Drawings.Charts.Layout3? Layout
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.Layout3Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.Layout3Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Boolean? ShowLeaderLines
@@ -96,8 +188,8 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -125,10 +217,33 @@ public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.LeaderLines? LeaderLines
+  public DocumentModel.Drawings.Charts.LeaderLines3? LeaderLines
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.LeaderLines3Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.LeaderLines3Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

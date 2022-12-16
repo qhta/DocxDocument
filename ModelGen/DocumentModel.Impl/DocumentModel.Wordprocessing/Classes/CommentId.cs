@@ -21,19 +21,47 @@ public class CommentIdImpl: ModelElementImpl, CommentId
   /// <summary>
   /// paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? ParaId
+  public DocumentModel.HexBinary? ParaId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.ParaId?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.ParaId.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.ParaId = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.ParaId = null;
+      }
+    }
   }
   
   /// <summary>
   /// durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? DurableId
+  public DocumentModel.HexBinary? DurableId
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.DurableId?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.DurableId.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.DurableId = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.DurableId = null;
+      }
+    }
   }
   
 }

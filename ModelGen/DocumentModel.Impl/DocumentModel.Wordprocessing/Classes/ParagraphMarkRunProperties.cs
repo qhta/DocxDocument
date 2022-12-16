@@ -23,8 +23,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   /// </summary>
   public DocumentModel.Wordprocessing.TrackChangeType? Inserted
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -32,8 +55,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   /// </summary>
   public DocumentModel.Wordprocessing.TrackChangeType? Deleted
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -41,8 +87,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   /// </summary>
   public DocumentModel.Wordprocessing.TrackChangeType? MoveFrom
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
@@ -50,20 +119,89 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   /// </summary>
   public DocumentModel.Wordprocessing.TrackChangeType? MoveTo
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? ConflictInsertion
+  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictInsertion
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeType2Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeType2Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? ConflictDeletion
+  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictDeletion
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TrackChangeType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TrackChangeType2Impl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TrackChangeType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TrackChangeType2Impl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public String? RunStyle
@@ -72,8 +210,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunStyle>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunStyle>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -103,8 +241,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.RunFonts? RunFonts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.RunFontsImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.RunFontsImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Boolean? Bold
@@ -113,8 +274,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -148,8 +309,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -183,8 +344,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -218,8 +379,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -253,8 +414,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -288,8 +449,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -323,8 +484,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -358,8 +519,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -393,8 +554,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -428,8 +589,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -463,8 +624,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -498,8 +659,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -533,8 +694,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -568,8 +729,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -603,8 +764,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -638,8 +799,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -669,8 +830,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.Color? Color
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ColorImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ColorImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Int32? Spacing
@@ -679,8 +863,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -714,8 +898,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -749,8 +933,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
-        return (System.UInt32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+        return (System.UInt32?)item?.Val?.Value;
       }
       return null;
     }
@@ -784,8 +968,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -819,8 +1003,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -854,8 +1038,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
-        return (System.String?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
+        return (System.String?)item?.Val?.Value;
       }
       return null;
     }
@@ -889,8 +1073,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Highlight>();
-        return (DocumentModel.Wordprocessing.HighlightColorKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Highlight>();
+        return (DocumentModel.Wordprocessing.HighlightColorKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -920,8 +1104,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.Underline? Underline
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.UnderlineImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.UnderlineImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.TextEffectKind? TextEffect
@@ -930,8 +1137,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
-        return (DocumentModel.Wordprocessing.TextEffectKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
+        return (DocumentModel.Wordprocessing.TextEffectKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -961,20 +1168,89 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.BorderType? Border
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BorderType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.BorderTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BorderType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.BorderTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.Shading? Shading
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ShadingImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ShadingImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.FitText? FitText
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FitTextImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FitTextImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment
@@ -983,8 +1259,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
-        return (DocumentModel.Wordprocessing.VerticalPositionKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
+        return (DocumentModel.Wordprocessing.VerticalPositionKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1018,8 +1294,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -1053,8 +1329,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -1088,8 +1364,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
-        return (DocumentModel.Wordprocessing.EmphasisMarkKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
+        return (DocumentModel.Wordprocessing.EmphasisMarkKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1119,14 +1395,60 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.LanguageType? Languages
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageType>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.LanguageTypeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageType>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.LanguageTypeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.EastAsianLayoutImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.EastAsianLayoutImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Boolean? SpecVanish
@@ -1135,8 +1457,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -1166,38 +1488,176 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.Glow? Glow
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Glow>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.GlowImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Glow>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.GlowImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.Reflection? Reflection
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Reflection>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ReflectionImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Reflection>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ReflectionImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.TextOutlineEffectImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.TextOutlineEffectImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.FillTextEffect? FillTextEffect
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.FillTextEffectImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.FillTextEffectImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.Scene3D? Scene3D
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Scene3D>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.Scene3DImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Scene3D>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.Scene3DImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.Properties3D? Properties3D
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Properties3D>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.Properties3DImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Properties3D>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.Properties3DImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.LigaturesKind? Ligatures
@@ -1206,8 +1666,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Ligatures>();
-        return (DocumentModel.Wordprocessing.LigaturesKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Ligatures>();
+        return (DocumentModel.Wordprocessing.LigaturesKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1241,8 +1701,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberingFormat>();
-        return (DocumentModel.Wordprocessing.NumberFormKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberingFormat>();
+        return (DocumentModel.Wordprocessing.NumberFormKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1276,8 +1736,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberSpacing>();
-        return (DocumentModel.Wordprocessing.NumberSpacingKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberSpacing>();
+        return (DocumentModel.Wordprocessing.NumberSpacingKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1307,8 +1767,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.StylisticSets? StylisticSets
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.StylisticSetsImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.StylisticSetsImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives
@@ -1317,8 +1800,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives>();
-        return (DocumentModel.Wordprocessing.OnOffKind?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives>();
+        return (DocumentModel.Wordprocessing.OnOffKind?)item?.Val?.Value;
       }
       return null;
     }
@@ -1352,8 +1835,8 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OfficeMath>();
-        return (System.Boolean?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OfficeMath>();
+        return (System.Boolean?)item?.Val?.Value;
       }
       return null;
     }
@@ -1383,8 +1866,31 @@ public class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunP
   
   public DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? ParagraphMarkRunPropertiesChange
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChangeImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChangeImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

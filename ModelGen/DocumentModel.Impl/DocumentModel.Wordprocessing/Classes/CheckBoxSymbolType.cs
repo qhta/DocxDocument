@@ -34,10 +34,24 @@ public class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Val
+  public DocumentModel.HexBinary? Val
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Val?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.Val.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Val = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Val = null;
+      }
+    }
   }
   
 }

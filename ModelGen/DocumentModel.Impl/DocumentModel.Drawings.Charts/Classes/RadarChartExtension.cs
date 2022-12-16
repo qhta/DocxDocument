@@ -31,10 +31,33 @@ public class RadarChartExtensionImpl: ModelElementImpl, RadarChartExtension
     }
   }
   
-  public DocumentModel.Drawings13.Charts.FilteredRadarSeries? FilteredRadarSeries
+  public DocumentModel.Drawings.Charts.FilteredRadarSeries? FilteredRadarSeries
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries>();
+        if (item != null)
+          return new DocumentModel.Drawings.Charts.FilteredRadarSeriesImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Charts.FilteredRadarSeriesImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

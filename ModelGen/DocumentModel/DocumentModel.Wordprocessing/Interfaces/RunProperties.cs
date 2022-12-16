@@ -203,7 +203,7 @@ public interface RunProperties
   /// <summary>
   /// Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Shadow? Shadow14 { get ; set; }
+  public DocumentModel.Wordprocessing.Shadow2? Shadow14 { get ; set; }
   
   /// <summary>
   /// Reflection, this property is only available in Office 2010 and later..

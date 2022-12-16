@@ -21,19 +21,65 @@ public class DrawingImpl: ModelElementImpl, Drawing
   /// <summary>
   /// Drawing Element Anchor.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawings.Anchor? Anchor
+  public DocumentModel.Drawings.Wordprocessing.Anchor? Anchor
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+        if (item != null)
+          return new DocumentModel.Drawings.Wordprocessing.AnchorImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Wordprocessing.AnchorImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   /// <summary>
   /// Inline Drawing Object.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawings.Inline? Inline
+  public DocumentModel.Drawings.Wordprocessing.Inline? Inline
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+        if (item != null)
+          return new DocumentModel.Drawings.Wordprocessing.InlineImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.Wordprocessing.InlineImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }

@@ -72,8 +72,9 @@ public static class TypeReflector
 
   public static void WaitDone()
   {
-    if (ReflectionTasks is not null && TypeQueue.Count>0)
-      Task.WaitAll(ReflectionTasks);
+    if (ReflectionTasks is not null)
+      while (TypeQueue.Count>0)
+        Task.WaitAll(ReflectionTasks, 1000);
   }
 
   public static void WaitForReflection(this TypeInfo typeInfo)
@@ -221,14 +222,14 @@ public static class TypeReflector
       }
     }
 */
-    foreach (var item in type.CustomAttributes)
-      typeInfo.CustomAttributes.Add(new CustomAttribData(item));
+    //foreach (var item in type.CustomAttributes)
+    //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
   public static void IncludeProperties(this TypeInfo typeInfo, ItemsConstraint constraint)
   {
-    //if (typeInfo.Name == "Rsids")
-    //  Debug.Assert(true);
+    if (typeInfo.Name == "DocParts")
+      Debug.Assert(true);
     if (constraint is ItemTypeConstraint typeConstraint)
     {
       typeConstraint.AccessProperty = CreateProperty(typeInfo, typeConstraint);
@@ -254,6 +255,15 @@ public static class TypeReflector
         var propInfo = new PropInfo(targetType);
         propInfo.Name = propName;
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
+        if (constraint.MaxCount != null || constraint.MinCount!= null)
+        {
+          propInfo.CustomAttributes.Add(new CustomAttribData(
+            new DocumentModel.Attributes.CollectionConstraintAttribute
+          { 
+            MinCount = constraint.MinCount,
+            MaxCount = constraint.MaxCount,
+          }));
+        }
         propInfo.PropertyType = TypeManager.RegisterType(propertyType);
         propInfo.IsConstrained = true;
         typeInfo.Properties.Add(propInfo);

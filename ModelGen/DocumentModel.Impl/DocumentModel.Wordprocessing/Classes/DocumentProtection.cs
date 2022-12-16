@@ -138,10 +138,24 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public DocumentModel.HexBinaryValue? AlgorithmIdExtensibility
+  public DocumentModel.HexBinary? AlgorithmIdExtensibility
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.AlgorithmIdExtensibility?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.AlgorithmIdExtensibility.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.AlgorithmIdExtensibility = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.AlgorithmIdExtensibility = null;
+      }
+    }
   }
   
   /// <summary>
@@ -160,10 +174,24 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public DocumentModel.HexBinaryValue? CryptographicProviderTypeExtensibility
+  public DocumentModel.HexBinary? CryptographicProviderTypeExtensibility
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
+        return (DocumentModel.HexBinary)OpenXmlElement.CryptographicProviderTypeExtensibility.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.CryptographicProviderTypeExtensibility = new DocumentFormat.OpenXml.HexBinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.CryptographicProviderTypeExtensibility = null;
+      }
+    }
   }
   
   /// <summary>
@@ -182,19 +210,47 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// Password Hash
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Hash
+  public DocumentModel.Base64Binary? Hash
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Hash?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.Hash.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Hash = new DocumentFormat.OpenXml.Base64BinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Hash = null;
+      }
+    }
   }
   
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Salt
+  public DocumentModel.Base64Binary? Salt
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Salt?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.Salt.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.Salt = new DocumentFormat.OpenXml.Base64BinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.Salt = null;
+      }
+    }
   }
   
   /// <summary>
@@ -213,19 +269,47 @@ public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? HashValue
+  public DocumentModel.Base64Binary? HashValue
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.HashValue?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.HashValue.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.HashValue = new DocumentFormat.OpenXml.Base64BinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.HashValue = null;
+      }
+    }
   }
   
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64BinaryValue? SaltValue
+  public DocumentModel.Base64Binary? SaltValue
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.SaltValue?.Value != null)
+        return (DocumentModel.Base64Binary)OpenXmlElement.SaltValue.Value;
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value != null)
+          OpenXmlElement.SaltValue = new DocumentFormat.OpenXml.Base64BinaryValue{ Value = value.ToString() };
+        else
+          OpenXmlElement.SaltValue = null;
+      }
+    }
   }
   
   /// <summary>

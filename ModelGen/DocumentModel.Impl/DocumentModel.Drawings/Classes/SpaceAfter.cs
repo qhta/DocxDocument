@@ -24,8 +24,8 @@ public class SpaceAfterImpl: DocumentModel.Drawings.TextSpacingTypeImpl, SpaceAf
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -59,8 +59,8 @@ public class SpaceAfterImpl: DocumentModel.Drawings.TextSpacingTypeImpl, SpaceAf
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }

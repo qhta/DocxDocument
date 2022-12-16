@@ -37,8 +37,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -72,8 +72,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -107,8 +107,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -142,8 +142,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -177,8 +177,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -212,8 +212,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -247,8 +247,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -282,8 +282,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -317,8 +317,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }
@@ -352,8 +352,8 @@ public class SchemeColorImpl: ModelElementImpl, SchemeColor
     {
       if (OpenXmlElement != null)
       {
-        var openXmlElement = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
-        return (System.Int32?)openXmlElement?.Val?.Value;
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
+        return (System.Int32?)item?.Val?.Value;
       }
       return null;
     }

@@ -19,7 +19,7 @@ public interface Surface3DChart
   
   public DocumentModel.Drawings.Charts.BandFormats? BandFormats { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.Surface3DChartExtensionList? Surface3DChartExtensionList { get ; set; }
   

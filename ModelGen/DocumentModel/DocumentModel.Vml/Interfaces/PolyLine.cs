@@ -263,7 +263,7 @@ public interface PolyLine
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64BinaryValue? Gfxdata { get ; set; }
+  public DocumentModel.Base64Binary? Gfxdata { get ; set; }
   
   /// <summary>
   /// Points for Compound Line

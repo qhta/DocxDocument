@@ -212,8 +212,31 @@ public class DivImpl: ModelElementImpl, Div
   /// </summary>
   public DocumentModel.Wordprocessing.DivBorder? DivBorder
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DivBorder>();
+        if (item != null)
+          return new DocumentModel.Wordprocessing.DivBorderImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DivBorder>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Wordprocessing.DivBorderImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.DivsChild>? DivsChilds

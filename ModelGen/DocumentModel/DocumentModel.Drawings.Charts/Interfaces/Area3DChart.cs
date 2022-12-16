@@ -23,7 +23,7 @@ public interface Area3DChart
   
   public UInt16? GapDepth { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.Area3DChartExtensionList? Area3DChartExtensionList { get ; set; }
   

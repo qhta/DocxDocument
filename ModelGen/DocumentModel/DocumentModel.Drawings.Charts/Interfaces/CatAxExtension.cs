@@ -10,6 +10,6 @@ public interface CatAxExtension
   /// </summary>
   public String? Uri { get ; set; }
   
-  public DocumentModel.Drawings13.Charts.NumberingFormat? NumberingFormat { get ; set; }
+  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get ; set; }
   
 }

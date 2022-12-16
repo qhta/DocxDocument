@@ -21,7 +21,7 @@ public interface AreaChart
   
   public DocumentModel.Drawings.Charts.DropLines? DropLines { get ; set; }
   
-  public UInt32? AxisId { get ; set; }
+  public Collection<System.UInt32>? AxisIds { get ; set; }
   
   public DocumentModel.Drawings.Charts.AreaChartExtensionList? AreaChartExtensionList { get ; set; }
   

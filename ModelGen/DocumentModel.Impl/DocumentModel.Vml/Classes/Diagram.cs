@@ -153,8 +153,31 @@ public class DiagramImpl: ModelElementImpl, Diagram
   /// </summary>
   public DocumentModel.Vml.RelationTable? RelationTable
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+        if (item != null)
+          return new DocumentModel.Vml.RelationTableImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Vml.RelationTableImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
   }
   
 }
