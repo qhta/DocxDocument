@@ -15,18 +15,18 @@ public interface DiagramDataPart
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
   
   public String? RelationshipType { get ; set; }
   
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.SlidePart? SlideParts { get ; set; }
+  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts { get ; set; }
   
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.WorksheetPart? WorksheetParts { get ; set; }
+  public Collection<DocumentModel.Packaging.WorksheetPart>? WorksheetParts { get ; set; }
   
 }

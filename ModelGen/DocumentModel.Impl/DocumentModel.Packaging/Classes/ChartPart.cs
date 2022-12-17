@@ -21,7 +21,7 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// <summary>
   /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ChartColorStylePart? ChartColorStyleParts
+  public Collection<DocumentModel.Packaging.ChartColorStylePart>? ChartColorStyleParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -50,7 +50,7 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ChartStylePart? ChartStyleParts
+  public Collection<DocumentModel.Packaging.ChartStylePart>? ChartStyleParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -69,7 +69,7 @@ public class ChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartPart
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

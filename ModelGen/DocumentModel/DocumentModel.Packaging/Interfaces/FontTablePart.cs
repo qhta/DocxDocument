@@ -10,7 +10,7 @@ public interface FontTablePart
   /// <summary>
   /// Gets the FontParts of the FontTablePart
   /// </summary>
-  public DocumentModel.Packaging.FontPart? FontParts { get ; set; }
+  public Collection<DocumentModel.Packaging.FontPart>? FontParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.

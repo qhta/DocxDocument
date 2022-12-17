@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "DocumentModel.BaseTypes.Impl/1.0.0": {
         "dependencies": {
-          "DocumentFormat.OpenXml": "2.18.0",
+          "DocumentFormat.OpenXml": "2.19.0",
           "DocumentModel": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
           "NETStandard.Library": "2.0.3"
@@ -18,14 +18,14 @@
           "DocumentModel.BaseTypes.Impl.dll": {}
         }
       },
-      "DocumentFormat.OpenXml/2.18.0": {
+      "DocumentFormat.OpenXml/2.19.0": {
         "dependencies": {
           "System.IO.Packaging": "7.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
-            "assemblyVersion": "2.18.0.0",
-            "fileVersion": "2.18.0.0"
+            "assemblyVersion": "2.19.0.0",
+            "fileVersion": "2.19.0.0"
           }
         }
       },
@@ -111,12 +111,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DocumentFormat.OpenXml/2.18.0": {
+    "DocumentFormat.OpenXml/2.19.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5fmehgA7WmJD551QwBhvjSsEmMbCQ/yfW83ZLfbPx1TeQGm0ikGIwAvz/XfO4veCjYWpBQfFH9elVhC2Y+HatQ==",
-      "path": "documentformat.openxml/2.18.0",
-      "hashPath": "documentformat.openxml.2.18.0.nupkg.sha512"
+      "sha512": "sha512-BLFqodowHZHR/A/sKU/6e+63J5ONWDdv8hEuSZOUiBfGFuVmsG9P3o+LMSq+dajNWE1q+lqVSa1H5FuhLX8/fA==",
+      "path": "documentformat.openxml/2.19.0",
+      "hashPath": "documentformat.openxml.2.19.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

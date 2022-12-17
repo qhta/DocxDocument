@@ -31,7 +31,7 @@ public class ThemePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThemePart
   /// <summary>
   /// Gets the ImageParts of the ThemePart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

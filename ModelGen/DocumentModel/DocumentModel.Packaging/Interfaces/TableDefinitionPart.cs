@@ -10,7 +10,7 @@ public interface TableDefinitionPart
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public DocumentModel.Packaging.QueryTablePart? QueryTableParts { get ; set; }
+  public Collection<DocumentModel.Packaging.QueryTablePart>? QueryTableParts { get ; set; }
   
   public String? RelationshipType { get ; set; }
   

@@ -31,7 +31,7 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   /// <summary>
   /// Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

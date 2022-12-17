@@ -15,7 +15,7 @@ public interface DiagramPersistLayoutPart
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
   
   public String? RelationshipType { get ; set; }
   
