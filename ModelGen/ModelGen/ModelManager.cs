@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices.ComTypes;
@@ -44,6 +45,8 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
+    if (typeInfo.Name.EndsWith("Relationship"))
+      return false;
     if (typeInfo.AcceptedProperties?.Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
     {
       if (typeInfo.BaseTypeInfo != null)
@@ -86,12 +89,17 @@ public static class ModelManager
 
     if (typeInfo.Type.Name.Contains('`'))
     {
-      if (typeInfo.Name.Contains("Enum"))
+      if (typeInfo.Name == "IEnumerable`1")
       {
         var sourceArgTypes = typeInfo.Type.GetGenericArguments();
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
+          var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
+          genericParamTypeInfo.TryAddTypeConversion();
+          if (genericParamTypeInfo.IsConverted)
+            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+          sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
           return true;
@@ -109,6 +117,18 @@ public static class ModelManager
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
           sourceArgType = typeof(List<>).MakeGenericType(new Type[] { sourceArgType });
+          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
+          typeInfo.IsConverted = true;
+          return true;
+        }
+      }
+      else 
+      if (typeInfo.Name.Contains("Enum"))
+      {
+        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
+        var sourceArgType = sourceArgTypes.FirstOrDefault();
+        if (sourceArgType != null)
+        {
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
           return true;

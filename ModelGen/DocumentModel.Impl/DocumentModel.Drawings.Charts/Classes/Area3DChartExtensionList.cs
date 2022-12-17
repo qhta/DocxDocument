@@ -84,13 +84,13 @@ public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensio
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Charts.Area3DChartExtensionImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Area3DChartExtension>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Charts.Area3DChartExtensionImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Area3DChartExtension>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:

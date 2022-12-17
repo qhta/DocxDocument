@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SXaLD3TyWm1akzVfpMYRdFrkwZEjCThNA0ikpR3V8QyFPA7zSnjpZMRyEHvWmU80+HsVgc3Wpwnqpft5uj3M/A==",
+  "dgSpecHash": "zFjcSkTF2SBXQRXFteNkgOVxFCXHmUWs3b23J49H/vqEWyh7y2NARdCQHqxM9U9jmZ6Rk2BSu2PjTWUoSxm5Rg==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes.Impl\\DocumentModel.BaseTypes.Impl.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.18.0\\documentformat.openxml.2.18.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.19.0\\documentformat.openxml.2.19.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

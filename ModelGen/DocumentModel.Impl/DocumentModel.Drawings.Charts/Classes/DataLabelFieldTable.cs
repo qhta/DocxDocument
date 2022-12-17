@@ -84,13 +84,13 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:

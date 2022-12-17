@@ -154,13 +154,13 @@ public class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImp
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:

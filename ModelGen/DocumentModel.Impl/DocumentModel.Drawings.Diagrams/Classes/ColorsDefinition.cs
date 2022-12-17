@@ -110,13 +110,13 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:
@@ -192,13 +192,13 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:
@@ -303,13 +303,13 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:

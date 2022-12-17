@@ -113,13 +113,13 @@ public class CustomXmlCellImpl: DocumentModel.Wordprocessing.CustomXmlElementImp
         case NotifyCollectionChangedAction.Remove:
           foreach (var val in args.OldItems)
           {
-        if (val is DocumentModel.Wordprocessing.TableCellImpl valImpl)
-        {
-            var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.TableCell>()
-                          .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
-            if (oldItem != null)
-              oldItem.Remove();
-        };
+              if (val is DocumentModel.Wordprocessing.TableCellImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.TableCell>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
           }
           break;
         default:

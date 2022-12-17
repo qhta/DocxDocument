@@ -21,7 +21,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.AlternativeFormatImportPart? AlternativeFormatImportParts
+  public Collection<DocumentModel.Packaging.AlternativeFormatImportPart>? AlternativeFormatImportParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -30,7 +30,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the ChartParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.ChartPart? ChartParts
+  public Collection<DocumentModel.Packaging.ChartPart>? ChartParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -49,7 +49,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the DiagramColorsParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.DiagramColorsPart? DiagramColorsParts
+  public Collection<DocumentModel.Packaging.DiagramColorsPart>? DiagramColorsParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -58,7 +58,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the DiagramDataParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.DiagramDataPart? DiagramDataParts
+  public Collection<DocumentModel.Packaging.DiagramDataPart>? DiagramDataParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -67,7 +67,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.DiagramLayoutDefinitionPart? DiagramLayoutDefinitionParts
+  public Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -76,7 +76,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.DiagramPersistLayoutPart? DiagramPersistLayoutParts
+  public Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -85,7 +85,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the DiagramStyleParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.DiagramStylePart? DiagramStyleParts
+  public Collection<DocumentModel.Packaging.DiagramStylePart>? DiagramStyleParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -94,7 +94,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.EmbeddedControlPersistencePart? EmbeddedControlPersistenceParts
+  public Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -103,7 +103,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the EmbeddedObjectParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.EmbeddedObjectPart? EmbeddedObjectParts
+  public Collection<DocumentModel.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -112,7 +112,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the EmbeddedPackageParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.EmbeddedPackagePart? EmbeddedPackageParts
+  public Collection<DocumentModel.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -121,7 +121,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the ExtendedChartParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.ExtendedChartPart? ExtendedChartParts
+  public Collection<DocumentModel.Packaging.ExtendedChartPart>? ExtendedChartParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -150,7 +150,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the ImageParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -159,7 +159,7 @@ public class HeaderPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, HeaderPart
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
-  public DocumentModel.Packaging.Model3DReferenceRelationshipPart? Model3DReferenceRelationshipParts
+  public Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -51,7 +51,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -70,7 +70,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.SlidePart? SlideParts
+  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");
@@ -79,7 +79,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  public DocumentModel.Packaging.WorksheetPart? WorksheetParts
+  public Collection<DocumentModel.Packaging.WorksheetPart>? WorksheetParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

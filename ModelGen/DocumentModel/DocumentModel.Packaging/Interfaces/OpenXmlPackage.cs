@@ -38,7 +38,7 @@ public interface OpenXmlPackage
   /// <summary>
   /// Gets all the  parts in the document package.
   /// </summary>
-  public DocumentModel.Packaging.DataPart? DataParts { get ; set; }
+  public Collection<DocumentModel.Packaging.DataPart>? DataParts { get ; set; }
   
   /// <summary>
   /// Gets the markup compatibility settings applied at loading time.

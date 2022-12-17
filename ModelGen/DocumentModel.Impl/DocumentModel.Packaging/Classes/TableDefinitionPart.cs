@@ -31,7 +31,7 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public DocumentModel.Packaging.QueryTablePart? QueryTableParts
+  public Collection<DocumentModel.Packaging.QueryTablePart>? QueryTableParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

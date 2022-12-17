@@ -22,6 +22,7 @@
     <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes.Impl\DocumentModel.BaseTypes.Impl.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Internal.Impl\DocumentModel.Internal.Impl.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 </Project>

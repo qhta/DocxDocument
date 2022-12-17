@@ -10,7 +10,7 @@ public interface WebExtensionPart
   /// <summary>
   /// Gets the ImageParts of the WebExtensionPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
   
   public String? RelationshipType { get ; set; }
   

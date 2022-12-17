@@ -246,7 +246,7 @@ public static class TypeReflector
     var targetType = constraint.ItemType;
     if (constraint.IsMultiple)
     {
-      var propName = MultipleItemsPropName(targetType.Name);
+      var propName = PluralizeName(targetType.Name);
       if (typeInfo.Name == propName)
         propName = "Items";
       var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
@@ -298,7 +298,7 @@ public static class TypeReflector
     //return null;
   }
 
-  public static string MultipleItemsPropName(string aName)
+  public static string PluralizeName(string aName)
   {
     if (aName.EndsWith('y'))
       return aName.Substring(0, aName.Length - 1) + "ies";
@@ -306,6 +306,16 @@ public static class TypeReflector
       return aName + "es";
     return aName + "s";
   }
+
+  public static string SingularizeName(string aName)
+  {
+    if (aName.EndsWith("ies"))
+      return aName.Substring(0, aName.Length - 3) + "y";
+    else if (aName.EndsWith("ses"))
+      return aName.Substring(0, aName.Length - 2);
+    return aName.Substring(0, aName.Length - 1);
+  }
+
   private static bool GenDocumentationComments(TypeInfo typeInfo)
   {
     var documentation = typeInfo.Type.GetXmlDocsElement();
