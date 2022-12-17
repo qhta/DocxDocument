@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "oPtLPiL3H8f6gW0xXCaLPZH38QSaLiVVH2YPeJMge4cm1V7N4LhJ9miaR6oQbbTutZiKL2+5FMpEDhFh1yTzmg==",
+  "success": true,
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Internal.Impl\\DocumentModel.Internal.Impl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.19.0\\documentformat.openxml.2.19.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

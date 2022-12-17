@@ -51,7 +51,7 @@ public class DiagramPersistLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartIm
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

@@ -31,7 +31,7 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
   /// <summary>
   /// Gets the FontParts of the FontTablePart
   /// </summary>
-  public DocumentModel.Packaging.FontPart? FontParts
+  public Collection<DocumentModel.Packaging.FontPart>? FontParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

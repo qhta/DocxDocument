@@ -87,7 +87,7 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// <summary>
   /// Gets all the  parts in the document package.
   /// </summary>
-  public DocumentModel.Packaging.DataPart? DataParts
+  public Collection<DocumentModel.Packaging.DataPart>? DataParts
   {
     get => throw new NotImplementedException("Method not implemented");
     set => throw new NotImplementedException("Method not implemented");

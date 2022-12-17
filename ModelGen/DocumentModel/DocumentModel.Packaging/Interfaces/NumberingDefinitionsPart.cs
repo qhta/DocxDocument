@@ -10,7 +10,7 @@ public interface NumberingDefinitionsPart
   /// <summary>
   /// Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.

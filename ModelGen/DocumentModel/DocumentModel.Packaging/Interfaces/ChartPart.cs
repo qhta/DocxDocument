@@ -8,7 +8,7 @@ public interface ChartPart
   /// <summary>
   /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ChartColorStylePart? ChartColorStyleParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ChartColorStylePart>? ChartColorStyleParts { get ; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -18,14 +18,14 @@ public interface ChartPart
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ChartStylePart? ChartStyleParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ChartStylePart>? ChartStyleParts { get ; set; }
   
   public String? ContentType { get ; set; }
   
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  public DocumentModel.Packaging.ImagePart? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
   
   public String? RelationshipType { get ; set; }
   
