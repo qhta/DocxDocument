@@ -210,12 +210,12 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ChartDrawings.DataLabelImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ChartDrawings.DataLabelImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ChartDrawings.DataLabel> observableCollection)
@@ -240,12 +240,12 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ChartDrawings.DataLabelImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ChartDrawings.DataLabelImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -292,12 +292,12 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ChartDrawings.DataLabelHiddenImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ChartDrawings.DataLabelHiddenImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ChartDrawings.DataLabelHidden> observableCollection)
@@ -322,12 +322,12 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ChartDrawings.DataLabelHiddenImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ChartDrawings.DataLabelHiddenImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

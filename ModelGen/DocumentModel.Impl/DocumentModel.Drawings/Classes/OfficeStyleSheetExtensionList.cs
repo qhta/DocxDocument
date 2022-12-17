@@ -43,12 +43,12 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.OfficeStyleSheetExtension> observableCollection)
@@ -73,12 +73,12 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

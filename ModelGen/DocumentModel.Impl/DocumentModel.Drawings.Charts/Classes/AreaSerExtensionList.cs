@@ -43,12 +43,12 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.AreaSerExtension> observableCollection)
@@ -73,12 +73,12 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

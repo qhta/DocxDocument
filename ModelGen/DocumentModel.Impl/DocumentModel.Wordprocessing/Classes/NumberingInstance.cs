@@ -95,12 +95,12 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.LevelOverride> observableCollection)
@@ -125,12 +125,12 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

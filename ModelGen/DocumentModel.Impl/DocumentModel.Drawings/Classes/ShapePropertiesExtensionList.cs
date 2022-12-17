@@ -43,12 +43,12 @@ public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapeProperties
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ShapePropertiesExtension> observableCollection)
@@ -73,12 +73,12 @@ public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapeProperties
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -43,12 +43,12 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.ExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.ExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Extension> observableCollection)
@@ -73,12 +73,12 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.ExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.ExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

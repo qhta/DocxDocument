@@ -43,12 +43,12 @@ public class GeoParentEntitiesQueryResultsImpl: ModelElementImpl, GeoParentEntit
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResultImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResultImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult> observableCollection)
@@ -73,12 +73,12 @@ public class GeoParentEntitiesQueryResultsImpl: ModelElementImpl, GeoParentEntit
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResultImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResultImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

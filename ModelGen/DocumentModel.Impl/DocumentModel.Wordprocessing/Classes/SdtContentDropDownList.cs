@@ -56,12 +56,12 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.ListItem> observableCollection)
@@ -86,12 +86,12 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

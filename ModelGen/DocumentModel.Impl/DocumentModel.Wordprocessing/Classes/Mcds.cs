@@ -43,12 +43,12 @@ public class McdsImpl: ModelElementImpl, Mcds
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.Mcd>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.McdImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.McdImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.Mcd> observableCollection)
@@ -73,12 +73,12 @@ public class McdsImpl: ModelElementImpl, Mcds
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.McdImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.McdImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

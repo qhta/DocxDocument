@@ -95,11 +95,11 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
         foreach (var val in value)
         {
-        if (val is string str)
-        {
-          var item = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = str };
-          OpenXmlElement.AddChild(item);
-        };
+          if (val is string str)
+          {
+            var item = new DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField{ Val = str };
+            OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<System.String> observableCollection)

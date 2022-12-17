@@ -69,12 +69,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Diagrams.ColorDefinitionTitle> observableCollection)
@@ -99,12 +99,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -151,12 +151,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Diagrams.ColorTransformDescription> observableCollection)
@@ -181,12 +181,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -262,12 +262,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel> observableCollection)
@@ -292,12 +292,12 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

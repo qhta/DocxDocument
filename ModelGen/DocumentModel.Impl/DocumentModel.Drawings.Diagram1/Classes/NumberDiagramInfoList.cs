@@ -43,12 +43,12 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo> observableCollection)
@@ -73,12 +73,12 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

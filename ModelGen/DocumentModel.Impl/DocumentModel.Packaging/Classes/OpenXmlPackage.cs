@@ -89,9 +89,87 @@ public class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartContainerImp
   /// </summary>
   public Collection<DocumentModel.Packaging.DataPart>? DataParts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_DataParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.DataParts
+            .Select(item => new DocumentModel.Packaging.DataPartImpl(item)).ToList();
+          _DataParts = new ObservableCollection<DocumentModel.Packaging.DataPart>(items);
+        }
+        else
+          _DataParts = new ObservableCollection<DocumentModel.Packaging.DataPart>();
+        _DataParts.CollectionChanged += _DataParts_CollectionChanged;
+      }
+      return _DataParts;
+    }
+    set
+    {
+      if (value != null && value != _DataParts && OpenXmlElement!=null)
+      {
+        foreach (var item in OpenXmlElement.DataParts.ToArray())
+          OpenXmlElement.DeletePart(item);
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Packaging.DataPartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddDataPartToList(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Packaging.DataPart> observableCollection)
+        _DataParts = observableCollection;
+      else if (value != null)
+        _DataParts = new ObservableCollection<DocumentModel.Packaging.DataPart>(value);
+      else
+       _DataParts = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Packaging.DataPart>? _DataParts;
+  
+  private void _DataParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          foreach (var item in OpenXmlElement.DataParts.ToArray())
+            OpenXmlElement.DeletePart(item);
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Packaging.DataPartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddDataPartToList(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Packaging.DataPartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.DataParts
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    OpenXmlElement.DeletePart(oldItem);
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   /// <summary>
   /// Gets the markup compatibility settings applied at loading time.

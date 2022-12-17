@@ -43,12 +43,12 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.PtExtension> observableCollection)
@@ -73,12 +73,12 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -43,12 +43,12 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.AllocatedCommandManifest> observableCollection)
@@ -73,12 +73,12 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -125,12 +125,12 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.ToolbarData>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.ToolbarData> observableCollection)
@@ -155,12 +155,12 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

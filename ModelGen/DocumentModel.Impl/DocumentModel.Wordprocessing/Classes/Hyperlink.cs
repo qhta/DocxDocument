@@ -150,12 +150,12 @@ public class HyperlinkImpl: ModelElementImpl, Hyperlink
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.SimpleField>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.SimpleField> observableCollection)
@@ -180,12 +180,12 @@ public class HyperlinkImpl: ModelElementImpl, Hyperlink
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.SimpleFieldImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -95,12 +95,12 @@ public class RuleImpl: ModelElementImpl, Rule
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Vml.ProxyImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Vml.ProxyImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Vml.Proxy> observableCollection)
@@ -125,12 +125,12 @@ public class RuleImpl: ModelElementImpl, Rule
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Vml.ProxyImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Vml.ProxyImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

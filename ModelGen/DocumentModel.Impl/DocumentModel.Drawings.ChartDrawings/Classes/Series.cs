@@ -236,12 +236,12 @@ public class SeriesImpl: ModelElementImpl, Series
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataPoint>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ChartDrawings.DataPoint> observableCollection)
@@ -266,12 +266,12 @@ public class SeriesImpl: ModelElementImpl, Series
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -411,11 +411,11 @@ public class SeriesImpl: ModelElementImpl, Series
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisId>();
         foreach (var val in value)
         {
-        if (val is string str)
-        {
-          var item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisId{ Text = str };
-          OpenXmlElement.AddChild(item);
-        };
+          if (val is string str)
+          {
+            var item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisId{ Text = str };
+            OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<System.String> observableCollection)

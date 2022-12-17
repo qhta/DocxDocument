@@ -23,9 +23,87 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   /// </summary>
   public Collection<DocumentModel.Packaging.ChartColorStylePart>? ChartColorStyleParts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_ChartColorStyleParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>()
+            .Select(item => new DocumentModel.Packaging.ChartColorStylePartImpl(item)).ToList();
+          _ChartColorStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>(items);
+        }
+        else
+          _ChartColorStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>();
+        _ChartColorStyleParts.CollectionChanged += _ChartColorStyleParts_CollectionChanged;
+      }
+      return _ChartColorStyleParts;
+    }
+    set
+    {
+      if (value != null && value != _ChartColorStyleParts && OpenXmlElement!=null)
+      {
+        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>().ToArray())
+          OpenXmlElement.DeletePart(item);
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddPart(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Packaging.ChartColorStylePart> observableCollection)
+        _ChartColorStyleParts = observableCollection;
+      else if (value != null)
+        _ChartColorStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>(value);
+      else
+       _ChartColorStyleParts = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>? _ChartColorStyleParts;
+  
+  private void _ChartColorStyleParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>().ToArray())
+            OpenXmlElement.DeletePart(item);
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddPart(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    OpenXmlElement.DeletePart(oldItem);
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -52,9 +130,87 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   /// </summary>
   public Collection<DocumentModel.Packaging.ChartStylePart>? ChartStyleParts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_ChartStyleParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>()
+            .Select(item => new DocumentModel.Packaging.ChartStylePartImpl(item)).ToList();
+          _ChartStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartStylePart>(items);
+        }
+        else
+          _ChartStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartStylePart>();
+        _ChartStyleParts.CollectionChanged += _ChartStyleParts_CollectionChanged;
+      }
+      return _ChartStyleParts;
+    }
+    set
+    {
+      if (value != null && value != _ChartStyleParts && OpenXmlElement!=null)
+      {
+        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>().ToArray())
+          OpenXmlElement.DeletePart(item);
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddPart(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Packaging.ChartStylePart> observableCollection)
+        _ChartStyleParts = observableCollection;
+      else if (value != null)
+        _ChartStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartStylePart>(value);
+      else
+       _ChartStyleParts = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Packaging.ChartStylePart>? _ChartStyleParts;
+  
+  private void _ChartStyleParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>().ToArray())
+            OpenXmlElement.DeletePart(item);
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddPart(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    OpenXmlElement.DeletePart(oldItem);
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   public new String? ContentType
   {
@@ -71,9 +227,87 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   /// </summary>
   public Collection<DocumentModel.Packaging.ImagePart>? ImageParts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_ImageParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>()
+            .Select(item => new DocumentModel.Packaging.ImagePartImpl(item)).ToList();
+          _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(items);
+        }
+        else
+          _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>();
+        _ImageParts.CollectionChanged += _ImageParts_CollectionChanged;
+      }
+      return _ImageParts;
+    }
+    set
+    {
+      if (value != null && value != _ImageParts && OpenXmlElement!=null)
+      {
+        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
+          OpenXmlElement.DeletePart(item);
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddPart(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
+        _ImageParts = observableCollection;
+      else if (value != null)
+        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
+      else
+       _ImageParts = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
+  
+  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
+            OpenXmlElement.DeletePart(item);
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddPart(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    OpenXmlElement.DeletePart(oldItem);
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   public new String? RelationshipType
   {

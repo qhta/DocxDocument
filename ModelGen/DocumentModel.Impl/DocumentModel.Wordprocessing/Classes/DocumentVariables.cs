@@ -43,12 +43,12 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.DocumentVariable> observableCollection)
@@ -73,12 +73,12 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

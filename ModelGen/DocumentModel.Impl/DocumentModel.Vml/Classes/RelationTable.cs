@@ -56,12 +56,12 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Vml.RelationImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Vml.RelationImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Vml.Relation> observableCollection)
@@ -86,12 +86,12 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Vml.RelationImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Vml.RelationImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -43,11 +43,11 @@ public class CopyrightsImpl: ModelElementImpl, Copyrights
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>();
         foreach (var val in value)
         {
-        if (val is string str)
-        {
-          var item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring{ Text = str };
-          OpenXmlElement.AddChild(item);
-        };
+          if (val is string str)
+          {
+            var item = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring{ Text = str };
+            OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<System.String> observableCollection)

@@ -43,12 +43,12 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.LinePropertiesExtension> observableCollection)
@@ -73,12 +73,12 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

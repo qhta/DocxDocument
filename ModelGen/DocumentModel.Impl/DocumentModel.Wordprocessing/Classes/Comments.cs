@@ -43,12 +43,12 @@ public class CommentsImpl: ModelElementImpl, Comments
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Comment>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.CommentImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.CommentImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.Comment> observableCollection)
@@ -73,12 +73,12 @@ public class CommentsImpl: ModelElementImpl, Comments
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.CommentImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.CommentImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

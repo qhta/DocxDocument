@@ -4,7 +4,7 @@ using DocumentFormat.OpenXml.Packaging;
 
 namespace DocumentModel.Impl
 {
-  public static class OpenXmlPartContainerExtension
+  public static class OpenXmlPartContainerExtensions
   {
     public static void AddDataPartReferenceRelationship(this DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer obj,
       DataPartReferenceRelationship relationship)
