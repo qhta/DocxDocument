@@ -43,12 +43,12 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.TabStop>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.TabStopImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.TabStopImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.TabStop> observableCollection)
@@ -73,12 +73,12 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.TabStopImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.TabStopImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

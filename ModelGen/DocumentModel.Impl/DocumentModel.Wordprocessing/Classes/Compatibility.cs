@@ -2383,12 +2383,12 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting> observableCollection)
@@ -2413,12 +2413,12 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

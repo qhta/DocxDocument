@@ -43,12 +43,12 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Extension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Extension> observableCollection)
@@ -73,12 +73,12 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

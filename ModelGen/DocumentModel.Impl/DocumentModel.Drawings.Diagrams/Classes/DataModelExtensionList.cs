@@ -43,12 +43,12 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DataModelExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.DataModelExtension> observableCollection)
@@ -73,12 +73,12 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

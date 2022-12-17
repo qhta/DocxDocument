@@ -243,12 +243,12 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyleVariation>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ChartsStyle.ColorStyleVariation> observableCollection)
@@ -273,12 +273,12 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -43,12 +43,12 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.AcceleratorKeymapType> observableCollection)
@@ -73,12 +73,12 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

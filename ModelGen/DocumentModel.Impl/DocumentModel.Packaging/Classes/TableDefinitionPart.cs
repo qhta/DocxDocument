@@ -33,9 +33,87 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
   /// </summary>
   public Collection<DocumentModel.Packaging.QueryTablePart>? QueryTableParts
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (_QueryTableParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>()
+            .Select(item => new DocumentModel.Packaging.QueryTablePartImpl(item)).ToList();
+          _QueryTableParts = new ObservableCollection<DocumentModel.Packaging.QueryTablePart>(items);
+        }
+        else
+          _QueryTableParts = new ObservableCollection<DocumentModel.Packaging.QueryTablePart>();
+        _QueryTableParts.CollectionChanged += _QueryTableParts_CollectionChanged;
+      }
+      return _QueryTableParts;
+    }
+    set
+    {
+      if (value != null && value != _QueryTableParts && OpenXmlElement!=null)
+      {
+        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>().ToArray())
+          OpenXmlElement.DeletePart(item);
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddPart(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Packaging.QueryTablePart> observableCollection)
+        _QueryTableParts = observableCollection;
+      else if (value != null)
+        _QueryTableParts = new ObservableCollection<DocumentModel.Packaging.QueryTablePart>(value);
+      else
+       _QueryTableParts = null;
+    }
   }
+  private ObservableCollection<DocumentModel.Packaging.QueryTablePart>? _QueryTableParts;
+  
+  private void _QueryTableParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>().ToArray())
+            OpenXmlElement.DeletePart(item);
+          break;
+        case NotifyCollectionChangedAction.Add:
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddPart(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    OpenXmlElement.DeletePart(oldItem);
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   public new String? RelationshipType
   {

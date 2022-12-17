@@ -43,12 +43,12 @@ public class DLblExtensionListImpl: ModelElementImpl, DLblExtensionList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DLblExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.DLblExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.DLblExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.DLblExtension> observableCollection)
@@ -73,12 +73,12 @@ public class DLblExtensionListImpl: ModelElementImpl, DLblExtensionList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.DLblExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.DLblExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

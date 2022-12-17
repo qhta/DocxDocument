@@ -43,12 +43,12 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ExtraColorScheme> observableCollection)
@@ -73,12 +73,12 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

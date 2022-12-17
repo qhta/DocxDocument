@@ -43,12 +43,12 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.DateAxExtension> observableCollection)
@@ -73,12 +73,12 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

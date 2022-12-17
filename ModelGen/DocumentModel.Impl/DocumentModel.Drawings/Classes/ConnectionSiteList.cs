@@ -43,12 +43,12 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ConnectionSite>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ConnectionSite> observableCollection)
@@ -73,12 +73,12 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

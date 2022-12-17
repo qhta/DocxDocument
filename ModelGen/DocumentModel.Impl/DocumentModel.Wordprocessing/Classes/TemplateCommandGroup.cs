@@ -43,12 +43,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.KeyMapCustomizations> observableCollection)
@@ -73,12 +73,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -125,12 +125,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization> observableCollection)
@@ -155,12 +155,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
@@ -236,12 +236,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommands>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.AllocatedCommands> observableCollection)
@@ -266,12 +266,12 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -43,12 +43,12 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.ShapeHandle>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Vml.ShapeHandle> observableCollection)
@@ -73,12 +73,12 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

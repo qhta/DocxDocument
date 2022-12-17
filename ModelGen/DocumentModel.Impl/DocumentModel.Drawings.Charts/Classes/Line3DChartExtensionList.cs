@@ -43,12 +43,12 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.Line3DChartExtension> observableCollection)
@@ -73,12 +73,12 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

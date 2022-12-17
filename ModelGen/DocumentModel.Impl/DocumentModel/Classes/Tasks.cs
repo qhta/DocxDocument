@@ -43,12 +43,12 @@ public class TasksImpl: ModelElementImpl, Tasks
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.DocumentTasks.Task>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.TaskImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.TaskImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Task> observableCollection)
@@ -73,12 +73,12 @@ public class TasksImpl: ModelElementImpl, Tasks
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.TaskImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.TaskImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

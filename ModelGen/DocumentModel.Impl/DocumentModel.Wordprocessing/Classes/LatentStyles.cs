@@ -121,12 +121,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo> observableCollection)
@@ -151,12 +151,12 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

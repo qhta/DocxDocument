@@ -43,12 +43,12 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.ConnectorLockingExtension> observableCollection)
@@ -73,12 +73,12 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

@@ -56,12 +56,12 @@ public class RulesImpl: ModelElementImpl, Rules
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Vml.RuleImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Vml.RuleImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Vml.Rule> observableCollection)
@@ -86,12 +86,12 @@ public class RulesImpl: ModelElementImpl, Rules
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Vml.RuleImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Vml.RuleImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

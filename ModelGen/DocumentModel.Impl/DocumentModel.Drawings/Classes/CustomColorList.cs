@@ -43,12 +43,12 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.CustomColor>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.CustomColorImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.CustomColorImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.CustomColor> observableCollection)
@@ -73,12 +73,12 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.CustomColorImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.CustomColorImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

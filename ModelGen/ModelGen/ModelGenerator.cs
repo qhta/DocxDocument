@@ -855,10 +855,11 @@ public class ModelGenerator
     TypeInfo propItemType,
     IndentedTextWriter writer)
   {
-    if (propItemType.Name.EndsWith("Part"))
-      return GeneratePropAccessorsNotImplemented(writer);
-    else if (prop.DeclaringType?.Name == "OpenXmlPartContainer")
+    if (prop.DeclaringType?.Name == "OpenXmlPartContainer")
       return GenerateOpenXmlPartContainerItemsCollectionTypeAccessors(prop, propItemType, writer);
+    else
+    if (propItemType.Name.EndsWith("Part"))
+      return GeneratePartCollectionTypeAccessors(prop, propItemType, writer);
     else
       return GenerateElementCollectionTypeAccessors(prop, propItemType, writer);
   }
@@ -900,7 +901,7 @@ public class ModelGenerator
     writer.WriteLine($"          var item = valImpl.OpenXmlElement;");
     writer.WriteLine($"          if (item != null)");
     writer.WriteLine($"            if (!OpenXmlElement.{propName}.Contains(item))");
-    if (itemTypeName=="Part")
+    if (itemTypeName == "Part")
       writer.WriteLine($"              OpenXmlElement.AddPart(item.OpenXmlPart, item.RelationshipId);");
     else
     if (itemTypeName.Contains("Hyperlink"))
@@ -924,9 +925,71 @@ public class ModelGenerator
     return true;
   }
 
-  private bool GenerateElementCollectionTypeAccessors(PropInfo prop,
+  private bool GeneratePartCollectionTypeAccessors(PropInfo prop,
     TypeInfo propItemType,
     IndentedTextWriter writer)
+  {
+    TypeInfo targetItemType = propItemType.GetConversionTarget(true);
+    string propItemTypeName = targetItemType.GetFullName();
+    string origItemTypeName = propItemType.GetFullName(true);
+    var propName = prop.Name;
+    var fieldName = "_" + propName;
+    string itemTypeName = TypeReflector.SingularizeName(propName);
+    writer.WriteLine($"  get");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if ({fieldName} != null)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"      if (OpenXmlElement != null)");
+    writer.WriteLine($"      {{");
+    if (itemTypeName == "DataPart")
+      writer.WriteLine($"        var items = OpenXmlElement.DataParts");
+    else
+      writer.WriteLine($"        var items = OpenXmlElement.GetPartsOfType<{origItemTypeName}>()");
+    writer.WriteLine($"          .Select(item => new {propItemTypeName}Impl(item)).ToList();");
+    writer.WriteLine($"        {fieldName} = new ObservableCollection<{propItemTypeName}>(items);");
+    writer.WriteLine($"      }}");
+    writer.WriteLine($"      else");
+    writer.WriteLine($"        {fieldName} = new ObservableCollection<{propItemTypeName}>();");
+    writer.WriteLine($"      {fieldName}.CollectionChanged += {fieldName}_CollectionChanged;");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"    return {fieldName};");
+    writer.WriteLine($"  }}");
+    writer.WriteLine($"  set");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if (value != null && value != {fieldName} && OpenXmlElement!=null)");
+    writer.WriteLine($"    {{");
+    if (itemTypeName=="DataPart")
+      writer.WriteLine($"      foreach (var item in OpenXmlElement.DataParts.ToArray())");
+    else
+      writer.WriteLine($"      foreach (var item in OpenXmlElement.GetPartsOfType<{origItemTypeName}>().ToArray())");
+    writer.WriteLine($"        OpenXmlElement.DeletePart(item);");
+    writer.WriteLine($"      foreach (var val in value)");
+    writer.WriteLine($"      {{");
+    writer.WriteLine($"        if (val is {propItemTypeName}Impl valImpl)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"          var item = valImpl.OpenXmlElement;");
+    writer.WriteLine($"          if (item != null)");
+    if (itemTypeName == "DataPart")
+      writer.WriteLine($"            OpenXmlElement.AddDataPartToList(item);");
+    else
+      writer.WriteLine($"            OpenXmlElement.AddPart(item);");
+    writer.WriteLine($"        }};");
+    writer.WriteLine($"      }}");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"    if (value is ObservableCollection<{propItemTypeName}> observableCollection)");
+    writer.WriteLine($"      {fieldName} = observableCollection;");
+    writer.WriteLine($"    else if (value != null)");
+    writer.WriteLine($"      {fieldName} = new ObservableCollection<{propItemTypeName}>(value);");
+    writer.WriteLine($"    else");
+    writer.WriteLine($"     {fieldName} = null;");
+    writer.WriteLine($"  }}");
+    AddGlobalUsing("System.Linq");
+    return true;
+  }
+
+  private bool GenerateElementCollectionTypeAccessors(PropInfo prop,
+  TypeInfo propItemType,
+  IndentedTextWriter writer)
   {
     TypeInfo targetItemType = propItemType.GetConversionTarget(true);
     string propItemTypeName = targetItemType.GetFullName();
@@ -975,14 +1038,14 @@ public class ModelGenerator
     }
     else if (targetItemType.Type == typeof(string))
     {
-      writer.WriteLine($"      if (val is string str)");
-      writer.WriteLine($"      {{");
+      writer.WriteLine($"        if (val is string str)");
+      writer.WriteLine($"        {{");
       if (propItemType.Type.HasProperty("Val"))
-        writer.WriteLine($"        var item = new {origItemTypeName}{{ Val = str }};");
+        writer.WriteLine($"          var item = new {origItemTypeName}{{ Val = str }};");
       else
-        writer.WriteLine($"        var item = new {origItemTypeName}{{ Text = str }};");
-      writer.WriteLine($"        OpenXmlElement.AddChild(item);");
-      writer.WriteLine($"      }};");
+        writer.WriteLine($"          var item = new {origItemTypeName}{{ Text = str }};");
+      writer.WriteLine($"          OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"        }};");
     }
     else if (targetItemType.Type.IsValueType)
     {
@@ -991,12 +1054,12 @@ public class ModelGenerator
     }
     else
     {
-      writer.WriteLine($"      if (val is {propItemTypeName}Impl valImpl)");
-      writer.WriteLine($"      {{");
-      writer.WriteLine($"        var item = valImpl.OpenXmlElement;");
-      writer.WriteLine($"        if (item != null)");
-      writer.WriteLine($"          OpenXmlElement.AddChild(item);");
-      writer.WriteLine($"      }};");
+      writer.WriteLine($"        if (val is {propItemTypeName}Impl valImpl)");
+      writer.WriteLine($"        {{");
+      writer.WriteLine($"          var item = valImpl.OpenXmlElement;");
+      writer.WriteLine($"          if (item != null)");
+      writer.WriteLine($"            OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"        }};");
     }
     writer.WriteLine($"      }}");
     writer.WriteLine($"    }}");
@@ -1015,12 +1078,11 @@ public class ModelGenerator
     TypeInfo propItemType,
     IndentedTextWriter writer)
   {
-    if (propItemType.Name.EndsWith("Part"))
-    {
-      return true;
-    }
-    else if (prop.DeclaringType?.Name == "OpenXmlPartContainer")
+    if (prop.DeclaringType?.Name == "OpenXmlPartContainer")
       return GenerateOpenXmlContainerItemsCollectionField(prop, propItemType, writer);
+    else
+    if (propItemType.Name.EndsWith("Part"))
+      return GeneratePartCollectionField(prop, propItemType, writer);
     else
       return GenerateElementCollectionField(prop, propItemType, writer);
   }
@@ -1093,6 +1155,69 @@ public class ModelGenerator
     return true;
   }
 
+  private bool GeneratePartCollectionField(PropInfo prop,
+    TypeInfo propItemType,
+   IndentedTextWriter writer)
+  {
+    TypeInfo targetItemType = propItemType.GetConversionTarget(true);
+    string propItemTypeName = targetItemType.GetFullName();
+    string origItemTypeName = propItemType.GetFullName(true);
+    var propName = prop.Name;
+    var fieldName = "_" + propName;
+    string itemTypeName = TypeReflector.SingularizeName(propName);
+    writer.WriteLine($"private ObservableCollection<{propItemTypeName}>? {fieldName};");
+    writer.WriteLine();
+    writer.WriteLine($"private void {fieldName}_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)");
+    writer.WriteLine($"{{");
+    writer.WriteLine($"  if (OpenXmlElement != null)");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    switch (args.Action)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Reset:");
+    if (itemTypeName=="DataPart")
+      writer.WriteLine($"        foreach (var item in OpenXmlElement.DataParts.ToArray())");
+    else
+      writer.WriteLine($"        foreach (var item in OpenXmlElement.GetPartsOfType<{origItemTypeName}>().ToArray())");
+    writer.WriteLine($"          OpenXmlElement.DeletePart(item);");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Add:");
+    writer.WriteLine($"        foreach (var val in args.NewItems)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"          if (val is {propItemTypeName}Impl valImpl)");
+    writer.WriteLine($"          {{");
+    writer.WriteLine($"            var item = valImpl.OpenXmlElement;");
+    writer.WriteLine($"            if (item != null)");
+    if (itemTypeName=="DataPart")
+      writer.WriteLine($"              OpenXmlElement.AddDataPartToList(item);");
+    else
+      writer.WriteLine($"              OpenXmlElement.AddPart(item);");
+    writer.WriteLine($"          }};");
+    writer.WriteLine($"        }}");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      case NotifyCollectionChangedAction.Remove:");
+    writer.WriteLine($"        foreach (var val in args.OldItems)");
+    writer.WriteLine($"        {{");
+    writer.WriteLine($"            if (val is {propItemTypeName}Impl valImpl)");
+    writer.WriteLine($"            {{");
+    if (itemTypeName=="DataPart")
+      writer.WriteLine($"                var oldItem = OpenXmlElement.DataParts");
+    else
+      writer.WriteLine($"                var oldItem = OpenXmlElement.GetPartsOfType<{origItemTypeName}>()");
+    writer.WriteLine($"                              .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);");
+    writer.WriteLine($"               if (oldItem != null)");
+    writer.WriteLine($"                  OpenXmlElement.DeletePart(oldItem);");
+    writer.WriteLine($"           }};");
+    writer.WriteLine($"        }}");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"      default:");
+    writer.WriteLine($"        break;");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"  }}");
+    writer.WriteLine($"}}");
+    writer.WriteLine();
+    AddGlobalUsing("System.Collections.Specialized");
+    return true;
+  }
   private bool GenerateElementCollectionField(PropInfo prop,
     TypeInfo propItemType,
    IndentedTextWriter writer)
@@ -1143,12 +1268,12 @@ public class ModelGenerator
     }
     else
     {
-      writer.WriteLine($"        if (val is {propItemTypeName}Impl valImpl)");
-      writer.WriteLine($"        {{");
-      writer.WriteLine($"          var item = valImpl.OpenXmlElement;");
-      writer.WriteLine($"          if (item != null)");
-      writer.WriteLine($"            OpenXmlElement.AddChild(item);");
-      writer.WriteLine($"        }};");
+      writer.WriteLine($"          if (val is {propItemTypeName}Impl valImpl)");
+      writer.WriteLine($"          {{");
+      writer.WriteLine($"            var item = valImpl.OpenXmlElement;");
+      writer.WriteLine($"            if (item != null)");
+      writer.WriteLine($"              OpenXmlElement.AddChild(item);");
+      writer.WriteLine($"          }};");
     }
     writer.WriteLine($"        }}");
     writer.WriteLine($"        break;");

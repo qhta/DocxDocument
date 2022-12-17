@@ -43,12 +43,12 @@ public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionL
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.Pie3DChartExtension> observableCollection)
@@ -73,12 +73,12 @@ public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionL
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

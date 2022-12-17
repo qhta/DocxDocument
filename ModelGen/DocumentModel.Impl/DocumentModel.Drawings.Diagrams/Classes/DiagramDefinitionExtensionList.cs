@@ -43,12 +43,12 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension> observableCollection)
@@ -73,12 +73,12 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
