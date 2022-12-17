@@ -43,12 +43,12 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.Charts.DataLabelFieldTableEntry> observableCollection)
@@ -73,12 +73,12 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

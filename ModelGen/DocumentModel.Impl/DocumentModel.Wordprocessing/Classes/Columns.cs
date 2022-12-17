@@ -95,12 +95,12 @@ public class ColumnsImpl: ModelElementImpl, Columns
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Wordprocessing.Column> observableCollection)
@@ -125,12 +125,12 @@ public class ColumnsImpl: ModelElementImpl, Columns
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

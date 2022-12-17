@@ -43,12 +43,12 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DashStop>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Drawings.DashStopImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Drawings.DashStopImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Drawings.DashStop> observableCollection)
@@ -73,12 +73,12 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Drawings.DashStopImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Drawings.DashStopImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

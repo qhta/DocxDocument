@@ -43,12 +43,12 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.WebExtensions.WebExtensionProperty> observableCollection)
@@ -73,12 +73,12 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

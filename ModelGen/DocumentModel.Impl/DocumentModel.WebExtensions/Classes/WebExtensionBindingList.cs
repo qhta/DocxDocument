@@ -43,12 +43,12 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.WebExtensions.WebExtensionBinding> observableCollection)
@@ -73,12 +73,12 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:

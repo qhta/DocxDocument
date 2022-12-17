@@ -56,12 +56,12 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
         OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Entry>();
         foreach (var val in value)
         {
-        if (val is DocumentModel.Vml.EntryImpl valImpl)
-        {
-          var item = valImpl.OpenXmlElement;
-          if (item != null)
-            OpenXmlElement.AddChild(item);
-        };
+          if (val is DocumentModel.Vml.EntryImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
         }
       }
       if (value is ObservableCollection<DocumentModel.Vml.Entry> observableCollection)
@@ -86,12 +86,12 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
         case NotifyCollectionChangedAction.Add:
           foreach (var val in args.NewItems)
           {
-          if (val is DocumentModel.Vml.EntryImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddChild(item);
-          };
+            if (val is DocumentModel.Vml.EntryImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
           }
           break;
         case NotifyCollectionChangedAction.Remove:
