@@ -334,6 +334,7 @@ public static class ModelData
     "OpenXmlElementContext",
     "OpenXmlElementList",
     "OpenXmlSimpleType",
+    "OpenXmlPackage",
     //"OpenXml*",
   };
 

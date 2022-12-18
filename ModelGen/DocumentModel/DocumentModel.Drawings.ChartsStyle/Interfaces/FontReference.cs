@@ -13,7 +13,7 @@ public interface FontReference
   /// <summary>
   /// mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public List<System.String>? Modifiers { get ; set; }
+  public DocumentModel.ListOf<System.String>? Modifiers { get ; set; }
   
   public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
   

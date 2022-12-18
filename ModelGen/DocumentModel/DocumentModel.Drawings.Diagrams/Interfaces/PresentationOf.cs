@@ -8,32 +8,32 @@ public interface PresentationOf
   /// <summary>
   /// Axis
   /// </summary>
-  public List<DocumentModel.Drawings.Diagrams.AxisKind>? Axis { get ; set; }
+  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? Axis { get ; set; }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public List<DocumentModel.Drawings.Diagrams.ElementKind>? PointType { get ; set; }
+  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? PointType { get ; set; }
   
   /// <summary>
   /// Hide Last Transition
   /// </summary>
-  public List<System.Boolean>? HideLastTrans { get ; set; }
+  public DocumentModel.ListOf<System.Boolean>? HideLastTrans { get ; set; }
   
   /// <summary>
   /// Start
   /// </summary>
-  public List<System.Int32>? Start { get ; set; }
+  public DocumentModel.ListOf<System.Int32>? Start { get ; set; }
   
   /// <summary>
   /// Count
   /// </summary>
-  public List<System.UInt32>? Count { get ; set; }
+  public DocumentModel.ListOf<System.UInt32>? Count { get ; set; }
   
   /// <summary>
   /// Step
   /// </summary>
-  public List<System.Int32>? Step { get ; set; }
+  public DocumentModel.ListOf<System.Int32>? Step { get ; set; }
   
   /// <summary>
   /// ExtensionList.

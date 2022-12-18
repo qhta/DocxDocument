@@ -116,7 +116,7 @@ public static class ModelManager
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
-          sourceArgType = typeof(List<>).MakeGenericType(new Type[] { sourceArgType });
+          sourceArgType = typeof(DocumentModel.ListOf<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
           return true;
@@ -338,7 +338,7 @@ public static class ModelManager
     return true;
   }
 
-  private static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
+  public static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
   {
     var result = new List<TypeInfo>();
     var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTarget(true);

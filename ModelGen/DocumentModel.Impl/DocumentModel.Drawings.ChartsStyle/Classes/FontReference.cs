@@ -34,10 +34,24 @@ public class FontReferenceImpl: ModelElementImpl, FontReference
   /// <summary>
   /// mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public List<System.String>? Modifiers
+  public DocumentModel.ListOf<System.String>? Modifiers
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Modifiers != null)
+        return new DocumentModel.ListOf<System.String>(OpenXmlElement.Modifiers.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.Modifiers = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.StringValue>(value.Items.Select(item => new DocumentFormat.OpenXml.StringValue(item)));
+    else
+      OpenXmlElement.Modifiers = null;
+      }
+    }
   }
   
   public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage
