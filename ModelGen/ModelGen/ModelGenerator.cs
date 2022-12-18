@@ -2,6 +2,8 @@
 using System.Diagnostics;
 
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 using Namotion.Reflection;
 
@@ -360,6 +362,9 @@ public class ModelGenerator
       return GenerateValueTypeAccessors(prop, targetPropType, writer);
     if (targetPropType.IsValueOrStringType)
       return GenerateValueTypeAccessors(prop, targetPropType, writer);
+    if (targetPropType.Name.StartsWith("ListOf`"))
+      return GenerateListValuePropAccessors(prop, targetPropType, writer);
+
     if (targetPropType.Name.StartsWith("Collection`"))
     {
       propItemType = targetPropType.GetGenericArgTypes()?.FirstOrDefault();
@@ -431,42 +436,32 @@ public class ModelGenerator
   {
     if (prop.Name == "AlternativeFormatImportParts")
       Debug.Assert(true);
-    if (targetPropType.Name.StartsWith("Collection`"))
-      return GeneratePropAccessorsNotImplemented(writer);
+    //if (targetPropType.Name.StartsWith("Collection`"))
+    //  return GenerateNotImplementedPropAccessors(writer);
 
     if (prop.PropertyType.Name.StartsWith("IEnumerable`"))
-      return GeneratePropAccessorsNotImplemented(writer);
-
-    if (targetPropType.Name.StartsWith("List`"))
-      return GeneratePropAccessorsNotImplemented(writer);
+      return GenerateNotImplementedPropAccessors(writer);
 
     if (targetPropType.Name.StartsWith("Dictionary`"))
-      return GeneratePropAccessorsNotImplemented(writer);
+      return GenerateNotImplementedPropAccessors(writer);
 
     if (targetPropType.Name.EndsWith("Parts"))
-      return GeneratePropAccessorsNotImplemented(writer);
-
-    //var origPropBaseType = GetTypeWithBaseOf(prop.PropertyType.Type, typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafElement));
-    //if (origPropBaseType != null && origPropBaseType.HasProperty("Val") && targetPropType.Properties?.Count() == 1)
-    //  return GenerateIncludedValueElementPropAccessors(prop, targetPropType, writer);
-
-    //if (targetPropType.Name == "Base64BinaryValue" || targetPropType.Name == "HexBinaryValue")
-    //  return GenerateBinaryValueDirectPropAccessors(prop, targetPropType, writer);
+      return GenerateIncludedObjectElementPropAccessors(prop, targetPropType, writer);
 
     if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("Part"))
       return GenerateObjectComplexPropAccessors(prop, targetPropType, writer);
 
-    if (targetPropType.Name.EndsWith("Part"))
-      return GeneratePropAccessorsNotImplemented(writer);
+    //if (targetPropType.Name.EndsWith("Part"))
+    //  return GenerateAutoPropAccessors(writer);
 
     if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("Package"))
-      return GeneratePropAccessorsNotImplemented(writer);
+      return GenerateObjectComplexPropAccessors(prop, targetPropType, writer);
 
-    if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("PartContainer"))
-      return GeneratePropAccessorsNotImplemented(writer);
+    //if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("PartContainer"))
+    //  return GenerateNotImplementedPropAccessors(writer);
 
-    if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("Relationship"))
-      return GeneratePropAccessorsNotImplemented(writer);
+    //if (prop.DeclaringType != null && prop.DeclaringType.Name.EndsWith("Relationship"))
+    //  return GenerateNotImplementedPropAccessors(writer);
 
     return GenerateIncludedObjectElementPropAccessors(prop, targetPropType, writer);
   }
@@ -480,10 +475,16 @@ public class ModelGenerator
     return null;
   }
 
-  private bool GeneratePropAccessorsNotImplemented(IndentedTextWriter writer)
+  private bool GenerateNotImplementedPropAccessors(IndentedTextWriter writer)
   {
     writer.WriteLine($"  get => throw new NotImplementedException(\"Method not implemented\");");
     writer.WriteLine($"  set => throw new NotImplementedException(\"Method not implemented\");");
+    return true;
+  }
+
+  private bool GenerateAutoPropAccessors(IndentedTextWriter writer)
+  {
+    writer.WriteLine($"  get;set;");
     return true;
   }
 
@@ -712,6 +713,53 @@ public class ModelGenerator
     return true;
   }
 
+  private bool GenerateListValuePropAccessors(PropInfo prop,
+    TypeInfo targetPropType,
+    IndentedTextWriter writer)
+  {
+    var propName = prop.Name;
+    var propBaseType = prop.PropertyType.GetGenericArgTypes().First();
+    var targetPropBaseType = propBaseType.GetConversionTarget(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropBaseTypeName = propBaseType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName();
+    var origTargetTypeName = targetPropType.GetFullName(true);
+    var targetListBaseType = targetPropType.GetGenericArgTypes().First();
+    var origTargetListBaseTypeName = targetListBaseType.GetFullName(true);
+    string? castBaseTypeName = null;
+    var origPropBaseTypeNameName = origPropBaseTypeName.ToString();
+    int k = origPropBaseTypeNameName.IndexOf("Values");
+    if (k>0)
+    {
+      var i = origPropBaseTypeNameName.LastIndexOf('<', k);
+      var j = origPropBaseTypeNameName.IndexOf('>', k);
+      if (i>0 && j>0)
+        castBaseTypeName = origPropBaseTypeNameName.Substring(i+1, j-i-1);
+    }
+    writer.WriteLine($"  get");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if (OpenXmlElement?.{propName} != null)");
+    writer.WriteLine($"      return new {targetPropTypeName}(OpenXmlElement.{propName}.InnerText);");
+    writer.WriteLine($"    return null;");
+    writer.WriteLine($"  }}");
+    writer.WriteLine($"  set");
+    writer.WriteLine($"  {{");
+    writer.WriteLine($"    if (OpenXmlElement != null)");
+    writer.WriteLine($"    {{");
+    writer.WriteLine($"      if (value?.Items.Any() == true)");
+    if (castBaseTypeName!=null)
+      writer.WriteLine($"        OpenXmlElement.{propName} = new {origPropTypeName}" +
+                       $"(value.Items.Select(item => new {origPropBaseTypeName}(({castBaseTypeName})item)));");
+    else
+      writer.WriteLine($"        OpenXmlElement.{propName} = new {origPropTypeName}" +
+                       $"(value.Items.Select(item => new {origPropBaseTypeName}(item)));");
+    writer.WriteLine($"  else");
+    writer.WriteLine($"    OpenXmlElement.{propName} = null;");
+    writer.WriteLine($"    }}");
+    writer.WriteLine($"  }}");
+    return true;
+  }
+
   private bool GeneratePartRootPropAccessors(PropInfo prop,
   TypeInfo targetPropType,
   IndentedTextWriter writer)
@@ -768,13 +816,6 @@ public class ModelGenerator
     return true;
   }
 
-  private bool GeneratePartPropAccessors(PropInfo prop,
-    TypeInfo targetPropType,
-    IndentedTextWriter writer)
-  {
-    writer.WriteLine($"  get; set; ");
-    return true;
-  }
   private bool GenerateIncludedValueElementPropAccessors(PropInfo prop,
     TypeInfo targetPropType,
     IndentedTextWriter writer)
