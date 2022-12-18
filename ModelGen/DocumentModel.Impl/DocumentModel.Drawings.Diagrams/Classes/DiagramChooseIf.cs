@@ -34,55 +34,139 @@ public class DiagramChooseIfImpl: ModelElementImpl, DiagramChooseIf
   /// <summary>
   /// Axis
   /// </summary>
-  public List<DocumentModel.Drawings.Diagrams.AxisKind>? Axis
+  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? Axis
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Axis != null)
+        return new DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>(OpenXmlElement.Axis.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.Axis = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues>>(value.Items.Select(item => new DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues>((DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues)item)));
+    else
+      OpenXmlElement.Axis = null;
+      }
+    }
   }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public List<DocumentModel.Drawings.Diagrams.ElementKind>? PointType
+  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? PointType
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.PointType != null)
+        return new DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>(OpenXmlElement.PointType.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.PointType = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues>>(value.Items.Select(item => new DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues>((DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues)item)));
+    else
+      OpenXmlElement.PointType = null;
+      }
+    }
   }
   
   /// <summary>
   /// Hide Last Transition
   /// </summary>
-  public List<System.Boolean>? HideLastTrans
+  public DocumentModel.ListOf<System.Boolean>? HideLastTrans
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.HideLastTrans != null)
+        return new DocumentModel.ListOf<System.Boolean>(OpenXmlElement.HideLastTrans.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.HideLastTrans = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.BooleanValue>(value.Items.Select(item => new DocumentFormat.OpenXml.BooleanValue(item)));
+    else
+      OpenXmlElement.HideLastTrans = null;
+      }
+    }
   }
   
   /// <summary>
   /// Start
   /// </summary>
-  public List<System.Int32>? Start
+  public DocumentModel.ListOf<System.Int32>? Start
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Start != null)
+        return new DocumentModel.ListOf<System.Int32>(OpenXmlElement.Start.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.Start = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.Int32Value>(value.Items.Select(item => new DocumentFormat.OpenXml.Int32Value(item)));
+    else
+      OpenXmlElement.Start = null;
+      }
+    }
   }
   
   /// <summary>
   /// Count
   /// </summary>
-  public List<System.UInt32>? Count
+  public DocumentModel.ListOf<System.UInt32>? Count
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Count != null)
+        return new DocumentModel.ListOf<System.UInt32>(OpenXmlElement.Count.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.Count = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.UInt32Value>(value.Items.Select(item => new DocumentFormat.OpenXml.UInt32Value(item)));
+    else
+      OpenXmlElement.Count = null;
+      }
+    }
   }
   
   /// <summary>
   /// Step
   /// </summary>
-  public List<System.Int32>? Step
+  public DocumentModel.ListOf<System.Int32>? Step
   {
-    get => throw new NotImplementedException("Method not implemented");
-    set => throw new NotImplementedException("Method not implemented");
+    get
+    {
+      if (OpenXmlElement?.Step != null)
+        return new DocumentModel.ListOf<System.Int32>(OpenXmlElement.Step.InnerText);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        if (value?.Items.Any() == true)
+          OpenXmlElement.Step = new DocumentFormat.OpenXml.ListValue<DocumentFormat.OpenXml.Int32Value>(value.Items.Select(item => new DocumentFormat.OpenXml.Int32Value(item)));
+    else
+      OpenXmlElement.Step = null;
+      }
+    }
   }
   
   /// <summary>
