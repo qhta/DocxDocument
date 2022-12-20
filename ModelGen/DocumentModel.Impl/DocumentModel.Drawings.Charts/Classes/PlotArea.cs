@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PlotAreaImpl: ModelElementImpl, PlotArea
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PlotArea? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PlotArea?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PlotAreaImpl(): base() {}

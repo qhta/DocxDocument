@@ -5,11 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial interface Footer
 {
-  /// <summary>
-  /// Gets the FooterPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.FooterPart? FooterPart { get; set; }
-  
   public Collection<DocumentModel.Wordprocessing.AltChunk>? AltChunks { get; set; }
   
   public DocumentModel.Wordprocessing.CustomXmlBlock? CustomXmlBlock { get; set; }

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElement
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OpenXmlGridlinesElementImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TransformGroupImpl: ModelElementImpl, TransformGroup
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TransformGroup? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TransformGroup?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TransformGroupImpl(): base() {}

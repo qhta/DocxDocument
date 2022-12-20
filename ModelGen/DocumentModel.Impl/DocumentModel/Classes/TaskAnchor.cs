@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskAnchorImpl: ModelElementImpl, TaskAnchor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskAnchorImpl(): base() {}

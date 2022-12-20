@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SignatureLineImpl: ModelElementImpl, SignatureLine
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SignatureLineImpl(): base() {}

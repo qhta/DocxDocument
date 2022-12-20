@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Point2DTypeImpl: ModelElementImpl, Point2DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Point2DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Point2DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Point2DTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class GroupImpl: ModelElementImpl, Group
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Group? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Group?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupImpl(): base() {}

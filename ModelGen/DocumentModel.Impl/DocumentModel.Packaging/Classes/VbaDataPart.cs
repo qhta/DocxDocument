@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class VbaDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaDataPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.VbaDataPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.VbaDataPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VbaDataPartImpl(): base() {}

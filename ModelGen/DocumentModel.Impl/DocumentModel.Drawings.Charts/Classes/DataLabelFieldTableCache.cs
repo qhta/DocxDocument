@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataLabelFieldTableCacheImpl: DocumentModel.Drawings.Charts.StringDataType3Impl, DataLabelFieldTableCache
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataLabelFieldTableCacheImpl(): base() {}
@@ -57,7 +58,7 @@ public partial class DataLabelFieldTableCacheImpl: DocumentModel.Drawings.Charts
   {
     get
     {
-      if (_StringPoints != null)
+      if (_StringPoints == null)
       {
         if (OpenXmlElement != null)
         {

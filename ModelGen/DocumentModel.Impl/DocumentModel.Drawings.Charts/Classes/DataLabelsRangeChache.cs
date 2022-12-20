@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataLabelsRangeChacheImpl: DocumentModel.Drawings.Charts.StringDataType3Impl, DataLabelsRangeChache
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataLabelsRangeChacheImpl(): base() {}
@@ -57,7 +58,7 @@ public partial class DataLabelsRangeChacheImpl: DocumentModel.Drawings.Charts.St
   {
     get
     {
-      if (_StringPoints != null)
+      if (_StringPoints == null)
       {
         if (OpenXmlElement != null)
         {

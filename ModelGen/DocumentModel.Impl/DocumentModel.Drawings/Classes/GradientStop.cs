@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GradientStopImpl: ModelElementImpl, GradientStop
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.GradientStop? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.GradientStop?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GradientStopImpl(): base() {}

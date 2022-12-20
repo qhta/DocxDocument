@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class OpenXmlFormulaElementImpl: ModelElementImpl, OpenXmlFormulaElement
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OpenXmlFormulaElementImpl(): base() {}

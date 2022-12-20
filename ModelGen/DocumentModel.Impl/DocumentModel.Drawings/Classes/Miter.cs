@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MiterImpl: ModelElementImpl, Miter
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Miter? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Miter?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MiterImpl(): base() {}

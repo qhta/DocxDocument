@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ListItemImpl: ModelElementImpl, ListItem
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ListItem? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ListItem?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ListItemImpl(): base() {}

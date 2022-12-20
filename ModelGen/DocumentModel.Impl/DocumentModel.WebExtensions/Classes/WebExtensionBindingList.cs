@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionBindingListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class WebExtensionBindingListImpl: ModelElementImpl, WebExtension
   {
     get
     {
-      if (_WebExtensionBindings != null)
+      if (_WebExtensionBindings == null)
       {
         if (OpenXmlElement != null)
         {

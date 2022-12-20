@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptionInfo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LatentStyleExceptionInfoImpl(): base() {}

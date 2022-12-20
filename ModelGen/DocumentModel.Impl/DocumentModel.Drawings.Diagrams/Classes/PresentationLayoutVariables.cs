@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PresentationLayoutVariablesImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, PresentationLayoutVariables
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresentationLayoutVariablesImpl(): base() {}

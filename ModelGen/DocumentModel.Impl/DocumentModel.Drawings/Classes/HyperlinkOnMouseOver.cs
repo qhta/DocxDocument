@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkOnMouseOverImpl: DocumentModel.Drawings.HyperlinkTypeImpl, HyperlinkOnMouseOver
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkOnMouseOverImpl(): base() {}

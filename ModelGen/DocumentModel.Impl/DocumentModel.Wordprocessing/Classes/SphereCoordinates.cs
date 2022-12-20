@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SphereCoordinatesImpl(): base() {}

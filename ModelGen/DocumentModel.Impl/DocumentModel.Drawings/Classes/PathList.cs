@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PathListImpl: ModelElementImpl, PathList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PathList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PathList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PathListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class PathListImpl: ModelElementImpl, PathList
   {
     get
     {
-      if (_Paths != null)
+      if (_Paths == null)
       {
         if (OpenXmlElement != null)
         {

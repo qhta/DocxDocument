@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class DataModelRootImpl: ModelElementImpl, DataModelRoot
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataModelRootImpl(): base() {}
@@ -175,26 +176,6 @@ public partial class DataModelRootImpl: ModelElementImpl, DataModelRoot
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the DiagramDataPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramDataPart? DiagramDataPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DiagramDataPart != null)
-        return new DocumentModel.Packaging.DiagramDataPartImpl(OpenXmlElement.DiagramDataPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DiagramDataPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

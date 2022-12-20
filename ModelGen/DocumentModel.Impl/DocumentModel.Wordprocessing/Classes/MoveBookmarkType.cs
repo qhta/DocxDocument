@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MoveBookmarkTypeImpl(): base() {}

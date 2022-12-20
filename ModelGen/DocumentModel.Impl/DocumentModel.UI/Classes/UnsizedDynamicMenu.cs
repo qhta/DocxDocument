@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class UnsizedDynamicMenuImpl: ModelElementImpl, UnsizedDynamicMenu
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnsizedDynamicMenuImpl(): base() {}

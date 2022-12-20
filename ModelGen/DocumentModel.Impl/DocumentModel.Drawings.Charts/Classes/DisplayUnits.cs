@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DisplayUnitsImpl(): base() {}

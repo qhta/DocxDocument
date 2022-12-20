@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TemplateCommandGroupImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommand
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the CustomizationPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.CustomizationPart? CustomizationPart
-  {
-    get
-    {
-      if (OpenXmlElement?.CustomizationPart != null)
-        return new DocumentModel.Packaging.CustomizationPartImpl(OpenXmlElement.CustomizationPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.CustomizationPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.KeyMapCustomizations>? KeyMapCustomizationses
   {
     get
     {
-      if (_KeyMapCustomizationses != null)
+      if (_KeyMapCustomizationses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -126,7 +107,7 @@ public partial class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommand
   {
     get
     {
-      if (_MismatchedKeyMapCustomizations != null)
+      if (_MismatchedKeyMapCustomizations == null)
       {
         if (OpenXmlElement != null)
         {
@@ -239,7 +220,7 @@ public partial class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommand
   {
     get
     {
-      if (_AllocatedCommandses != null)
+      if (_AllocatedCommandses == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlCellImpl: DocumentModel.Wordprocessing.CustomXmlElementImpl, CustomXmlCell
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.CustomXmlCell? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlCell?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlCellImpl(): base() {}
@@ -51,7 +52,7 @@ public partial class CustomXmlCellImpl: DocumentModel.Wordprocessing.CustomXmlEl
   {
     get
     {
-      if (_TableCells != null)
+      if (_TableCells == null)
       {
         if (OpenXmlElement != null)
         {
@@ -976,7 +977,7 @@ public partial class CustomXmlCellImpl: DocumentModel.Wordprocessing.CustomXmlEl
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ExtraColorScheme? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ExtraColorScheme?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtraColorSchemeImpl(): base() {}

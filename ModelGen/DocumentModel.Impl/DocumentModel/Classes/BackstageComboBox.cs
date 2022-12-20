@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageComboBoxImpl: ModelElementImpl, BackstageComboBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstageComboBoxImpl(): base() {}
@@ -269,7 +270,7 @@ public partial class BackstageComboBoxImpl: ModelElementImpl, BackstageComboBox
   {
     get
     {
-      if (_ItemBackstageItems != null)
+      if (_ItemBackstageItems == null)
       {
         if (OpenXmlElement != null)
         {

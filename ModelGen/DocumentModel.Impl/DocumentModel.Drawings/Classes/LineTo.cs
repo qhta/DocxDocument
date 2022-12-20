@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineToImpl: ModelElementImpl, LineTo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LineTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineToImpl(): base() {}

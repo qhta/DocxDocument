@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class InnerShadowImpl: ModelElementImpl, InnerShadow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.InnerShadow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.InnerShadow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public InnerShadowImpl(): base() {}

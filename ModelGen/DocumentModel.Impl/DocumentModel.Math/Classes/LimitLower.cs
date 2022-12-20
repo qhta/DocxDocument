@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitLowerImpl: ModelElementImpl, LimitLower
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.LimitLower? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.LimitLower?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LimitLowerImpl(): base() {}

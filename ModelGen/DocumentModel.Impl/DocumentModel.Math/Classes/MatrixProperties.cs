@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixPropertiesImpl: ModelElementImpl, MatrixProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.MatrixProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.MatrixProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MatrixPropertiesImpl(): base() {}

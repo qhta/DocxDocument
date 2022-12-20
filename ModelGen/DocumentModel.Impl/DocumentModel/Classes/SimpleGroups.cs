@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class SimpleGroupsImpl: ModelElementImpl, SimpleGroups
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SimpleGroupsImpl(): base() {}

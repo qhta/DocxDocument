@@ -5,10 +5,11 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public partial class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SchemaReferencesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

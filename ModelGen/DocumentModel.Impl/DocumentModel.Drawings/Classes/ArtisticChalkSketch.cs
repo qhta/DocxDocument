@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArtisticChalkSketchImpl(): base() {}

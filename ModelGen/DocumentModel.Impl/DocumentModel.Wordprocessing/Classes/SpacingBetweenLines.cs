@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SpacingBetweenLinesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveTo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QuadraticBezierCurveToImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezi
   {
     get
     {
-      if (_Points != null)
+      if (_Points == null)
       {
         if (OpenXmlElement != null)
         {

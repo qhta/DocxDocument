@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class StyleImpl: ModelElementImpl, Style
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Style? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Style?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleImpl(): base() {}

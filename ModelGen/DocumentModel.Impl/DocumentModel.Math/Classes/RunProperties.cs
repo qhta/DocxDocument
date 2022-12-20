@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class RunPropertiesImpl: ModelElementImpl, RunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.RunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.RunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunPropertiesImpl(): base() {}

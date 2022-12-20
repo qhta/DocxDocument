@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class IndentationImpl: ModelElementImpl, Indentation
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Indentation? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Indentation?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public IndentationImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentComboBoxImpl: ModelElementImpl, SdtContentComboBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentComboBoxImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class SdtContentComboBoxImpl: ModelElementImpl, SdtContentComboBo
   {
     get
     {
-      if (_ListItems != null)
+      if (_ListItems == null)
       {
         if (OpenXmlElement != null)
         {

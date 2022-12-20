@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CheckBoxImpl: ModelElementImpl, CheckBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.CheckBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CheckBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CheckBoxImpl(): base() {}

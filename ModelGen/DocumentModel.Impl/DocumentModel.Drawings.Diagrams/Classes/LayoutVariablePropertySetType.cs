@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class LayoutVariablePropertySetTypeImpl: ModelElementImpl, LayoutVariablePropertySetType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LayoutVariablePropertySetTypeImpl(): base() {}

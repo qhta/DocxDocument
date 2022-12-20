@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionReferenceList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionReferenceListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensi
   {
     get
     {
-      if (_WebExtensionStoreReferences != null)
+      if (_WebExtensionStoreReferences == null)
       {
         if (OpenXmlElement != null)
         {

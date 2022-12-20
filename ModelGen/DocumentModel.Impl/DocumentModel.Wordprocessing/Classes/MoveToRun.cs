@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveToRunImpl: DocumentModel.Wordprocessing.RunTrackChangeTypeImpl, MoveToRun
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.MoveToRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.MoveToRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MoveToRunImpl(): base() {}
@@ -834,7 +835,7 @@ public partial class MoveToRunImpl: DocumentModel.Wordprocessing.RunTrackChangeT
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

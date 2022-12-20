@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl, NonVisualGroupDrawingShapePropsExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualGroupDrawingShapePropsExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElem
   {
     get
     {
-      if (_NonVisualGroupDrawingShapePropsExtensions != null)
+      if (_NonVisualGroupDrawingShapePropsExtensions == null)
       {
         if (OpenXmlElement != null)
         {

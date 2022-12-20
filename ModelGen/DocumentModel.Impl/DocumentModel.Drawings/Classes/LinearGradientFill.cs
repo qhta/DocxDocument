@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LinearGradientFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LinearGradientFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LinearGradientFillImpl(): base() {}

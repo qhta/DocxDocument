@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ColorMapOverrideImpl: ModelElementImpl, ColorMapOverride
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorMapOverrideImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PlusImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Plus
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.Plus? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Plus?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PlusImpl(): base() {}

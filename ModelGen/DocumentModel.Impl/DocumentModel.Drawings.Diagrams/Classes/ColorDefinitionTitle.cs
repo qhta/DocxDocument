@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorDefinitionTitleImpl: ModelElementImpl, ColorDefinitionTitle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorDefinitionTitleImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// </summary>
 public partial class OEmbedImpl: ModelElementImpl, OEmbed
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OEmbedImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class CommandsImpl: ModelElementImpl, Commands
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.Commands? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.Commands?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommandsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CommandsImpl: ModelElementImpl, Commands
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

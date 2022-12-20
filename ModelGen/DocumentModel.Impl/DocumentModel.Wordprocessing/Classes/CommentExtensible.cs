@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentExtensibleImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ContextualTabsImpl: ModelElementImpl, ContextualTabs
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ContextualTabsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ContextualTabsImpl: ModelElementImpl, ContextualTabs
   {
     get
     {
-      if (_TabSets != null)
+      if (_TabSets == null)
       {
         if (OpenXmlElement != null)
         {

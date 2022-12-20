@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringReferenceImpl: ModelElementImpl, StringReference
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StringReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StringReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringReferenceImpl(): base() {}

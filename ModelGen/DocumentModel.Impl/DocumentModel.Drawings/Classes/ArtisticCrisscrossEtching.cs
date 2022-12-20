@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticCrisscrossEtchingImpl: ModelElementImpl, ArtisticCrisscrossEtching
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArtisticCrisscrossEtchingImpl(): base() {}

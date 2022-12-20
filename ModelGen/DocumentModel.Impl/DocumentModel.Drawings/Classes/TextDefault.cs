@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TextDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, TextDefault
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.TextDefault? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TextDefault?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextDefaultImpl(): base() {}

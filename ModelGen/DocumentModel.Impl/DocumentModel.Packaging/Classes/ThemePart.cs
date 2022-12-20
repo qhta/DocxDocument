@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ThemePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThemePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ThemePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ThemePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemePartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class ThemePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, The
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

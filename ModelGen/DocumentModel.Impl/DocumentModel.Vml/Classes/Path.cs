@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class PathImpl: ModelElementImpl, Path
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Path? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Path?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PathImpl(): base() {}

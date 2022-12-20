@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BarSerExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionL
   {
     get
     {
-      if (_BarSerExtensions != null)
+      if (_BarSerExtensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.ParagraphProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.ParagraphProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphPropertiesImpl(): base() {}

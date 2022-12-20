@@ -35,9 +35,4 @@ public partial interface CustomUI
   /// </summary>
   public DocumentModel.ContextMenus? ContextMenus { get; set; }
   
-  /// <summary>
-  /// Gets the RibbonAndBackstageCustomizationsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? RibbonAndBackstageCustomizationsPart { get; set; }
-  
 }

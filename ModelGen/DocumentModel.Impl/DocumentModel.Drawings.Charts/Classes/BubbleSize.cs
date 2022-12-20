@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BubbleSizeImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, BubbleSize
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.BubbleSize? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BubbleSize?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BubbleSizeImpl(): base() {}

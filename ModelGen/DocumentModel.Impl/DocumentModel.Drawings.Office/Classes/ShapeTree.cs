@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class ShapeTreeImpl: DocumentModel.Drawings.Office.GroupShapeTypeImpl, ShapeTree
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office.Drawing.ShapeTree? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.ShapeTree?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeTreeImpl(): base() {}

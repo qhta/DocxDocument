@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class StyleLabelDescriptionImpl: ModelElementImpl, StyleLabelDescription
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleLabelDescriptionImpl(): base() {}

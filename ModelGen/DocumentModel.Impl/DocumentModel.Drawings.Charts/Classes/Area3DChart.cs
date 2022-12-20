@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Area3DChartImpl: ModelElementImpl, Area3DChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Area3DChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Area3DChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Area3DChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class Area3DChartImpl: ModelElementImpl, Area3DChart
   {
     get
     {
-      if (_AreaChartSerieses != null)
+      if (_AreaChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -261,7 +262,7 @@ public partial class Area3DChartImpl: ModelElementImpl, Area3DChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

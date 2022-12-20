@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ParagraphImpl: ModelElementImpl, Paragraph
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Paragraph? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Paragraph?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphImpl(): base() {}

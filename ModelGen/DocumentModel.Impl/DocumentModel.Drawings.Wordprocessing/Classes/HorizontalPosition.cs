@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HorizontalPositionImpl(): base() {}

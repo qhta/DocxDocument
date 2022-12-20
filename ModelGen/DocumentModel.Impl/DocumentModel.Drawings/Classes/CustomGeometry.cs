@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomGeometryImpl: ModelElementImpl, CustomGeometry
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.CustomGeometry? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.CustomGeometry?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomGeometryImpl(): base() {}

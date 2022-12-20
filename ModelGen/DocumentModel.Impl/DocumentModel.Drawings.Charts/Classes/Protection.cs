@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ProtectionImpl: ModelElementImpl, Protection
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Protection? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Protection?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ProtectionImpl(): base() {}

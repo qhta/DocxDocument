@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class NaryPropertiesImpl: ModelElementImpl, NaryProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.NaryProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.NaryProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NaryPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ValAxExtensionImpl(): base() {}

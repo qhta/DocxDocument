@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class WholeImpl: ModelElementImpl, Whole
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Whole? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Whole?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WholeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousTableGridImpl: ModelElementImpl, PreviousTableGrid
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreviousTableGridImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class PreviousTableGridImpl: ModelElementImpl, PreviousTableGrid
   {
     get
     {
-      if (_GridColumns != null)
+      if (_GridColumns == null)
       {
         if (OpenXmlElement != null)
         {

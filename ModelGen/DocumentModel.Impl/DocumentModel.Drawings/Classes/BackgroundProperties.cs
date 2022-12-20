@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundPropertiesImpl: ModelElementImpl, BackgroundProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundPropertiesImpl(): base() {}

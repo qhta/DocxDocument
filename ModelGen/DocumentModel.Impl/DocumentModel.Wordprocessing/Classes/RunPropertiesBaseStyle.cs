@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunPropertiesBaseStyleImpl: ModelElementImpl, RunPropertiesBaseStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunPropertiesBaseStyleImpl(): base() {}

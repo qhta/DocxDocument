@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundBlurPropertiesImpl: ModelElementImpl, BackgroundBlurProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundBlurProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundBlurProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundBlurPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class PolyLineImpl: ModelElementImpl, PolyLine
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.PolyLine? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.PolyLine?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PolyLineImpl(): base() {}

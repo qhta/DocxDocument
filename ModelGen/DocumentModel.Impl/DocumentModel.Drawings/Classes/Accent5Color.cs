@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Accent5ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent5Color
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Accent5Color? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Accent5Color?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Accent5ColorImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class FilteredRadarSeriesImpl: ModelElementImpl, FilteredRadarSeries
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FilteredRadarSeriesImpl(): base() {}

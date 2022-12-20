@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LightRigImpl: ModelElementImpl, LightRig
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.LightRig? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.LightRig?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LightRigImpl(): base() {}

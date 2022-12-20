@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramStylePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DiagramStylePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DiagramStylePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramStylePartImpl(): base() {}

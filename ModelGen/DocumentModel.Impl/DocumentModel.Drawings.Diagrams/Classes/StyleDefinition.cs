@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleDefinitionImpl(): base() {}
@@ -44,31 +45,11 @@ public partial class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
     }
   }
   
-  /// <summary>
-  /// Gets the DiagramStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramStylePart? DiagramStylePart
-  {
-    get
-    {
-      if (OpenXmlElement?.DiagramStylePart != null)
-        return new DocumentModel.Packaging.DiagramStylePartImpl(OpenXmlElement.DiagramStylePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DiagramStylePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle>? StyleDefinitionTitles
   {
     get
     {
-      if (_StyleDefinitionTitles != null)
+      if (_StyleDefinitionTitles == null)
       {
         if (OpenXmlElement != null)
         {
@@ -152,7 +133,7 @@ public partial class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
   {
     get
     {
-      if (_StyleLabelDescriptions != null)
+      if (_StyleLabelDescriptions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ExtensionImpl: ModelElementImpl, Extension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtensionImpl(): base() {}

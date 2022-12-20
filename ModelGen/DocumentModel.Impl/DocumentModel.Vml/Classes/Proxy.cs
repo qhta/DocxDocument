@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ProxyImpl: ModelElementImpl, Proxy
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Proxy? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Proxy?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ProxyImpl(): base() {}

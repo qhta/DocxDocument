@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ClassificationExtensionListImpl: ModelElementImpl, ClassificationExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ClassificationExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ClassificationExtensionListImpl: ModelElementImpl, Classifi
   {
     get
     {
-      if (_ClassificationExtensions != null)
+      if (_ClassificationExtensions == null)
       {
         if (OpenXmlElement != null)
         {

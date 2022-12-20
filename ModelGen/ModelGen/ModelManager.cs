@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using DocumentFormat.OpenXml;
 
 using Namotion.Reflection;
+using Qhta.TypeUtils;
 
 namespace ModelGen;
 
@@ -316,14 +317,23 @@ public static class ModelManager
 
     //  }
     //}
-    if (!CheckPropertyOverrides(typeInfo))
+    if (!ValidateProperties(typeInfo))
       isValid = false;
     return isValid;
   }
 
-  public static bool CheckPropertyOverrides(this TypeInfo typeInfo)
+  public static bool ValidateProperties(this TypeInfo typeInfo)
   {
     var isValid = true;
+    if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.OpenXmlPartRootElement)))
+    {
+      var partProperty = typeInfo.Properties?.FirstOrDefault(item => item.Name.EndsWith("Part"));
+      if (partProperty != null)
+      {
+        partProperty.IsAccepted = false;
+        isValid = false;
+      }
+    }
     var baseTypes = typeInfo.GetBaseTypes();
     foreach (var baseType in baseTypes)
     {

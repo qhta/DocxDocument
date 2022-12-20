@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SimpleFieldImpl: ModelElementImpl, SimpleField
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SimpleField? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SimpleField?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SimpleFieldImpl(): base() {}
@@ -116,7 +117,7 @@ public partial class SimpleFieldImpl: ModelElementImpl, SimpleField
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1041,7 +1042,7 @@ public partial class SimpleFieldImpl: ModelElementImpl, SimpleField
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

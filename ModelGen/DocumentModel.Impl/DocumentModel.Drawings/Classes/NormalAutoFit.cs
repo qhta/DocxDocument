@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.NormalAutoFit? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.NormalAutoFit?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NormalAutoFitImpl(): base() {}

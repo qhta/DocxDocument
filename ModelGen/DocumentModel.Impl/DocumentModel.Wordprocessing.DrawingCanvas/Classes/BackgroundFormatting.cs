@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// </summary>
 public partial class BackgroundFormattingImpl: ModelElementImpl, BackgroundFormatting
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas.BackgroundFormatting? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas.BackgroundFormatting?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundFormattingImpl(): base() {}

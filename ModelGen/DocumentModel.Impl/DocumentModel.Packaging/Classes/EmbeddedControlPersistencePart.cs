@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EmbeddedControlPersistencePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EmbeddedControlPersistencePartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging
   {
     get
     {
-      if (_EmbeddedControlPersistenceBinaryDataParts != null)
+      if (_EmbeddedControlPersistenceBinaryDataParts == null)
       {
         if (OpenXmlElement != null)
         {

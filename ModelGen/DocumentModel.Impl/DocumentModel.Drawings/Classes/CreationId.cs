@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CreationIdImpl: ModelElementImpl, CreationId
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.CreationId? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.CreationId?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CreationIdImpl(): base() {}

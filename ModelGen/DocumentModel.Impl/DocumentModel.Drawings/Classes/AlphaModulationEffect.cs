@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaModulationEffectImpl: ModelElementImpl, AlphaModulationEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaModulationEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaModulationEffectImpl(): base() {}

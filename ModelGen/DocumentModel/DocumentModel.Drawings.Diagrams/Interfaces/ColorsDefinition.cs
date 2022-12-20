@@ -15,11 +15,6 @@ public partial interface ColorsDefinition
   /// </summary>
   public String? MinVersion { get; set; }
   
-  /// <summary>
-  /// Gets the DiagramColorsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramColorsPart? DiagramColorsPart { get; set; }
-  
   public Collection<DocumentModel.Drawings.Diagrams.ColorDefinitionTitle>? ColorDefinitionTitles { get; set; }
   
   public Collection<DocumentModel.Drawings.Diagrams.ColorTransformDescription>? ColorTransformDescriptions { get; set; }

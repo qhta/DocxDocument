@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PathGradientFillImpl: ModelElementImpl, PathGradientFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PathGradientFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PathGradientFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PathGradientFillImpl(): base() {}

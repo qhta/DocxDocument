@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionPropertyImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class FillExtendedPropertiesImpl: ModelElementImpl, FillExtendedProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillExtendedPropertiesImpl(): base() {}

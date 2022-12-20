@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class SplitButtonImpl: ModelElementImpl, SplitButton
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.SplitButton? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.SplitButton?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SplitButtonImpl(): base() {}

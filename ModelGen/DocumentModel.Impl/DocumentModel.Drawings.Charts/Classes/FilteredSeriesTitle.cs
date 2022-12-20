@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class FilteredSeriesTitleImpl: ModelElementImpl, FilteredSeriesTitle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FilteredSeriesTitleImpl(): base() {}

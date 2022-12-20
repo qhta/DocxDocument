@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class BackgroundImpl: ModelElementImpl, Background
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Background? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Background?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundImpl(): base() {}

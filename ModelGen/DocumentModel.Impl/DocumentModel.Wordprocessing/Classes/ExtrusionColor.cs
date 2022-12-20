@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ExtrusionColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ExtrusionColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtrusionColorImpl(): base() {}

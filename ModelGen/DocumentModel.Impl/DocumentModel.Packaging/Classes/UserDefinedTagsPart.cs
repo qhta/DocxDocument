@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class UserDefinedTagsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, UserDefinedTagsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UserDefinedTagsPartImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class BlipFillImpl: ModelElementImpl, BlipFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BlipFillImpl(): base() {}

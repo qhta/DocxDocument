@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ClassificationOutcomeImpl: ModelElementImpl, ClassificationOutcome
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ClassificationOutcomeImpl(): base() {}

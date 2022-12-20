@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ConnectionSiteList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ConnectionSiteList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConnectionSiteListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteLis
   {
     get
     {
-      if (_ConnectionSites != null)
+      if (_ConnectionSites == null)
       {
         if (OpenXmlElement != null)
         {

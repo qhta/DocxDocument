@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RotationImpl: ModelElementImpl, Rotation
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Rotation? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Rotation?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RotationImpl(): base() {}

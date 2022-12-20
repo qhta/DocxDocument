@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ImageLayerImpl: ModelElementImpl, ImageLayer
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ImageLayerImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class ImageLayerImpl: ModelElementImpl, ImageLayer
   {
     get
     {
-      if (_ImageEffects != null)
+      if (_ImageEffects == null)
       {
         if (OpenXmlElement != null)
         {

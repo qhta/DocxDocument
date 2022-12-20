@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkImpl: DocumentModel.Drawings.Color2TypeImpl, Hyperlink
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Hyperlink? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Hyperlink?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkImpl(): base() {}

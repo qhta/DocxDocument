@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsIdsImpl: ModelElementImpl, CommentsIds
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentsIdsImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class CommentsIdsImpl: ModelElementImpl, CommentsIds
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WordprocessingCommentsIdsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WordprocessingCommentsIdsPart? WordprocessingCommentsIdsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WordprocessingCommentsIdsPart != null)
-        return new DocumentModel.Packaging.WordprocessingCommentsIdsPartImpl(OpenXmlElement.WordprocessingCommentsIdsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WordprocessingCommentsIdsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.CommentId>? CommentIds
   {
     get
     {
-      if (_CommentIds != null)
+      if (_CommentIds == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RegroupTableImpl: ModelElementImpl, RegroupTable
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.RegroupTable? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.RegroupTable?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RegroupTableImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class RegroupTableImpl: ModelElementImpl, RegroupTable
   {
     get
     {
-      if (_Entries != null)
+      if (_Entries == null)
       {
         if (OpenXmlElement != null)
         {

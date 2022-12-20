@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlRunImpl: DocumentModel.Wordprocessing.CustomXmlElementImpl, CustomXmlRun
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.CustomXmlRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlRunImpl(): base() {}
@@ -80,7 +81,7 @@ public partial class CustomXmlRunImpl: DocumentModel.Wordprocessing.CustomXmlEle
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1005,7 +1006,7 @@ public partial class CustomXmlRunImpl: DocumentModel.Wordprocessing.CustomXmlEle
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

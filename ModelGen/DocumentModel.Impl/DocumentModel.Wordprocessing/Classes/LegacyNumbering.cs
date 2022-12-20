@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LegacyNumberingImpl(): base() {}

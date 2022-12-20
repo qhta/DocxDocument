@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class LayoutContainerImpl: ModelElementImpl, LayoutContainer
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LayoutContainerImpl(): base() {}

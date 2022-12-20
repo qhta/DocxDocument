@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class LegendStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LegendStyle
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LegendStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LegendStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LegendStyleImpl(): base() {}

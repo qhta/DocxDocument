@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, LineDefault
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.LineDefault? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineDefault?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineDefaultImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SectionPropertiesChangeImpl: ModelElementImpl, SectionPropertiesChange
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SectionPropertiesChangeImpl(): base() {}

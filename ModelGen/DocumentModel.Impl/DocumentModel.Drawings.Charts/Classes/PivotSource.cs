@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PivotSourceImpl: ModelElementImpl, PivotSource
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PivotSource? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PivotSource?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PivotSourceImpl(): base() {}

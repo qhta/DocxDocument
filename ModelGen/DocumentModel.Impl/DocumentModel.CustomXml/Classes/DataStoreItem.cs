@@ -5,10 +5,11 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public partial class DataStoreItemImpl: ModelElementImpl, DataStoreItem
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataStoreItemImpl(): base() {}
@@ -60,26 +61,6 @@ public partial class DataStoreItemImpl: ModelElementImpl, DataStoreItem
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the CustomXmlPropertiesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.CustomXmlPropertiesPart? CustomXmlPropertiesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.CustomXmlPropertiesPart != null)
-        return new DocumentModel.Packaging.CustomXmlPropertiesPartImpl(OpenXmlElement.CustomXmlPropertiesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.CustomXmlPropertiesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

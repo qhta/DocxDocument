@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OfficeArtExtensionList2Impl: ModelElementImpl, OfficeArtExtensionList2
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfficeArtExtensionList2Impl(): base() {}
@@ -22,7 +23,7 @@ public partial class OfficeArtExtensionList2Impl: ModelElementImpl, OfficeArtExt
   {
     get
     {
-      if (_Extensions != null)
+      if (_Extensions == null)
       {
         if (OpenXmlElement != null)
         {

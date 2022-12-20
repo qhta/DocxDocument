@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticGlowDiffusedImpl: ModelElementImpl, ArtisticGlowDiffused
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArtisticGlowDiffusedImpl(): base() {}

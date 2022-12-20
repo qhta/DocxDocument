@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class LeaderLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LeaderLine
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LeaderLine? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LeaderLine?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LeaderLineImpl(): base() {}

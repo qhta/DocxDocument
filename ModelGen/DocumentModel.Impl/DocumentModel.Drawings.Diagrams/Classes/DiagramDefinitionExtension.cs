@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class DiagramDefinitionExtensionImpl: ModelElementImpl, DiagramDefinitionExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramDefinitionExtensionImpl(): base() {}

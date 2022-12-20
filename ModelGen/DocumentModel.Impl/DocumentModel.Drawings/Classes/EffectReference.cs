@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EffectReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, EffectReference
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.EffectReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.EffectReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EffectReferenceImpl(): base() {}

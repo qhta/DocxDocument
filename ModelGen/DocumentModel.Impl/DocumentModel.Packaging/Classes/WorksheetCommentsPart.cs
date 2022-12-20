@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetCommentsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WorksheetCommentsPartImpl(): base() {}

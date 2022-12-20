@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class TransformImpl: ModelElementImpl, Transform
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TransformImpl(): base() {}

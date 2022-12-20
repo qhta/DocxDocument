@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Level2ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level2ParagraphProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Level2ParagraphPropertiesImpl(): base() {}

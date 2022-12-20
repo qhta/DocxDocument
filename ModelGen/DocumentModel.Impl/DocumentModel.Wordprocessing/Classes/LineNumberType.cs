@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LineNumberTypeImpl: ModelElementImpl, LineNumberType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LineNumberType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LineNumberType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineNumberTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ArgumentPropertiesImpl: ModelElementImpl, ArgumentProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.ArgumentProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.ArgumentProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArgumentPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EffectContainerTypeImpl: ModelElementImpl, EffectContainerType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.EffectContainerType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.EffectContainerType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EffectContainerTypeImpl(): base() {}

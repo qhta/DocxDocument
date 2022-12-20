@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.VbaSuppData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.VbaSuppData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VbaSuppDataImpl(): base() {}
@@ -79,26 +80,6 @@ public partial class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the VbaDataPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.VbaDataPart? VbaDataPart
-  {
-    get
-    {
-      if (OpenXmlElement?.VbaDataPart != null)
-        return new DocumentModel.Packaging.VbaDataPartImpl(OpenXmlElement.VbaDataPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.VbaDataPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

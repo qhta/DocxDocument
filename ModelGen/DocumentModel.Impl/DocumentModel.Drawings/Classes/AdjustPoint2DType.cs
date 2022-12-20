@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AdjustPoint2DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AdjustPoint2DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AdjustPoint2DTypeImpl(): base() {}

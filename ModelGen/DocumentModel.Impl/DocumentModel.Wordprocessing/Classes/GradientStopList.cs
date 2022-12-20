@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class GradientStopListImpl: ModelElementImpl, GradientStopList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.GradientStopList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.GradientStopList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GradientStopListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class GradientStopListImpl: ModelElementImpl, GradientStopList
   {
     get
     {
-      if (_GradientStops != null)
+      if (_GradientStops == null)
       {
         if (OpenXmlElement != null)
         {

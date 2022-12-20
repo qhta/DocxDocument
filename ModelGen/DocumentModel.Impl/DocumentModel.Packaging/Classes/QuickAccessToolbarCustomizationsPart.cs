@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class QuickAccessToolbarCustomizationsPartImpl: DocumentModel.Packaging.CustomUIPartImpl, QuickAccessToolbarCustomizationsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QuickAccessToolbarCustomizationsPartImpl(): base() {}

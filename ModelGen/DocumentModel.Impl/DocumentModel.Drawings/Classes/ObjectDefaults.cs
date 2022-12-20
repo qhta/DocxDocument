@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ObjectDefaultsImpl: ModelElementImpl, ObjectDefaults
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ObjectDefaults? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ObjectDefaults?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ObjectDefaultsImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoPolygonImpl: ModelElementImpl, GeoPolygon
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GeoPolygonImpl(): base() {}

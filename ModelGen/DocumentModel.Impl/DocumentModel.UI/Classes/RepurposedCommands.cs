@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class RepurposedCommandsImpl: ModelElementImpl, RepurposedCommands
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RepurposedCommandsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class RepurposedCommandsImpl: ModelElementImpl, RepurposedCommand
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

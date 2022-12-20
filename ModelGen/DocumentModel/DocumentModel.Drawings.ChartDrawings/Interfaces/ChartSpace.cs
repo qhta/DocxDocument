@@ -45,9 +45,4 @@ public partial interface ChartSpace
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
   
-  /// <summary>
-  /// Gets the ExtendedChartPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ExtendedChartPart? ExtendedChartPart { get; set; }
-  
 }

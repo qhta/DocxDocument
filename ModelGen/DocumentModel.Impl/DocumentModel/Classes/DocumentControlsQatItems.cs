@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class DocumentControlsQatItemsImpl: ModelElementImpl, DocumentControlsQatItems
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentControlsQatItemsImpl(): base() {}

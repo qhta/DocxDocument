@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.SlicersPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.SlicersPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SlicersPartImpl(): base() {}

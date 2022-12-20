@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LineChartImpl: ModelElementImpl, LineChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.LineChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.LineChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class LineChartImpl: ModelElementImpl, LineChart
   {
     get
     {
-      if (_LineChartSerieses != null)
+      if (_LineChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -354,7 +355,7 @@ public partial class LineChartImpl: ModelElementImpl, LineChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

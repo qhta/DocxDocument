@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoLocationsImpl: ModelElementImpl, GeoLocations
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GeoLocationsImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentImpl: ModelElementImpl, Comment
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Comment? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Comment?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentImpl(): base() {}
@@ -74,7 +75,7 @@ public partial class CommentImpl: ModelElementImpl, Comment
   {
     get
     {
-      if (_AltChunks != null)
+      if (_AltChunks == null)
       {
         if (OpenXmlElement != null)
         {
@@ -216,7 +217,7 @@ public partial class CommentImpl: ModelElementImpl, Comment
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -300,7 +301,7 @@ public partial class CommentImpl: ModelElementImpl, Comment
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {

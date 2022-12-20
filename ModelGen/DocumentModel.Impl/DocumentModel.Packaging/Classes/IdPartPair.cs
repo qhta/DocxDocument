@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class IdPartPairImpl: ModelObjectImpl, IdPartPair
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Packaging.IdPartPair? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.IdPartPair?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public IdPartPairImpl(): base() {}

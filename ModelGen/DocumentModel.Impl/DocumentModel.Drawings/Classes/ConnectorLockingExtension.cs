@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectorLockingExtensionImpl: ModelElementImpl, ConnectorLockingExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConnectorLockingExtensionImpl(): base() {}

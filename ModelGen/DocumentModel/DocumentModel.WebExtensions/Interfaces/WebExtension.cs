@@ -50,9 +50,4 @@ public partial interface WebExtension
   /// </summary>
   public DocumentModel.WebExtensions.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
-  /// <summary>
-  /// Gets the WebExtensionPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WebExtensionPart? WebExtensionPart { get; set; }
-  
 }

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectionTypeImpl: ModelElementImpl, ConnectionType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ConnectionType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ConnectionType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConnectionTypeImpl(): base() {}

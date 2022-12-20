@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableWidthDxaNilTypeImpl: ModelElementImpl, TableWidthDxaNilType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableWidthDxaNilTypeImpl(): base() {}

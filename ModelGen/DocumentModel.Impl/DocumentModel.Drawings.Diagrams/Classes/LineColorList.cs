@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class LineColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, LineColorList
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineColorListImpl(): base() {}

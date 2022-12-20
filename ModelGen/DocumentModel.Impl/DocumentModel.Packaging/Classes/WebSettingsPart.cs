@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WebSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebSettingsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WebSettingsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WebSettingsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebSettingsPartImpl(): base() {}

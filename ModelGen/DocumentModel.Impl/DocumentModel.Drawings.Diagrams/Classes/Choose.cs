@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ChooseImpl: ModelElementImpl, Choose
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Choose? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Choose?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChooseImpl(): base() {}

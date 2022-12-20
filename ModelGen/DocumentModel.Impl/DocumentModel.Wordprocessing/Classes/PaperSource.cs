@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PaperSourceImpl: ModelElementImpl, PaperSource
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PaperSource? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PaperSource?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PaperSourceImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageTabImpl: ModelElementImpl, BackstageTab
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstageTabImpl(): base() {}

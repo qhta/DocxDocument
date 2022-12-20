@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontRelationshipTypeImpl(): base() {}

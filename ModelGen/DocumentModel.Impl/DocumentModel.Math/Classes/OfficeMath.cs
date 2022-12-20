@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class OfficeMathImpl: ModelElementImpl, OfficeMath
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.OfficeMath? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.OfficeMath?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfficeMathImpl(): base() {}
@@ -631,7 +632,7 @@ public partial class OfficeMathImpl: ModelElementImpl, OfficeMath
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1556,7 +1557,7 @@ public partial class OfficeMathImpl: ModelElementImpl, OfficeMath
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

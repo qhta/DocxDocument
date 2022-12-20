@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RecipientsImpl: ModelElementImpl, Recipients
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Recipients? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Recipients?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RecipientsImpl(): base() {}

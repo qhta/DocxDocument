@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class OvalImpl: ModelElementImpl, Oval
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Oval? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Oval?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OvalImpl(): base() {}

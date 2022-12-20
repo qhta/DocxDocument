@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TablePositionPropertiesImpl: ModelElementImpl, TablePositionProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TablePositionPropertiesImpl(): base() {}

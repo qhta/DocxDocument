@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtEndCharPropertiesImpl: ModelElementImpl, SdtEndCharProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtEndCharPropertiesImpl(): base() {}

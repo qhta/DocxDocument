@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StyleSetImpl: ModelElementImpl, StyleSet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.StyleSet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.StyleSet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleSetImpl(): base() {}

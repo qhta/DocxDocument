@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticPastelsSmoothImpl: ModelElementImpl, ArtisticPastelsSmooth
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArtisticPastelsSmoothImpl(): base() {}

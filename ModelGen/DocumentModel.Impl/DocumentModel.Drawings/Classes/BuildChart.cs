@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BuildChartImpl: ModelElementImpl, BuildChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BuildChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BuildChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BuildChartImpl(): base() {}

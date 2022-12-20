@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ControlCloneQatImpl: ModelElementImpl, ControlCloneQat
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneQat? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneQat?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ControlCloneQatImpl(): base() {}

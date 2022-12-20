@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class LineImpl: ModelElementImpl, Line
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Line? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Line?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineImpl(): base() {}

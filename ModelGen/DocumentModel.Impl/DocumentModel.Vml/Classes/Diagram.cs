@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class DiagramImpl: ModelElementImpl, Diagram
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Diagram? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Diagram?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramImpl(): base() {}

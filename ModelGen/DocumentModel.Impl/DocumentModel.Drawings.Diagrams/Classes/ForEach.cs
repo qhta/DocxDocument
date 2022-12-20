@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ForEachImpl: ModelElementImpl, ForEach
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ForEach? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ForEach?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ForEachImpl(): base() {}

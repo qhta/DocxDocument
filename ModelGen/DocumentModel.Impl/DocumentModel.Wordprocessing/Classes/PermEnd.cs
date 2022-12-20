@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PermEndImpl: ModelElementImpl, PermEnd
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PermEnd? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PermEnd?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PermEndImpl(): base() {}

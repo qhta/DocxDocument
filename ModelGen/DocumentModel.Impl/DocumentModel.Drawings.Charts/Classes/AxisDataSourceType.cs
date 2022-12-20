@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class AxisDataSourceTypeImpl: ModelElementImpl, AxisDataSourceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AxisDataSourceTypeImpl(): base() {}

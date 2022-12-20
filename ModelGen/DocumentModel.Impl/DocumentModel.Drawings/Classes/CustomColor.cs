@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomColorImpl: ModelElementImpl, CustomColor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.CustomColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.CustomColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomColorImpl(): base() {}

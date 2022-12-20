@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RoundRectangleImpl: ModelElementImpl, RoundRectangle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.RoundRectangle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.RoundRectangle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RoundRectangleImpl(): base() {}

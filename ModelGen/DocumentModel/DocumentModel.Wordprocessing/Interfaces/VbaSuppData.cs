@@ -15,9 +15,4 @@ public partial interface VbaSuppData
   /// </summary>
   public DocumentModel.Wordprocessing.Mcds? Mcds { get; set; }
   
-  /// <summary>
-  /// Gets the VbaDataPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.VbaDataPart? VbaDataPart { get; set; }
-  
 }

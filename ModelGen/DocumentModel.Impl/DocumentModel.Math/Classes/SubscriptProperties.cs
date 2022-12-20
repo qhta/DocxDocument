@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class SubscriptPropertiesImpl: ModelElementImpl, SubscriptProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.SubscriptProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.SubscriptProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SubscriptPropertiesImpl(): base() {}

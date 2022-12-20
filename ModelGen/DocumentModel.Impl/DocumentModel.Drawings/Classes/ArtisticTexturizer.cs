@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArtisticTexturizerImpl(): base() {}

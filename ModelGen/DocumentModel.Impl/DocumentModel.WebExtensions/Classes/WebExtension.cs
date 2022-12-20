@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionImpl: ModelElementImpl, WebExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionImpl(): base() {}
@@ -246,26 +247,6 @@ public partial class WebExtensionImpl: ModelElementImpl, WebExtension
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the WebExtensionPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WebExtensionPart? WebExtensionPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WebExtensionPart != null)
-        return new DocumentModel.Packaging.WebExtensionPartImpl(OpenXmlElement.WebExtensionPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WebExtensionPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

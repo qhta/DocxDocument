@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleMatrixReferenceTypeImpl(): base() {}

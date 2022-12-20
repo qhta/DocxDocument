@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BubbleSerExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExte
   {
     get
     {
-      if (_BubbleSerExtensions != null)
+      if (_BubbleSerExtensions == null)
       {
         if (OpenXmlElement != null)
         {

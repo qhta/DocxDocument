@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class AlgorithmImpl: ModelElementImpl, Algorithm
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlgorithmImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class AlgorithmImpl: ModelElementImpl, Algorithm
   {
     get
     {
-      if (_Parameters != null)
+      if (_Parameters == null)
       {
         if (OpenXmlElement != null)
         {

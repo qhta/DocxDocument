@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskProgressEventInfoImpl: ModelElementImpl, TaskProgressEventInfo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskProgressEventInfoImpl(): base() {}

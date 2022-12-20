@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PersonImpl: ModelElementImpl, Person
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.Person? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.Person?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PersonImpl(): base() {}

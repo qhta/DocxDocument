@@ -30,9 +30,4 @@ public partial interface DataModelRoot
   /// </summary>
   public DocumentModel.Drawings.Diagrams.DataModelExtensionList? DataModelExtensionList { get; set; }
   
-  /// <summary>
-  /// Gets the DiagramDataPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramDataPart? DiagramDataPart { get; set; }
-  
 }

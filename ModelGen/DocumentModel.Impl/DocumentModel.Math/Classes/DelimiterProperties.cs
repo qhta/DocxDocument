@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class DelimiterPropertiesImpl: ModelElementImpl, DelimiterProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.DelimiterProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.DelimiterProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DelimiterPropertiesImpl(): base() {}

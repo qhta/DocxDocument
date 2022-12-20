@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class AdjustListImpl: ModelElementImpl, AdjustList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AdjustListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class AdjustListImpl: ModelElementImpl, AdjustList
   {
     get
     {
-      if (_Adjusts != null)
+      if (_Adjusts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstagePrimaryMenuImpl: ModelElementImpl, BackstagePrimaryMenu
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstagePrimaryMenuImpl(): base() {}

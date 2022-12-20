@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BreakImpl: ModelElementImpl, Break
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Break? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Break?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BreakImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BidirectionalEmbeddingImpl: ModelElementImpl, BidirectionalEmbedding
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BidirectionalEmbeddingImpl(): base() {}
@@ -64,7 +65,7 @@ public partial class BidirectionalEmbeddingImpl: ModelElementImpl, Bidirectional
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -989,7 +990,7 @@ public partial class BidirectionalEmbeddingImpl: ModelElementImpl, Bidirectional
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

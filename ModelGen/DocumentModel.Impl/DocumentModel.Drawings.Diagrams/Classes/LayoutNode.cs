@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class LayoutNodeImpl: ModelElementImpl, LayoutNode
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LayoutNodeImpl(): base() {}

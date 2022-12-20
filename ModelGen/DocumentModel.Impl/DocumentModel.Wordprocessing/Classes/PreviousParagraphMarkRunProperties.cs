@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousParagraphMarkRunPropertiesImpl: ModelElementImpl, PreviousParagraphMarkRunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreviousParagraphMarkRunPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class SingleCellTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SingleCellTablePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.SingleCellTablePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.SingleCellTablePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SingleCellTablePartImpl(): base() {}

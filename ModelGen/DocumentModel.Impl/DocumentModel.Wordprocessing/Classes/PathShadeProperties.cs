@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PathShadePropertiesImpl: ModelElementImpl, PathShadeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PathShadePropertiesImpl(): base() {}

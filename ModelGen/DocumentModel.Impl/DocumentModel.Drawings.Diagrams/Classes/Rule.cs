@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class RuleImpl: ModelElementImpl, Rule
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Rule? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Rule?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RuleImpl(): base() {}

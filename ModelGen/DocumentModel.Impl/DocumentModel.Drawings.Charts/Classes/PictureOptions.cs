@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PictureOptionsImpl: ModelElementImpl, PictureOptions
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PictureOptions?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PictureOptionsImpl(): base() {}

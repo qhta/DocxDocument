@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousTableRowPropertiesImpl: ModelElementImpl, PreviousTableRowProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreviousTableRowPropertiesImpl(): base() {}

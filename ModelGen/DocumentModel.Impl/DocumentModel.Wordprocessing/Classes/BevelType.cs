@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BevelTypeImpl: ModelElementImpl, BevelType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.BevelType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.BevelType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BevelTypeImpl(): base() {}

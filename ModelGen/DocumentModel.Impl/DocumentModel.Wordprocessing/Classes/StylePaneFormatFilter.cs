@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StylePaneFormatFilterImpl: ModelElementImpl, StylePaneFormatFilter
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StylePaneFormatFilterImpl(): base() {}

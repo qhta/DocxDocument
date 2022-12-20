@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class UserShapesImpl: ModelElementImpl, UserShapes
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.UserShapes? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.UserShapes?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UserShapesImpl(): base() {}
@@ -16,26 +17,6 @@ public partial class UserShapesImpl: ModelElementImpl, UserShapes
   public UserShapesImpl(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
-  }
-  
-  /// <summary>
-  /// Gets the ChartDrawingPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartDrawingPart? ChartDrawingPart
-  {
-    get
-    {
-      if (OpenXmlElement?.ChartDrawingPart != null)
-        return new DocumentModel.Packaging.ChartDrawingPartImpl(OpenXmlElement.ChartDrawingPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ChartDrawingPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
   }
   
   public DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? RelativeAnchorSize

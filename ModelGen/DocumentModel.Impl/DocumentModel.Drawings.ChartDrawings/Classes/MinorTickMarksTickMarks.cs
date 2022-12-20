@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class MinorTickMarksTickMarksImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElementImpl, MinorTickMarksTickMarks
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinorTickMarksTickMarks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinorTickMarksTickMarks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MinorTickMarksTickMarksImpl(): base() {}

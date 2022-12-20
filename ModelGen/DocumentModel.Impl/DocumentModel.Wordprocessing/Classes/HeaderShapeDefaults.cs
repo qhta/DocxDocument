@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HeaderShapeDefaultsImpl: ModelElementImpl, HeaderShapeDefaults
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HeaderShapeDefaultsImpl(): base() {}

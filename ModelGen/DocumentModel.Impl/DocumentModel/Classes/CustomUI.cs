@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class CustomUIImpl: ModelElementImpl, CustomUI
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomUIImpl(): base() {}
@@ -169,26 +170,6 @@ public partial class CustomUIImpl: ModelElementImpl, CustomUI
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the RibbonAndBackstageCustomizationsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? RibbonAndBackstageCustomizationsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.RibbonAndBackstageCustomizationsPart != null)
-        return new DocumentModel.Packaging.RibbonAndBackstageCustomizationsPartImpl(OpenXmlElement.RibbonAndBackstageCustomizationsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.RibbonAndBackstageCustomizationsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

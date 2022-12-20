@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class StylesWithEffectsPartImpl: DocumentModel.Packaging.StylesPartImpl, StylesWithEffectsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StylesWithEffectsPartImpl(): base() {}

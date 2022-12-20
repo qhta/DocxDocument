@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StylisticSetsImpl: ModelElementImpl, StylisticSets
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.StylisticSets? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.StylisticSets?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StylisticSetsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class StylisticSetsImpl: ModelElementImpl, StylisticSets
   {
     get
     {
-      if (_StyleSets != null)
+      if (_StyleSets == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class ToAnchorImpl: DocumentModel.Drawings.ChartDrawing.MarkerTypeImpl, ToAnchor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ToAnchorImpl(): base() {}

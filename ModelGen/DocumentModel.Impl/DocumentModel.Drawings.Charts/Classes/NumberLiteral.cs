@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberLiteral
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberLiteralImpl(): base() {}
@@ -92,7 +93,7 @@ public partial class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberData
   {
     get
     {
-      if (_NumericPoints != null)
+      if (_NumericPoints == null)
       {
         if (OpenXmlElement != null)
         {

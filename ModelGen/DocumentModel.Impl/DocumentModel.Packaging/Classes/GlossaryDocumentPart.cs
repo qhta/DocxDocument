@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, GlossaryDocumentPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GlossaryDocumentPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_AlternativeFormatImportParts != null)
+      if (_AlternativeFormatImportParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -91,7 +92,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_ChartParts != null)
+      if (_ChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -175,7 +176,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_DiagramColorsParts != null)
+      if (_DiagramColorsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -241,7 +242,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_DiagramDataParts != null)
+      if (_DiagramDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -307,7 +308,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_DiagramLayoutDefinitionParts != null)
+      if (_DiagramLayoutDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -373,7 +374,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_DiagramPersistLayoutParts != null)
+      if (_DiagramPersistLayoutParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -439,7 +440,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_DiagramStyleParts != null)
+      if (_DiagramStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -531,7 +532,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_EmbeddedControlPersistenceParts != null)
+      if (_EmbeddedControlPersistenceParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -597,7 +598,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_EmbeddedObjectParts != null)
+      if (_EmbeddedObjectParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -663,7 +664,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_EmbeddedPackageParts != null)
+      if (_EmbeddedPackageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -742,7 +743,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_ExtendedChartParts != null)
+      if (_ExtendedChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -821,7 +822,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_FooterParts != null)
+      if (_FooterParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -920,7 +921,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_HeaderParts != null)
+      if (_HeaderParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -986,7 +987,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1052,7 +1053,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_Model3DReferenceRelationshipParts != null)
+      if (_Model3DReferenceRelationshipParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1253,7 +1254,7 @@ public partial class GlossaryDocumentPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_WordprocessingPrinterSettingsParts != null)
+      if (_WordprocessingPrinterSettingsParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ShadingImpl: ModelElementImpl, Shading
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Shading? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Shading?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShadingImpl(): base() {}

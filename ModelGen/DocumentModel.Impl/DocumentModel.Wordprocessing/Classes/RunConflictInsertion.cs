@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunConflictInsertionImpl: DocumentModel.Wordprocessing.RunTrackChangeType2Impl, RunConflictInsertion
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunConflictInsertionImpl(): base() {}
@@ -834,7 +835,7 @@ public partial class RunConflictInsertionImpl: DocumentModel.Wordprocessing.RunT
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

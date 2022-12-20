@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class AreaChartSeries3Impl: ModelElementImpl, AreaChartSeries3
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.AreaChartSeries? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.AreaChartSeries?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AreaChartSeries3Impl(): base() {}
@@ -170,7 +171,7 @@ public partial class AreaChartSeries3Impl: ModelElementImpl, AreaChartSeries3
   {
     get
     {
-      if (_DataPoints != null)
+      if (_DataPoints == null)
       {
         if (OpenXmlElement != null)
         {
@@ -283,7 +284,7 @@ public partial class AreaChartSeries3Impl: ModelElementImpl, AreaChartSeries3
   {
     get
     {
-      if (_Trendlines != null)
+      if (_Trendlines == null)
       {
         if (OpenXmlElement != null)
         {
@@ -367,7 +368,7 @@ public partial class AreaChartSeries3Impl: ModelElementImpl, AreaChartSeries3
   {
     get
     {
-      if (_ErrorBarses != null)
+      if (_ErrorBarses == null)
       {
         if (OpenXmlElement != null)
         {

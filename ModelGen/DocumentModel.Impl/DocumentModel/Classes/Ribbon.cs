@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class RibbonImpl: ModelElementImpl, Ribbon
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RibbonImpl(): base() {}

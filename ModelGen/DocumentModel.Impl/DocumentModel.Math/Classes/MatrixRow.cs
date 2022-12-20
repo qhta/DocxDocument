@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixRowImpl: ModelElementImpl, MatrixRow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.MatrixRow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.MatrixRow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MatrixRowImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class MatrixRowImpl: ModelElementImpl, MatrixRow
   {
     get
     {
-      if (_Bases != null)
+      if (_Bases == null)
       {
         if (OpenXmlElement != null)
         {

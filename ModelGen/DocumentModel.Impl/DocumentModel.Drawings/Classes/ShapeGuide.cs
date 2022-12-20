@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapeGuideImpl: ModelElementImpl, ShapeGuide
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ShapeGuide? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ShapeGuide?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeGuideImpl(): base() {}

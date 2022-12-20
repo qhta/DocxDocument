@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StyleTablePropertiesImpl: ModelElementImpl, StyleTableProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleTablePropertiesImpl(): base() {}

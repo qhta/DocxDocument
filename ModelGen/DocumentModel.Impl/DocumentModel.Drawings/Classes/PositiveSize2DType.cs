@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PositiveSize2DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PositiveSize2DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PositiveSize2DTypeImpl(): base() {}

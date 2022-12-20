@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class MidColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MidColorSolidColorFillProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MidColorSolidColorFillPropertiesImpl(): base() {}

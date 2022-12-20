@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class CopyrightsImpl: ModelElementImpl, Copyrights
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CopyrightsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CopyrightsImpl: ModelElementImpl, Copyrights
   {
     get
     {
-      if (_CopyrightXsdstrings != null)
+      if (_CopyrightXsdstrings == null)
       {
         if (OpenXmlElement != null)
         {

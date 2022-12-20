@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskFormGroupCategoryImpl: ModelElementImpl, TaskFormGroupCategory
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskFormGroupCategoryImpl(): base() {}
@@ -178,7 +179,7 @@ public partial class TaskFormGroupCategoryImpl: ModelElementImpl, TaskFormGroupC
   {
     get
     {
-      if (_TaskFormGroupTasks != null)
+      if (_TaskFormGroupTasks == null)
       {
         if (OpenXmlElement != null)
         {

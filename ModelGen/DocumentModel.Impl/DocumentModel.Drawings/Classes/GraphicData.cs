@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GraphicDataImpl: ModelElementImpl, GraphicData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.GraphicData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.GraphicData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GraphicDataImpl(): base() {}

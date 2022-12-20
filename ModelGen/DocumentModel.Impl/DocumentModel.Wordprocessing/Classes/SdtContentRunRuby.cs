@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentRunRubyImpl: ModelElementImpl, SdtContentRunRuby
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentRunRubyImpl(): base() {}
@@ -950,7 +951,7 @@ public partial class SdtContentRunRubyImpl: ModelElementImpl, SdtContentRunRuby
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

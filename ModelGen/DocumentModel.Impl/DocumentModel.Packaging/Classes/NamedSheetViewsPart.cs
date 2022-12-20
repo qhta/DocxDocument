@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class NamedSheetViewsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NamedSheetViewsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NamedSheetViewsPartImpl(): base() {}

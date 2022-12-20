@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PredecessorDrawingElementReferenceImpl: ModelElementImpl, PredecessorDrawingElementReference
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PredecessorDrawingElementReferenceImpl(): base() {}

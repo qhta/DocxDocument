@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramLayoutDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramLayoutDefinitionPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramLayoutDefinitionPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class DiagramLayoutDefinitionPartImpl: DocumentModel.Packaging.Op
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

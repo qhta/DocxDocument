@@ -65,9 +65,4 @@ public partial interface WebSettings
   /// </summary>
   public DocumentModel.Wordprocessing.TargetScreenSizeKind? TargetScreenSize { get; set; }
   
-  /// <summary>
-  /// Gets the WebSettingsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WebSettingsPart? WebSettingsPart { get; set; }
-  
 }

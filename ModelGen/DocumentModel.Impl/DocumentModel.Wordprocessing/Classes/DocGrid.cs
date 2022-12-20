@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocGridImpl: ModelElementImpl, DocGrid
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocGrid? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocGrid?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocGridImpl(): base() {}

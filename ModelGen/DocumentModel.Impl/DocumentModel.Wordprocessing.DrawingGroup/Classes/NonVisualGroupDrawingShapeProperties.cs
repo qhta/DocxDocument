@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// </summary>
 public partial class NonVisualGroupDrawingShapePropertiesImpl: ModelElementImpl, NonVisualGroupDrawingShapeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualGroupDrawingShapePropertiesImpl(): base() {}

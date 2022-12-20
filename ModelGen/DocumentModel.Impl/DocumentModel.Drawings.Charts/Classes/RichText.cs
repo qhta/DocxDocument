@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class RichTextImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, RichText
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.RichText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.RichText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RichTextImpl(): base() {}

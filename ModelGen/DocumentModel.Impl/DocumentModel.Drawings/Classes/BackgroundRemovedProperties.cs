@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundRemovedPropertiesImpl: ModelElementImpl, BackgroundRemovedProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundRemovedPropertiesImpl(): base() {}

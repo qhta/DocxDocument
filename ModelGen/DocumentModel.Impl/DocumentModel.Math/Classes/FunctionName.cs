@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class FunctionNameImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, FunctionName
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.FunctionName? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.FunctionName?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FunctionNameImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class FunctionNameImpl: DocumentModel.Math.OfficeMathArgumentType
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class FunctionNameImpl: DocumentModel.Math.OfficeMathArgumentType
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

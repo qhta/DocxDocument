@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Pictures;
 /// </summary>
 public partial class BlipFillImpl: ModelElementImpl, BlipFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Pictures.BlipFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Pictures.BlipFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BlipFillImpl(): base() {}

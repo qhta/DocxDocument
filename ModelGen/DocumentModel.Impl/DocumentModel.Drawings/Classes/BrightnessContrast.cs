@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BrightnessContrastImpl(): base() {}

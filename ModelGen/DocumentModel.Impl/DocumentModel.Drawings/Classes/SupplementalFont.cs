@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SupplementalFontImpl: ModelElementImpl, SupplementalFont
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.SupplementalFont? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.SupplementalFont?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SupplementalFontImpl(): base() {}

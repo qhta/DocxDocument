@@ -5,11 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial interface Header
 {
-  /// <summary>
-  /// Gets the HeaderPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.HeaderPart? HeaderPart { get; set; }
-  
   public Collection<DocumentModel.Wordprocessing.AltChunk>? AltChunks { get; set; }
   
   public DocumentModel.Wordprocessing.CustomXmlBlock? CustomXmlBlock { get; set; }

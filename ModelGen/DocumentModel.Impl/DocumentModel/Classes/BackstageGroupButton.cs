@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageGroupButtonImpl: ModelElementImpl, BackstageGroupButton
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstageGroupButtonImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MinorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MinorGridlines
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MinorGridlinesImpl(): base() {}

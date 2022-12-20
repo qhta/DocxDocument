@@ -20,9 +20,4 @@ public partial interface ThemeOverride
   /// </summary>
   public DocumentModel.Drawings.FormatScheme? FormatScheme { get; set; }
   
-  /// <summary>
-  /// Gets the ThemeOverridePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ThemeOverridePart? ThemeOverridePart { get; set; }
-  
 }

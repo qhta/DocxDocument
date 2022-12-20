@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Line3DChartExtensionImpl: ModelElementImpl, Line3DChartExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Line3DChartExtensionImpl(): base() {}

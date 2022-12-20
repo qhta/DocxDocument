@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PieChartSeries3Impl: ModelElementImpl, PieChartSeries3
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.PieChartSeries? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.PieChartSeries?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PieChartSeries3Impl(): base() {}
@@ -196,7 +197,7 @@ public partial class PieChartSeries3Impl: ModelElementImpl, PieChartSeries3
   {
     get
     {
-      if (_DataPoints != null)
+      if (_DataPoints == null)
       {
         if (OpenXmlElement != null)
         {

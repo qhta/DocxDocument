@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousRunPropertiesImpl: ModelElementImpl, PreviousRunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreviousRunPropertiesImpl(): base() {}

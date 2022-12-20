@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class InlineImpl: ModelElementImpl, Inline
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public InlineImpl(): base() {}
