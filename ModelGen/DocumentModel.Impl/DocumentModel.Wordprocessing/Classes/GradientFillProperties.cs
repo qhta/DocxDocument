@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the GradientFillProperties Class.
 /// </summary>
-public class GradientFillPropertiesImpl: ModelElementImpl, GradientFillProperties
+public partial class GradientFillPropertiesImpl: ModelElementImpl, GradientFillProperties
 {
   public DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? OpenXmlElement
   {

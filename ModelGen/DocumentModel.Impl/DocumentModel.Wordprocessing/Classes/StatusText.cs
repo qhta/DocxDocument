@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Associated Status Text.
 /// </summary>
-public class StatusTextImpl: ModelElementImpl, StatusText
+public partial class StatusTextImpl: ModelElementImpl, StatusText
 {
   public DocumentFormat.OpenXml.Wordprocessing.StatusText? OpenXmlElement
   {

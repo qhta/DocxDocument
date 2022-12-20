@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Style.
 /// </summary>
-public class EffectStyleImpl: ModelElementImpl, EffectStyle
+public partial class EffectStyleImpl: ModelElementImpl, EffectStyle
 {
   public DocumentFormat.OpenXml.Drawing.EffectStyle? OpenXmlElement
   {

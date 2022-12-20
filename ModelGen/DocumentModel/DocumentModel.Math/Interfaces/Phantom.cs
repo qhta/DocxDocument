@@ -3,16 +3,16 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Phantom Function.
 /// </summary>
-public interface Phantom
+public partial interface Phantom
 {
   /// <summary>
   /// Phantom Properties.
   /// </summary>
-  public DocumentModel.Math.PhantomProperties? PhantomProperties { get ; set; }
+  public DocumentModel.Math.PhantomProperties? PhantomProperties { get; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get ; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
 }

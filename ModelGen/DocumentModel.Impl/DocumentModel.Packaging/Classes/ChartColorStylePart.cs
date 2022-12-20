@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ChartColorStylePart
 /// </summary>
-public class ChartColorStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartColorStylePart
+public partial class ChartColorStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartColorStylePart
 {
   public new DocumentFormat.OpenXml.Packaging.ChartColorStylePart? OpenXmlElement
   {
@@ -41,21 +41,11 @@ public class ChartColorStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, C
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ChartColorStylePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ChartColorStylePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

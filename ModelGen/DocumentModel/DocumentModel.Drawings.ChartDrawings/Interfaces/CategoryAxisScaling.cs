@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the CategoryAxisScaling Class.
 /// </summary>
-public interface CategoryAxisScaling
+public partial interface CategoryAxisScaling
 {
   /// <summary>
   /// gapWidth, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? GapWidth { get ; set; }
+  public String? GapWidth { get; set; }
   
 }

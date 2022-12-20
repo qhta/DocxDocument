@@ -3,11 +3,11 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RelationshipType Class.
 /// </summary>
-public interface RelationshipType
+public partial interface RelationshipType
 {
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
 }

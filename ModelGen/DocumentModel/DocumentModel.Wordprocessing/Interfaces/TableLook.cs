@@ -3,41 +3,41 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableLook Class.
 /// </summary>
-public interface TableLook
+public partial interface TableLook
 {
   /// <summary>
   /// val
   /// </summary>
-  public DocumentModel.HexBinary? Val { get ; set; }
+  public DocumentModel.HexBinary? Val { get; set; }
   
   /// <summary>
   /// firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstRow { get ; set; }
+  public Boolean? FirstRow { get; set; }
   
   /// <summary>
   /// lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastRow { get ; set; }
+  public Boolean? LastRow { get; set; }
   
   /// <summary>
   /// firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstColumn { get ; set; }
+  public Boolean? FirstColumn { get; set; }
   
   /// <summary>
   /// lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastColumn { get ; set; }
+  public Boolean? LastColumn { get; set; }
   
   /// <summary>
   /// noHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoHorizontalBand { get ; set; }
+  public Boolean? NoHorizontalBand { get; set; }
   
   /// <summary>
   /// noVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoVerticalBand { get ; set; }
+  public Boolean? NoVerticalBand { get; set; }
   
 }

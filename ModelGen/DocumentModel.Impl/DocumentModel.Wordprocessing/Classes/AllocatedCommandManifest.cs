@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the AllocatedCommandManifest Class.
 /// </summary>
-public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandManifest
+public partial class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandManifest
 {
   public DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AcceleratorKeymapType>? _AllocatedCommandManifestEntries;
   
-  private void _AllocatedCommandManifestEntries_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AllocatedCommandManifestEntries_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)
@@ -82,6 +83,7 @@ public class AllocatedCommandManifestImpl: ModelElementImpl, AllocatedCommandMan
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AcceleratorKeymapTypeImpl valImpl)

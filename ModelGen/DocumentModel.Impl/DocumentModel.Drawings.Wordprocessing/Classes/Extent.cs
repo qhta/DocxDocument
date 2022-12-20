@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Inline Drawing Object Extents.
 /// </summary>
-public class ExtentImpl: ModelElementImpl, Extent
+public partial class ExtentImpl: ModelElementImpl, Extent
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent? OpenXmlElement
   {

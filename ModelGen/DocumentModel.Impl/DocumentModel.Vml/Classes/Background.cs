@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Document Background.
 /// </summary>
-public class BackgroundImpl: ModelElementImpl, Background
+public partial class BackgroundImpl: ModelElementImpl, Background
 {
   public DocumentFormat.OpenXml.Vml.Background? OpenXmlElement
   {

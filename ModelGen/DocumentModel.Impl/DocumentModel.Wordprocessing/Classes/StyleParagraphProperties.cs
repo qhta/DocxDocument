@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table Style Conditional Formatting Paragraph Properties.
 /// </summary>
-public class StyleParagraphPropertiesImpl: ModelElementImpl, StyleParagraphProperties
+public partial class StyleParagraphPropertiesImpl: ModelElementImpl, StyleParagraphProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties? OpenXmlElement
   {

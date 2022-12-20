@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect.
 /// </summary>
-public interface Effect
+public partial interface Effect
 {
   /// <summary>
   /// Reference
   /// </summary>
-  public String? Reference { get ; set; }
+  public String? Reference { get; set; }
   
 }

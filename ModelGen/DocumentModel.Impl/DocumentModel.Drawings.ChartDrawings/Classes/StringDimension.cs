@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the StringDimension Class.
 /// </summary>
-public class StringDimensionImpl: ModelElementImpl, StringDimension
+public partial class StringDimensionImpl: ModelElementImpl, StringDimension
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension? OpenXmlElement
   {
@@ -132,7 +132,7 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.StringLevel>? _StringLevels;
   
-  private void _StringLevels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StringLevels_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -142,6 +142,7 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.StringLevelImpl valImpl)
@@ -153,6 +154,7 @@ public class StringDimensionImpl: ModelElementImpl, StringDimension
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.StringLevelImpl valImpl)

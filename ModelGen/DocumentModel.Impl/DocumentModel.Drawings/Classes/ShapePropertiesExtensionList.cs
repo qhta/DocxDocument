@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ShapePropertiesExtensionList Class.
 /// </summary>
-public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapePropertiesExtensionList
+public partial class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapePropertiesExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapeProperties
   }
   private ObservableCollection<DocumentModel.Drawings.ShapePropertiesExtension>? _ShapePropertiesExtensions;
   
-  private void _ShapePropertiesExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ShapePropertiesExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapeProperties
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapeProperties
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ShapePropertiesExtensionImpl valImpl)

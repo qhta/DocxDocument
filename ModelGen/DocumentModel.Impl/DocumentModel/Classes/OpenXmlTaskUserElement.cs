@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the OpenXmlTaskUserElement Class.
 /// </summary>
-public class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElement
+public partial class OpenXmlTaskUserElementImpl: ModelElementImpl, OpenXmlTaskUserElement
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement? OpenXmlElement
   {

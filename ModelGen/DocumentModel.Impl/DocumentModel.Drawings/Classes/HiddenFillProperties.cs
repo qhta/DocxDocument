@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenFillProperties Class.
 /// </summary>
-public class HiddenFillPropertiesImpl: ModelElementImpl, HiddenFillProperties
+public partial class HiddenFillPropertiesImpl: ModelElementImpl, HiddenFillProperties
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? OpenXmlElement
   {

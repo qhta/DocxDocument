@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RelationshipType Class.
 /// </summary>
-public class RelationshipTypeImpl: ModelElementImpl, RelationshipType
+public partial class RelationshipTypeImpl: ModelElementImpl, RelationshipType
 {
   public DocumentFormat.OpenXml.Wordprocessing.RelationshipType? OpenXmlElement
   {

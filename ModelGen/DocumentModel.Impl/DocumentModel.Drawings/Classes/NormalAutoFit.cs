@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Normal AutoFit.
 /// </summary>
-public class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
+public partial class NormalAutoFitImpl: ModelElementImpl, NormalAutoFit
 {
   public DocumentFormat.OpenXml.Drawing.NormalAutoFit? OpenXmlElement
   {

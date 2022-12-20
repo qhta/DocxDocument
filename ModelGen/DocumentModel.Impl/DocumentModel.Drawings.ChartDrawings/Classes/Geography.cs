@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Geography Class.
 /// </summary>
-public class GeographyImpl: ModelElementImpl, Geography
+public partial class GeographyImpl: ModelElementImpl, Geography
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography? OpenXmlElement
   {

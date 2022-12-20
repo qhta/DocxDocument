@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// UI Default Colors.
 /// </summary>
-public class ColorMenuImpl: ModelElementImpl, ColorMenu
+public partial class ColorMenuImpl: ModelElementImpl, ColorMenu
 {
   public DocumentFormat.OpenXml.Vml.Office.ColorMenu? OpenXmlElement
   {

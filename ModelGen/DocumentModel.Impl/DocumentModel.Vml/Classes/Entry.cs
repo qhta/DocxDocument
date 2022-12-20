@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Regroup Entry.
 /// </summary>
-public class EntryImpl: ModelElementImpl, Entry
+public partial class EntryImpl: ModelElementImpl, Entry
 {
   public DocumentFormat.OpenXml.Vml.Office.Entry? OpenXmlElement
   {

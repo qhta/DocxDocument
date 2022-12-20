@@ -3,36 +3,36 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Phonetic Guide Properties.
 /// </summary>
-public interface RubyProperties
+public partial interface RubyProperties
 {
   /// <summary>
   /// Phonetic Guide Text Alignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyAlignKind? RubyAlign { get ; set; }
+  public DocumentModel.Wordprocessing.RubyAlignKind? RubyAlign { get; set; }
   
   /// <summary>
   /// Phonetic Guide Text Font Size.
   /// </summary>
-  public String? PhoneticGuideTextFontSize { get ; set; }
+  public String? PhoneticGuideTextFontSize { get; set; }
   
   /// <summary>
   /// Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
   /// </summary>
-  public Int16? PhoneticGuideRaise { get ; set; }
+  public Int16? PhoneticGuideRaise { get; set; }
   
   /// <summary>
   /// Phonetic Guide Base Text Font Size.
   /// </summary>
-  public String? PhoneticGuideBaseTextSize { get ; set; }
+  public String? PhoneticGuideBaseTextSize { get; set; }
   
   /// <summary>
   /// Language ID for Phonetic Guide.
   /// </summary>
-  public String? LanguageId { get ; set; }
+  public String? LanguageId { get; set; }
   
   /// <summary>
   /// Invalidated Field Cache.
   /// </summary>
-  public Boolean? Dirty { get ; set; }
+  public Boolean? Dirty { get; set; }
   
 }

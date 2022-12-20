@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents an external relationship.
 /// </summary>
-public class ExternalRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, ExternalRelationship
+public partial class ExternalRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, ExternalRelationship
 {
   public new DocumentFormat.OpenXml.Packaging.ExternalRelationship? OpenXmlElement
   {

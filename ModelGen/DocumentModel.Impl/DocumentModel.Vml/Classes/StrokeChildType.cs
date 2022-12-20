@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the StrokeChildType Class.
 /// </summary>
-public class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
+public partial class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
 {
   public DocumentFormat.OpenXml.Vml.Office.StrokeChildType? OpenXmlElement
   {

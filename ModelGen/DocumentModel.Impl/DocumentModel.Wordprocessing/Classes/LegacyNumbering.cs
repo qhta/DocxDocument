@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Legacy Numbering Level Properties.
 /// </summary>
-public class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
+public partial class LegacyNumberingImpl: ModelElementImpl, LegacyNumbering
 {
   public DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? OpenXmlElement
   {

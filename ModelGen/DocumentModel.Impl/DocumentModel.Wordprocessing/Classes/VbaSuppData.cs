@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the VbaSuppData Class.
 /// </summary>
-public class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
+public partial class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
 {
   public DocumentFormat.OpenXml.Office.Word.VbaSuppData? OpenXmlElement
   {
@@ -79,6 +79,26 @@ public class VbaSuppDataImpl: ModelElementImpl, VbaSuppData
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the VbaDataPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.VbaDataPart? VbaDataPart
+  {
+    get
+    {
+      if (OpenXmlElement?.VbaDataPart != null)
+        return new DocumentModel.Packaging.VbaDataPartImpl(OpenXmlElement.VbaDataPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.VbaDataPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

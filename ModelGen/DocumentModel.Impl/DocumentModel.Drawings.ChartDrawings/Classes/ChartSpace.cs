@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ChartSpace Class.
 /// </summary>
-public class ChartSpaceImpl: ModelElementImpl, ChartSpace
+public partial class ChartSpaceImpl: ModelElementImpl, ChartSpace
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace? OpenXmlElement
   {
@@ -271,6 +271,26 @@ public class ChartSpaceImpl: ModelElementImpl, ChartSpace
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the ExtendedChartPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.ExtendedChartPart? ExtendedChartPart
+  {
+    get
+    {
+      if (OpenXmlElement?.ExtendedChartPart != null)
+        return new DocumentModel.Packaging.ExtendedChartPartImpl(OpenXmlElement.ExtendedChartPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.ExtendedChartPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

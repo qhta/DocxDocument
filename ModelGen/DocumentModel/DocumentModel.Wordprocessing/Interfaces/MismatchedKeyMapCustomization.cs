@@ -3,8 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MismatchedKeyMapCustomization Class.
 /// </summary>
-public interface MismatchedKeyMapCustomization
+public partial interface MismatchedKeyMapCustomization
 {
-  public Collection<DocumentModel.Wordprocessing.KeyMapEntry>? KeyMapEntries { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.KeyMapEntry>? KeyMapEntries { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CameraTool Class.
 /// </summary>
-public class CameraToolImpl: ModelElementImpl, CameraTool
+public partial class CameraToolImpl: ModelElementImpl, CameraTool
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? OpenXmlElement
   {

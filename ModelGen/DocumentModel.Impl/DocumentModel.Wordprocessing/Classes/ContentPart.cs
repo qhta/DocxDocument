@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ContentPart Class.
 /// </summary>
-public class ContentPartImpl: ModelElementImpl, ContentPart
+public partial class ContentPartImpl: ModelElementImpl, ContentPart
 {
   public DocumentFormat.OpenXml.Wordprocessing.ContentPart? OpenXmlElement
   {

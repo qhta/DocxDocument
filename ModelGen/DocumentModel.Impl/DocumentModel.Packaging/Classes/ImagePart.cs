@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ImagePart
 /// </summary>
-public class ImagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ImagePart
+public partial class ImagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ImagePart
 {
   public new DocumentFormat.OpenXml.Packaging.ImagePart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class ImagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ImagePart
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ImagePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

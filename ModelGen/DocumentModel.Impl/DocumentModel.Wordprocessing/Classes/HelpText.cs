@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Associated Help Text.
 /// </summary>
-public class HelpTextImpl: ModelElementImpl, HelpText
+public partial class HelpTextImpl: ModelElementImpl, HelpText
 {
   public DocumentFormat.OpenXml.Wordprocessing.HelpText? OpenXmlElement
   {

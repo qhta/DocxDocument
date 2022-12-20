@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundNormalProperties Class.
 /// </summary>
-public class BackgroundNormalPropertiesImpl: ModelElementImpl, BackgroundNormalProperties
+public partial class BackgroundNormalPropertiesImpl: ModelElementImpl, BackgroundNormalProperties
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundNormalProperties? OpenXmlElement
   {

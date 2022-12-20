@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Bezier Curve.
 /// </summary>
-public class CurveImpl: ModelElementImpl, Curve
+public partial class CurveImpl: ModelElementImpl, Curve
 {
   public DocumentFormat.OpenXml.Vml.Curve? OpenXmlElement
   {

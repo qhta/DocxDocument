@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Starting Anchor Point.
 /// </summary>
-public class FromAnchorImpl: DocumentModel.Drawings.ChartDrawing.MarkerTypeImpl, FromAnchor
+public partial class FromAnchorImpl: DocumentModel.Drawings.ChartDrawing.MarkerTypeImpl, FromAnchor
 {
   public new DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor? OpenXmlElement
   {

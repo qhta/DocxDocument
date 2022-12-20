@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Backdrop Plane.
 /// </summary>
-public class BackdropImpl: ModelElementImpl, Backdrop
+public partial class BackdropImpl: ModelElementImpl, Backdrop
 {
   public DocumentFormat.OpenXml.Drawing.Backdrop? OpenXmlElement
   {

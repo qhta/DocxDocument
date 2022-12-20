@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Minor Gridlines.
 /// </summary>
-public class MinorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MinorGridlines
+public partial class MinorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MinorGridlines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines? OpenXmlElement
   {

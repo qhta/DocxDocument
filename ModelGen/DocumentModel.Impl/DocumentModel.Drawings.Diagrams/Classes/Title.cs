@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Title.
 /// </summary>
-public class TitleImpl: ModelElementImpl, Title
+public partial class TitleImpl: ModelElementImpl, Title
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Title? OpenXmlElement
   {

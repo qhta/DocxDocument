@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineReference Class.
 /// </summary>
-public class LineReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, LineReference
+public partial class LineReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, LineReference
 {
   public new DocumentFormat.OpenXml.Drawing.LineReference? OpenXmlElement
   {

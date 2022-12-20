@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Style Definition.
 /// </summary>
-public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
+public partial class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition? OpenXmlElement
   {
@@ -41,6 +41,26 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
     {
       if (OpenXmlElement != null)
         OpenXmlElement.MinVersion = (System.String?)value;
+    }
+  }
+  
+  /// <summary>
+  /// Gets the DiagramStylePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DiagramStylePart? DiagramStylePart
+  {
+    get
+    {
+      if (OpenXmlElement?.DiagramStylePart != null)
+        return new DocumentModel.Packaging.DiagramStylePartImpl(OpenXmlElement.DiagramStylePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DiagramStylePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   
@@ -87,7 +107,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle>? _StyleDefinitionTitles;
   
-  private void _StyleDefinitionTitles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StyleDefinitionTitles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +117,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.StyleDefinitionTitleImpl valImpl)
@@ -108,6 +129,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.StyleDefinitionTitleImpl valImpl)
@@ -169,7 +191,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.StyleLabelDescription>? _StyleLabelDescriptions;
   
-  private void _StyleLabelDescriptions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StyleLabelDescriptions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -179,6 +201,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.StyleLabelDescriptionImpl valImpl)
@@ -190,6 +213,7 @@ public class StyleDefinitionImpl: ModelElementImpl, StyleDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.StyleLabelDescriptionImpl valImpl)

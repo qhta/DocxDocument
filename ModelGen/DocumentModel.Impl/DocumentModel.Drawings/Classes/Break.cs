@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Line Break.
 /// </summary>
-public class BreakImpl: ModelElementImpl, Break
+public partial class BreakImpl: ModelElementImpl, Break
 {
   public DocumentFormat.OpenXml.Drawing.Break? OpenXmlElement
   {

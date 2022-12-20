@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Line Spacing.
 /// </summary>
-public class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSpacing
+public partial class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSpacing
 {
   public new DocumentFormat.OpenXml.Drawing.LineSpacing? OpenXmlElement
   {

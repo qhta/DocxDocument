@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines a reference relationship. A reference relationship can be internal or external.
 /// </summary>
-public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
+public partial class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
 {
   public DocumentFormat.OpenXml.Packaging.ReferenceRelationship? OpenXmlElement
   {
@@ -27,7 +27,7 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("RelationshipType")?.SetValue(OpenXmlElement, (System.String?)value);
     }
   }
   
@@ -40,7 +40,7 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("IsExternal").SetValue(OpenXmlElement, (System.Boolean?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("IsExternal")?.SetValue(OpenXmlElement, (System.Boolean?)value);
     }
   }
   
@@ -53,7 +53,7 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Id").SetValue(OpenXmlElement, (System.String?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Id")?.SetValue(OpenXmlElement, (System.String?)value);
     }
   }
   
@@ -66,7 +66,7 @@ public class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Uri").SetValue(OpenXmlElement, (System.Uri?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.ReferenceRelationship).GetProperty("Uri")?.SetValue(OpenXmlElement, (System.Uri?)value);
     }
   }
   

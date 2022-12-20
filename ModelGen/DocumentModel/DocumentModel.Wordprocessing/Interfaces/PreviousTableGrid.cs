@@ -3,8 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Table Grid.
 /// </summary>
-public interface PreviousTableGrid
+public partial interface PreviousTableGrid
 {
-  public Collection<DocumentModel.Wordprocessing.GridColumn>? GridColumns { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.GridColumn>? GridColumns { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ContentPart Class.
 /// </summary>
-public class ContentPartImpl: ModelElementImpl, ContentPart
+public partial class ContentPartImpl: ModelElementImpl, ContentPart
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents the type of part referenced by a .
 /// </summary>
-public class DataPartImpl: ModelObjectImpl, DataPart
+public partial class DataPartImpl: ModelObjectImpl, DataPart
 {
   public DocumentFormat.OpenXml.Packaging.DataPart? OpenXmlElement
   {
@@ -24,11 +24,6 @@ public class DataPartImpl: ModelObjectImpl, DataPart
   public Uri? Uri
   {
     get => (System.Uri?)OpenXmlElement?.Uri;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DataPart).GetProperty("Uri").SetValue(OpenXmlElement, (System.Uri?)value);
-    }
   }
   
   /// <summary>
@@ -37,11 +32,6 @@ public class DataPartImpl: ModelObjectImpl, DataPart
   public String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DataPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

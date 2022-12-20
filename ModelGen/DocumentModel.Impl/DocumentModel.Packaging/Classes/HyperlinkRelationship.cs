@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents a hyperlink relationship.
 /// </summary>
-public class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, HyperlinkRelationship
+public partial class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, HyperlinkRelationship
 {
   public new DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? OpenXmlElement
   {
@@ -24,11 +24,6 @@ public class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelatio
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

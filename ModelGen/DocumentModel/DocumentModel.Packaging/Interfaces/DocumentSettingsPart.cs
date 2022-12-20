@@ -3,20 +3,25 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DocumentSettingsPart
 /// </summary>
-public interface DocumentSettingsPart
+public partial interface DocumentSettingsPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
   /// <summary>
   /// Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; }
   
-  public String? RelationshipType { get ; set; }
+  /// <summary>
+  /// Gets the MailMergeRecipientDataPart of the DocumentSettingsPart
+  /// </summary>
+  public DocumentModel.Packaging.MailMergeRecipientDataPart? MailMergeRecipientDataPart { get; }
+  
+  public String? RelationshipType { get; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Settings? Settings { get ; set; }
+  public DocumentModel.Wordprocessing.Settings? Settings { get; set; }
   
 }

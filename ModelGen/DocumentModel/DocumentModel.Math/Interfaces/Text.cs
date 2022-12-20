@@ -3,11 +3,11 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Text.
 /// </summary>
-public interface Text
+public partial interface Text
 {
   /// <summary>
   /// space
   /// </summary>
-  public DocumentModel.SpaceProcessingMode? Space { get ; set; }
+  public DocumentModel.SpaceProcessingMode? Space { get; set; }
   
 }

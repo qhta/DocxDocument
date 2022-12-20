@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataLabelCallout Class.
 /// </summary>
-public class DataLabelCalloutImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataLabelCallout
+public partial class DataLabelCalloutImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataLabelCallout
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataLabelCallout? OpenXmlElement
   {

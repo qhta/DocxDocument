@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Whole E2O Formatting.
 /// </summary>
-public class WholeImpl: ModelElementImpl, Whole
+public partial class WholeImpl: ModelElementImpl, Whole
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Whole? OpenXmlElement
   {

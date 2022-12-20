@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Line Style List.
 /// </summary>
-public interface LineStyleList
+public partial interface LineStyleList
 {
-  public DocumentModel.Drawings.Outline? Outline { get ; set; }
+  public DocumentModel.Drawings.Outline? Outline { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorMap Class.
 /// </summary>
-public class ColorMapImpl: DocumentModel.Drawings.ColorMappingTypeImpl, ColorMap
+public partial class ColorMapImpl: DocumentModel.Drawings.ColorMappingTypeImpl, ColorMap
 {
   public new DocumentFormat.OpenXml.Drawing.ColorMap? OpenXmlElement
   {

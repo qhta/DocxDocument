@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the RadarChartSeries Class.
 /// </summary>
-public class RadarChartSeriesImpl: ModelElementImpl, RadarChartSeries
+public partial class RadarChartSeriesImpl: ModelElementImpl, RadarChartSeries
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RadarChartSeries? OpenXmlElement
   {
@@ -241,7 +241,7 @@ public class RadarChartSeriesImpl: ModelElementImpl, RadarChartSeries
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -251,6 +251,7 @@ public class RadarChartSeriesImpl: ModelElementImpl, RadarChartSeries
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -262,6 +263,7 @@ public class RadarChartSeriesImpl: ModelElementImpl, RadarChartSeries
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)

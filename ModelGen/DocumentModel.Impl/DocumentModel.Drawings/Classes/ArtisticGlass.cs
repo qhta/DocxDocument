@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticGlass Class.
 /// </summary>
-public class ArtisticGlassImpl: ModelElementImpl, ArtisticGlass
+public partial class ArtisticGlassImpl: ModelElementImpl, ArtisticGlass
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass? OpenXmlElement
   {

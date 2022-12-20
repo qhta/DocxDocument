@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Data Labels.
 /// </summary>
-public class DataLabelsImpl: ModelElementImpl, DataLabels
+public partial class DataLabelsImpl: ModelElementImpl, DataLabels
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DataLabels? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataLabel>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataLabel>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataLabelImpl valImpl)
@@ -82,6 +83,7 @@ public class DataLabelsImpl: ModelElementImpl, DataLabels
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataLabelImpl valImpl)

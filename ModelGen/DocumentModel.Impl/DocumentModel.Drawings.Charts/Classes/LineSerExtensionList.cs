@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LineSerExtensionList Class.
 /// </summary>
-public class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
+public partial class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.LineSerExtension>? _LineSerExtensions;
   
-  private void _LineSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LineSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.LineSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.LineSerExtensionImpl valImpl)

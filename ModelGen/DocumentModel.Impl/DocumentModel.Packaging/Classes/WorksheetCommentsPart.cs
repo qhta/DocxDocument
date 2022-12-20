@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WorksheetCommentsPart
 /// </summary>
-public class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetCommentsPart
+public partial class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetCommentsPart
 {
   public new DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class WorksheetCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

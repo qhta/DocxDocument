@@ -3,10 +3,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the StylesWithEffectsPart
 /// </summary>
-public interface StylesWithEffectsPart
+public partial interface StylesWithEffectsPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

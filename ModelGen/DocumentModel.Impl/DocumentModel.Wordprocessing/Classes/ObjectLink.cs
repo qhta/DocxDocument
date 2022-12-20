@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ObjectLink Class.
 /// </summary>
-public class ObjectLinkImpl: ModelElementImpl, ObjectLink
+public partial class ObjectLinkImpl: ModelElementImpl, ObjectLink
 {
   public DocumentFormat.OpenXml.Wordprocessing.ObjectLink? OpenXmlElement
   {

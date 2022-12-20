@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Definitions.
 /// </summary>
-public class NumberingImpl: ModelElementImpl, Numbering
+public partial class NumberingImpl: ModelElementImpl, Numbering
 {
   public DocumentFormat.OpenXml.Wordprocessing.Numbering? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class NumberingImpl: ModelElementImpl, Numbering
   public NumberingImpl(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the NumberingDefinitionsPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.NumberingDefinitionsPart? NumberingDefinitionsPart
+  {
+    get
+    {
+      if (OpenXmlElement?.NumberingDefinitionsPart != null)
+        return new DocumentModel.Packaging.NumberingDefinitionsPartImpl(OpenXmlElement.NumberingDefinitionsPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.NumberingDefinitionsPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.NumberingPictureBullet>? NumberingPictureBullets
@@ -61,7 +81,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
   }
   private ObservableCollection<DocumentModel.Wordprocessing.NumberingPictureBullet>? _NumberingPictureBullets;
   
-  private void _NumberingPictureBullets_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumberingPictureBullets_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.NumberingPictureBulletImpl valImpl)
@@ -82,6 +103,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.NumberingPictureBulletImpl valImpl)
@@ -143,7 +165,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AbstractNum>? _AbstractNums;
   
-  private void _AbstractNums_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AbstractNums_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -153,6 +175,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AbstractNum>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AbstractNumImpl valImpl)
@@ -164,6 +187,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AbstractNumImpl valImpl)
@@ -225,7 +249,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
   }
   private ObservableCollection<DocumentModel.Wordprocessing.NumberingInstance>? _NumberingInstances;
   
-  private void _NumberingInstances_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumberingInstances_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -235,6 +259,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.NumberingInstance>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.NumberingInstanceImpl valImpl)
@@ -246,6 +271,7 @@ public class NumberingImpl: ModelElementImpl, Numbering
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.NumberingInstanceImpl valImpl)

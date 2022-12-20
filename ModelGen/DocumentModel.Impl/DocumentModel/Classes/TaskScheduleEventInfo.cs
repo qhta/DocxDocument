@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskScheduleEventInfo Class.
 /// </summary>
-public class TaskScheduleEventInfoImpl: ModelElementImpl, TaskScheduleEventInfo
+public partial class TaskScheduleEventInfoImpl: ModelElementImpl, TaskScheduleEventInfo
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DataLabelsRange Class.
 /// </summary>
-public class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
+public partial class DataLabelsRangeImpl: ModelElementImpl, DataLabelsRange
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? OpenXmlElement
   {

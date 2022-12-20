@@ -3,21 +3,21 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Lower-Limit Function.
 /// </summary>
-public interface LimitLower
+public partial interface LimitLower
 {
   /// <summary>
   /// Lower Limit Properties.
   /// </summary>
-  public DocumentModel.Math.LimitLowerProperties? LimitLowerProperties { get ; set; }
+  public DocumentModel.Math.LimitLowerProperties? LimitLowerProperties { get; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get ; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
   /// <summary>
   /// Limit (Lower).
   /// </summary>
-  public DocumentModel.Math.Limit? Limit { get ; set; }
+  public DocumentModel.Math.Limit? Limit { get; set; }
   
 }

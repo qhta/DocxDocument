@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PictureBulletBase Class.
 /// </summary>
-public class PictureBulletBaseImpl: ModelElementImpl, PictureBulletBase
+public partial class PictureBulletBaseImpl: ModelElementImpl, PictureBulletBase
 {
   public DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase? OpenXmlElement
   {

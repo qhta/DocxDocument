@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the Task Class.
 /// </summary>
-public class TaskImpl: ModelElementImpl, Task
+public partial class TaskImpl: ModelElementImpl, Task
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? OpenXmlElement
   {

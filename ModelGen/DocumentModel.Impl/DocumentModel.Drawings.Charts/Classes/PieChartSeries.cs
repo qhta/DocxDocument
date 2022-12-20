@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Pie Chart Series.
 /// </summary>
-public class PieChartSeriesImpl: ModelElementImpl, PieChartSeries
+public partial class PieChartSeriesImpl: ModelElementImpl, PieChartSeries
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries? OpenXmlElement
   {
@@ -235,7 +235,7 @@ public class PieChartSeriesImpl: ModelElementImpl, PieChartSeries
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -245,6 +245,7 @@ public class PieChartSeriesImpl: ModelElementImpl, PieChartSeries
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -256,6 +257,7 @@ public class PieChartSeriesImpl: ModelElementImpl, PieChartSeries
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)

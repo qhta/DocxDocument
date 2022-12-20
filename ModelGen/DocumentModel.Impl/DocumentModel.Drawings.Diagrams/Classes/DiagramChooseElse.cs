@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Else.
 /// </summary>
-public class DiagramChooseElseImpl: ModelElementImpl, DiagramChooseElse
+public partial class DiagramChooseElseImpl: ModelElementImpl, DiagramChooseElse
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse? OpenXmlElement
   {

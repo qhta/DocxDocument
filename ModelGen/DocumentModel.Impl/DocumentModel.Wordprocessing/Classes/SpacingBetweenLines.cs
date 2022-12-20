@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SpacingBetweenLines Class.
 /// </summary>
-public class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
+public partial class SpacingBetweenLinesImpl: ModelElementImpl, SpacingBetweenLines
 {
   public DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? OpenXmlElement
   {

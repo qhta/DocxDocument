@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the SeriesLine Class.
 /// </summary>
-public class SeriesLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, SeriesLine
+public partial class SeriesLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, SeriesLine
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.SeriesLine? OpenXmlElement
   {

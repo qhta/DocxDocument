@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Multi Level String Reference.
 /// </summary>
-public class MultiLevelStringReferenceImpl: ModelElementImpl, MultiLevelStringReference
+public partial class MultiLevelStringReferenceImpl: ModelElementImpl, MultiLevelStringReference
 {
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? OpenXmlElement
   {

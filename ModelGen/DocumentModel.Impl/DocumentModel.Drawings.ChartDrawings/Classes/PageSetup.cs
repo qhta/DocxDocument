@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the PageSetup Class.
 /// </summary>
-public class PageSetupImpl: ModelElementImpl, PageSetup
+public partial class PageSetupImpl: ModelElementImpl, PageSetup
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? OpenXmlElement
   {

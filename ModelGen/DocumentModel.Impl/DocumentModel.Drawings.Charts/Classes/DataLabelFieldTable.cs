@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DataLabelFieldTable Class.
 /// </summary>
-public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
+public partial class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataLabelFieldTableEntry>? _DataLabelFieldTableEntries;
   
-  private void _DataLabelFieldTableEntries_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataLabelFieldTableEntries_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)
@@ -82,6 +83,7 @@ public class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataLabelFieldTableEntryImpl valImpl)

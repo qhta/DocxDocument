@@ -3,16 +3,16 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FootnoteEndnoteReferenceType Class.
 /// </summary>
-public interface FootnoteEndnoteReferenceType
+public partial interface FootnoteEndnoteReferenceType
 {
   /// <summary>
   /// Suppress Footnote/Endnote Reference Mark
   /// </summary>
-  public Boolean? CustomMarkFollows { get ; set; }
+  public Boolean? CustomMarkFollows { get; set; }
   
   /// <summary>
   /// Footnote/Endnote ID Reference
   /// </summary>
-  public Int32? Id { get ; set; }
+  public Int32? Id { get; set; }
   
 }

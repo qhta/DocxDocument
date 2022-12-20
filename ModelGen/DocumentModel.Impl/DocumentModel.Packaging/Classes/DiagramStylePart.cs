@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DiagramStylePart
 /// </summary>
-public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramStylePart
+public partial class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramStylePart
 {
   public new DocumentFormat.OpenXml.Packaging.DiagramStylePart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class DiagramStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diag
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DiagramStylePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DiagramStylePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ImageEffect Class.
 /// </summary>
-public class ImageEffectImpl: ModelElementImpl, ImageEffect
+public partial class ImageEffectImpl: ModelElementImpl, ImageEffect
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect? OpenXmlElement
   {

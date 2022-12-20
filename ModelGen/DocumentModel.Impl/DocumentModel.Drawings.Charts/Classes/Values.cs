@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Values Class.
 /// </summary>
-public class ValuesImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Values
+public partial class ValuesImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Values
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.Values? OpenXmlElement
   {

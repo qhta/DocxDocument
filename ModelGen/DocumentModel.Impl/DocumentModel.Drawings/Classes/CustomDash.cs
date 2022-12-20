@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom Dash.
 /// </summary>
-public class CustomDashImpl: ModelElementImpl, CustomDash
+public partial class CustomDashImpl: ModelElementImpl, CustomDash
 {
   public DocumentFormat.OpenXml.Drawing.CustomDash? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
   }
   private ObservableCollection<DocumentModel.Drawings.DashStop>? _DashStops;
   
-  private void _DashStops_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DashStops_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DashStop>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.DashStopImpl valImpl)
@@ -82,6 +83,7 @@ public class CustomDashImpl: ModelElementImpl, CustomDash
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.DashStopImpl valImpl)

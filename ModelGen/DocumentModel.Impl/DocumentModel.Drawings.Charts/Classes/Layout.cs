@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Layout.
 /// </summary>
-public class LayoutImpl: ModelElementImpl, Layout
+public partial class LayoutImpl: ModelElementImpl, Layout
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Layout? OpenXmlElement
   {

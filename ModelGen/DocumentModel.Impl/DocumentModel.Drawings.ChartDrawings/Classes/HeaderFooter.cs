@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the HeaderFooter Class.
 /// </summary>
-public class HeaderFooterImpl: ModelElementImpl, HeaderFooter
+public partial class HeaderFooterImpl: ModelElementImpl, HeaderFooter
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? OpenXmlElement
   {

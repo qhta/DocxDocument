@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Camera Class.
 /// </summary>
-public class CameraImpl: ModelElementImpl, Camera
+public partial class CameraImpl: ModelElementImpl, Camera
 {
   public DocumentFormat.OpenXml.Office2010.Word.Camera? OpenXmlElement
   {

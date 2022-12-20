@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Shape Style.
 /// </summary>
-public class StyleImpl: ModelElementImpl, Style
+public partial class StyleImpl: ModelElementImpl, Style
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Style? OpenXmlElement
   {

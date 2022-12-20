@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtRunRuby Class.
 /// </summary>
-public class SdtRunRubyImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRunRuby
+public partial class SdtRunRubyImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRunRuby
 {
   public new DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby? OpenXmlElement
   {

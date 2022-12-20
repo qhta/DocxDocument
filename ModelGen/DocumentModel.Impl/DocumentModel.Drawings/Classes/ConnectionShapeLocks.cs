@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Connection Shape Locks.
 /// </summary>
-public class ConnectionShapeLocksImpl: ModelElementImpl, ConnectionShapeLocks
+public partial class ConnectionShapeLocksImpl: ModelElementImpl, ConnectionShapeLocks
 {
   public DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FrameProperties Class.
 /// </summary>
-public class FramePropertiesImpl: ModelElementImpl, FrameProperties
+public partial class FramePropertiesImpl: ModelElementImpl, FrameProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.FrameProperties? OpenXmlElement
   {

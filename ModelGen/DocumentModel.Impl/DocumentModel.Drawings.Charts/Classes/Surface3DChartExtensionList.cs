@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Surface3DChartExtensionList Class.
 /// </summary>
-public class Surface3DChartExtensionListImpl: ModelElementImpl, Surface3DChartExtensionList
+public partial class Surface3DChartExtensionListImpl: ModelElementImpl, Surface3DChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class Surface3DChartExtensionListImpl: ModelElementImpl, Surface3DChartEx
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Surface3DChartExtension>? _Surface3DChartExtensions;
   
-  private void _Surface3DChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Surface3DChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class Surface3DChartExtensionListImpl: ModelElementImpl, Surface3DChartEx
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.Surface3DChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class Surface3DChartExtensionListImpl: ModelElementImpl, Surface3DChartEx
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.Surface3DChartExtensionImpl valImpl)

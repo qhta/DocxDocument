@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GradientFill Class.
 /// </summary>
-public class GradientFillImpl: ModelElementImpl, GradientFill
+public partial class GradientFillImpl: ModelElementImpl, GradientFill
 {
   public DocumentFormat.OpenXml.Drawing.GradientFill? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Categorization.
 /// </summary>
-public class CategoryImpl: ModelElementImpl, Category
+public partial class CategoryImpl: ModelElementImpl, Category
 {
   public DocumentFormat.OpenXml.Wordprocessing.Category? OpenXmlElement
   {

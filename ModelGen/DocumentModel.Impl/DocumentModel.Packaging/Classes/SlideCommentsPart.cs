@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SlideCommentsPart
 /// </summary>
-public class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideCommentsPart
+public partial class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideCommentsPart
 {
   public new DocumentFormat.OpenXml.Packaging.SlideCommentsPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlideCommentsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlideCommentsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

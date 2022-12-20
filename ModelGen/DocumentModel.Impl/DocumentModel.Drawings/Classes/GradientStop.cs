@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Gradient stops.
 /// </summary>
-public class GradientStopImpl: ModelElementImpl, GradientStop
+public partial class GradientStopImpl: ModelElementImpl, GradientStop
 {
   public DocumentFormat.OpenXml.Drawing.GradientStop? OpenXmlElement
   {

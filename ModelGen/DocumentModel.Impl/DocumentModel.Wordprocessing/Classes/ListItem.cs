@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Combo Box List Item.
 /// </summary>
-public class ListItemImpl: ModelElementImpl, ListItem
+public partial class ListItemImpl: ModelElementImpl, ListItem
 {
   public DocumentFormat.OpenXml.Wordprocessing.ListItem? OpenXmlElement
   {

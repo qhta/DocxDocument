@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionPropertyBag Class.
 /// </summary>
-public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionPropertyBag
+public partial class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionPropertyBag
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
   }
   private ObservableCollection<DocumentModel.WebExtensions.WebExtensionProperty>? _WebExtensionProperties;
   
-  private void _WebExtensionProperties_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _WebExtensionProperties_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)
@@ -82,6 +83,7 @@ public class WebExtensionPropertyBagImpl: ModelElementImpl, WebExtensionProperty
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.WebExtensions.WebExtensionPropertyImpl valImpl)

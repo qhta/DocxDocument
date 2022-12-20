@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Cell-Level Structured Document Tag.
 /// </summary>
-public class SdtCellImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtCell
+public partial class SdtCellImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtCell
 {
   public new DocumentFormat.OpenXml.Wordprocessing.SdtCell? OpenXmlElement
   {

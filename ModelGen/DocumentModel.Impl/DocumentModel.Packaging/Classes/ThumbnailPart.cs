@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ThumbnailPart
 /// </summary>
-public class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThumbnailPart
+public partial class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThumbnailPart
 {
   public new DocumentFormat.OpenXml.Packaging.ThumbnailPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Thumbna
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ThumbnailPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

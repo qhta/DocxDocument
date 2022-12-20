@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Inline Embedded Object.
 /// </summary>
-public class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
+public partial class EmbeddedObjectImpl: ModelElementImpl, EmbeddedObject
 {
   public DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? OpenXmlElement
   {

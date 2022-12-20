@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Copyrights Class.
 /// </summary>
-public class CopyrightsImpl: ModelElementImpl, Copyrights
+public partial class CopyrightsImpl: ModelElementImpl, Copyrights
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights? OpenXmlElement
   {
@@ -60,7 +60,7 @@ public class CopyrightsImpl: ModelElementImpl, Copyrights
   }
   private ObservableCollection<System.String>? _CopyrightXsdstrings;
   
-  private void _CopyrightXsdstrings_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CopyrightXsdstrings_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -70,6 +70,7 @@ public class CopyrightsImpl: ModelElementImpl, Copyrights
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
           if (val is string str)
@@ -80,6 +81,7 @@ public class CopyrightsImpl: ModelElementImpl, Copyrights
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
         if (val is string str)

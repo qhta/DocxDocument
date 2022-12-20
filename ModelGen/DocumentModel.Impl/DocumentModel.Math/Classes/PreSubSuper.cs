@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Pre-Sub-Superscript Function.
 /// </summary>
-public class PreSubSuperImpl: ModelElementImpl, PreSubSuper
+public partial class PreSubSuperImpl: ModelElementImpl, PreSubSuper
 {
   public DocumentFormat.OpenXml.Math.PreSubSuper? OpenXmlElement
   {

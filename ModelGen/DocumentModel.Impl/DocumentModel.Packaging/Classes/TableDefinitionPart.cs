@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the TableDefinitionPart
 /// </summary>
-public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, TableDefinitionPart
+public partial class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, TableDefinitionPart
 {
   public new DocumentFormat.OpenXml.Packaging.TableDefinitionPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.TableDefinitionPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -49,33 +44,10 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
       }
       return _QueryTableParts;
     }
-    set
-    {
-      if (value != null && value != _QueryTableParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.QueryTablePart> observableCollection)
-        _QueryTableParts = observableCollection;
-      else if (value != null)
-        _QueryTableParts = new ObservableCollection<DocumentModel.Packaging.QueryTablePart>(value);
-      else
-       _QueryTableParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.QueryTablePart>? _QueryTableParts;
   
-  private void _QueryTableParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _QueryTableParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -86,6 +58,7 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
@@ -97,6 +70,7 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.QueryTablePartImpl valImpl)
@@ -118,11 +92,6 @@ public class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, T
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.TableDefinitionPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoPolygon Class.
 /// </summary>
-public class GeoPolygonImpl: ModelElementImpl, GeoPolygon
+public partial class GeoPolygonImpl: ModelElementImpl, GeoPolygon
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? OpenXmlElement
   {

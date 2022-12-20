@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the TextProperties Class.
 /// </summary>
-public class TextPropertiesImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, TextProperties
+public partial class TextPropertiesImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, TextProperties
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.TextProperties? OpenXmlElement
   {

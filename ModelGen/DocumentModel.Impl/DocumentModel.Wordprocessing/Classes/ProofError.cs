@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ProofError Class.
 /// </summary>
-public class ProofErrorImpl: ModelElementImpl, ProofError
+public partial class ProofErrorImpl: ModelElementImpl, ProofError
 {
   public DocumentFormat.OpenXml.Wordprocessing.ProofError? OpenXmlElement
   {

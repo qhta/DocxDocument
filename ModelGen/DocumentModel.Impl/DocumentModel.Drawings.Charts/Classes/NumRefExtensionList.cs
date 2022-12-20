@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the NumRefExtensionList Class.
 /// </summary>
-public class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
+public partial class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.NumRefExtension>? _NumRefExtensions;
   
-  private void _NumRefExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumRefExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.NumRefExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class NumRefExtensionListImpl: ModelElementImpl, NumRefExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.NumRefExtensionImpl valImpl)

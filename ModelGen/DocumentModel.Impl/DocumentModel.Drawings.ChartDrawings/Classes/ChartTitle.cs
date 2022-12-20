@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ChartTitle Class.
 /// </summary>
-public class ChartTitleImpl: ModelElementImpl, ChartTitle
+public partial class ChartTitleImpl: ModelElementImpl, ChartTitle
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartTitle? OpenXmlElement
   {

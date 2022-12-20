@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Container.
 /// </summary>
-public class EffectListImpl: ModelElementImpl, EffectList
+public partial class EffectListImpl: ModelElementImpl, EffectList
 {
   public DocumentFormat.OpenXml.Drawing.EffectList? OpenXmlElement
   {

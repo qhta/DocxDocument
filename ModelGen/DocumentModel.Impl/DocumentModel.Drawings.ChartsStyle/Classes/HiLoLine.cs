@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the HiLoLine Class.
 /// </summary>
-public class HiLoLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, HiLoLine
+public partial class HiLoLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, HiLoLine
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.HiLoLine? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the OpenXmlValueColorEndPositionElement Class.
 /// </summary>
-public class OpenXmlValueColorEndPositionElementImpl: ModelElementImpl, OpenXmlValueColorEndPositionElement
+public partial class OpenXmlValueColorEndPositionElementImpl: ModelElementImpl, OpenXmlValueColorEndPositionElement
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement? OpenXmlElement
   {

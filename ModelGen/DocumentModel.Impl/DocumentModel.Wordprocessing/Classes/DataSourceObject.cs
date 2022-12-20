@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Office Data Source Object Settings.
 /// </summary>
-public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
+public partial class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
 {
   public DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? OpenXmlElement
   {
@@ -233,7 +233,7 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   }
   private ObservableCollection<DocumentModel.Wordprocessing.FieldMapData>? _FieldMapDatas;
   
-  private void _FieldMapDatas_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _FieldMapDatas_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -243,6 +243,7 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.FieldMapDataImpl valImpl)
@@ -254,6 +255,7 @@ public class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.FieldMapDataImpl valImpl)

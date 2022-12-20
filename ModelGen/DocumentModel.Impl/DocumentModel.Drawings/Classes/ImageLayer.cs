@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ImageLayer Class.
 /// </summary>
-public class ImageLayerImpl: ModelElementImpl, ImageLayer
+public partial class ImageLayerImpl: ModelElementImpl, ImageLayer
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? OpenXmlElement
   {
@@ -74,7 +74,7 @@ public class ImageLayerImpl: ModelElementImpl, ImageLayer
   }
   private ObservableCollection<DocumentModel.Drawings.ImageEffect>? _ImageEffects;
   
-  private void _ImageEffects_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageEffects_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -84,6 +84,7 @@ public class ImageLayerImpl: ModelElementImpl, ImageLayer
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ImageEffectImpl valImpl)
@@ -95,6 +96,7 @@ public class ImageLayerImpl: ModelElementImpl, ImageLayer
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ImageEffectImpl valImpl)

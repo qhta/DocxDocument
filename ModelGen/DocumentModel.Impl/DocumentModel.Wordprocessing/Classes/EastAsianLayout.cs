@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the EastAsianLayout Class.
 /// </summary>
-public class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
+public partial class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
 {
   public DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? OpenXmlElement
   {

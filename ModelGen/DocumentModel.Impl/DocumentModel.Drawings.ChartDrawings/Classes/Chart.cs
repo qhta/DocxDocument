@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Chart Class.
 /// </summary>
-public class ChartImpl: ModelElementImpl, Chart
+public partial class ChartImpl: ModelElementImpl, Chart
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Chart? OpenXmlElement
   {

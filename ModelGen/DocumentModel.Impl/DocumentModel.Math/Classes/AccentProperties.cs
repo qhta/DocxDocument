@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Accent Properties.
 /// </summary>
-public class AccentPropertiesImpl: ModelElementImpl, AccentProperties
+public partial class AccentPropertiesImpl: ModelElementImpl, AccentProperties
 {
   public DocumentFormat.OpenXml.Math.AccentProperties? OpenXmlElement
   {

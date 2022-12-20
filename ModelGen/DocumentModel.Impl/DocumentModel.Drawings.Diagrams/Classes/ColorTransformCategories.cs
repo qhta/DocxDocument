@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Color Transform Category List.
 /// </summary>
-public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCategories
+public partial class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCategories
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCateg
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.ColorTransformCategory>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCateg
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ColorTransformCategoryImpl valImpl)
@@ -82,6 +83,7 @@ public class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCateg
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ColorTransformCategoryImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticTexturizer Class.
 /// </summary>
-public class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
+public partial class ArtisticTexturizerImpl: ModelElementImpl, ArtisticTexturizer
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? OpenXmlElement
   {

@@ -3,26 +3,26 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Freeze Document Layout.
 /// </summary>
-public interface ReadModeInkLockDown
+public partial interface ReadModeInkLockDown
 {
   /// <summary>
   /// Use Actual Pages, Not Virtual Pages
   /// </summary>
-  public Boolean? UseActualPages { get ; set; }
+  public Boolean? UseActualPages { get; set; }
   
   /// <summary>
   /// Virtual Page Width
   /// </summary>
-  public UInt32? Width { get ; set; }
+  public UInt32? Width { get; set; }
   
   /// <summary>
   /// Virtual Page Height
   /// </summary>
-  public UInt32? Height { get ; set; }
+  public UInt32? Height { get; set; }
   
   /// <summary>
   /// Font Size Scaling
   /// </summary>
-  public String? FontSize { get ; set; }
+  public String? FontSize { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Date Axis.
 /// </summary>
-public class DateAxisImpl: ModelElementImpl, DateAxis
+public partial class DateAxisImpl: ModelElementImpl, DateAxis
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DateAxis? OpenXmlElement
   {

@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LiveFeedProperties Class.
 /// </summary>
-public interface LiveFeedProperties
+public partial interface LiveFeedProperties
 {
   /// <summary>
   /// LiveFeedBackgroundProperties.
   /// </summary>
-  public DocumentModel.Drawings.LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get ; set; }
+  public DocumentModel.Drawings.LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

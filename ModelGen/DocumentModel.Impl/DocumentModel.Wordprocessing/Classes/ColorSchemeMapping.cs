@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Theme Color Mappings.
 /// </summary>
-public class ColorSchemeMappingImpl: ModelElementImpl, ColorSchemeMapping
+public partial class ColorSchemeMappingImpl: ModelElementImpl, ColorSchemeMapping
 {
   public DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Future extensions..
 /// </summary>
-public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionList
+public partial class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.HyperlinkExtension>? _HyperlinkExtensions;
   
-  private void _HyperlinkExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _HyperlinkExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.HyperlinkExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.HyperlinkExtensionImpl valImpl)

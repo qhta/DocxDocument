@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the DiagramDefinitionExtension Class.
 /// </summary>
-public class DiagramDefinitionExtensionImpl: ModelElementImpl, DiagramDefinitionExtension
+public partial class DiagramDefinitionExtensionImpl: ModelElementImpl, DiagramDefinitionExtension
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension? OpenXmlElement
   {

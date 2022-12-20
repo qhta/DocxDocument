@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineEndPropertiesType Class.
 /// </summary>
-public class LineEndPropertiesTypeImpl: ModelElementImpl, LineEndPropertiesType
+public partial class LineEndPropertiesTypeImpl: ModelElementImpl, LineEndPropertiesType
 {
   public DocumentFormat.OpenXml.Drawing.LineEndPropertiesType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Properties3D Class.
 /// </summary>
-public class Properties3DImpl: ModelElementImpl, Properties3D
+public partial class Properties3DImpl: ModelElementImpl, Properties3D
 {
   public DocumentFormat.OpenXml.Office2010.Word.Properties3D? OpenXmlElement
   {

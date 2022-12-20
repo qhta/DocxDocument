@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the PtExtensionList Class.
 /// </summary>
-public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
+public partial class PtExtensionListImpl: ModelElementImpl, PtExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.PtExtension>? _PtExtensions;
   
-  private void _PtExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _PtExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class PtExtensionListImpl: ModelElementImpl, PtExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.PtExtensionImpl valImpl)

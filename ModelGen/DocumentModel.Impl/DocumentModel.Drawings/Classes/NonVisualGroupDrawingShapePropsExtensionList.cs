@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualGroupDrawingShapePropsExtensionList Class.
 /// </summary>
-public class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl, NonVisualGroupDrawingShapePropsExtensionList
+public partial class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl, NonVisualGroupDrawingShapePropsExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl,
   }
   private ObservableCollection<DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension>? _NonVisualGroupDrawingShapePropsExtensions;
   
-  private void _NonVisualGroupDrawingShapePropsExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NonVisualGroupDrawingShapePropsExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl,
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class NonVisualGroupDrawingShapePropsExtensionListImpl: ModelElementImpl,
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionImpl valImpl)

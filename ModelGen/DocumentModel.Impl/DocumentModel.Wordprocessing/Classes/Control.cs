@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Control Class.
 /// </summary>
-public class ControlImpl: ModelElementImpl, Control
+public partial class ControlImpl: ModelElementImpl, Control
 {
   public DocumentFormat.OpenXml.Wordprocessing.Control? OpenXmlElement
   {

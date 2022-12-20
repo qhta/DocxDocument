@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticBlur Class.
 /// </summary>
-public class ArtisticBlurImpl: ModelElementImpl, ArtisticBlur
+public partial class ArtisticBlurImpl: ModelElementImpl, ArtisticBlur
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Drawing Object Non-Visual Properties.
 /// </summary>
-public class DocPropertiesImpl: ModelElementImpl, DocProperties
+public partial class DocPropertiesImpl: ModelElementImpl, DocProperties
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? OpenXmlElement
   {

@@ -3,21 +3,21 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RunTrackChangeType Class.
 /// </summary>
-public interface RunTrackChangeType
+public partial interface RunTrackChangeType
 {
   /// <summary>
   /// author
   /// </summary>
-  public String? Author { get ; set; }
+  public String? Author { get; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public DateTime? Date { get ; set; }
+  public DateTime? Date { get; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
 }

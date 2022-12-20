@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Custom XML Data Properties.
 /// </summary>
-public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
+public partial class DataStoreItemImpl: ModelElementImpl, DataStoreItem
 {
   public DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? OpenXmlElement
   {
@@ -60,6 +60,26 @@ public class DataStoreItemImpl: ModelElementImpl, DataStoreItem
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the CustomXmlPropertiesPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.CustomXmlPropertiesPart? CustomXmlPropertiesPart
+  {
+    get
+    {
+      if (OpenXmlElement?.CustomXmlPropertiesPart != null)
+        return new DocumentModel.Packaging.CustomXmlPropertiesPartImpl(OpenXmlElement.CustomXmlPropertiesPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.CustomXmlPropertiesPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

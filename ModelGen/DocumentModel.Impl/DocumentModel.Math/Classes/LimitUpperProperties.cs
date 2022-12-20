@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Upper Limit Properties.
 /// </summary>
-public class LimitUpperPropertiesImpl: ModelElementImpl, LimitUpperProperties
+public partial class LimitUpperPropertiesImpl: ModelElementImpl, LimitUpperProperties
 {
   public DocumentFormat.OpenXml.Math.LimitUpperProperties? OpenXmlElement
   {

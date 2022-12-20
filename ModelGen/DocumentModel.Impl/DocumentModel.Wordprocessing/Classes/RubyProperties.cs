@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Phonetic Guide Properties.
 /// </summary>
-public class RubyPropertiesImpl: ModelElementImpl, RubyProperties
+public partial class RubyPropertiesImpl: ModelElementImpl, RubyProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.RubyProperties? OpenXmlElement
   {

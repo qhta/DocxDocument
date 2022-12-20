@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataLabel Class.
 /// </summary>
-public class DataLabelImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataLabel
+public partial class DataLabelImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataLabel
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataLabel? OpenXmlElement
   {

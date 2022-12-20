@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the SeriesElementVisibilities Class.
 /// </summary>
-public class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisibilities
+public partial class SeriesElementVisibilitiesImpl: ModelElementImpl, SeriesElementVisibilities
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities? OpenXmlElement
   {

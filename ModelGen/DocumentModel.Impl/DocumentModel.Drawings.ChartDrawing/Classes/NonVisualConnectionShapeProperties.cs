@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Non-Visual Connection Shape Drawing Properties.
 /// </summary>
-public class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisualConnectionShapeProperties
+public partial class NonVisualConnectionShapePropertiesImpl: ModelElementImpl, NonVisualConnectionShapeProperties
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? OpenXmlElement
   {

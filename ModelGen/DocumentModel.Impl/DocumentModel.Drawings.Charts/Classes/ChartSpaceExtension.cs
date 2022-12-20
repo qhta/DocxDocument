@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ChartSpaceExtension Class.
 /// </summary>
-public class ChartSpaceExtensionImpl: ModelElementImpl, ChartSpaceExtension
+public partial class ChartSpaceExtensionImpl: ModelElementImpl, ChartSpaceExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? OpenXmlElement
   {

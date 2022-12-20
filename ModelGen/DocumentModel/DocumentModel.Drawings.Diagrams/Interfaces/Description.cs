@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Description.
 /// </summary>
-public interface Description
+public partial interface Description
 {
   /// <summary>
   /// Language
   /// </summary>
-  public String? Language { get ; set; }
+  public String? Language { get; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public String? Val { get ; set; }
+  public String? Val { get; set; }
   
 }

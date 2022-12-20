@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the SeriesLayoutProperties Class.
 /// </summary>
-public class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutProperties
+public partial class SeriesLayoutPropertiesImpl: ModelElementImpl, SeriesLayoutProperties
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? OpenXmlElement
   {

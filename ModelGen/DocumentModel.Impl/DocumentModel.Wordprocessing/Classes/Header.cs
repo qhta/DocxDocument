@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Header.
 /// </summary>
-public class HeaderImpl: ModelElementImpl, Header
+public partial class HeaderImpl: ModelElementImpl, Header
 {
   public DocumentFormat.OpenXml.Wordprocessing.Header? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class HeaderImpl: ModelElementImpl, Header
   public HeaderImpl(DocumentFormat.OpenXml.Wordprocessing.Header openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the HeaderPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.HeaderPart? HeaderPart
+  {
+    get
+    {
+      if (OpenXmlElement?.HeaderPart != null)
+        return new DocumentModel.Packaging.HeaderPartImpl(OpenXmlElement.HeaderPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.HeaderPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.AltChunk>? AltChunks
@@ -61,7 +81,7 @@ public class HeaderImpl: ModelElementImpl, Header
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AltChunk>? _AltChunks;
   
-  private void _AltChunks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AltChunks_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class HeaderImpl: ModelElementImpl, Header
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AltChunk>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AltChunkImpl valImpl)
@@ -82,6 +103,7 @@ public class HeaderImpl: ModelElementImpl, Header
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AltChunkImpl valImpl)
@@ -201,7 +223,7 @@ public class HeaderImpl: ModelElementImpl, Header
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Paragraph>? _Paragraphs;
   
-  private void _Paragraphs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Paragraphs_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -211,6 +233,7 @@ public class HeaderImpl: ModelElementImpl, Header
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
@@ -222,6 +245,7 @@ public class HeaderImpl: ModelElementImpl, Header
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
@@ -283,7 +307,7 @@ public class HeaderImpl: ModelElementImpl, Header
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Table>? _Tables;
   
-  private void _Tables_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Tables_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -293,6 +317,7 @@ public class HeaderImpl: ModelElementImpl, Header
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
@@ -304,6 +329,7 @@ public class HeaderImpl: ModelElementImpl, Header
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
@@ -1104,6 +1130,90 @@ public class HeaderImpl: ModelElementImpl, Header
       }
     }
   }
+  
+  public Collection<DocumentModel.Wordprocessing.ContentPart>? ContentParts
+  {
+    get
+    {
+      if (_ContentParts != null)
+      {
+        if (OpenXmlElement != null)
+        {
+          var items = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ContentPart>()
+            .Select(item => new DocumentModel.Wordprocessing.ContentPartImpl(item)).ToList();
+          _ContentParts = new ObservableCollection<DocumentModel.Wordprocessing.ContentPart>(items);
+        }
+        else
+          _ContentParts = new ObservableCollection<DocumentModel.Wordprocessing.ContentPart>();
+        _ContentParts.CollectionChanged += _ContentParts_CollectionChanged;
+      }
+      return _ContentParts;
+    }
+    set
+    {
+      if (value != null && value != _ContentParts && OpenXmlElement!=null)
+      {
+        OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ContentPart>();
+        foreach (var val in value)
+        {
+          if (val is DocumentModel.Wordprocessing.ContentPartImpl valImpl)
+          {
+            var item = valImpl.OpenXmlElement;
+            if (item != null)
+              OpenXmlElement.AddChild(item);
+          };
+        }
+      }
+      if (value is ObservableCollection<DocumentModel.Wordprocessing.ContentPart> observableCollection)
+        _ContentParts = observableCollection;
+      else if (value != null)
+        _ContentParts = new ObservableCollection<DocumentModel.Wordprocessing.ContentPart>(value);
+      else
+       _ContentParts = null;
+    }
+  }
+  private ObservableCollection<DocumentModel.Wordprocessing.ContentPart>? _ContentParts;
+  
+  private void _ContentParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (OpenXmlElement != null)
+    {
+      switch (args.Action)
+      {
+        case NotifyCollectionChangedAction.Reset:
+          OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ContentPart>();
+          break;
+        case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
+          foreach (var val in args.NewItems)
+          {
+            if (val is DocumentModel.Wordprocessing.ContentPartImpl valImpl)
+            {
+              var item = valImpl.OpenXmlElement;
+              if (item != null)
+                OpenXmlElement.AddChild(item);
+            };
+          }
+          break;
+        case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
+          foreach (var val in args.OldItems)
+          {
+              if (val is DocumentModel.Wordprocessing.ContentPartImpl valImpl)
+              {
+                  var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ContentPart>()
+                                .FirstOrDefault(anItem => anItem == valImpl.OpenXmlElement);
+                 if (oldItem != null)
+                    oldItem.Remove();
+             };
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   
   public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion
   {

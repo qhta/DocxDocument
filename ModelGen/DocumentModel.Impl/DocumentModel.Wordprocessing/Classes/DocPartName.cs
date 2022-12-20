@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Name.
 /// </summary>
-public class DocPartNameImpl: ModelElementImpl, DocPartName
+public partial class DocPartNameImpl: ModelElementImpl, DocPartName
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocPartName? OpenXmlElement
   {

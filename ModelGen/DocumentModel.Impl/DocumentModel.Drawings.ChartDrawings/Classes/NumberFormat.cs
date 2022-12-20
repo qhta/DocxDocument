@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NumberFormat Class.
 /// </summary>
-public class NumberFormatImpl: ModelElementImpl, NumberFormat
+public partial class NumberFormatImpl: ModelElementImpl, NumberFormat
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberFormat? OpenXmlElement
   {

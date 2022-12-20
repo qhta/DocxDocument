@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Container.
 /// </summary>
-public class EffectDagImpl: DocumentModel.Drawings.EffectContainerTypeImpl, EffectDag
+public partial class EffectDagImpl: DocumentModel.Drawings.EffectContainerTypeImpl, EffectDag
 {
   public new DocumentFormat.OpenXml.Drawing.EffectDag? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FullReference Class.
 /// </summary>
-public class FullReferenceImpl: ModelElementImpl, FullReference
+public partial class FullReferenceImpl: ModelElementImpl, FullReference
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference? OpenXmlElement
   {

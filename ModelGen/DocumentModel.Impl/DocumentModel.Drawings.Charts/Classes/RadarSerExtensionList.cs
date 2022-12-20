@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the RadarSerExtensionList Class.
 /// </summary>
-public class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
+public partial class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.RadarSerExtension>? _RadarSerExtensions;
   
-  private void _RadarSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _RadarSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.RadarSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class RadarSerExtensionListImpl: ModelElementImpl, RadarSerExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.RadarSerExtensionImpl valImpl)

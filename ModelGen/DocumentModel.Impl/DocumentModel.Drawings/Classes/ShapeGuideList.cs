@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List of Shape Guides.
 /// </summary>
-public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
+public partial class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
 {
   public DocumentFormat.OpenXml.Drawing.ShapeGuideList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
   }
   private ObservableCollection<DocumentModel.Drawings.ShapeGuide>? _ShapeGuides;
   
-  private void _ShapeGuides_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ShapeGuides_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapeGuide>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ShapeGuideImpl valImpl)
@@ -82,6 +83,7 @@ public class ShapeGuideListImpl: ModelElementImpl, ShapeGuideList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ShapeGuideImpl valImpl)

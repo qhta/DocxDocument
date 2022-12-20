@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FontSignature Class.
 /// </summary>
-public class FontSignatureImpl: ModelElementImpl, FontSignature
+public partial class FontSignatureImpl: ModelElementImpl, FontSignature
 {
   public DocumentFormat.OpenXml.Wordprocessing.FontSignature? OpenXmlElement
   {

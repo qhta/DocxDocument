@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Text Effect Color List.
 /// </summary>
-public class TextEffectColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, TextEffectColorList
+public partial class TextEffectColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, TextEffectColorList
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList? OpenXmlElement
   {

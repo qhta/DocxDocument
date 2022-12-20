@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Custom XML Schema Reference.
 /// </summary>
-public class SchemaImpl: ModelElementImpl, Schema
+public partial class SchemaImpl: ModelElementImpl, Schema
 {
   public DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? OpenXmlElement
   {

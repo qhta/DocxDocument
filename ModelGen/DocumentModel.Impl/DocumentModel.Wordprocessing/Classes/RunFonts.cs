@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RunFonts Class.
 /// </summary>
-public class RunFontsImpl: ModelElementImpl, RunFonts
+public partial class RunFontsImpl: ModelElementImpl, RunFonts
 {
   public DocumentFormat.OpenXml.Wordprocessing.RunFonts? OpenXmlElement
   {

@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NonVisualContentPartProperties Class.
 /// </summary>
-public interface NonVisualContentPartProperties
+public partial interface NonVisualContentPartProperties
 {
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   
   /// <summary>
   /// NonVisualInkContentPartProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get; set; }
   
 }

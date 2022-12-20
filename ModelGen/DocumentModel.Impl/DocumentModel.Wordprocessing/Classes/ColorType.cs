@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ColorType Class.
 /// </summary>
-public class ColorTypeImpl: ModelElementImpl, ColorType
+public partial class ColorTypeImpl: ModelElementImpl, ColorType
 {
   public DocumentFormat.OpenXml.Office2010.Word.ColorType? OpenXmlElement
   {

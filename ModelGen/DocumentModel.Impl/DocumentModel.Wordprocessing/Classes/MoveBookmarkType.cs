@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MoveBookmarkType Class.
 /// </summary>
-public class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
+public partial class MoveBookmarkTypeImpl: ModelElementImpl, MoveBookmarkType
 {
   public DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType? OpenXmlElement
   {

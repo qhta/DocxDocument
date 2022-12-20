@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the MultiLevelStringCache Class.
 /// </summary>
-public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
+public partial class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
 {
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache? OpenXmlElement
   {
@@ -87,7 +87,7 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Level>? _Levels;
   
-  private void _Levels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Levels_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +97,7 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Level>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.LevelImpl valImpl)
@@ -108,6 +109,7 @@ public class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.LevelImpl valImpl)

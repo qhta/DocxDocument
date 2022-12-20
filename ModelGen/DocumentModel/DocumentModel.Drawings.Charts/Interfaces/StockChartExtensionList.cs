@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StockChartExtensionList Class.
 /// </summary>
-public interface StockChartExtensionList
+public partial interface StockChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.StockChartExtension>? StockChartExtensions { get ; set; }
+  public Collection<DocumentModel.Drawings.Charts.StockChartExtension>? StockChartExtensions { get; set; }
   
 }

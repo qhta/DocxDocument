@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Path.
 /// </summary>
-public class PathImpl: ModelElementImpl, Path
+public partial class PathImpl: ModelElementImpl, Path
 {
   public DocumentFormat.OpenXml.Drawing.Path? OpenXmlElement
   {

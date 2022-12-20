@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Object Data.
 /// </summary>
-public class GraphicDataImpl: ModelElementImpl, GraphicData
+public partial class GraphicDataImpl: ModelElementImpl, GraphicData
 {
   public DocumentFormat.OpenXml.Drawing.GraphicData? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Definition Instance.
 /// </summary>
-public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
+public partial class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
 {
   public DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? OpenXmlElement
   {
@@ -113,7 +113,7 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
   }
   private ObservableCollection<DocumentModel.Wordprocessing.LevelOverride>? _LevelOverrides;
   
-  private void _LevelOverrides_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LevelOverrides_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -123,6 +123,7 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)
@@ -134,6 +135,7 @@ public class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.LevelOverrideImpl valImpl)

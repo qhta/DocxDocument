@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Editing Restrictions.
 /// </summary>
-public class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
+public partial class DocumentProtectionImpl: ModelElementImpl, DocumentProtection
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? OpenXmlElement
   {

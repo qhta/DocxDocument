@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoPolygons Class.
 /// </summary>
-public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
+public partial class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygons? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.GeoPolygon>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.GeoPolygonImpl valImpl)
@@ -82,6 +83,7 @@ public class GeoPolygonsImpl: ModelElementImpl, GeoPolygons
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.GeoPolygonImpl valImpl)

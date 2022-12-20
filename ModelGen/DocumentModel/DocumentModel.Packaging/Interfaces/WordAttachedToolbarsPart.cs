@@ -3,10 +3,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WordAttachedToolbarsPart
 /// </summary>
-public interface WordAttachedToolbarsPart
+public partial interface WordAttachedToolbarsPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

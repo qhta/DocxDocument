@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public interface NonVisualInkContentPartProperties
+public partial interface NonVisualInkContentPartProperties
 {
   /// <summary>
   /// isComment, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? IsComment { get ; set; }
+  public Boolean? IsComment { get; set; }
   
   /// <summary>
   /// ContentPartLocks.
   /// </summary>
-  public DocumentModel.Drawings.ContentPartLocks? ContentPartLocks { get ; set; }
+  public DocumentModel.Drawings.ContentPartLocks? ContentPartLocks { get; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList2? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Drawings.OfficeArtExtensionList2? OfficeArtExtensionList { get; set; }
   
 }

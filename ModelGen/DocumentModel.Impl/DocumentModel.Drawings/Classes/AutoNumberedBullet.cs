@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Auto-Numbered Bullet.
 /// </summary>
-public class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
+public partial class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
 {
   public DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? OpenXmlElement
   {

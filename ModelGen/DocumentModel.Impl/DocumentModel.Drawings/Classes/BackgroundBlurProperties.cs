@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundBlurProperties Class.
 /// </summary>
-public class BackgroundBlurPropertiesImpl: ModelElementImpl, BackgroundBlurProperties
+public partial class BackgroundBlurPropertiesImpl: ModelElementImpl, BackgroundBlurProperties
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundBlurProperties? OpenXmlElement
   {

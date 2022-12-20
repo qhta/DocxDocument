@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualPicturePropertiesExtensionList Class.
 /// </summary>
-public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonVisualPicturePropertiesExtensionList
+public partial class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonVisualPicturePropertiesExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonV
   }
   private ObservableCollection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>? _NonVisualPicturePropertiesExtensions;
   
-  private void _NonVisualPicturePropertiesExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NonVisualPicturePropertiesExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonV
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.NonVisualPicturePropertiesExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonV
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.NonVisualPicturePropertiesExtensionImpl valImpl)

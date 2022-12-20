@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Draw Line To.
 /// </summary>
-public class LineToImpl: ModelElementImpl, LineTo
+public partial class LineToImpl: ModelElementImpl, LineTo
 {
   public DocumentFormat.OpenXml.Drawing.LineTo? OpenXmlElement
   {

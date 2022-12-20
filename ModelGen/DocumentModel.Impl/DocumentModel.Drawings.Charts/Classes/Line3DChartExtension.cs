@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Line3DChartExtension Class.
 /// </summary>
-public class Line3DChartExtensionImpl: ModelElementImpl, Line3DChartExtension
+public partial class Line3DChartExtensionImpl: ModelElementImpl, Line3DChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the GroupShapeType Class.
 /// </summary>
-public class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
+public partial class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
 {
   public DocumentFormat.OpenXml.Office.Drawing.GroupShapeType? OpenXmlElement
   {

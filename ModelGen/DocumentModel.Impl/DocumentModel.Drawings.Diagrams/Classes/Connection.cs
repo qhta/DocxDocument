@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Connection.
 /// </summary>
-public class ConnectionImpl: ModelElementImpl, Connection
+public partial class ConnectionImpl: ModelElementImpl, Connection
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Connection? OpenXmlElement
   {

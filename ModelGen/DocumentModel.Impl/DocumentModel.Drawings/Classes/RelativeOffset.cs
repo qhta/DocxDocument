@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Relative Offset Effect.
 /// </summary>
-public class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
+public partial class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
 {
   public DocumentFormat.OpenXml.Drawing.RelativeOffset? OpenXmlElement
   {

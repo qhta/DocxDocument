@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Glow Class.
 /// </summary>
-public class GlowImpl: ModelElementImpl, Glow
+public partial class GlowImpl: ModelElementImpl, Glow
 {
   public DocumentFormat.OpenXml.Office2010.Word.Glow? OpenXmlElement
   {

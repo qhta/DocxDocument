@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Extensibility container.
 /// </summary>
-public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
+public partial class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataDisplayOptions16>? _DataDisplayOptions16s;
   
-  private void _DataDisplayOptions16s_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataDisplayOptions16s_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataDisplayOptions16Impl valImpl)
@@ -82,6 +83,7 @@ public class ChartExtensionListImpl: ModelElementImpl, ChartExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataDisplayOptions16Impl valImpl)

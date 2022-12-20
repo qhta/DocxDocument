@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List Level 3 Text Style.
 /// </summary>
-public class Level3ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level3ParagraphProperties
+public partial class Level3ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level3ParagraphProperties
 {
   public new DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties? OpenXmlElement
   {

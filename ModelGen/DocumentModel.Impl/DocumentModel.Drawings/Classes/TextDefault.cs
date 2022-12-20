@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Default.
 /// </summary>
-public class TextDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, TextDefault
+public partial class TextDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, TextDefault
 {
   public new DocumentFormat.OpenXml.Drawing.TextDefault? OpenXmlElement
   {

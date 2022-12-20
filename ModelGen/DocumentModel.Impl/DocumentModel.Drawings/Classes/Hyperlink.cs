@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Hyperlink.
 /// </summary>
-public class HyperlinkImpl: DocumentModel.Drawings.Color2TypeImpl, Hyperlink
+public partial class HyperlinkImpl: DocumentModel.Drawings.Color2TypeImpl, Hyperlink
 {
   public new DocumentFormat.OpenXml.Drawing.Hyperlink? OpenXmlElement
   {

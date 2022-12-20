@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Path Gradient.
 /// </summary>
-public interface PathGradientFill
+public partial interface PathGradientFill
 {
   /// <summary>
   /// Gradient Fill Path
   /// </summary>
-  public DocumentModel.Drawings.PathShadeKind? Path { get ; set; }
+  public DocumentModel.Drawings.PathShadeKind? Path { get; set; }
   
   /// <summary>
   /// Fill To Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.RelativeRectangleType? FillToRectangle { get ; set; }
+  public DocumentModel.Drawings.RelativeRectangleType? FillToRectangle { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Underline Stroke.
 /// </summary>
-public class UnderlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Underline
+public partial class UnderlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Underline
 {
   public new DocumentFormat.OpenXml.Drawing.Underline? OpenXmlElement
   {

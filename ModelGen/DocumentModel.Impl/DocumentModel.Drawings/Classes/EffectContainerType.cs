@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the EffectContainerType Class.
 /// </summary>
-public class EffectContainerTypeImpl: ModelElementImpl, EffectContainerType
+public partial class EffectContainerTypeImpl: ModelElementImpl, EffectContainerType
 {
   public DocumentFormat.OpenXml.Drawing.EffectContainerType? OpenXmlElement
   {

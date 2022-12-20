@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// <summary>
 /// Defines the OEmbed Class.
 /// </summary>
-public class OEmbedImpl: ModelElementImpl, OEmbed
+public partial class OEmbedImpl: ModelElementImpl, OEmbed
 {
   public DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed? OpenXmlElement
   {

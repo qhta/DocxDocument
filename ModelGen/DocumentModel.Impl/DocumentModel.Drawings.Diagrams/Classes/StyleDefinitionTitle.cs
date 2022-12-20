@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Title.
 /// </summary>
-public class StyleDefinitionTitleImpl: ModelElementImpl, StyleDefinitionTitle
+public partial class StyleDefinitionTitleImpl: ModelElementImpl, StyleDefinitionTitle
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle? OpenXmlElement
   {

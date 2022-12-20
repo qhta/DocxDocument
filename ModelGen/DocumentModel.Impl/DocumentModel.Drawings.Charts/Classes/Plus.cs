@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Plus.
 /// </summary>
-public class PlusImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Plus
+public partial class PlusImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Plus
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.Plus? OpenXmlElement
   {

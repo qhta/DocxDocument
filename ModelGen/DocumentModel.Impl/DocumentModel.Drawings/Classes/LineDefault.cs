@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Line Default.
 /// </summary>
-public class LineDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, LineDefault
+public partial class LineDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, LineDefault
 {
   public new DocumentFormat.OpenXml.Drawing.LineDefault? OpenXmlElement
   {

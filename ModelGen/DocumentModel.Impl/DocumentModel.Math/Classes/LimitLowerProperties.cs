@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Lower Limit Properties.
 /// </summary>
-public class LimitLowerPropertiesImpl: ModelElementImpl, LimitLowerProperties
+public partial class LimitLowerPropertiesImpl: ModelElementImpl, LimitLowerProperties
 {
   public DocumentFormat.OpenXml.Math.LimitLowerProperties? OpenXmlElement
   {

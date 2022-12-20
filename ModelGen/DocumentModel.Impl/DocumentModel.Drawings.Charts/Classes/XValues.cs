@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the XValues Class.
 /// </summary>
-public class XValuesImpl: DocumentModel.Drawings.Charts.AxisDataSourceTypeImpl, XValues
+public partial class XValuesImpl: DocumentModel.Drawings.Charts.AxisDataSourceTypeImpl, XValues
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.XValues? OpenXmlElement
   {

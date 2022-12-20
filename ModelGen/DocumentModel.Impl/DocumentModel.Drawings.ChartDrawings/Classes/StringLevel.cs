@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the StringLevel Class.
 /// </summary>
-public class StringLevelImpl: ModelElementImpl, StringLevel
+public partial class StringLevelImpl: ModelElementImpl, StringLevel
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? OpenXmlElement
   {
@@ -87,7 +87,7 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>? _ChartStringValues;
   
-  private void _ChartStringValues_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ChartStringValues_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +97,7 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.ChartStringValueImpl valImpl)
@@ -108,6 +109,7 @@ public class StringLevelImpl: ModelElementImpl, StringLevel
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.ChartStringValueImpl valImpl)

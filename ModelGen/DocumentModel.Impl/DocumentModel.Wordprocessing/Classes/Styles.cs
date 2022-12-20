@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines Styles.
 /// </summary>
-public class StylesImpl: ModelElementImpl, Styles
+public partial class StylesImpl: ModelElementImpl, Styles
 {
   public DocumentFormat.OpenXml.Wordprocessing.Styles? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class StylesImpl: ModelElementImpl, Styles
   public StylesImpl(DocumentFormat.OpenXml.Wordprocessing.Styles openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the StylesPart associated with this element, it could either be a StyleDefinitionsPart or a StylesWithEffectsPart.
+  /// </summary>
+  public DocumentModel.Packaging.StylesPart? StylesPart
+  {
+    get
+    {
+      if (OpenXmlElement?.StylesPart != null)
+        return new DocumentModel.Packaging.StylesPartImpl(OpenXmlElement.StylesPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.StylesPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   /// <summary>
@@ -125,7 +145,7 @@ public class StylesImpl: ModelElementImpl, Styles
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Style>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -135,6 +155,7 @@ public class StylesImpl: ModelElementImpl, Styles
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Style>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.StyleImpl valImpl)
@@ -146,6 +167,7 @@ public class StylesImpl: ModelElementImpl, Styles
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.StyleImpl valImpl)

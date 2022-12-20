@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CommentExtensible Class.
 /// </summary>
-public class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
+public partial class CommentExtensibleImpl: ModelElementImpl, CommentExtensible
 {
   public DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? OpenXmlElement
   {

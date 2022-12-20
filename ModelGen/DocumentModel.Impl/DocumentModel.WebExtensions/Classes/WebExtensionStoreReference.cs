@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionStoreReference Class.
 /// </summary>
-public class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStoreReference
+public partial class WebExtensionStoreReferenceImpl: ModelElementImpl, WebExtensionStoreReference
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoChildTypes Class.
 /// </summary>
-public class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
+public partial class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes? OpenXmlElement
   {
@@ -60,7 +60,7 @@ public class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
   }
   private ObservableCollection<System.String>? _EntityTypes;
   
-  private void _EntityTypes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EntityTypes_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -70,6 +70,7 @@ public class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
           if (val is string str)
@@ -80,6 +81,7 @@ public class GeoChildTypesImpl: ModelElementImpl, GeoChildTypes
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
         if (val is string str)

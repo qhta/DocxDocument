@@ -3,8 +3,8 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the CustomPropertyPart
 /// </summary>
-public interface CustomPropertyPart
+public partial interface CustomPropertyPart
 {
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

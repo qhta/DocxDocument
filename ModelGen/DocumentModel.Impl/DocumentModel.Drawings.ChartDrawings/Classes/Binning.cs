@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Binning Class.
 /// </summary>
-public class BinningImpl: ModelElementImpl, Binning
+public partial class BinningImpl: ModelElementImpl, Binning
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning? OpenXmlElement
   {

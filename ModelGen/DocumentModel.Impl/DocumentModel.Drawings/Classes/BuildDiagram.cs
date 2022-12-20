@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Build Diagram.
 /// </summary>
-public class BuildDiagramImpl: ModelElementImpl, BuildDiagram
+public partial class BuildDiagramImpl: ModelElementImpl, BuildDiagram
 {
   public DocumentFormat.OpenXml.Drawing.BuildDiagram? OpenXmlElement
   {

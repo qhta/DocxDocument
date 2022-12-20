@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BlipExtension Class.
 /// </summary>
-public class BlipExtensionImpl: ModelElementImpl, BlipExtension
+public partial class BlipExtensionImpl: ModelElementImpl, BlipExtension
 {
   public DocumentFormat.OpenXml.Drawing.BlipExtension? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Text Box Form Field Properties.
 /// </summary>
-public class TextInputImpl: ModelElementImpl, TextInput
+public partial class TextInputImpl: ModelElementImpl, TextInput
 {
   public DocumentFormat.OpenXml.Wordprocessing.TextInput? OpenXmlElement
   {

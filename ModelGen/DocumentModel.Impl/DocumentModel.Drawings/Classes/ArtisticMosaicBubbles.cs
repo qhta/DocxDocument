@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticMosaicBubbles Class.
 /// </summary>
-public class ArtisticMosaicBubblesImpl: ModelElementImpl, ArtisticMosaicBubbles
+public partial class ArtisticMosaicBubblesImpl: ModelElementImpl, ArtisticMosaicBubbles
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles? OpenXmlElement
   {

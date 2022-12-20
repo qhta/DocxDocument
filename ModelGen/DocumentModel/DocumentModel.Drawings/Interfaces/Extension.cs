@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Extension.
 /// </summary>
-public interface Extension
+public partial interface Extension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
 }

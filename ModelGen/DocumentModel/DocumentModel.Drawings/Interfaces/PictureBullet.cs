@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Picture Bullet.
 /// </summary>
-public interface PictureBullet
+public partial interface PictureBullet
 {
   /// <summary>
   /// Blip.
   /// </summary>
-  public DocumentModel.Drawings.Blip? Blip { get ; set; }
+  public DocumentModel.Drawings.Blip? Blip { get; set; }
   
 }

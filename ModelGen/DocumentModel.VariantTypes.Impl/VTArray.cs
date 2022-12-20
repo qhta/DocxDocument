@@ -134,7 +134,7 @@ public class VTArrayImpl : VariantImpl, VTArray
               var itemValue = _value.GetValue(i - (int)_lowerBounds);
               var itemVariant = VariantImpl.CreateVariant((ArrayBaseType)BaseType);
               itemVariant.Value = itemValue;
-              var openXmlElement = (itemVariant as DocumentModel.Impl.ModelElementImpl)?._OpenXmlElement;
+              var openXmlElement = (itemVariant as DocumentModel.ModelElementImpl)?._OpenXmlElement;
               if (openXmlElement != null)
                 OpenXmlElement.AppendChild(openXmlElement);
             }

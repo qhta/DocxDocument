@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ClassificationOutcome Class.
 /// </summary>
-public class ClassificationOutcomeImpl: ModelElementImpl, ClassificationOutcome
+public partial class ClassificationOutcomeImpl: ModelElementImpl, ClassificationOutcome
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome? OpenXmlElement
   {

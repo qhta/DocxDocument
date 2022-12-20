@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Information About Single HTML div Element.
 /// </summary>
-public class DivImpl: ModelElementImpl, Div
+public partial class DivImpl: ModelElementImpl, Div
 {
   public DocumentFormat.OpenXml.Wordprocessing.Div? OpenXmlElement
   {
@@ -282,7 +282,7 @@ public class DivImpl: ModelElementImpl, Div
   }
   private ObservableCollection<DocumentModel.Wordprocessing.DivsChild>? _DivsChilds;
   
-  private void _DivsChilds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DivsChilds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -292,6 +292,7 @@ public class DivImpl: ModelElementImpl, Div
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DivsChild>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.DivsChildImpl valImpl)
@@ -303,6 +304,7 @@ public class DivImpl: ModelElementImpl, Div
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.DivsChildImpl valImpl)

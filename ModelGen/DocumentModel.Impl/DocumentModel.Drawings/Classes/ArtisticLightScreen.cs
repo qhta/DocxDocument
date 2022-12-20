@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticLightScreen Class.
 /// </summary>
-public class ArtisticLightScreenImpl: ModelElementImpl, ArtisticLightScreen
+public partial class ArtisticLightScreenImpl: ModelElementImpl, ArtisticLightScreen
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? OpenXmlElement
   {

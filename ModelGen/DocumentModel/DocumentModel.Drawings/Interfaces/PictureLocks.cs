@@ -3,66 +3,66 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PictureLocks Class.
 /// </summary>
-public interface PictureLocks
+public partial interface PictureLocks
 {
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get ; set; }
+  public Boolean? NoGrouping { get; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get ; set; }
+  public Boolean? NoSelection { get; set; }
   
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  public Boolean? NoRotation { get ; set; }
+  public Boolean? NoRotation { get; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get ; set; }
+  public Boolean? NoChangeAspect { get; set; }
   
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get ; set; }
+  public Boolean? NoMove { get; set; }
   
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get ; set; }
+  public Boolean? NoResize { get; set; }
   
   /// <summary>
   /// Disallow Shape Point Editing
   /// </summary>
-  public Boolean? NoEditPoints { get ; set; }
+  public Boolean? NoEditPoints { get; set; }
   
   /// <summary>
   /// Disallow Showing Adjust Handles
   /// </summary>
-  public Boolean? NoAdjustHandles { get ; set; }
+  public Boolean? NoAdjustHandles { get; set; }
   
   /// <summary>
   /// Disallow Arrowhead Changes
   /// </summary>
-  public Boolean? NoChangeArrowheads { get ; set; }
+  public Boolean? NoChangeArrowheads { get; set; }
   
   /// <summary>
   /// Disallow Shape Type Change
   /// </summary>
-  public Boolean? NoChangeShapeType { get ; set; }
+  public Boolean? NoChangeShapeType { get; set; }
   
   /// <summary>
   /// Disallow Crop Changes
   /// </summary>
-  public Boolean? NoCrop { get ; set; }
+  public Boolean? NoCrop { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

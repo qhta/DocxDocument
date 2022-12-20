@@ -3,31 +3,31 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Background.
 /// </summary>
-public interface DocumentBackground
+public partial interface DocumentBackground
 {
   /// <summary>
   /// color
   /// </summary>
-  public String? Color { get ; set; }
+  public String? Color { get; set; }
   
   /// <summary>
   /// themeColor
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get ; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   /// <summary>
   /// themeTint
   /// </summary>
-  public String? ThemeTint { get ; set; }
+  public String? ThemeTint { get; set; }
   
   /// <summary>
   /// themeShade
   /// </summary>
-  public String? ThemeShade { get ; set; }
+  public String? ThemeShade { get; set; }
   
   /// <summary>
   /// Background.
   /// </summary>
-  public DocumentModel.Vml.Background? Background { get ; set; }
+  public DocumentModel.Vml.Background? Background { get; set; }
   
 }

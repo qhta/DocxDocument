@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Relative Offset Effect.
 /// </summary>
-public interface RelativeOffset
+public partial interface RelativeOffset
 {
   /// <summary>
   /// Offset X
   /// </summary>
-  public Int32? OffsetX { get ; set; }
+  public Int32? OffsetX { get; set; }
   
   /// <summary>
   /// Offset Y
   /// </summary>
-  public Int32? OffsetY { get ; set; }
+  public Int32? OffsetY { get; set; }
   
 }

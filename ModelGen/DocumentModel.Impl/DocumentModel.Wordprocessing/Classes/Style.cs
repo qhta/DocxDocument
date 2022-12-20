@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Definition.
 /// </summary>
-public class StyleImpl: ModelElementImpl, Style
+public partial class StyleImpl: ModelElementImpl, Style
 {
   public DocumentFormat.OpenXml.Wordprocessing.Style? OpenXmlElement
   {
@@ -689,7 +689,7 @@ public class StyleImpl: ModelElementImpl, Style
   }
   private ObservableCollection<DocumentModel.Wordprocessing.TableStyleProperties>? _TableStylePropertieses;
   
-  private void _TableStylePropertieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _TableStylePropertieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -699,6 +699,7 @@ public class StyleImpl: ModelElementImpl, Style
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.TableStylePropertiesImpl valImpl)
@@ -710,6 +711,7 @@ public class StyleImpl: ModelElementImpl, Style
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.TableStylePropertiesImpl valImpl)

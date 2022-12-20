@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Picture Bullet.
 /// </summary>
-public class PictureBulletImpl: ModelElementImpl, PictureBullet
+public partial class PictureBulletImpl: ModelElementImpl, PictureBullet
 {
   public DocumentFormat.OpenXml.Drawing.PictureBullet? OpenXmlElement
   {

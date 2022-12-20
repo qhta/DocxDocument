@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the CustomXmlPropertiesPart
 /// </summary>
-public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomXmlPropertiesPart
+public partial class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomXmlPropertiesPart
 {
   public new DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -51,11 +46,6 @@ public class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

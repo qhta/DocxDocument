@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Complex.
 /// </summary>
-public class ComplexImpl: ModelElementImpl, Complex
+public partial class ComplexImpl: ModelElementImpl, Complex
 {
   public DocumentFormat.OpenXml.Vml.Office.Complex? OpenXmlElement
   {

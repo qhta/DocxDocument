@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Title.
 /// </summary>
-public class ColorDefinitionTitleImpl: ModelElementImpl, ColorDefinitionTitle
+public partial class ColorDefinitionTitleImpl: ModelElementImpl, ColorDefinitionTitle
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle? OpenXmlElement
   {

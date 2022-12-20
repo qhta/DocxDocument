@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the PivotTablePart
 /// </summary>
-public class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotTablePart
+public partial class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotTablePart
 {
   public new DocumentFormat.OpenXml.Packaging.PivotTablePart? OpenXmlElement
   {
@@ -21,21 +21,24 @@ public class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotT
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the PivotTableCacheDefinitionPart of the PivotTablePart
+  /// </summary>
+  public DocumentModel.Packaging.PivotTableCacheDefinitionPart? PivotTableCacheDefinitionPart
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.PivotTablePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.PivotTableCacheDefinitionPart != null)
+        return new DocumentModel.Packaging.PivotTableCacheDefinitionPartImpl(OpenXmlElement.PivotTableCacheDefinitionPart);
+      return null;
     }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.PivotTablePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

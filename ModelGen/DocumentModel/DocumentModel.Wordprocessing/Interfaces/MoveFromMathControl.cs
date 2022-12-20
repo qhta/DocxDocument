@@ -3,12 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MoveFromMathControl Class.
 /// </summary>
-public interface MoveFromMathControl
+public partial interface MoveFromMathControl
 {
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get ; set; }
+  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl { get ; set; }
+  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl { get; set; }
   
-  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get ; set; }
+  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get; set; }
   
 }

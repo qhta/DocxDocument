@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Row-Level Structured Document Tag.
 /// </summary>
-public class SdtRowImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRow
+public partial class SdtRowImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRow
 {
   public new DocumentFormat.OpenXml.Wordprocessing.SdtRow? OpenXmlElement
   {

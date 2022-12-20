@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Text Properties.
 /// </summary>
-public class TextPropertiesImpl: ModelElementImpl, TextProperties
+public partial class TextPropertiesImpl: ModelElementImpl, TextProperties
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties? OpenXmlElement
   {

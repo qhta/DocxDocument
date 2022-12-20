@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the FormatOverride Class.
 /// </summary>
-public class FormatOverrideImpl: ModelElementImpl, FormatOverride
+public partial class FormatOverrideImpl: ModelElementImpl, FormatOverride
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride? OpenXmlElement
   {

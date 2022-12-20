@@ -3,16 +3,16 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Most Recently Used Colors.
 /// </summary>
-public interface ColorMostRecentlyUsed
+public partial interface ColorMostRecentlyUsed
 {
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   /// <summary>
   /// Recent colors
   /// </summary>
-  public String? Colors { get ; set; }
+  public String? Colors { get; set; }
   
 }

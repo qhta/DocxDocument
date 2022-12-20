@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Absolute Anchor Shape Size.
 /// </summary>
-public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
+public partial class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize? OpenXmlElement
   {
@@ -220,6 +220,35 @@ public class AbsoluteAnchorSizeImpl: ModelElementImpl, AbsoluteAnchorSize
         if (value is not null)
         {
           item = (value as DocumentModel.Drawings.ChartDrawing.PictureImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Drawings.ChartDrawings.ContentPart? ContentPart
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          return new DocumentModel.Drawings.ChartDrawings.ContentPartImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.ChartDrawings.ContentPartImpl)?.OpenXmlElement;
           if (item != null)
             OpenXmlElement.AddChild(item);
         }

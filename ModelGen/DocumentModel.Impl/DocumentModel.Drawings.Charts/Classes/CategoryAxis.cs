@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Category Axis Data.
 /// </summary>
-public class CategoryAxisImpl: ModelElementImpl, CategoryAxis
+public partial class CategoryAxisImpl: ModelElementImpl, CategoryAxis
 {
   public DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TintEffect Class.
 /// </summary>
-public class TintEffectImpl: ModelElementImpl, TintEffect
+public partial class TintEffectImpl: ModelElementImpl, TintEffect
 {
   public DocumentFormat.OpenXml.Drawing.TintEffect? OpenXmlElement
   {

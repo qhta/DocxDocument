@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenLineProperties Class.
 /// </summary>
-public class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
+public partial class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? OpenXmlElement
   {

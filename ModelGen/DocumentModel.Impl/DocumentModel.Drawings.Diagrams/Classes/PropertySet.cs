@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Property Set.
 /// </summary>
-public class PropertySetImpl: ModelElementImpl, PropertySet
+public partial class PropertySetImpl: ModelElementImpl, PropertySet
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? OpenXmlElement
   {

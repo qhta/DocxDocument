@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill Style List.
 /// </summary>
-public class FillStyleListImpl: ModelElementImpl, FillStyleList
+public partial class FillStyleListImpl: ModelElementImpl, FillStyleList
 {
   public DocumentFormat.OpenXml.Drawing.FillStyleList? OpenXmlElement
   {

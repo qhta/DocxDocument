@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ListStyle Class.
 /// </summary>
-public class ListStyleImpl: ModelElementImpl, ListStyle
+public partial class ListStyleImpl: ModelElementImpl, ListStyle
 {
   public DocumentFormat.OpenXml.Drawing.ListStyle? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ObjectProperties Class.
 /// </summary>
-public class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
+public partial class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? OpenXmlElement
   {

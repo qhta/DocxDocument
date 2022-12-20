@@ -3,16 +3,16 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableIndentation Class.
 /// </summary>
-public interface TableIndentation
+public partial interface TableIndentation
 {
   /// <summary>
   /// w
   /// </summary>
-  public Int32? Width { get ; set; }
+  public Int32? Width { get; set; }
   
   /// <summary>
   /// type
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get ; set; }
+  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Non-Visual Picture Drawing Properties.
 /// </summary>
-public class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualPictureDrawingProperties
+public partial class NonVisualPictureDrawingPropertiesImpl: ModelElementImpl, NonVisualPictureDrawingProperties
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties? OpenXmlElement
   {

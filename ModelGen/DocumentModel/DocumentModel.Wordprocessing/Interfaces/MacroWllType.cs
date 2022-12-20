@@ -3,11 +3,11 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MacroWllType Class.
 /// </summary>
-public interface MacroWllType
+public partial interface MacroWllType
 {
   /// <summary>
   /// macroName
   /// </summary>
-  public String? MacroName { get ; set; }
+  public String? MacroName { get; set; }
   
 }

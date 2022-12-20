@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the FontCollectionType Class.
 /// </summary>
-public class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
+public partial class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
 {
   public DocumentFormat.OpenXml.Drawing.FontCollectionType? OpenXmlElement
   {

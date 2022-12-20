@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Transform2D Class.
 /// </summary>
-public class Transform2DImpl: ModelElementImpl, Transform2D
+public partial class Transform2DImpl: ModelElementImpl, Transform2D
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ValAxExtensionList Class.
 /// </summary>
-public class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
+public partial class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.ValAxExtension>? _ValAxExtensions;
   
-  private void _ValAxExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ValAxExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.ValAxExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ValAxExtensionListImpl: ModelElementImpl, ValAxExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.ValAxExtensionImpl valImpl)

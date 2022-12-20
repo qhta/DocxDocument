@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Minus.
 /// </summary>
-public class MinusImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Minus
+public partial class MinusImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, Minus
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.Minus? OpenXmlElement
   {

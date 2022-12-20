@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the HighLowLines Class.
 /// </summary>
-public class HighLowLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, HighLowLines
+public partial class HighLowLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, HighLowLines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.HighLowLines? OpenXmlElement
   {

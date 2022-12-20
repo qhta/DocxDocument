@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the ColorData Class.
 /// </summary>
-public class ColorDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, ColorData
+public partial class ColorDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, ColorData
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.ColorData? OpenXmlElement
   {

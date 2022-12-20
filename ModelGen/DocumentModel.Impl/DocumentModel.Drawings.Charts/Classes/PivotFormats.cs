@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// pivot chart format persistence data.
 /// </summary>
-public class PivotFormatsImpl: ModelElementImpl, PivotFormats
+public partial class PivotFormatsImpl: ModelElementImpl, PivotFormats
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PivotFormats? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PivotFormatsImpl: ModelElementImpl, PivotFormats
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.PivotFormat>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PivotFormatsImpl: ModelElementImpl, PivotFormats
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PivotFormat>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.PivotFormatImpl valImpl)
@@ -82,6 +83,7 @@ public class PivotFormatsImpl: ModelElementImpl, PivotFormats
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.PivotFormatImpl valImpl)

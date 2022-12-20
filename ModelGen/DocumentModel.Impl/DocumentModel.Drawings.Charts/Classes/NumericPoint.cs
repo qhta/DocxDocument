@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Numeric Point.
 /// </summary>
-public class NumericPointImpl: ModelElementImpl, NumericPoint
+public partial class NumericPointImpl: ModelElementImpl, NumericPoint
 {
   public DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? OpenXmlElement
   {

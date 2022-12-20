@@ -3,11 +3,11 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Default Paragraph Properties.
 /// </summary>
-public interface ParagraphPropertiesDefault
+public partial interface ParagraphPropertiesDefault
 {
   /// <summary>
   /// Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get ; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
   
 }

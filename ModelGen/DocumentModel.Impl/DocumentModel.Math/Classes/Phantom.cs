@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Phantom Function.
 /// </summary>
-public class PhantomImpl: ModelElementImpl, Phantom
+public partial class PhantomImpl: ModelElementImpl, Phantom
 {
   public DocumentFormat.OpenXml.Math.Phantom? OpenXmlElement
   {

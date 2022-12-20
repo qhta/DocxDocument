@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Pie3DChartExtensionList Class.
 /// </summary>
-public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionList
+public partial class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionL
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Pie3DChartExtension>? _Pie3DChartExtensions;
   
-  private void _Pie3DChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Pie3DChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class Pie3DChartExtensionListImpl: ModelElementImpl, Pie3DChartExtensionL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.Pie3DChartExtensionImpl valImpl)

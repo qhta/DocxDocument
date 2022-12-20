@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Ink.
 /// </summary>
-public class InkImpl: ModelElementImpl, Ink
+public partial class InkImpl: ModelElementImpl, Ink
 {
   public DocumentFormat.OpenXml.Vml.Office.Ink? OpenXmlElement
   {

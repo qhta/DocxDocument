@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Visibility of Annotation Types.
 /// </summary>
-public class RevisionViewImpl: ModelElementImpl, RevisionView
+public partial class RevisionViewImpl: ModelElementImpl, RevisionView
 {
   public DocumentFormat.OpenXml.Wordprocessing.RevisionView? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table Row Properties.
 /// </summary>
-public class TableRowPropertiesImpl: ModelElementImpl, TableRowProperties
+public partial class TableRowPropertiesImpl: ModelElementImpl, TableRowProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableRowProperties? OpenXmlElement
   {

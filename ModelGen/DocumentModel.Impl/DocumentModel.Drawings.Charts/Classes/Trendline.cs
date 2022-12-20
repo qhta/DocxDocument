@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Trendline Class.
 /// </summary>
-public class TrendlineImpl: ModelElementImpl, Trendline
+public partial class TrendlineImpl: ModelElementImpl, Trendline
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Trendline? OpenXmlElement
   {

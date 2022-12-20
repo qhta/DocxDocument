@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Picture Fill.
 /// </summary>
-public class BlipFillImpl: ModelElementImpl, BlipFill
+public partial class BlipFillImpl: ModelElementImpl, BlipFill
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill? OpenXmlElement
   {

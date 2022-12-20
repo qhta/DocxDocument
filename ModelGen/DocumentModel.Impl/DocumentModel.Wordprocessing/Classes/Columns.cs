@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Columns Class.
 /// </summary>
-public class ColumnsImpl: ModelElementImpl, Columns
+public partial class ColumnsImpl: ModelElementImpl, Columns
 {
   public DocumentFormat.OpenXml.Wordprocessing.Columns? OpenXmlElement
   {
@@ -113,7 +113,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Column>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -123,6 +123,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)
@@ -134,6 +135,7 @@ public class ColumnsImpl: ModelElementImpl, Columns
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ColumnImpl valImpl)

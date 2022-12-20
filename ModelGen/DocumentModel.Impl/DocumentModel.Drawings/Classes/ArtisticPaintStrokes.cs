@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPaintStrokes Class.
 /// </summary>
-public class ArtisticPaintStrokesImpl: ModelElementImpl, ArtisticPaintStrokes
+public partial class ArtisticPaintStrokesImpl: ModelElementImpl, ArtisticPaintStrokes
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? OpenXmlElement
   {

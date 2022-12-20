@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Layout.
 /// </summary>
-public interface Layout
+public partial interface Layout
 {
   /// <summary>
   /// Manual Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ManualLayout? ManualLayout { get ; set; }
+  public DocumentModel.Drawings.Charts.ManualLayout? ManualLayout { get; set; }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
 }

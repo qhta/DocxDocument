@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ErrorBars Class.
 /// </summary>
-public class ErrorBarsImpl: ModelElementImpl, ErrorBars
+public partial class ErrorBarsImpl: ModelElementImpl, ErrorBars
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? OpenXmlElement
   {

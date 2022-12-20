@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Shape.
 /// </summary>
-public class ShapeImpl: ModelElementImpl, Shape
+public partial class ShapeImpl: ModelElementImpl, Shape
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Shape? OpenXmlElement
   {

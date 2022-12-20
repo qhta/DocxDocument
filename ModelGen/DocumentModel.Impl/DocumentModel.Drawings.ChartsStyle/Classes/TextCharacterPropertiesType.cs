@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the TextCharacterPropertiesType Class.
 /// </summary>
-public class TextCharacterPropertiesTypeImpl: ModelElementImpl, TextCharacterPropertiesType
+public partial class TextCharacterPropertiesTypeImpl: ModelElementImpl, TextCharacterPropertiesType
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? OpenXmlElement
   {

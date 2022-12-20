@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -23,6 +23,8 @@
     <ProjectReference Include="..\DocumentModel.BaseTypes.Impl\DocumentModel.BaseTypes.Impl.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Internal.Impl\DocumentModel.Internal.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel.VariantTypes.Impl\DocumentModel.VariantTypes.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel.VariantTypes\DocumentModel.VariantTypes.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 </Project>

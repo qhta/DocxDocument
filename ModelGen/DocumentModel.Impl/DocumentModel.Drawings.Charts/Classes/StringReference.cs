@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StringReference Class.
 /// </summary>
-public class StringReferenceImpl: ModelElementImpl, StringReference
+public partial class StringReferenceImpl: ModelElementImpl, StringReference
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StringReference? OpenXmlElement
   {

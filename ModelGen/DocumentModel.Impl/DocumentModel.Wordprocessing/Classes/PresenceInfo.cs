@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PresenceInfo Class.
 /// </summary>
-public class PresenceInfoImpl: ModelElementImpl, PresenceInfo
+public partial class PresenceInfoImpl: ModelElementImpl, PresenceInfo
 {
   public DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? OpenXmlElement
   {

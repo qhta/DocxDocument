@@ -3,46 +3,46 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Shape Definition.
 /// </summary>
-public interface Shape
+public partial interface Shape
 {
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  public String? Macro { get ; set; }
+  public String? Macro { get; set; }
   
   /// <summary>
   /// Text Link
   /// </summary>
-  public String? TextLink { get ; set; }
+  public String? TextLink { get; set; }
   
   /// <summary>
   /// Lock Text
   /// </summary>
-  public Boolean? LockText { get ; set; }
+  public Boolean? LockText { get; set; }
   
   /// <summary>
   /// Publish to Server
   /// </summary>
-  public Boolean? Published { get ; set; }
+  public Boolean? Published { get; set; }
   
   /// <summary>
   /// Non-Visual Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? NonVisualShapeProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
   
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.ShapeProperties? ShapeProperties { get; set; }
   
   /// <summary>
   /// Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Style? Style { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.Style? Style { get; set; }
   
   /// <summary>
   /// Shape Text Body.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.TextBody? TextBody { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.TextBody? TextBody { get; set; }
   
 }

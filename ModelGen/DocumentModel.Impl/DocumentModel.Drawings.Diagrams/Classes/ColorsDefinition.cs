@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Color Transform Definitions.
 /// </summary>
-public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
+public partial class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition? OpenXmlElement
   {
@@ -41,6 +41,26 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
     {
       if (OpenXmlElement != null)
         OpenXmlElement.MinVersion = (System.String?)value;
+    }
+  }
+  
+  /// <summary>
+  /// Gets the DiagramColorsPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DiagramColorsPart? DiagramColorsPart
+  {
+    get
+    {
+      if (OpenXmlElement?.DiagramColorsPart != null)
+        return new DocumentModel.Packaging.DiagramColorsPartImpl(OpenXmlElement.DiagramColorsPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DiagramColorsPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   
@@ -87,7 +107,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.ColorDefinitionTitle>? _ColorDefinitionTitles;
   
-  private void _ColorDefinitionTitles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ColorDefinitionTitles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +117,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
@@ -108,6 +129,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ColorDefinitionTitleImpl valImpl)
@@ -169,7 +191,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.ColorTransformDescription>? _ColorTransformDescriptions;
   
-  private void _ColorTransformDescriptions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ColorTransformDescriptions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -179,6 +201,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
@@ -190,6 +213,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ColorTransformDescriptionImpl valImpl)
@@ -280,7 +304,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel>? _ColorTransformStyleLabels;
   
-  private void _ColorTransformStyleLabels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ColorTransformStyleLabels_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -290,6 +314,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)
@@ -301,6 +326,7 @@ public class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ColorTransformStyleLabelImpl valImpl)

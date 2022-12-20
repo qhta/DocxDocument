@@ -3,36 +3,36 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Page Margins.
 /// </summary>
-public interface PageMargins
+public partial interface PageMargins
 {
   /// <summary>
   /// Left
   /// </summary>
-  public Double? Left { get ; set; }
+  public Double? Left { get; set; }
   
   /// <summary>
   /// Right
   /// </summary>
-  public Double? Right { get ; set; }
+  public Double? Right { get; set; }
   
   /// <summary>
   /// Top
   /// </summary>
-  public Double? Top { get ; set; }
+  public Double? Top { get; set; }
   
   /// <summary>
   /// Bottom
   /// </summary>
-  public Double? Bottom { get ; set; }
+  public Double? Bottom { get; set; }
   
   /// <summary>
   /// Header
   /// </summary>
-  public Double? Header { get ; set; }
+  public Double? Header { get; set; }
   
   /// <summary>
   /// Footer
   /// </summary>
-  public Double? Footer { get ; set; }
+  public Double? Footer { get; set; }
   
 }

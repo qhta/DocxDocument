@@ -15,3 +15,5 @@ D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\nets
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.Attributes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.VariantTypes.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes.Impl\bin\Debug\netstandard2.0\DocumentModel.VariantTypes.pdb

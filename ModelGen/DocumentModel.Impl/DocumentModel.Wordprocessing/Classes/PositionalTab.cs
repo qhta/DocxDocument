@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Absolute Position Tab Character.
 /// </summary>
-public class PositionalTabImpl: ModelElementImpl, PositionalTab
+public partial class PositionalTabImpl: ModelElementImpl, PositionalTab
 {
   public DocumentFormat.OpenXml.Wordprocessing.PositionalTab? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the CustomizationPart
 /// </summary>
-public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomizationPart
+public partial class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomizationPart
 {
   public new DocumentFormat.OpenXml.Packaging.CustomizationPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cus
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.CustomizationPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.CustomizationPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -55,6 +45,19 @@ public class CustomizationPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Cus
       if (value is DocumentModel.Wordprocessing.TemplateCommandGroupImpl valueImpl)
         if (valueImpl.OpenXmlElement != null)
             OpenXmlElement.TemplateCommandGroup = valueImpl.OpenXmlElement;
+    }
+  }
+  
+  /// <summary>
+  /// Gets the WordAttachedToolbarsPart of the CustomizationPart
+  /// </summary>
+  public DocumentModel.Packaging.WordAttachedToolbarsPart? WordAttachedToolbarsPart
+  {
+    get
+    {
+      if (OpenXmlElement?.WordAttachedToolbarsPart != null)
+        return new DocumentModel.Packaging.WordAttachedToolbarsPartImpl(OpenXmlElement.WordAttachedToolbarsPart);
+      return null;
     }
   }
   

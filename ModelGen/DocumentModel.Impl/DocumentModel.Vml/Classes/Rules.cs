@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Rule Set.
 /// </summary>
-public class RulesImpl: ModelElementImpl, Rules
+public partial class RulesImpl: ModelElementImpl, Rules
 {
   public DocumentFormat.OpenXml.Vml.Office.Rules? OpenXmlElement
   {
@@ -74,7 +74,7 @@ public class RulesImpl: ModelElementImpl, Rules
   }
   private ObservableCollection<DocumentModel.Vml.Rule>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -84,6 +84,7 @@ public class RulesImpl: ModelElementImpl, Rules
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.RuleImpl valImpl)
@@ -95,6 +96,7 @@ public class RulesImpl: ModelElementImpl, Rules
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.RuleImpl valImpl)

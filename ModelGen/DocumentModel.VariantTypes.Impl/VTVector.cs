@@ -121,7 +121,7 @@ public class VTVectorImpl : VariantImpl, VTVector
             {
               var itemVariant = VariantImpl.CreateVariant(itemValue);
               itemVariant.Value = itemValue;
-              var openXmlElement = (itemVariant as DocumentModel.Impl.ModelElementImpl)?._OpenXmlElement;
+              var openXmlElement = (itemVariant as DocumentModel.ModelElementImpl)?._OpenXmlElement;
               if (openXmlElement != null)
                 OpenXmlElement.AppendChild(openXmlElement);
             }

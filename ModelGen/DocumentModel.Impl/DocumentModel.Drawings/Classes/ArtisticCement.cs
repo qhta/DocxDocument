@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticCement Class.
 /// </summary>
-public class ArtisticCementImpl: ModelElementImpl, ArtisticCement
+public partial class ArtisticCementImpl: ModelElementImpl, ArtisticCement
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement? OpenXmlElement
   {

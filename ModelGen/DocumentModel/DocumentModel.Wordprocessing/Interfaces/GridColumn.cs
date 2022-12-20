@@ -3,11 +3,11 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Grid Column Definition.
 /// </summary>
-public interface GridColumn
+public partial interface GridColumn
 {
   /// <summary>
   /// Grid Column Width
   /// </summary>
-  public String? Width { get ; set; }
+  public String? Width { get; set; }
   
 }

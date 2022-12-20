@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Color Specified.
 /// </summary>
-public class BulletColorImpl: DocumentModel.Drawings.ColorTypeImpl, BulletColor
+public partial class BulletColorImpl: DocumentModel.Drawings.ColorTypeImpl, BulletColor
 {
   public new DocumentFormat.OpenXml.Drawing.BulletColor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Subscript Properties.
 /// </summary>
-public class SubscriptPropertiesImpl: ModelElementImpl, SubscriptProperties
+public partial class SubscriptPropertiesImpl: ModelElementImpl, SubscriptProperties
 {
   public DocumentFormat.OpenXml.Math.SubscriptProperties? OpenXmlElement
   {

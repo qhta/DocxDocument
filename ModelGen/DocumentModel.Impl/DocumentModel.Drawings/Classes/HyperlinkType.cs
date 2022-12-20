@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HyperlinkType Class.
 /// </summary>
-public class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
+public partial class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
 {
   public DocumentFormat.OpenXml.Drawing.HyperlinkType? OpenXmlElement
   {

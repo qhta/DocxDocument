@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AlphaModulationFixed Class.
 /// </summary>
-public class AlphaModulationFixedImpl: ModelElementImpl, AlphaModulationFixed
+public partial class AlphaModulationFixedImpl: ModelElementImpl, AlphaModulationFixed
 {
   public DocumentFormat.OpenXml.Drawing.AlphaModulationFixed? OpenXmlElement
   {

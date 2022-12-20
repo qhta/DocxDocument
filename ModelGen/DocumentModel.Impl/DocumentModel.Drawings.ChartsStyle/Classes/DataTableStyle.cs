@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataTableStyle Class.
 /// </summary>
-public class DataTableStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataTableStyle
+public partial class DataTableStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataTableStyle
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataTableStyle? OpenXmlElement
   {
