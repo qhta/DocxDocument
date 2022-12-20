@@ -78,14 +78,14 @@ namespace DocxDocument.Reader.Test
             origCorePropertiesCount++;
         }
         var coreProperties = typeof(CoreProperties).GetProperties();
-        foreach (var prop in coreProperties)
+        foreach (var prop in coreProperties.Where(item => item.CanWrite))
           if (prop.GetValue(coreDocumentProperties, null) != null)
             corePropertiesCount++;
         TestContext.Progress.WriteLine(
           $"  CoreProperties: defined {coreProperties.Count()} loaded {corePropertiesCount} expected {origCorePropertiesCount}");
         if (showDetails)
         {
-          foreach (var prop in coreProperties)
+          foreach (var prop in coreProperties.Where(item=>item.CanWrite))
           {
             var value = document.Properties.Get(prop.Name);
             if (value != null)
@@ -106,8 +106,8 @@ namespace DocxDocument.Reader.Test
         var origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
           ?.Count(item => statisticPropElementsNames.Contains(item.LocalName)) ?? 0;
         var contentProperties = typeof(ExtendedProperties).GetProperties();
-        origContentPropertiesCount = origExtraFilePropertiesCount - origStatisticPropertiesCount;
-        foreach (var prop in contentProperties)
+        origContentPropertiesCount = origExtraFilePropertiesCount;// - origStatisticPropertiesCount;
+        foreach (var prop in contentProperties.Where(item=>item.CanWrite))
         {
           if (prop.GetValue(contentDocumentProperties, null) != null)
             contentPropertiesCount++;
@@ -116,7 +116,7 @@ namespace DocxDocument.Reader.Test
           $"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
         if (showDetails)
         {
-          foreach (var prop in contentProperties)
+          foreach (var prop in contentProperties.Where(item => item.CanWrite))
           {
             var value = document.Properties.Get(prop.Name);
             if (value != null)
@@ -177,7 +177,7 @@ namespace DocxDocument.Reader.Test
         {
           foreach (var prop in customDocumentProperties)
           {
-            if (prop != null)
+            if (prop?.Name != null)
             {
               var value = document.Properties.Get(prop.Name);
               if (value != null)
@@ -185,13 +185,7 @@ namespace DocxDocument.Reader.Test
             }
           }
         }
-        if (showDetails)
-        {
-          foreach (var customProp in customDocumentProperties)
-          {
-            TestContext.Progress.WriteLine($"    {customProp}");
-          }
-        }
+
       }
       //var revisions = document.Properties.Revisions;
       //var revisionsCount = revisions?.Count ?? 0;

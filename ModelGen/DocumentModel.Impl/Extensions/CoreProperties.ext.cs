@@ -1,16 +1,20 @@
-﻿namespace DocumentModel.Properties;
+﻿using System.Diagnostics;
 
-public partial class CorePropertiesImpl
+namespace DocumentModel.Properties;
+
+public partial class CorePropertiesImpl//: IEnumerable<KeyValuePair<string, object?>
 {
   public int Count
   {
     get
     {
-      var coreProperties = typeof(CoreProperties).GetProperties();
+      var coreProperties = typeof(CoreProperties).GetProperties().Where(item => item.Name!="Count").ToArray();
       int corePropertiesCount = 0;
       foreach (var prop in coreProperties)
         if (prop.GetValue(this, null) != null)
+        {
           corePropertiesCount++;
+        }
       return corePropertiesCount;
     }
   }
