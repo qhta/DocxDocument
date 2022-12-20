@@ -59,12 +59,12 @@ public partial interface CoreProperties
   /// The category. This value is typically used by UI applications to create navigation
   /// </summary>
   public String? Category { get; set; }
-  
+
   /// <summary>
   /// A unique identifier.
   /// </summary>
   public String? Identifier { get; set; }
-  
+
   /// <summary>
   /// The type of content represented, generally defined by a specific
   /// </summary>

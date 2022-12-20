@@ -42,7 +42,7 @@ public partial class CustomPropertiesImpl: ModelElementImpl, CustomProperties
   {
     get
     {
-      if (_CustomDocumentProperties != null)
+      if (_CustomDocumentProperties == null)
       {
         if (OpenXmlElement != null)
         {

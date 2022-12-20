@@ -28,7 +28,6 @@ public class VTVectorImpl : VariantImpl, VTVector
 
   private static Dictionary<VectorBaseType, Type> _itemTypes = new Dictionary<VectorBaseType, Type>
   {
-    { VectorBaseType.Variant, typeof(Variant) },
     { VectorBaseType.OneByteSignedInteger, typeof(SByte) },
     { VectorBaseType.TwoBytesSignedInteger, typeof(Int16) },
     { VectorBaseType.FourBytesSignedInteger, typeof(Int32) },
@@ -213,5 +212,13 @@ public class VTVectorImpl : VariantImpl, VTVector
     throw new InvalidOperationException("Can't convert Vector variant to UInt64");
   }
 
-
+  public override string ToString()
+  {
+    var ss = new List<string?>();
+    var value = Value;
+    if (value is IEnumerable enumerable)
+      foreach (var item in enumerable)
+        ss.Add(item.ToString());
+    return "(" + String.Join(", ", ss) + ")";
+  }
 }
