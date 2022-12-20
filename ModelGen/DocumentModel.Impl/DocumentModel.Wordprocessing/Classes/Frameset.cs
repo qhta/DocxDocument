@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Nested Frameset Definition.
 /// </summary>
-public class FramesetImpl: ModelElementImpl, Frameset
+public partial class FramesetImpl: ModelElementImpl, Frameset
 {
   public DocumentFormat.OpenXml.Wordprocessing.Frameset? OpenXmlElement
   {

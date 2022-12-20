@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AlphaBiLevel Class.
 /// </summary>
-public interface AlphaBiLevel
+public partial interface AlphaBiLevel
 {
   /// <summary>
   /// Threshold
   /// </summary>
-  public Int32? Threshold { get ; set; }
+  public Int32? Threshold { get; set; }
   
 }

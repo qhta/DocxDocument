@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Display Units Label.
 /// </summary>
-public class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
+public partial class DisplayUnitsLabelImpl: ModelElementImpl, DisplayUnitsLabel
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Bar3DChartExtension Class.
 /// </summary>
-public class Bar3DChartExtensionImpl: ModelElementImpl, Bar3DChartExtension
+public partial class Bar3DChartExtensionImpl: ModelElementImpl, Bar3DChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension? OpenXmlElement
   {

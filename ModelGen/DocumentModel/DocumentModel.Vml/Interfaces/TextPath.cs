@@ -3,46 +3,46 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the TextPath Class.
 /// </summary>
-public interface TextPath
+public partial interface TextPath
 {
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  public String? Style { get ; set; }
+  public String? Style { get; set; }
   
   /// <summary>
   /// Text Path Toggle
   /// </summary>
-  public Boolean? On { get ; set; }
+  public Boolean? On { get; set; }
   
   /// <summary>
   /// Shape Fit Toggle
   /// </summary>
-  public Boolean? FitShape { get ; set; }
+  public Boolean? FitShape { get; set; }
   
   /// <summary>
   /// Path Fit Toggle
   /// </summary>
-  public Boolean? FitPath { get ; set; }
+  public Boolean? FitPath { get; set; }
   
   /// <summary>
   /// Text Path Trim Toggle
   /// </summary>
-  public Boolean? Trim { get ; set; }
+  public Boolean? Trim { get; set; }
   
   /// <summary>
   /// Text X-Scaling
   /// </summary>
-  public Boolean? XScale { get ; set; }
+  public Boolean? XScale { get; set; }
   
   /// <summary>
   /// Text Path Text
   /// </summary>
-  public String? String { get ; set; }
+  public String? String { get; set; }
   
 }

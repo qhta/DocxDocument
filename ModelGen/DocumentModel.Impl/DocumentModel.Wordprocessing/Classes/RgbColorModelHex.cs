@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RgbColorModelHex Class.
 /// </summary>
-public class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
+public partial class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
 {
   public DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Foreground color.
 /// </summary>
-public class ForegroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, ForegroundColor
+public partial class ForegroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, ForegroundColor
 {
   public new DocumentFormat.OpenXml.Drawing.ForegroundColor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Constraint.
 /// </summary>
-public class ConstraintImpl: ModelElementImpl, Constraint
+public partial class ConstraintImpl: ModelElementImpl, Constraint
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? OpenXmlElement
   {

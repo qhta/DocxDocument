@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Divs Class.
 /// </summary>
-public class DivsImpl: ModelElementImpl, Divs
+public partial class DivsImpl: ModelElementImpl, Divs
 {
   public DocumentFormat.OpenXml.Wordprocessing.Divs? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Style Label.
 /// </summary>
-public class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyleLabel
+public partial class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyleLabel
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel? OpenXmlElement
   {

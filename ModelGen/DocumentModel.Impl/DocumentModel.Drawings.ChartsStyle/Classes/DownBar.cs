@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DownBar Class.
 /// </summary>
-public class DownBarImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DownBar
+public partial class DownBarImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DownBar
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DownBar? OpenXmlElement
   {

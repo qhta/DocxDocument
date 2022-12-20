@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines Recipients.
 /// </summary>
-public class RecipientsImpl: ModelElementImpl, Recipients
+public partial class RecipientsImpl: ModelElementImpl, Recipients
 {
   public DocumentFormat.OpenXml.Wordprocessing.Recipients? OpenXmlElement
   {

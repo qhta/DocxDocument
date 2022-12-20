@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the CategoryAxisData Class.
 /// </summary>
-public class CategoryAxisDataImpl: DocumentModel.Drawings.Charts.AxisDataSourceTypeImpl, CategoryAxisData
+public partial class CategoryAxisDataImpl: DocumentModel.Drawings.Charts.AxisDataSourceTypeImpl, CategoryAxisData
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData? OpenXmlElement
   {

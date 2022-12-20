@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Scatter Charts.
 /// </summary>
-public class ScatterChartImpl: ModelElementImpl, ScatterChart
+public partial class ScatterChartImpl: ModelElementImpl, ScatterChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ScatterChart? OpenXmlElement
   {
@@ -123,7 +123,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.ScatterChartSeries>? _ScatterChartSerieses;
   
-  private void _ScatterChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ScatterChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -133,6 +133,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.ScatterChartSeriesImpl valImpl)
@@ -144,6 +145,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.ScatterChartSeriesImpl valImpl)
@@ -230,7 +232,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -240,6 +242,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -247,6 +250,7 @@ public class ScatterChartImpl: ModelElementImpl, ScatterChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

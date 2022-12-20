@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D view settings.
 /// </summary>
-public class View3DImpl: ModelElementImpl, View3D
+public partial class View3DImpl: ModelElementImpl, View3D
 {
   public DocumentFormat.OpenXml.Drawing.Charts.View3D? OpenXmlElement
   {

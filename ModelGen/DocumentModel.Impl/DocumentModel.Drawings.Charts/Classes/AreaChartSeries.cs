@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Area Chart Series.
 /// </summary>
-public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
+public partial class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
 {
   public DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries? OpenXmlElement
   {
@@ -209,7 +209,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -219,6 +219,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -230,6 +231,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -320,7 +322,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Trendline>? _Trendlines;
   
-  private void _Trendlines_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Trendlines_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -330,6 +332,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Trendline>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)
@@ -341,6 +344,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)
@@ -402,7 +406,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.ErrorBars>? _ErrorBarses;
   
-  private void _ErrorBarses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ErrorBarses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -412,6 +416,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.ErrorBarsImpl valImpl)
@@ -423,6 +428,7 @@ public class AreaChartSeriesImpl: ModelElementImpl, AreaChartSeries
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.ErrorBarsImpl valImpl)

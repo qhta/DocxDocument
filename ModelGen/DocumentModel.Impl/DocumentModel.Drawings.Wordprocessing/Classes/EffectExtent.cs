@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Object Extents Including Effects.
 /// </summary>
-public class EffectExtentImpl: ModelElementImpl, EffectExtent
+public partial class EffectExtentImpl: ModelElementImpl, EffectExtent
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? OpenXmlElement
   {

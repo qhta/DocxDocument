@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Layout Definition.
 /// </summary>
-public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
+public partial class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition? OpenXmlElement
   {
@@ -57,6 +57,26 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
     }
   }
   
+  /// <summary>
+  /// Gets the DiagramLayoutDefinitionPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DiagramLayoutDefinitionPart? DiagramLayoutDefinitionPart
+  {
+    get
+    {
+      if (OpenXmlElement?.DiagramLayoutDefinitionPart != null)
+        return new DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl(OpenXmlElement.DiagramLayoutDefinitionPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
+  }
+  
   public Collection<DocumentModel.Drawings.Diagrams.Title>? Titles
   {
     get
@@ -100,7 +120,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Title>? _Titles;
   
-  private void _Titles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Titles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -110,6 +130,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Title>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.TitleImpl valImpl)
@@ -121,6 +142,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.TitleImpl valImpl)
@@ -182,7 +204,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Description>? _Descriptions;
   
-  private void _Descriptions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Descriptions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -192,6 +214,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Description>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.DescriptionImpl valImpl)
@@ -203,6 +226,7 @@ public class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.DescriptionImpl valImpl)

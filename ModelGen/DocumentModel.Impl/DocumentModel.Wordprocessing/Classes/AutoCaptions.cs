@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Automatic Captioning Settings.
 /// </summary>
-public class AutoCaptionsImpl: ModelElementImpl, AutoCaptions
+public partial class AutoCaptionsImpl: ModelElementImpl, AutoCaptions
 {
   public DocumentFormat.OpenXml.Wordprocessing.AutoCaptions? OpenXmlElement
   {

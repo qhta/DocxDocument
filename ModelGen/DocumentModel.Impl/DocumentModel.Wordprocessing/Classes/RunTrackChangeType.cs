@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RunTrackChangeType Class.
 /// </summary>
-public class RunTrackChangeTypeImpl: ModelElementImpl, RunTrackChangeType
+public partial class RunTrackChangeTypeImpl: ModelElementImpl, RunTrackChangeType
 {
   public DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? OpenXmlElement
   {

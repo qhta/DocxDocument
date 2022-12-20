@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Accent 4.
 /// </summary>
-public class Accent4ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent4Color
+public partial class Accent4ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent4Color
 {
   public new DocumentFormat.OpenXml.Drawing.Accent4Color? OpenXmlElement
   {

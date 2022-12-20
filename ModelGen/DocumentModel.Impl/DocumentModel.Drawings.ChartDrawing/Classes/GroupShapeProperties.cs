@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Group Shape Properties.
 /// </summary>
-public class GroupShapePropertiesImpl: ModelElementImpl, GroupShapeProperties
+public partial class GroupShapePropertiesImpl: ModelElementImpl, GroupShapeProperties
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties? OpenXmlElement
   {

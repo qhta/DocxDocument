@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
+public partial class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties? OpenXmlElement
   {

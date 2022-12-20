@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Top and Bottom Wrapping.
 /// </summary>
-public class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
+public partial class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? OpenXmlElement
   {

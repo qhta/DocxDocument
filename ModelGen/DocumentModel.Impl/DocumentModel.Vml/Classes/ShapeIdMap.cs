@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape ID Map.
 /// </summary>
-public class ShapeIdMapImpl: ModelElementImpl, ShapeIdMap
+public partial class ShapeIdMapImpl: ModelElementImpl, ShapeIdMap
 {
   public DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? OpenXmlElement
   {

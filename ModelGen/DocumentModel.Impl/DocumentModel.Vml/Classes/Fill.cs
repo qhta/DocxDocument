@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Fill Class.
 /// </summary>
-public class FillImpl: ModelElementImpl, Fill
+public partial class FillImpl: ModelElementImpl, Fill
 {
   public DocumentFormat.OpenXml.Vml.Fill? OpenXmlElement
   {

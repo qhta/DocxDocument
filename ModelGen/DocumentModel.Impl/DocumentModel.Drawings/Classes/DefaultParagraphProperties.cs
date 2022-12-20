@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Default Paragraph Style.
 /// </summary>
-public class DefaultParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, DefaultParagraphProperties
+public partial class DefaultParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, DefaultParagraphProperties
 {
   public new DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties? OpenXmlElement
   {

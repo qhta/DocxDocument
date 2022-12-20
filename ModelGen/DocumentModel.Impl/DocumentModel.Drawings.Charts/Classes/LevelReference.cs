@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LevelReference Class.
 /// </summary>
-public class LevelReferenceImpl: ModelElementImpl, LevelReference
+public partial class LevelReferenceImpl: ModelElementImpl, LevelReference
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference? OpenXmlElement
   {

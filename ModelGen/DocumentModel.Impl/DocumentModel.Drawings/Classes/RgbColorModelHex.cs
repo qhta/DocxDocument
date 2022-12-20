@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// RGB Color Model - Hex Variant.
 /// </summary>
-public class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
+public partial class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
 {
   public DocumentFormat.OpenXml.Drawing.RgbColorModelHex? OpenXmlElement
   {

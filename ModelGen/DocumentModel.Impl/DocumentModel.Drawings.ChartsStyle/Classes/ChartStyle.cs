@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the ChartStyle Class.
 /// </summary>
-public class ChartStyleImpl: ModelElementImpl, ChartStyle
+public partial class ChartStyleImpl: ModelElementImpl, ChartStyle
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle? OpenXmlElement
   {
@@ -1052,6 +1052,26 @@ public class ChartStyleImpl: ModelElementImpl, ChartStyle
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the ChartStylePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.ChartStylePart? ChartStylePart
+  {
+    get
+    {
+      if (OpenXmlElement?.ChartStylePart != null)
+        return new DocumentModel.Packaging.ChartStylePartImpl(OpenXmlElement.ChartStylePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.ChartStylePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

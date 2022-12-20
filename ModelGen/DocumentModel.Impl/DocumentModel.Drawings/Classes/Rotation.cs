@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Rotation.
 /// </summary>
-public class RotationImpl: ModelElementImpl, Rotation
+public partial class RotationImpl: ModelElementImpl, Rotation
 {
   public DocumentFormat.OpenXml.Drawing.Rotation? OpenXmlElement
   {

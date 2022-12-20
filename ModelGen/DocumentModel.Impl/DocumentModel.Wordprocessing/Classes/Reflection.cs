@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Reflection Class.
 /// </summary>
-public class ReflectionImpl: ModelElementImpl, Reflection
+public partial class ReflectionImpl: ModelElementImpl, Reflection
 {
   public DocumentFormat.OpenXml.Office2010.Word.Reflection? OpenXmlElement
   {

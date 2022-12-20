@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// String Point.
 /// </summary>
-public class StringPointImpl: ModelElementImpl, StringPoint
+public partial class StringPointImpl: ModelElementImpl, StringPoint
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StringPoint? OpenXmlElement
   {

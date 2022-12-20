@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Set of Borders for HTML div.
 /// </summary>
-public class DivBorderImpl: ModelElementImpl, DivBorder
+public partial class DivBorderImpl: ModelElementImpl, DivBorder
 {
   public DocumentFormat.OpenXml.Wordprocessing.DivBorder? OpenXmlElement
   {

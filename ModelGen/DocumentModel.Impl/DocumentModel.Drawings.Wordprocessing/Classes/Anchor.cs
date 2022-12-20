@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Anchor for Floating DrawingML Object.
 /// </summary>
-public class AnchorImpl: ModelElementImpl, Anchor
+public partial class AnchorImpl: ModelElementImpl, Anchor
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? OpenXmlElement
   {
@@ -603,7 +603,7 @@ public class AnchorImpl: ModelElementImpl, Anchor
     }
   }
   
-  public DocumentModel.Drawings.Wordprocessing.RelativeWidth? RelativeWidth
+  public DocumentModel.Wordprocessing.Drawings.RelativeWidth? RelativeWidth
   {
     get
     {
@@ -611,7 +611,7 @@ public class AnchorImpl: ModelElementImpl, Anchor
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth>();
         if (item != null)
-          return new DocumentModel.Drawings.Wordprocessing.RelativeWidthImpl(item);
+          return new DocumentModel.Wordprocessing.Drawings.RelativeWidthImpl(item);
       }
       return null;
     }
@@ -624,7 +624,7 @@ public class AnchorImpl: ModelElementImpl, Anchor
           item.Remove();
         if (value is not null)
         {
-          item = (value as DocumentModel.Drawings.Wordprocessing.RelativeWidthImpl)?.OpenXmlElement;
+          item = (value as DocumentModel.Wordprocessing.Drawings.RelativeWidthImpl)?.OpenXmlElement;
           if (item != null)
             OpenXmlElement.AddChild(item);
         }

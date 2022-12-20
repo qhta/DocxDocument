@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Modulate Effect.
 /// </summary>
-public class AlphaModulationEffectImpl: ModelElementImpl, AlphaModulationEffect
+public partial class AlphaModulationEffectImpl: ModelElementImpl, AlphaModulationEffect
 {
   public DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? OpenXmlElement
   {

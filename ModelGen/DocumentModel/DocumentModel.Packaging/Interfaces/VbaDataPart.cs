@@ -3,15 +3,15 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the VbaDataPart
 /// </summary>
-public interface VbaDataPart
+public partial interface VbaDataPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.VbaSuppData? VbaSuppData { get ; set; }
+  public DocumentModel.Wordprocessing.VbaSuppData? VbaSuppData { get; set; }
   
 }

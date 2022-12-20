@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the OpenXmlTickMarksElement Class.
 /// </summary>
-public class OpenXmlTickMarksElementImpl: ModelElementImpl, OpenXmlTickMarksElement
+public partial class OpenXmlTickMarksElementImpl: ModelElementImpl, OpenXmlTickMarksElement
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement? OpenXmlElement
   {

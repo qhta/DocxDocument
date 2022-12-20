@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// 3-D Shape Properties.
 /// </summary>
-public class Shape3DImpl: ModelElementImpl, Shape3D
+public partial class Shape3DImpl: ModelElementImpl, Shape3D
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D? OpenXmlElement
   {

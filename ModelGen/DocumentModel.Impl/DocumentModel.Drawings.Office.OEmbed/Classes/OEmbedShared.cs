@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// <summary>
 /// Defines the OEmbedShared Class.
 /// </summary>
-public class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
+public partial class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
 {
   public DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared? OpenXmlElement
   {

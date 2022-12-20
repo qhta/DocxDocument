@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// RGB Color Model - Percentage Variant.
 /// </summary>
-public class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercentage
+public partial class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercentage
 {
   public DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? OpenXmlElement
   {

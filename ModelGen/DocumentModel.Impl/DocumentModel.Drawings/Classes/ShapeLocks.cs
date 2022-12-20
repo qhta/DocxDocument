@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Locks.
 /// </summary>
-public class ShapeLocksImpl: ModelElementImpl, ShapeLocks
+public partial class ShapeLocksImpl: ModelElementImpl, ShapeLocks
 {
   public DocumentFormat.OpenXml.Drawing.ShapeLocks? OpenXmlElement
   {

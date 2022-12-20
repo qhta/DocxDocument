@@ -3,8 +3,8 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the FontPart
 /// </summary>
-public interface FontPart
+public partial interface FontPart
 {
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

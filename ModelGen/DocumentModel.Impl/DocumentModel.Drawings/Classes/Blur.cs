@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Blur Class.
 /// </summary>
-public class BlurImpl: ModelElementImpl, Blur
+public partial class BlurImpl: ModelElementImpl, Blur
 {
   public DocumentFormat.OpenXml.Drawing.Blur? OpenXmlElement
   {

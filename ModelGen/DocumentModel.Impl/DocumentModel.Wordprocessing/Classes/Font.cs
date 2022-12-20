@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Properties for a Single Font.
 /// </summary>
-public class FontImpl: ModelElementImpl, Font
+public partial class FontImpl: ModelElementImpl, Font
 {
   public DocumentFormat.OpenXml.Wordprocessing.Font? OpenXmlElement
   {

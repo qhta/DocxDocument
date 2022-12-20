@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Default Text Run Properties.
 /// </summary>
-public class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, DefaultRunProperties
+public partial class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, DefaultRunProperties
 {
   public new DocumentFormat.OpenXml.Drawing.DefaultRunProperties? OpenXmlElement
   {

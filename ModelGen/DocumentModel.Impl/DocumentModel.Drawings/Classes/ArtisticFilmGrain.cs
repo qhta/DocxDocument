@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticFilmGrain Class.
 /// </summary>
-public class ArtisticFilmGrainImpl: ModelElementImpl, ArtisticFilmGrain
+public partial class ArtisticFilmGrainImpl: ModelElementImpl, ArtisticFilmGrain
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain? OpenXmlElement
   {

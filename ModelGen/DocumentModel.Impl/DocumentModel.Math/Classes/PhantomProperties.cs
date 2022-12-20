@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Phantom Properties.
 /// </summary>
-public class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
+public partial class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
 {
   public DocumentFormat.OpenXml.Math.PhantomProperties? OpenXmlElement
   {

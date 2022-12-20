@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table-Level Property Exceptions.
 /// </summary>
-public class TablePropertyExceptionsImpl: ModelElementImpl, TablePropertyExceptions
+public partial class TablePropertyExceptionsImpl: ModelElementImpl, TablePropertyExceptions
 {
   public DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions? OpenXmlElement
   {

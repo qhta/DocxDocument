@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionReferenceList Class.
 /// </summary>
-public class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionReferenceList
+public partial class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionReferenceList
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionRefere
   }
   private ObservableCollection<DocumentModel.WebExtensions.WebExtensionStoreReference>? _WebExtensionStoreReferences;
   
-  private void _WebExtensionStoreReferences_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _WebExtensionStoreReferences_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionRefere
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.WebExtensions.WebExtensionStoreReferenceImpl valImpl)
@@ -82,6 +83,7 @@ public class WebExtensionReferenceListImpl: ModelElementImpl, WebExtensionRefere
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.WebExtensions.WebExtensionStoreReferenceImpl valImpl)

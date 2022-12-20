@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BubbleSerExtensionList Class.
 /// </summary>
-public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionList
+public partial class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BubbleSerExtension>? _BubbleSerExtensions;
   
-  private void _BubbleSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BubbleSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BubbleSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class BubbleSerExtensionListImpl: ModelElementImpl, BubbleSerExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BubbleSerExtensionImpl valImpl)

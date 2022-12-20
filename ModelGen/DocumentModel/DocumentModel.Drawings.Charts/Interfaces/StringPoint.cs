@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// String Point.
 /// </summary>
-public interface StringPoint
+public partial interface StringPoint
 {
   /// <summary>
   /// Index
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public UInt32? Index { get; set; }
   
   /// <summary>
   /// Text Value.
   /// </summary>
-  public String? NumericValue { get ; set; }
+  public String? NumericValue { get; set; }
   
 }

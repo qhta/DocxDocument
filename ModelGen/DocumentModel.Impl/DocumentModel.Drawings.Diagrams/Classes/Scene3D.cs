@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// 3-D Scene.
 /// </summary>
-public class Scene3DImpl: ModelElementImpl, Scene3D
+public partial class Scene3DImpl: ModelElementImpl, Scene3D
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D? OpenXmlElement
   {

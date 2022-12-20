@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Single Frame Properties.
 /// </summary>
-public class FrameImpl: ModelElementImpl, Frame
+public partial class FrameImpl: ModelElementImpl, Frame
 {
   public DocumentFormat.OpenXml.Wordprocessing.Frame? OpenXmlElement
   {

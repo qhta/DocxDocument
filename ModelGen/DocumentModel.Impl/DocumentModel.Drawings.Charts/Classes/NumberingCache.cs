@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the NumberingCache Class.
 /// </summary>
-public class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberingCache
+public partial class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberingCache
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.NumberingCache? OpenXmlElement
   {
@@ -131,7 +131,7 @@ public class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImp
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.NumericPoint>? _NumericPoints;
   
-  private void _NumericPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumericPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -141,6 +141,7 @@ public class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImp
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)
@@ -152,6 +153,7 @@ public class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImp
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)

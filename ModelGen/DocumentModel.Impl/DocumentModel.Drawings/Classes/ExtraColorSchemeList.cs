@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ExtraColorSchemeList Class.
 /// </summary>
-public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
+public partial class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
 {
   public DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
   }
   private ObservableCollection<DocumentModel.Drawings.ExtraColorScheme>? _ExtraColorSchemes;
   
-  private void _ExtraColorSchemes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ExtraColorSchemes_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)
@@ -82,6 +83,7 @@ public class ExtraColorSchemeListImpl: ModelElementImpl, ExtraColorSchemeList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ExtraColorSchemeImpl valImpl)

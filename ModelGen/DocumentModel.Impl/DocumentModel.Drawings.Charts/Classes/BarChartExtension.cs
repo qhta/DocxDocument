@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BarChartExtension Class.
 /// </summary>
-public class BarChartExtensionImpl: ModelElementImpl, BarChartExtension
+public partial class BarChartExtensionImpl: ModelElementImpl, BarChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension? OpenXmlElement
   {

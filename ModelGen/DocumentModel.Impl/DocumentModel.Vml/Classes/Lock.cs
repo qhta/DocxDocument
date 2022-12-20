@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Lock Class.
 /// </summary>
-public class LockImpl: ModelElementImpl, Lock
+public partial class LockImpl: ModelElementImpl, Lock
 {
   public DocumentFormat.OpenXml.Vml.Office.Lock? OpenXmlElement
   {

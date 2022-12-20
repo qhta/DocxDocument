@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the AcceleratorKeymapType Class.
 /// </summary>
-public class AcceleratorKeymapTypeImpl: ModelElementImpl, AcceleratorKeymapType
+public partial class AcceleratorKeymapTypeImpl: ModelElementImpl, AcceleratorKeymapType
 {
   public DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType? OpenXmlElement
   {

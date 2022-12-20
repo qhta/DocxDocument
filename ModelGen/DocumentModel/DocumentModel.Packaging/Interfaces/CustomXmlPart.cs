@@ -3,8 +3,13 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the CustomXmlPart
 /// </summary>
-public interface CustomXmlPart
+public partial interface CustomXmlPart
 {
-  public String? RelationshipType { get ; set; }
+  /// <summary>
+  /// Gets the CustomXmlPropertiesPart of the CustomXmlPart
+  /// </summary>
+  public DocumentModel.Packaging.CustomXmlPropertiesPart? CustomXmlPropertiesPart { get; }
+  
+  public String? RelationshipType { get; }
   
 }

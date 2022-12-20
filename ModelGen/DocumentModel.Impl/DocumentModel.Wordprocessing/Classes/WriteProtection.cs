@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Write Protection.
 /// </summary>
-public class WriteProtectionImpl: ModelElementImpl, WriteProtection
+public partial class WriteProtectionImpl: ModelElementImpl, WriteProtection
 {
   public DocumentFormat.OpenXml.Wordprocessing.WriteProtection? OpenXmlElement
   {

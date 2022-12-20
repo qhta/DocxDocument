@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ExtendedChartPart
 /// </summary>
-public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ExtendedChartPart
+public partial class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ExtendedChartPart
 {
   public new DocumentFormat.OpenXml.Packaging.ExtendedChartPart? OpenXmlElement
   {
@@ -39,33 +39,10 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
       }
       return _ChartColorStyleParts;
     }
-    set
-    {
-      if (value != null && value != _ChartColorStyleParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ChartColorStylePart> observableCollection)
-        _ChartColorStyleParts = observableCollection;
-      else if (value != null)
-        _ChartColorStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>(value);
-      else
-       _ChartColorStyleParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ChartColorStylePart>? _ChartColorStyleParts;
   
-  private void _ChartColorStyleParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ChartColorStyleParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -76,6 +53,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
@@ -87,6 +65,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ChartColorStylePartImpl valImpl)
@@ -104,6 +83,19 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
     }
   }
   
+  
+  /// <summary>
+  /// Gets the ChartDrawingPart of the ExtendedChartPart
+  /// </summary>
+  public DocumentModel.Packaging.ChartDrawingPart? ChartDrawingPart
+  {
+    get
+    {
+      if (OpenXmlElement?.ChartDrawingPart != null)
+        return new DocumentModel.Packaging.ChartDrawingPartImpl(OpenXmlElement.ChartDrawingPart);
+      return null;
+    }
+  }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -146,33 +138,10 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
       }
       return _ChartStyleParts;
     }
-    set
-    {
-      if (value != null && value != _ChartStyleParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ChartStylePart> observableCollection)
-        _ChartStyleParts = observableCollection;
-      else if (value != null)
-        _ChartStyleParts = new ObservableCollection<DocumentModel.Packaging.ChartStylePart>(value);
-      else
-       _ChartStyleParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ChartStylePart>? _ChartStyleParts;
   
-  private void _ChartStyleParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ChartStyleParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -183,6 +152,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
@@ -194,6 +164,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ChartStylePartImpl valImpl)
@@ -215,10 +186,18 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the EmbeddedPackagePart of the ExtendedChartPart
+  /// </summary>
+  public DocumentModel.Packaging.EmbeddedPackagePart? EmbeddedPackagePart
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ExtendedChartPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.EmbeddedPackagePart != null)
+        return new DocumentModel.Packaging.EmbeddedPackagePartImpl(OpenXmlElement.EmbeddedPackagePart);
+      return null;
     }
   }
   
@@ -243,33 +222,10 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -280,6 +236,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -291,6 +248,7 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -312,10 +270,18 @@ public class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Ext
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the ThemeOverridePart of the ExtendedChartPart
+  /// </summary>
+  public DocumentModel.Packaging.ThemeOverridePart? ThemeOverridePart
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ExtendedChartPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.ThemeOverridePart != null)
+        return new DocumentModel.Packaging.ThemeOverridePartImpl(OpenXmlElement.ThemeOverridePart);
+      return null;
     }
   }
   

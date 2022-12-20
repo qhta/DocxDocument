@@ -3,46 +3,46 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Chart Non Visual Properties.
 /// </summary>
-public interface NonVisualDrawingProperties
+public partial interface NonVisualDrawingProperties
 {
   /// <summary>
   /// Application defined unique identifier.
   /// </summary>
-  public UInt32? Id { get ; set; }
+  public UInt32? Id { get; set; }
   
   /// <summary>
   /// Name compatible with Object Model (non-unique).
   /// </summary>
-  public String? Name { get ; set; }
+  public String? Name { get; set; }
   
   /// <summary>
   /// Description of the drawing element.
   /// </summary>
-  public String? Description { get ; set; }
+  public String? Description { get; set; }
   
   /// <summary>
   /// Flag determining to show or hide this element.
   /// </summary>
-  public Boolean? Hidden { get ; set; }
+  public Boolean? Hidden { get; set; }
   
   /// <summary>
   /// Title
   /// </summary>
-  public String? Title { get ; set; }
+  public String? Title { get; set; }
   
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get ; set; }
+  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
   
   /// <summary>
   /// Hyperlink associated with hovering over the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnHover? HyperlinkOnHover { get ; set; }
+  public DocumentModel.Drawings.HyperlinkOnHover? HyperlinkOnHover { get; set; }
   
   /// <summary>
   /// Future extension.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get ; set; }
+  public DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
   
 }

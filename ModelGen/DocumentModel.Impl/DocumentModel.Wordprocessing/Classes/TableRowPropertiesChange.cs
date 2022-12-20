@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Revision Information for Table Row Properties.
 /// </summary>
-public class TableRowPropertiesChangeImpl: ModelElementImpl, TableRowPropertiesChange
+public partial class TableRowPropertiesChangeImpl: ModelElementImpl, TableRowPropertiesChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange? OpenXmlElement
   {

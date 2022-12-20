@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CustomColorList Class.
 /// </summary>
-public class CustomColorListImpl: ModelElementImpl, CustomColorList
+public partial class CustomColorListImpl: ModelElementImpl, CustomColorList
 {
   public DocumentFormat.OpenXml.Drawing.CustomColorList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
   }
   private ObservableCollection<DocumentModel.Drawings.CustomColor>? _CustomColors;
   
-  private void _CustomColors_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CustomColors_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.CustomColor>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.CustomColorImpl valImpl)
@@ -82,6 +83,7 @@ public class CustomColorListImpl: ModelElementImpl, CustomColorList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.CustomColorImpl valImpl)

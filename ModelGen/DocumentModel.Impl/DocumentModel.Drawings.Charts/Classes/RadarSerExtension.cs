@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the RadarSerExtension Class.
 /// </summary>
-public class RadarSerExtensionImpl: ModelElementImpl, RadarSerExtension
+public partial class RadarSerExtensionImpl: ModelElementImpl, RadarSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? OpenXmlElement
   {

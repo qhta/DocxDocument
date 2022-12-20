@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the LeaderLine Class.
 /// </summary>
-public class LeaderLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LeaderLine
+public partial class LeaderLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LeaderLine
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LeaderLine? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundRemoval Class.
 /// </summary>
-public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
+public partial class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? OpenXmlElement
   {
@@ -113,7 +113,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   }
   private ObservableCollection<DocumentModel.Drawings.ForegroundMark>? _ForegroundMarks;
   
-  private void _ForegroundMarks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ForegroundMarks_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -123,6 +123,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ForegroundMarkImpl valImpl)
@@ -134,6 +135,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ForegroundMarkImpl valImpl)
@@ -195,7 +197,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   }
   private ObservableCollection<DocumentModel.Drawings.BackgroundMark>? _BackgroundMarks;
   
-  private void _BackgroundMarks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BackgroundMarks_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -205,6 +207,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.BackgroundMarkImpl valImpl)
@@ -216,6 +219,7 @@ public class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.BackgroundMarkImpl valImpl)

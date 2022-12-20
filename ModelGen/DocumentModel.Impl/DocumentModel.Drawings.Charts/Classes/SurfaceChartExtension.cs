@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SurfaceChartExtension Class.
 /// </summary>
-public class SurfaceChartExtensionImpl: ModelElementImpl, SurfaceChartExtension
+public partial class SurfaceChartExtensionImpl: ModelElementImpl, SurfaceChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtension? OpenXmlElement
   {

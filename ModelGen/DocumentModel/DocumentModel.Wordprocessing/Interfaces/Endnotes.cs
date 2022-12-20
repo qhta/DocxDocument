@@ -3,8 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Endnotes.
 /// </summary>
-public interface Endnotes
+public partial interface Endnotes
 {
-  public DocumentModel.Wordprocessing.Endnote? Endnote { get ; set; }
+  /// <summary>
+  /// Gets the EndnotesPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.EndnotesPart? EndnotesPart { get; set; }
+  
+  public DocumentModel.Wordprocessing.Endnote? Endnote { get; set; }
   
 }

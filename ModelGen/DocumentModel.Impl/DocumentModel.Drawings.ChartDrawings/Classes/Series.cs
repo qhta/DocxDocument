@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Series Class.
 /// </summary>
-public class SeriesImpl: ModelElementImpl, Series
+public partial class SeriesImpl: ModelElementImpl, Series
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series? OpenXmlElement
   {
@@ -254,7 +254,7 @@ public class SeriesImpl: ModelElementImpl, Series
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -264,6 +264,7 @@ public class SeriesImpl: ModelElementImpl, Series
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
@@ -275,6 +276,7 @@ public class SeriesImpl: ModelElementImpl, Series
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.DataPointImpl valImpl)
@@ -428,7 +430,7 @@ public class SeriesImpl: ModelElementImpl, Series
   }
   private ObservableCollection<System.String>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -438,6 +440,7 @@ public class SeriesImpl: ModelElementImpl, Series
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
           if (val is string str)
@@ -448,6 +451,7 @@ public class SeriesImpl: ModelElementImpl, Series
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
         if (val is string str)

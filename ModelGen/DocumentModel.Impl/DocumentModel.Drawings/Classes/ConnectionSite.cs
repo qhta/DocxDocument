@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Connection Site.
 /// </summary>
-public class ConnectionSiteImpl: ModelElementImpl, ConnectionSite
+public partial class ConnectionSiteImpl: ModelElementImpl, ConnectionSite
 {
   public DocumentFormat.OpenXml.Drawing.ConnectionSite? OpenXmlElement
   {

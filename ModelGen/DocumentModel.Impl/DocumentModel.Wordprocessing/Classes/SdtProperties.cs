@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Structured Document Tag Properties.
 /// </summary>
-public class SdtPropertiesImpl: ModelElementImpl, SdtProperties
+public partial class SdtPropertiesImpl: ModelElementImpl, SdtProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtProperties? OpenXmlElement
   {

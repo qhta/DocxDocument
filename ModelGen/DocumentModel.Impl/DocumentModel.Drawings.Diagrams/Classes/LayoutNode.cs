@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Layout Node.
 /// </summary>
-public class LayoutNodeImpl: ModelElementImpl, LayoutNode
+public partial class LayoutNodeImpl: ModelElementImpl, LayoutNode
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode? OpenXmlElement
   {

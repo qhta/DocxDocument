@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPlasticWrap Class.
 /// </summary>
-public class ArtisticPlasticWrapImpl: ModelElementImpl, ArtisticPlasticWrap
+public partial class ArtisticPlasticWrapImpl: ModelElementImpl, ArtisticPlasticWrap
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap? OpenXmlElement
   {

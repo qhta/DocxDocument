@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BarChartSeries Class.
 /// </summary>
-public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
+public partial class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries? OpenXmlElement
   {
@@ -245,7 +245,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -255,6 +255,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -266,6 +267,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -356,7 +358,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Trendline>? _Trendlines;
   
-  private void _Trendlines_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Trendlines_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -366,6 +368,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Trendline>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)
@@ -377,6 +380,7 @@ public class BarChartSeries3Impl: ModelElementImpl, BarChartSeries3
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)

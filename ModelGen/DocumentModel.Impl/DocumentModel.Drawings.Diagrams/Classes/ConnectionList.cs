@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Connection List.
 /// </summary>
-public class ConnectionListImpl: ModelElementImpl, ConnectionList
+public partial class ConnectionListImpl: ModelElementImpl, ConnectionList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ConnectionListImpl: ModelElementImpl, ConnectionList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Connection>? _Connections;
   
-  private void _Connections_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Connections_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ConnectionListImpl: ModelElementImpl, ConnectionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ConnectionImpl valImpl)
@@ -82,6 +83,7 @@ public class ConnectionListImpl: ModelElementImpl, ConnectionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ConnectionImpl valImpl)

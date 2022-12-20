@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SlideSyncDataPart
 /// </summary>
-public class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideSyncDataPart
+public partial class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideSyncDataPart
 {
   public new DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Sli
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

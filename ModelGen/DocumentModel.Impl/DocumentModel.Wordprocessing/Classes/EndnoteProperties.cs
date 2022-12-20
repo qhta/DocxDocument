@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the EndnoteProperties Class.
 /// </summary>
-public class EndnotePropertiesImpl: ModelElementImpl, EndnoteProperties
+public partial class EndnotePropertiesImpl: ModelElementImpl, EndnoteProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? OpenXmlElement
   {

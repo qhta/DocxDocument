@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Grouping History.
 /// </summary>
-public class RegroupTableImpl: ModelElementImpl, RegroupTable
+public partial class RegroupTableImpl: ModelElementImpl, RegroupTable
 {
   public DocumentFormat.OpenXml.Vml.Office.RegroupTable? OpenXmlElement
   {
@@ -74,7 +74,7 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
   }
   private ObservableCollection<DocumentModel.Vml.Entry>? _Entries;
   
-  private void _Entries_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Entries_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -84,6 +84,7 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Entry>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.EntryImpl valImpl)
@@ -95,6 +96,7 @@ public class RegroupTableImpl: ModelElementImpl, RegroupTable
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.EntryImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TextSpacingType Class.
 /// </summary>
-public class TextSpacingTypeImpl: ModelElementImpl, TextSpacingType
+public partial class TextSpacingTypeImpl: ModelElementImpl, TextSpacingType
 {
   public DocumentFormat.OpenXml.Drawing.TextSpacingType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Line Color List.
 /// </summary>
-public class LineColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, LineColorList
+public partial class LineColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, LineColorList
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList? OpenXmlElement
   {

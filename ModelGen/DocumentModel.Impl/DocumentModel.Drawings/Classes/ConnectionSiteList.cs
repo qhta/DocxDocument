@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List of Shape Connection Sites.
 /// </summary>
-public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
+public partial class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
 {
   public DocumentFormat.OpenXml.Drawing.ConnectionSiteList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
   }
   private ObservableCollection<DocumentModel.Drawings.ConnectionSite>? _ConnectionSites;
   
-  private void _ConnectionSites_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ConnectionSites_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ConnectionSite>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)
@@ -82,6 +83,7 @@ public class ConnectionSiteListImpl: ModelElementImpl, ConnectionSiteList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ConnectionSiteImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Description.
 /// </summary>
-public class DescriptionImpl: ModelElementImpl, Description
+public partial class DescriptionImpl: ModelElementImpl, Description
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Description? OpenXmlElement
   {

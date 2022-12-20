@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtBlock Class.
 /// </summary>
-public class SdtBlockImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtBlock
+public partial class SdtBlockImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtBlock
 {
   public new DocumentFormat.OpenXml.Wordprocessing.SdtBlock? OpenXmlElement
   {

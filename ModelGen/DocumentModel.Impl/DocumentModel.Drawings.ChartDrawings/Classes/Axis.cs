@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Axis Class.
 /// </summary>
-public class AxisImpl: ModelElementImpl, Axis
+public partial class AxisImpl: ModelElementImpl, Axis
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis? OpenXmlElement
   {

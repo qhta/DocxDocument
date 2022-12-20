@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// New Shape Defaults.
 /// </summary>
-public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
+public partial class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
 {
   public DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? OpenXmlElement
   {

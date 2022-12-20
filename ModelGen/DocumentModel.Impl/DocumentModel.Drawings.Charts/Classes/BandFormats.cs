@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Band Formats.
 /// </summary>
-public class BandFormatsImpl: ModelElementImpl, BandFormats
+public partial class BandFormatsImpl: ModelElementImpl, BandFormats
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BandFormats? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BandFormatsImpl: ModelElementImpl, BandFormats
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BandFormat>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BandFormatsImpl: ModelElementImpl, BandFormats
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BandFormatImpl valImpl)
@@ -82,6 +83,7 @@ public class BandFormatsImpl: ModelElementImpl, BandFormats
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BandFormatImpl valImpl)

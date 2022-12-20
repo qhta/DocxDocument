@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Most Recently Used Colors.
 /// </summary>
-public class ColorMostRecentlyUsedImpl: ModelElementImpl, ColorMostRecentlyUsed
+public partial class ColorMostRecentlyUsedImpl: ModelElementImpl, ColorMostRecentlyUsed
 {
   public DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed? OpenXmlElement
   {

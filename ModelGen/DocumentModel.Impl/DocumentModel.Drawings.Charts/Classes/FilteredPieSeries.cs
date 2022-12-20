@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredPieSeries Class.
 /// </summary>
-public class FilteredPieSeriesImpl: ModelElementImpl, FilteredPieSeries
+public partial class FilteredPieSeriesImpl: ModelElementImpl, FilteredPieSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries? OpenXmlElement
   {

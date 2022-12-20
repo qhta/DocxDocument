@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Definition.
 /// </summary>
-public class ShapeImpl: ModelElementImpl, Shape
+public partial class ShapeImpl: ModelElementImpl, Shape
 {
   public DocumentFormat.OpenXml.Vml.Shape? OpenXmlElement
   {

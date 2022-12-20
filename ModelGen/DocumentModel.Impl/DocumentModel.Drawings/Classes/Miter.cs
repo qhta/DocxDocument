@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Miter Line Join.
 /// </summary>
-public class MiterImpl: ModelElementImpl, Miter
+public partial class MiterImpl: ModelElementImpl, Miter
 {
   public DocumentFormat.OpenXml.Drawing.Miter? OpenXmlElement
   {

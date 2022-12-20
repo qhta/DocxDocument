@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SerAxExtension Class.
 /// </summary>
-public class SerAxExtensionImpl: ModelElementImpl, SerAxExtension
+public partial class SerAxExtensionImpl: ModelElementImpl, SerAxExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? OpenXmlElement
   {

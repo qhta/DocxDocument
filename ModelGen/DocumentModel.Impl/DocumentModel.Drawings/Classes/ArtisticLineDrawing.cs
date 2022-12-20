@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticLineDrawing Class.
 /// </summary>
-public class ArtisticLineDrawingImpl: ModelElementImpl, ArtisticLineDrawing
+public partial class ArtisticLineDrawingImpl: ModelElementImpl, ArtisticLineDrawing
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? OpenXmlElement
   {

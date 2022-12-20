@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Fill Color List.
 /// </summary>
-public class FillColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, FillColorList
+public partial class FillColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, FillColorList
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList? OpenXmlElement
   {

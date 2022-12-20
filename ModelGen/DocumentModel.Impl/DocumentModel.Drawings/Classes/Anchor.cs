@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Anchor Point.
 /// </summary>
-public class AnchorImpl: ModelElementImpl, Anchor
+public partial class AnchorImpl: ModelElementImpl, Anchor
 {
   public DocumentFormat.OpenXml.Drawing.Anchor? OpenXmlElement
   {

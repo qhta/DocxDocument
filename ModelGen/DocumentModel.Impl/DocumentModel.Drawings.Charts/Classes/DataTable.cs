@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Data Table.
 /// </summary>
-public class DataTableImpl: ModelElementImpl, DataTable
+public partial class DataTableImpl: ModelElementImpl, DataTable
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DataTable? OpenXmlElement
   {

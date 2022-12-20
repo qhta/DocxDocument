@@ -3,31 +3,31 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoLocationQuery Class.
 /// </summary>
-public interface GeoLocationQuery
+public partial interface GeoLocationQuery
 {
   /// <summary>
   /// countryRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? CountryRegion { get ; set; }
+  public String? CountryRegion { get; set; }
   
   /// <summary>
   /// adminDistrict1, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? AdminDistrict1 { get ; set; }
+  public String? AdminDistrict1 { get; set; }
   
   /// <summary>
   /// adminDistrict2, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? AdminDistrict2 { get ; set; }
+  public String? AdminDistrict2 { get; set; }
   
   /// <summary>
   /// postalCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? PostalCode { get ; set; }
+  public String? PostalCode { get; set; }
   
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? EntityType { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? EntityType { get; set; }
   
 }

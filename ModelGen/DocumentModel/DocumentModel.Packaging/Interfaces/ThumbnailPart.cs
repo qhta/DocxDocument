@@ -3,8 +3,8 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ThumbnailPart
 /// </summary>
-public interface ThumbnailPart
+public partial interface ThumbnailPart
 {
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

@@ -3,14 +3,14 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Checkbox Form Field Properties.
 /// </summary>
-public interface CheckBox
+public partial interface CheckBox
 {
-  public String? FormFieldSize { get ; set; }
+  public String? FormFieldSize { get; set; }
   
-  public Boolean? AutomaticallySizeFormField { get ; set; }
+  public Boolean? AutomaticallySizeFormField { get; set; }
   
-  public Boolean? DefaultCheckBoxFormFieldState { get ; set; }
+  public Boolean? DefaultCheckBoxFormFieldState { get; set; }
   
-  public Boolean? Checked { get ; set; }
+  public Boolean? Checked { get; set; }
   
 }

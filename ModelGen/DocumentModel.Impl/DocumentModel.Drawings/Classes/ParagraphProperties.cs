@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, ParagraphProperties
+public partial class ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, ParagraphProperties
 {
   public new DocumentFormat.OpenXml.Drawing.ParagraphProperties? OpenXmlElement
   {

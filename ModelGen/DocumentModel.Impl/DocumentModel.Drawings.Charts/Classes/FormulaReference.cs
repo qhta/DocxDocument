@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FormulaReference Class.
 /// </summary>
-public class FormulaReferenceImpl: ModelElementImpl, FormulaReference
+public partial class FormulaReferenceImpl: ModelElementImpl, FormulaReference
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference? OpenXmlElement
   {

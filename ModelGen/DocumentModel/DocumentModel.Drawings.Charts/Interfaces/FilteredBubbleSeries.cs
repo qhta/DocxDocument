@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredBubbleSeries Class.
 /// </summary>
-public interface FilteredBubbleSeries
+public partial interface FilteredBubbleSeries
 {
   /// <summary>
   /// BubbleChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.BubbleChartSeries3? BubbleChartSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.BubbleChartSeries3? BubbleChartSeries { get; set; }
   
 }

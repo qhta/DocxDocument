@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Rule List.
 /// </summary>
-public class RuleListImpl: ModelElementImpl, RuleList
+public partial class RuleListImpl: ModelElementImpl, RuleList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class RuleListImpl: ModelElementImpl, RuleList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Rule>? _Rules;
   
-  private void _Rules_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Rules_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class RuleListImpl: ModelElementImpl, RuleList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.RuleImpl valImpl)
@@ -82,6 +83,7 @@ public class RuleListImpl: ModelElementImpl, RuleList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.RuleImpl valImpl)

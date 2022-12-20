@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskUndo Class.
 /// </summary>
-public class TaskUndoImpl: ModelElementImpl, TaskUndo
+public partial class TaskUndoImpl: ModelElementImpl, TaskUndo
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndo? OpenXmlElement
   {

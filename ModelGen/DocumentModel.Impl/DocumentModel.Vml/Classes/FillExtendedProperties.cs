@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Fill Extended Properties.
 /// </summary>
-public class FillExtendedPropertiesImpl: ModelElementImpl, FillExtendedProperties
+public partial class FillExtendedPropertiesImpl: ModelElementImpl, FillExtendedProperties
 {
   public DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? OpenXmlElement
   {

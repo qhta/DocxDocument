@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Rule.
 /// </summary>
-public class RuleImpl: ModelElementImpl, Rule
+public partial class RuleImpl: ModelElementImpl, Rule
 {
   public DocumentFormat.OpenXml.Vml.Office.Rule? OpenXmlElement
   {
@@ -113,7 +113,7 @@ public class RuleImpl: ModelElementImpl, Rule
   }
   private ObservableCollection<DocumentModel.Vml.Proxy>? _Proxies;
   
-  private void _Proxies_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Proxies_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -123,6 +123,7 @@ public class RuleImpl: ModelElementImpl, Rule
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.ProxyImpl valImpl)
@@ -134,6 +135,7 @@ public class RuleImpl: ModelElementImpl, Rule
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.ProxyImpl valImpl)

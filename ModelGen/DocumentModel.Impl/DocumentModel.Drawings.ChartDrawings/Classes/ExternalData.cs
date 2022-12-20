@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ExternalData Class.
 /// </summary>
-public class ExternalDataImpl: ModelElementImpl, ExternalData
+public partial class ExternalDataImpl: ModelElementImpl, ExternalData
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the AllocatedCommand Class.
 /// </summary>
-public class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
+public partial class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
 {
   public DocumentFormat.OpenXml.Office.Word.AllocatedCommand? OpenXmlElement
   {

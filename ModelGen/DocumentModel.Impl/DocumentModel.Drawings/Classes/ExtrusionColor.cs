@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Extrusion Color.
 /// </summary>
-public class ExtrusionColorImpl: DocumentModel.Drawings.ColorTypeImpl, ExtrusionColor
+public partial class ExtrusionColorImpl: DocumentModel.Drawings.ColorTypeImpl, ExtrusionColor
 {
   public new DocumentFormat.OpenXml.Drawing.ExtrusionColor? OpenXmlElement
   {

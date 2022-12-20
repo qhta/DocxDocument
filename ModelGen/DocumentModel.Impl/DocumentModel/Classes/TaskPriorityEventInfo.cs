@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskPriorityEventInfo Class.
 /// </summary>
-public class TaskPriorityEventInfoImpl: ModelElementImpl, TaskPriorityEventInfo
+public partial class TaskPriorityEventInfoImpl: ModelElementImpl, TaskPriorityEventInfo
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? OpenXmlElement
   {

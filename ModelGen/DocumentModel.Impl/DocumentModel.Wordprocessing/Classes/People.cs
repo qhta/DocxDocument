@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the People Class.
 /// </summary>
-public class PeopleImpl: ModelElementImpl, People
+public partial class PeopleImpl: ModelElementImpl, People
 {
   public DocumentFormat.OpenXml.Office2013.Word.People? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class PeopleImpl: ModelElementImpl, People
   public PeopleImpl(DocumentFormat.OpenXml.Office2013.Word.People openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the WordprocessingPeoplePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.WordprocessingPeoplePart? WordprocessingPeoplePart
+  {
+    get
+    {
+      if (OpenXmlElement?.WordprocessingPeoplePart != null)
+        return new DocumentModel.Packaging.WordprocessingPeoplePartImpl(OpenXmlElement.WordprocessingPeoplePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.WordprocessingPeoplePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.Person>? Persons
@@ -61,7 +81,7 @@ public class PeopleImpl: ModelElementImpl, People
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Person>? _Persons;
   
-  private void _Persons_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Persons_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class PeopleImpl: ModelElementImpl, People
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.Person>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.PersonImpl valImpl)
@@ -82,6 +103,7 @@ public class PeopleImpl: ModelElementImpl, People
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.PersonImpl valImpl)

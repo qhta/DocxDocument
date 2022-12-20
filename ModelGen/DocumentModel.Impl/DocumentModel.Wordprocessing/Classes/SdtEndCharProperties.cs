@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Structured Document Tag End Character Properties.
 /// </summary>
-public class SdtEndCharPropertiesImpl: ModelElementImpl, SdtEndCharProperties
+public partial class SdtEndCharPropertiesImpl: ModelElementImpl, SdtEndCharProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? OpenXmlElement
   {

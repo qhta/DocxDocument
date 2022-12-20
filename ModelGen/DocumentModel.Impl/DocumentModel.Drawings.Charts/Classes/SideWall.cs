@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D side wall formatting.
 /// </summary>
-public class SideWallImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, SideWall
+public partial class SideWallImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, SideWall
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.SideWall? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom geometry.
 /// </summary>
-public class CustomGeometryImpl: ModelElementImpl, CustomGeometry
+public partial class CustomGeometryImpl: ModelElementImpl, CustomGeometry
 {
   public DocumentFormat.OpenXml.Drawing.CustomGeometry? OpenXmlElement
   {

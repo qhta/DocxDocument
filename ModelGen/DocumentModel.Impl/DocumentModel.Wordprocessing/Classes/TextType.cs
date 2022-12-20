@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TextType Class.
 /// </summary>
-public class TextTypeImpl: ModelElementImpl, TextType
+public partial class TextTypeImpl: ModelElementImpl, TextType
 {
   public DocumentFormat.OpenXml.Wordprocessing.TextType? OpenXmlElement
   {

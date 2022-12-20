@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Section Properties.
 /// </summary>
-public class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionProperties
+public partial class PreviousSectionPropertiesImpl: ModelElementImpl, PreviousSectionProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties? OpenXmlElement
   {

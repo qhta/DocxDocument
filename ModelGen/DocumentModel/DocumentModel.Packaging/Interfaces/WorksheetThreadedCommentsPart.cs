@@ -3,10 +3,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WorksheetThreadedCommentsPart
 /// </summary>
-public interface WorksheetThreadedCommentsPart
+public partial interface WorksheetThreadedCommentsPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

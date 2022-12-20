@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MathControlMoveType Class.
 /// </summary>
-public class MathControlMoveTypeImpl: ModelElementImpl, MathControlMoveType
+public partial class MathControlMoveTypeImpl: ModelElementImpl, MathControlMoveType
 {
   public DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? OpenXmlElement
   {

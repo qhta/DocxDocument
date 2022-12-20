@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Bar Properties.
 /// </summary>
-public class BarPropertiesImpl: ModelElementImpl, BarProperties
+public partial class BarPropertiesImpl: ModelElementImpl, BarProperties
 {
   public DocumentFormat.OpenXml.Math.BarProperties? OpenXmlElement
   {

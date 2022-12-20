@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Latent Style Information.
 /// </summary>
-public class LatentStylesImpl: ModelElementImpl, LatentStyles
+public partial class LatentStylesImpl: ModelElementImpl, LatentStyles
 {
   public DocumentFormat.OpenXml.Wordprocessing.LatentStyles? OpenXmlElement
   {
@@ -139,7 +139,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
   }
   private ObservableCollection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>? _LatentStyleExceptionInfos;
   
-  private void _LatentStyleExceptionInfos_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LatentStyleExceptionInfos_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -149,6 +149,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)
@@ -160,6 +161,7 @@ public class LatentStylesImpl: ModelElementImpl, LatentStyles
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.LatentStyleExceptionInfoImpl valImpl)

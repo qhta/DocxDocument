@@ -3,8 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CommentsIds Class.
 /// </summary>
-public interface CommentsIds
+public partial interface CommentsIds
 {
-  public Collection<DocumentModel.Wordprocessing.CommentId>? CommentIds { get ; set; }
+  /// <summary>
+  /// Gets the WordprocessingCommentsIdsPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.WordprocessingCommentsIdsPart? WordprocessingCommentsIdsPart { get; set; }
+  
+  public Collection<DocumentModel.Wordprocessing.CommentId>? CommentIds { get; set; }
   
 }

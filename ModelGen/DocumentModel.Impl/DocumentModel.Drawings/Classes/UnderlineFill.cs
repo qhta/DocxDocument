@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Underline Fill.
 /// </summary>
-public class UnderlineFillImpl: ModelElementImpl, UnderlineFill
+public partial class UnderlineFillImpl: ModelElementImpl, UnderlineFill
 {
   public DocumentFormat.OpenXml.Drawing.UnderlineFill? OpenXmlElement
   {

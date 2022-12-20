@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NumericDimension Class.
 /// </summary>
-public class NumericDimensionImpl: ModelElementImpl, NumericDimension
+public partial class NumericDimensionImpl: ModelElementImpl, NumericDimension
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension? OpenXmlElement
   {
@@ -132,7 +132,7 @@ public class NumericDimensionImpl: ModelElementImpl, NumericDimension
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.NumericLevel>? _NumericLevels;
   
-  private void _NumericLevels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumericLevels_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -142,6 +142,7 @@ public class NumericDimensionImpl: ModelElementImpl, NumericDimension
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.NumericLevelImpl valImpl)
@@ -153,6 +154,7 @@ public class NumericDimensionImpl: ModelElementImpl, NumericDimension
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.NumericLevelImpl valImpl)

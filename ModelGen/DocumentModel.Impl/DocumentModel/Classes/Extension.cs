@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the Extension Class.
 /// </summary>
-public class ExtensionImpl: ModelElementImpl, Extension
+public partial class ExtensionImpl: ModelElementImpl, Extension
 {
   public DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension? OpenXmlElement
   {

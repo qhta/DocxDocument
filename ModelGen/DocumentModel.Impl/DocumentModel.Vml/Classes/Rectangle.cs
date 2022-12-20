@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Rectangle.
 /// </summary>
-public class RectangleImpl: ModelElementImpl, Rectangle
+public partial class RectangleImpl: ModelElementImpl, Rectangle
 {
   public DocumentFormat.OpenXml.Vml.Rectangle? OpenXmlElement
   {

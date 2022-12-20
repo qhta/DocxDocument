@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoDataEntityQueryResult Class.
 /// </summary>
-public class GeoDataEntityQueryResultImpl: ModelElementImpl, GeoDataEntityQueryResult
+public partial class GeoDataEntityQueryResultImpl: ModelElementImpl, GeoDataEntityQueryResult
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Text Body.
 /// </summary>
-public class TextBodyImpl: ModelElementImpl, TextBody
+public partial class TextBodyImpl: ModelElementImpl, TextBody
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.TextBody? OpenXmlElement
   {

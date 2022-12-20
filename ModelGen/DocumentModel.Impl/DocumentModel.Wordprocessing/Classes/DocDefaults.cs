@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Default Paragraph and Run Properties.
 /// </summary>
-public class DocDefaultsImpl: ModelElementImpl, DocDefaults
+public partial class DocDefaultsImpl: ModelElementImpl, DocDefaults
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocDefaults? OpenXmlElement
   {

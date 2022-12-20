@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageNumberType Class.
 /// </summary>
-public class PageNumberTypeImpl: ModelElementImpl, PageNumberType
+public partial class PageNumberTypeImpl: ModelElementImpl, PageNumberType
 {
   public DocumentFormat.OpenXml.Wordprocessing.PageNumberType? OpenXmlElement
   {

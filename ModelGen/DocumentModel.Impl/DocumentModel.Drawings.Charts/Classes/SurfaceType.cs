@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SurfaceType Class.
 /// </summary>
-public class SurfaceTypeImpl: ModelElementImpl, SurfaceType
+public partial class SurfaceTypeImpl: ModelElementImpl, SurfaceType
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceType? OpenXmlElement
   {

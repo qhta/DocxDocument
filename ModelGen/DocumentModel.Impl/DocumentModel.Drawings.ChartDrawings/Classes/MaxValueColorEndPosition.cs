@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MaxValueColorEndPosition Class.
 /// </summary>
-public class MaxValueColorEndPositionImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElementImpl, MaxValueColorEndPosition
+public partial class MaxValueColorEndPositionImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElementImpl, MaxValueColorEndPosition
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? OpenXmlElement
   {

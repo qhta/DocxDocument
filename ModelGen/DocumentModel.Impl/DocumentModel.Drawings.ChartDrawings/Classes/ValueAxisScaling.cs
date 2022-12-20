@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ValueAxisScaling Class.
 /// </summary>
-public class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
+public partial class ValueAxisScalingImpl: ModelElementImpl, ValueAxisScaling
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? OpenXmlElement
   {

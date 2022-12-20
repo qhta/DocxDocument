@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DocumentSettingsPart
 /// </summary>
-public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentSettingsPart
+public partial class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentSettingsPart
 {
   public new DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -49,33 +44,10 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -86,6 +58,7 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -97,6 +70,7 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -115,14 +89,22 @@ public class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   }
   
   
+  /// <summary>
+  /// Gets the MailMergeRecipientDataPart of the DocumentSettingsPart
+  /// </summary>
+  public DocumentModel.Packaging.MailMergeRecipientDataPart? MailMergeRecipientDataPart
+  {
+    get
+    {
+      if (OpenXmlElement?.MailMergeRecipientDataPart != null)
+        return new DocumentModel.Packaging.MailMergeRecipientDataPartImpl(OpenXmlElement.MailMergeRecipientDataPart);
+      return null;
+    }
+  }
+  
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>

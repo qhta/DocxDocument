@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Revision Information for Table Grid Column Definitions.
 /// </summary>
-public class TableGridChangeImpl: ModelElementImpl, TableGridChange
+public partial class TableGridChangeImpl: ModelElementImpl, TableGridChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableGridChange? OpenXmlElement
   {

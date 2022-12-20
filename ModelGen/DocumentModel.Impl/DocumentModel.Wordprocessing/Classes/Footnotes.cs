@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Footnotes.
 /// </summary>
-public class FootnotesImpl: ModelElementImpl, Footnotes
+public partial class FootnotesImpl: ModelElementImpl, Footnotes
 {
   public DocumentFormat.OpenXml.Wordprocessing.Footnotes? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class FootnotesImpl: ModelElementImpl, Footnotes
   public FootnotesImpl(DocumentFormat.OpenXml.Wordprocessing.Footnotes openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the FootnotesPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.FootnotesPart? FootnotesPart
+  {
+    get
+    {
+      if (OpenXmlElement?.FootnotesPart != null)
+        return new DocumentModel.Packaging.FootnotesPartImpl(OpenXmlElement.FootnotesPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.FootnotesPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public DocumentModel.Wordprocessing.Footnote? Footnote

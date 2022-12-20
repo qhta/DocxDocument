@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SketchOptions Class.
 /// </summary>
-public class SketchOptionsImpl: ModelElementImpl, SketchOptions
+public partial class SketchOptionsImpl: ModelElementImpl, SketchOptions
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? OpenXmlElement
   {

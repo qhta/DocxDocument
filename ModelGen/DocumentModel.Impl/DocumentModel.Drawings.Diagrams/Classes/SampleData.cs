@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the SampleData Class.
 /// </summary>
-public class SampleDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, SampleData
+public partial class SampleDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, SampleData
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.SampleData? OpenXmlElement
   {

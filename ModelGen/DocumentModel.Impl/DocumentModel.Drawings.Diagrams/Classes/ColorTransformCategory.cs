@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Color Transform Category.
 /// </summary>
-public class ColorTransformCategoryImpl: ModelElementImpl, ColorTransformCategory
+public partial class ColorTransformCategoryImpl: ModelElementImpl, ColorTransformCategory
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SolidFill Class.
 /// </summary>
-public class SolidFillImpl: ModelElementImpl, SolidFill
+public partial class SolidFillImpl: ModelElementImpl, SolidFill
 {
   public DocumentFormat.OpenXml.Drawing.SolidFill? OpenXmlElement
   {

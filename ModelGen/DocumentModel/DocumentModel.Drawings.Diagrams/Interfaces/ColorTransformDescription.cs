@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Description.
 /// </summary>
-public interface ColorTransformDescription
+public partial interface ColorTransformDescription
 {
   /// <summary>
   /// Language
   /// </summary>
-  public String? Language { get ; set; }
+  public String? Language { get; set; }
   
   /// <summary>
   /// Description Value
   /// </summary>
-  public String? Val { get ; set; }
+  public String? Val { get; set; }
   
 }

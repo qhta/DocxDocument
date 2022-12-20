@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LineSketchTypeProperties Class.
 /// </summary>
-public class LineSketchTypePropertiesImpl: ModelElementImpl, LineSketchTypeProperties
+public partial class LineSketchTypePropertiesImpl: ModelElementImpl, LineSketchTypeProperties
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? OpenXmlElement
   {

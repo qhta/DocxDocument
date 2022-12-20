@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Vector3DType Class.
 /// </summary>
-public class Vector3DTypeImpl: ModelElementImpl, Vector3DType
+public partial class Vector3DTypeImpl: ModelElementImpl, Vector3DType
 {
   public DocumentFormat.OpenXml.Drawing.Vector3DType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DLblsExtensionList Class.
 /// </summary>
-public class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
+public partial class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DLblsExtension>? _DLblsExtensions;
   
-  private void _DLblsExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DLblsExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DLblsExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DLblsExtensionImpl valImpl)

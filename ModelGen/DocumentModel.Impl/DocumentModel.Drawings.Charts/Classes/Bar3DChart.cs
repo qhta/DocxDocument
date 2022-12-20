@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D Bar Charts.
 /// </summary>
-public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
+public partial class Bar3DChartImpl: ModelElementImpl, Bar3DChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? OpenXmlElement
   {
@@ -149,7 +149,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BarChartSeries>? _BarChartSerieses;
   
-  private void _BarChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BarChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -159,6 +159,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BarChartSeriesImpl valImpl)
@@ -170,6 +171,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BarChartSeriesImpl valImpl)
@@ -361,7 +363,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -371,6 +373,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -378,6 +381,7 @@ public class Bar3DChartImpl: ModelElementImpl, Bar3DChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

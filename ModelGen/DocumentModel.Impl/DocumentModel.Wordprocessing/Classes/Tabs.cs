@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Tabs Class.
 /// </summary>
-public class TabsImpl: ModelElementImpl, Tabs
+public partial class TabsImpl: ModelElementImpl, Tabs
 {
   public DocumentFormat.OpenXml.Wordprocessing.Tabs? OpenXmlElement
   {

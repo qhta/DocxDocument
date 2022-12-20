@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AlphaBiLevel Class.
 /// </summary>
-public class AlphaBiLevelImpl: ModelElementImpl, AlphaBiLevel
+public partial class AlphaBiLevelImpl: ModelElementImpl, AlphaBiLevel
 {
   public DocumentFormat.OpenXml.Drawing.AlphaBiLevel? OpenXmlElement
   {

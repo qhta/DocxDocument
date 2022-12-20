@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Up Bars.
 /// </summary>
-public interface UpBars
+public partial interface UpBars
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Presentation Layout Variables.
 /// </summary>
-public class PresentationLayoutVariablesImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, PresentationLayoutVariables
+public partial class PresentationLayoutVariablesImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, PresentationLayoutVariables
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables? OpenXmlElement
   {

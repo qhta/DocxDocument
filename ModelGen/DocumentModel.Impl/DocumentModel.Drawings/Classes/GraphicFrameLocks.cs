@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Frame Locks.
 /// </summary>
-public class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
+public partial class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
 {
   public DocumentFormat.OpenXml.Drawing.GraphicFrameLocks? OpenXmlElement
   {

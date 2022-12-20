@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Person Class.
 /// </summary>
-public class PersonImpl: ModelElementImpl, Person
+public partial class PersonImpl: ModelElementImpl, Person
 {
   public DocumentFormat.OpenXml.Office2013.Word.Person? OpenXmlElement
   {

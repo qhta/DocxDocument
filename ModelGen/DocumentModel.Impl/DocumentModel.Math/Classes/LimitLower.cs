@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Lower-Limit Function.
 /// </summary>
-public class LimitLowerImpl: ModelElementImpl, LimitLower
+public partial class LimitLowerImpl: ModelElementImpl, LimitLower
 {
   public DocumentFormat.OpenXml.Math.LimitLower? OpenXmlElement
   {

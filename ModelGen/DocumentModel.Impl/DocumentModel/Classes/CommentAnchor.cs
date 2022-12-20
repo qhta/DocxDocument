@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the CommentAnchor Class.
 /// </summary>
-public class CommentAnchorImpl: ModelElementImpl, CommentAnchor
+public partial class CommentAnchorImpl: ModelElementImpl, CommentAnchor
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor? OpenXmlElement
   {

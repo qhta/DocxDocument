@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Toolbars Class.
 /// </summary>
-public class ToolbarsImpl: ModelElementImpl, Toolbars
+public partial class ToolbarsImpl: ModelElementImpl, Toolbars
 {
   public DocumentFormat.OpenXml.Office.Word.Toolbars? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? _AllocatedCommandManifests;
   
-  private void _AllocatedCommandManifests_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AllocatedCommandManifests_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
@@ -82,6 +83,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AllocatedCommandManifestImpl valImpl)
@@ -143,7 +145,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
   }
   private ObservableCollection<DocumentModel.Wordprocessing.ToolbarData>? _ToolbarDatas;
   
-  private void _ToolbarDatas_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ToolbarDatas_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -153,6 +155,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.ToolbarData>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)
@@ -164,6 +167,7 @@ public class ToolbarsImpl: ModelElementImpl, Toolbars
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ToolbarDataImpl valImpl)

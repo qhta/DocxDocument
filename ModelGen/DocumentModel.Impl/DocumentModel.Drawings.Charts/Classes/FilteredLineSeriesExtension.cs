@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredLineSeriesExtension Class.
 /// </summary>
-public class FilteredLineSeriesExtensionImpl: ModelElementImpl, FilteredLineSeriesExtension
+public partial class FilteredLineSeriesExtensionImpl: ModelElementImpl, FilteredLineSeriesExtension
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension? OpenXmlElement
   {

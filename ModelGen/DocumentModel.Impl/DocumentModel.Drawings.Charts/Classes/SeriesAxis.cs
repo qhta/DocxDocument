@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Series Axis.
 /// </summary>
-public class SeriesAxisImpl: ModelElementImpl, SeriesAxis
+public partial class SeriesAxisImpl: ModelElementImpl, SeriesAxis
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? OpenXmlElement
   {

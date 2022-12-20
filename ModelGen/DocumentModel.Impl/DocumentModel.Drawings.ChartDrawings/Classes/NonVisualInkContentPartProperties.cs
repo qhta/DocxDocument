@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualInkContentPartProperties
+public partial class NonVisualInkContentPartPropertiesImpl: ModelElementImpl, NonVisualInkContentPartProperties
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? OpenXmlElement
   {

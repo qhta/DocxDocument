@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the LineReference Class.
 /// </summary>
-public class LineReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, LineReference
+public partial class LineReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, LineReference
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference? OpenXmlElement
   {

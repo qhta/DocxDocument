@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Defines the WebVideoProperty Class.
 /// </summary>
-public class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
+public partial class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
 {
   public DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty? OpenXmlElement
   {

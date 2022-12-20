@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Area3DChartExtensionList Class.
 /// </summary>
-public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensionList
+public partial class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Area3DChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensio
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Area3DChartExtension>? _Area3DChartExtensions;
   
-  private void _Area3DChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Area3DChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensio
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Area3DChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.Area3DChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class Area3DChartExtensionListImpl: ModelElementImpl, Area3DChartExtensio
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.Area3DChartExtensionImpl valImpl)

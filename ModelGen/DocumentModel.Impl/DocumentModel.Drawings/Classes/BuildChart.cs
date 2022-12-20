@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Build Chart.
 /// </summary>
-public class BuildChartImpl: ModelElementImpl, BuildChart
+public partial class BuildChartImpl: ModelElementImpl, BuildChart
 {
   public DocumentFormat.OpenXml.Drawing.BuildChart? OpenXmlElement
   {

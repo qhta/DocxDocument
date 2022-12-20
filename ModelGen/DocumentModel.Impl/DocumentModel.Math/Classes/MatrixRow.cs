@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Row.
 /// </summary>
-public class MatrixRowImpl: ModelElementImpl, MatrixRow
+public partial class MatrixRowImpl: ModelElementImpl, MatrixRow
 {
   public DocumentFormat.OpenXml.Math.MatrixRow? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class MatrixRowImpl: ModelElementImpl, MatrixRow
   }
   private ObservableCollection<DocumentModel.Math.Base>? _Bases;
   
-  private void _Bases_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Bases_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class MatrixRowImpl: ModelElementImpl, MatrixRow
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Math.BaseImpl valImpl)
@@ -82,6 +83,7 @@ public class MatrixRowImpl: ModelElementImpl, MatrixRow
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Math.BaseImpl valImpl)

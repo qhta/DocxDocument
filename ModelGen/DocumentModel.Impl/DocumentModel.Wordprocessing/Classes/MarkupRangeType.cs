@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MarkupRangeType Class.
 /// </summary>
-public class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
+public partial class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
 {
   public DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? OpenXmlElement
   {

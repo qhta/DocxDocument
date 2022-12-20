@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Defines the MarkerType Class.
 /// </summary>
-public class MarkerTypeImpl: ModelElementImpl, MarkerType
+public partial class MarkerTypeImpl: ModelElementImpl, MarkerType
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType? OpenXmlElement
   {

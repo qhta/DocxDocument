@@ -3,8 +3,8 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Columns.
 /// </summary>
-public interface MatrixColumns
+public partial interface MatrixColumns
 {
-  public Collection<DocumentModel.Math.MatrixColumn>? Items { get ; set; }
+  public Collection<DocumentModel.Math.MatrixColumn>? Items { get; set; }
   
 }

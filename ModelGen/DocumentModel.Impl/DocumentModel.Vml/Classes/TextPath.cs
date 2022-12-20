@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the TextPath Class.
 /// </summary>
-public class TextPathImpl: ModelElementImpl, TextPath
+public partial class TextPathImpl: ModelElementImpl, TextPath
 {
   public DocumentFormat.OpenXml.Vml.TextPath? OpenXmlElement
   {

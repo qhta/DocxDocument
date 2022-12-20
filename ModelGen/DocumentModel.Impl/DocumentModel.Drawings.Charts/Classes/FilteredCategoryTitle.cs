@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredCategoryTitle Class.
 /// </summary>
-public class FilteredCategoryTitleImpl: ModelElementImpl, FilteredCategoryTitle
+public partial class FilteredCategoryTitleImpl: ModelElementImpl, FilteredCategoryTitle
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle? OpenXmlElement
   {

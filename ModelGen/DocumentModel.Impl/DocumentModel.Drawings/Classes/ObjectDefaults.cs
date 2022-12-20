@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ObjectDefaults Class.
 /// </summary>
-public class ObjectDefaultsImpl: ModelElementImpl, ObjectDefaults
+public partial class ObjectDefaultsImpl: ModelElementImpl, ObjectDefaults
 {
   public DocumentFormat.OpenXml.Drawing.ObjectDefaults? OpenXmlElement
   {

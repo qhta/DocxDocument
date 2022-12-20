@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Group-Character Properties.
 /// </summary>
-public class GroupCharPropertiesImpl: ModelElementImpl, GroupCharProperties
+public partial class GroupCharPropertiesImpl: ModelElementImpl, GroupCharProperties
 {
   public DocumentFormat.OpenXml.Math.GroupCharProperties? OpenXmlElement
   {

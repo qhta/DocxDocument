@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DisplayUnits Class.
 /// </summary>
-public class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
+public partial class DisplayUnitsImpl: ModelElementImpl, DisplayUnits
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? OpenXmlElement
   {

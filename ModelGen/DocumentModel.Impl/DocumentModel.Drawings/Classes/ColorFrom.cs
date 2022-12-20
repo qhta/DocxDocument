@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Change Color From.
 /// </summary>
-public class ColorFromImpl: DocumentModel.Drawings.ColorTypeImpl, ColorFrom
+public partial class ColorFromImpl: DocumentModel.Drawings.ColorTypeImpl, ColorFrom
 {
   public new DocumentFormat.OpenXml.Drawing.ColorFrom? OpenXmlElement
   {

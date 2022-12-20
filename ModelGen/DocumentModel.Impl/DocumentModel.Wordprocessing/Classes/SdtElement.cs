@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines SdtElement - the base class for the sdt elements.
 /// </summary>
-public class SdtElementImpl: ModelElementImpl, SdtElement
+public partial class SdtElementImpl: ModelElementImpl, SdtElement
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtElement? OpenXmlElement
   {

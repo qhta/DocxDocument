@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentDropDownList Class.
 /// </summary>
-public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownList
+public partial class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownList
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList? OpenXmlElement
   {
@@ -74,7 +74,7 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
   }
   private ObservableCollection<DocumentModel.Wordprocessing.ListItem>? _ListItems;
   
-  private void _ListItems_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ListItems_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -84,6 +84,7 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)
@@ -95,6 +96,7 @@ public class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ListItemImpl valImpl)

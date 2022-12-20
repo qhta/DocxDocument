@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the ShapeTree Class.
 /// </summary>
-public class ShapeTreeImpl: DocumentModel.Drawings.Office.GroupShapeTypeImpl, ShapeTree
+public partial class ShapeTreeImpl: DocumentModel.Drawings.Office.GroupShapeTypeImpl, ShapeTree
 {
   public new DocumentFormat.OpenXml.Office.Drawing.ShapeTree? OpenXmlElement
   {

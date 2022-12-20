@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the CategoryAxisScaling Class.
 /// </summary>
-public class CategoryAxisScalingImpl: ModelElementImpl, CategoryAxisScaling
+public partial class CategoryAxisScalingImpl: ModelElementImpl, CategoryAxisScaling
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? OpenXmlElement
   {

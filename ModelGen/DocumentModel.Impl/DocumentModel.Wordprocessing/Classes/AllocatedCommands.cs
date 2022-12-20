@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the AllocatedCommands Class.
 /// </summary>
-public class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
+public partial class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
 {
   public DocumentFormat.OpenXml.Office.Word.AllocatedCommands? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AllocatedCommand>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommand>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AllocatedCommandImpl valImpl)
@@ -82,6 +83,7 @@ public class AllocatedCommandsImpl: ModelElementImpl, AllocatedCommands
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AllocatedCommandImpl valImpl)

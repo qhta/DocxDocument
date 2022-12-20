@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Shadow Class.
 /// </summary>
-public class ShadowImpl: ModelElementImpl, Shadow
+public partial class ShadowImpl: ModelElementImpl, Shadow
 {
   public DocumentFormat.OpenXml.Vml.Shadow? OpenXmlElement
   {

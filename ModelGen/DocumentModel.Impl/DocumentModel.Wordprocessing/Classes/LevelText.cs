@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Level Text.
 /// </summary>
-public class LevelTextImpl: ModelElementImpl, LevelText
+public partial class LevelTextImpl: ModelElementImpl, LevelText
 {
   public DocumentFormat.OpenXml.Wordprocessing.LevelText? OpenXmlElement
   {

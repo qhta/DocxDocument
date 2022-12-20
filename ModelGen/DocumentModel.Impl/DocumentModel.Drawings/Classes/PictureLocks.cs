@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PictureLocks Class.
 /// </summary>
-public class PictureLocksImpl: ModelElementImpl, PictureLocks
+public partial class PictureLocksImpl: ModelElementImpl, PictureLocks
 {
   public DocumentFormat.OpenXml.Drawing.PictureLocks? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Table Grid.
 /// </summary>
-public class TableGridImpl: ModelElementImpl, TableGrid
+public partial class TableGridImpl: ModelElementImpl, TableGrid
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableGrid? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class TableGridImpl: ModelElementImpl, TableGrid
   }
   private ObservableCollection<DocumentModel.Wordprocessing.GridColumn>? _GridColumns;
   
-  private void _GridColumns_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _GridColumns_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class TableGridImpl: ModelElementImpl, TableGrid
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.GridColumn>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.GridColumnImpl valImpl)
@@ -82,6 +83,7 @@ public class TableGridImpl: ModelElementImpl, TableGrid
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.GridColumnImpl valImpl)

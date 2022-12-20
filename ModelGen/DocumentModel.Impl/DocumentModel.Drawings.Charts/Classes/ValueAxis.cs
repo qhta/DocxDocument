@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Value Axis.
 /// </summary>
-public class ValueAxisImpl: ModelElementImpl, ValueAxis
+public partial class ValueAxisImpl: ModelElementImpl, ValueAxis
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ValueAxis? OpenXmlElement
   {

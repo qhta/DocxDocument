@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Text Rectangle.
 /// </summary>
-public class RectangleImpl: ModelElementImpl, Rectangle
+public partial class RectangleImpl: ModelElementImpl, Rectangle
 {
   public DocumentFormat.OpenXml.Drawing.Rectangle? OpenXmlElement
   {

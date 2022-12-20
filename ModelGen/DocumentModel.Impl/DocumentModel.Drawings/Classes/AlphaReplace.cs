@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Replace Effect.
 /// </summary>
-public class AlphaReplaceImpl: ModelElementImpl, AlphaReplace
+public partial class AlphaReplaceImpl: ModelElementImpl, AlphaReplace
 {
   public DocumentFormat.OpenXml.Drawing.AlphaReplace? OpenXmlElement
   {

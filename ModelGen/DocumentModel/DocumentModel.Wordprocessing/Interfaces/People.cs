@@ -3,8 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the People Class.
 /// </summary>
-public interface People
+public partial interface People
 {
-  public Collection<DocumentModel.Wordprocessing.Person>? Persons { get ; set; }
+  /// <summary>
+  /// Gets the WordprocessingPeoplePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.WordprocessingPeoplePart? WordprocessingPeoplePart { get; set; }
+  
+  public Collection<DocumentModel.Wordprocessing.Person>? Persons { get; set; }
   
 }

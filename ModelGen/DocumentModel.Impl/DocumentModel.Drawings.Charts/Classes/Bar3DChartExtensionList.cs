@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Bar3DChartExtensionList Class.
 /// </summary>
-public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionList
+public partial class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionL
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Bar3DChartExtension>? _Bar3DChartExtensions;
   
-  private void _Bar3DChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Bar3DChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.Bar3DChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class Bar3DChartExtensionListImpl: ModelElementImpl, Bar3DChartExtensionL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.Bar3DChartExtensionImpl valImpl)

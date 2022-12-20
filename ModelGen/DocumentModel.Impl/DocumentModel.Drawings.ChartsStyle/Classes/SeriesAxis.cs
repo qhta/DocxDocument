@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the SeriesAxis Class.
 /// </summary>
-public class SeriesAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, SeriesAxis
+public partial class SeriesAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, SeriesAxis
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.SeriesAxis? OpenXmlElement
   {

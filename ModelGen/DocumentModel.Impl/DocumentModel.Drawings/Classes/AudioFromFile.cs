@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Audio from File.
 /// </summary>
-public class AudioFromFileImpl: ModelElementImpl, AudioFromFile
+public partial class AudioFromFileImpl: ModelElementImpl, AudioFromFile
 {
   public DocumentFormat.OpenXml.Drawing.AudioFromFile? OpenXmlElement
   {

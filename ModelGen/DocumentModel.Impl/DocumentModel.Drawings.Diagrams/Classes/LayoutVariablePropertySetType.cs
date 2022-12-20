@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the LayoutVariablePropertySetType Class.
 /// </summary>
-public class LayoutVariablePropertySetTypeImpl: ModelElementImpl, LayoutVariablePropertySetType
+public partial class LayoutVariablePropertySetTypeImpl: ModelElementImpl, LayoutVariablePropertySetType
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? OpenXmlElement
   {

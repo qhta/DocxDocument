@@ -3,8 +3,8 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the EmbeddedObjectPart
 /// </summary>
-public interface EmbeddedObjectPart
+public partial interface EmbeddedObjectPart
 {
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

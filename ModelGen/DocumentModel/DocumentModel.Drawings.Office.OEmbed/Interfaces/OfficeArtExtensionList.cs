@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// <summary>
 /// Defines the OfficeArtExtensionList Class.
 /// </summary>
-public interface OfficeArtExtensionList
+public partial interface OfficeArtExtensionList
 {
-  public Collection<DocumentModel.Drawings.Extension>? Extensions { get ; set; }
+  public Collection<DocumentModel.Drawings.Extension>? Extensions { get; set; }
   
 }

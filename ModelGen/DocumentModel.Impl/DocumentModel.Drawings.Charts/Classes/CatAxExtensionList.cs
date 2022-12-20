@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the CatAxExtensionList Class.
 /// </summary>
-public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
+public partial class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.CatAxExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.CatAxExtension>? _CatAxExtensions;
   
-  private void _CatAxExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CatAxExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.CatAxExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.CatAxExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class CatAxExtensionListImpl: ModelElementImpl, CatAxExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.CatAxExtensionImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Page Margins.
 /// </summary>
-public class PageMarginsImpl: ModelElementImpl, PageMargins
+public partial class PageMarginsImpl: ModelElementImpl, PageMargins
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PageMargins? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Connection Shape.
 /// </summary>
-public class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
+public partial class ConnectionShapeImpl: ModelElementImpl, ConnectionShape
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape? OpenXmlElement
   {

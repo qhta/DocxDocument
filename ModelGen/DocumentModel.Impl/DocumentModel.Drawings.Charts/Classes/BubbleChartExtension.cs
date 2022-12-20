@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BubbleChartExtension Class.
 /// </summary>
-public class BubbleChartExtensionImpl: ModelElementImpl, BubbleChartExtension
+public partial class BubbleChartExtensionImpl: ModelElementImpl, BubbleChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension? OpenXmlElement
   {

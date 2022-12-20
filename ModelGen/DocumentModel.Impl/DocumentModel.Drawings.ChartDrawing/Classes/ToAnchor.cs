@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Ending Anchor Point.
 /// </summary>
-public class ToAnchorImpl: DocumentModel.Drawings.ChartDrawing.MarkerTypeImpl, ToAnchor
+public partial class ToAnchorImpl: DocumentModel.Drawings.ChartDrawing.MarkerTypeImpl, ToAnchor
 {
   public new DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? OpenXmlElement
   {

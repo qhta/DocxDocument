@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "f2KbW3PIkHUWg8Xjn54mduKenfSkIgk1nmJb9xC4Orjpiku5gHJk9c+5RcikPBwRVx/QngVYL+3/lud+v2nt2g==",
+  "success": true,
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocxDocument.Reader\\DocxDocument.Reader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.19.0\\documentformat.openxml.2.19.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\7.0.0\\system.io.packaging.7.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
+  "logs": []
+}

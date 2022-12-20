@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the AreaSerExtensionList Class.
 /// </summary>
-public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
+public partial class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.AreaSerExtension>? _AreaSerExtensions;
   
-  private void _AreaSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AreaSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.AreaSerExtensionImpl valImpl)

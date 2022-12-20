@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LiveFeedBackgroundProperties Class.
 /// </summary>
-public class LiveFeedBackgroundPropertiesImpl: ModelElementImpl, LiveFeedBackgroundProperties
+public partial class LiveFeedBackgroundPropertiesImpl: ModelElementImpl, LiveFeedBackgroundProperties
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties? OpenXmlElement
   {

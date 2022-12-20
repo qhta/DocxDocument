@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Insertion Behaviors.
 /// </summary>
-public class BehaviorsImpl: ModelElementImpl, Behaviors
+public partial class BehaviorsImpl: ModelElementImpl, Behaviors
 {
   public DocumentFormat.OpenXml.Wordprocessing.Behaviors? OpenXmlElement
   {

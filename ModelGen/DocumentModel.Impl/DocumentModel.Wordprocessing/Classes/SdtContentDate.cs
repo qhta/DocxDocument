@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentDate Class.
 /// </summary>
-public class SdtContentDateImpl: ModelElementImpl, SdtContentDate
+public partial class SdtContentDateImpl: ModelElementImpl, SdtContentDate
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? OpenXmlElement
   {

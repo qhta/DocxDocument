@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Radar Charts.
 /// </summary>
-public class RadarChartImpl: ModelElementImpl, RadarChart
+public partial class RadarChartImpl: ModelElementImpl, RadarChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RadarChart? OpenXmlElement
   {
@@ -123,7 +123,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.RadarChartSeries>? _RadarChartSerieses;
   
-  private void _RadarChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _RadarChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -133,6 +133,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.RadarChartSeriesImpl valImpl)
@@ -144,6 +145,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.RadarChartSeriesImpl valImpl)
@@ -230,7 +232,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -240,6 +242,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -247,6 +250,7 @@ public class RadarChartImpl: ModelElementImpl, RadarChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

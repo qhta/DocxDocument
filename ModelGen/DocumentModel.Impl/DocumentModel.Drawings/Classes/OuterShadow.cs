@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Outer Shadow Effect.
 /// </summary>
-public class OuterShadowImpl: ModelElementImpl, OuterShadow
+public partial class OuterShadowImpl: ModelElementImpl, OuterShadow
 {
   public DocumentFormat.OpenXml.Drawing.OuterShadow? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the YValues Class.
 /// </summary>
-public class YValuesImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, YValues
+public partial class YValuesImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, YValues
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.YValues? OpenXmlElement
   {

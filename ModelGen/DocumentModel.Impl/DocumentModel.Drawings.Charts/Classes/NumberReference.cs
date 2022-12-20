@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Number Reference.
 /// </summary>
-public class NumberReferenceImpl: ModelElementImpl, NumberReference
+public partial class NumberReferenceImpl: ModelElementImpl, NumberReference
 {
   public DocumentFormat.OpenXml.Drawing.Charts.NumberReference? OpenXmlElement
   {

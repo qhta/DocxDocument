@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the ColorStyle Class.
 /// </summary>
-public class ColorStyleImpl: ModelElementImpl, ColorStyle
+public partial class ColorStyleImpl: ModelElementImpl, ColorStyle
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle? OpenXmlElement
   {
@@ -41,6 +41,26 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
     {
       if (OpenXmlElement != null)
         OpenXmlElement.Id = (System.UInt32?)value;
+    }
+  }
+  
+  /// <summary>
+  /// Gets the ChartColorStylePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.ChartColorStylePart? ChartColorStylePart
+  {
+    get
+    {
+      if (OpenXmlElement?.ChartColorStylePart != null)
+        return new DocumentModel.Packaging.ChartColorStylePartImpl(OpenXmlElement.ChartColorStylePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.ChartColorStylePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   
@@ -261,7 +281,7 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
   }
   private ObservableCollection<DocumentModel.Drawings.ChartsStyle.ColorStyleVariation>? _ColorStyleVariations;
   
-  private void _ColorStyleVariations_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ColorStyleVariations_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -271,6 +291,7 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyleVariation>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)
@@ -282,6 +303,7 @@ public class ColorStyleImpl: ModelElementImpl, ColorStyle
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartsStyle.ColorStyleVariationImpl valImpl)

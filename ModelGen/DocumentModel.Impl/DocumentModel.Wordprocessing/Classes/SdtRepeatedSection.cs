@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtRepeatedSection Class.
 /// </summary>
-public class SdtRepeatedSectionImpl: ModelElementImpl, SdtRepeatedSection
+public partial class SdtRepeatedSectionImpl: ModelElementImpl, SdtRepeatedSection
 {
   public DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection? OpenXmlElement
   {

@@ -3,10 +3,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WordprocessingPrinterSettingsPart
 /// </summary>
-public interface WordprocessingPrinterSettingsPart
+public partial interface WordprocessingPrinterSettingsPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtPlaceholder Class.
 /// </summary>
-public class SdtPlaceholderImpl: ModelElementImpl, SdtPlaceholder
+public partial class SdtPlaceholderImpl: ModelElementImpl, SdtPlaceholder
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder? OpenXmlElement
   {

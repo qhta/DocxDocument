@@ -3,31 +3,31 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Protection Class.
 /// </summary>
-public interface Protection
+public partial interface Protection
 {
   /// <summary>
   /// Chart Object.
   /// </summary>
-  public Boolean? ChartObject { get ; set; }
+  public Boolean? ChartObject { get; set; }
   
   /// <summary>
   /// Data Cannot Be Changed.
   /// </summary>
-  public Boolean? Data { get ; set; }
+  public Boolean? Data { get; set; }
   
   /// <summary>
   /// Formatting.
   /// </summary>
-  public Boolean? Formatting { get ; set; }
+  public Boolean? Formatting { get; set; }
   
   /// <summary>
   /// Selection.
   /// </summary>
-  public Boolean? Selection { get ; set; }
+  public Boolean? Selection { get; set; }
   
   /// <summary>
   /// User Interface.
   /// </summary>
-  public Boolean? UserInterface { get ; set; }
+  public Boolean? UserInterface { get; set; }
   
 }

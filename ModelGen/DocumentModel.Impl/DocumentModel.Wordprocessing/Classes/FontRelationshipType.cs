@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FontRelationshipType Class.
 /// </summary>
-public class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
+public partial class FontRelationshipTypeImpl: ModelElementImpl, FontRelationshipType
 {
   public DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? OpenXmlElement
   {

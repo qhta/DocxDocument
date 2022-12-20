@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SpreadsheetPrinterSettingsPart
 /// </summary>
-public class SpreadsheetPrinterSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SpreadsheetPrinterSettingsPart
+public partial class SpreadsheetPrinterSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SpreadsheetPrinterSettingsPart
 {
   public new DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class SpreadsheetPrinterSettingsPartImpl: DocumentModel.Packaging.OpenXml
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

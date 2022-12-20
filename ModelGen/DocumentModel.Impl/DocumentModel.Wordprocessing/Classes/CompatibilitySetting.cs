@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CompatibilitySetting Class.
 /// </summary>
-public class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
+public partial class CompatibilitySettingImpl: ModelElementImpl, CompatibilitySetting
 {
   public DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting? OpenXmlElement
   {

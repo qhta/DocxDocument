@@ -3,8 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Footnotes.
 /// </summary>
-public interface Footnotes
+public partial interface Footnotes
 {
-  public DocumentModel.Wordprocessing.Footnote? Footnote { get ; set; }
+  /// <summary>
+  /// Gets the FootnotesPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.FootnotesPart? FootnotesPart { get; set; }
+  
+  public DocumentModel.Wordprocessing.Footnote? Footnote { get; set; }
   
 }

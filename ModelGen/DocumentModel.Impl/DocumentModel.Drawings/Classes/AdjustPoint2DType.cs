@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AdjustPoint2DType Class.
 /// </summary>
-public class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
+public partial class AdjustPoint2DTypeImpl: ModelElementImpl, AdjustPoint2DType
 {
   public DocumentFormat.OpenXml.Drawing.AdjustPoint2DType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Set of Associated XML Schemas.
 /// </summary>
-public class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
+public partial class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
 {
   public DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
   }
   private ObservableCollection<DocumentModel.CustomXml.SchemaReference>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.CustomXml.SchemaReferenceImpl valImpl)
@@ -82,6 +83,7 @@ public class SchemaReferencesImpl: ModelElementImpl, SchemaReferences
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.CustomXml.SchemaReferenceImpl valImpl)

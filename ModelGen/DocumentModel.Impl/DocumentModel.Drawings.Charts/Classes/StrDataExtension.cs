@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StrDataExtension Class.
 /// </summary>
-public class StrDataExtensionImpl: ModelElementImpl, StrDataExtension
+public partial class StrDataExtensionImpl: ModelElementImpl, StrDataExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension? OpenXmlElement
   {

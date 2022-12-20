@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Dash Stop.
 /// </summary>
-public class DashStopImpl: ModelElementImpl, DashStop
+public partial class DashStopImpl: ModelElementImpl, DashStop
 {
   public DocumentFormat.OpenXml.Drawing.DashStop? OpenXmlElement
   {

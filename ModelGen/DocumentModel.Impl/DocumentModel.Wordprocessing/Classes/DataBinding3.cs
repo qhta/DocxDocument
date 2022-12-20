@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the DataBinding Class.
 /// </summary>
-public class DataBinding3Impl: ModelElementImpl, DataBinding3
+public partial class DataBinding3Impl: ModelElementImpl, DataBinding3
 {
   public DocumentFormat.OpenXml.Office2013.Word.DataBinding? OpenXmlElement
   {

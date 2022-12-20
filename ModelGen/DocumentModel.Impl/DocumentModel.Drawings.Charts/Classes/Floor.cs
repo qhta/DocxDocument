@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D floor formatting.
 /// </summary>
-public class FloorImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, Floor
+public partial class FloorImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, Floor
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.Floor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SchemeColor Class.
 /// </summary>
-public class SchemeColorImpl: ModelElementImpl, SchemeColor
+public partial class SchemeColorImpl: ModelElementImpl, SchemeColor
 {
   public DocumentFormat.OpenXml.Office2010.Word.SchemeColor? OpenXmlElement
   {

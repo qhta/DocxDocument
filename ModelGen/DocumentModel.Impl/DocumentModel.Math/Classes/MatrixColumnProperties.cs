@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Column Properties.
 /// </summary>
-public class MatrixColumnPropertiesImpl: ModelElementImpl, MatrixColumnProperties
+public partial class MatrixColumnPropertiesImpl: ModelElementImpl, MatrixColumnProperties
 {
   public DocumentFormat.OpenXml.Math.MatrixColumnProperties? OpenXmlElement
   {

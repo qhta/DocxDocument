@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Leader Lines.
 /// </summary>
-public class LeaderLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, LeaderLines
+public partial class LeaderLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, LeaderLines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.LeaderLines? OpenXmlElement
   {

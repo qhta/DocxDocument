@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PieSerExtension Class.
 /// </summary>
-public class PieSerExtensionImpl: ModelElementImpl, PieSerExtension
+public partial class PieSerExtensionImpl: ModelElementImpl, PieSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PieSerExtension? OpenXmlElement
   {

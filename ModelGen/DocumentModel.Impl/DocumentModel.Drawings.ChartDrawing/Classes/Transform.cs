@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Graphic Frame Transform.
 /// </summary>
-public class TransformImpl: ModelElementImpl, Transform
+public partial class TransformImpl: ModelElementImpl, Transform
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform? OpenXmlElement
   {

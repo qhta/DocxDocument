@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the DataLabelVisibilities Class.
 /// </summary>
-public class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
+public partial class DataLabelVisibilitiesImpl: ModelElementImpl, DataLabelVisibilities
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? OpenXmlElement
   {

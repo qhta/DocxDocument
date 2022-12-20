@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document.
 /// </summary>
-public class DocumentImpl: ModelElementImpl, Document
+public partial class DocumentImpl: ModelElementImpl, Document
 {
   public DocumentFormat.OpenXml.Wordprocessing.Document? OpenXmlElement
   {
@@ -92,6 +92,26 @@ public class DocumentImpl: ModelElementImpl, Document
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the MainDocumentPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.MainDocumentPart? MainDocumentPart
+  {
+    get
+    {
+      if (OpenXmlElement?.MainDocumentPart != null)
+        return new DocumentModel.Packaging.MainDocumentPartImpl(OpenXmlElement.MainDocumentPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.MainDocumentPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

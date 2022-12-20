@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Form Field Properties.
 /// </summary>
-public class FormFieldDataImpl: ModelElementImpl, FormFieldData
+public partial class FormFieldDataImpl: ModelElementImpl, FormFieldData
 {
   public DocumentFormat.OpenXml.Wordprocessing.FormFieldData? OpenXmlElement
   {

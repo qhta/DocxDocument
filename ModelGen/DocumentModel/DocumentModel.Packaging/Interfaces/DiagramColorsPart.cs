@@ -3,15 +3,15 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DiagramColorsPart
 /// </summary>
-public interface DiagramColorsPart
+public partial interface DiagramColorsPart
 {
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ColorsDefinition? ColorsDefinition { get ; set; }
+  public DocumentModel.Drawings.Diagrams.ColorsDefinition? ColorsDefinition { get; set; }
   
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

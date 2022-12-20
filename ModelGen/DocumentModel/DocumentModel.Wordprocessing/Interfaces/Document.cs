@@ -3,21 +3,26 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document.
 /// </summary>
-public interface Document
+public partial interface Document
 {
   /// <summary>
   /// conformance
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get; set; }
   
   /// <summary>
   /// Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get ; set; }
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
   
   /// <summary>
   /// Body.
   /// </summary>
-  public DocumentModel.Wordprocessing.Body? Body { get ; set; }
+  public DocumentModel.Wordprocessing.Body? Body { get; set; }
+  
+  /// <summary>
+  /// Gets the MainDocumentPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.MainDocumentPart? MainDocumentPart { get; set; }
   
 }

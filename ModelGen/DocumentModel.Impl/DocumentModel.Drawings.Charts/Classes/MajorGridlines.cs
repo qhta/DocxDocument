@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Major Gridlines.
 /// </summary>
-public class MajorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MajorGridlines
+public partial class MajorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MajorGridlines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines? OpenXmlElement
   {

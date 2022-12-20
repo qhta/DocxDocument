@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PaperSource Class.
 /// </summary>
-public class PaperSourceImpl: ModelElementImpl, PaperSource
+public partial class PaperSourceImpl: ModelElementImpl, PaperSource
 {
   public DocumentFormat.OpenXml.Wordprocessing.PaperSource? OpenXmlElement
   {

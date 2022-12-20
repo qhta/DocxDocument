@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset geometry.
 /// </summary>
-public class PresetGeometryImpl: ModelElementImpl, PresetGeometry
+public partial class PresetGeometryImpl: ModelElementImpl, PresetGeometry
 {
   public DocumentFormat.OpenXml.Drawing.PresetGeometry? OpenXmlElement
   {

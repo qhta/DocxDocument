@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Background color.
 /// </summary>
-public class BackgroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, BackgroundColor
+public partial class BackgroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, BackgroundColor
 {
   public new DocumentFormat.OpenXml.Drawing.BackgroundColor? OpenXmlElement
   {

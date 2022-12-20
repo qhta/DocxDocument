@@ -3,10 +3,15 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the VbaProjectPart
 /// </summary>
-public interface VbaProjectPart
+public partial interface VbaProjectPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
+  
+  /// <summary>
+  /// Gets the VbaDataPart of the VbaProjectPart
+  /// </summary>
+  public DocumentModel.Packaging.VbaDataPart? VbaDataPart { get; }
   
 }

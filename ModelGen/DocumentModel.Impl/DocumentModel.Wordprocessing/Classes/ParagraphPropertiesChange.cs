@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ParagraphPropertiesChange Class.
 /// </summary>
-public class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertiesChange
+public partial class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertiesChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? OpenXmlElement
   {

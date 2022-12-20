@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the ChartArea Class.
 /// </summary>
-public class ChartAreaImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, ChartArea
+public partial class ChartAreaImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, ChartArea
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartArea? OpenXmlElement
   {

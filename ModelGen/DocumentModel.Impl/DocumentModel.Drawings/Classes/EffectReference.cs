@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Effect Reference.
 /// </summary>
-public class EffectReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, EffectReference
+public partial class EffectReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, EffectReference
 {
   public new DocumentFormat.OpenXml.Drawing.EffectReference? OpenXmlElement
   {

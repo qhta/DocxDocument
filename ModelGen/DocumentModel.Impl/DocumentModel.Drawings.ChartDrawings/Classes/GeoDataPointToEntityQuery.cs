@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoDataPointToEntityQuery Class.
 /// </summary>
-public class GeoDataPointToEntityQueryImpl: ModelElementImpl, GeoDataPointToEntityQuery
+public partial class GeoDataPointToEntityQueryImpl: ModelElementImpl, GeoDataPointToEntityQuery
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQuery? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the KeyMapEntry Class.
 /// </summary>
-public class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
+public partial class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
 {
   public DocumentFormat.OpenXml.Office.Word.KeyMapEntry? OpenXmlElement
   {

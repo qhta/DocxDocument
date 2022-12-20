@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BarSerExtensionList Class.
 /// </summary>
-public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
+public partial class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BarSerExtension>? _BarSerExtensions;
   
-  private void _BarSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BarSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BarSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class BarSerExtensionListImpl: ModelElementImpl, BarSerExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BarSerExtensionImpl valImpl)

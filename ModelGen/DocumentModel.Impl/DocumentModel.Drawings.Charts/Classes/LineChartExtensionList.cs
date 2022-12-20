@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LineChartExtensionList Class.
 /// </summary>
-public class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionList
+public partial class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.LineChartExtension>? _LineChartExtensions;
   
-  private void _LineChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LineChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.LineChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class LineChartExtensionListImpl: ModelElementImpl, LineChartExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.LineChartExtensionImpl valImpl)

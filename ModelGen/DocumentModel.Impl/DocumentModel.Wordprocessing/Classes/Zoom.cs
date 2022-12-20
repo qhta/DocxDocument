@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Magnification Setting.
 /// </summary>
-public class ZoomImpl: ModelElementImpl, Zoom
+public partial class ZoomImpl: ModelElementImpl, Zoom
 {
   public DocumentFormat.OpenXml.Wordprocessing.Zoom? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableWidthDxaNilType Class.
 /// </summary>
-public class TableWidthDxaNilTypeImpl: ModelElementImpl, TableWidthDxaNilType
+public partial class TableWidthDxaNilTypeImpl: ModelElementImpl, TableWidthDxaNilType
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType? OpenXmlElement
   {

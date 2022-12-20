@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the Drawing Class.
 /// </summary>
-public class DrawingImpl: ModelElementImpl, Drawing
+public partial class DrawingImpl: ModelElementImpl, Drawing
 {
   public DocumentFormat.OpenXml.Office.Drawing.Drawing? OpenXmlElement
   {
@@ -47,6 +47,26 @@ public class DrawingImpl: ModelElementImpl, Drawing
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the DiagramPersistLayoutPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DiagramPersistLayoutPart? DiagramPersistLayoutPart
+  {
+    get
+    {
+      if (OpenXmlElement?.DiagramPersistLayoutPart != null)
+        return new DocumentModel.Packaging.DiagramPersistLayoutPartImpl(OpenXmlElement.DiagramPersistLayoutPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DiagramPersistLayoutPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

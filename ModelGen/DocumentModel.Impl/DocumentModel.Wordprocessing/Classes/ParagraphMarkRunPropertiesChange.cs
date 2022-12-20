@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Revision Information for Run Properties on the Paragraph Mark.
 /// </summary>
-public class ParagraphMarkRunPropertiesChangeImpl: ModelElementImpl, ParagraphMarkRunPropertiesChange
+public partial class ParagraphMarkRunPropertiesChangeImpl: ModelElementImpl, ParagraphMarkRunPropertiesChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange? OpenXmlElement
   {

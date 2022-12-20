@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the UpDownBarType Class.
 /// </summary>
-public class UpDownBarTypeImpl: ModelElementImpl, UpDownBarType
+public partial class UpDownBarTypeImpl: ModelElementImpl, UpDownBarType
 {
   public DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Style Label.
 /// </summary>
-public class StyleLabelImpl: ModelElementImpl, StyleLabel
+public partial class StyleLabelImpl: ModelElementImpl, StyleLabel
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel? OpenXmlElement
   {

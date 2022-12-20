@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Group Shape.
 /// </summary>
-public class GroupShapeImpl: ModelElementImpl, GroupShape
+public partial class GroupShapeImpl: ModelElementImpl, GroupShape
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape? OpenXmlElement
   {
@@ -220,6 +220,35 @@ public class GroupShapeImpl: ModelElementImpl, GroupShape
         if (value is not null)
         {
           item = (value as DocumentModel.Drawings.ChartDrawing.PictureImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Drawings.ChartDrawings.ContentPart? ContentPart
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          return new DocumentModel.Drawings.ChartDrawings.ContentPartImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.ChartDrawings.ContentPartImpl)?.OpenXmlElement;
           if (item != null)
             OpenXmlElement.AddChild(item);
         }

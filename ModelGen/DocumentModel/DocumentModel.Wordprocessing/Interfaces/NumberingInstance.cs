@@ -3,23 +3,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Definition Instance.
 /// </summary>
-public interface NumberingInstance
+public partial interface NumberingInstance
 {
   /// <summary>
   /// numId
   /// </summary>
-  public Int32? NumberID { get ; set; }
+  public Int32? NumberID { get; set; }
   
   /// <summary>
   /// durableId
   /// </summary>
-  public Int32? DurableId { get ; set; }
+  public Int32? DurableId { get; set; }
   
   /// <summary>
   /// AbstractNumId.
   /// </summary>
-  public Int32? AbstractNumId { get ; set; }
+  public Int32? AbstractNumId { get; set; }
   
-  public Collection<DocumentModel.Wordprocessing.LevelOverride>? LevelOverrides { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.LevelOverride>? LevelOverrides { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoLocationQueryResult Class.
 /// </summary>
-public class GeoLocationQueryResultImpl: ModelElementImpl, GeoLocationQueryResult
+public partial class GeoLocationQueryResultImpl: ModelElementImpl, GeoLocationQueryResult
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult? OpenXmlElement
   {

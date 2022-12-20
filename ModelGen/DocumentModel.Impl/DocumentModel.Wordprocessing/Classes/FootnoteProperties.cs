@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FootnoteProperties Class.
 /// </summary>
-public class FootnotePropertiesImpl: ModelElementImpl, FootnoteProperties
+public partial class FootnotePropertiesImpl: ModelElementImpl, FootnoteProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? OpenXmlElement
   {

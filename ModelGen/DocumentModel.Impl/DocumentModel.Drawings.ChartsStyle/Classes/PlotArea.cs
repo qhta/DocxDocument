@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the PlotArea Class.
 /// </summary>
-public class PlotAreaImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, PlotArea
+public partial class PlotAreaImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, PlotArea
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.PlotArea? OpenXmlElement
   {

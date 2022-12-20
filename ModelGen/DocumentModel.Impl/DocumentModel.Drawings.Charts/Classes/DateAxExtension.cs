@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DateAxExtension Class.
 /// </summary>
-public class DateAxExtensionImpl: ModelElementImpl, DateAxExtension
+public partial class DateAxExtensionImpl: ModelElementImpl, DateAxExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension? OpenXmlElement
   {

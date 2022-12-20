@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CreationId Class.
 /// </summary>
-public class CreationIdImpl: ModelElementImpl, CreationId
+public partial class CreationIdImpl: ModelElementImpl, CreationId
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.CreationId? OpenXmlElement
   {

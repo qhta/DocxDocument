@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the TickLabels Class.
 /// </summary>
-public class TickLabelsImpl: ModelElementImpl, TickLabels
+public partial class TickLabelsImpl: ModelElementImpl, TickLabels
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickLabels? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageSize Class.
 /// </summary>
-public class PageSizeImpl: ModelElementImpl, PageSize
+public partial class PageSizeImpl: ModelElementImpl, PageSize
 {
   public DocumentFormat.OpenXml.Wordprocessing.PageSize? OpenXmlElement
   {

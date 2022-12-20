@@ -3,26 +3,26 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ParagraphPropertiesChange Class.
 /// </summary>
-public interface ParagraphPropertiesChange
+public partial interface ParagraphPropertiesChange
 {
   /// <summary>
   /// author
   /// </summary>
-  public String? Author { get ; set; }
+  public String? Author { get; set; }
   
   /// <summary>
   /// date
   /// </summary>
-  public DateTime? Date { get ; set; }
+  public DateTime? Date { get; set; }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
   /// <summary>
   /// Previous Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphPropertiesExtended? ParagraphPropertiesExtended { get ; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesExtended? ParagraphPropertiesExtended { get; set; }
   
 }

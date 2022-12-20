@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Skew Transform.
 /// </summary>
-public class SkewImpl: ModelElementImpl, Skew
+public partial class SkewImpl: ModelElementImpl, Skew
 {
   public DocumentFormat.OpenXml.Vml.Office.Skew? OpenXmlElement
   {

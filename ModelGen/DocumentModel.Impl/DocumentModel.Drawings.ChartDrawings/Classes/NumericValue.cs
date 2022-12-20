@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NumericValue Class.
 /// </summary>
-public class NumericValueImpl: ModelElementImpl, NumericValue
+public partial class NumericValueImpl: ModelElementImpl, NumericValue
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue? OpenXmlElement
   {

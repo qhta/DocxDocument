@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Shape Extent.
 /// </summary>
-public class ExtentImpl: ModelElementImpl, Extent
+public partial class ExtentImpl: ModelElementImpl, Extent
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Up Bars.
 /// </summary>
-public class UpBarsImpl: DocumentModel.Drawings.Charts.UpDownBarTypeImpl, UpBars
+public partial class UpBarsImpl: DocumentModel.Drawings.Charts.UpDownBarTypeImpl, UpBars
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.UpBars? OpenXmlElement
   {

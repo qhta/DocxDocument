@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Radical Function.
 /// </summary>
-public class RadicalImpl: ModelElementImpl, Radical
+public partial class RadicalImpl: ModelElementImpl, Radical
 {
   public DocumentFormat.OpenXml.Math.Radical? OpenXmlElement
   {

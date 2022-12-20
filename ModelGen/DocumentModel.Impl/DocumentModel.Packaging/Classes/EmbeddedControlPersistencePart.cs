@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the EmbeddedControlPersistencePart
 /// </summary>
-public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EmbeddedControlPersistencePart
+public partial class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EmbeddedControlPersistencePart
 {
   public new DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart? OpenXmlElement
   {
@@ -39,33 +39,10 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
       }
       return _EmbeddedControlPersistenceBinaryDataParts;
     }
-    set
-    {
-      if (value != null && value != _EmbeddedControlPersistenceBinaryDataParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> observableCollection)
-        _EmbeddedControlPersistenceBinaryDataParts = observableCollection;
-      else if (value != null)
-        _EmbeddedControlPersistenceBinaryDataParts = new ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>(value);
-      else
-       _EmbeddedControlPersistenceBinaryDataParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>? _EmbeddedControlPersistenceBinaryDataParts;
   
-  private void _EmbeddedControlPersistenceBinaryDataParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EmbeddedControlPersistenceBinaryDataParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -76,6 +53,7 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPartImpl valImpl)
@@ -87,6 +65,7 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPartImpl valImpl)
@@ -108,11 +87,6 @@ public class EmbeddedControlPersistencePartImpl: DocumentModel.Packaging.OpenXml
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

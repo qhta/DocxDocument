@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the EmbeddedWavAudioFileType Class.
 /// </summary>
-public class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFileType
+public partial class EmbeddedWavAudioFileTypeImpl: ModelElementImpl, EmbeddedWavAudioFileType
 {
   public DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? OpenXmlElement
   {

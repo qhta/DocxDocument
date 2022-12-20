@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Horizontal Positioning.
 /// </summary>
-public class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
+public partial class HorizontalPositionImpl: ModelElementImpl, HorizontalPosition
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition? OpenXmlElement
   {

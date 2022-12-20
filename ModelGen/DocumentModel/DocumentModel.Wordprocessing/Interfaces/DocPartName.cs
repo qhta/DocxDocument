@@ -3,16 +3,16 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Name.
 /// </summary>
-public interface DocPartName
+public partial interface DocPartName
 {
   /// <summary>
   /// Name Value
   /// </summary>
-  public String? Val { get ; set; }
+  public String? Val { get; set; }
   
   /// <summary>
   /// Built-In Entry
   /// </summary>
-  public Boolean? Decorated { get ; set; }
+  public Boolean? Decorated { get; set; }
   
 }

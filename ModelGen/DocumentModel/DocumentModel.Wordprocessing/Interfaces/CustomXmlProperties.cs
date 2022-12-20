@@ -3,13 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Custom XML Element Properties.
 /// </summary>
-public interface CustomXmlProperties
+public partial interface CustomXmlProperties
 {
   /// <summary>
   /// Custom XML Element Placeholder Text.
   /// </summary>
-  public String? CustomXmlPlaceholder { get ; set; }
+  public String? CustomXmlPlaceholder { get; set; }
   
-  public Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? CustomXmlAttributes { get ; set; }
+  public Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? CustomXmlAttributes { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Square Wrapping.
 /// </summary>
-public class WrapSquareImpl: ModelElementImpl, WrapSquare
+public partial class WrapSquareImpl: ModelElementImpl, WrapSquare
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare? OpenXmlElement
   {

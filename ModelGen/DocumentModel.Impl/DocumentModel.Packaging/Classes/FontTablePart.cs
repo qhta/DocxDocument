@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the FontTablePart
 /// </summary>
-public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTablePart
+public partial class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTablePart
 {
   public new DocumentFormat.OpenXml.Packaging.FontTablePart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.FontTablePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -49,33 +44,10 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
       }
       return _FontParts;
     }
-    set
-    {
-      if (value != null && value != _FontParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.FontPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.FontPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.FontPart> observableCollection)
-        _FontParts = observableCollection;
-      else if (value != null)
-        _FontParts = new ObservableCollection<DocumentModel.Packaging.FontPart>(value);
-      else
-       _FontParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.FontPart>? _FontParts;
   
-  private void _FontParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _FontParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -86,6 +58,7 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.FontPartImpl valImpl)
@@ -97,6 +70,7 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.FontPartImpl valImpl)
@@ -138,11 +112,6 @@ public class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTab
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.FontTablePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Abstract Numbering Definition.
 /// </summary>
-public class AbstractNumImpl: ModelElementImpl, AbstractNum
+public partial class AbstractNumImpl: ModelElementImpl, AbstractNum
 {
   public DocumentFormat.OpenXml.Wordprocessing.AbstractNum? OpenXmlElement
   {
@@ -230,7 +230,7 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Level>? _Levels;
   
-  private void _Levels_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Levels_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -240,6 +240,7 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Level>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.LevelImpl valImpl)
@@ -251,6 +252,7 @@ public class AbstractNumImpl: ModelElementImpl, AbstractNum
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.LevelImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the DocEvents Class.
 /// </summary>
-public class DocEventsImpl: ModelElementImpl, DocEvents
+public partial class DocEventsImpl: ModelElementImpl, DocEvents
 {
   public DocumentFormat.OpenXml.Office.Word.DocEvents? OpenXmlElement
   {

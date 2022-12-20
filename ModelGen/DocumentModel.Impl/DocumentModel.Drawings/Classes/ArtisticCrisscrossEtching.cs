@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticCrisscrossEtching Class.
 /// </summary>
-public class ArtisticCrisscrossEtchingImpl: ModelElementImpl, ArtisticCrisscrossEtching
+public partial class ArtisticCrisscrossEtchingImpl: ModelElementImpl, ArtisticCrisscrossEtching
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching? OpenXmlElement
   {

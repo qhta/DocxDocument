@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Underline Class.
 /// </summary>
-public class UnderlineImpl: ModelElementImpl, Underline
+public partial class UnderlineImpl: ModelElementImpl, Underline
 {
   public DocumentFormat.OpenXml.Wordprocessing.Underline? OpenXmlElement
   {

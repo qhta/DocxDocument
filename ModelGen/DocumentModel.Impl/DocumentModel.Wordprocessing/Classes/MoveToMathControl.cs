@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MoveToMathControl Class.
 /// </summary>
-public class MoveToMathControlImpl: DocumentModel.Wordprocessing.MathControlMoveTypeImpl, MoveToMathControl
+public partial class MoveToMathControlImpl: DocumentModel.Wordprocessing.MathControlMoveTypeImpl, MoveToMathControl
 {
   public new DocumentFormat.OpenXml.Wordprocessing.MoveToMathControl? OpenXmlElement
   {

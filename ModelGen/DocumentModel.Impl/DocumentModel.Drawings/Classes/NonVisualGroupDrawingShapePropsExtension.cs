@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualGroupDrawingShapePropsExtension Class.
 /// </summary>
-public class NonVisualGroupDrawingShapePropsExtensionImpl: ModelElementImpl, NonVisualGroupDrawingShapePropsExtension
+public partial class NonVisualGroupDrawingShapePropsExtensionImpl: ModelElementImpl, NonVisualGroupDrawingShapePropsExtension
 {
   public DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension? OpenXmlElement
   {

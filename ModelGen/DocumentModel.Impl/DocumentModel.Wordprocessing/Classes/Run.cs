@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Phonetic Guide Text Run.
 /// </summary>
-public class RunImpl: ModelElementImpl, Run
+public partial class RunImpl: ModelElementImpl, Run
 {
   public DocumentFormat.OpenXml.Wordprocessing.Run? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the ValueAxis Class.
 /// </summary>
-public class ValueAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, ValueAxis
+public partial class ValueAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, ValueAxis
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ValueAxis? OpenXmlElement
   {

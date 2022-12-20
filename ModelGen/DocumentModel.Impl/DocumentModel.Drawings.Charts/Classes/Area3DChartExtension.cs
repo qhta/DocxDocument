@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Area3DChartExtension Class.
 /// </summary>
-public class Area3DChartExtensionImpl: ModelElementImpl, Area3DChartExtension
+public partial class Area3DChartExtensionImpl: ModelElementImpl, Area3DChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Area3DChartExtension? OpenXmlElement
   {

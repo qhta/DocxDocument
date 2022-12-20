@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenShape3D Class.
 /// </summary>
-public class HiddenShape3DImpl: ModelElementImpl, HiddenShape3D
+public partial class HiddenShape3DImpl: ModelElementImpl, HiddenShape3D
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D? OpenXmlElement
   {

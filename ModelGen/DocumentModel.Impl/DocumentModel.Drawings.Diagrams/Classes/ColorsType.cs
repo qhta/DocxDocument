@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the ColorsType Class.
 /// </summary>
-public class ColorsTypeImpl: ModelElementImpl, ColorsType
+public partial class ColorsTypeImpl: ModelElementImpl, ColorsType
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType? OpenXmlElement
   {

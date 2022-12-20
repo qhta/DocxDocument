@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the TitleStyle Class.
 /// </summary>
-public class TitleStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, TitleStyle
+public partial class TitleStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, TitleStyle
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TitleStyle? OpenXmlElement
   {

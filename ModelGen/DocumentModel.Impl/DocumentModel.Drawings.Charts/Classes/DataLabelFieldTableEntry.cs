@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DataLabelFieldTableEntry Class.
 /// </summary>
-public class DataLabelFieldTableEntryImpl: ModelElementImpl, DataLabelFieldTableEntry
+public partial class DataLabelFieldTableEntryImpl: ModelElementImpl, DataLabelFieldTableEntry
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? OpenXmlElement
   {

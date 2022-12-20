@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the GradientStop Class.
 /// </summary>
-public class GradientStopImpl: ModelElementImpl, GradientStop
+public partial class GradientStopImpl: ModelElementImpl, GradientStop
 {
   public DocumentFormat.OpenXml.Office2010.Word.GradientStop? OpenXmlElement
   {

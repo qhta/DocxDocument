@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AudioCDTimeType Class.
 /// </summary>
-public class AudioCDTimeTypeImpl: ModelElementImpl, AudioCDTimeType
+public partial class AudioCDTimeTypeImpl: ModelElementImpl, AudioCDTimeType
 {
   public DocumentFormat.OpenXml.Drawing.AudioCDTimeType? OpenXmlElement
   {

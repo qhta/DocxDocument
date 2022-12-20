@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the NumericLevel Class.
 /// </summary>
-public class NumericLevelImpl: ModelElementImpl, NumericLevel
+public partial class NumericLevelImpl: ModelElementImpl, NumericLevel
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel? OpenXmlElement
   {
@@ -100,7 +100,7 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.NumericValue>? _NumericValues;
   
-  private void _NumericValues_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumericValues_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -110,6 +110,7 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.NumericValueImpl valImpl)
@@ -121,6 +122,7 @@ public class NumericLevelImpl: ModelElementImpl, NumericLevel
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.NumericValueImpl valImpl)

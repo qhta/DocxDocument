@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List Level 7 Text Style.
 /// </summary>
-public class Level7ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level7ParagraphProperties
+public partial class Level7ParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, Level7ParagraphProperties
 {
   public new DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the CategoryAxis Class.
 /// </summary>
-public class CategoryAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, CategoryAxis
+public partial class CategoryAxisImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, CategoryAxis
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.CategoryAxis? OpenXmlElement
   {

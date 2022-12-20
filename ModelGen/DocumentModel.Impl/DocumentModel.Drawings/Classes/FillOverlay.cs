@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill Overlay Effect.
 /// </summary>
-public class FillOverlayImpl: ModelElementImpl, FillOverlay
+public partial class FillOverlayImpl: ModelElementImpl, FillOverlay
 {
   public DocumentFormat.OpenXml.Drawing.FillOverlay? OpenXmlElement
   {

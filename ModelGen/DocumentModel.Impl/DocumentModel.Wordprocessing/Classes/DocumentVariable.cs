@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Single Document Variable.
 /// </summary>
-public class DocumentVariableImpl: ModelElementImpl, DocumentVariable
+public partial class DocumentVariableImpl: ModelElementImpl, DocumentVariable
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Image File.
 /// </summary>
-public class ImageFileImpl: ModelElementImpl, ImageFile
+public partial class ImageFileImpl: ModelElementImpl, ImageFile
 {
   public DocumentFormat.OpenXml.Vml.ImageFile? OpenXmlElement
   {

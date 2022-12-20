@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TemplateCommandGroup Class.
 /// </summary>
-public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
+public partial class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
 {
   public DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   public TemplateCommandGroupImpl(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the CustomizationPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.CustomizationPart? CustomizationPart
+  {
+    get
+    {
+      if (OpenXmlElement?.CustomizationPart != null)
+        return new DocumentModel.Packaging.CustomizationPartImpl(OpenXmlElement.CustomizationPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.CustomizationPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.KeyMapCustomizations>? KeyMapCustomizationses
@@ -61,7 +81,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   }
   private ObservableCollection<DocumentModel.Wordprocessing.KeyMapCustomizations>? _KeyMapCustomizationses;
   
-  private void _KeyMapCustomizationses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _KeyMapCustomizationses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
@@ -82,6 +103,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.KeyMapCustomizationsImpl valImpl)
@@ -143,7 +165,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   }
   private ObservableCollection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization>? _MismatchedKeyMapCustomizations;
   
-  private void _MismatchedKeyMapCustomizations_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _MismatchedKeyMapCustomizations_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -153,6 +175,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
@@ -164,6 +187,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.MismatchedKeyMapCustomizationImpl valImpl)
@@ -254,7 +278,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AllocatedCommands>? _AllocatedCommandses;
   
-  private void _AllocatedCommandses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AllocatedCommandses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -264,6 +288,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommands>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)
@@ -275,6 +300,7 @@ public class TemplateCommandGroupImpl: ModelElementImpl, TemplateCommandGroup
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AllocatedCommandsImpl valImpl)

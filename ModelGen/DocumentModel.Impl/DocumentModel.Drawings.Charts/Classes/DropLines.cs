@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Drop Lines.
 /// </summary>
-public class DropLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, DropLines
+public partial class DropLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, DropLines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.DropLines? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Future extensions..
 /// </summary>
-public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
+public partial class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.BlipExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.BlipExtension>? _BlipExtensions;
   
-  private void _BlipExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BlipExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.BlipExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.BlipExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.BlipExtensionImpl valImpl)

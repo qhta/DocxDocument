@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Background Fill Style List.
 /// </summary>
-public class BackgroundFillStyleListImpl: ModelElementImpl, BackgroundFillStyleList
+public partial class BackgroundFillStyleListImpl: ModelElementImpl, BackgroundFillStyleList
 {
   public DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList? OpenXmlElement
   {

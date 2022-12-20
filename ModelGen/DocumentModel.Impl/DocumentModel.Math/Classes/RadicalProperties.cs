@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Radical Properties.
 /// </summary>
-public class RadicalPropertiesImpl: ModelElementImpl, RadicalProperties
+public partial class RadicalPropertiesImpl: ModelElementImpl, RadicalProperties
 {
   public DocumentFormat.OpenXml.Math.RadicalProperties? OpenXmlElement
   {
