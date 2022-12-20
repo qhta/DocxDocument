@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DeletedRunImpl: DocumentModel.Wordprocessing.RunTrackChangeTypeImpl, DeletedRun
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.DeletedRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DeletedRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DeletedRunImpl(): base() {}
@@ -834,7 +835,7 @@ public partial class DeletedRunImpl: DocumentModel.Wordprocessing.RunTrackChange
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

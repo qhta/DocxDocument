@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundFillStyleListImpl: ModelElementImpl, BackgroundFillStyleList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundFillStyleListImpl(): base() {}

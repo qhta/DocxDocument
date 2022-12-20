@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageDropDownImpl: ModelElementImpl, BackstageDropDown
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstageDropDownImpl(): base() {}
@@ -321,7 +322,7 @@ public partial class BackstageDropDownImpl: ModelElementImpl, BackstageDropDown
   {
     get
     {
-      if (_ItemBackstageItems != null)
+      if (_ItemBackstageItems == null)
       {
         if (OpenXmlElement != null)
         {

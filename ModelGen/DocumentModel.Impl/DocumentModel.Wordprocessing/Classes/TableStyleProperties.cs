@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableStylePropertiesImpl: ModelElementImpl, TableStyleProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableStylePropertiesImpl(): base() {}

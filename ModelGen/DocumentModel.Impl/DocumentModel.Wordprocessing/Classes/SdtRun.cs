@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtRunImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRun
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.SdtRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtRunImpl(): base() {}

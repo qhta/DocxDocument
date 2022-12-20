@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AdjustHandlePolar?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AdjustHandlePolarImpl(): base() {}

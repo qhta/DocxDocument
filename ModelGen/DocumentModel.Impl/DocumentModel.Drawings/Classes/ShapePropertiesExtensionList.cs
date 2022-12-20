@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapePropertiesExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapePropertiesExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ShapePropertiesExtensionListImpl: ModelElementImpl, ShapePr
   {
     get
     {
-      if (_ShapePropertiesExtensions != null)
+      if (_ShapePropertiesExtensions == null)
       {
         if (OpenXmlElement != null)
         {

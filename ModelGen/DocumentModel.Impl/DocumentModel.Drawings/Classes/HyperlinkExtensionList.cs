@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class HyperlinkExtensionListImpl: ModelElementImpl, HyperlinkExte
   {
     get
     {
-      if (_HyperlinkExtensions != null)
+      if (_HyperlinkExtensions == null)
       {
         if (OpenXmlElement != null)
         {

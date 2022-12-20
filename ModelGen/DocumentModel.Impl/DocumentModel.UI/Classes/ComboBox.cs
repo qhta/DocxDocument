@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class ComboBoxImpl: ModelElementImpl, ComboBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.ComboBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.ComboBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ComboBoxImpl(): base() {}
@@ -529,7 +530,7 @@ public partial class ComboBoxImpl: ModelElementImpl, ComboBox
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

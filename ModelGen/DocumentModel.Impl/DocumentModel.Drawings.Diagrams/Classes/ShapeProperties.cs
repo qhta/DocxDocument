@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ShapePropertiesImpl: ModelElementImpl, ShapeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapePropertiesImpl(): base() {}

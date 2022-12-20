@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PropertySetImpl: ModelElementImpl, PropertySet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PropertySetImpl(): base() {}

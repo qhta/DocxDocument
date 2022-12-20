@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class TextBodyTypeImpl: ModelElementImpl, TextBodyType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.TextBodyType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.TextBodyType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextBodyTypeImpl(): base() {}

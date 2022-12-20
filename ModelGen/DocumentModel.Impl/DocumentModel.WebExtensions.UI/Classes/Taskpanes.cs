@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions.UI;
 /// </summary>
 public partial class TaskpanesImpl: ModelElementImpl, Taskpanes
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskpanesImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class TaskpanesImpl: ModelElementImpl, Taskpanes
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WebExTaskpanesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WebExTaskpanesPart? WebExTaskpanesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WebExTaskpanesPart != null)
-        return new DocumentModel.Packaging.WebExTaskpanesPartImpl(OpenXmlElement.WebExTaskpanesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WebExTaskpanesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.WebExtensions.UI.WebExtensionTaskpane>? WebExtensionTaskpanes
   {
     get
     {
-      if (_WebExtensionTaskpanes != null)
+      if (_WebExtensionTaskpanes == null)
       {
         if (OpenXmlElement != null)
         {

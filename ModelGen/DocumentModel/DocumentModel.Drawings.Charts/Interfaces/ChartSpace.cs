@@ -20,11 +20,6 @@ public partial interface ChartSpace
   /// </summary>
   public Boolean? RoundedCorners { get; set; }
   
-  /// <summary>
-  /// Gets the ChartPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartPart? ChartPart { get; set; }
-  
   public Byte? Style { get; set; }
   
   public DocumentModel.Drawings.Charts.ColorMapOverride? ColorMapOverride { get; set; }

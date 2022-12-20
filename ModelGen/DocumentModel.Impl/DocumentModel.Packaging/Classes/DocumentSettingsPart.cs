@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentSettingsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DocumentSettingsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentSettingsPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class DocumentSettingsPartImpl: DocumentModel.Packaging.OpenXmlPa
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

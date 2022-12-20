@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunPropertiesDefaultImpl: ModelElementImpl, RunPropertiesDefault
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunPropertiesDefaultImpl(): base() {}

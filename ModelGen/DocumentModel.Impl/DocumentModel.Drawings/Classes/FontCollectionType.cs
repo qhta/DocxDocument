@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FontCollectionTypeImpl: ModelElementImpl, FontCollectionType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FontCollectionType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FontCollectionType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontCollectionTypeImpl(): base() {}

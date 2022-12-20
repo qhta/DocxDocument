@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlBlockImpl: DocumentModel.Wordprocessing.CustomXmlElementImpl, CustomXmlBlock
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlBlockImpl(): base() {}
@@ -109,7 +110,7 @@ public partial class CustomXmlBlockImpl: DocumentModel.Wordprocessing.CustomXmlE
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -193,7 +194,7 @@ public partial class CustomXmlBlockImpl: DocumentModel.Wordprocessing.CustomXmlE
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1060,7 +1061,7 @@ public partial class CustomXmlBlockImpl: DocumentModel.Wordprocessing.CustomXmlE
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

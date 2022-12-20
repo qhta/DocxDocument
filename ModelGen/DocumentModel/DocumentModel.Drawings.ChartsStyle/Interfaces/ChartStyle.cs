@@ -170,9 +170,4 @@ public partial interface ChartStyle
   /// </summary>
   public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
-  /// <summary>
-  /// Gets the ChartStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartStylePart? ChartStylePart { get; set; }
-  
 }

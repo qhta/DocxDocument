@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RelativeOffsetImpl: ModelElementImpl, RelativeOffset
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.RelativeOffset? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.RelativeOffset?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelativeOffsetImpl(): base() {}

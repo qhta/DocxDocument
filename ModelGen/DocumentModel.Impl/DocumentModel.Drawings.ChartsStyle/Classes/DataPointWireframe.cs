@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class DataPointWireframeImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointWireframe
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataPointWireframeImpl(): base() {}

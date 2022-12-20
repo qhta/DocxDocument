@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PrintSettingsImpl: ModelElementImpl, PrintSettings
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PrintSettings? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PrintSettings?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PrintSettingsImpl(): base() {}

@@ -5,26 +5,20 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class ExtendedPropertiesImpl: ModelElementImpl, ExtendedProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.Properties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.Properties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
-
-  public ExtendedPropertiesImpl() : base()
-  {
-  }
+  
+  public ExtendedPropertiesImpl(): base() {}
   
   public ExtendedPropertiesImpl(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
-
-  //public ExtendedPropertiesImpl(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement) : base(openXmlElement)
-  //{
-  //  OpenXmlElement = openXmlElement;
-  //}
-
+  
   /// <summary>
   /// Name of Document Template.
   /// </summary>
@@ -748,26 +742,6 @@ public partial class ExtendedPropertiesImpl: ModelElementImpl, ExtendedPropertie
             OpenXmlElement.DocumentSecurity = new DocumentFormat.OpenXml.ExtendedProperties.DocumentSecurity{ Text = value };
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ExtendedFilePropertiesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ExtendedFilePropertiesPart? ExtendedFilePropertiesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.ExtendedFilePropertiesPart != null)
-        return new DocumentModel.Packaging.ExtendedFilePropertiesPartImpl(OpenXmlElement.ExtendedFilePropertiesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ExtendedFilePropertiesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

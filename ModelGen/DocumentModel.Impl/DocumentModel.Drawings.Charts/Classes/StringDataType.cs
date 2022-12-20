@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringDataTypeImpl: ModelElementImpl, StringDataType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StringDataType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StringDataType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringDataTypeImpl(): base() {}

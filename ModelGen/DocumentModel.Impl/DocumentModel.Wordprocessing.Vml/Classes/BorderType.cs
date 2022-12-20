@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// </summary>
 public partial class BorderTypeImpl: ModelElementImpl, BorderType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BorderTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StyleImpl: ModelElementImpl, Style
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Style? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Style?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleImpl(): base() {}
@@ -650,7 +651,7 @@ public partial class StyleImpl: ModelElementImpl, Style
   {
     get
     {
-      if (_TableStylePropertieses != null)
+      if (_TableStylePropertieses == null)
       {
         if (OpenXmlElement != null)
         {

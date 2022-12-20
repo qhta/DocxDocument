@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ExternalDataImpl: ModelElementImpl, ExternalData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ExternalData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ExternalData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExternalDataImpl(): base() {}

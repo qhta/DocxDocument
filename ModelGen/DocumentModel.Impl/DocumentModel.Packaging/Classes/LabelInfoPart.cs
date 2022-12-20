@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class LabelInfoPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, LabelInfoPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.LabelInfoPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.LabelInfoPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LabelInfoPartImpl(): base() {}

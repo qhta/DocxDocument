@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GeoChildEntitiesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
   {
     get
     {
-      if (_GeoHierarchyEntities != null)
+      if (_GeoHierarchyEntities == null)
       {
         if (OpenXmlElement != null)
         {

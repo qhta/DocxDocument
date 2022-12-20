@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentIdImpl: ModelElementImpl, CommentId
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentIdImpl(): base() {}

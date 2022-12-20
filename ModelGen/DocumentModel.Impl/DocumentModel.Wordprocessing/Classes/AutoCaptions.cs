@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class AutoCaptionsImpl: ModelElementImpl, AutoCaptions
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.AutoCaptions? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.AutoCaptions?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AutoCaptionsImpl(): base() {}

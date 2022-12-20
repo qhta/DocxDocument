@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataPointImpl: ModelElementImpl, DataPoint
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DataPoint? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DataPoint?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataPointImpl(): base() {}

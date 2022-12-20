@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class DigitalSignatureImpl: ModelElementImpl, DigitalSignature
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DigitalSignatureImpl(): base() {}

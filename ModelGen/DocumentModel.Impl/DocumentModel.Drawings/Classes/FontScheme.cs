@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FontSchemeImpl: ModelElementImpl, FontScheme
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FontScheme? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FontScheme?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontSchemeImpl(): base() {}

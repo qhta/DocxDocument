@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ColorReplacementImpl: ModelElementImpl, ColorReplacement
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ColorReplacement? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ColorReplacement?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorReplacementImpl(): base() {}

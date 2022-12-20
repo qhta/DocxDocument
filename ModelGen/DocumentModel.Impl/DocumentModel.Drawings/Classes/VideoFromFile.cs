@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class VideoFromFileImpl: ModelElementImpl, VideoFromFile
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.VideoFromFile? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.VideoFromFile?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VideoFromFileImpl(): base() {}

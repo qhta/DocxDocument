@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartNameImpl: ModelElementImpl, DocPartName
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocPartName? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocPartName?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocPartNameImpl(): base() {}

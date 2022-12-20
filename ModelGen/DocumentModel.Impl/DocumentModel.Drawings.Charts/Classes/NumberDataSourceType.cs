@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumberDataSourceTypeImpl: ModelElementImpl, NumberDataSourceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberDataSourceTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TabStopImpl: ModelElementImpl, TabStop
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TabStop? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TabStop?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TabStopImpl(): base() {}

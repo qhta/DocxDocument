@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SurfaceSerExtensionImpl: ModelElementImpl, SurfaceSerExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SurfaceSerExtensionImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ButtonRegularImpl: ModelElementImpl, ButtonRegular
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ButtonRegularImpl(): base() {}

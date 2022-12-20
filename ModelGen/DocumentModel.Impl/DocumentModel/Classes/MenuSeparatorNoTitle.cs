@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class MenuSeparatorNoTitleImpl: ModelElementImpl, MenuSeparatorNoTitle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MenuSeparatorNoTitleImpl(): base() {}

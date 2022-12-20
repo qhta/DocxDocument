@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class AllocatedCommandImpl: ModelElementImpl, AllocatedCommand
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.AllocatedCommand? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.AllocatedCommand?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AllocatedCommandImpl(): base() {}

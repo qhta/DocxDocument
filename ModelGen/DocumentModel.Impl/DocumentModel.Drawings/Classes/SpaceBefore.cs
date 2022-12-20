@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SpaceBeforeImpl: DocumentModel.Drawings.TextSpacingTypeImpl, SpaceBefore
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.SpaceBefore? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.SpaceBefore?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SpaceBeforeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BodyPropertiesImpl: ModelElementImpl, BodyProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BodyProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BodyProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BodyPropertiesImpl(): base() {}

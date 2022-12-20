@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ColorTemperatureImpl: ModelElementImpl, ColorTemperature
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorTemperatureImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Dark1ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Dark1Color
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Dark1Color? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Dark1Color?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Dark1ColorImpl(): base() {}

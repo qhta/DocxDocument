@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HelpTextImpl: ModelElementImpl, HelpText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.HelpText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.HelpText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HelpTextImpl(): base() {}

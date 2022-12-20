@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class StyleColorImpl: ModelElementImpl, StyleColor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleColorImpl(): base() {}

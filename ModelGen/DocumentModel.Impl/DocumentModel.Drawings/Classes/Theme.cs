@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ThemeImpl: ModelElementImpl, Theme
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Theme? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Theme?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemeImpl(): base() {}
@@ -201,26 +202,6 @@ public partial class ThemeImpl: ModelElementImpl, Theme
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ThemePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ThemePart? ThemePart
-  {
-    get
-    {
-      if (OpenXmlElement?.ThemePart != null)
-        return new DocumentModel.Packaging.ThemePartImpl(OpenXmlElement.ThemePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ThemePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class DropDownImpl: ModelElementImpl, DropDown
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.DropDown? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.DropDown?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DropDownImpl(): base() {}
@@ -529,7 +530,7 @@ public partial class DropDownImpl: ModelElementImpl, DropDown
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {
@@ -613,7 +614,7 @@ public partial class DropDownImpl: ModelElementImpl, DropDown
   {
     get
     {
-      if (_UnsizedButtons != null)
+      if (_UnsizedButtons == null)
       {
         if (OpenXmlElement != null)
         {

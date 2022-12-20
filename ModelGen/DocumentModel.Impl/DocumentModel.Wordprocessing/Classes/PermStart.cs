@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PermStartImpl: ModelElementImpl, PermStart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PermStart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PermStart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PermStartImpl(): base() {}

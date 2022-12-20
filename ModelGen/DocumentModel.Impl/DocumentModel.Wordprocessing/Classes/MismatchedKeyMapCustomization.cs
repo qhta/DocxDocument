@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MismatchedKeyMapCustomizationImpl: ModelElementImpl, MismatchedKeyMapCustomization
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MismatchedKeyMapCustomizationImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class MismatchedKeyMapCustomizationImpl: ModelElementImpl, Mismat
   {
     get
     {
-      if (_KeyMapEntries != null)
+      if (_KeyMapEntries == null)
       {
         if (OpenXmlElement != null)
         {

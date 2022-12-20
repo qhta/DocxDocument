@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LineJoinMiterPropertiesImpl: ModelElementImpl, LineJoinMiterProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineJoinMiterPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BoxImpl: ModelElementImpl, Box
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Box? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Box?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BoxImpl(): base() {}

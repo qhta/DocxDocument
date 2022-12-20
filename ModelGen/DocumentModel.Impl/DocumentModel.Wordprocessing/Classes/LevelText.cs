@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LevelTextImpl: ModelElementImpl, LevelText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LevelText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LevelText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LevelTextImpl(): base() {}

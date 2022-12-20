@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FillReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, FillReference
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.FillReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FillReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillReferenceImpl(): base() {}

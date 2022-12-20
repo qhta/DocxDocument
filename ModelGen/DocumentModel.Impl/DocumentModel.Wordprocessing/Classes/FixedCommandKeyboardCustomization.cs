@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedCommandKeyboardCustomization
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FixedCommandKeyboardCustomizationImpl(): base() {}

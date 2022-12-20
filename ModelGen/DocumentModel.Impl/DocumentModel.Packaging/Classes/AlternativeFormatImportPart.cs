@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class AlternativeFormatImportPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, AlternativeFormatImportPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlternativeFormatImportPartImpl(): base() {}

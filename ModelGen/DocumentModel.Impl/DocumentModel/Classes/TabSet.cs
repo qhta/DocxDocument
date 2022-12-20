@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TabSetImpl: ModelElementImpl, TabSet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.TabSet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.TabSet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TabSetImpl(): base() {}
@@ -61,7 +62,7 @@ public partial class TabSetImpl: ModelElementImpl, TabSet
   {
     get
     {
-      if (_Tabs != null)
+      if (_Tabs == null)
       {
         if (OpenXmlElement != null)
         {

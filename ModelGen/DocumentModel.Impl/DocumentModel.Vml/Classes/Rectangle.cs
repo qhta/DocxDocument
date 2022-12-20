@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RectangleImpl: ModelElementImpl, Rectangle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Rectangle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Rectangle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RectangleImpl(): base() {}

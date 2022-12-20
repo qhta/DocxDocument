@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TrackChangeTypeImpl: ModelElementImpl, TrackChangeType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TrackChangeType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TrackChangeType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TrackChangeTypeImpl(): base() {}

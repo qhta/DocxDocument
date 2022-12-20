@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixColumnImpl: ModelElementImpl, MatrixColumn
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.MatrixColumn? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.MatrixColumn?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MatrixColumnImpl(): base() {}

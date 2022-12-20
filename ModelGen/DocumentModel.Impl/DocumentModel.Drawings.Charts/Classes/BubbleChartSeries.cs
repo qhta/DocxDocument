@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BubbleChartSeriesImpl: ModelElementImpl, BubbleChartSeries
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BubbleChartSeriesImpl(): base() {}
@@ -206,7 +207,7 @@ public partial class BubbleChartSeriesImpl: ModelElementImpl, BubbleChartSeries
   {
     get
     {
-      if (_DataPoints != null)
+      if (_DataPoints == null)
       {
         if (OpenXmlElement != null)
         {
@@ -319,7 +320,7 @@ public partial class BubbleChartSeriesImpl: ModelElementImpl, BubbleChartSeries
   {
     get
     {
-      if (_Trendlines != null)
+      if (_Trendlines == null)
       {
         if (OpenXmlElement != null)
         {
@@ -403,7 +404,7 @@ public partial class BubbleChartSeriesImpl: ModelElementImpl, BubbleChartSeries
   {
     get
     {
-      if (_ErrorBarses != null)
+      if (_ErrorBarses == null)
       {
         if (OpenXmlElement != null)
         {

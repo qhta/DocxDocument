@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TintEffectImpl: ModelElementImpl, TintEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TintEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TintEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TintEffectImpl(): base() {}

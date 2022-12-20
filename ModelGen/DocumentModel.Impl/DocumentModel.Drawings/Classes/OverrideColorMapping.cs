@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingTypeImpl, OverrideColorMapping
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.OverrideColorMapping? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.OverrideColorMapping?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OverrideColorMappingImpl(): base() {}

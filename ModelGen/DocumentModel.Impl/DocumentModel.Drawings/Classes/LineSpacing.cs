@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineSpacingImpl: DocumentModel.Drawings.TextSpacingTypeImpl, LineSpacing
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.LineSpacing? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineSpacing?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineSpacingImpl(): base() {}

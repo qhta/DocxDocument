@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SurfaceChartExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceCha
   {
     get
     {
-      if (_SurfaceChartExtensions != null)
+      if (_SurfaceChartExtensions == null)
       {
         if (OpenXmlElement != null)
         {

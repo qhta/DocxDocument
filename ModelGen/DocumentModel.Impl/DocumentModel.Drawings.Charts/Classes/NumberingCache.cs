@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberingCache
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.NumberingCache? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumberingCache?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingCacheImpl(): base() {}
@@ -92,7 +93,7 @@ public partial class NumberingCacheImpl: DocumentModel.Drawings.Charts.NumberDat
   {
     get
     {
-      if (_NumericPoints != null)
+      if (_NumericPoints == null)
       {
         if (OpenXmlElement != null)
         {

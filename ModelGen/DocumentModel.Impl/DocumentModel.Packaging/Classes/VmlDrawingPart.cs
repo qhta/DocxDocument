@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDrawingPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.VmlDrawingPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.VmlDrawingPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VmlDrawingPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -96,7 +97,7 @@ public partial class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl
   {
     get
     {
-      if (_LegacyDiagramTextParts != null)
+      if (_LegacyDiagramTextParts == null)
       {
         if (OpenXmlElement != null)
         {

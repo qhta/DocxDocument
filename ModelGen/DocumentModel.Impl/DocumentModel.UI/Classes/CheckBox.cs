@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class CheckBoxImpl: ModelElementImpl, CheckBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.CheckBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.CheckBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CheckBoxImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PeopleImpl: ModelElementImpl, People
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.People? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.People?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PeopleImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class PeopleImpl: ModelElementImpl, People
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WordprocessingPeoplePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WordprocessingPeoplePart? WordprocessingPeoplePart
-  {
-    get
-    {
-      if (OpenXmlElement?.WordprocessingPeoplePart != null)
-        return new DocumentModel.Packaging.WordprocessingPeoplePartImpl(OpenXmlElement.WordprocessingPeoplePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WordprocessingPeoplePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.Person>? Persons
   {
     get
     {
-      if (_Persons != null)
+      if (_Persons == null)
       {
         if (OpenXmlElement != null)
         {

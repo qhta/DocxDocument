@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CustomSplitImpl: ModelElementImpl, CustomSplit
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.CustomSplit?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomSplitImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CustomSplitImpl: ModelElementImpl, CustomSplit
   {
     get
     {
-      if (_SecondPiePoints != null)
+      if (_SecondPiePoints == null)
       {
         if (OpenXmlElement != null)
         {

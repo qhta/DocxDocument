@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BlipExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BlipExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BlipExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class BlipExtensionListImpl: ModelElementImpl, BlipExtensionList
   {
     get
     {
-      if (_BlipExtensions != null)
+      if (_BlipExtensions == null)
       {
         if (OpenXmlElement != null)
         {

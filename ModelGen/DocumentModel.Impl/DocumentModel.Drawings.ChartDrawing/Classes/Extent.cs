@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class ExtentImpl: ModelElementImpl, Extent
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtentImpl(): base() {}

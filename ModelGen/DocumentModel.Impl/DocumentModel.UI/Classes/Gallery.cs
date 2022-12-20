@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class GalleryImpl: ModelElementImpl, Gallery
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.Gallery? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.Gallery?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GalleryImpl(): base() {}
@@ -672,7 +673,7 @@ public partial class GalleryImpl: ModelElementImpl, Gallery
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {
@@ -756,7 +757,7 @@ public partial class GalleryImpl: ModelElementImpl, Gallery
   {
     get
     {
-      if (_UnsizedButtons != null)
+      if (_UnsizedButtons == null)
       {
         if (OpenXmlElement != null)
         {

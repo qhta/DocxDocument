@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableLayoutImpl: ModelElementImpl, TableLayout
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableLayout? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableLayout?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableLayoutImpl(): base() {}

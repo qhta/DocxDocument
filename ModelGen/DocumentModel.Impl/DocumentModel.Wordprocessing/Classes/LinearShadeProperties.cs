@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LinearShadePropertiesImpl(): base() {}

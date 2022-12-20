@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentExImpl: ModelElementImpl, CommentEx
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.CommentEx? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.CommentEx?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentExImpl(): base() {}

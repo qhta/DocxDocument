@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class ShapeStyleImpl: ModelElementImpl, ShapeStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.ShapeStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeStyleImpl(): base() {}

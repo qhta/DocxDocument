@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TextCharacterPropertiesTypeImpl: ModelElementImpl, TextCharacterPropertiesType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextCharacterPropertiesTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RelationshipTypeImpl: ModelElementImpl, RelationshipType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RelationshipType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RelationshipType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelationshipTypeImpl(): base() {}

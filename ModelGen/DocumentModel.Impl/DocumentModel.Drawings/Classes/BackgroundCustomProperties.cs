@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundCustomPropertiesImpl: ModelElementImpl, BackgroundCustomProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundCustomProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundCustomProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundCustomPropertiesImpl(): base() {}

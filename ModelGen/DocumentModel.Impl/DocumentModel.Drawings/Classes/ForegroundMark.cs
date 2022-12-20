@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ForegroundMarkImpl: ModelElementImpl, ForegroundMark
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ForegroundMarkImpl(): base() {}

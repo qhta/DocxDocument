@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Impl;
+﻿using System.Xml.Serialization;
+
+namespace DocumentModel.Impl;
 
 public class ModelObjectImpl: ModelElement
 {
@@ -9,5 +11,6 @@ public class ModelObjectImpl: ModelElement
     _OpenXmlElement = openXmlElement;
   }
 
-  public object? _OpenXmlElement { get; set; }
+  [XmlIgnore]
+  public object? _OpenXmlElement { get; protected set; }
 }

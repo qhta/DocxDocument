@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class VariableListImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, VariableList
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Diagrams.VariableList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.VariableList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VariableListImpl(): base() {}

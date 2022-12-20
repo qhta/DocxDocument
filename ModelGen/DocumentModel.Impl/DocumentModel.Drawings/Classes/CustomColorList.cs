@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomColorListImpl: ModelElementImpl, CustomColorList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.CustomColorList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.CustomColorList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomColorListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CustomColorListImpl: ModelElementImpl, CustomColorList
   {
     get
     {
-      if (_CustomColors != null)
+      if (_CustomColors == null)
       {
         if (OpenXmlElement != null)
         {

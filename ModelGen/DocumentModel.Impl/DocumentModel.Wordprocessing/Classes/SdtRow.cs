@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtRowImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRow
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.SdtRow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtRow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtRowImpl(): base() {}

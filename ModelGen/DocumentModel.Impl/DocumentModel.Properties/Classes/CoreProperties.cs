@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
 {
+  [XmlIgnore]
   public System.IO.Packaging.PackageProperties? OpenXmlElement
   {
     get => (System.IO.Packaging.PackageProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CorePropertiesImpl(): base() {}

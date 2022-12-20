@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SimpleFieldRubyImpl: ModelElementImpl, SimpleFieldRuby
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SimpleFieldRubyImpl(): base() {}
@@ -1015,7 +1016,7 @@ public partial class SimpleFieldRubyImpl: ModelElementImpl, SimpleFieldRuby
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

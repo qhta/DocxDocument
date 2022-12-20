@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CategoryAxisImpl: ModelElementImpl, CategoryAxis
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CategoryAxisImpl(): base() {}

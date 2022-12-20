@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class UnderlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Underline
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Underline? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Underline?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnderlineImpl(): base() {}

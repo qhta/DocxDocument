@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class NumericDimensionImpl: ModelElementImpl, NumericDimension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumericDimensionImpl(): base() {}
@@ -93,7 +94,7 @@ public partial class NumericDimensionImpl: ModelElementImpl, NumericDimension
   {
     get
     {
-      if (_NumericLevels != null)
+      if (_NumericLevels == null)
       {
         if (OpenXmlElement != null)
         {

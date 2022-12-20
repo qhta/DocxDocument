@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MoveToImpl: ModelElementImpl, MoveTo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.MoveTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.MoveTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MoveToImpl(): base() {}

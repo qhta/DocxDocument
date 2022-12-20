@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PageMarginsImpl: ModelElementImpl, PageMargins
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PageMargins? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PageMargins?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageMarginsImpl(): base() {}

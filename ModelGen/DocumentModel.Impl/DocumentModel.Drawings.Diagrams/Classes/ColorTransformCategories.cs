@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransformCategories
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorTransformCategoriesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ColorTransformCategoriesImpl: ModelElementImpl, ColorTransf
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

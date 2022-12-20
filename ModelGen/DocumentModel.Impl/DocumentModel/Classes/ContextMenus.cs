@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ContextMenusImpl: ModelElementImpl, ContextMenus
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ContextMenusImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ContextMenusImpl: ModelElementImpl, ContextMenus
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

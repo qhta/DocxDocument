@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class MaxColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MaxColorSolidColorFillProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MaxColorSolidColorFillPropertiesImpl(): base() {}

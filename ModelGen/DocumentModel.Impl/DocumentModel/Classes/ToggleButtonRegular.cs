@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ToggleButtonRegularImpl: ModelElementImpl, ToggleButtonRegular
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ToggleButtonRegularImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineStyleListImpl: ModelElementImpl, LineStyleList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LineStyleList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineStyleList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineStyleListImpl(): base() {}

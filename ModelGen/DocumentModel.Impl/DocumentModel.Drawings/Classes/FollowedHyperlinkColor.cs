@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FollowedHyperlinkColorImpl: DocumentModel.Drawings.Color2TypeImpl, FollowedHyperlinkColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FollowedHyperlinkColorImpl(): base() {}

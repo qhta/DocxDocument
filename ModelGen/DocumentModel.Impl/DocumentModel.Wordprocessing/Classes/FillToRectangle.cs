@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FillToRectangleImpl: ModelElementImpl, FillToRectangle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.FillToRectangle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.FillToRectangle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillToRectangleImpl(): base() {}

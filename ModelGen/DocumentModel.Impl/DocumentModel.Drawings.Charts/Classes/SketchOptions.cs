@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SketchOptionsImpl: ModelElementImpl, SketchOptions
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SketchOptionsImpl(): base() {}

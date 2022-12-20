@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class LegacyDiagramTextPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, LegacyDiagramTextPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LegacyDiagramTextPartImpl(): base() {}

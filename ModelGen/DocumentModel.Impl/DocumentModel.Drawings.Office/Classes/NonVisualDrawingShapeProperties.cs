@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class NonVisualDrawingShapePropertiesImpl: ModelElementImpl, NonVisualDrawingShapeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualDrawingShapePropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class CurveImpl: ModelElementImpl, Curve
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Curve? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Curve?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CurveImpl(): base() {}

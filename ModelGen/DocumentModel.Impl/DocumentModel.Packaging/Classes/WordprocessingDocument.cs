@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WordprocessingDocumentImpl: DocumentModel.Packaging.OpenXmlPackageImpl, WordprocessingDocument
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WordprocessingDocument? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WordprocessingDocument?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordprocessingDocumentImpl(): base() {}

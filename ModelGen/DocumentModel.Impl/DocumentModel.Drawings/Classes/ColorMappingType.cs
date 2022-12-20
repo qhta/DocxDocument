@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ColorMappingTypeImpl: ModelElementImpl, ColorMappingType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ColorMappingType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ColorMappingType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorMappingTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HeaderImpl: ModelElementImpl, Header
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Header? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Header?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HeaderImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class HeaderImpl: ModelElementImpl, Header
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the HeaderPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.HeaderPart? HeaderPart
-  {
-    get
-    {
-      if (OpenXmlElement?.HeaderPart != null)
-        return new DocumentModel.Packaging.HeaderPartImpl(OpenXmlElement.HeaderPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.HeaderPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.AltChunk>? AltChunks
   {
     get
     {
-      if (_AltChunks != null)
+      if (_AltChunks == null)
       {
         if (OpenXmlElement != null)
         {
@@ -184,7 +165,7 @@ public partial class HeaderImpl: ModelElementImpl, Header
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -268,7 +249,7 @@ public partial class HeaderImpl: ModelElementImpl, Header
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1135,7 +1116,7 @@ public partial class HeaderImpl: ModelElementImpl, Header
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

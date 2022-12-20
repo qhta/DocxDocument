@@ -15,11 +15,6 @@ public partial interface ColorStyle
   /// </summary>
   public UInt32? Id { get; set; }
   
-  /// <summary>
-  /// Gets the ChartColorStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartColorStylePart? ChartColorStylePart { get; set; }
-  
   public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   
   public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }

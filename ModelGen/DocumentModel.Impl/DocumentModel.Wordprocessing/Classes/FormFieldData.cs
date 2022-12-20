@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FormFieldDataImpl: ModelElementImpl, FormFieldData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FormFieldData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FormFieldData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FormFieldDataImpl(): base() {}

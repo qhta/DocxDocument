@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class TrendlineImpl: ModelElementImpl, Trendline
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Trendline? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Trendline?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TrendlineImpl(): base() {}

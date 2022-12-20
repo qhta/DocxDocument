@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, MailMergeRecipientDataPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MailMergeRecipientDataPartImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class TextBodyImpl: ModelElementImpl, TextBody
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.TextBody? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.TextBody?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextBodyImpl(): base() {}

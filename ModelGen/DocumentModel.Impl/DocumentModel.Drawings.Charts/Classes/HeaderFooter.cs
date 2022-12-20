@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class HeaderFooterImpl: ModelElementImpl, HeaderFooter
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HeaderFooterImpl(): base() {}

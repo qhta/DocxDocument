@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageMenuToggleButtonImpl: ModelElementImpl, BackstageMenuToggleButton
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuToggleButton? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuToggleButton?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackstageMenuToggleButtonImpl(): base() {}

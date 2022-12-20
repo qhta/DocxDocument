@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, LineReference
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.LineReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineReferenceImpl(): base() {}

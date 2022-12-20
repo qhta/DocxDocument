@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class RelativeHeightImpl: ModelElementImpl, RelativeHeight
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelativeHeightImpl(): base() {}

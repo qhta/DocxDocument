@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RsidsImpl: ModelElementImpl, Rsids
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Rsids? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Rsids?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RsidsImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class RsidsImpl: ModelElementImpl, Rsids
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

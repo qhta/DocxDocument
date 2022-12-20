@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class EditBoxImpl: ModelElementImpl, EditBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.EditBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.EditBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EditBoxImpl(): base() {}

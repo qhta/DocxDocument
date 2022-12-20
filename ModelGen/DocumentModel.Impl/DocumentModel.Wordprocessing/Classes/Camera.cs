@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CameraImpl: ModelElementImpl, Camera
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.Camera? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.Camera?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CameraImpl(): base() {}

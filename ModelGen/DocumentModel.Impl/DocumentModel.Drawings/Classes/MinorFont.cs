@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, MinorFont
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.MinorFont? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.MinorFont?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MinorFontImpl(): base() {}
@@ -109,7 +110,7 @@ public partial class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImp
   {
     get
     {
-      if (_SupplementalFonts != null)
+      if (_SupplementalFonts == null)
       {
         if (OpenXmlElement != null)
         {

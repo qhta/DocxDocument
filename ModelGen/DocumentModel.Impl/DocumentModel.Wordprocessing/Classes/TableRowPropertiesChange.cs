@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableRowPropertiesChangeImpl: ModelElementImpl, TableRowPropertiesChange
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableRowPropertiesChangeImpl(): base() {}

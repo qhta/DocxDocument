@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ReflectionImpl: ModelElementImpl, Reflection
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Reflection? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Reflection?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ReflectionImpl(): base() {}

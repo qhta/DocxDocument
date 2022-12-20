@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunFontsImpl: ModelElementImpl, RunFonts
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RunFonts? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RunFonts?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunFontsImpl(): base() {}

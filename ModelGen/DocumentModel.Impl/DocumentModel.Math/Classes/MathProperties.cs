@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MathPropertiesImpl: ModelElementImpl, MathProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.MathProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.MathProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MathPropertiesImpl(): base() {}

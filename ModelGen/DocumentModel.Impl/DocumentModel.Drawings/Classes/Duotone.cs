@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DuotoneImpl: ModelElementImpl, Duotone
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Duotone? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Duotone?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DuotoneImpl(): base() {}

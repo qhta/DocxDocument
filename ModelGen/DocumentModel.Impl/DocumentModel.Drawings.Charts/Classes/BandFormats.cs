@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BandFormatsImpl: ModelElementImpl, BandFormats
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.BandFormats? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BandFormats?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BandFormatsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class BandFormatsImpl: ModelElementImpl, BandFormats
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

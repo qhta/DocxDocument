@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ContourColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ContourColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2010.Word.ContourColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.ContourColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ContourColorImpl(): base() {}

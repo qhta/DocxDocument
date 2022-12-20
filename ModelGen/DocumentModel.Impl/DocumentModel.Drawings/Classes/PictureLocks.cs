@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PictureLocksImpl: ModelElementImpl, PictureLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PictureLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PictureLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PictureLocksImpl(): base() {}

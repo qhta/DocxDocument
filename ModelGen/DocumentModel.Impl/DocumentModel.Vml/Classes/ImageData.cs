@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ImageDataImpl: ModelElementImpl, ImageData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.ImageData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.ImageData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ImageDataImpl(): base() {}

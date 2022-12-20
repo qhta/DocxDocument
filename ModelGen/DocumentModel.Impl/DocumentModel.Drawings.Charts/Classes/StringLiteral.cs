@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringLiteral
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.StringLiteral? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StringLiteral?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringLiteralImpl(): base() {}
@@ -57,7 +58,7 @@ public partial class StringLiteralImpl: DocumentModel.Drawings.Charts.StringData
   {
     get
     {
-      if (_StringPoints != null)
+      if (_StringPoints == null)
       {
         if (OpenXmlElement != null)
         {

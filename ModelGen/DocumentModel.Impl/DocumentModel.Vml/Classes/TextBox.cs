@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class TextBoxImpl: ModelElementImpl, TextBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.TextBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.TextBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextBoxImpl(): base() {}

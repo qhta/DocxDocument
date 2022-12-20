@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CaptionImpl: ModelElementImpl, Caption
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Caption? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Caption?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CaptionImpl(): base() {}

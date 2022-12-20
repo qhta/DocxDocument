@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MacroWllTypeImpl: ModelElementImpl, MacroWllType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.MacroWllType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.MacroWllType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MacroWllTypeImpl(): base() {}

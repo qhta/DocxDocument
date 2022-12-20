@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ShapeProperties2Impl: ModelElementImpl, ShapeProperties2
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeProperties2Impl(): base() {}

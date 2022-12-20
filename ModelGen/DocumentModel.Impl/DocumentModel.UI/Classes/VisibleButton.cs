@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class VisibleButtonImpl: ModelElementImpl, VisibleButton
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.VisibleButton? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.VisibleButton?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VisibleButtonImpl(): base() {}

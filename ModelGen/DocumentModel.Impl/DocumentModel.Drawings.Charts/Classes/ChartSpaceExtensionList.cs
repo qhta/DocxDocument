@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartSpaceExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceEx
   {
     get
     {
-      if (_ChartSpaceExtensions != null)
+      if (_ChartSpaceExtensions == null)
       {
         if (OpenXmlElement != null)
         {

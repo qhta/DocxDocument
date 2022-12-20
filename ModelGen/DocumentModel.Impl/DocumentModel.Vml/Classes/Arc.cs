@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ArcImpl: ModelElementImpl, Arc
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Arc? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Arc?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArcImpl(): base() {}

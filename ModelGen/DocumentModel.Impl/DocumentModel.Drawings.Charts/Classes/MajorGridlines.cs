@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MajorGridlinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, MajorGridlines
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MajorGridlinesImpl(): base() {}

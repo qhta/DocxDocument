@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SettingsImpl: ModelElementImpl, Settings
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Settings? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Settings?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SettingsImpl(): base() {}
@@ -756,31 +757,11 @@ public partial class SettingsImpl: ModelElementImpl, Settings
     }
   }
   
-  /// <summary>
-  /// Gets the DocumentSettingsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DocumentSettingsPart? DocumentSettingsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DocumentSettingsPart != null)
-        return new DocumentModel.Packaging.DocumentSettingsPartImpl(OpenXmlElement.DocumentSettingsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DocumentSettingsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.ActiveWritingStyle>? ActiveWritingStyles
   {
     get
     {
-      if (_ActiveWritingStyles != null)
+      if (_ActiveWritingStyles == null)
       {
         if (OpenXmlElement != null)
         {
@@ -2973,7 +2954,7 @@ public partial class SettingsImpl: ModelElementImpl, Settings
   {
     get
     {
-      if (_AttachedSchemas != null)
+      if (_AttachedSchemas == null)
       {
         if (OpenXmlElement != null)
         {

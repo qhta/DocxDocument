@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class MarkerLayoutPropertiesImpl: ModelElementImpl, MarkerLayoutProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MarkerLayoutPropertiesImpl(): base() {}

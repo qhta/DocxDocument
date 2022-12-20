@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocDefaultsImpl: ModelElementImpl, DocDefaults
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocDefaults? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocDefaults?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocDefaultsImpl(): base() {}

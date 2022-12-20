@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ExternalRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, ExternalRelationship
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ExternalRelationship? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ExternalRelationship?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExternalRelationshipImpl(): base() {}

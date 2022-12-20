@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FillOverlayImpl: ModelElementImpl, FillOverlay
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FillOverlay? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FillOverlay?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillOverlayImpl(): base() {}

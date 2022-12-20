@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FontImpl: ModelElementImpl, Font
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Font? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Font?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontImpl(): base() {}

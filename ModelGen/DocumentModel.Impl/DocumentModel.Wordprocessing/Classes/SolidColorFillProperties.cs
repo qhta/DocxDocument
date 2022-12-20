@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SolidColorFillPropertiesImpl: ModelElementImpl, SolidColorFillProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SolidColorFillPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FontReferenceImpl: ModelElementImpl, FontReference
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FontReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FontReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontReferenceImpl(): base() {}

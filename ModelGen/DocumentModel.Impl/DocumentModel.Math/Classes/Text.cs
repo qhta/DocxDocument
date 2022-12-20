@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class TextImpl: ModelElementImpl, Text
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Text? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Text?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextImpl(): base() {}

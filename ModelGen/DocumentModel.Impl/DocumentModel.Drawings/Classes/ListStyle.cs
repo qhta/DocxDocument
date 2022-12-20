@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ListStyleImpl: ModelElementImpl, ListStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ListStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ListStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ListStyleImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class BackgroundImpl: ModelElementImpl, Background
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Background? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Background?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundImpl(): base() {}

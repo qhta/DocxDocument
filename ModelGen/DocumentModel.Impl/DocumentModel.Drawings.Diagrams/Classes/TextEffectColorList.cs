@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class TextEffectColorListImpl: DocumentModel.Drawings.Diagrams.ColorsTypeImpl, TextEffectColorList
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextEffectColorListImpl(): base() {}

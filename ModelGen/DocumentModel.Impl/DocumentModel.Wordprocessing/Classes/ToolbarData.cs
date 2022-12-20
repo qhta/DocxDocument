@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ToolbarDataImpl: ModelElementImpl, ToolbarData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.ToolbarData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.ToolbarData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ToolbarDataImpl(): base() {}

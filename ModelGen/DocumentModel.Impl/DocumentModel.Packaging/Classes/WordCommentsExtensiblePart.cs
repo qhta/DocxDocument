@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WordCommentsExtensiblePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordCommentsExtensiblePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordCommentsExtensiblePartImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagram1;
 /// </summary>
 public partial class DiagramAutoBulletImpl: ModelElementImpl, DiagramAutoBullet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramAutoBulletImpl(): base() {}

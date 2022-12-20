@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PictureBulletImpl: ModelElementImpl, PictureBullet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PictureBullet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PictureBullet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PictureBulletImpl(): base() {}

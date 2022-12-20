@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class CustomXmlPropertiesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomXmlPropertiesPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlPropertiesPartImpl(): base() {}

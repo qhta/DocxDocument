@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConditionalFormatStyleImpl(): base() {}

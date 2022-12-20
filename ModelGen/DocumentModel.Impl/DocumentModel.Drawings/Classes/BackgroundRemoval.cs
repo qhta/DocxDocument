@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundRemovalImpl(): base() {}
@@ -74,7 +75,7 @@ public partial class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   {
     get
     {
-      if (_ForegroundMarks != null)
+      if (_ForegroundMarks == null)
       {
         if (OpenXmlElement != null)
         {
@@ -158,7 +159,7 @@ public partial class BackgroundRemovalImpl: ModelElementImpl, BackgroundRemoval
   {
     get
     {
-      if (_BackgroundMarks != null)
+      if (_BackgroundMarks == null)
       {
         if (OpenXmlElement != null)
         {

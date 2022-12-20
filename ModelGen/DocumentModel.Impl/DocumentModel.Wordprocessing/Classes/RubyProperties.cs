@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RubyPropertiesImpl: ModelElementImpl, RubyProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RubyProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RubyProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RubyPropertiesImpl(): base() {}

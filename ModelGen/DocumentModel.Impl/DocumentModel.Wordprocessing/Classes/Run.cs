@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunImpl: ModelElementImpl, Run
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Run? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Run?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunImpl(): base() {}

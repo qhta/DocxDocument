@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class TitleImpl: ModelElementImpl, Title
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Title? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Title?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TitleImpl(): base() {}

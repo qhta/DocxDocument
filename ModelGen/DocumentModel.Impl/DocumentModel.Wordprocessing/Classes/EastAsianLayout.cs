@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class EastAsianLayoutImpl: ModelElementImpl, EastAsianLayout
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EastAsianLayoutImpl(): base() {}

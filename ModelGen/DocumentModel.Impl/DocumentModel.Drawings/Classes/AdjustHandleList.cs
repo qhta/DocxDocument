@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustHandleListImpl: ModelElementImpl, AdjustHandleList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AdjustHandleList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AdjustHandleList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AdjustHandleListImpl(): base() {}

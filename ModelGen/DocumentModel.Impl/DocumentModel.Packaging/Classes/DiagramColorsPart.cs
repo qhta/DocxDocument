@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramColorsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramColorsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DiagramColorsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DiagramColorsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramColorsPartImpl(): base() {}

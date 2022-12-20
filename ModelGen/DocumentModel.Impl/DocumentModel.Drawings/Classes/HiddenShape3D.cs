@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HiddenShape3DImpl: ModelElementImpl, HiddenShape3D
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HiddenShape3DImpl(): base() {}

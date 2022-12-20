@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.BorderBoxProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.BorderBoxProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BorderBoxPropertiesImpl(): base() {}

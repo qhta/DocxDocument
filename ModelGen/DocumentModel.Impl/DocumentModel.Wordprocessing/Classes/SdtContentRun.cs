@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentRunImpl: ModelElementImpl, SdtContentRun
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentRunImpl(): base() {}
@@ -80,7 +81,7 @@ public partial class SdtContentRunImpl: ModelElementImpl, SdtContentRun
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1005,7 +1006,7 @@ public partial class SdtContentRunImpl: ModelElementImpl, SdtContentRun
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

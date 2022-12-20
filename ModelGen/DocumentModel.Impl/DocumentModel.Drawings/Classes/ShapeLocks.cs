@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapeLocksImpl: ModelElementImpl, ShapeLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ShapeLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ShapeLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeLocksImpl(): base() {}

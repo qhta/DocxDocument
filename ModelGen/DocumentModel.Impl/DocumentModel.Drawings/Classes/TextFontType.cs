@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TextFontTypeImpl: ModelElementImpl, TextFontType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TextFontType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TextFontType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextFontTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SeriesLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, SeriesLines
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.SeriesLines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SeriesLinesImpl(): base() {}

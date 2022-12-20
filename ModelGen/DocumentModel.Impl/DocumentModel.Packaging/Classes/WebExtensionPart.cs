@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebExtensionPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WebExtensionPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WebExtensionPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class WebExtensionPartImpl: DocumentModel.Packaging.OpenXmlPartIm
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

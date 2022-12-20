@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ReadModeInkLockDownImpl(): base() {}

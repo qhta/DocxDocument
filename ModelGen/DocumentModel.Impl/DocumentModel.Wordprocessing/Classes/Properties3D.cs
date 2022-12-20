@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Properties3DImpl: ModelElementImpl, Properties3D
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.Properties3D? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.Properties3D?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Properties3DImpl(): base() {}

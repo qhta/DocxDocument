@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Vector3DTypeImpl: ModelElementImpl, Vector3DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Vector3DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Vector3DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Vector3DTypeImpl(): base() {}

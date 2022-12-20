@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class UnsizedButtonImpl: ModelElementImpl, UnsizedButton
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnsizedButtonImpl(): base() {}

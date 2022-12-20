@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaBiLevelImpl: ModelElementImpl, AlphaBiLevel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaBiLevel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaBiLevel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaBiLevelImpl(): base() {}

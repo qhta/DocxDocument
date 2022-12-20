@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ZoomImpl: ModelElementImpl, Zoom
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Zoom? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Zoom?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ZoomImpl(): base() {}

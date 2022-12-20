@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class GroupImpl: ModelElementImpl, Group
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.Group? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.Group?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupImpl(): base() {}

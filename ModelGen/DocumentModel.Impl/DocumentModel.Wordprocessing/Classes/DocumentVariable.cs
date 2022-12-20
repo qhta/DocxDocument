@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentVariableImpl: ModelElementImpl, DocumentVariable
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocumentVariable?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentVariableImpl(): base() {}

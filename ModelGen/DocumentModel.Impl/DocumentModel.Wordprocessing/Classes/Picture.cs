@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PictureImpl: ModelElementImpl, Picture
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Picture? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Picture?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PictureImpl(): base() {}

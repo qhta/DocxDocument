@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class HyperlinkRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, HyperlinkRelationship
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.HyperlinkRelationship?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkRelationshipImpl(): base() {}

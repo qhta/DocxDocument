@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class PivotTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PivotTablePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.PivotTablePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.PivotTablePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PivotTablePartImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TextTypeImpl: ModelElementImpl, TextType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TextType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TextType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextTypeImpl(): base() {}

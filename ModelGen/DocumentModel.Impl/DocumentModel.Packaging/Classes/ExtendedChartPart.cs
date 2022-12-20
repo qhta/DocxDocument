@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ExtendedChartPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ExtendedChartPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ExtendedChartPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtendedChartPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartI
   {
     get
     {
-      if (_ChartColorStyleParts != null)
+      if (_ChartColorStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -124,7 +125,7 @@ public partial class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartI
   {
     get
     {
-      if (_ChartStyleParts != null)
+      if (_ChartStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -208,7 +209,7 @@ public partial class ExtendedChartPartImpl: DocumentModel.Packaging.OpenXmlPartI
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

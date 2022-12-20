@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ControlImpl: ModelElementImpl, Control
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Control? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Control?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ControlImpl(): base() {}

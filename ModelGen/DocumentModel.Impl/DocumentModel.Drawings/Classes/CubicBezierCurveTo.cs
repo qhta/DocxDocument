@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CubicBezierCurveToImpl: ModelElementImpl, CubicBezierCurveTo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CubicBezierCurveToImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CubicBezierCurveToImpl: ModelElementImpl, CubicBezierCurveT
   {
     get
     {
-      if (_Points != null)
+      if (_Points == null)
       {
         if (OpenXmlElement != null)
         {

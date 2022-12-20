@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocumentVariables? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocumentVariables?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentVariablesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

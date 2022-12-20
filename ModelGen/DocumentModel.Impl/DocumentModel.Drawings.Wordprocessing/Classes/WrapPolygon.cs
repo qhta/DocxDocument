@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WrapPolygonImpl: ModelElementImpl, WrapPolygon
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WrapPolygonImpl(): base() {}

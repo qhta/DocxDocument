@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TabsImpl: ModelElementImpl, Tabs
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Tabs? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Tabs?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TabsImpl(): base() {}

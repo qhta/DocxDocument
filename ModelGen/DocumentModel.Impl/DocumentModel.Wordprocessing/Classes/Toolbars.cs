@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ToolbarsImpl: ModelElementImpl, Toolbars
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.Toolbars? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.Toolbars?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ToolbarsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ToolbarsImpl: ModelElementImpl, Toolbars
   {
     get
     {
-      if (_AllocatedCommandManifests != null)
+      if (_AllocatedCommandManifests == null)
       {
         if (OpenXmlElement != null)
         {
@@ -106,7 +107,7 @@ public partial class ToolbarsImpl: ModelElementImpl, Toolbars
   {
     get
     {
-      if (_ToolbarDatas != null)
+      if (_ToolbarDatas == null)
       {
         if (OpenXmlElement != null)
         {

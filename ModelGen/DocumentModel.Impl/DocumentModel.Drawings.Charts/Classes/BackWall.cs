@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BackWallImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, BackWall
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.BackWall? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BackWall?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackWallImpl(): base() {}

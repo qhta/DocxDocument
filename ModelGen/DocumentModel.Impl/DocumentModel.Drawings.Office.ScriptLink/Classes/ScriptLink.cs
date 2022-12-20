@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 /// </summary>
 public partial class ScriptLinkImpl: ModelElementImpl, ScriptLink
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ScriptLinkImpl(): base() {}

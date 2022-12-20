@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MultiLvlStrRefExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvl
   {
     get
     {
-      if (_MultiLvlStrRefExtensions != null)
+      if (_MultiLvlStrRefExtensions == null)
       {
         if (OpenXmlElement != null)
         {

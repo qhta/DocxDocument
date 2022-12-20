@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ThumbnailPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThumbnailPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ThumbnailPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ThumbnailPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThumbnailPartImpl(): base() {}

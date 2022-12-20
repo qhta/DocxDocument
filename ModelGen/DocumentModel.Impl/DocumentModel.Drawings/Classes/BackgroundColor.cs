@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, BackgroundColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.BackgroundColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BackgroundColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackgroundColorImpl(): base() {}

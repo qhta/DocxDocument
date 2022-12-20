@@ -1,9 +1,6 @@
 ﻿using System.CodeDom.Compiler;
-using System.Diagnostics;
 
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 using Namotion.Reflection;
 
@@ -73,8 +70,6 @@ public class ModelGenerator
 
   public bool GenerateTypeFile(TypeInfo typeInfo)
   {
-    //if (typeInfo.Name == "Rsids")
-    //  Debug.Assert(true);
     if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
     {
       if (typeInfo.TypeKind == TypeKind.Enum)
@@ -117,7 +112,7 @@ public class ModelGenerator
       writer.WriteLine();
     }
 
-    GenDocumentationComments(typeInfo, writer);
+    GenerateDocumentationComments(typeInfo, writer);
     GenerateCustomAttributes(typeInfo.CustomAttributes, writer);
 
     bool newOpenXmlElementProperty = true;
@@ -193,10 +188,11 @@ public class ModelGenerator
   private bool GenerateOpenXmlElementProperty(string origModelElementTypeName, bool newProperty, IndentedTextWriter writer)
   {
     var newPropertyStr = newProperty ? "new " : String.Empty;
+    writer.WriteLine($"[XmlIgnore]");
     writer.WriteLine($"public {newPropertyStr}{origModelElementTypeName}? OpenXmlElement");
     writer.WriteLine($"{{");
     writer.WriteLine($"  get => ({origModelElementTypeName}?)_OpenXmlElement;");
-    writer.WriteLine($"  set => _OpenXmlElement = value;");
+    writer.WriteLine($"  protected set => _OpenXmlElement = value;");
     writer.WriteLine($"}}");
     writer.WriteLine();
     return true;
@@ -320,7 +316,7 @@ public class ModelGenerator
     TrimNamespace(targetPropTypeName);
     var propTypeName = targetPropTypeName.ToString();
     string qm = /*(targetPropTypeName.Name.StartsWith("Nullable")) ? "" :*/ "?";
-    GenDocumentationComments(prop, writer);
+    GenerateDocumentationComments(prop, writer);
     GenerateCustomAttributes(prop.CustomAttributes, writer);
     if (kind == TypeKind.Interface)
     {
@@ -364,8 +360,8 @@ public class ModelGenerator
   {
     fieldName = null;
     propItemType = null;
-    if (prop.Name == "DataPart")
-      Debug.Assert(true);
+    //if (prop.Name == "DataPart")
+    //  Debug.Assert(true);
     if (prop.DeclaringType?.Name=="CoreProperties")
       return GenerateCorePropertiesPropAccessors(prop, targetPropType, writer);
     if (targetPropType.TypeKind == TypeKind.Enum)
@@ -1001,7 +997,7 @@ public class ModelGenerator
     string itemTypeName = TypeReflector.SingularizeName(propName);
     writer.WriteLine($"  get");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if ({fieldName} != null)");
+    writer.WriteLine($"    if ({fieldName} == null)");
     writer.WriteLine($"    {{");
     writer.WriteLine($"      if (OpenXmlElement != null)");
     writer.WriteLine($"      {{");
@@ -1066,7 +1062,7 @@ public class ModelGenerator
     string itemTypeName = TypeReflector.SingularizeName(propName);
     writer.WriteLine($"  get");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if ({fieldName} != null)");
+    writer.WriteLine($"    if ({fieldName} == null)");
     writer.WriteLine($"    {{");
     writer.WriteLine($"      if (OpenXmlElement != null)");
     writer.WriteLine($"      {{");
@@ -1131,7 +1127,7 @@ public class ModelGenerator
     var fieldName = "_" + propName;
     writer.WriteLine($"  get");
     writer.WriteLine($"  {{");
-    writer.WriteLine($"    if ({fieldName} != null)");
+    writer.WriteLine($"    if ({fieldName} == null)");
     writer.WriteLine($"    {{");
     writer.WriteLine($"      if (OpenXmlElement != null)");
     writer.WriteLine($"      {{");
@@ -1618,7 +1614,7 @@ public class ModelGenerator
       writer.WriteLine($"namespace {aNamespace};");
       writer.WriteLine();
     }
-    GenDocumentationComments(type, writer);
+    GenerateDocumentationComments(type, writer);
     GenerateCustomAttributes(type.CustomAttributes, writer);
     writer.WriteLine($"public enum {typeName}");
     writer.WriteLine("{");
@@ -1634,7 +1630,7 @@ public class ModelGenerator
 
   private bool GenerateEnum(EnumInfo field, IndentedTextWriter writer)
   {
-    bool addEmptyLine = GenDocumentationComments(field, writer);
+    bool addEmptyLine = GenerateDocumentationComments(field, writer);
     if (field.CustomAttributes != null)
     {
       GenerateCustomAttributes(field.CustomAttributes, writer);
@@ -1699,7 +1695,7 @@ public class ModelGenerator
 
   #region Documentation comments generation
 
-  private bool GenDocumentationComments(TypeInfo typeInfo, IndentedTextWriter writer)
+  private bool GenerateDocumentationComments(TypeInfo typeInfo, IndentedTextWriter writer)
   {
     var summary = typeInfo.Summary;
     if (summary != null)
@@ -1712,7 +1708,7 @@ public class ModelGenerator
     return false;
   }
 
-  private bool GenDocumentationComments(EnumInfo aField, IndentedTextWriter writer)
+  private bool GenerateDocumentationComments(EnumInfo aField, IndentedTextWriter writer)
   {
     var summary = aField.Summary;
     if (summary != null)
@@ -1725,7 +1721,7 @@ public class ModelGenerator
     return false;
   }
 
-  private bool GenDocumentationComments(PropInfo aProp, IndentedTextWriter writer)
+  private bool GenerateDocumentationComments(PropInfo aProp, IndentedTextWriter writer)
   {
     var summary = aProp.Summary;
     if (summary != null)
@@ -1757,6 +1753,7 @@ public class ModelGenerator
     var ok1 = GenerateGlobalUsings(Path.Combine(IntfOutputPath, "GlobalUsings.cs"));
     AddGlobalUsing("DocumentModel.Impl");
     AddGlobalUsing("DocumentModel.VariantTypes");
+    AddGlobalUsing("System.Xml.Serialization");
     var ok2 = GenerateGlobalUsings(Path.Combine(ImplOutputPath, "GlobalUsings.cs"));
     return ok1 && ok2;
   }

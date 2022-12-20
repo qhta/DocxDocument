@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class StrokeChildTypeImpl: ModelElementImpl, StrokeChildType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.StrokeChildType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.StrokeChildType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StrokeChildTypeImpl(): base() {}

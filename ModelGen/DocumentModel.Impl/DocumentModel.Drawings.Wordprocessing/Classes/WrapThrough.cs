@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WrapThroughImpl: ModelElementImpl, WrapThrough
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WrapThroughImpl(): base() {}

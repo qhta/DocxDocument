@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousParagraphPropertiesImpl: ModelElementImpl, PreviousParagraphProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreviousParagraphPropertiesImpl(): base() {}

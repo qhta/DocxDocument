@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PageSetupImpl: ModelElementImpl, PageSetup
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PageSetup? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PageSetup?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageSetupImpl(): base() {}

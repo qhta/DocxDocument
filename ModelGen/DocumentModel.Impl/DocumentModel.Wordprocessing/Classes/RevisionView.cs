@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RevisionViewImpl: ModelElementImpl, RevisionView
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.RevisionView? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.RevisionView?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RevisionViewImpl(): base() {}

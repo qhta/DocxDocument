@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DashStopImpl: ModelElementImpl, DashStop
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.DashStop? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.DashStop?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DashStopImpl(): base() {}

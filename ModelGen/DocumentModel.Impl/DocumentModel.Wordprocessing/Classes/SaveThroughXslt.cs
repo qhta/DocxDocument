@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SaveThroughXsltImpl: ModelElementImpl, SaveThroughXslt
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SaveThroughXsltImpl(): base() {}

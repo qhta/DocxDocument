@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RulesImpl: ModelElementImpl, Rules
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Rules? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Rules?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RulesImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class RulesImpl: ModelElementImpl, Rules
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DLblsExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class DLblsExtensionListImpl: ModelElementImpl, DLblsExtensionLis
   {
     get
     {
-      if (_DLblsExtensions != null)
+      if (_DLblsExtensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WorksheetSortMapPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetSortMapPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WorksheetSortMapPartImpl(): base() {}

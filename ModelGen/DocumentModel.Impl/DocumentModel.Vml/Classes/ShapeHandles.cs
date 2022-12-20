@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.ShapeHandles? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.ShapeHandles?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeHandlesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

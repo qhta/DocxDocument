@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ImagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ImagePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ImagePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ImagePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ImagePartImpl(): base() {}

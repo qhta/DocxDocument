@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public KeyMapCustomizationsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomiza
   {
     get
     {
-      if (_KeyMapEntries != null)
+      if (_KeyMapEntries == null)
       {
         if (OpenXmlElement != null)
         {

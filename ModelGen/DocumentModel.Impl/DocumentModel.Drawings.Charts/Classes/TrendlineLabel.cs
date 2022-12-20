@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class TrendlineLabelImpl: ModelElementImpl, TrendlineLabel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TrendlineLabelImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TabsImpl: ModelElementImpl, Tabs
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.Tabs? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.Tabs?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TabsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class TabsImpl: ModelElementImpl, Tabs
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

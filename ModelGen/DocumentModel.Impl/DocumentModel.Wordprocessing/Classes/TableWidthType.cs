@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableWidthTypeImpl: ModelElementImpl, TableWidthType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableWidthType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableWidthType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableWidthTypeImpl(): base() {}
