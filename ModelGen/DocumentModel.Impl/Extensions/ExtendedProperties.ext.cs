@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Properties;
+﻿using System.Diagnostics;
+
+namespace DocumentModel.Properties;
 
 public partial class ExtendedPropertiesImpl
 {
@@ -6,11 +8,13 @@ public partial class ExtendedPropertiesImpl
   {
     get
     {
-      var extendedProperties = typeof(ExtendedProperties).GetProperties();
+      var extendedProperties = typeof(ExtendedProperties).GetProperties().Where(item => item.Name!="Count");
       int extendedPropertiesCount = 0;
       foreach (var prop in extendedProperties)
         if (prop.GetValue(this, null) != null)
+        {
           extendedPropertiesCount++;
+        }
       return extendedPropertiesCount;
     }
   }

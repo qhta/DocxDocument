@@ -140,9 +140,9 @@ public partial interface ExtendedProperties
   /// </summary>
   public String? DocumentSecurity { get; set; }
   
-  /// <summary>
-  /// Gets the ExtendedFilePropertiesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ExtendedFilePropertiesPart? ExtendedFilePropertiesPart { get; set; }
+  ///// <summary>
+  ///// Gets the ExtendedFilePropertiesPart associated with this element.
+  ///// </summary>
+  //public DocumentModel.Packaging.ExtendedFilePropertiesPart? ExtendedFilePropertiesPart { get; set; }
   
 }

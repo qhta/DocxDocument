@@ -10,10 +10,10 @@ public partial class CustomDocumentPropertyImpl
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.Variant>();
+        var item = OpenXmlElement.FirstChild;
         if (item == null)
           return null;
-        var variantImpl = new VariantImpl(item);
+        var variantImpl = VariantImpl.CreateVariant(item);
         return variantImpl.Value;
       }
       return null;
@@ -35,4 +35,13 @@ public partial class CustomDocumentPropertyImpl
     //}
   }
 
+  public override string ToString()
+  {
+    var str = $"{Name} = {Value}";
+    if (FormatId != null && FormatId.Length > 0)
+      str += $", FormatId={FormatId}";
+    if (LinkTarget != null && LinkTarget.Length > 0)
+      str += $", LinkTarget={LinkTarget}";
+    return str;
+  }
 }

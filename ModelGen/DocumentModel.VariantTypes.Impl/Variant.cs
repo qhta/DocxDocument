@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+
 using DocumentModel.Impl;
 
 namespace DocumentModel.VariantTypes;
@@ -116,32 +119,32 @@ public class VariantImpl : ModelElementImpl, Variant
       return new VTSignedByteImpl { Value = vSByte };
 
     if (value is short vShort)
-      return new VTShortImpl{ Value = vShort};
+      return new VTShortImpl { Value = vShort };
     if (value is ushort vUShort)
-      return new VTUnsignedShortImpl{ Value = vUShort};
+      return new VTUnsignedShortImpl { Value = vUShort };
 
     if (value is Int32 vInt32)
-      return new VTInt32Impl{ Value = vInt32 };
+      return new VTInt32Impl { Value = vInt32 };
     if (value is UInt32 vUInt32)
       return new VTUnsignedInt32Impl { Value = vUInt32 };
 
     if (value is Int64 vInt64)
-      return new VTInt64Impl{ Value = vInt64 };
+      return new VTInt64Impl { Value = vInt64 };
     if (value is UInt64 vUInt64)
-      return new VTUnsignedInt64Impl{ Value = vUInt64 };
+      return new VTUnsignedInt64Impl { Value = vUInt64 };
 
     if (value is float vFloat)
-      return new VTFloatImpl{ Value = vFloat };
+      return new VTFloatImpl { Value = vFloat };
     if (value is Double vDouble)
-      return new VTDoubleImpl{ Value = vDouble };
+      return new VTDoubleImpl { Value = vDouble };
 
     if (value is Decimal vDecimal)
-      return new VTDecimalImpl{ Value = vDecimal };
+      return new VTDecimalImpl { Value = vDecimal };
 
     if (value is DateOnly vDate)
-      return new VTDateImpl{ Value = vDate };
+      return new VTDateImpl { Value = vDate };
     if (value is DateTime vFileTime)
-      return new VTDateTimeImpl{ Value = vFileTime };
+      return new VTDateTimeImpl { Value = vFileTime };
 
     if (value is DBNull)
       return new VTNullImpl();
@@ -149,12 +152,12 @@ public class VariantImpl : ModelElementImpl, Variant
       return new VTEmptyImpl();
 
     if (value is Guid vclassId)
-      return new VTClassIdImpl{ Value = vclassId };
+      return new VTClassIdImpl { Value = vclassId };
     //if (value is Error vError)
     //  return new VTErrorImpl{ Value = vError };
 
     if (value is byte[] vBlob)
-      return new VTBlobImpl{ Value = vBlob };
+      return new VTBlobImpl { Value = vBlob };
 
     //if (value is Storage vStorage)
     //  return new VTStorageImpl{ Value = vStorage };
@@ -172,7 +175,7 @@ public class VariantImpl : ModelElementImpl, Variant
     //if (value is ClipboardData vtClipboardData)
     //  return new VTClipboardDataImpl{ Value = vtClipboardData };
     if (value is object variant)
-      return new VariantImpl{ Value = variant };
+      return new VariantImpl { Value = variant };
 
     throw new InvalidOperationException($"Can't create variant for {value.GetType()} type");
 
@@ -270,8 +273,24 @@ public class VariantImpl : ModelElementImpl, Variant
 
   public virtual object? Value
   {
-    get; set;
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.FirstChild;
+        if (item != null)
+        {
+          _value = CreateVariant(item);
+        }
+      }
+      return _value;
+    }
+    set
+    {
+      _value = value;
+    }
   }
+  private object? _value;
 
   public virtual TypeCode GetTypeCode()
   {
@@ -409,4 +428,8 @@ public class VariantImpl : ModelElementImpl, Variant
     return Convert.ToUInt64(Value);
   }
 
+  public override string? ToString()
+  {
+    return Value?.ToString();
+  }
 }

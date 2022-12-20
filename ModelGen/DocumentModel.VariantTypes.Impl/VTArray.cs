@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using DocumentFormat.OpenXml.Drawing.Charts;
@@ -224,4 +225,13 @@ public class VTArrayImpl : VariantImpl, VTArray
     throw new InvalidOperationException("Can't convert Array variant to UInt64");
   }
 
+  public override string ToString()
+  {
+    var ss = new List<string?>();
+    var value = Value;
+    if (value is IEnumerable enumerable)
+      foreach (var item in enumerable)
+        ss.Add(item.ToString());
+    return "(" + String.Join(", ", ss) + ")";
+  }
 }
