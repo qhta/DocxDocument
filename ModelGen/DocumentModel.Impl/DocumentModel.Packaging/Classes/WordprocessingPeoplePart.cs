@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WordprocessingPeoplePart
 /// </summary>
-public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingPeoplePart
+public partial class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingPeoplePart
 {
   public new DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartIm
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -51,11 +46,6 @@ public class WordprocessingPeoplePartImpl: DocumentModel.Packaging.OpenXmlPartIm
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

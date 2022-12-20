@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Run Properties.
 /// </summary>
-public class RunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, RunProperties
+public partial class RunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, RunProperties
 {
   public new DocumentFormat.OpenXml.Drawing.RunProperties? OpenXmlElement
   {

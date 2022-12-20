@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MinorTickMarksTickMarks Class.
 /// </summary>
-public class MinorTickMarksTickMarksImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElementImpl, MinorTickMarksTickMarks
+public partial class MinorTickMarksTickMarksImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElementImpl, MinorTickMarksTickMarks
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinorTickMarksTickMarks? OpenXmlElement
   {

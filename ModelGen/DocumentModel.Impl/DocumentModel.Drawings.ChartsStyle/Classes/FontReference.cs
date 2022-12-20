@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the FontReference Class.
 /// </summary>
-public class FontReferenceImpl: ModelElementImpl, FontReference
+public partial class FontReferenceImpl: ModelElementImpl, FontReference
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? OpenXmlElement
   {

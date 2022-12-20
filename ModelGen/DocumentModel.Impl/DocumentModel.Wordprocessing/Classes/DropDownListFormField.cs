@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Drop-Down List Form Field Properties.
 /// </summary>
-public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
+public partial class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
 {
   public DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? OpenXmlElement
   {
@@ -112,7 +112,7 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
   }
   private ObservableCollection<System.String>? _ListEntryFormFields;
   
-  private void _ListEntryFormFields_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ListEntryFormFields_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -122,6 +122,7 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
           if (val is string str)
@@ -132,6 +133,7 @@ public class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
         if (val is string str)

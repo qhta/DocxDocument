@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Character Bullet.
 /// </summary>
-public class CharacterBulletImpl: ModelElementImpl, CharacterBullet
+public partial class CharacterBulletImpl: ModelElementImpl, CharacterBullet
 {
   public DocumentFormat.OpenXml.Drawing.CharacterBullet? OpenXmlElement
   {

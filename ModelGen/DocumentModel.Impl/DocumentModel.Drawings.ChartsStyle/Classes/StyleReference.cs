@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the StyleReference Class.
 /// </summary>
-public class StyleReferenceImpl: ModelElementImpl, StyleReference
+public partial class StyleReferenceImpl: ModelElementImpl, StyleReference
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? OpenXmlElement
   {

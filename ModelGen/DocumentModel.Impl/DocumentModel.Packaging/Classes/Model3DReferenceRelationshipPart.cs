@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the Model3DReferenceRelationshipPart
 /// </summary>
-public class Model3DReferenceRelationshipPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Model3DReferenceRelationshipPart
+public partial class Model3DReferenceRelationshipPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Model3DReferenceRelationshipPart
 {
   public new DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class Model3DReferenceRelationshipPartImpl: DocumentModel.Packaging.OpenX
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

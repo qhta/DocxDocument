@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Rich Text.
 /// </summary>
-public class RichTextImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, RichText
+public partial class RichTextImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, RichText
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.RichText? OpenXmlElement
   {

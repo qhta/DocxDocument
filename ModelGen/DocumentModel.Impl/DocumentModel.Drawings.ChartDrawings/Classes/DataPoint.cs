@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the DataPoint Class.
 /// </summary>
-public class DataPointImpl: ModelElementImpl, DataPoint
+public partial class DataPointImpl: ModelElementImpl, DataPoint
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataPoint? OpenXmlElement
   {

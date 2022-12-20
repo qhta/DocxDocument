@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// End Paragraph Run Properties.
 /// </summary>
-public class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, EndParagraphRunProperties
+public partial class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, EndParagraphRunProperties
 {
   public new DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties? OpenXmlElement
   {

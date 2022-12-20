@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FixedCommandKeyboardCustomization Class.
 /// </summary>
-public class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedCommandKeyboardCustomization
+public partial class FixedCommandKeyboardCustomizationImpl: ModelElementImpl, FixedCommandKeyboardCustomization
 {
   public DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? OpenXmlElement
   {

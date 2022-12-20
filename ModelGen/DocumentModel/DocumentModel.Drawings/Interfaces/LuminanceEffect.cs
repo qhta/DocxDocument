@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Luminance.
 /// </summary>
-public interface LuminanceEffect
+public partial interface LuminanceEffect
 {
   /// <summary>
   /// Brightness
   /// </summary>
-  public Int32? Brightness { get ; set; }
+  public Int32? Brightness { get; set; }
   
   /// <summary>
   /// Contrast
   /// </summary>
-  public Int32? Contrast { get ; set; }
+  public Int32? Contrast { get; set; }
   
 }

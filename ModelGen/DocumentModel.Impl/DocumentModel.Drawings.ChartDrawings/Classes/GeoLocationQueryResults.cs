@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoLocationQueryResults Class.
 /// </summary>
-public class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResults
+public partial class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResults
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResults? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResu
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResu
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResultImpl valImpl)
@@ -82,6 +83,7 @@ public class GeoLocationQueryResultsImpl: ModelElementImpl, GeoLocationQueryResu
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResultImpl valImpl)

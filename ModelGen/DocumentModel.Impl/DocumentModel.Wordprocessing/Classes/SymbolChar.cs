@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Symbol Character.
 /// </summary>
-public class SymbolCharImpl: ModelElementImpl, SymbolChar
+public partial class SymbolCharImpl: ModelElementImpl, SymbolChar
 {
   public DocumentFormat.OpenXml.Wordprocessing.SymbolChar? OpenXmlElement
   {

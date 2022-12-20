@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the VbaProjectPart
 /// </summary>
-public class VbaProjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaProjectPart
+public partial class VbaProjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaProjectPart
 {
   public new DocumentFormat.OpenXml.Packaging.VbaProjectPart? OpenXmlElement
   {
@@ -21,20 +21,23 @@ public class VbaProjectPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VbaPro
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.VbaProjectPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the VbaDataPart of the VbaProjectPart
+  /// </summary>
+  public DocumentModel.Packaging.VbaDataPart? VbaDataPart
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.VbaProjectPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.VbaDataPart != null)
+        return new DocumentModel.Packaging.VbaDataPartImpl(OpenXmlElement.VbaDataPart);
+      return null;
     }
   }
   

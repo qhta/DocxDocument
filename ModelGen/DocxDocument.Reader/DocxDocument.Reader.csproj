@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DocxReader.Base.cs" />
+    <Compile Remove="DocxReader.ReadRunProperties.cs" />
+    <Compile Remove="DocxReader.ReadSettings.cs" />
+    <Compile Remove="DocxReader.ReadStyles.cs" />
+    <Compile Remove="DocxReader.ReadTheme.cs" />
+    <Compile Remove="StringExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Encodings\Symbol.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Encodings\Webdings.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Encodings\Wingdings.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.Impl\DocumentModel.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
+  </ItemGroup>
+
+</Project>

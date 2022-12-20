@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MacroWllType Class.
 /// </summary>
-public class MacroWllTypeImpl: ModelElementImpl, MacroWllType
+public partial class MacroWllTypeImpl: ModelElementImpl, MacroWllType
 {
   public DocumentFormat.OpenXml.Office.Word.MacroWllType? OpenXmlElement
   {

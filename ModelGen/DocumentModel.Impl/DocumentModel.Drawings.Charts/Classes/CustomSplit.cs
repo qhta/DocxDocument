@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Custom Split.
 /// </summary>
-public class CustomSplitImpl: ModelElementImpl, CustomSplit
+public partial class CustomSplitImpl: ModelElementImpl, CustomSplit
 {
   public DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? OpenXmlElement
   {
@@ -57,7 +57,7 @@ public class CustomSplitImpl: ModelElementImpl, CustomSplit
   }
   private ObservableCollection<System.UInt32>? _SecondPiePoints;
   
-  private void _SecondPiePoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SecondPiePoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -67,6 +67,7 @@ public class CustomSplitImpl: ModelElementImpl, CustomSplit
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint { Val = (UInt32)val };
@@ -74,6 +75,7 @@ public class CustomSplitImpl: ModelElementImpl, CustomSplit
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint>()

@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Embedded Custom XML Schema Supplementary Data.
 /// </summary>
-public class SchemaLibraryImpl: ModelElementImpl, SchemaLibrary
+public partial class SchemaLibraryImpl: ModelElementImpl, SchemaLibrary
 {
   public DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class SchemaLibraryImpl: ModelElementImpl, SchemaLibrary
   }
   private ObservableCollection<DocumentModel.CustomXml.Schema>? _Schemas;
   
-  private void _Schemas_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Schemas_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class SchemaLibraryImpl: ModelElementImpl, SchemaLibrary
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.CustomXml.SchemaImpl valImpl)
@@ -82,6 +83,7 @@ public class SchemaLibraryImpl: ModelElementImpl, SchemaLibrary
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.CustomXml.SchemaImpl valImpl)

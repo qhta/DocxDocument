@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TablePositionProperties Class.
 /// </summary>
-public class TablePositionPropertiesImpl: ModelElementImpl, TablePositionProperties
+public partial class TablePositionPropertiesImpl: ModelElementImpl, TablePositionProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? OpenXmlElement
   {

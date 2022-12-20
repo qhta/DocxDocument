@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PivotSource Class.
 /// </summary>
-public class PivotSource3Impl: ModelElementImpl, PivotSource3
+public partial class PivotSource3Impl: ModelElementImpl, PivotSource3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource? OpenXmlElement
   {

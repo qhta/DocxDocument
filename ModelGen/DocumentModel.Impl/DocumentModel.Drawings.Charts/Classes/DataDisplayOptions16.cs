@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DataDisplayOptions16 Class.
 /// </summary>
-public class DataDisplayOptions16Impl: ModelElementImpl, DataDisplayOptions16
+public partial class DataDisplayOptions16Impl: ModelElementImpl, DataDisplayOptions16
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16? OpenXmlElement
   {

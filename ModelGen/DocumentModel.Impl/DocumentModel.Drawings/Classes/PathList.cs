@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List of Shape Paths.
 /// </summary>
-public class PathListImpl: ModelElementImpl, PathList
+public partial class PathListImpl: ModelElementImpl, PathList
 {
   public DocumentFormat.OpenXml.Drawing.PathList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PathListImpl: ModelElementImpl, PathList
   }
   private ObservableCollection<DocumentModel.Drawings.Path>? _Paths;
   
-  private void _Paths_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Paths_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PathListImpl: ModelElementImpl, PathList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Path>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.PathImpl valImpl)
@@ -82,6 +83,7 @@ public class PathListImpl: ModelElementImpl, PathList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.PathImpl valImpl)

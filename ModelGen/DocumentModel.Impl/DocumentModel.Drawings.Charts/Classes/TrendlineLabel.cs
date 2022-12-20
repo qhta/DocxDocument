@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Trendline Label.
 /// </summary>
-public class TrendlineLabelImpl: ModelElementImpl, TrendlineLabel
+public partial class TrendlineLabelImpl: ModelElementImpl, TrendlineLabel
 {
   public DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel? OpenXmlElement
   {

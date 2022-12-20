@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPhotocopy Class.
 /// </summary>
-public class ArtisticPhotocopyImpl: ModelElementImpl, ArtisticPhotocopy
+public partial class ArtisticPhotocopyImpl: ModelElementImpl, ArtisticPhotocopy
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? OpenXmlElement
   {

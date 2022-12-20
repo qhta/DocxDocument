@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Through Wrapping.
 /// </summary>
-public class WrapThroughImpl: ModelElementImpl, WrapThrough
+public partial class WrapThroughImpl: ModelElementImpl, WrapThrough
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? OpenXmlElement
   {

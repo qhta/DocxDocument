@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenScene3D Class.
 /// </summary>
-public class HiddenScene3DImpl: ModelElementImpl, HiddenScene3D
+public partial class HiddenScene3DImpl: ModelElementImpl, HiddenScene3D
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? OpenXmlElement
   {

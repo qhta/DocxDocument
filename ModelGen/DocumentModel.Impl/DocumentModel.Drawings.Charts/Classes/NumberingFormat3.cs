@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the NumberingFormat Class.
 /// </summary>
-public class NumberingFormat3Impl: ModelElementImpl, NumberingFormat3
+public partial class NumberingFormat3Impl: ModelElementImpl, NumberingFormat3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat? OpenXmlElement
   {

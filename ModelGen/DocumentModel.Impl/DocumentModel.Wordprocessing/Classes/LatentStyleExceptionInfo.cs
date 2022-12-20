@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Latent Style Exception.
 /// </summary>
-public class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptionInfo
+public partial class LatentStyleExceptionInfoImpl: ModelElementImpl, LatentStyleExceptionInfo
 {
   public DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? OpenXmlElement
   {

@@ -105,7 +105,7 @@ public class ModelCreator
     foreach (var typeInfo in TypeManager.AllTypes.ToArray())
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
-      if (!ModelManager.CheckPropertyOverrides(typeInfo))
+      if (!ModelManager.ValidateType(typeInfo))
         invalidTypesCount++;
     }
     //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
@@ -133,7 +133,7 @@ public class ModelCreator
     ModelDisplay.WriteLine("Renaming types");
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
-    var renamedCount = 0;
+    var renamedCount = ModelManager.RenameSpecificTypes();
     foreach (var type in TypeManager.AllTypes.ToArray())
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Category List.
 /// </summary>
-public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategories
+public partial class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategories
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategorie
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.StyleDisplayCategory>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategorie
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.StyleDisplayCategoryImpl valImpl)
@@ -82,6 +83,7 @@ public class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategorie
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.StyleDisplayCategoryImpl valImpl)

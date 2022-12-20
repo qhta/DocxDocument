@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Choose Element.
 /// </summary>
-public class ChooseImpl: ModelElementImpl, Choose
+public partial class ChooseImpl: ModelElementImpl, Choose
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Choose? OpenXmlElement
   {

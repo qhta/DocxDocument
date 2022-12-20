@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CameraTool Class.
 /// </summary>
-public interface CameraTool
+public partial interface CameraTool
 {
   /// <summary>
   /// cellRange, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? CellRange { get ; set; }
+  public String? CellRange { get; set; }
   
   /// <summary>
   /// spid, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public String? ShapeId { get; set; }
   
 }

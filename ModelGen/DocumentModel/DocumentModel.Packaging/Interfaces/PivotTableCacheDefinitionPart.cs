@@ -3,10 +3,15 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the PivotTableCacheDefinitionPart
 /// </summary>
-public interface PivotTableCacheDefinitionPart
+public partial interface PivotTableCacheDefinitionPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  /// <summary>
+  /// Gets the PivotTableCacheRecordsPart of the PivotTableCacheDefinitionPart
+  /// </summary>
+  public DocumentModel.Packaging.PivotTableCacheRecordsPart? PivotTableCacheRecordsPart { get; }
+  
+  public String? RelationshipType { get; }
   
 }

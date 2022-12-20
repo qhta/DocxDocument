@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset Color.
 /// </summary>
-public class PresetColorImpl: ModelElementImpl, PresetColor
+public partial class PresetColorImpl: ModelElementImpl, PresetColor
 {
   public DocumentFormat.OpenXml.Drawing.PresetColor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Shape Adjust List.
 /// </summary>
-public class AdjustListImpl: ModelElementImpl, AdjustList
+public partial class AdjustListImpl: ModelElementImpl, AdjustList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class AdjustListImpl: ModelElementImpl, AdjustList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Adjust>? _Adjusts;
   
-  private void _Adjusts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Adjusts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class AdjustListImpl: ModelElementImpl, AdjustList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.AdjustImpl valImpl)
@@ -82,6 +83,7 @@ public class AdjustListImpl: ModelElementImpl, AdjustList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.AdjustImpl valImpl)

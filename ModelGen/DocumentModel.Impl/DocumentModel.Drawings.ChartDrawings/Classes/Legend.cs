@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Legend Class.
 /// </summary>
-public class LegendImpl: ModelElementImpl, Legend
+public partial class LegendImpl: ModelElementImpl, Legend
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend? OpenXmlElement
   {

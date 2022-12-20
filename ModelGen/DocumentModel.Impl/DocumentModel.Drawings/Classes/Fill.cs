@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill.
 /// </summary>
-public class FillImpl: ModelElementImpl, Fill
+public partial class FillImpl: ModelElementImpl, Fill
 {
   public DocumentFormat.OpenXml.Drawing.Fill? OpenXmlElement
   {

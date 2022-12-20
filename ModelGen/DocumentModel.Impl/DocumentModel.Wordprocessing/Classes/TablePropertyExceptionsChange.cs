@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Revision Information for Table-Level Property Exceptions.
 /// </summary>
-public class TablePropertyExceptionsChangeImpl: ModelElementImpl, TablePropertyExceptionsChange
+public partial class TablePropertyExceptionsChangeImpl: ModelElementImpl, TablePropertyExceptionsChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange? OpenXmlElement
   {

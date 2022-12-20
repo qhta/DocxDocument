@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskHistoryEvent Class.
 /// </summary>
-public class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
+public partial class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent? OpenXmlElement
   {

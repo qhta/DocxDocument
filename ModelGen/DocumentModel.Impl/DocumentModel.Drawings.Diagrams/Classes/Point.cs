@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Point.
 /// </summary>
-public class PointImpl: ModelElementImpl, Point
+public partial class PointImpl: ModelElementImpl, Point
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Point? OpenXmlElement
   {

@@ -3,11 +3,11 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Single Formula.
 /// </summary>
-public interface Formula
+public partial interface Formula
 {
   /// <summary>
   /// Equation
   /// </summary>
-  public String? Equation { get ; set; }
+  public String? Equation { get; set; }
   
 }

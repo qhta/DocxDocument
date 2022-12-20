@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FitText Class.
 /// </summary>
-public class FitTextImpl: ModelElementImpl, FitText
+public partial class FitTextImpl: ModelElementImpl, FitText
 {
   public DocumentFormat.OpenXml.Wordprocessing.FitText? OpenXmlElement
   {

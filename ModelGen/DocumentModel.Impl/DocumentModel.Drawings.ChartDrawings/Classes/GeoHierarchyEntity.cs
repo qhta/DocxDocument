@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoHierarchyEntity Class.
 /// </summary>
-public class GeoHierarchyEntityImpl: ModelElementImpl, GeoHierarchyEntity
+public partial class GeoHierarchyEntityImpl: ModelElementImpl, GeoHierarchyEntity
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? OpenXmlElement
   {

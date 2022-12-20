@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BrightnessContrast Class.
 /// </summary>
-public class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
+public partial class BrightnessContrastImpl: ModelElementImpl, BrightnessContrast
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? OpenXmlElement
   {

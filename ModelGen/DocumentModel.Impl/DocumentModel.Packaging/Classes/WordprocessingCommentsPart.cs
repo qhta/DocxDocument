@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WordprocessingCommentsPart
 /// </summary>
-public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingCommentsPart
+public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingCommentsPart
 {
   public new DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart? OpenXmlElement
   {
@@ -39,33 +39,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _AlternativeFormatImportParts;
     }
-    set
-    {
-      if (value != null && value != _AlternativeFormatImportParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.AlternativeFormatImportPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.AlternativeFormatImportPart> observableCollection)
-        _AlternativeFormatImportParts = observableCollection;
-      else if (value != null)
-        _AlternativeFormatImportParts = new ObservableCollection<DocumentModel.Packaging.AlternativeFormatImportPart>(value);
-      else
-       _AlternativeFormatImportParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.AlternativeFormatImportPart>? _AlternativeFormatImportParts;
   
-  private void _AlternativeFormatImportParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AlternativeFormatImportParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -76,6 +53,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.AlternativeFormatImportPartImpl valImpl)
@@ -87,6 +65,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.AlternativeFormatImportPartImpl valImpl)
@@ -126,33 +105,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _ChartParts;
     }
-    set
-    {
-      if (value != null && value != _ChartParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ChartPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ChartPart> observableCollection)
-        _ChartParts = observableCollection;
-      else if (value != null)
-        _ChartParts = new ObservableCollection<DocumentModel.Packaging.ChartPart>(value);
-      else
-       _ChartParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ChartPart>? _ChartParts;
   
-  private void _ChartParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ChartParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -163,6 +119,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ChartPartImpl valImpl)
@@ -174,6 +131,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ChartPartImpl valImpl)
@@ -215,11 +173,6 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -243,33 +196,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _DiagramColorsParts;
     }
-    set
-    {
-      if (value != null && value != _DiagramColorsParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DiagramColorsPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DiagramColorsPart> observableCollection)
-        _DiagramColorsParts = observableCollection;
-      else if (value != null)
-        _DiagramColorsParts = new ObservableCollection<DocumentModel.Packaging.DiagramColorsPart>(value);
-      else
-       _DiagramColorsParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DiagramColorsPart>? _DiagramColorsParts;
   
-  private void _DiagramColorsParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramColorsParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -280,6 +210,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DiagramColorsPartImpl valImpl)
@@ -291,6 +222,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.DiagramColorsPartImpl valImpl)
@@ -330,33 +262,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _DiagramDataParts;
     }
-    set
-    {
-      if (value != null && value != _DiagramDataParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DiagramDataPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DiagramDataPart> observableCollection)
-        _DiagramDataParts = observableCollection;
-      else if (value != null)
-        _DiagramDataParts = new ObservableCollection<DocumentModel.Packaging.DiagramDataPart>(value);
-      else
-       _DiagramDataParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DiagramDataPart>? _DiagramDataParts;
   
-  private void _DiagramDataParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramDataParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -367,6 +276,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DiagramDataPartImpl valImpl)
@@ -378,6 +288,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.DiagramDataPartImpl valImpl)
@@ -417,33 +328,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _DiagramLayoutDefinitionParts;
     }
-    set
-    {
-      if (value != null && value != _DiagramLayoutDefinitionParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DiagramLayoutDefinitionPart> observableCollection)
-        _DiagramLayoutDefinitionParts = observableCollection;
-      else if (value != null)
-        _DiagramLayoutDefinitionParts = new ObservableCollection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>(value);
-      else
-       _DiagramLayoutDefinitionParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? _DiagramLayoutDefinitionParts;
   
-  private void _DiagramLayoutDefinitionParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramLayoutDefinitionParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -454,6 +342,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl valImpl)
@@ -465,6 +354,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl valImpl)
@@ -504,33 +394,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _DiagramPersistLayoutParts;
     }
-    set
-    {
-      if (value != null && value != _DiagramPersistLayoutParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DiagramPersistLayoutPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DiagramPersistLayoutPart> observableCollection)
-        _DiagramPersistLayoutParts = observableCollection;
-      else if (value != null)
-        _DiagramPersistLayoutParts = new ObservableCollection<DocumentModel.Packaging.DiagramPersistLayoutPart>(value);
-      else
-       _DiagramPersistLayoutParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DiagramPersistLayoutPart>? _DiagramPersistLayoutParts;
   
-  private void _DiagramPersistLayoutParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramPersistLayoutParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -541,6 +408,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DiagramPersistLayoutPartImpl valImpl)
@@ -552,6 +420,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.DiagramPersistLayoutPartImpl valImpl)
@@ -591,33 +460,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _DiagramStyleParts;
     }
-    set
-    {
-      if (value != null && value != _DiagramStyleParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DiagramStylePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DiagramStylePart> observableCollection)
-        _DiagramStyleParts = observableCollection;
-      else if (value != null)
-        _DiagramStyleParts = new ObservableCollection<DocumentModel.Packaging.DiagramStylePart>(value);
-      else
-       _DiagramStyleParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DiagramStylePart>? _DiagramStyleParts;
   
-  private void _DiagramStyleParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramStyleParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -628,6 +474,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DiagramStylePartImpl valImpl)
@@ -639,6 +486,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.DiagramStylePartImpl valImpl)
@@ -678,33 +526,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _EmbeddedControlPersistenceParts;
     }
-    set
-    {
-      if (value != null && value != _EmbeddedControlPersistenceParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.EmbeddedControlPersistencePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistencePart> observableCollection)
-        _EmbeddedControlPersistenceParts = observableCollection;
-      else if (value != null)
-        _EmbeddedControlPersistenceParts = new ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistencePart>(value);
-      else
-       _EmbeddedControlPersistenceParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.EmbeddedControlPersistencePart>? _EmbeddedControlPersistenceParts;
   
-  private void _EmbeddedControlPersistenceParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EmbeddedControlPersistenceParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -715,6 +540,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.EmbeddedControlPersistencePartImpl valImpl)
@@ -726,6 +552,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.EmbeddedControlPersistencePartImpl valImpl)
@@ -765,33 +592,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _EmbeddedObjectParts;
     }
-    set
-    {
-      if (value != null && value != _EmbeddedObjectParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.EmbeddedObjectPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.EmbeddedObjectPart> observableCollection)
-        _EmbeddedObjectParts = observableCollection;
-      else if (value != null)
-        _EmbeddedObjectParts = new ObservableCollection<DocumentModel.Packaging.EmbeddedObjectPart>(value);
-      else
-       _EmbeddedObjectParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.EmbeddedObjectPart>? _EmbeddedObjectParts;
   
-  private void _EmbeddedObjectParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EmbeddedObjectParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -802,6 +606,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.EmbeddedObjectPartImpl valImpl)
@@ -813,6 +618,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.EmbeddedObjectPartImpl valImpl)
@@ -852,33 +658,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _EmbeddedPackageParts;
     }
-    set
-    {
-      if (value != null && value != _EmbeddedPackageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.EmbeddedPackagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.EmbeddedPackagePart> observableCollection)
-        _EmbeddedPackageParts = observableCollection;
-      else if (value != null)
-        _EmbeddedPackageParts = new ObservableCollection<DocumentModel.Packaging.EmbeddedPackagePart>(value);
-      else
-       _EmbeddedPackageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.EmbeddedPackagePart>? _EmbeddedPackageParts;
   
-  private void _EmbeddedPackageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EmbeddedPackageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -889,6 +672,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.EmbeddedPackagePartImpl valImpl)
@@ -900,6 +684,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.EmbeddedPackagePartImpl valImpl)
@@ -939,33 +724,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _ExtendedChartParts;
     }
-    set
-    {
-      if (value != null && value != _ExtendedChartParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ExtendedChartPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ExtendedChartPart> observableCollection)
-        _ExtendedChartParts = observableCollection;
-      else if (value != null)
-        _ExtendedChartParts = new ObservableCollection<DocumentModel.Packaging.ExtendedChartPart>(value);
-      else
-       _ExtendedChartParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ExtendedChartPart>? _ExtendedChartParts;
   
-  private void _ExtendedChartParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ExtendedChartParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -976,6 +738,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ExtendedChartPartImpl valImpl)
@@ -987,6 +750,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ExtendedChartPartImpl valImpl)
@@ -1026,33 +790,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -1063,6 +804,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -1074,6 +816,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -1113,33 +856,10 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
       }
       return _Model3DReferenceRelationshipParts;
     }
-    set
-    {
-      if (value != null && value != _Model3DReferenceRelationshipParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.Model3DReferenceRelationshipPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> observableCollection)
-        _Model3DReferenceRelationshipParts = observableCollection;
-      else if (value != null)
-        _Model3DReferenceRelationshipParts = new ObservableCollection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>(value);
-      else
-       _Model3DReferenceRelationshipParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? _Model3DReferenceRelationshipParts;
   
-  private void _Model3DReferenceRelationshipParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Model3DReferenceRelationshipParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -1150,6 +870,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.Model3DReferenceRelationshipPartImpl valImpl)
@@ -1161,6 +882,7 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.Model3DReferenceRelationshipPartImpl valImpl)
@@ -1182,11 +904,6 @@ public class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPart
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

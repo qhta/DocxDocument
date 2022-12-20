@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ForegroundMark Class.
 /// </summary>
-public class ForegroundMarkImpl: ModelElementImpl, ForegroundMark
+public partial class ForegroundMarkImpl: ModelElementImpl, ForegroundMark
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Duotone Effect.
 /// </summary>
-public class DuotoneImpl: ModelElementImpl, Duotone
+public partial class DuotoneImpl: ModelElementImpl, Duotone
 {
   public DocumentFormat.OpenXml.Drawing.Duotone? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SphereCoordinates Class.
 /// </summary>
-public class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
+public partial class SphereCoordinatesImpl: ModelElementImpl, SphereCoordinates
 {
   public DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? OpenXmlElement
   {

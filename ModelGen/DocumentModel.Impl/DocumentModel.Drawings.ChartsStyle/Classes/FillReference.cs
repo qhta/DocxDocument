@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the FillReference Class.
 /// </summary>
-public class FillReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, FillReference
+public partial class FillReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, FillReference
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference? OpenXmlElement
   {

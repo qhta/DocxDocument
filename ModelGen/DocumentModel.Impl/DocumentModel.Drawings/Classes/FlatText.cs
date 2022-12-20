@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// No text in 3D scene.
 /// </summary>
-public class FlatTextImpl: ModelElementImpl, FlatText
+public partial class FlatTextImpl: ModelElementImpl, FlatText
 {
   public DocumentFormat.OpenXml.Drawing.FlatText? OpenXmlElement
   {

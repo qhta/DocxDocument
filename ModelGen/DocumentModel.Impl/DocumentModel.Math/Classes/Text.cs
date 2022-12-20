@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Text.
 /// </summary>
-public class TextImpl: ModelElementImpl, Text
+public partial class TextImpl: ModelElementImpl, Text
 {
   public DocumentFormat.OpenXml.Math.Text? OpenXmlElement
   {

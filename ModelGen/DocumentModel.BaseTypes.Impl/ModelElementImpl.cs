@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Impl;
+﻿namespace DocumentModel;
 
 public class ModelElementImpl: ModelElement
 {

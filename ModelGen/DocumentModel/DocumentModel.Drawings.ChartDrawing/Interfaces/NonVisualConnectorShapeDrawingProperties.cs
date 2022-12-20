@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Connector Non Visual Properties.
 /// </summary>
-public interface NonVisualConnectorShapeDrawingProperties
+public partial interface NonVisualConnectorShapeDrawingProperties
 {
   /// <summary>
   /// Chart Non Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? NonVisualDrawingProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   
   /// <summary>
   /// Non-Visual Connection Shape Drawing Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get; set; }
   
 }

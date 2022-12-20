@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Path Class.
 /// </summary>
-public class PathImpl: ModelElementImpl, Path
+public partial class PathImpl: ModelElementImpl, Path
 {
   public DocumentFormat.OpenXml.Vml.Path? OpenXmlElement
   {

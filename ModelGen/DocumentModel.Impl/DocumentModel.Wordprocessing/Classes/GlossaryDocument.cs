@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Glossary Document Root Element.
 /// </summary>
-public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
+public partial class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
 {
   public DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? OpenXmlElement
   {
@@ -79,6 +79,26 @@ public class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
             OpenXmlElement.AddChild(item);
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the GlossaryDocumentPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.GlossaryDocumentPart? GlossaryDocumentPart
+  {
+    get
+    {
+      if (OpenXmlElement?.GlossaryDocumentPart != null)
+        return new DocumentModel.Packaging.GlossaryDocumentPartImpl(OpenXmlElement.GlossaryDocumentPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.GlossaryDocumentPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

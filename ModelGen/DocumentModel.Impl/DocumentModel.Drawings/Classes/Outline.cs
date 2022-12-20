@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Outline Class.
 /// </summary>
-public class OutlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Outline
+public partial class OutlineImpl: DocumentModel.Drawings.LinePropertiesTypeImpl, Outline
 {
   public new DocumentFormat.OpenXml.Drawing.Outline? OpenXmlElement
   {

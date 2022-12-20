@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Default Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesDefaultImpl: ModelElementImpl, ParagraphPropertiesDefault
+public partial class ParagraphPropertiesDefaultImpl: ModelElementImpl, ParagraphPropertiesDefault
 {
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault? OpenXmlElement
   {

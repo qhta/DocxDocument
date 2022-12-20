@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Camera.
 /// </summary>
-public class CameraImpl: ModelElementImpl, Camera
+public partial class CameraImpl: ModelElementImpl, Camera
 {
   public DocumentFormat.OpenXml.Drawing.Camera? OpenXmlElement
   {

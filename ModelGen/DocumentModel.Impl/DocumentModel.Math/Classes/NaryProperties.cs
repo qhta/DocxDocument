@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// n-ary Properties.
 /// </summary>
-public class NaryPropertiesImpl: ModelElementImpl, NaryProperties
+public partial class NaryPropertiesImpl: ModelElementImpl, NaryProperties
 {
   public DocumentFormat.OpenXml.Math.NaryProperties? OpenXmlElement
   {

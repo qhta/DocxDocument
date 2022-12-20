@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ShapePropertiesExtension Class.
 /// </summary>
-public class ShapePropertiesExtensionImpl: ModelElementImpl, ShapePropertiesExtension
+public partial class ShapePropertiesExtensionImpl: ModelElementImpl, ShapePropertiesExtension
 {
   public DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension? OpenXmlElement
   {

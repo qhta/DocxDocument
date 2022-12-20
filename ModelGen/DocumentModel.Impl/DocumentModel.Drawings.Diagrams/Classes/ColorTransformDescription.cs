@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Description.
 /// </summary>
-public class ColorTransformDescriptionImpl: ModelElementImpl, ColorTransformDescription
+public partial class ColorTransformDescriptionImpl: ModelElementImpl, ColorTransformDescription
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription? OpenXmlElement
   {

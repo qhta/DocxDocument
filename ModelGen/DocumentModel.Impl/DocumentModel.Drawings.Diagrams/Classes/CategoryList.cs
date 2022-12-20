@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Category List.
 /// </summary>
-public class CategoryListImpl: ModelElementImpl, CategoryList
+public partial class CategoryListImpl: ModelElementImpl, CategoryList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class CategoryListImpl: ModelElementImpl, CategoryList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Category>? _Categories;
   
-  private void _Categories_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Categories_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class CategoryListImpl: ModelElementImpl, CategoryList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Category>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.CategoryImpl valImpl)
@@ -82,6 +83,7 @@ public class CategoryListImpl: ModelElementImpl, CategoryList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.CategoryImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoData Class.
 /// </summary>
-public class GeoDataImpl: ModelElementImpl, GeoData
+public partial class GeoDataImpl: ModelElementImpl, GeoData
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData? OpenXmlElement
   {

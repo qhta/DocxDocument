@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.SVG;
 /// <summary>
 /// Defines the SVGBlip Class.
 /// </summary>
-public class SVGBlipImpl: ModelElementImpl, SVGBlip
+public partial class SVGBlipImpl: ModelElementImpl, SVGBlip
 {
   public DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? OpenXmlElement
   {

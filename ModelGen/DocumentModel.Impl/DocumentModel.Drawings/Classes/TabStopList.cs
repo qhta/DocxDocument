@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tab List.
 /// </summary>
-public class TabStopListImpl: ModelElementImpl, TabStopList
+public partial class TabStopListImpl: ModelElementImpl, TabStopList
 {
   public DocumentFormat.OpenXml.Drawing.TabStopList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
   }
   private ObservableCollection<DocumentModel.Drawings.TabStop>? _TabStops;
   
-  private void _TabStops_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _TabStops_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.TabStop>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.TabStopImpl valImpl)
@@ -82,6 +83,7 @@ public class TabStopListImpl: ModelElementImpl, TabStopList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.TabStopImpl valImpl)

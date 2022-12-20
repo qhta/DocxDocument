@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Protection Class.
 /// </summary>
-public class ProtectionImpl: ModelElementImpl, Protection
+public partial class ProtectionImpl: ModelElementImpl, Protection
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Protection? OpenXmlElement
   {

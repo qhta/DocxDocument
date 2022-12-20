@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Variable List.
 /// </summary>
-public class VariableListImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, VariableList
+public partial class VariableListImpl: DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetTypeImpl, VariableList
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.VariableList? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the FormatOverrides Class.
 /// </summary>
-public class FormatOverridesImpl: ModelElementImpl, FormatOverrides
+public partial class FormatOverridesImpl: ModelElementImpl, FormatOverrides
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class FormatOverridesImpl: ModelElementImpl, FormatOverrides
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.FormatOverride>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class FormatOverridesImpl: ModelElementImpl, FormatOverrides
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.FormatOverrideImpl valImpl)
@@ -82,6 +83,7 @@ public class FormatOverridesImpl: ModelElementImpl, FormatOverrides
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.FormatOverrideImpl valImpl)

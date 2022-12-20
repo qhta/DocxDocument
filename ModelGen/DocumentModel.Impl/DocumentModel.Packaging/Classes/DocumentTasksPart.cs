@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DocumentTasksPart
 /// </summary>
-public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentTasksPart
+public partial class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentTasksPart
 {
   public new DocumentFormat.OpenXml.Packaging.DocumentTasksPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Doc
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DocumentTasksPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DocumentTasksPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>

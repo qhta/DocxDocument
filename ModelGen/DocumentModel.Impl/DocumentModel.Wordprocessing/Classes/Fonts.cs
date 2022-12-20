@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Font Table Root Element.
 /// </summary>
-public class FontsImpl: ModelElementImpl, Fonts
+public partial class FontsImpl: ModelElementImpl, Fonts
 {
   public DocumentFormat.OpenXml.Wordprocessing.Fonts? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class FontsImpl: ModelElementImpl, Fonts
   public FontsImpl(DocumentFormat.OpenXml.Wordprocessing.Fonts openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the FontTablePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.FontTablePart? FontTablePart
+  {
+    get
+    {
+      if (OpenXmlElement?.FontTablePart != null)
+        return new DocumentModel.Packaging.FontTablePartImpl(OpenXmlElement.FontTablePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.FontTablePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.Font>? Items
@@ -61,7 +81,7 @@ public class FontsImpl: ModelElementImpl, Fonts
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Font>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class FontsImpl: ModelElementImpl, Fonts
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Font>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.FontImpl valImpl)
@@ -82,6 +103,7 @@ public class FontsImpl: ModelElementImpl, Fonts
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.FontImpl valImpl)

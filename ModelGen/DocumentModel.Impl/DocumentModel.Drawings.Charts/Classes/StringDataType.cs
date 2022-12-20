@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StringDataType Class.
 /// </summary>
-public class StringDataTypeImpl: ModelElementImpl, StringDataType
+public partial class StringDataTypeImpl: ModelElementImpl, StringDataType
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StringDataType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredAreaSeries Class.
 /// </summary>
-public class FilteredAreaSeriesImpl: ModelElementImpl, FilteredAreaSeries
+public partial class FilteredAreaSeriesImpl: ModelElementImpl, FilteredAreaSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries? OpenXmlElement
   {

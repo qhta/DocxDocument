@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Bar Charts.
 /// </summary>
-public class BarChartImpl: ModelElementImpl, BarChart
+public partial class BarChartImpl: ModelElementImpl, BarChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BarChart? OpenXmlElement
   {
@@ -149,7 +149,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BarChartSeries>? _BarChartSerieses;
   
-  private void _BarChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BarChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -159,6 +159,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BarChartSeriesImpl valImpl)
@@ -170,6 +171,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BarChartSeriesImpl valImpl)
@@ -330,7 +332,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.SeriesLines>? _SeriesLineses;
   
-  private void _SeriesLineses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SeriesLineses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -340,6 +342,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.SeriesLinesImpl valImpl)
@@ -351,6 +354,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.SeriesLinesImpl valImpl)
@@ -408,7 +412,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -418,6 +422,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -425,6 +430,7 @@ public class BarChartImpl: ModelElementImpl, BarChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 /// Defines the NumberDiagramInfoList Class.
 /// </summary>
-public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
+public partial class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
 {
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo>? _NumberDiagramInfos;
   
-  private void _NumberDiagramInfos_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumberDiagramInfos_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)
@@ -82,6 +83,7 @@ public class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagram1.NumberDiagramInfoImpl valImpl)

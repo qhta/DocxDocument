@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PathShadeProperties Class.
 /// </summary>
-public class PathShadePropertiesImpl: ModelElementImpl, PathShadeProperties
+public partial class PathShadePropertiesImpl: ModelElementImpl, PathShadeProperties
 {
   public DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? OpenXmlElement
   {

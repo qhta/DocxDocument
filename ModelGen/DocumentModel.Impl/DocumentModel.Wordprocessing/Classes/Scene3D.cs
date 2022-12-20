@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Scene3D Class.
 /// </summary>
-public class Scene3DImpl: ModelElementImpl, Scene3D
+public partial class Scene3DImpl: ModelElementImpl, Scene3D
 {
   public DocumentFormat.OpenXml.Office2010.Word.Scene3D? OpenXmlElement
   {

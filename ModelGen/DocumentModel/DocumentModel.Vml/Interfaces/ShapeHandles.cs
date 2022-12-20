@@ -3,8 +3,8 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the ShapeHandles Class.
 /// </summary>
-public interface ShapeHandles
+public partial interface ShapeHandles
 {
-  public Collection<DocumentModel.Vml.ShapeHandle>? Items { get ; set; }
+  public Collection<DocumentModel.Vml.ShapeHandle>? Items { get; set; }
   
 }

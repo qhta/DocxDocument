@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableCellMarginDefault Class.
 /// </summary>
-public class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefault
+public partial class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefault
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? OpenXmlElement
   {

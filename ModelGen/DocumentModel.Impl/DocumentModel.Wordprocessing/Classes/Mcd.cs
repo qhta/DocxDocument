@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Mcd Class.
 /// </summary>
-public class McdImpl: ModelElementImpl, Mcd
+public partial class McdImpl: ModelElementImpl, Mcd
 {
   public DocumentFormat.OpenXml.Office.Word.Mcd? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Defines the Point2DType Class.
 /// </summary>
-public class Point2DTypeImpl: ModelElementImpl, Point2DType
+public partial class Point2DTypeImpl: ModelElementImpl, Point2DType
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? OpenXmlElement
   {

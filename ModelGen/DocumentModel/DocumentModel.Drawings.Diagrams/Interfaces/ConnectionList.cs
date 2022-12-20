@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Connection List.
 /// </summary>
-public interface ConnectionList
+public partial interface ConnectionList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Connection>? Connections { get ; set; }
+  public Collection<DocumentModel.Drawings.Diagrams.Connection>? Connections { get; set; }
   
 }

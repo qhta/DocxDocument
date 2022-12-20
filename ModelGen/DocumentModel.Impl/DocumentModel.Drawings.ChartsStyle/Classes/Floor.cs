@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the Floor Class.
 /// </summary>
-public class FloorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, Floor
+public partial class FloorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, Floor
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.Floor? OpenXmlElement
   {

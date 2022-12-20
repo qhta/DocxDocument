@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Diagram to Animate.
 /// </summary>
-public interface Diagram
+public partial interface Diagram
 {
   /// <summary>
   /// Identifier
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
   /// <summary>
   /// Animation Build Step
   /// </summary>
-  public DocumentModel.Drawings.DiagramBuildStepKind? BuildStep { get ; set; }
+  public DocumentModel.Drawings.DiagramBuildStepKind? BuildStep { get; set; }
   
 }

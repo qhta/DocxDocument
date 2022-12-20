@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticChalkSketch Class.
 /// </summary>
-public class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
+public partial class ArtisticChalkSketchImpl: ModelElementImpl, ArtisticChalkSketch
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch? OpenXmlElement
   {

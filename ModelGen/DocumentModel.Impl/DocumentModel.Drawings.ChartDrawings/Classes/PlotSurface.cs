@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the PlotSurface Class.
 /// </summary>
-public class PlotSurfaceImpl: ModelElementImpl, PlotSurface
+public partial class PlotSurfaceImpl: ModelElementImpl, PlotSurface
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotSurface? OpenXmlElement
   {

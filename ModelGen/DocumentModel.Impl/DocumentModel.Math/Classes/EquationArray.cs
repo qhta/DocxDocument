@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Equation-Array Function.
 /// </summary>
-public class EquationArrayImpl: ModelElementImpl, EquationArray
+public partial class EquationArrayImpl: ModelElementImpl, EquationArray
 {
   public DocumentFormat.OpenXml.Math.EquationArray? OpenXmlElement
   {
@@ -93,7 +93,7 @@ public class EquationArrayImpl: ModelElementImpl, EquationArray
   }
   private ObservableCollection<DocumentModel.Math.Base>? _Bases;
   
-  private void _Bases_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Bases_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -103,6 +103,7 @@ public class EquationArrayImpl: ModelElementImpl, EquationArray
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Math.BaseImpl valImpl)
@@ -114,6 +115,7 @@ public class EquationArrayImpl: ModelElementImpl, EquationArray
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Math.BaseImpl valImpl)

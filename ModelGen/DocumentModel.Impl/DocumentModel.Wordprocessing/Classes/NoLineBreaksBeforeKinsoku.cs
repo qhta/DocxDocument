@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Custom Set Of Characters Which Cannot Begin A Line.
 /// </summary>
-public class NoLineBreaksBeforeKinsokuImpl: ModelElementImpl, NoLineBreaksBeforeKinsoku
+public partial class NoLineBreaksBeforeKinsokuImpl: ModelElementImpl, NoLineBreaksBeforeKinsoku
 {
   public DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksBeforeKinsoku? OpenXmlElement
   {

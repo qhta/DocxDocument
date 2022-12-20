@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PieChartExtensionList Class.
 /// </summary>
-public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
+public partial class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PieChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.PieChartExtension>? _PieChartExtensions;
   
-  private void _PieChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _PieChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.PieChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class PieChartExtensionListImpl: ModelElementImpl, PieChartExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.PieChartExtensionImpl valImpl)

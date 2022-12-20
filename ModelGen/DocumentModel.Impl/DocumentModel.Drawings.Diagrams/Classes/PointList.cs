@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Point List.
 /// </summary>
-public class PointListImpl: ModelElementImpl, PointList
+public partial class PointListImpl: ModelElementImpl, PointList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.PointList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PointListImpl: ModelElementImpl, PointList
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Point>? _Points;
   
-  private void _Points_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Points_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PointListImpl: ModelElementImpl, PointList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Point>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.PointImpl valImpl)
@@ -82,6 +83,7 @@ public class PointListImpl: ModelElementImpl, PointList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.PointImpl valImpl)

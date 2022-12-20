@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the ImageData Class.
 /// </summary>
-public class ImageDataImpl: ModelElementImpl, ImageData
+public partial class ImageDataImpl: ModelElementImpl, ImageData
 {
   public DocumentFormat.OpenXml.Vml.ImageData? OpenXmlElement
   {

@@ -3,51 +3,51 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SurfaceChartSeries Class.
 /// </summary>
-public interface SurfaceChartSeries3
+public partial interface SurfaceChartSeries3
 {
   /// <summary>
   /// Index.
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public UInt32? Index { get; set; }
   
   /// <summary>
   /// Order.
   /// </summary>
-  public UInt32? Order { get ; set; }
+  public UInt32? Order { get; set; }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get ; set; }
+  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get ; set; }
+  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
   
   /// <summary>
   /// CategoryAxisData.
   /// </summary>
-  public DocumentModel.Drawings.Charts.CategoryAxisData? CategoryAxisData { get ; set; }
+  public DocumentModel.Drawings.Charts.CategoryAxisData? CategoryAxisData { get; set; }
   
   /// <summary>
   /// Values.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Values? Values { get ; set; }
+  public DocumentModel.Drawings.Charts.Values? Values { get; set; }
   
   /// <summary>
   /// Bubble3D.
   /// </summary>
-  public Boolean? Bubble3D { get ; set; }
+  public Boolean? Bubble3D { get; set; }
   
   /// <summary>
   /// SurfaceSerExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SurfaceSerExtensionList? SurfaceSerExtensionList { get ; set; }
+  public DocumentModel.Drawings.Charts.SurfaceSerExtensionList? SurfaceSerExtensionList { get; set; }
   
 }

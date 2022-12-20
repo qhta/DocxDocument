@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the TrendlineLabel Class.
 /// </summary>
-public class TrendlineLabelImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, TrendlineLabel
+public partial class TrendlineLabelImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, TrendlineLabel
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TrendlineLabel? OpenXmlElement
   {

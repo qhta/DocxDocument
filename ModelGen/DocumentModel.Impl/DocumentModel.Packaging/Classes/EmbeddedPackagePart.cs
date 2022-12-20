@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the EmbeddedPackagePart
 /// </summary>
-public class EmbeddedPackagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EmbeddedPackagePart
+public partial class EmbeddedPackagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EmbeddedPackagePart
 {
   public new DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class EmbeddedPackagePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, E
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

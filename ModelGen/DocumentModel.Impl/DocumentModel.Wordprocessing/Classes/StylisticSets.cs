@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the StylisticSets Class.
 /// </summary>
-public class StylisticSetsImpl: ModelElementImpl, StylisticSets
+public partial class StylisticSetsImpl: ModelElementImpl, StylisticSets
 {
   public DocumentFormat.OpenXml.Office2010.Word.StylisticSets? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class StylisticSetsImpl: ModelElementImpl, StylisticSets
   }
   private ObservableCollection<DocumentModel.Wordprocessing.StyleSet>? _StyleSets;
   
-  private void _StyleSets_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StyleSets_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class StylisticSetsImpl: ModelElementImpl, StylisticSets
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.StyleSet>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.StyleSetImpl valImpl)
@@ -82,6 +83,7 @@ public class StylisticSetsImpl: ModelElementImpl, StylisticSets
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.StyleSetImpl valImpl)

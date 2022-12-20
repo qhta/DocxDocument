@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Move Path To.
 /// </summary>
-public class MoveToImpl: ModelElementImpl, MoveTo
+public partial class MoveToImpl: ModelElementImpl, MoveTo
 {
   public DocumentFormat.OpenXml.Drawing.MoveTo? OpenXmlElement
   {

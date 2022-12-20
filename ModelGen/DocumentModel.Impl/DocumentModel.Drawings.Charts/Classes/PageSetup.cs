@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Page Setup.
 /// </summary>
-public class PageSetupImpl: ModelElementImpl, PageSetup
+public partial class PageSetupImpl: ModelElementImpl, PageSetup
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PageSetup? OpenXmlElement
   {

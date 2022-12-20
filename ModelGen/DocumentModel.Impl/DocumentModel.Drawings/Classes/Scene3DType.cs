@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// 3D Scene Properties.
 /// </summary>
-public class Scene3DTypeImpl: ModelElementImpl, Scene3DType
+public partial class Scene3DTypeImpl: ModelElementImpl, Scene3DType
 {
   public DocumentFormat.OpenXml.Drawing.Scene3DType? OpenXmlElement
   {

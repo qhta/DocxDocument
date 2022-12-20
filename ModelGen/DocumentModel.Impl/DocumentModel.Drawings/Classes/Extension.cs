@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Extension.
 /// </summary>
-public class ExtensionImpl: ModelElementImpl, Extension
+public partial class ExtensionImpl: ModelElementImpl, Extension
 {
   public DocumentFormat.OpenXml.Drawing.Extension? OpenXmlElement
   {

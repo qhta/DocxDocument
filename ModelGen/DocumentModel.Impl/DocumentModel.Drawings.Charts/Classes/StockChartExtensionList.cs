@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StockChartExtensionList Class.
 /// </summary>
-public class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionList
+public partial class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionL
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StockChartExtension>? _StockChartExtensions;
   
-  private void _StockChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StockChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StockChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StockChartExtensionImpl valImpl)

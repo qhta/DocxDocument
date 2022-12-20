@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the AltChunk Class.
 /// </summary>
-public class AltChunkImpl: ModelElementImpl, AltChunk
+public partial class AltChunkImpl: ModelElementImpl, AltChunk
 {
   public DocumentFormat.OpenXml.Wordprocessing.AltChunk? OpenXmlElement
   {

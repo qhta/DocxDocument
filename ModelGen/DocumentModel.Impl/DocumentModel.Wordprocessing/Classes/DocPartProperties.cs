@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Glossary Document Entry Properties.
 /// </summary>
-public class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
+public partial class DocPartPropertiesImpl: ModelElementImpl, DocPartProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? OpenXmlElement
   {

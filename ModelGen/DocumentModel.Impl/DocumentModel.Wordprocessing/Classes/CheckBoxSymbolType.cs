@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CheckBoxSymbolType Class.
 /// </summary>
-public class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
+public partial class CheckBoxSymbolTypeImpl: ModelElementImpl, CheckBoxSymbolType
 {
   public DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? OpenXmlElement
   {

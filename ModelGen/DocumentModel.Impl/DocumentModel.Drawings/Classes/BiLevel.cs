@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BiLevel Class.
 /// </summary>
-public class BiLevelImpl: ModelElementImpl, BiLevel
+public partial class BiLevelImpl: ModelElementImpl, BiLevel
 {
   public DocumentFormat.OpenXml.Drawing.BiLevel? OpenXmlElement
   {

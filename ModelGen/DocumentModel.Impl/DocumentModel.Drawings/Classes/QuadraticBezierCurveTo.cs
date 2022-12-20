@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Draw Quadratic Bezier Curve To.
 /// </summary>
-public class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveTo
+public partial class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveTo
 {
   public DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveT
   }
   private ObservableCollection<DocumentModel.Drawings.AdjustPoint2DType>? _Points;
   
-  private void _Points_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Points_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveT
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Point>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.AdjustPoint2DTypeImpl valImpl)
@@ -82,6 +83,7 @@ public class QuadraticBezierCurveToImpl: ModelElementImpl, QuadraticBezierCurveT
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.AdjustPoint2DTypeImpl valImpl)

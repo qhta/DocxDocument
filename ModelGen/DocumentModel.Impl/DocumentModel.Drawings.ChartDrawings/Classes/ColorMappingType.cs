@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ColorMappingType Class.
 /// </summary>
-public class ColorMappingTypeImpl: ModelElementImpl, ColorMappingType
+public partial class ColorMappingTypeImpl: ModelElementImpl, ColorMappingType
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ColorMappingType? OpenXmlElement
   {

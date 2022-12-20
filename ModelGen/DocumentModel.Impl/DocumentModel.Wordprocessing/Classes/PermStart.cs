@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PermStart Class.
 /// </summary>
-public class PermStartImpl: ModelElementImpl, PermStart
+public partial class PermStartImpl: ModelElementImpl, PermStart
 {
   public DocumentFormat.OpenXml.Wordprocessing.PermStart? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Pivot Format.
 /// </summary>
-public class PivotFormatImpl: ModelElementImpl, PivotFormat
+public partial class PivotFormatImpl: ModelElementImpl, PivotFormat
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PivotFormat? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableLook Class.
 /// </summary>
-public class TableLookImpl: ModelElementImpl, TableLook
+public partial class TableLookImpl: ModelElementImpl, TableLook
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableLook? OpenXmlElement
   {

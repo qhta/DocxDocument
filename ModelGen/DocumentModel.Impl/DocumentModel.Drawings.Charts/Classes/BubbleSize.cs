@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BubbleSize Class.
 /// </summary>
-public class BubbleSizeImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, BubbleSize
+public partial class BubbleSizeImpl: DocumentModel.Drawings.Charts.NumberDataSourceTypeImpl, BubbleSize
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.BubbleSize? OpenXmlElement
   {

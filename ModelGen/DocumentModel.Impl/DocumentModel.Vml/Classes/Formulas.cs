@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Formulas Class.
 /// </summary>
-public class FormulasImpl: ModelElementImpl, Formulas
+public partial class FormulasImpl: ModelElementImpl, Formulas
 {
   public DocumentFormat.OpenXml.Vml.Formulas? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class FormulasImpl: ModelElementImpl, Formulas
   }
   private ObservableCollection<DocumentModel.Vml.Formula>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class FormulasImpl: ModelElementImpl, Formulas
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Formula>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.FormulaImpl valImpl)
@@ -82,6 +83,7 @@ public class FormulasImpl: ModelElementImpl, Formulas
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.FormulaImpl valImpl)

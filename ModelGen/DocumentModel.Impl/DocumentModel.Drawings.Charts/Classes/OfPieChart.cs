@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Pie of Pie or Bar of Pie Charts.
 /// </summary>
-public class OfPieChartImpl: ModelElementImpl, OfPieChart
+public partial class OfPieChartImpl: ModelElementImpl, OfPieChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.OfPieChart? OpenXmlElement
   {
@@ -123,7 +123,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.PieChartSeries>? _PieChartSerieses;
   
-  private void _PieChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _PieChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -133,6 +133,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.PieChartSeriesImpl valImpl)
@@ -144,6 +145,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.PieChartSeriesImpl valImpl)
@@ -403,7 +405,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.SeriesLines>? _SeriesLineses;
   
-  private void _SeriesLineses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SeriesLineses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -413,6 +415,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.SeriesLinesImpl valImpl)
@@ -424,6 +427,7 @@ public class OfPieChartImpl: ModelElementImpl, OfPieChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.SeriesLinesImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MinValueColorEndPosition Class.
 /// </summary>
-public class MinValueColorEndPositionImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElementImpl, MinValueColorEndPosition
+public partial class MinValueColorEndPositionImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElementImpl, MinValueColorEndPosition
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition? OpenXmlElement
   {

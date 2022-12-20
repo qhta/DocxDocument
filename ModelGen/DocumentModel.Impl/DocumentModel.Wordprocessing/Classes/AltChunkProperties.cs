@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// External Content Import Properties.
 /// </summary>
-public class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
+public partial class AltChunkPropertiesImpl: ModelElementImpl, AltChunkProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties? OpenXmlElement
   {

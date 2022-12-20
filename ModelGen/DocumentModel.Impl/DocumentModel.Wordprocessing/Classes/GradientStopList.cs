@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the GradientStopList Class.
 /// </summary>
-public class GradientStopListImpl: ModelElementImpl, GradientStopList
+public partial class GradientStopListImpl: ModelElementImpl, GradientStopList
 {
   public DocumentFormat.OpenXml.Office2010.Word.GradientStopList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class GradientStopListImpl: ModelElementImpl, GradientStopList
   }
   private ObservableCollection<DocumentModel.Wordprocessing.GradientStop>? _GradientStops;
   
-  private void _GradientStops_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _GradientStops_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class GradientStopListImpl: ModelElementImpl, GradientStopList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.GradientStop>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.GradientStopImpl valImpl)
@@ -82,6 +83,7 @@ public class GradientStopListImpl: ModelElementImpl, GradientStopList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.GradientStopImpl valImpl)

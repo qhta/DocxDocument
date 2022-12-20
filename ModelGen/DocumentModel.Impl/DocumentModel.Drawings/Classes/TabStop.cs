@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tab Stop.
 /// </summary>
-public class TabStopImpl: ModelElementImpl, TabStop
+public partial class TabStopImpl: ModelElementImpl, TabStop
 {
   public DocumentFormat.OpenXml.Drawing.TabStop? OpenXmlElement
   {

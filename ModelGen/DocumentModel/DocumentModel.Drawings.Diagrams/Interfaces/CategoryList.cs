@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Category List.
 /// </summary>
-public interface CategoryList
+public partial interface CategoryList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Category>? Categories { get ; set; }
+  public Collection<DocumentModel.Drawings.Diagrams.Category>? Categories { get; set; }
   
 }

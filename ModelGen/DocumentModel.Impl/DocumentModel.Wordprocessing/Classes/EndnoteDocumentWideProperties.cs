@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document-Wide Endnote Properties.
 /// </summary>
-public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumentWideProperties
+public partial class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumentWideProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? OpenXmlElement
   {
@@ -171,7 +171,7 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
   }
   private ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? _EndnoteSpecialReferences;
   
-  private void _EndnoteSpecialReferences_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _EndnoteSpecialReferences_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -181,6 +181,7 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)
@@ -192,6 +193,7 @@ public class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumen
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)

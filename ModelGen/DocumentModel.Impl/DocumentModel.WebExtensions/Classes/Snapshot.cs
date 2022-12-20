@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the Snapshot Class.
 /// </summary>
-public class SnapshotImpl: ModelElementImpl, Snapshot
+public partial class SnapshotImpl: ModelElementImpl, Snapshot
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? OpenXmlElement
   {

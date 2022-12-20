@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Single Caption Type Definition.
 /// </summary>
-public class CaptionImpl: ModelElementImpl, Caption
+public partial class CaptionImpl: ModelElementImpl, Caption
 {
   public DocumentFormat.OpenXml.Wordprocessing.Caption? OpenXmlElement
   {

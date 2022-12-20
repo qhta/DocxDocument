@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageBorders Class.
 /// </summary>
-public class PageBordersImpl: ModelElementImpl, PageBorders
+public partial class PageBordersImpl: ModelElementImpl, PageBorders
 {
   public DocumentFormat.OpenXml.Wordprocessing.PageBorders? OpenXmlElement
   {

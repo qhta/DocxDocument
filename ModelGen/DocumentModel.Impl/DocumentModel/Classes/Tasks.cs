@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the Tasks Class.
 /// </summary>
-public class TasksImpl: ModelElementImpl, Tasks
+public partial class TasksImpl: ModelElementImpl, Tasks
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class TasksImpl: ModelElementImpl, Tasks
   public TasksImpl(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the DocumentTasksPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DocumentTasksPart? DocumentTasksPart
+  {
+    get
+    {
+      if (OpenXmlElement?.DocumentTasksPart != null)
+        return new DocumentModel.Packaging.DocumentTasksPartImpl(OpenXmlElement.DocumentTasksPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DocumentTasksPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Task>? Items
@@ -61,7 +81,7 @@ public class TasksImpl: ModelElementImpl, Tasks
   }
   private ObservableCollection<DocumentModel.Task>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class TasksImpl: ModelElementImpl, Tasks
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.DocumentTasks.Task>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.TaskImpl valImpl)
@@ -82,6 +103,7 @@ public class TasksImpl: ModelElementImpl, Tasks
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.TaskImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Legend Entry.
 /// </summary>
-public class LegendEntryImpl: ModelElementImpl, LegendEntry
+public partial class LegendEntryImpl: ModelElementImpl, LegendEntry
 {
   public DocumentFormat.OpenXml.Drawing.Charts.LegendEntry? OpenXmlElement
   {

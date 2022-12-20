@@ -3,16 +3,16 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Accent Properties.
 /// </summary>
-public interface AccentProperties
+public partial interface AccentProperties
 {
   /// <summary>
   /// Accent Character.
   /// </summary>
-  public String? AccentChar { get ; set; }
+  public String? AccentChar { get; set; }
   
   /// <summary>
   /// Control Properties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

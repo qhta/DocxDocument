@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Frameset Splitter Properties.
 /// </summary>
-public class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
+public partial class FramesetSplitbarImpl: ModelElementImpl, FramesetSplitbar
 {
   public DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? OpenXmlElement
   {

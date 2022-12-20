@@ -3,16 +3,16 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Fraction Properties.
 /// </summary>
-public interface FractionProperties
+public partial interface FractionProperties
 {
   /// <summary>
   /// Fraction type.
   /// </summary>
-  public DocumentModel.Math.FractionKind? FractionType { get ; set; }
+  public DocumentModel.Math.FractionKind? FractionType { get; set; }
   
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get ; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

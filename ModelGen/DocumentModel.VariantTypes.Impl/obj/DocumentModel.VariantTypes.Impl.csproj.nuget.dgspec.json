@@ -365,6 +365,9 @@
               },
               "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes\\DocumentModel.BaseTypes.csproj": {
                 "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes\\DocumentModel.BaseTypes.csproj"
+              },
+              "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.VariantTypes\\DocumentModel.VariantTypes.csproj": {
+                "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.VariantTypes\\DocumentModel.VariantTypes.csproj"
               }
             }
           }

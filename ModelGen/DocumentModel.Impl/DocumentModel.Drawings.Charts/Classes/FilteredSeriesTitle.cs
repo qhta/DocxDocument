@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredSeriesTitle Class.
 /// </summary>
-public class FilteredSeriesTitleImpl: ModelElementImpl, FilteredSeriesTitle
+public partial class FilteredSeriesTitleImpl: ModelElementImpl, FilteredSeriesTitle
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticGlowEdges Class.
 /// </summary>
-public class ArtisticGlowEdgesImpl: ModelElementImpl, ArtisticGlowEdges
+public partial class ArtisticGlowEdgesImpl: ModelElementImpl, ArtisticGlowEdges
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? OpenXmlElement
   {

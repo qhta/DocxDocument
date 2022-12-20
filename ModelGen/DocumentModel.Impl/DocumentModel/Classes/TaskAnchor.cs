@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskAnchor Class.
 /// </summary>
-public class TaskAnchorImpl: ModelElementImpl, TaskAnchor
+public partial class TaskAnchorImpl: ModelElementImpl, TaskAnchor
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? OpenXmlElement
   {

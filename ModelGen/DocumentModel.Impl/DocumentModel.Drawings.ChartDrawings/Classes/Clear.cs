@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Clear Class.
 /// </summary>
-public class ClearImpl: ModelElementImpl, Clear
+public partial class ClearImpl: ModelElementImpl, Clear
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear? OpenXmlElement
   {

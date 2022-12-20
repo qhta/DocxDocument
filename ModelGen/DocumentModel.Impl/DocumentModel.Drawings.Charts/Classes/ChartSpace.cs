@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Chart Space.
 /// </summary>
-public class ChartSpaceImpl: ModelElementImpl, ChartSpace
+public partial class ChartSpaceImpl: ModelElementImpl, ChartSpace
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? OpenXmlElement
   {
@@ -113,6 +113,26 @@ public class ChartSpaceImpl: ModelElementImpl, ChartSpace
           }
         }
       }
+    }
+  }
+  
+  /// <summary>
+  /// Gets the ChartPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.ChartPart? ChartPart
+  {
+    get
+    {
+      if (OpenXmlElement?.ChartPart != null)
+        return new DocumentModel.Packaging.ChartPartImpl(OpenXmlElement.ChartPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.ChartPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

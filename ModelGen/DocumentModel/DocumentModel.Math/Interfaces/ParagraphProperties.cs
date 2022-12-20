@@ -3,11 +3,11 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Office Math Paragraph Properties.
 /// </summary>
-public interface ParagraphProperties
+public partial interface ParagraphProperties
 {
   /// <summary>
   /// Justification.
   /// </summary>
-  public DocumentModel.Math.JustificationKind? Justification { get ; set; }
+  public DocumentModel.Math.JustificationKind? Justification { get; set; }
   
 }

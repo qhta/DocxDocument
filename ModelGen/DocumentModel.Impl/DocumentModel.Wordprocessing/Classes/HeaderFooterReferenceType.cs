@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the HeaderFooterReferenceType Class.
 /// </summary>
-public class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterReferenceType
+public partial class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterReferenceType
 {
   public DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? OpenXmlElement
   {

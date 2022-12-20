@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Paragraphs.
 /// </summary>
-public class ParagraphImpl: ModelElementImpl, Paragraph
+public partial class ParagraphImpl: ModelElementImpl, Paragraph
 {
   public DocumentFormat.OpenXml.Drawing.Paragraph? OpenXmlElement
   {

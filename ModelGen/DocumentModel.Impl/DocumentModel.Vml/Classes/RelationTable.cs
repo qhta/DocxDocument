@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Diagram Relationship Table.
 /// </summary>
-public class RelationTableImpl: ModelElementImpl, RelationTable
+public partial class RelationTableImpl: ModelElementImpl, RelationTable
 {
   public DocumentFormat.OpenXml.Vml.Office.RelationTable? OpenXmlElement
   {
@@ -74,7 +74,7 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
   }
   private ObservableCollection<DocumentModel.Vml.Relation>? _Relations;
   
-  private void _Relations_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Relations_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -84,6 +84,7 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.RelationImpl valImpl)
@@ -95,6 +96,7 @@ public class RelationTableImpl: ModelElementImpl, RelationTable
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.RelationImpl valImpl)

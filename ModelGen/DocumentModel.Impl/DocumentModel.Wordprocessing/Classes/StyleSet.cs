@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the StyleSet Class.
 /// </summary>
-public class StyleSetImpl: ModelElementImpl, StyleSet
+public partial class StyleSetImpl: ModelElementImpl, StyleSet
 {
   public DocumentFormat.OpenXml.Office2010.Word.StyleSet? OpenXmlElement
   {

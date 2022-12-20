@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Override Color Mapping.
 /// </summary>
-public class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingTypeImpl, OverrideColorMapping
+public partial class OverrideColorMappingImpl: DocumentModel.Drawings.ColorMappingTypeImpl, OverrideColorMapping
 {
   public new DocumentFormat.OpenXml.Drawing.OverrideColorMapping? OpenXmlElement
   {

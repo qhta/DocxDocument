@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ConnectorLockingExtensionList Class.
 /// </summary>
-public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLockingExtensionList
+public partial class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLockingExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
   }
   private ObservableCollection<DocumentModel.Drawings.ConnectorLockingExtension>? _ConnectorLockingExtensions;
   
-  private void _ConnectorLockingExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ConnectorLockingExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ConnectorLockingExtensionListImpl: ModelElementImpl, ConnectorLocki
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ConnectorLockingExtensionImpl valImpl)

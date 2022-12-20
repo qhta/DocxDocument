@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Shape Properties.
 /// </summary>
-public class ShapePropertiesImpl: ModelElementImpl, ShapeProperties
+public partial class ShapePropertiesImpl: ModelElementImpl, ShapeProperties
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties? OpenXmlElement
   {

@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Shape Default.
 /// </summary>
-public interface ShapeDefault
+public partial interface ShapeDefault
 {
-  public DocumentModel.Drawings.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get ; set; }
+  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
   
-  public DocumentModel.Drawings.ListStyle? ListStyle { get ; set; }
+  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
   
-  public DocumentModel.Drawings.ShapeStyle? ShapeStyle { get ; set; }
+  public DocumentModel.Drawings.ShapeStyle? ShapeStyle { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

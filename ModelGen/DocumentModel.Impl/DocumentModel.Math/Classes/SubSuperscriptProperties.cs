@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Sub-Superscript Properties.
 /// </summary>
-public class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptProperties
+public partial class SubSuperscriptPropertiesImpl: ModelElementImpl, SubSuperscriptProperties
 {
   public DocumentFormat.OpenXml.Math.SubSuperscriptProperties? OpenXmlElement
   {

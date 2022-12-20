@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Multiple Path Line.
 /// </summary>
-public class PolyLineImpl: ModelElementImpl, PolyLine
+public partial class PolyLineImpl: ModelElementImpl, PolyLine
 {
   public DocumentFormat.OpenXml.Vml.PolyLine? OpenXmlElement
   {

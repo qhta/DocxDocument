@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the ColorStyleVariation Class.
 /// </summary>
-public class ColorStyleVariationImpl: ModelElementImpl, ColorStyleVariation
+public partial class ColorStyleVariationImpl: ModelElementImpl, ColorStyleVariation
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyleVariation? OpenXmlElement
   {

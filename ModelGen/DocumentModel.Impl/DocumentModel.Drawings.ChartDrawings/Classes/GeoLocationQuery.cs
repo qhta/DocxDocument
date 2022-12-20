@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoLocationQuery Class.
 /// </summary>
-public class GeoLocationQueryImpl: ModelElementImpl, GeoLocationQuery
+public partial class GeoLocationQueryImpl: ModelElementImpl, GeoLocationQuery
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? OpenXmlElement
   {

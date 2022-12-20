@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the DeletedMathControl Class.
 /// </summary>
-public class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
+public partial class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
 {
   public DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? OpenXmlElement
   {

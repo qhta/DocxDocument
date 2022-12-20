@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Linear Gradient Fill.
 /// </summary>
-public interface LinearGradientFill
+public partial interface LinearGradientFill
 {
   /// <summary>
   /// Angle
   /// </summary>
-  public Int32? Angle { get ; set; }
+  public Int32? Angle { get; set; }
   
   /// <summary>
   /// Scaled
   /// </summary>
-  public Boolean? Scaled { get ; set; }
+  public Boolean? Scaled { get; set; }
   
 }

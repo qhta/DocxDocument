@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Header and Footer.
 /// </summary>
-public class HeaderFooterImpl: ModelElementImpl, HeaderFooter
+public partial class HeaderFooterImpl: ModelElementImpl, HeaderFooter
 {
   public DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? OpenXmlElement
   {

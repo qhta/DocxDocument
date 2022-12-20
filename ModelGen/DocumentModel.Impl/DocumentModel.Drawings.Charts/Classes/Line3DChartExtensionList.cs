@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Line3DChartExtensionList Class.
 /// </summary>
-public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensionList
+public partial class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Line3DChartExtension>? _Line3DChartExtensions;
   
-  private void _Line3DChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Line3DChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensio
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.Line3DChartExtensionImpl valImpl)

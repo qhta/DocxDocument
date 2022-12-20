@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the MarkupType Class.
 /// </summary>
-public class MarkupType2Impl: ModelElementImpl, MarkupType2
+public partial class MarkupType2Impl: ModelElementImpl, MarkupType2
 {
   public DocumentFormat.OpenXml.Office2010.Word.MarkupType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Polar Adjust Handle.
 /// </summary>
-public class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
+public partial class AdjustHandlePolarImpl: ModelElementImpl, AdjustHandlePolar
 {
   public DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Inverse Effect.
 /// </summary>
-public class AlphaInverseImpl: ModelElementImpl, AlphaInverse
+public partial class AlphaInverseImpl: ModelElementImpl, AlphaInverse
 {
   public DocumentFormat.OpenXml.Drawing.AlphaInverse? OpenXmlElement
   {

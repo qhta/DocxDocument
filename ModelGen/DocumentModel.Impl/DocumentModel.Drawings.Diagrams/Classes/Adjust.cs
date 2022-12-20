@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Shape Adjust.
 /// </summary>
-public class AdjustImpl: ModelElementImpl, Adjust
+public partial class AdjustImpl: ModelElementImpl, Adjust
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Adjust? OpenXmlElement
   {

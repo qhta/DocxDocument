@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Data Model.
 /// </summary>
-public class DataModelImpl: ModelElementImpl, DataModel
+public partial class DataModelImpl: ModelElementImpl, DataModel
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DataModel? OpenXmlElement
   {

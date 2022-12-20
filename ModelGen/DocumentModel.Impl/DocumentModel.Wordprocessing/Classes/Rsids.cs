@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Listing of All Revision Save ID Values.
 /// </summary>
-public class RsidsImpl: ModelElementImpl, Rsids
+public partial class RsidsImpl: ModelElementImpl, Rsids
 {
   public DocumentFormat.OpenXml.Wordprocessing.Rsids? OpenXmlElement
   {
@@ -83,7 +83,7 @@ public class RsidsImpl: ModelElementImpl, Rsids
   }
   private ObservableCollection<DocumentModel.HexWord>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -93,6 +93,7 @@ public class RsidsImpl: ModelElementImpl, Rsids
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Wordprocessing.Rsid { Val = (string?)val };
@@ -100,6 +101,7 @@ public class RsidsImpl: ModelElementImpl, Rsids
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Rsid>()

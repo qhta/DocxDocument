@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Light Rig.
 /// </summary>
-public class LightRigImpl: ModelElementImpl, LightRig
+public partial class LightRigImpl: ModelElementImpl, LightRig
 {
   public DocumentFormat.OpenXml.Drawing.LightRig? OpenXmlElement
   {

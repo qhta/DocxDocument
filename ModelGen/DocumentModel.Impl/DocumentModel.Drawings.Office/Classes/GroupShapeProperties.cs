@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the GroupShapeProperties Class.
 /// </summary>
-public class GroupShapePropertiesImpl: ModelElementImpl, GroupShapeProperties
+public partial class GroupShapePropertiesImpl: ModelElementImpl, GroupShapeProperties
 {
   public DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Defines the Run Class.
 /// </summary>
-public class RunImpl: ModelElementImpl, Run
+public partial class RunImpl: ModelElementImpl, Run
 {
   public DocumentFormat.OpenXml.Math.Run? OpenXmlElement
   {

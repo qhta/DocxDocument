@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Equation Array Properties.
 /// </summary>
-public class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayProperties
+public partial class EquationArrayPropertiesImpl: ModelElementImpl, EquationArrayProperties
 {
   public DocumentFormat.OpenXml.Math.EquationArrayProperties? OpenXmlElement
   {

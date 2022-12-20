@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Complex Field Character.
 /// </summary>
-public class FieldCharImpl: ModelElementImpl, FieldChar
+public partial class FieldCharImpl: ModelElementImpl, FieldChar
 {
   public DocumentFormat.OpenXml.Wordprocessing.FieldChar? OpenXmlElement
   {

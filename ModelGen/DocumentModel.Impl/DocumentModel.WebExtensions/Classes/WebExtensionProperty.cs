@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionProperty Class.
 /// </summary>
-public class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
+public partial class WebExtensionPropertyImpl: ModelElementImpl, WebExtensionProperty
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty? OpenXmlElement
   {

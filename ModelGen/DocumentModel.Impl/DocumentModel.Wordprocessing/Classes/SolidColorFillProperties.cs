@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SolidColorFillProperties Class.
 /// </summary>
-public class SolidColorFillPropertiesImpl: ModelElementImpl, SolidColorFillProperties
+public partial class SolidColorFillPropertiesImpl: ModelElementImpl, SolidColorFillProperties
 {
   public DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties? OpenXmlElement
   {

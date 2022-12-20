@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Number Literal.
 /// </summary>
-public class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberLiteral
+public partial class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl, NumberLiteral
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? OpenXmlElement
   {
@@ -131,7 +131,7 @@ public class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.NumericPoint>? _NumericPoints;
   
-  private void _NumericPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _NumericPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -141,6 +141,7 @@ public class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)
@@ -152,6 +153,7 @@ public class NumberLiteralImpl: DocumentModel.Drawings.Charts.NumberDataTypeImpl
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.NumericPointImpl valImpl)

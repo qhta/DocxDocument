@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ToolbarData Class.
 /// </summary>
-public class ToolbarDataImpl: ModelElementImpl, ToolbarData
+public partial class ToolbarDataImpl: ModelElementImpl, ToolbarData
 {
   public DocumentFormat.OpenXml.Office.Word.ToolbarData? OpenXmlElement
   {

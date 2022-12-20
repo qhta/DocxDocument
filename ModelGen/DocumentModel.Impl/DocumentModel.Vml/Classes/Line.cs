@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Line.
 /// </summary>
-public class LineImpl: ModelElementImpl, Line
+public partial class LineImpl: ModelElementImpl, Line
 {
   public DocumentFormat.OpenXml.Vml.Line? OpenXmlElement
   {

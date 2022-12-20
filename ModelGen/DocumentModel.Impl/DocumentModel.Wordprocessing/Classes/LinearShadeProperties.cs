@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LinearShadeProperties Class.
 /// </summary>
-public class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
+public partial class LinearShadePropertiesImpl: ModelElementImpl, LinearShadeProperties
 {
   public DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Shading Class.
 /// </summary>
-public class ShadingImpl: ModelElementImpl, Shading
+public partial class ShadingImpl: ModelElementImpl, Shading
 {
   public DocumentFormat.OpenXml.Wordprocessing.Shading? OpenXmlElement
   {

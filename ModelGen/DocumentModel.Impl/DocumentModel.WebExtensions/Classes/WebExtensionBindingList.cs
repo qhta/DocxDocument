@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionBindingList Class.
 /// </summary>
-public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingList
+public partial class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingList
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
   }
   private ObservableCollection<DocumentModel.WebExtensions.WebExtensionBinding>? _WebExtensionBindings;
   
-  private void _WebExtensionBindings_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _WebExtensionBindings_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)
@@ -82,6 +83,7 @@ public class WebExtensionBindingListImpl: ModelElementImpl, WebExtensionBindingL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.WebExtensions.WebExtensionBindingImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPencilGrayscale Class.
 /// </summary>
-public class ArtisticPencilGrayscaleImpl: ModelElementImpl, ArtisticPencilGrayscale
+public partial class ArtisticPencilGrayscaleImpl: ModelElementImpl, ArtisticPencilGrayscale
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale? OpenXmlElement
   {

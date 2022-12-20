@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Reference.
 /// </summary>
-public class ProxyImpl: ModelElementImpl, Proxy
+public partial class ProxyImpl: ModelElementImpl, Proxy
 {
   public DocumentFormat.OpenXml.Vml.Office.Proxy? OpenXmlElement
   {

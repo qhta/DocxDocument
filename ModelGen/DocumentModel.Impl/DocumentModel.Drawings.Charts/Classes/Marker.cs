@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Marker.
 /// </summary>
-public class MarkerImpl: ModelElementImpl, Marker
+public partial class MarkerImpl: ModelElementImpl, Marker
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Marker? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPencilSketch Class.
 /// </summary>
-public class ArtisticPencilSketchImpl: ModelElementImpl, ArtisticPencilSketch
+public partial class ArtisticPencilSketchImpl: ModelElementImpl, ArtisticPencilSketch
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch? OpenXmlElement
   {

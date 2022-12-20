@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Minor fonts.
 /// </summary>
-public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, MinorFont
+public partial class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, MinorFont
 {
   public new DocumentFormat.OpenXml.Drawing.MinorFont? OpenXmlElement
   {
@@ -148,7 +148,7 @@ public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, Minor
   }
   private ObservableCollection<DocumentModel.Drawings.SupplementalFont>? _SupplementalFonts;
   
-  private void _SupplementalFonts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SupplementalFonts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -158,6 +158,7 @@ public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, Minor
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.SupplementalFont>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.SupplementalFontImpl valImpl)
@@ -169,6 +170,7 @@ public class MinorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, Minor
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.SupplementalFontImpl valImpl)

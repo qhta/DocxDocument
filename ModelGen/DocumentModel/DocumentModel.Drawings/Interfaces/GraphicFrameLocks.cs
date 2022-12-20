@@ -3,41 +3,41 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Frame Locks.
 /// </summary>
-public interface GraphicFrameLocks
+public partial interface GraphicFrameLocks
 {
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get ; set; }
+  public Boolean? NoGrouping { get; set; }
   
   /// <summary>
   /// Disallow Selection of Child Shapes
   /// </summary>
-  public Boolean? NoDrilldown { get ; set; }
+  public Boolean? NoDrilldown { get; set; }
   
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get ; set; }
+  public Boolean? NoSelection { get; set; }
   
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get ; set; }
+  public Boolean? NoChangeAspect { get; set; }
   
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get ; set; }
+  public Boolean? NoMove { get; set; }
   
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get ; set; }
+  public Boolean? NoResize { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

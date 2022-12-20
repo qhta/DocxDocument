@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Footnote Numbering Format.
 /// </summary>
-public class NumberingFormatImpl: ModelElementImpl, NumberingFormat
+public partial class NumberingFormatImpl: ModelElementImpl, NumberingFormat
 {
   public DocumentFormat.OpenXml.Wordprocessing.NumberingFormat? OpenXmlElement
   {

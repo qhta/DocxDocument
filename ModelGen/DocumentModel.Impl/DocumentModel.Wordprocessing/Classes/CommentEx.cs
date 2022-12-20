@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CommentEx Class.
 /// </summary>
-public class CommentExImpl: ModelElementImpl, CommentEx
+public partial class CommentExImpl: ModelElementImpl, CommentEx
 {
   public DocumentFormat.OpenXml.Office2013.Word.CommentEx? OpenXmlElement
   {

@@ -3,13 +3,13 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LineChartExtension Class.
 /// </summary>
-public interface LineChartExtension
+public partial interface LineChartExtension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
   
 }

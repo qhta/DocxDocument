@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the BevelType Class.
 /// </summary>
-public class BevelTypeImpl: ModelElementImpl, BevelType
+public partial class BevelTypeImpl: ModelElementImpl, BevelType
 {
   public DocumentFormat.OpenXml.Office2010.Word.BevelType? OpenXmlElement
   {

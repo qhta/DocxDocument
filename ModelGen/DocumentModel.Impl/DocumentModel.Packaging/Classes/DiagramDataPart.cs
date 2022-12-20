@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the DiagramDataPart
 /// </summary>
-public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramDataPart
+public partial class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramDataPart
 {
   public new DocumentFormat.OpenXml.Packaging.DiagramDataPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DiagramDataPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -69,33 +64,10 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -106,6 +78,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -117,6 +90,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -138,11 +112,6 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.DiagramDataPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -166,33 +135,10 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
       }
       return _SlideParts;
     }
-    set
-    {
-      if (value != null && value != _SlideParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlidePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.SlidePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.SlidePart> observableCollection)
-        _SlideParts = observableCollection;
-      else if (value != null)
-        _SlideParts = new ObservableCollection<DocumentModel.Packaging.SlidePart>(value);
-      else
-       _SlideParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.SlidePart>? _SlideParts;
   
-  private void _SlideParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SlideParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -203,6 +149,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.SlidePartImpl valImpl)
@@ -214,6 +161,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.SlidePartImpl valImpl)
@@ -253,33 +201,10 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
       }
       return _WorksheetParts;
     }
-    set
-    {
-      if (value != null && value != _WorksheetParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WorksheetPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.WorksheetPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.WorksheetPart> observableCollection)
-        _WorksheetParts = observableCollection;
-      else if (value != null)
-        _WorksheetParts = new ObservableCollection<DocumentModel.Packaging.WorksheetPart>(value);
-      else
-       _WorksheetParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.WorksheetPart>? _WorksheetParts;
   
-  private void _WorksheetParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _WorksheetParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -290,6 +215,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.WorksheetPartImpl valImpl)
@@ -301,6 +227,7 @@ public class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Diagr
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.WorksheetPartImpl valImpl)

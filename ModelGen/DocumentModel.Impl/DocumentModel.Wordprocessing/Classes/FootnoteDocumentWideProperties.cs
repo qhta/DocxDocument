@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document-Wide Footnote Properties.
 /// </summary>
-public class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocumentWideProperties
+public partial class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocumentWideProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? OpenXmlElement
   {
@@ -171,7 +171,7 @@ public class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocum
   }
   private ObservableCollection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? _FootnoteSpecialReferences;
   
-  private void _FootnoteSpecialReferences_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _FootnoteSpecialReferences_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -181,6 +181,7 @@ public class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocum
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FootnoteSpecialReference>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)
@@ -192,6 +193,7 @@ public class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocum
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeImpl valImpl)

@@ -3,13 +3,13 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HyperlinkExtension Class.
 /// </summary>
-public interface HyperlinkExtension
+public partial interface HyperlinkExtension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.HyperlinkColorEnum? HyperlinkColor { get ; set; }
+  public DocumentModel.Drawings.HyperlinkColorEnum? HyperlinkColor { get; set; }
   
 }

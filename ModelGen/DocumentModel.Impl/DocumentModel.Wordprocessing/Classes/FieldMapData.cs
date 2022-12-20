@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// External Data Source to Merge Field Mapping.
 /// </summary>
-public class FieldMapDataImpl: ModelElementImpl, FieldMapData
+public partial class FieldMapDataImpl: ModelElementImpl, FieldMapData
 {
   public DocumentFormat.OpenXml.Wordprocessing.FieldMapData? OpenXmlElement
   {

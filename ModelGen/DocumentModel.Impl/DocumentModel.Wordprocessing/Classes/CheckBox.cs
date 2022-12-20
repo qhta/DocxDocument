@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Checkbox Form Field Properties.
 /// </summary>
-public class CheckBoxImpl: ModelElementImpl, CheckBox
+public partial class CheckBoxImpl: ModelElementImpl, CheckBox
 {
   public DocumentFormat.OpenXml.Wordprocessing.CheckBox? OpenXmlElement
   {

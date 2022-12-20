@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
 /// </summary>
-public class StylesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, StylesPart
+public partial class StylesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, StylesPart
 {
   public new DocumentFormat.OpenXml.Packaging.StylesPart? OpenXmlElement
   {

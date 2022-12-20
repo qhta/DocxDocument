@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ContourColor Class.
 /// </summary>
-public class ContourColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ContourColor
+public partial class ContourColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ContourColor
 {
   public new DocumentFormat.OpenXml.Office2010.Word.ContourColor? OpenXmlElement
   {

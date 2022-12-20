@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// <summary>
 /// Defines the OEmbedShared Class.
 /// </summary>
-public interface OEmbedShared
+public partial interface OEmbedShared
 {
   /// <summary>
   /// srcUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? SrcUrl { get ; set; }
+  public String? SrcUrl { get; set; }
   
   /// <summary>
   /// type, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? Type { get ; set; }
+  public String? Type { get; set; }
   
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

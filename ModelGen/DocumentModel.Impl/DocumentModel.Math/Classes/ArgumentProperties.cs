@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Argument Properties.
 /// </summary>
-public class ArgumentPropertiesImpl: ModelElementImpl, ArgumentProperties
+public partial class ArgumentPropertiesImpl: ModelElementImpl, ArgumentProperties
 {
   public DocumentFormat.OpenXml.Math.ArgumentProperties? OpenXmlElement
   {

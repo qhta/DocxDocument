@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Column.
 /// </summary>
-public class MatrixColumnImpl: ModelElementImpl, MatrixColumn
+public partial class MatrixColumnImpl: ModelElementImpl, MatrixColumn
 {
   public DocumentFormat.OpenXml.Math.MatrixColumn? OpenXmlElement
   {

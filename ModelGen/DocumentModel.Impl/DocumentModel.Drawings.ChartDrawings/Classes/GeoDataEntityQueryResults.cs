@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoDataEntityQueryResults Class.
 /// </summary>
-public class GeoDataEntityQueryResultsImpl: ModelElementImpl, GeoDataEntityQueryResults
+public partial class GeoDataEntityQueryResultsImpl: ModelElementImpl, GeoDataEntityQueryResults
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResults? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class GeoDataEntityQueryResultsImpl: ModelElementImpl, GeoDataEntityQuery
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class GeoDataEntityQueryResultsImpl: ModelElementImpl, GeoDataEntityQuery
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResultImpl valImpl)
@@ -82,6 +83,7 @@ public class GeoDataEntityQueryResultsImpl: ModelElementImpl, GeoDataEntityQuery
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResultImpl valImpl)

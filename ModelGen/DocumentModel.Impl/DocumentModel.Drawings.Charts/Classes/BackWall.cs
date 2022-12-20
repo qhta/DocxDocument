@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D back wall formatting.
 /// </summary>
-public class BackWallImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, BackWall
+public partial class BackWallImpl: DocumentModel.Drawings.Charts.SurfaceTypeImpl, BackWall
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.BackWall? OpenXmlElement
   {

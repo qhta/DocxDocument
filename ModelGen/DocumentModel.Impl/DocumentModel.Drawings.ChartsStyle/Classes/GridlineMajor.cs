@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the GridlineMajor Class.
 /// </summary>
-public class GridlineMajorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, GridlineMajor
+public partial class GridlineMajorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, GridlineMajor
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.GridlineMajor? OpenXmlElement
   {

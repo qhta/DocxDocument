@@ -39,6 +39,7 @@
         "dependencies": {
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
+          "DocumentModel.VariantTypes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "runtime": {

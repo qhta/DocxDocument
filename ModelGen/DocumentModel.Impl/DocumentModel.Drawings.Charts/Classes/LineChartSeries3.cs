@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LineChartSeries Class.
 /// </summary>
-public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
+public partial class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.LineChartSeries? OpenXmlElement
   {
@@ -241,7 +241,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DataPoint>? _DataPoints;
   
-  private void _DataPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -251,6 +251,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -262,6 +263,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DataPointImpl valImpl)
@@ -352,7 +354,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.Trendline>? _Trendlines;
   
-  private void _Trendlines_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Trendlines_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -362,6 +364,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Trendline>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)
@@ -373,6 +376,7 @@ public class LineChartSeries3Impl: ModelElementImpl, LineChartSeries3
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.TrendlineImpl valImpl)

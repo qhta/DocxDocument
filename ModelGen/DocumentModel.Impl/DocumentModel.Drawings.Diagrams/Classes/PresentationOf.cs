@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Presentation Of.
 /// </summary>
-public class PresentationOfImpl: ModelElementImpl, PresentationOf
+public partial class PresentationOfImpl: ModelElementImpl, PresentationOf
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? OpenXmlElement
   {

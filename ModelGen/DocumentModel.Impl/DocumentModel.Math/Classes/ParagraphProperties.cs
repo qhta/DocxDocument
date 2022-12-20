@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Office Math Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
+public partial class ParagraphPropertiesImpl: ModelElementImpl, ParagraphProperties
 {
   public DocumentFormat.OpenXml.Math.ParagraphProperties? OpenXmlElement
   {

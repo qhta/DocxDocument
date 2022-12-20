@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Border Box Properties.
 /// </summary>
-public class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
+public partial class BorderBoxPropertiesImpl: ModelElementImpl, BorderBoxProperties
 {
   public DocumentFormat.OpenXml.Math.BorderBoxProperties? OpenXmlElement
   {

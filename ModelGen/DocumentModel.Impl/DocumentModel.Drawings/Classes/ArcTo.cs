@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Draw Arc To.
 /// </summary>
-public class ArcToImpl: ModelElementImpl, ArcTo
+public partial class ArcToImpl: ModelElementImpl, ArcTo
 {
   public DocumentFormat.OpenXml.Drawing.ArcTo? OpenXmlElement
   {

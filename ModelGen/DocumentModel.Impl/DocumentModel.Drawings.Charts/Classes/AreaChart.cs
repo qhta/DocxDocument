@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Area Charts.
 /// </summary>
-public class AreaChartImpl: ModelElementImpl, AreaChart
+public partial class AreaChartImpl: ModelElementImpl, AreaChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.AreaChart? OpenXmlElement
   {
@@ -123,7 +123,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.AreaChartSeries>? _AreaChartSerieses;
   
-  private void _AreaChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AreaChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -133,6 +133,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.AreaChartSeriesImpl valImpl)
@@ -144,6 +145,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.AreaChartSeriesImpl valImpl)
@@ -259,7 +261,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -269,6 +271,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -276,6 +279,7 @@ public class AreaChartImpl: ModelElementImpl, AreaChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

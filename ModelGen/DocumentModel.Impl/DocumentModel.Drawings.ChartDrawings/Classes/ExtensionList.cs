@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ExtensionList Class.
 /// </summary>
-public class ExtensionListImpl: ModelElementImpl, ExtensionList
+public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.Extension2>? _Extension2s;
   
-  private void _Extension2s_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Extension2s_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Extension2>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.Extension2Impl valImpl)
@@ -82,6 +83,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.Extension2Impl valImpl)

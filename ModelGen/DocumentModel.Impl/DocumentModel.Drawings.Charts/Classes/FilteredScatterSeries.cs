@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredScatterSeries Class.
 /// </summary>
-public class FilteredScatterSeriesImpl: ModelElementImpl, FilteredScatterSeries
+public partial class FilteredScatterSeriesImpl: ModelElementImpl, FilteredScatterSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries? OpenXmlElement
   {

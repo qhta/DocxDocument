@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Non-Visual Group Shape Drawing Properties.
 /// </summary>
-public class NonVisualGroupShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualGroupShapeDrawingProperties
+public partial class NonVisualGroupShapeDrawingPropertiesImpl: ModelElementImpl, NonVisualGroupShapeDrawingProperties
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties? OpenXmlElement
   {

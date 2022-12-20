@@ -3,21 +3,21 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Subscript Function.
 /// </summary>
-public interface Subscript
+public partial interface Subscript
 {
   /// <summary>
   /// Subscript Properties.
   /// </summary>
-  public DocumentModel.Math.SubscriptProperties? SubscriptProperties { get ; set; }
+  public DocumentModel.Math.SubscriptProperties? SubscriptProperties { get; set; }
   
   /// <summary>
   /// Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get ; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
   /// <summary>
   /// Subscript (Subscript function).
   /// </summary>
-  public DocumentModel.Math.SubArgument? SubArgument { get ; set; }
+  public DocumentModel.Math.SubArgument? SubArgument { get; set; }
   
 }

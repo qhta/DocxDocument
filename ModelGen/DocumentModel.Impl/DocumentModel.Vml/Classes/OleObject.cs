@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Embedded OLE Object.
 /// </summary>
-public class OleObjectImpl: ModelElementImpl, OleObject
+public partial class OleObjectImpl: ModelElementImpl, OleObject
 {
   public DocumentFormat.OpenXml.Vml.Office.OleObject? OpenXmlElement
   {

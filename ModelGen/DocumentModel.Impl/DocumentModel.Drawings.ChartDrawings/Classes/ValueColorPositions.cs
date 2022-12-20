@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ValueColorPositions Class.
 /// </summary>
-public class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
+public partial class ValueColorPositionsImpl: ModelElementImpl, ValueColorPositions
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions? OpenXmlElement
   {

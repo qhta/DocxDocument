@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Contour Color.
 /// </summary>
-public class ContourColorImpl: DocumentModel.Drawings.ColorTypeImpl, ContourColor
+public partial class ContourColorImpl: DocumentModel.Drawings.ColorTypeImpl, ContourColor
 {
   public new DocumentFormat.OpenXml.Drawing.ContourColor? OpenXmlElement
   {

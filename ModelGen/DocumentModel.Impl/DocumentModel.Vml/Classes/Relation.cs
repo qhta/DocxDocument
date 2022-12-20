@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Diagram Relationship.
 /// </summary>
-public class RelationImpl: ModelElementImpl, Relation
+public partial class RelationImpl: ModelElementImpl, Relation
 {
   public DocumentFormat.OpenXml.Vml.Office.Relation? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ContentPartLocks Class.
 /// </summary>
-public class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
+public partial class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks? OpenXmlElement
   {

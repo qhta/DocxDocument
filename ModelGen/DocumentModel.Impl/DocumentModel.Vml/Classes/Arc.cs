@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Arc Segment.
 /// </summary>
-public class ArcImpl: ModelElementImpl, Arc
+public partial class ArcImpl: ModelElementImpl, Arc
 {
   public DocumentFormat.OpenXml.Vml.Arc? OpenXmlElement
   {

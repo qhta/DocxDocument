@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DLblsExtension Class.
 /// </summary>
-public class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
+public partial class DLblsExtensionImpl: ModelElementImpl, DLblsExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension? OpenXmlElement
   {

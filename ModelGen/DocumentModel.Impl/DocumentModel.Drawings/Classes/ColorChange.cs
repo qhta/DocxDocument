@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Color Change Effect.
 /// </summary>
-public class ColorChangeImpl: ModelElementImpl, ColorChange
+public partial class ColorChangeImpl: ModelElementImpl, ColorChange
 {
   public DocumentFormat.OpenXml.Drawing.ColorChange? OpenXmlElement
   {

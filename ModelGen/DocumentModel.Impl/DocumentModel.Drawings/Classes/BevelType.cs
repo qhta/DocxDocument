@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BevelType Class.
 /// </summary>
-public class BevelTypeImpl: ModelElementImpl, BevelType
+public partial class BevelTypeImpl: ModelElementImpl, BevelType
 {
   public DocumentFormat.OpenXml.Drawing.BevelType? OpenXmlElement
   {

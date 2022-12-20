@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Compatibility Settings.
 /// </summary>
-public class CompatibilityImpl: ModelElementImpl, Compatibility
+public partial class CompatibilityImpl: ModelElementImpl, Compatibility
 {
   public DocumentFormat.OpenXml.Wordprocessing.Compatibility? OpenXmlElement
   {
@@ -2401,7 +2401,7 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
   }
   private ObservableCollection<DocumentModel.Wordprocessing.CompatibilitySetting>? _CompatibilitySettings;
   
-  private void _CompatibilitySettings_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CompatibilitySettings_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -2411,6 +2411,7 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)
@@ -2422,6 +2423,7 @@ public class CompatibilityImpl: ModelElementImpl, Compatibility
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.CompatibilitySettingImpl valImpl)

@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Video from File.
 /// </summary>
-public interface VideoFromFile
+public partial interface VideoFromFile
 {
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
-  public String? Link { get ; set; }
+  public String? Link { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

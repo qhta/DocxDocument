@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the RelationshipIdType Class.
 /// </summary>
-public class RelationshipIdTypeImpl: ModelElementImpl, RelationshipIdType
+public partial class RelationshipIdTypeImpl: ModelElementImpl, RelationshipIdType
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType? OpenXmlElement
   {

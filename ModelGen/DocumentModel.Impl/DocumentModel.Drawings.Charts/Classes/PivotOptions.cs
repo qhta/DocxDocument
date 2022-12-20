@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PivotOptions Class.
 /// </summary>
-public class PivotOptionsImpl: ModelElementImpl, PivotOptions
+public partial class PivotOptionsImpl: ModelElementImpl, PivotOptions
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Single Column Definition.
 /// </summary>
-public class ColumnImpl: ModelElementImpl, Column
+public partial class ColumnImpl: ModelElementImpl, Column
 {
   public DocumentFormat.OpenXml.Wordprocessing.Column? OpenXmlElement
   {

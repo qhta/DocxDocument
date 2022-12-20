@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ValAxExtension Class.
 /// </summary>
-public class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
+public partial class ValAxExtensionImpl: ModelElementImpl, ValAxExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension? OpenXmlElement
   {

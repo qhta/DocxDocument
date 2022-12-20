@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PtExtension Class.
 /// </summary>
-public class PtExtensionImpl: ModelElementImpl, PtExtension
+public partial class PtExtensionImpl: ModelElementImpl, PtExtension
 {
   public DocumentFormat.OpenXml.Drawing.PtExtension? OpenXmlElement
   {

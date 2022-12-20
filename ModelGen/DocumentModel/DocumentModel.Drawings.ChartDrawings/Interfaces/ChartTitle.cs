@@ -3,41 +3,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ChartTitle Class.
 /// </summary>
-public interface ChartTitle
+public partial interface ChartTitle
 {
   /// <summary>
   /// pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.SidePos? Pos { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.SidePos? Pos { get; set; }
   
   /// <summary>
   /// align, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PosAlign? Align { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.PosAlign? Align { get; set; }
   
   /// <summary>
   /// overlay, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Overlay { get ; set; }
+  public Boolean? Overlay { get; set; }
   
   /// <summary>
   /// Text.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.Text? Text { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.Text? Text { get; set; }
   
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
   
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
   
 }

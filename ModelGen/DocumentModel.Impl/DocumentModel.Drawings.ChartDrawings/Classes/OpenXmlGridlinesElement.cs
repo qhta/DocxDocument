@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the OpenXmlGridlinesElement Class.
 /// </summary>
-public class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElement
+public partial class OpenXmlGridlinesElementImpl: ModelElementImpl, OpenXmlGridlinesElement
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement? OpenXmlElement
   {

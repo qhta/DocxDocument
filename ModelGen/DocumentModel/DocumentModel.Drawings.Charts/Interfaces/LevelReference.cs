@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LevelReference Class.
 /// </summary>
-public interface LevelReference
+public partial interface LevelReference
 {
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  public String? SequenceOfReferences { get ; set; }
+  public String? SequenceOfReferences { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the OfficeArtExtensionList Class.
 /// </summary>
-public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionList
+public partial class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionList
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.Extension>? _Extensions;
   
-  private void _Extensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Extensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Extension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class OfficeArtExtensionListImpl: ModelElementImpl, OfficeArtExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ExtensionImpl valImpl)

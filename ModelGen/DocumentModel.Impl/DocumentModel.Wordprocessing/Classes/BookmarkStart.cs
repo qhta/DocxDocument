@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the BookmarkStart Class.
 /// </summary>
-public class BookmarkStartImpl: ModelElementImpl, BookmarkStart
+public partial class BookmarkStartImpl: ModelElementImpl, BookmarkStart
 {
   public DocumentFormat.OpenXml.Wordprocessing.BookmarkStart? OpenXmlElement
   {

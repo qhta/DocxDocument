@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Pattern Fill.
 /// </summary>
-public class PatternFillImpl: ModelElementImpl, PatternFill
+public partial class PatternFillImpl: ModelElementImpl, PatternFill
 {
   public DocumentFormat.OpenXml.Drawing.PatternFill? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the DataModelExtensionList Class.
 /// </summary>
-public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionList
+public partial class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.DataModelExtension>? _DataModelExtensions;
   
-  private void _DataModelExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataModelExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DataModelExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class DataModelExtensionListImpl: ModelElementImpl, DataModelExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.DataModelExtensionImpl valImpl)

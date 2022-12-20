@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StrRefExtensionList Class.
 /// </summary>
-public class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
+public partial class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StrRefExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StrRefExtension>? _StrRefExtensions;
   
-  private void _StrRefExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StrRefExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StrRefExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StrRefExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class StrRefExtensionListImpl: ModelElementImpl, StrRefExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StrRefExtensionImpl valImpl)

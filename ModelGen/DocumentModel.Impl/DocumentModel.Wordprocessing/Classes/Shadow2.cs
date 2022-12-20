@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Shadow Class.
 /// </summary>
-public class Shadow2Impl: ModelElementImpl, Shadow2
+public partial class Shadow2Impl: ModelElementImpl, Shadow2
 {
   public DocumentFormat.OpenXml.Office2010.Word.Shadow? OpenXmlElement
   {

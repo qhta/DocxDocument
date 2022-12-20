@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataPointMarker Class.
 /// </summary>
-public class DataPointMarkerImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointMarker
+public partial class DataPointMarkerImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointMarker
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointMarker? OpenXmlElement
   {

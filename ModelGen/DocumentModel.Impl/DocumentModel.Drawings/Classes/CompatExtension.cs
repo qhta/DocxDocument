@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the CompatExtension Class.
 /// </summary>
-public class CompatExtensionImpl: ModelElementImpl, CompatExtension
+public partial class CompatExtensionImpl: ModelElementImpl, CompatExtension
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Band Format.
 /// </summary>
-public class BandFormatImpl: ModelElementImpl, BandFormat
+public partial class BandFormatImpl: ModelElementImpl, BandFormat
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BandFormat? OpenXmlElement
   {

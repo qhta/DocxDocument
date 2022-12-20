@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Inline DrawingML Object.
 /// </summary>
-public class InlineImpl: ModelElementImpl, Inline
+public partial class InlineImpl: ModelElementImpl, Inline
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the RelativeRectangleType Class.
 /// </summary>
-public class RelativeRectangleTypeImpl: ModelElementImpl, RelativeRectangleType
+public partial class RelativeRectangleTypeImpl: ModelElementImpl, RelativeRectangleType
 {
   public DocumentFormat.OpenXml.Drawing.RelativeRectangleType? OpenXmlElement
   {

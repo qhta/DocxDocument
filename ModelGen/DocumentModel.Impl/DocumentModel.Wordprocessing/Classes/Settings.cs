@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Settings.
 /// </summary>
-public class SettingsImpl: ModelElementImpl, Settings
+public partial class SettingsImpl: ModelElementImpl, Settings
 {
   public DocumentFormat.OpenXml.Wordprocessing.Settings? OpenXmlElement
   {
@@ -756,6 +756,26 @@ public class SettingsImpl: ModelElementImpl, Settings
     }
   }
   
+  /// <summary>
+  /// Gets the DocumentSettingsPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.DocumentSettingsPart? DocumentSettingsPart
+  {
+    get
+    {
+      if (OpenXmlElement?.DocumentSettingsPart != null)
+        return new DocumentModel.Packaging.DocumentSettingsPartImpl(OpenXmlElement.DocumentSettingsPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.DocumentSettingsPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
+  }
+  
   public Collection<DocumentModel.Wordprocessing.ActiveWritingStyle>? ActiveWritingStyles
   {
     get
@@ -799,7 +819,7 @@ public class SettingsImpl: ModelElementImpl, Settings
   }
   private ObservableCollection<DocumentModel.Wordprocessing.ActiveWritingStyle>? _ActiveWritingStyles;
   
-  private void _ActiveWritingStyles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ActiveWritingStyles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -809,6 +829,7 @@ public class SettingsImpl: ModelElementImpl, Settings
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ActiveWritingStyleImpl valImpl)
@@ -820,6 +841,7 @@ public class SettingsImpl: ModelElementImpl, Settings
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ActiveWritingStyleImpl valImpl)
@@ -1285,6 +1307,76 @@ public class SettingsImpl: ModelElementImpl, Settings
           if (value is not null)
           {
             item = new DocumentFormat.OpenXml.Wordprocessing.AutoFormatOverride{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public Boolean? StyleLockThemesPart
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleLockThemesPart>();
+        return (System.Boolean?)item?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleLockThemesPart>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Boolean?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Wordprocessing.StyleLockThemesPart{ Val = (System.Boolean?)value };
+            OpenXmlElement.AddChild(item);
+          }
+        }
+      }
+    }
+  }
+  
+  public Boolean? StyleLockStylesPart
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleLockStylesPart>();
+        return (System.Boolean?)item?.Val?.Value;
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleLockStylesPart>();
+        if (item != null)
+        {
+          if (value is not null)
+            item.Val = (System.Boolean?)value;
+          else
+            item.Remove();
+        }
+        else
+        {
+          if (value is not null)
+          {
+            item = new DocumentFormat.OpenXml.Wordprocessing.StyleLockStylesPart{ Val = (System.Boolean?)value };
             OpenXmlElement.AddChild(item);
           }
         }
@@ -2919,7 +3011,7 @@ public class SettingsImpl: ModelElementImpl, Settings
   }
   private ObservableCollection<System.String>? _AttachedSchemas;
   
-  private void _AttachedSchemas_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AttachedSchemas_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -2929,6 +3021,7 @@ public class SettingsImpl: ModelElementImpl, Settings
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AttachedSchema>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
           if (val is string str)
@@ -2939,6 +3032,7 @@ public class SettingsImpl: ModelElementImpl, Settings
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
         if (val is string str)

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the KeyMapCustomizations Class.
 /// </summary>
-public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
+public partial class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
 {
   public DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
   }
   private ObservableCollection<DocumentModel.Wordprocessing.KeyMapEntry>? _KeyMapEntries;
   
-  private void _KeyMapEntries_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _KeyMapEntries_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.KeyMapEntryImpl valImpl)
@@ -82,6 +83,7 @@ public class KeyMapCustomizationsImpl: ModelElementImpl, KeyMapCustomizations
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.KeyMapEntryImpl valImpl)

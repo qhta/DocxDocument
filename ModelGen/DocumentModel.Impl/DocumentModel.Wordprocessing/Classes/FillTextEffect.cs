@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FillTextEffect Class.
 /// </summary>
-public class FillTextEffectImpl: ModelElementImpl, FillTextEffect
+public partial class FillTextEffectImpl: ModelElementImpl, FillTextEffect
 {
   public DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? OpenXmlElement
   {

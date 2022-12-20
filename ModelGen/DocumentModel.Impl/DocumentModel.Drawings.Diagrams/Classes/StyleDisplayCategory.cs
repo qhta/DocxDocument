@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Category.
 /// </summary>
-public class StyleDisplayCategoryImpl: ModelElementImpl, StyleDisplayCategory
+public partial class StyleDisplayCategoryImpl: ModelElementImpl, StyleDisplayCategory
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory? OpenXmlElement
   {

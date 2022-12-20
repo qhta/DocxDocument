@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ConnectorLockingExtension Class.
 /// </summary>
-public class ConnectorLockingExtensionImpl: ModelElementImpl, ConnectorLockingExtension
+public partial class ConnectorLockingExtensionImpl: ModelElementImpl, ConnectorLockingExtension
 {
   public DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension? OpenXmlElement
   {

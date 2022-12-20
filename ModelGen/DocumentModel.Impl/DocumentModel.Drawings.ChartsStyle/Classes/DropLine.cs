@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DropLine Class.
 /// </summary>
-public class DropLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DropLine
+public partial class DropLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DropLine
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DropLine? OpenXmlElement
   {

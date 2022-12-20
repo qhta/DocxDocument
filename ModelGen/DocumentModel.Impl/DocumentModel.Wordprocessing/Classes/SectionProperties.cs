@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Section Properties.
 /// </summary>
-public class SectionPropertiesImpl: ModelElementImpl, SectionProperties
+public partial class SectionPropertiesImpl: ModelElementImpl, SectionProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.SectionProperties? OpenXmlElement
   {

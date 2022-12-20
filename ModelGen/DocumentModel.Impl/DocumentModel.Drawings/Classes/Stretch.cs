@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Stretch.
 /// </summary>
-public class StretchImpl: ModelElementImpl, Stretch
+public partial class StretchImpl: ModelElementImpl, Stretch
 {
   public DocumentFormat.OpenXml.Drawing.Stretch? OpenXmlElement
   {

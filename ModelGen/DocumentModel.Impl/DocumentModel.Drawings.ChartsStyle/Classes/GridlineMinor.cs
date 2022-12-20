@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the GridlineMinor Class.
 /// </summary>
-public class GridlineMinorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, GridlineMinor
+public partial class GridlineMinorImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, GridlineMinor
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.GridlineMinor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CommentsExtensible Class.
 /// </summary>
-public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
+public partial class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
 {
   public DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
   public CommentsExtensibleImpl(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the WordCommentsExtensiblePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.WordCommentsExtensiblePart? WordCommentsExtensiblePart
+  {
+    get
+    {
+      if (OpenXmlElement?.WordCommentsExtensiblePart != null)
+        return new DocumentModel.Packaging.WordCommentsExtensiblePartImpl(OpenXmlElement.WordCommentsExtensiblePart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.WordCommentsExtensiblePartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.CommentExtensible>? CommentExtensibles
@@ -61,7 +81,7 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
   }
   private ObservableCollection<DocumentModel.Wordprocessing.CommentExtensible>? _CommentExtensibles;
   
-  private void _CommentExtensibles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CommentExtensibles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.CommentExtensibleImpl valImpl)
@@ -82,6 +103,7 @@ public class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.CommentExtensibleImpl valImpl)

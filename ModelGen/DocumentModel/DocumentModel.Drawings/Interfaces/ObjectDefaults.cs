@@ -3,26 +3,26 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ObjectDefaults Class.
 /// </summary>
-public interface ObjectDefaults
+public partial interface ObjectDefaults
 {
   /// <summary>
   /// Shape Default.
   /// </summary>
-  public DocumentModel.Drawings.ShapeDefault? ShapeDefault { get ; set; }
+  public DocumentModel.Drawings.ShapeDefault? ShapeDefault { get; set; }
   
   /// <summary>
   /// Line Default.
   /// </summary>
-  public DocumentModel.Drawings.LineDefault? LineDefault { get ; set; }
+  public DocumentModel.Drawings.LineDefault? LineDefault { get; set; }
   
   /// <summary>
   /// Text Default.
   /// </summary>
-  public DocumentModel.Drawings.TextDefault? TextDefault { get ; set; }
+  public DocumentModel.Drawings.TextDefault? TextDefault { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

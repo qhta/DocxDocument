@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// XY Adjust Handle.
 /// </summary>
-public class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
+public partial class AdjustHandleXYImpl: ModelElementImpl, AdjustHandleXY
 {
   public DocumentFormat.OpenXml.Drawing.AdjustHandleXY? OpenXmlElement
   {

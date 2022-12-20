@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the RichTextBody Class.
 /// </summary>
-public class RichTextBodyImpl: DocumentModel.Drawings.ChartDrawings.TextBodyTypeImpl, RichTextBody
+public partial class RichTextBodyImpl: DocumentModel.Drawings.ChartDrawings.TextBodyTypeImpl, RichTextBody
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RichTextBody? OpenXmlElement
   {

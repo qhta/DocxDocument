@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Bubble Charts.
 /// </summary>
-public class BubbleChartImpl: ModelElementImpl, BubbleChart
+public partial class BubbleChartImpl: ModelElementImpl, BubbleChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? OpenXmlElement
   {
@@ -97,7 +97,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BubbleChartSeries>? _BubbleChartSerieses;
   
-  private void _BubbleChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BubbleChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -107,6 +107,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BubbleChartSeriesImpl valImpl)
@@ -118,6 +119,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BubbleChartSeriesImpl valImpl)
@@ -344,7 +346,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -354,6 +356,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -361,6 +364,7 @@ public class BubbleChartImpl: ModelElementImpl, BubbleChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

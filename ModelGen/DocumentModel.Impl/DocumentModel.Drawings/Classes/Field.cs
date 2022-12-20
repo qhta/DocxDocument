@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Field.
 /// </summary>
-public class FieldImpl: ModelElementImpl, Field
+public partial class FieldImpl: ModelElementImpl, Field
 {
   public DocumentFormat.OpenXml.Drawing.Field? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredBubbleSeries Class.
 /// </summary>
-public class FilteredBubbleSeriesImpl: ModelElementImpl, FilteredBubbleSeries
+public partial class FilteredBubbleSeriesImpl: ModelElementImpl, FilteredBubbleSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries? OpenXmlElement
   {

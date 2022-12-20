@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Break.
 /// </summary>
-public class BreakImpl: ModelElementImpl, Break
+public partial class BreakImpl: ModelElementImpl, Break
 {
   public DocumentFormat.OpenXml.Wordprocessing.Break? OpenXmlElement
   {

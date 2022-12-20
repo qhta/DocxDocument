@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StockChartExtension Class.
 /// </summary>
-public class StockChartExtensionImpl: ModelElementImpl, StockChartExtension
+public partial class StockChartExtensionImpl: ModelElementImpl, StockChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension? OpenXmlElement
   {

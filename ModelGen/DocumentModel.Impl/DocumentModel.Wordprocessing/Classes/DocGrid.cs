@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the DocGrid Class.
 /// </summary>
-public class DocGridImpl: ModelElementImpl, DocGrid
+public partial class DocGridImpl: ModelElementImpl, DocGrid
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocGrid? OpenXmlElement
   {

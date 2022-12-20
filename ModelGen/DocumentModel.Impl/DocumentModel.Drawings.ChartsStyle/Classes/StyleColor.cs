@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the StyleColor Class.
 /// </summary>
-public class StyleColorImpl: ModelElementImpl, StyleColor
+public partial class StyleColorImpl: ModelElementImpl, StyleColor
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? OpenXmlElement
   {

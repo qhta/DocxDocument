@@ -3,16 +3,16 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Matrix Column Properties.
 /// </summary>
-public interface MatrixColumnProperties
+public partial interface MatrixColumnProperties
 {
   /// <summary>
   /// Matrix Column Count.
   /// </summary>
-  public Int32? MatrixColumnCount { get ; set; }
+  public Int32? MatrixColumnCount { get; set; }
   
   /// <summary>
   /// Matrix Column Justification.
   /// </summary>
-  public DocumentModel.Math.HorizontalAlignmentKind? MatrixColumnJustification { get ; set; }
+  public DocumentModel.Math.HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
   
 }

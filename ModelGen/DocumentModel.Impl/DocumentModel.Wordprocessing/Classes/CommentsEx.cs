@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the CommentsEx Class.
 /// </summary>
-public class CommentsExImpl: ModelElementImpl, CommentsEx
+public partial class CommentsExImpl: ModelElementImpl, CommentsEx
 {
   public DocumentFormat.OpenXml.Office2013.Word.CommentsEx? OpenXmlElement
   {
@@ -16,6 +16,26 @@ public class CommentsExImpl: ModelElementImpl, CommentsEx
   public CommentsExImpl(DocumentFormat.OpenXml.Office2013.Word.CommentsEx openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
+  }
+  
+  /// <summary>
+  /// Gets the WordprocessingCommentsExPart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.WordprocessingCommentsExPart? WordprocessingCommentsExPart
+  {
+    get
+    {
+      if (OpenXmlElement?.WordprocessingCommentsExPart != null)
+        return new DocumentModel.Packaging.WordprocessingCommentsExPartImpl(OpenXmlElement.WordprocessingCommentsExPart);
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+        if (value is DocumentModel.Packaging.WordprocessingCommentsExPartImpl valueImpl)
+          if (valueImpl.OpenXmlElement != null)
+              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
+    }
   }
   
   public Collection<DocumentModel.Wordprocessing.CommentEx>? CommentExs
@@ -61,7 +81,7 @@ public class CommentsExImpl: ModelElementImpl, CommentsEx
   }
   private ObservableCollection<DocumentModel.Wordprocessing.CommentEx>? _CommentExs;
   
-  private void _CommentExs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CommentExs_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +91,7 @@ public class CommentsExImpl: ModelElementImpl, CommentsEx
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.CommentEx>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.CommentExImpl valImpl)
@@ -82,6 +103,7 @@ public class CommentsExImpl: ModelElementImpl, CommentsEx
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.CommentExImpl valImpl)

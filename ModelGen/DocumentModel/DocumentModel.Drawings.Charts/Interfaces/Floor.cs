@@ -3,14 +3,14 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D floor formatting.
 /// </summary>
-public interface Floor
+public partial interface Floor
 {
-  public Byte? Thickness { get ; set; }
+  public Byte? Thickness { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get ; set; }
+  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
 }

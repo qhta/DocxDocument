@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Clipping Path.
 /// </summary>
-public class ClipPathImpl: ModelElementImpl, ClipPath
+public partial class ClipPathImpl: ModelElementImpl, ClipPath
 {
   public DocumentFormat.OpenXml.Vml.Office.ClipPath? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Break.
 /// </summary>
-public class BreakImpl: ModelElementImpl, Break
+public partial class BreakImpl: ModelElementImpl, Break
 {
   public DocumentFormat.OpenXml.Math.Break? OpenXmlElement
   {

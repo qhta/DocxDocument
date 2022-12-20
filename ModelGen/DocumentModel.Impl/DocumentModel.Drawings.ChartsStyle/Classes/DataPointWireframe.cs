@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataPointWireframe Class.
 /// </summary>
-public class DataPointWireframeImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointWireframe
+public partial class DataPointWireframeImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointWireframe
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe? OpenXmlElement
   {

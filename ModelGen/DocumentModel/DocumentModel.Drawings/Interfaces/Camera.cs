@@ -3,26 +3,26 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Camera.
 /// </summary>
-public interface Camera
+public partial interface Camera
 {
   /// <summary>
   /// Preset Camera Type
   /// </summary>
-  public DocumentModel.Drawings.PresetCameraKind? Preset { get ; set; }
+  public DocumentModel.Drawings.PresetCameraKind? Preset { get; set; }
   
   /// <summary>
   /// Field of View
   /// </summary>
-  public Int32? FieldOfView { get ; set; }
+  public Int32? FieldOfView { get; set; }
   
   /// <summary>
   /// Zoom
   /// </summary>
-  public Int32? Zoom { get ; set; }
+  public Int32? Zoom { get; set; }
   
   /// <summary>
   /// Rotation.
   /// </summary>
-  public DocumentModel.Drawings.Rotation? Rotation { get ; set; }
+  public DocumentModel.Drawings.Rotation? Rotation { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtRun Class.
 /// </summary>
-public class SdtRunImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRun
+public partial class SdtRunImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtRun
 {
   public new DocumentFormat.OpenXml.Wordprocessing.SdtRun? OpenXmlElement
   {

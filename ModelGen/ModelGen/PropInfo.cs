@@ -11,6 +11,7 @@ public class PropInfo: ModelElement
   public TypeInfo? DeclaringType => (TypeInfo?)Owner;
   public PropertyInfo? PropertyInfo { get; set; }
   public TypeInfo PropertyType { get; set; }
+  public bool IsReadonly { get; set; }
   public bool IsStatic { get; set; }
   public bool IsAbstract { get; set; }
   public bool IsVirtual { get; set; }
@@ -43,6 +44,9 @@ public class PropInfo: ModelElement
     //}
     //else
     //  IsAbstract = true;
+
+    if (propertyInfo.SetMethod == null)
+      IsReadonly = true;
 
     if (ModelData.ExcludedProperties.Contains(propertyInfo.Name))
       IsAccepted = false;

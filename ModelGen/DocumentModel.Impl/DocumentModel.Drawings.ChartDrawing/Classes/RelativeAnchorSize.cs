@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Relative Anchor Shape Size.
 /// </summary>
-public class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
+public partial class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize? OpenXmlElement
   {
@@ -220,6 +220,35 @@ public class RelativeAnchorSizeImpl: ModelElementImpl, RelativeAnchorSize
         if (value is not null)
         {
           item = (value as DocumentModel.Drawings.ChartDrawing.PictureImpl)?.OpenXmlElement;
+          if (item != null)
+            OpenXmlElement.AddChild(item);
+        }
+      }
+    }
+  }
+  
+  public DocumentModel.Drawings.ChartDrawings.ContentPart? ContentPart
+  {
+    get
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          return new DocumentModel.Drawings.ChartDrawings.ContentPartImpl(item);
+      }
+      return null;
+    }
+    set
+    {
+      if (OpenXmlElement != null)
+      {
+        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart>();
+        if (item != null)
+          item.Remove();
+        if (value is not null)
+        {
+          item = (value as DocumentModel.Drawings.ChartDrawings.ContentPartImpl)?.OpenXmlElement;
           if (item != null)
             OpenXmlElement.AddChild(item);
         }

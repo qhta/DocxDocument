@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the GroupShapeLocks Class.
 /// </summary>
-public class GroupShapeLocksImpl: ModelElementImpl, GroupShapeLocks
+public partial class GroupShapeLocksImpl: ModelElementImpl, GroupShapeLocks
 {
   public DocumentFormat.OpenXml.Drawing.GroupShapeLocks? OpenXmlElement
   {

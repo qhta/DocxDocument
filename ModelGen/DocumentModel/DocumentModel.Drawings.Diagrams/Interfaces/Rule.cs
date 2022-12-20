@@ -3,46 +3,46 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Rule.
 /// </summary>
-public interface Rule
+public partial interface Rule
 {
   /// <summary>
   /// Constraint Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConstraintKind? Type { get ; set; }
+  public DocumentModel.Drawings.Diagrams.ConstraintKind? Type { get; set; }
   
   /// <summary>
   /// For
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? For { get ; set; }
+  public DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? For { get; set; }
   
   /// <summary>
   /// For Name
   /// </summary>
-  public String? ForName { get ; set; }
+  public String? ForName { get; set; }
   
   /// <summary>
   /// Data Point Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ElementKind? PointType { get ; set; }
+  public DocumentModel.Drawings.Diagrams.ElementKind? PointType { get; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public Double? Val { get ; set; }
+  public Double? Val { get; set; }
   
   /// <summary>
   /// Factor
   /// </summary>
-  public Double? Fact { get ; set; }
+  public Double? Fact { get; set; }
   
   /// <summary>
   /// Max Value
   /// </summary>
-  public Double? Max { get ; set; }
+  public Double? Max { get; set; }
   
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get ; set; }
+  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
   
 }

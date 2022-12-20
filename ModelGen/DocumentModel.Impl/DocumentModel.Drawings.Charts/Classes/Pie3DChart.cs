@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// 3D Pie Charts.
 /// </summary>
-public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
+public partial class Pie3DChartImpl: ModelElementImpl, Pie3DChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart? OpenXmlElement
   {
@@ -97,7 +97,7 @@ public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.PieChartSeries>? _PieChartSerieses;
   
-  private void _PieChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _PieChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -107,6 +107,7 @@ public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.PieChartSeriesImpl valImpl)
@@ -118,6 +119,7 @@ public class Pie3DChartImpl: ModelElementImpl, Pie3DChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.PieChartSeriesImpl valImpl)

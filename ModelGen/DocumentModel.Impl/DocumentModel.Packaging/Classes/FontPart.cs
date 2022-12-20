@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the FontPart
 /// </summary>
-public class FontPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontPart
+public partial class FontPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontPart
 {
   public new DocumentFormat.OpenXml.Packaging.FontPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class FontPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontPart
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.FontPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

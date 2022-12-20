@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Box Properties.
 /// </summary>
-public class BoxPropertiesImpl: ModelElementImpl, BoxProperties
+public partial class BoxPropertiesImpl: ModelElementImpl, BoxProperties
 {
   public DocumentFormat.OpenXml.Math.BoxProperties? OpenXmlElement
   {

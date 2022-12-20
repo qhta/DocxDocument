@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Variables.
 /// </summary>
-public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
+public partial class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocumentVariables? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
   }
   private ObservableCollection<DocumentModel.Wordprocessing.DocumentVariable>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)
@@ -82,6 +83,7 @@ public class DocumentVariablesImpl: ModelElementImpl, DocumentVariables
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.DocumentVariableImpl valImpl)

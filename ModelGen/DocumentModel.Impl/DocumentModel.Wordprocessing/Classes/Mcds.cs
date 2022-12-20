@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Mcds Class.
 /// </summary>
-public class McdsImpl: ModelElementImpl, Mcds
+public partial class McdsImpl: ModelElementImpl, Mcds
 {
   public DocumentFormat.OpenXml.Office.Word.Mcds? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class McdsImpl: ModelElementImpl, Mcds
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Mcd>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class McdsImpl: ModelElementImpl, Mcds
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.Mcd>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.McdImpl valImpl)
@@ -82,6 +83,7 @@ public class McdsImpl: ModelElementImpl, Mcds
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.McdImpl valImpl)

@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Modulate Effect.
 /// </summary>
-public interface AlphaModulationEffect
+public partial interface AlphaModulationEffect
 {
   /// <summary>
   /// EffectContainer.
   /// </summary>
-  public DocumentModel.Drawings.EffectContainer? EffectContainer { get ; set; }
+  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Tight Wrapping.
 /// </summary>
-public class WrapTightImpl: ModelElementImpl, WrapTight
+public partial class WrapTightImpl: ModelElementImpl, WrapTight
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight? OpenXmlElement
   {

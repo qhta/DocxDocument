@@ -3,16 +3,16 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape ID Map.
 /// </summary>
-public interface ShapeIdMap
+public partial interface ShapeIdMap
 {
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get ; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   /// <summary>
   /// Shape IDs
   /// </summary>
-  public String? Data { get ; set; }
+  public String? Data { get; set; }
   
 }

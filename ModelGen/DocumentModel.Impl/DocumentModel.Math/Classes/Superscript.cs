@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Superscript Function.
 /// </summary>
-public class SuperscriptImpl: ModelElementImpl, Superscript
+public partial class SuperscriptImpl: ModelElementImpl, Superscript
 {
   public DocumentFormat.OpenXml.Math.Superscript? OpenXmlElement
   {

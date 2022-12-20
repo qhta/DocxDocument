@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Defines the StyleData Class.
 /// </summary>
-public class StyleDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, StyleData
+public partial class StyleDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, StyleData
 {
   public new DocumentFormat.OpenXml.Drawing.Diagrams.StyleData? OpenXmlElement
   {

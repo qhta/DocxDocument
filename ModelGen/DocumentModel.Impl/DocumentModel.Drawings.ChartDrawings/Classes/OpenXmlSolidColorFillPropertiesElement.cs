@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the OpenXmlSolidColorFillPropertiesElement Class.
 /// </summary>
-public class OpenXmlSolidColorFillPropertiesElementImpl: ModelElementImpl, OpenXmlSolidColorFillPropertiesElement
+public partial class OpenXmlSolidColorFillPropertiesElementImpl: ModelElementImpl, OpenXmlSolidColorFillPropertiesElement
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement? OpenXmlElement
   {

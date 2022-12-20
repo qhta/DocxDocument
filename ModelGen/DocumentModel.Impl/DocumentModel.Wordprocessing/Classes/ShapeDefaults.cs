@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Default Properties for VML Objects in Main Document.
 /// </summary>
-public class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
+public partial class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
 {
   public DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? OpenXmlElement
   {

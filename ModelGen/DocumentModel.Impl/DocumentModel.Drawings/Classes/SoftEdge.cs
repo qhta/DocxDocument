@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Soft Edge Effect.
 /// </summary>
-public class SoftEdgeImpl: ModelElementImpl, SoftEdge
+public partial class SoftEdgeImpl: ModelElementImpl, SoftEdge
 {
   public DocumentFormat.OpenXml.Drawing.SoftEdge? OpenXmlElement
   {

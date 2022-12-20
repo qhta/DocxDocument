@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ChartSpaceExtensionList Class.
 /// </summary>
-public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionList
+public partial class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionL
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? _ChartSpaceExtensions;
   
-  private void _ChartSpaceExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ChartSpaceExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.ChartSpaceExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ChartSpaceExtensionListImpl: ModelElementImpl, ChartSpaceExtensionL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.ChartSpaceExtensionImpl valImpl)

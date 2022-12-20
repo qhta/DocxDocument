@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoParentEntitiesQuery Class.
 /// </summary>
-public class GeoParentEntitiesQueryImpl: ModelElementImpl, GeoParentEntitiesQuery
+public partial class GeoParentEntitiesQueryImpl: ModelElementImpl, GeoParentEntitiesQuery
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery? OpenXmlElement
   {

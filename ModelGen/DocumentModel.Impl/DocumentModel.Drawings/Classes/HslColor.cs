@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Hue, Saturation, Luminance Color Model.
 /// </summary>
-public class HslColorImpl: ModelElementImpl, HslColor
+public partial class HslColorImpl: ModelElementImpl, HslColor
 {
   public DocumentFormat.OpenXml.Drawing.HslColor? OpenXmlElement
   {

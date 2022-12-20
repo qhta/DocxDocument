@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the DataModelExtensionBlock Class.
 /// </summary>
-public class DataModelExtensionBlockImpl: ModelElementImpl, DataModelExtensionBlock
+public partial class DataModelExtensionBlockImpl: ModelElementImpl, DataModelExtensionBlock
 {
   public DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock? OpenXmlElement
   {

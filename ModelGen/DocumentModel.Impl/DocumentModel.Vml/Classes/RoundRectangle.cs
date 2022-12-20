@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Rounded Rectangle.
 /// </summary>
-public class RoundRectangleImpl: ModelElementImpl, RoundRectangle
+public partial class RoundRectangleImpl: ModelElementImpl, RoundRectangle
 {
   public DocumentFormat.OpenXml.Vml.RoundRectangle? OpenXmlElement
   {

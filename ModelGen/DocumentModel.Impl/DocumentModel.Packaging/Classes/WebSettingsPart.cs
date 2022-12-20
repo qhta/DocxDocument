@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the WebSettingsPart
 /// </summary>
-public class WebSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebSettingsPart
+public partial class WebSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebSettingsPart
 {
   public new DocumentFormat.OpenXml.Packaging.WebSettingsPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class WebSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebSe
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WebSettingsPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.WebSettingsPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>

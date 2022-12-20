@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ConditionalFormatStyle Class.
 /// </summary>
-public class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyle
+public partial class ConditionalFormatStyleImpl: ModelElementImpl, ConditionalFormatStyle
 {
   public DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? OpenXmlElement
   {

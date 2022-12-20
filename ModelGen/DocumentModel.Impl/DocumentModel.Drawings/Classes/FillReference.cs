@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Fill Reference.
 /// </summary>
-public class FillReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, FillReference
+public partial class FillReferenceImpl: DocumentModel.Drawings.StyleMatrixReferenceTypeImpl, FillReference
 {
   public new DocumentFormat.OpenXml.Drawing.FillReference? OpenXmlElement
   {

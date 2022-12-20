@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the UpBar Class.
 /// </summary>
-public class UpBarImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, UpBar
+public partial class UpBarImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, UpBar
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.UpBar? OpenXmlElement
   {

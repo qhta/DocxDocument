@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MidColorSolidColorFillProperties Class.
 /// </summary>
-public class MidColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MidColorSolidColorFillProperties
+public partial class MidColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MidColorSolidColorFillProperties
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties? OpenXmlElement
   {

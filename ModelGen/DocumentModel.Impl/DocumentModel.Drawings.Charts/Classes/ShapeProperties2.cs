@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ShapeProperties Class.
 /// </summary>
-public class ShapeProperties2Impl: ModelElementImpl, ShapeProperties2
+public partial class ShapeProperties2Impl: ModelElementImpl, ShapeProperties2
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties? OpenXmlElement
   {

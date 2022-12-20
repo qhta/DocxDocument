@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorReplacement Class.
 /// </summary>
-public class ColorReplacementImpl: ModelElementImpl, ColorReplacement
+public partial class ColorReplacementImpl: ModelElementImpl, ColorReplacement
 {
   public DocumentFormat.OpenXml.Drawing.ColorReplacement? OpenXmlElement
   {

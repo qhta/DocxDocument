@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredPieSeries Class.
 /// </summary>
-public interface FilteredPieSeries
+public partial interface FilteredPieSeries
 {
   /// <summary>
   /// PieChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PieChartSeries3? PieChartSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.PieChartSeries3? PieChartSeries { get; set; }
   
 }

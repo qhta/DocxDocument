@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Category.
 /// </summary>
-public class CategoryImpl: ModelElementImpl, Category
+public partial class CategoryImpl: ModelElementImpl, Category
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Category? OpenXmlElement
   {

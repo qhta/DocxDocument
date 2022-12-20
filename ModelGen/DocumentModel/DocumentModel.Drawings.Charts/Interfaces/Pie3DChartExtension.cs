@@ -3,13 +3,13 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Pie3DChartExtension Class.
 /// </summary>
-public interface Pie3DChartExtension
+public partial interface Pie3DChartExtension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries { get; set; }
   
 }

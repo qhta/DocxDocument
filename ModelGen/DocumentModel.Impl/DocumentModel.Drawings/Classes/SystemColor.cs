@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// System Color.
 /// </summary>
-public class SystemColorImpl: ModelElementImpl, SystemColor
+public partial class SystemColorImpl: ModelElementImpl, SystemColor
 {
   public DocumentFormat.OpenXml.Drawing.SystemColor? OpenXmlElement
   {

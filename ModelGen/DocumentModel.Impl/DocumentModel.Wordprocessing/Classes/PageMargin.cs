@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PageMargin Class.
 /// </summary>
-public class PageMarginImpl: ModelElementImpl, PageMargin
+public partial class PageMarginImpl: ModelElementImpl, PageMargin
 {
   public DocumentFormat.OpenXml.Wordprocessing.PageMargin? OpenXmlElement
   {

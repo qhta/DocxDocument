@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the PermEnd Class.
 /// </summary>
-public class PermEndImpl: ModelElementImpl, PermEnd
+public partial class PermEndImpl: ModelElementImpl, PermEnd
 {
   public DocumentFormat.OpenXml.Wordprocessing.PermEnd? OpenXmlElement
   {

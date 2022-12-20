@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the AlternativeFormatImportPart
 /// </summary>
-public class AlternativeFormatImportPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, AlternativeFormatImportPart
+public partial class AlternativeFormatImportPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, AlternativeFormatImportPart
 {
   public new DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class AlternativeFormatImportPartImpl: DocumentModel.Packaging.OpenXmlPar
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

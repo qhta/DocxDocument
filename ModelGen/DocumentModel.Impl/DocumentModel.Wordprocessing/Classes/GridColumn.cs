@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Grid Column Definition.
 /// </summary>
-public class GridColumnImpl: ModelElementImpl, GridColumn
+public partial class GridColumnImpl: ModelElementImpl, GridColumn
 {
   public DocumentFormat.OpenXml.Wordprocessing.GridColumn? OpenXmlElement
   {

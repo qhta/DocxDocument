@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the RunPropertiesChange Class.
 /// </summary>
-public class RunPropertiesChangeImpl: ModelElementImpl, RunPropertiesChange
+public partial class RunPropertiesChangeImpl: ModelElementImpl, RunPropertiesChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Future extensions..
 /// </summary>
-public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesExtensionList
+public partial class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
   }
   private ObservableCollection<DocumentModel.Drawings.LinePropertiesExtension>? _LinePropertiesExtensions;
   
-  private void _LinePropertiesExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LinePropertiesExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class LinePropertiesExtensionListImpl: ModelElementImpl, LinePropertiesEx
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.LinePropertiesExtensionImpl valImpl)

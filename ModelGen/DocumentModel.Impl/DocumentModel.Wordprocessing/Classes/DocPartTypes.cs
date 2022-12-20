@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Entry Types.
 /// </summary>
-public class DocPartTypesImpl: ModelElementImpl, DocPartTypes
+public partial class DocPartTypesImpl: ModelElementImpl, DocPartTypes
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? OpenXmlElement
   {

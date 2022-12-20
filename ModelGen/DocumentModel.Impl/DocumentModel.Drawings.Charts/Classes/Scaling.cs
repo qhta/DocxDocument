@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Scaling.
 /// </summary>
-public class ScalingImpl: ModelElementImpl, Scaling
+public partial class ScalingImpl: ModelElementImpl, Scaling
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Scaling? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// DrawingML Object.
 /// </summary>
-public class DrawingImpl: ModelElementImpl, Drawing
+public partial class DrawingImpl: ModelElementImpl, Drawing
 {
   public DocumentFormat.OpenXml.Wordprocessing.Drawing? OpenXmlElement
   {

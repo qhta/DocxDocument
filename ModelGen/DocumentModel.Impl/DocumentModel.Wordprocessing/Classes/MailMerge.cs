@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Mail Merge Settings.
 /// </summary>
-public class MailMergeImpl: ModelElementImpl, MailMerge
+public partial class MailMergeImpl: ModelElementImpl, MailMerge
 {
   public DocumentFormat.OpenXml.Wordprocessing.MailMerge? OpenXmlElement
   {

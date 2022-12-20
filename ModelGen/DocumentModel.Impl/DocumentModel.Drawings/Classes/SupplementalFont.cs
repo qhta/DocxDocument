@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Font.
 /// </summary>
-public class SupplementalFontImpl: ModelElementImpl, SupplementalFont
+public partial class SupplementalFontImpl: ModelElementImpl, SupplementalFont
 {
   public DocumentFormat.OpenXml.Drawing.SupplementalFont? OpenXmlElement
   {

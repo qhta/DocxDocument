@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Style Table Cell Properties.
 /// </summary>
-public class StyleTableCellPropertiesImpl: ModelElementImpl, StyleTableCellProperties
+public partial class StyleTableCellPropertiesImpl: ModelElementImpl, StyleTableCellProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? OpenXmlElement
   {

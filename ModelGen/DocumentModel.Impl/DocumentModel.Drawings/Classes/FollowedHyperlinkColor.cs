@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Followed Hyperlink.
 /// </summary>
-public class FollowedHyperlinkColorImpl: DocumentModel.Drawings.Color2TypeImpl, FollowedHyperlinkColor
+public partial class FollowedHyperlinkColorImpl: DocumentModel.Drawings.Color2TypeImpl, FollowedHyperlinkColor
 {
   public new DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor? OpenXmlElement
   {

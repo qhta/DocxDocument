@@ -3,10 +3,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ControlPropertiesPart
 /// </summary>
-public interface ControlPropertiesPart
+public partial interface ControlPropertiesPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

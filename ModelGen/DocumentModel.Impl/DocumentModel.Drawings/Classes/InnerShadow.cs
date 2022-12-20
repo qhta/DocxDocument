@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Inner Shadow Effect.
 /// </summary>
-public class InnerShadowImpl: ModelElementImpl, InnerShadow
+public partial class InnerShadowImpl: ModelElementImpl, InnerShadow
 {
   public DocumentFormat.OpenXml.Drawing.InnerShadow? OpenXmlElement
   {

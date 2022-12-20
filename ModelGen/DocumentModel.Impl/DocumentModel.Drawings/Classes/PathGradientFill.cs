@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Path Gradient.
 /// </summary>
-public class PathGradientFillImpl: ModelElementImpl, PathGradientFill
+public partial class PathGradientFillImpl: ModelElementImpl, PathGradientFill
 {
   public DocumentFormat.OpenXml.Drawing.PathGradientFill? OpenXmlElement
   {

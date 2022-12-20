@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Level.
 /// </summary>
-public class LevelImpl: ModelElementImpl, Level
+public partial class LevelImpl: ModelElementImpl, Level
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Level? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class LevelImpl: ModelElementImpl, Level
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StringPoint>? _StringPoints;
   
-  private void _StringPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StringPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class LevelImpl: ModelElementImpl, Level
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)
@@ -82,6 +83,7 @@ public class LevelImpl: ModelElementImpl, Level
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)

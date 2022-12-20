@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Subtotals Class.
 /// </summary>
-public class SubtotalsImpl: ModelElementImpl, Subtotals
+public partial class SubtotalsImpl: ModelElementImpl, Subtotals
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals? OpenXmlElement
   {
@@ -57,7 +57,7 @@ public class SubtotalsImpl: ModelElementImpl, Subtotals
   }
   private ObservableCollection<System.UInt32>? _UnsignedIntegerTypes;
   
-  private void _UnsignedIntegerTypes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _UnsignedIntegerTypes_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -67,6 +67,7 @@ public class SubtotalsImpl: ModelElementImpl, Subtotals
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType { Val = (UInt32)val };
@@ -74,6 +75,7 @@ public class SubtotalsImpl: ModelElementImpl, Subtotals
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType>()

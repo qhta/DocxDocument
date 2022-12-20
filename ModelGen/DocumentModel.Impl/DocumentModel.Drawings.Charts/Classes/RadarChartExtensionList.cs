@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the RadarChartExtensionList Class.
 /// </summary>
-public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionList
+public partial class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionL
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.RadarChartExtension>? _RadarChartExtensions;
   
-  private void _RadarChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _RadarChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionL
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.RadarChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class RadarChartExtensionListImpl: ModelElementImpl, RadarChartExtensionL
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.RadarChartExtensionImpl valImpl)

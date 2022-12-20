@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ChartDrawingPart
 /// </summary>
-public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartDrawingPart
+public partial class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartDrawingPart
 {
   public new DocumentFormat.OpenXml.Packaging.ChartDrawingPart? OpenXmlElement
   {
@@ -18,13 +18,34 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
     OpenXmlElement = openXmlElement;
   }
   
+  /// <summary>
+  /// Gets the ChartPart of the ChartDrawingPart
+  /// </summary>
+  public DocumentModel.Packaging.ChartPart? ChartPart
+  {
+    get
+    {
+      if (OpenXmlElement?.ChartPart != null)
+        return new DocumentModel.Packaging.ChartPartImpl(OpenXmlElement.ChartPart);
+      return null;
+    }
+  }
+  
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the ExtendedChartPart of the ChartDrawingPart
+  /// </summary>
+  public DocumentModel.Packaging.ExtendedChartPart? ExtendedChartPart
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ChartDrawingPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.ExtendedChartPart != null)
+        return new DocumentModel.Packaging.ExtendedChartPartImpl(OpenXmlElement.ExtendedChartPart);
+      return null;
     }
   }
   
@@ -49,33 +70,10 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -86,6 +84,7 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -97,6 +96,7 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -118,11 +118,6 @@ public class ChartDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, Char
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.ChartDrawingPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>

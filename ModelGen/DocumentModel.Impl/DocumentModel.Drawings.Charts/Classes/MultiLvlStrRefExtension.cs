@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the MultiLvlStrRefExtension Class.
 /// </summary>
-public class MultiLvlStrRefExtensionImpl: ModelElementImpl, MultiLvlStrRefExtension
+public partial class MultiLvlStrRefExtensionImpl: ModelElementImpl, MultiLvlStrRefExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtension? OpenXmlElement
   {

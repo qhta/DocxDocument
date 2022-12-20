@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Paragraph Numbering Properties.
 /// </summary>
-public class NumberingChangeImpl: ModelElementImpl, NumberingChange
+public partial class NumberingChangeImpl: ModelElementImpl, NumberingChange
 {
   public DocumentFormat.OpenXml.Wordprocessing.NumberingChange? OpenXmlElement
   {

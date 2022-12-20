@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the LineSerExtension Class.
 /// </summary>
-public class LineSerExtensionImpl: ModelElementImpl, LineSerExtension
+public partial class LineSerExtensionImpl: ModelElementImpl, LineSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension? OpenXmlElement
   {

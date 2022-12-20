@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Shape Adjust.
 /// </summary>
-public interface Adjust
+public partial interface Adjust
 {
   /// <summary>
   /// Adjust Handle Index
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public UInt32? Index { get; set; }
   
   /// <summary>
   /// Value
   /// </summary>
-  public Double? Val { get ; set; }
+  public Double? Val { get; set; }
   
 }

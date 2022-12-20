@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines MailMergeRecipientDataPart.
 /// </summary>
-public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, MailMergeRecipientDataPart
+public partial class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, MailMergeRecipientDataPart
 {
   public new DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? OpenXmlElement
   {
@@ -61,11 +61,6 @@ public class MailMergeRecipientDataPartImpl: DocumentModel.Packaging.OpenXmlPart
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

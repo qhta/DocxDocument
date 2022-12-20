@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the DataLabelHidden Class.
 /// </summary>
-public class DataLabelHiddenImpl: ModelElementImpl, DataLabelHidden
+public partial class DataLabelHiddenImpl: ModelElementImpl, DataLabelHidden
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden? OpenXmlElement
   {

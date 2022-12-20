@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualGroupProperties Class.
 /// </summary>
-public class NonVisualGroupPropertiesImpl: ModelElementImpl, NonVisualGroupProperties
+public partial class NonVisualGroupPropertiesImpl: ModelElementImpl, NonVisualGroupProperties
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Delimiter Properties.
 /// </summary>
-public class DelimiterPropertiesImpl: ModelElementImpl, DelimiterProperties
+public partial class DelimiterPropertiesImpl: ModelElementImpl, DelimiterProperties
 {
   public DocumentFormat.OpenXml.Math.DelimiterProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Table Properties.
 /// </summary>
-public class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTableProperties
+public partial class PreviousTablePropertiesImpl: ModelElementImpl, PreviousTableProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the ShapeStyle Class.
 /// </summary>
-public class ShapeStyleImpl: ModelElementImpl, ShapeStyle
+public partial class ShapeStyleImpl: ModelElementImpl, ShapeStyle
 {
   public DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? OpenXmlElement
   {

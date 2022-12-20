@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 /// Defines the NumberDiagramInfo Class.
 /// </summary>
-public class NumberDiagramInfoImpl: ModelElementImpl, NumberDiagramInfo
+public partial class NumberDiagramInfoImpl: ModelElementImpl, NumberDiagramInfo
 {
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? OpenXmlElement
   {

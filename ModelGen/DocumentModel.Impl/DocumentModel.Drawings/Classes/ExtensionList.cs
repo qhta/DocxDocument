@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ExtensionList Class.
 /// </summary>
-public class ExtensionListImpl: ModelElementImpl, ExtensionList
+public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.ExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Extension>? _Extensions;
   
-  private void _Extensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Extensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Extension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ExtensionListImpl: ModelElementImpl, ExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ExtensionImpl valImpl)

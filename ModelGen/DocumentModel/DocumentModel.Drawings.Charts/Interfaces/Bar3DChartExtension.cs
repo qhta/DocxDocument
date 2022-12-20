@@ -3,13 +3,13 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Bar3DChartExtension Class.
 /// </summary>
-public interface Bar3DChartExtension
+public partial interface Bar3DChartExtension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredBarSeries? FilteredBarSeries { get ; set; }
+  public DocumentModel.Drawings.Charts.FilteredBarSeries? FilteredBarSeries { get; set; }
   
 }

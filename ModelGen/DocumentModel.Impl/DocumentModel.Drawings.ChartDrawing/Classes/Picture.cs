@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Defines the Picture Class.
 /// </summary>
-public class PictureImpl: ModelElementImpl, Picture
+public partial class PictureImpl: ModelElementImpl, Picture
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? OpenXmlElement
   {

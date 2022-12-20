@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SlicersPart
 /// </summary>
-public class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPart
+public partial class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPart
 {
   public new DocumentFormat.OpenXml.Packaging.SlicersPart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class SlicersPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlicersPa
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlicersPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SlicersPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

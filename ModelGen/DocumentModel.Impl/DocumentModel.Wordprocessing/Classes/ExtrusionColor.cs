@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ExtrusionColor Class.
 /// </summary>
-public class ExtrusionColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ExtrusionColor
+public partial class ExtrusionColorImpl: DocumentModel.Wordprocessing.ColorTypeImpl, ExtrusionColor
 {
   public new DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? OpenXmlElement
   {

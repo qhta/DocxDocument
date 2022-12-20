@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// List of extensions to the CT_DiagramDefintions type..
 /// </summary>
-public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefinitionExtensionList
+public partial class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefinitionExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension>? _DiagramDefinitionExtensions;
   
-  private void _DiagramDefinitionExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DiagramDefinitionExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class DiagramDefinitionExtensionListImpl: ModelElementImpl, DiagramDefini
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionImpl valImpl)

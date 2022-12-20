@@ -3,36 +3,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenFillProperties Class.
 /// </summary>
-public interface HiddenFillProperties
+public partial interface HiddenFillProperties
 {
   /// <summary>
   /// NoFill.
   /// </summary>
-  public Boolean? NoFill { get ; set; }
+  public Boolean? NoFill { get; set; }
   
   /// <summary>
   /// SolidFill.
   /// </summary>
-  public DocumentModel.Drawings.SolidFill? SolidFill { get ; set; }
+  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
   
   /// <summary>
   /// GradientFill.
   /// </summary>
-  public DocumentModel.Drawings.GradientFill? GradientFill { get ; set; }
+  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
   
   /// <summary>
   /// BlipFill.
   /// </summary>
-  public DocumentModel.Drawings.BlipFill? BlipFill { get ; set; }
+  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
   
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawings.PatternFill? PatternFill { get ; set; }
+  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
   
   /// <summary>
   /// Group Fill.
   /// </summary>
-  public Boolean? GroupFill { get ; set; }
+  public Boolean? GroupFill { get; set; }
   
 }

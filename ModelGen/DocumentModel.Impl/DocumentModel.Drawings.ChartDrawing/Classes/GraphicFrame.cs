@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Graphic Frame.
 /// </summary>
-public class GraphicFrameImpl: ModelElementImpl, GraphicFrame
+public partial class GraphicFrameImpl: ModelElementImpl, GraphicFrame
 {
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame? OpenXmlElement
   {

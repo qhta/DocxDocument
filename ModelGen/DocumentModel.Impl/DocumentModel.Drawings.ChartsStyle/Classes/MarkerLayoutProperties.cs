@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the MarkerLayoutProperties Class.
 /// </summary>
-public class MarkerLayoutPropertiesImpl: ModelElementImpl, MarkerLayoutProperties
+public partial class MarkerLayoutPropertiesImpl: ModelElementImpl, MarkerLayoutProperties
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? OpenXmlElement
   {

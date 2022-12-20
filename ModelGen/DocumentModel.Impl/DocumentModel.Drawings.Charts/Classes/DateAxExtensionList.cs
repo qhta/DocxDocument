@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DateAxExtensionList Class.
 /// </summary>
-public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
+public partial class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.DateAxExtension>? _DateAxExtensions;
   
-  private void _DateAxExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DateAxExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.DateAxExtensionImpl valImpl)

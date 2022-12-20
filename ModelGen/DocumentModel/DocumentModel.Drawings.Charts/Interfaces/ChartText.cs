@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ChartText Class.
 /// </summary>
-public interface ChartText
+public partial interface ChartText
 {
   /// <summary>
   /// String Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringReference? StringReference { get ; set; }
+  public DocumentModel.Drawings.Charts.StringReference? StringReference { get; set; }
   
   /// <summary>
   /// Rich Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RichText? RichText { get ; set; }
+  public DocumentModel.Drawings.Charts.RichText? RichText { get; set; }
   
   /// <summary>
   /// String Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringLiteral? StringLiteral { get ; set; }
+  public DocumentModel.Drawings.Charts.StringLiteral? StringLiteral { get; set; }
   
 }

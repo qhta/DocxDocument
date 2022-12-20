@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Group.
 /// </summary>
-public class GroupImpl: ModelElementImpl, Group
+public partial class GroupImpl: ModelElementImpl, Group
 {
   public DocumentFormat.OpenXml.Vml.Group? OpenXmlElement
   {

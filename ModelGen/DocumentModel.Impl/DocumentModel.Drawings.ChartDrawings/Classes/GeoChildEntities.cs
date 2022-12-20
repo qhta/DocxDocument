@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoChildEntities Class.
 /// </summary>
-public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
+public partial class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntities? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity>? _GeoHierarchyEntities;
   
-  private void _GeoHierarchyEntities_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _GeoHierarchyEntities_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntityImpl valImpl)
@@ -82,6 +83,7 @@ public class GeoChildEntitiesImpl: ModelElementImpl, GeoChildEntities
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntityImpl valImpl)

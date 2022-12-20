@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the TextFontType Class.
 /// </summary>
-public class TextFontTypeImpl: ModelElementImpl, TextFontType
+public partial class TextFontTypeImpl: ModelElementImpl, TextFontType
 {
   public DocumentFormat.OpenXml.Drawing.TextFontType? OpenXmlElement
   {

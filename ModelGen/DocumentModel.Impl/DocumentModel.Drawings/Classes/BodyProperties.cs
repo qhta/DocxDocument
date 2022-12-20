@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BodyProperties Class.
 /// </summary>
-public class BodyPropertiesImpl: ModelElementImpl, BodyProperties
+public partial class BodyPropertiesImpl: ModelElementImpl, BodyProperties
 {
   public DocumentFormat.OpenXml.Drawing.BodyProperties? OpenXmlElement
   {

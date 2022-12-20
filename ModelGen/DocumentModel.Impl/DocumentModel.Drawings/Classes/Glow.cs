@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Glow Effect.
 /// </summary>
-public class GlowImpl: ModelElementImpl, Glow
+public partial class GlowImpl: ModelElementImpl, Glow
 {
   public DocumentFormat.OpenXml.Drawing.Glow? OpenXmlElement
   {

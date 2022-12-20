@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 /// Defines the BorderType Class.
 /// </summary>
-public class BorderTypeImpl: ModelElementImpl, BorderType
+public partial class BorderTypeImpl: ModelElementImpl, BorderType
 {
   public DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? OpenXmlElement
   {

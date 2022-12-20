@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Color Class.
 /// </summary>
-public class Color3Impl: ModelElementImpl, Color3
+public partial class Color3Impl: ModelElementImpl, Color3
 {
   public DocumentFormat.OpenXml.Office2013.Word.Color? OpenXmlElement
   {

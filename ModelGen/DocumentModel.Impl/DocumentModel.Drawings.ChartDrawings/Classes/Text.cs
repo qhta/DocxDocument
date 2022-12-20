@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Text Class.
 /// </summary>
-public class TextImpl: ModelElementImpl, Text
+public partial class TextImpl: ModelElementImpl, Text
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text? OpenXmlElement
   {

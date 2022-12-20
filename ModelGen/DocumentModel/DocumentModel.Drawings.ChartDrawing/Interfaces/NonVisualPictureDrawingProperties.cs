@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 /// Non-Visual Picture Drawing Properties.
 /// </summary>
-public interface NonVisualPictureDrawingProperties
+public partial interface NonVisualPictureDrawingProperties
 {
   /// <summary>
   /// preferRelativeResize
   /// </summary>
-  public Boolean? PreferRelativeResize { get ; set; }
+  public Boolean? PreferRelativeResize { get; set; }
   
   /// <summary>
   /// PictureLocks.
   /// </summary>
-  public DocumentModel.Drawings.PictureLocks? PictureLocks { get ; set; }
+  public DocumentModel.Drawings.PictureLocks? PictureLocks { get; set; }
   
   /// <summary>
   /// NonVisualPicturePropertiesExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get ; set; }
+  public DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LineJoinMiterProperties Class.
 /// </summary>
-public class LineJoinMiterPropertiesImpl: ModelElementImpl, LineJoinMiterProperties
+public partial class LineJoinMiterPropertiesImpl: ModelElementImpl, LineJoinMiterProperties
 {
   public DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? OpenXmlElement
   {

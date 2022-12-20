@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the MultiLvlStrRefExtensionList Class.
 /// </summary>
-public class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefExtensionList
+public partial class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefEx
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.MultiLvlStrRefExtension>? _MultiLvlStrRefExtensions;
   
-  private void _MultiLvlStrRefExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _MultiLvlStrRefExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefEx
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class MultiLvlStrRefExtensionListImpl: ModelElementImpl, MultiLvlStrRefEx
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionImpl valImpl)

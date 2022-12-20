@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the PlotArea Class.
 /// </summary>
-public class PlotAreaImpl: ModelElementImpl, PlotArea
+public partial class PlotAreaImpl: ModelElementImpl, PlotArea
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotArea? OpenXmlElement
   {
@@ -93,7 +93,7 @@ public class PlotAreaImpl: ModelElementImpl, PlotArea
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.Axis>? _Axises;
   
-  private void _Axises_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Axises_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -103,6 +103,7 @@ public class PlotAreaImpl: ModelElementImpl, PlotArea
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Axis>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.AxisImpl valImpl)
@@ -114,6 +115,7 @@ public class PlotAreaImpl: ModelElementImpl, PlotArea
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.AxisImpl valImpl)

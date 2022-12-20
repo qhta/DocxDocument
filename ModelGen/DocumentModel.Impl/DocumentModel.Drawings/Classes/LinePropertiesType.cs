@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the LinePropertiesType Class.
 /// </summary>
-public class LinePropertiesTypeImpl: ModelElementImpl, LinePropertiesType
+public partial class LinePropertiesTypeImpl: ModelElementImpl, LinePropertiesType
 {
   public DocumentFormat.OpenXml.Drawing.LinePropertiesType? OpenXmlElement
   {

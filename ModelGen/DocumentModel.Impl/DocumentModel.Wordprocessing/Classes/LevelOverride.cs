@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LevelOverride Class.
 /// </summary>
-public class LevelOverrideImpl: ModelElementImpl, LevelOverride
+public partial class LevelOverrideImpl: ModelElementImpl, LevelOverride
 {
   public DocumentFormat.OpenXml.Wordprocessing.LevelOverride? OpenXmlElement
   {

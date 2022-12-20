@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the TextBox Class.
 /// </summary>
-public class TextBoxImpl: ModelElementImpl, TextBox
+public partial class TextBoxImpl: ModelElementImpl, TextBox
 {
   public DocumentFormat.OpenXml.Vml.TextBox? OpenXmlElement
   {

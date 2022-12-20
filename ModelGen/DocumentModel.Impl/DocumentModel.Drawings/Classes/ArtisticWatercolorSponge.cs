@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticWatercolorSponge Class.
 /// </summary>
-public class ArtisticWatercolorSpongeImpl: ModelElementImpl, ArtisticWatercolorSponge
+public partial class ArtisticWatercolorSpongeImpl: ModelElementImpl, ArtisticWatercolorSponge
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Run Properties.
 /// </summary>
-public class PreviousRunPropertiesImpl: ModelElementImpl, PreviousRunProperties
+public partial class PreviousRunPropertiesImpl: ModelElementImpl, PreviousRunProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? OpenXmlElement
   {

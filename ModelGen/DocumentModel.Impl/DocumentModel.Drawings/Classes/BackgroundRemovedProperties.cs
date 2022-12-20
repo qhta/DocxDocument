@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundRemovedProperties Class.
 /// </summary>
-public class BackgroundRemovedPropertiesImpl: ModelElementImpl, BackgroundRemovedProperties
+public partial class BackgroundRemovedPropertiesImpl: ModelElementImpl, BackgroundRemovedProperties
 {
   public DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties? OpenXmlElement
   {

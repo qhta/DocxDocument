@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the AreaSerExtension Class.
 /// </summary>
-public class AreaSerExtensionImpl: ModelElementImpl, AreaSerExtension
+public partial class AreaSerExtensionImpl: ModelElementImpl, AreaSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension? OpenXmlElement
   {

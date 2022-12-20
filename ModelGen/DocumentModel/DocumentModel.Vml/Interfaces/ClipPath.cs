@@ -3,11 +3,11 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Shape Clipping Path.
 /// </summary>
-public interface ClipPath
+public partial interface ClipPath
 {
   /// <summary>
   /// Path Definition
   /// </summary>
-  public String? Value { get ; set; }
+  public String? Value { get; set; }
   
 }

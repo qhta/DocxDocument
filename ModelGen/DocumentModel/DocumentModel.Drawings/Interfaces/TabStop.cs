@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tab Stop.
 /// </summary>
-public interface TabStop
+public partial interface TabStop
 {
   /// <summary>
   /// Tab Position
   /// </summary>
-  public Int32? Position { get ; set; }
+  public Int32? Position { get; set; }
   
   /// <summary>
   /// Tab Alignment
   /// </summary>
-  public DocumentModel.Drawings.TextTabAlignmentKind? Alignment { get ; set; }
+  public DocumentModel.Drawings.TextTabAlignmentKind? Alignment { get; set; }
   
 }

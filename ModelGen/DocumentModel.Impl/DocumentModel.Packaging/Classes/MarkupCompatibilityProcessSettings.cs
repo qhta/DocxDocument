@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents markup compatibility processing settings.
 /// </summary>
-public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupCompatibilityProcessSettings
+public partial class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupCompatibilityProcessSettings
 {
   public DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? OpenXmlElement
   {
@@ -27,7 +27,7 @@ public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupComp
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings).GetProperty("ProcessMode").SetValue(OpenXmlElement, (DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings).GetProperty("ProcessMode")?.SetValue(OpenXmlElement, (DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode?)value);
     }
   }
   
@@ -40,7 +40,7 @@ public class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupComp
     set
     {
       if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings).GetProperty("TargetFileFormatVersions").SetValue(OpenXmlElement, (DocumentFormat.OpenXml.FileFormatVersions?)value);
+        typeof(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings).GetProperty("TargetFileFormatVersions")?.SetValue(OpenXmlElement, (DocumentFormat.OpenXml.FileFormatVersions?)value);
     }
   }
   

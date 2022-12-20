@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the OfficeStyleSheetExtension Class.
 /// </summary>
-public class OfficeStyleSheetExtensionImpl: ModelElementImpl, OfficeStyleSheetExtension
+public partial class OfficeStyleSheetExtensionImpl: ModelElementImpl, OfficeStyleSheetExtension
 {
   public DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension? OpenXmlElement
   {

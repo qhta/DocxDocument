@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Video from File.
 /// </summary>
-public class VideoFromFileImpl: ModelElementImpl, VideoFromFile
+public partial class VideoFromFileImpl: ModelElementImpl, VideoFromFile
 {
   public DocumentFormat.OpenXml.Drawing.VideoFromFile? OpenXmlElement
   {

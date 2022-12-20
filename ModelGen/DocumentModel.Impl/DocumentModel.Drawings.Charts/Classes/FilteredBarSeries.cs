@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredBarSeries Class.
 /// </summary>
-public class FilteredBarSeriesImpl: ModelElementImpl, FilteredBarSeries
+public partial class FilteredBarSeriesImpl: ModelElementImpl, FilteredBarSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries? OpenXmlElement
   {

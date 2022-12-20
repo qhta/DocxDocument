@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the TextData Class.
 /// </summary>
-public class TextDataImpl: ModelElementImpl, TextData
+public partial class TextDataImpl: ModelElementImpl, TextData
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? OpenXmlElement
   {

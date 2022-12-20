@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DataModelExtension Class.
 /// </summary>
-public class DataModelExtensionImpl: ModelElementImpl, DataModelExtension
+public partial class DataModelExtensionImpl: ModelElementImpl, DataModelExtension
 {
   public DocumentFormat.OpenXml.Drawing.DataModelExtension? OpenXmlElement
   {

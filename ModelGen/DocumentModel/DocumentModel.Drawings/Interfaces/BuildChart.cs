@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Build Chart.
 /// </summary>
-public interface BuildChart
+public partial interface BuildChart
 {
   /// <summary>
   /// Build
   /// </summary>
-  public String? Build { get ; set; }
+  public String? Build { get; set; }
   
   /// <summary>
   /// Animate Background
   /// </summary>
-  public Boolean? AnimateBackground { get ; set; }
+  public Boolean? AnimateBackground { get; set; }
   
 }

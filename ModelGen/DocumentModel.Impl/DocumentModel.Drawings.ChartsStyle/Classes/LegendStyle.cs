@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the LegendStyle Class.
 /// </summary>
-public class LegendStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LegendStyle
+public partial class LegendStyleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, LegendStyle
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LegendStyle? OpenXmlElement
   {

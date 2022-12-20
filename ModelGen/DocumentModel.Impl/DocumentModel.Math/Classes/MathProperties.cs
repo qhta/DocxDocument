@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Math Properties.
 /// </summary>
-public class MathPropertiesImpl: ModelElementImpl, MathProperties
+public partial class MathPropertiesImpl: ModelElementImpl, MathProperties
 {
   public DocumentFormat.OpenXml.Math.MathProperties? OpenXmlElement
   {

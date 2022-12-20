@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPaintBrush Class.
 /// </summary>
-public class ArtisticPaintBrushImpl: ModelElementImpl, ArtisticPaintBrush
+public partial class ArtisticPaintBrushImpl: ModelElementImpl, ArtisticPaintBrush
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? OpenXmlElement
   {

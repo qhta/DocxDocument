@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SeriesLines Class.
 /// </summary>
-public class SeriesLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, SeriesLines
+public partial class SeriesLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, SeriesLines
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? OpenXmlElement
   {

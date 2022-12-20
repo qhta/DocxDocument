@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Format Scheme.
 /// </summary>
-public class FormatSchemeImpl: ModelElementImpl, FormatScheme
+public partial class FormatSchemeImpl: ModelElementImpl, FormatScheme
 {
   public DocumentFormat.OpenXml.Drawing.FormatScheme? OpenXmlElement
   {

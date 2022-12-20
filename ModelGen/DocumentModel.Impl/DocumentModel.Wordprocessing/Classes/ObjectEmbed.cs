@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the ObjectEmbed Class.
 /// </summary>
-public class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
+public partial class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
 {
   public DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? OpenXmlElement
   {

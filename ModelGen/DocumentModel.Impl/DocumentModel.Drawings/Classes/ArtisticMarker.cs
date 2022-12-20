@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticMarker Class.
 /// </summary>
-public class ArtisticMarkerImpl: ModelElementImpl, ArtisticMarker
+public partial class ArtisticMarkerImpl: ModelElementImpl, ArtisticMarker
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? OpenXmlElement
   {

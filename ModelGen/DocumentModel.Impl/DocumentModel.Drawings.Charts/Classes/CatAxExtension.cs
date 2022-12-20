@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the CatAxExtension Class.
 /// </summary>
-public class CatAxExtensionImpl: ModelElementImpl, CatAxExtension
+public partial class CatAxExtensionImpl: ModelElementImpl, CatAxExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.CatAxExtension? OpenXmlElement
   {

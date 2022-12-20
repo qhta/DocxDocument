@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableLayout Class.
 /// </summary>
-public class TableLayoutImpl: ModelElementImpl, TableLayout
+public partial class TableLayoutImpl: ModelElementImpl, TableLayout
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableLayout? OpenXmlElement
   {

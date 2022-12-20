@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the SingleCellTablePart
 /// </summary>
-public class SingleCellTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SingleCellTablePart
+public partial class SingleCellTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SingleCellTablePart
 {
   public new DocumentFormat.OpenXml.Packaging.SingleCellTablePart? OpenXmlElement
   {
@@ -21,21 +21,11 @@ public class SingleCellTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, S
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SingleCellTablePart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.SingleCellTablePart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

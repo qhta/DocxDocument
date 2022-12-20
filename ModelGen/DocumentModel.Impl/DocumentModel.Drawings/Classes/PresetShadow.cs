@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Preset Shadow.
 /// </summary>
-public class PresetShadowImpl: ModelElementImpl, PresetShadow
+public partial class PresetShadowImpl: ModelElementImpl, PresetShadow
 {
   public DocumentFormat.OpenXml.Drawing.PresetShadow? OpenXmlElement
   {

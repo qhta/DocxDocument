@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the AreaChartExtensionList Class.
 /// </summary>
-public class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionList
+public partial class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionLis
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.AreaChartExtension>? _AreaChartExtensions;
   
-  private void _AreaChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AreaChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionLis
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.AreaChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class AreaChartExtensionListImpl: ModelElementImpl, AreaChartExtensionLis
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.AreaChartExtensionImpl valImpl)

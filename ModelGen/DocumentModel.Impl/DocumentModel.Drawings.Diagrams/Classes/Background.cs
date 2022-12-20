@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Background Formatting.
 /// </summary>
-public class BackgroundImpl: ModelElementImpl, Background
+public partial class BackgroundImpl: ModelElementImpl, Background
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Background? OpenXmlElement
   {

@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Number Reference.
 /// </summary>
-public interface NumberReference
+public partial interface NumberReference
 {
   /// <summary>
   /// Formula.
   /// </summary>
-  public String? Formula { get ; set; }
+  public String? Formula { get; set; }
   
   /// <summary>
   /// NumberingCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberingCache? NumberingCache { get ; set; }
+  public DocumentModel.Drawings.Charts.NumberingCache? NumberingCache { get; set; }
   
   /// <summary>
   /// NumRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumRefExtensionList? NumRefExtensionList { get ; set; }
+  public DocumentModel.Drawings.Charts.NumRefExtensionList? NumRefExtensionList { get; set; }
   
 }

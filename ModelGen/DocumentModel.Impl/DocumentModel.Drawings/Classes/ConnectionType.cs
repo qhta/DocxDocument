@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ConnectionType Class.
 /// </summary>
-public class ConnectionTypeImpl: ModelElementImpl, ConnectionType
+public partial class ConnectionTypeImpl: ModelElementImpl, ConnectionType
 {
   public DocumentFormat.OpenXml.Drawing.ConnectionType? OpenXmlElement
   {

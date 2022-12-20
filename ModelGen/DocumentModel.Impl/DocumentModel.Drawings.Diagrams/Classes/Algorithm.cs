@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Algorithm.
 /// </summary>
-public class AlgorithmImpl: ModelElementImpl, Algorithm
+public partial class AlgorithmImpl: ModelElementImpl, Algorithm
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm? OpenXmlElement
   {
@@ -87,7 +87,7 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Parameter>? _Parameters;
   
-  private void _Parameters_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Parameters_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +97,7 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Parameter>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ParameterImpl valImpl)
@@ -108,6 +109,7 @@ public class AlgorithmImpl: ModelElementImpl, Algorithm
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ParameterImpl valImpl)

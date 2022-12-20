@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Stroke Class.
 /// </summary>
-public class StrokeImpl: ModelElementImpl, Stroke
+public partial class StrokeImpl: ModelElementImpl, Stroke
 {
   public DocumentFormat.OpenXml.Vml.Stroke? OpenXmlElement
   {

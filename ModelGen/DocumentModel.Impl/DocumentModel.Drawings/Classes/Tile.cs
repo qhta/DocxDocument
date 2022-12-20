@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Tile.
 /// </summary>
-public class TileImpl: ModelElementImpl, Tile
+public partial class TileImpl: ModelElementImpl, Tile
 {
   public DocumentFormat.OpenXml.Drawing.Tile? OpenXmlElement
   {

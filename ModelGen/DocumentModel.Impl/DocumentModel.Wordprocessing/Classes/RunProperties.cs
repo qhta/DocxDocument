@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Run Properties.
 /// </summary>
-public class RunPropertiesImpl: ModelElementImpl, RunProperties
+public partial class RunPropertiesImpl: ModelElementImpl, RunProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.RunProperties? OpenXmlElement
   {

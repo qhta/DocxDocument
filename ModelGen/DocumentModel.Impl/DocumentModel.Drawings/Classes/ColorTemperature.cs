@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ColorTemperature Class.
 /// </summary>
-public class ColorTemperatureImpl: ModelElementImpl, ColorTemperature
+public partial class ColorTemperatureImpl: ModelElementImpl, ColorTemperature
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? OpenXmlElement
   {

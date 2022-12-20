@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Extension2 Class.
 /// </summary>
-public class Extension2Impl: ModelElementImpl, Extension2
+public partial class Extension2Impl: ModelElementImpl, Extension2
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Extension2? OpenXmlElement
   {

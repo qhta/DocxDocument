@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the OfficeStyleSheetExtensionList Class.
 /// </summary>
-public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleSheetExtensionList
+public partial class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleSheetExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
   }
   private ObservableCollection<DocumentModel.Drawings.OfficeStyleSheetExtension>? _OfficeStyleSheetExtensions;
   
-  private void _OfficeStyleSheetExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _OfficeStyleSheetExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class OfficeStyleSheetExtensionListImpl: ModelElementImpl, OfficeStyleShe
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.OfficeStyleSheetExtensionImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LineNumberType Class.
 /// </summary>
-public class LineNumberTypeImpl: ModelElementImpl, LineNumberType
+public partial class LineNumberTypeImpl: ModelElementImpl, LineNumberType
 {
   public DocumentFormat.OpenXml.Wordprocessing.LineNumberType? OpenXmlElement
   {

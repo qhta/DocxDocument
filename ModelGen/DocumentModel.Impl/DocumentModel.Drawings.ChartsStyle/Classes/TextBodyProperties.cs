@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the TextBodyProperties Class.
 /// </summary>
-public class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
+public partial class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties? OpenXmlElement
   {

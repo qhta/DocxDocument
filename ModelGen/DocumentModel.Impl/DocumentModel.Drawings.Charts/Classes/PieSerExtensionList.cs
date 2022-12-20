@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PieSerExtensionList Class.
 /// </summary>
-public class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
+public partial class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PieSerExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.PieSerExtension>? _PieSerExtensions;
   
-  private void _PieSerExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _PieSerExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieSerExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.PieSerExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.PieSerExtensionImpl valImpl)

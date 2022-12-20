@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Oval.
 /// </summary>
-public class OvalImpl: ModelElementImpl, Oval
+public partial class OvalImpl: ModelElementImpl, Oval
 {
   public DocumentFormat.OpenXml.Vml.Oval? OpenXmlElement
   {

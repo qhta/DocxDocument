@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StringCache Class.
 /// </summary>
-public class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringCache
+public partial class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringCache
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.StringCache? OpenXmlElement
   {
@@ -96,7 +96,7 @@ public class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, 
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StringPoint>? _StringPoints;
   
-  private void _StringPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StringPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -106,6 +106,7 @@ public class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, 
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)
@@ -117,6 +118,7 @@ public class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, 
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)

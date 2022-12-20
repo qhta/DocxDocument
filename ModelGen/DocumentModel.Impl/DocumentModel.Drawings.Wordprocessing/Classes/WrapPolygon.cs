@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Tight Wrapping Extents Polygon.
 /// </summary>
-public class WrapPolygonImpl: ModelElementImpl, WrapPolygon
+public partial class WrapPolygonImpl: ModelElementImpl, WrapPolygon
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? OpenXmlElement
   {

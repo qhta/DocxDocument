@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the base class for OpenXmlPackage and OpenXmlPart.
 /// </summary>
-public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
+public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
 {
   public DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer? OpenXmlElement
   {
@@ -39,32 +39,10 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
       }
       return _ExternalRelationships;
     }
-    set
-    {
-      if (value != null && value != _ExternalRelationships && OpenXmlElement!=null)
-      {
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ExternalRelationshipImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              if (!OpenXmlElement.ExternalRelationships.Contains(item))
-                OpenXmlElement.AddExternalRelationship(item.RelationshipType, item.Uri, item.Id);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ExternalRelationship> observableCollection)
-        _ExternalRelationships = observableCollection;
-      else if (value != null)
-        _ExternalRelationships = new ObservableCollection<DocumentModel.Packaging.ExternalRelationship>(value);
-      else
-       _ExternalRelationships = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ExternalRelationship>? _ExternalRelationships;
   
-  private void _ExternalRelationships_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ExternalRelationships_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -75,6 +53,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
             OpenXmlElement.DeleteReferenceRelationship(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ExternalRelationshipImpl valImpl)
@@ -86,6 +65,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             if (val is DocumentModel.Packaging.ExternalRelationshipImpl valImpl)
@@ -123,32 +103,10 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
       }
       return _HyperlinkRelationships;
     }
-    set
-    {
-      if (value != null && value != _HyperlinkRelationships && OpenXmlElement!=null)
-      {
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.HyperlinkRelationshipImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              if (!OpenXmlElement.HyperlinkRelationships.Contains(item))
-                OpenXmlElement.AddHyperlinkRelationship(item.Uri, item.IsExternal, item.Id);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.HyperlinkRelationship> observableCollection)
-        _HyperlinkRelationships = observableCollection;
-      else if (value != null)
-        _HyperlinkRelationships = new ObservableCollection<DocumentModel.Packaging.HyperlinkRelationship>(value);
-      else
-       _HyperlinkRelationships = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.HyperlinkRelationship>? _HyperlinkRelationships;
   
-  private void _HyperlinkRelationships_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _HyperlinkRelationships_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -159,6 +117,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
             OpenXmlElement.DeleteReferenceRelationship(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.HyperlinkRelationshipImpl valImpl)
@@ -170,6 +129,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             if (val is DocumentModel.Packaging.HyperlinkRelationshipImpl valImpl)
@@ -207,32 +167,10 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
       }
       return _DataPartReferenceRelationships;
     }
-    set
-    {
-      if (value != null && value != _DataPartReferenceRelationships && OpenXmlElement!=null)
-      {
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.DataPartReferenceRelationshipImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              if (!OpenXmlElement.DataPartReferenceRelationships.Contains(item))
-                OpenXmlElement.AddDataPartReferenceRelationship(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.DataPartReferenceRelationship> observableCollection)
-        _DataPartReferenceRelationships = observableCollection;
-      else if (value != null)
-        _DataPartReferenceRelationships = new ObservableCollection<DocumentModel.Packaging.DataPartReferenceRelationship>(value);
-      else
-       _DataPartReferenceRelationships = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.DataPartReferenceRelationship>? _DataPartReferenceRelationships;
   
-  private void _DataPartReferenceRelationships_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _DataPartReferenceRelationships_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -243,6 +181,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
             OpenXmlElement.DeleteReferenceRelationship(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.DataPartReferenceRelationshipImpl valImpl)
@@ -254,6 +193,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             if (val is DocumentModel.Packaging.DataPartReferenceRelationshipImpl valImpl)
@@ -291,32 +231,10 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
       }
       return _Parts;
     }
-    set
-    {
-      if (value != null && value != _Parts && OpenXmlElement!=null)
-      {
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.IdPartPairImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              if (!OpenXmlElement.Parts.Contains(item))
-                OpenXmlElement.AddPart(item.OpenXmlPart, item.RelationshipId);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.IdPartPair> observableCollection)
-        _Parts = observableCollection;
-      else if (value != null)
-        _Parts = new ObservableCollection<DocumentModel.Packaging.IdPartPair>(value);
-      else
-       _Parts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.IdPartPair>? _Parts;
   
-  private void _Parts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Parts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -327,6 +245,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
             OpenXmlElement.DeletePart(item.RelationshipId);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.IdPartPairImpl valImpl)
@@ -338,6 +257,7 @@ public class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             if (val is DocumentModel.Packaging.IdPartPairImpl valImpl)

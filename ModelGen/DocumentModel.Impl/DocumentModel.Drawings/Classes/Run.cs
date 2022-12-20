@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Text Run.
 /// </summary>
-public class RunImpl: ModelElementImpl, Run
+public partial class RunImpl: ModelElementImpl, Run
 {
   public DocumentFormat.OpenXml.Drawing.Run? OpenXmlElement
   {

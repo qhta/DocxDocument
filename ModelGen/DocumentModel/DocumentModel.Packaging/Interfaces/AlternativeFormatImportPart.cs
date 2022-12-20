@@ -3,8 +3,8 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the AlternativeFormatImportPart
 /// </summary>
-public interface AlternativeFormatImportPart
+public partial interface AlternativeFormatImportPart
 {
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

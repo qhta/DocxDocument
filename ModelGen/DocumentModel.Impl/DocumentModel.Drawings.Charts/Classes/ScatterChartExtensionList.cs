@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ScatterChartExtensionList Class.
 /// </summary>
-public class ScatterChartExtensionListImpl: ModelElementImpl, ScatterChartExtensionList
+public partial class ScatterChartExtensionListImpl: ModelElementImpl, ScatterChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ScatterChartExtensionListImpl: ModelElementImpl, ScatterChartExtens
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.ScatterChartExtension>? _ScatterChartExtensions;
   
-  private void _ScatterChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ScatterChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ScatterChartExtensionListImpl: ModelElementImpl, ScatterChartExtens
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.ScatterChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class ScatterChartExtensionListImpl: ModelElementImpl, ScatterChartExtens
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.ScatterChartExtensionImpl valImpl)

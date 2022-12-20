@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundMark Class.
 /// </summary>
-public class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
+public partial class BackgroundMarkImpl: ModelElementImpl, BackgroundMark
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? OpenXmlElement
   {

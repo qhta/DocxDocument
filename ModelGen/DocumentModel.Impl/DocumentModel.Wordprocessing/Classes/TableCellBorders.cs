@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TableCellBorders Class.
 /// </summary>
-public class TableCellBordersImpl: ModelElementImpl, TableCellBorders
+public partial class TableCellBordersImpl: ModelElementImpl, TableCellBorders
 {
   public DocumentFormat.OpenXml.Wordprocessing.TableCellBorders? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// String Literal.
 /// </summary>
-public class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringLiteral
+public partial class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringLiteral
 {
   public new DocumentFormat.OpenXml.Drawing.Charts.StringLiteral? OpenXmlElement
   {
@@ -96,7 +96,7 @@ public class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StringPoint>? _StringPoints;
   
-  private void _StringPoints_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StringPoints_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -106,6 +106,7 @@ public class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)
@@ -117,6 +118,7 @@ public class StringLiteralImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StringPointImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Extra Color Scheme.
 /// </summary>
-public class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
+public partial class ExtraColorSchemeImpl: ModelElementImpl, ExtraColorScheme
 {
   public DocumentFormat.OpenXml.Drawing.ExtraColorScheme? OpenXmlElement
   {

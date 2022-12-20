@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Vertical Positioning.
 /// </summary>
-public class VerticalPositionImpl: ModelElementImpl, VerticalPosition
+public partial class VerticalPositionImpl: ModelElementImpl, VerticalPosition
 {
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? OpenXmlElement
   {

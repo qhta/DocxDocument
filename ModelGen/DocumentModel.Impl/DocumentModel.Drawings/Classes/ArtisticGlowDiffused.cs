@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticGlowDiffused Class.
 /// </summary>
-public class ArtisticGlowDiffusedImpl: ModelElementImpl, ArtisticGlowDiffused
+public partial class ArtisticGlowDiffusedImpl: ModelElementImpl, ArtisticGlowDiffused
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused? OpenXmlElement
   {

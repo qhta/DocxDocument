@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SurfaceChartSeries Class.
 /// </summary>
-public class SurfaceChartSeries3Impl: ModelElementImpl, SurfaceChartSeries3
+public partial class SurfaceChartSeries3Impl: ModelElementImpl, SurfaceChartSeries3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries? OpenXmlElement
   {

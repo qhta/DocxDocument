@@ -3,21 +3,21 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Fraction Function.
 /// </summary>
-public interface Fraction
+public partial interface Fraction
 {
   /// <summary>
   /// Fraction Properties.
   /// </summary>
-  public DocumentModel.Math.FractionProperties? FractionProperties { get ; set; }
+  public DocumentModel.Math.FractionProperties? FractionProperties { get; set; }
   
   /// <summary>
   /// Numerator.
   /// </summary>
-  public DocumentModel.Math.Numerator? Numerator { get ; set; }
+  public DocumentModel.Math.Numerator? Numerator { get; set; }
   
   /// <summary>
   /// Denominator.
   /// </summary>
-  public DocumentModel.Math.Denominator? Denominator { get ; set; }
+  public DocumentModel.Math.Denominator? Denominator { get; set; }
   
 }

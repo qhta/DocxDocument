@@ -3,21 +3,26 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Theme Override.
 /// </summary>
-public interface ThemeOverride
+public partial interface ThemeOverride
 {
   /// <summary>
   /// Color Scheme.
   /// </summary>
-  public DocumentModel.Drawings.ColorScheme? ColorScheme { get ; set; }
+  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
   
   /// <summary>
   /// FontScheme.
   /// </summary>
-  public DocumentModel.Drawings.FontScheme? FontScheme { get ; set; }
+  public DocumentModel.Drawings.FontScheme? FontScheme { get; set; }
   
   /// <summary>
   /// FormatScheme.
   /// </summary>
-  public DocumentModel.Drawings.FormatScheme? FormatScheme { get ; set; }
+  public DocumentModel.Drawings.FormatScheme? FormatScheme { get; set; }
+  
+  /// <summary>
+  /// Gets the ThemeOverridePart associated with this element.
+  /// </summary>
+  public DocumentModel.Packaging.ThemeOverridePart? ThemeOverridePart { get; set; }
   
 }

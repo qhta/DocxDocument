@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the AxisTitle Class.
 /// </summary>
-public class AxisTitleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, AxisTitle
+public partial class AxisTitleImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, AxisTitle
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.AxisTitle? OpenXmlElement
   {

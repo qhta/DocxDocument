@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Custom XML Attribute.
 /// </summary>
-public class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
+public partial class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
 {
   public DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute? OpenXmlElement
   {

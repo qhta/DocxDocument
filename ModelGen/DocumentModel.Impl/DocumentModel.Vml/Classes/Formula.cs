@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Single Formula.
 /// </summary>
-public class FormulaImpl: ModelElementImpl, Formula
+public partial class FormulaImpl: ModelElementImpl, Formula
 {
   public DocumentFormat.OpenXml.Vml.Formula? OpenXmlElement
   {

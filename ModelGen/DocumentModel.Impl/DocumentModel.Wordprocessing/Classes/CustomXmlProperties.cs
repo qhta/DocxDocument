@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Custom XML Element Properties.
 /// </summary>
-public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
+public partial class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? OpenXmlElement
   {
@@ -87,7 +87,7 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
   }
   private ObservableCollection<DocumentModel.Wordprocessing.CustomXmlAttribute>? _CustomXmlAttributes;
   
-  private void _CustomXmlAttributes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _CustomXmlAttributes_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +97,7 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.CustomXmlAttributeImpl valImpl)
@@ -108,6 +109,7 @@ public class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.CustomXmlAttributeImpl valImpl)

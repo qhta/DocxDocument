@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// QuickTime from File.
 /// </summary>
-public class QuickTimeFromFileImpl: ModelElementImpl, QuickTimeFromFile
+public partial class QuickTimeFromFileImpl: ModelElementImpl, QuickTimeFromFile
 {
   public DocumentFormat.OpenXml.Drawing.QuickTimeFromFile? OpenXmlElement
   {

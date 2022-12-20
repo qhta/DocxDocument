@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Luminance.
 /// </summary>
-public class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
+public partial class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
 {
   public DocumentFormat.OpenXml.Drawing.LuminanceEffect? OpenXmlElement
   {

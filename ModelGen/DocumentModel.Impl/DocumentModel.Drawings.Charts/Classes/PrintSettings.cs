@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PrintSettings Class.
 /// </summary>
-public class PrintSettingsImpl: ModelElementImpl, PrintSettings
+public partial class PrintSettingsImpl: ModelElementImpl, PrintSettings
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PrintSettings? OpenXmlElement
   {

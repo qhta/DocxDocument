@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the StyleEntry Class.
 /// </summary>
-public class StyleEntryImpl: ModelElementImpl, StyleEntry
+public partial class StyleEntryImpl: ModelElementImpl, StyleEntry
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? OpenXmlElement
   {

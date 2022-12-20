@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Highlight Class.
 /// </summary>
-public class HighlightImpl: DocumentModel.Drawings.ColorTypeImpl, Highlight
+public partial class HighlightImpl: DocumentModel.Drawings.ColorTypeImpl, Highlight
 {
   public new DocumentFormat.OpenXml.Drawing.Highlight? OpenXmlElement
   {

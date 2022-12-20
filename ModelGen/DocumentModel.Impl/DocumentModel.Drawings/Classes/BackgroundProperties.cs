@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundProperties Class.
 /// </summary>
-public class BackgroundPropertiesImpl: ModelElementImpl, BackgroundProperties
+public partial class BackgroundPropertiesImpl: ModelElementImpl, BackgroundProperties
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties? OpenXmlElement
   {

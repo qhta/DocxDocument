@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// VML Diagram.
 /// </summary>
-public class DiagramImpl: ModelElementImpl, Diagram
+public partial class DiagramImpl: ModelElementImpl, Diagram
 {
   public DocumentFormat.OpenXml.Vml.Office.Diagram? OpenXmlElement
   {

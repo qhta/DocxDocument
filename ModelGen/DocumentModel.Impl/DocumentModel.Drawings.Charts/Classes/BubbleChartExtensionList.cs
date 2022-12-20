@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BubbleChartExtensionList Class.
 /// </summary>
-public class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensionList
+public partial class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensio
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BubbleChartExtension>? _BubbleChartExtensions;
   
-  private void _BubbleChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BubbleChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensio
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BubbleChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class BubbleChartExtensionListImpl: ModelElementImpl, BubbleChartExtensio
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BubbleChartExtensionImpl valImpl)

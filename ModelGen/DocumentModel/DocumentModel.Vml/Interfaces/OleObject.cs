@@ -3,56 +3,56 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Embedded OLE Object.
 /// </summary>
-public interface OleObject
+public partial interface OleObject
 {
   /// <summary>
   /// OLE Object Type
   /// </summary>
-  public DocumentModel.Vml.OleKind? Type { get ; set; }
+  public DocumentModel.Vml.OleKind? Type { get; set; }
   
   /// <summary>
   /// OLE Object Application
   /// </summary>
-  public String? ProgId { get ; set; }
+  public String? ProgId { get; set; }
   
   /// <summary>
   /// OLE Object Shape
   /// </summary>
-  public String? ShapeId { get ; set; }
+  public String? ShapeId { get; set; }
   
   /// <summary>
   /// OLE Object Representation
   /// </summary>
-  public DocumentModel.Vml.OleDrawAspectKind? DrawAspect { get ; set; }
+  public DocumentModel.Vml.OleDrawAspectKind? DrawAspect { get; set; }
   
   /// <summary>
   /// OLE Object Unique ID
   /// </summary>
-  public String? ObjectId { get ; set; }
+  public String? ObjectId { get; set; }
   
   /// <summary>
   /// Relationship
   /// </summary>
-  public String? Id { get ; set; }
+  public String? Id { get; set; }
   
   /// <summary>
   /// OLE Update Mode
   /// </summary>
-  public DocumentModel.Vml.OleUpdateMode? UpdateMode { get ; set; }
+  public DocumentModel.Vml.OleUpdateMode? UpdateMode { get; set; }
   
   /// <summary>
   /// Embedded Object Alternate Image Request.
   /// </summary>
-  public String? LinkType { get ; set; }
+  public String? LinkType { get; set; }
   
   /// <summary>
   /// Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public String? LockedField { get ; set; }
+  public String? LockedField { get; set; }
   
   /// <summary>
   /// WordprocessingML Field Switches.
   /// </summary>
-  public String? FieldCodes { get ; set; }
+  public String? FieldCodes { get; set; }
   
 }

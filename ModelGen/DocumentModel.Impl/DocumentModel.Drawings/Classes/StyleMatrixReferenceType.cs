@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the StyleMatrixReferenceType Class.
 /// </summary>
-public class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenceType
+public partial class StyleMatrixReferenceTypeImpl: ModelElementImpl, StyleMatrixReferenceType
 {
   public DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType? OpenXmlElement
   {

@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BackgroundNormalProperties Class.
 /// </summary>
-public interface BackgroundNormalProperties
+public partial interface BackgroundNormalProperties
 {
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get ; set; }
+  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

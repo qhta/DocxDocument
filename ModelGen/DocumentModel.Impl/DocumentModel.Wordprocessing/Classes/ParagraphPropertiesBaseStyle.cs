@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesBaseStyleImpl: ModelElementImpl, ParagraphPropertiesBaseStyle
+public partial class ParagraphPropertiesBaseStyleImpl: ModelElementImpl, ParagraphPropertiesBaseStyle
 {
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle? OpenXmlElement
   {

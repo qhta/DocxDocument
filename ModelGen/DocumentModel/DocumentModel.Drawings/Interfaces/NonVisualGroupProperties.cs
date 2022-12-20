@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the NonVisualGroupProperties Class.
 /// </summary>
-public interface NonVisualGroupProperties
+public partial interface NonVisualGroupProperties
 {
   /// <summary>
   /// isLegacyGroup, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? IsLegacyGroup { get ; set; }
+  public Boolean? IsLegacyGroup { get; set; }
   
 }

@@ -3,13 +3,13 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ValAxExtension Class.
 /// </summary>
-public interface ValAxExtension
+public partial interface ValAxExtension
 {
   /// <summary>
   /// URI
   /// </summary>
-  public String? Uri { get ; set; }
+  public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get ; set; }
+  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get; set; }
   
 }

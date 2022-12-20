@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// VML Object.
 /// </summary>
-public class PictureImpl: ModelElementImpl, Picture
+public partial class PictureImpl: ModelElementImpl, Picture
 {
   public DocumentFormat.OpenXml.Wordprocessing.Picture? OpenXmlElement
   {

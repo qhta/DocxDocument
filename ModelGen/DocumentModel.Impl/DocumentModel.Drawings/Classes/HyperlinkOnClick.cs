@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HyperlinkOnClick Class.
 /// </summary>
-public class HyperlinkOnClickImpl: DocumentModel.Drawings.HyperlinkTypeImpl, HyperlinkOnClick
+public partial class HyperlinkOnClickImpl: DocumentModel.Drawings.HyperlinkTypeImpl, HyperlinkOnClick
 {
   public new DocumentFormat.OpenXml.Drawing.HyperlinkOnClick? OpenXmlElement
   {

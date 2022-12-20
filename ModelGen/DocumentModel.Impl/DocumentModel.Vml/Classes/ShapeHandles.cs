@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the ShapeHandles Class.
 /// </summary>
-public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
+public partial class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
 {
   public DocumentFormat.OpenXml.Vml.ShapeHandles? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
   }
   private ObservableCollection<DocumentModel.Vml.ShapeHandle>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.ShapeHandle>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)
@@ -82,6 +83,7 @@ public class ShapeHandlesImpl: ModelElementImpl, ShapeHandles
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Vml.ShapeHandleImpl valImpl)

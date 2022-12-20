@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Alpha Inset/Outset Effect.
 /// </summary>
-public class AlphaOutsetImpl: ModelElementImpl, AlphaOutset
+public partial class AlphaOutsetImpl: ModelElementImpl, AlphaOutset
 {
   public DocumentFormat.OpenXml.Drawing.AlphaOutset? OpenXmlElement
   {

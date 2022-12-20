@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Linear Gradient Fill.
 /// </summary>
-public class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
+public partial class LinearGradientFillImpl: ModelElementImpl, LinearGradientFill
 {
   public DocumentFormat.OpenXml.Drawing.LinearGradientFill? OpenXmlElement
   {

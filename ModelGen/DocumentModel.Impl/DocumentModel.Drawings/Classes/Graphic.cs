@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Graphic Object.
 /// </summary>
-public class GraphicImpl: ModelElementImpl, Graphic
+public partial class GraphicImpl: ModelElementImpl, Graphic
 {
   public DocumentFormat.OpenXml.Drawing.Graphic? OpenXmlElement
   {

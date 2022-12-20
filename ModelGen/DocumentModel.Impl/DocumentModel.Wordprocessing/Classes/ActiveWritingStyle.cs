@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Grammar Checking Settings.
 /// </summary>
-public class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
+public partial class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
 {
   public DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? OpenXmlElement
   {

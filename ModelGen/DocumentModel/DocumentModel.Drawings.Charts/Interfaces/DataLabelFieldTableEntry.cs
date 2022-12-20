@@ -3,21 +3,21 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the DataLabelFieldTableEntry Class.
 /// </summary>
-public interface DataLabelFieldTableEntry
+public partial interface DataLabelFieldTableEntry
 {
   /// <summary>
   /// TextFieldGuid.
   /// </summary>
-  public String? TextFieldGuid { get ; set; }
+  public String? TextFieldGuid { get; set; }
   
   /// <summary>
   /// Formula.
   /// </summary>
-  public String? Formula { get ; set; }
+  public String? Formula { get; set; }
   
   /// <summary>
   /// DataLabelFieldTableCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DataLabelFieldTableCache? DataLabelFieldTableCache { get ; set; }
+  public DocumentModel.Drawings.Charts.DataLabelFieldTableCache? DataLabelFieldTableCache { get; set; }
   
 }

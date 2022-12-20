@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents an abstract base class for all OpenXml parts.
 /// </summary>
-public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, OpenXmlPart
+public partial class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, OpenXmlPart
 {
   public new DocumentFormat.OpenXml.Packaging.OpenXmlPart? OpenXmlElement
   {
@@ -24,11 +24,6 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   public Uri? Uri
   {
     get => (System.Uri?)OpenXmlElement?.Uri;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart).GetProperty("Uri").SetValue(OpenXmlElement, (System.Uri?)value);
-    }
   }
   
   /// <summary>
@@ -37,11 +32,6 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   public virtual String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -50,10 +40,18 @@ public class OpenXmlPartImpl: DocumentModel.Packaging.OpenXmlPartContainerImpl, 
   public virtual String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
+  }
+  
+  /// <summary>
+  /// Gets the root element of the current part.
+  /// </summary>
+  public DocumentModel.ModelElement? RootElement
+  {
+    get
     {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.OpenXmlPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
+      if (OpenXmlElement?.RootElement != null)
+        return new DocumentModel.ModelElementImpl(OpenXmlElement.RootElement);
+      return null;
     }
   }
   

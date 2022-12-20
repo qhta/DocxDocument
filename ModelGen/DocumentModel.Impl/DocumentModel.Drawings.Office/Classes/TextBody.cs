@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 /// Defines the TextBody Class.
 /// </summary>
-public class TextBodyImpl: ModelElementImpl, TextBody
+public partial class TextBodyImpl: ModelElementImpl, TextBody
 {
   public DocumentFormat.OpenXml.Office.Drawing.TextBody? OpenXmlElement
   {

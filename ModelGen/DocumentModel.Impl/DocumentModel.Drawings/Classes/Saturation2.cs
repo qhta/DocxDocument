@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the Saturation Class.
 /// </summary>
-public class Saturation2Impl: ModelElementImpl, Saturation2
+public partial class Saturation2Impl: ModelElementImpl, Saturation2
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.Saturation? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ScatterSerExtension Class.
 /// </summary>
-public class ScatterSerExtensionImpl: ModelElementImpl, ScatterSerExtension
+public partial class ScatterSerExtensionImpl: ModelElementImpl, ScatterSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ScatterSerExtension? OpenXmlElement
   {

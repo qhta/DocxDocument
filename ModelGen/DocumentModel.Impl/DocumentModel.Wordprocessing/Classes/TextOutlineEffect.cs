@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TextOutlineEffect Class.
 /// </summary>
-public class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
+public partial class TextOutlineEffectImpl: ModelElementImpl, TextOutlineEffect
 {
   public DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? OpenXmlElement
   {

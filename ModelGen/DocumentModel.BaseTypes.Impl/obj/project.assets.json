@@ -121,6 +121,7 @@
         "dependencies": {
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
+          "DocumentModel.VariantTypes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -148,6 +149,16 @@
         },
         "runtime": {
           "bin/placeholder/DocumentModel.BaseTypes.dll": {}
+        }
+      },
+      "DocumentModel.VariantTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
         }
       }
     }
@@ -488,6 +499,11 @@
       "type": "project",
       "path": "../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj",
       "msbuildProject": "../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj"
+    },
+    "DocumentModel.VariantTypes/1.0.0": {
+      "type": "project",
+      "path": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj",
+      "msbuildProject": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj"
     }
   },
   "projectFileDependencyGroups": {

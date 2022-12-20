@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Constraint List.
 /// </summary>
-public class ConstraintsImpl: ModelElementImpl, Constraints
+public partial class ConstraintsImpl: ModelElementImpl, Constraints
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Constraints? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class ConstraintsImpl: ModelElementImpl, Constraints
   }
   private ObservableCollection<DocumentModel.Drawings.Diagrams.Constraint>? _Items;
   
-  private void _Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class ConstraintsImpl: ModelElementImpl, Constraints
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Diagrams.ConstraintImpl valImpl)
@@ -82,6 +83,7 @@ public class ConstraintsImpl: ModelElementImpl, Constraints
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Diagrams.ConstraintImpl valImpl)

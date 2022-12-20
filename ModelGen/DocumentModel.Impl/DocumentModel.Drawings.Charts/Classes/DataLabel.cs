@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Data Label.
 /// </summary>
-public class DataLabelImpl: ModelElementImpl, DataLabel
+public partial class DataLabelImpl: ModelElementImpl, DataLabel
 {
   public DocumentFormat.OpenXml.Drawing.Charts.DataLabel? OpenXmlElement
   {

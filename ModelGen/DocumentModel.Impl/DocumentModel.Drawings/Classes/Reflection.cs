@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Reflection Effect.
 /// </summary>
-public class ReflectionImpl: ModelElementImpl, Reflection
+public partial class ReflectionImpl: ModelElementImpl, Reflection
 {
   public DocumentFormat.OpenXml.Drawing.Reflection? OpenXmlElement
   {

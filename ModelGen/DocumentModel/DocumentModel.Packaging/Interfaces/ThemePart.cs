@@ -3,20 +3,20 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the ThemePart
 /// </summary>
-public interface ThemePart
+public partial interface ThemePart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
   /// <summary>
   /// Gets the ImageParts of the ThemePart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get ; set; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Theme? Theme { get ; set; }
+  public DocumentModel.Drawings.Theme? Theme { get; set; }
   
 }

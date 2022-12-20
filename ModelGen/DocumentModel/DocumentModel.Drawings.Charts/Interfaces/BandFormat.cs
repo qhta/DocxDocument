@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Band Format.
 /// </summary>
-public interface BandFormat
+public partial interface BandFormat
 {
   /// <summary>
   /// Index.
   /// </summary>
-  public UInt32? Index { get ; set; }
+  public UInt32? Index { get; set; }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get ; set; }
+  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Parameter.
 /// </summary>
-public class ParameterImpl: ModelElementImpl, Parameter
+public partial class ParameterImpl: ModelElementImpl, Parameter
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Parameter? OpenXmlElement
   {

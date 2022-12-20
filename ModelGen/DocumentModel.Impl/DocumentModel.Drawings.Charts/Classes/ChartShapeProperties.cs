@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ChartShapeProperties Class.
 /// </summary>
-public class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
+public partial class ChartShapePropertiesImpl: ModelElementImpl, ChartShapeProperties
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties? OpenXmlElement
   {

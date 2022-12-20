@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Dark 1.
 /// </summary>
-public class Dark1ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Dark1Color
+public partial class Dark1ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Dark1Color
 {
   public new DocumentFormat.OpenXml.Drawing.Dark1Color? OpenXmlElement
   {

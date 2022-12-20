@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Custom color.
 /// </summary>
-public class CustomColorImpl: ModelElementImpl, CustomColor
+public partial class CustomColorImpl: ModelElementImpl, CustomColor
 {
   public DocumentFormat.OpenXml.Drawing.CustomColor? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Series Text.
 /// </summary>
-public class SeriesTextImpl: ModelElementImpl, SeriesText
+public partial class SeriesTextImpl: ModelElementImpl, SeriesText
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SeriesText? OpenXmlElement
   {

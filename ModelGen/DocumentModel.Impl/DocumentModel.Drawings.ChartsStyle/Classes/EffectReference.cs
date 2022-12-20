@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the EffectReference Class.
 /// </summary>
-public class EffectReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, EffectReference
+public partial class EffectReferenceImpl: DocumentModel.Drawings.ChartsStyle.StyleReferenceImpl, EffectReference
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference? OpenXmlElement
   {

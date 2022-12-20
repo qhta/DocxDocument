@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Pie3DChartExtension Class.
 /// </summary>
-public class Pie3DChartExtensionImpl: ModelElementImpl, Pie3DChartExtension
+public partial class Pie3DChartExtensionImpl: ModelElementImpl, Pie3DChartExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? OpenXmlElement
   {

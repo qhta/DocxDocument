@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the ValueColors Class.
 /// </summary>
-public class ValueColorsImpl: ModelElementImpl, ValueColors
+public partial class ValueColorsImpl: ModelElementImpl, ValueColors
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? OpenXmlElement
   {

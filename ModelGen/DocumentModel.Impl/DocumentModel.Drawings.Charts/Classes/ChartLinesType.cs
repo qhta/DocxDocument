@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the ChartLinesType Class.
 /// </summary>
-public class ChartLinesTypeImpl: ModelElementImpl, ChartLinesType
+public partial class ChartLinesTypeImpl: ModelElementImpl, ChartLinesType
 {
   public DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Comment Content.
 /// </summary>
-public class CommentImpl: ModelElementImpl, Comment
+public partial class CommentImpl: ModelElementImpl, Comment
 {
   public DocumentFormat.OpenXml.Wordprocessing.Comment? OpenXmlElement
   {
@@ -113,7 +113,7 @@ public class CommentImpl: ModelElementImpl, Comment
   }
   private ObservableCollection<DocumentModel.Wordprocessing.AltChunk>? _AltChunks;
   
-  private void _AltChunks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AltChunks_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -123,6 +123,7 @@ public class CommentImpl: ModelElementImpl, Comment
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AltChunk>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.AltChunkImpl valImpl)
@@ -134,6 +135,7 @@ public class CommentImpl: ModelElementImpl, Comment
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.AltChunkImpl valImpl)
@@ -253,7 +255,7 @@ public class CommentImpl: ModelElementImpl, Comment
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Paragraph>? _Paragraphs;
   
-  private void _Paragraphs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Paragraphs_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -263,6 +265,7 @@ public class CommentImpl: ModelElementImpl, Comment
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
@@ -274,6 +277,7 @@ public class CommentImpl: ModelElementImpl, Comment
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.ParagraphImpl valImpl)
@@ -335,7 +339,7 @@ public class CommentImpl: ModelElementImpl, Comment
   }
   private ObservableCollection<DocumentModel.Wordprocessing.Table>? _Tables;
   
-  private void _Tables_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Tables_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -345,6 +349,7 @@ public class CommentImpl: ModelElementImpl, Comment
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Wordprocessing.TableImpl valImpl)
@@ -356,6 +361,7 @@ public class CommentImpl: ModelElementImpl, Comment
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Wordprocessing.TableImpl valImpl)

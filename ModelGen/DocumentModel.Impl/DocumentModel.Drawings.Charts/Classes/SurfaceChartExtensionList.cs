@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SurfaceChartExtensionList Class.
 /// </summary>
-public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtensionList
+public partial class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtens
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.SurfaceChartExtension>? _SurfaceChartExtensions;
   
-  private void _SurfaceChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SurfaceChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtens
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.SurfaceChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class SurfaceChartExtensionListImpl: ModelElementImpl, SurfaceChartExtens
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.SurfaceChartExtensionImpl valImpl)

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Freeze Document Layout.
 /// </summary>
-public class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
+public partial class ReadModeInkLockDownImpl: ModelElementImpl, ReadModeInkLockDown
 {
   public DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? OpenXmlElement
   {

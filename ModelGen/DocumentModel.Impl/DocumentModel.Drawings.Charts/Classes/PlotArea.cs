@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Plot data and formatting.
 /// </summary>
-public class PlotAreaImpl: ModelElementImpl, PlotArea
+public partial class PlotAreaImpl: ModelElementImpl, PlotArea
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PlotArea? OpenXmlElement
   {

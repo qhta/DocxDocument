@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskHistory Class.
 /// </summary>
-public class TaskHistoryImpl: ModelElementImpl, TaskHistory
+public partial class TaskHistoryImpl: ModelElementImpl, TaskHistory
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class TaskHistoryImpl: ModelElementImpl, TaskHistory
   }
   private ObservableCollection<DocumentModel.TaskHistoryEvent>? _TaskHistoryEvents;
   
-  private void _TaskHistoryEvents_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _TaskHistoryEvents_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class TaskHistoryImpl: ModelElementImpl, TaskHistory
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.TaskHistoryEventImpl valImpl)
@@ -82,6 +83,7 @@ public class TaskHistoryImpl: ModelElementImpl, TaskHistory
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.TaskHistoryEventImpl valImpl)

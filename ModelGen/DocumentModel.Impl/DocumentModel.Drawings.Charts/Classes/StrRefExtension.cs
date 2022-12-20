@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StrRefExtension Class.
 /// </summary>
-public class StrRefExtensionImpl: ModelElementImpl, StrRefExtension
+public partial class StrRefExtensionImpl: ModelElementImpl, StrRefExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StrRefExtension? OpenXmlElement
   {

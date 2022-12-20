@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the InsertedMathControl Class.
 /// </summary>
-public class InsertedMathControlImpl: ModelElementImpl, InsertedMathControl
+public partial class InsertedMathControlImpl: ModelElementImpl, InsertedMathControl
 {
   public DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the HiddenEffectsProperties Class.
 /// </summary>
-public class HiddenEffectsPropertiesImpl: ModelElementImpl, HiddenEffectsProperties
+public partial class HiddenEffectsPropertiesImpl: ModelElementImpl, HiddenEffectsProperties
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? OpenXmlElement
   {

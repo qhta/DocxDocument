@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// If.
 /// </summary>
-public class DiagramChooseIfImpl: ModelElementImpl, DiagramChooseIf
+public partial class DiagramChooseIfImpl: ModelElementImpl, DiagramChooseIf
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? OpenXmlElement
   {

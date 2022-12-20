@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Caption Settings.
 /// </summary>
-public class CaptionsImpl: ModelElementImpl, Captions
+public partial class CaptionsImpl: ModelElementImpl, Captions
 {
   public DocumentFormat.OpenXml.Wordprocessing.Captions? OpenXmlElement
   {

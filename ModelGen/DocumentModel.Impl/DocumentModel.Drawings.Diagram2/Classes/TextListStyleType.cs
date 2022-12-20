@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram2;
 /// <summary>
 /// Defines the TextListStyleType Class.
 /// </summary>
-public class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
+public partial class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
 {
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType? OpenXmlElement
   {

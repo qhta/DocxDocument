@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the Wall Class.
 /// </summary>
-public class WallImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, Wall
+public partial class WallImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, Wall
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.Wall? OpenXmlElement
   {

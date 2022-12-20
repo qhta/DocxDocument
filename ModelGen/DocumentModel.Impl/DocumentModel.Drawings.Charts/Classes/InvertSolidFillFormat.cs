@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the InvertSolidFillFormat Class.
 /// </summary>
-public class InvertSolidFillFormatImpl: ModelElementImpl, InvertSolidFillFormat
+public partial class InvertSolidFillFormatImpl: ModelElementImpl, InvertSolidFillFormat
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat? OpenXmlElement
   {

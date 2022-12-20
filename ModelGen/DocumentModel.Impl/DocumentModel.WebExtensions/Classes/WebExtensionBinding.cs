@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 /// Defines the WebExtensionBinding Class.
 /// </summary>
-public class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
+public partial class WebExtensionBindingImpl: ModelElementImpl, WebExtensionBinding
 {
   public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ImageProperties Class.
 /// </summary>
-public class ImagePropertiesImpl: ModelElementImpl, ImageProperties
+public partial class ImagePropertiesImpl: ModelElementImpl, ImageProperties
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties? OpenXmlElement
   {

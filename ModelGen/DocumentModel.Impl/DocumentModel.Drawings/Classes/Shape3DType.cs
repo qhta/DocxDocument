@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Apply 3D shape properties.
 /// </summary>
-public class Shape3DTypeImpl: ModelElementImpl, Shape3DType
+public partial class Shape3DTypeImpl: ModelElementImpl, Shape3DType
 {
   public DocumentFormat.OpenXml.Drawing.Shape3DType? OpenXmlElement
   {

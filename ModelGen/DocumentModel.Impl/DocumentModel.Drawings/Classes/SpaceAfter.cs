@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Space After.
 /// </summary>
-public class SpaceAfterImpl: DocumentModel.Drawings.TextSpacingTypeImpl, SpaceAfter
+public partial class SpaceAfterImpl: DocumentModel.Drawings.TextSpacingTypeImpl, SpaceAfter
 {
   public new DocumentFormat.OpenXml.Drawing.SpaceAfter? OpenXmlElement
   {

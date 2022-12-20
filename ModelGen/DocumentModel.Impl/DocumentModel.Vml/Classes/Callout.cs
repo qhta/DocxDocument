@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Defines the Callout Class.
 /// </summary>
-public class CalloutImpl: ModelElementImpl, Callout
+public partial class CalloutImpl: ModelElementImpl, Callout
 {
   public DocumentFormat.OpenXml.Vml.Office.Callout? OpenXmlElement
   {

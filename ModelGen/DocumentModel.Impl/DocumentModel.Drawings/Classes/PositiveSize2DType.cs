@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the PositiveSize2DType Class.
 /// </summary>
-public class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
+public partial class PositiveSize2DTypeImpl: ModelElementImpl, PositiveSize2DType
 {
   public DocumentFormat.OpenXml.Drawing.PositiveSize2DType? OpenXmlElement
   {

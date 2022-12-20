@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// List of Shape Adjust Handles.
 /// </summary>
-public class AdjustHandleListImpl: ModelElementImpl, AdjustHandleList
+public partial class AdjustHandleListImpl: ModelElementImpl, AdjustHandleList
 {
   public DocumentFormat.OpenXml.Drawing.AdjustHandleList? OpenXmlElement
   {

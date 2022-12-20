@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoCache Class.
 /// </summary>
-public class GeoCacheImpl: ModelElementImpl, GeoCache
+public partial class GeoCacheImpl: ModelElementImpl, GeoCache
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? OpenXmlElement
   {

@@ -3,15 +3,15 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the CustomXmlPropertiesPart
 /// </summary>
-public interface CustomXmlPropertiesPart
+public partial interface CustomXmlPropertiesPart
 {
-  public String? ContentType { get ; set; }
+  public String? ContentType { get; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.CustomXml.DataStoreItem? DataStoreItem { get ; set; }
+  public DocumentModel.CustomXml.DataStoreItem? DataStoreItem { get; set; }
   
-  public String? RelationshipType { get ; set; }
+  public String? RelationshipType { get; }
   
 }

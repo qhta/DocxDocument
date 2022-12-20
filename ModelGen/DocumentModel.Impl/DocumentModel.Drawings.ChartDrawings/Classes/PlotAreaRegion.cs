@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the PlotAreaRegion Class.
 /// </summary>
-public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
+public partial class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion? OpenXmlElement
   {
@@ -93,7 +93,7 @@ public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
   }
   private ObservableCollection<DocumentModel.Drawings.ChartDrawings.Series>? _Serieses;
   
-  private void _Serieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _Serieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -103,6 +103,7 @@ public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.ChartDrawings.SeriesImpl valImpl)
@@ -114,6 +115,7 @@ public class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.ChartDrawings.SeriesImpl valImpl)

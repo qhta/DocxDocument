@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Statistics Class.
 /// </summary>
-public class StatisticsImpl: ModelElementImpl, Statistics
+public partial class StatisticsImpl: ModelElementImpl, Statistics
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics? OpenXmlElement
   {

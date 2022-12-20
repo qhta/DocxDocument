@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the SignatureLine Class.
 /// </summary>
-public class SignatureLineImpl: ModelElementImpl, SignatureLine
+public partial class SignatureLineImpl: ModelElementImpl, SignatureLine
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? OpenXmlElement
   {

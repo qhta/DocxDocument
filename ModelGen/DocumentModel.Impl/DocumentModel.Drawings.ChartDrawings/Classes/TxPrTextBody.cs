@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the TxPrTextBody Class.
 /// </summary>
-public class TxPrTextBodyImpl: DocumentModel.Drawings.ChartDrawings.TextBodyTypeImpl, TxPrTextBody
+public partial class TxPrTextBodyImpl: DocumentModel.Drawings.ChartDrawings.TextBodyTypeImpl, TxPrTextBody
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Level Associated Paragraph Properties.
 /// </summary>
-public class PreviousParagraphPropertiesImpl: ModelElementImpl, PreviousParagraphProperties
+public partial class PreviousParagraphPropertiesImpl: ModelElementImpl, PreviousParagraphProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties? OpenXmlElement
   {

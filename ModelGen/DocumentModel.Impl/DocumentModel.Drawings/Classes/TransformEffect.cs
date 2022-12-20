@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Transform Effect.
 /// </summary>
-public class TransformEffectImpl: ModelElementImpl, TransformEffect
+public partial class TransformEffectImpl: ModelElementImpl, TransformEffect
 {
   public DocumentFormat.OpenXml.Drawing.TransformEffect? OpenXmlElement
   {

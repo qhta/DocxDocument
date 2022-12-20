@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Data About Single Data Source Record.
 /// </summary>
-public class RecipientDataImpl: ModelElementImpl, RecipientData
+public partial class RecipientDataImpl: ModelElementImpl, RecipientData
 {
   public DocumentFormat.OpenXml.Wordprocessing.RecipientData? OpenXmlElement
   {

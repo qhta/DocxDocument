@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Upper-Limit Function.
 /// </summary>
-public class LimitUpperImpl: ModelElementImpl, LimitUpper
+public partial class LimitUpperImpl: ModelElementImpl, LimitUpper
 {
   public DocumentFormat.OpenXml.Math.LimitUpper? OpenXmlElement
   {

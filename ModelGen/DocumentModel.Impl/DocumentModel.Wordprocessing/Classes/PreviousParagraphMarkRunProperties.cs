@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Previous Run Properties for the Paragraph Mark.
 /// </summary>
-public class PreviousParagraphMarkRunPropertiesImpl: ModelElementImpl, PreviousParagraphMarkRunProperties
+public partial class PreviousParagraphMarkRunPropertiesImpl: ModelElementImpl, PreviousParagraphMarkRunProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties? OpenXmlElement
   {

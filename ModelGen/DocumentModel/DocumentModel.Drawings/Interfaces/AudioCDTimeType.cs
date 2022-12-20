@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the AudioCDTimeType Class.
 /// </summary>
-public interface AudioCDTimeType
+public partial interface AudioCDTimeType
 {
   /// <summary>
   /// Track
   /// </summary>
-  public Byte? Track { get ; set; }
+  public Byte? Track { get; set; }
   
   /// <summary>
   /// Time
   /// </summary>
-  public UInt32? Time { get ; set; }
+  public UInt32? Time { get; set; }
   
 }

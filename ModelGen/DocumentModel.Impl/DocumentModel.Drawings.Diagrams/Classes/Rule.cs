@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Rule.
 /// </summary>
-public class RuleImpl: ModelElementImpl, Rule
+public partial class RuleImpl: ModelElementImpl, Rule
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.Rule? OpenXmlElement
   {

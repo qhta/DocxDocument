@@ -87,6 +87,7 @@
         "dependencies": {
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
+          "DocumentModel.VariantTypes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "runtime": {
@@ -101,6 +102,11 @@
       "DocumentModel.BaseTypes/1.0.0": {
         "runtime": {
           "DocumentModel.BaseTypes.dll": {}
+        }
+      },
+      "DocumentModel.VariantTypes/1.0.0": {
+        "runtime": {
+          "DocumentModel.VariantTypes.dll": {}
         }
       }
     }
@@ -178,6 +184,11 @@
       "sha512": ""
     },
     "DocumentModel.BaseTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DocumentModel.VariantTypes/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

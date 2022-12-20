@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Surface Charts.
 /// </summary>
-public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
+public partial class SurfaceChartImpl: ModelElementImpl, SurfaceChart
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceChart? OpenXmlElement
   {
@@ -97,7 +97,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.SurfaceChartSeries>? _SurfaceChartSerieses;
   
-  private void _SurfaceChartSerieses_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SurfaceChartSerieses_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -107,6 +107,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.SurfaceChartSeriesImpl valImpl)
@@ -118,6 +119,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.SurfaceChartSeriesImpl valImpl)
@@ -204,7 +206,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
   }
   private ObservableCollection<System.UInt32>? _AxisIds;
   
-  private void _AxisIds_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _AxisIds_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -214,6 +216,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             var newItem = new DocumentFormat.OpenXml.Drawing.Charts.AxisId { Val = (UInt32)val };
@@ -221,6 +224,7 @@ public class SurfaceChartImpl: ModelElementImpl, SurfaceChart
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
             var oldItem = OpenXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>()

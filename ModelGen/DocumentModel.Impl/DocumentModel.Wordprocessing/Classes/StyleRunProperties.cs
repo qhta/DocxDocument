@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Run Properties.
 /// </summary>
-public class StyleRunPropertiesImpl: ModelElementImpl, StyleRunProperties
+public partial class StyleRunPropertiesImpl: ModelElementImpl, StyleRunProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties? OpenXmlElement
   {

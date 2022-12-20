@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the ArtisticPastelsSmooth Class.
 /// </summary>
-public class ArtisticPastelsSmoothImpl: ModelElementImpl, ArtisticPastelsSmooth
+public partial class ArtisticPastelsSmoothImpl: ModelElementImpl, ArtisticPastelsSmooth
 {
   public DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth? OpenXmlElement
   {

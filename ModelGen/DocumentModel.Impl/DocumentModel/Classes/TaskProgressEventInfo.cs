@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the TaskProgressEventInfo Class.
 /// </summary>
-public class TaskProgressEventInfoImpl: ModelElementImpl, TaskProgressEventInfo
+public partial class TaskProgressEventInfoImpl: ModelElementImpl, TaskProgressEventInfo
 {
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo? OpenXmlElement
   {

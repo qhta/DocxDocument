@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FootnoteEndnoteSeparatorReferenceType Class.
 /// </summary>
-public class FootnoteEndnoteSeparatorReferenceTypeImpl: ModelElementImpl, FootnoteEndnoteSeparatorReferenceType
+public partial class FootnoteEndnoteSeparatorReferenceTypeImpl: ModelElementImpl, FootnoteEndnoteSeparatorReferenceType
 {
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? OpenXmlElement
   {

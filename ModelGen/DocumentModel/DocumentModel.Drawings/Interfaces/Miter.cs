@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Miter Line Join.
 /// </summary>
-public interface Miter
+public partial interface Miter
 {
   /// <summary>
   /// Miter Join Limit
   /// </summary>
-  public Int32? Limit { get ; set; }
+  public Int32? Limit { get; set; }
   
 }

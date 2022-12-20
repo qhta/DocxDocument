@@ -3,16 +3,16 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the BrightnessContrast Class.
 /// </summary>
-public interface BrightnessContrast
+public partial interface BrightnessContrast
 {
   /// <summary>
   /// bright, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Bright { get ; set; }
+  public Int32? Bright { get; set; }
   
   /// <summary>
   /// contrast, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Contrast { get ; set; }
+  public Int32? Contrast { get; set; }
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BarChartExtensionList Class.
 /// </summary>
-public class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
+public partial class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.BarChartExtension>? _BarChartExtensions;
   
-  private void _BarChartExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _BarChartExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.BarChartExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class BarChartExtensionListImpl: ModelElementImpl, BarChartExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.BarChartExtensionImpl valImpl)

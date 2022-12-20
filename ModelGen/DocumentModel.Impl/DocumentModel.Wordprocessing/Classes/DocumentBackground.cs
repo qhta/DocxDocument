@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Document Background.
 /// </summary>
-public class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
+public partial class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
 {
   public DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Scheme Color.
 /// </summary>
-public class SchemeColorImpl: ModelElementImpl, SchemeColor
+public partial class SchemeColorImpl: ModelElementImpl, SchemeColor
 {
   public DocumentFormat.OpenXml.Drawing.SchemeColor? OpenXmlElement
   {

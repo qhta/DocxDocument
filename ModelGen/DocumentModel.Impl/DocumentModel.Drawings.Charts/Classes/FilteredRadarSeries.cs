@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the FilteredRadarSeries Class.
 /// </summary>
-public class FilteredRadarSeriesImpl: ModelElementImpl, FilteredRadarSeries
+public partial class FilteredRadarSeriesImpl: ModelElementImpl, FilteredRadarSeries
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries? OpenXmlElement
   {

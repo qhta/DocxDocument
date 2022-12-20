@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the GeoLocations Class.
 /// </summary>
-public class GeoLocationsImpl: ModelElementImpl, GeoLocations
+public partial class GeoLocationsImpl: ModelElementImpl, GeoLocations
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? OpenXmlElement
   {

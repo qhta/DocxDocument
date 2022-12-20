@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the SerAxExtensionList Class.
 /// </summary>
-public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
+public partial class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.SerAxExtension>? _SerAxExtensions;
   
-  private void _SerAxExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _SerAxExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.SerAxExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class SerAxExtensionListImpl: ModelElementImpl, SerAxExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.SerAxExtensionImpl valImpl)

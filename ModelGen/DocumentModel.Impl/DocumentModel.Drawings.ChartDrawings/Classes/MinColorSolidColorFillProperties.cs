@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MinColorSolidColorFillProperties Class.
 /// </summary>
-public class MinColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MinColorSolidColorFillProperties
+public partial class MinColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MinColorSolidColorFillProperties
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties? OpenXmlElement
   {

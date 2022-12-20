@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Digital Signature Line.
 /// </summary>
-public class SignatureLineImpl: ModelElementImpl, SignatureLine
+public partial class SignatureLineImpl: ModelElementImpl, SignatureLine
 {
   public DocumentFormat.OpenXml.Vml.Office.SignatureLine? OpenXmlElement
   {

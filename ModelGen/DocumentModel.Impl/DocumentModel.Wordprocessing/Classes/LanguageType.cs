@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the LanguageType Class.
 /// </summary>
-public class LanguageTypeImpl: ModelElementImpl, LanguageType
+public partial class LanguageTypeImpl: ModelElementImpl, LanguageType
 {
   public DocumentFormat.OpenXml.Wordprocessing.LanguageType? OpenXmlElement
   {

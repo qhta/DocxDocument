@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 /// Group-Character Function.
 /// </summary>
-public class GroupCharImpl: ModelElementImpl, GroupChar
+public partial class GroupCharImpl: ModelElementImpl, GroupChar
 {
   public DocumentFormat.OpenXml.Math.GroupChar? OpenXmlElement
   {

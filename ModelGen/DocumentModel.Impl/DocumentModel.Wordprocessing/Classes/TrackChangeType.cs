@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the TrackChangeType Class.
 /// </summary>
-public class TrackChangeTypeImpl: ModelElementImpl, TrackChangeType
+public partial class TrackChangeTypeImpl: ModelElementImpl, TrackChangeType
 {
   public DocumentFormat.OpenXml.Wordprocessing.TrackChangeType? OpenXmlElement
   {

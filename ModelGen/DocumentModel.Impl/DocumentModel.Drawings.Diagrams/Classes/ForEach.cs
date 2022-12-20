@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// For Each.
 /// </summary>
-public class ForEachImpl: ModelElementImpl, ForEach
+public partial class ForEachImpl: ModelElementImpl, ForEach
 {
   public DocumentFormat.OpenXml.Drawing.Diagrams.ForEach? OpenXmlElement
   {

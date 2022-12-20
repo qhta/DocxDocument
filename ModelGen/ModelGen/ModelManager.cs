@@ -89,6 +89,18 @@ public static class ModelManager
 
     if (typeInfo.Type.Name.Contains('`'))
     {
+      if (typeInfo.Name == "Nullable`1")
+      {
+        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
+        var sourceArgType = sourceArgTypes.FirstOrDefault();
+        if (sourceArgType != null)
+        {
+          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
+          typeInfo.IsConverted = true;
+          return true;
+        }
+      }
+      else
       if (typeInfo.Name == "IEnumerable`1")
       {
         var sourceArgTypes = typeInfo.Type.GetGenericArguments();
@@ -122,7 +134,7 @@ public static class ModelManager
           return true;
         }
       }
-      else 
+      else
       if (typeInfo.Name.Contains("Enum"))
       {
         var sourceArgTypes = typeInfo.Type.GetGenericArguments();
@@ -293,6 +305,22 @@ public static class ModelManager
     return false;
   }
 
+  public static bool ValidateType(this TypeInfo typeInfo)
+  {
+    var isValid = true;
+    //if (typeInfo.Name.StartsWith("Nullable`"))
+    //{
+    //  var arg = typeInfo.GetGenericArgTypes().FirstOrDefault();
+    //  if (arg != null)
+    //  {
+
+    //  }
+    //}
+    if (!CheckPropertyOverrides(typeInfo))
+      isValid = false;
+    return isValid;
+  }
+
   public static bool CheckPropertyOverrides(this TypeInfo typeInfo)
   {
     var isValid = true;
@@ -442,26 +470,36 @@ public static class ModelManager
         typeInfo.Name = qualifiedName.Name;
       }
     }
-    //else
-    //{
-    //  if (HasDuplicatesInNamespace(typeInfo))
-    //  {
-    //    var duplicatedTypes = GetDuplicatesInNamespace(typeInfo).ToList();
-    //    duplicatedTypes.Sort((t1, t2)=> t1.Name.Length.CompareTo(t2.Name.Length));
-    //    for (int i = 1; i < duplicatedTypes.Count(); i++)
-    //      duplicatedTypes[i].Name += (i + 1).ToString();
-    //  }
-    //}
     return false;
+  }
+
+  public static int RenameSpecificTypes()
+  {
+    var count = 0;
+    if (TypeManager.TryGetTypeInfo(typeof(System.IO.Packaging.PackageProperties), out var corePropertiesTypeInfo))
+    {
+      corePropertiesTypeInfo.Name = "CoreProperties";
+      corePropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      count++;
+    }
+    if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.ExtendedProperties.Properties), out var extendedPropertiesTypeInfo))
+    {
+      extendedPropertiesTypeInfo.Name = "ExtendedProperties";
+      extendedPropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      count++;
+    }
+    if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.CustomProperties.Properties), out var customPropertiesTypeInfo))
+    {
+      customPropertiesTypeInfo.Name = "CustomProperties";
+      customPropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      count++;
+    }
+    return count;
   }
 
   private static void RenameTypeWithNamespace(TypeInfo typeInfo)
   {
     var origNamespace = typeInfo.OriginalNamespace;
-    if (typeInfo.Name.EndsWith("ShapeProperties"))
-    {
-      var aName = origNamespace.Replace("DocumentForma.OpenXml.","");
-    }
     if (origNamespace.Contains("2010"))
       typeInfo.Name += "2";
     else

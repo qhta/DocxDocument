@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the BarSerExtension Class.
 /// </summary>
-public class BarSerExtensionImpl: ModelElementImpl, BarSerExtension
+public partial class BarSerExtensionImpl: ModelElementImpl, BarSerExtension
 {
   public DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Numbering Symbol Run Properties.
 /// </summary>
-public class NumberingSymbolRunPropertiesImpl: ModelElementImpl, NumberingSymbolRunProperties
+public partial class NumberingSymbolRunPropertiesImpl: ModelElementImpl, NumberingSymbolRunProperties
 {
   public DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? OpenXmlElement
   {

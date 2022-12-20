@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the FillToRectangle Class.
 /// </summary>
-public class FillToRectangleImpl: ModelElementImpl, FillToRectangle
+public partial class FillToRectangleImpl: ModelElementImpl, FillToRectangle
 {
   public DocumentFormat.OpenXml.Office2010.Word.FillToRectangle? OpenXmlElement
   {

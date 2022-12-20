@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentCheckBox Class.
 /// </summary>
-public class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
+public partial class SdtContentCheckBoxImpl: ModelElementImpl, SdtContentCheckBox
 {
   public DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the DefaultShapeDefinitionType Class.
 /// </summary>
-public class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefinitionType
+public partial class DefaultShapeDefinitionTypeImpl: ModelElementImpl, DefaultShapeDefinitionType
 {
   public DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType? OpenXmlElement
   {

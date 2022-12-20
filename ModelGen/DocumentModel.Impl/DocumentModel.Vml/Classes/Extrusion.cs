@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// 3D Extrusion.
 /// </summary>
-public class ExtrusionImpl: ModelElementImpl, Extrusion
+public partial class ExtrusionImpl: ModelElementImpl, Extrusion
 {
   public DocumentFormat.OpenXml.Vml.Office.Extrusion? OpenXmlElement
   {

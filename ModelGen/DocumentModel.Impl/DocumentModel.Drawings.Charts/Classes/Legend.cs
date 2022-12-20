@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Legend data and formatting.
 /// </summary>
-public class LegendImpl: ModelElementImpl, Legend
+public partial class LegendImpl: ModelElementImpl, Legend
 {
   public DocumentFormat.OpenXml.Drawing.Charts.Legend? OpenXmlElement
   {
@@ -87,7 +87,7 @@ public class LegendImpl: ModelElementImpl, Legend
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.LegendEntry>? _LegendEntries;
   
-  private void _LegendEntries_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LegendEntries_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -97,6 +97,7 @@ public class LegendImpl: ModelElementImpl, Legend
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.LegendEntryImpl valImpl)
@@ -108,6 +109,7 @@ public class LegendImpl: ModelElementImpl, Legend
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.LegendEntryImpl valImpl)

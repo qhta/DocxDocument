@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtDocPartType Class.
 /// </summary>
-public class SdtDocPartTypeImpl: ModelElementImpl, SdtDocPartType
+public partial class SdtDocPartTypeImpl: ModelElementImpl, SdtDocPartType
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtDocPartType? OpenXmlElement
   {

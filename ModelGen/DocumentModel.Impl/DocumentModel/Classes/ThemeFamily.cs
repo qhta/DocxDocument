@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Defines the ThemeFamily Class.
 /// </summary>
-public class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
+public partial class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
 {
   public DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? OpenXmlElement
   {

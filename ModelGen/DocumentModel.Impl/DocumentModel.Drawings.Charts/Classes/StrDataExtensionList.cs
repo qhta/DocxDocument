@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the StrDataExtensionList Class.
 /// </summary>
-public class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
+public partial class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
 {
   public DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList? OpenXmlElement
   {
@@ -61,7 +61,7 @@ public class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
   }
   private ObservableCollection<DocumentModel.Drawings.Charts.StrDataExtension>? _StrDataExtensions;
   
-  private void _StrDataExtensions_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _StrDataExtensions_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -71,6 +71,7 @@ public class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
           OpenXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension>();
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Drawings.Charts.StrDataExtensionImpl valImpl)
@@ -82,6 +83,7 @@ public class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Drawings.Charts.StrDataExtensionImpl valImpl)

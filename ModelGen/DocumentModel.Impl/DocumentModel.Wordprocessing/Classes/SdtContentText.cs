@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SdtContentText Class.
 /// </summary>
-public class SdtContentTextImpl: ModelElementImpl, SdtContentText
+public partial class SdtContentTextImpl: ModelElementImpl, SdtContentText
 {
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentText? OpenXmlElement
   {

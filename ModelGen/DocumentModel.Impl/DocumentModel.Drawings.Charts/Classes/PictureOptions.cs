@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the PictureOptions Class.
 /// </summary>
-public class PictureOptionsImpl: ModelElementImpl, PictureOptions
+public partial class PictureOptionsImpl: ModelElementImpl, PictureOptions
 {
   public DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the CategoryFilterException Class.
 /// </summary>
-public class CategoryFilterExceptionImpl: ModelElementImpl, CategoryFilterException
+public partial class CategoryFilterExceptionImpl: ModelElementImpl, CategoryFilterException
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? OpenXmlElement
   {

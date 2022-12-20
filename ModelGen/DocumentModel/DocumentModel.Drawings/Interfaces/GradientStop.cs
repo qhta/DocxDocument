@@ -3,41 +3,41 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Gradient stops.
 /// </summary>
-public interface GradientStop
+public partial interface GradientStop
 {
   /// <summary>
   /// Position
   /// </summary>
-  public Int32? Position { get ; set; }
+  public Int32? Position { get; set; }
   
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get ; set; }
+  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get ; set; }
+  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
   
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public DocumentModel.Drawings.HslColor? HslColor { get ; set; }
+  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
   
   /// <summary>
   /// System Color.
   /// </summary>
-  public DocumentModel.Drawings.SystemColor? SystemColor { get ; set; }
+  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
   
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  public DocumentModel.Drawings.SchemeColor? SchemeColor { get ; set; }
+  public DocumentModel.Drawings.SchemeColor? SchemeColor { get; set; }
   
   /// <summary>
   /// Preset Color.
   /// </summary>
-  public DocumentModel.Drawings.PresetColor? PresetColor { get ; set; }
+  public DocumentModel.Drawings.PresetColor? PresetColor { get; set; }
   
 }

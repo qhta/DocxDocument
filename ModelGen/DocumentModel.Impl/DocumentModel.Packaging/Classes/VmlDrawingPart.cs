@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 /// Defines the VmlDrawingPart
 /// </summary>
-public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDrawingPart
+public partial class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDrawingPart
 {
   public new DocumentFormat.OpenXml.Packaging.VmlDrawingPart? OpenXmlElement
   {
@@ -21,11 +21,6 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
   public new String? ContentType
   {
     get => (System.String?)OpenXmlElement?.ContentType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.VmlDrawingPart).GetProperty("ContentType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
   /// <summary>
@@ -49,33 +44,10 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
       }
       return _ImageParts;
     }
-    set
-    {
-      if (value != null && value != _ImageParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.ImagePart> observableCollection)
-        _ImageParts = observableCollection;
-      else if (value != null)
-        _ImageParts = new ObservableCollection<DocumentModel.Packaging.ImagePart>(value);
-      else
-       _ImageParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.ImagePart>? _ImageParts;
   
-  private void _ImageParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _ImageParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -86,6 +58,7 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -97,6 +70,7 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.ImagePartImpl valImpl)
@@ -136,33 +110,10 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
       }
       return _LegacyDiagramTextParts;
     }
-    set
-    {
-      if (value != null && value != _LegacyDiagramTextParts && OpenXmlElement!=null)
-      {
-        foreach (var item in OpenXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart>().ToArray())
-          OpenXmlElement.DeletePart(item);
-        foreach (var val in value)
-        {
-          if (val is DocumentModel.Packaging.LegacyDiagramTextPartImpl valImpl)
-          {
-            var item = valImpl.OpenXmlElement;
-            if (item != null)
-              OpenXmlElement.AddPart(item);
-          };
-        }
-      }
-      if (value is ObservableCollection<DocumentModel.Packaging.LegacyDiagramTextPart> observableCollection)
-        _LegacyDiagramTextParts = observableCollection;
-      else if (value != null)
-        _LegacyDiagramTextParts = new ObservableCollection<DocumentModel.Packaging.LegacyDiagramTextPart>(value);
-      else
-       _LegacyDiagramTextParts = null;
-    }
   }
   private ObservableCollection<DocumentModel.Packaging.LegacyDiagramTextPart>? _LegacyDiagramTextParts;
   
-  private void _LegacyDiagramTextParts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void _LegacyDiagramTextParts_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (OpenXmlElement != null)
     {
@@ -173,6 +124,7 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
             OpenXmlElement.DeletePart(item);
           break;
         case NotifyCollectionChangedAction.Add:
+          if (args.NewItems != null)
           foreach (var val in args.NewItems)
           {
             if (val is DocumentModel.Packaging.LegacyDiagramTextPartImpl valImpl)
@@ -184,6 +136,7 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
           }
           break;
         case NotifyCollectionChangedAction.Remove:
+          if (args.OldItems != null)
           foreach (var val in args.OldItems)
           {
               if (val is DocumentModel.Packaging.LegacyDiagramTextPartImpl valImpl)
@@ -205,11 +158,6 @@ public class VmlDrawingPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, VmlDra
   public new String? RelationshipType
   {
     get => (System.String?)OpenXmlElement?.RelationshipType;
-    set
-    {
-      if (OpenXmlElement != null)
-        typeof(DocumentFormat.OpenXml.Packaging.VmlDrawingPart).GetProperty("RelationshipType").SetValue(OpenXmlElement, (System.String?)value);
-    }
   }
   
 }

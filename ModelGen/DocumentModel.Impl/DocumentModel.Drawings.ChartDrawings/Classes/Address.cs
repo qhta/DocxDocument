@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the Address Class.
 /// </summary>
-public class AddressImpl: ModelElementImpl, Address
+public partial class AddressImpl: ModelElementImpl, Address
 {
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address? OpenXmlElement
   {

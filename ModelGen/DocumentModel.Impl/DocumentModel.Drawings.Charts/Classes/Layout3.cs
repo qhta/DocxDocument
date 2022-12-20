@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Defines the Layout Class.
 /// </summary>
-public class Layout3Impl: ModelElementImpl, Layout3
+public partial class Layout3Impl: ModelElementImpl, Layout3
 {
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout? OpenXmlElement
   {

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Defines the DataPointLine Class.
 /// </summary>
-public class DataPointLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointLine
+public partial class DataPointLineImpl: DocumentModel.Drawings.ChartsStyle.StyleEntryImpl, DataPointLine
 {
   public new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointLine? OpenXmlElement
   {

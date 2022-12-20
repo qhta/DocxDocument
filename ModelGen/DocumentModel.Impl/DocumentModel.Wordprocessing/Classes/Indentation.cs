@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the Indentation Class.
 /// </summary>
-public class IndentationImpl: ModelElementImpl, Indentation
+public partial class IndentationImpl: ModelElementImpl, Indentation
 {
   public DocumentFormat.OpenXml.Wordprocessing.Indentation? OpenXmlElement
   {

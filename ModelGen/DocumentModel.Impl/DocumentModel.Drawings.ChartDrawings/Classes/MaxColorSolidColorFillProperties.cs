@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
-public class MaxColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MaxColorSolidColorFillProperties
+public partial class MaxColorSolidColorFillPropertiesImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElementImpl, MaxColorSolidColorFillProperties
 {
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties? OpenXmlElement
   {

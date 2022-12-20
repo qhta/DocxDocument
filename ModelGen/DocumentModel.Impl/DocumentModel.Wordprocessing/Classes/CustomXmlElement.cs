@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines CustomXmlElement - the base class for the customXml elements.
 /// </summary>
-public class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
+public partial class CustomXmlElementImpl: ModelElementImpl, CustomXmlElement
 {
   public DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? OpenXmlElement
   {
