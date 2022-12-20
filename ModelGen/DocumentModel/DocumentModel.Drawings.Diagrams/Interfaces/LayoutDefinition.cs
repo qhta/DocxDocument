@@ -20,11 +20,6 @@ public partial interface LayoutDefinition
   /// </summary>
   public String? DefaultStyle { get; set; }
   
-  /// <summary>
-  /// Gets the DiagramLayoutDefinitionPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramLayoutDefinitionPart? DiagramLayoutDefinitionPart { get; set; }
-  
   public Collection<DocumentModel.Drawings.Diagrams.Title>? Titles { get; set; }
   
   public Collection<DocumentModel.Drawings.Diagrams.Description>? Descriptions { get; set; }

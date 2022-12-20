@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class XmlSignaturePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, XmlSignaturePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.XmlSignaturePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.XmlSignaturePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public XmlSignaturePartImpl(): base() {}

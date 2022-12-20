@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RelationTableImpl: ModelElementImpl, RelationTable
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.RelationTable? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.RelationTable?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelationTableImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class RelationTableImpl: ModelElementImpl, RelationTable
   {
     get
     {
-      if (_Relations != null)
+      if (_Relations == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunConflictDeletionImpl: DocumentModel.Wordprocessing.RunTrackChangeType2Impl, RunConflictDeletion
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunConflictDeletionImpl(): base() {}
@@ -834,7 +835,7 @@ public partial class RunConflictDeletionImpl: DocumentModel.Wordprocessing.RunTr
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

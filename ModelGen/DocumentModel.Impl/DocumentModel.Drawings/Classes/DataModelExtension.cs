@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DataModelExtensionImpl: ModelElementImpl, DataModelExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.DataModelExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.DataModelExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataModelExtensionImpl(): base() {}

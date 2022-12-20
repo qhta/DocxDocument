@@ -20,9 +20,4 @@ public partial interface Document
   /// </summary>
   public DocumentModel.Wordprocessing.Body? Body { get; set; }
   
-  /// <summary>
-  /// Gets the MainDocumentPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.MainDocumentPart? MainDocumentPart { get; set; }
-  
 }

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class WriteProtectionImpl: ModelElementImpl, WriteProtection
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.WriteProtection? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.WriteProtection?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WriteProtectionImpl(): base() {}

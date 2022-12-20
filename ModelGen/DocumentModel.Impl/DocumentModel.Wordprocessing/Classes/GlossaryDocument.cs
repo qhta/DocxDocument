@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GlossaryDocumentImpl(): base() {}
@@ -79,26 +80,6 @@ public partial class GlossaryDocumentImpl: ModelElementImpl, GlossaryDocument
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the GlossaryDocumentPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.GlossaryDocumentPart? GlossaryDocumentPart
-  {
-    get
-    {
-      if (OpenXmlElement?.GlossaryDocumentPart != null)
-        return new DocumentModel.Packaging.GlossaryDocumentPartImpl(OpenXmlElement.GlossaryDocumentPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.GlossaryDocumentPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

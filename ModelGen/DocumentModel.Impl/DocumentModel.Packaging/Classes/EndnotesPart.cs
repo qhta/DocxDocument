@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, EndnotesPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.EndnotesPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.EndnotesPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EndnotesPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_AlternativeFormatImportParts != null)
+      if (_AlternativeFormatImportParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -91,7 +92,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ChartParts != null)
+      if (_ChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -162,7 +163,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramColorsParts != null)
+      if (_DiagramColorsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -228,7 +229,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramDataParts != null)
+      if (_DiagramDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -294,7 +295,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramLayoutDefinitionParts != null)
+      if (_DiagramLayoutDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -360,7 +361,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramPersistLayoutParts != null)
+      if (_DiagramPersistLayoutParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -426,7 +427,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramStyleParts != null)
+      if (_DiagramStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -492,7 +493,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_EmbeddedControlPersistenceParts != null)
+      if (_EmbeddedControlPersistenceParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -558,7 +559,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_EmbeddedObjectParts != null)
+      if (_EmbeddedObjectParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -624,7 +625,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_EmbeddedPackageParts != null)
+      if (_EmbeddedPackageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -710,7 +711,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ExtendedChartParts != null)
+      if (_ExtendedChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -776,7 +777,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -842,7 +843,7 @@ public partial class EndnotesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_Model3DReferenceRelationshipParts != null)
+      if (_Model3DReferenceRelationshipParts == null)
       {
         if (OpenXmlElement != null)
         {

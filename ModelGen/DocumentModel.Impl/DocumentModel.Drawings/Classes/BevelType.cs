@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BevelTypeImpl: ModelElementImpl, BevelType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BevelType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BevelType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BevelTypeImpl(): base() {}

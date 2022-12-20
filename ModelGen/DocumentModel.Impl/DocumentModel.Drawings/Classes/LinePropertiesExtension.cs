@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LinePropertiesExtensionImpl: ModelElementImpl, LinePropertiesExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LinePropertiesExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LinePropertiesExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LinePropertiesExtensionImpl(): base() {}

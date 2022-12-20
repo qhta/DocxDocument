@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class UnsizedControlCloneImpl: ModelElementImpl, UnsizedControlClone
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnsizedControlCloneImpl(): base() {}

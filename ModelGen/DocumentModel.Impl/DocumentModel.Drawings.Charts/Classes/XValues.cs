@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class XValuesImpl: DocumentModel.Drawings.Charts.AxisDataSourceTypeImpl, XValues
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.XValues? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.XValues?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public XValuesImpl(): base() {}

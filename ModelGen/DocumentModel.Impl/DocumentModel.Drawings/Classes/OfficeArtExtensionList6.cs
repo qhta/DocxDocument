@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OfficeArtExtensionList6Impl: ModelElementImpl, OfficeArtExtensionList6
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfficeArtExtensionList6Impl(): base() {}
@@ -22,7 +23,7 @@ public partial class OfficeArtExtensionList6Impl: ModelElementImpl, OfficeArtExt
   {
     get
     {
-      if (_Extensions != null)
+      if (_Extensions == null)
       {
         if (OpenXmlElement != null)
         {

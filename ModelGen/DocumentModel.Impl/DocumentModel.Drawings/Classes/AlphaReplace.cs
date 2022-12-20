@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaReplaceImpl: ModelElementImpl, AlphaReplace
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaReplace? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaReplace?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaReplaceImpl(): base() {}

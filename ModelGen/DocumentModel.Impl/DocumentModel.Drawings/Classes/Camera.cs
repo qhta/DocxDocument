@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CameraImpl: ModelElementImpl, Camera
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Camera? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Camera?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CameraImpl(): base() {}

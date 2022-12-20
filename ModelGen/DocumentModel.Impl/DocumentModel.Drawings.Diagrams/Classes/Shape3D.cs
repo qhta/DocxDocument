@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class Shape3DImpl: ModelElementImpl, Shape3D
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Shape3DImpl(): base() {}

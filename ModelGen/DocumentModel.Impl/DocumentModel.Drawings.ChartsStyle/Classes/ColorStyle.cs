@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class ColorStyleImpl: ModelElementImpl, ColorStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorStyleImpl(): base() {}
@@ -41,26 +42,6 @@ public partial class ColorStyleImpl: ModelElementImpl, ColorStyle
     {
       if (OpenXmlElement != null)
         OpenXmlElement.Id = (System.UInt32?)value;
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ChartColorStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartColorStylePart? ChartColorStylePart
-  {
-    get
-    {
-      if (OpenXmlElement?.ChartColorStylePart != null)
-        return new DocumentModel.Packaging.ChartColorStylePartImpl(OpenXmlElement.ChartColorStylePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ChartColorStylePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   
@@ -242,7 +223,7 @@ public partial class ColorStyleImpl: ModelElementImpl, ColorStyle
   {
     get
     {
-      if (_ColorStyleVariations != null)
+      if (_ColorStyleVariations == null)
       {
         if (OpenXmlElement != null)
         {

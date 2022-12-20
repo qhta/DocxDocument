@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// </summary>
 public partial class GraphicFrameTypeImpl: ModelElementImpl, GraphicFrameType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas.GraphicFrameType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas.GraphicFrameType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GraphicFrameTypeImpl(): base() {}

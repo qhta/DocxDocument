@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class AbstractNumImpl: ModelElementImpl, AbstractNum
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.AbstractNum? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.AbstractNum?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AbstractNumImpl(): base() {}
@@ -191,7 +192,7 @@ public partial class AbstractNumImpl: ModelElementImpl, AbstractNum
   {
     get
     {
-      if (_Levels != null)
+      if (_Levels == null)
       {
         if (OpenXmlElement != null)
         {

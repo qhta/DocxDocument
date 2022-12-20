@@ -15,11 +15,6 @@ public partial interface StyleDefinition
   /// </summary>
   public String? MinVersion { get; set; }
   
-  /// <summary>
-  /// Gets the DiagramStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramStylePart? DiagramStylePart { get; set; }
-  
   public Collection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle>? StyleDefinitionTitles { get; set; }
   
   public Collection<DocumentModel.Drawings.Diagrams.StyleLabelDescription>? StyleLabelDescriptions { get; set; }

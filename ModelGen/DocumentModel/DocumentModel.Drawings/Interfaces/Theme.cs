@@ -40,9 +40,4 @@ public partial interface Theme
   /// </summary>
   public DocumentModel.Drawings.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
   
-  /// <summary>
-  /// Gets the ThemePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ThemePart? ThemePart { get; set; }
-  
 }

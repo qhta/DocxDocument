@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SharpenSoftenImpl: ModelElementImpl, SharpenSoften
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SharpenSoftenImpl(): base() {}

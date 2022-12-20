@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ProofStateImpl: ModelElementImpl, ProofState
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ProofState? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ProofState?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ProofStateImpl(): base() {}

@@ -7,3 +7,4 @@ global using System.Collections.Specialized;
 global using System.IO;
 global using System.IO.Packaging;
 global using System.Linq;
+global using System.Xml.Serialization;

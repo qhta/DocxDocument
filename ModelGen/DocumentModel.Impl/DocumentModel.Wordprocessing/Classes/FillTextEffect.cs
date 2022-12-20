@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FillTextEffectImpl: ModelElementImpl, FillTextEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.FillTextEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillTextEffectImpl(): base() {}

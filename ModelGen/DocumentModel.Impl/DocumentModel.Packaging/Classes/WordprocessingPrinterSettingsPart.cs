@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WordprocessingPrinterSettingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingPrinterSettingsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordprocessingPrinterSettingsPartImpl(): base() {}

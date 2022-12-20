@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LayoutImpl: ModelElementImpl, Layout
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Layout? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Layout?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LayoutImpl(): base() {}

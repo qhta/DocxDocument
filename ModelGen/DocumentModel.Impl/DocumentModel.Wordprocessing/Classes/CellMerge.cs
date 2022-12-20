@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CellMergeImpl: ModelElementImpl, CellMerge
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.CellMerge? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CellMerge?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CellMergeImpl(): base() {}

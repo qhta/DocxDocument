@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RunImpl: ModelElementImpl, Run
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Run? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Run?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunImpl(): base() {}

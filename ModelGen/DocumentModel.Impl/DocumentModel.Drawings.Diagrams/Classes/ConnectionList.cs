@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ConnectionListImpl: ModelElementImpl, ConnectionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConnectionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ConnectionListImpl: ModelElementImpl, ConnectionList
   {
     get
     {
-      if (_Connections != null)
+      if (_Connections == null)
       {
         if (OpenXmlElement != null)
         {

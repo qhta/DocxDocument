@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SystemColorImpl: ModelElementImpl, SystemColor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.SystemColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.SystemColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SystemColorImpl(): base() {}

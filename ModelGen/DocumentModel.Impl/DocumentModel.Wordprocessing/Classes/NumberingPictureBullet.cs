@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingPictureBulletImpl: ModelElementImpl, NumberingPictureBullet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingPictureBulletImpl(): base() {}

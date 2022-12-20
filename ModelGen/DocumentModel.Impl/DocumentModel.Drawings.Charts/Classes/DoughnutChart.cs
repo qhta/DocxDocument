@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DoughnutChartImpl: ModelElementImpl, DoughnutChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DoughnutChartImpl(): base() {}
@@ -58,7 +59,7 @@ public partial class DoughnutChartImpl: ModelElementImpl, DoughnutChart
   {
     get
     {
-      if (_PieChartSerieses != null)
+      if (_PieChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DeletedMathControlImpl: ModelElementImpl, DeletedMathControl
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DeletedMathControlImpl(): base() {}

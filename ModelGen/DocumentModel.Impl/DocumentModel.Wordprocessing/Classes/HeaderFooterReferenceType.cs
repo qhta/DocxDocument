@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HeaderFooterReferenceTypeImpl: ModelElementImpl, HeaderFooterReferenceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HeaderFooterReferenceTypeImpl(): base() {}

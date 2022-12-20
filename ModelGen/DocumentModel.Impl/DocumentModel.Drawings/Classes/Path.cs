@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PathImpl: ModelElementImpl, Path
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Path? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Path?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PathImpl(): base() {}

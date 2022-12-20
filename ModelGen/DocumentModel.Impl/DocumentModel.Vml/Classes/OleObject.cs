@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class OleObjectImpl: ModelElementImpl, OleObject
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.OleObject? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.OleObject?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OleObjectImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ColorMenuImpl: ModelElementImpl, ColorMenu
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.ColorMenu? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.ColorMenu?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorMenuImpl(): base() {}

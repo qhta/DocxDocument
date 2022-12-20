@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ObjectEmbedImpl: ModelElementImpl, ObjectEmbed
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ObjectEmbedImpl(): base() {}

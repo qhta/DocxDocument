@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class ControlCloneImpl: ModelElementImpl, ControlClone
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.ControlClone? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.ControlClone?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ControlCloneImpl(): base() {}

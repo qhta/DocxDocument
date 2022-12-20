@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FootnoteEndnoteReferenceTypeImpl: ModelElementImpl, FootnoteEndnoteReferenceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FootnoteEndnoteReferenceTypeImpl(): base() {}

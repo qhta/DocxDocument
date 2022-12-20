@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumberingFormatImpl: ModelElementImpl, NumberingFormat
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingFormatImpl(): base() {}

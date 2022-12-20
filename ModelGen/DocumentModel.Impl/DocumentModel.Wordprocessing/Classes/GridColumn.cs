@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class GridColumnImpl: ModelElementImpl, GridColumn
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.GridColumn? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.GridColumn?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GridColumnImpl(): base() {}

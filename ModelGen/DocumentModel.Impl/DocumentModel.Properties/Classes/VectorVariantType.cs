@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class VectorVariantTypeImpl: ModelElementImpl, VectorVariantType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.VectorVariantType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.VectorVariantType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VectorVariantTypeImpl(): base() {}

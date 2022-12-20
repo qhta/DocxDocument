@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BarChartSeriesImpl: ModelElementImpl, BarChartSeries
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BarChartSeriesImpl(): base() {}
@@ -206,7 +207,7 @@ public partial class BarChartSeriesImpl: ModelElementImpl, BarChartSeries
   {
     get
     {
-      if (_DataPoints != null)
+      if (_DataPoints == null)
       {
         if (OpenXmlElement != null)
         {
@@ -319,7 +320,7 @@ public partial class BarChartSeriesImpl: ModelElementImpl, BarChartSeries
   {
     get
     {
-      if (_Trendlines != null)
+      if (_Trendlines == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EndParagraphRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, EndParagraphRunProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EndParagraphRunPropertiesImpl(): base() {}

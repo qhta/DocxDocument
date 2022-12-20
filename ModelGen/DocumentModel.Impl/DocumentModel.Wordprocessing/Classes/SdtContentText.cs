@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentTextImpl: ModelElementImpl, SdtContentText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentTextImpl(): base() {}

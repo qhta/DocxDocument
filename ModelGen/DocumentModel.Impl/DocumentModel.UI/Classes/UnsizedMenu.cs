@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class UnsizedMenuImpl: ModelElementImpl, UnsizedMenu
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnsizedMenuImpl(): base() {}

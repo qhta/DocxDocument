@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TransformEffectImpl: ModelElementImpl, TransformEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TransformEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TransformEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TransformEffectImpl(): base() {}

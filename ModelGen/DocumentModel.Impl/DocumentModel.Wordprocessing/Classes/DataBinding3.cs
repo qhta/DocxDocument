@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DataBinding3Impl: ModelElementImpl, DataBinding3
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.DataBinding? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.DataBinding?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataBinding3Impl(): base() {}

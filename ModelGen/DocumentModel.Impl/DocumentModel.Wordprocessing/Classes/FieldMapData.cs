@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FieldMapDataImpl: ModelElementImpl, FieldMapData
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FieldMapData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FieldMapData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FieldMapDataImpl(): base() {}

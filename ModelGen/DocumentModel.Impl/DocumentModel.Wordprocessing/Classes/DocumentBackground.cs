@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentBackgroundImpl: ModelElementImpl, DocumentBackground
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DocumentBackground?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentBackgroundImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FitTextImpl: ModelElementImpl, FitText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FitText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FitText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FitTextImpl(): base() {}

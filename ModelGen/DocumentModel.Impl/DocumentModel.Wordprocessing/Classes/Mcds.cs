@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class McdsImpl: ModelElementImpl, Mcds
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.Mcds? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.Mcds?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public McdsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class McdsImpl: ModelElementImpl, Mcds
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class PrimaryItemImpl: ModelElementImpl, PrimaryItem
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PrimaryItemImpl(): base() {}

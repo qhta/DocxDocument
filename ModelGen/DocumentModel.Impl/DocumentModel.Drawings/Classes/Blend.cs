@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BlendImpl: ModelElementImpl, Blend
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Blend? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Blend?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BlendImpl(): base() {}

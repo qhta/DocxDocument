@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StylesImpl: ModelElementImpl, Styles
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Styles? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Styles?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StylesImpl(): base() {}
@@ -16,26 +17,6 @@ public partial class StylesImpl: ModelElementImpl, Styles
   public StylesImpl(DocumentFormat.OpenXml.Wordprocessing.Styles openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
-  }
-  
-  /// <summary>
-  /// Gets the StylesPart associated with this element, it could either be a StyleDefinitionsPart or a StylesWithEffectsPart.
-  /// </summary>
-  public DocumentModel.Packaging.StylesPart? StylesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.StylesPart != null)
-        return new DocumentModel.Packaging.StylesPartImpl(OpenXmlElement.StylesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.StylesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
   }
   
   /// <summary>
@@ -106,7 +87,7 @@ public partial class StylesImpl: ModelElementImpl, Styles
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

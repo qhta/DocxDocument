@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class TextPropertiesImpl: DocumentModel.Drawings.Charts.TextBodyTypeImpl, TextProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.TextProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.TextProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextPropertiesImpl(): base() {}

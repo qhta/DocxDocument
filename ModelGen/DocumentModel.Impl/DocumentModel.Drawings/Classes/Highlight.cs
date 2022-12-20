@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HighlightImpl: DocumentModel.Drawings.ColorTypeImpl, Highlight
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Highlight? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Highlight?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HighlightImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SerAxExtensionImpl: ModelElementImpl, SerAxExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SerAxExtensionImpl(): base() {}

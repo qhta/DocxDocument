@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class SubtotalsImpl: ModelElementImpl, Subtotals
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SubtotalsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class SubtotalsImpl: ModelElementImpl, Subtotals
   {
     get
     {
-      if (_UnsignedIntegerTypes != null)
+      if (_UnsignedIntegerTypes == null)
       {
         if (OpenXmlElement != null)
         {

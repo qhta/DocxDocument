@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Accent2ColorImpl: DocumentModel.Drawings.Color2TypeImpl, Accent2Color
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Accent2Color? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Accent2Color?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Accent2ColorImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskUndoImpl: ModelElementImpl, TaskUndo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskUndoImpl(): base() {}

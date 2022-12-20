@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class RadioGroupImpl: ModelElementImpl, RadioGroup
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RadioGroupImpl(): base() {}
@@ -256,7 +257,7 @@ public partial class RadioGroupImpl: ModelElementImpl, RadioGroup
   {
     get
     {
-      if (_RadioButtonBackstageItems != null)
+      if (_RadioButtonBackstageItems == null)
       {
         if (OpenXmlElement != null)
         {

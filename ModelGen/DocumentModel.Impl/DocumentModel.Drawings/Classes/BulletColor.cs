@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BulletColorImpl: DocumentModel.Drawings.ColorTypeImpl, BulletColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.BulletColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BulletColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BulletColorImpl(): base() {}

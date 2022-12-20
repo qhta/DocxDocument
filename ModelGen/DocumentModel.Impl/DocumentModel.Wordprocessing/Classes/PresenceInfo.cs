@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PresenceInfoImpl: ModelElementImpl, PresenceInfo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.PresenceInfo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresenceInfoImpl(): base() {}

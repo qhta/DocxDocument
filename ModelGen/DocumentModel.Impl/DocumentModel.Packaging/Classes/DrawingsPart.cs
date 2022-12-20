@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DrawingsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DrawingsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DrawingsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DrawingsPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ChartParts != null)
+      if (_ChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -96,7 +97,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_CustomXmlParts != null)
+      if (_CustomXmlParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -162,7 +163,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramColorsParts != null)
+      if (_DiagramColorsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -228,7 +229,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramDataParts != null)
+      if (_DiagramDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -294,7 +295,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramLayoutDefinitionParts != null)
+      if (_DiagramLayoutDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -360,7 +361,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramPersistLayoutParts != null)
+      if (_DiagramPersistLayoutParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -426,7 +427,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_DiagramStyleParts != null)
+      if (_DiagramStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -492,7 +493,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ExtendedChartParts != null)
+      if (_ExtendedChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -558,7 +559,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -629,7 +630,7 @@ public partial class DrawingsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, 
   {
     get
     {
-      if (_WebExtensionParts != null)
+      if (_WebExtensionParts == null)
       {
         if (OpenXmlElement != null)
         {

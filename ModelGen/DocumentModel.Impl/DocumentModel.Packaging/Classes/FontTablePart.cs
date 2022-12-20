@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, FontTablePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.FontTablePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.FontTablePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontTablePartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class FontTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_FontParts != null)
+      if (_FontParts == null)
       {
         if (OpenXmlElement != null)
         {

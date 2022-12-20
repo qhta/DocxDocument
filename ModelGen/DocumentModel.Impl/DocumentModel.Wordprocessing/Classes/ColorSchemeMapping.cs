@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ColorSchemeMappingImpl: ModelElementImpl, ColorSchemeMapping
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorSchemeMappingImpl(): base() {}

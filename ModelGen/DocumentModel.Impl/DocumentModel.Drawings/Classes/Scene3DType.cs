@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Scene3DTypeImpl: ModelElementImpl, Scene3DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Scene3DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Scene3DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Scene3DTypeImpl(): base() {}

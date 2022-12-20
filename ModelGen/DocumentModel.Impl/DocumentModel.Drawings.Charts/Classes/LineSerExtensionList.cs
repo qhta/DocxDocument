@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineSerExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class LineSerExtensionListImpl: ModelElementImpl, LineSerExtensio
   {
     get
     {
-      if (_LineSerExtensions != null)
+      if (_LineSerExtensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BreakImpl: ModelElementImpl, Break
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Break? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Break?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BreakImpl(): base() {}

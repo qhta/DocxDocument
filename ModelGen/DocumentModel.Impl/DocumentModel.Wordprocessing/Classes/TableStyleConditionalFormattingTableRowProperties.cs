@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableStyleConditionalFormattingTableRowPropertiesImpl: ModelElementImpl, TableStyleConditionalFormattingTableRowProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableStyleConditionalFormattingTableRowPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LightRigImpl: ModelElementImpl, LightRig
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LightRig? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LightRig?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LightRigImpl(): base() {}

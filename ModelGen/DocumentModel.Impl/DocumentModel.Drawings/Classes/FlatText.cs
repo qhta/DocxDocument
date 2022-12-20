@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FlatTextImpl: ModelElementImpl, FlatText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FlatText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FlatText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FlatTextImpl(): base() {}

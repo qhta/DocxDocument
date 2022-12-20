@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions.UI;
 /// </summary>
 public partial class WebExtensionTaskpaneImpl: ModelElementImpl, WebExtensionTaskpane
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionTaskpaneImpl(): base() {}

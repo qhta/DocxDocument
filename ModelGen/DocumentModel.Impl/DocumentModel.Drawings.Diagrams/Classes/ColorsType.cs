@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorsTypeImpl: ModelElementImpl, ColorsType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorsTypeImpl(): base() {}

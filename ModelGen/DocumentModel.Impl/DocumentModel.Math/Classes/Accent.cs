@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class AccentImpl: ModelElementImpl, Accent
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Accent? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Accent?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AccentImpl(): base() {}

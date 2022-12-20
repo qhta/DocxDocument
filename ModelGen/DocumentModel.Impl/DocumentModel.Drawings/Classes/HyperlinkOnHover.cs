@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkOnHoverImpl: DocumentModel.Drawings.HyperlinkTypeImpl, HyperlinkOnHover
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.HyperlinkOnHover? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.HyperlinkOnHover?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkOnHoverImpl(): base() {}

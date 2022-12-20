@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// </summary>
 public partial class GroupShapePropertiesImpl: ModelElementImpl, GroupShapeProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.GroupShapeProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.GroupShapeProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupShapePropertiesImpl(): base() {}

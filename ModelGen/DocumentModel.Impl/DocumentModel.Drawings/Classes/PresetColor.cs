@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PresetColorImpl: ModelElementImpl, PresetColor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PresetColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PresetColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresetColorImpl(): base() {}

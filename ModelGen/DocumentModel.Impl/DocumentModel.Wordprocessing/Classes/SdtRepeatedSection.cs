@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtRepeatedSectionImpl: ModelElementImpl, SdtRepeatedSection
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtRepeatedSectionImpl(): base() {}

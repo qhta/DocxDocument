@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NotesMasterPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.NotesMasterPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.NotesMasterPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NotesMasterPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_ChartParts != null)
+      if (_ChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -96,7 +97,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_CustomXmlParts != null)
+      if (_CustomXmlParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -162,7 +163,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_DiagramColorsParts != null)
+      if (_DiagramColorsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -228,7 +229,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_DiagramDataParts != null)
+      if (_DiagramDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -294,7 +295,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_DiagramLayoutDefinitionParts != null)
+      if (_DiagramLayoutDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -360,7 +361,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_DiagramPersistLayoutParts != null)
+      if (_DiagramPersistLayoutParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -426,7 +427,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_DiagramStyleParts != null)
+      if (_DiagramStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -492,7 +493,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_EmbeddedControlPersistenceBinaryDataParts != null)
+      if (_EmbeddedControlPersistenceBinaryDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -558,7 +559,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_EmbeddedObjectParts != null)
+      if (_EmbeddedObjectParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -624,7 +625,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_EmbeddedPackageParts != null)
+      if (_EmbeddedPackageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -690,7 +691,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_ExtendedChartParts != null)
+      if (_ExtendedChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -756,7 +757,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -822,7 +823,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_Model3DReferenceRelationshipParts != null)
+      if (_Model3DReferenceRelationshipParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -919,7 +920,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_UserDefinedTagsParts != null)
+      if (_UserDefinedTagsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -985,7 +986,7 @@ public partial class NotesMasterPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_VmlDrawingParts != null)
+      if (_VmlDrawingParts == null)
       {
         if (OpenXmlElement != null)
         {

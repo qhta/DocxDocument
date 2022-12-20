@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AutoNumberedBulletImpl: ModelElementImpl, AutoNumberedBullet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AutoNumberedBullet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AutoNumberedBulletImpl(): base() {}

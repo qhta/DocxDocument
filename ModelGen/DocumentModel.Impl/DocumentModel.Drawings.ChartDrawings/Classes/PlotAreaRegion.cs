@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PlotAreaRegionImpl(): base() {}
@@ -54,7 +55,7 @@ public partial class PlotAreaRegionImpl: ModelElementImpl, PlotAreaRegion
   {
     get
     {
-      if (_Serieses != null)
+      if (_Serieses == null)
       {
         if (OpenXmlElement != null)
         {

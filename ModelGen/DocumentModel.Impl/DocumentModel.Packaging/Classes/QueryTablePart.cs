@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class QueryTablePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, QueryTablePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.QueryTablePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.QueryTablePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QueryTablePartImpl(): base() {}

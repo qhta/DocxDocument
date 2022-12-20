@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapetypeImpl: ModelElementImpl, Shapetype
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Shapetype? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Shapetype?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapetypeImpl(): base() {}

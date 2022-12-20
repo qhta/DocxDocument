@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RectangleImpl: ModelElementImpl, Rectangle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Rectangle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Rectangle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RectangleImpl(): base() {}

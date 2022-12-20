@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HiddenLinePropertiesImpl: ModelElementImpl, HiddenLineProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HiddenLinePropertiesImpl(): base() {}

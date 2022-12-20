@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class PhantomPropertiesImpl: ModelElementImpl, PhantomProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.PhantomProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.PhantomProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PhantomPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PresetGeometryImpl: ModelElementImpl, PresetGeometry
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PresetGeometry? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PresetGeometry?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresetGeometryImpl(): base() {}

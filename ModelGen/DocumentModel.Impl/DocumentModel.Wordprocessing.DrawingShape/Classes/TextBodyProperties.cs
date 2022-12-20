@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// </summary>
 public partial class TextBodyPropertiesImpl: ModelElementImpl, TextBodyProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingShape.TextBodyProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingShape.TextBodyProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextBodyPropertiesImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class TextLabelImpl: ModelElementImpl, TextLabel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.TextLabel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.TextLabel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextLabelImpl(): base() {}

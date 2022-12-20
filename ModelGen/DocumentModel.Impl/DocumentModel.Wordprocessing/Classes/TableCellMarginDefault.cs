@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableCellMarginDefaultImpl: ModelElementImpl, TableCellMarginDefault
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableCellMarginDefaultImpl(): base() {}

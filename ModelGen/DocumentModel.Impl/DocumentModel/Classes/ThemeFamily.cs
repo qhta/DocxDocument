@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ThemeFamilyImpl: ModelElementImpl, ThemeFamily
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemeFamilyImpl(): base() {}

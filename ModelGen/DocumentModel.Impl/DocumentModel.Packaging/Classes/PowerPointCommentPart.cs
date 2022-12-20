@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class PowerPointCommentPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, PowerPointCommentPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.PowerPointCommentPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.PowerPointCommentPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PowerPointCommentPartImpl(): base() {}

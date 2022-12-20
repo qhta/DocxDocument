@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeDefaultsImpl(): base() {}

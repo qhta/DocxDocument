@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ObjectLinkImpl: ModelElementImpl, ObjectLink
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ObjectLink? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ObjectLink?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ObjectLinkImpl(): base() {}

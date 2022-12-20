@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphImpl: ModelElementImpl, Paragraph
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Paragraph? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Paragraph?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphImpl(): base() {}
@@ -257,7 +258,7 @@ public partial class ParagraphImpl: ModelElementImpl, Paragraph
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1182,7 +1183,7 @@ public partial class ParagraphImpl: ModelElementImpl, Paragraph
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

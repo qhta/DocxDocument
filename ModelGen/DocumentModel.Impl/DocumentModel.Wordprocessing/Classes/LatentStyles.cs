@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LatentStylesImpl: ModelElementImpl, LatentStyles
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LatentStyles? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LatentStyles?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LatentStylesImpl(): base() {}
@@ -100,7 +101,7 @@ public partial class LatentStylesImpl: ModelElementImpl, LatentStyles
   {
     get
     {
-      if (_LatentStyleExceptionInfos != null)
+      if (_LatentStyleExceptionInfos == null)
       {
         if (OpenXmlElement != null)
         {

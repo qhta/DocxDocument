@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OuterShadowImpl: ModelElementImpl, OuterShadow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.OuterShadow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.OuterShadow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OuterShadowImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class UpDownBarsImpl: ModelElementImpl, UpDownBars
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.UpDownBars? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.UpDownBars?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UpDownBarsImpl(): base() {}

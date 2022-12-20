@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class FormulasImpl: ModelElementImpl, Formulas
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Formulas? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Formulas?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FormulasImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class FormulasImpl: ModelElementImpl, Formulas
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

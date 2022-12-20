@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ColumnImpl: ModelElementImpl, Column
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Column? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Column?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColumnImpl(): base() {}

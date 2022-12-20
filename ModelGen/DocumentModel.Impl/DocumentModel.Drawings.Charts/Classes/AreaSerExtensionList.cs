@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AreaSerExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class AreaSerExtensionListImpl: ModelElementImpl, AreaSerExtensio
   {
     get
     {
-      if (_AreaSerExtensions != null)
+      if (_AreaSerExtensions == null)
       {
         if (OpenXmlElement != null)
         {

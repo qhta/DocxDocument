@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class TextPropertiesImpl: ModelElementImpl, TextProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextPropertiesImpl(): base() {}

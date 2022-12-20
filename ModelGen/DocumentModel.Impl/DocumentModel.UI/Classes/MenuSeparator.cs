@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class MenuSeparatorImpl: ModelElementImpl, MenuSeparator
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MenuSeparatorImpl(): base() {}

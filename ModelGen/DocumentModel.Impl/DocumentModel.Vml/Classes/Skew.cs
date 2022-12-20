@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class SkewImpl: ModelElementImpl, Skew
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Skew? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Skew?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SkewImpl(): base() {}

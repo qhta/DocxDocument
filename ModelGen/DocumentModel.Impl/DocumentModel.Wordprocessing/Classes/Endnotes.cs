@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class EndnotesImpl: ModelElementImpl, Endnotes
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Endnotes? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Endnotes?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EndnotesImpl(): base() {}
@@ -16,26 +17,6 @@ public partial class EndnotesImpl: ModelElementImpl, Endnotes
   public EndnotesImpl(DocumentFormat.OpenXml.Wordprocessing.Endnotes openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
-  }
-  
-  /// <summary>
-  /// Gets the EndnotesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.EndnotesPart? EndnotesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.EndnotesPart != null)
-        return new DocumentModel.Packaging.EndnotesPartImpl(OpenXmlElement.EndnotesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.EndnotesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
   }
   
   public DocumentModel.Wordprocessing.Endnote? Endnote

@@ -15,9 +15,4 @@ public partial interface GlossaryDocument
   /// </summary>
   public DocumentModel.Wordprocessing.DocParts? DocParts { get; set; }
   
-  /// <summary>
-  /// Gets the GlossaryDocumentPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.GlossaryDocumentPart? GlossaryDocumentPart { get; set; }
-  
 }

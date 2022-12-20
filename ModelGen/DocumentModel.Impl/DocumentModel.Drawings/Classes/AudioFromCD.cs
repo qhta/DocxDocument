@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AudioFromCDImpl: ModelElementImpl, AudioFromCD
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AudioFromCD? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AudioFromCD?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AudioFromCDImpl(): base() {}

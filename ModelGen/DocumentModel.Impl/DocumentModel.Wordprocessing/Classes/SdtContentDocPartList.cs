@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentDocPartListImpl: DocumentModel.Wordprocessing.SdtDocPartTypeImpl, SdtContentDocPartList
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentDocPartListImpl(): base() {}

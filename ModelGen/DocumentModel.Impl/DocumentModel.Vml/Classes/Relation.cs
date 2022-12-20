@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RelationImpl: ModelElementImpl, Relation
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Relation? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Relation?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelationImpl(): base() {}

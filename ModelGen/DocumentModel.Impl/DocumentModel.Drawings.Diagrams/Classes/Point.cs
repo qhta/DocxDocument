@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PointImpl: ModelElementImpl, Point
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Point? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Point?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PointImpl(): base() {}

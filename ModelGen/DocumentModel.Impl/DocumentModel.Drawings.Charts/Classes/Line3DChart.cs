@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Line3DChartImpl: ModelElementImpl, Line3DChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Line3DChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Line3DChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class Line3DChartImpl: ModelElementImpl, Line3DChart
   {
     get
     {
-      if (_LineChartSerieses != null)
+      if (_LineChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -261,7 +262,7 @@ public partial class Line3DChartImpl: ModelElementImpl, Line3DChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

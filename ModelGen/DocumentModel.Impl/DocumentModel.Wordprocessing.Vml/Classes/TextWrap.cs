@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// </summary>
 public partial class TextWrapImpl: ModelElementImpl, TextWrap
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextWrapImpl(): base() {}

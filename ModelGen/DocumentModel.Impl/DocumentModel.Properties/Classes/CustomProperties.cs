@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class CustomPropertiesImpl: ModelElementImpl, CustomProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.CustomProperties.Properties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.CustomProperties.Properties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomPropertiesImpl(): base() {}
@@ -16,26 +17,6 @@ public partial class CustomPropertiesImpl: ModelElementImpl, CustomProperties
   public CustomPropertiesImpl(DocumentFormat.OpenXml.CustomProperties.Properties openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
-  }
-  
-  /// <summary>
-  /// Gets the CustomFilePropertiesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.CustomFilePropertiesPart? CustomFilePropertiesPart
-  {
-    get
-    {
-      if (OpenXmlElement?.CustomFilePropertiesPart != null)
-        return new DocumentModel.Packaging.CustomFilePropertiesPartImpl(OpenXmlElement.CustomFilePropertiesPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.CustomFilePropertiesPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
   }
   
   public Collection<DocumentModel.Properties.CustomDocumentProperty>? CustomDocumentProperties

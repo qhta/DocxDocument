@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class SharedControlsQatItemsImpl: ModelElementImpl, SharedControlsQatItems
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SharedControlsQatItemsImpl(): base() {}

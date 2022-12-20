@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LevelImpl: ModelElementImpl, Level
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Level? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Level?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LevelImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class LevelImpl: ModelElementImpl, Level
   {
     get
     {
-      if (_StringPoints != null)
+      if (_StringPoints == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class MarkerTypeImpl: ModelElementImpl, MarkerType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MarkerTypeImpl(): base() {}

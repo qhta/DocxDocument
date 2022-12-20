@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumRefExtensionImpl: ModelElementImpl, NumRefExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumRefExtensionImpl(): base() {}

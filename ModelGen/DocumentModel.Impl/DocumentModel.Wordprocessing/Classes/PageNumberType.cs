@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PageNumberTypeImpl: ModelElementImpl, PageNumberType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PageNumberType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PageNumberType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageNumberTypeImpl(): base() {}

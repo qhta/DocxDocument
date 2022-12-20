@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class ButtonImpl: ModelElementImpl, Button
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.Button? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.Button?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ButtonImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Pictures;
 /// </summary>
 public partial class PictureImpl: ModelElementImpl, Picture
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Pictures.Picture? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Pictures.Picture?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PictureImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class MaxValueColorEndPositionImpl: DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElementImpl, MaxValueColorEndPosition
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MaxValueColorEndPositionImpl(): base() {}

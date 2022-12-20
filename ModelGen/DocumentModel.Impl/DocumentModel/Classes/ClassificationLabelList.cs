@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ClassificationLabelListImpl: ModelElementImpl, ClassificationLabelList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ClassificationLabelListImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class ClassificationLabelListImpl: ModelElementImpl, Classificati
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the LabelInfoPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.LabelInfoPart? LabelInfoPart
-  {
-    get
-    {
-      if (OpenXmlElement?.LabelInfoPart != null)
-        return new DocumentModel.Packaging.LabelInfoPartImpl(OpenXmlElement.LabelInfoPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.LabelInfoPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.ClassificationLabel>? ClassificationLabels
   {
     get
     {
-      if (_ClassificationLabels != null)
+      if (_ClassificationLabels == null)
       {
         if (OpenXmlElement != null)
         {

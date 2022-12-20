@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class InsertedMathControlImpl: ModelElementImpl, InsertedMathControl
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public InsertedMathControlImpl(): base() {}

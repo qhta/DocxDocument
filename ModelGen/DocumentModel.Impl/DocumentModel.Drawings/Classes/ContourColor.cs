@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ContourColorImpl: DocumentModel.Drawings.ColorTypeImpl, ContourColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ContourColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ContourColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ContourColorImpl(): base() {}

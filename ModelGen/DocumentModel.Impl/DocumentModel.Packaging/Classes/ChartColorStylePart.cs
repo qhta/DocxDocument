@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ChartColorStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartColorStylePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ChartColorStylePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ChartColorStylePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartColorStylePartImpl(): base() {}

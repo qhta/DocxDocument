@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ParameterImpl: ModelElementImpl, Parameter
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Parameter? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Parameter?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParameterImpl(): base() {}

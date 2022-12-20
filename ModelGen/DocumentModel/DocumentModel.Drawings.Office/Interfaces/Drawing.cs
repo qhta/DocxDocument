@@ -10,9 +10,4 @@ public partial interface Drawing
   /// </summary>
   public DocumentModel.Drawings.Office.ShapeTree? ShapeTree { get; set; }
   
-  /// <summary>
-  /// Gets the DiagramPersistLayoutPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramPersistLayoutPart? DiagramPersistLayoutPart { get; set; }
-  
 }

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LuminanceEffectImpl: ModelElementImpl, LuminanceEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LuminanceEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LuminanceEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LuminanceEffectImpl(): base() {}

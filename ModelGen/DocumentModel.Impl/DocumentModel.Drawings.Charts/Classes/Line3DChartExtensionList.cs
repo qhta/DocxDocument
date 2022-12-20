@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChartExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Line3DChartExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class Line3DChartExtensionListImpl: ModelElementImpl, Line3DChart
   {
     get
     {
-      if (_Line3DChartExtensions != null)
+      if (_Line3DChartExtensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BookmarkStartImpl: ModelElementImpl, BookmarkStart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.BookmarkStart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.BookmarkStart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BookmarkStartImpl(): base() {}

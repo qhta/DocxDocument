@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingChangeImpl: ModelElementImpl, NumberingChange
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NumberingChange? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NumberingChange?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingChangeImpl(): base() {}

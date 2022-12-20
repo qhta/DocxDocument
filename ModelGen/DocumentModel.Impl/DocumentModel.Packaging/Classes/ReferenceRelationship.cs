@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ReferenceRelationshipImpl: ModelObjectImpl, ReferenceRelationship
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Packaging.ReferenceRelationship? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ReferenceRelationship?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ReferenceRelationshipImpl(): base() {}

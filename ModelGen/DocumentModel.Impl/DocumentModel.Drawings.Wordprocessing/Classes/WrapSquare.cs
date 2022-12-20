@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WrapSquareImpl: ModelElementImpl, WrapSquare
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WrapSquareImpl(): base() {}

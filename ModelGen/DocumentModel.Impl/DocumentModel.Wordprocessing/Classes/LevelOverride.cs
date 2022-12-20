@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LevelOverrideImpl: ModelElementImpl, LevelOverride
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LevelOverride? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LevelOverride?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LevelOverrideImpl(): base() {}

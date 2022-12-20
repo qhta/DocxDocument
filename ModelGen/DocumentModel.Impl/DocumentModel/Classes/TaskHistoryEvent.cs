@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskHistoryEventImpl: ModelElementImpl, TaskHistoryEvent
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskHistoryEventImpl(): base() {}

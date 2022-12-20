@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlPropertiesImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class CustomXmlPropertiesImpl: ModelElementImpl, CustomXmlPropert
   {
     get
     {
-      if (_CustomXmlAttributes != null)
+      if (_CustomXmlAttributes == null)
       {
         if (OpenXmlElement != null)
         {

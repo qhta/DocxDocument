@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class MenuImpl: ModelElementImpl, Menu
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.Menu? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.Menu?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MenuImpl(): base() {}

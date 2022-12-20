@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ActiveWritingStyleImpl: ModelElementImpl, ActiveWritingStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ActiveWritingStyleImpl(): base() {}

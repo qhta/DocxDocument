@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class ExtentImpl: ModelElementImpl, Extent
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtentImpl(): base() {}

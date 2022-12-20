@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagram2;
 /// </summary>
 public partial class TextListStyleTypeImpl: ModelElementImpl, TextListStyleType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextListStyleTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class DegreeImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, Degree
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.Degree? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Degree?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DegreeImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class DegreeImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, 
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class DegreeImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, 
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

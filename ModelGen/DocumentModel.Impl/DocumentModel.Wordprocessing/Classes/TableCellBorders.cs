@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableCellBordersImpl: ModelElementImpl, TableCellBorders
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableCellBorders? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableCellBorders?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableCellBordersImpl(): base() {}

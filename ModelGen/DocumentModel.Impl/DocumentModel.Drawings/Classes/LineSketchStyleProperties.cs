@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineSketchStylePropertiesImpl: ModelElementImpl, LineSketchStyleProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineSketchStylePropertiesImpl(): base() {}

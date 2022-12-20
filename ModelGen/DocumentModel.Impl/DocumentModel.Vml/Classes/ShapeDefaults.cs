@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapeDefaultsImpl: ModelElementImpl, ShapeDefaults
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.ShapeDefaults?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeDefaultsImpl(): base() {}

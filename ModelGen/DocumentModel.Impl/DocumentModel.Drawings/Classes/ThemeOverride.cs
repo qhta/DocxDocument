@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ThemeOverride? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ThemeOverride?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemeOverrideImpl(): base() {}
@@ -111,26 +112,6 @@ public partial class ThemeOverrideImpl: ModelElementImpl, ThemeOverride
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ThemeOverridePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ThemeOverridePart? ThemeOverridePart
-  {
-    get
-    {
-      if (OpenXmlElement?.ThemeOverridePart != null)
-        return new DocumentModel.Packaging.ThemeOverridePartImpl(OpenXmlElement.ThemeOverridePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ThemeOverridePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

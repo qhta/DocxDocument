@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class NumberingDefinitionsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, NumberingDefinitionsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingDefinitionsPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class NumberingDefinitionsPartImpl: DocumentModel.Packaging.OpenX
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PresetShadowImpl: ModelElementImpl, PresetShadow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PresetShadow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PresetShadow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresetShadowImpl(): base() {}

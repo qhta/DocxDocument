@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PatternFillImpl: ModelElementImpl, PatternFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PatternFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PatternFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PatternFillImpl(): base() {}

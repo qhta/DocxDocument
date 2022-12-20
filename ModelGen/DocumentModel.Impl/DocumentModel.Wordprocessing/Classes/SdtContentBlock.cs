@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentBlockImpl: ModelElementImpl, SdtContentBlock
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentBlock? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentBlock?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentBlockImpl(): base() {}
@@ -80,7 +81,7 @@ public partial class SdtContentBlockImpl: ModelElementImpl, SdtContentBlock
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -164,7 +165,7 @@ public partial class SdtContentBlockImpl: ModelElementImpl, SdtContentBlock
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1031,7 +1032,7 @@ public partial class SdtContentBlockImpl: ModelElementImpl, SdtContentBlock
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

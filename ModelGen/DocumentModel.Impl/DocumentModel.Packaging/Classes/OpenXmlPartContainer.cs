@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartContainer
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OpenXmlPartContainerImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartConta
   {
     get
     {
-      if (_ExternalRelationships != null)
+      if (_ExternalRelationships == null)
       {
         if (OpenXmlElement != null)
         {
@@ -89,7 +90,7 @@ public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartConta
   {
     get
     {
-      if (_HyperlinkRelationships != null)
+      if (_HyperlinkRelationships == null)
       {
         if (OpenXmlElement != null)
         {
@@ -153,7 +154,7 @@ public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartConta
   {
     get
     {
-      if (_DataPartReferenceRelationships != null)
+      if (_DataPartReferenceRelationships == null)
       {
         if (OpenXmlElement != null)
         {
@@ -217,7 +218,7 @@ public partial class OpenXmlPartContainerImpl: ModelObjectImpl, OpenXmlPartConta
   {
     get
     {
-      if (_Parts != null)
+      if (_Parts == null)
       {
         if (OpenXmlElement != null)
         {

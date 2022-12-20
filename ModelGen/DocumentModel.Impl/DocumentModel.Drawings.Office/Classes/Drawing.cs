@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class DrawingImpl: ModelElementImpl, Drawing
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.Drawing? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.Drawing?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DrawingImpl(): base() {}
@@ -47,26 +48,6 @@ public partial class DrawingImpl: ModelElementImpl, Drawing
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the DiagramPersistLayoutPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramPersistLayoutPart? DiagramPersistLayoutPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DiagramPersistLayoutPart != null)
-        return new DocumentModel.Packaging.DiagramPersistLayoutPartImpl(OpenXmlElement.DiagramPersistLayoutPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DiagramPersistLayoutPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

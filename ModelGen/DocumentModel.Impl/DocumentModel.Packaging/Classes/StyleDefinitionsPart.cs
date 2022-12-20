@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class StyleDefinitionsPartImpl: DocumentModel.Packaging.StylesPartImpl, StyleDefinitionsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleDefinitionsPartImpl(): base() {}

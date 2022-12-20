@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BodyImpl: ModelElementImpl, Body
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Body? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Body?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BodyImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class BodyImpl: ModelElementImpl, Body
   {
     get
     {
-      if (_AltChunks != null)
+      if (_AltChunks == null)
       {
         if (OpenXmlElement != null)
         {
@@ -164,7 +165,7 @@ public partial class BodyImpl: ModelElementImpl, Body
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -248,7 +249,7 @@ public partial class BodyImpl: ModelElementImpl, Body
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1115,7 +1116,7 @@ public partial class BodyImpl: ModelElementImpl, Body
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

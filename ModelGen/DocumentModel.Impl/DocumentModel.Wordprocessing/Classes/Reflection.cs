@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ReflectionImpl: ModelElementImpl, Reflection
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.Reflection? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.Reflection?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ReflectionImpl(): base() {}

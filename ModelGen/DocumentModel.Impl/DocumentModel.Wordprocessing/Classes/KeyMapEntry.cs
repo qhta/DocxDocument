@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class KeyMapEntryImpl: ModelElementImpl, KeyMapEntry
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.KeyMapEntry? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.KeyMapEntry?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public KeyMapEntryImpl(): base() {}

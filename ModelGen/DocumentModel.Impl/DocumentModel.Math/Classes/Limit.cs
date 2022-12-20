@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, Limit
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.Limit? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Limit?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LimitImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class LimitImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, L
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class LimitImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, L
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

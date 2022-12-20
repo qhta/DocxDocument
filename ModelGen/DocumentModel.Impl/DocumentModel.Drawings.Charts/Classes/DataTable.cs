@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataTableImpl: ModelElementImpl, DataTable
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DataTable? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DataTable?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataTableImpl(): base() {}

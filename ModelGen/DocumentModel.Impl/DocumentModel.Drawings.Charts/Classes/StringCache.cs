@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTypeImpl, StringCache
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.StringCache? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StringCache?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringCacheImpl(): base() {}
@@ -57,7 +58,7 @@ public partial class StringCacheImpl: DocumentModel.Drawings.Charts.StringDataTy
   {
     get
     {
-      if (_StringPoints != null)
+      if (_StringPoints == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class SlideCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideCommentsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.SlideCommentsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.SlideCommentsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SlideCommentsPartImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ThemeOverridePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ThemeOverridePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ThemeOverridePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemeOverridePartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class ThemeOverridePartImpl: DocumentModel.Packaging.OpenXmlPartI
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class HeadingPairsImpl: DocumentModel.Properties.VectorVariantTypeImpl, HeadingPairs
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HeadingPairsImpl(): base() {}

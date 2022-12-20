@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MultiLevelStringReferenceImpl: ModelElementImpl, MultiLevelStringReference
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MultiLevelStringReferenceImpl(): base() {}

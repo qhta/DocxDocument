@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class TimeLinePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, TimeLinePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.TimeLinePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.TimeLinePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TimeLinePartImpl(): base() {}

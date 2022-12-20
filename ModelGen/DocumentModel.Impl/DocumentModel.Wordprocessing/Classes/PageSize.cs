@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PageSizeImpl: ModelElementImpl, PageSize
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PageSize? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PageSize?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageSizeImpl(): base() {}

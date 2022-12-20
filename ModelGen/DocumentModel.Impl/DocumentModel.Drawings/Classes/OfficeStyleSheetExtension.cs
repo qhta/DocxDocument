@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OfficeStyleSheetExtensionImpl: ModelElementImpl, OfficeStyleSheetExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfficeStyleSheetExtensionImpl(): base() {}

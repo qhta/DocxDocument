@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SoftEdgeImpl: ModelElementImpl, SoftEdge
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.SoftEdge? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.SoftEdge?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SoftEdgeImpl(): base() {}

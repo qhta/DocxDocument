@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MailMergeImpl: ModelElementImpl, MailMerge
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.MailMerge? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.MailMerge?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MailMergeImpl(): base() {}

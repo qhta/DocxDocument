@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MajorFontImpl: DocumentModel.Drawings.FontCollectionTypeImpl, MajorFont
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.MajorFont? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.MajorFont?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MajorFontImpl(): base() {}
@@ -109,7 +110,7 @@ public partial class MajorFontImpl: DocumentModel.Drawings.FontCollectionTypeImp
   {
     get
     {
-      if (_SupplementalFonts != null)
+      if (_SupplementalFonts == null)
       {
         if (OpenXmlElement != null)
         {

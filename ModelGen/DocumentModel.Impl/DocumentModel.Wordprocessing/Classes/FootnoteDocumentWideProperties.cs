@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, FootnoteDocumentWideProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FootnoteDocumentWidePropertiesImpl(): base() {}
@@ -132,7 +133,7 @@ public partial class FootnoteDocumentWidePropertiesImpl: ModelElementImpl, Footn
   {
     get
     {
-      if (_FootnoteSpecialReferences != null)
+      if (_FootnoteSpecialReferences == null)
       {
         if (OpenXmlElement != null)
         {

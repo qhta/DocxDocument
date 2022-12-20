@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingPropertiesImpl: ModelElementImpl, NumberingProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NumberingProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingPropertiesImpl(): base() {}

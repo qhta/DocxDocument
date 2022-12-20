@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class MarkupCompatibilityProcessSettingsImpl: ModelObjectImpl, MarkupCompatibilityProcessSettings
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MarkupCompatibilityProcessSettingsImpl(): base() {}

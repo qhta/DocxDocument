@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class RelativeWidthImpl: ModelElementImpl, RelativeWidth
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelativeWidthImpl(): base() {}

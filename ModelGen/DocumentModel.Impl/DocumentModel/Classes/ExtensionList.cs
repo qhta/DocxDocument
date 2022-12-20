@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
   {
     get
     {
-      if (_Extensions != null)
+      if (_Extensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataLabelsImpl: ModelElementImpl, DataLabels
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DataLabels? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DataLabels?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataLabelsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class DataLabelsImpl: ModelElementImpl, DataLabels
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

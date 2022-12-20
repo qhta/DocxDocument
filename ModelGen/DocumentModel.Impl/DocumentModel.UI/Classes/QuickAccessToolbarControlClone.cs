@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class QuickAccessToolbarControlCloneImpl: ModelElementImpl, QuickAccessToolbarControlClone
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QuickAccessToolbarControlCloneImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GroupShapeLocksImpl: ModelElementImpl, GroupShapeLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.GroupShapeLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.GroupShapeLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupShapeLocksImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ScatterChartImpl: ModelElementImpl, ScatterChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ScatterChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ScatterChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ScatterChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class ScatterChartImpl: ModelElementImpl, ScatterChart
   {
     get
     {
-      if (_ScatterChartSerieses != null)
+      if (_ScatterChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -197,7 +198,7 @@ public partial class ScatterChartImpl: ModelElementImpl, ScatterChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

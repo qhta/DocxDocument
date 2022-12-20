@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class NonVisualContentPartPropertiesImpl: ModelElementImpl, NonVisualContentPartProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualContentPartProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualContentPartProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualContentPartPropertiesImpl(): base() {}

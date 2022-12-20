@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class CategoryListImpl: ModelElementImpl, CategoryList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CategoryListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class CategoryListImpl: ModelElementImpl, CategoryList
   {
     get
     {
-      if (_Categories != null)
+      if (_Categories == null)
       {
         if (OpenXmlElement != null)
         {

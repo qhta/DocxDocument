@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class OfficeMathArgumentTypeImpl: ModelElementImpl, OfficeMathArgumentType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.OfficeMathArgumentType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.OfficeMathArgumentType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfficeMathArgumentTypeImpl(): base() {}

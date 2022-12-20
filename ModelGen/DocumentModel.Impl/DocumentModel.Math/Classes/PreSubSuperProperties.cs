@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class PreSubSuperPropertiesImpl: ModelElementImpl, PreSubSuperProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.PreSubSuperProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.PreSubSuperProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PreSubSuperPropertiesImpl(): base() {}

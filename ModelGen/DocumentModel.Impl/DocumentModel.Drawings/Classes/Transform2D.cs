@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Transform2DImpl: ModelElementImpl, Transform2D
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Transform2D? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Transform2D?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Transform2DImpl(): base() {}

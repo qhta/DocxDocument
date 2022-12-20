@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayCategories
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleDisplayCategoriesImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class StyleDisplayCategoriesImpl: ModelElementImpl, StyleDisplayC
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArcToImpl: ModelElementImpl, ArcTo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ArcTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ArcTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ArcToImpl(): base() {}

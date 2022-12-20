@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class HighLowLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, HighLowLines
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.HighLowLines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.HighLowLines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HighLowLinesImpl(): base() {}

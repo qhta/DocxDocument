@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class StringDimensionImpl: ModelElementImpl, StringDimension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringDimensionImpl(): base() {}
@@ -93,7 +94,7 @@ public partial class StringDimensionImpl: ModelElementImpl, StringDimension
   {
     get
     {
-      if (_StringLevels != null)
+      if (_StringLevels == null)
       {
         if (OpenXmlElement != null)
         {

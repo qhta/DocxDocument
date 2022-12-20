@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkTypeImpl: ModelElementImpl, HyperlinkType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.HyperlinkType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.HyperlinkType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkTypeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ContentPartLocksImpl: ModelElementImpl, ContentPartLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ContentPartLocksImpl(): base() {}

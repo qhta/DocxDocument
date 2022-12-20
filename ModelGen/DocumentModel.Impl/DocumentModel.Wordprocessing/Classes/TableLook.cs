@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableLookImpl: ModelElementImpl, TableLook
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableLook? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableLook?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableLookImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TabStopListImpl: ModelElementImpl, TabStopList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TabStopList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TabStopList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TabStopListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class TabStopListImpl: ModelElementImpl, TabStopList
   {
     get
     {
-      if (_TabStops != null)
+      if (_TabStops == null)
       {
         if (OpenXmlElement != null)
         {

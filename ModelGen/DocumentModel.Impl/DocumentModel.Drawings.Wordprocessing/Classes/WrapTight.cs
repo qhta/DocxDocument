@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WrapTightImpl: ModelElementImpl, WrapTight
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WrapTightImpl(): base() {}

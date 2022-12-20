@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BlurImpl: ModelElementImpl, Blur
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Blur? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Blur?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BlurImpl(): base() {}

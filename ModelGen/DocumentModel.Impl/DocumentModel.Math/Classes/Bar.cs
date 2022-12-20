@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BarImpl: ModelElementImpl, Bar
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Bar? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Bar?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BarImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingImpl: ModelElementImpl, Numbering
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Numbering? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Numbering?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class NumberingImpl: ModelElementImpl, Numbering
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the NumberingDefinitionsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.NumberingDefinitionsPart? NumberingDefinitionsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.NumberingDefinitionsPart != null)
-        return new DocumentModel.Packaging.NumberingDefinitionsPartImpl(OpenXmlElement.NumberingDefinitionsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.NumberingDefinitionsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.NumberingPictureBullet>? NumberingPictureBullets
   {
     get
     {
-      if (_NumberingPictureBullets != null)
+      if (_NumberingPictureBullets == null)
       {
         if (OpenXmlElement != null)
         {
@@ -126,7 +107,7 @@ public partial class NumberingImpl: ModelElementImpl, Numbering
   {
     get
     {
-      if (_AbstractNums != null)
+      if (_AbstractNums == null)
       {
         if (OpenXmlElement != null)
         {
@@ -210,7 +191,7 @@ public partial class NumberingImpl: ModelElementImpl, Numbering
   {
     get
     {
-      if (_NumberingInstances != null)
+      if (_NumberingInstances == null)
       {
         if (OpenXmlElement != null)
         {

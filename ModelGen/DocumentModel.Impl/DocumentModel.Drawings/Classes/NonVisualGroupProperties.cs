@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualGroupPropertiesImpl: ModelElementImpl, NonVisualGroupProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualGroupPropertiesImpl(): base() {}

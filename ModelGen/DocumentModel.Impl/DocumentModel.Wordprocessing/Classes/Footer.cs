@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FooterImpl: ModelElementImpl, Footer
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Footer? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Footer?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FooterImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class FooterImpl: ModelElementImpl, Footer
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the FooterPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.FooterPart? FooterPart
-  {
-    get
-    {
-      if (OpenXmlElement?.FooterPart != null)
-        return new DocumentModel.Packaging.FooterPartImpl(OpenXmlElement.FooterPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.FooterPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.AltChunk>? AltChunks
   {
     get
     {
-      if (_AltChunks != null)
+      if (_AltChunks == null)
       {
         if (OpenXmlElement != null)
         {
@@ -184,7 +165,7 @@ public partial class FooterImpl: ModelElementImpl, Footer
   {
     get
     {
-      if (_Paragraphs != null)
+      if (_Paragraphs == null)
       {
         if (OpenXmlElement != null)
         {
@@ -268,7 +249,7 @@ public partial class FooterImpl: ModelElementImpl, Footer
   {
     get
     {
-      if (_Tables != null)
+      if (_Tables == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1135,7 +1116,7 @@ public partial class FooterImpl: ModelElementImpl, Footer
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

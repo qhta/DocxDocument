@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class SuperArgumentImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, SuperArgument
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.SuperArgument? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.SuperArgument?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SuperArgumentImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class SuperArgumentImpl: DocumentModel.Math.OfficeMathArgumentTyp
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class SuperArgumentImpl: DocumentModel.Math.OfficeMathArgumentTyp
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

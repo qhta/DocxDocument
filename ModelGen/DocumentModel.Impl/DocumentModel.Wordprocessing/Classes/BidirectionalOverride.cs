@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BidirectionalOverrideImpl: ModelElementImpl, BidirectionalOverride
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.BidirectionalOverride? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.BidirectionalOverride?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BidirectionalOverrideImpl(): base() {}
@@ -64,7 +65,7 @@ public partial class BidirectionalOverrideImpl: ModelElementImpl, BidirectionalO
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -989,7 +990,7 @@ public partial class BidirectionalOverrideImpl: ModelElementImpl, BidirectionalO
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

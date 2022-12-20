@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WorksheetPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WorksheetPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WorksheetPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WorksheetPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_ControlPropertiesParts != null)
+      if (_ControlPropertiesParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -96,7 +97,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_CustomPropertyParts != null)
+      if (_CustomPropertyParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -175,7 +176,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_EmbeddedControlPersistenceBinaryDataParts != null)
+      if (_EmbeddedControlPersistenceBinaryDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -241,7 +242,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_EmbeddedControlPersistenceParts != null)
+      if (_EmbeddedControlPersistenceParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -307,7 +308,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_EmbeddedObjectParts != null)
+      if (_EmbeddedObjectParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -373,7 +374,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_EmbeddedPackageParts != null)
+      if (_EmbeddedPackageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -439,7 +440,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -505,7 +506,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_Model3DReferenceRelationshipParts != null)
+      if (_Model3DReferenceRelationshipParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -571,7 +572,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_NamedSheetViewsParts != null)
+      if (_NamedSheetViewsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -637,7 +638,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_PivotTableParts != null)
+      if (_PivotTableParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -703,7 +704,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_QueryTableParts != null)
+      if (_QueryTableParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -787,7 +788,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_SlicersParts != null)
+      if (_SlicersParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -853,7 +854,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_SpreadsheetPrinterSettingsParts != null)
+      if (_SpreadsheetPrinterSettingsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -919,7 +920,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_TableDefinitionParts != null)
+      if (_TableDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -985,7 +986,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_TimeLineParts != null)
+      if (_TimeLineParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1051,7 +1052,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_VmlDrawingParts != null)
+      if (_VmlDrawingParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1143,7 +1144,7 @@ public partial class WorksheetPartImpl: DocumentModel.Packaging.OpenXmlPartImpl,
   {
     get
     {
-      if (_WorksheetThreadedCommentsParts != null)
+      if (_WorksheetThreadedCommentsParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StockChartImpl: ModelElementImpl, StockChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StockChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StockChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StockChartImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class StockChartImpl: ModelElementImpl, StockChart
   {
     get
     {
-      if (_LineChartSerieses != null)
+      if (_LineChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -222,7 +223,7 @@ public partial class StockChartImpl: ModelElementImpl, StockChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

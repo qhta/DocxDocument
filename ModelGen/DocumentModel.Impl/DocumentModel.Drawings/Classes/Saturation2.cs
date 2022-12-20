@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Saturation2Impl: ModelElementImpl, Saturation2
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.Saturation? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.Saturation?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Saturation2Impl(): base() {}

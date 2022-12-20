@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphPropertiesChangeImpl: ModelElementImpl, ParagraphPropertiesChange
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphPropertiesChangeImpl(): base() {}

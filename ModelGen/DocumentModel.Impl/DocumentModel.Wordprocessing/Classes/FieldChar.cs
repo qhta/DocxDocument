@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FieldCharImpl: ModelElementImpl, FieldChar
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FieldChar? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FieldChar?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FieldCharImpl(): base() {}

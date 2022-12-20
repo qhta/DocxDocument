@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class InsertedRunImpl: DocumentModel.Wordprocessing.RunTrackChangeTypeImpl, InsertedRun
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.InsertedRun? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.InsertedRun?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public InsertedRunImpl(): base() {}
@@ -834,7 +835,7 @@ public partial class InsertedRunImpl: DocumentModel.Wordprocessing.RunTrackChang
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

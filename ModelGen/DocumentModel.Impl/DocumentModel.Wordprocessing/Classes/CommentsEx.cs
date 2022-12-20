@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsExImpl: ModelElementImpl, CommentsEx
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.CommentsEx? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.CommentsEx?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentsExImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class CommentsExImpl: ModelElementImpl, CommentsEx
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WordprocessingCommentsExPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WordprocessingCommentsExPart? WordprocessingCommentsExPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WordprocessingCommentsExPart != null)
-        return new DocumentModel.Packaging.WordprocessingCommentsExPartImpl(OpenXmlElement.WordprocessingCommentsExPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WordprocessingCommentsExPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.CommentEx>? CommentExs
   {
     get
     {
-      if (_CommentExs != null)
+      if (_CommentExs == null)
       {
         if (OpenXmlElement != null)
         {

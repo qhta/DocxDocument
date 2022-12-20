@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class HyperlinkListImpl: DocumentModel.Properties.VectorVariantTypeImpl, HyperlinkList
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkListImpl(): base() {}

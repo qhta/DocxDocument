@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DigitalSignatureOriginPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DigitalSignatureOriginPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DigitalSignatureOriginPartImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class DigitalSignatureOriginPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_XmlSignatureParts != null)
+      if (_XmlSignatureParts == null)
       {
         if (OpenXmlElement != null)
         {

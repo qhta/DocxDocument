@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class RibbonExtensibilityPartImpl: DocumentModel.Packaging.CustomUIPartImpl, RibbonExtensibilityPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RibbonExtensibilityPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class RibbonExtensibilityPartImpl: DocumentModel.Packaging.Custom
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -1,6 +1,9 @@
-﻿namespace DocumentModel.Impl;
+﻿using System.Xml.Serialization;
+
+namespace DocumentModel.Impl;
 
 public class ModelPartImpl: ModelElement
 {
-  public object? _OpenXmlElement { get; set; }
+  [XmlIgnore]
+  public object? _OpenXmlElement { get; protected set; }
 }

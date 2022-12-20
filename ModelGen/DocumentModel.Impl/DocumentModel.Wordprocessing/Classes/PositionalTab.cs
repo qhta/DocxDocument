@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PositionalTabImpl: ModelElementImpl, PositionalTab
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PositionalTab? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PositionalTab?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PositionalTabImpl(): base() {}

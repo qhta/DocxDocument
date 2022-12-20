@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RgbColorModelHexImpl: ModelElementImpl, RgbColorModelHex
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RgbColorModelHexImpl(): base() {}

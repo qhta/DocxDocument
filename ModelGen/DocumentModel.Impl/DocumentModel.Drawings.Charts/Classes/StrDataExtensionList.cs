@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StrDataExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class StrDataExtensionListImpl: ModelElementImpl, StrDataExtensio
   {
     get
     {
-      if (_StrDataExtensions != null)
+      if (_StrDataExtensions == null)
       {
         if (OpenXmlElement != null)
         {

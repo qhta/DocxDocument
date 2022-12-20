@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagram1;
 /// </summary>
 public partial class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramInfoList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberDiagramInfoListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class NumberDiagramInfoListImpl: ModelElementImpl, NumberDiagramI
   {
     get
     {
-      if (_NumberDiagramInfos != null)
+      if (_NumberDiagramInfos == null)
       {
         if (OpenXmlElement != null)
         {

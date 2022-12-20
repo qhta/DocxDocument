@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ComplexImpl: ModelElementImpl, Complex
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Complex? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Complex?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ComplexImpl(): base() {}

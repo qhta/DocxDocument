@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WebVideoPropertyImpl: ModelElementImpl, WebVideoProperty
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebVideoPropertyImpl(): base() {}

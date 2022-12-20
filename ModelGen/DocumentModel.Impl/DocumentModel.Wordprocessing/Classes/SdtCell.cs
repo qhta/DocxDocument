@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtCellImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtCell
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.SdtCell? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtCell?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtCellImpl(): base() {}

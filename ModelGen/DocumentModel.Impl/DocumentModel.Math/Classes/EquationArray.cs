@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class EquationArrayImpl: ModelElementImpl, EquationArray
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.EquationArray? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.EquationArray?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EquationArrayImpl(): base() {}
@@ -54,7 +55,7 @@ public partial class EquationArrayImpl: ModelElementImpl, EquationArray
   {
     get
     {
-      if (_Bases != null)
+      if (_Bases == null)
       {
         if (OpenXmlElement != null)
         {

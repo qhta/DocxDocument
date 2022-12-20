@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class DropDownRegularImpl: ModelElementImpl, DropDownRegular
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DropDownRegularImpl(): base() {}
@@ -529,7 +530,7 @@ public partial class DropDownRegularImpl: ModelElementImpl, DropDownRegular
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {
@@ -613,7 +614,7 @@ public partial class DropDownRegularImpl: ModelElementImpl, DropDownRegular
   {
     get
     {
-      if (_ButtonRegulars != null)
+      if (_ButtonRegulars == null)
       {
         if (OpenXmlElement != null)
         {

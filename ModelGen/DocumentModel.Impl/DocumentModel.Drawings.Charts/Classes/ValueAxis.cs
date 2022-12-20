@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ValueAxisImpl: ModelElementImpl, ValueAxis
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ValueAxis? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ValueAxis?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ValueAxisImpl(): base() {}

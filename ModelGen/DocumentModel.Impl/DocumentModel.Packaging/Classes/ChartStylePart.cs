@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class ChartStylePartImpl: DocumentModel.Packaging.OpenXmlPartImpl, ChartStylePart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.ChartStylePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.ChartStylePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartStylePartImpl(): base() {}

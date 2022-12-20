@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensible
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentsExtensibleImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class CommentsExtensibleImpl: ModelElementImpl, CommentsExtensibl
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WordCommentsExtensiblePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WordCommentsExtensiblePart? WordCommentsExtensiblePart
-  {
-    get
-    {
-      if (OpenXmlElement?.WordCommentsExtensiblePart != null)
-        return new DocumentModel.Packaging.WordCommentsExtensiblePartImpl(OpenXmlElement.WordCommentsExtensiblePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WordCommentsExtensiblePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.CommentExtensible>? CommentExtensibles
   {
     get
     {
-      if (_CommentExtensibles != null)
+      if (_CommentExtensibles == null)
       {
         if (OpenXmlElement != null)
         {

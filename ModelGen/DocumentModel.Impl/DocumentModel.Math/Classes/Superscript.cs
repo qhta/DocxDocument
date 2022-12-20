@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class SuperscriptImpl: ModelElementImpl, Superscript
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Superscript? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Superscript?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SuperscriptImpl(): base() {}

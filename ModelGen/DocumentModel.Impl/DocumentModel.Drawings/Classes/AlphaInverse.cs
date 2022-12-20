@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaInverseImpl: ModelElementImpl, AlphaInverse
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaInverse? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaInverse?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaInverseImpl(): base() {}

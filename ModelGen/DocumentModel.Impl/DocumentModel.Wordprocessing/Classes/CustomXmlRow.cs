@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlRowImpl: DocumentModel.Wordprocessing.CustomXmlElementImpl, CustomXmlRow
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.CustomXmlRow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlRow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlRowImpl(): base() {}
@@ -51,7 +52,7 @@ public partial class CustomXmlRowImpl: DocumentModel.Wordprocessing.CustomXmlEle
   {
     get
     {
-      if (_TableRows != null)
+      if (_TableRows == null)
       {
         if (OpenXmlElement != null)
         {
@@ -976,7 +977,7 @@ public partial class CustomXmlRowImpl: DocumentModel.Wordprocessing.CustomXmlEle
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GradientFillImpl: ModelElementImpl, GradientFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.GradientFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.GradientFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GradientFillImpl(): base() {}

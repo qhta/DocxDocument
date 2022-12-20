@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtBlockImpl: DocumentModel.Wordprocessing.SdtElementImpl, SdtBlock
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.SdtBlock? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtBlock?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtBlockImpl(): base() {}

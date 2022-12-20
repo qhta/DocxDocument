@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableRowHeightImpl: ModelElementImpl, TableRowHeight
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableRowHeight?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableRowHeightImpl(): base() {}

@@ -110,11 +110,6 @@ public partial interface Settings
   /// </summary>
   public Boolean? HideGrammaticalErrors { get; set; }
   
-  /// <summary>
-  /// Gets the DocumentSettingsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DocumentSettingsPart? DocumentSettingsPart { get; set; }
-  
   public Collection<DocumentModel.Wordprocessing.ActiveWritingStyle>? ActiveWritingStyles { get; set; }
   
   public DocumentModel.Wordprocessing.ProofState? ProofState { get; set; }

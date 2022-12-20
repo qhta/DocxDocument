@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskPriorityEventInfoImpl: ModelElementImpl, TaskPriorityEventInfo
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskPriorityEventInfoImpl(): base() {}

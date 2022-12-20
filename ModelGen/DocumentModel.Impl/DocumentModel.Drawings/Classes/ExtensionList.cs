@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
   {
     get
     {
-      if (_Extensions != null)
+      if (_Extensions == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskImpl: ModelElementImpl, Task
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.Task?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TaskImpl(): base() {}

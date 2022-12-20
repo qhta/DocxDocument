@@ -5,11 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial interface TemplateCommandGroup
 {
-  /// <summary>
-  /// Gets the CustomizationPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.CustomizationPart? CustomizationPart { get; set; }
-  
   public Collection<DocumentModel.Wordprocessing.KeyMapCustomizations>? KeyMapCustomizationses { get; set; }
   
   public Collection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization>? MismatchedKeyMapCustomizations { get; set; }

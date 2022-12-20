@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class ClassificationExtensionImpl: ModelElementImpl, ClassificationExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ClassificationExtensionImpl(): base() {}

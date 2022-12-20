@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class CustomUIImpl: ModelElementImpl, CustomUI
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.CustomUI? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.CustomUI?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomUIImpl(): base() {}
@@ -16,26 +17,6 @@ public partial class CustomUIImpl: ModelElementImpl, CustomUI
   public CustomUIImpl(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement): base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
-  }
-  
-  /// <summary>
-  /// Gets the CustomUIPart associated with this element, it could either be a QuickAccessToolbarCustomizationsPart or a RibbonExtensibilityPart.
-  /// </summary>
-  public DocumentModel.Packaging.CustomUIPart? CustomUIPart
-  {
-    get
-    {
-      if (OpenXmlElement?.CustomUIPart != null)
-        return new DocumentModel.Packaging.CustomUIPartImpl(OpenXmlElement.CustomUIPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.CustomUIPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
   }
   
   /// <summary>

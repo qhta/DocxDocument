@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PtExtensionImpl: ModelElementImpl, PtExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.PtExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.PtExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PtExtensionImpl(): base() {}

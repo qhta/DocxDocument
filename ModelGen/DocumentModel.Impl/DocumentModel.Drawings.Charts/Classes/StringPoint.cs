@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringPointImpl: ModelElementImpl, StringPoint
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StringPoint? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StringPoint?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringPointImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class LabelControlImpl: ModelElementImpl, LabelControl
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.LabelControl? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.LabelControl?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LabelControlImpl(): base() {}

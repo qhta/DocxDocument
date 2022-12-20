@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class ItemImpl: ModelElementImpl, Item
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.Item? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.Item?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ItemImpl(): base() {}

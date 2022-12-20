@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DefaultParagraphPropertiesImpl: DocumentModel.Drawings.TextParagraphPropertiesTypeImpl, DefaultParagraphProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DefaultParagraphPropertiesImpl(): base() {}

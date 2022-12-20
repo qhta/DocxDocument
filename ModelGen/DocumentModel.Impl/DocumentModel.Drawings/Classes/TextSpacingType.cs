@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TextSpacingTypeImpl: ModelElementImpl, TextSpacingType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.TextSpacingType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.TextSpacingType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextSpacingTypeImpl(): base() {}

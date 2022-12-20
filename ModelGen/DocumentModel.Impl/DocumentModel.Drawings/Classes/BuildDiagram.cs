@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BuildDiagramImpl: ModelElementImpl, BuildDiagram
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.BuildDiagram? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.BuildDiagram?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BuildDiagramImpl(): base() {}

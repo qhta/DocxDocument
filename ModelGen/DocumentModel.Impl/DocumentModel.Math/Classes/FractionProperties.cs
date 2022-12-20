@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class FractionPropertiesImpl: ModelElementImpl, FractionProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.FractionProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.FractionProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FractionPropertiesImpl(): base() {}

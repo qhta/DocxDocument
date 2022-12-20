@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BreakImpl: ModelElementImpl, Break
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Break? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Break?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BreakImpl(): base() {}

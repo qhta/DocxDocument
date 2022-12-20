@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphPropertiesExtendedImpl: ModelElementImpl, ParagraphPropertiesExtended
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphPropertiesExtendedImpl(): base() {}

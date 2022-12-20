@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HyperlinkImpl: ModelElementImpl, Hyperlink
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Hyperlink? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Hyperlink?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkImpl(): base() {}
@@ -129,7 +130,7 @@ public partial class HyperlinkImpl: ModelElementImpl, Hyperlink
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1054,7 +1055,7 @@ public partial class HyperlinkImpl: ModelElementImpl, Hyperlink
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

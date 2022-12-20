@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFormField
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DropDownListFormFieldImpl(): base() {}
@@ -74,7 +75,7 @@ public partial class DropDownListFormFieldImpl: ModelElementImpl, DropDownListFo
   {
     get
     {
-      if (_ListEntryFormFields != null)
+      if (_ListEntryFormFields == null)
       {
         if (OpenXmlElement != null)
         {

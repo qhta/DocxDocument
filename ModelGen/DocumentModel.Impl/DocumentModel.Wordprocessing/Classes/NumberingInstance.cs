@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NumberingInstance?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingInstanceImpl(): base() {}
@@ -74,7 +75,7 @@ public partial class NumberingInstanceImpl: ModelElementImpl, NumberingInstance
   {
     get
     {
-      if (_LevelOverrides != null)
+      if (_LevelOverrides == null)
       {
         if (OpenXmlElement != null)
         {

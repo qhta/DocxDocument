@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FontSignatureImpl: ModelElementImpl, FontSignature
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FontSignature? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FontSignature?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontSignatureImpl(): base() {}

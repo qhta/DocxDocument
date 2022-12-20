@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DivImpl: ModelElementImpl, Div
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Div? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Div?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DivImpl(): base() {}
@@ -243,7 +244,7 @@ public partial class DivImpl: ModelElementImpl, Div
   {
     get
     {
-      if (_DivsChilds != null)
+      if (_DivsChilds == null)
       {
         if (OpenXmlElement != null)
         {

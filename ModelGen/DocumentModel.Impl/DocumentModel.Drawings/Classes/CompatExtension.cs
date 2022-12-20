@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CompatExtensionImpl: ModelElementImpl, CompatExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CompatExtensionImpl(): base() {}

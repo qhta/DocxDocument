@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class RadicalImpl: ModelElementImpl, Radical
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Radical? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Radical?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RadicalImpl(): base() {}

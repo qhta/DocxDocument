@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class SlideSyncDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, SlideSyncDataPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.SlideSyncDataPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SlideSyncDataPartImpl(): base() {}

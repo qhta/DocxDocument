@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocEventsImpl: ModelElementImpl, DocEvents
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.DocEvents? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.DocEvents?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocEventsImpl(): base() {}

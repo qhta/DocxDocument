@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableImpl: ModelElementImpl, Table
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Table? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Table?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class TableImpl: ModelElementImpl, Table
   {
     get
     {
-      if (_TableRows != null)
+      if (_TableRows == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1005,7 +1006,7 @@ public partial class TableImpl: ModelElementImpl, Table
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

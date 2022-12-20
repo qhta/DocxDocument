@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class UnderlineImpl: ModelElementImpl, Underline
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Underline? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Underline?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public UnderlineImpl(): base() {}

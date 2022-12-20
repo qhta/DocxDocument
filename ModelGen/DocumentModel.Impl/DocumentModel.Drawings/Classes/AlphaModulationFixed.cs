@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaModulationFixedImpl: ModelElementImpl, AlphaModulationFixed
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaModulationFixed? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaModulationFixed?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaModulationFixedImpl(): base() {}

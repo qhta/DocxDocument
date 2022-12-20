@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ErrorBarsImpl: ModelElementImpl, ErrorBars
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ErrorBars?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ErrorBarsImpl(): base() {}

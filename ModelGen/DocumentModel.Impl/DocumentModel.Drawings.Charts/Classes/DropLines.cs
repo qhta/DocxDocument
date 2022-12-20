@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DropLinesImpl: DocumentModel.Drawings.Charts.ChartLinesTypeImpl, DropLines
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Charts.DropLines? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DropLines?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DropLinesImpl(): base() {}

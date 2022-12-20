@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// </summary>
 public partial class LinkedTextBoxImpl: ModelElementImpl, LinkedTextBox
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingShape.LinkedTextBox? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingShape.LinkedTextBox?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LinkedTextBoxImpl(): base() {}

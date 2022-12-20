@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlAttributeImpl: ModelElementImpl, CustomXmlAttribute
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomXmlAttributeImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class FillImpl: ModelElementImpl, Fill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Fill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Fill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FillImpl(): base() {}

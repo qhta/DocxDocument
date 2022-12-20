@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorDataImpl: DocumentModel.Drawings.Diagrams.SampleDataTypeImpl, ColorData
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.Diagrams.ColorData? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorData?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorDataImpl(): base() {}

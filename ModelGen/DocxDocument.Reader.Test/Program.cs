@@ -7,7 +7,7 @@ namespace DocxDocument.Reader.Test
   {
     static void NoMain(string[] args)
     {
-      var testInstance = new TestReader_ReadProperties();
+      var testInstance = new TestProperties();
       testInstance.Setup();
       testInstance.TestCustomProperties();
     }

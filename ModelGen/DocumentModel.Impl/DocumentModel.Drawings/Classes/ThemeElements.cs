@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ThemeElementsImpl: ModelElementImpl, ThemeElements
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ThemeElements? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ThemeElements?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ThemeElementsImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class EffectExtentImpl: ModelElementImpl, EffectExtent
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EffectExtentImpl(): base() {}

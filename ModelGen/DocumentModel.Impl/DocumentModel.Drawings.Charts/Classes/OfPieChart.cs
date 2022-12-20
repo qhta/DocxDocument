@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class OfPieChartImpl: ModelElementImpl, OfPieChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.OfPieChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.OfPieChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OfPieChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class OfPieChartImpl: ModelElementImpl, OfPieChart
   {
     get
     {
-      if (_PieChartSerieses != null)
+      if (_PieChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -366,7 +367,7 @@ public partial class OfPieChartImpl: ModelElementImpl, OfPieChart
   {
     get
     {
-      if (_SeriesLineses != null)
+      if (_SeriesLineses == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingSymbolRunPropertiesImpl: ModelElementImpl, NumberingSymbolRunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumberingSymbolRunPropertiesImpl(): base() {}

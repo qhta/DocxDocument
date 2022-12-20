@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// </summary>
 public partial class WordprocessingShapeImpl: ModelElementImpl, WordprocessingShape
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingShape.WordprocessingShape? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingShape.WordprocessingShape?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordprocessingShapeImpl(): base() {}

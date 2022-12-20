@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RgbColorModelPercentageImpl: ModelElementImpl, RgbColorModelPercentage
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RgbColorModelPercentageImpl(): base() {}

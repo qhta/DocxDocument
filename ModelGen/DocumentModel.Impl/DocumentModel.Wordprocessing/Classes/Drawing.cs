@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DrawingImpl: ModelElementImpl, Drawing
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Drawing? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Drawing?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DrawingImpl(): base() {}

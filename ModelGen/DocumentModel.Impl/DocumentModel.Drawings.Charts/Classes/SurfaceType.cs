@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SurfaceTypeImpl: ModelElementImpl, SurfaceType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.SurfaceType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.SurfaceType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SurfaceTypeImpl(): base() {}

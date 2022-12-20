@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GlowImpl: ModelElementImpl, Glow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Glow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Glow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GlowImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorTransformStyleLabelImpl: ModelElementImpl, ColorTransformStyleLabel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorTransformStyleLabelImpl(): base() {}

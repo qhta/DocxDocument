@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CatAxExtensionImpl: ModelElementImpl, CatAxExtension
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.CatAxExtension? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.CatAxExtension?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CatAxExtensionImpl(): base() {}

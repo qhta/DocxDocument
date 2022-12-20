@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentCellImpl: ModelElementImpl, SdtContentCell
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentCell? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentCell?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentCellImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class SdtContentCellImpl: ModelElementImpl, SdtContentCell
   {
     get
     {
-      if (_TableCells != null)
+      if (_TableCells == null)
       {
         if (OpenXmlElement != null)
         {
@@ -947,7 +948,7 @@ public partial class SdtContentCellImpl: ModelElementImpl, SdtContentCell
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

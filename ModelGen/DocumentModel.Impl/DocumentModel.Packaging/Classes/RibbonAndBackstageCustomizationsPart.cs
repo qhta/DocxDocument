@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class RibbonAndBackstageCustomizationsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, RibbonAndBackstageCustomizationsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RibbonAndBackstageCustomizationsPartImpl(): base() {}
@@ -50,7 +51,7 @@ public partial class RibbonAndBackstageCustomizationsPartImpl: DocumentModel.Pac
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ClipPathImpl: ModelElementImpl, ClipPath
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.ClipPath? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.ClipPath?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ClipPathImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class MenuWithTitleImpl: ModelElementImpl, MenuWithTitle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MenuWithTitleImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FormatSchemeImpl: ModelElementImpl, FormatScheme
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.FormatScheme? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.FormatScheme?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FormatSchemeImpl(): base() {}

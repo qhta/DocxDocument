@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class NumericLevelImpl: ModelElementImpl, NumericLevel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumericLevelImpl(): base() {}
@@ -61,7 +62,7 @@ public partial class NumericLevelImpl: ModelElementImpl, NumericLevel
   {
     get
     {
-      if (_NumericValues != null)
+      if (_NumericValues == null)
       {
         if (OpenXmlElement != null)
         {

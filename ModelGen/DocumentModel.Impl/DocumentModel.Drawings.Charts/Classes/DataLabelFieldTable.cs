@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTable
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataLabelFieldTableImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class DataLabelFieldTableImpl: ModelElementImpl, DataLabelFieldTa
   {
     get
     {
-      if (_DataLabelFieldTableEntries != null)
+      if (_DataLabelFieldTableEntries == null)
       {
         if (OpenXmlElement != null)
         {

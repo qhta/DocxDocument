@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Pie3DChartImpl: ModelElementImpl, Pie3DChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Pie3DChartImpl(): base() {}
@@ -58,7 +59,7 @@ public partial class Pie3DChartImpl: ModelElementImpl, Pie3DChart
   {
     get
     {
-      if (_PieChartSerieses != null)
+      if (_PieChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {

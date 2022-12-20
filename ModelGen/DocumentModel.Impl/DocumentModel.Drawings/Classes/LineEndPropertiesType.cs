@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineEndPropertiesTypeImpl: ModelElementImpl, LineEndPropertiesType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.LineEndPropertiesType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.LineEndPropertiesType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LineEndPropertiesTypeImpl(): base() {}

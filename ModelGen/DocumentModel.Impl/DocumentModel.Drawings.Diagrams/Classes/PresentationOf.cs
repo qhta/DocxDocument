@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PresentationOfImpl: ModelElementImpl, PresentationOf
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PresentationOfImpl(): base() {}

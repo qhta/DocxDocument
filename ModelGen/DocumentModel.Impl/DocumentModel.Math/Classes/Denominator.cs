@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class DenominatorImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, Denominator
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.Denominator? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Denominator?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DenominatorImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class DenominatorImpl: DocumentModel.Math.OfficeMathArgumentTypeI
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class DenominatorImpl: DocumentModel.Math.OfficeMathArgumentTypeI
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphMarkRunPropertiesImpl: ModelElementImpl, ParagraphMarkRunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphMarkRunPropertiesImpl(): base() {}

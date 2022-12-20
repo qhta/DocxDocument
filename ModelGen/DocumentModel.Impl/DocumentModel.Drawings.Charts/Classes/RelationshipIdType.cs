@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class RelationshipIdTypeImpl: ModelElementImpl, RelationshipIdType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelationshipIdTypeImpl(): base() {}

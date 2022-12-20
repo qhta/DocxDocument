@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDropDownList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtContentDropDownListImpl(): base() {}
@@ -35,7 +36,7 @@ public partial class SdtContentDropDownListImpl: ModelElementImpl, SdtContentDro
   {
     get
     {
-      if (_ListItems != null)
+      if (_ListItems == null)
       {
         if (OpenXmlElement != null)
         {

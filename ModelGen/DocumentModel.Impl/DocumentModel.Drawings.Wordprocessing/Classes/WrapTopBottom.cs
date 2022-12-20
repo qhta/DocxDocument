@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class WrapTopBottomImpl: ModelElementImpl, WrapTopBottom
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WrapTopBottomImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WordprocessingCommentsPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordprocessingCommentsPartImpl(): base() {}
@@ -25,7 +26,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_AlternativeFormatImportParts != null)
+      if (_AlternativeFormatImportParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -91,7 +92,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_ChartParts != null)
+      if (_ChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -182,7 +183,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_DiagramColorsParts != null)
+      if (_DiagramColorsParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -248,7 +249,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_DiagramDataParts != null)
+      if (_DiagramDataParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -314,7 +315,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_DiagramLayoutDefinitionParts != null)
+      if (_DiagramLayoutDefinitionParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -380,7 +381,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_DiagramPersistLayoutParts != null)
+      if (_DiagramPersistLayoutParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -446,7 +447,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_DiagramStyleParts != null)
+      if (_DiagramStyleParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -512,7 +513,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_EmbeddedControlPersistenceParts != null)
+      if (_EmbeddedControlPersistenceParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -578,7 +579,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_EmbeddedObjectParts != null)
+      if (_EmbeddedObjectParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -644,7 +645,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_EmbeddedPackageParts != null)
+      if (_EmbeddedPackageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -710,7 +711,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_ExtendedChartParts != null)
+      if (_ExtendedChartParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -776,7 +777,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -842,7 +843,7 @@ public partial class WordprocessingCommentsPartImpl: DocumentModel.Packaging.Ope
   {
     get
     {
-      if (_Model3DReferenceRelationshipParts != null)
+      if (_Model3DReferenceRelationshipParts == null)
       {
         if (OpenXmlElement != null)
         {

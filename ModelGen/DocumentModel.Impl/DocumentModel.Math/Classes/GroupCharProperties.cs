@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class GroupCharPropertiesImpl: ModelElementImpl, GroupCharProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.GroupCharProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.GroupCharProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupCharPropertiesImpl(): base() {}

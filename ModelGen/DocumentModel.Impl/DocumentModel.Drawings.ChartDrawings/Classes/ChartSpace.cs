@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class ChartSpaceImpl: ModelElementImpl, ChartSpace
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartSpaceImpl(): base() {}
@@ -271,26 +272,6 @@ public partial class ChartSpaceImpl: ModelElementImpl, ChartSpace
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ExtendedChartPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ExtendedChartPart? ExtendedChartPart
-  {
-    get
-    {
-      if (OpenXmlElement?.ExtendedChartPart != null)
-        return new DocumentModel.Packaging.ExtendedChartPartImpl(OpenXmlElement.ExtendedChartPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ExtendedChartPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

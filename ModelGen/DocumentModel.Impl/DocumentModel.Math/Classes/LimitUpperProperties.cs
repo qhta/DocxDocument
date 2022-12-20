@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitUpperPropertiesImpl: ModelElementImpl, LimitUpperProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.LimitUpperProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.LimitUpperProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LimitUpperPropertiesImpl(): base() {}

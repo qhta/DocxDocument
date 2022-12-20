@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class BehaviorsImpl: ModelElementImpl, Behaviors
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Behaviors? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Behaviors?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BehaviorsImpl(): base() {}

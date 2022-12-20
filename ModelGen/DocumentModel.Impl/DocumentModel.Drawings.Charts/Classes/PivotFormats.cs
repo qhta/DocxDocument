@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PivotFormatsImpl: ModelElementImpl, PivotFormats
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PivotFormats? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PivotFormats?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PivotFormatsImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class PivotFormatsImpl: ModelElementImpl, PivotFormats
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PageBordersImpl: ModelElementImpl, PageBorders
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PageBorders? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PageBorders?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageBordersImpl(): base() {}

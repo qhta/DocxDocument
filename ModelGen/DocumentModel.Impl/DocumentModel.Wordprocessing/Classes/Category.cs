@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CategoryImpl: ModelElementImpl, Category
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Category? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Category?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CategoryImpl(): base() {}

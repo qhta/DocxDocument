@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsImpl: ModelElementImpl, Comments
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Comments? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Comments?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CommentsImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class CommentsImpl: ModelElementImpl, Comments
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the WordprocessingCommentsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WordprocessingCommentsPart? WordprocessingCommentsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WordprocessingCommentsPart != null)
-        return new DocumentModel.Packaging.WordprocessingCommentsPartImpl(OpenXmlElement.WordprocessingCommentsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WordprocessingCommentsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.Comment>? Items
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

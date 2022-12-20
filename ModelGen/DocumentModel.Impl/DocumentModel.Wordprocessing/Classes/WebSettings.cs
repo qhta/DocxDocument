@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class WebSettingsImpl: ModelElementImpl, WebSettings
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.WebSettings? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.WebSettings?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebSettingsImpl(): base() {}
@@ -409,26 +410,6 @@ public partial class WebSettingsImpl: ModelElementImpl, WebSettings
             OpenXmlElement.TargetScreenSize = new DocumentFormat.OpenXml.Wordprocessing.TargetScreenSize{ Val = (DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues?)value };
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the WebSettingsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.WebSettingsPart? WebSettingsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.WebSettingsPart != null)
-        return new DocumentModel.Packaging.WebSettingsPartImpl(OpenXmlElement.WebSettingsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.WebSettingsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

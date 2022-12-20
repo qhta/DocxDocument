@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FrameImpl: ModelElementImpl, Frame
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Frame? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Frame?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FrameImpl(): base() {}

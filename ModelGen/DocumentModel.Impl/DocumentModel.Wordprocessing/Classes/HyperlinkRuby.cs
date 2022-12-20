@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HyperlinkRubyImpl: ModelElementImpl, HyperlinkRuby
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public HyperlinkRubyImpl(): base() {}
@@ -1028,7 +1029,7 @@ public partial class HyperlinkRubyImpl: ModelElementImpl, HyperlinkRuby
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

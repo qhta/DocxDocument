@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Shape3DTypeImpl: ModelElementImpl, Shape3DType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Shape3DType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Shape3DType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public Shape3DTypeImpl(): base() {}

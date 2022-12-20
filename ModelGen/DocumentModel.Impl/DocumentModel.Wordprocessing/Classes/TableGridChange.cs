@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableGridChangeImpl: ModelElementImpl, TableGridChange
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.TableGridChange? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.TableGridChange?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableGridChangeImpl(): base() {}

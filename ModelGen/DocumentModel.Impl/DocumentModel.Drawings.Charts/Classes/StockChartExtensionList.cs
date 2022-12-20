@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StockChartExtensionListImpl: ModelElementImpl, StockChartExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StockChartExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class StockChartExtensionListImpl: ModelElementImpl, StockChartEx
   {
     get
     {
-      if (_StockChartExtensions != null)
+      if (_StockChartExtensions == null)
       {
         if (OpenXmlElement != null)
         {

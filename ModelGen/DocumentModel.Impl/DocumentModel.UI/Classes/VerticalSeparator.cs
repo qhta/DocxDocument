@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class VerticalSeparatorImpl: ModelElementImpl, VerticalSeparator
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VerticalSeparatorImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LanguageTypeImpl: ModelElementImpl, LanguageType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.LanguageType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.LanguageType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LanguageTypeImpl(): base() {}

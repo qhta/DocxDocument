@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FontsImpl: ModelElementImpl, Fonts
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Fonts? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Fonts?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FontsImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class FontsImpl: ModelElementImpl, Fonts
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the FontTablePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.FontTablePart? FontTablePart
-  {
-    get
-    {
-      if (OpenXmlElement?.FontTablePart != null)
-        return new DocumentModel.Packaging.FontTablePartImpl(OpenXmlElement.FontTablePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.FontTablePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Wordprocessing.Font>? Items
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

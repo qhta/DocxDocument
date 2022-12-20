@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DateAxisImpl: ModelElementImpl, DateAxis
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DateAxis? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DateAxis?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DateAxisImpl(): base() {}

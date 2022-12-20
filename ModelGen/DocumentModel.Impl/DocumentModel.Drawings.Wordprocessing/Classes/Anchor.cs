@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class AnchorImpl: ModelElementImpl, Anchor
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AnchorImpl(): base() {}

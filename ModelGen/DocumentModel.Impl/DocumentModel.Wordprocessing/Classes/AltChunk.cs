@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class AltChunkImpl: ModelElementImpl, AltChunk
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.AltChunk? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.AltChunk?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AltChunkImpl(): base() {}

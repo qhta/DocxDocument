@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapeDefaultImpl: DocumentModel.Drawings.DefaultShapeDefinitionTypeImpl, ShapeDefault
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ShapeDefault? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ShapeDefault?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeDefaultImpl(): base() {}

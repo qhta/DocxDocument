@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PageMarginImpl: ModelElementImpl, PageMargin
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.PageMargin? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.PageMargin?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PageMarginImpl(): base() {}

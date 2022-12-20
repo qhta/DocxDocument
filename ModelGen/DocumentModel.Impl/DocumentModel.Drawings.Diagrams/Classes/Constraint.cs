@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ConstraintImpl: ModelElementImpl, Constraint
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.Constraint?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConstraintImpl(): base() {}

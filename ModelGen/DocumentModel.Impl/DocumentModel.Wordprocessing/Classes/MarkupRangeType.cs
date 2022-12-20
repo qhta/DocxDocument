@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MarkupRangeTypeImpl: ModelElementImpl, MarkupRangeType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MarkupRangeTypeImpl(): base() {}

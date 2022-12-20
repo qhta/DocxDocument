@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectionShapeLocksImpl: ModelElementImpl, ConnectionShapeLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ConnectionShapeLocksImpl(): base() {}

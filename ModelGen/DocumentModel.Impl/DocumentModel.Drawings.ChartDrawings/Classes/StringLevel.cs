@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class StringLevelImpl: ModelElementImpl, StringLevel
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StringLevelImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class StringLevelImpl: ModelElementImpl, StringLevel
   {
     get
     {
-      if (_ChartStringValues != null)
+      if (_ChartStringValues == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaOutsetImpl: ModelElementImpl, AlphaOutset
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.AlphaOutset? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.AlphaOutset?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public AlphaOutsetImpl(): base() {}

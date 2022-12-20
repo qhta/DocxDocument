@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// </summary>
 public partial class OEmbedSharedImpl: ModelElementImpl, OEmbedShared
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public OEmbedSharedImpl(): base() {}

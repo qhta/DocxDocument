@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class BottomItemsGroupControlsImpl: ModelElementImpl, BottomItemsGroupControls
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.CustomUI.BottomItemsGroupControls? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.CustomUI.BottomItemsGroupControls?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BottomItemsGroupControlsImpl(): base() {}

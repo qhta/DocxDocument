@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class View3DImpl: ModelElementImpl, View3D
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.View3D? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.View3D?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public View3DImpl(): base() {}

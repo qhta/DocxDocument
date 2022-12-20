@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class TextPathImpl: ModelElementImpl, TextPath
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.TextPath? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.TextPath?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TextPathImpl(): base() {}

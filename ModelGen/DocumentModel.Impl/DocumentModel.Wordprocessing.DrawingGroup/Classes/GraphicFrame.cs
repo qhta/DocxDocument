@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// </summary>
 public partial class GraphicFrameImpl: ModelElementImpl, GraphicFrame
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.GraphicFrame? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.GraphicFrame?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GraphicFrameImpl(): base() {}

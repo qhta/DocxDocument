@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStringCache
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MultiLevelStringCacheImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class MultiLevelStringCacheImpl: ModelElementImpl, MultiLevelStri
   {
     get
     {
-      if (_Levels != null)
+      if (_Levels == null)
       {
         if (OpenXmlElement != null)
         {

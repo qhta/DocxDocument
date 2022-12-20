@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FieldImpl: ModelElementImpl, Field
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Field? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Field?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FieldImpl(): base() {}

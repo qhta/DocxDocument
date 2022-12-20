@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StatusTextImpl: ModelElementImpl, StatusText
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.StatusText? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.StatusText?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StatusTextImpl(): base() {}

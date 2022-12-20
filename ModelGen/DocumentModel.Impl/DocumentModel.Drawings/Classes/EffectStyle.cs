@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EffectStyleImpl: ModelElementImpl, EffectStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.EffectStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.EffectStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EffectStyleImpl(): base() {}

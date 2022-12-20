@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StyleRunPropertiesImpl: ModelElementImpl, StyleRunProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public StyleRunPropertiesImpl(): base() {}

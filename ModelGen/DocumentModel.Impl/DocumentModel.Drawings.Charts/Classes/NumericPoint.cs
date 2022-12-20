@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumericPointImpl: ModelElementImpl, NumericPoint
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.NumericPoint?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumericPointImpl(): base() {}

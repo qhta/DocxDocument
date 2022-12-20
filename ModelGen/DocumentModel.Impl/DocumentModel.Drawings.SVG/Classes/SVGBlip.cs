@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.SVG;
 /// </summary>
 public partial class SVGBlipImpl: ModelElementImpl, SVGBlip
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SVGBlipImpl(): base() {}

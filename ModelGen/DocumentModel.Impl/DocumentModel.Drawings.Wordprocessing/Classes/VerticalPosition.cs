@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// </summary>
 public partial class VerticalPositionImpl: ModelElementImpl, VerticalPosition
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public VerticalPositionImpl(): base() {}

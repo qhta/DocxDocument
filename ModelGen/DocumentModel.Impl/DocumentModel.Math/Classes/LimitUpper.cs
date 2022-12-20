@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitUpperImpl: ModelElementImpl, LimitUpper
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.LimitUpper? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.LimitUpper?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LimitUpperImpl(): base() {}

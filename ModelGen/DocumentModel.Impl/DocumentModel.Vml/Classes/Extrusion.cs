@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ExtrusionImpl: ModelElementImpl, Extrusion
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.Extrusion? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.Extrusion?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtrusionImpl(): base() {}

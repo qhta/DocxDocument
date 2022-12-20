@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorsDefinitionImpl(): base() {}
@@ -44,31 +45,11 @@ public partial class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
     }
   }
   
-  /// <summary>
-  /// Gets the DiagramColorsPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramColorsPart? DiagramColorsPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DiagramColorsPart != null)
-        return new DocumentModel.Packaging.DiagramColorsPartImpl(OpenXmlElement.DiagramColorsPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DiagramColorsPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Drawings.Diagrams.ColorDefinitionTitle>? ColorDefinitionTitles
   {
     get
     {
-      if (_ColorDefinitionTitles != null)
+      if (_ColorDefinitionTitles == null)
       {
         if (OpenXmlElement != null)
         {
@@ -152,7 +133,7 @@ public partial class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   {
     get
     {
-      if (_ColorTransformDescriptions != null)
+      if (_ColorTransformDescriptions == null)
       {
         if (OpenXmlElement != null)
         {
@@ -265,7 +246,7 @@ public partial class ColorsDefinitionImpl: ModelElementImpl, ColorsDefinition
   {
     get
     {
-      if (_ColorTransformStyleLabels != null)
+      if (_ColorTransformStyleLabels == null)
       {
         if (OpenXmlElement != null)
         {

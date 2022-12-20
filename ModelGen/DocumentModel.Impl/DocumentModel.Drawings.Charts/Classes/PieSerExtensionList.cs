@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.PieSerExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.PieSerExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PieSerExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class PieSerExtensionListImpl: ModelElementImpl, PieSerExtensionL
   {
     get
     {
-      if (_PieSerExtensions != null)
+      if (_PieSerExtensions == null)
       {
         if (OpenXmlElement != null)
         {

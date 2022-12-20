@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunTrackChangeType2Impl: ModelElementImpl, RunTrackChangeType2
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunTrackChangeType2Impl(): base() {}

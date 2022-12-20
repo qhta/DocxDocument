@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class RadarChartImpl: ModelElementImpl, RadarChart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.RadarChart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.RadarChart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RadarChartImpl(): base() {}
@@ -84,7 +85,7 @@ public partial class RadarChartImpl: ModelElementImpl, RadarChart
   {
     get
     {
-      if (_RadarChartSerieses != null)
+      if (_RadarChartSerieses == null)
       {
         if (OpenXmlElement != null)
         {
@@ -197,7 +198,7 @@ public partial class RadarChartImpl: ModelElementImpl, RadarChart
   {
     get
     {
-      if (_AxisIds != null)
+      if (_AxisIds == null)
       {
         if (OpenXmlElement != null)
         {

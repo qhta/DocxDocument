@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ColorToImpl: DocumentModel.Drawings.ColorTypeImpl, ColorTo
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ColorTo? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ColorTo?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ColorToImpl(): base() {}

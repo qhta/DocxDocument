@@ -5,10 +5,11 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class TitlesOfPartsImpl: ModelElementImpl, TitlesOfParts
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TitlesOfPartsImpl(): base() {}

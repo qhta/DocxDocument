@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 public partial class ChartStyleImpl: ModelElementImpl, ChartStyle
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartStyleImpl(): base() {}
@@ -1052,26 +1053,6 @@ public partial class ChartStyleImpl: ModelElementImpl, ChartStyle
             OpenXmlElement.AddChild(item);
         }
       }
-    }
-  }
-  
-  /// <summary>
-  /// Gets the ChartStylePart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.ChartStylePart? ChartStylePart
-  {
-    get
-    {
-      if (OpenXmlElement?.ChartStylePart != null)
-        return new DocumentModel.Packaging.ChartStylePartImpl(OpenXmlElement.ChartStylePart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.ChartStylePartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
     }
   }
   

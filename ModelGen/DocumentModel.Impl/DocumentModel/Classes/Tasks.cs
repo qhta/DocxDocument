@@ -5,10 +5,11 @@ namespace DocumentModel;
 /// </summary>
 public partial class TasksImpl: ModelElementImpl, Tasks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TasksImpl(): base() {}
@@ -18,31 +19,11 @@ public partial class TasksImpl: ModelElementImpl, Tasks
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// Gets the DocumentTasksPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DocumentTasksPart? DocumentTasksPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DocumentTasksPart != null)
-        return new DocumentModel.Packaging.DocumentTasksPartImpl(OpenXmlElement.DocumentTasksPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DocumentTasksPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Task>? Items
   {
     get
     {
-      if (_Items != null)
+      if (_Items == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataDisplayOptions16Impl: ModelElementImpl, DataDisplayOptions16
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataDisplayOptions16Impl(): base() {}

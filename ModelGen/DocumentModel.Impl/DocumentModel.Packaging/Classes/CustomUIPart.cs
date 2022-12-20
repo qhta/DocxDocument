@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class CustomUIPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, CustomUIPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.CustomUIPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.CustomUIPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CustomUIPartImpl(): base() {}

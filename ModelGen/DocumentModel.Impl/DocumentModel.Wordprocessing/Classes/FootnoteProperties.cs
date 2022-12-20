@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FootnotePropertiesImpl: ModelElementImpl, FootnoteProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public FootnotePropertiesImpl(): base() {}

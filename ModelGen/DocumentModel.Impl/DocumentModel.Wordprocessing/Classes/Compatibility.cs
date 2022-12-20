@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CompatibilityImpl: ModelElementImpl, Compatibility
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.Compatibility? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.Compatibility?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CompatibilityImpl(): base() {}
@@ -2362,7 +2363,7 @@ public partial class CompatibilityImpl: ModelElementImpl, Compatibility
   {
     get
     {
-      if (_CompatibilitySettings != null)
+      if (_CompatibilitySettings == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RelativeRectangleTypeImpl: ModelElementImpl, RelativeRectangleType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.RelativeRectangleType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.RelativeRectangleType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RelativeRectangleTypeImpl(): base() {}

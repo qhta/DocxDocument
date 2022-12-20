@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramPersistLayoutPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramPersistLayoutPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramPersistLayoutPartImpl(): base() {}
@@ -50,7 +51,7 @@ public partial class DiagramPersistLayoutPartImpl: DocumentModel.Packaging.OpenX
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {

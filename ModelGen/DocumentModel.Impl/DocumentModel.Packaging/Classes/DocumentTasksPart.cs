@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DocumentTasksPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DocumentTasksPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DocumentTasksPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DocumentTasksPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DocumentTasksPartImpl(): base() {}

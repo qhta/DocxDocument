@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ProofErrorImpl: ModelElementImpl, ProofError
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ProofError? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ProofError?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ProofErrorImpl(): base() {}

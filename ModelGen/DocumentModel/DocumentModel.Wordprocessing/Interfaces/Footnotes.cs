@@ -5,11 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial interface Footnotes
 {
-  /// <summary>
-  /// Gets the FootnotesPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.FootnotesPart? FootnotesPart { get; set; }
-  
   public DocumentModel.Wordprocessing.Footnote? Footnote { get; set; }
   
 }

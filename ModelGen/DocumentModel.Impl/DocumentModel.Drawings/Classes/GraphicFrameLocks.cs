@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GraphicFrameLocksImpl: ModelElementImpl, GraphicFrameLocks
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.GraphicFrameLocks? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.GraphicFrameLocks?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GraphicFrameLocksImpl(): base() {}

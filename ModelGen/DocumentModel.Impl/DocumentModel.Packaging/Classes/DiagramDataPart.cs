@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, DiagramDataPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DiagramDataPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DiagramDataPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DiagramDataPartImpl(): base() {}
@@ -50,7 +51,7 @@ public partial class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_ImageParts != null)
+      if (_ImageParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -121,7 +122,7 @@ public partial class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_SlideParts != null)
+      if (_SlideParts == null)
       {
         if (OpenXmlElement != null)
         {
@@ -187,7 +188,7 @@ public partial class DiagramDataPartImpl: DocumentModel.Packaging.OpenXmlPartImp
   {
     get
     {
-      if (_WorksheetParts != null)
+      if (_WorksheetParts == null)
       {
         if (OpenXmlElement != null)
         {

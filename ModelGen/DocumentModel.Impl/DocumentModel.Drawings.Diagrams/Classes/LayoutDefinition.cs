@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LayoutDefinitionImpl(): base() {}
@@ -57,31 +58,11 @@ public partial class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
     }
   }
   
-  /// <summary>
-  /// Gets the DiagramLayoutDefinitionPart associated with this element.
-  /// </summary>
-  public DocumentModel.Packaging.DiagramLayoutDefinitionPart? DiagramLayoutDefinitionPart
-  {
-    get
-    {
-      if (OpenXmlElement?.DiagramLayoutDefinitionPart != null)
-        return new DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl(OpenXmlElement.DiagramLayoutDefinitionPart);
-      return null;
-    }
-    set
-    {
-      if (OpenXmlElement != null)
-        if (value is DocumentModel.Packaging.DiagramLayoutDefinitionPartImpl valueImpl)
-          if (valueImpl.OpenXmlElement != null)
-              OpenXmlElement.SetPart(valueImpl.OpenXmlElement);
-    }
-  }
-  
   public Collection<DocumentModel.Drawings.Diagrams.Title>? Titles
   {
     get
     {
-      if (_Titles != null)
+      if (_Titles == null)
       {
         if (OpenXmlElement != null)
         {
@@ -165,7 +146,7 @@ public partial class LayoutDefinitionImpl: ModelElementImpl, LayoutDefinition
   {
     get
     {
-      if (_Descriptions != null)
+      if (_Descriptions == null)
       {
         if (OpenXmlElement != null)
         {

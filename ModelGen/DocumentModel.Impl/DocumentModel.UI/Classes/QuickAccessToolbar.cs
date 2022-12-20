@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class QuickAccessToolbarImpl: ModelElementImpl, QuickAccessToolbar
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QuickAccessToolbarImpl(): base() {}

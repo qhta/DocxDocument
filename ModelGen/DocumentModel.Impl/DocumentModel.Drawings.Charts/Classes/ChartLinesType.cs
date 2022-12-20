@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ChartLinesTypeImpl: ModelElementImpl, ChartLinesType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ChartLinesTypeImpl(): base() {}

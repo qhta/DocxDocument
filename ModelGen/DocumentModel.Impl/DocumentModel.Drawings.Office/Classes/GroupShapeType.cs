@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class GroupShapeTypeImpl: ModelElementImpl, GroupShapeType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Drawing.GroupShapeType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Drawing.GroupShapeType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GroupShapeTypeImpl(): base() {}

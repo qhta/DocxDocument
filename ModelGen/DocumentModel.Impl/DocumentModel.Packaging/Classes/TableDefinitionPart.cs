@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, TableDefinitionPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.TableDefinitionPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.TableDefinitionPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public TableDefinitionPartImpl(): base() {}
@@ -30,7 +31,7 @@ public partial class TableDefinitionPartImpl: DocumentModel.Packaging.OpenXmlPar
   {
     get
     {
-      if (_QueryTableParts != null)
+      if (_QueryTableParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtPlaceholderImpl: ModelElementImpl, SdtPlaceholder
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SdtPlaceholderImpl(): base() {}

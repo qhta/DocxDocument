@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DataSourceObject?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataSourceObjectImpl(): base() {}
@@ -194,7 +195,7 @@ public partial class DataSourceObjectImpl: ModelElementImpl, DataSourceObject
   {
     get
     {
-      if (_FieldMapDatas != null)
+      if (_FieldMapDatas == null)
       {
         if (OpenXmlElement != null)
         {

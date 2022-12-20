@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ObjectPropertiesImpl: ModelElementImpl, ObjectProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ObjectPropertiesImpl(): base() {}

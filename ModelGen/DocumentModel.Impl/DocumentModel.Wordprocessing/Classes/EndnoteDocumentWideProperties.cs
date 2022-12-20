@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, EndnoteDocumentWideProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EndnoteDocumentWidePropertiesImpl(): base() {}
@@ -132,7 +133,7 @@ public partial class EndnoteDocumentWidePropertiesImpl: ModelElementImpl, Endnot
   {
     get
     {
-      if (_EndnoteSpecialReferences != null)
+      if (_EndnoteSpecialReferences == null)
       {
         if (OpenXmlElement != null)
         {

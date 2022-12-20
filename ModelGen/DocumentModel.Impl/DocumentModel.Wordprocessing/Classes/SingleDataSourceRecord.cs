@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SingleDataSourceRecordImpl: ModelElementImpl, SingleDataSourceRecord
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SingleDataSourceRecordImpl(): base() {}

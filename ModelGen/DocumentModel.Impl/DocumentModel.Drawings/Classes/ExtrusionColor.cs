@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ExtrusionColorImpl: DocumentModel.Drawings.ColorTypeImpl, ExtrusionColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ExtrusionColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ExtrusionColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtrusionColorImpl(): base() {}

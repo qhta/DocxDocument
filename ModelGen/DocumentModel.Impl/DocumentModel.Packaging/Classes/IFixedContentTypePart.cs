@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class IFixedContentTypePartImpl: ModelObjectImpl, IFixedContentTypePart
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Packaging.IFixedContentTypePart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.IFixedContentTypePart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public IFixedContentTypePartImpl(): base() {}

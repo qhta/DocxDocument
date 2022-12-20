@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class RunImpl: ModelElementImpl, Run
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Run? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Run?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public RunImpl(): base() {}

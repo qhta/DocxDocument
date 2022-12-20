@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DataPartReferenceRelationshipImpl: DocumentModel.Packaging.ReferenceRelationshipImpl, DataPartReferenceRelationship
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DataPartReferenceRelationshipImpl(): base() {}

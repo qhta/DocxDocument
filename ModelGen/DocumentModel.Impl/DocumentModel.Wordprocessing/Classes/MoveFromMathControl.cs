@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveFromMathControlImpl: DocumentModel.Wordprocessing.MathControlMoveTypeImpl, MoveFromMathControl
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MoveFromMathControlImpl(): base() {}

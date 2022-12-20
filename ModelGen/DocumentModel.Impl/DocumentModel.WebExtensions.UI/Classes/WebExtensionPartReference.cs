@@ -5,10 +5,11 @@ namespace DocumentModel.WebExtensions.UI;
 /// </summary>
 public partial class WebExtensionPartReferenceImpl: ModelElementImpl, WebExtensionPartReference
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExtensionPartReferenceImpl(): base() {}

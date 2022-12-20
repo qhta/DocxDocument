@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SolidFillImpl: ModelElementImpl, SolidFill
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.SolidFill? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.SolidFill?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SolidFillImpl(): base() {}

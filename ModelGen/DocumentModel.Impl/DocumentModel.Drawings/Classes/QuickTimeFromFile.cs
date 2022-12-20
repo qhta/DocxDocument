@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class QuickTimeFromFileImpl: ModelElementImpl, QuickTimeFromFile
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.QuickTimeFromFile? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.QuickTimeFromFile?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public QuickTimeFromFileImpl(): base() {}

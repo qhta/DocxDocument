@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// </summary>
 public partial class WordprocessingGroupImpl: DocumentModel.Wordprocessing.DrawingGroup.WordprocessingGroupTypeImpl, WordprocessingGroup
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WordprocessingGroupImpl(): base() {}

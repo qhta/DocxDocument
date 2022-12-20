@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class NumeratorImpl: DocumentModel.Math.OfficeMathArgumentTypeImpl, Numerator
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Math.Numerator? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Numerator?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NumeratorImpl(): base() {}
@@ -660,7 +661,7 @@ public partial class NumeratorImpl: DocumentModel.Math.OfficeMathArgumentTypeImp
   {
     get
     {
-      if (_SimpleFields != null)
+      if (_SimpleFields == null)
       {
         if (OpenXmlElement != null)
         {
@@ -1585,7 +1586,7 @@ public partial class NumeratorImpl: DocumentModel.Math.OfficeMathArgumentTypeImp
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

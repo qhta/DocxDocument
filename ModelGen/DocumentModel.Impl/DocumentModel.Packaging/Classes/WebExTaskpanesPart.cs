@@ -5,10 +5,11 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WebExTaskpanesPartImpl: DocumentModel.Packaging.OpenXmlPartImpl, WebExTaskpanesPart
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public WebExTaskpanesPartImpl(): base() {}
@@ -55,7 +56,7 @@ public partial class WebExTaskpanesPartImpl: DocumentModel.Packaging.OpenXmlPart
   {
     get
     {
-      if (_WebExtensionParts != null)
+      if (_WebExtensionParts == null)
       {
         if (OpenXmlElement != null)
         {

@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphBordersImpl: ModelElementImpl, ParagraphBorders
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphBordersImpl(): base() {}

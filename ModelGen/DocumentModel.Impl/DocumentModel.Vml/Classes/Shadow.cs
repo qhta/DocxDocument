@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShadowImpl: ModelElementImpl, Shadow
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Shadow? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Shadow?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShadowImpl(): base() {}

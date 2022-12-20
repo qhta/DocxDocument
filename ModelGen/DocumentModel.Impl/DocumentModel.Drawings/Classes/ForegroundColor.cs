@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ForegroundColorImpl: DocumentModel.Drawings.ColorTypeImpl, ForegroundColor
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.ForegroundColor? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ForegroundColor?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ForegroundColorImpl(): base() {}

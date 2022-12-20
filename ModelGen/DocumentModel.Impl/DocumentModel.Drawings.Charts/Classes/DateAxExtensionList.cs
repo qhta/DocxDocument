@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DateAxExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class DateAxExtensionListImpl: ModelElementImpl, DateAxExtensionL
   {
     get
     {
-      if (_DateAxExtensions != null)
+      if (_DateAxExtensions == null)
       {
         if (OpenXmlElement != null)
         {

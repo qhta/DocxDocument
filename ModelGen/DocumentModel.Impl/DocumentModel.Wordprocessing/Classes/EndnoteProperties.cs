@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class EndnotePropertiesImpl: ModelElementImpl, EndnoteProperties
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public EndnotePropertiesImpl(): base() {}

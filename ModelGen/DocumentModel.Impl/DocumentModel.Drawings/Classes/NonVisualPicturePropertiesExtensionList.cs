@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualPicturePropertiesExtensionListImpl: ModelElementImpl, NonVisualPicturePropertiesExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NonVisualPicturePropertiesExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class NonVisualPicturePropertiesExtensionListImpl: ModelElementIm
   {
     get
     {
-      if (_NonVisualPicturePropertiesExtensions != null)
+      if (_NonVisualPicturePropertiesExtensions == null)
       {
         if (OpenXmlElement != null)
         {

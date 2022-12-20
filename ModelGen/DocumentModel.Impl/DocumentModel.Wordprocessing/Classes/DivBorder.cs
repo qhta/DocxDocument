@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DivBorderImpl: ModelElementImpl, DivBorder
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.DivBorder? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.DivBorder?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DivBorderImpl(): base() {}

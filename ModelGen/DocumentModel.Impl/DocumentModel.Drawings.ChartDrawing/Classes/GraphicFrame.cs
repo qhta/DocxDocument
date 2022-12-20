@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class GraphicFrameImpl: ModelElementImpl, GraphicFrame
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public GraphicFrameImpl(): base() {}

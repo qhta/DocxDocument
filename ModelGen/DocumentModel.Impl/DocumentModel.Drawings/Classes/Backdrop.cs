@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackdropImpl: ModelElementImpl, Backdrop
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Backdrop? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Backdrop?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public BackdropImpl(): base() {}

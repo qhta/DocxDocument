@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class SampleDataTypeImpl: ModelElementImpl, SampleDataType
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public SampleDataTypeImpl(): base() {}

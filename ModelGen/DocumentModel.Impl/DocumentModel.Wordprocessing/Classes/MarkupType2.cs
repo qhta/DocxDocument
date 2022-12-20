@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MarkupType2Impl: ModelElementImpl, MarkupType2
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Word.MarkupType? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Word.MarkupType?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public MarkupType2Impl(): base() {}

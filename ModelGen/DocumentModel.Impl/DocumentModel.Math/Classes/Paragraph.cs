@@ -5,10 +5,11 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ParagraphImpl: ModelElementImpl, Paragraph
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Math.Paragraph? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Math.Paragraph?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ParagraphImpl(): base() {}
@@ -895,7 +896,7 @@ public partial class ParagraphImpl: ModelElementImpl, Paragraph
   {
     get
     {
-      if (_ContentParts != null)
+      if (_ContentParts == null)
       {
         if (OpenXmlElement != null)
         {

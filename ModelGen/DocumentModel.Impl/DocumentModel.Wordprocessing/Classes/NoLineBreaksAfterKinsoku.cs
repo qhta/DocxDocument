@@ -5,10 +5,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NoLineBreaksAfterKinsokuImpl: ModelElementImpl, NoLineBreaksAfterKinsoku
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public NoLineBreaksAfterKinsokuImpl(): base() {}

@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ExtensionListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class ExtensionListImpl: ModelElementImpl, ExtensionList
   {
     get
     {
-      if (_Extension2s != null)
+      if (_Extension2s == null)
       {
         if (OpenXmlElement != null)
         {

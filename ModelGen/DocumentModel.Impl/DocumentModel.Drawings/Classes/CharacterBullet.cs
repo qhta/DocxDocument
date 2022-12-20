@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CharacterBulletImpl: ModelElementImpl, CharacterBullet
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.CharacterBullet? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.CharacterBullet?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public CharacterBulletImpl(): base() {}

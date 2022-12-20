@@ -5,10 +5,11 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class DialogBoxLauncherImpl: ModelElementImpl, DialogBoxLauncher
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DialogBoxLauncherImpl(): base() {}

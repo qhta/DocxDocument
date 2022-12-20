@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DefaultRunPropertiesImpl: DocumentModel.Drawings.TextCharacterPropertiesTypeImpl, DefaultRunProperties
 {
+  [XmlIgnore]
   public new DocumentFormat.OpenXml.Drawing.DefaultRunProperties? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.DefaultRunProperties?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public DefaultRunPropertiesImpl(): base() {}

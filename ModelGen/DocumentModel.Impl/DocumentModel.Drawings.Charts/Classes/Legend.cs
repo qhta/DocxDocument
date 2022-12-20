@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LegendImpl: ModelElementImpl, Legend
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Charts.Legend? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Charts.Legend?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public LegendImpl(): base() {}
@@ -48,7 +49,7 @@ public partial class LegendImpl: ModelElementImpl, Legend
   {
     get
     {
-      if (_LegendEntries != null)
+      if (_LegendEntries == null)
       {
         if (OpenXmlElement != null)
         {

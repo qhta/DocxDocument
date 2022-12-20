@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ImageEffectImpl: ModelElementImpl, ImageEffect
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ImageEffectImpl(): base() {}

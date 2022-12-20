@@ -5,10 +5,11 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PointListImpl: ModelElementImpl, PointList
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Drawing.Diagrams.PointList? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Drawing.Diagrams.PointList?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public PointListImpl(): base() {}
@@ -22,7 +23,7 @@ public partial class PointListImpl: ModelElementImpl, PointList
   {
     get
     {
-      if (_Points != null)
+      if (_Points == null)
       {
         if (OpenXmlElement != null)
         {

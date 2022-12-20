@@ -5,10 +5,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapeIdMapImpl: ModelElementImpl, ShapeIdMap
 {
+  [XmlIgnore]
   public DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.Vml.Office.ShapeIdMap?)_OpenXmlElement;
-    set => _OpenXmlElement = value;
+    protected set => _OpenXmlElement = value;
   }
   
   public ShapeIdMapImpl(): base() {}
