@@ -10,8 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestPropertiesWrite.cs" />
     <Compile Remove="TestReader - Copy.cs" />
     <Compile Remove="TestSerialization.cs" />
+    <Compile Remove="TestSettings.cs" />
   </ItemGroup>
 
   <ItemGroup>

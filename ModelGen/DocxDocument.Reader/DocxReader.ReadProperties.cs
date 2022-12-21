@@ -4,32 +4,26 @@ namespace DocxDocument.Reader;
 
 public partial class DocxReader
 {
-  public DM.DocumentProperties ReadDocumentProperties()
+  public DocumentProperties ReadDocumentProperties()
   {
     return ReadDocumentProperties(Parts.AllDocumentProperties);
   }
 
-  public DM.DocumentProperties ReadDocumentProperties(Parts parts)
+  public DocumentProperties ReadDocumentProperties(Parts parts)
   {
-    var dmProperties = new DM.DocumentPropertiesImpl();
+    var dmProperties = new DocumentPropertiesImpl();
     if (parts.HasFlag(Parts.CoreFileProperties))
       dmProperties.CoreProperties = new CorePropertiesImpl(WordprocessingDocument.PackageProperties);
     if (parts.HasFlag(Parts.ExtendedFileProperties))
     {
       if (WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null)
         dmProperties.ExtendedProperties = new ExtendedPropertiesImpl(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
-      //else
-      //  dmProperties.ExtendedProperties = new ExtendedPropertiesImpl(WordprocessingDocument.AddExtendedFilePropertiesPart().Properties);
     }
     if (parts.HasFlag(Parts.CustomFileProperties))
     {
       if (WordprocessingDocument.CustomFilePropertiesPart?.Properties != null)
         dmProperties.CustomProperties = new CustomPropertiesImpl(WordprocessingDocument.CustomFilePropertiesPart.Properties);
-      //else
-      //  dmProperties.CustomProperties = new CustomPropertiesImpl(WordprocessingDocument.AddCustomFilePropertiesPart().Properties);
     }
-    //if ((parts | Parts.AllDocumentProperties) == Parts.AllDocumentProperties)
-    //  //ReadDocumentSettings(dmProperties);
     return dmProperties;
   }
 
