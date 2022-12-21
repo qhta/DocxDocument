@@ -11,11 +11,6 @@ namespace DocxDocument.Reader.Test
 {
   public class TestProperties: TestBase
   {
-    //[SetUp]
-    //public void Setup()
-    //{
-    //  base.Setup();
-    //}
 
     [Test]
     public void TestNormalTemplateProperties()
@@ -123,7 +118,7 @@ namespace DocxDocument.Reader.Test
       int origCustomPropertiesCount = 0;
       if (customDocumentProperties != null)
       {
-        customPropertiesCount = customDocumentProperties.Count;
+        customPropertiesCount = customDocumentProperties.Count();
         origCustomPropertiesCount = reader.WordprocessingDocument?.CustomFilePropertiesPart?.Properties.Count() ?? 0;
         TestContext.Progress.WriteLine($"  CustomProperties = {customPropertiesCount}/{origCustomPropertiesCount}");
         if (showDetails)

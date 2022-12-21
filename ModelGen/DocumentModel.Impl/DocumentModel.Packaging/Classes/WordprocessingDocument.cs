@@ -32,16 +32,6 @@ public partial class WordprocessingDocumentImpl: DocumentModel.Packaging.OpenXml
     }
   }
   
-  public new DocumentModel.Packaging.OpenXmlPart? RootPart
-  {
-    get
-    {
-      if (OpenXmlElement?.RootPart != null)
-        return new DocumentModel.Packaging.OpenXmlPartImpl(OpenXmlElement.RootPart);
-      return null;
-    }
-  }
-  
   /// <summary>
   /// Gets the MainDocumentPart of the WordprocessingDocument.
   /// </summary>

@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsShipped>true</IsShipped>
+    <NoWarn>$(NoWarn);3003</NoWarn>
+
+    <!-- For now, we have internal access to the framework assembly. That should be removed, and then we'll need to turn this on. -->
+    <IncludeFrameworkShims>false</IncludeFrameworkShims>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IncludeSourceGenerator>true</IncludeSourceGenerator>
+    <DocumentFormat_OpenXml_Generator_NamespaceLookup>true</DocumentFormat_OpenXml_Generator_NamespaceLookup>
+    <DocumentFormat_OpenXml_Generator_Parts>true</DocumentFormat_OpenXml_Generator_Parts>
+    <DocumentFormat_OpenXml_Generator_Schemas>true</DocumentFormat_OpenXml_Generator_Schemas>
+    <DocumentFormat_OpenXml_Generator_Factories>true</DocumentFormat_OpenXml_Generator_Factories>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Summary>The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents</Summary>
+    <Description>
+      <![CDATA[The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:
+
+- High-performance generation of word-processing documents, spreadsheets, and presentations.
+- Populating content in Word files from an XML data source.
+- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.
+- Extraction of data from Excel documents.
+- Searching and replacing content in Word/PowerPoint using regular expressions.
+- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.
+- Document modification, such as removing tracked revisions or removing unacceptable content from documents.]]>
+    </Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../DocumentFormat.OpenXml.Framework/DocumentFormat.OpenXml.Framework.csproj" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition=" '$(TargetFramework)' == 'net35'">
+      <PropertyGroup>
+        <CompileWithPeVerify>true</CompileWithPeVerify>
+      </PropertyGroup>
+
+      <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+      </ItemGroup>
+    </When>
+
+    <When Condition=" '$(TargetFramework)' == 'net40' ">
+      <PropertyGroup>
+        <CompileWithPeVerify>true</CompileWithPeVerify>
+      </PropertyGroup>
+
+      <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+      </ItemGroup>
+    </When>
+
+    <When Condition=" '$(TargetFramework)' == 'net46' ">
+      <PropertyGroup>
+        <CompileWithPeVerify>true</CompileWithPeVerify>
+      </PropertyGroup>
+
+      <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+      </ItemGroup>
+    </When>
+
+    <When Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+      <ItemGroup>
+        <PackageReference Include="System.IO.Packaging" />
+      </ItemGroup>
+
+      <!-- In order to support .NET Native, we need to include an appropriate .rd.xml -->
+      <ItemGroup>
+        <EmbeddedResource Include="Properties\DocumentFormat.OpenXml.rd.xml" />
+      </ItemGroup>
+
+    </When>
+
+    <When Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+      <ItemGroup>
+        <PackageReference Include="System.IO.Packaging" />
+      </ItemGroup>
+
+      <!-- In order to support .NET Native, we need to include an appropriate .rd.xml -->
+      <ItemGroup>
+        <EmbeddedResource Include="Properties\DocumentFormat.OpenXml.rd.xml" />
+      </ItemGroup>
+    </When>
+
+    <When Condition=" '$(TargetFramework)' == 'net6.0' OR '$(TargetFramework)' == 'net7.0' ">
+      <ItemGroup>
+        <PackageReference Include="System.IO.Packaging" />
+      </ItemGroup>
+
+      <!-- In order to support .NET Native, we need to include an appropriate .rd.xml -->
+      <ItemGroup>
+        <EmbeddedResource Include="Properties\DocumentFormat.OpenXml.rd.xml" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+</Project>

@@ -8,10 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "ModelGen/1.0.0": {
         "dependencies": {
-          "DocumentFormat.OpenXml": "1.0.0",
+          "DocumentFormat.OpenXml": "2.19.0",
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
           "DocumentModel.VariantTypes": "1.0.0",
+          "IgnoresAccessChecksToGenerator": "0.6.0",
           "Namotion.Reflection": "2.1.1",
           "Qhta.Collections": "1.0.0.0",
           "Qhta.TextUtils": "2.3.0.0",
@@ -21,6 +22,18 @@
           "ModelGen.dll": {}
         }
       },
+      "DocumentFormat.OpenXml/2.19.0": {
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "runtime": {
+          "lib/net6.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "2.19.0.0",
+            "fileVersion": "2.19.0.0"
+          }
+        }
+      },
+      "IgnoresAccessChecksToGenerator/0.6.0": {},
       "Microsoft.CSharp/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -102,11 +115,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.IO.Packaging/7.0.0": {
+      "System.IO.Packaging/4.7.0": {
         "runtime": {
-          "lib/net6.0/System.IO.Packaging.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/netstandard2.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
           }
         }
       },
@@ -262,14 +275,6 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "DocumentFormat.OpenXml/1.0.0": {
-        "dependencies": {
-          "System.IO.Packaging": "7.0.0"
-        },
-        "runtime": {
-          "DocumentFormat.OpenXml.dll": {}
-        }
-      },
       "DocumentModel.Attributes/1.0.0": {
         "runtime": {
           "DocumentModel.Attributes.dll": {}
@@ -316,6 +321,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DocumentFormat.OpenXml/2.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BLFqodowHZHR/A/sKU/6e+63J5ONWDdv8hEuSZOUiBfGFuVmsG9P3o+LMSq+dajNWE1q+lqVSa1H5FuhLX8/fA==",
+      "path": "documentformat.openxml/2.19.0",
+      "hashPath": "documentformat.openxml.2.19.0.nupkg.sha512"
+    },
+    "IgnoresAccessChecksToGenerator/0.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NdT88a8JKkmyzpVDHLJtzDW/QduXOnZgAisVgZ+PMP0PXPTBuO6kCLNzCRkpYvCTLQ6f3tOEKekIOnzejdfB5A==",
+      "path": "ignoresaccesscheckstogenerator/0.6.0",
+      "hashPath": "ignoresaccesscheckstogenerator.0.6.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
@@ -380,12 +399,12 @@
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
     },
-    "System.IO.Packaging/7.0.0": {
+    "System.IO.Packaging/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+j5ezLP7785/pd4taKQhXAWsymsIW2nTnE/U3/jpGZzcJx5lip6qkj6UrxSE7ZYZfL0GaLuymwGLqwJV/c7O7Q==",
-      "path": "system.io.packaging/7.0.0",
-      "hashPath": "system.io.packaging.7.0.0.nupkg.sha512"
+      "sha512": "sha512-9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
+      "path": "system.io.packaging/4.7.0",
+      "hashPath": "system.io.packaging.4.7.0.nupkg.sha512"
     },
     "System.Linq/4.3.0": {
       "type": "package",
@@ -512,11 +531,6 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
-    },
-    "DocumentFormat.OpenXml/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",

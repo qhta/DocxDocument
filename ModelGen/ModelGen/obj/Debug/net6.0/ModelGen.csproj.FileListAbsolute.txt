@@ -23,8 +23,6 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.csp
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.Impl.csproj.xml
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Collections.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Collections.pdb
-D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentFormat.OpenXml.pdb
-D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentFormat.OpenXml.xml
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.BaseTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
