@@ -1,8 +1,3 @@
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.csproj.AssemblyReference.cache
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.GeneratedMSBuildEditorConfig.editorconfig
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.AssemblyInfoInputs.cache
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.AssemblyInfo.cs
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.csproj.CoreCompileInputs.cache
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.deps.json
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.pdb
@@ -16,6 +11,11 @@ D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\n
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\bin\Debug\net6.0\DocumentModel.Attributes.pdb
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.csproj.CoreCompileInputs.cache
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.csproj.CopyComplete
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\DocumentModel.VariantTypes.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes.Impl\obj\Debug\net6.0\refint\DocumentModel.VariantTypes.Impl.dll

@@ -10,8 +10,6 @@ public partial interface WordprocessingDocument
   /// </summary>
   public DocumentModel.WordprocessingDocumentType? DocumentType { get; set; }
   
-  public DocumentModel.Packaging.OpenXmlPart? RootPart { get; }
-  
   /// <summary>
   /// Gets the MainDocumentPart of the WordprocessingDocument.
   /// </summary>

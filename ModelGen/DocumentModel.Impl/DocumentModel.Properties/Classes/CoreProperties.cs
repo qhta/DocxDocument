@@ -1,8 +1,5 @@
 namespace DocumentModel.Properties;
 
-/// <summary>
-/// This class provides access to the "core properties", such as Title and
-/// </summary>
 public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
 {
   [XmlIgnore]
@@ -19,9 +16,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     OpenXmlElement = openXmlElement;
   }
   
-  /// <summary>
-  /// The title.
-  /// </summary>
   public String? Title
   {
     get => OpenXmlElement?.Title;
@@ -32,9 +26,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The topic of the contents.
-  /// </summary>
   public String? Subject
   {
     get => OpenXmlElement?.Subject;
@@ -45,9 +36,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The primary creator. The identification is environment-specific and
-  /// </summary>
   public String? Creator
   {
     get => OpenXmlElement?.Creator;
@@ -58,9 +46,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// A delimited set of keywords to support searching and indexing. This
-  /// </summary>
   public String? Keywords
   {
     get => OpenXmlElement?.Keywords;
@@ -71,9 +56,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The description or abstract of the contents.
-  /// </summary>
   public String? Description
   {
     get => OpenXmlElement?.Description;
@@ -84,9 +66,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The user who performed the last modification. The identification is
-  /// </summary>
   public String? LastModifiedBy
   {
     get => OpenXmlElement?.LastModifiedBy;
@@ -97,9 +76,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The revision number. This value indicates the number of saves or
-  /// </summary>
   public String? Revision
   {
     get => OpenXmlElement?.Revision;
@@ -110,9 +86,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The date and time of the last printing.
-  /// </summary>
   public DateTime? LastPrinted
   {
     get => OpenXmlElement?.LastPrinted;
@@ -123,9 +96,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The creation date and time.
-  /// </summary>
   public DateTime? Created
   {
     get => OpenXmlElement?.Created;
@@ -136,9 +106,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The date and time of the last modification.
-  /// </summary>
   public DateTime? Modified
   {
     get => OpenXmlElement?.Modified;
@@ -149,9 +116,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The category. This value is typically used by UI applications to create navigation
-  /// </summary>
   public String? Category
   {
     get => OpenXmlElement?.Category;
@@ -162,9 +126,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// A unique identifier.
-  /// </summary>
   public String? Identifier
   {
     get => OpenXmlElement?.Identifier;
@@ -175,9 +136,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The type of content represented, generally defined by a specific
-  /// </summary>
   public String? ContentType
   {
     get => OpenXmlElement?.ContentType;
@@ -188,9 +146,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The primary language of the package content. The language tag is
-  /// </summary>
   public String? Language
   {
     get => OpenXmlElement?.Language;
@@ -201,9 +156,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The version number. This value is set by the user or by the application.
-  /// </summary>
   public String? Version
   {
     get => OpenXmlElement?.Version;
@@ -214,9 +166,6 @@ public partial class CorePropertiesImpl: ModelObjectImpl, CoreProperties
     }
   }
   
-  /// <summary>
-  /// The status of the content. Example values include "Draft",
-  /// </summary>
   public String? ContentStatus
   {
     get => OpenXmlElement?.ContentStatus;

@@ -1,5 +1,0 @@
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\obj\Debug\net6.0\DocumentModel.BaseTypes.csproj.AssemblyReference.cache
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\obj\Debug\net6.0\DocumentModel.BaseTypes.GeneratedMSBuildEditorConfig.editorconfig
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\obj\Debug\net6.0\DocumentModel.BaseTypes.AssemblyInfoInputs.cache
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\obj\Debug\net6.0\DocumentModel.BaseTypes.AssemblyInfo.cs
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\obj\Debug\net6.0\DocumentModel.BaseTypes.csproj.CoreCompileInputs.cache

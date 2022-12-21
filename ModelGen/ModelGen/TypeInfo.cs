@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using DocumentFormat.OpenXml.Framework.Metadata;
+using System.Runtime.CompilerServices;
 
 namespace ModelGen;
 

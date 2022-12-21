@@ -15,6 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Extensions\Wordprocessing\DocumentSettings.ext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
   </ItemGroup>
 

@@ -22,7 +22,7 @@ public partial class OpenXmlPackageImpl: DocumentModel.Packaging.OpenXmlPartCont
   /// <summary>
   /// Gets the root part for the package.
   /// </summary>
-  public virtual DocumentModel.Packaging.OpenXmlPart? RootPart
+  public DocumentModel.Packaging.OpenXmlPart? RootPart
   {
     get
     {
