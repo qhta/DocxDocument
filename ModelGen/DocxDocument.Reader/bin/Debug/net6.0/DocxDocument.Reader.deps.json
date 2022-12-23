@@ -41,7 +41,6 @@
         "dependencies": {
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "runtime": {
@@ -75,8 +74,6 @@
           "DocumentModel.BaseTypes": "1.0.0",
           "DocumentModel.BaseTypes.Impl": "1.0.0",
           "DocumentModel.Internal.Impl": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0",
-          "DocumentModel.VariantTypes.Impl": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "runtime": {
@@ -89,21 +86,6 @@
         },
         "runtime": {
           "DocumentModel.Internal.Impl.dll": {}
-        }
-      },
-      "DocumentModel.VariantTypes/1.0.0": {
-        "runtime": {
-          "DocumentModel.VariantTypes.dll": {}
-        }
-      },
-      "DocumentModel.VariantTypes.Impl/1.0.0": {
-        "dependencies": {
-          "DocumentModel.BaseTypes": "1.0.0",
-          "DocumentModel.BaseTypes.Impl": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0"
-        },
-        "runtime": {
-          "DocumentModel.VariantTypes.Impl.dll": {}
         }
       }
     }
@@ -161,16 +143,6 @@
       "sha512": ""
     },
     "DocumentModel.Internal.Impl/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DocumentModel.VariantTypes/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DocumentModel.VariantTypes.Impl/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

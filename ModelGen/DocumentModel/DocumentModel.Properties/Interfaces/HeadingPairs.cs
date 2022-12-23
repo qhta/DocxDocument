@@ -5,6 +5,6 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial interface HeadingPairs
 {
-  public DocumentModel.VariantTypes.VTVector? VTVector { get; set; }
+  public DocumentModel.VectorVariant? VTVector { get; set; }
   
 }

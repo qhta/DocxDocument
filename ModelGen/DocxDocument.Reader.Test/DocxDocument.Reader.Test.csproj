@@ -6,10 +6,11 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
-    <GenerateProgramFile>true</GenerateProgramFile>
+    <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestProperties.cs" />
     <Compile Remove="TestPropertiesWrite.cs" />
     <Compile Remove="TestReader - Copy.cs" />
     <Compile Remove="TestSerialization.cs" />

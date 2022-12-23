@@ -98,8 +98,6 @@ D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\D
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.Internal.Impl.dll
-D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
-D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocxDocument.Reader.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocxDocument.Reader.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.pdb
@@ -108,8 +106,6 @@ D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\D
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.BaseTypes.Impl.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.Impl.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.Internal.Impl.pdb
-D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.VariantTypes.pdb
-D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\DocxDocument.Reader.Test.csproj.AssemblyReference.cache
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\DocxDocument.Reader.Test.GeneratedMSBuildEditorConfig.editorconfig
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\DocxDocument.Reader.Test.AssemblyInfoInputs.cache
@@ -121,3 +117,5 @@ D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\r
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\DocxDocument.Reader.Test.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\DocxDocument.Reader.Test.genruntimeconfig.cache
 D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\obj\Debug\net6.0\ref\DocxDocument.Reader.Test.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.Collections.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.Collections.pdb

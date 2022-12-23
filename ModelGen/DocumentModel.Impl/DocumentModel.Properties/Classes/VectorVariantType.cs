@@ -22,7 +22,7 @@ public partial class VectorVariantTypeImpl: ModelElementImpl, VectorVariantType
   /// <summary>
   /// Vector.
   /// </summary>
-  public virtual DocumentModel.VariantTypes.VTVector? VTVector
+  public virtual DocumentModel.VectorVariant? VTVector
   {
     get
     {
@@ -30,7 +30,7 @@ public partial class VectorVariantTypeImpl: ModelElementImpl, VectorVariantType
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
         if (item != null)
-          return new DocumentModel.VariantTypes.VTVectorImpl(item);
+          return new VTVectorImpl(item).GetValue();
       }
       return null;
     }
@@ -43,9 +43,9 @@ public partial class VectorVariantTypeImpl: ModelElementImpl, VectorVariantType
           item.Remove();
         if (value != null)
         {
-          var newItem = (value as DocumentModel.VariantTypes.VTVectorImpl)?.OpenXmlElement;
-          if (newItem != null)
-            OpenXmlElement.AddChild(newItem);
+          var vtVector = new VTVectorImpl { Value = value }.OpenXmlElement;
+          if (vtVector != null)
+            OpenXmlElement.AddChild(vtVector);
         }
       }
     }
