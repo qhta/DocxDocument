@@ -466,7 +466,7 @@
       },
       "DocumentModel.Attributes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         },
@@ -476,7 +476,7 @@
       },
       "DocumentModel.BaseTypes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/DocumentModel.BaseTypes.dll": {}
         },
@@ -486,7 +486,10 @@
       },
       "DocumentModel.VariantTypes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DocumentModel.BaseTypes": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DocumentModel.VariantTypes.dll": {}
         },

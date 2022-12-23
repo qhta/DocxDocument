@@ -7,11 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader.Test", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.Internal.Impl", "..\DocumentModel.Internal.Impl\DocumentModel.Internal.Impl.csproj", "{36EE701C-B894-40C7-A947-00C771D844DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.VariantTypes.Impl", "..\DocumentModel.VariantTypes.Impl\DocumentModel.VariantTypes.Impl.csproj", "{C3F02426-B91D-43C6-A464-DF9001BEFBB3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseTypes.Impl", "..\DocumentModel.BaseTypes.Impl\DocumentModel.BaseTypes.Impl.csproj", "{8DA06B2F-24C2-42A2-842C-085D20BC9541}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.VariantTypes", "..\DocumentModel.VariantTypes\DocumentModel.VariantTypes.csproj", "{9FAC6B1C-DAE4-4464-B014-EF78426BF8A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.Impl", "..\DocumentModel.Impl\DocumentModel.Impl.csproj", "{D9BE8A4C-0940-477F-BB1B-3B02FB65472A}"
 EndProject
@@ -37,18 +33,10 @@ Global
 		{36EE701C-B894-40C7-A947-00C771D844DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36EE701C-B894-40C7-A947-00C771D844DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36EE701C-B894-40C7-A947-00C771D844DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3F02426-B91D-43C6-A464-DF9001BEFBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3F02426-B91D-43C6-A464-DF9001BEFBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3F02426-B91D-43C6-A464-DF9001BEFBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3F02426-B91D-43C6-A464-DF9001BEFBB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DA06B2F-24C2-42A2-842C-085D20BC9541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DA06B2F-24C2-42A2-842C-085D20BC9541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA06B2F-24C2-42A2-842C-085D20BC9541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA06B2F-24C2-42A2-842C-085D20BC9541}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9FAC6B1C-DAE4-4464-B014-EF78426BF8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FAC6B1C-DAE4-4464-B014-EF78426BF8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FAC6B1C-DAE4-4464-B014-EF78426BF8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FAC6B1C-DAE4-4464-B014-EF78426BF8A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9BE8A4C-0940-477F-BB1B-3B02FB65472A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9BE8A4C-0940-477F-BB1B-3B02FB65472A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9BE8A4C-0940-477F-BB1B-3B02FB65472A}.Release|Any CPU.ActiveCfg = Release|Any CPU

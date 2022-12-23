@@ -6,11 +6,6 @@ namespace DocxDocument.Reader.Test;
 
 public class TestBase
 {
-  protected string[] statisticPropElementsNames = new string[] { "TotalTime", "Characters", "CharactersWithSpaces",
-    "HiddenSlides", "Lines", "MMClips", "Notes", "Pages", "Paragraphs", "Slides", "TotalTime", "Words" };
-  protected string[] extraPropElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode" };
-  protected string[] notSettingsElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode", "w:rsids" };
-
   [SetUp]
   public virtual void Setup()
   {

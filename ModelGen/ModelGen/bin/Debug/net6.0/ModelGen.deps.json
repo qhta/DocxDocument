@@ -286,6 +286,9 @@
         }
       },
       "DocumentModel.VariantTypes/1.0.0": {
+        "dependencies": {
+          "DocumentModel.BaseTypes": "1.0.0"
+        },
         "runtime": {
           "DocumentModel.VariantTypes.dll": {}
         }

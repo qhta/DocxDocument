@@ -5,11 +5,11 @@ namespace DocxDocument.Reader.Test
 {
   class Program
   {
-    static void NoMain(string[] args)
+    static void Main(string[] args)
     {
-      var testInstance = new TestProperties();
+      var testInstance = new TestVariants();
       testInstance.Setup();
-      testInstance.TestCustomProperties();
+      testInstance.TestBooleanVariantType();
     }
   }
 }

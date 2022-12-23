@@ -3,7 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 /// Hyperlink List.
 /// </summary>
-public partial class HyperlinkListImpl: DocumentModel.Properties.VectorVariantTypeImpl, HyperlinkList
+public partial class HyperlinkListImpl : DocumentModel.Properties.VectorVariantTypeImpl, HyperlinkList
 {
   [XmlIgnore]
   public new DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? OpenXmlElement
@@ -11,15 +11,15 @@ public partial class HyperlinkListImpl: DocumentModel.Properties.VectorVariantTy
     get => (DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList?)_OpenXmlElement;
     protected set => _OpenXmlElement = value;
   }
-  
-  public HyperlinkListImpl(): base() {}
-  
-  public HyperlinkListImpl(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList openXmlElement): base(openXmlElement)
+
+  public HyperlinkListImpl() : base() { }
+
+  public HyperlinkListImpl(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList openXmlElement) : base(openXmlElement)
   {
     OpenXmlElement = openXmlElement;
   }
-  
-  public new DocumentModel.VariantTypes.VTVector? VTVector
+
+  public new DocumentModel.VectorVariant? VTVector
   {
     get
     {
@@ -27,7 +27,7 @@ public partial class HyperlinkListImpl: DocumentModel.Properties.VectorVariantTy
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
         if (item != null)
-          return new DocumentModel.VariantTypes.VTVectorImpl(item);
+          return new VTVectorImpl(item).GetValue();
       }
       return null;
     }
@@ -40,12 +40,12 @@ public partial class HyperlinkListImpl: DocumentModel.Properties.VectorVariantTy
           item.Remove();
         if (value != null)
         {
-          var newItem = (value as DocumentModel.VariantTypes.VTVectorImpl)?.OpenXmlElement;
-          if (newItem != null)
-            OpenXmlElement.AddChild(newItem);
+          var vtVector = new VTVectorImpl { Value = value }.OpenXmlElement;
+          if (vtVector != null)
+            OpenXmlElement.AddChild(vtVector);
         }
       }
     }
   }
-  
+
 }

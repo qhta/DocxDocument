@@ -2,7 +2,7 @@
 
 namespace DocumentModel.Properties;
 
-public partial class CustomDocumentPropertyImpl
+public partial class CustomDocumentPropertyImpl: CustomDocumentProperty
 {
   public object? Value
   {
@@ -13,7 +13,7 @@ public partial class CustomDocumentPropertyImpl
         var item = OpenXmlElement.FirstChild;
         if (item == null)
           return null;
-        var variantImpl = VariantImpl.CreateVariant(item);
+        var variantImpl = VariantImpl.VTToVariant(item);
         return variantImpl.Value;
       }
       return null;

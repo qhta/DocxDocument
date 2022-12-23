@@ -1,3 +1,6 @@
+using DocumentFormat.OpenXml.VariantTypes;
+using DocumentFormat.OpenXml;
+
 namespace DocumentModel.Properties;
 
 /// <summary>
@@ -19,7 +22,7 @@ public partial class HeadingPairsImpl: DocumentModel.Properties.VectorVariantTyp
     OpenXmlElement = openXmlElement;
   }
   
-  public new DocumentModel.VariantTypes.VTVector? VTVector
+  public new DocumentModel.VectorVariant? VTVector
   {
     get
     {
@@ -27,7 +30,7 @@ public partial class HeadingPairsImpl: DocumentModel.Properties.VectorVariantTyp
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
         if (item != null)
-          return new DocumentModel.VariantTypes.VTVectorImpl(item);
+          return new VTVectorImpl(item).GetValue();
       }
       return null;
     }
@@ -40,9 +43,9 @@ public partial class HeadingPairsImpl: DocumentModel.Properties.VectorVariantTyp
           item.Remove();
         if (value != null)
         {
-          var newItem = (value as DocumentModel.VariantTypes.VTVectorImpl)?.OpenXmlElement;
-          if (newItem != null)
-            OpenXmlElement.AddChild(newItem);
+          var vtVector = new VTVectorImpl { Value = value }.OpenXmlElement;
+          if (vtVector != null)
+            OpenXmlElement.AddChild(vtVector);
         }
       }
     }

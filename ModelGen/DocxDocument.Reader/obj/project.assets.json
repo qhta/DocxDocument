@@ -45,11 +45,10 @@
       },
       "DocumentModel/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DocumentModel.Attributes": "1.0.0",
           "DocumentModel.BaseTypes": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -61,7 +60,7 @@
       },
       "DocumentModel.Attributes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         },
@@ -71,7 +70,7 @@
       },
       "DocumentModel.BaseTypes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/DocumentModel.BaseTypes.dll": {}
         },
@@ -81,7 +80,7 @@
       },
       "DocumentModel.BaseTypes.Impl/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DocumentFormat.OpenXml": "2.19.0",
           "DocumentModel": "1.0.0",
@@ -103,8 +102,6 @@
           "DocumentModel.BaseTypes": "1.0.0",
           "DocumentModel.BaseTypes.Impl": "1.0.0",
           "DocumentModel.Internal.Impl": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0",
-          "DocumentModel.VariantTypes.Impl": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -125,31 +122,6 @@
         },
         "runtime": {
           "bin/placeholder/DocumentModel.Internal.Impl.dll": {}
-        }
-      },
-      "DocumentModel.VariantTypes/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
-        }
-      },
-      "DocumentModel.VariantTypes.Impl/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "DocumentModel.BaseTypes": "1.0.0",
-          "DocumentModel.BaseTypes.Impl": "1.0.0",
-          "DocumentModel.VariantTypes": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DocumentModel.VariantTypes.Impl.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DocumentModel.VariantTypes.Impl.dll": {}
         }
       }
     }
@@ -258,16 +230,6 @@
       "type": "project",
       "path": "../DocumentModel.Internal.Impl/DocumentModel.Internal.Impl.csproj",
       "msbuildProject": "../DocumentModel.Internal.Impl/DocumentModel.Internal.Impl.csproj"
-    },
-    "DocumentModel.VariantTypes/1.0.0": {
-      "type": "project",
-      "path": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj",
-      "msbuildProject": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj"
-    },
-    "DocumentModel.VariantTypes.Impl/1.0.0": {
-      "type": "project",
-      "path": "../DocumentModel.VariantTypes.Impl/DocumentModel.VariantTypes.Impl.csproj",
-      "msbuildProject": "../DocumentModel.VariantTypes.Impl/DocumentModel.VariantTypes.Impl.csproj"
     }
   },
   "projectFileDependencyGroups": {
