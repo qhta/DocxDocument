@@ -6,14 +6,10 @@ D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\Documen
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.BaseTypes.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.Internal.Impl.dll
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.Attributes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.BaseTypes.Impl.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.BaseTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.Internal.Impl.pdb
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.Impl.pdb
-D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.VariantTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\DocumentModel.Impl.csproj.AssemblyReference.cache
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\DocumentModel.Impl.GeneratedMSBuildEditorConfig.editorconfig
@@ -25,3 +21,5 @@ D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\Documen
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\refint\DocumentModel.Impl.dll
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\DocumentModel.Impl.pdb
 D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\obj\Debug\net6.0\ref\DocumentModel.Impl.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\Qhta.Collections.dll
+D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Impl\bin\Debug\net6.0\Qhta.Collections.pdb

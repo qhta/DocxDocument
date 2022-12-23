@@ -1,16 +1,13 @@
-using System.Collections;
-using System.IO.Packaging;
-using System.Reflection;
-using System.Xml.Serialization;
-
-using DocumentFormat.OpenXml.Packaging;
 using DocumentModel.Properties;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 
 namespace DocxDocument.Reader.Test
 {
   public class TestProperties: TestBase
   {
+    protected string[] statisticPropElementsNames = new string[] { "TotalTime", "Characters", "CharactersWithSpaces",
+      "HiddenSlides", "Lines", "MMClips", "Notes", "Pages", "Paragraphs", "Slides", "TotalTime", "Words" };
+    protected string[] extraPropElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode" };
+    protected string[] notSettingsElementsNames = new string[] { "w14:docId", "w15:docId", "w14:conflictMode", "w:rsids" };
 
     [Test]
     public void TestNormalTemplateProperties()
@@ -82,8 +79,9 @@ namespace DocxDocument.Reader.Test
 
       #endregion
 
-      #region ContentDocumentProperties
-      ExtendedProperties? contentDocumentProperties = document.Properties.ExtendedProperties;
+
+    #region ContentDocumentProperties
+    ExtendedProperties? contentDocumentProperties = document.Properties.ExtendedProperties;
       int contentPropertiesCount = 0;
       int origContentPropertiesCount = 0;
       if (contentDocumentProperties != null)

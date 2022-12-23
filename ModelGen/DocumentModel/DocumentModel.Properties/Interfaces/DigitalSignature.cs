@@ -8,6 +8,6 @@ public partial interface DigitalSignature
   /// <summary>
   /// Binary Blob.
   /// </summary>
-  public DocumentModel.VariantTypes.VTBlob? VTBlob { get; set; }
+  public byte[]? VTBlob { get; set; }
   
 }

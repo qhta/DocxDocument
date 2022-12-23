@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SxwOha0qSZAzMMCkYjrFE9JMKni3WxdVGWPGSTzm3Ftgs+WJ/RCHtveTf+lxjANoCPADXNjZZmGJvq0m/CpOFA==",
+  "dgSpecHash": "+OoV7sWZ1O66MHH+B/EVszbpy1EM+BPaNEWLbc2+TmemS9nv49x3kQx5VB98WBtk8rarhl0t+LGbO4sXjaPLVA==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.VariantTypes\\DocumentModel.VariantTypes.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -22,7 +22,7 @@ public partial class DigitalSignatureImpl: ModelElementImpl, DigitalSignature
   /// <summary>
   /// Binary Blob.
   /// </summary>
-  public DocumentModel.VariantTypes.VTBlob? VTBlob
+  public byte[]? VTBlob
   {
     get
     {
@@ -30,7 +30,7 @@ public partial class DigitalSignatureImpl: ModelElementImpl, DigitalSignature
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTBlob>();
         if (item != null)
-          return new DocumentModel.VariantTypes.VTBlobImpl(item);
+          return new DocumentModel.VariantImpl(item).Value as byte[];
       }
       return null;
     }
@@ -43,9 +43,9 @@ public partial class DigitalSignatureImpl: ModelElementImpl, DigitalSignature
           item.Remove();
         if (value != null)
         {
-          var newItem = (value as DocumentModel.VariantTypes.VTBlobImpl)?.OpenXmlElement;
-          if (newItem != null)
-            OpenXmlElement.AddChild(newItem);
+          //var newItem = (value as DocumentModel.VariantTypes.VTBlobImpl)?.OpenXmlElement;
+          //if (newItem != null)
+          //  OpenXmlElement.AddChild(newItem);
         }
       }
     }
