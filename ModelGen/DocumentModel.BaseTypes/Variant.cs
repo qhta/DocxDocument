@@ -1,11 +1,14 @@
+using System.ComponentModel;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
 /// Variant implementation. Value is of any type.
-
 /// </summary>
+[XmlInclude(typeof(DateOnly))]
+[XmlInclude(typeof(DBNull))]
 public record Variant: IConvertible
 {
   public Variant()
@@ -17,13 +20,19 @@ public record Variant: IConvertible
     SetValue(value);
   }
 
+  public Variant(VariantType variantType)
+  {
+    VariantType = variantType;
+  }
+
   public Variant(VariantType variantType, object? value)
   {
     SetValue(value);
     VariantType = variantType;
   }
 
-  public virtual VariantType VariantType { get; protected set; }
+  [XmlAttribute]
+  public virtual VariantType VariantType { get; set; }
 
   public virtual object? Value
   {
@@ -129,7 +138,7 @@ public record Variant: IConvertible
     if (value is DateOnly vDate)
     {
       VariantType = VariantType.Date;
-      Value = vDate;
+      Value = vDate.ToDateTime(default(TimeOnly));
       return;
     }
 
@@ -274,6 +283,8 @@ public record Variant: IConvertible
 
   public virtual byte ToByte(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return Byte.Parse(str, NumberStyles.HexNumber);
     return Convert.ToByte(Value);
   }
 
@@ -282,6 +293,8 @@ public record Variant: IConvertible
 
   public virtual sbyte ToSByte(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return SByte.Parse(str, NumberStyles.HexNumber);
     return Convert.ToSByte(Value);
   }
 
@@ -290,6 +303,8 @@ public record Variant: IConvertible
 
   public virtual short ToInt16(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return Int16.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt16(Value);
   }
 
@@ -298,6 +313,8 @@ public record Variant: IConvertible
 
   public virtual ushort ToUInt16(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return UInt16.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt16(Value);
   }
 
@@ -306,6 +323,8 @@ public record Variant: IConvertible
 
   public virtual int ToInt32(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return Int32.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt32(Value);
   }
 
@@ -314,6 +333,8 @@ public record Variant: IConvertible
 
   public virtual uint ToUInt32(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return UInt32.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt32(Value);
   }
 
@@ -322,6 +343,8 @@ public record Variant: IConvertible
 
   public virtual long ToInt64(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return Int64.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt64(Value);
   }
 
@@ -330,6 +353,8 @@ public record Variant: IConvertible
 
   public virtual ulong ToUInt64(IFormatProvider? provider = null)
   {
+    if (VariantType == VariantType.Error && Value is string str)
+      return UInt64.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt64(Value);
   }
 
@@ -379,7 +404,7 @@ public record Variant: IConvertible
   public virtual DateTime ToDateTime(IFormatProvider? provider = null)
   {
     if (Value is DateOnly dateOnly)
-      return dateOnly.ToDateTime(new TimeOnly());
+      return dateOnly.ToDateTime(default(TimeOnly));
     return Convert.ToDateTime(Value);
   }
 
