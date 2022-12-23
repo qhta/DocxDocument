@@ -1,4 +1,10 @@
 using System.Diagnostics;
+using System.Numerics;
+using System.Reflection.Metadata;
+using System.Xml.Serialization;
+
+using VariantType = DocumentModel.VariantType;
+using Variant = DocumentModel.Variant;
 
 using DocumentModel;
 using DocumentModel.Properties;
@@ -7,28 +13,6 @@ namespace DocxDocument.Reader.Test
 {
   public class TestVariants : TestBase
   {
-
-    //[Test]
-    //public void TestSimpleVariants()
-    //{
-    //  TestSpecificVariantTypes(new DocumentModel.VariantType[]
-    //    {
-    //      DocumentModel.VariantType.Bool,
-    //    }, true);
-    //}
-
-    //public virtual void TestSpecificVariantTypes(DocumentModel.VariantType[] types, bool showDetails = false)
-    //{
-    //  foreach (var variantType in types)
-    //  {
-    //    switch (variantType)
-    //    {
-    //      case VariantType.Bool:
-    //        TestBooleanVariantType(showDetails);
-    //        break;
-    //    }
-    //  }
-    //}
 
     [Test]
     public void TestBooleanVariantType()
@@ -1101,6 +1085,18 @@ namespace DocxDocument.Reader.Test
       Assert.That((int)variant, Is.EqualTo(n), "Char set/ int get");
     }
 
+
+    [Test]
+    public void TestErrorVariantType()
+    {
+      Variant variant;
+
+      variant = new Variant(VariantType.Error, 0xFFFF);
+      Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
+      variant = new Variant(VariantType.Error, "FFFF");
+      Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
+    }
+
     [Test]
     public void TestInternalVariantType()
     {
@@ -1190,5 +1186,55 @@ namespace DocxDocument.Reader.Test
       Assert.That(arrayVariant[2], Is.EqualTo(9), "ArrayVariant retyped element 2");
       Assert.That(arrayVariant[3], Is.EqualTo(0), "ArrayVariant retyped element 3");
     }
+
+    private static Dictionary<VariantType, object?> TestVariantValues = new()
+    {  
+      { VariantType.SByte, SByte.MaxValue }, 
+      { VariantType.Int16, Int16.MaxValue }, 
+      { VariantType.Int32, Int32.MaxValue }, 
+      { VariantType.Int64, Int64.MaxValue }, 
+      { VariantType.Integer, Int32.MaxValue }, 
+      { VariantType.Byte, Byte.MaxValue }, 
+      { VariantType.UInt16, UInt16.MaxValue }, 
+      { VariantType.UInt32, UInt32.MaxValue }, 
+      { VariantType.UInt64, UInt64.MaxValue }, 
+      { VariantType.UnsignedInteger, Decimal.MaxValue }, 
+      { VariantType.Single, Single.MaxValue }, 
+      { VariantType.Double, Double.MaxValue }, 
+      { VariantType.Decimal, Decimal.MaxValue }, 
+      { VariantType.Char, Char.MaxValue }, 
+      { VariantType.Date, DateOnly.FromDateTime(DateTime.Now) }, 
+      { VariantType.DateTime, DateTime.Now }, 
+      { VariantType.Bool, true }, 
+      { VariantType.Currency, Decimal.MaxValue }, 
+      { VariantType.Null, DBNull.Value }, 
+      { VariantType.Empty, null }, 
+      { VariantType.Error, UInt16.MaxValue }, 
+      { VariantType.ClassId, Guid.NewGuid() }, 
+};
+
+    [Test]
+    public void TestVariantSerialization()
+    {
+      foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
+      {
+        if (TestVariantValues.TryGetValue(variantType, out var val))
+        {
+          var variant = new Variant(variantType, val);
+          var textWriter = new StringWriter();
+          var serializer = new XmlSerializer(typeof(Variant));
+          serializer.Serialize(textWriter, variant);
+          textWriter.Flush();
+          string str = textWriter.ToString();
+          TestContext.Out.WriteLine(str);
+          TestContext.Out.WriteLine();
+
+          var textReader = new StringReader(str);
+          var newVariant = (Variant?)serializer.Deserialize(textReader);
+          Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
+          Assert.That(newVariant.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
+        }
+      }
+    }
   }
-  }
+}
