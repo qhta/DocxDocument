@@ -1,0 +1,17 @@
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.csproj.AssemblyReference.cache
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.AssemblyInfoInputs.cache
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.AssemblyInfo.cs
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.csproj.CoreCompileInputs.cache
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.deps.json
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.pdb
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\DocumentModel.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\Qhta.Collections.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\DocumentModel.pdb
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\bin\Debug\net6.0\Qhta.Collections.pdb
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.csproj.CopyComplete
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\refint\DocumentModel.BaseTypes.OpenXml.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\DocumentModel.BaseTypes.OpenXml.pdb
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\DocumentModel.BaseTypes.OpenXml\obj\Debug\net6.0\ref\DocumentModel.BaseTypes.OpenXml.dll

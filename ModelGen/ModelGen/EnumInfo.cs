@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Namotion.Reflection;
+﻿using Namotion.Reflection;
 
 namespace ModelGen;
 

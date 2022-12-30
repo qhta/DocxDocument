@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-using DocumentFormat.OpenXml.Bibliography;
+﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Validation.Schema;
 using Namotion.Reflection;
 

@@ -1,0 +1,91 @@
+namespace DocumentModel.OpenXml;
+
+public static class VTVectorConverter
+{
+
+  private static BiDiDictionary<VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
+  {
+    { VectorBaseValues.OneByteSignedInteger, VariantType.Byte },
+    { VectorBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
+    { VectorBaseValues.FourBytesSignedInteger, VariantType.Int32 },
+    { VectorBaseValues.EightBytesSignedInteger, VariantType.Int64 },
+    { VectorBaseValues.OneByteUnsignedInteger, VariantType.Byte },
+    { VectorBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
+    { VectorBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
+    { VectorBaseValues.EightBytesUnsignedInteger, VariantType.UInt64 },
+    { VectorBaseValues.FourBytesReal, VariantType.Single },
+    { VectorBaseValues.EightBytesReal, VariantType.Double },
+    { VectorBaseValues.Bstr, VariantType.Bstr },
+    { VectorBaseValues.Lpstr, VariantType.Lpstr },
+    { VectorBaseValues.Lpwstr, VariantType.Lpwstr },
+    { VectorBaseValues.Date, VariantType.Date },
+    { VectorBaseValues.Filetime, VariantType.DateTime },
+    { VectorBaseValues.Bool, VariantType.Bool },
+    { VectorBaseValues.Currency, VariantType.Currency },
+    { VectorBaseValues.Error, VariantType.Error },
+    { VectorBaseValues.ClassId, VariantType.ClassId },
+    { VectorBaseValues.ClipboardData, VariantType.ClipboardData },
+    { VectorBaseValues.Variant, VariantType.Variant },
+  };
+
+  public static VariantType? GetBaseType(VTVector openXmlElement)
+  {
+    if (openXmlElement.BaseType?.Value != null)
+      return VectorBaseTypeConversion.GetValue2(openXmlElement.BaseType.Value);
+    return null;
+  }
+
+  public static void SetBaseType(VTVector openXmlElement, VariantType? value)
+  {
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.BaseType = VectorBaseTypeConversion.GetValue1((VariantType)value);
+      else
+        openXmlElement.BaseType = null;
+    }
+  }
+
+  public static VectorVariant? GetValue(VTVector? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var baseType = GetBaseType(openXmlElement);
+      var itemType = (baseType != null) ? VectorVariant.ItemTypes[(VariantType)baseType] : null;
+      var _value = new VectorVariant();
+      foreach (var item in openXmlElement.Elements())
+      {
+        var itemVariant = VariantConverter.GetValue(item);
+        var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
+        _value.Add(itemValue);
+      }
+      return _value;
+    }
+    return null;
+  }
+
+  public static void SetValue(VTVector openXmlElement, VectorVariant? value)
+  {
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren();
+      if (value != null)
+        foreach (var itemValue in value)
+        {
+          var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
+          openXmlElement.AppendChild(itemVariant);
+        }
+    }
+  }
+
+  public static VTVector CreateOpenXmlElement(VectorVariant? value)
+  {
+    var openXmlElement = new VTVector();
+    if (value != null)
+    {
+      SetBaseType(openXmlElement, value.BaseType);
+      SetValue(openXmlElement, value);
+    }
+    return openXmlElement;
+  }
+}

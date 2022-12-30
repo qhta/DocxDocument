@@ -5,9 +5,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using Namotion.Reflection;
 
 using System.Diagnostics;
-using System.Reflection;
 using DocumentFormat.OpenXml.Validation.Schema;
-using System.CodeDom.Compiler;
 
 namespace ModelGen;
 
