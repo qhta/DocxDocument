@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 using System.Xml.Schema;
 
 using DocumentFormat.OpenXml.Framework.Metadata;

@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using DocumentFormat.OpenXml.Framework.Metadata;
 using System.Runtime.CompilerServices;
@@ -107,6 +106,8 @@ public class TypeInfo : ModelElement
       }
       aNamespace = nSpace;
     }
+    if (aNamespace == "System")
+      aNamespace = "";
     return aNamespace;
   }
 
@@ -125,6 +126,8 @@ public class TypeInfo : ModelElement
       aNamespace = this.Namespace;
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
+    if (aNamespace == "System")
+      aNamespace = "";
     if (IsGenericTypeParameter)
       return new FullTypeName(Name, null);
     var result = new FullTypeName(aName, aNamespace);

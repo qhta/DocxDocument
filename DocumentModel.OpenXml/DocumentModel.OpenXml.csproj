@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BaseTypes\VariantImpl.cs" />
+    <Compile Remove="BaseTypes\VariantReader.cs" />
+    <Compile Remove="BaseTypes\VariantWriter.cs" />
+    <Compile Remove="BaseTypes\VTArrayImpl.cs" />
+    <Compile Remove="BaseTypes\VTArrayReader.cs" />
+    <Compile Remove="BaseTypes\VTArrayWriter.cs" />
+    <Compile Remove="BaseTypes\VTVectorImpl.cs" />
+    <Compile Remove="BaseTypes\VTVectorReader.cs" />
+    <Compile Remove="BaseTypes\VTVectorWriter.cs" />
+    <Compile Remove="Properties\CoreProperties.cs" />
+    <Compile Remove="Properties\CustomDocumentProperty.cs" />
+    <Compile Remove="Properties\CustomProperties.cs" />
+    <Compile Remove="Properties\CustomPropertiesConverter - Copy.cs" />
+    <Compile Remove="Properties\ExtendedProperties.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Qhta.Collections">
+      <HintPath>..\..\MyLib\Qhta.Collections\obj\Debug\Qhta.Collections.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
