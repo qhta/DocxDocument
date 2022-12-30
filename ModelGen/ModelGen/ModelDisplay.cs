@@ -1,6 +1,4 @@
-﻿using System.CodeDom.Compiler;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public static class ModelDisplay
 {

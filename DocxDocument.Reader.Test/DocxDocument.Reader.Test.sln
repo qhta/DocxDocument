@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader.Test", "DocxDocument.Reader.Test.csproj", "{14C1F897-10E1-4D02-9B6F-99F233A5131C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader", "..\DocxDocument.Reader\DocxDocument.Reader.csproj", "{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel", "..\DocumentModel\DocumentModel.csproj", "{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.OpenXml", "..\DocumentModel.OpenXml\DocumentModel.OpenXml.csproj", "{2BD5C97A-4B33-4A85-96EA-AE844F25ABA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Serialization", "..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj", "{CC74288F-4741-483C-A01F-2CD9839A0934}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.TypeUtils", "..\..\MyLib\Qhta.TypeUtils\Qhta.TypeUtils.csproj", "{68864BCD-44EF-454C-AE92-E780E5546B5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Conversion", "..\..\MyLib\Qhta.Conversion\Qhta.Conversion.csproj", "{F3FCADFF-9A07-49B8-8E4D-91B2BC873A6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14C1F897-10E1-4D02-9B6F-99F233A5131C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C1F897-10E1-4D02-9B6F-99F233A5131C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C1F897-10E1-4D02-9B6F-99F233A5131C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C1F897-10E1-4D02-9B6F-99F233A5131C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD5C97A-4B33-4A85-96EA-AE844F25ABA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD5C97A-4B33-4A85-96EA-AE844F25ABA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD5C97A-4B33-4A85-96EA-AE844F25ABA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD5C97A-4B33-4A85-96EA-AE844F25ABA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC74288F-4741-483C-A01F-2CD9839A0934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC74288F-4741-483C-A01F-2CD9839A0934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC74288F-4741-483C-A01F-2CD9839A0934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC74288F-4741-483C-A01F-2CD9839A0934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68864BCD-44EF-454C-AE92-E780E5546B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68864BCD-44EF-454C-AE92-E780E5546B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68864BCD-44EF-454C-AE92-E780E5546B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68864BCD-44EF-454C-AE92-E780E5546B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FCADFF-9A07-49B8-8E4D-91B2BC873A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FCADFF-9A07-49B8-8E4D-91B2BC873A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FCADFF-9A07-49B8-8E4D-91B2BC873A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FCADFF-9A07-49B8-8E4D-91B2BC873A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A2ACE62-5D8B-4B85-99C7-ED0B15EB6D6F}
+	EndGlobalSection
+EndGlobal

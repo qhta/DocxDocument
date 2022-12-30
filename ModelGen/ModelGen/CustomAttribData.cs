@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Vml.Spreadsheet;
 
 namespace ModelGen;

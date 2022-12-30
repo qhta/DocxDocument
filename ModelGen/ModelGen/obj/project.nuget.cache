@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t6D/lHpqkH4m/QupYnmNuRKTF4u5ZXhaEAdeoHN7REKOW3MMrHElTRnNQo0z2Bc1L3gVMRvq992S3fUXAqK0nw==",
+  "dgSpecHash": "shAyYPtRJ7SttejUNEFi6Q+BO1yBWLSCMybfTI3IzqCYjIfYnhsPMBINpigrbq3osr16Mzseq9wrlonDotH/oQ==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\7.0.0\\system.io.packaging.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",

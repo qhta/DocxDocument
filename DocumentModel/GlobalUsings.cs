@@ -1,0 +1,9 @@
+global using System;
+global using System.Collections;
+global using System.Collections.ObjectModel;
+global using System.IO;
+global using System.IO.Packaging;
+global using System.Linq;
+global using System.Text.Json.Serialization;
+global using System.Xml.Serialization;
+global using Qhta.Xml.Serialization;

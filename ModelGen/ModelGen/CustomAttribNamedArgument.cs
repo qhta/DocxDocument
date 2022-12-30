@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public class CustomAttribNamedArgument: IOwnedElement
 {

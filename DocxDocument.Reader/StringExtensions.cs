@@ -45,9 +45,9 @@ public static class StringExtensions
   public static Dictionary<char, int> LoadCharset(string filename)
   {
     Dictionary<char, int> charset = new Dictionary<char, int>();
-    using (var textReader = File.OpenText(filename))
+    using (StreamReader textReader = File.OpenText(filename))
     {
-      string line;
+      string? line;
       while ((line = textReader.ReadLine())!=null)
       {
         var strs = line.Split(new char[] { ',', ';' });

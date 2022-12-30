@@ -1,8 +1,11 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 
-using DM = DocxDocument.Model;
+using DM = DocumentModel;
+using DMP = DocumentModel.Properties;
+using DMW = DocumentModel.Wordprocessing;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 using W10 = DocumentFormat.OpenXml.Office2010.Word;
+using DocumentModel.Properties;
 
 namespace DocxDocument.Reader;
 
@@ -76,18 +79,18 @@ public partial class DocxReader
     WordprocessingDocument = wordprocessingDocument;
   }
 
-  public DM.Document ReadDocument()
+  public DMW.Document ReadDocument()
   {
     return ReadDocument(Parts.All);
   }
 
-  public DM.Document ReadDocument(Parts parts)
+  public DMW.Document ReadDocument(Parts parts)
   {
     //WP.Settings
     var t0 = DateTime.Now;
-    var document = new DM.Document(WordprocessingDocument);
-    //if (parts.HasFlag(Parts.AllDocumentProperties))
-    //  document.Properties = ReadDocumentProperties(parts);
+    var document = new DMW.Document();
+    if (parts.HasFlag(Parts.AllDocumentProperties))
+      document.Properties = ReadDocumentProperties(parts);
     //if (parts.HasFlag(Parts.AllDocumentSettings))
     //  document.Settings = ReadDocumentSettings(parts);
     //var t1 = DateTime.Now;
@@ -107,52 +110,69 @@ public partial class DocxReader
     return document;
   }
 
-  private DM.ListDefinitions ReadListDefinitions(WP.Numbering? numbering)
+  private DMP.DocumentProperties ReadDocumentProperties(Parts parts)
   {
-    var listDefinitions = new DM.ListDefinitions();
-    if (numbering == null) 
-      return listDefinitions;
+    var properties = new DMP.DocumentProperties();
+    if (parts.HasFlag(Parts.CoreFileProperties))
+      properties.CoreProperties = DocumentModel.OpenXml.Properties.CorePropertiesConverter.GetValue(WordprocessingDocument.PackageProperties);
 
-    foreach (var element in numbering.ChildElements)
-    {
-      if (element is WP.AbstractNum abstractNum)
-      {
-        int numId = abstractNum.AbstractNumberId?.Value ?? 0;
-        DM.MultilevelType multilevelType = DM.MultilevelType.Single;
-        if (abstractNum.MultiLevelType?.Val != null)
-          multilevelType = (DM.MultilevelType)(abstractNum.MultiLevelType.Val.Value);
-        DM.ListDefinition listDefinition = new DM.ListDefinition { ID = numId, MultiLevelType = multilevelType };
-        listDefinitions.Add(listDefinition);
-        foreach (var item in abstractNum.Elements<WP.Level>())
-        {
-          var level = new DM.ListLevel
-          {
-            Level = item.LevelIndex?.Value + 1 ?? 0,
-            StartNumber = item.StartNumberingValue?.Val ?? 0,
-            RestartLevel = item.LevelRestart?.Val ?? 0,
-            NumberingFormat = (DM.NumberingFormat)(item.NumberingFormat?.Val?.Value ?? 0),
-            LevelText = item.LevelText?.Val
-          };
-          if (level.LevelText != null)
-          {
-            var fontName = item.NumberingSymbolRunProperties?.RunFonts?.Ascii?.Value;
-            if (fontName != null)
-            {
-              var appName = AppDomain.CurrentDomain.BaseDirectory;
-              string fileName = Path.Combine(appName, "Encodings", fontName + ".enc");
-              if (StringExtensions.EnsureLoadCharset(fontName, fileName))
-              {
-                string str = level.LevelText;
-                level.LevelText = str.DecodeCharset(fontName);
-              }
-            }
-          }
-          level.ID = level.Level;
-          listDefinition.Levels.Add(level);
-        }
-      }
-    }
-    return listDefinitions;
+    if (parts.HasFlag(Parts.ExtendedFileProperties) && WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null)
+      properties.ExtendedProperties =
+        DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.GetValue(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+
+    if (parts.HasFlag(Parts.CustomFileProperties) && WordprocessingDocument.CustomFilePropertiesPart?.Properties != null)
+      properties.CustomProperties =
+        DocumentModel.OpenXml.Properties.CustomPropertiesConverter.GetValue(WordprocessingDocument.CustomFilePropertiesPart.Properties);
+      
+    return properties;
   }
+
+  //private DM.ListDefinitions ReadListDefinitions(WP.Numbering? numbering)
+  //{
+  //  var listDefinitions = new DM.ListDefinitions();
+  //  if (numbering == null) 
+  //    return listDefinitions;
+
+  //  foreach (var element in numbering.ChildElements)
+  //  {
+  //    if (element is WP.AbstractNum abstractNum)
+  //    {
+  //      int numId = abstractNum.AbstractNumberId?.Value ?? 0;
+  //      DM.MultilevelType multilevelType = DM.MultilevelType.Single;
+  //      if (abstractNum.MultiLevelType?.Val != null)
+  //        multilevelType = (DM.MultilevelType)(abstractNum.MultiLevelType.Val.Value);
+  //      DM.ListDefinition listDefinition = new DM.ListDefinition { ID = numId, MultiLevelType = multilevelType };
+  //      listDefinitions.Add(listDefinition);
+  //      foreach (var item in abstractNum.Elements<WP.Level>())
+  //      {
+  //        var level = new DM.ListLevel
+  //        {
+  //          Level = item.LevelIndex?.Value + 1 ?? 0,
+  //          StartNumber = item.StartNumberingValue?.Val ?? 0,
+  //          RestartLevel = item.LevelRestart?.Val ?? 0,
+  //          NumberingFormat = (DM.NumberingFormat)(item.NumberingFormat?.Val?.Value ?? 0),
+  //          LevelText = item.LevelText?.Val
+  //        };
+  //        if (level.LevelText != null)
+  //        {
+  //          var fontName = item.NumberingSymbolRunProperties?.RunFonts?.Ascii?.Value;
+  //          if (fontName != null)
+  //          {
+  //            var appName = AppDomain.CurrentDomain.BaseDirectory;
+  //            string fileName = Path.Combine(appName, "Encodings", fontName + ".enc");
+  //            if (StringExtensions.EnsureLoadCharset(fontName, fileName))
+  //            {
+  //              string str = level.LevelText;
+  //              level.LevelText = str.DecodeCharset(fontName);
+  //            }
+  //          }
+  //        }
+  //        level.ID = level.Level;
+  //        listDefinition.Levels.Add(level);
+  //      }
+  //    }
+  //  }
+  //  return listDefinitions;
+  //}
 
 }

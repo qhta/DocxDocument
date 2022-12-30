@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Reflection;
 
 namespace ModelGen;
 
@@ -197,7 +196,7 @@ public class ModelCreator
   private TimeSpan GenerateCode()
   {
     ModelDisplay.WriteLine();
-    ModelGenerator.PrepareProjects();
+    //ModelGenerator.PrepareProjects();
     int generatedCount = 0;
     ModelDisplay.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
     DateTime t1 = DateTime.Now;
@@ -213,7 +212,7 @@ public class ModelCreator
       if (ModelGenerator.GenerateTypeFile(typeInfo))
         generatedCount++;
     }
-    ModelGenerator.GenerateGlobalUsings();
+    //ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     ModelDisplay.WriteLine();
