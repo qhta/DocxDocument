@@ -1,48 +1,42 @@
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Numerics;
-
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 
 using DocumentModel.BaseTypes;
-using DocumentModel.Properties;
 
 namespace DocumentModel;
 
 /// <summary>
 /// Variant implementation. Value is of any type.
 /// </summary>
+//[Newtonsoft.Json.JsonConverter(typeof(VariantJsonConverter))]
 [XmlInclude(typeof(DateOnly))]
 [XmlInclude(typeof(DBNull))]
 [XmlInclude(typeof(HexWord))]
 [XmlInclude(typeof(VectorVariant))]
 [XmlInclude(typeof(ArrayVariant))]
-[TypeConverter(typeof(VariantXmlConverter))]
+//[TypeConverter(typeof(VariantXmlConverter))]
 [XmlContentProperty("Value")]
-//[QXmlArrayItem("sbyte", typeof(SByte))]
-//[QXmlArrayItem("int16", typeof(Int16))]
-//[QXmlArrayItem("int32", typeof(Int32))]
-//[QXmlArrayItem("int64", typeof(Int64))]
-//[QXmlArrayItem("byte", typeof(Byte))]
-//[QXmlArrayItem("uint16", typeof(UInt16))]
-//[QXmlArrayItem("uint32", typeof(UInt32))]
-//[QXmlArrayItem("uint64", typeof(UInt64))]
-//[QXmlArrayItem("single", typeof(Single))]
-//[QXmlArrayItem("double", typeof(Double))]
-//[QXmlArrayItem("char", typeof(Char))]
-//[QXmlArrayItem("string", typeof(String))]
-//[QXmlArrayItem("dateonly", typeof(DateOnly))]
-//[QXmlArrayItem("datetime", typeof(DateTime))]
-//[QXmlArrayItem("boolean", typeof(Boolean))]
-//[QXmlArrayItem("decimal", typeof(Decimal))]
-//[QXmlArrayItem("hexword", typeof(HexWord))]
-//[QXmlArrayItem("null", Value = null)]
-//[QXmlArrayItem("guid", typeof(Guid))]
-//[QXmlArrayItem("byte[]", typeof(byte[]))]
-//[QXmlArrayItem("variant", typeof(Variant))]
+[QXmlArrayItem("sbyte", typeof(SByte))]
+[QXmlArrayItem("int16", typeof(Int16))]
+[QXmlArrayItem("int32", typeof(Int32))]
+[QXmlArrayItem("int64", typeof(Int64))]
+[QXmlArrayItem("byte", typeof(Byte))]
+[QXmlArrayItem("uint16", typeof(UInt16))]
+[QXmlArrayItem("uint32", typeof(UInt32))]
+[QXmlArrayItem("uint64", typeof(UInt64))]
+[QXmlArrayItem("single", typeof(Single))]
+[QXmlArrayItem("double", typeof(Double))]
+[QXmlArrayItem("char", typeof(Char))]
+[QXmlArrayItem("string", typeof(String))]
+[QXmlArrayItem("dateonly", typeof(DateOnly))]
+[QXmlArrayItem("datetime", typeof(DateTime))]
+[QXmlArrayItem("boolean", typeof(Boolean))]
+[QXmlArrayItem("decimal", typeof(Decimal))]
+[QXmlArrayItem("hexword", typeof(HexWord))]
+[QXmlArrayItem("null", Value = null)]
+[QXmlArrayItem("guid", typeof(Guid))]
+[QXmlArrayItem("byte[]", typeof(byte[]))]
+[QXmlArrayItem("variant", typeof(Variant))]
 public record Variant : IConvertible
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
@@ -126,6 +120,8 @@ public record Variant : IConvertible
     var val = ConvertValue(VariantType, value);
     if (val != null)
       _Value = val;
+    else if (VariantType==VariantType.Null)
+      _Value = DBNull.Value;
     else
       SetValueRecognizeType(value);
   }
@@ -218,7 +214,7 @@ public record Variant : IConvertible
 
       case VariantType.DateTime:
         if (value is string)
-          return XmlConvert.ToDateTime((string)value);
+          return Convert.ToDateTime((string)value);
         else
           return Convert.ToDateTime(value);
 
@@ -532,6 +528,7 @@ public record Variant : IConvertible
     else if (conversionType == typeof(Guid)) return ToGuid(provider);
     else if (conversionType == typeof(byte[])) return ToBytes(provider);
     else if (conversionType == typeof(Variant)) return new Variant(this);
+    else if (conversionType == typeof(object)) return this;
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
 
