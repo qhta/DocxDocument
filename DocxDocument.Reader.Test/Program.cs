@@ -9,7 +9,7 @@ namespace DocxDocument.Reader.Test
     {
       var testInstance = new TestVariants();
       testInstance.Setup();
-      testInstance.TestVariantSerialization();
+      testInstance.TestXmlVectorVariantSerialization();
       Console.WriteLine("Test passed");
     }
   }

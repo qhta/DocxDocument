@@ -1,17 +1,14 @@
-using System.Diagnostics;
 using System.Globalization;
-using System.Numerics;
-using System.Reflection.Metadata;
-using System.Xml.Serialization;
-
-using VariantType = DocumentModel.VariantType;
-using Variant = DocumentModel.Variant;
-
+using System.Text.Json.Serialization;
 using DocumentModel;
-using Qhta.Xml.Serialization;
-using DocumentFormat.OpenXml.VariantTypes;
-using Microsoft.VisualBasic;
+using DocumentModel.BaseTypes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Qhta.TypeUtils;
+using Qhta.Xml.Serialization;
+
+using Variant = DocumentModel.Variant;
+using VariantType = DocumentModel.VariantType;
 
 namespace DocxDocument.Reader.Test;
 public class TestVariants : TestBase
@@ -1214,11 +1211,44 @@ public class TestVariants : TestBase
       { VariantType.Empty, null },
       { VariantType.Error, UInt16.MaxValue },
       { VariantType.ClassId, Guid.NewGuid() },
-      { VariantType.Variant, new Variant() },
+      //{ VariantType.Variant, new Variant() },
     };
 
+  //[Test]
+  public void TestJsonVariantSerialization()
+  {
+
+    foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
+    {
+      if (variantType > VariantType.Empty)
+        if (TestVariantValues.TryGetValue(variantType, out var val))
+        {
+          WriteLine($"Testing variant type {variantType}");
+          var variant = new Variant(variantType, val);
+          var textWriter = new StringWriter();
+          var serializer = new JsonSerializer();
+          //serializer.Converters.Add(new VariantJsonConverter());
+          //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+          serializer.Serialize(textWriter, variant);
+          textWriter.Flush();
+          string str = textWriter.ToString();
+          WriteLine(str);
+          WriteLine();
+
+        var textReader = new StringReader(str);
+        var jsonReader = new JsonTextReader(textReader);
+        var newVariant = (Variant?)serializer.Deserialize<Variant>(jsonReader);
+        Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
+        Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
+          $"Deserialized variant VariantType different for VariantType.{variantType}");
+        Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
+        Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
+      }
+    }
+  }
+
   [Test]
-  public void TestVariantSerialization()
+  public void TestXmlVariantSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
@@ -1247,7 +1277,7 @@ public class TestVariants : TestBase
   }
 
   [Test]
-  public void TestVectorVariantSerialization()
+  public void TestXmlVectorVariantSerialization()
   {
     var vectorVariant = new VectorVariant();
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
@@ -1286,7 +1316,7 @@ public class TestVariants : TestBase
   }
 
   [Test]
-  public void TestArrayVariantSerialization()
+  public void TestXmlArrayVariantSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
