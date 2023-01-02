@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Xml;
 
 using DocumentModel.BaseTypes;
+using Qhta.Conversion;
 
 namespace DocumentModel;
 
@@ -16,28 +17,28 @@ namespace DocumentModel;
 [XmlInclude(typeof(ArrayVariant))]
 //[TypeConverter(typeof(VariantXmlConverter))]
 [XmlContentProperty("Value")]
-[QXmlArrayItem("sbyte", typeof(SByte))]
-[QXmlArrayItem("int16", typeof(Int16))]
-[QXmlArrayItem("int32", typeof(Int32))]
-[QXmlArrayItem("int64", typeof(Int64))]
-[QXmlArrayItem("byte", typeof(Byte))]
-[QXmlArrayItem("uint16", typeof(UInt16))]
-[QXmlArrayItem("uint32", typeof(UInt32))]
-[QXmlArrayItem("uint64", typeof(UInt64))]
-[QXmlArrayItem("single", typeof(Single))]
-[QXmlArrayItem("double", typeof(Double))]
-[QXmlArrayItem("char", typeof(Char))]
-[QXmlArrayItem("string", typeof(String))]
-[QXmlArrayItem("dateonly", typeof(DateOnly))]
-[QXmlArrayItem("datetime", typeof(DateTime))]
-[QXmlArrayItem("boolean", typeof(Boolean))]
-[QXmlArrayItem("decimal", typeof(Decimal))]
-[QXmlArrayItem("hexword", typeof(HexWord))]
-[QXmlArrayItem("null", Value = null)]
-[QXmlArrayItem("guid", typeof(Guid))]
-[QXmlArrayItem("byte[]", typeof(byte[]))]
-[QXmlArrayItem("variant", typeof(Variant))]
-public record Variant : IConvertible
+[QXmlElementType("sbyte", typeof(SByte))]
+[QXmlElementType("int16", typeof(Int16))]
+[QXmlElementType("int32", typeof(Int32))]
+[QXmlElementType("int64", typeof(Int64))]
+[QXmlElementType("byte", typeof(Byte))]
+[QXmlElementType("uint16", typeof(UInt16))]
+[QXmlElementType("uint32", typeof(UInt32))]
+[QXmlElementType("uint64", typeof(UInt64))]
+[QXmlElementType("single", typeof(Single))]
+[QXmlElementType("double", typeof(Double))]
+[QXmlElementType("char", typeof(Char))]
+[QXmlElementType("string", typeof(String))]
+[QXmlElementType("dateonly", typeof(DateOnly))]
+[QXmlElementType("datetime", typeof(DateTime))]
+[QXmlElementType("boolean", typeof(Boolean))]
+[QXmlElementType("decimal", typeof(Decimal))]
+[QXmlElementType("hexword", typeof(HexWord))]
+[QXmlElementType("null", Value = null)]
+[QXmlElementType("guid", typeof(Guid))]
+[QXmlElementType("bytes", typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
+[QXmlElementType("variant", typeof(Variant))]
+public record Variant : IConvertible, IEquatable<Variant>
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
   {
@@ -824,4 +825,19 @@ public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? cu
     return null;
   }
 
+  public virtual bool Equals(Variant? other)
+  {
+    if (other == null) return false;
+    if (this.VariantType != other.VariantType) 
+      return false;
+    if (this.Value is byte[] thisBytes && other.Value is byte[] otherBytes)
+    {
+      if (thisBytes.Length != otherBytes.Length) return false;
+      return thisBytes.SequenceEqual(otherBytes);
+      //for (int i=0; i<thisBytes.Length; i++)
+      //  if (thisBytes[i] != otherBytes[i]) return false;
+      //return true;
+    }
+    return this.Value == other.Value;
+  }
 }
