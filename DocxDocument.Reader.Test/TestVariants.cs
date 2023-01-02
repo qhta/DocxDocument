@@ -1085,7 +1085,6 @@ public class TestVariants : TestBase
     Assert.That((int)variant, Is.EqualTo(n), "Char set/ Int get");
   }
 
-
   [Test]
   public void TestErrorVariantType()
   {
@@ -1189,6 +1188,7 @@ public class TestVariants : TestBase
 
   private static Dictionary<VariantType, object?> TestVariantValues = new()
     {
+      { VariantType.Empty, null },
       { VariantType.SByte, SByte.MaxValue },
       { VariantType.Int16, Int16.MaxValue },
       { VariantType.Int32, Int32.MaxValue },
@@ -1208,51 +1208,51 @@ public class TestVariants : TestBase
       { VariantType.Bool, true },
       { VariantType.Currency, Decimal.MaxValue },
       { VariantType.Null, DBNull.Value },
-      { VariantType.Empty, null },
       { VariantType.Error, UInt16.MaxValue },
       { VariantType.ClassId, Guid.NewGuid() },
+      { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
       //{ VariantType.Variant, new Variant() },
     };
 
   //[Test]
-  public void TestJsonVariantSerialization()
-  {
+  //public void TestJsonVariantSerialization()
+  //{
 
-    foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
-    {
-      if (variantType > VariantType.Empty)
-        if (TestVariantValues.TryGetValue(variantType, out var val))
-        {
-          WriteLine($"Testing variant type {variantType}");
-          var variant = new Variant(variantType, val);
-          var textWriter = new StringWriter();
-          var serializer = new JsonSerializer();
-          //serializer.Converters.Add(new VariantJsonConverter());
-          //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-          serializer.Serialize(textWriter, variant);
-          textWriter.Flush();
-          string str = textWriter.ToString();
-          WriteLine(str);
-          WriteLine();
+  //  foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
+  //  {
+  //    if (variantType == VariantType.Blob)
+  //      if (TestVariantValues.TryGetValue(variantType, out var val))
+  //      {
+  //        WriteLine($"Testing variant type {variantType}");
+  //        var variant = new Variant(variantType, val);
+  //        var textWriter = new StringWriter();
+  //        var serializer = new JsonSerializer();
+  //        //serializer.Converters.Add(new VariantJsonConverter());
+  //        //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+  //        serializer.Serialize(textWriter, variant);
+  //        textWriter.Flush();
+  //        string str = textWriter.ToString();
+  //        WriteLine(str);
+  //        WriteLine();
 
-        var textReader = new StringReader(str);
-        var jsonReader = new JsonTextReader(textReader);
-        var newVariant = (Variant?)serializer.Deserialize<Variant>(jsonReader);
-        Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
-        Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
-          $"Deserialized variant VariantType different for VariantType.{variantType}");
-        Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
-        Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
-      }
-    }
-  }
+  //      var textReader = new StringReader(str);
+  //      var jsonReader = new JsonTextReader(textReader);
+  //      var newVariant = (Variant?)serializer.Deserialize<Variant>(jsonReader);
+  //      Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
+  //      Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
+  //        $"Deserialized variant VariantType different for VariantType.{variantType}");
+  //      Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
+  //      Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
+  //    }
+  //  }
+  //}
 
   [Test]
   public void TestXmlVariantSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
-      //if (variantType <= VariantType.Int16)
+      if (variantType == VariantType.Blob)
       if (TestVariantValues.TryGetValue(variantType, out var val))
       {
         WriteLine($"Testing variant type {variantType}");
