@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Array Variant Type Simple Type
 /// </summary>
- [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+//[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 public enum VariantType
 {
   /// <summary>
