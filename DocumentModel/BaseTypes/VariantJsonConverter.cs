@@ -23,7 +23,7 @@ public class VariantJsonConverter : Newtonsoft.Json.JsonConverter<Variant>
       {
         writer.WritePropertyName(nameof(Variant.Value));
         writer.WriteStartObject();
-        writer.WritePropertyName(value.Value.GetType().Name.ToLower());
+        writer.WritePropertyName(value.Value.GetType().Name);
         writer.WriteValue(value.Value);
         writer.WriteEndObject();
       }

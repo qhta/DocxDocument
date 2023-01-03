@@ -2907,7 +2907,6 @@
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.5.0",
       "NUnit3TestAdapter >= 4.3.1",
-      "Newtonsoft.Json >= 13.0.1",
       "Qhta.Conversion >= 1.0.0",
       "Qhta.Xml.Serialization >= 1.0.0",
       "coverlet.collector >= 3.2.0"
@@ -2988,10 +2987,6 @@
           "NUnit3TestAdapter": {
             "target": "Package",
             "version": "[4.3.1, )"
-          },
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[13.0.1, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
