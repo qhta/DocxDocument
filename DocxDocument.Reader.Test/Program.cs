@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace DocxDocument.Reader.Test;
 
-namespace DocxDocument.Reader.Test
+internal class Program
 {
-  class Program
+  private static void Main(string[] args)
   {
-    static void Main(string[] args)
-    {
-      var testInstance = new TestVariants();
-      testInstance.Setup();
-      testInstance.TestXmlArrayVariantSerialization();
-      Console.WriteLine("Test passed");
-    }
+    var testInstance = new TestVariants();
+    testInstance.Setup();
+    testInstance.TestXmlArrayVariantSerialization();
+    Console.WriteLine("Test passed");
   }
 }
