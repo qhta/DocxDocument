@@ -1,4 +1,6 @@
+//#define TraceSetValue
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Xml;
 
 using DocumentModel.BaseTypes;
@@ -17,27 +19,27 @@ namespace DocumentModel;
 [XmlInclude(typeof(ArrayVariant))]
 //[TypeConverter(typeof(VariantXmlConverter))]
 [XmlContentProperty("Value")]
-[QXmlElementType("sbyte", typeof(SByte))]
-[QXmlElementType("int16", typeof(Int16))]
-[QXmlElementType("int32", typeof(Int32))]
-[QXmlElementType("int64", typeof(Int64))]
-[QXmlElementType("byte", typeof(Byte))]
-[QXmlElementType("uint16", typeof(UInt16))]
-[QXmlElementType("uint32", typeof(UInt32))]
-[QXmlElementType("uint64", typeof(UInt64))]
-[QXmlElementType("single", typeof(Single))]
-[QXmlElementType("double", typeof(Double))]
-[QXmlElementType("char", typeof(Char))]
-[QXmlElementType("string", typeof(String))]
-[QXmlElementType("dateonly", typeof(DateOnly))]
-[QXmlElementType("datetime", typeof(DateTime))]
-[QXmlElementType("boolean", typeof(Boolean))]
-[QXmlElementType("decimal", typeof(Decimal))]
-[QXmlElementType("hexword", typeof(HexWord))]
-[QXmlElementType("null", Value = null)]
-[QXmlElementType("guid", typeof(Guid))]
-[QXmlElementType("bytes", typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
-[QXmlElementType("variant", typeof(Variant))]
+[QXmlElementType(typeof(SByte))]
+[QXmlElementType(typeof(Int16))]
+[QXmlElementType(typeof(Int32))]
+[QXmlElementType(typeof(Int64))]
+[QXmlElementType(typeof(Byte))]
+[QXmlElementType(typeof(UInt16))]
+[QXmlElementType(typeof(UInt32))]
+[QXmlElementType(typeof(UInt64))]
+[QXmlElementType(typeof(Single))]
+[QXmlElementType(typeof(Double))]
+[QXmlElementType(typeof(Char))]
+[QXmlElementType(typeof(String))]
+[QXmlElementType(typeof(DateOnly))]
+[QXmlElementType(typeof(DateTime))]
+[QXmlElementType(typeof(Boolean))]
+[QXmlElementType(typeof(Decimal))]
+[QXmlElementType(typeof(HexWord))]
+[QXmlElementType("null",Value = null)]
+[QXmlElementType(typeof(Guid))]
+[QXmlElementType(typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
+[QXmlElementType(typeof(Variant))]
 public record Variant : IConvertible, IEquatable<Variant>
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
@@ -98,6 +100,9 @@ public record Variant : IConvertible, IEquatable<Variant>
     get => _VariantType;
     set
     {
+#if TraceSetValue
+      Debug.WriteLine($"Set VariantType({value})");
+#endif
       if (value == VariantType.Null)
         _Value = DBNull.Value;
       _VariantType = value;
@@ -118,6 +123,9 @@ public record Variant : IConvertible, IEquatable<Variant>
 
   public void SetValue(object? value)
   {
+#if TraceSetValue
+    Debug.WriteLine($"SetValue({value})");
+#endif
     var val = ConvertValue(VariantType, value);
     if (val != null)
       _Value = val;
@@ -827,17 +835,19 @@ public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? cu
 
   public virtual bool Equals(Variant? other)
   {
+    bool result = false;
     if (other == null) return false;
     if (this.VariantType != other.VariantType) 
       return false;
+    if (this._Value == null && other._Value == null)
+      return true;
     if (this.Value is byte[] thisBytes && other.Value is byte[] otherBytes)
-    {
-      if (thisBytes.Length != otherBytes.Length) return false;
-      return thisBytes.SequenceEqual(otherBytes);
-      //for (int i=0; i<thisBytes.Length; i++)
-      //  if (thisBytes[i] != otherBytes[i]) return false;
-      //return true;
-    }
-    return this.Value == other.Value;
+      result = thisBytes.SequenceEqual(otherBytes);
+    else
+    if (this.Value is Variant thisVariant && other.Value is Variant otherVariant)
+      result = thisVariant.Equals(otherVariant);
+    else
+      result = this._Value?.Equals(other._Value) == true;
+    return result;
   }
 }
