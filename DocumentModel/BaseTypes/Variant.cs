@@ -850,4 +850,9 @@ public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? cu
       result = this._Value?.Equals(other._Value) == true;
     return result;
   }
+
+  public override int GetHashCode()
+  {
+    return HashCode.Combine(this.VariantType, this._Value);
+  }
 }
