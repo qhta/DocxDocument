@@ -1,6 +1,4 @@
-﻿using DocumentModel.UI;
-
-namespace DocumentModel.Properties;
+﻿namespace DocumentModel.Properties;
 
 public partial class CustomProperties : ICollection<CustomDocumentProperty>
 {

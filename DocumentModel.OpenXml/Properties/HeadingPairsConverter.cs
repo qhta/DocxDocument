@@ -15,26 +15,59 @@ public static class HeadingPairsConverter
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
-  
-  public static DocumentModel.VectorVariant? GetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+
+  public static DocumentModel.Properties.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+  {
+    if (openXmlElement?.VTVector == null) return null;
+    var vector = VTVectorConverter.GetValue(openXmlElement?.VTVector);
+    if (vector == null) return null;
+    var result = new DocumentModel.Properties.HeadingPairs();
+    for (int i = 0; i < vector.Count; i++)
+    {
+      var str = (string?)Convert.ChangeType(vector[i], typeof(string));
+      i++;
+      if (i >= vector.Count)
+        break;
+      var num = (int?)Convert.ChangeType(vector[i], typeof(int));
+      if (str != null && num!=null)
+        result.Add(new StringNum { Str = str, Num = num });
+    }
+    return result;
+  }
+
+  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.Properties.HeadingPairs? value)
+  {
+    if (openXmlElement != null && value!=null)
+    {
+      var vector = new VectorVariant();
+      foreach (var item in value)
+      {
+        vector.Add(item.Str);
+        vector.Add(item.Num);
+      }
+      openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(vector);
+    }
+  }
+
+  public static DocumentModel.Properties.HeadingPairs? GetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = GetVTVector(openXmlElement);
+      var value = GetHeadingPairs(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.VectorVariant? value)
+  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.Properties.HeadingPairs? value)
   {
     if (openXmlElement != null)
     {
-      SetVTVector(openXmlElement, value);
+      SetHeadingPairs(openXmlElement, value);
     }
   }
   
-  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DocumentModel.VectorVariant? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DocumentModel.Properties.HeadingPairs? value)
   {
     if (value != null)
     {
