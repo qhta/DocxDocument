@@ -30,7 +30,7 @@ public partial class DigitalSignature: ModelElementImpl
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTBlob>();
         if (item != null)
-          return VariantConverter.GetValue(item).ToBytes();
+          return VariantConverter.CreateModelElement(item).ToBytes();
       }
       return null;
     }

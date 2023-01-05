@@ -55,8 +55,9 @@ public static class VTVectorConverter
       var _value = new VectorVariant();
       foreach (var item in openXmlElement.Elements())
       {
-        var itemVariant = VariantConverter.GetValue(item);
-        var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
+        var itemValue = VariantConverter.GetValue(item);
+        if (itemType != null)
+          itemValue = Convert.ChangeType(itemValue, itemType);
         _value.Add(itemValue);
       }
       return _value;

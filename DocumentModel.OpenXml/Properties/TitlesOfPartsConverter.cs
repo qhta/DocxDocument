@@ -19,31 +19,23 @@ public static class TitlesOfPartsConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
   
-  public static DocumentModel.Properties.TitlesOfParts? GetValue(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static DocumentModel.VectorVariant? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Properties.TitlesOfParts();
-      value.Vector = GetVTVector(openXmlElement);
+      var value = GetVTVector(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, DocumentModel.Properties.TitlesOfParts? value)
-  {
-    if (openXmlElement != null)
-    {
-      SetVTVector(openXmlElement, value?.Vector);
-    }
-  }
   
-  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(DocumentModel.Properties.TitlesOfParts? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(DocumentModel.VectorVariant? value)
   {
     if (value != null)
     {
       var openXmlElement = new DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts();
-      SetValue(openXmlElement, value);
+      SetVTVector(openXmlElement, value);
       return openXmlElement;
     }
     return null;
