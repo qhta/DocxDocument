@@ -1,3 +1,5 @@
+using DocumentModel.BaseTypes;
+
 namespace DocumentModel.Properties;
 
 /// <summary>
@@ -83,12 +85,12 @@ public partial class ExtendedProperties
   /// <summary>
   /// Heading Pairs.
   /// </summary>
-  public DocumentModel.VectorVariant? HeadingPairs { get; set; }
+  public HeadingPairs? HeadingPairs { get; set; }
   
   /// <summary>
   /// Part Titles.
   /// </summary>
-  public DocumentModel.VectorVariant? TitlesOfParts { get; set; }
+  public StringList? TitlesOfParts { get; set; }
   
   /// <summary>
   /// Links Up-to-Date.
@@ -113,7 +115,7 @@ public partial class ExtendedProperties
   /// <summary>
   /// Hyperlink List.
   /// </summary>
-  public DocumentModel.Properties.HyperlinkList? HyperlinkList { get; set; }
+  public StringList? HyperlinkList { get; set; }
   
   /// <summary>
   /// Hyperlinks Changed.
