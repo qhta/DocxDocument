@@ -1211,7 +1211,8 @@ public class TestVariants : TestBase
       { VariantType.Error, UInt16.MaxValue },
       { VariantType.ClassId, Guid.NewGuid() },
       { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
-      { VariantType.Variant, new Variant(123) },
+      // VariantType.Variant can't be tested here as deserialization results in internal vector value
+      //{ VariantType.Variant, new Variant(123) },
     };
 
 

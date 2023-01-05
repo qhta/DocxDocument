@@ -15,18 +15,20 @@ public record ArrayVariant : Variant, ICollection<object?>
 
   public ArrayVariant()
   {
-    VariantType = VariantType.Array;
+    base.VariantType = VariantType.Array;
   }
+
+  [XmlIgnore] public new VariantType VariantType => VariantType.Array;
 
   public ArrayVariant(VariantType baseType, int size)
   {
-    VariantType = VariantType.Array;
+    base.VariantType = VariantType.Array;
     Resize(size, baseType);
   }
 
   public ArrayVariant(VariantType baseType, int lowerBounds, int upperBounds)
   {
-    VariantType = VariantType.Array;
+    base.VariantType = VariantType.Array;
     Resize(lowerBounds, upperBounds, baseType);
   }
 

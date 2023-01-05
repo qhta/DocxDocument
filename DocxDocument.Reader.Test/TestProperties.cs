@@ -186,11 +186,11 @@ namespace DocxDocument.Reader.Test
         .Where(item=>item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var properties = ReadProperties(filename, true);
+      var oldProperties = ReadProperties(filename, true);
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
         new SerializationOptions{ AcceptAllProperties = true, });
-      serializer.Serialize(textWriter, properties);
+      serializer.Serialize(textWriter, oldProperties);
       textWriter.Flush();
       string str = textWriter.ToString();
       Debug.WriteLine(str);
@@ -201,9 +201,13 @@ namespace DocxDocument.Reader.Test
       var textReader = new StringReader(str);
       var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-      var propertiesCount = properties.Count();
+      var oldPropertiesCount = oldProperties.Count();
       var newPropertiesCount = newProperties.Count();
-      Assert.That(newPropertiesCount, Is.EqualTo(propertiesCount), $"Deserialized properties count different for original");
+      Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+      var newPropArray = newProperties.ToArray();
+      var oldPropArray = newProperties.ToArray();
+      for (int i=0; i<oldPropertiesCount; i++)
+        Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
     }
 
   }

@@ -353,11 +353,11 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   /// Heading Pairs.
   /// </summary>
-  public static DocumentModel.VectorVariant? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static DocumentModel.Properties.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
     return HeadingPairsConverter.GetValue(openXmlElement?.HeadingPairs);
   }
-  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.VectorVariant? value)
+  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.HeadingPairs? value)
   {
     if (openXmlElement != null)
       openXmlElement.HeadingPairs = HeadingPairsConverter.CreateOpenXmlElement(value);
@@ -366,16 +366,16 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   /// Part Titles.
   /// </summary>
-  public static DocumentModel.VectorVariant? GetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static DocumentModel.StringList? GetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
     return TitlesOfPartsConverter.CreateModelElement(openXmlElement?.TitlesOfParts);
   }
-  public static void SetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.VectorVariant? value)
+  public static void SetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.TitlesOfParts = TitlesOfPartsConverter.CreateOpenXmlElement(value);
   }
-  
+
   /// <summary>
   /// Links Up-to-Date.
   /// </summary>
@@ -471,11 +471,11 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   /// Hyperlink List.
   /// </summary>
-  public static DocumentModel.Properties.HyperlinkList? GetHyperlinkList(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
+  public static DocumentModel.StringList? GetHyperlinkList(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
   {
-    return HyperlinkListConverter.GetValue(openXmlElement?.HyperlinkList);
+    return HyperlinkListConverter.CreateModelElement(openXmlElement?.HyperlinkList);
   }
-  public static void SetHyperlinkList(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.HyperlinkList? value)
+  public static void SetHyperlinkList(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.HyperlinkList = HyperlinkListConverter.CreateOpenXmlElement(value);

@@ -79,6 +79,42 @@ public static class VTVectorConverter
     }
   }
 
+  public static StringList? GetStringList(VTVector? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var baseType = GetBaseType(openXmlElement);
+      var itemType = typeof(string);
+      var _value = new StringList();
+      foreach (var item in openXmlElement.Elements())
+      {
+        var itemValue = VariantConverter.GetValue(item);
+        if (itemType != null)
+        {
+          var str = (string?)Convert.ChangeType(itemValue, itemType);
+          if (str==null)
+            str = string.Empty;
+          _value.Add(str);
+        }
+      }
+      return _value;
+    }
+    return null;
+  }
+
+  public static void SetStringList(VTVector openXmlElement, StringList? value)
+  {
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren();
+      if (value != null)
+        foreach (var itemValue in value)
+        {
+          var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
+          openXmlElement.AppendChild(itemVariant);
+        }
+    }
+  }
   public static VTVector CreateOpenXmlElement(VectorVariant? value)
   {
     var openXmlElement = new VTVector();
@@ -86,6 +122,17 @@ public static class VTVectorConverter
     {
       SetBaseType(openXmlElement, value.BaseType);
       SetValue(openXmlElement, value);
+    }
+    return openXmlElement;
+  }
+
+  public static VTVector CreateOpenXmlElement(StringList? value)
+  {
+    var openXmlElement = new VTVector();
+    if (value != null)
+    {
+      SetBaseType(openXmlElement, VariantType.Lpwstr);
+      SetStringList(openXmlElement, value);
     }
     return openXmlElement;
   }

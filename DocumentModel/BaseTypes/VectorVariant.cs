@@ -10,15 +10,14 @@ public record VectorVariant: Variant, IList<object?>
 {
   public VectorVariant()
   {
-    VariantType = VariantType.Vector;
+    base.VariantType = VariantType.Vector;
   }
 
-  [XmlIgnore]
-  public new VariantType VariantType { get; }
+  [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
 
   public VectorVariant(VariantType baseType)
   {
-    VariantType = VariantType.Vector;
+    base.VariantType = VariantType.Vector;
     BaseType = baseType;
   }
 

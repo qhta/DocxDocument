@@ -94,12 +94,12 @@ public partial class ExtendedProperties : ICollection<DocumentProperty>
 
   public void CopyTo(DocumentProperty[] array, int arrayIndex)
   {
-    foreach (var name in GetPropNames())
+    var items = new List<DocumentProperty>();
+    foreach (var item in this)
     {
-      var item = Get(name);
-      if (item != null)
-        array.SetValue(item, arrayIndex++);
+      items.Add(item);
     }
+    items.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(DocumentProperty item)
