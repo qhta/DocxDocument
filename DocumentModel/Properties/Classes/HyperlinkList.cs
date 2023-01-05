@@ -5,6 +5,6 @@ namespace DocumentModel.Properties;
 /// </summary>
 public partial class HyperlinkList
 {
-  public DocumentModel.VectorVariant? VTVector { get; set; }
+  public DocumentModel.VectorVariant? Vector { get; set; }
   
 }

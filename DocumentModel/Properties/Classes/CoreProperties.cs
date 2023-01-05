@@ -3,7 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 /// This class provides access to the "core properties", such as Title and
 /// </summary>
-public partial class ExtendedProperties
+public partial class CoreProperties
 {
   /// <summary>
   /// The title.

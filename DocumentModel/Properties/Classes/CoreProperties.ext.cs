@@ -1,4 +1,9 @@
-﻿namespace DocumentModel.Properties;
+﻿using DocumentModel.Wordprocessing;
+
+using Qhta.Conversion;
+using Qhta.TestHelper;
+
+namespace DocumentModel.Properties;
 
 public partial class CoreProperties : ICollection<DocumentProperty>
 {
@@ -17,7 +22,8 @@ public partial class CoreProperties : ICollection<DocumentProperty>
   public object? Get(string propName)
   {
     var prop = typeof(CoreProperties).GetProperty(propName);
-    return prop?.GetValue(this, null);
+    var value = prop?.GetValue(this, null);
+    return value;
   }
 
   public bool Set(string propName, object? value)
@@ -25,6 +31,11 @@ public partial class CoreProperties : ICollection<DocumentProperty>
     var prop = typeof(CoreProperties).GetProperty(propName);
     if (prop != null)
     {
+      if (value is String valStr && value.GetType() != prop.PropertyType)
+      {
+        var typeConverter = new ValueTypeConverter(prop.PropertyType, null, null, null, null);
+        value = typeConverter.ConvertFromInvariantString(valStr);
+      }
       prop.SetValue(this, value);
       return true;
     }

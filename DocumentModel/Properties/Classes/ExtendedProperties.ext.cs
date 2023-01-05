@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Text.Json.Nodes;
 
+using Qhta.Conversion;
+
 namespace DocumentModel.Properties;
 
 public partial class ExtendedProperties : ICollection<DocumentProperty>
@@ -28,32 +30,12 @@ public partial class ExtendedProperties : ICollection<DocumentProperty>
     var prop = typeof(ExtendedProperties).GetProperty(propName);
     if (prop != null)
     {
-      try
+      if (value is String valStr && value.GetType() != prop.PropertyType)
       {
-        if (value?.GetType() == typeof(object))
-          value = null;
-        else if (value != null)
-        {
-          var propType = prop.PropertyType;
-          if (propType.Name.StartsWith("Nullable`"))
-            propType = propType.GenericTypeArguments.First();
-          if (value.GetType() != propType)
-            value = Convert.ChangeType(value, propType, CultureInfo.InvariantCulture);
-        }
-        prop.SetValue(this, value);
+        var typeConverter = new ValueTypeConverter(prop.PropertyType, null, null, null, null);
+        value = typeConverter.ConvertFromInvariantString(valStr);
       }
-      catch (Exception e)
-      {
-        if (value is Newtonsoft.Json.Linq.JObject obj)
-        {
-
-        }
-        else
-        {
-          Console.WriteLine(e);
-          throw;
-        }
-      }
+      prop.SetValue(this, value);
       return true;
     }
     return false;

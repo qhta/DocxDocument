@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Properties\Classes\HeadingPairs.cs" />
+    <Compile Remove="Properties\Classes\HeadingPairs.ext.cs" />
+    <Compile Remove="Properties\Classes\HeadingPairsJsonConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
   </ItemGroup>

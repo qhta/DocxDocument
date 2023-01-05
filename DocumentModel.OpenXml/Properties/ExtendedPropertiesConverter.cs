@@ -353,11 +353,11 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   /// Heading Pairs.
   /// </summary>
-  public static DocumentModel.Properties.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static DocumentModel.VectorVariant? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
     return HeadingPairsConverter.GetValue(openXmlElement?.HeadingPairs);
   }
-  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.HeadingPairs? value)
+  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.VectorVariant? value)
   {
     if (openXmlElement != null)
       openXmlElement.HeadingPairs = HeadingPairsConverter.CreateOpenXmlElement(value);
