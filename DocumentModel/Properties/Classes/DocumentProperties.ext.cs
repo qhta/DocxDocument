@@ -58,8 +58,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (item.Name != null)
     {
       if (CoreProperties == null)
-        CoreProperties = new ExtendedProperties();
-      if (ExtendedProperties.GetPropNames().Contains(item.Name))
+        CoreProperties = new CoreProperties();
+      if (CoreProperties.GetPropNames().Contains(item.Name))
         CoreProperties.Set(item.Name, item.Value);
       else if (ExtendedProperties.GetPropNames().Contains((item.Name)))
       {
