@@ -23,31 +23,31 @@ namespace DocxDocument.Reader.Test
     public void TestNormalTemplateProperties()
     {
       var filename = Path.Combine(TestPath, "Normal.dotm");
-      ProcessProperties(filename, true);
+      ReadProperties(filename, true);
     }
 
     [Test]
     public void TestDocumentProperties()
     {
       var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-      ProcessProperties(filename, true);
+      ReadProperties(filename, true);
     }
 
     [Test]
     public void TestCustomProperties()
     {
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      ProcessProperties(filename, true);
+      ReadProperties(filename, true);
     }
 
     [Test]
     public void TestSampleDocsProperties()
     {
       foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-        ProcessProperties(filename);
+        ReadProperties(filename);
     }
 
-    public virtual DocumentModel.Properties.DocumentProperties ProcessProperties(string filename, bool showDetails = false)
+    public virtual DocumentModel.Properties.DocumentProperties ReadProperties(string filename, bool showDetails = false)
     {
       TestContext.Progress.WriteLine(filename);
       var reader = new DocxReader(filename);
@@ -58,7 +58,7 @@ namespace DocxDocument.Reader.Test
       TestContext.Progress.WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
 
       #region CoreDocumentProperties
-      ExtendedProperties? coreDocumentProperties = document.Properties.CoreProperties;
+      CoreProperties? coreDocumentProperties = document.Properties.CoreProperties;
       int origCorePropertiesCount = 0;
       int corePropertiesCount = 0;
       if (coreDocumentProperties != null)
@@ -70,7 +70,7 @@ namespace DocxDocument.Reader.Test
           if (prop.GetValue(coreFilePropertiesPart, new object[0]) != null)
             origCorePropertiesCount++;
         }
-        var coreProperties = typeof(ExtendedProperties).GetProperties();
+        var coreProperties = typeof(CoreProperties).GetProperties();
         foreach (var prop in coreProperties.Where(item => item.CanWrite))
           if (prop.GetValue(coreDocumentProperties, null) != null)
             corePropertiesCount++;
@@ -159,7 +159,7 @@ namespace DocxDocument.Reader.Test
         .Where(item => item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var properties = ProcessProperties(filename, true);
+      var properties = ReadProperties(filename, true);
       var serializer = JsonSerializer.Create();
       var textWriter = new StringWriter();
       var jsonWriter = new JsonTextWriter(textWriter) { Formatting = Formatting.Indented };
@@ -186,7 +186,7 @@ namespace DocxDocument.Reader.Test
         .Where(item=>item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var properties = ProcessProperties(filename, true);
+      var properties = ReadProperties(filename, true);
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
         new SerializationOptions{ AcceptAllProperties = true, });

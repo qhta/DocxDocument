@@ -162,9 +162,9 @@ public static class CorePropertiesConverter
       openXmlElement.ContentStatus = value;
   }
   
-  public static DocumentModel.Properties.ExtendedProperties? GetValue(System.IO.Packaging.PackageProperties openXmlElement)
+  public static DocumentModel.Properties.CoreProperties? GetValue(System.IO.Packaging.PackageProperties openXmlElement)
   {
-    var value = new DocumentModel.Properties.ExtendedProperties();
+    var value = new DocumentModel.Properties.CoreProperties();
     value.Title = GetTitle(openXmlElement);
     value.Subject = GetSubject(openXmlElement);
     value.Creator = GetCreator(openXmlElement);
@@ -184,7 +184,7 @@ public static class CorePropertiesConverter
     return value;
   }
   
-  public static void SetValue(System.IO.Packaging.PackageProperties openXmlElement, DocumentModel.Properties.ExtendedProperties value)
+  public static void SetValue(System.IO.Packaging.PackageProperties openXmlElement, DocumentModel.Properties.CoreProperties value)
   {
     SetTitle(openXmlElement, value.Title);
     SetSubject(openXmlElement, value.Subject);

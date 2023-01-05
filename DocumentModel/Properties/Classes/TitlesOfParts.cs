@@ -8,6 +8,6 @@ public partial class TitlesOfParts
   /// <summary>
   /// Vector.
   /// </summary>
-  public DocumentModel.VectorVariant? VTVector { get; set; }
+  public DocumentModel.VectorVariant? Vector { get; set; }
   
 }

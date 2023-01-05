@@ -16,26 +16,25 @@ public static class HeadingPairsConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
   
-  public static DocumentModel.Properties.HeadingPairs? GetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+  public static DocumentModel.VectorVariant? GetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Properties.HeadingPairs();
-      value.VTVector = GetVTVector(openXmlElement);
+      var value = GetVTVector(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.Properties.HeadingPairs? value)
+  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.VectorVariant? value)
   {
     if (openXmlElement != null)
     {
-      SetVTVector(openXmlElement, value?.VTVector);
+      SetVTVector(openXmlElement, value);
     }
   }
   
-  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DocumentModel.Properties.HeadingPairs? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DocumentModel.VectorVariant? value)
   {
     if (value != null)
     {

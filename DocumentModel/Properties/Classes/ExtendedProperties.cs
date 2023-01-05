@@ -83,7 +83,7 @@ public partial class ExtendedProperties
   /// <summary>
   /// Heading Pairs.
   /// </summary>
-  public DocumentModel.Properties.HeadingPairs? HeadingPairs { get; set; }
+  public DocumentModel.VectorVariant? HeadingPairs { get; set; }
   
   /// <summary>
   /// Part Titles.

@@ -21,7 +21,7 @@ public static class HyperlinkListConverter
     if (openXmlElement != null)
     {
       var value = new DocumentModel.Properties.HyperlinkList();
-      value.VTVector = GetVTVector(openXmlElement);
+      value.Vector = GetVTVector(openXmlElement);
       return value;
     }
     return null;
@@ -31,7 +31,7 @@ public static class HyperlinkListConverter
   {
     if (openXmlElement != null)
     {
-      SetVTVector(openXmlElement, value?.VTVector);
+      SetVTVector(openXmlElement, value?.Vector);
     }
   }
   

@@ -7,9 +7,9 @@ public partial class TitlesOfParts
 {
   public override string? ToString()
   {
-    if (this.VTVector != null)
+    if (this.Vector != null)
     {
-      var str = VTVector.ToString();
+      var str = Vector.ToString();
       return str;
     }
     return null;

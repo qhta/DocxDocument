@@ -24,7 +24,7 @@ public static class TitlesOfPartsConverter
     if (openXmlElement != null)
     {
       var value = new DocumentModel.Properties.TitlesOfParts();
-      value.VTVector = GetVTVector(openXmlElement);
+      value.Vector = GetVTVector(openXmlElement);
       return value;
     }
     return null;
@@ -34,7 +34,7 @@ public static class TitlesOfPartsConverter
   {
     if (openXmlElement != null)
     {
-      SetVTVector(openXmlElement, value?.VTVector);
+      SetVTVector(openXmlElement, value?.Vector);
     }
   }
   
