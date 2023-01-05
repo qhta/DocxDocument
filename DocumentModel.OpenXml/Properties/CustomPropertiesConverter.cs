@@ -12,7 +12,7 @@ public static class CustomPropertiesConverter
       var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Properties.CustomDocumentProperty>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty>())
       {
-        var newItem = DocumentModel.OpenXml.Properties.CustomDocumentPropertyConverter.GetValue(item);
+        var newItem = DocumentModel.OpenXml.Properties.CustomDocumentPropertyConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }

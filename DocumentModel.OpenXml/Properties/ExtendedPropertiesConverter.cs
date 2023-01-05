@@ -366,11 +366,11 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   /// Part Titles.
   /// </summary>
-  public static DocumentModel.Properties.TitlesOfParts? GetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static DocumentModel.VectorVariant? GetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return TitlesOfPartsConverter.GetValue(openXmlElement?.TitlesOfParts);
+    return TitlesOfPartsConverter.CreateModelElement(openXmlElement?.TitlesOfParts);
   }
-  public static void SetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.TitlesOfParts? value)
+  public static void SetTitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.VectorVariant? value)
   {
     if (openXmlElement != null)
       openXmlElement.TitlesOfParts = TitlesOfPartsConverter.CreateOpenXmlElement(value);

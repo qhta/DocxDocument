@@ -88,7 +88,7 @@ public partial class ExtendedProperties
   /// <summary>
   /// Part Titles.
   /// </summary>
-  public DocumentModel.Properties.TitlesOfParts? TitlesOfParts { get; set; }
+  public DocumentModel.VectorVariant? TitlesOfParts { get; set; }
   
   /// <summary>
   /// Links Up-to-Date.

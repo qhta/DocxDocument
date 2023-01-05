@@ -86,7 +86,7 @@ public static class VTArrayConverter
       int i = _value.LowerBounds;
       foreach (var item in openXmlElement.Elements())
       {
-        var itemVariant = VariantConverter.GetValue(item);
+        var itemVariant = VariantConverter.CreateModelElement(item);
         var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
         _value[i] = itemValue;
       }

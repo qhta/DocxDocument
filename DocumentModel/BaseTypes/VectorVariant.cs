@@ -13,6 +13,9 @@ public record VectorVariant: Variant, IList<object?>
     VariantType = VariantType.Vector;
   }
 
+  [XmlIgnore]
+  public new VariantType VariantType { get; }
+
   public VectorVariant(VariantType baseType)
   {
     VariantType = VariantType.Vector;

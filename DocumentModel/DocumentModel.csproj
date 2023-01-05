@@ -24,6 +24,8 @@
     <Compile Remove="Properties\Classes\HeadingPairs.cs" />
     <Compile Remove="Properties\Classes\HeadingPairs.ext.cs" />
     <Compile Remove="Properties\Classes\HeadingPairsJsonConverter.cs" />
+    <Compile Remove="Properties\Classes\TitlesOfParts.cs" />
+    <Compile Remove="Properties\Classes\TitlesOfParts.ext.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -60,8 +60,37 @@ public static class CustomDocumentPropertyConverter
     if (openXmlElement != null)
       openXmlElement.LinkTarget = value;
   }
-  
-  public static DocumentModel.Properties.CustomDocumentProperty? GetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? openXmlElement)
+
+  /// <summary>
+  /// Variant Value
+  /// </summary>
+  public static object? GetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var valueElement = openXmlElement.Elements().FirstOrDefault(item => item.GetType().Name.StartsWith("VT"));
+      if (valueElement != null)
+        return VariantConverter.GetValue(valueElement);
+    }
+    return null;
+  }
+  public static void SetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, object? value)
+  {
+    if (openXmlElement != null)
+    {
+      var valueElement = openXmlElement.Elements().FirstOrDefault(item => item.LocalName.StartsWith("VT"));
+      if (valueElement != null)
+        valueElement.Remove();
+      if (value != null)
+      {
+        valueElement = VariantConverter.CreateOpenXmlElement(value);
+        if (valueElement != null)
+          openXmlElement.AddChild(valueElement);
+      }
+    }
+  }
+
+  public static DocumentModel.Properties.CustomDocumentProperty? CreateModelElement(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? openXmlElement)
   {
     var value = new DocumentModel.Properties.CustomDocumentProperty();
     if (openXmlElement != null)
@@ -70,19 +99,9 @@ public static class CustomDocumentPropertyConverter
       value.PropertyId = GetPropertyId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.LinkTarget = GetLinkTarget(openXmlElement);
+      value.Value = GetValue(openXmlElement);
     }
     return value;
-  }
-  
-  public static void SetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? openXmlElement, DocumentModel.Properties.CustomDocumentProperty? value)
-  {
-    if (openXmlElement != null)
-    {
-      SetFormatId(openXmlElement, value?.FormatId);
-      SetPropertyId(openXmlElement, value?.PropertyId);
-      SetName(openXmlElement, value?.Name);
-      SetLinkTarget(openXmlElement, value?.LinkTarget);
-    }
   }
   
   public static DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.CustomDocumentProperty? value)
@@ -90,7 +109,11 @@ public static class CustomDocumentPropertyConverter
     if (value != null)
     {
       var openXmlElement = new DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty();
-      SetValue(openXmlElement, value);
+      SetFormatId(openXmlElement, value.FormatId);
+      SetPropertyId(openXmlElement, value.PropertyId);
+      SetName(openXmlElement, value.Name);
+      SetLinkTarget(openXmlElement, value.LinkTarget);
+      SetValue(openXmlElement, value.Value);
       return openXmlElement;
     }
     return null;
