@@ -30,7 +30,7 @@ public static class DigitalSignatureConverter
     }
   }
   
-  public static DocumentModel.Properties.DigitalSignature? GetValue(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
+  public static DocumentModel.Properties.DigitalSignature? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
   {
     if (openXmlElement != null)
     {

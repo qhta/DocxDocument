@@ -10,6 +10,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": "2.19.0",
           "DocumentModel": "1.0.0",
+          "Qhta.TypeUtils": "1.3.0",
           "Qhta.Collections": "1.0.0.0"
         },
         "runtime": {
@@ -43,6 +44,11 @@
           "DocumentModel.dll": {}
         }
       },
+      "Qhta.TypeUtils/1.3.0": {
+        "runtime": {
+          "Qhta.TypeUtils.dll": {}
+        }
+      },
       "Qhta.Collections/1.0.0.0": {
         "runtime": {
           "Qhta.Collections.dll": {
@@ -64,14 +70,6 @@
           "Qhta.Conversion.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Qhta.TypeUtils/1.3.0.0": {
-        "runtime": {
-          "Qhta.TypeUtils.dll": {
-            "assemblyVersion": "1.3.0.0",
-            "fileVersion": "1.3.0.0"
           }
         }
       }
@@ -102,6 +100,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Qhta.TypeUtils/1.3.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Qhta.Collections/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -113,11 +116,6 @@
       "sha512": ""
     },
     "Qhta.Conversion/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Qhta.TypeUtils/1.3.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

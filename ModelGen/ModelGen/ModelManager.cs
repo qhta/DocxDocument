@@ -17,6 +17,8 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
+    if (typeInfo.Name == "CopyrightXsdstring")
+      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (!TryAddTypeTableConversion(typeInfo))
@@ -104,7 +106,7 @@ public static class ModelManager
       else
       if (typeInfo.Name == "IEnumerable`1")
       {
-        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
+          var sourceArgTypes = typeInfo.Type.GetGenericArguments();
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
@@ -116,6 +118,25 @@ public static class ModelManager
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
           return true;
+        }
+      }
+      else
+      if (typeInfo.Name == "Collection`1")
+      {
+        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
+        var sourceArgType = sourceArgTypes.FirstOrDefault();
+        if (sourceArgType != null)
+        {
+          var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
+          genericParamTypeInfo.TryAddTypeConversion();
+          if (genericParamTypeInfo.IsConverted)
+          {
+            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+            sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
+            targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
+            typeInfo.IsConverted = true;
+            return true;
+          }
         }
       }
       else
@@ -201,10 +222,10 @@ public static class ModelManager
     return result;
   }
 
-  public static TypeInfo GetConversionTarget(this TypeInfo typeInfo, bool finalTarget)
+  public static TypeInfo GetConversionTarget(this TypeInfo typeInfo, bool finalTarget = true)
   {
-    if (!typeInfo.IsConverted)
-      return typeInfo;
+    //if (!typeInfo.IsConverted)
+    //  return typeInfo;
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     if (result == null && typeInfo.IsConstructedGenericType)
       if (TryAddGenericTypeConversion(typeInfo, out var targetType))

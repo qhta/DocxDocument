@@ -7,7 +7,7 @@ public static class TitlesOfPartsConverter
 {
   public static DocumentModel.VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
-    return VTVectorConverter.GetValue(openXmlElement?.VTVector);
+    return VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
   }
   
   public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, DocumentModel.VectorVariant? value)

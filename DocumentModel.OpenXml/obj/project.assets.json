@@ -46,6 +46,16 @@
         "runtime": {
           "bin/placeholder/DocumentModel.dll": {}
         }
+      },
+      "Qhta.TypeUtils/1.3.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Qhta.TypeUtils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.TypeUtils.dll": {}
+        }
       }
     }
   },
@@ -105,12 +115,18 @@
       "type": "project",
       "path": "../DocumentModel/DocumentModel.csproj",
       "msbuildProject": "../DocumentModel/DocumentModel.csproj"
+    },
+    "Qhta.TypeUtils/1.3.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.TypeUtils/Qhta.TypeUtils.csproj",
+      "msbuildProject": "../../MyLib/Qhta.TypeUtils/Qhta.TypeUtils.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "DocumentFormat.OpenXml >= 2.19.0",
-      "DocumentModel >= 1.0.0"
+      "DocumentModel >= 1.0.0",
+      "Qhta.TypeUtils >= 1.3.0"
     ]
   },
   "packageFolders": {
@@ -147,6 +163,9 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.TypeUtils\\Qhta.TypeUtils.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.TypeUtils\\Qhta.TypeUtils.csproj"
             }
           }
         }
