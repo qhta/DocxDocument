@@ -6,3 +6,4 @@ global using System.Xml.Serialization;
 global using DocumentFormat.OpenXml;
 global using DocumentFormat.OpenXml.VariantTypes;
 global using Qhta.Collections;
+global using Qhta.TypeUtils;

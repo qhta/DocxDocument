@@ -22,7 +22,6 @@
     <Compile Remove="Properties\CustomProperties.cs" />
     <Compile Remove="Properties\CustomPropertiesConverter - Copy.cs" />
     <Compile Remove="Properties\ExtendedProperties.cs" />
-    <Compile Remove="Wordprocessing\ColorSchemeMappingConverter - kopia.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.TypeUtils\Qhta.TypeUtils.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 
@@ -37,18 +37,6 @@
     <Reference Include="Qhta.Collections">
       <HintPath>..\..\MyLib\Qhta.Collections\obj\Debug\Qhta.Collections.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Drawings.Office.ScriptLink\" />
-    <Folder Include="Drawings.Wordprocessing\" />
-    <Folder Include="Drawings\" />
-    <Folder Include="Math\" />
-    <Folder Include="Packaging\" />
-    <Folder Include="Vml\" />
-    <Folder Include="Wordprocessing.Drawings\" />
-    <Folder Include="Wordprocessing.Vml\" />
-    <Folder Include="Wordprocessing\" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ public static class HeadingPairsConverter
 {
   public static DocumentModel.VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
-    return VTVectorConverter.GetValue(openXmlElement?.VTVector);
+    return VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
   }
   
   public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.VectorVariant? value)
@@ -19,7 +19,7 @@ public static class HeadingPairsConverter
   public static DocumentModel.Properties.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement?.VTVector == null) return null;
-    var vector = VTVectorConverter.GetValue(openXmlElement?.VTVector);
+    var vector = VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
     if (vector == null) return null;
     var result = new DocumentModel.Properties.HeadingPairs();
     for (int i = 0; i < vector.Count; i++)
@@ -49,7 +49,7 @@ public static class HeadingPairsConverter
     }
   }
 
-  public static DocumentModel.Properties.HeadingPairs? GetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+  public static DocumentModel.Properties.HeadingPairs? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -59,20 +59,12 @@ public static class HeadingPairsConverter
     return null;
   }
   
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DocumentModel.Properties.HeadingPairs? value)
-  {
-    if (openXmlElement != null)
-    {
-      SetHeadingPairs(openXmlElement, value);
-    }
-  }
-  
   public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DocumentModel.Properties.HeadingPairs? value)
   {
     if (value != null)
     {
       var openXmlElement = new DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs();
-      SetValue(openXmlElement, value);
+      SetHeadingPairs(openXmlElement, value); ;
       return openXmlElement;
     }
     return null;

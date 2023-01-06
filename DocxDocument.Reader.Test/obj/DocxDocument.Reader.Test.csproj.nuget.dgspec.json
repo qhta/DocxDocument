@@ -34,6 +34,9 @@
             "projectReferences": {
               "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj": {
                 "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj"
+              },
+              "D:\\VS\\Projects\\MyLib\\Qhta.TypeUtils\\Qhta.TypeUtils.csproj": {
+                "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.TypeUtils\\Qhta.TypeUtils.csproj"
               }
             }
           }

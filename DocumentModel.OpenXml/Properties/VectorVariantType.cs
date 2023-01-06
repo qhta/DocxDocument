@@ -30,7 +30,7 @@ public partial class VectorVariantType: ModelElementImpl
       {
         var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
         if (item != null)
-          return VTVectorConverter.GetValue(item);
+          return VTVectorConverter.CreateModelElement(item);
       }
       return null;
     }

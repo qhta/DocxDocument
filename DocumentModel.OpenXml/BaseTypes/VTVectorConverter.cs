@@ -46,7 +46,7 @@ public static class VTVectorConverter
     }
   }
 
-  public static VectorVariant? GetValue(VTVector? openXmlElement)
+  public static VectorVariant? CreateModelElement(VTVector? openXmlElement)
   {
     if (openXmlElement != null)
     {

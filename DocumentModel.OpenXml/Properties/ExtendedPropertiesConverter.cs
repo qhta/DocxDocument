@@ -355,7 +355,7 @@ public static class ExtendedPropertiesConverter
   /// </summary>
   public static DocumentModel.Properties.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return HeadingPairsConverter.GetValue(openXmlElement?.HeadingPairs);
+    return HeadingPairsConverter.CreateModelElement(openXmlElement?.HeadingPairs);
   }
   public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.HeadingPairs? value)
   {
@@ -509,7 +509,7 @@ public static class ExtendedPropertiesConverter
   /// </summary>
   public static DocumentModel.Properties.DigitalSignature? GetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return DigitalSignatureConverter.GetValue(openXmlElement?.DigitalSignature);
+    return DigitalSignatureConverter.CreateModelElement(openXmlElement?.DigitalSignature);
   }
   public static void SetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.DigitalSignature? value)
   {
@@ -586,7 +586,7 @@ public static class ExtendedPropertiesConverter
     }
   }
   
-  public static DocumentModel.Properties.ExtendedProperties? GetValue(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
+  public static DocumentModel.Properties.ExtendedProperties? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
   {
     var value = new DocumentModel.Properties.ExtendedProperties();
     if (openXmlElement != null)
