@@ -8,4 +8,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class Document
 {
   public DocumentProperties? Properties { get; set; }
+
+  public Styles? Styles { get; set; }
 }

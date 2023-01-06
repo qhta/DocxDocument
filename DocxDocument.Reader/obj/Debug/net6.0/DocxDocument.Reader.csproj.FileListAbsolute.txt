@@ -21,11 +21,9 @@ D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Collection
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\DocumentModel.OpenXml.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Collections.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Conversion.dll
-D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.TestHelper.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.TypeUtils.dll
-D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Xml.Serialization.dll
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.TypeUtils.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.TypeUtils.xml
-D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Xml.Serialization.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Conversion.pdb
-D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.TestHelper.pdb
+D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll
+D:\VS\Projects\DocxDocument\DocxDocument.Reader\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.pdb

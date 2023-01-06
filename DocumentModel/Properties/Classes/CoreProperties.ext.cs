@@ -1,7 +1,6 @@
 ﻿using DocumentModel.Wordprocessing;
 
 using Qhta.Conversion;
-using Qhta.TestHelper;
 
 namespace DocumentModel.Properties;
 

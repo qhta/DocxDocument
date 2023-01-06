@@ -12,13 +12,11 @@ D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\ref\DocumentModel.dll
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Collections.dll
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Conversion.dll
-D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.TestHelper.dll
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.TypeUtils.dll
-D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Xml.Serialization.dll
-D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Xml.Serialization.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.TypeUtils.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.TypeUtils.xml
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Collections.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Conversion.pdb
-D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.TestHelper.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\DocumentModel.csproj.CopyComplete
+D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll
+D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.pdb

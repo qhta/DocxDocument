@@ -16,11 +16,9 @@ D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\obj\Debug\net6.0\refint\Docume
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\obj\Debug\net6.0\DocumentModel.OpenXml.pdb
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\obj\Debug\net6.0\ref\DocumentModel.OpenXml.dll
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Conversion.dll
-D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.TestHelper.dll
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.TypeUtils.dll
-D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Xml.Serialization.dll
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.TypeUtils.pdb
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.TypeUtils.xml
-D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Xml.Serialization.pdb
 D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Conversion.pdb
-D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.TestHelper.pdb
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll
+D:\VS\Projects\DocxDocument\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.pdb

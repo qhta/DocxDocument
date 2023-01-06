@@ -824,8 +824,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "Qhta.Xml.Serialization": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -920,6 +918,7 @@
           "Qhta.Conversion": "1.0.0",
           "Qhta.TestHelper": "1.0.0",
           "Qhta.TypeUtils": "1.3.0",
+          "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "System.CodeDom": "7.0.0",
           "System.Collections.Specialized": "4.3.0",
           "System.Security.Permissions": "7.0.0"
@@ -929,6 +928,16 @@
         },
         "runtime": {
           "bin/placeholder/Qhta.Xml.Serialization.dll": {}
+        }
+      },
+      "Qhta.Xml.Serialization.Attributes/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Qhta.Xml.Serialization.Attributes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.Xml.Serialization.Attributes.dll": {}
         }
       }
     }
@@ -2897,6 +2906,11 @@
       "type": "project",
       "path": "../../MyLib/Qhta.Serialization/Qhta.Xml.Serialization.csproj",
       "msbuildProject": "../../MyLib/Qhta.Serialization/Qhta.Xml.Serialization.csproj"
+    },
+    "Qhta.Xml.Serialization.Attributes/1.0.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.Xml.Serialization.Attributes/Qhta.Xml.Serialization.Attributes.csproj",
+      "msbuildProject": "../../MyLib/Qhta.Xml.Serialization.Attributes/Qhta.Xml.Serialization.Attributes.csproj"
     }
   },
   "projectFileDependencyGroups": {
