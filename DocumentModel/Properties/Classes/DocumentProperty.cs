@@ -31,8 +31,9 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     return base.Equals(obj);
   }
 
-  public bool Equals(DocumentProperty other)
+  public bool Equals(DocumentProperty? other)
   {
+    if (other == null) return false;
     if (this.Name != other.Name)
       return false;
     if (this.Value == other.Value)
