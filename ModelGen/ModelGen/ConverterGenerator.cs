@@ -36,7 +36,6 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var typeName = type.Name;
     var aNamespace = type.Namespace;
-    aNamespace = aNamespace.Replace(".Properties", ".DocumentProperties");
     aNamespace = aNamespace.Replace("DocumentModel.", "");
     //var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
     var implOutputPath = Path.Combine(OutputPath, aNamespace);

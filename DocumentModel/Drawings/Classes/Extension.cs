@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Extension.
 /// </summary>
-public partial class DrawingExtension
+public partial class Extension
 {
   /// <summary>
   /// URI

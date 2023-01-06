@@ -23,7 +23,7 @@ public partial class OpenXmlPackage
   /// <summary>
   /// Gets the core package properties of the Open XML document.
   /// </summary>
-  public DocumentModel.Properties.ExtendedProperties? PackageProperties { get; }
+  public DocumentModel.Properties.CoreProperties? PackageProperties { get; }
   
   /// <summary>
   /// Gets or sets the compression level for the content of the new part
