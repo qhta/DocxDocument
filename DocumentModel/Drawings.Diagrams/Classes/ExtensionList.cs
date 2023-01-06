@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class ExtensionList
 {
-  public Collection<DocumentModel.Drawings.DrawingExtension>? Extensions { get; set; }
+  public Collection<DocumentModel.Drawings.Extension>? Extensions { get; set; }
   
 }

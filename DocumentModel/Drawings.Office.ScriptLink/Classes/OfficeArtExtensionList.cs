@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 /// </summary>
 public partial class OfficeArtExtensionList
 {
-  public Collection<DocumentModel.Drawings.DrawingExtension>? Extensions { get; set; }
+  public Collection<DocumentModel.Drawings.Extension>? Extensions { get; set; }
   
 }

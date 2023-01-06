@@ -476,6 +476,16 @@
         "runtime": {
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         }
+      },
+      "Qhta.Xml.Serialization.Attributes/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Qhta.Xml.Serialization.Attributes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.Xml.Serialization.Attributes.dll": {}
+        }
       }
     }
   },
@@ -2194,6 +2204,11 @@
       "type": "project",
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
       "msbuildProject": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj"
+    },
+    "Qhta.Xml.Serialization.Attributes/1.0.0": {
+      "type": "project",
+      "path": "../../../MyLib/Qhta.Xml.Serialization.Attributes/Qhta.Xml.Serialization.Attributes.csproj",
+      "msbuildProject": "../../../MyLib/Qhta.Xml.Serialization.Attributes/Qhta.Xml.Serialization.Attributes.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2202,6 +2217,7 @@
       "DocumentModel.Attributes >= 1.0.0",
       "IgnoresAccessChecksToGenerator >= 0.6.0",
       "Namotion.Reflection >= 2.1.1",
+      "Qhta.Xml.Serialization.Attributes >= 1.0.0",
       "System.IO.Packaging >= 7.0.0"
     ]
   },
@@ -2239,6 +2255,9 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.Xml.Serialization.Attributes\\Qhta.Xml.Serialization.Attributes.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.Xml.Serialization.Attributes\\Qhta.Xml.Serialization.Attributes.csproj"
             }
           }
         }
