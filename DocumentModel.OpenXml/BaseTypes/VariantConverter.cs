@@ -112,7 +112,7 @@ public static class VariantConverter
       });
 
     if (openXmlElement is VTVector vtVector)
-      return VTVectorConverter.GetValue(vtVector)
+      return VTVectorConverter.CreateModelElement(vtVector)
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTArray vtArray)
@@ -235,7 +235,7 @@ public static class VariantConverter
         });
 
     if (openXmlElement is VTVector vtVector)
-      return VTVectorConverter.GetValue(vtVector)
+      return VTVectorConverter.CreateModelElement(vtVector)
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTArray vtArray)

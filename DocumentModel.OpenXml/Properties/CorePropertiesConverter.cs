@@ -229,7 +229,7 @@ public static class CorePropertiesConverter
       openXmlElement.ContentStatus = value;
   }
   
-  public static DocumentModel.Properties.CoreProperties? GetValue(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static DocumentModel.Properties.CoreProperties? CreateModelElement(System.IO.Packaging.PackageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {

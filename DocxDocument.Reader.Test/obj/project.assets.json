@@ -838,7 +838,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DocumentFormat.OpenXml": "2.19.0",
-          "DocumentModel": "1.0.0"
+          "DocumentModel": "1.0.0",
+          "Qhta.TypeUtils": "1.3.0"
         },
         "compile": {
           "bin/placeholder/DocumentModel.OpenXml.dll": {}

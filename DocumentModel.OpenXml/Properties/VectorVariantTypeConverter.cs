@@ -10,7 +10,7 @@ public static class VectorVariantTypeConverter
   /// </summary>
   public static DocumentModel.VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.VectorVariantType? openXmlElement)
   {
-    return VTVectorConverter.GetValue(openXmlElement?.VTVector);
+    return VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
   }
   
   public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.VectorVariantType? openXmlElement, DocumentModel.VectorVariant? value)
