@@ -32,3 +32,7 @@ D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.OpenXml.dll
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\DocumentModel.OpenXml.pdb
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Conversion.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Conversion.pdb
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll
+D:\VS\Projects\DocxDocument\ModelGen\ModelGen\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.pdb

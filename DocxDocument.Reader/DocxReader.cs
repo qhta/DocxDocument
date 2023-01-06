@@ -100,8 +100,8 @@ public partial class DocxReader
     //if (parts.HasFlag(Parts.NumberingDefinitions))
     //  document.ListDefinitions = ReadListDefinitions(WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering);
     //var t3 = DateTime.Now;
-    //if (parts.HasFlag(Parts.StyleDefinitions))
-    //  document.Styles = ReadStyleDefinitions(WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles);
+    if (parts.HasFlag(Parts.StyleDefinitions))
+      document.Styles = ReadStyleDefinitions(parts);
     //var t4 = DateTime.Now;
     //Debug.WriteLine($"ReadDocumentProperties {(t1 - t0).TotalMilliseconds} ms");
     //Debug.WriteLine($"ReadTheme {(t2 - t1).TotalMilliseconds} ms");
@@ -125,6 +125,17 @@ public partial class DocxReader
         DocumentModel.OpenXml.Properties.CustomPropertiesConverter.GetValue(WordprocessingDocument.CustomFilePropertiesPart.Properties);
       
     return properties;
+  }
+
+  private DMW.Styles ReadStyleDefinitions(Parts parts)
+  {
+    DMW.Styles styleDefinitions;
+    //var stylesOpenXmlElement = WordprocessingDocument.GetPartsOfType<StylesPart>().FirstOrDefault()?.Styles;
+    //if (stylesOpenXmlElement != null)
+    //  styleDefinitions = DocumentModel.OpenXml.Wordprocessing.StylesConverter.GetValue(stylesOpenXmlElement);
+    //else
+      styleDefinitions = new();
+    return styleDefinitions;
   }
 
   //private DM.ListDefinitions ReadListDefinitions(WP.Numbering? numbering)

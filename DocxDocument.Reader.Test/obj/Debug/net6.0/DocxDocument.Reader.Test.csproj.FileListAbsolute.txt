@@ -131,3 +131,5 @@ D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.Conve
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.TestHelper.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.TypeUtils.pdb
 D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.TypeUtils.xml
+D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll
+D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.pdb

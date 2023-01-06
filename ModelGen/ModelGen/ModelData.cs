@@ -12,7 +12,7 @@ public static class ModelData
 
   public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
   {
-    "DocumentFormat.OpenXml.ExtendedProperties"
+    "DocumentFormat.OpenXml.Wordprocesing"
   };
 
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings

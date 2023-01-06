@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 using DocumentFormat.OpenXml;
 
@@ -164,23 +166,25 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   private bool GenerateAcceptedPropertiesConversion(TypeInfo typeInfo, string? inNamespace)
   {
+    var ok = true;
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
         //if (kind == TypeKind.Interface || !prop.IsConstrained)
         if (!GeneratePropertyAccessors(prop, inNamespace))
-          return false;
-    return true;
+          ok = false;
+    return ok;
   }
 
   private bool GenerateItemsProperties(TypeInfo typeInfo, ItemsConstraint constraint, string fromClassName, string? inNamespace,
     List<string> subclassesTypeNames)
   {
+    var ok = true;
     if (constraint is ItemTypeConstraint itemTypeConstraint)
     {
       var prop = itemTypeConstraint.AccessProperty;
       if (prop != null)
         if (!GeneratePropertyAccessors(prop, inNamespace))
-          return false;
+          ok = false;
     }
     else
     if (constraint is ItemsCompoundConstraint itemsCompoundConstraint)
@@ -192,43 +196,42 @@ public class ConverterGenerator : BaseCodeGenerator
         foreach (var itemConstraint in itemsCompoundConstraint.Items)
         {
           if (!GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames))
-            return false;
+            ok = false;
         }
       }
     }
-    return true;
+    return ok;
   }
 
   private bool GeneratePropertyAccessors(PropInfo prop, string? inNamespace)
   {
+    var ok = true;
     var targetPropType = prop.PropertyType.GetConversionTarget(true);
     FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
     TrimNamespace(targetPropTypeName);
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
     if (!GeneratePropertyAccessors(prop, targetPropType))
-      return false;
+      ok = false;
 
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
-    return true;
+    return ok;
   }
 
   private bool GeneratePropertyAccessors(PropInfo prop, TypeInfo targetPropType)
   {
-    var ok = GeneratePropertyGetter(prop, targetPropType);
+    var ok1 = GeneratePropertyGetter(prop, targetPropType);
     if (prop.IsReadonly)
-      return ok;
-    if (ok)
-      ok = GeneratePropertySetter(prop, targetPropType);
-    return ok;
+      return ok1;
+    var ok2 = GeneratePropertySetter(prop, targetPropType);
+    return ok1 && ok2;
   }
 
   private bool GeneratePropertyGetter(PropInfo prop, TypeInfo targetPropType)
   {
+    var ok = true;
     var origPropName = prop.Name;
-    //if (origPropName == "EndnotePosition")
-    //  Debug.Assert(true);
     var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
     var targetPropTypeName = targetPropType.GetFullName(false);
     var origPropTypeName = prop.PropertyType.GetFullName(true);
@@ -238,20 +241,33 @@ public class ConverterGenerator : BaseCodeGenerator
     if (targetPropType.Type.Name.StartsWith("Collection`"))
     {
       var itemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
-      if (itemType == null)
-        return false;
-      var origItemTypeName = itemType.GetFullName(true);
-      var targetItemTypeName = itemType.GetFullName(false);
-      GenerateCollectionPropertyGetCode(origPropTypeName, origItemTypeName, targetItemTypeName);
+      if (itemType != null)
+      {
+        var origItemTypeName = itemType.GetFullName(true);
+        var targetItemTypeName = itemType.GetFullName(false);
+        GenerateCollectionPropertyGetCode(origPropTypeName, origItemTypeName, targetItemTypeName);
+      }
+      else
+      {
+        GenerateThrowNotImplementedException(1);
+        ok = false;
+      }
     }
     else if (targetPropType.Type.IsEnum)
     {
       if (prop.PropertyType.Name.StartsWith("EnumValues`"))
         GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
+      else if (prop.PropertyType.Name.StartsWith("EnumValue`"))
+        GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
+      else if (prop.PropertyType.Name.StartsWith("OpenXmlSimpleValue`"))
+        GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
       else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
         GenerateEnumValPropertyGetCode(origPropName, targetPropTypeName);
       else
-        return false;
+      {
+        GenerateThrowNotImplementedException(2);
+        ok = false;
+      }
     }
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.StringType)))
@@ -269,11 +285,12 @@ public class ConverterGenerator : BaseCodeGenerator
       GenerateSimplePropertyGetCode(origPropName);
     Writer.Indent--;
     Writer.WriteLine($"}}");
-    return true;
+    return ok;
   }
 
   private bool GeneratePropertySetter(PropInfo prop, TypeInfo targetPropType)
   {
+    bool ok = true;
     var origPropName = prop.Name;
     var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
     var targetPropTypeName = targetPropType.GetFullName(false);
@@ -285,15 +302,39 @@ public class ConverterGenerator : BaseCodeGenerator
     if (targetPropType.Type.Name.StartsWith("Collection`"))
     {
       var itemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
-      if (itemType == null)
-        return false;
-      var origItemTypeName = itemType.GetFullName(true);
-      var targetItemTypeName = itemType.GetFullName(false);
-      GenerateCollectionPropertySetCode(origPropTypeName, origItemTypeName, targetItemTypeName);
+      if (itemType != null)
+      {
+        var origItemTypeName = itemType.GetFullName(true);
+        var targetItemTypeName = itemType.GetFullName(false);
+        GenerateCollectionPropertySetCode(origPropTypeName, origItemTypeName, targetItemTypeName);
+      }
+      else
+      {
+        GenerateThrowNotImplementedException(1);
+        ok = false;
+      }
     }
     else if (targetPropType.Type.IsEnum)
     {
       if (prop.PropertyType.Name.StartsWith("EnumValues`"))
+      {
+        var origEnumType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
+        if (origEnumType != null)
+        {
+          var origEnumTypeName = origEnumType.GetFullName(true);
+          GenerateEnumTypePropertySetCode(origPropName, origEnumTypeName);
+        }
+      }
+      else if (prop.PropertyType.Name.StartsWith("EnumValue`"))
+      {
+        var origEnumType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
+        if (origEnumType != null)
+        {
+          var origEnumTypeName = origEnumType.GetFullName(true);
+          GenerateEnumTypePropertySetCode(origPropName, origEnumTypeName);
+        }
+      }
+      else if (prop.PropertyType.Name.StartsWith("OpenXmlSimpleValue`"))
       {
         var origEnumType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
         if (origEnumType != null)
@@ -314,11 +355,17 @@ public class ConverterGenerator : BaseCodeGenerator
             GenerateEnumValPropertySetCode(origPropName, origPropTypeName, origEnumTypeName);
           }
           else
-            return false;
+          {
+            GenerateThrowNotImplementedException(2);
+            ok = false;
+          }
         }
       }
       else
-        return false;
+      {
+        GenerateThrowNotImplementedException(3);
+        ok = false;
+      }
     }
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.StringType)))
@@ -337,7 +384,7 @@ public class ConverterGenerator : BaseCodeGenerator
       GenerateSimplePropertySetCode(origPropName);
     Writer.Indent--;
     Writer.WriteLine($"}}");
-    return true;
+    return ok;
   }
   #endregion
 
@@ -497,6 +544,12 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"    }}");
     Writer.WriteLine($"  }}");
     Writer.WriteLine($"}}");
+  }
+
+  private void GenerateThrowNotImplementedException(int point, [CallerMemberName] string? callerName = null)
+  {
+    string? message = $"\"Not implemented {point} in {callerName}\"";
+    Writer.WriteLine($"throw new NotImplementedException({message});");
   }
   #endregion
 

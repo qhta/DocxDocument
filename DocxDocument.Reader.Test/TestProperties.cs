@@ -179,7 +179,7 @@ namespace DocxDocument.Reader.Test
       Assert.That(newPropertiesCount, Is.EqualTo(propertiesCount), $"Deserialized properties count different for original");
     }
 
-    //[Test]
+    [Test]
     public void TestPropertiesXmlSerialization()
     {
       var extraTypes = Assembly.Load("DocumentModel").GetTypes()
