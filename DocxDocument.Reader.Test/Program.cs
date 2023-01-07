@@ -4,9 +4,9 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    var testInstance = new TestVariants();
+    var testInstance = new TestConverters();
     testInstance.Setup();
-    testInstance.TestXmlArrayVariantSerialization();
+    testInstance.TestEnumOpenXmlLeafElementConverter();
     Console.WriteLine("Test passed");
   }
 }

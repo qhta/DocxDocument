@@ -24,7 +24,10 @@ public class ConverterGenerator : BaseCodeGenerator
     {
       if (!typeInfo.IsGenericTypeParameter)
       {
-        GenerateConverterClass(typeInfo);
+        if (typeInfo.Type.IsEnum)
+          Debug.WriteLine($"Skipped {typeInfo.Type}");
+        //else
+          //GenerateConverterClass(typeInfo);
       }
       return true;
     }
@@ -38,7 +41,6 @@ public class ConverterGenerator : BaseCodeGenerator
     var typeName = type.Name;
     var aNamespace = type.Namespace;
     aNamespace = aNamespace.Replace("DocumentModel.", "");
-    //var intfOutputPath = Path.Combine(IntfOutputPath, aNamespace);
     var implOutputPath = Path.Combine(OutputPath, aNamespace);
     return GenerateConverterClass(type, typeName, Path.Combine(implOutputPath, typeName + "Converter" + ".cs"));
   }
@@ -77,7 +79,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var ok = GenerateAcceptedPropertiesConversion(typeInfo, aNamespace);
 
     if (ok)
-      ok = GenerateValueAccessors(typeInfo);
+      ok = GenerateConversionMethods(typeInfo);
 
     Writer.Indent--;
     Writer.WriteLine("}");
@@ -85,21 +87,19 @@ public class ConverterGenerator : BaseCodeGenerator
     return ok;
   }
 
-  private bool GenerateValueAccessors(TypeInfo typeInfo)
+  private bool GenerateConversionMethods(TypeInfo typeInfo)
   {
-    var ok = GenerateGetValueMethod(typeInfo);
-    if (ok)
-      ok = GenerateSetValueMethod(typeInfo);
+    var ok = GenerateCreateModelElementMethod(typeInfo);
     if (ok && !typeInfo.Type.IsAbstract)
       ok = GenerateCreateOpenXmlElementMethod(typeInfo);
     return ok;
   }
 
-  private bool GenerateGetValueMethod(TypeInfo typeInfo)
+  private bool GenerateCreateModelElementMethod(TypeInfo typeInfo)
   {
     var origTypeName = typeInfo.GetFullName(true);
     var targetTypeName = typeInfo.GetConversionTarget().GetFullName(false);
-    Writer.WriteLine($"public static {targetTypeName}? GetValue({origTypeName}? openXmlElement)");
+    Writer.WriteLine($"public static {targetTypeName}? CreateModelElement({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
     Writer.WriteLine($"if (openXmlElement != null)");
@@ -120,29 +120,6 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"}}");
     return true;
   }
-  private bool GenerateSetValueMethod(TypeInfo typeInfo)
-  {
-    var origTypeName = typeInfo.GetFullName(true);
-    var targetTypeName = typeInfo.GetConversionTarget().GetFullName(false);
-    Writer.WriteLine($"");
-    Writer.WriteLine($"public static void SetValue({origTypeName}? openXmlElement, {targetTypeName}? value)");
-    Writer.WriteLine($"{{");
-    Writer.Indent++;
-    Writer.WriteLine($"if (openXmlElement != null)");
-    Writer.WriteLine($"{{");
-    Writer.Indent++;
-    if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
-      {
-        var origPropName = prop.Name;
-        Writer.WriteLine($"Set{origPropName}(openXmlElement, value?.{origPropName});");
-      }
-    Writer.Indent--;
-    Writer.WriteLine($"}}");
-    Writer.Indent--;
-    Writer.WriteLine($"}}");
-    return true;
-  }
 
   private bool GenerateCreateOpenXmlElementMethod(TypeInfo typeInfo)
   {
@@ -156,7 +133,14 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"{{");
     Writer.WriteLine($"  var openXmlElement = new {origTypeName}();");
-    Writer.WriteLine($"  SetValue(openXmlElement, value);");
+    if (typeInfo.Properties != null)
+      foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
+      {
+        var origPropName = prop.Name;
+        Writer.WriteLine($"  Set{origPropName}(openXmlElement, value?.{origPropName});");
+      }
+
+    //Writer.WriteLine($"  SetValue(openXmlElement, value);");
     Writer.WriteLine($"  return openXmlElement;");
     Writer.WriteLine($"}}");
     Writer.WriteLine($"return null;");
@@ -240,6 +224,8 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"public static {targetPropTypeName}? Get{origPropName}({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
+    //if (origPropName == "ConnectionShape")
+    //  Debug.Assert(true);
     if (targetPropType.Type.Name.StartsWith("Collection`"))
     {
       var sourceItemType = sourcePropType.GetGenericArgTypes().FirstOrDefault();
@@ -265,7 +251,7 @@ public class ConverterGenerator : BaseCodeGenerator
       else if (prop.PropertyType.Name.StartsWith("OpenXmlSimpleValue`"))
         GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
       else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-        GenerateEnumValPropertyGetCode(origPropName, targetPropTypeName);
+        GenerateContentEnumValPropertyGetCode(origPropName, targetPropTypeName);
       else
       {
         GenerateThrowNotImplementedException(2);
@@ -282,8 +268,11 @@ public class ConverterGenerator : BaseCodeGenerator
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafTextElement)))
       GenerateTextPropertyGetCode(origPropName);
     else
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlElement)))
+    if (prop.DeclaringType?.Type.HasProperty(origPropName)==true)
       GenerateConvertedPropertyGetCode(origPropName);
+    else
+    if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlCompositeElement))==true)
+      GenerateContentElementPropertyGetCode(origPropName);
     else
       GenerateSimplePropertyGetCode(origPropName);
     Writer.Indent--;
@@ -383,9 +372,11 @@ public class ConverterGenerator : BaseCodeGenerator
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafTextElement)))
       GenerateTextPropertySetCode(origPropName, origPropTypeName);
     else
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlElement)))
+    if (prop.DeclaringType?.Type.HasProperty(origPropName)==true)
       GenerateConvertedPropertySetCode(origPropName);
-
+    else
+    if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlCompositeElement))==true)
+      GenerateContentElementPropertySetCode(origPropName);
     else
       GenerateSimplePropertySetCode(origPropName);
     Writer.Indent--;
@@ -437,9 +428,6 @@ public class ConverterGenerator : BaseCodeGenerator
   private void GenerateEnumValPropertyGetCode(string origPropName, string targetPropTypeName)
   {
     Writer.WriteLine($"return ({targetPropTypeName}?)openXmlElement?.{origPropName}?.Val?.Value;");
-    /*
-         return (DocumentModel.Wordprocessing.EndnotePositionKind?)openXmlElement?.EndnotePosition?.Val?.Value;
-     */
   }
 
   private void GenerateEnumValPropertySetCode(string origPropName, string origPropTypeName, string origPropValTypeName)
@@ -451,14 +439,6 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"  else");
     Writer.WriteLine($"    openXmlElement.{origPropName} = null;");
     Writer.WriteLine($"}}");
-    /*
-    {
-      if (value != null)
-        openXmlElement.EndnotePosition = new EndnotePosition { Val = (DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues)value };
-      else
-        openXmlElement.EndnotePosition = null;
-    }
-     */
   }
   #endregion
 
@@ -483,13 +463,59 @@ public class ConverterGenerator : BaseCodeGenerator
   #region Converted property access code generation
   private void GenerateConvertedPropertyGetCode(string origPropName)
   {
-    Writer.WriteLine($"return {origPropName}Converter.GetValue(openXmlElement?.{origPropName});");
+    Writer.WriteLine($"return {origPropName}Converter.CreateModelElement(openXmlElement?.{origPropName});");
   }
 
   private void GenerateConvertedPropertySetCode(string origPropName)
   {
     Writer.WriteLine($"if (openXmlElement != null)");
     Writer.WriteLine($"  openXmlElement.{origPropName} = {origPropName}Converter.CreateOpenXmlElement(value);");
+  }
+  #endregion
+
+  #region Content element property access code generation
+  private void GenerateContentElementPropertyGetCode(string origPropName)
+  {
+    Writer.WriteLine($"return {origPropName}Converter.CreateModelElement(openXmlElement?.GetFirstChild<{origPropName}>());");
+  }
+
+  private void GenerateContentElementPropertySetCode(string origPropName)
+  {
+    Writer.WriteLine($"if (openXmlElement != null)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = openXmlElement.GetFirstChild<{origPropName}>();");
+    Writer.WriteLine($"  if (itemElement != null)");
+    Writer.WriteLine($"    itemElement.Remove();");
+    Writer.WriteLine($"  if (value != null)");
+    Writer.WriteLine($"  {{");
+    Writer.WriteLine($"    itemElement = {origPropName}Converter.CreateOpenXmlElement(value);");
+    Writer.WriteLine($"    if (itemElement != null)");
+    Writer.WriteLine($"      openXmlElement.AddChild(itemElement);");
+    Writer.WriteLine($"  }}");
+    Writer.WriteLine($"}}");
+  }
+  #endregion
+
+  #region Content enum val property access code generation
+  private void GenerateContentEnumValPropertyGetCode(string origPropName, string targetPropTypeName)
+  {
+    Writer.WriteLine($"return ({targetPropTypeName}?)openXmlElement?.GetFirstChild<{origPropName}>();");
+  }
+
+  private void GenerateContentEnumValPropertySetCode(string origPropName)
+  {
+    Writer.WriteLine($"if (openXmlElement != null)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = openXmlElement.GetFirstChild<{origPropName}>();");
+    Writer.WriteLine($"  if (itemElement != null)");
+    Writer.WriteLine($"    itemElement.Remove();");
+    Writer.WriteLine($"  if (value != null)");
+    Writer.WriteLine($"  {{");
+    Writer.WriteLine($"    itemElement = {origPropName}Converter.CreateOpenXmlElement(value);");
+    Writer.WriteLine($"    if (itemElement != null)");
+    Writer.WriteLine($"      openXmlElement.AddChild(itemElement);");
+    Writer.WriteLine($"  }}");
+    Writer.WriteLine($"}}");
   }
   #endregion
 
@@ -525,7 +551,7 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"  var collection = new System.Collections.ObjectModel.Collection<{targetItemTypeName}>();");
     Writer.WriteLine($"  foreach (var item in openXmlElement.Elements<{origItemTypeName}>())");
     Writer.WriteLine($"  {{");
-    Writer.WriteLine($"    var newItem = {converterTypeName}.GetValue(item);");
+    Writer.WriteLine($"    var newItem = {converterTypeName}.CreateModelElement(item);");
     Writer.WriteLine($"    if (newItem != null)");
     Writer.WriteLine($"      collection.Add(newItem);");
     Writer.WriteLine($"  }}");
