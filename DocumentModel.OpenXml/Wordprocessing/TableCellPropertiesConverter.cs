@@ -6,6 +6,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class TableCellPropertiesConverter
 {
   /// <summary>
+  /// ConditionalFormatStyle.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? GetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// TableCellWidth.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// GridSpan.
+  /// </summary>
+  public static Int32? GetGridSpan(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGridSpan(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// HorizontalMerge.
   /// </summary>
   public static DocumentModel.Wordprocessing.MergedCellKind? GetHorizontalMerge(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
@@ -70,6 +109,19 @@ public static class TableCellPropertiesConverter
   }
   
   /// <summary>
+  /// TableCellBorders.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableCellBorders? GetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellBorders? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Shading.
   /// </summary>
   public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
@@ -112,6 +164,19 @@ public static class TableCellPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  /// <summary>
+  /// TableCellMargin.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
   /// <summary>
@@ -240,6 +305,46 @@ public static class TableCellPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static DocumentModel.Wordprocessing.TrackChangeType? GetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.TrackChangeType? GetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.CellMerge? GetCellMerge(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCellMerge(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.CellMerge? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.TableCellPropertiesChange? GetTableCellPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.TableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellPropertiesChange? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

@@ -5,6 +5,16 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DisplayUnitsConverter
 {
+  public static Double? GetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, Double? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Drawings.Charts.BuiltInUnitKind? GetBuiltInUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
@@ -32,6 +42,26 @@ public static class DisplayUnitsConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? GetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.DisplayUnitsLabel? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

@@ -6,6 +6,32 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class FramesetSplitbarConverter
 {
   /// <summary>
+  /// Frameset Splitter Width.
+  /// </summary>
+  public static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Width");
+  }
+  
+  public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Frameset Splitter Color.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement, DocumentModel.Wordprocessing.Color? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
   public static DocumentModel.Wordprocessing.OnOffOnlyKind? GetNoBorder(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)

@@ -5,6 +5,69 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BubbleChartConverter
 {
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BubbleChartSeries>? GetBubbleChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBubbleChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BubbleChartSeries>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt32? GetBubbleScale(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBubbleScale(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetShowNegativeBubbles(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetShowNegativeBubbles(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Drawings.Charts.SizeRepresentsKind? GetSizeRepresents(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -32,6 +95,26 @@ public static class BubbleChartConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static System.Collections.ObjectModel.Collection<UInt32>? GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? GetBubbleChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBubbleChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, DocumentModel.Drawings.Charts.BubbleChartExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

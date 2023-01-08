@@ -6,6 +6,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class CategoryConverter
 {
   /// <summary>
+  /// Category Associated With Entry.
+  /// </summary>
+  public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement)
+  {
+    return openXmlElement?.Name?.Val?.Value;
+  }
+  
+  public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Gallery Associated With Entry.
   /// </summary>
   public static DocumentModel.Wordprocessing.DocPartGalleryKind? GetGallery(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement)

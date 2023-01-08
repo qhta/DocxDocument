@@ -6,6 +6,19 @@ namespace DocumentModel.OpenXml.Math;
 public static class MatrixColumnPropertiesConverter
 {
   /// <summary>
+  /// Matrix Column Count.
+  /// </summary>
+  public static Int32? GetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Matrix Column Justification.
   /// </summary>
   public static DocumentModel.Math.HorizontalAlignmentKind? GetMatrixColumnJustification(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)

@@ -6,6 +6,48 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class PageBordersConverter
 {
   /// <summary>
+  /// Z-Ordering of Page Border
+  /// </summary>
+  public static DocumentModel.Wordprocessing.PageBorderZOrderKind? GetZOrder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DocumentModel.Wordprocessing.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
+  }
+  
+  public static void SetZOrder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderZOrderKind? value)
+  {
+    if (openXmlElement != null)
+      openXmlElement.ZOrder = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DocumentModel.Wordprocessing.PageBorderZOrderKind>(value);
+  }
+  
+  /// <summary>
+  /// Pages to Display Page Borders
+  /// </summary>
+  public static DocumentModel.Wordprocessing.PageBorderDisplayKind? GetDisplay(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DocumentModel.Wordprocessing.PageBorderDisplayKind>(openXmlElement?.Display?.Value);
+  }
+  
+  public static void SetDisplay(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderDisplayKind? value)
+  {
+    if (openXmlElement != null)
+      openXmlElement.Display = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DocumentModel.Wordprocessing.PageBorderDisplayKind>(value);
+  }
+  
+  /// <summary>
+  /// Page Border Positioning
+  /// </summary>
+  public static DocumentModel.Wordprocessing.PageBorderOffsetKind? GetOffsetFrom(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DocumentModel.Wordprocessing.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
+  }
+  
+  public static void SetOffsetFrom(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderOffsetKind? value)
+  {
+    if (openXmlElement != null)
+      openXmlElement.OffsetFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DocumentModel.Wordprocessing.PageBorderOffsetKind>(value);
+  }
+  
+  /// <summary>
   /// Top Border.
   /// </summary>
   public static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)

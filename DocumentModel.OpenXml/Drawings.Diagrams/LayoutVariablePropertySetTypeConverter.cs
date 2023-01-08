@@ -6,6 +6,58 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 public static class LayoutVariablePropertySetTypeConverter
 {
   /// <summary>
+  /// Show Organization Chart User Interface.
+  /// </summary>
+  public static Boolean? GetOrganizationChart(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOrganizationChart(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Maximum Children.
+  /// </summary>
+  public static Int32? GetMaxNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMaxNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Preferred Number of Children.
+  /// </summary>
+  public static Int32? GetPreferredNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPreferredNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Show Insert Bullet.
+  /// </summary>
+  public static Boolean? GetBulletEnabled(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBulletEnabled(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Diagram Direction.
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.DirectionKind? GetDirection(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)

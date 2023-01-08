@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 using Qhta.TypeUtils;
 
@@ -72,6 +73,19 @@ public class ConverterGenerator : BaseCodeGenerator
     return null;
   }
 
+  public static Type? GetOpenXmlEnumValueType(Type type)
+  {
+    var propType = type;
+    if (propType.Name.StartsWith("EnumValue"))
+    {
+      var argType = propType.GenericTypeArguments.FirstOrDefault();
+      if (argType != null && argType.IsEnum)
+      {
+        return argType;
+      }
+    }
+    return null;
+  }
 
   #region Converter class generation
   private bool GenerateConverterClass(TypeInfo type)
@@ -85,7 +99,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateConverterClass(TypeInfo type, string typeName, string filename)
   {
-    if (typeName=="CustomProperties")
+    if (typeName == "BorderType")
       Debug.Assert(true);
     if (!AssurePathExists(filename))
       return false;
@@ -101,7 +115,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
     {
-      aNamespace = aNamespace.Replace("DocumentModel.", "DocumentModel.OpenXml.");
+      aNamespace = aNamespace.Replace("DocumentModel", "DocumentModel.OpenXml");
       Writer.WriteLine($"namespace {aNamespace};");
       Writer.WriteLine();
     }
@@ -190,6 +204,8 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   private bool GenerateAcceptedPropertiesConversion(TypeInfo typeInfo, string? inNamespace)
   {
+    if (typeInfo.Name == "BorderType")
+      Debug.Assert(true);
     var ok = true;
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)
@@ -231,8 +247,6 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (prop.PropertyType?.Type == null)
       return false;
-    if (!IsOpenXmlLeafEnumValueType(prop.PropertyType.Type))
-      return true;
     var ok = true;
     var targetPropType = prop.PropertyType.GetConversionTarget(true);
     GenerateDocumentationComments(prop);
@@ -266,16 +280,17 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"public static {targetPropTypeName}? Get{origPropName}({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
-    //if (origPropName == "ConnectionShape")
+    //if (origPropName == "BoxStyle")
     //  Debug.Assert(true);
     if (targetPropType.Type.IsEnum)
       ok = GenerateEnumPropertyGetCode(prop);
+    else
+    if (targetPropType.Type == typeof(string))
+      ok = GenerateStringPropertyGetCode(prop);
     //else 
     //if (targetPropType.Type.Name.StartsWith("Collection`"))
     //  ok = GenerateCollectionGetCode(prop, origPropType, targetPropType);
-    //else
-    //if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.StringType)))
-    //  ok = GenerateStringTypePropertyGetCode(origPropName);
+
     //else 
     //if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlSimpleType)))
     //  ok = GenerateSimpleTypePropertyGetCode(origPropName);
@@ -310,6 +325,8 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"public static void Set{origPropName}({origTypeName}? openXmlElement, {targetPropTypeName}? value)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
+    if (origPropName == "BoxStyle")
+      Debug.Assert(true);
     if (targetPropType.Type.IsEnum)
       ok = GenerateEnumPropertySetCode(prop);
     //else
@@ -377,22 +394,22 @@ public class ConverterGenerator : BaseCodeGenerator
     var origPropName = prop.Name;
     //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
     //var origPropType = prop.PropertyType;
-    var targetPropType = prop.PropertyType.GetConversionTarget();
-    var targetPropTypeName = targetPropType.GetFullName(false);
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    //var targetPropType = prop.PropertyType.GetConversionTarget();
+    //var targetPropTypeName = targetPropType.GetFullName(false);
+    //var origPropTypeName = prop.PropertyType.GetFullName(true);
     if (origPropName.Contains("Border"))
       Debug.Assert(true);
     if (prop.PropertyType.Name.StartsWith("EnumValues`"))
-      return GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertyGetCode(prop);
     else if (prop.PropertyType.Name.StartsWith("EnumValue`"))
-      return GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertyGetCode(prop);
     else if (prop.PropertyType.Name.StartsWith("OpenXmlSimpleValue`"))
-      return GenerateEnumTypePropertyGetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertyGetCode(prop);
     else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
       return GenerateContentEnumValPropertyGetCode(prop);
     else
     {
-      GenerateThrowNotImplementedException(2);
+      GenerateThrowNotImplementedException(1);
       return false;
     }
   }
@@ -402,36 +419,59 @@ public class ConverterGenerator : BaseCodeGenerator
     var origPropName = prop.Name;
     //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
     //var origPropType = prop.PropertyType;
-    var targetPropType = prop.PropertyType.GetConversionTarget();
-    var targetPropTypeName = targetPropType.GetFullName(false);
+    //var targetPropType = prop.PropertyType.GetConversionTarget();
+    //var targetPropTypeName = targetPropType.GetFullName(false);
     //var origPropTypeName = prop.PropertyType.GetFullName(true);
 
     if (prop.PropertyType.Name.StartsWith("EnumValues`"))
-      return GenerateEnumTypePropertySetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertySetCode(prop);
     else if (prop.PropertyType.Name.StartsWith("EnumValue`"))
-      return GenerateEnumTypePropertySetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertySetCode(prop);
     else if (prop.PropertyType.Name.StartsWith("OpenXmlSimpleValue`"))
-      return GenerateEnumTypePropertySetCode(origPropName, targetPropTypeName);
+      return GenerateEnumTypePropertySetCode(prop);
     else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
       return GenerateContentEnumValPropertySetCode(prop);
     else
     {
-      GenerateThrowNotImplementedException(2);
+      GenerateThrowNotImplementedException(1);
       return false;
     }
   }
 
-  private bool GenerateEnumTypePropertyGetCode(string origPropName, string targetPropTypeName)
+  private bool GenerateEnumTypePropertyGetCode(PropInfo prop)
   {
-    Writer.WriteLine($"return ({targetPropTypeName}?)openXmlElement?.{origPropName}?.Value;");
-    return true;
+    var origPropName = prop.Name;
+    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropType = prop.PropertyType.Type;
+    var origPropValueType = GetOpenXmlEnumValueType(origPropType);
+    var targetPropType = prop.PropertyType.GetConversionTarget();
+    if (origPropValueType != null && targetPropType != null)
+    {
+      var origPropValueTypeName = origPropValueType.FullName;
+      var targetPropTypeName = targetPropType.GetFullName(false);
+      Writer.WriteLine(
+        $"return EnumValueConverter.GetValue<{origPropValueTypeName}, {targetPropTypeName}>(openXmlElement?.{origPropName}?.Value);");
+      return true;
+    }
+    return false;
   }
 
-  private bool GenerateEnumTypePropertySetCode(string origPropName, string origPropTypeName)
+  private bool GenerateEnumTypePropertySetCode(PropInfo prop)
   {
-    Writer.WriteLine($"if (openXmlElement != null)");
-    Writer.WriteLine($"  openXmlElement.{origPropName} = ({origPropTypeName}?)value;");
-    return true;
+    var origPropName = prop.Name;
+    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropType = prop.PropertyType.Type;
+    var origPropValueType = GetOpenXmlEnumValueType(origPropType);
+    var targetPropType = prop.PropertyType.GetConversionTarget();
+    if (origPropValueType != null && targetPropType != null)
+    {
+      var origPropValueTypeName = origPropValueType.FullName;
+      var targetPropTypeName = targetPropType.GetFullName(false);
+      Writer.WriteLine($"if (openXmlElement != null)");
+      Writer.WriteLine($"  openXmlElement.{origPropName} = EnumValueConverter.CreateEnumValue<{origPropValueTypeName}, {targetPropTypeName}>(value);");
+      return true;
+    }
+    return false;
   }
   #endregion
 
@@ -456,9 +496,33 @@ public class ConverterGenerator : BaseCodeGenerator
   #endregion
 
   #region String property access code generation
+
+  private bool GenerateStringPropertyGetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    //var origPropType = prop.PropertyType;
+    var targetPropType = prop.PropertyType.GetConversionTarget();
+    var targetPropTypeName = targetPropType.GetFullName(false);
+    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    if (origPropName.Contains("Border"))
+      Debug.Assert(true);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.StringType)))
+    {
+      if (prop.DeclaringType?.Type.HasProperty(origPropName) == true)
+        return GenerateStringTypePropertyGetCode(origPropName);
+      else
+        return GenerateThrowNotImplementedException(2, $"property declaring Type is {prop.DeclaringType?.Type}");
+    }
+    else
+    {
+      return GenerateThrowNotImplementedException(1, $"propertyType is {prop.PropertyType.Type}");
+    }
+  }
+
   private bool GenerateStringTypePropertyGetCode(string origPropName)
   {
-    Writer.WriteLine($"return openXmlElement?.{origPropName}?.Value?.Val;");
+    Writer.WriteLine($"return openXmlElement?.{origPropName}?.Val?.Value;");
     return true;
   }
 
@@ -698,6 +762,12 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateThrowNotImplementedException(int point, [CallerMemberName] string? callerName = null)
   {
     string? message = $"\"Not implemented {point} in {callerName}\"";
+    Writer.WriteLine($"throw new NotImplementedException({message});");
+    return true;
+  }
+  private bool GenerateThrowNotImplementedException(int point, string msg, [CallerMemberName] string? callerName = null)
+  {
+    string? message = $"\"Not implemented {point} in {callerName}: {msg}\"";
     Writer.WriteLine($"throw new NotImplementedException({message});");
     return true;
   }

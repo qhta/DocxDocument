@@ -37,4 +37,64 @@ public static class LegendConverter
     }
   }
   
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LegendEntry>? GetLegendEntries(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLegendEntries(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LegendEntry>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.Layout? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, DocumentModel.Drawings.Charts.Layout? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

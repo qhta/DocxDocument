@@ -6,6 +6,19 @@ namespace DocumentModel.OpenXml.Math;
 public static class MathPropertiesConverter
 {
   /// <summary>
+  /// Math Font.
+  /// </summary>
+  public static String? GetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.MathFont");
+  }
+  
+  public static void SetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Break on Binary Operators.
   /// </summary>
   public static DocumentModel.Math.BreakBinaryOperatorKind? GetBreakBinary(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
@@ -134,6 +147,32 @@ public static class MathPropertiesConverter
   }
   
   /// <summary>
+  /// Left Margin.
+  /// </summary>
+  public static UInt32? GetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Right Margin.
+  /// </summary>
+  public static UInt32? GetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Default Justification.
   /// </summary>
   public static DocumentModel.Math.JustificationKind? GetDefaultJustification(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
@@ -163,6 +202,68 @@ public static class MathPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  /// <summary>
+  /// Pre-Equation Spacing.
+  /// </summary>
+  public static UInt32? GetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Post-Equation Spacing.
+  /// </summary>
+  public static UInt32? GetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Inter-Equation Spacing.
+  /// </summary>
+  public static UInt32? GetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Intra-Equation Spacing.
+  /// </summary>
+  public static UInt32? GetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt32? GetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
   public static DocumentModel.Math.BooleanKind? GetWrapRight(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)

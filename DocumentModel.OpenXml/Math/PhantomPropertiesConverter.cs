@@ -165,4 +165,17 @@ public static class PhantomPropertiesConverter
     }
   }
   
+  /// <summary>
+  /// ControlProperties.
+  /// </summary>
+  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.PhantomProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetControlProperties(DocumentFormat.OpenXml.Math.PhantomProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

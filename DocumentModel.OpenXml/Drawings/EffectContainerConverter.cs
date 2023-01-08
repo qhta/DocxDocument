@@ -5,4 +5,304 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class EffectContainerConverter
 {
+  public static DocumentModel.Drawings.EffectContainer? GetChildEffectContainer(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetChildEffectContainer(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.EffectContainer? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Effect? GetEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Effect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaBiLevel? GetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaBiLevel? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetAlphaCeiling(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaCeiling(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetAlphaFloor(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaFloor(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaInverse? GetAlphaInverse(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaInverse(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaInverse? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaModulationEffect? GetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaModulationEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaModulationFixed? GetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaModulationFixed? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaOutset? GetAlphaOutset(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaOutset(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaOutset? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.AlphaReplace? GetAlphaReplace(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAlphaReplace(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.AlphaReplace? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.BiLevel? GetBiLevel(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBiLevel(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.BiLevel? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Blend? GetBlend(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBlend(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Blend? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Blur? GetBlur(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBlur(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Blur? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.ColorChange? GetColorChange(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetColorChange(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.ColorChange? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.ColorReplacement? GetColorReplacement(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetColorReplacement(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.ColorReplacement? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Duotone? GetDuotone(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDuotone(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Duotone? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Fill? GetFill(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetFill(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Fill? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.FillOverlay? GetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.FillOverlay? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Glow? GetGlow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGlow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Glow? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetGrayscale(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGrayscale(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Hsl? GetHsl(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetHsl(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Hsl? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.InnerShadow? GetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.InnerShadow? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.LuminanceEffect? GetLuminanceEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLuminanceEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.LuminanceEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.OuterShadow? GetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.OuterShadow? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.PresetShadow? GetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.PresetShadow? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Reflection? GetReflection(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetReflection(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.Reflection? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.RelativeOffset? GetRelativeOffset(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRelativeOffset(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.RelativeOffset? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.SoftEdge? GetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.SoftEdge? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.TintEffect? GetTintEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTintEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.TintEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.TransformEffect? GetTransformEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTransformEffect(DocumentFormat.OpenXml.Drawing.EffectContainer? openXmlElement, DocumentModel.Drawings.TransformEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }
