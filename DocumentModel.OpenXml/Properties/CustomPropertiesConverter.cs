@@ -38,7 +38,7 @@ public static class CustomPropertiesConverter
     }
   }
   
-  public static DocumentModel.Properties.CustomProperties? GetValue(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
+  public static DocumentModel.Properties.CustomProperties? CreateModelElement(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
   {
     var value = new DocumentModel.Properties.CustomProperties();
     if (openXmlElement != null)
