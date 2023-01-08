@@ -211,7 +211,9 @@ public class BaseCodeGenerator
     return filename;
   }
 
-  protected bool AssurePathExists(string filename)
+  #endregion
+
+  protected virtual bool AssurePathExists(string filename)
   {
     if (File.Exists(filename))
       return false;
@@ -224,5 +226,4 @@ public class BaseCodeGenerator
     return true;
   }
 
-  #endregion
 }

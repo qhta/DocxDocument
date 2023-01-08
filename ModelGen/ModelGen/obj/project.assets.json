@@ -467,6 +467,19 @@
           }
         }
       },
+      "DocumentModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "System.IO.Packaging": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DocumentModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocumentModel.dll": {}
+        }
+      },
       "DocumentModel.Attributes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -479,7 +492,7 @@
       },
       "Qhta.Xml.Serialization.Attributes/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/Qhta.Xml.Serialization.Attributes.dll": {}
         },
@@ -2200,6 +2213,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "DocumentModel/1.0.0": {
+      "type": "project",
+      "path": "../../DocumentModel/DocumentModel.csproj",
+      "msbuildProject": "../../DocumentModel/DocumentModel.csproj"
+    },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
@@ -2214,6 +2232,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "DocumentFormat.OpenXml >= 2.19.0",
+      "DocumentModel >= 1.0.0",
       "DocumentModel.Attributes >= 1.0.0",
       "IgnoresAccessChecksToGenerator >= 0.6.0",
       "Namotion.Reflection >= 2.1.1",
@@ -2253,6 +2272,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj": {
+              "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj"
+            },
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj"
             },

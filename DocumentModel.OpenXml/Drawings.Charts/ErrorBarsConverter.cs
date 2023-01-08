@@ -1,0 +1,104 @@
+namespace DocumentModel.OpenXml.Drawings.Charts;
+
+/// <summary>
+/// Defines the ErrorBars Class.
+/// </summary>
+public static class ErrorBarsConverter
+{
+  /// <summary>
+  /// Error Bar Direction.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ErrorBarDirectionKind? GetErrorDirection(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorDirection>();
+      if (itemElement?.Val?.Value != null)
+      {
+        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DocumentModel.Drawings.Charts.ErrorBarDirectionKind>(itemElement.Val.Value);
+      }
+    }
+    return null;
+  }
+  
+  public static void SetErrorDirection(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.ErrorBarDirectionKind? value)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorDirection>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorDirection, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DocumentModel.Drawings.Charts.ErrorBarDirectionKind>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  
+  /// <summary>
+  /// Error Bar Type.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ErrorBarKind? GetErrorBarType(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarType>();
+      if (itemElement?.Val?.Value != null)
+      {
+        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DocumentModel.Drawings.Charts.ErrorBarKind>(itemElement.Val.Value);
+      }
+    }
+    return null;
+  }
+  
+  public static void SetErrorBarType(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.ErrorBarKind? value)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarType>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarType, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DocumentModel.Drawings.Charts.ErrorBarKind>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  
+  /// <summary>
+  /// Error Bar Value Type.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ErrorKind? GetErrorBarValueType(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValueType>();
+      if (itemElement?.Val?.Value != null)
+      {
+        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DocumentModel.Drawings.Charts.ErrorKind>(itemElement.Val.Value);
+      }
+    }
+    return null;
+  }
+  
+  public static void SetErrorBarValueType(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.ErrorKind? value)
+  {
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValueType>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValueType, DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DocumentModel.Drawings.Charts.ErrorKind>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  
+}

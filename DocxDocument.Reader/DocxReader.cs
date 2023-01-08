@@ -122,7 +122,7 @@ public partial class DocxReader
 
     if (parts.HasFlag(Parts.CustomFileProperties) && WordprocessingDocument.CustomFilePropertiesPart?.Properties != null)
       properties.CustomProperties =
-        DocumentModel.OpenXml.Properties.CustomPropertiesConverter.GetValue(WordprocessingDocument.CustomFilePropertiesPart.Properties);
+        DocumentModel.OpenXml.Properties.CustomPropertiesConverter.CreateModelElement(WordprocessingDocument.CustomFilePropertiesPart.Properties);
       
     return properties;
   }

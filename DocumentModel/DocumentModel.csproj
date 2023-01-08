@@ -30,10 +30,13 @@
 
   <ItemGroup>
     <Reference Include="Qhta.Conversion">
-      <HintPath>..\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
+      <HintPath>..\..\MyLib\Qhta.Conversion\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TypeUtils">
+      <HintPath>..\..\MyLib\bin\Qhta.TypeUtils.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.Xml.Serialization.Attributes">
-      <HintPath>..\DocumentModel.OpenXml\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll</HintPath>
+      <HintPath>..\..\MyLib\Qhta.Xml.Serialization.Attributes\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

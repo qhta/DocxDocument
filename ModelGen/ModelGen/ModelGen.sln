@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.Attributes", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Serialization.Attributes", "..\..\..\MyLib\Qhta.Xml.Serialization.Attributes\Qhta.Xml.Serialization.Attributes.csproj", "{06DC25E8-CF40-4432-BFD9-EFC7CAEE041A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel", "..\..\DocumentModel\DocumentModel.csproj", "{886C3F94-B040-42AD-AA8F-8897463FEF51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{06DC25E8-CF40-4432-BFD9-EFC7CAEE041A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06DC25E8-CF40-4432-BFD9-EFC7CAEE041A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06DC25E8-CF40-4432-BFD9-EFC7CAEE041A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886C3F94-B040-42AD-AA8F-8897463FEF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886C3F94-B040-42AD-AA8F-8897463FEF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886C3F94-B040-42AD-AA8F-8897463FEF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886C3F94-B040-42AD-AA8F-8897463FEF51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
