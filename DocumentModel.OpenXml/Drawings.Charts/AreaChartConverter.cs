@@ -37,4 +37,67 @@ public static class AreaChartConverter
     }
   }
   
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartSeries>? GetAreaChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAreaChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartSeries>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.DropLines? GetDropLines(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDropLines(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, DocumentModel.Drawings.Charts.DropLines? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<UInt32>? GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.AreaChartExtensionList? GetAreaChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAreaChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement, DocumentModel.Drawings.Charts.AreaChartExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

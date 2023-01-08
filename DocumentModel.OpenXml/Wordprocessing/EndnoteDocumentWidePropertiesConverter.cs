@@ -51,6 +51,19 @@ public static class EndnoteDocumentWidePropertiesConverter
   }
   
   /// <summary>
+  /// Footnote and Endnote Numbering Starting Value.
+  /// </summary>
+  public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Footnote and Endnote Numbering Restart Location.
   /// </summary>
   public static DocumentModel.Wordprocessing.RestartNumberKind? GetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
@@ -80,6 +93,16 @@ public static class EndnoteDocumentWidePropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? GetEndnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEndnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

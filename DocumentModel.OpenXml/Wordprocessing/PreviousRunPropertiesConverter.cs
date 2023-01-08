@@ -5,6 +5,256 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PreviousRunPropertiesConverter
 {
+  public static String? GetRunStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.RunStyle");
+  }
+  
+  public static void SetRunStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.RunFonts? GetRunFonts(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRunFonts(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.RunFonts? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetBold(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBold(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetItalic(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetItalic(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetOutline(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOutline(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetShadow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetShadow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetEmboss(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEmboss(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetImprint(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetImprint(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetNoProof(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetNoProof(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetWebHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetWebHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.Color? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Int32? GetSpacing(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSpacing(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Int32? GetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt32? GetKern(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetKern(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static String? GetPosition(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Position");
+  }
+  
+  public static void SetPosition(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FontSize");
+  }
+  
+  public static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static String? GetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript");
+  }
+  
+  public static void SetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Wordprocessing.HighlightColorKind? GetHighlight(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -93,6 +343,16 @@ public static class PreviousRunPropertiesConverter
     throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
+  public static DocumentModel.Wordprocessing.FitText? GetFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.FitText? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Wordprocessing.VerticalPositionKind? GetVerticalTextAlignment(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -122,6 +382,26 @@ public static class PreviousRunPropertiesConverter
     }
   }
   
+  public static Boolean? GetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Wordprocessing.EmphasisMarkKind? GetEmphasis(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -149,6 +429,96 @@ public static class PreviousRunPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static DocumentModel.Wordprocessing.LanguageType? GetLanguages(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLanguages(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.LanguageType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.EastAsianLayout? GetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.EastAsianLayout? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.Glow? GetGlow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGlow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.Glow? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.Reflection? GetReflection(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetReflection(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.Reflection? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.TextOutlineEffect? GetTextOutlineEffect(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTextOutlineEffect(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.TextOutlineEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.FillTextEffect? GetFillTextEffect(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetFillTextEffect(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.FillTextEffect? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.Scene3D? GetScene3D(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetScene3D(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.Scene3D? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Wordprocessing.Properties3D? GetProperties3D(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetProperties3D(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.Properties3D? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
   public static DocumentModel.Wordprocessing.LigaturesKind? GetLigatures(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
@@ -236,6 +606,16 @@ public static class PreviousRunPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static DocumentModel.Wordprocessing.StylisticSets? GetStylisticSets(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetStylisticSets(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement, DocumentModel.Wordprocessing.StylisticSets? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
   public static DocumentModel.Wordprocessing.OnOffKind? GetContextualAlternatives(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties? openXmlElement)

@@ -69,4 +69,87 @@ public static class BarChartConverter
     }
   }
   
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartSeries>? GetBarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartSeries>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt16? GetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static SByte? GetOverlap(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOverlap(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, SByte? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines>? GetSeriesLineses(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSeriesLineses(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<UInt32>? GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.BarChartExtensionList? GetBarChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBarChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, DocumentModel.Drawings.Charts.BarChartExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

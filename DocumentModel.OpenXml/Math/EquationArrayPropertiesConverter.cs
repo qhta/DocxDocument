@@ -101,4 +101,43 @@ public static class EquationArrayPropertiesConverter
     }
   }
   
+  /// <summary>
+  /// Row Spacing Rule.
+  /// </summary>
+  public static Int32? GetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Row Spacing (Equation Array).
+  /// </summary>
+  public static UInt16? GetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// ControlProperties.
+  /// </summary>
+  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

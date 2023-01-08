@@ -165,4 +165,69 @@ public static class ManualLayoutConverter
     }
   }
   
+  /// <summary>
+  /// Left.
+  /// </summary>
+  public static Double? GetLeft(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLeft(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement, Double? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Top.
+  /// </summary>
+  public static Double? GetTop(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTop(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement, Double? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Width.
+  /// </summary>
+  public static Double? GetWidth(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetWidth(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement, Double? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Height.
+  /// </summary>
+  public static Double? GetHeight(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetHeight(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement, Double? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Chart Extensibility.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

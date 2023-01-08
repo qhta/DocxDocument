@@ -5,6 +5,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DocPartTypesConverter
 {
+  /// <summary>
+  /// Entry Is Of All Types
+  /// </summary>
+  public static Boolean? GetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Wordprocessing.DocPartKind? GetDocPartType(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
   {
     if (openXmlElement != null)

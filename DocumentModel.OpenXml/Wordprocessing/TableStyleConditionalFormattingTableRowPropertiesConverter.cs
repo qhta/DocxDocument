@@ -5,6 +5,16 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableStyleConditionalFormattingTableRowPropertiesConverter
 {
+  public static Boolean? GetHidden(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetHidden(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Wordprocessing.OnOffOnlyKind? GetCantSplit(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -61,6 +71,16 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
   public static DocumentModel.Wordprocessing.TableRowAlignmentKind? GetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? openXmlElement)

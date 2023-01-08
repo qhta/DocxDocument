@@ -37,4 +37,43 @@ public static class TextInputConverter
     }
   }
   
+  /// <summary>
+  /// Default Text Box Form Field String.
+  /// </summary>
+  public static String? GetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString");
+  }
+  
+  public static void SetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Text Box Form Field Maximum Length.
+  /// </summary>
+  public static Int16? GetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, Int16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Text Box Form Field Formatting.
+  /// </summary>
+  public static String? GetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Format");
+  }
+  
+  public static void SetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

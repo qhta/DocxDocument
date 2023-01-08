@@ -5,6 +5,19 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkExtensionConverter
 {
+  /// <summary>
+  /// URI
+  /// </summary>
+  public static String? GetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+  }
+  
+  public static void SetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Drawings.HyperlinkColorEnum? GetHyperlinkColor(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
   {
     if (openXmlElement != null)

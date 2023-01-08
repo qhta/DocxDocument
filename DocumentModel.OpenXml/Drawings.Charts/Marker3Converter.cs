@@ -37,4 +37,43 @@ public static class Marker3Converter
     }
   }
   
+  /// <summary>
+  /// Size.
+  /// </summary>
+  public static Byte? GetSize(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSize(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, Byte? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// ChartShapeProperties.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Chart Extensibility.
+  /// </summary>
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

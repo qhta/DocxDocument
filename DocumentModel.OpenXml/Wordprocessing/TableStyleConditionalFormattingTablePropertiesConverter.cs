@@ -38,6 +38,45 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   }
   
   /// <summary>
+  /// TableCellSpacing.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// TableIndentation.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableIndentation? GetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableIndentation? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// TableBorders.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableBorders? GetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableBorders? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Shading.
   /// </summary>
   public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
@@ -46,6 +85,19 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   }
   
   public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// TableCellMarginDefault.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableCellMarginDefault? GetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMarginDefault? value)
   {
     throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }

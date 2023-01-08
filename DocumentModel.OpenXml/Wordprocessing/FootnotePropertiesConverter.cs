@@ -51,6 +51,19 @@ public static class FootnotePropertiesConverter
   }
   
   /// <summary>
+  /// Footnote and Endnote Numbering Starting Value.
+  /// </summary>
+  public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Footnote and Endnote Numbering Restart Location.
   /// </summary>
   public static DocumentModel.Wordprocessing.RestartNumberKind? GetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties? openXmlElement)

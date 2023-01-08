@@ -37,4 +37,69 @@ public static class RubyPropertiesConverter
     }
   }
   
+  /// <summary>
+  /// Phonetic Guide Text Font Size.
+  /// </summary>
+  public static String? GetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize");
+  }
+  
+  public static void SetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
+  /// </summary>
+  public static Int16? GetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, Int16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Phonetic Guide Base Text Font Size.
+  /// </summary>
+  public static String? GetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize");
+  }
+  
+  public static void SetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Language ID for Phonetic Guide.
+  /// </summary>
+  public static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
+  }
+  
+  public static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Invalidated Field Cache.
+  /// </summary>
+  public static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

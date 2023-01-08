@@ -38,6 +38,19 @@ public static class MailMergeConverter
   }
   
   /// <summary>
+  /// Query Contains Link to External Query File.
+  /// </summary>
+  public static Boolean? GetLinkToQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetLinkToQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Data Source Type.
   /// </summary>
   public static DocumentModel.Wordprocessing.MailMergeDataKind? GetDataType(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
@@ -70,6 +83,71 @@ public static class MailMergeConverter
   }
   
   /// <summary>
+  /// Data Source Connection String.
+  /// </summary>
+  public static String? GetConnectString(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    return openXmlElement?.ConnectString?.Val?.Value;
+  }
+  
+  public static void SetConnectString(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Query For Data Source Records To Merge.
+  /// </summary>
+  public static String? GetQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    return openXmlElement?.Query?.Val?.Value;
+  }
+  
+  public static void SetQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Data Source File Path.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.RelationshipType? GetDataSourceReference(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataSourceReference(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Header Definition File Path.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.RelationshipType? GetHeaderSource(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetHeaderSource(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Remove Blank Lines from Merged Documents.
+  /// </summary>
+  public static Boolean? GetDoNotSuppressBlankLines(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDoNotSuppressBlankLines(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Merged Document Destination.
   /// </summary>
   public static DocumentModel.Wordprocessing.MailMergeDestinationKind? GetDestination(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
@@ -99,6 +177,97 @@ public static class MailMergeConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  /// <summary>
+  /// Column Containing E-mail Address.
+  /// </summary>
+  public static String? GetAddressFieldName(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    return openXmlElement?.AddressFieldName?.Val?.Value;
+  }
+  
+  public static void SetAddressFieldName(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Merged E-mail or Fax Subject Line.
+  /// </summary>
+  public static String? GetMailSubject(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    return openXmlElement?.MailSubject?.Val?.Value;
+  }
+  
+  public static void SetMailSubject(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Merged Document To E-Mail Attachment.
+  /// </summary>
+  public static Boolean? GetMailAsAttachment(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMailAsAttachment(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// View Merged Data Within Document.
+  /// </summary>
+  public static Boolean? GetViewMergedData(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetViewMergedData(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Record Currently Displayed In Merged Document.
+  /// </summary>
+  public static Int32? GetActiveRecord(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetActiveRecord(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Mail Merge Error Reporting Setting.
+  /// </summary>
+  public static Int32? GetCheckErrors(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCheckErrors(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, Int32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Office Data Source Object Settings.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.DataSourceObject? GetDataSourceObject(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataSourceObject(DocumentFormat.OpenXml.Wordprocessing.MailMerge? openXmlElement, DocumentModel.Wordprocessing.DataSourceObject? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

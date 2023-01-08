@@ -5,4 +5,171 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ShapeProperties3Converter
 {
+  /// <summary>
+  /// Black and White Mode
+  /// </summary>
+  public static DocumentModel.Drawings.BlackWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+  }
+  
+  public static void SetBlackWhiteMode(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
+  {
+    if (openXmlElement != null)
+      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
+  }
+  
+  /// <summary>
+  /// 2D Transform for Individual Objects.
+  /// </summary>
+  public static DocumentModel.Drawings.Transform2D? GetTransform2D(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTransform2D(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.Transform2D? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.CustomGeometry? GetCustomGeometry(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetCustomGeometry(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.CustomGeometry? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.PresetGeometry? GetPresetGeometry(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPresetGeometry(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.PresetGeometry? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetNoFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSolidFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGradientFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBlipFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.BlipFill? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetPatternFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static Boolean? GetGroupFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGroupFill(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetOutline(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.Outline? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEffectList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.EffectList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetEffectDag(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.EffectDag? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Scene3DType? GetScene3DType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetScene3DType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.Scene3DType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Shape3DType? GetShape3DType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetShape3DType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.Shape3DType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.ShapePropertiesExtensionList? GetShapePropertiesExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetShapePropertiesExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties? openXmlElement, DocumentModel.Drawings.ShapePropertiesExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

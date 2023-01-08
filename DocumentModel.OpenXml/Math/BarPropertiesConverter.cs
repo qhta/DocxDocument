@@ -37,4 +37,17 @@ public static class BarPropertiesConverter
     }
   }
   
+  /// <summary>
+  /// ControlProperties.
+  /// </summary>
+  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetControlProperties(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
 }

@@ -6,6 +6,19 @@ namespace DocumentModel.OpenXml.Math;
 public static class NaryPropertiesConverter
 {
   /// <summary>
+  /// n-ary Operator Character.
+  /// </summary>
+  public static String? GetAccentChar(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.AccentChar");
+  }
+  
+  public static void SetAccentChar(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// n-ary Limit Location.
   /// </summary>
   public static DocumentModel.Math.LimitLocationKind? GetLimitLocation(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
@@ -131,6 +144,19 @@ public static class NaryPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  /// <summary>
+  /// ControlProperties.
+  /// </summary>
+  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetControlProperties(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }
