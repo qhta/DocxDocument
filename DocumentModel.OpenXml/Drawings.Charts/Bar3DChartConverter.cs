@@ -69,6 +69,59 @@ public static class Bar3DChartConverter
     }
   }
   
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  public static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, Boolean? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartSeries>? GetBarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartSeries>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt16? GetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static UInt16? GetGapDepth(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetGapDepth(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, UInt16? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
   public static DocumentModel.Drawings.Charts.ShapeKind? GetShape(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -96,6 +149,26 @@ public static class Bar3DChartConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  public static System.Collections.ObjectModel.Collection<UInt32>? GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  public static DocumentModel.Drawings.Charts.Bar3DChartExtensionList? GetBar3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBar3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChart? openXmlElement, DocumentModel.Drawings.Charts.Bar3DChartExtensionList? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }

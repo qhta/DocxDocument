@@ -6,6 +6,71 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class FrameConverter
 {
   /// <summary>
+  /// Frame Size.
+  /// </summary>
+  public static String? GetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    return openXmlElement?.FrameSize?.Val?.Value;
+  }
+  
+  public static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Frame Name.
+  /// </summary>
+  public static String? GetFrameName(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FrameName");
+  }
+  
+  public static void SetFrameName(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, String? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Source File for Frame.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.RelationshipType? GetSourceFileReference(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetSourceFileReference(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Left and Right Margin for Frame.
+  /// </summary>
+  public static UInt32? GetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
+  /// Top and Bottom Margin for Frame.
+  /// </summary>
+  public static UInt32? GetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Scrollbar Display Option.
   /// </summary>
   public static DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind? GetScrollbarVisibility(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)

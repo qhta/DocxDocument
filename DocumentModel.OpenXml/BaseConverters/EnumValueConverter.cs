@@ -15,20 +15,20 @@ public static class EnumValueConverter
     return null;
   }
 
-  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType? value) 
-  //  where OpenXmlElementType : EnumValue<OpenXmlEnumType>, new() where OpenXmlEnumType : struct, IConvertible
-  //  where ModelEnumType : struct, IConvertible
-  //{
-  //  if (value != null)
-  //  {
-  //    var element = new OpenXmlElementType();
-  //    int n = (int)Convert.ChangeType(value, typeof(int));
-  //    var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
-  //    element.Value = val;
-  //    return element;
-  //  }
-  //  return null;
-  //}
+  public static EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
+    where OpenXmlEnumType : struct, IConvertible
+    where ModelEnumType : struct, IConvertible
+  {
+    if (value != null)
+    {
+      var element = new EnumValue<OpenXmlEnumType>();
+      int n = (int)Convert.ChangeType(value, typeof(int));
+      var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
+      element.Value = val;
+      return element;
+    }
+    return null;
+  }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
     where OpenXmlElementType : OpenXmlLeafElement, new() where OpenXmlEnumType : struct, IConvertible

@@ -51,6 +51,19 @@ public static class StyleTableCellPropertiesConverter
   }
   
   /// <summary>
+  /// TableCellMargin.
+  /// </summary>
+  public static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
   public static DocumentModel.Wordprocessing.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)

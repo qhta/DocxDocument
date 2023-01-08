@@ -102,6 +102,19 @@ public static class BoxPropertiesConverter
   }
   
   /// <summary>
+  /// Break.
+  /// </summary>
+  public static DocumentModel.Math.Break? GetBreak(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetBreak(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement, DocumentModel.Math.Break? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+  }
+  
+  /// <summary>
   /// Alignment.
   /// </summary>
   public static DocumentModel.Math.BooleanKind? GetAlignment(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
@@ -131,6 +144,19 @@ public static class BoxPropertiesConverter
           openXmlElement.AddChild(itemElement);
       }
     }
+  }
+  
+  /// <summary>
+  /// ControlProperties.
+  /// </summary>
+  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+  }
+  
+  public static void SetControlProperties(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+  {
+    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
   }
   
 }
