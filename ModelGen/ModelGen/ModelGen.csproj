@@ -35,6 +35,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\MyLib\Qhta.Xml.Serialization.Attributes\Qhta.Xml.Serialization.Attributes.csproj" />
+    <ProjectReference Include="..\..\DocumentModel\DocumentModel.csproj" />
     <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
   </ItemGroup>
 

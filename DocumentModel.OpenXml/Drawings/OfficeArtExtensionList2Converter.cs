@@ -1,0 +1,8 @@
+namespace DocumentModel.OpenXml.Drawings;
+
+/// <summary>
+/// Defines the OfficeArtExtensionList Class.
+/// </summary>
+public static class OfficeArtExtensionList2Converter
+{
+}

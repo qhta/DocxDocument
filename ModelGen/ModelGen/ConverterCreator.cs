@@ -274,6 +274,7 @@ public class ConverterCreator
     ModelDisplay.WriteLine($"Generating time is {ts}");
     ModelDisplay.WriteLine($"Generated {CodeGenerator.GeneratedInterfacesCount} interfaces, {CodeGenerator.GeneratedClassesCount} classes" +
                       $", {CodeGenerator.GeneratedStructsCount} structs, {CodeGenerator.GeneratedEnumTypesCount} enums");
+    ModelDisplay.WriteLine($"Skipped {CodeGenerator.SkippedTypesCount} converters");
     ModelDisplay.WriteLine($"Total {CodeGenerator.GeneratedPropertiesCount} properties, {CodeGenerator.GeneratedEnumValuesCount} enumValues");
     return ts;
   }
