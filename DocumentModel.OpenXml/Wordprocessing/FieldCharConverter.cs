@@ -24,12 +24,16 @@ public static class FieldCharConverter
   /// </summary>
   public static Boolean? GetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FieldLock?.Value;
   }
   
   public static void SetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.FieldLock = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class FieldCharConverter
   /// </summary>
   public static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dirty?.Value;
   }
   
   public static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Dirty = null;
   }
   
   /// <summary>
@@ -50,12 +58,12 @@ public static class FieldCharConverter
   /// </summary>
   public static String? GetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FieldData");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FieldData");
   }
   
   public static void SetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FieldData");
   }
   
   /// <summary>
@@ -63,12 +71,26 @@ public static class FieldCharConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FormFieldData? GetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement, DocumentModel.Wordprocessing.FormFieldData? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -76,12 +98,47 @@ public static class FieldCharConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.NumberingChange? GetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement, DocumentModel.Wordprocessing.NumberingChange? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FieldChar();
+      value.FieldCharType = GetFieldCharType(openXmlElement);
+      value.FieldLock = GetFieldLock(openXmlElement);
+      value.Dirty = GetDirty(openXmlElement);
+      value.FieldData = GetFieldData(openXmlElement);
+      value.FormFieldData = GetFormFieldData(openXmlElement);
+      value.NumberingChange = GetNumberingChange(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldChar? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldChar, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

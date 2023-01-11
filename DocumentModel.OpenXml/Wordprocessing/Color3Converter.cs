@@ -10,12 +10,16 @@ public static class Color3Converter
   /// </summary>
   public static String? GetVal(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Val = new StringValue { Value = value };
+      else
+        openXmlElement.Val = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class Color3Converter
   /// </summary>
   public static String? GetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeTint?.Value;
   }
   
   public static void SetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeTint = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeTint = null;
   }
   
   /// <summary>
@@ -50,12 +58,35 @@ public static class Color3Converter
   /// </summary>
   public static String? GetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeShade?.Value;
   }
   
   public static void SetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeShade = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeShade = null;
   }
   
+  public static DocumentModel.Wordprocessing.Color3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Color3();
+      value.Val = GetVal(openXmlElement);
+      value.ThemeColor = GetThemeColor(openXmlElement);
+      value.ThemeTint = GetThemeTint(openXmlElement);
+      value.ThemeShade = GetThemeShade(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color3? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Color, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

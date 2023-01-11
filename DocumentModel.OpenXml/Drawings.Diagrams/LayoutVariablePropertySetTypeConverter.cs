@@ -10,12 +10,30 @@ public static class LayoutVariablePropertySetTypeConverter
   /// </summary>
   public static Boolean? GetOrganizationChart(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetOrganizationChart(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.Diagrams.OrganizationChart();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +41,12 @@ public static class LayoutVariablePropertySetTypeConverter
   /// </summary>
   public static Int32? GetMaxNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren");
   }
   
   public static void SetMaxNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Diagrams.MaxNumberOfChildren");
   }
   
   /// <summary>
@@ -36,12 +54,12 @@ public static class LayoutVariablePropertySetTypeConverter
   /// </summary>
   public static Int32? GetPreferredNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren");
   }
   
   public static void SetPreferredNumberOfChildren(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Diagrams.PreferredNumberOfChildren");
   }
   
   /// <summary>
@@ -49,12 +67,30 @@ public static class LayoutVariablePropertySetTypeConverter
   /// </summary>
   public static Boolean? GetBulletEnabled(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetBulletEnabled(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.Diagrams.BulletEnabled();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -217,4 +253,28 @@ public static class LayoutVariablePropertySetTypeConverter
     }
   }
   
+  public static DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType();
+      value.OrganizationChart = GetOrganizationChart(openXmlElement);
+      value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
+      value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);
+      value.BulletEnabled = GetBulletEnabled(openXmlElement);
+      value.Direction = GetDirection(openXmlElement);
+      value.HierarchyBranch = GetHierarchyBranch(openXmlElement);
+      value.AnimateOneByOne = GetAnimateOneByOne(openXmlElement);
+      value.AnimationLevel = GetAnimationLevel(openXmlElement);
+      value.ResizeHandles = GetResizeHandles(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,12 @@ public static class FramesetSplitbarConverter
   /// </summary>
   public static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Width");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Width");
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Width");
   }
   
   /// <summary>
@@ -23,12 +23,26 @@ public static class FramesetSplitbarConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement, DocumentModel.Wordprocessing.Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -95,4 +109,23 @@ public static class FramesetSplitbarConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.FramesetSplitbar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FramesetSplitbar();
+      value.Width = GetWidth(openXmlElement);
+      value.Color = GetColor(openXmlElement);
+      value.NoBorder = GetNoBorder(openXmlElement);
+      value.FlatBorders = GetFlatBorders(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FramesetSplitbar? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,12 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.BeginChar");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.BeginChar");
   }
   
   public static void SetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.BeginChar");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.SeparatorChar");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.SeparatorChar");
   }
   
   public static void SetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.SeparatorChar");
   }
   
   /// <summary>
@@ -36,12 +36,12 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.EndChar");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.EndChar");
   }
   
   public static void SetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.EndChar");
   }
   
   /// <summary>
@@ -113,12 +113,47 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.DelimiterProperties();
+      value.BeginChar = GetBeginChar(openXmlElement);
+      value.SeparatorChar = GetSeparatorChar(openXmlElement);
+      value.EndChar = GetEndChar(openXmlElement);
+      value.GrowOperators = GetGrowOperators(openXmlElement);
+      value.Shape = GetShape(openXmlElement);
+      value.ControlProperties = GetControlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.DelimiterProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.DelimiterProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

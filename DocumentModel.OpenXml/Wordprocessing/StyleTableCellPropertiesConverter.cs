@@ -10,12 +10,26 @@ public static class StyleTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -55,12 +69,26 @@ public static class StyleTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -95,4 +123,23 @@ public static class StyleTableCellPropertiesConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.StyleTableCellProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.StyleTableCellProperties();
+      value.Shading = GetShading(openXmlElement);
+      value.NoWrap = GetNoWrap(openXmlElement);
+      value.TableCellMargin = GetTableCellMargin(openXmlElement);
+      value.TableCellVerticalAlignment = GetTableCellVerticalAlignment(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleTableCellProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

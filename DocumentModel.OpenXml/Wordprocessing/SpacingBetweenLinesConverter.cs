@@ -10,12 +10,16 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static String? GetBefore(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Before?.Value;
   }
   
   public static void SetBefore(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Before = new StringValue { Value = value };
+      else
+        openXmlElement.Before = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static Int32? GetBeforeLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.BeforeLines?.Value;
   }
   
   public static void SetBeforeLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.BeforeLines = value;
   }
   
   /// <summary>
@@ -36,12 +41,16 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static Boolean? GetBeforeAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.BeforeAutoSpacing?.Value;
   }
   
   public static void SetBeforeAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BeforeAutoSpacing = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.BeforeAutoSpacing = null;
   }
   
   /// <summary>
@@ -49,12 +58,16 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static String? GetAfter(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.After?.Value;
   }
   
   public static void SetAfter(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.After = new StringValue { Value = value };
+      else
+        openXmlElement.After = null;
   }
   
   /// <summary>
@@ -62,12 +75,13 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static Int32? GetAfterLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.AfterLines?.Value;
   }
   
   public static void SetAfterLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.AfterLines = value;
   }
   
   /// <summary>
@@ -75,12 +89,16 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static Boolean? GetAfterAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.AfterAutoSpacing?.Value;
   }
   
   public static void SetAfterAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AfterAutoSpacing = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.AfterAutoSpacing = null;
   }
   
   /// <summary>
@@ -88,12 +106,16 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   public static String? GetLine(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Line?.Value;
   }
   
   public static void SetLine(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Line = new StringValue { Value = value };
+      else
+        openXmlElement.Line = null;
   }
   
   /// <summary>
@@ -110,4 +132,27 @@ public static class SpacingBetweenLinesConverter
       openXmlElement.LineRule = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DocumentModel.Wordprocessing.LineSpacingRuleKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.SpacingBetweenLines? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SpacingBetweenLines();
+      value.Before = GetBefore(openXmlElement);
+      value.BeforeLines = GetBeforeLines(openXmlElement);
+      value.BeforeAutoSpacing = GetBeforeAutoSpacing(openXmlElement);
+      value.After = GetAfter(openXmlElement);
+      value.AfterLines = GetAfterLines(openXmlElement);
+      value.AfterAutoSpacing = GetAfterAutoSpacing(openXmlElement);
+      value.Line = GetLine(openXmlElement);
+      value.LineRule = GetLineRule(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SpacingBetweenLines? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

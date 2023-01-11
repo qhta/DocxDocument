@@ -10,12 +10,13 @@ public static class PermEndConverter
   /// </summary>
   public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class PermEndConverter
       openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.PermEnd? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PermEnd();
+      value.Id = GetId(openXmlElement);
+      value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermEnd? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermEnd, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

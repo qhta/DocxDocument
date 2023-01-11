@@ -10,12 +10,16 @@ public static class DocumentVariableConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class DocumentVariableConverter
   /// </summary>
   public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Val = new StringValue { Value = value };
+      else
+        openXmlElement.Val = null;
   }
   
+  public static DocumentModel.Wordprocessing.DocumentVariable? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentVariable? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocumentVariable();
+      value.Name = GetName(openXmlElement);
+      value.Val = GetVal(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentVariable? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentVariable, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

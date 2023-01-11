@@ -47,7 +47,13 @@ public static class FieldMapDataConverter
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Name = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+      else
+        openXmlElement.Name = null;
+    }
   }
   
   /// <summary>
@@ -60,7 +66,13 @@ public static class FieldMapDataConverter
   
   public static void SetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.MappedName = new DocumentFormat.OpenXml.Wordprocessing.MappedName { Val = value };
+      else
+        openXmlElement.MappedName = null;
+    }
   }
   
   /// <summary>
@@ -68,12 +80,12 @@ public static class FieldMapDataConverter
   /// </summary>
   public static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
   }
   
   public static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
   }
   
   /// <summary>
@@ -81,12 +93,12 @@ public static class FieldMapDataConverter
   /// </summary>
   public static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
   }
   
   public static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
   }
   
   /// <summary>
@@ -94,12 +106,51 @@ public static class FieldMapDataConverter
   /// </summary>
   public static Boolean? GetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DynamicAddress();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FieldMapData();
+      value.MailMergeFieldType = GetMailMergeFieldType(openXmlElement);
+      value.Name = GetName(openXmlElement);
+      value.MappedName = GetMappedName(openXmlElement);
+      value.ColumnIndex = GetColumnIndex(openXmlElement);
+      value.LanguageId = GetLanguageId(openXmlElement);
+      value.DynamicAddress = GetDynamicAddress(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldMapData? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldMapData, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

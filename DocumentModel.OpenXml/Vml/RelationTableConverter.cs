@@ -21,12 +21,52 @@ public static class RelationTableConverter
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>? GetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Relation>())
+      {
+        var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Relation>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Vml.RelationTable? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.RelationTable? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.RelationTable();
+      value.Extension = GetExtension(openXmlElement);
+      value.Relations = GetRelations(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RelationTable? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RelationTable, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

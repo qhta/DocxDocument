@@ -10,12 +10,42 @@ public static class FilteredSeriesTitleConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ChartText3? GetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? openXmlElement, DocumentModel.Drawings.Charts.ChartText3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.FilteredSeriesTitle();
+      value.ChartText = GetChartText(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredSeriesTitle? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

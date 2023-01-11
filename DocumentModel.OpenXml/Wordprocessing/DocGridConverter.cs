@@ -24,12 +24,13 @@ public static class DocGridConverter
   /// </summary>
   public static Int32? GetLinePitch(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LinePitch?.Value;
   }
   
   public static void SetLinePitch(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.LinePitch = value;
   }
   
   /// <summary>
@@ -37,12 +38,31 @@ public static class DocGridConverter
   /// </summary>
   public static Int32? GetCharacterSpace(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CharacterSpace?.Value;
   }
   
   public static void SetCharacterSpace(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.CharacterSpace = value;
   }
   
+  public static DocumentModel.Wordprocessing.DocGrid? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocGrid();
+      value.Type = GetType(openXmlElement);
+      value.LinePitch = GetLinePitch(openXmlElement);
+      value.CharacterSpace = GetCharacterSpace(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocGrid? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocGrid, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

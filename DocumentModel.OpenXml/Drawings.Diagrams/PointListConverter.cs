@@ -7,12 +7,51 @@ public static class PointListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>? GetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Point>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Point>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Point>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PointList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.PointList();
+      value.Points = GetPoints(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PointList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PointList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -24,12 +24,33 @@ public static class ColorMostRecentlyUsedConverter
   /// </summary>
   public static String? GetColors(DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Colors?.Value;
   }
   
   public static void SetColors(DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Colors = new StringValue { Value = value };
+      else
+        openXmlElement.Colors = null;
   }
   
+  public static DocumentModel.Vml.ColorMostRecentlyUsed? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ColorMostRecentlyUsed();
+      value.Extension = GetExtension(openXmlElement);
+      value.Colors = GetColors(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ColorMostRecentlyUsed? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

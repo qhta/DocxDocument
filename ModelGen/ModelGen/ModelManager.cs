@@ -17,7 +17,7 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "CopyrightXsdstring")
+    if (typeInfo.Name == "AttachedTemplate")
       Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
@@ -32,6 +32,8 @@ public static class ModelManager
 
   private static bool TryAddTypeTableConversion(TypeInfo typeInfo)
   {
+    if (typeInfo.Name == "AttachedTemplate")
+      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var targetType))
@@ -46,6 +48,8 @@ public static class ModelManager
 
   private static bool TryAddBaseTypeConversion(TypeInfo typeInfo)
   {
+    if (typeInfo.Name == "AttachedTemplate")
+      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (typeInfo.Name.EndsWith("Relationship"))
@@ -257,8 +261,8 @@ public static class ModelManager
 
   public static bool CheckTypeUsage(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
   {
-    //if (typeInfo.Name == "VTInt32")
-    //  Debug.Assert(true);
+    if (typeInfo.Name == "AttachedTemplate")
+      Debug.Assert(true);
     if (typeInfo.UsesEvaluated)
       return typeInfo.IsUsed;
     typeInfo.UsesEvaluated = true;

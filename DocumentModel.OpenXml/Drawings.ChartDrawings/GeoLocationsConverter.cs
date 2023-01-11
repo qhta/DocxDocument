@@ -10,12 +10,42 @@ public static class GeoLocationsConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawings.GeoLocation? GetGeoLocation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetGeoLocation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoLocation? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocations();
+      value.GeoLocation = GetGeoLocation(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocations? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

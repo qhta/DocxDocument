@@ -15,7 +15,13 @@ public static class DataSourceObjectConverter
   
   public static void SetUdlConnectionString(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.UdlConnectionString = new DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString { Val = value };
+      else
+        openXmlElement.UdlConnectionString = null;
+    }
   }
   
   /// <summary>
@@ -28,7 +34,13 @@ public static class DataSourceObjectConverter
   
   public static void SetDataSourceTableName(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.DataSourceTableName = new DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName { Val = value };
+      else
+        openXmlElement.DataSourceTableName = null;
+    }
   }
   
   /// <summary>
@@ -36,12 +48,26 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.RelationshipType? GetSourceReference(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SourceReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSourceReference(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SourceReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SourceReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +75,12 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static UInt32? GetColumnDelimiter(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter");
   }
   
   public static void SetColumnDelimiter(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter");
   }
   
   /// <summary>
@@ -94,32 +120,110 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static Boolean? GetFirstRowHeader(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetFirstRowHeader(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FieldMapData>? GetFieldMapDatas(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FieldMapData>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.FieldMapDataConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetFieldMapDatas(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FieldMapData>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.FieldMapDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FieldMapData>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.RelationshipType? GetRecipientDataReference(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRecipientDataReference(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.DataSourceObject? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DataSourceObject();
+      value.UdlConnectionString = GetUdlConnectionString(openXmlElement);
+      value.DataSourceTableName = GetDataSourceTableName(openXmlElement);
+      value.SourceReference = GetSourceReference(openXmlElement);
+      value.ColumnDelimiter = GetColumnDelimiter(openXmlElement);
+      value.MailMergeSource = GetMailMergeSource(openXmlElement);
+      value.FirstRowHeader = GetFirstRowHeader(openXmlElement);
+      value.FieldMapDatas = GetFieldMapDatas(openXmlElement);
+      value.RecipientDataReference = GetRecipientDataReference(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataSourceObject? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataSourceObject, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

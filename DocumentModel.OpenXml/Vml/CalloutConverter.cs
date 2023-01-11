@@ -24,12 +24,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -37,12 +37,16 @@ public static class CalloutConverter
   /// </summary>
   public static String? GetType(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Type?.Value;
   }
   
   public static void SetType(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Type = new StringValue { Value = value };
+      else
+        openXmlElement.Type = null;
   }
   
   /// <summary>
@@ -50,12 +54,16 @@ public static class CalloutConverter
   /// </summary>
   public static String? GetGap(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Gap?.Value;
   }
   
   public static void SetGap(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Gap = new StringValue { Value = value };
+      else
+        openXmlElement.Gap = null;
   }
   
   /// <summary>
@@ -77,12 +85,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetDropAuto(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetDropAuto(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -90,12 +98,16 @@ public static class CalloutConverter
   /// </summary>
   public static String? GetDrop(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Drop?.Value;
   }
   
   public static void SetDrop(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Drop = new StringValue { Value = value };
+      else
+        openXmlElement.Drop = null;
   }
   
   /// <summary>
@@ -103,12 +115,16 @@ public static class CalloutConverter
   /// </summary>
   public static String? GetDistance(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Distance?.Value;
   }
   
   public static void SetDistance(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Distance = new StringValue { Value = value };
+      else
+        openXmlElement.Distance = null;
   }
   
   /// <summary>
@@ -116,12 +132,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetLengthSpecified(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetLengthSpecified(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -129,12 +145,16 @@ public static class CalloutConverter
   /// </summary>
   public static String? GetLength(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Length?.Value;
   }
   
   public static void SetLength(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Length = new StringValue { Value = value };
+      else
+        openXmlElement.Length = null;
   }
   
   /// <summary>
@@ -142,12 +162,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetAccentBar(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAccentBar(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -155,12 +175,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetTextBorder(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetTextBorder(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -168,12 +188,12 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetMinusX(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetMinusX(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -181,12 +201,41 @@ public static class CalloutConverter
   /// </summary>
   public static Boolean? GetMinusY(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetMinusY(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
+  public static DocumentModel.Vml.Callout? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Callout();
+      value.Extension = GetExtension(openXmlElement);
+      value.On = GetOn(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      value.Gap = GetGap(openXmlElement);
+      value.Angle = GetAngle(openXmlElement);
+      value.DropAuto = GetDropAuto(openXmlElement);
+      value.Drop = GetDrop(openXmlElement);
+      value.Distance = GetDistance(openXmlElement);
+      value.LengthSpecified = GetLengthSpecified(openXmlElement);
+      value.Length = GetLength(openXmlElement);
+      value.AccentBar = GetAccentBar(openXmlElement);
+      value.TextBorder = GetTextBorder(openXmlElement);
+      value.MinusX = GetMinusX(openXmlElement);
+      value.MinusY = GetMinusY(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Callout? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Callout, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

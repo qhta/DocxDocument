@@ -24,12 +24,12 @@ public static class VerticalPositionConverter
   /// </summary>
   public static String? GetVerticalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment");
   }
   
   public static void SetVerticalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment");
   }
   
   /// <summary>
@@ -37,12 +37,12 @@ public static class VerticalPositionConverter
   /// </summary>
   public static String? GetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset");
   }
   
   public static void SetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset");
   }
   
   /// <summary>
@@ -50,12 +50,31 @@ public static class VerticalPositionConverter
   /// </summary>
   public static String? GetPercentagePositionVerticalOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset");
   }
   
   public static void SetPercentagePositionVerticalOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset");
   }
   
+  public static DocumentModel.Drawings.Wordprocessing.VerticalPosition? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Wordprocessing.VerticalPosition();
+      value.RelativeFrom = GetRelativeFrom(openXmlElement);
+      value.VerticalAlignment = GetVerticalAlignment(openXmlElement);
+      value.PositionOffset = GetPositionOffset(openXmlElement);
+      value.PercentagePositionVerticalOffset = GetPercentagePositionVerticalOffset(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.VerticalPosition? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

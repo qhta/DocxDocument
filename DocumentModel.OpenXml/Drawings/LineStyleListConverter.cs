@@ -7,12 +7,42 @@ public static class LineStyleListConverter
 {
   public static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetOutline(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement, DocumentModel.Drawings.Outline? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.LineStyleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.LineStyleList();
+      value.Outline = GetOutline(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineStyleList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineStyleList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

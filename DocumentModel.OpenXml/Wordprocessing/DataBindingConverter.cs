@@ -10,12 +10,16 @@ public static class DataBindingConverter
   /// </summary>
   public static String? GetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PrefixMappings?.Value;
   }
   
   public static void SetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PrefixMappings = new StringValue { Value = value };
+      else
+        openXmlElement.PrefixMappings = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class DataBindingConverter
   /// </summary>
   public static String? GetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.XPath?.Value;
   }
   
   public static void SetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.XPath = new StringValue { Value = value };
+      else
+        openXmlElement.XPath = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class DataBindingConverter
   /// </summary>
   public static String? GetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StoreItemId?.Value;
   }
   
   public static void SetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StoreItemId = new StringValue { Value = value };
+      else
+        openXmlElement.StoreItemId = null;
   }
   
+  public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DataBinding();
+      value.PrefixMappings = GetPrefixMappings(openXmlElement);
+      value.XPath = GetXPath(openXmlElement);
+      value.StoreItemId = GetStoreItemId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataBinding, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

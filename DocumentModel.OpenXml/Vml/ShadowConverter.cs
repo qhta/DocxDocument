@@ -10,12 +10,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,12 @@ public static class ShadowConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -50,12 +54,12 @@ public static class ShadowConverter
   /// </summary>
   public static Boolean? GetObscured(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetObscured(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -63,12 +67,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetColor(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Color?.Value;
   }
   
   public static void SetColor(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Color = new StringValue { Value = value };
+      else
+        openXmlElement.Color = null;
   }
   
   /// <summary>
@@ -76,12 +84,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetOpacity(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Opacity?.Value;
   }
   
   public static void SetOpacity(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Opacity = new StringValue { Value = value };
+      else
+        openXmlElement.Opacity = null;
   }
   
   /// <summary>
@@ -89,12 +101,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetOffset(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Offset?.Value;
   }
   
   public static void SetOffset(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Offset = new StringValue { Value = value };
+      else
+        openXmlElement.Offset = null;
   }
   
   /// <summary>
@@ -102,12 +118,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetColor2(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Color2?.Value;
   }
   
   public static void SetColor2(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Color2 = new StringValue { Value = value };
+      else
+        openXmlElement.Color2 = null;
   }
   
   /// <summary>
@@ -115,12 +135,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetOffset2(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Offset2?.Value;
   }
   
   public static void SetOffset2(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Offset2 = new StringValue { Value = value };
+      else
+        openXmlElement.Offset2 = null;
   }
   
   /// <summary>
@@ -128,12 +152,16 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetOrigin(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Origin?.Value;
   }
   
   public static void SetOrigin(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Origin = new StringValue { Value = value };
+      else
+        openXmlElement.Origin = null;
   }
   
   /// <summary>
@@ -141,12 +169,42 @@ public static class ShadowConverter
   /// </summary>
   public static String? GetMatrix(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Matrix?.Value;
   }
   
   public static void SetMatrix(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Matrix = new StringValue { Value = value };
+      else
+        openXmlElement.Matrix = null;
   }
   
+  public static DocumentModel.Vml.Shadow? CreateModelElement(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Shadow();
+      value.Id = GetId(openXmlElement);
+      value.On = GetOn(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      value.Obscured = GetObscured(openXmlElement);
+      value.Color = GetColor(openXmlElement);
+      value.Opacity = GetOpacity(openXmlElement);
+      value.Offset = GetOffset(openXmlElement);
+      value.Color2 = GetColor2(openXmlElement);
+      value.Offset2 = GetOffset2(openXmlElement);
+      value.Origin = GetOrigin(openXmlElement);
+      value.Matrix = GetMatrix(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Shadow? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Shadow, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

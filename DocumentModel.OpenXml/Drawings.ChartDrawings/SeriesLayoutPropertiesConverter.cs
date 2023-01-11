@@ -10,12 +10,26 @@ public static class SeriesLayoutPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? GetParentLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.ParentLabelLayoutConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetParentLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ParentLabelLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -55,72 +69,198 @@ public static class SeriesLayoutPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? GetSeriesElementVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesElementVisibilitiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSeriesElementVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesElementVisibilitiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAggregation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetAggregation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.Binning? GetBinning(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.BinningConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBinning(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.Binning? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.BinningConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.Geography? GetGeography(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeographyConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetGeography(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.Geography? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeographyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.Statistics? GetStatistics(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.StatisticsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStatistics(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.Statistics? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.StatisticsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.Subtotals? GetSubtotals(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.SubtotalsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSubtotals(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.Subtotals? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.SubtotalsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties();
+      value.ParentLabelLayout = GetParentLabelLayout(openXmlElement);
+      value.RegionLabelLayout = GetRegionLabelLayout(openXmlElement);
+      value.SeriesElementVisibilities = GetSeriesElementVisibilities(openXmlElement);
+      value.Aggregation = GetAggregation(openXmlElement);
+      value.Binning = GetBinning(openXmlElement);
+      value.Geography = GetGeography(openXmlElement);
+      value.Statistics = GetStatistics(openXmlElement);
+      value.Subtotals = GetSubtotals(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

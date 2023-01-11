@@ -10,12 +10,16 @@ public static class TaskConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,26 @@ public static class TaskConverter
   /// </summary>
   public static DocumentModel.TaskAnchor? GetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.TaskAnchorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.TaskAnchor? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.TaskAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +54,26 @@ public static class TaskConverter
   /// </summary>
   public static DocumentModel.TaskHistory? GetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.TaskHistoryConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.TaskHistory? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.TaskHistoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +81,45 @@ public static class TaskConverter
   /// </summary>
   public static DocumentModel.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Task? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Task();
+      value.Id = GetId(openXmlElement);
+      value.TaskAnchor = GetTaskAnchor(openXmlElement);
+      value.TaskHistory = GetTaskHistory(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Task? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.Task, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

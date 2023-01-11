@@ -10,12 +10,16 @@ public static class HeaderFooterConverter
   /// </summary>
   public static Boolean? GetAlignWithMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.AlignWithMargins?.Value;
   }
   
   public static void SetAlignWithMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.AlignWithMargins = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class HeaderFooterConverter
   /// </summary>
   public static Boolean? GetDifferentOddEven(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DifferentOddEven?.Value;
   }
   
   public static void SetDifferentOddEven(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.DifferentOddEven = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class HeaderFooterConverter
   /// </summary>
   public static Boolean? GetDifferentFirst(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DifferentFirst?.Value;
   }
   
   public static void SetDifferentFirst(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.DifferentFirst = null;
   }
   
   /// <summary>
@@ -49,12 +61,12 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring");
   }
   
   public static void SetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring");
   }
   
   /// <summary>
@@ -62,12 +74,12 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring");
   }
   
   public static void SetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring");
   }
   
   /// <summary>
@@ -75,12 +87,12 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring");
   }
   
   public static void SetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring");
   }
   
   /// <summary>
@@ -88,12 +100,12 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring");
   }
   
   public static void SetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring");
   }
   
   /// <summary>
@@ -101,12 +113,12 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring");
   }
   
   public static void SetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring");
   }
   
   /// <summary>
@@ -114,12 +126,36 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring");
   }
   
   public static void SetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring");
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.HeaderFooter();
+      value.AlignWithMargins = GetAlignWithMargins(openXmlElement);
+      value.DifferentOddEven = GetDifferentOddEven(openXmlElement);
+      value.DifferentFirst = GetDifferentFirst(openXmlElement);
+      value.OddHeaderXsdstring = GetOddHeaderXsdstring(openXmlElement);
+      value.OddFooterXsdstring = GetOddFooterXsdstring(openXmlElement);
+      value.EvenHeaderXsdstring = GetEvenHeaderXsdstring(openXmlElement);
+      value.EvenFooterXsdstring = GetEvenFooterXsdstring(openXmlElement);
+      value.FirstHeaderXsdstring = GetFirstHeaderXsdstring(openXmlElement);
+      value.FirstFooterXsdstring = GetFirstFooterXsdstring(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.HeaderFooter? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

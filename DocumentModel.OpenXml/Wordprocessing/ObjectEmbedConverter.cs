@@ -24,12 +24,16 @@ public static class ObjectEmbedConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class ObjectEmbedConverter
   /// </summary>
   public static String? GetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ProgId?.Value;
   }
   
   public static void SetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ProgId = new StringValue { Value = value };
+      else
+        openXmlElement.ProgId = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class ObjectEmbedConverter
   /// </summary>
   public static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShapeId?.Value;
   }
   
   public static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeId = new StringValue { Value = value };
+      else
+        openXmlElement.ShapeId = null;
   }
   
   /// <summary>
@@ -63,12 +75,36 @@ public static class ObjectEmbedConverter
   /// </summary>
   public static String? GetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FieldCodes?.Value;
   }
   
   public static void SetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FieldCodes = new StringValue { Value = value };
+      else
+        openXmlElement.FieldCodes = null;
   }
   
+  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ObjectEmbed();
+      value.drawAspect = GetdrawAspect(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.ProgId = GetProgId(openXmlElement);
+      value.ShapeId = GetShapeId(openXmlElement);
+      value.FieldCodes = GetFieldCodes(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectEmbed? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

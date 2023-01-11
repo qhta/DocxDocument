@@ -10,12 +10,42 @@ public static class DialogBoxLauncherConverter
   /// </summary>
   public static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher? openXmlElement, DocumentModel.UI.UnsizedButton? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.UI.DialogBoxLauncher? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.UI.DialogBoxLauncher();
+      value.UnsizedButton = GetUnsizedButton(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DialogBoxLauncher? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

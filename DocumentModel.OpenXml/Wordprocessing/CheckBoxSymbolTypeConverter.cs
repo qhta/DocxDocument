@@ -10,12 +10,16 @@ public static class CheckBoxSymbolTypeConverter
   /// </summary>
   public static String? GetFont(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Font?.Value;
   }
   
   public static void SetFont(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Font = new StringValue { Value = value };
+      else
+        openXmlElement.Font = null;
   }
   
   /// <summary>
@@ -23,12 +27,29 @@ public static class CheckBoxSymbolTypeConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
+  public static DocumentModel.Wordprocessing.CheckBoxSymbolType? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.CheckBoxSymbolType();
+      value.Font = GetFont(openXmlElement);
+      value.Val = GetVal(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

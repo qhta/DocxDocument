@@ -10,12 +10,26 @@ public static class PrimaryItemConverter
   /// </summary>
   public static DocumentModel.BackstageRegularButton? GetBackstageRegularButton(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.BackstageRegularButtonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBackstageRegularButton(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement, DocumentModel.BackstageRegularButton? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.BackstageRegularButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,43 @@ public static class PrimaryItemConverter
   /// </summary>
   public static DocumentModel.BackstagePrimaryMenu? GetBackstagePrimaryMenu(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.BackstagePrimaryMenuConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBackstagePrimaryMenu(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement, DocumentModel.BackstagePrimaryMenu? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.BackstagePrimaryMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.PrimaryItem? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.PrimaryItem();
+      value.BackstageRegularButton = GetBackstageRegularButton(openXmlElement);
+      value.BackstagePrimaryMenu = GetBackstagePrimaryMenu(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.PrimaryItem? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

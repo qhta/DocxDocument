@@ -10,12 +10,13 @@ public static class PaperSourceConverter
   /// </summary>
   public static UInt16? GetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.First?.Value;
   }
   
   public static void SetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.First = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class PaperSourceConverter
   /// </summary>
   public static UInt16? GetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Other?.Value;
   }
   
   public static void SetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Other = value;
   }
   
+  public static DocumentModel.Wordprocessing.PaperSource? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PaperSource();
+      value.First = GetFirst(openXmlElement);
+      value.Other = GetOther(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PaperSource? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PaperSource, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

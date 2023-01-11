@@ -10,12 +10,16 @@ public static class DataLabelVisibilitiesConverter
   /// </summary>
   public static Boolean? GetSeriesName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SeriesName?.Value;
   }
   
   public static void SetSeriesName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SeriesName = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.SeriesName = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class DataLabelVisibilitiesConverter
   /// </summary>
   public static Boolean? GetCategoryName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CategoryName?.Value;
   }
   
   public static void SetCategoryName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CategoryName = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.CategoryName = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class DataLabelVisibilitiesConverter
   /// </summary>
   public static Boolean? GetValue(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Value?.Value;
   }
   
   public static void SetValue(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Value = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Value = null;
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities();
+      value.SeriesName = GetSeriesName(openXmlElement);
+      value.CategoryName = GetCategoryName(openXmlElement);
+      value.Value = GetValue(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

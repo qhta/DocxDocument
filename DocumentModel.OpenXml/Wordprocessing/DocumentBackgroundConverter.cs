@@ -10,12 +10,16 @@ public static class DocumentBackgroundConverter
   /// </summary>
   public static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Color?.Value;
   }
   
   public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Color = new StringValue { Value = value };
+      else
+        openXmlElement.Color = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class DocumentBackgroundConverter
   /// </summary>
   public static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeTint?.Value;
   }
   
   public static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeTint = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeTint = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class DocumentBackgroundConverter
   /// </summary>
   public static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeShade?.Value;
   }
   
   public static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeShade = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeShade = null;
   }
   
   /// <summary>
@@ -63,12 +75,46 @@ public static class DocumentBackgroundConverter
   /// </summary>
   public static DocumentModel.Vml.Background? GetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Background>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.BackgroundConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, DocumentModel.Vml.Background? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Background>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Background>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.DocumentBackground? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocumentBackground();
+      value.Color = GetColor(openXmlElement);
+      value.ThemeColor = GetThemeColor(openXmlElement);
+      value.ThemeTint = GetThemeTint(openXmlElement);
+      value.ThemeShade = GetThemeShade(openXmlElement);
+      value.Background = GetBackground(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentBackground? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentBackground, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

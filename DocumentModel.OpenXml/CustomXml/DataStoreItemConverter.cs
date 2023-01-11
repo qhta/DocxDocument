@@ -10,12 +10,16 @@ public static class DataStoreItemConverter
   /// </summary>
   public static String? GetItemId(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ItemId?.Value;
   }
   
   public static void SetItemId(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ItemId = new StringValue { Value = value };
+      else
+        openXmlElement.ItemId = null;
   }
   
   /// <summary>
@@ -23,12 +27,43 @@ public static class DataStoreItemConverter
   /// </summary>
   public static DocumentModel.CustomXml.SchemaReferences? GetSchemaReferences(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.CustomXml.SchemaReferencesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSchemaReferences(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement, DocumentModel.CustomXml.SchemaReferences? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.CustomXml.SchemaReferencesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.CustomXml.DataStoreItem? CreateModelElement(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.CustomXml.DataStoreItem();
+      value.ItemId = GetItemId(openXmlElement);
+      value.SchemaReferences = GetSchemaReferences(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.DataStoreItem? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

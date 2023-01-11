@@ -24,12 +24,33 @@ public static class ShapeIdMapConverter
   /// </summary>
   public static String? GetData(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Data?.Value;
   }
   
   public static void SetData(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Data = new StringValue { Value = value };
+      else
+        openXmlElement.Data = null;
   }
   
+  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ShapeIdMap();
+      value.Extension = GetExtension(openXmlElement);
+      value.Data = GetData(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeIdMap? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeIdMap, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

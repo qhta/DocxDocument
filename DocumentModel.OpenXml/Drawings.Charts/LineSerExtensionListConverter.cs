@@ -7,12 +7,51 @@ public static class LineSerExtensionListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineSerExtension>? GetLineSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineSerExtension>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.LineSerExtensionConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetLineSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineSerExtension>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.Charts.LineSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LineSerExtension>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.LineSerExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.LineSerExtensionList();
+      value.LineSerExtensions = GetLineSerExtensions(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LineSerExtensionList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.LineSerExtensionList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

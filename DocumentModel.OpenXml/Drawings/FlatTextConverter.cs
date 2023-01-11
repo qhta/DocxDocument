@@ -10,12 +10,29 @@ public static class FlatTextConverter
   /// </summary>
   public static Int64? GetZ(DocumentFormat.OpenXml.Drawing.FlatText? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Z?.Value;
   }
   
   public static void SetZ(DocumentFormat.OpenXml.Drawing.FlatText? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Z = value;
   }
   
+  public static DocumentModel.Drawings.FlatText? CreateModelElement(DocumentFormat.OpenXml.Drawing.FlatText? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.FlatText();
+      value.Z = GetZ(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FlatText? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FlatText, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

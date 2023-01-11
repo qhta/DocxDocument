@@ -10,12 +10,16 @@ public static class TableGridChangeConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,43 @@ public static class TableGridChangeConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.PreviousTableGrid? GetPreviousTableGrid(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PreviousTableGridConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPreviousTableGrid(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement, DocumentModel.Wordprocessing.PreviousTableGrid? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousTableGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.TableGridChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableGridChange();
+      value.Id = GetId(openXmlElement);
+      value.PreviousTableGrid = GetPreviousTableGrid(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableGridChange? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableGridChange, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

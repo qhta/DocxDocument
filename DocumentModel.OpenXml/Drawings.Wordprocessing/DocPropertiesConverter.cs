@@ -10,12 +10,13 @@ public static class DocPropertiesConverter
   /// </summary>
   public static UInt32? GetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
   /// <summary>
@@ -23,12 +24,16 @@ public static class DocPropertiesConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -36,12 +41,16 @@ public static class DocPropertiesConverter
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Description?.Value;
   }
   
   public static void SetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Description = new StringValue { Value = value };
+      else
+        openXmlElement.Description = null;
   }
   
   /// <summary>
@@ -49,12 +58,16 @@ public static class DocPropertiesConverter
   /// </summary>
   public static Boolean? GetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Hidden?.Value;
   }
   
   public static void SetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Hidden = null;
   }
   
   /// <summary>
@@ -62,12 +75,16 @@ public static class DocPropertiesConverter
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Title?.Value;
   }
   
   public static void SetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Title = new StringValue { Value = value };
+      else
+        openXmlElement.Title = null;
   }
   
   /// <summary>
@@ -75,12 +92,26 @@ public static class DocPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -88,12 +119,26 @@ public static class DocPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.HyperlinkOnHover? GetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, DocumentModel.Drawings.HyperlinkOnHover? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -101,12 +146,49 @@ public static class DocPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement, DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Wordprocessing.DocProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Wordprocessing.DocProperties();
+      value.Id = GetId(openXmlElement);
+      value.Name = GetName(openXmlElement);
+      value.Description = GetDescription(openXmlElement);
+      value.Hidden = GetHidden(openXmlElement);
+      value.Title = GetTitle(openXmlElement);
+      value.HyperlinkOnClick = GetHyperlinkOnClick(openXmlElement);
+      value.HyperlinkOnHover = GetHyperlinkOnHover(openXmlElement);
+      value.NonVisualDrawingPropertiesExtensionList = GetNonVisualDrawingPropertiesExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.DocProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

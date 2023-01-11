@@ -10,12 +10,28 @@ public static class CustomUIPartConverter
   /// </summary>
   public static DocumentModel.UI.CustomUI? GetCustomUI(DocumentFormat.OpenXml.Packaging.CustomUIPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetCustomUI(DocumentFormat.OpenXml.Packaging.CustomUIPart? openXmlElement, DocumentModel.UI.CustomUI? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
+  public static DocumentModel.Packaging.CustomUIPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomUIPart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.CustomUIPart();
+      value.CustomUI = GetCustomUI(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomUIPart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomUIPart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

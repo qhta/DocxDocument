@@ -24,12 +24,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetSize(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetSize?.Value;
   }
   
   public static void SetGetSize(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetSize = new StringValue { Value = value };
+      else
+        openXmlElement.GetSize = null;
   }
   
   /// <summary>
@@ -51,12 +55,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Description?.Value;
   }
   
   public static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Description = new StringValue { Value = value };
+      else
+        openXmlElement.Description = null;
   }
   
   /// <summary>
@@ -64,12 +72,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetDescription?.Value;
   }
   
   public static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetDescription = new StringValue { Value = value };
+      else
+        openXmlElement.GetDescription = null;
   }
   
   /// <summary>
@@ -77,12 +89,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -90,12 +106,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.IdQ?.Value;
   }
   
   public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IdQ = new StringValue { Value = value };
+      else
+        openXmlElement.IdQ = null;
   }
   
   /// <summary>
@@ -103,12 +123,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.IdMso?.Value;
   }
   
   public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IdMso = new StringValue { Value = value };
+      else
+        openXmlElement.IdMso = null;
   }
   
   /// <summary>
@@ -116,12 +140,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Tag?.Value;
   }
   
   public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Tag = new StringValue { Value = value };
+      else
+        openXmlElement.Tag = null;
   }
   
   /// <summary>
@@ -129,12 +157,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Image?.Value;
   }
   
   public static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Image = new StringValue { Value = value };
+      else
+        openXmlElement.Image = null;
   }
   
   /// <summary>
@@ -142,12 +174,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ImageMso?.Value;
   }
   
   public static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ImageMso = new StringValue { Value = value };
+      else
+        openXmlElement.ImageMso = null;
   }
   
   /// <summary>
@@ -155,12 +191,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetImage?.Value;
   }
   
   public static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetImage = new StringValue { Value = value };
+      else
+        openXmlElement.GetImage = null;
   }
   
   /// <summary>
@@ -168,12 +208,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Screentip?.Value;
   }
   
   public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Screentip = new StringValue { Value = value };
+      else
+        openXmlElement.Screentip = null;
   }
   
   /// <summary>
@@ -181,12 +225,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetScreentip?.Value;
   }
   
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetScreentip = new StringValue { Value = value };
+      else
+        openXmlElement.GetScreentip = null;
   }
   
   /// <summary>
@@ -194,12 +242,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Supertip?.Value;
   }
   
   public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Supertip = new StringValue { Value = value };
+      else
+        openXmlElement.Supertip = null;
   }
   
   /// <summary>
@@ -207,12 +259,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetSupertip?.Value;
   }
   
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetSupertip = new StringValue { Value = value };
+      else
+        openXmlElement.GetSupertip = null;
   }
   
   /// <summary>
@@ -220,12 +276,16 @@ public static class MenuConverter
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Enabled?.Value;
   }
   
   public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Enabled = null;
   }
   
   /// <summary>
@@ -233,12 +293,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetEnabled?.Value;
   }
   
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetEnabled = new StringValue { Value = value };
+      else
+        openXmlElement.GetEnabled = null;
   }
   
   /// <summary>
@@ -246,12 +310,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Label?.Value;
   }
   
   public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Label = new StringValue { Value = value };
+      else
+        openXmlElement.Label = null;
   }
   
   /// <summary>
@@ -259,12 +327,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetLabel?.Value;
   }
   
   public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetLabel = new StringValue { Value = value };
+      else
+        openXmlElement.GetLabel = null;
   }
   
   /// <summary>
@@ -272,12 +344,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertAfterMso?.Value;
   }
   
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertAfterMso = new StringValue { Value = value };
+      else
+        openXmlElement.InsertAfterMso = null;
   }
   
   /// <summary>
@@ -285,12 +361,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertBeforeMso?.Value;
   }
   
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+      else
+        openXmlElement.InsertBeforeMso = null;
   }
   
   /// <summary>
@@ -298,12 +378,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertAfterQ?.Value;
   }
   
   public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertAfterQ = new StringValue { Value = value };
+      else
+        openXmlElement.InsertAfterQ = null;
   }
   
   /// <summary>
@@ -311,12 +395,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertBeforeQ?.Value;
   }
   
   public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+      else
+        openXmlElement.InsertBeforeQ = null;
   }
   
   /// <summary>
@@ -324,12 +412,16 @@ public static class MenuConverter
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Visible?.Value;
   }
   
   public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Visible = null;
   }
   
   /// <summary>
@@ -337,12 +429,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetVisible?.Value;
   }
   
   public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetVisible = new StringValue { Value = value };
+      else
+        openXmlElement.GetVisible = null;
   }
   
   /// <summary>
@@ -350,12 +446,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Keytip?.Value;
   }
   
   public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Keytip = new StringValue { Value = value };
+      else
+        openXmlElement.Keytip = null;
   }
   
   /// <summary>
@@ -363,12 +463,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetKeytip?.Value;
   }
   
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetKeytip = new StringValue { Value = value };
+      else
+        openXmlElement.GetKeytip = null;
   }
   
   /// <summary>
@@ -376,12 +480,16 @@ public static class MenuConverter
   /// </summary>
   public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ShowLabel?.Value;
   }
   
   public static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.ShowLabel = null;
   }
   
   /// <summary>
@@ -389,12 +497,16 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetShowLabel?.Value;
   }
   
   public static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetShowLabel = new StringValue { Value = value };
+      else
+        openXmlElement.GetShowLabel = null;
   }
   
   /// <summary>
@@ -402,12 +514,16 @@ public static class MenuConverter
   /// </summary>
   public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ShowImage?.Value;
   }
   
   public static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.ShowImage = null;
   }
   
   /// <summary>
@@ -415,102 +531,288 @@ public static class MenuConverter
   /// </summary>
   public static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetShowImage?.Value;
   }
   
   public static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetShowImage = new StringValue { Value = value };
+      else
+        openXmlElement.GetShowImage = null;
   }
   
   public static DocumentModel.UI.UnsizedControlClone? GetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedControlClone? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedButton? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.CheckBoxConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.CheckBox? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedGallery? GetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedGallery? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedToggleButton? GetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedToggleButton? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.MenuSeparator? GetMenuSeparator(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.MenuSeparatorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMenuSeparator(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.MenuSeparator? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.MenuSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedSplitButton? GetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedSplitButtonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedSplitButton? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedSplitButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedMenu? GetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedMenu? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.UI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement, DocumentModel.UI.UnsizedDynamicMenu? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.UI.Menu? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.Menu? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.UI.Menu();
+      value.Size = GetSize(openXmlElement);
+      value.GetSize = GetGetSize(openXmlElement);
+      value.ItemSize = GetItemSize(openXmlElement);
+      value.Description = GetDescription(openXmlElement);
+      value.GetDescription = GetGetDescription(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.IdQ = GetIdQ(openXmlElement);
+      value.IdMso = GetIdMso(openXmlElement);
+      value.Tag = GetTag(openXmlElement);
+      value.Image = GetImage(openXmlElement);
+      value.ImageMso = GetImageMso(openXmlElement);
+      value.GetImage = GetGetImage(openXmlElement);
+      value.Screentip = GetScreentip(openXmlElement);
+      value.GetScreentip = GetGetScreentip(openXmlElement);
+      value.Supertip = GetSupertip(openXmlElement);
+      value.GetSupertip = GetGetSupertip(openXmlElement);
+      value.Enabled = GetEnabled(openXmlElement);
+      value.GetEnabled = GetGetEnabled(openXmlElement);
+      value.Label = GetLabel(openXmlElement);
+      value.GetLabel = GetGetLabel(openXmlElement);
+      value.InsertAfterMso = GetInsertAfterMso(openXmlElement);
+      value.InsertBeforeMso = GetInsertBeforeMso(openXmlElement);
+      value.InsertAfterQ = GetInsertAfterQ(openXmlElement);
+      value.InsertBeforeQ = GetInsertBeforeQ(openXmlElement);
+      value.Visible = GetVisible(openXmlElement);
+      value.GetVisible = GetGetVisible(openXmlElement);
+      value.Keytip = GetKeytip(openXmlElement);
+      value.GetKeytip = GetGetKeytip(openXmlElement);
+      value.ShowLabel = GetShowLabel(openXmlElement);
+      value.GetShowLabel = GetGetShowLabel(openXmlElement);
+      value.ShowImage = GetShowImage(openXmlElement);
+      value.GetShowImage = GetGetShowImage(openXmlElement);
+      value.UnsizedControlClone = GetUnsizedControlClone(openXmlElement);
+      value.UnsizedButton = GetUnsizedButton(openXmlElement);
+      value.CheckBox = GetCheckBox(openXmlElement);
+      value.UnsizedGallery = GetUnsizedGallery(openXmlElement);
+      value.UnsizedToggleButton = GetUnsizedToggleButton(openXmlElement);
+      value.MenuSeparator = GetMenuSeparator(openXmlElement);
+      value.UnsizedSplitButton = GetUnsizedSplitButton(openXmlElement);
+      value.UnsizedMenu = GetUnsizedMenu(openXmlElement);
+      value.UnsizedDynamicMenu = GetUnsizedDynamicMenu(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.Menu? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.Menu, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

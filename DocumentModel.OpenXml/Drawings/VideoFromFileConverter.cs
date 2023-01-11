@@ -10,12 +10,16 @@ public static class VideoFromFileConverter
   /// </summary>
   public static String? GetLink(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Link?.Value;
   }
   
   public static void SetLink(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Link = new StringValue { Value = value };
+      else
+        openXmlElement.Link = null;
   }
   
   /// <summary>
@@ -23,12 +27,43 @@ public static class VideoFromFileConverter
   /// </summary>
   public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.VideoFromFile? CreateModelElement(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.VideoFromFile();
+      value.Link = GetLink(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.VideoFromFile? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.VideoFromFile, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

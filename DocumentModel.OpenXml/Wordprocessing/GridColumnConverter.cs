@@ -10,12 +10,32 @@ public static class GridColumnConverter
   /// </summary>
   public static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Width = new StringValue { Value = value };
+      else
+        openXmlElement.Width = null;
   }
   
+  public static DocumentModel.Wordprocessing.GridColumn? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.GridColumn? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.GridColumn();
+      value.Width = GetWidth(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GridColumn? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.GridColumn, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,13 @@ public static class GeoLocationConverter
   /// </summary>
   public static Double? GetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Latitude?.Value;
   }
   
   public static void SetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Latitude = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class GeoLocationConverter
   /// </summary>
   public static Double? GetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Longitude?.Value;
   }
   
   public static void SetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Longitude = value;
   }
   
   /// <summary>
@@ -36,12 +38,16 @@ public static class GeoLocationConverter
   /// </summary>
   public static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.EntityName?.Value;
   }
   
   public static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EntityName = new StringValue { Value = value };
+      else
+        openXmlElement.EntityName = null;
   }
   
   /// <summary>
@@ -63,12 +69,46 @@ public static class GeoLocationConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawings.Address? GetAddress(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.AddressConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAddress(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, DocumentModel.Drawings.ChartDrawings.Address? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.AddressConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocation();
+      value.Latitude = GetLatitude(openXmlElement);
+      value.Longitude = GetLongitude(openXmlElement);
+      value.EntityName = GetEntityName(openXmlElement);
+      value.EntityType = GetEntityType(openXmlElement);
+      value.Address = GetAddress(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocation? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

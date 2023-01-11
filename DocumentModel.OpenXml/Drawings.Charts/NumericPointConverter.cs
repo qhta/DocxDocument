@@ -10,12 +10,13 @@ public static class NumericPointConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Index?.Value;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Index = value;
   }
   
   /// <summary>
@@ -23,12 +24,16 @@ public static class NumericPointConverter
   /// </summary>
   public static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FormatCode?.Value;
   }
   
   public static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FormatCode = new StringValue { Value = value };
+      else
+        openXmlElement.FormatCode = null;
   }
   
   /// <summary>
@@ -36,12 +41,30 @@ public static class NumericPointConverter
   /// </summary>
   public static String? GetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Drawing.Charts.NumericValue");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.NumericValue");
   }
   
   public static void SetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.NumericValue");
   }
   
+  public static DocumentModel.Drawings.Charts.NumericPoint? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.NumericPoint();
+      value.Index = GetIndex(openXmlElement);
+      value.FormatCode = GetFormatCode(openXmlElement);
+      value.NumericValue = GetNumericValue(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumericPoint? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumericPoint, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

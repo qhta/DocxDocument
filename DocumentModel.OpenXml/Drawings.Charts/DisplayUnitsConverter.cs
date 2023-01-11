@@ -7,12 +7,12 @@ public static class DisplayUnitsConverter
 {
   public static Double? GetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit");
   }
   
   public static void SetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit");
   }
   
   public static DocumentModel.Drawings.Charts.BuiltInUnitKind? GetBuiltInUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
@@ -46,22 +46,69 @@ public static class DisplayUnitsConverter
   
   public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? GetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.DisplayUnitsLabelConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.DisplayUnitsLabel? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.DisplayUnitsLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.DisplayUnits();
+      value.CustomDisplayUnit = GetCustomDisplayUnit(openXmlElement);
+      value.BuiltInUnit = GetBuiltInUnit(openXmlElement);
+      value.DisplayUnitsLabel = GetDisplayUnitsLabel(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DisplayUnits? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

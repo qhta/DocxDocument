@@ -7,7 +7,7 @@ public static class CustomXmlPropertiesPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   /// <summary>
@@ -15,17 +15,35 @@ public static class CustomXmlPropertiesPartConverter
   /// </summary>
   public static DocumentModel.CustomXml.DataStoreItem? GetDataStoreItem(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetDataStoreItem(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement, DocumentModel.CustomXml.DataStoreItem? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.CustomXmlPropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.CustomXmlPropertiesPart();
+      value.ContentType = GetContentType(openXmlElement);
+      value.DataStoreItem = GetDataStoreItem(openXmlElement);
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomXmlPropertiesPart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

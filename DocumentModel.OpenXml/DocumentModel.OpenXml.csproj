@@ -7,6 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;618</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;618</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="BaseTypes\VariantImpl.cs" />
     <Compile Remove="BaseTypes\VariantReader.cs" />
@@ -17,6 +25,7 @@
     <Compile Remove="BaseTypes\VTVectorImpl.cs" />
     <Compile Remove="BaseTypes\VTVectorReader.cs" />
     <Compile Remove="BaseTypes\VTVectorWriter.cs" />
+    <Compile Remove="Drawings\BevelTypeConverter - Copy.cs" />
     <Compile Remove="Properties\CoreProperties.cs" />
     <Compile Remove="Properties\CustomDocumentProperty.cs" />
     <Compile Remove="Properties\CustomProperties.cs" />

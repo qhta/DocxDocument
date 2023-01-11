@@ -24,12 +24,26 @@ public static class TableStylePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.StyleParagraphProperties? GetStyleParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.StyleParagraphPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyleParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement, DocumentModel.Wordprocessing.StyleParagraphProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.StyleParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -37,12 +51,26 @@ public static class TableStylePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement, DocumentModel.Wordprocessing.RunPropertiesBaseStyle? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -50,12 +78,26 @@ public static class TableStylePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? GetTableStyleConditionalFormattingTableProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTablePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableStyleConditionalFormattingTableProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement, DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTablePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -63,12 +105,26 @@ public static class TableStylePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableStyleConditionalFormattingTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement, DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -76,12 +132,47 @@ public static class TableStylePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? GetTableStyleConditionalFormattingTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableStyleConditionalFormattingTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement, DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.TableStyleProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableStyleProperties();
+      value.Type = GetType(openXmlElement);
+      value.StyleParagraphProperties = GetStyleParagraphProperties(openXmlElement);
+      value.RunPropertiesBaseStyle = GetRunPropertiesBaseStyle(openXmlElement);
+      value.TableStyleConditionalFormattingTableProperties = GetTableStyleConditionalFormattingTableProperties(openXmlElement);
+      value.TableStyleConditionalFormattingTableRowProperties = GetTableStyleConditionalFormattingTableRowProperties(openXmlElement);
+      value.TableStyleConditionalFormattingTableCellProperties = GetTableStyleConditionalFormattingTableCellProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableStyleProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

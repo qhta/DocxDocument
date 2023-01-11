@@ -10,12 +10,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.QualifiedId?.Value;
   }
   
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.QualifiedId = new StringValue { Value = value };
+      else
+        openXmlElement.QualifiedId = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Tag?.Value;
   }
   
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Tag = new StringValue { Value = value };
+      else
+        openXmlElement.Tag = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class ImageControlConverter
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Enabled?.Value;
   }
   
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Enabled = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetEnabled?.Value;
   }
   
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetEnabled = new StringValue { Value = value };
+      else
+        openXmlElement.GetEnabled = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class ImageControlConverter
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Visible?.Value;
   }
   
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Visible = null;
   }
   
   /// <summary>
@@ -88,12 +112,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetVisible?.Value;
   }
   
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetVisible = new StringValue { Value = value };
+      else
+        openXmlElement.GetVisible = null;
   }
   
   /// <summary>
@@ -101,12 +129,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Image?.Value;
   }
   
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Image = new StringValue { Value = value };
+      else
+        openXmlElement.Image = null;
   }
   
   /// <summary>
@@ -114,12 +146,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ImageMso?.Value;
   }
   
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ImageMso = new StringValue { Value = value };
+      else
+        openXmlElement.ImageMso = null;
   }
   
   /// <summary>
@@ -127,12 +163,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetImage?.Value;
   }
   
   public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetImage = new StringValue { Value = value };
+      else
+        openXmlElement.GetImage = null;
   }
   
   /// <summary>
@@ -140,12 +180,16 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AltText?.Value;
   }
   
   public static void SetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AltText = new StringValue { Value = value };
+      else
+        openXmlElement.AltText = null;
   }
   
   /// <summary>
@@ -153,12 +197,43 @@ public static class ImageControlConverter
   /// </summary>
   public static String? GetGetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetAltText?.Value;
   }
   
   public static void SetGetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetAltText = new StringValue { Value = value };
+      else
+        openXmlElement.GetAltText = null;
   }
   
+  public static DocumentModel.ImageControl? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.ImageControl();
+      value.Id = GetId(openXmlElement);
+      value.QualifiedId = GetQualifiedId(openXmlElement);
+      value.Tag = GetTag(openXmlElement);
+      value.Enabled = GetEnabled(openXmlElement);
+      value.GetEnabled = GetGetEnabled(openXmlElement);
+      value.Visible = GetVisible(openXmlElement);
+      value.GetVisible = GetGetVisible(openXmlElement);
+      value.Image = GetImage(openXmlElement);
+      value.ImageMso = GetImageMso(openXmlElement);
+      value.GetImage = GetGetImage(openXmlElement);
+      value.AltText = GetAltText(openXmlElement);
+      value.GetAltText = GetGetAltText(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ImageControl? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static String? GetLanguage(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Language?.Value;
   }
   
   public static void SetLanguage(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Language = new StringValue { Value = value };
+      else
+        openXmlElement.Language = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static UInt16? GetVendorID(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.VendorID?.Value;
   }
   
   public static void SetVendorID(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.VendorID = value;
   }
   
   /// <summary>
@@ -36,12 +41,13 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static Int32? GetDllVersion(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DllVersion?.Value;
   }
   
   public static void SetDllVersion(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DllVersion = value;
   }
   
   /// <summary>
@@ -49,12 +55,16 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static Boolean? GetNaturalLanguageGrammarCheck(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NaturalLanguageGrammarCheck?.Value;
   }
   
   public static void SetNaturalLanguageGrammarCheck(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.NaturalLanguageGrammarCheck = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.NaturalLanguageGrammarCheck = null;
   }
   
   /// <summary>
@@ -62,12 +72,16 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static Boolean? GetCheckStyle(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CheckStyle?.Value;
   }
   
   public static void SetCheckStyle(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CheckStyle = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.CheckStyle = null;
   }
   
   /// <summary>
@@ -75,12 +89,37 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   public static String? GetApplicationName(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ApplicationName?.Value;
   }
   
   public static void SetApplicationName(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ApplicationName = new StringValue { Value = value };
+      else
+        openXmlElement.ApplicationName = null;
   }
   
+  public static DocumentModel.Wordprocessing.ActiveWritingStyle? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ActiveWritingStyle();
+      value.Language = GetLanguage(openXmlElement);
+      value.VendorID = GetVendorID(openXmlElement);
+      value.DllVersion = GetDllVersion(openXmlElement);
+      value.NaturalLanguageGrammarCheck = GetNaturalLanguageGrammarCheck(openXmlElement);
+      value.CheckStyle = GetCheckStyle(openXmlElement);
+      value.ApplicationName = GetApplicationName(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ActiveWritingStyle? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

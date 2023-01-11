@@ -10,7 +10,7 @@ public static class DataPartConverter
   /// </summary>
   public static Uri? GetUri(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   /// <summary>
@@ -18,7 +18,24 @@ public static class DataPartConverter
   /// </summary>
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.DataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.DataPart();
+      value.Uri = GetUri(openXmlElement);
+      value.ContentType = GetContentType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DataPart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DataPart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

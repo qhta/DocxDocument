@@ -10,12 +10,13 @@ public static class EastAsianLayoutConverter
   /// </summary>
   public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
   /// <summary>
@@ -23,12 +24,16 @@ public static class EastAsianLayoutConverter
   /// </summary>
   public static Boolean? GetCombine(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Combine?.Value;
   }
   
   public static void SetCombine(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Combine = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Combine = null;
   }
   
   /// <summary>
@@ -50,12 +55,16 @@ public static class EastAsianLayoutConverter
   /// </summary>
   public static Boolean? GetVertical(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Vertical?.Value;
   }
   
   public static void SetVertical(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Vertical = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Vertical = null;
   }
   
   /// <summary>
@@ -63,12 +72,36 @@ public static class EastAsianLayoutConverter
   /// </summary>
   public static Boolean? GetVerticalCompress(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.VerticalCompress?.Value;
   }
   
   public static void SetVerticalCompress(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.VerticalCompress = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.VerticalCompress = null;
   }
   
+  public static DocumentModel.Wordprocessing.EastAsianLayout? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.EastAsianLayout();
+      value.Id = GetId(openXmlElement);
+      value.Combine = GetCombine(openXmlElement);
+      value.CombineBrackets = GetCombineBrackets(openXmlElement);
+      value.Vertical = GetVertical(openXmlElement);
+      value.VerticalCompress = GetVerticalCompress(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EastAsianLayout? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

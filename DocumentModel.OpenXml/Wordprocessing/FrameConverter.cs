@@ -15,7 +15,13 @@ public static class FrameConverter
   
   public static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.FrameSize = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
+      else
+        openXmlElement.FrameSize = null;
+    }
   }
   
   /// <summary>
@@ -23,12 +29,12 @@ public static class FrameConverter
   /// </summary>
   public static String? GetFrameName(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FrameName");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FrameName");
   }
   
   public static void SetFrameName(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FrameName");
   }
   
   /// <summary>
@@ -36,12 +42,26 @@ public static class FrameConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.RelationshipType? GetSourceFileReference(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SourceFileReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSourceFileReference(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SourceFileReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SourceFileReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +69,12 @@ public static class FrameConverter
   /// </summary>
   public static UInt32? GetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginWidth");
   }
   
   public static void SetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginWidth");
   }
   
   /// <summary>
@@ -62,12 +82,12 @@ public static class FrameConverter
   /// </summary>
   public static UInt32? GetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginHeight");
   }
   
   public static void SetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginHeight");
   }
   
   /// <summary>
@@ -166,4 +186,27 @@ public static class FrameConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.Frame? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Frame();
+      value.FrameSize = GetFrameSize(openXmlElement);
+      value.FrameName = GetFrameName(openXmlElement);
+      value.SourceFileReference = GetSourceFileReference(openXmlElement);
+      value.MarginWidth = GetMarginWidth(openXmlElement);
+      value.MarginHeight = GetMarginHeight(openXmlElement);
+      value.ScrollbarVisibility = GetScrollbarVisibility(openXmlElement);
+      value.NoResizeAllowed = GetNoResizeAllowed(openXmlElement);
+      value.LinkedToFile = GetLinkedToFile(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Frame? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Frame, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

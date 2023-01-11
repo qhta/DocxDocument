@@ -10,12 +10,16 @@ public static class CaptionConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class CaptionConverter
   /// </summary>
   public static Boolean? GetChapterNumber(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ChapterNumber?.Value;
   }
   
   public static void SetChapterNumber(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ChapterNumber = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.ChapterNumber = null;
   }
   
   /// <summary>
@@ -50,12 +58,13 @@ public static class CaptionConverter
   /// </summary>
   public static Int32? GetHeading(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Heading?.Value;
   }
   
   public static void SetHeading(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Heading = value;
   }
   
   /// <summary>
@@ -63,12 +72,16 @@ public static class CaptionConverter
   /// </summary>
   public static Boolean? GetNoLabel(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NoLabel?.Value;
   }
   
   public static void SetNoLabel(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.NoLabel = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.NoLabel = null;
   }
   
   /// <summary>
@@ -99,4 +112,26 @@ public static class CaptionConverter
       openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DocumentModel.Wordprocessing.ChapterSeparatorKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.Caption? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Caption();
+      value.Name = GetName(openXmlElement);
+      value.Position = GetPosition(openXmlElement);
+      value.ChapterNumber = GetChapterNumber(openXmlElement);
+      value.Heading = GetHeading(openXmlElement);
+      value.NoLabel = GetNoLabel(openXmlElement);
+      value.NumberFormat = GetNumberFormat(openXmlElement);
+      value.Separator = GetSeparator(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Caption? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Caption, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

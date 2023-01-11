@@ -10,12 +10,32 @@ public static class MacroWllTypeConverter
   /// </summary>
   public static String? GetMacroName(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MacroName?.Value;
   }
   
   public static void SetMacroName(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MacroName = new StringValue { Value = value };
+      else
+        openXmlElement.MacroName = null;
   }
   
+  public static DocumentModel.Wordprocessing.MacroWllType? CreateModelElement(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.MacroWllType();
+      value.MacroName = GetMacroName(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MacroWllType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MacroWllType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

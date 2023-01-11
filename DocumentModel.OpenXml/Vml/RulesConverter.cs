@@ -21,12 +21,52 @@ public static class RulesConverter
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>? GetItems(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Rule>())
+      {
+        var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetItems(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rule>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Vml.Rules? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Rules();
+      value.Extension = GetExtension(openXmlElement);
+      value.Items = GetItems(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rules? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rules, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

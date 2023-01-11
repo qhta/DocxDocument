@@ -10,12 +10,13 @@ public static class BrightnessContrastConverter
   /// </summary>
   public static Int32? GetBright(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Bright?.Value;
   }
   
   public static void SetBright(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Bright = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class BrightnessContrastConverter
   /// </summary>
   public static Int32? GetContrast(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Contrast?.Value;
   }
   
   public static void SetContrast(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Contrast = value;
   }
   
+  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BrightnessContrast();
+      value.Bright = GetBright(openXmlElement);
+      value.Contrast = GetContrast(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BrightnessContrast? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

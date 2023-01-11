@@ -24,12 +24,13 @@ public static class FramePropertiesConverter
   /// </summary>
   public static Int32? GetLines(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Lines?.Value;
   }
   
   public static void SetLines(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Lines = value;
   }
   
   /// <summary>
@@ -37,12 +38,16 @@ public static class FramePropertiesConverter
   /// </summary>
   public static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Width = new StringValue { Value = value };
+      else
+        openXmlElement.Width = null;
   }
   
   /// <summary>
@@ -50,12 +55,13 @@ public static class FramePropertiesConverter
   /// </summary>
   public static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Height?.Value;
   }
   
   public static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Height = value;
   }
   
   /// <summary>
@@ -63,12 +69,16 @@ public static class FramePropertiesConverter
   /// </summary>
   public static String? GetVerticalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.VerticalSpace?.Value;
   }
   
   public static void SetVerticalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.VerticalSpace = new StringValue { Value = value };
+      else
+        openXmlElement.VerticalSpace = null;
   }
   
   /// <summary>
@@ -76,12 +86,16 @@ public static class FramePropertiesConverter
   /// </summary>
   public static String? GetHorizontalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.HorizontalSpace?.Value;
   }
   
   public static void SetHorizontalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalSpace = new StringValue { Value = value };
+      else
+        openXmlElement.HorizontalSpace = null;
   }
   
   /// <summary>
@@ -131,12 +145,16 @@ public static class FramePropertiesConverter
   /// </summary>
   public static String? GetX(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.X?.Value;
   }
   
   public static void SetX(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.X = new StringValue { Value = value };
+      else
+        openXmlElement.X = null;
   }
   
   /// <summary>
@@ -158,12 +176,16 @@ public static class FramePropertiesConverter
   /// </summary>
   public static String? GetY(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Y?.Value;
   }
   
   public static void SetY(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Y = new StringValue { Value = value };
+      else
+        openXmlElement.Y = null;
   }
   
   /// <summary>
@@ -199,12 +221,46 @@ public static class FramePropertiesConverter
   /// </summary>
   public static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.AnchorLock?.Value;
   }
   
   public static void SetAnchorLock(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AnchorLock = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.AnchorLock = null;
   }
   
+  public static DocumentModel.Wordprocessing.FrameProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FrameProperties();
+      value.DropCap = GetDropCap(openXmlElement);
+      value.Lines = GetLines(openXmlElement);
+      value.Width = GetWidth(openXmlElement);
+      value.Height = GetHeight(openXmlElement);
+      value.VerticalSpace = GetVerticalSpace(openXmlElement);
+      value.HorizontalSpace = GetHorizontalSpace(openXmlElement);
+      value.Wrap = GetWrap(openXmlElement);
+      value.HorizontalPosition = GetHorizontalPosition(openXmlElement);
+      value.VerticalPosition = GetVerticalPosition(openXmlElement);
+      value.X = GetX(openXmlElement);
+      value.XAlign = GetXAlign(openXmlElement);
+      value.Y = GetY(openXmlElement);
+      value.YAlign = GetYAlign(openXmlElement);
+      value.HeightType = GetHeightType(openXmlElement);
+      value.AnchorLock = GetAnchorLock(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FrameProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FrameProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

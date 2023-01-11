@@ -10,12 +10,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int64? GetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.BlurRadius?.Value;
   }
   
   public static void SetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.BlurRadius = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.StartOpacity?.Value;
   }
   
   public static void SetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.StartOpacity = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.StartPosition?.Value;
   }
   
   public static void SetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.StartPosition = value;
   }
   
   /// <summary>
@@ -49,12 +52,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.EndAlpha?.Value;
   }
   
   public static void SetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.EndAlpha = value;
   }
   
   /// <summary>
@@ -62,12 +66,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.EndPosition?.Value;
   }
   
   public static void SetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.EndPosition = value;
   }
   
   /// <summary>
@@ -75,12 +80,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int64? GetDistance(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Distance?.Value;
   }
   
   public static void SetDistance(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Distance = value;
   }
   
   /// <summary>
@@ -88,12 +94,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetDirection(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Direction?.Value;
   }
   
   public static void SetDirection(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Direction = value;
   }
   
   /// <summary>
@@ -101,12 +108,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FadeDirection?.Value;
   }
   
   public static void SetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FadeDirection = value;
   }
   
   /// <summary>
@@ -114,12 +122,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.HorizontalRatio?.Value;
   }
   
   public static void SetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.HorizontalRatio = value;
   }
   
   /// <summary>
@@ -127,12 +136,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.VerticalRatio?.Value;
   }
   
   public static void SetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.VerticalRatio = value;
   }
   
   /// <summary>
@@ -140,12 +150,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.HorizontalSkew?.Value;
   }
   
   public static void SetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.HorizontalSkew = value;
   }
   
   /// <summary>
@@ -153,12 +164,13 @@ public static class ReflectionConverter
   /// </summary>
   public static Int32? GetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.VerticalSkew?.Value;
   }
   
   public static void SetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.VerticalSkew = value;
   }
   
   /// <summary>
@@ -180,12 +192,45 @@ public static class ReflectionConverter
   /// </summary>
   public static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.RotateWithShape?.Value;
   }
   
   public static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.RotateWithShape = null;
   }
   
+  public static DocumentModel.Drawings.Reflection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Reflection();
+      value.BlurRadius = GetBlurRadius(openXmlElement);
+      value.StartOpacity = GetStartOpacity(openXmlElement);
+      value.StartPosition = GetStartPosition(openXmlElement);
+      value.EndAlpha = GetEndAlpha(openXmlElement);
+      value.EndPosition = GetEndPosition(openXmlElement);
+      value.Distance = GetDistance(openXmlElement);
+      value.Direction = GetDirection(openXmlElement);
+      value.FadeDirection = GetFadeDirection(openXmlElement);
+      value.HorizontalRatio = GetHorizontalRatio(openXmlElement);
+      value.VerticalRatio = GetVerticalRatio(openXmlElement);
+      value.HorizontalSkew = GetHorizontalSkew(openXmlElement);
+      value.VerticalSkew = GetVerticalSkew(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      value.RotateWithShape = GetRotateWithShape(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Reflection? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Reflection, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

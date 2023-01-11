@@ -10,12 +10,42 @@ public static class MatrixColumnConverter
   /// </summary>
   public static DocumentModel.Math.MatrixColumnProperties? GetMatrixColumnProperties(DocumentFormat.OpenXml.Math.MatrixColumn? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.MatrixColumnPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMatrixColumnProperties(DocumentFormat.OpenXml.Math.MatrixColumn? openXmlElement, DocumentModel.Math.MatrixColumnProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.MatrixColumnPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixColumnProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.MatrixColumn? CreateModelElement(DocumentFormat.OpenXml.Math.MatrixColumn? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.MatrixColumn();
+      value.MatrixColumnProperties = GetMatrixColumnProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumn? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumn, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

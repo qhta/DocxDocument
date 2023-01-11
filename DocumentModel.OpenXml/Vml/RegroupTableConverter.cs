@@ -21,12 +21,52 @@ public static class RegroupTableConverter
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry>? GetEntries(DocumentFormat.OpenXml.Vml.Office.RegroupTable? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Entry>())
+      {
+        var newItem = DocumentModel.OpenXml.Vml.EntryConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetEntries(DocumentFormat.OpenXml.Vml.Office.RegroupTable? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Entry>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Vml.EntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Entry>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Vml.RegroupTable? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.RegroupTable? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.RegroupTable();
+      value.Extension = GetExtension(openXmlElement);
+      value.Entries = GetEntries(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RegroupTable? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RegroupTable, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

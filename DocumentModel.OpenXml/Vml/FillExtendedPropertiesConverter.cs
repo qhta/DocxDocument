@@ -33,4 +33,21 @@ public static class FillExtendedPropertiesConverter
       openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DocumentModel.Vml.FillKind>(value);
   }
   
+  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.FillExtendedProperties();
+      value.Extension = GetExtension(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.FillExtendedProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

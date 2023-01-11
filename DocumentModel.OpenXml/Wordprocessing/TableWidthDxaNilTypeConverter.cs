@@ -10,12 +10,13 @@ public static class TableWidthDxaNilTypeConverter
   /// </summary>
   public static Int16? GetWidth(DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class TableWidthDxaNilTypeConverter
       openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DocumentModel.Wordprocessing.TableWidthKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.TableWidthDxaNilType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableWidthDxaNilType();
+      value.Width = GetWidth(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableWidthDxaNilType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

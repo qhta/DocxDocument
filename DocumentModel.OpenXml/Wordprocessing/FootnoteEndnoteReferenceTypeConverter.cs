@@ -10,25 +10,47 @@ public static class FootnoteEndnoteReferenceTypeConverter
   /// </summary>
   public static Boolean? GetCustomMarkFollows(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CustomMarkFollows?.Value;
   }
   
   public static void SetCustomMarkFollows(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CustomMarkFollows = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.CustomMarkFollows = null;
   }
   
   /// <summary>
   /// Footnote/Endnote ID Reference
   /// </summary>
-  public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
+  public static Int64? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement, Int32? value)
+  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType();
+      value.CustomMarkFollows = GetCustomMarkFollows(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

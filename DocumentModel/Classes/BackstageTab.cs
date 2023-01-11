@@ -98,27 +98,27 @@ public partial class BackstageTab
   /// <summary>
   /// columnWidthPercent, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? ColumnWidthPercent { get; set; }
+  public Int64? ColumnWidthPercent { get; set; }
   
   /// <summary>
   /// firstColumnMinWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? FirstColumnMinWidth { get; set; }
+  public Int64? FirstColumnMinWidth { get; set; }
   
   /// <summary>
   /// firstColumnMaxWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? FirstColumnMaxWidth { get; set; }
+  public Int64? FirstColumnMaxWidth { get; set; }
   
   /// <summary>
   /// secondColumnMinWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? SecondColumnMinWidth { get; set; }
+  public Int64? SecondColumnMinWidth { get; set; }
   
   /// <summary>
   /// secondColumnMaxWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? SecondColumnMaxWidth { get; set; }
+  public Int64? SecondColumnMaxWidth { get; set; }
   
   /// <summary>
   /// BackstageGroups.

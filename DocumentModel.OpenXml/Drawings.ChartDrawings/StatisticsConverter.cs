@@ -19,4 +19,20 @@ public static class StatisticsConverter
       openXmlElement.QuartileMethod = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DocumentModel.Drawings.ChartDrawings.QuartileMethod>(value);
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.Statistics? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.Statistics();
+      value.QuartileMethod = GetQuartileMethod(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Statistics? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

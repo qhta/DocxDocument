@@ -24,12 +24,16 @@ public static class RelationConverter
   /// </summary>
   public static String? GetSourceId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SourceId?.Value;
   }
   
   public static void SetSourceId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SourceId = new StringValue { Value = value };
+      else
+        openXmlElement.SourceId = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class RelationConverter
   /// </summary>
   public static String? GetDestinationId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.DestinationId?.Value;
   }
   
   public static void SetDestinationId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DestinationId = new StringValue { Value = value };
+      else
+        openXmlElement.DestinationId = null;
   }
   
   /// <summary>
@@ -50,12 +58,35 @@ public static class RelationConverter
   /// </summary>
   public static String? GetCenterShapeId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CenterShapeId?.Value;
   }
   
   public static void SetCenterShapeId(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CenterShapeId = new StringValue { Value = value };
+      else
+        openXmlElement.CenterShapeId = null;
   }
   
+  public static DocumentModel.Vml.Relation? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Relation();
+      value.Extension = GetExtension(openXmlElement);
+      value.SourceId = GetSourceId(openXmlElement);
+      value.DestinationId = GetDestinationId(openXmlElement);
+      value.CenterShapeId = GetCenterShapeId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Relation? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Relation, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

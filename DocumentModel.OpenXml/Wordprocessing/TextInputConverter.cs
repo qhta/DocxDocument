@@ -42,12 +42,12 @@ public static class TextInputConverter
   /// </summary>
   public static String? GetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString");
   }
   
   public static void SetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString");
   }
   
   /// <summary>
@@ -55,12 +55,12 @@ public static class TextInputConverter
   /// </summary>
   public static Int16? GetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MaxLength");
   }
   
   public static void SetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MaxLength");
   }
   
   /// <summary>
@@ -68,12 +68,31 @@ public static class TextInputConverter
   /// </summary>
   public static String? GetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Format");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Format");
   }
   
   public static void SetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Format");
   }
   
+  public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TextInput();
+      value.TextBoxFormFieldType = GetTextBoxFormFieldType(openXmlElement);
+      value.DefaultTextBoxFormFieldString = GetDefaultTextBoxFormFieldString(openXmlElement);
+      value.MaxLength = GetMaxLength(openXmlElement);
+      value.Format = GetFormat(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextInput? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextInput, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }
