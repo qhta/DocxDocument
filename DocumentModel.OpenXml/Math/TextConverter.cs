@@ -19,4 +19,20 @@ public static class TextConverter
       openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(value);
   }
   
+  public static DocumentModel.Math.Text? CreateModelElement(DocumentFormat.OpenXml.Math.Text? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.Text();
+      value.Space = GetSpace(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Text? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Text, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

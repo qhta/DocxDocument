@@ -10,12 +10,29 @@ public static class TaskProgressEventInfoConverter
   /// </summary>
   public static Int32? GetPercentComplete(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.PercentComplete?.Value;
   }
   
   public static void SetPercentComplete(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.PercentComplete = value;
   }
   
+  public static DocumentModel.TaskProgressEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.TaskProgressEventInfo();
+      value.PercentComplete = GetPercentComplete(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskProgressEventInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

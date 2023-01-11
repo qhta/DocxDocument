@@ -34,4 +34,20 @@ public static class BehaviorsConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Behaviors? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Behaviors();
+      value.Behavior = GetBehavior(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Behaviors? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Behaviors, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

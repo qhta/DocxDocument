@@ -10,12 +10,13 @@ public static class HslConverter
   /// </summary>
   public static Int32? GetHue(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Hue?.Value;
   }
   
   public static void SetHue(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Hue = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class HslConverter
   /// </summary>
   public static Int32? GetSaturation(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Saturation?.Value;
   }
   
   public static void SetSaturation(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Saturation = value;
   }
   
   /// <summary>
@@ -36,12 +38,31 @@ public static class HslConverter
   /// </summary>
   public static Int32? GetLuminance(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Luminance?.Value;
   }
   
   public static void SetLuminance(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Luminance = value;
   }
   
+  public static DocumentModel.Drawings.Hsl? CreateModelElement(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Hsl();
+      value.Hue = GetHue(openXmlElement);
+      value.Saturation = GetSaturation(openXmlElement);
+      value.Luminance = GetLuminance(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Hsl? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Hsl, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

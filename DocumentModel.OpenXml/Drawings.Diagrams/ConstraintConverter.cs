@@ -38,12 +38,16 @@ public static class ConstraintConverter
   /// </summary>
   public static String? GetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ForName?.Value;
   }
   
   public static void SetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ForName = new StringValue { Value = value };
+      else
+        openXmlElement.ForName = null;
   }
   
   /// <summary>
@@ -93,12 +97,16 @@ public static class ConstraintConverter
   /// </summary>
   public static String? GetReferenceForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ReferenceForName?.Value;
   }
   
   public static void SetReferenceForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ReferenceForName = new StringValue { Value = value };
+      else
+        openXmlElement.ReferenceForName = null;
   }
   
   /// <summary>
@@ -134,12 +142,13 @@ public static class ConstraintConverter
   /// </summary>
   public static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Val = value;
   }
   
   /// <summary>
@@ -147,12 +156,13 @@ public static class ConstraintConverter
   /// </summary>
   public static Double? GetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Fact?.Value;
   }
   
   public static void SetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Fact = value;
   }
   
   /// <summary>
@@ -160,12 +170,53 @@ public static class ConstraintConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Constraint? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Constraint();
+      value.Type = GetType(openXmlElement);
+      value.For = GetFor(openXmlElement);
+      value.ForName = GetForName(openXmlElement);
+      value.PointType = GetPointType(openXmlElement);
+      value.ReferenceType = GetReferenceType(openXmlElement);
+      value.ReferenceFor = GetReferenceFor(openXmlElement);
+      value.ReferenceForName = GetReferenceForName(openXmlElement);
+      value.ReferencePointType = GetReferencePointType(openXmlElement);
+      value.Operator = GetOperator(openXmlElement);
+      value.Val = GetVal(openXmlElement);
+      value.Fact = GetFact(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Constraint? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Constraint, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

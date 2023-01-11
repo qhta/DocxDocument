@@ -106,12 +106,30 @@ public static class ErrorBarsConverter
   /// </summary>
   public static Boolean? GetNoEndCap(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NoEndCap>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetNoEndCap(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NoEndCap>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.NoEndCap();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -119,12 +137,26 @@ public static class ErrorBarsConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.Plus? GetPlus(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Plus>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.PlusConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPlus(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.Plus? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Plus>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.PlusConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Plus>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -132,12 +164,26 @@ public static class ErrorBarsConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.Minus? GetMinus(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Minus>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.MinusConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMinus(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.Minus? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Minus>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.MinusConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Minus>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -145,12 +191,12 @@ public static class ErrorBarsConverter
   /// </summary>
   public static Double? GetErrorBarValue(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue");
   }
   
   public static void SetErrorBarValue(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue");
   }
   
   /// <summary>
@@ -158,12 +204,26 @@ public static class ErrorBarsConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -171,12 +231,50 @@ public static class ErrorBarsConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.ErrorBars? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.ErrorBars();
+      value.ErrorDirection = GetErrorDirection(openXmlElement);
+      value.ErrorBarType = GetErrorBarType(openXmlElement);
+      value.ErrorBarValueType = GetErrorBarValueType(openXmlElement);
+      value.NoEndCap = GetNoEndCap(openXmlElement);
+      value.Plus = GetPlus(openXmlElement);
+      value.Minus = GetMinus(openXmlElement);
+      value.ErrorBarValue = GetErrorBarValue(openXmlElement);
+      value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ErrorBars? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ErrorBars, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

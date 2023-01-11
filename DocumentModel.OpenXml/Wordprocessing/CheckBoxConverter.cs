@@ -7,42 +7,115 @@ public static class CheckBoxConverter
 {
   public static String? GetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.FormFieldSize");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FormFieldSize");
   }
   
   public static void SetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FormFieldSize");
   }
   
   public static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Checked();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.CheckBox();
+      value.FormFieldSize = GetFormFieldSize(openXmlElement);
+      value.AutomaticallySizeFormField = GetAutomaticallySizeFormField(openXmlElement);
+      value.DefaultCheckBoxFormFieldState = GetDefaultCheckBoxFormFieldState(openXmlElement);
+      value.Checked = GetChecked(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBox? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CheckBox, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

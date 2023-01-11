@@ -10,12 +10,16 @@ public static class FontConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -28,7 +32,13 @@ public static class FontConverter
   
   public static void SetAltName(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AltName = new DocumentFormat.OpenXml.Wordprocessing.AltName { Val = value };
+      else
+        openXmlElement.AltName = null;
+    }
   }
   
   /// <summary>
@@ -36,12 +46,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>();
+    if (itemElement != null)
+      return HexBinaryConverter.GetValue(itemElement);
+    return null;
   }
   
   public static void SetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HexBinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +73,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontCharSet? GetFontCharSet(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontCharSetConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFontCharSet(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontCharSet? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontCharSetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FontCharSet>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -94,12 +132,30 @@ public static class FontConverter
   /// </summary>
   public static Boolean? GetNotTrueType(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetNotTrueType(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NotTrueType();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -139,12 +195,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontSignature? GetFontSignature(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSignature>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontSignatureConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFontSignature(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontSignature? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSignature>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontSignatureConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FontSignature>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -152,12 +222,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontRelationshipType? GetEmbedRegularFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedRegularFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEmbedRegularFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontRelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedRegularFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmbedRegularFont>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -165,12 +249,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontRelationshipType? GetEmbedBoldFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEmbedBoldFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontRelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldFont>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -178,12 +276,26 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontRelationshipType? GetEmbedItalicFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedItalicFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEmbedItalicFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontRelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedItalicFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmbedItalicFont>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -191,12 +303,53 @@ public static class FontConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FontRelationshipType? GetEmbedBoldItalicFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldItalicFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEmbedBoldItalicFont(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.Wordprocessing.FontRelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldItalicFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FontRelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmbedBoldItalicFont>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Font? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Font();
+      value.Name = GetName(openXmlElement);
+      value.AltName = GetAltName(openXmlElement);
+      value.Panose1Number = GetPanose1Number(openXmlElement);
+      value.FontCharSet = GetFontCharSet(openXmlElement);
+      value.FontFamily = GetFontFamily(openXmlElement);
+      value.NotTrueType = GetNotTrueType(openXmlElement);
+      value.Pitch = GetPitch(openXmlElement);
+      value.FontSignature = GetFontSignature(openXmlElement);
+      value.EmbedRegularFont = GetEmbedRegularFont(openXmlElement);
+      value.EmbedBoldFont = GetEmbedBoldFont(openXmlElement);
+      value.EmbedItalicFont = GetEmbedItalicFont(openXmlElement);
+      value.EmbedBoldItalicFont = GetEmbedBoldItalicFont(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Font? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Font, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,26 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.ConditionalFormatStyle? GetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,26 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +64,12 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static Int32? GetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.GridSpan");
   }
   
   public static void SetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.GridSpan");
   }
   
   /// <summary>
@@ -113,12 +141,26 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableCellBorders? GetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellBorders? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -126,12 +168,26 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -171,12 +227,26 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -309,32 +379,105 @@ public static class PreviousTableCellPropertiesConverter
   
   public static DocumentModel.Wordprocessing.TrackChangeType? GetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.TrackChangeType? GetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.CellMerge? GetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellMerge>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.CellMerge? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellMerge>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellMerge>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PreviousTableCellProperties();
+      value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
+      value.TableCellWidth = GetTableCellWidth(openXmlElement);
+      value.GridSpan = GetGridSpan(openXmlElement);
+      value.HorizontalMerge = GetHorizontalMerge(openXmlElement);
+      value.VerticalMerge = GetVerticalMerge(openXmlElement);
+      value.TableCellBorders = GetTableCellBorders(openXmlElement);
+      value.Shading = GetShading(openXmlElement);
+      value.NoWrap = GetNoWrap(openXmlElement);
+      value.TableCellMargin = GetTableCellMargin(openXmlElement);
+      value.TextDirection = GetTextDirection(openXmlElement);
+      value.TableCellFitText = GetTableCellFitText(openXmlElement);
+      value.TableCellVerticalAlignment = GetTableCellVerticalAlignment(openXmlElement);
+      value.HideMark = GetHideMark(openXmlElement);
+      value.CellInsertion = GetCellInsertion(openXmlElement);
+      value.CellDeletion = GetCellDeletion(openXmlElement);
+      value.CellMerge = GetCellMerge(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

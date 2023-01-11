@@ -24,12 +24,26 @@ public static class DocumentConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.DocumentBackground? GetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement, DocumentModel.Wordprocessing.DocumentBackground? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -37,12 +51,44 @@ public static class DocumentConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Body? GetBody(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Body>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBody(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement, DocumentModel.Wordprocessing.Body? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Body>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Body>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Document? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Document();
+      value.Conformance = GetConformance(openXmlElement);
+      value.DocumentBackground = GetDocumentBackground(openXmlElement);
+      value.Body = GetBody(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Document? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Document, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

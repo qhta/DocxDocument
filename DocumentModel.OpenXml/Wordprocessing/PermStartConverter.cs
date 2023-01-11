@@ -24,12 +24,16 @@ public static class PermStartConverter
   /// </summary>
   public static String? GetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Ed?.Value;
   }
   
   public static void SetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Ed = new StringValue { Value = value };
+      else
+        openXmlElement.Ed = null;
   }
   
   /// <summary>
@@ -37,12 +41,13 @@ public static class PermStartConverter
   /// </summary>
   public static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ColumnFirst?.Value;
   }
   
   public static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.ColumnFirst = value;
   }
   
   /// <summary>
@@ -50,12 +55,13 @@ public static class PermStartConverter
   /// </summary>
   public static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ColumnLast?.Value;
   }
   
   public static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.ColumnLast = value;
   }
   
   /// <summary>
@@ -63,12 +69,13 @@ public static class PermStartConverter
   /// </summary>
   public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
   /// <summary>
@@ -85,4 +92,25 @@ public static class PermStartConverter
       openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PermStart();
+      value.EditorGroup = GetEditorGroup(openXmlElement);
+      value.Ed = GetEd(openXmlElement);
+      value.ColumnFirst = GetColumnFirst(openXmlElement);
+      value.ColumnLast = GetColumnLast(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermStart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermStart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

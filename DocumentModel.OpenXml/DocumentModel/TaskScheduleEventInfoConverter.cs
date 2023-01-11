@@ -10,12 +10,13 @@ public static class TaskScheduleEventInfoConverter
   /// </summary>
   public static DateTime? GetStartDate(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.StartDate?.Value;
   }
   
   public static void SetStartDate(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? openXmlElement, DateTime? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.StartDate = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class TaskScheduleEventInfoConverter
   /// </summary>
   public static DateTime? GetDueDate(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DueDate?.Value;
   }
   
   public static void SetDueDate(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? openXmlElement, DateTime? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DueDate = value;
   }
   
+  public static DocumentModel.TaskScheduleEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.TaskScheduleEventInfo();
+      value.StartDate = GetStartDate(openXmlElement);
+      value.DueDate = GetDueDate(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskScheduleEventInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskScheduleEventInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

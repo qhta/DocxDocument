@@ -10,12 +10,16 @@ public static class RuleConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -51,22 +55,69 @@ public static class RuleConverter
   /// </summary>
   public static String? GetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShapeReference?.Value;
   }
   
   public static void SetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeReference = new StringValue { Value = value };
+      else
+        openXmlElement.ShapeReference = null;
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>? GetProxies(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Proxy>())
+      {
+        var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetProxies(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Proxy>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Vml.Rule? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Rule();
+      value.Id = GetId(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      value.How = GetHow(openXmlElement);
+      value.ShapeReference = GetShapeReference(openXmlElement);
+      value.Proxies = GetProxies(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rule? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rule, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

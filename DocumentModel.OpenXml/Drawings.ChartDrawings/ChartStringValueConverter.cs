@@ -10,12 +10,29 @@ public static class ChartStringValueConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Index?.Value;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Index = value;
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.ChartStringValue? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.ChartStringValue();
+      value.Index = GetIndex(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ChartStringValue? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

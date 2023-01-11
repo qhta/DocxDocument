@@ -10,12 +10,29 @@ public static class SharpenSoftenConverter
   /// </summary>
   public static Int32? GetAmount(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Amount?.Value;
   }
   
   public static void SetAmount(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Amount = value;
   }
   
+  public static DocumentModel.Drawings.SharpenSoften? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.SharpenSoften();
+      value.Amount = GetAmount(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SharpenSoften? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

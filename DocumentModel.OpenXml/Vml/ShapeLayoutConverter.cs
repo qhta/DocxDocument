@@ -24,12 +24,26 @@ public static class ShapeLayoutConverter
   /// </summary>
   public static DocumentModel.Vml.ShapeIdMap? GetShapeIdMap(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ShapeIdMapConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeIdMap(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.ShapeIdMap? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ShapeIdMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -37,12 +51,26 @@ public static class ShapeLayoutConverter
   /// </summary>
   public static DocumentModel.Vml.RegroupTable? GetRegroupTable(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RegroupTable>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.RegroupTableConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRegroupTable(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.RegroupTable? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RegroupTable>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.RegroupTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RegroupTable>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -50,12 +78,45 @@ public static class ShapeLayoutConverter
   /// </summary>
   public static DocumentModel.Vml.Rules? GetRules(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Rules>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.RulesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRules(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.Rules? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Rules>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.RulesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rules>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Vml.ShapeLayout? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ShapeLayout();
+      value.Extension = GetExtension(openXmlElement);
+      value.ShapeIdMap = GetShapeIdMap(openXmlElement);
+      value.RegroupTable = GetRegroupTable(openXmlElement);
+      value.Rules = GetRules(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeLayout? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeLayout, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

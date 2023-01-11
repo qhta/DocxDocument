@@ -126,12 +126,26 @@ public static class RunPropertiesConverter
   
   public static DocumentModel.Math.Break? GetBreak(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.BreakConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBreak(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement, DocumentModel.Math.Break? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Break>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Math.BooleanKind? GetAlignment(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement)
@@ -163,4 +177,25 @@ public static class RunPropertiesConverter
     }
   }
   
+  public static DocumentModel.Math.RunProperties? CreateModelElement(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.RunProperties();
+      value.Literal = GetLiteral(openXmlElement);
+      value.NormalText = GetNormalText(openXmlElement);
+      value.Script = GetScript(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      value.Break = GetBreak(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.RunProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.RunProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

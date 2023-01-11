@@ -10,12 +10,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static Int32? GetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference");
   }
   
   public static void SetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static Int32? GetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingId");
   }
   
   public static void SetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingId");
   }
   
   /// <summary>
@@ -36,12 +36,26 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.NumberingChange? GetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, DocumentModel.Wordprocessing.NumberingChange? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +63,45 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TrackChangeType? GetInserted(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Inserted>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetInserted(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Inserted>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Inserted>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.NumberingProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.NumberingProperties();
+      value.NumberingLevelReference = GetNumberingLevelReference(openXmlElement);
+      value.NumberingId = GetNumberingId(openXmlElement);
+      value.NumberingChange = GetNumberingChange(openXmlElement);
+      value.Inserted = GetInserted(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

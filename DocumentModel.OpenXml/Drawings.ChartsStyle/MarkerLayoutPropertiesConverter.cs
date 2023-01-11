@@ -24,12 +24,29 @@ public static class MarkerLayoutPropertiesConverter
   /// </summary>
   public static Byte? GetSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
   }
   
   public static void SetSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
   }
   
+  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties();
+      value.Symbol = GetSymbol(openXmlElement);
+      value.Size = GetSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

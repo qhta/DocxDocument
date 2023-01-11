@@ -61,4 +61,23 @@ public static class TextWrapConverter
       openXmlElement.AnchorY = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.Vml.VerticalAnchorKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.Vml.TextWrap? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Vml.TextWrap();
+      value.Type = GetType(openXmlElement);
+      value.Side = GetSide(openXmlElement);
+      value.AnchorX = GetAnchorX(openXmlElement);
+      value.AnchorY = GetAnchorY(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.TextWrap? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

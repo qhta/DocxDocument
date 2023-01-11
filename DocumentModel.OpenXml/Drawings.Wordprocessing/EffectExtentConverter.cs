@@ -10,12 +10,13 @@ public static class EffectExtentConverter
   /// </summary>
   public static Int64? GetLeftEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LeftEdge?.Value;
   }
   
   public static void SetLeftEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.LeftEdge = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class EffectExtentConverter
   /// </summary>
   public static Int64? GetTopEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.TopEdge?.Value;
   }
   
   public static void SetTopEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.TopEdge = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class EffectExtentConverter
   /// </summary>
   public static Int64? GetRightEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.RightEdge?.Value;
   }
   
   public static void SetRightEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.RightEdge = value;
   }
   
   /// <summary>
@@ -49,12 +52,32 @@ public static class EffectExtentConverter
   /// </summary>
   public static Int64? GetBottomEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.BottomEdge?.Value;
   }
   
   public static void SetBottomEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.BottomEdge = value;
   }
   
+  public static DocumentModel.Drawings.Wordprocessing.EffectExtent? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Wordprocessing.EffectExtent();
+      value.LeftEdge = GetLeftEdge(openXmlElement);
+      value.TopEdge = GetTopEdge(openXmlElement);
+      value.RightEdge = GetRightEdge(openXmlElement);
+      value.BottomEdge = GetBottomEdge(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

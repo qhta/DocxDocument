@@ -10,12 +10,26 @@ public static class BarConverter
   /// </summary>
   public static DocumentModel.Math.BarProperties? GetBarProperties(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BarProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBarProperties(DocumentFormat.OpenXml.Math.Bar? openXmlElement, DocumentModel.Math.BarProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BarProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BarProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,43 @@ public static class BarConverter
   /// </summary>
   public static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBase(DocumentFormat.OpenXml.Math.Bar? openXmlElement, DocumentModel.Math.Base? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.Bar? CreateModelElement(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.Bar();
+      value.BarProperties = GetBarProperties(openXmlElement);
+      value.Base = GetBase(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Bar? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Bar, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

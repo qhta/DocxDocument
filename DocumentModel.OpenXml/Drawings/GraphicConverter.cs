@@ -10,12 +10,42 @@ public static class GraphicConverter
   /// </summary>
   public static DocumentModel.Drawings.GraphicData? GetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement, DocumentModel.Drawings.GraphicData? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Graphic? CreateModelElement(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Graphic();
+      value.GraphicData = GetGraphicData(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Graphic? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Graphic, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

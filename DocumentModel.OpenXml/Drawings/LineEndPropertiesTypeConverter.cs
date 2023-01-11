@@ -47,4 +47,22 @@ public static class LineEndPropertiesTypeConverter
       openXmlElement.Length = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DocumentModel.Drawings.LineEndLengthKind>(value);
   }
   
+  public static DocumentModel.Drawings.LineEndPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.LineEndPropertiesType();
+      value.Type = GetType(openXmlElement);
+      value.Width = GetWidth(openXmlElement);
+      value.Length = GetLength(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineEndPropertiesType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineEndPropertiesType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

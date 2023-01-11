@@ -10,12 +10,13 @@ public static class ConnectionTypeConverter
   /// </summary>
   public static UInt32? GetId(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ConnectionTypeConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Index?.Value;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Index = value;
   }
   
+  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ConnectionType();
+      value.Id = GetId(openXmlElement);
+      value.Index = GetIndex(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

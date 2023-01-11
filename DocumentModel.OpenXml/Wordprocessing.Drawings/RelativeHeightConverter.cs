@@ -24,12 +24,29 @@ public static class RelativeHeightConverter
   /// </summary>
   public static String? GetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight");
   }
   
   public static void SetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight");
   }
   
+  public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Drawings.RelativeHeight();
+      value.RelativeFrom = GetRelativeFrom(openXmlElement);
+      value.PercentageHeight = GetPercentageHeight(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeHeight? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,22 +10,40 @@ public static class WordCommentsExtensiblePartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.CommentsExtensible? GetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement, DocumentModel.Wordprocessing.CommentsExtensible? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.WordCommentsExtensiblePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.WordCommentsExtensiblePart();
+      value.CommentsExtensible = GetCommentsExtensible(openXmlElement);
+      value.ContentType = GetContentType(openXmlElement);
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordCommentsExtensiblePart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

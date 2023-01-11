@@ -10,12 +10,13 @@ public static class FitTextConverter
   /// </summary>
   public static UInt32? GetVal(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Val = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class FitTextConverter
   /// </summary>
   public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
+  public static DocumentModel.Wordprocessing.FitText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FitText();
+      value.Val = GetVal(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FitText? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FitText, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

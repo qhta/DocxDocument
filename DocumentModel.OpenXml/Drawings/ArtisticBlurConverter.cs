@@ -10,12 +10,29 @@ public static class ArtisticBlurConverter
   /// </summary>
   public static Int32? GetRadius(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Radius?.Value;
   }
   
   public static void SetRadius(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Radius = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticBlur? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticBlur();
+      value.Radius = GetRadius(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticBlur? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

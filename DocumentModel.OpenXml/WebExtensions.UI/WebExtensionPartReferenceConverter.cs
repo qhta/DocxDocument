@@ -10,12 +10,32 @@ public static class WebExtensionPartReferenceConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
+  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.WebExtensions.UI.WebExtensionPartReference();
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.UI.WebExtensionPartReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

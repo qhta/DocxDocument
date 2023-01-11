@@ -10,12 +10,28 @@ public static class IdPartPairConverter
   /// </summary>
   public static String? GetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   public static void SetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.IdPartPair? CreateModelElement(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.IdPartPair();
+      value.RelationshipId = GetRelationshipId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IdPartPair? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.IdPartPair, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetRadialAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.RadialAdjustmentGuide?.Value;
   }
   
   public static void SetRadialAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.RadialAdjustmentGuide = new StringValue { Value = value };
+      else
+        openXmlElement.RadialAdjustmentGuide = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetMinRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MinRadial?.Value;
   }
   
   public static void SetMinRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MinRadial = new StringValue { Value = value };
+      else
+        openXmlElement.MinRadial = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetMaxRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MaxRadial?.Value;
   }
   
   public static void SetMaxRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MaxRadial = new StringValue { Value = value };
+      else
+        openXmlElement.MaxRadial = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetAngleAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AngleAdjustmentGuide?.Value;
   }
   
   public static void SetAngleAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AngleAdjustmentGuide = new StringValue { Value = value };
+      else
+        openXmlElement.AngleAdjustmentGuide = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetMinAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MinAngle?.Value;
   }
   
   public static void SetMinAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MinAngle = new StringValue { Value = value };
+      else
+        openXmlElement.MinAngle = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static String? GetMaxAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MaxAngle?.Value;
   }
   
   public static void SetMaxAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MaxAngle = new StringValue { Value = value };
+      else
+        openXmlElement.MaxAngle = null;
   }
   
   /// <summary>
@@ -88,12 +112,48 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   public static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.AdjustHandlePolar();
+      value.RadialAdjustmentGuide = GetRadialAdjustmentGuide(openXmlElement);
+      value.MinRadial = GetMinRadial(openXmlElement);
+      value.MaxRadial = GetMaxRadial(openXmlElement);
+      value.AngleAdjustmentGuide = GetAngleAdjustmentGuide(openXmlElement);
+      value.MinAngle = GetMinAngle(openXmlElement);
+      value.MaxAngle = GetMaxAngle(openXmlElement);
+      value.Position = GetPosition(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandlePolar? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandlePolar, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

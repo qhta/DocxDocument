@@ -10,12 +10,32 @@ public static class PredecessorDrawingElementReferenceConverter
   /// </summary>
   public static String? GetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Pred?.Value;
   }
   
   public static void SetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Pred = new StringValue { Value = value };
+      else
+        openXmlElement.Pred = null;
   }
   
+  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.PredecessorDrawingElementReference();
+      value.Pred = GetPred(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PredecessorDrawingElementReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

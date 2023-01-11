@@ -10,12 +10,16 @@ public static class ItemConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ItemConverter
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Label?.Value;
   }
   
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Label = new StringValue { Value = value };
+      else
+        openXmlElement.Label = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ItemConverter
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Image?.Value;
   }
   
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Image = new StringValue { Value = value };
+      else
+        openXmlElement.Image = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class ItemConverter
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ImageMso?.Value;
   }
   
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ImageMso = new StringValue { Value = value };
+      else
+        openXmlElement.ImageMso = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class ItemConverter
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Screentip?.Value;
   }
   
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Screentip = new StringValue { Value = value };
+      else
+        openXmlElement.Screentip = null;
   }
   
   /// <summary>
@@ -75,12 +95,37 @@ public static class ItemConverter
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Supertip?.Value;
   }
   
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Supertip = new StringValue { Value = value };
+      else
+        openXmlElement.Supertip = null;
   }
   
+  public static DocumentModel.Item? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Item();
+      value.Id = GetId(openXmlElement);
+      value.Label = GetLabel(openXmlElement);
+      value.Image = GetImage(openXmlElement);
+      value.ImageMso = GetImageMso(openXmlElement);
+      value.Screentip = GetScreentip(openXmlElement);
+      value.Supertip = GetSupertip(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Item? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Item, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

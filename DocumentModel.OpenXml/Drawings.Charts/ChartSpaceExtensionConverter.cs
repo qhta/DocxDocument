@@ -10,42 +10,107 @@ public static class ChartSpaceExtensionConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
   public static DocumentModel.Drawings.Charts.PivotOptions? GetPivotOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.PivotOptionsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPivotOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement, DocumentModel.Drawings.Charts.PivotOptions? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.SketchOptions? GetSketchOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.SketchOptionsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSketchOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement, DocumentModel.Drawings.Charts.SketchOptions? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.SketchOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.PivotSource3? GetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.PivotSource3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement, DocumentModel.Drawings.Charts.PivotSource3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotSource3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.ChartSpaceExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtension();
+      value.Uri = GetUri(openXmlElement);
+      value.PivotOptions = GetPivotOptions(openXmlElement);
+      value.SketchOptions = GetSketchOptions(openXmlElement);
+      value.PivotSource = GetPivotSource(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpaceExtension? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

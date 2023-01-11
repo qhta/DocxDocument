@@ -7,7 +7,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   /// <summary>
@@ -15,12 +15,12 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// </summary>
   public static DocumentModel.CustomUI? GetCustomUI(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetCustomUI(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement, DocumentModel.CustomUI? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
   /// <summary>
@@ -28,12 +28,42 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// </summary>
   public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+      {
+        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart();
+      value.ContentType = GetContentType(openXmlElement);
+      value.CustomUI = GetCustomUI(openXmlElement);
+      value.ImageParts = GetImageParts(openXmlElement);
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,13 @@ public static class TextOutlineEffectConverter
   /// </summary>
   public static Int32? GetLineWidth(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LineWidth?.Value;
   }
   
   public static void SetLineWidth(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.LineWidth = value;
   }
   
   /// <summary>
@@ -62,32 +63,78 @@ public static class TextOutlineEffectConverter
   
   public static Boolean? GetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.SolidColorFillProperties? GetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, DocumentModel.Wordprocessing.SolidColorFillProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.GradientFillProperties? GetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, DocumentModel.Wordprocessing.GradientFillProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.PresetLineDashKind? GetPresetLineDashProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
@@ -121,32 +168,108 @@ public static class TextOutlineEffectConverter
   
   public static Boolean? GetRoundEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetRoundEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RoundEmpty>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2010.Word.RoundEmpty();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetBevelEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetBevelEmpty(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelEmpty>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2010.Word.BevelEmpty();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.LineJoinMiterProperties? GetLineJoinMiterProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.LineJoinMiterPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLineJoinMiterProperties(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement, DocumentModel.Wordprocessing.LineJoinMiterProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.LineJoinMiterPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.TextOutlineEffect? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TextOutlineEffect();
+      value.LineWidth = GetLineWidth(openXmlElement);
+      value.CapType = GetCapType(openXmlElement);
+      value.Compound = GetCompound(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      value.NoFillEmpty = GetNoFillEmpty(openXmlElement);
+      value.SolidColorFillProperties = GetSolidColorFillProperties(openXmlElement);
+      value.GradientFillProperties = GetGradientFillProperties(openXmlElement);
+      value.PresetLineDashProperties = GetPresetLineDashProperties(openXmlElement);
+      value.RoundEmpty = GetRoundEmpty(openXmlElement);
+      value.BevelEmpty = GetBevelEmpty(openXmlElement);
+      value.LineJoinMiterProperties = GetLineJoinMiterProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextOutlineEffect? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

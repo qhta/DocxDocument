@@ -10,12 +10,12 @@ public static class SectionPropertiesConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class SectionPropertiesConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   /// <summary>
@@ -36,12 +36,12 @@ public static class SectionPropertiesConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   /// <summary>
@@ -49,52 +49,108 @@ public static class SectionPropertiesConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? GetHeaderReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetHeaderReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.HeaderFooterReferenceType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? GetFooterReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FooterReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFooterReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.HeaderFooterReferenceType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FooterReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FooterReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.FootnoteProperties? GetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.FootnoteProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.EndnoteProperties? GetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.EndnoteProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.SectionMarkKind? GetSectionType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
@@ -128,82 +184,198 @@ public static class SectionPropertiesConverter
   
   public static DocumentModel.Wordprocessing.PageSize? GetPageSize(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPageSize(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.PageSize? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageSize>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.PageMargin? GetPageMargin(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPageMargin(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.PageMargin? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageMargin>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.PaperSource? GetPaperSource(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPaperSource(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.PaperSource? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PaperSource>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.PageBorders? GetPageBorders(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPageBorders(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.PageBorders? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageBorders>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.LineNumberType? GetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.LineNumberType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.PageNumberType? GetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.PageNumberType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Columns? GetColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.Columns? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Columns>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetFormProtection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetFormProtection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormProtection();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.VerticalJustificationKind? GetVerticalTextAlignmentOnPage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
@@ -237,22 +409,58 @@ public static class SectionPropertiesConverter
   
   public static Boolean? GetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NoEndnote();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetTitlePage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetTitlePage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.TitlePage();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
@@ -286,62 +494,182 @@ public static class SectionPropertiesConverter
   
   public static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BiDi();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.GutterOnRight();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.DocGrid? GetDocGrid(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDocGrid(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.DocGrid? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocGrid>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.RelationshipType? GetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Int32? GetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns");
   }
   
   public static void SetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns");
   }
   
   public static DocumentModel.Wordprocessing.SectionPropertiesChange? GetSectionPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.SectionPropertiesChangeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSectionPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.Wordprocessing.SectionPropertiesChange? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.SectionPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.SectionProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SectionProperties();
+      value.RsidRPr = GetRsidRPr(openXmlElement);
+      value.RsidDel = GetRsidDel(openXmlElement);
+      value.RsidR = GetRsidR(openXmlElement);
+      value.RsidSect = GetRsidSect(openXmlElement);
+      value.HeaderReference = GetHeaderReference(openXmlElement);
+      value.FooterReference = GetFooterReference(openXmlElement);
+      value.FootnoteProperties = GetFootnoteProperties(openXmlElement);
+      value.EndnoteProperties = GetEndnoteProperties(openXmlElement);
+      value.SectionType = GetSectionType(openXmlElement);
+      value.PageSize = GetPageSize(openXmlElement);
+      value.PageMargin = GetPageMargin(openXmlElement);
+      value.PaperSource = GetPaperSource(openXmlElement);
+      value.PageBorders = GetPageBorders(openXmlElement);
+      value.LineNumberType = GetLineNumberType(openXmlElement);
+      value.PageNumberType = GetPageNumberType(openXmlElement);
+      value.Columns = GetColumns(openXmlElement);
+      value.FormProtection = GetFormProtection(openXmlElement);
+      value.VerticalTextAlignmentOnPage = GetVerticalTextAlignmentOnPage(openXmlElement);
+      value.NoEndnote = GetNoEndnote(openXmlElement);
+      value.TitlePage = GetTitlePage(openXmlElement);
+      value.TextDirection = GetTextDirection(openXmlElement);
+      value.BiDi = GetBiDi(openXmlElement);
+      value.GutterOnRight = GetGutterOnRight(openXmlElement);
+      value.DocGrid = GetDocGrid(openXmlElement);
+      value.PrinterSettingsReference = GetPrinterSettingsReference(openXmlElement);
+      value.FootnoteColumns = GetFootnoteColumns(openXmlElement);
+      value.SectionPropertiesChange = GetSectionPropertiesChange(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

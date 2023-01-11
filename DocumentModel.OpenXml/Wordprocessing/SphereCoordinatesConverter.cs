@@ -10,12 +10,13 @@ public static class SphereCoordinatesConverter
   /// </summary>
   public static Int32? GetLattitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Lattitude?.Value;
   }
   
   public static void SetLattitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Lattitude = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class SphereCoordinatesConverter
   /// </summary>
   public static Int32? GetLongitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Longitude?.Value;
   }
   
   public static void SetLongitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Longitude = value;
   }
   
   /// <summary>
@@ -36,12 +38,31 @@ public static class SphereCoordinatesConverter
   /// </summary>
   public static Int32? GetRevolution(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Revolution?.Value;
   }
   
   public static void SetRevolution(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Revolution = value;
   }
   
+  public static DocumentModel.Wordprocessing.SphereCoordinates? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SphereCoordinates();
+      value.Lattitude = GetLattitude(openXmlElement);
+      value.Longitude = GetLongitude(openXmlElement);
+      value.Revolution = GetRevolution(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SphereCoordinates? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

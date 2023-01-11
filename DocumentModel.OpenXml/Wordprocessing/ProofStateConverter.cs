@@ -33,4 +33,21 @@ public static class ProofStateConverter
       openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DocumentModel.Wordprocessing.ProofingStateKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.ProofState? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ProofState();
+      value.Spelling = GetSpelling(openXmlElement);
+      value.Grammar = GetGrammar(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofState? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofState, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

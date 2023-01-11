@@ -61,4 +61,23 @@ public static class BackgroundPropertiesConverter
       openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DocumentModel.Drawings.TargetScreenSize>(value);
   }
   
+  public static DocumentModel.Drawings.BackgroundProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BackgroundProperties();
+      value.Mode = GetMode(openXmlElement);
+      value.Pure = GetPure(openXmlElement);
+      value.Normal = GetNormal(openXmlElement);
+      value.TargetScreenSize = GetTargetScreenSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

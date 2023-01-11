@@ -10,12 +10,16 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static Boolean? GetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Locked?.Value;
   }
   
   public static void SetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Locked = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Locked = null;
   }
   
   /// <summary>
@@ -36,12 +44,13 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static Int32? GetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.UiPriority?.Value;
   }
   
   public static void SetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.UiPriority = value;
   }
   
   /// <summary>
@@ -49,12 +58,16 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static Boolean? GetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SemiHidden?.Value;
   }
   
   public static void SetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SemiHidden = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.SemiHidden = null;
   }
   
   /// <summary>
@@ -62,12 +75,16 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static Boolean? GetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.UnhideWhenUsed?.Value;
   }
   
   public static void SetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.UnhideWhenUsed = null;
   }
   
   /// <summary>
@@ -75,12 +92,37 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   public static Boolean? GetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.PrimaryStyle?.Value;
   }
   
   public static void SetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PrimaryStyle = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.PrimaryStyle = null;
   }
   
+  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LatentStyleExceptionInfo();
+      value.Name = GetName(openXmlElement);
+      value.Locked = GetLocked(openXmlElement);
+      value.UiPriority = GetUiPriority(openXmlElement);
+      value.SemiHidden = GetSemiHidden(openXmlElement);
+      value.UnhideWhenUsed = GetUnhideWhenUsed(openXmlElement);
+      value.PrimaryStyle = GetPrimaryStyle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyleExceptionInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

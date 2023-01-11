@@ -24,12 +24,30 @@ public static class AutoNumberedBulletConverter
   /// </summary>
   public static Int32? GetStartAt(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.StartAt?.Value;
   }
   
   public static void SetStartAt(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.StartAt = value;
   }
   
+  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.AutoNumberedBullet();
+      value.Type = GetType(openXmlElement);
+      value.StartAt = GetStartAt(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AutoNumberedBullet? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AutoNumberedBullet, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

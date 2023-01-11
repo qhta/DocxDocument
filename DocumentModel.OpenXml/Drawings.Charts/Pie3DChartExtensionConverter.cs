@@ -10,22 +10,57 @@ public static class Pie3DChartExtensionConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
   public static DocumentModel.Drawings.Charts.FilteredPieSeries? GetFilteredPieSeries(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.FilteredPieSeriesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFilteredPieSeries(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredPieSeries? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredPieSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.Pie3DChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.Pie3DChartExtension();
+      value.Uri = GetUri(openXmlElement);
+      value.FilteredPieSeries = GetFilteredPieSeries(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Pie3DChartExtension? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

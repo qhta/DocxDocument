@@ -10,12 +10,29 @@ public static class AlphaOutsetConverter
   /// </summary>
   public static Int64? GetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Radius?.Value;
   }
   
   public static void SetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Radius = value;
   }
   
+  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.AlphaOutset();
+      value.Radius = GetRadius(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaOutset? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaOutset, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

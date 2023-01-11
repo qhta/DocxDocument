@@ -10,12 +10,13 @@ public static class TableRowHeightConverter
   /// </summary>
   public static UInt32? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Val = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class TableRowHeightConverter
       openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DocumentModel.Wordprocessing.HeightRuleKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.TableRowHeight? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableRowHeight();
+      value.Val = GetVal(openXmlElement);
+      value.HeightType = GetHeightType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableRowHeight? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableRowHeight, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

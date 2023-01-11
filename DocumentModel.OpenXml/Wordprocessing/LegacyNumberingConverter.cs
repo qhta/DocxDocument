@@ -10,12 +10,16 @@ public static class LegacyNumberingConverter
   /// </summary>
   public static Boolean? GetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Legacy?.Value;
   }
   
   public static void SetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Legacy = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Legacy = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class LegacyNumberingConverter
   /// </summary>
   public static String? GetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LegacySpace?.Value;
   }
   
   public static void SetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LegacySpace = new StringValue { Value = value };
+      else
+        openXmlElement.LegacySpace = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class LegacyNumberingConverter
   /// </summary>
   public static String? GetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LegacyIndent?.Value;
   }
   
   public static void SetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LegacyIndent = new StringValue { Value = value };
+      else
+        openXmlElement.LegacyIndent = null;
   }
   
+  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LegacyNumbering();
+      value.Legacy = GetLegacy(openXmlElement);
+      value.LegacySpace = GetLegacySpace(openXmlElement);
+      value.LegacyIndent = GetLegacyIndent(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LegacyNumbering? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -266,12 +266,50 @@ public static class BorderBoxPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BorderBoxProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetControlProperties(DocumentFormat.OpenXml.Math.BorderBoxProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.BorderBoxProperties? CreateModelElement(DocumentFormat.OpenXml.Math.BorderBoxProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.BorderBoxProperties();
+      value.HideTop = GetHideTop(openXmlElement);
+      value.HideBottom = GetHideBottom(openXmlElement);
+      value.HideLeft = GetHideLeft(openXmlElement);
+      value.HideRight = GetHideRight(openXmlElement);
+      value.StrikeHorizontal = GetStrikeHorizontal(openXmlElement);
+      value.StrikeVertical = GetStrikeVertical(openXmlElement);
+      value.StrikeBottomLeftToTopRight = GetStrikeBottomLeftToTopRight(openXmlElement);
+      value.StrikeTopLeftToBottomRight = GetStrikeTopLeftToBottomRight(openXmlElement);
+      value.ControlProperties = GetControlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBoxProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBoxProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

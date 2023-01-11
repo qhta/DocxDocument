@@ -10,12 +10,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Val = new StringValue { Value = value };
+      else
+        openXmlElement.Val = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetFirstRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstRow?.Value;
   }
   
   public static void SetFirstRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FirstRow = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.FirstRow = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetLastRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LastRow?.Value;
   }
   
   public static void SetLastRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LastRow = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.LastRow = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstColumn?.Value;
   }
   
   public static void SetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FirstColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.FirstColumn = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LastColumn?.Value;
   }
   
   public static void SetLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LastColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.LastColumn = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetOddVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.OddVerticalBand?.Value;
   }
   
   public static void SetOddVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OddVerticalBand = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.OddVerticalBand = null;
   }
   
   /// <summary>
@@ -88,12 +112,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetEvenVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.EvenVerticalBand?.Value;
   }
   
   public static void SetEvenVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EvenVerticalBand = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.EvenVerticalBand = null;
   }
   
   /// <summary>
@@ -101,12 +129,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetOddHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.OddHorizontalBand?.Value;
   }
   
   public static void SetOddHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OddHorizontalBand = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.OddHorizontalBand = null;
   }
   
   /// <summary>
@@ -114,12 +146,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetEvenHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.EvenHorizontalBand?.Value;
   }
   
   public static void SetEvenHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EvenHorizontalBand = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.EvenHorizontalBand = null;
   }
   
   /// <summary>
@@ -127,12 +163,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetFirstRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstRowFirstColumn?.Value;
   }
   
   public static void SetFirstRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FirstRowFirstColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.FirstRowFirstColumn = null;
   }
   
   /// <summary>
@@ -140,12 +180,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetFirstRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstRowLastColumn?.Value;
   }
   
   public static void SetFirstRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FirstRowLastColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.FirstRowLastColumn = null;
   }
   
   /// <summary>
@@ -153,12 +197,16 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetLastRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LastRowFirstColumn?.Value;
   }
   
   public static void SetLastRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LastRowFirstColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.LastRowFirstColumn = null;
   }
   
   /// <summary>
@@ -166,12 +214,44 @@ public static class ConditionalFormatStyleConverter
   /// </summary>
   public static Boolean? GetLastRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LastRowLastColumn?.Value;
   }
   
   public static void SetLastRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LastRowLastColumn = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.LastRowLastColumn = null;
   }
   
+  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ConditionalFormatStyle();
+      value.Val = GetVal(openXmlElement);
+      value.FirstRow = GetFirstRow(openXmlElement);
+      value.LastRow = GetLastRow(openXmlElement);
+      value.FirstColumn = GetFirstColumn(openXmlElement);
+      value.LastColumn = GetLastColumn(openXmlElement);
+      value.OddVerticalBand = GetOddVerticalBand(openXmlElement);
+      value.EvenVerticalBand = GetEvenVerticalBand(openXmlElement);
+      value.OddHorizontalBand = GetOddHorizontalBand(openXmlElement);
+      value.EvenHorizontalBand = GetEvenHorizontalBand(openXmlElement);
+      value.FirstRowFirstColumn = GetFirstRowFirstColumn(openXmlElement);
+      value.FirstRowLastColumn = GetFirstRowLastColumn(openXmlElement);
+      value.LastRowFirstColumn = GetLastRowFirstColumn(openXmlElement);
+      value.LastRowLastColumn = GetLastRowLastColumn(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

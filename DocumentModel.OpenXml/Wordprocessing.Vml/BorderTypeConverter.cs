@@ -22,14 +22,15 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border Width
   /// </summary>
-  public static Int32? GetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
+  public static Int64? GetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
-  public static void SetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement, Int32? value)
+  public static void SetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -37,12 +38,30 @@ public static class BorderTypeConverter
   /// </summary>
   public static Boolean? GetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
+  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Vml.BorderType();
+      value.Type = GetType(openXmlElement);
+      value.Width = GetWidth(openXmlElement);
+      value.Shadow = GetShadow(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.BorderType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

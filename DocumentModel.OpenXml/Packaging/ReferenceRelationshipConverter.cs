@@ -10,12 +10,12 @@ public static class ReferenceRelationshipConverter
   /// </summary>
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   public static void SetRelationshipType(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is System.String");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class ReferenceRelationshipConverter
   /// </summary>
   public static Boolean? GetIsExternal(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is System.Boolean");
   }
   
   public static void SetIsExternal(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is System.Boolean");
   }
   
   /// <summary>
@@ -36,12 +36,12 @@ public static class ReferenceRelationshipConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   public static void SetId(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is System.String");
   }
   
   /// <summary>
@@ -49,12 +49,31 @@ public static class ReferenceRelationshipConverter
   /// </summary>
   public static Uri? GetUri(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement, Uri? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
+  public static DocumentModel.Packaging.ReferenceRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.ReferenceRelationship();
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      value.IsExternal = GetIsExternal(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.Uri = GetUri(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ReferenceRelationship? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ReferenceRelationship, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Position?.Value;
   }
   
   public static void SetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Position = new StringValue { Value = value };
+      else
+        openXmlElement.Position = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Polar?.Value;
   }
   
   public static void SetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Polar = new StringValue { Value = value };
+      else
+        openXmlElement.Polar = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetMap(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Map?.Value;
   }
   
   public static void SetMap(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Map = new StringValue { Value = value };
+      else
+        openXmlElement.Map = null;
   }
   
   /// <summary>
@@ -49,12 +61,12 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   public static void SetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   /// <summary>
@@ -62,12 +74,12 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   public static void SetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   /// <summary>
@@ -75,12 +87,12 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   public static void SetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   /// <summary>
@@ -88,12 +100,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.XRange?.Value;
   }
   
   public static void SetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.XRange = new StringValue { Value = value };
+      else
+        openXmlElement.XRange = null;
   }
   
   /// <summary>
@@ -101,12 +117,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.YRange?.Value;
   }
   
   public static void SetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.YRange = new StringValue { Value = value };
+      else
+        openXmlElement.YRange = null;
   }
   
   /// <summary>
@@ -114,12 +134,40 @@ public static class ShapeHandleConverter
   /// </summary>
   public static String? GetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.RadiusRange?.Value;
   }
   
   public static void SetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.RadiusRange = new StringValue { Value = value };
+      else
+        openXmlElement.RadiusRange = null;
   }
   
+  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ShapeHandle();
+      value.Position = GetPosition(openXmlElement);
+      value.Polar = GetPolar(openXmlElement);
+      value.Map = GetMap(openXmlElement);
+      value.InvertX = GetInvertX(openXmlElement);
+      value.InvertY = GetInvertY(openXmlElement);
+      value.Switch = GetSwitch(openXmlElement);
+      value.XRange = GetXRange(openXmlElement);
+      value.YRange = GetYRange(openXmlElement);
+      value.RadiusRange = GetRadiusRange(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandle? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandle, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

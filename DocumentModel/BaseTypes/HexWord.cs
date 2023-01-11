@@ -4,147 +4,146 @@ using DocumentModel.BaseTypes;
 namespace DocumentModel;
 
 [TypeConverter(typeof(HexWordTypeConverter))]
-public struct HexWord: IConvertible
+public record HexWord: IConvertible
 {
-  private ushort value;
+  private ushort Value;
 
+  public static implicit operator HexWord(string val) => new HexWord (ushort.Parse(val, NumberStyles.HexNumber));
 
-  public static implicit operator HexWord(string val) => new HexWord { value = ushort.Parse(val, NumberStyles.HexNumber) };
+  //public static implicit operator HexWord?(string? val) =>
+  //  (val is not null) ? new HexWord (ushort.Parse(val, NumberStyles.HexNumber)) : (HexWord?)null;
 
-  public static implicit operator HexWord?(string? val) =>
-    (val is not null) ? new HexWord { value = ushort.Parse(val, NumberStyles.HexNumber) } : (HexWord?)null;
+  public static implicit operator string(HexWord val) => val.Value.ToString("X4");
+  //public static implicit operator string?(HexWord? val) => val?.Value.ToString("X4");
 
-  public static implicit operator string(HexWord val) => val.value.ToString("X4");
-  public static implicit operator string?(HexWord? val) => val?.value.ToString("X4");
+  public static implicit operator ushort(HexWord val) => val.Value;
 
-  public static implicit operator ushort(HexWord val) => val.value;
-
-  public static implicit operator HexWord(ushort val) => new HexWord { value = val };
+  public static implicit operator HexWord(ushort val) => new HexWord (val);
 
   public HexWord(string val)
   {
-    value = ushort.Parse(val, NumberStyles.HexNumber);
+    Value = ushort.Parse(val, NumberStyles.HexNumber);
   }
 
-  public HexWord(ushort val)
+  public HexWord(ushort value)
   {
-    value = val;
+    Value = value;
   }
 
   public override string ToString()
   {
-    return value.ToString("X4");
+    return Value.ToString("X4");
   }
 
   public TypeCode GetTypeCode()
   {
-    return value.GetTypeCode();
+    return Value.GetTypeCode();
   }
 
   public bool ToBoolean(IFormatProvider? provider)
   {
-    return value != 0;
+    return Value != 0;
   }
 
   public byte ToByte(IFormatProvider? provider)
   {
-    return (byte)value;
+    return (byte)Value;
   }
 
   public char ToChar(IFormatProvider? provider)
   {
-    return ((IConvertible)value).ToChar(provider);
+    return ((IConvertible)Value).ToChar(provider);
   }
 
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    return ((IConvertible)value).ToDateTime(provider);
+    return ((IConvertible)Value).ToDateTime(provider);
   }
 
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public double ToDouble(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public short ToInt16(IFormatProvider? provider)
   {
-    return (short)value;
+    return (short)Value;
   }
 
   public int ToInt32(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public long ToInt64(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    return (sbyte)value;
+    return (sbyte)Value;
   }
 
   public float ToSingle(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider);
+    return Value.ToString(provider);
   }
 
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return value;
+    return Value;
   }
 
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return value;
+      return Value;
     if (targetType == typeof(Int32))
-      return value;
+      return Value;
     if (targetType == typeof(UInt32))
-      return value;
+      return Value;
     if (targetType == typeof(Int64))
-      return value;
+      return Value;
     if (targetType == typeof(UInt64))
-      return value;
+      return Value;
     if (targetType == typeof(Int16))
-      return (short)value;
+      return (short)Value;
     if (targetType == typeof(Byte))
-      return (byte)value;
+      return (byte)Value;
     if (targetType == typeof(SByte))
-      return (sbyte)value;
+      return (sbyte)Value;
     if (targetType == typeof(Single))
-      return value;
+      return Value;
     if (targetType == typeof(Double))
-      return value;
+      return Value;
     if (targetType == typeof(Decimal))
-      return value;
+      return Value;
     if (targetType == typeof(string))
-      return value.ToString("X4");
+      return Value.ToString("X4");
     if (targetType == typeof(HexWord))
-      return new HexWord(value);
-    return ((IConvertible)value).ToType(targetType, provider);
+      return new HexWord(Value);
+    return ((IConvertible)Value).ToType(targetType, provider);
   }
 
 

@@ -10,12 +10,13 @@ public static class ArtisticMarkerConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticMarkerConverter
   /// </summary>
   public static Int32? GetSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Size?.Value;
   }
   
   public static void SetSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Size = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticMarker? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticMarker();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.Size = GetSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticMarker? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

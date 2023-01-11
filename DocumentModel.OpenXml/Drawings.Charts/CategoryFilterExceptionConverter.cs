@@ -10,12 +10,12 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static String? GetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences");
   }
   
   public static void SetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences");
   }
   
   /// <summary>
@@ -23,12 +23,26 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ShapeProperties3? GetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ShapeProperties3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, DocumentModel.Drawings.Charts.ShapeProperties3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ShapeProperties3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +50,12 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static UInt32? GetExplosion(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion");
   }
   
   public static void SetExplosion(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion");
   }
   
   /// <summary>
@@ -49,12 +63,30 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static Boolean? GetInvertIfNegativeBoolean(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetInvertIfNegativeBoolean(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +94,30 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static Boolean? GetBubble3D(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetBubble3D(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,12 +125,26 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.Marker3? GetMarker(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.Marker3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMarker(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, DocumentModel.Drawings.Charts.Marker3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.Marker3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -88,12 +152,48 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.DataLabel3? GetDataLabel(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabel3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDataLabel(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, DocumentModel.Drawings.Charts.DataLabel3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabel3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.CategoryFilterException? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.CategoryFilterException();
+      value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
+      value.ShapeProperties = GetShapeProperties(openXmlElement);
+      value.Explosion = GetExplosion(openXmlElement);
+      value.InvertIfNegativeBoolean = GetInvertIfNegativeBoolean(openXmlElement);
+      value.Bubble3D = GetBubble3D(openXmlElement);
+      value.Marker = GetMarker(openXmlElement);
+      value.DataLabel = GetDataLabel(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CategoryFilterException? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }
