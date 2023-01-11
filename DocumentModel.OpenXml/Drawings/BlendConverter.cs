@@ -24,12 +24,43 @@ public static class BlendConverter
   /// </summary>
   public static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement, DocumentModel.Drawings.EffectContainer? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Blend? CreateModelElement(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Blend();
+      value.BlendMode = GetBlendMode(openXmlElement);
+      value.EffectContainer = GetEffectContainer(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blend? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blend, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

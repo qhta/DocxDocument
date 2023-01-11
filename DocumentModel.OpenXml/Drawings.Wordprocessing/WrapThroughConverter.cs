@@ -24,12 +24,13 @@ public static class WrapThroughConverter
   /// </summary>
   public static UInt32? GetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DistanceFromLeft?.Value;
   }
   
   public static void SetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DistanceFromLeft = value;
   }
   
   /// <summary>
@@ -37,12 +38,13 @@ public static class WrapThroughConverter
   /// </summary>
   public static UInt32? GetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DistanceFromRight?.Value;
   }
   
   public static void SetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DistanceFromRight = value;
   }
   
   /// <summary>
@@ -50,12 +52,45 @@ public static class WrapThroughConverter
   /// </summary>
   public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? GetWrapPolygon(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapPolygonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetWrapPolygon(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapPolygonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Wordprocessing.WrapThrough();
+      value.WrapText = GetWrapText(openXmlElement);
+      value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
+      value.DistanceFromRight = GetDistanceFromRight(openXmlElement);
+      value.WrapPolygon = GetWrapPolygon(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapThrough? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

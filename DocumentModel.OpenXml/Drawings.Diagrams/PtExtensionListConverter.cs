@@ -7,12 +7,51 @@ public static class PtExtensionListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>? GetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.PtExtension>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PtExtension>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.PtExtensionList();
+      value.PtExtensions = GetPtExtensions(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PtExtensionList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

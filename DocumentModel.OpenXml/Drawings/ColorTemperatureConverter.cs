@@ -10,12 +10,29 @@ public static class ColorTemperatureConverter
   /// </summary>
   public static Int32? GetColorTemperatureValue(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ColorTemperatureValue?.Value;
   }
   
   public static void SetColorTemperatureValue(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.ColorTemperatureValue = value;
   }
   
+  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ColorTemperature();
+      value.ColorTemperatureValue = GetColorTemperatureValue(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorTemperature? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

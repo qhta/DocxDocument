@@ -10,12 +10,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.QualifiedId?.Value;
   }
   
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.QualifiedId = new StringValue { Value = value };
+      else
+        openXmlElement.QualifiedId = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Tag?.Value;
   }
   
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Tag = new StringValue { Value = value };
+      else
+        openXmlElement.Tag = null;
   }
   
   /// <summary>
@@ -77,12 +89,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Enabled?.Value;
   }
   
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Enabled = null;
   }
   
   /// <summary>
@@ -90,12 +106,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetEnabled?.Value;
   }
   
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetEnabled = new StringValue { Value = value };
+      else
+        openXmlElement.GetEnabled = null;
   }
   
   /// <summary>
@@ -103,12 +123,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Label?.Value;
   }
   
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Label = new StringValue { Value = value };
+      else
+        openXmlElement.Label = null;
   }
   
   /// <summary>
@@ -116,12 +140,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetLabel?.Value;
   }
   
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetLabel = new StringValue { Value = value };
+      else
+        openXmlElement.GetLabel = null;
   }
   
   /// <summary>
@@ -129,12 +157,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Visible?.Value;
   }
   
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Visible = null;
   }
   
   /// <summary>
@@ -142,12 +174,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetVisible?.Value;
   }
   
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetVisible = new StringValue { Value = value };
+      else
+        openXmlElement.GetVisible = null;
   }
   
   /// <summary>
@@ -155,12 +191,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.OnAction?.Value;
   }
   
   public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OnAction = new StringValue { Value = value };
+      else
+        openXmlElement.OnAction = null;
   }
   
   /// <summary>
@@ -168,12 +208,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Keytip?.Value;
   }
   
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Keytip = new StringValue { Value = value };
+      else
+        openXmlElement.Keytip = null;
   }
   
   /// <summary>
@@ -181,12 +225,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetKeytip?.Value;
   }
   
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetKeytip = new StringValue { Value = value };
+      else
+        openXmlElement.GetKeytip = null;
   }
   
   /// <summary>
@@ -194,12 +242,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetSelectedItemIndex?.Value;
   }
   
   public static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetSelectedItemIndex = new StringValue { Value = value };
+      else
+        openXmlElement.GetSelectedItemIndex = null;
   }
   
   /// <summary>
@@ -207,12 +259,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetItemCount?.Value;
   }
   
   public static void SetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetItemCount = new StringValue { Value = value };
+      else
+        openXmlElement.GetItemCount = null;
   }
   
   /// <summary>
@@ -220,12 +276,16 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetItemLabel?.Value;
   }
   
   public static void SetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetItemLabel = new StringValue { Value = value };
+      else
+        openXmlElement.GetItemLabel = null;
   }
   
   /// <summary>
@@ -233,22 +293,83 @@ public static class RadioGroupConverter
   /// </summary>
   public static String? GetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetItemID?.Value;
   }
   
   public static void SetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetItemID = new StringValue { Value = value };
+      else
+        openXmlElement.GetItemID = null;
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>? GetRadioButtonBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.RadioButtonBackstageItem>())
+      {
+        var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetRadioButtonBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.RadioButtonBackstageItem>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.RadioButtonBackstageItem>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.RadioGroup? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.RadioGroup();
+      value.Id = GetId(openXmlElement);
+      value.QualifiedId = GetQualifiedId(openXmlElement);
+      value.Tag = GetTag(openXmlElement);
+      value.AlignLabel = GetAlignLabel(openXmlElement);
+      value.Expand = GetExpand(openXmlElement);
+      value.Enabled = GetEnabled(openXmlElement);
+      value.GetEnabled = GetGetEnabled(openXmlElement);
+      value.Label = GetLabel(openXmlElement);
+      value.GetLabel = GetGetLabel(openXmlElement);
+      value.Visible = GetVisible(openXmlElement);
+      value.GetVisible = GetGetVisible(openXmlElement);
+      value.OnAction = GetOnAction(openXmlElement);
+      value.Keytip = GetKeytip(openXmlElement);
+      value.GetKeytip = GetGetKeytip(openXmlElement);
+      value.GetSelectedItemIndex = GetGetSelectedItemIndex(openXmlElement);
+      value.GetItemCount = GetGetItemCount(openXmlElement);
+      value.GetItemLabel = GetGetItemLabel(openXmlElement);
+      value.GetItemID = GetGetItemID(openXmlElement);
+      value.RadioButtonBackstageItems = GetRadioButtonBackstageItems(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.RadioGroup? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

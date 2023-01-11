@@ -10,12 +10,16 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   public static Boolean? GetIsComment(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.IsComment?.Value;
   }
   
   public static void SetIsComment(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IsComment = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.IsComment = null;
   }
   
   /// <summary>
@@ -23,12 +27,26 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.ContentPartLocks? GetContentPartLocks(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ContentPartLocksConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetContentPartLocks(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement, DocumentModel.Drawings.ContentPartLocks? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ContentPartLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +54,44 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.OfficeArtExtensionList2? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionList2Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList2? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionList2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties();
+      value.IsComment = GetIsComment(openXmlElement);
+      value.ContentPartLocks = GetContentPartLocks(openXmlElement);
+      value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

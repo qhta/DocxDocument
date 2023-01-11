@@ -37,4 +37,20 @@ public static class ParagraphPropertiesConverter
     }
   }
   
+  public static DocumentModel.Math.ParagraphProperties? CreateModelElement(DocumentFormat.OpenXml.Math.ParagraphProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.ParagraphProperties();
+      value.Justification = GetJustification(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ParagraphProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.ParagraphProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class CustomUIConverter
   /// </summary>
   public static String? GetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.OnLoad?.Value;
   }
   
   public static void SetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OnLoad = new StringValue { Value = value };
+      else
+        openXmlElement.OnLoad = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class CustomUIConverter
   /// </summary>
   public static String? GetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LoadImage?.Value;
   }
   
   public static void SetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LoadImage = new StringValue { Value = value };
+      else
+        openXmlElement.LoadImage = null;
   }
   
   /// <summary>
@@ -36,12 +44,26 @@ public static class CustomUIConverter
   /// </summary>
   public static DocumentModel.Commands? GetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.CommandsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, DocumentModel.Commands? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.CommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +71,26 @@ public static class CustomUIConverter
   /// </summary>
   public static DocumentModel.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.RibbonConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, DocumentModel.Ribbon? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +98,26 @@ public static class CustomUIConverter
   /// </summary>
   public static DocumentModel.Backstage? GetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.BackstageConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, DocumentModel.Backstage? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.BackstageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,12 +125,47 @@ public static class CustomUIConverter
   /// </summary>
   public static DocumentModel.ContextMenus? GetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.ContextMenusConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, DocumentModel.ContextMenus? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.ContextMenusConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.CustomUI();
+      value.OnLoad = GetOnLoad(openXmlElement);
+      value.LoadImage = GetLoadImage(openXmlElement);
+      value.Commands = GetCommands(openXmlElement);
+      value.Ribbon = GetRibbon(openXmlElement);
+      value.Backstage = GetBackstage(openXmlElement);
+      value.ContextMenus = GetContextMenus(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomUI? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

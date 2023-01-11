@@ -10,12 +10,13 @@ public static class NormalAutoFitConverter
   /// </summary>
   public static Int32? GetFontScale(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FontScale?.Value;
   }
   
   public static void SetFontScale(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FontScale = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class NormalAutoFitConverter
   /// </summary>
   public static Int32? GetLineSpaceReduction(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LineSpaceReduction?.Value;
   }
   
   public static void SetLineSpaceReduction(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.LineSpaceReduction = value;
   }
   
+  public static DocumentModel.Drawings.NormalAutoFit? CreateModelElement(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.NormalAutoFit();
+      value.FontScale = GetFontScale(openXmlElement);
+      value.LineSpaceReduction = GetLineSpaceReduction(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NormalAutoFit? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NormalAutoFit, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class WrapPolygonConverter
   /// </summary>
   public static Boolean? GetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Edited?.Value;
   }
   
   public static void SetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Edited = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Edited = null;
   }
   
   /// <summary>
@@ -23,22 +27,68 @@ public static class WrapPolygonConverter
   /// </summary>
   public static DocumentModel.Drawings.Wordprocessing.Point2DType? GetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Wordprocessing.Point2DType? GetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Wordprocessing.WrapPolygon();
+      value.Edited = GetEdited(openXmlElement);
+      value.StartPoint = GetStartPoint(openXmlElement);
+      value.LineTo = GetLineTo(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

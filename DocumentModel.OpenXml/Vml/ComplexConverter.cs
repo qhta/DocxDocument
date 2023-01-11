@@ -19,4 +19,20 @@ public static class ComplexConverter
       openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
   
+  public static DocumentModel.Vml.Complex? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Complex? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Complex();
+      value.Extension = GetExtension(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Complex? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Complex, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

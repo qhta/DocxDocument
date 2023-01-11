@@ -10,12 +10,13 @@ public static class ArtisticPaintStrokesConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticPaintStrokesConverter
   /// </summary>
   public static Int32? GetIntensity(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Intensity?.Value;
   }
   
   public static void SetIntensity(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Intensity = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticPaintStrokes? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticPaintStrokes();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.Intensity = GetIntensity(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPaintStrokes? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

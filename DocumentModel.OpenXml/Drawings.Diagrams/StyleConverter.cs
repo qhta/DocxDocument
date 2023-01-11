@@ -10,12 +10,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Drawings.LineReference? GetLineReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.LineReferenceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLineReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement, DocumentModel.Drawings.LineReference? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Drawings.FillReference? GetFillReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.FillReferenceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFillReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement, DocumentModel.Drawings.FillReference? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +64,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Drawings.EffectReference? GetEffectReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.EffectReferenceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEffectReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement, DocumentModel.Drawings.EffectReference? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +91,45 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Drawings.FontReference? GetFontReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.FontReferenceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFontReference(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement, DocumentModel.Drawings.FontReference? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontReference>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Style? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Style? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Style();
+      value.LineReference = GetLineReference(openXmlElement);
+      value.FillReference = GetFillReference(openXmlElement);
+      value.EffectReference = GetEffectReference(openXmlElement);
+      value.FontReference = GetFontReference(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Style? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Style, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

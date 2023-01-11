@@ -7,12 +7,42 @@ public static class RecipientsConverter
 {
   public static DocumentModel.Wordprocessing.RecipientData? GetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientData>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement, DocumentModel.Wordprocessing.RecipientData? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RecipientData>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Recipients();
+      value.RecipientData = GetRecipientData(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Recipients? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Recipients, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

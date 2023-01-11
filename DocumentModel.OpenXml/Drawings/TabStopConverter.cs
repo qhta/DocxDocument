@@ -10,12 +10,13 @@ public static class TabStopConverter
   /// </summary>
   public static Int32? GetPosition(DocumentFormat.OpenXml.Drawing.TabStop? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Position?.Value;
   }
   
   public static void SetPosition(DocumentFormat.OpenXml.Drawing.TabStop? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Position = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class TabStopConverter
       openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DocumentModel.Drawings.TextTabAlignmentKind>(value);
   }
   
+  public static DocumentModel.Drawings.TabStop? CreateModelElement(DocumentFormat.OpenXml.Drawing.TabStop? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.TabStop();
+      value.Position = GetPosition(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TabStop? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TabStop, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

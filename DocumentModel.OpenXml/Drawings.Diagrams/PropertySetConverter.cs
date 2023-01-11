@@ -10,12 +10,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetPresentationElementId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PresentationElementId?.Value;
   }
   
   public static void SetPresentationElementId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PresentationElementId = new StringValue { Value = value };
+      else
+        openXmlElement.PresentationElementId = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetPresentationName(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PresentationName?.Value;
   }
   
   public static void SetPresentationName(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PresentationName = new StringValue { Value = value };
+      else
+        openXmlElement.PresentationName = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetPresentationStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PresentationStyleLabel?.Value;
   }
   
   public static void SetPresentationStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PresentationStyleLabel = new StringValue { Value = value };
+      else
+        openXmlElement.PresentationStyleLabel = null;
   }
   
   /// <summary>
@@ -49,12 +61,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetPresentationStyleIndex(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.PresentationStyleIndex?.Value;
   }
   
   public static void SetPresentationStyleIndex(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.PresentationStyleIndex = value;
   }
   
   /// <summary>
@@ -62,12 +75,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetPresentationStyleCount(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.PresentationStyleCount?.Value;
   }
   
   public static void SetPresentationStyleCount(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.PresentationStyleCount = value;
   }
   
   /// <summary>
@@ -75,12 +89,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetLayoutTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LayoutTypeId?.Value;
   }
   
   public static void SetLayoutTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LayoutTypeId = new StringValue { Value = value };
+      else
+        openXmlElement.LayoutTypeId = null;
   }
   
   /// <summary>
@@ -88,12 +106,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetLayoutCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LayoutCategoryId?.Value;
   }
   
   public static void SetLayoutCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LayoutCategoryId = new StringValue { Value = value };
+      else
+        openXmlElement.LayoutCategoryId = null;
   }
   
   /// <summary>
@@ -101,12 +123,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetQuickStyleTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.QuickStyleTypeId?.Value;
   }
   
   public static void SetQuickStyleTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.QuickStyleTypeId = new StringValue { Value = value };
+      else
+        openXmlElement.QuickStyleTypeId = null;
   }
   
   /// <summary>
@@ -114,12 +140,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetQuickStyleCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.QuickStyleCategoryId?.Value;
   }
   
   public static void SetQuickStyleCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.QuickStyleCategoryId = new StringValue { Value = value };
+      else
+        openXmlElement.QuickStyleCategoryId = null;
   }
   
   /// <summary>
@@ -127,12 +157,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetColorType(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ColorType?.Value;
   }
   
   public static void SetColorType(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ColorType = new StringValue { Value = value };
+      else
+        openXmlElement.ColorType = null;
   }
   
   /// <summary>
@@ -140,12 +174,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetColorCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ColorCategoryId?.Value;
   }
   
   public static void SetColorCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ColorCategoryId = new StringValue { Value = value };
+      else
+        openXmlElement.ColorCategoryId = null;
   }
   
   /// <summary>
@@ -153,12 +191,16 @@ public static class PropertySetConverter
   /// </summary>
   public static Boolean? GetCoherent3D(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Coherent3D?.Value;
   }
   
   public static void SetCoherent3D(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Coherent3D = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Coherent3D = null;
   }
   
   /// <summary>
@@ -166,12 +208,16 @@ public static class PropertySetConverter
   /// </summary>
   public static String? GetPlaceholderText(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PlaceholderText?.Value;
   }
   
   public static void SetPlaceholderText(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PlaceholderText = new StringValue { Value = value };
+      else
+        openXmlElement.PlaceholderText = null;
   }
   
   /// <summary>
@@ -179,12 +225,16 @@ public static class PropertySetConverter
   /// </summary>
   public static Boolean? GetPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Placeholder?.Value;
   }
   
   public static void SetPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Placeholder = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Placeholder = null;
   }
   
   /// <summary>
@@ -192,12 +242,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Rotation?.Value;
   }
   
   public static void SetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Rotation = value;
   }
   
   /// <summary>
@@ -205,12 +256,16 @@ public static class PropertySetConverter
   /// </summary>
   public static Boolean? GetVerticalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.VerticalFlip?.Value;
   }
   
   public static void SetVerticalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.VerticalFlip = null;
   }
   
   /// <summary>
@@ -218,12 +273,16 @@ public static class PropertySetConverter
   /// </summary>
   public static Boolean? GetHorizontalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.HorizontalFlip?.Value;
   }
   
   public static void SetHorizontalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.HorizontalFlip = null;
   }
   
   /// <summary>
@@ -231,12 +290,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetFixedWidthOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FixedWidthOverride?.Value;
   }
   
   public static void SetFixedWidthOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FixedWidthOverride = value;
   }
   
   /// <summary>
@@ -244,12 +304,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetFixedHeightOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FixedHeightOverride?.Value;
   }
   
   public static void SetFixedHeightOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FixedHeightOverride = value;
   }
   
   /// <summary>
@@ -257,12 +318,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetWidthScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.WidthScale?.Value;
   }
   
   public static void SetWidthScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.WidthScale = value;
   }
   
   /// <summary>
@@ -270,12 +332,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetHightScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.HightScale?.Value;
   }
   
   public static void SetHightScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.HightScale = value;
   }
   
   /// <summary>
@@ -283,12 +346,16 @@ public static class PropertySetConverter
   /// </summary>
   public static Boolean? GetTextChanged(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.TextChanged?.Value;
   }
   
   public static void SetTextChanged(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.TextChanged = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.TextChanged = null;
   }
   
   /// <summary>
@@ -296,12 +363,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetFactorWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FactorWidth?.Value;
   }
   
   public static void SetFactorWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FactorWidth = value;
   }
   
   /// <summary>
@@ -309,12 +377,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetFactorHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FactorHeight?.Value;
   }
   
   public static void SetFactorHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FactorHeight = value;
   }
   
   /// <summary>
@@ -322,12 +391,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetNeighborOffsetWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NeighborOffsetWidth?.Value;
   }
   
   public static void SetNeighborOffsetWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.NeighborOffsetWidth = value;
   }
   
   /// <summary>
@@ -335,12 +405,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetNeighborOffsetHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NeighborOffsetHeight?.Value;
   }
   
   public static void SetNeighborOffsetHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.NeighborOffsetHeight = value;
   }
   
   /// <summary>
@@ -348,12 +419,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetRadiusScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.RadiusScale?.Value;
   }
   
   public static void SetRadiusScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.RadiusScale = value;
   }
   
   /// <summary>
@@ -361,12 +433,13 @@ public static class PropertySetConverter
   /// </summary>
   public static Int32? GetIncludeAngleScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.IncludeAngleScale?.Value;
   }
   
   public static void SetIncludeAngleScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.IncludeAngleScale = value;
   }
   
   /// <summary>
@@ -374,12 +447,26 @@ public static class PropertySetConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? GetPresentationLayoutVariables(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.PresentationLayoutVariablesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPresentationLayoutVariables(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PresentationLayoutVariablesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -387,12 +474,71 @@ public static class PropertySetConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.Style? GetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Style>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, DocumentModel.Drawings.Diagrams.Style? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Style>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Style>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.PropertySet? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.PropertySet();
+      value.PresentationElementId = GetPresentationElementId(openXmlElement);
+      value.PresentationName = GetPresentationName(openXmlElement);
+      value.PresentationStyleLabel = GetPresentationStyleLabel(openXmlElement);
+      value.PresentationStyleIndex = GetPresentationStyleIndex(openXmlElement);
+      value.PresentationStyleCount = GetPresentationStyleCount(openXmlElement);
+      value.LayoutTypeId = GetLayoutTypeId(openXmlElement);
+      value.LayoutCategoryId = GetLayoutCategoryId(openXmlElement);
+      value.QuickStyleTypeId = GetQuickStyleTypeId(openXmlElement);
+      value.QuickStyleCategoryId = GetQuickStyleCategoryId(openXmlElement);
+      value.ColorType = GetColorType(openXmlElement);
+      value.ColorCategoryId = GetColorCategoryId(openXmlElement);
+      value.Coherent3D = GetCoherent3D(openXmlElement);
+      value.PlaceholderText = GetPlaceholderText(openXmlElement);
+      value.Placeholder = GetPlaceholder(openXmlElement);
+      value.Rotation = GetRotation(openXmlElement);
+      value.VerticalFlip = GetVerticalFlip(openXmlElement);
+      value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
+      value.FixedWidthOverride = GetFixedWidthOverride(openXmlElement);
+      value.FixedHeightOverride = GetFixedHeightOverride(openXmlElement);
+      value.WidthScale = GetWidthScale(openXmlElement);
+      value.HightScale = GetHightScale(openXmlElement);
+      value.TextChanged = GetTextChanged(openXmlElement);
+      value.FactorWidth = GetFactorWidth(openXmlElement);
+      value.FactorHeight = GetFactorHeight(openXmlElement);
+      value.NeighborOffsetWidth = GetNeighborOffsetWidth(openXmlElement);
+      value.NeighborOffsetHeight = GetNeighborOffsetHeight(openXmlElement);
+      value.RadiusScale = GetRadiusScale(openXmlElement);
+      value.IncludeAngleScale = GetIncludeAngleScale(openXmlElement);
+      value.PresentationLayoutVariables = GetPresentationLayoutVariables(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PropertySet? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

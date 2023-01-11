@@ -10,12 +10,13 @@ public static class ArtisticLightScreenConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticLightScreenConverter
   /// </summary>
   public static Int32? GetGridSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.GridSize?.Value;
   }
   
   public static void SetGridSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.GridSize = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticLightScreen? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticLightScreen();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.GridSize = GetGridSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticLightScreen? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

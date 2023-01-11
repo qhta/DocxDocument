@@ -10,12 +10,16 @@ public static class RunTrackChangeTypeConverter
   /// </summary>
   public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Author?.Value;
   }
   
   public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Author = new StringValue { Value = value };
+      else
+        openXmlElement.Author = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class RunTrackChangeTypeConverter
   /// </summary>
   public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Date?.Value;
   }
   
   public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, DateTime? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Date = value;
   }
   
   /// <summary>
@@ -36,12 +41,34 @@ public static class RunTrackChangeTypeConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
+  public static DocumentModel.Wordprocessing.RunTrackChangeType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.RunTrackChangeType();
+      value.Author = GetAuthor(openXmlElement);
+      value.Date = GetDate(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunTrackChangeType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

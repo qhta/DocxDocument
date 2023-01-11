@@ -24,12 +24,12 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -37,12 +37,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetWeight(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Weight?.Value;
   }
   
   public static void SetWeight(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Weight = new StringValue { Value = value };
+      else
+        openXmlElement.Weight = null;
   }
   
   /// <summary>
@@ -50,12 +54,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetColor(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Color?.Value;
   }
   
   public static void SetColor(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Color = new StringValue { Value = value };
+      else
+        openXmlElement.Color = null;
   }
   
   /// <summary>
@@ -63,12 +71,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetColor2(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Color2?.Value;
   }
   
   public static void SetColor2(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Color2 = new StringValue { Value = value };
+      else
+        openXmlElement.Color2 = null;
   }
   
   /// <summary>
@@ -76,12 +88,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetOpacity(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Opacity?.Value;
   }
   
   public static void SetOpacity(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Opacity = new StringValue { Value = value };
+      else
+        openXmlElement.Opacity = null;
   }
   
   /// <summary>
@@ -103,12 +119,13 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static Decimal? GetMiterLimit(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MiterLimit?.Value;
   }
   
   public static void SetMiterLimit(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, Decimal? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MiterLimit = value;
   }
   
   /// <summary>
@@ -144,12 +161,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetDashStyle(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.DashStyle?.Value;
   }
   
   public static void SetDashStyle(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DashStyle = new StringValue { Value = value };
+      else
+        openXmlElement.DashStyle = null;
   }
   
   /// <summary>
@@ -157,12 +178,12 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetInsetPen(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -184,12 +205,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetSource(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Source?.Value;
   }
   
   public static void SetSource(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Source = new StringValue { Value = value };
+      else
+        openXmlElement.Source = null;
   }
   
   /// <summary>
@@ -211,12 +236,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetImageSize(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ImageSize?.Value;
   }
   
   public static void SetImageSize(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ImageSize = new StringValue { Value = value };
+      else
+        openXmlElement.ImageSize = null;
   }
   
   /// <summary>
@@ -224,12 +253,12 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static Boolean? GetImageAlignShape(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetImageAlignShape(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -321,12 +350,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetHref(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Href?.Value;
   }
   
   public static void SetHref(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Href = new StringValue { Value = value };
+      else
+        openXmlElement.Href = null;
   }
   
   /// <summary>
@@ -334,12 +367,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetAlternateImageReference(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AlternateImageReference?.Value;
   }
   
   public static void SetAlternateImageReference(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlternateImageReference = new StringValue { Value = value };
+      else
+        openXmlElement.AlternateImageReference = null;
   }
   
   /// <summary>
@@ -347,12 +384,16 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Title?.Value;
   }
   
   public static void SetTitle(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Title = new StringValue { Value = value };
+      else
+        openXmlElement.Title = null;
   }
   
   /// <summary>
@@ -360,12 +401,54 @@ public static class StrokeChildTypeConverter
   /// </summary>
   public static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetForceDash(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
+  public static DocumentModel.Vml.StrokeChildType? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.StrokeChildType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.StrokeChildType();
+      value.Extension = GetExtension(openXmlElement);
+      value.On = GetOn(openXmlElement);
+      value.Weight = GetWeight(openXmlElement);
+      value.Color = GetColor(openXmlElement);
+      value.Color2 = GetColor2(openXmlElement);
+      value.Opacity = GetOpacity(openXmlElement);
+      value.LineStyle = GetLineStyle(openXmlElement);
+      value.MiterLimit = GetMiterLimit(openXmlElement);
+      value.JoinStyle = GetJoinStyle(openXmlElement);
+      value.EndCap = GetEndCap(openXmlElement);
+      value.DashStyle = GetDashStyle(openXmlElement);
+      value.InsetPen = GetInsetPen(openXmlElement);
+      value.FillType = GetFillType(openXmlElement);
+      value.Source = GetSource(openXmlElement);
+      value.ImageAspect = GetImageAspect(openXmlElement);
+      value.ImageSize = GetImageSize(openXmlElement);
+      value.ImageAlignShape = GetImageAlignShape(openXmlElement);
+      value.StartArrow = GetStartArrow(openXmlElement);
+      value.StartArrowWidth = GetStartArrowWidth(openXmlElement);
+      value.StartArrowLength = GetStartArrowLength(openXmlElement);
+      value.EndArrow = GetEndArrow(openXmlElement);
+      value.EndArrowWidth = GetEndArrowWidth(openXmlElement);
+      value.EndArrowLength = GetEndArrowLength(openXmlElement);
+      value.Href = GetHref(openXmlElement);
+      value.AlternateImageReference = GetAlternateImageReference(openXmlElement);
+      value.Title = GetTitle(openXmlElement);
+      value.ForceDash = GetForceDash(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.StrokeChildType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.StrokeChildType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

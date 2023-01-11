@@ -19,4 +19,20 @@ public static class TableLayoutConverter
       openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DocumentModel.Wordprocessing.TableLayoutKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableLayout? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableLayout();
+      value.Type = GetType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLayout? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLayout, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

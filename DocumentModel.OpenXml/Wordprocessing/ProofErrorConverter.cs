@@ -19,4 +19,20 @@ public static class ProofErrorConverter
       openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DocumentModel.Wordprocessing.ProofingErrorKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ProofError? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ProofError();
+      value.Type = GetType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofError? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofError, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

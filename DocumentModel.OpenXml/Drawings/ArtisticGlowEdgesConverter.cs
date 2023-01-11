@@ -10,12 +10,13 @@ public static class ArtisticGlowEdgesConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticGlowEdgesConverter
   /// </summary>
   public static Int32? GetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Smoothness?.Value;
   }
   
   public static void SetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Smoothness = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticGlowEdges? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticGlowEdges();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.Smoothness = GetSmoothness(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticGlowEdges? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

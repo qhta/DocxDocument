@@ -15,7 +15,13 @@ public static class CategoryConverter
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Name = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+      else
+        openXmlElement.Name = null;
+    }
   }
   
   /// <summary>
@@ -50,4 +56,21 @@ public static class CategoryConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.Category? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Category();
+      value.Name = GetName(openXmlElement);
+      value.Gallery = GetGallery(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Category? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Category, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

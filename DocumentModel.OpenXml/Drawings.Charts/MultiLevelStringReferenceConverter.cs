@@ -10,12 +10,12 @@ public static class MultiLevelStringReferenceConverter
   /// </summary>
   public static String? GetFormula(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Drawing.Charts.Formula");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Formula");
   }
   
   public static void SetFormula(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Formula");
   }
   
   /// <summary>
@@ -23,12 +23,26 @@ public static class MultiLevelStringReferenceConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.MultiLevelStringCache? GetMultiLevelStringCache(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringCacheConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMultiLevelStringCache(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement, DocumentModel.Drawings.Charts.MultiLevelStringCache? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +50,44 @@ public static class MultiLevelStringReferenceConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? GetMultiLvlStrRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.MultiLvlStrRefExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetMultiLvlStrRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement, DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLvlStrRefExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.MultiLevelStringReference();
+      value.Formula = GetFormula(openXmlElement);
+      value.MultiLevelStringCache = GetMultiLevelStringCache(openXmlElement);
+      value.MultiLvlStrRefExtensionList = GetMultiLvlStrRefExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -178,12 +178,54 @@ public static class ColorMapOverrideConverter
   /// </summary>
   public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.ColorMapOverride? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.ColorMapOverride();
+      value.Background1 = GetBackground1(openXmlElement);
+      value.Text1 = GetText1(openXmlElement);
+      value.Background2 = GetBackground2(openXmlElement);
+      value.Text2 = GetText2(openXmlElement);
+      value.Accent1 = GetAccent1(openXmlElement);
+      value.Accent2 = GetAccent2(openXmlElement);
+      value.Accent3 = GetAccent3(openXmlElement);
+      value.Accent4 = GetAccent4(openXmlElement);
+      value.Accent5 = GetAccent5(openXmlElement);
+      value.Accent6 = GetAccent6(openXmlElement);
+      value.Hyperlink = GetHyperlink(openXmlElement);
+      value.FollowedHyperlink = GetFollowedHyperlink(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ColorMapOverride? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

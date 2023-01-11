@@ -10,12 +10,16 @@ public static class GeoLocationQueryConverter
   /// </summary>
   public static String? GetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CountryRegion?.Value;
   }
   
   public static void SetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CountryRegion = new StringValue { Value = value };
+      else
+        openXmlElement.CountryRegion = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class GeoLocationQueryConverter
   /// </summary>
   public static String? GetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AdminDistrict1?.Value;
   }
   
   public static void SetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AdminDistrict1 = new StringValue { Value = value };
+      else
+        openXmlElement.AdminDistrict1 = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class GeoLocationQueryConverter
   /// </summary>
   public static String? GetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AdminDistrict2?.Value;
   }
   
   public static void SetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AdminDistrict2 = new StringValue { Value = value };
+      else
+        openXmlElement.AdminDistrict2 = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class GeoLocationQueryConverter
   /// </summary>
   public static String? GetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PostalCode?.Value;
   }
   
   public static void SetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PostalCode = new StringValue { Value = value };
+      else
+        openXmlElement.PostalCode = null;
   }
   
   /// <summary>
@@ -71,4 +87,24 @@ public static class GeoLocationQueryConverter
       openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQuery();
+      value.CountryRegion = GetCountryRegion(openXmlElement);
+      value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);
+      value.AdminDistrict2 = GetAdminDistrict2(openXmlElement);
+      value.PostalCode = GetPostalCode(openXmlElement);
+      value.EntityType = GetEntityType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

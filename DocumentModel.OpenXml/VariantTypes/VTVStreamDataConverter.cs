@@ -10,12 +10,32 @@ public static class VTVStreamDataConverter
   /// </summary>
   public static String? GetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Version?.Value;
   }
   
   public static void SetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Version = new StringValue { Value = value };
+      else
+        openXmlElement.Version = null;
   }
   
+  public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.VariantTypes.VTVStreamData();
+      value.Version = GetVersion(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTVStreamData? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTVStreamData, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

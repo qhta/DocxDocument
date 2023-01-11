@@ -42,12 +42,26 @@ public static class EndnoteDocumentWidePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement, DocumentModel.Wordprocessing.NumberingFormat? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -55,12 +69,12 @@ public static class EndnoteDocumentWidePropertiesConverter
   /// </summary>
   public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingStart");
   }
   
   public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingStart");
   }
   
   /// <summary>
@@ -97,12 +111,55 @@ public static class EndnoteDocumentWidePropertiesConverter
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? GetEndnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetEndnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteSpecialReference>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.EndnoteDocumentWideProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.EndnoteDocumentWideProperties();
+      value.EndnotePosition = GetEndnotePosition(openXmlElement);
+      value.NumberingFormat = GetNumberingFormat(openXmlElement);
+      value.NumberingStart = GetNumberingStart(openXmlElement);
+      value.NumberingRestart = GetNumberingRestart(openXmlElement);
+      value.EndnoteSpecialReferences = GetEndnoteSpecialReferences(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EndnoteDocumentWideProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

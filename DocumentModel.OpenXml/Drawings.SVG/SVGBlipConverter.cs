@@ -10,12 +10,16 @@ public static class SVGBlipConverter
   /// </summary>
   public static String? GetEmbed(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Embed?.Value;
   }
   
   public static void SetEmbed(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Embed = new StringValue { Value = value };
+      else
+        openXmlElement.Embed = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class SVGBlipConverter
   /// </summary>
   public static String? GetLink(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Link?.Value;
   }
   
   public static void SetLink(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Link = new StringValue { Value = value };
+      else
+        openXmlElement.Link = null;
   }
   
+  public static DocumentModel.Drawings.SVG.SVGBlip? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.SVG.SVGBlip();
+      value.Embed = GetEmbed(openXmlElement);
+      value.Link = GetLink(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SVG.SVGBlip? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

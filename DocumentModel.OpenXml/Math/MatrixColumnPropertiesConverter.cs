@@ -8,14 +8,14 @@ public static class MatrixColumnPropertiesConverter
   /// <summary>
   /// Matrix Column Count.
   /// </summary>
-  public static Int32? GetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)
+  public static Int64? GetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.MatrixColumnCount");
   }
   
-  public static void SetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement, Int32? value)
+  public static void SetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.MatrixColumnCount");
   }
   
   /// <summary>
@@ -50,4 +50,21 @@ public static class MatrixColumnPropertiesConverter
     }
   }
   
+  public static DocumentModel.Math.MatrixColumnProperties? CreateModelElement(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.MatrixColumnProperties();
+      value.MatrixColumnCount = GetMatrixColumnCount(openXmlElement);
+      value.MatrixColumnJustification = GetMatrixColumnJustification(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumnProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumnProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

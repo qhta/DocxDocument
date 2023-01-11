@@ -10,12 +10,16 @@ public static class BackgroundConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.Background? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,12 @@ public static class BackgroundConverter
   /// </summary>
   public static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -36,12 +40,16 @@ public static class BackgroundConverter
   /// </summary>
   public static String? GetFillcolor(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Fillcolor?.Value;
   }
   
   public static void SetFillcolor(DocumentFormat.OpenXml.Vml.Background? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Fillcolor = new StringValue { Value = value };
+      else
+        openXmlElement.Fillcolor = null;
   }
   
   /// <summary>
@@ -105,12 +113,49 @@ public static class BackgroundConverter
   /// </summary>
   public static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFill(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.Fill? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Vml.Background? CreateModelElement(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Background();
+      value.Id = GetId(openXmlElement);
+      value.Filled = GetFilled(openXmlElement);
+      value.Fillcolor = GetFillcolor(openXmlElement);
+      value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
+      value.PureBlackWhiteMode = GetPureBlackWhiteMode(openXmlElement);
+      value.NormalBlackWhiteMode = GetNormalBlackWhiteMode(openXmlElement);
+      value.TargetScreenSize = GetTargetScreenSize(openXmlElement);
+      value.Fill = GetFill(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Background? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Background, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

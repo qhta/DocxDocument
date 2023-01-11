@@ -10,12 +10,16 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   public static Boolean? GetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.UseActualPages?.Value;
   }
   
   public static void SetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UseActualPages = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.UseActualPages = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   public static UInt32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -36,12 +41,13 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   public static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Height?.Value;
   }
   
   public static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Height = value;
   }
   
   /// <summary>
@@ -49,12 +55,35 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   public static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FontSize?.Value;
   }
   
   public static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FontSize = new StringValue { Value = value };
+      else
+        openXmlElement.FontSize = null;
   }
   
+  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ReadModeInkLockDown();
+      value.UseActualPages = GetUseActualPages(openXmlElement);
+      value.Width = GetWidth(openXmlElement);
+      value.Height = GetHeight(openXmlElement);
+      value.FontSize = GetFontSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ReadModeInkLockDown? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

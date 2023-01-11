@@ -10,12 +10,13 @@ public static class TintEffectConverter
   /// </summary>
   public static Int32? GetHue(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Hue?.Value;
   }
   
   public static void SetHue(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Hue = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class TintEffectConverter
   /// </summary>
   public static Int32? GetAmount(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Amount?.Value;
   }
   
   public static void SetAmount(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Amount = value;
   }
   
+  public static DocumentModel.Drawings.TintEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.TintEffect();
+      value.Hue = GetHue(openXmlElement);
+      value.Amount = GetAmount(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TintEffect? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TintEffect, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

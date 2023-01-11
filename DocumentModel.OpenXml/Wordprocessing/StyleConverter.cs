@@ -24,12 +24,16 @@ public static class StyleConverter
   /// </summary>
   public static String? GetStyleId(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StyleId?.Value;
   }
   
   public static void SetStyleId(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StyleId = new StringValue { Value = value };
+      else
+        openXmlElement.StyleId = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class StyleConverter
   /// </summary>
   public static Boolean? GetDefault(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Default?.Value;
   }
   
   public static void SetDefault(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Default = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Default = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class StyleConverter
   /// </summary>
   public static Boolean? GetCustomStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CustomStyle?.Value;
   }
   
   public static void SetCustomStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CustomStyle = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.CustomStyle = null;
   }
   
   /// <summary>
@@ -63,12 +75,12 @@ public static class StyleConverter
   /// </summary>
   public static String? GetStyleName(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.StyleName");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StyleName");
   }
   
   public static void SetStyleName(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StyleName");
   }
   
   /// <summary>
@@ -76,12 +88,12 @@ public static class StyleConverter
   /// </summary>
   public static String? GetAliases(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.Aliases");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Aliases");
   }
   
   public static void SetAliases(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Aliases");
   }
   
   /// <summary>
@@ -89,12 +101,12 @@ public static class StyleConverter
   /// </summary>
   public static String? GetBasedOn(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.BasedOn");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.BasedOn");
   }
   
   public static void SetBasedOn(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.BasedOn");
   }
   
   /// <summary>
@@ -102,12 +114,12 @@ public static class StyleConverter
   /// </summary>
   public static String? GetNextParagraphStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle");
   }
   
   public static void SetNextParagraphStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle");
   }
   
   /// <summary>
@@ -115,12 +127,12 @@ public static class StyleConverter
   /// </summary>
   public static String? GetLinkedStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.LinkedStyle");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LinkedStyle");
   }
   
   public static void SetLinkedStyle(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LinkedStyle");
   }
   
   /// <summary>
@@ -192,12 +204,12 @@ public static class StyleConverter
   /// </summary>
   public static Int32? GetUIPriority(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.UIPriority");
   }
   
   public static void SetUIPriority(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.UIPriority");
   }
   
   /// <summary>
@@ -429,12 +441,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.HexWord? GetRsid(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+    if (itemElement != null)
+      return HexWordConverter.GetValue(itemElement);
+    return null;
   }
   
   public static void SetRsid(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.HexWord? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HexWordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Rsid>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -442,12 +468,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.StyleParagraphProperties? GetStyleParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.StyleParagraphPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyleParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.Wordprocessing.StyleParagraphProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.StyleParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -455,12 +495,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.StyleRunProperties? GetStyleRunProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.StyleRunPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyleRunProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.Wordprocessing.StyleRunProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.StyleRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -468,12 +522,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.StyleTableProperties? GetStyleTableProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.StyleTablePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyleTableProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.Wordprocessing.StyleTableProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.StyleTablePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -481,12 +549,26 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTableStyleConditionalFormattingTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -494,22 +576,100 @@ public static class StyleConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.StyleTableCellProperties? GetStyleTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.StyleTableCellPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyleTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, DocumentModel.Wordprocessing.StyleTableCellProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.StyleTableCellPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.TableStyleProperties>? GetTableStylePropertieses(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.TableStyleProperties>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.TableStylePropertiesConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetTableStylePropertieses(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.TableStyleProperties>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.TableStylePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Style? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Style();
+      value.Type = GetType(openXmlElement);
+      value.StyleId = GetStyleId(openXmlElement);
+      value.Default = GetDefault(openXmlElement);
+      value.CustomStyle = GetCustomStyle(openXmlElement);
+      value.StyleName = GetStyleName(openXmlElement);
+      value.Aliases = GetAliases(openXmlElement);
+      value.BasedOn = GetBasedOn(openXmlElement);
+      value.NextParagraphStyle = GetNextParagraphStyle(openXmlElement);
+      value.LinkedStyle = GetLinkedStyle(openXmlElement);
+      value.AutoRedefine = GetAutoRedefine(openXmlElement);
+      value.StyleHidden = GetStyleHidden(openXmlElement);
+      value.UIPriority = GetUIPriority(openXmlElement);
+      value.SemiHidden = GetSemiHidden(openXmlElement);
+      value.UnhideWhenUsed = GetUnhideWhenUsed(openXmlElement);
+      value.PrimaryStyle = GetPrimaryStyle(openXmlElement);
+      value.Locked = GetLocked(openXmlElement);
+      value.Personal = GetPersonal(openXmlElement);
+      value.PersonalCompose = GetPersonalCompose(openXmlElement);
+      value.PersonalReply = GetPersonalReply(openXmlElement);
+      value.Rsid = GetRsid(openXmlElement);
+      value.StyleParagraphProperties = GetStyleParagraphProperties(openXmlElement);
+      value.StyleRunProperties = GetStyleRunProperties(openXmlElement);
+      value.StyleTableProperties = GetStyleTableProperties(openXmlElement);
+      value.TableStyleConditionalFormattingTableRowProperties = GetTableStyleConditionalFormattingTableRowProperties(openXmlElement);
+      value.StyleTableCellProperties = GetStyleTableCellProperties(openXmlElement);
+      value.TableStylePropertieses = GetTableStylePropertieses(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Style? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Style, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

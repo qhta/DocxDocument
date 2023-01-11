@@ -10,12 +10,13 @@ public static class LinearGradientFillConverter
   /// </summary>
   public static Int32? GetAngle(DocumentFormat.OpenXml.Drawing.LinearGradientFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Angle?.Value;
   }
   
   public static void SetAngle(DocumentFormat.OpenXml.Drawing.LinearGradientFill? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Angle = value;
   }
   
   /// <summary>
@@ -23,12 +24,33 @@ public static class LinearGradientFillConverter
   /// </summary>
   public static Boolean? GetScaled(DocumentFormat.OpenXml.Drawing.LinearGradientFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Scaled?.Value;
   }
   
   public static void SetScaled(DocumentFormat.OpenXml.Drawing.LinearGradientFill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Scaled = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Scaled = null;
   }
   
+  public static DocumentModel.Drawings.LinearGradientFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.LinearGradientFill? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.LinearGradientFill();
+      value.Angle = GetAngle(openXmlElement);
+      value.Scaled = GetScaled(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinearGradientFill? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinearGradientFill, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

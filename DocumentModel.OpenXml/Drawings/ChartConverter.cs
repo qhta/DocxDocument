@@ -10,12 +10,13 @@ public static class ChartConverter
   /// </summary>
   public static Int32? GetSeriesIndex(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SeriesIndex?.Value;
   }
   
   public static void SetSeriesIndex(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SeriesIndex = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class ChartConverter
   /// </summary>
   public static Int32? GetCategoryIndex(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CategoryIndex?.Value;
   }
   
   public static void SetCategoryIndex(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.CategoryIndex = value;
   }
   
   /// <summary>
@@ -45,4 +47,22 @@ public static class ChartConverter
       openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DocumentModel.Drawings.ChartBuildStepKind>(value);
   }
   
+  public static DocumentModel.Drawings.Chart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Chart();
+      value.SeriesIndex = GetSeriesIndex(openXmlElement);
+      value.CategoryIndex = GetCategoryIndex(openXmlElement);
+      value.BuildStep = GetBuildStep(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Chart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Chart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

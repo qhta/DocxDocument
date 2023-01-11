@@ -10,12 +10,16 @@ public static class CustomXmlElementConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class CustomXmlElementConverter
   /// </summary>
   public static String? GetElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Element?.Value;
   }
   
   public static void SetElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Element = new StringValue { Value = value };
+      else
+        openXmlElement.Element = null;
   }
   
   /// <summary>
@@ -36,12 +44,44 @@ public static class CustomXmlElementConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.CustomXmlProperties? GetCustomXmlProperties(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CustomXmlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCustomXmlProperties(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement, DocumentModel.Wordprocessing.CustomXmlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.CustomXmlElement? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.CustomXmlElement();
+      value.Uri = GetUri(openXmlElement);
+      value.Element = GetElement(openXmlElement);
+      value.CustomXmlProperties = GetCustomXmlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlElement? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,32 @@ public static class TaskTitleEventInfoConverter
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Title?.Value;
   }
   
   public static void SetTitle(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Title = new StringValue { Value = value };
+      else
+        openXmlElement.Title = null;
   }
   
+  public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.TaskTitleEventInfo();
+      value.Title = GetTitle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskTitleEventInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

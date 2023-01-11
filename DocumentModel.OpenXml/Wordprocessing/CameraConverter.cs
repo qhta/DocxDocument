@@ -19,4 +19,20 @@ public static class CameraConverter
       openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DocumentModel.Wordprocessing.PresetCameraKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.Camera? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Camera? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Camera();
+      value.PresetCameraType = GetPresetCameraType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Camera? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Camera, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

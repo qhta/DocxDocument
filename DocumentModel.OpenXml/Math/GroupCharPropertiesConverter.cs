@@ -10,12 +10,12 @@ public static class GroupCharPropertiesConverter
   /// </summary>
   public static String? GetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.AccentChar");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.AccentChar");
   }
   
   public static void SetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.AccentChar");
   }
   
   /// <summary>
@@ -87,12 +87,45 @@ public static class GroupCharPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.GroupCharProperties();
+      value.AccentChar = GetAccentChar(openXmlElement);
+      value.Position = GetPosition(openXmlElement);
+      value.VerticalJustification = GetVerticalJustification(openXmlElement);
+      value.ControlProperties = GetControlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupCharProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupCharProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

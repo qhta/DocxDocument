@@ -10,12 +10,32 @@ public static class CompatExtensionConverter
   /// </summary>
   public static String? GetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShapeId?.Value;
   }
   
   public static void SetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeId = new StringValue { Value = value };
+      else
+        openXmlElement.ShapeId = null;
   }
   
+  public static DocumentModel.Drawings.CompatExtension? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.CompatExtension();
+      value.ShapeId = GetShapeId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CompatExtension? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

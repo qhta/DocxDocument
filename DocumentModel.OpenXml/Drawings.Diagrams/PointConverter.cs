@@ -10,12 +10,16 @@ public static class PointConverter
   /// </summary>
   public static String? GetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ModelId?.Value;
   }
   
   public static void SetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ModelId = new StringValue { Value = value };
+      else
+        openXmlElement.ModelId = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class PointConverter
   /// </summary>
   public static String? GetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ConnectionId?.Value;
   }
   
   public static void SetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ConnectionId = new StringValue { Value = value };
+      else
+        openXmlElement.ConnectionId = null;
   }
   
   /// <summary>
@@ -50,12 +58,26 @@ public static class PointConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.PropertySet? GetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.PropertySet? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -63,12 +85,26 @@ public static class PointConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.ShapeProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -76,12 +112,26 @@ public static class PointConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.TextBody? GetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.TextBody? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -89,12 +139,48 @@ public static class PointConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.PtExtensionList? GetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.PtExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Point();
+      value.ModelId = GetModelId(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      value.ConnectionId = GetConnectionId(openXmlElement);
+      value.PropertySet = GetPropertySet(openXmlElement);
+      value.ShapeProperties = GetShapeProperties(openXmlElement);
+      value.TextBody = GetTextBody(openXmlElement);
+      value.PtExtensionList = GetPtExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Point? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Point, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

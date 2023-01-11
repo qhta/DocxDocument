@@ -106,12 +106,26 @@ public static class BoxPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.Break? GetBreak(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.BreakConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBreak(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement, DocumentModel.Math.Break? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Break>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -151,12 +165,47 @@ public static class BoxPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetControlProperties(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.BoxProperties? CreateModelElement(DocumentFormat.OpenXml.Math.BoxProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.BoxProperties();
+      value.OperatorEmulator = GetOperatorEmulator(openXmlElement);
+      value.NoBreak = GetNoBreak(openXmlElement);
+      value.Differential = GetDifferential(openXmlElement);
+      value.Break = GetBreak(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      value.ControlProperties = GetControlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BoxProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BoxProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

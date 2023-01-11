@@ -38,12 +38,44 @@ public static class LightRigConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.SphereCoordinates? GetSphereCoordinates(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.SphereCoordinatesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSphereCoordinates(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement, DocumentModel.Wordprocessing.SphereCoordinates? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.SphereCoordinatesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.LightRig? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LightRig();
+      value.LightRigType = GetLightRigType(openXmlElement);
+      value.LightDirectionType = GetLightDirectionType(openXmlElement);
+      value.SphereCoordinates = GetSphereCoordinates(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LightRig? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LightRig, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

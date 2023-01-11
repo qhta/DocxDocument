@@ -38,12 +38,16 @@ public static class RuleConverter
   /// </summary>
   public static String? GetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ForName?.Value;
   }
   
   public static void SetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ForName = new StringValue { Value = value };
+      else
+        openXmlElement.ForName = null;
   }
   
   /// <summary>
@@ -65,12 +69,13 @@ public static class RuleConverter
   /// </summary>
   public static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Val = value;
   }
   
   /// <summary>
@@ -78,12 +83,13 @@ public static class RuleConverter
   /// </summary>
   public static Double? GetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Fact?.Value;
   }
   
   public static void SetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Fact = value;
   }
   
   /// <summary>
@@ -91,12 +97,13 @@ public static class RuleConverter
   /// </summary>
   public static Double? GetMax(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Max?.Value;
   }
   
   public static void SetMax(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Max = value;
   }
   
   /// <summary>
@@ -104,12 +111,49 @@ public static class RuleConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Rule? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Rule();
+      value.Type = GetType(openXmlElement);
+      value.For = GetFor(openXmlElement);
+      value.ForName = GetForName(openXmlElement);
+      value.PointType = GetPointType(openXmlElement);
+      value.Val = GetVal(openXmlElement);
+      value.Fact = GetFact(openXmlElement);
+      value.Max = GetMax(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Rule? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Rule, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -2,7 +2,7 @@
 
 namespace ModelGen;
 
-public class FullTypeName
+public record FullTypeName
 {
   public FullTypeName(string fullName)
   {

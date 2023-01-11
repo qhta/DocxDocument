@@ -10,12 +10,13 @@ public static class BevelTypeConverter
   /// </summary>
   public static Int64? GetWidth(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class BevelTypeConverter
   /// </summary>
   public static Int64? GetHeight(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Height?.Value;
   }
   
   public static void SetHeight(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Height = value;
   }
   
   /// <summary>
@@ -45,4 +47,22 @@ public static class BevelTypeConverter
       openXmlElement.PresetProfileType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DocumentModel.Wordprocessing.BevelPresetKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.BevelType? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.BevelType();
+      value.Width = GetWidth(openXmlElement);
+      value.Height = GetHeight(openXmlElement);
+      value.PresetProfileType = GetPresetProfileType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BevelType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.BevelType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

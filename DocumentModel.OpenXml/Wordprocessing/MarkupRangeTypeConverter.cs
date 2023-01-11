@@ -24,12 +24,33 @@ public static class MarkupRangeTypeConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
+  public static DocumentModel.Wordprocessing.MarkupRangeType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.MarkupRangeType();
+      value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MarkupRangeType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

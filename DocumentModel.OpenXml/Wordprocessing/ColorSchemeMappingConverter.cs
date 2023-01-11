@@ -173,4 +173,31 @@ public static class ColorSchemeMappingConverter
       openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.ColorSchemeMapping? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ColorSchemeMapping();
+      value.Background1 = GetBackground1(openXmlElement);
+      value.Text1 = GetText1(openXmlElement);
+      value.Background2 = GetBackground2(openXmlElement);
+      value.Text2 = GetText2(openXmlElement);
+      value.Accent1 = GetAccent1(openXmlElement);
+      value.Accent2 = GetAccent2(openXmlElement);
+      value.Accent3 = GetAccent3(openXmlElement);
+      value.Accent4 = GetAccent4(openXmlElement);
+      value.Accent5 = GetAccent5(openXmlElement);
+      value.Accent6 = GetAccent6(openXmlElement);
+      value.Hyperlink = GetHyperlink(openXmlElement);
+      value.FollowedHyperlink = GetFollowedHyperlink(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ColorSchemeMapping? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

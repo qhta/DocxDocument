@@ -10,12 +10,16 @@ public static class ObjectPropertiesConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ObjectPropertiesConverter
   /// </summary>
   public static Boolean? GetIsActiveX(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.IsActiveX?.Value;
   }
   
   public static void SetIsActiveX(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IsActiveX = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.IsActiveX = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class ObjectPropertiesConverter
   /// </summary>
   public static String? GetLinkType(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.LinkType?.Value;
   }
   
   public static void SetLinkType(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LinkType = new StringValue { Value = value };
+      else
+        openXmlElement.LinkType = null;
   }
   
+  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ObjectProperties();
+      value.Id = GetId(openXmlElement);
+      value.IsActiveX = GetIsActiveX(openXmlElement);
+      value.LinkType = GetLinkType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ObjectProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

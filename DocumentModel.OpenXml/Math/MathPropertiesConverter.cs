@@ -10,12 +10,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static String? GetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Math.MathFont");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.MathFont");
   }
   
   public static void SetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.MathFont");
   }
   
   /// <summary>
@@ -151,12 +151,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.LeftMargin");
   }
   
   public static void SetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.LeftMargin");
   }
   
   /// <summary>
@@ -164,12 +164,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RightMargin");
   }
   
   public static void SetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RightMargin");
   }
   
   /// <summary>
@@ -209,12 +209,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.PreSpacing");
   }
   
   public static void SetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.PreSpacing");
   }
   
   /// <summary>
@@ -222,12 +222,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.PostSpacing");
   }
   
   public static void SetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.PostSpacing");
   }
   
   /// <summary>
@@ -235,12 +235,12 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.InterSpacing");
   }
   
   public static void SetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.InterSpacing");
   }
   
   /// <summary>
@@ -248,22 +248,22 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.IntraSpacing");
   }
   
   public static void SetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.IntraSpacing");
   }
   
   public static UInt32? GetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.WrapIndent");
   }
   
   public static void SetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.WrapIndent");
   }
   
   public static DocumentModel.Math.BooleanKind? GetWrapRight(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
@@ -353,4 +353,35 @@ public static class MathPropertiesConverter
     }
   }
   
+  public static DocumentModel.Math.MathProperties? CreateModelElement(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.MathProperties();
+      value.MathFont = GetMathFont(openXmlElement);
+      value.BreakBinary = GetBreakBinary(openXmlElement);
+      value.BreakBinarySubtraction = GetBreakBinarySubtraction(openXmlElement);
+      value.SmallFraction = GetSmallFraction(openXmlElement);
+      value.DisplayDefaults = GetDisplayDefaults(openXmlElement);
+      value.LeftMargin = GetLeftMargin(openXmlElement);
+      value.RightMargin = GetRightMargin(openXmlElement);
+      value.DefaultJustification = GetDefaultJustification(openXmlElement);
+      value.PreSpacing = GetPreSpacing(openXmlElement);
+      value.PostSpacing = GetPostSpacing(openXmlElement);
+      value.InterSpacing = GetInterSpacing(openXmlElement);
+      value.IntraSpacing = GetIntraSpacing(openXmlElement);
+      value.WrapIndent = GetWrapIndent(openXmlElement);
+      value.WrapRight = GetWrapRight(openXmlElement);
+      value.IntegralLimitLocation = GetIntegralLimitLocation(openXmlElement);
+      value.NaryLimitLocation = GetNaryLimitLocation(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MathProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MathProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// </summary>
   public static String? GetEmbed(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Embed?.Value;
   }
   
   public static void SetEmbed(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Embed = new StringValue { Value = value };
+      else
+        openXmlElement.Embed = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// </summary>
   public static Boolean? GetBuiltIn(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.BuiltIn?.Value;
   }
   
   public static void SetBuiltIn(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BuiltIn = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.BuiltIn = null;
   }
   
+  public static DocumentModel.Drawings.EmbeddedWavAudioFileType? CreateModelElement(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.EmbeddedWavAudioFileType();
+      value.Embed = GetEmbed(openXmlElement);
+      value.Name = GetName(openXmlElement);
+      value.BuiltIn = GetBuiltIn(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EmbeddedWavAudioFileType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,13 @@ public static class ExtentConverter
   /// </summary>
   public static Int64? GetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Cx?.Value;
   }
   
   public static void SetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Cx = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ExtentConverter
   /// </summary>
   public static Int64? GetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Cy?.Value;
   }
   
   public static void SetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Cy = value;
   }
   
+  public static DocumentModel.Drawings.ChartDrawing.Extent? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawing.Extent();
+      value.Cx = GetCx(openXmlElement);
+      value.Cy = GetCy(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Extent? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

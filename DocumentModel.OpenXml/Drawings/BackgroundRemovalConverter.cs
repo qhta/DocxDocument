@@ -10,12 +10,13 @@ public static class BackgroundRemovalConverter
   /// </summary>
   public static Int32? GetMarqueeTop(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MarqueeTop?.Value;
   }
   
   public static void SetMarqueeTop(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MarqueeTop = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class BackgroundRemovalConverter
   /// </summary>
   public static Int32? GetMarqueeBottom(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MarqueeBottom?.Value;
   }
   
   public static void SetMarqueeBottom(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MarqueeBottom = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class BackgroundRemovalConverter
   /// </summary>
   public static Int32? GetMarqueeLeft(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MarqueeLeft?.Value;
   }
   
   public static void SetMarqueeLeft(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MarqueeLeft = value;
   }
   
   /// <summary>
@@ -49,32 +52,100 @@ public static class BackgroundRemovalConverter
   /// </summary>
   public static Int32? GetMarqueeRight(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MarqueeRight?.Value;
   }
   
   public static void SetMarqueeRight(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MarqueeRight = value;
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>? GetForegroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.ForegroundMarkConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetForegroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.ForegroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>? GetBackgroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.BackgroundMarkConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetBackgroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.BackgroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.BackgroundRemoval? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BackgroundRemoval();
+      value.MarqueeTop = GetMarqueeTop(openXmlElement);
+      value.MarqueeBottom = GetMarqueeBottom(openXmlElement);
+      value.MarqueeLeft = GetMarqueeLeft(openXmlElement);
+      value.MarqueeRight = GetMarqueeRight(openXmlElement);
+      value.ForegroundMarks = GetForegroundMarks(openXmlElement);
+      value.BackgroundMarks = GetBackgroundMarks(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundRemoval? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

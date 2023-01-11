@@ -10,32 +10,82 @@ public static class ChooseConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? GetDiagramChooseIf(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseIfConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDiagramChooseIf(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, DocumentModel.Drawings.Diagrams.DiagramChooseIf? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseIfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Diagrams.DiagramChooseElse? GetDiagramChooseElse(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseElseConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDiagramChooseElse(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, DocumentModel.Drawings.Diagrams.DiagramChooseElse? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseElseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Choose? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Choose();
+      value.Name = GetName(openXmlElement);
+      value.DiagramChooseIf = GetDiagramChooseIf(openXmlElement);
+      value.DiagramChooseElse = GetDiagramChooseElse(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Choose? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Choose, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

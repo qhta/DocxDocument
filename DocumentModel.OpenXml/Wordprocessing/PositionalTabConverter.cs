@@ -47,4 +47,22 @@ public static class PositionalTabConverter
       openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabLeaderCharValues, DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.PositionalTab? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PositionalTab();
+      value.Alignment = GetAlignment(openXmlElement);
+      value.RelativeTo = GetRelativeTo(openXmlElement);
+      value.Leader = GetLeader(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PositionalTab? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PositionalTab, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetStyle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Style?.Value;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Style = new StringValue { Value = value };
+      else
+        openXmlElement.Style = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetHref(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Href?.Value;
   }
   
   public static void SetHref(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Href = new StringValue { Value = value };
+      else
+        openXmlElement.Href = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetTarget(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Target?.Value;
   }
   
   public static void SetTarget(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Target = new StringValue { Value = value };
+      else
+        openXmlElement.Target = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetClass(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Class?.Value;
   }
   
   public static void SetClass(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Class = new StringValue { Value = value };
+      else
+        openXmlElement.Class = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Title?.Value;
   }
   
   public static void SetTitle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Title = new StringValue { Value = value };
+      else
+        openXmlElement.Title = null;
   }
   
   /// <summary>
@@ -88,12 +112,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetAlternate(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Alternate?.Value;
   }
   
   public static void SetAlternate(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Alternate = new StringValue { Value = value };
+      else
+        openXmlElement.Alternate = null;
   }
   
   /// <summary>
@@ -101,12 +129,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetCoordinateSize(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CoordinateSize?.Value;
   }
   
   public static void SetCoordinateSize(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CoordinateSize = new StringValue { Value = value };
+      else
+        openXmlElement.CoordinateSize = null;
   }
   
   /// <summary>
@@ -114,12 +146,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetCoordinateOrigin(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CoordinateOrigin?.Value;
   }
   
   public static void SetCoordinateOrigin(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CoordinateOrigin = new StringValue { Value = value };
+      else
+        openXmlElement.CoordinateOrigin = null;
   }
   
   /// <summary>
@@ -127,12 +163,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetWrapCoordinates(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.WrapCoordinates?.Value;
   }
   
   public static void SetWrapCoordinates(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.WrapCoordinates = new StringValue { Value = value };
+      else
+        openXmlElement.WrapCoordinates = null;
   }
   
   /// <summary>
@@ -140,12 +180,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetPrint(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -153,12 +193,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetOptionalString(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.OptionalString?.Value;
   }
   
   public static void SetOptionalString(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OptionalString = new StringValue { Value = value };
+      else
+        openXmlElement.OptionalString = null;
   }
   
   /// <summary>
@@ -166,25 +210,26 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetOned(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetOned(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
   /// Regroup ID
   /// </summary>
-  public static Int32? GetRegroupId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
+  public static Int64? GetRegroupId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.RegroupId?.Value;
   }
   
-  public static void SetRegroupId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int32? value)
+  public static void SetRegroupId(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.RegroupId = value;
   }
   
   /// <summary>
@@ -192,12 +237,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -205,12 +250,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetButton(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetButton(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -218,12 +263,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetUserHidden(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -231,12 +276,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetBullet(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -244,12 +289,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetHorizontal(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -257,12 +302,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -270,12 +315,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -283,12 +328,13 @@ public static class PolyLineConverter
   /// </summary>
   public static Single? GetHorizontalPercentage(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.HorizontalPercentage?.Value;
   }
   
   public static void SetHorizontalPercentage(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Single? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.HorizontalPercentage = value;
   }
   
   /// <summary>
@@ -310,12 +356,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -323,12 +369,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -336,12 +382,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetUserDrawn(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -349,12 +395,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetBorderTopColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.BorderTopColor?.Value;
   }
   
   public static void SetBorderTopColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BorderTopColor = new StringValue { Value = value };
+      else
+        openXmlElement.BorderTopColor = null;
   }
   
   /// <summary>
@@ -362,12 +412,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetBorderLeftColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.BorderLeftColor?.Value;
   }
   
   public static void SetBorderLeftColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BorderLeftColor = new StringValue { Value = value };
+      else
+        openXmlElement.BorderLeftColor = null;
   }
   
   /// <summary>
@@ -375,12 +429,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetBorderBottomColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.BorderBottomColor?.Value;
   }
   
   public static void SetBorderBottomColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BorderBottomColor = new StringValue { Value = value };
+      else
+        openXmlElement.BorderBottomColor = null;
   }
   
   /// <summary>
@@ -388,51 +446,58 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetBorderRightColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.BorderRightColor?.Value;
   }
   
   public static void SetBorderRightColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BorderRightColor = new StringValue { Value = value };
+      else
+        openXmlElement.BorderRightColor = null;
   }
   
   /// <summary>
   /// Diagram Node Layout Identifier
   /// </summary>
-  public static Int32? GetDiagramLayout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
+  public static Int64? GetDiagramLayout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DiagramLayout?.Value;
   }
   
-  public static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int32? value)
+  public static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DiagramLayout = value;
   }
   
   /// <summary>
   /// Diagram Node Identifier
   /// </summary>
-  public static Int32? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
+  public static Int64? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DiagramNodeKind?.Value;
   }
   
-  public static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int32? value)
+  public static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DiagramNodeKind = value;
   }
   
   /// <summary>
   /// Diagram Node Recent Layout Identifier
   /// </summary>
-  public static Int32? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
+  public static Int64? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DiagramLayoutMostRecentUsed?.Value;
   }
   
-  public static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int32? value)
+  public static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
   
   /// <summary>
@@ -454,12 +519,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetFilled(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -467,12 +532,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetFillColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FillColor?.Value;
   }
   
   public static void SetFillColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FillColor = new StringValue { Value = value };
+      else
+        openXmlElement.FillColor = null;
   }
   
   /// <summary>
@@ -480,12 +549,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetStroked(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetStroked(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -493,12 +562,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StrokeColor?.Value;
   }
   
   public static void SetStrokeColor(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StrokeColor = new StringValue { Value = value };
+      else
+        openXmlElement.StrokeColor = null;
   }
   
   /// <summary>
@@ -506,12 +579,16 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetStrokeWeight(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StrokeWeight?.Value;
   }
   
   public static void SetStrokeWeight(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StrokeWeight = new StringValue { Value = value };
+      else
+        openXmlElement.StrokeWeight = null;
   }
   
   /// <summary>
@@ -519,12 +596,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetInsetPen(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -532,12 +609,13 @@ public static class PolyLineConverter
   /// </summary>
   public static Int32? GetOptionalNumber(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.OptionalNumber?.Value;
   }
   
   public static void SetOptionalNumber(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.OptionalNumber = value;
   }
   
   /// <summary>
@@ -601,12 +679,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetForceDash(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -614,12 +692,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetOleIcon(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetOleIcon(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -627,12 +705,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetOle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   public static void SetOle(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   /// <summary>
@@ -640,12 +718,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetPreferRelative(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetPreferRelative(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -653,12 +731,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetClipToWrap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetClipToWrap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -666,12 +744,12 @@ public static class PolyLineConverter
   /// </summary>
   public static Boolean? GetClip(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetClip(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -679,12 +757,12 @@ public static class PolyLineConverter
   /// </summary>
   public static DocumentModel.Base64Binary? GetGfxdata(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   public static void SetGfxdata(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Base64Binary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   /// <summary>
@@ -692,232 +770,638 @@ public static class PolyLineConverter
   /// </summary>
   public static String? GetPoints(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Points?.Value;
   }
   
   public static void SetPoints(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Points = new StringValue { Value = value };
+      else
+        openXmlElement.Points = null;
   }
   
   public static DocumentModel.Vml.Path? GetPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.PathConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Path? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Path>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Formulas? GetFormulas(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.FormulasConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFormulas(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Formulas? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.FormulasConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formulas>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.ShapeHandles? GetShapeHandles(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeHandles(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.ShapeHandles? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandles>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFill(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Fill? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStroke(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Stroke? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShadow(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Shadow? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextBox(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.TextBox? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.TextPath? GetTextPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.TextPathConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.TextPath? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.TextPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextPath>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetImageData(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.ImageData? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSkew(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Skew? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtrusion(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Extrusion? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCallout(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Callout? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLock(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Lock? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ClipPathConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetClipPath(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.ClipPath? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSignatureLine(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.SignatureLine? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.SignatureLine>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Vml.TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextWrap(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Wordprocessing.Vml.TextWrap? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetAnchorLock(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Vml.BorderType? GetTopBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTopBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Vml.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBottomBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Vml.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLeftBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Vml.BorderType? GetRightBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRightBorder(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.Ink? GetInk(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Ink>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.InkConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetInk(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement, DocumentModel.Vml.Ink? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Ink>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.InkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Ink>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Vml.PolyLine? CreateModelElement(DocumentFormat.OpenXml.Vml.PolyLine? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.PolyLine();
+      value.Id = GetId(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      value.Href = GetHref(openXmlElement);
+      value.Target = GetTarget(openXmlElement);
+      value.Class = GetClass(openXmlElement);
+      value.Title = GetTitle(openXmlElement);
+      value.Alternate = GetAlternate(openXmlElement);
+      value.CoordinateSize = GetCoordinateSize(openXmlElement);
+      value.CoordinateOrigin = GetCoordinateOrigin(openXmlElement);
+      value.WrapCoordinates = GetWrapCoordinates(openXmlElement);
+      value.Print = GetPrint(openXmlElement);
+      value.OptionalString = GetOptionalString(openXmlElement);
+      value.Oned = GetOned(openXmlElement);
+      value.RegroupId = GetRegroupId(openXmlElement);
+      value.DoubleClickNotify = GetDoubleClickNotify(openXmlElement);
+      value.Button = GetButton(openXmlElement);
+      value.UserHidden = GetUserHidden(openXmlElement);
+      value.Bullet = GetBullet(openXmlElement);
+      value.Horizontal = GetHorizontal(openXmlElement);
+      value.HorizontalStandard = GetHorizontalStandard(openXmlElement);
+      value.HorizontalNoShade = GetHorizontalNoShade(openXmlElement);
+      value.HorizontalPercentage = GetHorizontalPercentage(openXmlElement);
+      value.HorizontalAlignment = GetHorizontalAlignment(openXmlElement);
+      value.AllowInCell = GetAllowInCell(openXmlElement);
+      value.AllowOverlap = GetAllowOverlap(openXmlElement);
+      value.UserDrawn = GetUserDrawn(openXmlElement);
+      value.BorderTopColor = GetBorderTopColor(openXmlElement);
+      value.BorderLeftColor = GetBorderLeftColor(openXmlElement);
+      value.BorderBottomColor = GetBorderBottomColor(openXmlElement);
+      value.BorderRightColor = GetBorderRightColor(openXmlElement);
+      value.DiagramLayout = GetDiagramLayout(openXmlElement);
+      value.DiagramNodeKind = GetDiagramNodeKind(openXmlElement);
+      value.DiagramLayoutMostRecentUsed = GetDiagramLayoutMostRecentUsed(openXmlElement);
+      value.InsetMode = GetInsetMode(openXmlElement);
+      value.Filled = GetFilled(openXmlElement);
+      value.FillColor = GetFillColor(openXmlElement);
+      value.Stroked = GetStroked(openXmlElement);
+      value.StrokeColor = GetStrokeColor(openXmlElement);
+      value.StrokeWeight = GetStrokeWeight(openXmlElement);
+      value.InsetPen = GetInsetPen(openXmlElement);
+      value.OptionalNumber = GetOptionalNumber(openXmlElement);
+      value.ConnectorType = GetConnectorType(openXmlElement);
+      value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
+      value.PureBlackWhiteMode = GetPureBlackWhiteMode(openXmlElement);
+      value.NormalBlackWhiteMode = GetNormalBlackWhiteMode(openXmlElement);
+      value.ForceDash = GetForceDash(openXmlElement);
+      value.OleIcon = GetOleIcon(openXmlElement);
+      value.Ole = GetOle(openXmlElement);
+      value.PreferRelative = GetPreferRelative(openXmlElement);
+      value.ClipToWrap = GetClipToWrap(openXmlElement);
+      value.Clip = GetClip(openXmlElement);
+      value.Gfxdata = GetGfxdata(openXmlElement);
+      value.Points = GetPoints(openXmlElement);
+      value.Path = GetPath(openXmlElement);
+      value.Formulas = GetFormulas(openXmlElement);
+      value.ShapeHandles = GetShapeHandles(openXmlElement);
+      value.Fill = GetFill(openXmlElement);
+      value.Stroke = GetStroke(openXmlElement);
+      value.Shadow = GetShadow(openXmlElement);
+      value.TextBox = GetTextBox(openXmlElement);
+      value.TextPath = GetTextPath(openXmlElement);
+      value.ImageData = GetImageData(openXmlElement);
+      value.Skew = GetSkew(openXmlElement);
+      value.Extrusion = GetExtrusion(openXmlElement);
+      value.Callout = GetCallout(openXmlElement);
+      value.Lock = GetLock(openXmlElement);
+      value.ClipPath = GetClipPath(openXmlElement);
+      value.SignatureLine = GetSignatureLine(openXmlElement);
+      value.TextWrap = GetTextWrap(openXmlElement);
+      value.AnchorLock = GetAnchorLock(openXmlElement);
+      value.TopBorder = GetTopBorder(openXmlElement);
+      value.BottomBorder = GetBottomBorder(openXmlElement);
+      value.LeftBorder = GetLeftBorder(openXmlElement);
+      value.RightBorder = GetRightBorder(openXmlElement);
+      value.Ink = GetInk(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.PolyLine? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.PolyLine, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

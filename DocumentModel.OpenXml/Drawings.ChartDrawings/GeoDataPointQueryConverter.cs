@@ -24,12 +24,13 @@ public static class GeoDataPointQueryConverter
   /// </summary>
   public static Double? GetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Latitude?.Value;
   }
   
   public static void SetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Latitude = value;
   }
   
   /// <summary>
@@ -37,12 +38,31 @@ public static class GeoDataPointQueryConverter
   /// </summary>
   public static Double? GetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Longitude?.Value;
   }
   
   public static void SetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Longitude = value;
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery();
+      value.EntityType = GetEntityType(openXmlElement);
+      value.Latitude = GetLatitude(openXmlElement);
+      value.Longitude = GetLongitude(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

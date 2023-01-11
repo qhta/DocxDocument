@@ -33,4 +33,21 @@ public static class ColorsTypeConverter
       openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DocumentModel.Drawings.Diagrams.HueDirectionKind>(value);
   }
   
+  public static DocumentModel.Drawings.Diagrams.ColorsType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.ColorsType();
+      value.Method = GetMethod(openXmlElement);
+      value.HueDirection = GetHueDirection(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorsType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

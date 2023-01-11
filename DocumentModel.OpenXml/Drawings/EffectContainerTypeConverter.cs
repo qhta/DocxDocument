@@ -24,12 +24,33 @@ public static class EffectContainerTypeConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Drawing.EffectContainerType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Drawing.EffectContainerType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
+  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DocumentFormat.OpenXml.Drawing.EffectContainerType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.EffectContainerType();
+      value.Type = GetType(openXmlElement);
+      value.Name = GetName(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectContainerType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectContainerType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

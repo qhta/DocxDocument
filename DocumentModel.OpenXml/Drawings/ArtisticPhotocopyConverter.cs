@@ -10,12 +10,13 @@ public static class ArtisticPhotocopyConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticPhotocopyConverter
   /// </summary>
   public static Int32? GetDetail(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Detail?.Value;
   }
   
   public static void SetDetail(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Detail = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticPhotocopy();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.Detail = GetDetail(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPhotocopy? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

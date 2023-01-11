@@ -10,12 +10,13 @@ public static class RelativeRectangleTypeConverter
   /// </summary>
   public static Int32? GetLeft(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Left?.Value;
   }
   
   public static void SetLeft(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Left = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class RelativeRectangleTypeConverter
   /// </summary>
   public static Int32? GetTop(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Top?.Value;
   }
   
   public static void SetTop(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Top = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class RelativeRectangleTypeConverter
   /// </summary>
   public static Int32? GetRight(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Right?.Value;
   }
   
   public static void SetRight(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Right = value;
   }
   
   /// <summary>
@@ -49,12 +52,32 @@ public static class RelativeRectangleTypeConverter
   /// </summary>
   public static Int32? GetBottom(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Bottom?.Value;
   }
   
   public static void SetBottom(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Bottom = value;
   }
   
+  public static DocumentModel.Drawings.RelativeRectangleType? CreateModelElement(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.RelativeRectangleType();
+      value.Left = GetLeft(openXmlElement);
+      value.Top = GetTop(openXmlElement);
+      value.Right = GetRight(openXmlElement);
+      value.Bottom = GetBottom(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeRectangleType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeRectangleType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

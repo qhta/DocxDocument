@@ -10,12 +10,26 @@ public static class DocPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.DocPartName? GetDocPartName(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartName>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.DocPartNameConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDocPartName(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, DocumentModel.Wordprocessing.DocPartName? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartName>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartNameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartName>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -28,7 +42,13 @@ public static class DocPartPropertiesConverter
   
   public static void SetStyleId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.StyleId = new DocumentFormat.OpenXml.Wordprocessing.StyleId { Val = value };
+      else
+        openXmlElement.StyleId = null;
+    }
   }
   
   /// <summary>
@@ -36,12 +56,26 @@ public static class DocPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Category? GetCategory(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Category>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CategoryConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCategory(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, DocumentModel.Wordprocessing.Category? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Category>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.CategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Category>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +83,26 @@ public static class DocPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.DocPartTypes? GetDocPartTypes(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.DocPartTypesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDocPartTypes(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, DocumentModel.Wordprocessing.DocPartTypes? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartTypesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +110,26 @@ public static class DocPartPropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Behaviors? GetBehaviors(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behaviors>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.BehaviorsConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBehaviors(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, DocumentModel.Wordprocessing.Behaviors? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behaviors>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.BehaviorsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Behaviors>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -80,7 +142,13 @@ public static class DocPartPropertiesConverter
   
   public static void SetDescription(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Description = new DocumentFormat.OpenXml.Wordprocessing.Description { Val = value };
+      else
+        openXmlElement.Description = null;
+    }
   }
   
   /// <summary>
@@ -88,12 +156,34 @@ public static class DocPartPropertiesConverter
   /// </summary>
   public static String? GetDocPartId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.DocPartId");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DocPartId");
   }
   
   public static void SetDocPartId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DocPartId");
   }
   
+  public static DocumentModel.Wordprocessing.DocPartProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocPartProperties();
+      value.DocPartName = GetDocPartName(openXmlElement);
+      value.StyleId = GetStyleId(openXmlElement);
+      value.Category = GetCategory(openXmlElement);
+      value.DocPartTypes = GetDocPartTypes(openXmlElement);
+      value.Behaviors = GetBehaviors(openXmlElement);
+      value.Description = GetDescription(openXmlElement);
+      value.DocPartId = GetDocPartId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

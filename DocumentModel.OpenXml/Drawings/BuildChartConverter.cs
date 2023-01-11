@@ -10,12 +10,16 @@ public static class BuildChartConverter
   /// </summary>
   public static String? GetBuild(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Build?.Value;
   }
   
   public static void SetBuild(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Build = new StringValue { Value = value };
+      else
+        openXmlElement.Build = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class BuildChartConverter
   /// </summary>
   public static Boolean? GetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.AnimateBackground?.Value;
   }
   
   public static void SetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AnimateBackground = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.AnimateBackground = null;
   }
   
+  public static DocumentModel.Drawings.BuildChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BuildChart();
+      value.Build = GetBuild(openXmlElement);
+      value.AnimateBackground = GetAnimateBackground(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildChart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildChart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

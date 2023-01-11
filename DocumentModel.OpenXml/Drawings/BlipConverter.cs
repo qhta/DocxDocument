@@ -10,12 +10,16 @@ public static class BlipConverter
   /// </summary>
   public static String? GetEmbed(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Embed?.Value;
   }
   
   public static void SetEmbed(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Embed = new StringValue { Value = value };
+      else
+        openXmlElement.Embed = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class BlipConverter
   /// </summary>
   public static String? GetLink(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Link?.Value;
   }
   
   public static void SetLink(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Link = new StringValue { Value = value };
+      else
+        openXmlElement.Link = null;
   }
   
   /// <summary>
@@ -47,182 +55,482 @@ public static class BlipConverter
   
   public static DocumentModel.Drawings.AlphaBiLevel? GetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.AlphaBiLevel? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAlphaCeiling(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetAlphaCeiling(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaCeiling();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAlphaFloor(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetAlphaFloor(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaFloor();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.AlphaInverse? GetAlphaInverse(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaInverse>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAlphaInverse(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.AlphaInverse? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaInverse>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaInverse>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.AlphaModulationEffect? GetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.AlphaModulationEffect? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.AlphaModulationFixed? GetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.AlphaModulationFixed? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.AlphaReplace? GetAlphaReplace(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaReplace>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAlphaReplace(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.AlphaReplace? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaReplace>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaReplace>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.BiLevel? GetBiLevel(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BiLevel>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBiLevel(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.BiLevel? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BiLevel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BiLevel>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Blur? GetBlur(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.BlurConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBlur(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.Blur? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ColorChange? GetColorChange(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorChange>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColorChange(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.ColorChange? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorChange>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorChange>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ColorReplacement? GetColorReplacement(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorReplacement>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColorReplacement(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.ColorReplacement? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorReplacement>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorReplacement>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Duotone? GetDuotone(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Duotone>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDuotone(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.Duotone? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Duotone>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Duotone>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.FillOverlay? GetFillOverlay(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFillOverlay(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.FillOverlay? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetGrayscale(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+      return itemElement != null;
+    }
+    return null;
   }
   
   public static void SetGrayscale(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DocumentFormat.OpenXml.Drawing.Grayscale();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Hsl? GetHsl(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hsl>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.HslConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetHsl(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.Hsl? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hsl>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.HslConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hsl>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.LuminanceEffect? GetLuminanceEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceEffect>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLuminanceEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.LuminanceEffect? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceEffect>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LuminanceEffect>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.TintEffect? GetTintEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TintEffect>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTintEffect(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.TintEffect? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TintEffect>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TintEffect>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.BlipExtensionList? GetBlipExtensionList(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.BlipExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBlipExtensionList(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement, DocumentModel.Drawings.BlipExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.BlipExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Blip? CreateModelElement(DocumentFormat.OpenXml.Drawing.Blip? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Blip();
+      value.Embed = GetEmbed(openXmlElement);
+      value.Link = GetLink(openXmlElement);
+      value.CompressionState = GetCompressionState(openXmlElement);
+      value.AlphaBiLevel = GetAlphaBiLevel(openXmlElement);
+      value.AlphaCeiling = GetAlphaCeiling(openXmlElement);
+      value.AlphaFloor = GetAlphaFloor(openXmlElement);
+      value.AlphaInverse = GetAlphaInverse(openXmlElement);
+      value.AlphaModulationEffect = GetAlphaModulationEffect(openXmlElement);
+      value.AlphaModulationFixed = GetAlphaModulationFixed(openXmlElement);
+      value.AlphaReplace = GetAlphaReplace(openXmlElement);
+      value.BiLevel = GetBiLevel(openXmlElement);
+      value.Blur = GetBlur(openXmlElement);
+      value.ColorChange = GetColorChange(openXmlElement);
+      value.ColorReplacement = GetColorReplacement(openXmlElement);
+      value.Duotone = GetDuotone(openXmlElement);
+      value.FillOverlay = GetFillOverlay(openXmlElement);
+      value.Grayscale = GetGrayscale(openXmlElement);
+      value.Hsl = GetHsl(openXmlElement);
+      value.LuminanceEffect = GetLuminanceEffect(openXmlElement);
+      value.TintEffect = GetTintEffect(openXmlElement);
+      value.BlipExtensionList = GetBlipExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blip? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blip, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

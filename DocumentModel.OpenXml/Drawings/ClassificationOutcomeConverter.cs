@@ -19,4 +19,20 @@ public static class ClassificationOutcomeConverter
       openXmlElement.ClassificationOutcomeType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DocumentModel.Drawings.ClassificationOutcomeType>(value);
   }
   
+  public static DocumentModel.Drawings.ClassificationOutcome? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ClassificationOutcome();
+      value.ClassificationOutcomeType = GetClassificationOutcomeType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ClassificationOutcome? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

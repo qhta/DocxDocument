@@ -10,12 +10,16 @@ public static class ColorSchemeConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -23,12 +27,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Dark1Color? GetDark1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark1Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Dark1ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDark1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Dark1Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark1Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Dark1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark1Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +54,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Light1Color? GetLight1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light1Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Light1ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLight1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Light1Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light1Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Light1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light1Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +81,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Dark2Color? GetDark2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark2Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Dark2ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDark2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Dark2Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark2Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Dark2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark2Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +108,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Light2Color? GetLight2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light2Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Light2ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLight2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Light2Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light2Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Light2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light2Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,12 +135,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent1Color? GetAccent1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent1Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent1ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent1Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent1Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent1Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent1Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -88,12 +162,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent2Color? GetAccent2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent2Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent2ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent2Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent2Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent2Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent2Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -101,12 +189,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent3Color? GetAccent3Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent3Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent3ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent3Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent3Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent3Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent3ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent3Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -114,12 +216,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent4Color? GetAccent4Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent4Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent4ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent4Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent4Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent4Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent4ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent4Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -127,12 +243,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent5Color? GetAccent5Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent5Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent5ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent5Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent5Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent5Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent5ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent5Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -140,12 +270,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Accent6Color? GetAccent6Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent6Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Accent6ColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAccent6Color(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Accent6Color? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent6Color>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Accent6ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent6Color>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -153,12 +297,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hyperlink>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.HyperlinkConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetHyperlink(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.Hyperlink? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hyperlink>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hyperlink>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -166,12 +324,26 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.FollowedHyperlinkColor? GetFollowedHyperlinkColor(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.FollowedHyperlinkColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFollowedHyperlinkColor(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.FollowedHyperlinkColor? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.FollowedHyperlinkColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -179,12 +351,55 @@ public static class ColorSchemeConverter
   /// </summary>
   public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ColorScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ColorScheme();
+      value.Name = GetName(openXmlElement);
+      value.Dark1Color = GetDark1Color(openXmlElement);
+      value.Light1Color = GetLight1Color(openXmlElement);
+      value.Dark2Color = GetDark2Color(openXmlElement);
+      value.Light2Color = GetLight2Color(openXmlElement);
+      value.Accent1Color = GetAccent1Color(openXmlElement);
+      value.Accent2Color = GetAccent2Color(openXmlElement);
+      value.Accent3Color = GetAccent3Color(openXmlElement);
+      value.Accent4Color = GetAccent4Color(openXmlElement);
+      value.Accent5Color = GetAccent5Color(openXmlElement);
+      value.Accent6Color = GetAccent6Color(openXmlElement);
+      value.Hyperlink = GetHyperlink(openXmlElement);
+      value.FollowedHyperlinkColor = GetFollowedHyperlinkColor(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorScheme? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorScheme, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

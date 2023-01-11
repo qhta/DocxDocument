@@ -10,12 +10,16 @@ public static class SchemaConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class SchemaConverter
   /// </summary>
   public static String? GetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ManifestLocation?.Value;
   }
   
   public static void SetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ManifestLocation = new StringValue { Value = value };
+      else
+        openXmlElement.ManifestLocation = null;
   }
   
   /// <summary>
@@ -36,12 +44,34 @@ public static class SchemaConverter
   /// </summary>
   public static String? GetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SchemaLocation?.Value;
   }
   
   public static void SetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SchemaLocation = new StringValue { Value = value };
+      else
+        openXmlElement.SchemaLocation = null;
   }
   
+  public static DocumentModel.CustomXml.Schema? CreateModelElement(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.CustomXml.Schema();
+      value.Uri = GetUri(openXmlElement);
+      value.ManifestLocation = GetManifestLocation(openXmlElement);
+      value.SchemaLocation = GetSchemaLocation(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.Schema? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

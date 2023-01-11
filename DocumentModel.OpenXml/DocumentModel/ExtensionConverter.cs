@@ -10,12 +10,32 @@ public static class ExtensionConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
+  public static DocumentModel.Extension? CreateModelElement(DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Extension();
+      value.Uri = GetUri(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Extension? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

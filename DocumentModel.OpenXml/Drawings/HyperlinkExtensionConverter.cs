@@ -10,12 +10,16 @@ public static class HyperlinkExtensionConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
   public static DocumentModel.Drawings.HyperlinkColorEnum? GetHyperlinkColor(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
@@ -47,4 +51,21 @@ public static class HyperlinkExtensionConverter
     }
   }
   
+  public static DocumentModel.Drawings.HyperlinkExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.HyperlinkExtension();
+      value.Uri = GetUri(openXmlElement);
+      value.HyperlinkColor = GetHyperlinkColor(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkExtension? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkExtension, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

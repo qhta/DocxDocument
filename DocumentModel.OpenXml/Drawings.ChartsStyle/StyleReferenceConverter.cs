@@ -10,12 +10,13 @@ public static class StyleReferenceConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Index?.Value;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Index = value;
   }
   
   /// <summary>
@@ -23,12 +24,29 @@ public static class StyleReferenceConverter
   /// </summary>
   public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
   }
   
   public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement, DocumentModel.ListOf<String>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
   }
   
+  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartsStyle.StyleReference();
+      value.Index = GetIndex(openXmlElement);
+      value.Modifiers = GetModifiers(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

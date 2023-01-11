@@ -104,14 +104,14 @@ public static class EquationArrayPropertiesConverter
   /// <summary>
   /// Row Spacing Rule.
   /// </summary>
-  public static Int32? GetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
+  public static Int64? GetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacingRule");
   }
   
-  public static void SetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, Int32? value)
+  public static void SetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacingRule");
   }
   
   /// <summary>
@@ -119,12 +119,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   public static UInt16? GetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacing");
   }
   
   public static void SetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacing");
   }
   
   /// <summary>
@@ -132,12 +132,47 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Math.EquationArrayProperties? CreateModelElement(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Math.EquationArrayProperties();
+      value.BaseJustification = GetBaseJustification(openXmlElement);
+      value.MaxDistribution = GetMaxDistribution(openXmlElement);
+      value.ObjectDistribution = GetObjectDistribution(openXmlElement);
+      value.RowSpacingRule = GetRowSpacingRule(openXmlElement);
+      value.RowSpacing = GetRowSpacing(openXmlElement);
+      value.ControlProperties = GetControlProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.EquationArrayProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.EquationArrayProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

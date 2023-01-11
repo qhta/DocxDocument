@@ -7,12 +7,51 @@ public static class LineChartExtensionListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartExtension>? GetLineChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartExtension>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.LineChartExtensionConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetLineChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartExtension>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.Charts.LineChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.LineChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.LineChartExtensionList();
+      value.LineChartExtensions = GetLineChartExtensions(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LineChartExtensionList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.LineChartExtensionList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

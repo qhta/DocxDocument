@@ -10,12 +10,13 @@ public static class VTClipboardDataConverter
   /// </summary>
   public static Int32? GetFormat(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Format?.Value;
   }
   
   public static void SetFormat(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Format = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class VTClipboardDataConverter
   /// </summary>
   public static UInt32? GetSize(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Size?.Value;
   }
   
   public static void SetSize(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Size = value;
   }
   
+  public static DocumentModel.VariantTypes.VTClipboardData? CreateModelElement(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.VariantTypes.VTClipboardData();
+      value.Format = GetFormat(openXmlElement);
+      value.Size = GetSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTClipboardData? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTClipboardData, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

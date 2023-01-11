@@ -10,12 +10,13 @@ public static class BackgroundMarkConverter
   /// </summary>
   public static Int32? GetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstXCoordinate?.Value;
   }
   
   public static void SetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FirstXCoordinate = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class BackgroundMarkConverter
   /// </summary>
   public static Int32? GetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FirstYCoordinate?.Value;
   }
   
   public static void SetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FirstYCoordinate = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class BackgroundMarkConverter
   /// </summary>
   public static Int32? GetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SecondXCoordinate?.Value;
   }
   
   public static void SetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SecondXCoordinate = value;
   }
   
   /// <summary>
@@ -49,12 +52,32 @@ public static class BackgroundMarkConverter
   /// </summary>
   public static Int32? GetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SecondYCoordinate?.Value;
   }
   
   public static void SetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SecondYCoordinate = value;
   }
   
+  public static DocumentModel.Drawings.BackgroundMark? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BackgroundMark();
+      value.FirstXCoordinate = GetFirstXCoordinate(openXmlElement);
+      value.FirstYCoordinate = GetFirstYCoordinate(openXmlElement);
+      value.SecondXCoordinate = GetSecondXCoordinate(openXmlElement);
+      value.SecondYCoordinate = GetSecondYCoordinate(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundMark? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

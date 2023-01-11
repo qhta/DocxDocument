@@ -7,12 +7,29 @@ public static class QueryTablePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.QueryTablePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.QueryTablePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.QueryTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.QueryTablePart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.QueryTablePart();
+      value.ContentType = GetContentType(openXmlElement);
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.QueryTablePart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.QueryTablePart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

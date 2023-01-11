@@ -10,12 +10,13 @@ public static class Vector3DTypeConverter
   /// </summary>
   public static Int64? GetDx(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dx?.Value;
   }
   
   public static void SetDx(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Dx = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class Vector3DTypeConverter
   /// </summary>
   public static Int64? GetDy(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dy?.Value;
   }
   
   public static void SetDy(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Dy = value;
   }
   
   /// <summary>
@@ -36,12 +38,31 @@ public static class Vector3DTypeConverter
   /// </summary>
   public static Int64? GetDz(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dz?.Value;
   }
   
   public static void SetDz(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Dz = value;
   }
   
+  public static DocumentModel.Drawings.Vector3DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Vector3DType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Vector3DType();
+      value.Dx = GetDx(openXmlElement);
+      value.Dy = GetDy(openXmlElement);
+      value.Dz = GetDz(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Vector3DType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Vector3DType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class GeoHierarchyEntityConverter
   /// </summary>
   public static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.EntityName?.Value;
   }
   
   public static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EntityName = new StringValue { Value = value };
+      else
+        openXmlElement.EntityName = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class GeoHierarchyEntityConverter
   /// </summary>
   public static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.EntityId?.Value;
   }
   
   public static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EntityId = new StringValue { Value = value };
+      else
+        openXmlElement.EntityId = null;
   }
   
   /// <summary>
@@ -45,4 +53,22 @@ public static class GeoHierarchyEntityConverter
       openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity();
+      value.EntityName = GetEntityName(openXmlElement);
+      value.EntityId = GetEntityId(openXmlElement);
+      value.EntityType = GetEntityType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

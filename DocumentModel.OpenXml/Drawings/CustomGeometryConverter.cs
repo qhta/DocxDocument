@@ -10,12 +10,26 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,26 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.ShapeGuideList? GetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeGuideList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.ShapeGuideList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeGuideList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuideList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +64,26 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.AdjustHandleList? GetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.AdjustHandleList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +91,26 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.ConnectionSiteList? GetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.ConnectionSiteList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +118,26 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.Rectangle? GetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rectangle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.RectangleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.Rectangle? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rectangle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rectangle>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,12 +145,47 @@ public static class CustomGeometryConverter
   /// </summary>
   public static DocumentModel.Drawings.PathList? GetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.PathListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.PathList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.PathListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.CustomGeometry? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.CustomGeometry();
+      value.AdjustValueList = GetAdjustValueList(openXmlElement);
+      value.ShapeGuideList = GetShapeGuideList(openXmlElement);
+      value.AdjustHandleList = GetAdjustHandleList(openXmlElement);
+      value.ConnectionSiteList = GetConnectionSiteList(openXmlElement);
+      value.Rectangle = GetRectangle(openXmlElement);
+      value.PathList = GetPathList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomGeometry? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomGeometry, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

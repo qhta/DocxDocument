@@ -7,12 +7,51 @@ public static class FormulasConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Formula>? GetItems(DocumentFormat.OpenXml.Vml.Formulas? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Formula>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Formula>())
+      {
+        var newItem = DocumentModel.OpenXml.Vml.FormulaConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetItems(DocumentFormat.OpenXml.Vml.Formulas? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Formula>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Formula>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Vml.FormulaConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formula>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Vml.Formulas? CreateModelElement(DocumentFormat.OpenXml.Vml.Formulas? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Formulas();
+      value.Items = GetItems(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Formulas? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Formulas, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

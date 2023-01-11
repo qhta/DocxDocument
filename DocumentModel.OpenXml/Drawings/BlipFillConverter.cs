@@ -10,12 +10,13 @@ public static class BlipFillConverter
   /// </summary>
   public static UInt32? GetDpi(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dpi?.Value;
   }
   
   public static void SetDpi(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Dpi = value;
   }
   
   /// <summary>
@@ -23,12 +24,16 @@ public static class BlipFillConverter
   /// </summary>
   public static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.RotateWithShape?.Value;
   }
   
   public static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.RotateWithShape = null;
   }
   
   /// <summary>
@@ -36,12 +41,26 @@ public static class BlipFillConverter
   /// </summary>
   public static DocumentModel.Drawings.Blip? GetBlip(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.BlipConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBlip(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Blip? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,32 +68,95 @@ public static class BlipFillConverter
   /// </summary>
   public static DocumentModel.Drawings.RelativeRectangleType? GetSourceRectangle(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSourceRectangle(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SourceRectangle>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Tile? GetTile(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tile>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.TileConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTile(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Tile? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tile>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.TileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Tile>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Stretch? GetStretch(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Stretch>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.StretchConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStretch(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Stretch? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Stretch>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.StretchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Stretch>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.BlipFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BlipFill();
+      value.Dpi = GetDpi(openXmlElement);
+      value.RotateWithShape = GetRotateWithShape(openXmlElement);
+      value.Blip = GetBlip(openXmlElement);
+      value.SourceRectangle = GetSourceRectangle(openXmlElement);
+      value.Tile = GetTile(openXmlElement);
+      value.Stretch = GetStretch(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BlipFill? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BlipFill, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

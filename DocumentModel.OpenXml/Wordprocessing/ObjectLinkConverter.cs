@@ -24,12 +24,16 @@ public static class ObjectLinkConverter
   /// </summary>
   public static Boolean? GetLockedField(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LockedField?.Value;
   }
   
   public static void SetLockedField(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LockedField = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.LockedField = null;
   }
   
   /// <summary>
@@ -51,12 +55,16 @@ public static class ObjectLinkConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -64,12 +72,16 @@ public static class ObjectLinkConverter
   /// </summary>
   public static String? GetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ProgId?.Value;
   }
   
   public static void SetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ProgId = new StringValue { Value = value };
+      else
+        openXmlElement.ProgId = null;
   }
   
   /// <summary>
@@ -77,12 +89,16 @@ public static class ObjectLinkConverter
   /// </summary>
   public static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShapeId?.Value;
   }
   
   public static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeId = new StringValue { Value = value };
+      else
+        openXmlElement.ShapeId = null;
   }
   
   /// <summary>
@@ -90,12 +106,38 @@ public static class ObjectLinkConverter
   /// </summary>
   public static String? GetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FieldCodes?.Value;
   }
   
   public static void SetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FieldCodes = new StringValue { Value = value };
+      else
+        openXmlElement.FieldCodes = null;
   }
   
+  public static DocumentModel.Wordprocessing.ObjectLink? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.ObjectLink();
+      value.UpdateMode = GetUpdateMode(openXmlElement);
+      value.LockedField = GetLockedField(openXmlElement);
+      value.drawAspect = GetdrawAspect(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.ProgId = GetProgId(openXmlElement);
+      value.ShapeId = GetShapeId(openXmlElement);
+      value.FieldCodes = GetFieldCodes(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectLink? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectLink, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,29 @@ public static class BiLevelConverter
   /// </summary>
   public static Int32? GetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Threshold?.Value;
   }
   
   public static void SetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Threshold = value;
   }
   
+  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DocumentFormat.OpenXml.Drawing.BiLevel? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.BiLevel();
+      value.Threshold = GetThreshold(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BiLevel? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BiLevel, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

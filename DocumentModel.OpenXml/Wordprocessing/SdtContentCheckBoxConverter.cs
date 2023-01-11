@@ -42,12 +42,26 @@ public static class SdtContentCheckBoxConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.CheckBoxSymbolType? GetCheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CheckedState>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement, DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CheckedState>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CheckedState>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -55,12 +69,44 @@ public static class SdtContentCheckBoxConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.CheckBoxSymbolType? GetUncheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetUncheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement, DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.SdtContentCheckBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SdtContentCheckBox();
+      value.Checked = GetChecked(openXmlElement);
+      value.CheckedState = GetCheckedState(openXmlElement);
+      value.UncheckedState = GetUncheckedState(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentCheckBox? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   public static String? GetVersion(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Version?.Value;
   }
   
   public static void SetVersion(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Version = new StringValue { Value = value };
+      else
+        openXmlElement.Version = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   public static String? GetStore(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Store?.Value;
   }
   
   public static void SetStore(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Store = new StringValue { Value = value };
+      else
+        openXmlElement.Store = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   public static String? GetStoreType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StoreType?.Value;
   }
   
   public static void SetStoreType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StoreType = new StringValue { Value = value };
+      else
+        openXmlElement.StoreType = null;
   }
   
   /// <summary>
@@ -62,12 +78,46 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   public static DocumentModel.WebExtensions.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement, DocumentModel.WebExtensions.OfficeArtExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.WebExtensions.WebExtensionStoreReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.WebExtensions.WebExtensionStoreReference();
+      value.Id = GetId(openXmlElement);
+      value.Version = GetVersion(openXmlElement);
+      value.Store = GetStore(openXmlElement);
+      value.StoreType = GetStoreType(openXmlElement);
+      value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionStoreReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class AutoCaptionConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class AutoCaptionConverter
   /// </summary>
   public static String? GetCaption(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Caption?.Value;
   }
   
   public static void SetCaption(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Caption = new StringValue { Value = value };
+      else
+        openXmlElement.Caption = null;
   }
   
+  public static DocumentModel.Wordprocessing.AutoCaption? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.AutoCaption();
+      value.Name = GetName(openXmlElement);
+      value.Caption = GetCaption(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AutoCaption? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AutoCaption, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

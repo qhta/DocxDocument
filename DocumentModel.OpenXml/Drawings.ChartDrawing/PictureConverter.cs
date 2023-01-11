@@ -10,12 +10,16 @@ public static class PictureConverter
   /// </summary>
   public static String? GetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Macro?.Value;
   }
   
   public static void SetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Macro = new StringValue { Value = value };
+      else
+        openXmlElement.Macro = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class PictureConverter
   /// </summary>
   public static Boolean? GetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Published?.Value;
   }
   
   public static void SetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Published = null;
   }
   
   /// <summary>
@@ -36,12 +44,26 @@ public static class PictureConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? GetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -49,12 +71,26 @@ public static class PictureConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawing.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, DocumentModel.Drawings.ChartDrawing.BlipFill? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -62,12 +98,26 @@ public static class PictureConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawing.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, DocumentModel.Drawings.ChartDrawing.ShapeProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,12 +125,47 @@ public static class PictureConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartDrawing.Style? GetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement, DocumentModel.Drawings.ChartDrawing.Style? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.ChartDrawing.Picture? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawing.Picture();
+      value.Macro = GetMacro(openXmlElement);
+      value.Published = GetPublished(openXmlElement);
+      value.NonVisualPictureProperties = GetNonVisualPictureProperties(openXmlElement);
+      value.BlipFill = GetBlipFill(openXmlElement);
+      value.ShapeProperties = GetShapeProperties(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Picture? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

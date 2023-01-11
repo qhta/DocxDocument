@@ -22,14 +22,15 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shape ID Optional Storage
   /// </summary>
-  public static Int32? GetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
+  public static Int64? GetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MaxShapeId?.Value;
   }
   
-  public static void SetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Int32? value)
+  public static void SetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.MaxShapeId = value;
   }
   
   /// <summary>
@@ -37,12 +38,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static String? GetStyle(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Style?.Value;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Style = new StringValue { Value = value };
+      else
+        openXmlElement.Style = null;
   }
   
   /// <summary>
@@ -50,12 +55,12 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -63,12 +68,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static String? GetFillColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FillColor?.Value;
   }
   
   public static void SetFillColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FillColor = new StringValue { Value = value };
+      else
+        openXmlElement.FillColor = null;
   }
   
   /// <summary>
@@ -76,12 +85,12 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -89,12 +98,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StrokeColor?.Value;
   }
   
   public static void SetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StrokeColor = new StringValue { Value = value };
+      else
+        openXmlElement.StrokeColor = null;
   }
   
   /// <summary>
@@ -102,12 +115,12 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -115,12 +128,12 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -142,12 +155,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFill(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Fill? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -155,12 +182,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetImageData(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.ImageData? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -168,12 +209,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Stroke? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -181,12 +236,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextBox(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.TextBox? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -194,12 +263,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetShadow(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Shadow? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -207,12 +290,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetSkew(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Skew? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -220,12 +317,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtrusion(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Extrusion? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -233,12 +344,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetCallout(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Callout? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -246,12 +371,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLock(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.Lock? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -259,12 +398,26 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.ColorMostRecentlyUsed? GetColorMostRecentlyUsed(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ColorMostRecentlyUsedConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColorMostRecentlyUsed(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.ColorMostRecentlyUsed? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ColorMostRecentlyUsedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -272,12 +425,62 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static DocumentModel.Vml.ColorMenu? GetColorMenu(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMenu>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Vml.ColorMenuConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetColorMenu(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, DocumentModel.Vml.ColorMenu? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMenu>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Vml.ColorMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ColorMenu>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Vml.ShapeDefaults? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ShapeDefaults();
+      value.Extension = GetExtension(openXmlElement);
+      value.MaxShapeId = GetMaxShapeId(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      value.BeFilled = GetBeFilled(openXmlElement);
+      value.FillColor = GetFillColor(openXmlElement);
+      value.IsStroke = GetIsStroke(openXmlElement);
+      value.StrokeColor = GetStrokeColor(openXmlElement);
+      value.AllowInCell = GetAllowInCell(openXmlElement);
+      value.AllowOverlap = GetAllowOverlap(openXmlElement);
+      value.InsetMode = GetInsetMode(openXmlElement);
+      value.Fill = GetFill(openXmlElement);
+      value.ImageData = GetImageData(openXmlElement);
+      value.Stroke = GetStroke(openXmlElement);
+      value.TextBox = GetTextBox(openXmlElement);
+      value.Shadow = GetShadow(openXmlElement);
+      value.Skew = GetSkew(openXmlElement);
+      value.Extrusion = GetExtrusion(openXmlElement);
+      value.Callout = GetCallout(openXmlElement);
+      value.Lock = GetLock(openXmlElement);
+      value.ColorMostRecentlyUsed = GetColorMostRecentlyUsed(openXmlElement);
+      value.ColorMenu = GetColorMenu(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeDefaults? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeDefaults, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

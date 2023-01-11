@@ -10,12 +10,32 @@ public static class ClipPathConverter
   /// </summary>
   public static String? GetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Value?.Value;
   }
   
   public static void SetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Value = new StringValue { Value = value };
+      else
+        openXmlElement.Value = null;
   }
   
+  public static DocumentModel.Vml.ClipPath? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ClipPath();
+      value.Value = GetValue(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ClipPath? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ClipPath, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

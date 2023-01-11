@@ -375,7 +375,7 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.OnOffValue), typeof(System.Boolean)},
     { typeof(DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse), typeof(System.Boolean) },
     { typeof(DocumentFormat.OpenXml.Office2010.ExcelAc.List), typeof(System.String) },
-    { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int32)},
+    { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int64)},
     { typeof(DocumentFormat.OpenXml.Int32Value), typeof(System.Int32)},
     { typeof(DocumentFormat.OpenXml.UInt32Value), typeof(System.UInt32)},
     { typeof(DocumentFormat.OpenXml.Int16Value), typeof(System.Int16)},

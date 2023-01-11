@@ -10,12 +10,29 @@ public static class LineJoinMiterPropertiesConverter
   /// </summary>
   public static Int32? GetLimit(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Limit?.Value;
   }
   
   public static void SetLimit(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Limit = value;
   }
   
+  public static DocumentModel.Wordprocessing.LineJoinMiterProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LineJoinMiterProperties();
+      value.Limit = GetLimit(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineJoinMiterProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

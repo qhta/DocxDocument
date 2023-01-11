@@ -10,12 +10,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SmtClean?.Value;
   }
   
   public static void SetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SmtClean = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.SmtClean = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static UInt32? GetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SmtId?.Value;
   }
   
   public static void SetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SmtId = value;
   }
   
   /// <summary>
@@ -36,12 +41,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Kumimoji?.Value;
   }
   
   public static void SetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Kumimoji = null;
   }
   
   /// <summary>
@@ -49,12 +58,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static String? GetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Language?.Value;
   }
   
   public static void SetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Language = new StringValue { Value = value };
+      else
+        openXmlElement.Language = null;
   }
   
   /// <summary>
@@ -62,12 +75,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static String? GetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AlternativeLanguage?.Value;
   }
   
   public static void SetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlternativeLanguage = new StringValue { Value = value };
+      else
+        openXmlElement.AlternativeLanguage = null;
   }
   
   /// <summary>
@@ -75,12 +92,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Int32? GetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FontSize?.Value;
   }
   
   public static void SetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FontSize = value;
   }
   
   /// <summary>
@@ -88,12 +106,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Bold?.Value;
   }
   
   public static void SetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Bold = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Bold = null;
   }
   
   /// <summary>
@@ -101,12 +123,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Italic?.Value;
   }
   
   public static void SetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Italic = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Italic = null;
   }
   
   /// <summary>
@@ -142,12 +168,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Int32? GetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Kerning?.Value;
   }
   
   public static void SetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Kerning = value;
   }
   
   /// <summary>
@@ -169,12 +196,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Int32? GetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Spacing?.Value;
   }
   
   public static void SetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Spacing = value;
   }
   
   /// <summary>
@@ -182,12 +210,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NormalizeHeight?.Value;
   }
   
   public static void SetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.NormalizeHeight = null;
   }
   
   /// <summary>
@@ -195,12 +227,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Int32? GetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Baseline?.Value;
   }
   
   public static void SetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Baseline = value;
   }
   
   /// <summary>
@@ -208,12 +241,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.NoProof?.Value;
   }
   
   public static void SetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.NoProof = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.NoProof = null;
   }
   
   /// <summary>
@@ -221,12 +258,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Dirty?.Value;
   }
   
   public static void SetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Dirty = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Dirty = null;
   }
   
   /// <summary>
@@ -234,12 +275,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SpellingError?.Value;
   }
   
   public static void SetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SpellingError = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.SpellingError = null;
   }
   
   /// <summary>
@@ -247,12 +292,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static Boolean? GetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SmartTagClean?.Value;
   }
   
   public static void SetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.SmartTagClean = null;
   }
   
   /// <summary>
@@ -260,12 +309,13 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static UInt32? GetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SmartTagId?.Value;
   }
   
   public static void SetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SmartTagId = value;
   }
   
   /// <summary>
@@ -273,12 +323,16 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static String? GetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Bookmark?.Value;
   }
   
   public static void SetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Bookmark = new StringValue { Value = value };
+      else
+        openXmlElement.Bookmark = null;
   }
   
   /// <summary>
@@ -286,12 +340,63 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   public static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.Outline? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.TextCharacterPropertiesType();
+      value.SmtClean = GetSmtClean(openXmlElement);
+      value.SmtId = GetSmtId(openXmlElement);
+      value.Kumimoji = GetKumimoji(openXmlElement);
+      value.Language = GetLanguage(openXmlElement);
+      value.AlternativeLanguage = GetAlternativeLanguage(openXmlElement);
+      value.FontSize = GetFontSize(openXmlElement);
+      value.Bold = GetBold(openXmlElement);
+      value.Italic = GetItalic(openXmlElement);
+      value.Underline = GetUnderline(openXmlElement);
+      value.Strike = GetStrike(openXmlElement);
+      value.Kerning = GetKerning(openXmlElement);
+      value.Capital = GetCapital(openXmlElement);
+      value.Spacing = GetSpacing(openXmlElement);
+      value.NormalizeHeight = GetNormalizeHeight(openXmlElement);
+      value.Baseline = GetBaseline(openXmlElement);
+      value.NoProof = GetNoProof(openXmlElement);
+      value.Dirty = GetDirty(openXmlElement);
+      value.SpellingError = GetSpellingError(openXmlElement);
+      value.SmartTagClean = GetSmartTagClean(openXmlElement);
+      value.SmartTagId = GetSmartTagId(openXmlElement);
+      value.Bookmark = GetBookmark(openXmlElement);
+      value.Outline = GetOutline(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextCharacterPropertiesType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

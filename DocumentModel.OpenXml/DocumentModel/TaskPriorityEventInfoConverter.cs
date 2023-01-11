@@ -10,12 +10,29 @@ public static class TaskPriorityEventInfoConverter
   /// </summary>
   public static Int32? GetValue(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Value?.Value;
   }
   
   public static void SetValue(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Value = value;
   }
   
+  public static DocumentModel.TaskPriorityEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.TaskPriorityEventInfo();
+      value.Value = GetValue(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskPriorityEventInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

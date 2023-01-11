@@ -10,12 +10,26 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEffectList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? openXmlElement, DocumentModel.Drawings.EffectList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +37,43 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   public static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetEffectDag(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? openXmlElement, DocumentModel.Drawings.EffectDag? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.HiddenEffectsProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.HiddenEffectsProperties();
+      value.EffectList = GetEffectList(openXmlElement);
+      value.EffectDag = GetEffectDag(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenEffectsProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

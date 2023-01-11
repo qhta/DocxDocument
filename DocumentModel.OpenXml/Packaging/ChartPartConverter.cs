@@ -10,7 +10,18 @@ public static class ChartPartConverter
   /// </summary>
   public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart>? GetChartColorStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart>();
+      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>())
+      {
+        var newItem = DocumentModel.OpenXml.Packaging.ChartColorStylePartConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   /// <summary>
@@ -18,12 +29,12 @@ public static class ChartPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ChartSpace? GetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   public static void SetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement, DocumentModel.Drawings.Charts.ChartSpace? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
   }
   
   /// <summary>
@@ -31,12 +42,23 @@ public static class ChartPartConverter
   /// </summary>
   public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart>? GetChartStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart>();
+      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>())
+      {
+        var newItem = DocumentModel.OpenXml.Packaging.ChartStylePartConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
   /// <summary>
@@ -44,12 +66,44 @@ public static class ChartPartConverter
   /// </summary>
   public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+      {
+        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is System.String");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
   }
   
+  public static DocumentModel.Packaging.ChartPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.ChartPart();
+      value.ChartColorStyleParts = GetChartColorStyleParts(openXmlElement);
+      value.ChartSpace = GetChartSpace(openXmlElement);
+      value.ChartStyleParts = GetChartStyleParts(openXmlElement);
+      value.ContentType = GetContentType(openXmlElement);
+      value.ImageParts = GetImageParts(openXmlElement);
+      value.RelationshipType = GetRelationshipType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartPart? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartPart, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

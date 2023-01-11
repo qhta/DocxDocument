@@ -7,22 +7,85 @@ public static class ToolbarsConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? GetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>? GetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.ToolbarData>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.ToolbarData>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.ToolbarData>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Toolbars();
+      value.AllocatedCommandManifests = GetAllocatedCommandManifests(openXmlElement);
+      value.ToolbarDatas = GetToolbarDatas(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Toolbars? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Toolbars, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

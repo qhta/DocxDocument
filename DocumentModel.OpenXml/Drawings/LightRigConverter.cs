@@ -38,12 +38,44 @@ public static class LightRigConverter
   /// </summary>
   public static DocumentModel.Drawings.Rotation? GetRotation(DocumentFormat.OpenXml.Drawing.LightRig? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rotation>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.RotationConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetRotation(DocumentFormat.OpenXml.Drawing.LightRig? openXmlElement, DocumentModel.Drawings.Rotation? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rotation>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.RotationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rotation>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.LightRig? CreateModelElement(DocumentFormat.OpenXml.Drawing.LightRig? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.LightRig();
+      value.Rig = GetRig(openXmlElement);
+      value.Direction = GetDirection(openXmlElement);
+      value.Rotation = GetRotation(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LightRig? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LightRig, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

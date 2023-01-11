@@ -10,12 +10,16 @@ public static class DocPartTypesConverter
   /// </summary>
   public static Boolean? GetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.All?.Value;
   }
   
   public static void SetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.All = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.All = null;
   }
   
   public static DocumentModel.Wordprocessing.DocPartKind? GetDocPartType(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
@@ -47,4 +51,21 @@ public static class DocPartTypesConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.DocPartTypes? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocPartTypes();
+      value.All = GetAll(openXmlElement);
+      value.DocPartType = GetDocPartType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartTypes? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartTypes, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

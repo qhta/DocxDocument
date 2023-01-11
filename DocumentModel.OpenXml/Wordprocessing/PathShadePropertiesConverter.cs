@@ -24,12 +24,43 @@ public static class PathShadePropertiesConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.FillToRectangle? GetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? openXmlElement, DocumentModel.Wordprocessing.FillToRectangle? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.PathShadeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PathShadeProperties();
+      value.Path = GetPath(openXmlElement);
+      value.FillToRectangle = GetFillToRectangle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PathShadeProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

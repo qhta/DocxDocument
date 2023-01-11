@@ -10,12 +10,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetValue(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Value?.Value;
   }
   
   public static void SetValue(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Value = new StringValue { Value = value };
+      else
+        openXmlElement.Value = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetLimo(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Limo?.Value;
   }
   
   public static void SetLimo(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Limo = new StringValue { Value = value };
+      else
+        openXmlElement.Limo = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.TextboxRectangle?.Value;
   }
   
   public static void SetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.TextboxRectangle = new StringValue { Value = value };
+      else
+        openXmlElement.TextboxRectangle = null;
   }
   
   /// <summary>
@@ -62,12 +78,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -75,12 +91,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -88,12 +104,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -101,12 +117,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -114,12 +130,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -127,12 +143,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -140,12 +156,12 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   /// <summary>
@@ -167,12 +183,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetConnectionPoints(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ConnectionPoints?.Value;
   }
   
   public static void SetConnectionPoints(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ConnectionPoints = new StringValue { Value = value };
+      else
+        openXmlElement.ConnectionPoints = null;
   }
   
   /// <summary>
@@ -180,12 +200,16 @@ public static class PathConverter
   /// </summary>
   public static String? GetConnectAngles(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ConnectAngles?.Value;
   }
   
   public static void SetConnectAngles(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ConnectAngles = new StringValue { Value = value };
+      else
+        openXmlElement.ConnectAngles = null;
   }
   
   /// <summary>
@@ -193,12 +217,42 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
+  public static DocumentModel.Vml.Path? CreateModelElement(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Path();
+      value.Id = GetId(openXmlElement);
+      value.Value = GetValue(openXmlElement);
+      value.Limo = GetLimo(openXmlElement);
+      value.TextboxRectangle = GetTextboxRectangle(openXmlElement);
+      value.AllowFill = GetAllowFill(openXmlElement);
+      value.AllowStroke = GetAllowStroke(openXmlElement);
+      value.AllowShading = GetAllowShading(openXmlElement);
+      value.ShowArrowhead = GetShowArrowhead(openXmlElement);
+      value.AllowGradientShape = GetAllowGradientShape(openXmlElement);
+      value.AllowTextPath = GetAllowTextPath(openXmlElement);
+      value.AllowInsetPen = GetAllowInsetPen(openXmlElement);
+      value.ConnectionPointType = GetConnectionPointType(openXmlElement);
+      value.ConnectionPoints = GetConnectionPoints(openXmlElement);
+      value.ConnectAngles = GetConnectAngles(openXmlElement);
+      value.AllowExtrusion = GetAllowExtrusion(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Path? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Path, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

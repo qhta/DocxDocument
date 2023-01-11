@@ -7,12 +7,42 @@ public static class FootnotesConverter
 {
   public static DocumentModel.Wordprocessing.Footnote? GetFootnote(DocumentFormat.OpenXml.Wordprocessing.Footnotes? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Footnote>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.FootnoteConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetFootnote(DocumentFormat.OpenXml.Wordprocessing.Footnotes? openXmlElement, DocumentModel.Wordprocessing.Footnote? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Footnote>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.FootnoteConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Footnote>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Footnotes? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Footnotes? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Footnotes();
+      value.Footnote = GetFootnote(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Footnotes? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Footnotes, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

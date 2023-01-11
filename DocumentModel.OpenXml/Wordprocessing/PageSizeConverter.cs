@@ -10,12 +10,13 @@ public static class PageSizeConverter
   /// </summary>
   public static UInt32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class PageSizeConverter
   /// </summary>
   public static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Height?.Value;
   }
   
   public static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Height = value;
   }
   
   /// <summary>
@@ -50,12 +52,32 @@ public static class PageSizeConverter
   /// </summary>
   public static UInt16? GetCode(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Code?.Value;
   }
   
   public static void SetCode(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Code = value;
   }
   
+  public static DocumentModel.Wordprocessing.PageSize? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PageSize();
+      value.Width = GetWidth(openXmlElement);
+      value.Height = GetHeight(openXmlElement);
+      value.Orient = GetOrient(openXmlElement);
+      value.Code = GetCode(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageSize? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageSize, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

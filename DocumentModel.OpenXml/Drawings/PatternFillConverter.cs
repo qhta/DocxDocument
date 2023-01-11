@@ -24,12 +24,26 @@ public static class PatternFillConverter
   /// </summary>
   public static DocumentModel.Drawings.ForegroundColor? GetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement, DocumentModel.Drawings.ForegroundColor? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ForegroundColor>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -37,12 +51,44 @@ public static class PatternFillConverter
   /// </summary>
   public static DocumentModel.Drawings.BackgroundColor? GetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement, DocumentModel.Drawings.BackgroundColor? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundColor>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.PatternFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.PatternFill();
+      value.Preset = GetPreset(openXmlElement);
+      value.ForegroundColor = GetForegroundColor(openXmlElement);
+      value.BackgroundColor = GetBackgroundColor(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PatternFill? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PatternFill, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

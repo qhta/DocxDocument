@@ -10,12 +10,32 @@ public static class SchemaReferenceConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
+  public static DocumentModel.CustomXml.SchemaReference? CreateModelElement(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.CustomXml.SchemaReference();
+      value.Uri = GetUri(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.SchemaReference? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

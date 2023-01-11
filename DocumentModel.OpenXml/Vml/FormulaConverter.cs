@@ -10,12 +10,32 @@ public static class FormulaConverter
   /// </summary>
   public static String? GetEquation(DocumentFormat.OpenXml.Vml.Formula? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Equation?.Value;
   }
   
   public static void SetEquation(DocumentFormat.OpenXml.Vml.Formula? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Equation = new StringValue { Value = value };
+      else
+        openXmlElement.Equation = null;
   }
   
+  public static DocumentModel.Vml.Formula? CreateModelElement(DocumentFormat.OpenXml.Vml.Formula? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Formula();
+      value.Equation = GetEquation(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Formula? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Formula, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

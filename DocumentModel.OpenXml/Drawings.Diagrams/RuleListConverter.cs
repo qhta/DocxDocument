@@ -7,12 +7,51 @@ public static class RuleListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>? GetRules(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.RuleConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetRules(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.Diagrams.RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.RuleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.RuleList();
+      value.Rules = GetRules(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.RuleList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.RuleList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

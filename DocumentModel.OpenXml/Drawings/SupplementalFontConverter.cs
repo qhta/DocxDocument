@@ -10,12 +10,16 @@ public static class SupplementalFontConverter
   /// </summary>
   public static String? GetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Script?.Value;
   }
   
   public static void SetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Script = new StringValue { Value = value };
+      else
+        openXmlElement.Script = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class SupplementalFontConverter
   /// </summary>
   public static String? GetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Typeface?.Value;
   }
   
   public static void SetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Typeface = new StringValue { Value = value };
+      else
+        openXmlElement.Typeface = null;
   }
   
+  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.SupplementalFont();
+      value.Script = GetScript(openXmlElement);
+      value.Typeface = GetTypeface(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SupplementalFont? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SupplementalFont, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

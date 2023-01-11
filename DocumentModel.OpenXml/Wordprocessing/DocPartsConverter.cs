@@ -5,4 +5,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DocPartsConverter
 {
+  public static DocumentModel.Wordprocessing.DocParts? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocParts? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocParts();
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocParts? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocParts, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

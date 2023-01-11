@@ -10,12 +10,13 @@ public static class EntryConverter
   /// </summary>
   public static Int32? GetNew(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.New?.Value;
   }
   
   public static void SetNew(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.New = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class EntryConverter
   /// </summary>
   public static Int32? GetOld(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Old?.Value;
   }
   
   public static void SetOld(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Old = value;
   }
   
+  public static DocumentModel.Vml.Entry? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.Entry();
+      value.New = GetNew(openXmlElement);
+      value.Old = GetOld(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Entry? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Entry, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

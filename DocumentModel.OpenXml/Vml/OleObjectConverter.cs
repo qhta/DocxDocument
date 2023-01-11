@@ -24,12 +24,16 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetProgId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ProgId?.Value;
   }
   
   public static void SetProgId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ProgId = new StringValue { Value = value };
+      else
+        openXmlElement.ProgId = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetShapeId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShapeId?.Value;
   }
   
   public static void SetShapeId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeId = new StringValue { Value = value };
+      else
+        openXmlElement.ShapeId = null;
   }
   
   /// <summary>
@@ -64,12 +72,16 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetObjectId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ObjectId?.Value;
   }
   
   public static void SetObjectId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ObjectId = new StringValue { Value = value };
+      else
+        openXmlElement.ObjectId = null;
   }
   
   /// <summary>
@@ -77,12 +89,16 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -104,12 +120,12 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Vml.Office.LinkType");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LinkType");
   }
   
   public static void SetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LinkType");
   }
   
   /// <summary>
@@ -117,12 +133,12 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Vml.Office.LockedField");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LockedField");
   }
   
   public static void SetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LockedField");
   }
   
   /// <summary>
@@ -130,12 +146,37 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Vml.Office.FieldCodes");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.FieldCodes");
   }
   
   public static void SetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.FieldCodes");
   }
   
+  public static DocumentModel.Vml.OleObject? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.OleObject();
+      value.Type = GetType(openXmlElement);
+      value.ProgId = GetProgId(openXmlElement);
+      value.ShapeId = GetShapeId(openXmlElement);
+      value.DrawAspect = GetDrawAspect(openXmlElement);
+      value.ObjectId = GetObjectId(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.UpdateMode = GetUpdateMode(openXmlElement);
+      value.LinkType = GetLinkType(openXmlElement);
+      value.LockedField = GetLockedField(openXmlElement);
+      value.FieldCodes = GetFieldCodes(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.OleObject? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.OleObject, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

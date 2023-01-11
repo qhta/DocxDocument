@@ -7,12 +7,51 @@ public static class ChartSpaceExtensionListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? GetChartSpaceExtensions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetChartSpaceExtensions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtensionList();
+      value.ChartSpaceExtensions = GetChartSpaceExtensions(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpaceExtensionList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class ColumnsConverter
   /// </summary>
   public static Boolean? GetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.EqualWidth?.Value;
   }
   
   public static void SetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EqualWidth = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.EqualWidth = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ColumnsConverter
   /// </summary>
   public static String? GetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Space?.Value;
   }
   
   public static void SetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Space = new StringValue { Value = value };
+      else
+        openXmlElement.Space = null;
   }
   
   /// <summary>
@@ -36,12 +44,13 @@ public static class ColumnsConverter
   /// </summary>
   public static Int16? GetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ColumnCount?.Value;
   }
   
   public static void SetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.ColumnCount = value;
   }
   
   /// <summary>
@@ -49,22 +58,69 @@ public static class ColumnsConverter
   /// </summary>
   public static Boolean? GetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Separator?.Value;
   }
   
   public static void SetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Separator = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Separator = null;
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>? GetItems(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Column>())
+      {
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Column>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Columns();
+      value.EqualWidth = GetEqualWidth(openXmlElement);
+      value.Space = GetSpace(openXmlElement);
+      value.ColumnCount = GetColumnCount(openXmlElement);
+      value.Separator = GetSeparator(openXmlElement);
+      value.Items = GetItems(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Columns? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Columns, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,16 @@ public static class TextBoxConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class TextBoxConverter
   /// </summary>
   public static String? GetStyle(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Style?.Value;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Style = new StringValue { Value = value };
+      else
+        openXmlElement.Style = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class TextBoxConverter
   /// </summary>
   public static String? GetInset(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Inset?.Value;
   }
   
   public static void SetInset(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Inset = new StringValue { Value = value };
+      else
+        openXmlElement.Inset = null;
   }
   
   /// <summary>
@@ -49,22 +61,56 @@ public static class TextBoxConverter
   /// </summary>
   public static Boolean? GetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static void SetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   public static DocumentModel.Wordprocessing.TextBoxContent? GetTextBoxContent(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TextBoxContentConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetTextBoxContent(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, DocumentModel.Wordprocessing.TextBoxContent? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.TextBoxContentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Vml.TextBox? CreateModelElement(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.TextBox();
+      value.Id = GetId(openXmlElement);
+      value.Style = GetStyle(openXmlElement);
+      value.Inset = GetInset(openXmlElement);
+      value.SingleClick = GetSingleClick(openXmlElement);
+      value.TextBoxContent = GetTextBoxContent(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextBox? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextBox, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

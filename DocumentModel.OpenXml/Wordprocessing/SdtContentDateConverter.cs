@@ -10,12 +10,13 @@ public static class SdtContentDateConverter
   /// </summary>
   public static DateTime? GetFullDate(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.FullDate?.Value;
   }
   
   public static void SetFullDate(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement, DateTime? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.FullDate = value;
   }
   
   /// <summary>
@@ -28,7 +29,13 @@ public static class SdtContentDateConverter
   
   public static void SetDateFormat(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.DateFormat = new DocumentFormat.OpenXml.Wordprocessing.DateFormat { Val = value };
+      else
+        openXmlElement.DateFormat = null;
+    }
   }
   
   /// <summary>
@@ -36,12 +43,12 @@ public static class SdtContentDateConverter
   /// </summary>
   public static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
   }
   
   public static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LanguageId");
   }
   
   /// <summary>
@@ -108,4 +115,24 @@ public static class SdtContentDateConverter
     }
   }
   
+  public static DocumentModel.Wordprocessing.SdtContentDate? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SdtContentDate();
+      value.FullDate = GetFullDate(openXmlElement);
+      value.DateFormat = GetDateFormat(openXmlElement);
+      value.LanguageId = GetLanguageId(openXmlElement);
+      value.SdtDateMappingType = GetSdtDateMappingType(openXmlElement);
+      value.Calendar = GetCalendar(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDate? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDate, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

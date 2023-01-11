@@ -10,12 +10,16 @@ public static class PresenceInfoConverter
   /// </summary>
   public static String? GetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ProviderId?.Value;
   }
   
   public static void SetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ProviderId = new StringValue { Value = value };
+      else
+        openXmlElement.ProviderId = null;
   }
   
   /// <summary>
@@ -23,12 +27,33 @@ public static class PresenceInfoConverter
   /// </summary>
   public static String? GetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.UserId?.Value;
   }
   
   public static void SetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UserId = new StringValue { Value = value };
+      else
+        openXmlElement.UserId = null;
   }
   
+  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.PresenceInfo();
+      value.ProviderId = GetProviderId(openXmlElement);
+      value.UserId = GetUserId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PresenceInfo? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.PresenceInfo, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

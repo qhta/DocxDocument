@@ -10,12 +10,12 @@ public static class DataLabelFieldTableEntryConverter
   /// </summary>
   public static String? GetTextFieldGuid(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid");
   }
   
   public static void SetTextFieldGuid(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class DataLabelFieldTableEntryConverter
   /// </summary>
   public static String? GetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula");
   }
   
   public static void SetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula");
   }
   
   /// <summary>
@@ -36,12 +36,44 @@ public static class DataLabelFieldTableEntryConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.DataLabelFieldTableCache? GetDataLabelFieldTableCache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableCacheConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetDataLabelFieldTableCache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement, DocumentModel.Drawings.Charts.DataLabelFieldTableCache? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableEntry();
+      value.TextFieldGuid = GetTextFieldGuid(openXmlElement);
+      value.Formula = GetFormula(openXmlElement);
+      value.DataLabelFieldTableCache = GetDataLabelFieldTableCache(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

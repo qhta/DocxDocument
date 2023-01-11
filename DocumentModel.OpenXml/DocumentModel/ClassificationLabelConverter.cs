@@ -10,12 +10,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Enabled?.Value;
   }
   
   public static void SetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Enabled = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SetDate?.Value;
   }
   
   public static void SetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SetDate = new StringValue { Value = value };
+      else
+        openXmlElement.SetDate = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Method?.Value;
   }
   
   public static void SetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Method = new StringValue { Value = value };
+      else
+        openXmlElement.Method = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Name?.Value;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Name = new StringValue { Value = value };
+      else
+        openXmlElement.Name = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SiteId?.Value;
   }
   
   public static void SetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SiteId = new StringValue { Value = value };
+      else
+        openXmlElement.SiteId = null;
   }
   
   /// <summary>
@@ -88,12 +112,16 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static String? GetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ActionId?.Value;
   }
   
   public static void SetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ActionId = new StringValue { Value = value };
+      else
+        openXmlElement.ActionId = null;
   }
   
   /// <summary>
@@ -101,12 +129,13 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static UInt32? GetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.ContentBits?.Value;
   }
   
   public static void SetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.ContentBits = value;
   }
   
   /// <summary>
@@ -114,12 +143,40 @@ public static class ClassificationLabelConverter
   /// </summary>
   public static Boolean? GetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Removed?.Value;
   }
   
   public static void SetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Removed = new BooleanValue { Value = (Boolean)value };
+      else
+        openXmlElement.Removed = null;
   }
   
+  public static DocumentModel.ClassificationLabel? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.ClassificationLabel();
+      value.Id = GetId(openXmlElement);
+      value.Enabled = GetEnabled(openXmlElement);
+      value.SetDate = GetSetDate(openXmlElement);
+      value.Method = GetMethod(openXmlElement);
+      value.Name = GetName(openXmlElement);
+      value.SiteId = GetSiteId(openXmlElement);
+      value.ActionId = GetActionId(openXmlElement);
+      value.ContentBits = GetContentBits(openXmlElement);
+      value.Removed = GetRemoved(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationLabel? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

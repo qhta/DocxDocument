@@ -10,12 +10,32 @@ public static class SdtContentTextConverter
   /// </summary>
   public static Boolean? GetMultiLine(DocumentFormat.OpenXml.Wordprocessing.SdtContentText? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.MultiLine?.Value;
   }
   
   public static void SetMultiLine(DocumentFormat.OpenXml.Wordprocessing.SdtContentText? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MultiLine = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.MultiLine = null;
   }
   
+  public static DocumentModel.Wordprocessing.SdtContentText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentText? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.SdtContentText();
+      value.MultiLine = GetMultiLine(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentText? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentText, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocNewXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString");
   }
   
   public static void SetEventDocNewXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocOpenXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString");
   }
   
   public static void SetEventDocOpenXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString");
   }
   
   /// <summary>
@@ -36,12 +36,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocCloseXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString");
   }
   
   public static void SetEventDocCloseXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString");
   }
   
   /// <summary>
@@ -49,12 +49,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocSyncXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString");
   }
   
   public static void SetEventDocSyncXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString");
   }
   
   /// <summary>
@@ -62,12 +62,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocXmlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString");
   }
   
   public static void SetEventDocXmlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString");
   }
   
   /// <summary>
@@ -75,12 +75,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocXmlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString");
   }
   
   public static void SetEventDocXmlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString");
   }
   
   /// <summary>
@@ -88,12 +88,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocContentControlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString");
   }
   
   public static void SetEventDocContentControlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString");
   }
   
   /// <summary>
@@ -101,12 +101,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocContentControlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString");
   }
   
   public static void SetEventDocContentControlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString");
   }
   
   /// <summary>
@@ -114,12 +114,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocContentControlOnExistXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString");
   }
   
   public static void SetEventDocContentControlOnExistXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString");
   }
   
   /// <summary>
@@ -127,12 +127,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocContentControlOnEnterXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString");
   }
   
   public static void SetEventDocContentControlOnEnterXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString");
   }
   
   /// <summary>
@@ -140,12 +140,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocStoreUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString");
   }
   
   public static void SetEventDocStoreUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString");
   }
   
   /// <summary>
@@ -153,12 +153,12 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocContentControlUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString");
   }
   
   public static void SetEventDocContentControlUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString");
   }
   
   /// <summary>
@@ -166,12 +166,40 @@ public static class DocEventsConverter
   /// </summary>
   public static String? GetEventDocBuildingBlockAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString");
   }
   
   public static void SetEventDocBuildingBlockAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString");
   }
   
+  public static DocumentModel.Wordprocessing.DocEvents? CreateModelElement(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocEvents();
+      value.EventDocNewXsdString = GetEventDocNewXsdString(openXmlElement);
+      value.EventDocOpenXsdString = GetEventDocOpenXsdString(openXmlElement);
+      value.EventDocCloseXsdString = GetEventDocCloseXsdString(openXmlElement);
+      value.EventDocSyncXsdString = GetEventDocSyncXsdString(openXmlElement);
+      value.EventDocXmlAfterInsertXsdString = GetEventDocXmlAfterInsertXsdString(openXmlElement);
+      value.EventDocXmlBeforeDeleteXsdString = GetEventDocXmlBeforeDeleteXsdString(openXmlElement);
+      value.EventDocContentControlAfterInsertXsdString = GetEventDocContentControlAfterInsertXsdString(openXmlElement);
+      value.EventDocContentControlBeforeDeleteXsdString = GetEventDocContentControlBeforeDeleteXsdString(openXmlElement);
+      value.EventDocContentControlOnExistXsdString = GetEventDocContentControlOnExistXsdString(openXmlElement);
+      value.EventDocContentControlOnEnterXsdString = GetEventDocContentControlOnEnterXsdString(openXmlElement);
+      value.EventDocStoreUpdateXsdString = GetEventDocStoreUpdateXsdString(openXmlElement);
+      value.EventDocContentControlUpdateXsdString = GetEventDocContentControlUpdateXsdString(openXmlElement);
+      value.EventDocBuildingBlockAfterInsertXsdString = GetEventDocBuildingBlockAfterInsertXsdString(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocEvents? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.DocEvents, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

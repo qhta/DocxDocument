@@ -10,12 +10,29 @@ public static class AlphaBiLevelConverter
   /// </summary>
   public static Int32? GetThreshold(DocumentFormat.OpenXml.Drawing.AlphaBiLevel? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Threshold?.Value;
   }
   
   public static void SetThreshold(DocumentFormat.OpenXml.Drawing.AlphaBiLevel? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Threshold = value;
   }
   
+  public static DocumentModel.Drawings.AlphaBiLevel? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaBiLevel? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.AlphaBiLevel();
+      value.Threshold = GetThreshold(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaBiLevel? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaBiLevel, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

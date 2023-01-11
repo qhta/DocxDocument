@@ -24,12 +24,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static Boolean? GetFormatting(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Formatting?.Value;
   }
   
   public static void SetFormatting(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Formatting = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Formatting = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static Boolean? GetEnforcement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Enforcement?.Value;
   }
   
   public static void SetEnforcement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Enforcement = new OnOffValue { Value = (Boolean)value };
+      else
+        openXmlElement.Enforcement = null;
   }
   
   /// <summary>
@@ -92,12 +100,13 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static Int32? GetCryptographicAlgorithmSid(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CryptographicAlgorithmSid?.Value;
   }
   
   public static void SetCryptographicAlgorithmSid(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.CryptographicAlgorithmSid = value;
   }
   
   /// <summary>
@@ -105,12 +114,13 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static UInt32? GetCryptographicSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CryptographicSpinCount?.Value;
   }
   
   public static void SetCryptographicSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.CryptographicSpinCount = value;
   }
   
   /// <summary>
@@ -118,12 +128,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static String? GetCryptographicProvider(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CryptographicProvider?.Value;
   }
   
   public static void SetCryptographicProvider(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CryptographicProvider = new StringValue { Value = value };
+      else
+        openXmlElement.CryptographicProvider = null;
   }
   
   /// <summary>
@@ -131,12 +145,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   /// <summary>
@@ -144,12 +158,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static String? GetAlgorithmIdExtensibilitySource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AlgorithmIdExtensibilitySource?.Value;
   }
   
   public static void SetAlgorithmIdExtensibilitySource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlgorithmIdExtensibilitySource = new StringValue { Value = value };
+      else
+        openXmlElement.AlgorithmIdExtensibilitySource = null;
   }
   
   /// <summary>
@@ -157,12 +175,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.HexBinary? GetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   public static void SetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.HexBinary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
   }
   
   /// <summary>
@@ -170,12 +188,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static String? GetCryptographicProviderTypeExtSource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.CryptographicProviderTypeExtSource?.Value;
   }
   
   public static void SetCryptographicProviderTypeExtSource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CryptographicProviderTypeExtSource = new StringValue { Value = value };
+      else
+        openXmlElement.CryptographicProviderTypeExtSource = null;
   }
   
   /// <summary>
@@ -183,12 +205,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.Base64Binary? GetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   public static void SetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   /// <summary>
@@ -196,12 +218,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.Base64Binary? GetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   public static void SetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   /// <summary>
@@ -209,12 +231,16 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static String? GetAlgorithmName(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.AlgorithmName?.Value;
   }
   
   public static void SetAlgorithmName(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlgorithmName = new StringValue { Value = value };
+      else
+        openXmlElement.AlgorithmName = null;
   }
   
   /// <summary>
@@ -222,12 +248,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.Base64Binary? GetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   public static void SetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   /// <summary>
@@ -235,12 +261,12 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static DocumentModel.Base64Binary? GetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   public static void SetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
   }
   
   /// <summary>
@@ -248,12 +274,47 @@ public static class DocumentProtectionConverter
   /// </summary>
   public static Int32? GetSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SpinCount?.Value;
   }
   
   public static void SetSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SpinCount = value;
   }
   
+  public static DocumentModel.Wordprocessing.DocumentProtection? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.DocumentProtection();
+      value.Edit = GetEdit(openXmlElement);
+      value.Formatting = GetFormatting(openXmlElement);
+      value.Enforcement = GetEnforcement(openXmlElement);
+      value.CryptographicProviderType = GetCryptographicProviderType(openXmlElement);
+      value.CryptographicAlgorithmClass = GetCryptographicAlgorithmClass(openXmlElement);
+      value.CryptographicAlgorithmType = GetCryptographicAlgorithmType(openXmlElement);
+      value.CryptographicAlgorithmSid = GetCryptographicAlgorithmSid(openXmlElement);
+      value.CryptographicSpinCount = GetCryptographicSpinCount(openXmlElement);
+      value.CryptographicProvider = GetCryptographicProvider(openXmlElement);
+      value.AlgorithmIdExtensibility = GetAlgorithmIdExtensibility(openXmlElement);
+      value.AlgorithmIdExtensibilitySource = GetAlgorithmIdExtensibilitySource(openXmlElement);
+      value.CryptographicProviderTypeExtensibility = GetCryptographicProviderTypeExtensibility(openXmlElement);
+      value.CryptographicProviderTypeExtSource = GetCryptographicProviderTypeExtSource(openXmlElement);
+      value.Hash = GetHash(openXmlElement);
+      value.Salt = GetSalt(openXmlElement);
+      value.AlgorithmName = GetAlgorithmName(openXmlElement);
+      value.HashValue = GetHashValue(openXmlElement);
+      value.SaltValue = GetSaltValue(openXmlElement);
+      value.SpinCount = GetSpinCount(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentProtection? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentProtection, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

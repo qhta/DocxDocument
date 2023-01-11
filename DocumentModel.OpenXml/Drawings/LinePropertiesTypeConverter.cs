@@ -10,12 +10,13 @@ public static class LinePropertiesTypeConverter
   /// </summary>
   public static Int32? GetWidth(DocumentFormat.OpenXml.Drawing.LinePropertiesType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Drawing.LinePropertiesType? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -60,4 +61,23 @@ public static class LinePropertiesTypeConverter
       openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DocumentModel.Drawings.PenAlignmentKind>(value);
   }
   
+  public static DocumentModel.Drawings.LinePropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.LinePropertiesType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.LinePropertiesType();
+      value.Width = GetWidth(openXmlElement);
+      value.CapType = GetCapType(openXmlElement);
+      value.CompoundLineType = GetCompoundLineType(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinePropertiesType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinePropertiesType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

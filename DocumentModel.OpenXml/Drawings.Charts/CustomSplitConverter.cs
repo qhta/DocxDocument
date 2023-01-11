@@ -7,12 +7,51 @@ public static class CustomSplitConverter
 {
   public static System.Collections.ObjectModel.Collection<UInt32>? GetSecondPiePoints(DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<UInt32>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint>())
+      {
+        var newItem = UInt32ValueConverter.GetValue(item);
+        if (newItem != null)
+          collection.Add((UInt32)newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetSecondPiePoints(DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SecondPiePoint>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.CustomSplit? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.CustomSplit? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.CustomSplit();
+      value.SecondPiePoints = GetSecondPiePoints(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CustomSplit? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.CustomSplit, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

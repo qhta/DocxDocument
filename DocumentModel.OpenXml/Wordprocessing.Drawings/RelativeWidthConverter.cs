@@ -24,12 +24,29 @@ public static class RelativeWidthConverter
   /// </summary>
   public static String? GetPercentageWidth(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth");
   }
   
   public static void SetPercentageWidth(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth");
   }
   
+  public static DocumentModel.Wordprocessing.Drawings.RelativeWidth? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Drawings.RelativeWidth();
+      value.ObjectId = GetObjectId(openXmlElement);
+      value.PercentageWidth = GetPercentageWidth(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeWidth? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

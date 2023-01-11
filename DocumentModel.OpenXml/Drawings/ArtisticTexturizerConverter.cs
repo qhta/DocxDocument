@@ -10,12 +10,13 @@ public static class ArtisticTexturizerConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticTexturizerConverter
   /// </summary>
   public static Int32? GetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Scaling?.Value;
   }
   
   public static void SetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Scaling = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticTexturizer? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticTexturizer();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.Scaling = GetScaling(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticTexturizer? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

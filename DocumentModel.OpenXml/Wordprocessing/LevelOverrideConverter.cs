@@ -10,12 +10,13 @@ public static class LevelOverrideConverter
   /// </summary>
   public static Int32? GetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.LevelIndex?.Value;
   }
   
   public static void SetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.LevelIndex = value;
   }
   
   /// <summary>
@@ -23,12 +24,12 @@ public static class LevelOverrideConverter
   /// </summary>
   public static Int32? GetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue");
   }
   
   public static void SetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue");
   }
   
   /// <summary>
@@ -36,12 +37,44 @@ public static class LevelOverrideConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Level? GetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Level>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, DocumentModel.Wordprocessing.Level? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Level>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Level>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.LevelOverride? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LevelOverride();
+      value.LevelIndex = GetLevelIndex(openXmlElement);
+      value.StartOverrideNumberingValue = GetStartOverrideNumberingValue(openXmlElement);
+      value.Level = GetLevel(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelOverride? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelOverride, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

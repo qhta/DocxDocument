@@ -8,14 +8,31 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>
-  public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  public static Int64? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Id?.Value;
   }
   
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement, Int32? value)
+  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Id = value;
   }
   
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType();
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

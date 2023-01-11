@@ -10,12 +10,13 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Left?.Value;
   }
   
   public static void SetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Left = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Right?.Value;
   }
   
   public static void SetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Right = value;
   }
   
   /// <summary>
@@ -36,12 +38,13 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Top?.Value;
   }
   
   public static void SetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Top = value;
   }
   
   /// <summary>
@@ -49,12 +52,13 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Bottom?.Value;
   }
   
   public static void SetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Bottom = value;
   }
   
   /// <summary>
@@ -62,12 +66,13 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Header?.Value;
   }
   
   public static void SetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Header = value;
   }
   
   /// <summary>
@@ -75,12 +80,34 @@ public static class PageMarginsConverter
   /// </summary>
   public static Double? GetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Footer?.Value;
   }
   
   public static void SetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Footer = value;
   }
   
+  public static DocumentModel.Drawings.Charts.PageMargins? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.PageMargins();
+      value.Left = GetLeft(openXmlElement);
+      value.Right = GetRight(openXmlElement);
+      value.Top = GetTop(openXmlElement);
+      value.Bottom = GetBottom(openXmlElement);
+      value.Header = GetHeader(openXmlElement);
+      value.Footer = GetFooter(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PageMargins? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PageMargins, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

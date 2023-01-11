@@ -10,12 +10,13 @@ public static class LineNumberTypeConverter
   /// </summary>
   public static Int16? GetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.CountBy?.Value;
   }
   
   public static void SetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.CountBy = value;
   }
   
   /// <summary>
@@ -23,12 +24,13 @@ public static class LineNumberTypeConverter
   /// </summary>
   public static Int16? GetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Start?.Value;
   }
   
   public static void SetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Start = value;
   }
   
   /// <summary>
@@ -36,12 +38,16 @@ public static class LineNumberTypeConverter
   /// </summary>
   public static String? GetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Distance?.Value;
   }
   
   public static void SetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Distance = new StringValue { Value = value };
+      else
+        openXmlElement.Distance = null;
   }
   
   /// <summary>
@@ -58,4 +64,23 @@ public static class LineNumberTypeConverter
       openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DocumentModel.Wordprocessing.LineNumberRestartKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LineNumberType();
+      value.CountBy = GetCountBy(openXmlElement);
+      value.Start = GetStart(openXmlElement);
+      value.Distance = GetDistance(openXmlElement);
+      value.Restart = GetRestart(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineNumberType? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LineNumberType, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

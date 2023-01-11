@@ -51,15 +51,16 @@ public static class TypeManager
 
   public static IEnumerable<string> GetNamespaces(OTS filter)
   {
+    var knownNamespace = KnownNamespaces.ToArray();
     if (filter == OTS.Any)
       return KnownNamespaces.Select(item => item.Key);
     var result = new List<string>();
     if (filter.HasFlag(OTS.Target))
-      result.AddRange(KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
+      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
     if (filter.HasFlag(OTS.Origin))
-      result.AddRange(KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
+      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
     if (filter.HasFlag(OTS.System))
-      result.AddRange(KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
+      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
     return result;
   }
 
@@ -102,7 +103,7 @@ public static class TypeManager
   {
     lock (KnownTypesLock)
     {
-      //if (type.Name == "NullableContextAttribute")
+      //if (type.Name == "StyleSet")
       //  Debug.Assert(true);
       if (KnownTypes.TryGetValue(type, out var info))
         return info;
@@ -152,6 +153,13 @@ public static class TypeManager
     lock (RelationshipsLock)
       return typeInfo.IncomingRelationships.ToArray();
   }
+
+  public static TypeRelationship[] GetIncomingRelationships(this TypeInfo typeInfo, Semantics semantics)
+  {
+    lock (RelationshipsLock)
+      return typeInfo.IncomingRelationships.Where(item => item.Semantics == semantics).ToArray();
+  }
+
 
   public static TypeRelationship[] GetOutgoingRelationships(this TypeInfo typeInfo)
   {

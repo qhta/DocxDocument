@@ -10,12 +10,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.IdQ?.Value;
   }
   
   public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IdQ = new StringValue { Value = value };
+      else
+        openXmlElement.IdQ = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertAfterMso?.Value;
   }
   
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertAfterMso = new StringValue { Value = value };
+      else
+        openXmlElement.InsertAfterMso = null;
   }
   
   /// <summary>
@@ -49,12 +61,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertBeforeMso?.Value;
   }
   
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+      else
+        openXmlElement.InsertBeforeMso = null;
   }
   
   /// <summary>
@@ -62,12 +78,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertAfterQ?.Value;
   }
   
   public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertAfterQ = new StringValue { Value = value };
+      else
+        openXmlElement.InsertAfterQ = null;
   }
   
   /// <summary>
@@ -75,12 +95,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.InsertBeforeQ?.Value;
   }
   
   public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+      else
+        openXmlElement.InsertBeforeQ = null;
   }
   
   /// <summary>
@@ -88,12 +112,16 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Title?.Value;
   }
   
   public static void SetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Title = new StringValue { Value = value };
+      else
+        openXmlElement.Title = null;
   }
   
   /// <summary>
@@ -101,12 +129,39 @@ public static class MenuSeparatorConverter
   /// </summary>
   public static String? GetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GetTitle?.Value;
   }
   
   public static void SetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GetTitle = new StringValue { Value = value };
+      else
+        openXmlElement.GetTitle = null;
   }
   
+  public static DocumentModel.UI.MenuSeparator? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.UI.MenuSeparator();
+      value.Id = GetId(openXmlElement);
+      value.IdQ = GetIdQ(openXmlElement);
+      value.InsertAfterMso = GetInsertAfterMso(openXmlElement);
+      value.InsertBeforeMso = GetInsertBeforeMso(openXmlElement);
+      value.InsertAfterQ = GetInsertAfterQ(openXmlElement);
+      value.InsertBeforeQ = GetInsertBeforeQ(openXmlElement);
+      value.Title = GetTitle(openXmlElement);
+      value.GetTitle = GetGetTitle(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.MenuSeparator? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

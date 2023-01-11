@@ -10,12 +10,42 @@ public static class FilteredScatterSeriesConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ScatterChartSeries3? GetScatterChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeries3Converter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetScatterChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries? openXmlElement, DocumentModel.Drawings.Charts.ScatterChartSeries3? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Charts.FilteredScatterSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Charts.FilteredScatterSeries();
+      value.ScatterChartSeries = GetScatterChartSeries(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredScatterSeries? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

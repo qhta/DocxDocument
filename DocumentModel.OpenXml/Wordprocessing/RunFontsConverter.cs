@@ -24,12 +24,16 @@ public static class RunFontsConverter
   /// </summary>
   public static String? GetAscii(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Ascii?.Value;
   }
   
   public static void SetAscii(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Ascii = new StringValue { Value = value };
+      else
+        openXmlElement.Ascii = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class RunFontsConverter
   /// </summary>
   public static String? GetHighAnsi(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.HighAnsi?.Value;
   }
   
   public static void SetHighAnsi(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HighAnsi = new StringValue { Value = value };
+      else
+        openXmlElement.HighAnsi = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class RunFontsConverter
   /// </summary>
   public static String? GetEastAsia(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.EastAsia?.Value;
   }
   
   public static void SetEastAsia(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.EastAsia = new StringValue { Value = value };
+      else
+        openXmlElement.EastAsia = null;
   }
   
   /// <summary>
@@ -63,12 +75,16 @@ public static class RunFontsConverter
   /// </summary>
   public static String? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ComplexScript?.Value;
   }
   
   public static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ComplexScript = new StringValue { Value = value };
+      else
+        openXmlElement.ComplexScript = null;
   }
   
   /// <summary>
@@ -127,4 +143,28 @@ public static class RunFontsConverter
       openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.RunFonts? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.RunFonts();
+      value.Hint = GetHint(openXmlElement);
+      value.Ascii = GetAscii(openXmlElement);
+      value.HighAnsi = GetHighAnsi(openXmlElement);
+      value.EastAsia = GetEastAsia(openXmlElement);
+      value.ComplexScript = GetComplexScript(openXmlElement);
+      value.AsciiTheme = GetAsciiTheme(openXmlElement);
+      value.HighAnsiTheme = GetHighAnsiTheme(openXmlElement);
+      value.EastAsiaTheme = GetEastAsiaTheme(openXmlElement);
+      value.ComplexScriptTheme = GetComplexScriptTheme(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunFonts? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunFonts, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,13 @@ public static class LinearShadePropertiesConverter
   /// </summary>
   public static Int32? GetAngle(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Angle?.Value;
   }
   
   public static void SetAngle(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Angle = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class LinearShadePropertiesConverter
       openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.LinearShadeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.LinearShadeProperties();
+      value.Angle = GetAngle(openXmlElement);
+      value.Scaled = GetScaled(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LinearShadeProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

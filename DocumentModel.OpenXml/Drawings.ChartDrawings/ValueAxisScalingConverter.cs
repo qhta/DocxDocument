@@ -10,12 +10,16 @@ public static class ValueAxisScalingConverter
   /// </summary>
   public static String? GetMax(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Max?.Value;
   }
   
   public static void SetMax(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Max = new StringValue { Value = value };
+      else
+        openXmlElement.Max = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ValueAxisScalingConverter
   /// </summary>
   public static String? GetMin(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Min?.Value;
   }
   
   public static void SetMin(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Min = new StringValue { Value = value };
+      else
+        openXmlElement.Min = null;
   }
   
   /// <summary>
@@ -36,12 +44,16 @@ public static class ValueAxisScalingConverter
   /// </summary>
   public static String? GetMajorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MajorUnit?.Value;
   }
   
   public static void SetMajorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MajorUnit = new StringValue { Value = value };
+      else
+        openXmlElement.MajorUnit = null;
   }
   
   /// <summary>
@@ -49,12 +61,35 @@ public static class ValueAxisScalingConverter
   /// </summary>
   public static String? GetMinorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.MinorUnit?.Value;
   }
   
   public static void SetMinorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.MinorUnit = new StringValue { Value = value };
+      else
+        openXmlElement.MinorUnit = null;
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.ValueAxisScaling();
+      value.Max = GetMax(openXmlElement);
+      value.Min = GetMin(openXmlElement);
+      value.MajorUnit = GetMajorUnit(openXmlElement);
+      value.MinorUnit = GetMinorUnit(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

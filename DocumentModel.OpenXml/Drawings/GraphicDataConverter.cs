@@ -10,12 +10,32 @@ public static class GraphicDataConverter
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Uri?.Value;
   }
   
   public static void SetUri(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Uri = new StringValue { Value = value };
+      else
+        openXmlElement.Uri = null;
   }
   
+  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.GraphicData();
+      value.Uri = GetUri(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GraphicData? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GraphicData, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -1,23 +1,23 @@
 ﻿namespace DocumentModel;
 
-public struct HexBinary
+public record HexBinary
 {
   private byte[] value;
 
   //public static implicit operator string(HexBinary val) => val.ToString();
 
 
-  public static implicit operator HexBinary(string val) => new HexBinary ( val);
+  public static implicit operator HexBinary(string val) => new HexBinary (val);
 
 
   public static implicit operator byte[](HexBinary val) => val.value;
 
-  public static implicit operator HexBinary(byte[] val) => new HexBinary { value = val };
+  public static implicit operator HexBinary(byte[] val) => new HexBinary(val);
 
 
   public static implicit operator byte(HexBinary val) => val.value[0];
 
-  public static implicit operator HexBinary(byte val) => new HexBinary { value = new byte[] { val } };
+  public static implicit operator HexBinary(byte val) => new HexBinary(new byte[] { val });
 
 
   public static implicit operator ushort(HexBinary val) => ushort.Parse(val.ToString(), NumberStyles.HexNumber, null);

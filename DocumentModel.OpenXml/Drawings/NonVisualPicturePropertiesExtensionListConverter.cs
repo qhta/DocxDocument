@@ -7,12 +7,51 @@ public static class NonVisualPicturePropertiesExtensionListConverter
 {
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>? GetNonVisualPicturePropertiesExtensions(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>();
+      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>())
+      {
+        var newItem = DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   public static void SetNonVisualPicturePropertiesExtensions(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>(item);
+          if (newItem != null)
+            openXmlElement.AddChild(newItem);
+        }
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList();
+      value.NonVisualPicturePropertiesExtensions = GetNonVisualPicturePropertiesExtensions(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

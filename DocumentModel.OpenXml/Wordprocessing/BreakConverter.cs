@@ -33,4 +33,21 @@ public static class BreakConverter
       openXmlElement.Clear = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DocumentModel.Wordprocessing.BreakTextRestartLocationKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.Break? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Break? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Break();
+      value.Type = GetType(openXmlElement);
+      value.Clear = GetClear(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Break? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Break, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

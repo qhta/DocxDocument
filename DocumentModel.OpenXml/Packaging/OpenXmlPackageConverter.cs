@@ -10,12 +10,12 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static Boolean? GetStrictRelationshipFound(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is System.Boolean");
   }
   
   public static void SetStrictRelationshipFound(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is System.Boolean");
   }
   
   /// <summary>
@@ -23,7 +23,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.Packaging.Package? GetPackage(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   /// <summary>
@@ -31,7 +31,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.FileAccess? GetFileOpenAccess(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GenerateEnumPropertyGetCode");
+    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
   }
   
   /// <summary>
@@ -39,7 +39,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static DocumentModel.Properties.CoreProperties? GetPackageProperties(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   /// <summary>
@@ -47,12 +47,12 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.Packaging.CompressionOption? GetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GenerateEnumPropertyGetCode");
+    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
   }
   
   public static void SetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement, System.IO.Packaging.CompressionOption? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GenerateEnumPropertySetCode");
+    throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: 1");
   }
   
   /// <summary>
@@ -60,7 +60,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.Collections.Generic.Dictionary<String, String>? GetPartExtensionProvider(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   /// <summary>
@@ -68,7 +68,18 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPart>? GetDataParts(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    if (openXmlElement != null)
+    {
+      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPart>();
+      foreach (var item in openXmlElement.DataParts)
+      {
+        var newItem = DocumentModel.OpenXml.Packaging.DataPartConverter.CreateModelElement(item);
+        if (newItem != null)
+          collection.Add(newItem);
+      }
+      return collection;
+    }
+    return null;
   }
   
   /// <summary>
@@ -76,7 +87,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static DocumentModel.Packaging.MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
   }
   
   /// <summary>
@@ -84,7 +95,31 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static Boolean? GetAutoSave(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is System.Boolean");
   }
   
+  public static DocumentModel.Packaging.OpenXmlPackage? CreateModelElement(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Packaging.OpenXmlPackage();
+      value.StrictRelationshipFound = GetStrictRelationshipFound(openXmlElement);
+      value.Package = GetPackage(openXmlElement);
+      value.FileOpenAccess = GetFileOpenAccess(openXmlElement);
+      value.PackageProperties = GetPackageProperties(openXmlElement);
+      value.CompressionOption = GetCompressionOption(openXmlElement);
+      value.PartExtensionProvider = GetPartExtensionProvider(openXmlElement);
+      value.DataParts = GetDataParts(openXmlElement);
+      value.MarkupCompatibilityProcessSettings = GetMarkupCompatibilityProcessSettings(openXmlElement);
+      value.AutoSave = GetAutoSave(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.OpenXmlPackage? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.OpenXmlPackage, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

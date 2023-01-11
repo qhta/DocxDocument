@@ -10,12 +10,16 @@ public static class TableCellPropertiesChangeConverter
   /// </summary>
   public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Author?.Value;
   }
   
   public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Author = new StringValue { Value = value };
+      else
+        openXmlElement.Author = null;
   }
   
   /// <summary>
@@ -23,12 +27,13 @@ public static class TableCellPropertiesChangeConverter
   /// </summary>
   public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Date?.Value;
   }
   
   public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, DateTime? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Date = value;
   }
   
   /// <summary>
@@ -36,12 +41,16 @@ public static class TableCellPropertiesChangeConverter
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Id?.Value;
   }
   
   public static void SetId(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Id = new StringValue { Value = value };
+      else
+        openXmlElement.Id = null;
   }
   
   /// <summary>
@@ -49,12 +58,45 @@ public static class TableCellPropertiesChangeConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.PreviousTableCellProperties? GetPreviousTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.PreviousTableCellPropertiesConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetPreviousTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousTableCellPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Wordprocessing.TableCellPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableCellPropertiesChange();
+      value.Author = GetAuthor(openXmlElement);
+      value.Date = GetDate(openXmlElement);
+      value.Id = GetId(openXmlElement);
+      value.PreviousTableCellProperties = GetPreviousTableCellProperties(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellPropertiesChange? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

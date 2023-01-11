@@ -10,12 +10,29 @@ public static class Saturation2Converter
   /// </summary>
   public static Int32? GetSaturationAmount(DocumentFormat.OpenXml.Office2010.Drawing.Saturation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SaturationAmount?.Value;
   }
   
   public static void SetSaturationAmount(DocumentFormat.OpenXml.Office2010.Drawing.Saturation? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SaturationAmount = value;
   }
   
+  public static DocumentModel.Drawings.Saturation2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.Saturation? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Saturation2();
+      value.SaturationAmount = GetSaturationAmount(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Saturation2? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Saturation, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

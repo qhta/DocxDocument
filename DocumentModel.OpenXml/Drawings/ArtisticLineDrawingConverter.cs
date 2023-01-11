@@ -10,12 +10,13 @@ public static class ArtisticLineDrawingConverter
   /// </summary>
   public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Transparancy?.Value;
   }
   
   public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Transparancy = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class ArtisticLineDrawingConverter
   /// </summary>
   public static Int32? GetPencilSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.PencilSize?.Value;
   }
   
   public static void SetPencilSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.PencilSize = value;
   }
   
+  public static DocumentModel.Drawings.ArtisticLineDrawing? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ArtisticLineDrawing();
+      value.Transparancy = GetTransparancy(openXmlElement);
+      value.PencilSize = GetPencilSize(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticLineDrawing? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

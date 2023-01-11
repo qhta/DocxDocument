@@ -10,12 +10,32 @@ public static class CategoryAxisScalingConverter
   /// </summary>
   public static String? GetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.GapWidth?.Value;
   }
   
   public static void SetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.GapWidth = new StringValue { Value = value };
+      else
+        openXmlElement.GapWidth = null;
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling();
+      value.GapWidth = GetGapWidth(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

@@ -10,12 +10,13 @@ public static class TableIndentationConverter
   /// </summary>
   public static Int32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.TableIndentation? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.Width?.Value;
   }
   
   public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.TableIndentation? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.Width = value;
   }
   
   /// <summary>
@@ -32,4 +33,21 @@ public static class TableIndentationConverter
       openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DocumentModel.Wordprocessing.TableWidthUnitKind>(value);
   }
   
+  public static DocumentModel.Wordprocessing.TableIndentation? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableIndentation? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.TableIndentation();
+      value.Width = GetWidth(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableIndentation? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableIndentation, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

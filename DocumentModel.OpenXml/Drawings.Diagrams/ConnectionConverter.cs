@@ -10,12 +10,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ModelId?.Value;
   }
   
   public static void SetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ModelId = new StringValue { Value = value };
+      else
+        openXmlElement.ModelId = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetSourceId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SourceId?.Value;
   }
   
   public static void SetSourceId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SourceId = new StringValue { Value = value };
+      else
+        openXmlElement.SourceId = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetDestinationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.DestinationId?.Value;
   }
   
   public static void SetDestinationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DestinationId = new StringValue { Value = value };
+      else
+        openXmlElement.DestinationId = null;
   }
   
   /// <summary>
@@ -63,12 +75,13 @@ public static class ConnectionConverter
   /// </summary>
   public static UInt32? GetSourcePosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.SourcePosition?.Value;
   }
   
   public static void SetSourcePosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.SourcePosition = value;
   }
   
   /// <summary>
@@ -76,12 +89,13 @@ public static class ConnectionConverter
   /// </summary>
   public static UInt32? GetDestinationPosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.DestinationPosition?.Value;
   }
   
   public static void SetDestinationPosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.DestinationPosition = value;
   }
   
   /// <summary>
@@ -89,12 +103,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetParentTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ParentTransitionId?.Value;
   }
   
   public static void SetParentTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ParentTransitionId = new StringValue { Value = value };
+      else
+        openXmlElement.ParentTransitionId = null;
   }
   
   /// <summary>
@@ -102,12 +120,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetSiblingTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.SiblingTransitionId?.Value;
   }
   
   public static void SetSiblingTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SiblingTransitionId = new StringValue { Value = value };
+      else
+        openXmlElement.SiblingTransitionId = null;
   }
   
   /// <summary>
@@ -115,12 +137,16 @@ public static class ConnectionConverter
   /// </summary>
   public static String? GetPresentationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.PresentationId?.Value;
   }
   
   public static void SetPresentationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PresentationId = new StringValue { Value = value };
+      else
+        openXmlElement.PresentationId = null;
   }
   
   /// <summary>
@@ -128,12 +154,51 @@ public static class ConnectionConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+    return null;
   }
   
   public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+        if (itemElement != null)
+          openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
+  public static DocumentModel.Drawings.Diagrams.Connection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.Diagrams.Connection();
+      value.ModelId = GetModelId(openXmlElement);
+      value.Type = GetType(openXmlElement);
+      value.SourceId = GetSourceId(openXmlElement);
+      value.DestinationId = GetDestinationId(openXmlElement);
+      value.SourcePosition = GetSourcePosition(openXmlElement);
+      value.DestinationPosition = GetDestinationPosition(openXmlElement);
+      value.ParentTransitionId = GetParentTransitionId(openXmlElement);
+      value.SiblingTransitionId = GetSiblingTransitionId(openXmlElement);
+      value.PresentationId = GetPresentationId(openXmlElement);
+      value.ExtensionList = GetExtensionList(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Connection? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Connection, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

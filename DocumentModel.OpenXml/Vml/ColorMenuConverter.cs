@@ -24,12 +24,16 @@ public static class ColorMenuConverter
   /// </summary>
   public static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.StrokeColor?.Value;
   }
   
   public static void SetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.StrokeColor = new StringValue { Value = value };
+      else
+        openXmlElement.StrokeColor = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class ColorMenuConverter
   /// </summary>
   public static String? GetFillColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.FillColor?.Value;
   }
   
   public static void SetFillColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FillColor = new StringValue { Value = value };
+      else
+        openXmlElement.FillColor = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class ColorMenuConverter
   /// </summary>
   public static String? GetShadowColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ShadowColor?.Value;
   }
   
   public static void SetShadowColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShadowColor = new StringValue { Value = value };
+      else
+        openXmlElement.ShadowColor = null;
   }
   
   /// <summary>
@@ -63,12 +75,36 @@ public static class ColorMenuConverter
   /// </summary>
   public static String? GetExtrusionColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ExtrusionColor?.Value;
   }
   
   public static void SetExtrusionColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ExtrusionColor = new StringValue { Value = value };
+      else
+        openXmlElement.ExtrusionColor = null;
   }
   
+  public static DocumentModel.Vml.ColorMenu? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Vml.ColorMenu();
+      value.Extension = GetExtension(openXmlElement);
+      value.StrokeColor = GetStrokeColor(openXmlElement);
+      value.FillColor = GetFillColor(openXmlElement);
+      value.ShadowColor = GetShadowColor(openXmlElement);
+      value.ExtrusionColor = GetExtrusionColor(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ColorMenu? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ColorMenu, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

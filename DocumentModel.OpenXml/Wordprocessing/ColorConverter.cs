@@ -10,12 +10,16 @@ public static class ColorConverter
   /// </summary>
   public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.Val?.Value;
   }
   
   public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Val = new StringValue { Value = value };
+      else
+        openXmlElement.Val = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class ColorConverter
   /// </summary>
   public static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeTint?.Value;
   }
   
   public static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeTint = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeTint = null;
   }
   
   /// <summary>
@@ -50,12 +58,35 @@ public static class ColorConverter
   /// </summary>
   public static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in propertyType is DocumentFormat.OpenXml.StringValue");
+    return openXmlElement?.ThemeShade?.Value;
   }
   
   public static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ThemeShade = new StringValue { Value = value };
+      else
+        openXmlElement.ThemeShade = null;
   }
   
+  public static DocumentModel.Wordprocessing.Color? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Wordprocessing.Color();
+      value.Val = GetVal(openXmlElement);
+      value.ThemeColor = GetThemeColor(openXmlElement);
+      value.ThemeTint = GetThemeTint(openXmlElement);
+      value.ThemeShade = GetThemeShade(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Color, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

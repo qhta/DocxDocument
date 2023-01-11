@@ -19,4 +19,20 @@ public static class ParentLabelLayoutConverter
       openXmlElement.ParentLabelLayoutVal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal>(value);
   }
   
+  public static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.ChartDrawings.ParentLabelLayout();
+      value.ParentLabelLayoutVal = GetParentLabelLayoutVal(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }

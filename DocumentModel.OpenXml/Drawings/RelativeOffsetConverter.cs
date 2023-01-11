@@ -10,12 +10,13 @@ public static class RelativeOffsetConverter
   /// </summary>
   public static Int32? GetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.OffsetX?.Value;
   }
   
   public static void SetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.OffsetX = value;
   }
   
   /// <summary>
@@ -23,12 +24,30 @@ public static class RelativeOffsetConverter
   /// </summary>
   public static Int32? GetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertyGetter");
+    return openXmlElement?.OffsetY?.Value;
   }
   
   public static void SetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented 1 in GeneratePropertySetter");
+    if (openXmlElement != null)
+      openXmlElement.OffsetY = value;
   }
   
+  public static DocumentModel.Drawings.RelativeOffset? CreateModelElement(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.Drawings.RelativeOffset();
+      value.OffsetX = GetOffsetX(openXmlElement);
+      value.OffsetY = GetOffsetY(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeOffset? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeOffset, new()
+  {
+  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+  }
 }
