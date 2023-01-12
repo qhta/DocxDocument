@@ -46,6 +46,12 @@ public static class MatrixColumnConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumn? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumn, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMatrixColumnProperties(openXmlElement, value?.MatrixColumnProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

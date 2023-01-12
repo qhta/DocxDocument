@@ -156,6 +156,19 @@ public static class BackgroundConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Background? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Background, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetFilled(openXmlElement, value?.Filled);
+      SetFillcolor(openXmlElement, value?.Fillcolor);
+      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+      SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
+      SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
+      SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
+      SetFill(openXmlElement, value?.Fill);
+      return openXmlElement;
+    }
+    return default;
   }
 }

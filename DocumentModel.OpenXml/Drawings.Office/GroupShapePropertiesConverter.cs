@@ -319,6 +319,13 @@ public static class GroupShapePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.GroupShapeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+      SetTransformGroup(openXmlElement, value?.TransformGroup);
+      return openXmlElement;
+    }
+    return default;
   }
 }

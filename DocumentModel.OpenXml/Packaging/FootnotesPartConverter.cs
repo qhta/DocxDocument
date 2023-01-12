@@ -304,6 +304,12 @@ public static class FootnotesPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.FootnotesPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.FootnotesPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFootnotes(openXmlElement, value?.Footnotes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

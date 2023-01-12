@@ -88,6 +88,14 @@ public static class NumberReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormula(openXmlElement, value?.Formula);
+      SetNumberingCache(openXmlElement, value?.NumberingCache);
+      SetNumRefExtensionList(openXmlElement, value?.NumRefExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -63,6 +63,14 @@ public static class PositionalTabConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PositionalTab? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PositionalTab, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetRelativeTo(openXmlElement, value?.RelativeTo);
+      SetLeader(openXmlElement, value?.Leader);
+      return openXmlElement;
+    }
+    return default;
   }
 }

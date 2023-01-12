@@ -70,6 +70,12 @@ public static class SdtContentComboBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentComboBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLastValue(openXmlElement, value?.LastValue);
+      return openXmlElement;
+    }
+    return default;
   }
 }

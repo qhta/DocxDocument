@@ -440,8 +440,8 @@ public static class ModelData
     //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInteger), typeof(DocumentModel.VariantTypes.VTUnsignedInt64)},
     //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedShort), typeof(DocumentModel.VariantTypes.VTUnsignedShort)},
     //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTVStreamData), typeof(DocumentModel.VariantTypes.VTVStream)},
-    { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
-    { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
+    { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(byte[])},
+    { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(byte[])},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

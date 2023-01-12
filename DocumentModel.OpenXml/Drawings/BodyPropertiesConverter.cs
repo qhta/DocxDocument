@@ -535,6 +535,31 @@ public static class BodyPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BodyProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BodyProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRotation(openXmlElement, value?.Rotation);
+      SetUseParagraphSpacing(openXmlElement, value?.UseParagraphSpacing);
+      SetVerticalOverflow(openXmlElement, value?.VerticalOverflow);
+      SetHorizontalOverflow(openXmlElement, value?.HorizontalOverflow);
+      SetVertical(openXmlElement, value?.Vertical);
+      SetWrap(openXmlElement, value?.Wrap);
+      SetLeftInset(openXmlElement, value?.LeftInset);
+      SetTopInset(openXmlElement, value?.TopInset);
+      SetRightInset(openXmlElement, value?.RightInset);
+      SetBottomInset(openXmlElement, value?.BottomInset);
+      SetColumnCount(openXmlElement, value?.ColumnCount);
+      SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
+      SetRightToLeftColumns(openXmlElement, value?.RightToLeftColumns);
+      SetFromWordArt(openXmlElement, value?.FromWordArt);
+      SetAnchor(openXmlElement, value?.Anchor);
+      SetAnchorCenter(openXmlElement, value?.AnchorCenter);
+      SetForceAntiAlias(openXmlElement, value?.ForceAntiAlias);
+      SetUpRight(openXmlElement, value?.UpRight);
+      SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
+      SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
+      return openXmlElement;
+    }
+    return default;
   }
 }

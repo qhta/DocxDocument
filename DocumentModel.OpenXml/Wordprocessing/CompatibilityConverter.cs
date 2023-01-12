@@ -2132,6 +2132,76 @@ public static class CompatibilityConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Compatibility? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Compatibility, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUseSingleBorderForContiguousCells(openXmlElement, value?.UseSingleBorderForContiguousCells);
+      SetWordPerfectJustification(openXmlElement, value?.WordPerfectJustification);
+      SetNoTabHangIndent(openXmlElement, value?.NoTabHangIndent);
+      SetNoLeading(openXmlElement, value?.NoLeading);
+      SetSpaceForUnderline(openXmlElement, value?.SpaceForUnderline);
+      SetNoColumnBalance(openXmlElement, value?.NoColumnBalance);
+      SetBalanceSingleByteDoubleByteWidth(openXmlElement, value?.BalanceSingleByteDoubleByteWidth);
+      SetNoExtraLineSpacing(openXmlElement, value?.NoExtraLineSpacing);
+      SetDoNotLeaveBackslashAlone(openXmlElement, value?.DoNotLeaveBackslashAlone);
+      SetUnderlineTrailingSpaces(openXmlElement, value?.UnderlineTrailingSpaces);
+      SetDoNotExpandShiftReturn(openXmlElement, value?.DoNotExpandShiftReturn);
+      SetSpacingInWholePoints(openXmlElement, value?.SpacingInWholePoints);
+      SetLineWrapLikeWord6(openXmlElement, value?.LineWrapLikeWord6);
+      SetPrintBodyTextBeforeHeader(openXmlElement, value?.PrintBodyTextBeforeHeader);
+      SetPrintColorBlackWhite(openXmlElement, value?.PrintColorBlackWhite);
+      SetWordPerfectSpaceWidth(openXmlElement, value?.WordPerfectSpaceWidth);
+      SetShowBreaksInFrames(openXmlElement, value?.ShowBreaksInFrames);
+      SetSubFontBySize(openXmlElement, value?.SubFontBySize);
+      SetSuppressBottomSpacing(openXmlElement, value?.SuppressBottomSpacing);
+      SetSuppressTopSpacing(openXmlElement, value?.SuppressTopSpacing);
+      SetSuppressSpacingAtTopOfPage(openXmlElement, value?.SuppressSpacingAtTopOfPage);
+      SetSuppressTopSpacingWordPerfect(openXmlElement, value?.SuppressTopSpacingWordPerfect);
+      SetSuppressSpacingBeforeAfterPageBreak(openXmlElement, value?.SuppressSpacingBeforeAfterPageBreak);
+      SetSwapBordersFacingPages(openXmlElement, value?.SwapBordersFacingPages);
+      SetConvertMailMergeEscape(openXmlElement, value?.ConvertMailMergeEscape);
+      SetTruncateFontHeightsLikeWordPerfect(openXmlElement, value?.TruncateFontHeightsLikeWordPerfect);
+      SetMacWordSmallCaps(openXmlElement, value?.MacWordSmallCaps);
+      SetUsePrinterMetrics(openXmlElement, value?.UsePrinterMetrics);
+      SetDoNotSuppressParagraphBorders(openXmlElement, value?.DoNotSuppressParagraphBorders);
+      SetWrapTrailSpaces(openXmlElement, value?.WrapTrailSpaces);
+      SetFootnoteLayoutLikeWord8(openXmlElement, value?.FootnoteLayoutLikeWord8);
+      SetShapeLayoutLikeWord8(openXmlElement, value?.ShapeLayoutLikeWord8);
+      SetAlignTablesRowByRow(openXmlElement, value?.AlignTablesRowByRow);
+      SetForgetLastTabAlignment(openXmlElement, value?.ForgetLastTabAlignment);
+      SetAdjustLineHeightInTable(openXmlElement, value?.AdjustLineHeightInTable);
+      SetAutoSpaceLikeWord95(openXmlElement, value?.AutoSpaceLikeWord95);
+      SetNoSpaceRaiseLower(openXmlElement, value?.NoSpaceRaiseLower);
+      SetDoNotUseHTMLParagraphAutoSpacing(openXmlElement, value?.DoNotUseHTMLParagraphAutoSpacing);
+      SetLayoutRawTableWidth(openXmlElement, value?.LayoutRawTableWidth);
+      SetLayoutTableRowsApart(openXmlElement, value?.LayoutTableRowsApart);
+      SetUseWord97LineBreakRules(openXmlElement, value?.UseWord97LineBreakRules);
+      SetDoNotBreakWrappedTables(openXmlElement, value?.DoNotBreakWrappedTables);
+      SetDoNotSnapToGridInCell(openXmlElement, value?.DoNotSnapToGridInCell);
+      SetSelectFieldWithFirstOrLastChar(openXmlElement, value?.SelectFieldWithFirstOrLastChar);
+      SetApplyBreakingRules(openXmlElement, value?.ApplyBreakingRules);
+      SetDoNotWrapTextWithPunctuation(openXmlElement, value?.DoNotWrapTextWithPunctuation);
+      SetDoNotUseEastAsianBreakRules(openXmlElement, value?.DoNotUseEastAsianBreakRules);
+      SetUseWord2002TableStyleRules(openXmlElement, value?.UseWord2002TableStyleRules);
+      SetGrowAutofit(openXmlElement, value?.GrowAutofit);
+      SetUseFarEastLayout(openXmlElement, value?.UseFarEastLayout);
+      SetUseNormalStyleForList(openXmlElement, value?.UseNormalStyleForList);
+      SetDoNotUseIndentAsNumberingTabStop(openXmlElement, value?.DoNotUseIndentAsNumberingTabStop);
+      SetUseAltKinsokuLineBreakRules(openXmlElement, value?.UseAltKinsokuLineBreakRules);
+      SetAllowSpaceOfSameStyleInTable(openXmlElement, value?.AllowSpaceOfSameStyleInTable);
+      SetDoNotSuppressIndentation(openXmlElement, value?.DoNotSuppressIndentation);
+      SetDoNotAutofitConstrainedTables(openXmlElement, value?.DoNotAutofitConstrainedTables);
+      SetAutofitToFirstFixedWidthCell(openXmlElement, value?.AutofitToFirstFixedWidthCell);
+      SetUnderlineTabInNumberingList(openXmlElement, value?.UnderlineTabInNumberingList);
+      SetDisplayHangulFixedWidth(openXmlElement, value?.DisplayHangulFixedWidth);
+      SetSplitPageBreakAndParagraphMark(openXmlElement, value?.SplitPageBreakAndParagraphMark);
+      SetDoNotVerticallyAlignCellWithShape(openXmlElement, value?.DoNotVerticallyAlignCellWithShape);
+      SetDoNotBreakConstrainedForcedTable(openXmlElement, value?.DoNotBreakConstrainedForcedTable);
+      SetDoNotVerticallyAlignInTextBox(openXmlElement, value?.DoNotVerticallyAlignInTextBox);
+      SetUseAnsiKerningPairs(openXmlElement, value?.UseAnsiKerningPairs);
+      SetCachedColumnBalance(openXmlElement, value?.CachedColumnBalance);
+      return openXmlElement;
+    }
+    return default;
   }
 }

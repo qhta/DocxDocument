@@ -102,6 +102,14 @@ public static class FontCollectionTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FontCollectionType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FontCollectionType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLatinFont(openXmlElement, value?.LatinFont);
+      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+      return openXmlElement;
+    }
+    return default;
   }
 }

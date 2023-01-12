@@ -130,6 +130,15 @@ public static class Scene3DTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Scene3DType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Scene3DType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCamera(openXmlElement, value?.Camera);
+      SetLightRig(openXmlElement, value?.LightRig);
+      SetBackdrop(openXmlElement, value?.Backdrop);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

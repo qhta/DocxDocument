@@ -36,6 +36,12 @@ public static class PredecessorDrawingElementReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PredecessorDrawingElementReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPred(openXmlElement, value?.Pred);
+      return openXmlElement;
+    }
+    return default;
   }
 }

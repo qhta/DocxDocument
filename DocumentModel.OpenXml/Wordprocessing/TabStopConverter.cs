@@ -63,6 +63,14 @@ public static class TabStopConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TabStop? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TabStop, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetLeader(openXmlElement, value?.Leader);
+      SetPosition(openXmlElement, value?.Position);
+      return openXmlElement;
+    }
+    return default;
   }
 }

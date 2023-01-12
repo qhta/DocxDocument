@@ -154,6 +154,14 @@ public static class GradientFillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GradientFill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GradientFill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFlip(openXmlElement, value?.Flip);
+      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+      SetGradientStopList(openXmlElement, value?.GradientStopList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -310,6 +310,20 @@ public static class BorderBoxPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBoxProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBoxProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHideTop(openXmlElement, value?.HideTop);
+      SetHideBottom(openXmlElement, value?.HideBottom);
+      SetHideLeft(openXmlElement, value?.HideLeft);
+      SetHideRight(openXmlElement, value?.HideRight);
+      SetStrikeHorizontal(openXmlElement, value?.StrikeHorizontal);
+      SetStrikeVertical(openXmlElement, value?.StrikeVertical);
+      SetStrikeBottomLeftToTopRight(openXmlElement, value?.StrikeBottomLeftToTopRight);
+      SetStrikeTopLeftToBottomRight(openXmlElement, value?.StrikeTopLeftToBottomRight);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

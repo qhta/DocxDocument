@@ -23,22 +23,22 @@ public partial class GalleryRegular
   /// <summary>
   /// columns, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Columns { get; set; }
+  public Int64? Columns { get; set; }
   
   /// <summary>
   /// rows, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? Rows { get; set; }
+  public Int64? Rows { get; set; }
   
   /// <summary>
   /// itemWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? ItemWidth { get; set; }
+  public Int64? ItemWidth { get; set; }
   
   /// <summary>
   /// itemHeight, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? ItemHeight { get; set; }
+  public Int64? ItemHeight { get; set; }
   
   /// <summary>
   /// getItemWidth, this property is only available in Office 2010 and later.

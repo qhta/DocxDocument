@@ -81,6 +81,15 @@ public static class LineNumberTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineNumberType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LineNumberType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCountBy(openXmlElement, value?.CountBy);
+      SetStart(openXmlElement, value?.Start);
+      SetDistance(openXmlElement, value?.Distance);
+      SetRestart(openXmlElement, value?.Restart);
+      return openXmlElement;
+    }
+    return default;
   }
 }

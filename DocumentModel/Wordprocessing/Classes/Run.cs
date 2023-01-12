@@ -8,17 +8,17 @@ public partial class Run
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  public DocumentModel.HexBinary? RsidRunProperties { get; set; }
+  public Byte[]? RsidRunProperties { get; set; }
   
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  public DocumentModel.HexBinary? RsidRunDeletion { get; set; }
+  public Byte[]? RsidRunDeletion { get; set; }
   
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  public DocumentModel.HexBinary? RsidRunAddition { get; set; }
+  public Byte[]? RsidRunAddition { get; set; }
   
   /// <summary>
   /// Run Properties.

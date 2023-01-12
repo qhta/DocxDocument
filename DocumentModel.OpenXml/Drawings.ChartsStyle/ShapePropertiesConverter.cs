@@ -419,6 +419,13 @@ public static class ShapePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.ShapeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+      SetTransform2D(openXmlElement, value?.Transform2D);
+      return openXmlElement;
+    }
+    return default;
   }
 }

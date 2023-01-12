@@ -100,6 +100,15 @@ public static class ThemeFamilyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ThemeFamily? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetId(openXmlElement, value?.Id);
+      SetVid(openXmlElement, value?.Vid);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -130,6 +130,15 @@ public static class PreSubSuperConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.PreSubSuper? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.PreSubSuper, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPreSubSuperProperties(openXmlElement, value?.PreSubSuperProperties);
+      SetSubArgument(openXmlElement, value?.SubArgument);
+      SetSuperArgument(openXmlElement, value?.SuperArgument);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

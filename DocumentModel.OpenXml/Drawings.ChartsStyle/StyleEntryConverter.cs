@@ -10,12 +10,12 @@ public static class StyleEntryConverter
   /// </summary>
   public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
   }
   
   public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.ListOf<String>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
   }
   
   /// <summary>
@@ -270,6 +270,21 @@ public static class StyleEntryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleEntry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetModifiers(openXmlElement, value?.Modifiers);
+      SetLineReference(openXmlElement, value?.LineReference);
+      SetLineWidthScale(openXmlElement, value?.LineWidthScale);
+      SetFillReference(openXmlElement, value?.FillReference);
+      SetEffectReference(openXmlElement, value?.EffectReference);
+      SetFontReference(openXmlElement, value?.FontReference);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
+      SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -10,12 +10,25 @@ public static class DropDownListFormFieldConverter
   /// </summary>
   public static Int32? GetDropDownListSelection(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDropDownListSelection(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +36,25 @@ public static class DropDownListFormFieldConverter
   /// </summary>
   public static Int32? GetDefaultDropDownListItemIndex(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDefaultDropDownListItemIndex(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<String>? GetListEntryFormFields(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement)
@@ -80,6 +106,13 @@ public static class DropDownListFormFieldConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DropDownListFormField? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDropDownListSelection(openXmlElement, value?.DropDownListSelection);
+      SetDefaultDropDownListItemIndex(openXmlElement, value?.DefaultDropDownListItemIndex);
+      return openXmlElement;
+    }
+    return default;
   }
 }

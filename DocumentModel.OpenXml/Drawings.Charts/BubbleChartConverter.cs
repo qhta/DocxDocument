@@ -123,12 +123,25 @@ public static class BubbleChartConverter
   
   public static UInt32? GetBubbleScale(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.BubbleScale");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BubbleScale>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetBubbleScale(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.BubbleScale");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BubbleScale>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.BubbleScale{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetShowNegativeBubbles(DocumentFormat.OpenXml.Drawing.Charts.BubbleChart? openXmlElement)
@@ -267,6 +280,12 @@ public static class BubbleChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BubbleChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BubbleChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

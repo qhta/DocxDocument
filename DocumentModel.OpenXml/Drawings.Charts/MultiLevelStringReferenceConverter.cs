@@ -88,6 +88,14 @@ public static class MultiLevelStringReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormula(openXmlElement, value?.Formula);
+      SetMultiLevelStringCache(openXmlElement, value?.MultiLevelStringCache);
+      SetMultiLvlStrRefExtensionList(openXmlElement, value?.MultiLvlStrRefExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

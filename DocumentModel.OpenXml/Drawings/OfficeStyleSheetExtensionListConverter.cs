@@ -52,6 +52,11 @@ public static class OfficeStyleSheetExtensionListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OfficeStyleSheetExtensionList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

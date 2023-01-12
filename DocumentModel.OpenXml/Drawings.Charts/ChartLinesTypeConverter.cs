@@ -46,6 +46,12 @@ public static class ChartLinesTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartLinesType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

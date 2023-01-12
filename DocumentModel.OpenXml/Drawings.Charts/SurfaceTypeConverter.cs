@@ -10,12 +10,25 @@ public static class SurfaceTypeConverter
   /// </summary>
   public static Byte? GetThickness(DocumentFormat.OpenXml.Drawing.Charts.SurfaceType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Thickness");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetThickness(DocumentFormat.OpenXml.Drawing.Charts.SurfaceType? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Thickness");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -116,6 +129,15 @@ public static class SurfaceTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SurfaceType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SurfaceType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetThickness(openXmlElement, value?.Thickness);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -18,12 +18,12 @@ public partial class MatrixProperties
   /// <summary>
   /// Row Spacing Rule.
   /// </summary>
-  public Int32? RowSpacingRule { get; set; }
+  public Int64? RowSpacingRule { get; set; }
   
   /// <summary>
   /// Matrix Column Gap Rule.
   /// </summary>
-  public Int32? ColumnGapRule { get; set; }
+  public Int64? ColumnGapRule { get; set; }
   
   /// <summary>
   /// Row Spacing (Matrix).

@@ -79,6 +79,13 @@ public static class SubSuperscriptPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.SubSuperscriptProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.SubSuperscriptProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAlignScripts(openXmlElement, value?.AlignScripts);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

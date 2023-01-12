@@ -117,6 +117,15 @@ public static class ShapeLayoutConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeLayout? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeLayout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetShapeIdMap(openXmlElement, value?.ShapeIdMap);
+      SetRegroupTable(openXmlElement, value?.RegroupTable);
+      SetRules(openXmlElement, value?.Rules);
+      return openXmlElement;
+    }
+    return default;
   }
 }

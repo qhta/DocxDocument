@@ -473,6 +473,36 @@ public static class BackstageTabConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageTab? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetTitle(openXmlElement, value?.Title);
+      SetGetTitle(openXmlElement, value?.GetTitle);
+      SetColumnWidthPercent(openXmlElement, value?.ColumnWidthPercent);
+      SetFirstColumnMinWidth(openXmlElement, value?.FirstColumnMinWidth);
+      SetFirstColumnMaxWidth(openXmlElement, value?.FirstColumnMaxWidth);
+      SetSecondColumnMinWidth(openXmlElement, value?.SecondColumnMinWidth);
+      SetSecondColumnMaxWidth(openXmlElement, value?.SecondColumnMaxWidth);
+      SetBackstageGroups(openXmlElement, value?.BackstageGroups);
+      SetSimpleGroups(openXmlElement, value?.SimpleGroups);
+      return openXmlElement;
+    }
+    return default;
   }
 }

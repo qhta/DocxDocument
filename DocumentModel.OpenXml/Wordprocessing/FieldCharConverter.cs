@@ -139,6 +139,17 @@ public static class FieldCharConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldChar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldChar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFieldCharType(openXmlElement, value?.FieldCharType);
+      SetFieldLock(openXmlElement, value?.FieldLock);
+      SetDirty(openXmlElement, value?.Dirty);
+      SetFieldData(openXmlElement, value?.FieldData);
+      SetFormFieldData(openXmlElement, value?.FormFieldData);
+      SetNumberingChange(openXmlElement, value?.NumberingChange);
+      return openXmlElement;
+    }
+    return default;
   }
 }

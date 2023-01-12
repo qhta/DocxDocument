@@ -596,6 +596,12 @@ public static class SdtRunConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtRun? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtRun, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSdtContentRun(openXmlElement, value?.SdtContentRun);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -181,6 +181,18 @@ public static class PointConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Point? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Point, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetModelId(openXmlElement, value?.ModelId);
+      SetType(openXmlElement, value?.Type);
+      SetConnectionId(openXmlElement, value?.ConnectionId);
+      SetPropertySet(openXmlElement, value?.PropertySet);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTextBody(openXmlElement, value?.TextBody);
+      SetPtExtensionList(openXmlElement, value?.PtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -10,12 +10,25 @@ public static class DataPointConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.DataPoint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.DataPoint? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -112,12 +125,25 @@ public static class DataPointConverter
   /// </summary>
   public static UInt32? GetExplosion(DocumentFormat.OpenXml.Drawing.Charts.DataPoint? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Explosion");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Explosion>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetExplosion(DocumentFormat.OpenXml.Drawing.Charts.DataPoint? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Explosion");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Explosion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Explosion{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -222,6 +248,19 @@ public static class DataPointConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataPoint? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DataPoint, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
+      SetMarker(openXmlElement, value?.Marker);
+      SetBubble3D(openXmlElement, value?.Bubble3D);
+      SetExplosion(openXmlElement, value?.Explosion);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

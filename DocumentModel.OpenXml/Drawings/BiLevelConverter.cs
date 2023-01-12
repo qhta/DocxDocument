@@ -33,6 +33,12 @@ public static class BiLevelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BiLevel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BiLevel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetThreshold(openXmlElement, value?.Threshold);
+      return openXmlElement;
+    }
+    return default;
   }
 }

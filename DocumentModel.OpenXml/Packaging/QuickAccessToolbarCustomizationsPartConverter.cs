@@ -30,6 +30,11 @@ public static class QuickAccessToolbarCustomizationsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

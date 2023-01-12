@@ -130,6 +130,15 @@ public static class BackdropConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Backdrop? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Backdrop, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAnchor(openXmlElement, value?.Anchor);
+      SetNormal(openXmlElement, value?.Normal);
+      SetUpVector(openXmlElement, value?.UpVector);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -144,6 +144,18 @@ public static class AddressConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Address? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAddress1(openXmlElement, value?.Address1);
+      SetCountryRegion(openXmlElement, value?.CountryRegion);
+      SetAdminDistrict1(openXmlElement, value?.AdminDistrict1);
+      SetAdminDistrict2(openXmlElement, value?.AdminDistrict2);
+      SetPostalCode(openXmlElement, value?.PostalCode);
+      SetLocality(openXmlElement, value?.Locality);
+      SetIsoCountryCode(openXmlElement, value?.IsoCountryCode);
+      return openXmlElement;
+    }
+    return default;
   }
 }

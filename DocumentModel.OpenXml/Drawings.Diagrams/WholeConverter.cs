@@ -96,6 +96,12 @@ public static class WholeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Whole? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Whole, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOutline(openXmlElement, value?.Outline);
+      return openXmlElement;
+    }
+    return default;
   }
 }

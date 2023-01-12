@@ -75,6 +75,15 @@ public static class VerticalPositionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.VerticalPosition? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelativeFrom(openXmlElement, value?.RelativeFrom);
+      SetVerticalAlignment(openXmlElement, value?.VerticalAlignment);
+      SetPositionOffset(openXmlElement, value?.PositionOffset);
+      SetPercentagePositionVerticalOffset(openXmlElement, value?.PercentagePositionVerticalOffset);
+      return openXmlElement;
+    }
+    return default;
   }
 }

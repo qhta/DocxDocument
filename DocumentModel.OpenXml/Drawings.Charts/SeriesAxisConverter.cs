@@ -10,12 +10,25 @@ public static class SeriesAxisConverter
   /// </summary>
   public static UInt32? GetAxisId(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.AxisId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetAxisId(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.AxisId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AxisId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -371,12 +384,25 @@ public static class SeriesAxisConverter
   /// </summary>
   public static UInt32? GetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.CrossesKind? GetCrosses(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
@@ -410,32 +436,71 @@ public static class SeriesAxisConverter
   
   public static Double? GetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CrossesAt");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CrossesAt");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossesAt{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Int32? GetTickLabelSkip(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetTickLabelSkip(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Int32? GetTickMarkSkip(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetTickMarkSkip(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.SerAxExtensionList? GetSerAxExtensionList(DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis? openXmlElement)
@@ -494,6 +559,25 @@ public static class SeriesAxisConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SeriesAxis? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SeriesAxis, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAxisId(openXmlElement, value?.AxisId);
+      SetScaling(openXmlElement, value?.Scaling);
+      SetDelete(openXmlElement, value?.Delete);
+      SetAxisPosition(openXmlElement, value?.AxisPosition);
+      SetMajorGridlines(openXmlElement, value?.MajorGridlines);
+      SetMinorGridlines(openXmlElement, value?.MinorGridlines);
+      SetTitle(openXmlElement, value?.Title);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetMajorTickMark(openXmlElement, value?.MajorTickMark);
+      SetMinorTickMark(openXmlElement, value?.MinorTickMark);
+      SetTickLabelPosition(openXmlElement, value?.TickLabelPosition);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetCrossingAxis(openXmlElement, value?.CrossingAxis);
+      return openXmlElement;
+    }
+    return default;
   }
 }

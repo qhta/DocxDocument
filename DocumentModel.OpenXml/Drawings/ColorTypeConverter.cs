@@ -186,6 +186,17 @@ public static class ColorTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

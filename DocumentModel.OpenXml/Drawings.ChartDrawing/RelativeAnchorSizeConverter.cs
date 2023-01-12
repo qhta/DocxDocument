@@ -199,6 +199,13 @@ public static class RelativeAnchorSizeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFromAnchor(openXmlElement, value?.FromAnchor);
+      SetToAnchor(openXmlElement, value?.ToAnchor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

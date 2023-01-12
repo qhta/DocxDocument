@@ -36,6 +36,12 @@ public static class FormulaConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Formula? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Formula, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEquation(openXmlElement, value?.Equation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

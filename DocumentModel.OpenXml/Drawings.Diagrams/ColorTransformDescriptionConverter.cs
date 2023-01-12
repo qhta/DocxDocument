@@ -54,6 +54,13 @@ public static class ColorTransformDescriptionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformDescription? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLanguage(openXmlElement, value?.Language);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

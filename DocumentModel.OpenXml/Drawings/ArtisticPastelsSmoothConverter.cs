@@ -48,6 +48,13 @@ public static class ArtisticPastelsSmoothConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPastelsSmooth? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetBrushSize(openXmlElement, value?.BrushSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

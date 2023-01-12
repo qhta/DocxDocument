@@ -236,6 +236,25 @@ public static class CalloutConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Callout? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Callout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetOn(openXmlElement, value?.On);
+      SetType(openXmlElement, value?.Type);
+      SetGap(openXmlElement, value?.Gap);
+      SetAngle(openXmlElement, value?.Angle);
+      SetDropAuto(openXmlElement, value?.DropAuto);
+      SetDrop(openXmlElement, value?.Drop);
+      SetDistance(openXmlElement, value?.Distance);
+      SetLengthSpecified(openXmlElement, value?.LengthSpecified);
+      SetLength(openXmlElement, value?.Length);
+      SetAccentBar(openXmlElement, value?.AccentBar);
+      SetTextBorder(openXmlElement, value?.TextBorder);
+      SetMinusX(openXmlElement, value?.MinusX);
+      SetMinusY(openXmlElement, value?.MinusY);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -1492,6 +1492,12 @@ public static class BidirectionalEmbeddingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BidirectionalEmbedding? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

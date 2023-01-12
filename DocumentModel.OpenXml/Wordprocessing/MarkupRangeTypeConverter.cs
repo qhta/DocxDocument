@@ -51,6 +51,13 @@ public static class MarkupRangeTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MarkupRangeType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

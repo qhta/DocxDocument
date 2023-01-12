@@ -8,27 +8,43 @@ public static class CommentExConverter
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+  public static Byte[]? GetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.ParaId?.Value != null)
+      return Convert.FromHexString(openXmlElement.ParaId.Value);
+    return null;
   }
   
-  public static void SetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.ParaId = Convert.ToHexString(value);
+      else
+        openXmlElement.ParaId = null;
+    }
   }
   
   /// <summary>
   /// paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+  public static Byte[]? GetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.ParaIdParent?.Value != null)
+      return Convert.FromHexString(openXmlElement.ParaIdParent.Value);
+    return null;
   }
   
-  public static void SetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.ParaIdParent = Convert.ToHexString(value);
+      else
+        openXmlElement.ParaIdParent = null;
+    }
   }
   
   /// <summary>
@@ -64,6 +80,14 @@ public static class CommentExConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentEx? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.CommentEx, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParaId(openXmlElement, value?.ParaId);
+      SetParaIdParent(openXmlElement, value?.ParaIdParent);
+      SetDone(openXmlElement, value?.Done);
+      return openXmlElement;
+    }
+    return default;
   }
 }

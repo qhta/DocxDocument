@@ -191,6 +191,17 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTableJustification(openXmlElement, value?.TableJustification);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableIndentation(openXmlElement, value?.TableIndentation);
+      SetTableBorders(openXmlElement, value?.TableBorders);
+      SetShading(openXmlElement, value?.Shading);
+      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+      return openXmlElement;
+    }
+    return default;
   }
 }

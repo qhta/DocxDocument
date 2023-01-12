@@ -206,6 +206,13 @@ public static class ColorsDefinitionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorsDefinition? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUniqueId(openXmlElement, value?.UniqueId);
+      SetMinVersion(openXmlElement, value?.MinVersion);
+      return openXmlElement;
+    }
+    return default;
   }
 }

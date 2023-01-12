@@ -72,6 +72,14 @@ public static class ObjectPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ObjectProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetIsActiveX(openXmlElement, value?.IsActiveX);
+      SetLinkType(openXmlElement, value?.LinkType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

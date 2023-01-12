@@ -258,7 +258,7 @@ public partial class Settings
   
   public String? ListSeparator { get; set; }
   
-  public DocumentModel.HexBinary? DocumentId { get; set; }
+  public Byte[]? DocumentId { get; set; }
   
   public DocumentModel.Wordprocessing.OnOffKind? DiscardImageEditingData { get; set; }
   

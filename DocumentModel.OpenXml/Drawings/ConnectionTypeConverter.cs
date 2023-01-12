@@ -48,6 +48,13 @@ public static class ConnectionTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetIndex(openXmlElement, value?.Index);
+      return openXmlElement;
+    }
+    return default;
   }
 }

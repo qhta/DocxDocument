@@ -46,6 +46,12 @@ public static class AlphaModulationEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEffectContainer(openXmlElement, value?.EffectContainer);
+      return openXmlElement;
+    }
+    return default;
   }
 }

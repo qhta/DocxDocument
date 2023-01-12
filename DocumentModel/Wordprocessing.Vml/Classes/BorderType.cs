@@ -13,7 +13,7 @@ public partial class BorderType
   /// <summary>
   /// Border Width
   /// </summary>
-  public Int32? Width { get; set; }
+  public Int64? Width { get; set; }
   
   /// <summary>
   /// Border shadow

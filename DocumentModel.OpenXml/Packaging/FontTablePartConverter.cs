@@ -64,6 +64,12 @@ public static class FontTablePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.FontTablePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.FontTablePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFonts(openXmlElement, value?.Fonts);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -64,6 +64,13 @@ public static class QuickTimeFromFileConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.QuickTimeFromFile? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.QuickTimeFromFile, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLink(openXmlElement, value?.Link);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

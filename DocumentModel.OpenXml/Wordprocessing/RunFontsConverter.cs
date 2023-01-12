@@ -165,6 +165,20 @@ public static class RunFontsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunFonts? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunFonts, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHint(openXmlElement, value?.Hint);
+      SetAscii(openXmlElement, value?.Ascii);
+      SetHighAnsi(openXmlElement, value?.HighAnsi);
+      SetEastAsia(openXmlElement, value?.EastAsia);
+      SetComplexScript(openXmlElement, value?.ComplexScript);
+      SetAsciiTheme(openXmlElement, value?.AsciiTheme);
+      SetHighAnsiTheme(openXmlElement, value?.HighAnsiTheme);
+      SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
+      SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
+      return openXmlElement;
+    }
+    return default;
   }
 }

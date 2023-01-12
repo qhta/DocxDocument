@@ -28,12 +28,12 @@ public partial class Inline
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? AnchorId { get; set; }
+  public Byte[]? AnchorId { get; set; }
   
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? EditId { get; set; }
+  public Byte[]? EditId { get; set; }
   
   /// <summary>
   /// Drawing Object Size.

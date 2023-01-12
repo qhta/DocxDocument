@@ -226,6 +226,22 @@ public static class ContentPartLocksConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ContentPartLocks? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoGrouping(openXmlElement, value?.NoGrouping);
+      SetNoSelection(openXmlElement, value?.NoSelection);
+      SetNoRotation(openXmlElement, value?.NoRotation);
+      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+      SetNoMove(openXmlElement, value?.NoMove);
+      SetNoResize(openXmlElement, value?.NoResize);
+      SetNoEditPoints(openXmlElement, value?.NoEditPoints);
+      SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
+      SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
+      SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -105,6 +105,16 @@ public static class GeoLocationQueryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCountryRegion(openXmlElement, value?.CountryRegion);
+      SetAdminDistrict1(openXmlElement, value?.AdminDistrict1);
+      SetAdminDistrict2(openXmlElement, value?.AdminDistrict2);
+      SetPostalCode(openXmlElement, value?.PostalCode);
+      SetEntityType(openXmlElement, value?.EntityType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

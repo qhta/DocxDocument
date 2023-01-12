@@ -177,6 +177,20 @@ public static class ClassificationLabelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationLabel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetSetDate(openXmlElement, value?.SetDate);
+      SetMethod(openXmlElement, value?.Method);
+      SetName(openXmlElement, value?.Name);
+      SetSiteId(openXmlElement, value?.SiteId);
+      SetActionId(openXmlElement, value?.ActionId);
+      SetContentBits(openXmlElement, value?.ContentBits);
+      SetRemoved(openXmlElement, value?.Removed);
+      return openXmlElement;
+    }
+    return default;
   }
 }

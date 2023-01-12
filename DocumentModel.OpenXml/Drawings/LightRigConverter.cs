@@ -76,6 +76,14 @@ public static class LightRigConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LightRig? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LightRig, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRig(openXmlElement, value?.Rig);
+      SetDirection(openXmlElement, value?.Direction);
+      SetRotation(openXmlElement, value?.Rotation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

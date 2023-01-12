@@ -211,6 +211,17 @@ public static class PhantomPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.PhantomProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.PhantomProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShowPhantom(openXmlElement, value?.ShowPhantom);
+      SetZeroWidth(openXmlElement, value?.ZeroWidth);
+      SetZeroAscent(openXmlElement, value?.ZeroAscent);
+      SetZeroDescent(openXmlElement, value?.ZeroDescent);
+      SetTransparent(openXmlElement, value?.Transparent);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

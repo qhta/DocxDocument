@@ -74,6 +74,13 @@ public static class TextBodyTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.TextBodyType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.TextBodyType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBodyProperties(openXmlElement, value?.BodyProperties);
+      SetListStyle(openXmlElement, value?.ListStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

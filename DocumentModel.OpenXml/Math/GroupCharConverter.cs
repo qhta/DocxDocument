@@ -74,6 +74,13 @@ public static class GroupCharConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupChar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupChar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -85,6 +85,13 @@ public static class StringLevelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.StringLevel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPtCount(openXmlElement, value?.PtCount);
+      SetName(openXmlElement, value?.Name);
+      return openXmlElement;
+    }
+    return default;
   }
 }

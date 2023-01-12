@@ -46,6 +46,12 @@ public static class FilteredRadarSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredRadarSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadarChartSeries(openXmlElement, value?.RadarChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

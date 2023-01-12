@@ -32,6 +32,12 @@ public static class LevelReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LevelReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+      return openXmlElement;
+    }
+    return default;
   }
 }

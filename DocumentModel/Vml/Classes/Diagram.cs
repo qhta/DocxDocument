@@ -13,7 +13,7 @@ public partial class Diagram
   /// <summary>
   /// Diagram Style Options
   /// </summary>
-  public Int32? Style { get; set; }
+  public Int64? Style { get; set; }
   
   /// <summary>
   /// Diagram Automatic Format
@@ -33,17 +33,17 @@ public partial class Diagram
   /// <summary>
   /// Diagram Layout X Scale
   /// </summary>
-  public Int32? ScaleX { get; set; }
+  public Int64? ScaleX { get; set; }
   
   /// <summary>
   /// Diagram Layout Y Scale
   /// </summary>
-  public Int32? ScaleY { get; set; }
+  public Int64? ScaleY { get; set; }
   
   /// <summary>
   /// Diagram Font Size
   /// </summary>
-  public Int32? FontSize { get; set; }
+  public Int64? FontSize { get; set; }
   
   /// <summary>
   /// Diagram Layout Extents
@@ -53,7 +53,7 @@ public partial class Diagram
   /// <summary>
   /// Diagram Base Font Size
   /// </summary>
-  public Int32? BaseTextScale { get; set; }
+  public Int64? BaseTextScale { get; set; }
   
   /// <summary>
   /// Diagram Relationship Table.

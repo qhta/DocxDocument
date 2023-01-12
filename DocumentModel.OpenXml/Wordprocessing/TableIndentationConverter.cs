@@ -48,6 +48,13 @@ public static class TableIndentationConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableIndentation? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableIndentation, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetType(openXmlElement, value?.Type);
+      return openXmlElement;
+    }
+    return default;
   }
 }

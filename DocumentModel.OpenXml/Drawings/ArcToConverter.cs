@@ -90,6 +90,15 @@ public static class ArcToConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArcTo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ArcTo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidthRadius(openXmlElement, value?.WidthRadius);
+      SetHeightRadius(openXmlElement, value?.HeightRadius);
+      SetStartAngle(openXmlElement, value?.StartAngle);
+      SetSwingAngle(openXmlElement, value?.SwingAngle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

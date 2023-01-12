@@ -44,6 +44,12 @@ public static class WordprocessingPeoplePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingPeoplePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPeople(openXmlElement, value?.People);
+      return openXmlElement;
+    }
+    return default;
   }
 }

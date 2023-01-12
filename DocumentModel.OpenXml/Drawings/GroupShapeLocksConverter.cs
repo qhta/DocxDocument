@@ -172,6 +172,19 @@ public static class GroupShapeLocksConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GroupShapeLocks? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GroupShapeLocks, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoGrouping(openXmlElement, value?.NoGrouping);
+      SetNoUngrouping(openXmlElement, value?.NoUngrouping);
+      SetNoSelection(openXmlElement, value?.NoSelection);
+      SetNoRotation(openXmlElement, value?.NoRotation);
+      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+      SetNoMove(openXmlElement, value?.NoMove);
+      SetNoResize(openXmlElement, value?.NoResize);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

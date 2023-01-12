@@ -126,6 +126,15 @@ public static class GroupCharPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupCharProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupCharProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAccentChar(openXmlElement, value?.AccentChar);
+      SetPosition(openXmlElement, value?.Position);
+      SetVerticalJustification(openXmlElement, value?.VerticalJustification);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

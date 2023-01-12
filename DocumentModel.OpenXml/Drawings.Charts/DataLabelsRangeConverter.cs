@@ -60,6 +60,13 @@ public static class DataLabelsRangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelsRange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormula(openXmlElement, value?.Formula);
+      SetDataLabelsRangeChache(openXmlElement, value?.DataLabelsRangeChache);
+      return openXmlElement;
+    }
+    return default;
   }
 }

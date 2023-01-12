@@ -74,6 +74,13 @@ public static class NumberDataSourceTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberDataSourceType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNumberReference(openXmlElement, value?.NumberReference);
+      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+      return openXmlElement;
+    }
+    return default;
   }
 }

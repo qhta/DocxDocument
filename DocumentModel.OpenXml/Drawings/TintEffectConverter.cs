@@ -48,6 +48,13 @@ public static class TintEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TintEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TintEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHue(openXmlElement, value?.Hue);
+      SetAmount(openXmlElement, value?.Amount);
+      return openXmlElement;
+    }
+    return default;
   }
 }

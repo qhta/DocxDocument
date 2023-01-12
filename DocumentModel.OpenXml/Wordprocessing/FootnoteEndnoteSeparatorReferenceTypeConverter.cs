@@ -33,6 +33,12 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

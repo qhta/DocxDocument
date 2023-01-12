@@ -64,6 +64,13 @@ public static class VideoFromFileConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.VideoFromFile? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.VideoFromFile, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLink(openXmlElement, value?.Link);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

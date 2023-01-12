@@ -36,6 +36,12 @@ public static class EffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Effect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Effect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetReference(openXmlElement, value?.Reference);
+      return openXmlElement;
+    }
+    return default;
   }
 }

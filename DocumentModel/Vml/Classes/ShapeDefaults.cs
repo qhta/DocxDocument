@@ -13,7 +13,7 @@ public partial class ShapeDefaults
   /// <summary>
   /// Shape ID Optional Storage
   /// </summary>
-  public Int32? MaxShapeId { get; set; }
+  public Int64? MaxShapeId { get; set; }
   
   /// <summary>
   /// style

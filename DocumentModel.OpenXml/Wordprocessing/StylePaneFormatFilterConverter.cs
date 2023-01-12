@@ -8,14 +8,22 @@ public static class StylePaneFormatFilterConverter
   /// <summary>
   /// val
   /// </summary>
-  public static DocumentModel.HexBinary? GetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? openXmlElement)
+  public static Byte[]? GetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Val?.Value != null)
+      return Convert.FromHexString(openXmlElement.Val.Value);
+    return null;
   }
   
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Val = Convert.ToHexString(value);
+      else
+        openXmlElement.Val = null;
+    }
   }
   
   /// <summary>
@@ -302,6 +310,27 @@ public static class StylePaneFormatFilterConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StylePaneFormatFilter? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetAllStyles(openXmlElement, value?.AllStyles);
+      SetCustomStyles(openXmlElement, value?.CustomStyles);
+      SetLatentStyles(openXmlElement, value?.LatentStyles);
+      SetStylesInUse(openXmlElement, value?.StylesInUse);
+      SetHeadingStyles(openXmlElement, value?.HeadingStyles);
+      SetNumberingStyles(openXmlElement, value?.NumberingStyles);
+      SetTableStyles(openXmlElement, value?.TableStyles);
+      SetDirectFormattingOnRuns(openXmlElement, value?.DirectFormattingOnRuns);
+      SetDirectFormattingOnParagraphs(openXmlElement, value?.DirectFormattingOnParagraphs);
+      SetDirectFormattingOnNumbering(openXmlElement, value?.DirectFormattingOnNumbering);
+      SetDirectFormattingOnTables(openXmlElement, value?.DirectFormattingOnTables);
+      SetClearFormatting(openXmlElement, value?.ClearFormatting);
+      SetTop3HeadingStyles(openXmlElement, value?.Top3HeadingStyles);
+      SetVisibleStyles(openXmlElement, value?.VisibleStyles);
+      SetAlternateStyleNames(openXmlElement, value?.AlternateStyleNames);
+      return openXmlElement;
+    }
+    return default;
   }
 }

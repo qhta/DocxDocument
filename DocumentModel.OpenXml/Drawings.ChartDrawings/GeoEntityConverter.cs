@@ -51,6 +51,13 @@ public static class GeoEntityConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoEntity? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEntityName(openXmlElement, value?.EntityName);
+      SetEntityType(openXmlElement, value?.EntityType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

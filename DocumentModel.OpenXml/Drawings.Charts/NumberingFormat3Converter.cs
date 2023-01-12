@@ -54,6 +54,13 @@ public static class NumberingFormat3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberingFormat3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormatCode(openXmlElement, value?.FormatCode);
+      SetSourceLinked(openXmlElement, value?.SourceLinked);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -69,6 +69,14 @@ public static class GeoPolygonConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoPolygon? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPolygonId(openXmlElement, value?.PolygonId);
+      SetNumPoints(openXmlElement, value?.NumPoints);
+      SetPcaRings(openXmlElement, value?.PcaRings);
+      return openXmlElement;
+    }
+    return default;
   }
 }

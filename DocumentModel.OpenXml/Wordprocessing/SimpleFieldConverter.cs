@@ -1545,6 +1545,15 @@ public static class SimpleFieldConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SimpleField? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SimpleField, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetInstruction(openXmlElement, value?.Instruction);
+      SetFieldLock(openXmlElement, value?.FieldLock);
+      SetDirty(openXmlElement, value?.Dirty);
+      SetFieldData(openXmlElement, value?.FieldData);
+      return openXmlElement;
+    }
+    return default;
   }
 }

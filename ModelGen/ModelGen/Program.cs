@@ -6,11 +6,8 @@ public static class Program
 
   public static void Main(string[] args)
   {
-    //var type = typeof(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize);
-    //var ok = !type.HasProperty("ConnectionShape");
-    //Console.WriteLine(ok);
-    //GenerateModelTypes();
-    GenerateTypeConverter(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
+    GenerateModelTypes();
+    //GenerateTypeConverter(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
 
   public static void GenerateModelTypes()

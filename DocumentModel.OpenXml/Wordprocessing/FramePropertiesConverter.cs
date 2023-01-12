@@ -261,6 +261,26 @@ public static class FramePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FrameProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FrameProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDropCap(openXmlElement, value?.DropCap);
+      SetLines(openXmlElement, value?.Lines);
+      SetWidth(openXmlElement, value?.Width);
+      SetHeight(openXmlElement, value?.Height);
+      SetVerticalSpace(openXmlElement, value?.VerticalSpace);
+      SetHorizontalSpace(openXmlElement, value?.HorizontalSpace);
+      SetWrap(openXmlElement, value?.Wrap);
+      SetHorizontalPosition(openXmlElement, value?.HorizontalPosition);
+      SetVerticalPosition(openXmlElement, value?.VerticalPosition);
+      SetX(openXmlElement, value?.X);
+      SetXAlign(openXmlElement, value?.XAlign);
+      SetY(openXmlElement, value?.Y);
+      SetYAlign(openXmlElement, value?.YAlign);
+      SetHeightType(openXmlElement, value?.HeightType);
+      SetAnchorLock(openXmlElement, value?.AnchorLock);
+      return openXmlElement;
+    }
+    return default;
   }
 }

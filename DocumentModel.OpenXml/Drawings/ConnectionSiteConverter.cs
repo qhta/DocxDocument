@@ -64,6 +64,13 @@ public static class ConnectionSiteConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionSite? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionSite, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAngle(openXmlElement, value?.Angle);
+      SetPosition(openXmlElement, value?.Position);
+      return openXmlElement;
+    }
+    return default;
   }
 }

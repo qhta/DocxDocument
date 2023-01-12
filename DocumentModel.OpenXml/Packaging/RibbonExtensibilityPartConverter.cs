@@ -50,6 +50,11 @@ public static class RibbonExtensibilityPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.RibbonExtensibilityPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -198,6 +198,18 @@ public static class AbstractNumConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AbstractNum? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AbstractNum, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAbstractNumberId(openXmlElement, value?.AbstractNumberId);
+      SetNsid(openXmlElement, value?.Nsid);
+      SetMultiLevelType(openXmlElement, value?.MultiLevelType);
+      SetTemplateCode(openXmlElement, value?.TemplateCode);
+      SetAbstractNumDefinitionName(openXmlElement, value?.AbstractNumDefinitionName);
+      SetStyleLink(openXmlElement, value?.StyleLink);
+      SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
+      return openXmlElement;
+    }
+    return default;
   }
 }

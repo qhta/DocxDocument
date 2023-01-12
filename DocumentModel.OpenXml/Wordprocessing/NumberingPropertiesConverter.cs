@@ -10,12 +10,25 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static Int32? GetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +36,25 @@ public static class NumberingPropertiesConverter
   /// </summary>
   public static Int32? GetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -102,6 +128,15 @@ public static class NumberingPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNumberingLevelReference(openXmlElement, value?.NumberingLevelReference);
+      SetNumberingId(openXmlElement, value?.NumberingId);
+      SetNumberingChange(openXmlElement, value?.NumberingChange);
+      SetInserted(openXmlElement, value?.Inserted);
+      return openXmlElement;
+    }
+    return default;
   }
 }

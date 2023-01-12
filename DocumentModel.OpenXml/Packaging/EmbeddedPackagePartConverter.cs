@@ -24,6 +24,11 @@ public static class EmbeddedPackagePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EmbeddedPackagePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

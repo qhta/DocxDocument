@@ -32,6 +32,12 @@ public static class StylesPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StylesPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StylesPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStyles(openXmlElement, value?.Styles);
+      return openXmlElement;
+    }
+    return default;
   }
 }

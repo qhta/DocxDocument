@@ -46,6 +46,12 @@ public static class GraphicConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Graphic? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Graphic, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGraphicData(openXmlElement, value?.GraphicData);
+      return openXmlElement;
+    }
+    return default;
   }
 }

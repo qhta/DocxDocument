@@ -64,6 +64,12 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCustomUI(openXmlElement, value?.CustomUI);
+      return openXmlElement;
+    }
+    return default;
   }
 }

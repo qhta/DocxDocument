@@ -51,6 +51,13 @@ public static class TableWidthTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableWidthType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableWidthType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetType(openXmlElement, value?.Type);
+      return openXmlElement;
+    }
+    return default;
   }
 }

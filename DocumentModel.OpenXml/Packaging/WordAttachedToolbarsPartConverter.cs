@@ -30,6 +30,11 @@ public static class WordAttachedToolbarsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordAttachedToolbarsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

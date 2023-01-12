@@ -64,6 +64,12 @@ public static class DiagramLayoutDefinitionPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramLayoutDefinitionPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLayoutDefinition(openXmlElement, value?.LayoutDefinition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

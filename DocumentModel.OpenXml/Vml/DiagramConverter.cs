@@ -196,6 +196,22 @@ public static class DiagramConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Diagram? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Diagram, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetStyle(openXmlElement, value?.Style);
+      SetAutoFormat(openXmlElement, value?.AutoFormat);
+      SetReverse(openXmlElement, value?.Reverse);
+      SetAutoLayout(openXmlElement, value?.AutoLayout);
+      SetScaleX(openXmlElement, value?.ScaleX);
+      SetScaleY(openXmlElement, value?.ScaleY);
+      SetFontSize(openXmlElement, value?.FontSize);
+      SetConstrainBounds(openXmlElement, value?.ConstrainBounds);
+      SetBaseTextScale(openXmlElement, value?.BaseTextScale);
+      SetRelationTable(openXmlElement, value?.RelationTable);
+      return openXmlElement;
+    }
+    return default;
   }
 }

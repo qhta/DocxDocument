@@ -130,6 +130,15 @@ public static class DivBorderConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DivBorder? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DivBorder, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTopBorder(openXmlElement, value?.TopBorder);
+      SetLeftBorder(openXmlElement, value?.LeftBorder);
+      SetBottomBorder(openXmlElement, value?.BottomBorder);
+      SetRightBorder(openXmlElement, value?.RightBorder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

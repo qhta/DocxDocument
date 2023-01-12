@@ -194,6 +194,17 @@ public static class HiddenFillPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenFillProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetGroupFill(openXmlElement, value?.GroupFill);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -170,6 +170,17 @@ public static class DiagramAutoBulletConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram1.DiagramAutoBullet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAutoBulletPrefix(openXmlElement, value?.AutoBulletPrefix);
+      SetLeadZeros(openXmlElement, value?.LeadZeros);
+      SetNoBullet(openXmlElement, value?.NoBullet);
+      SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
+      SetCharacterBullet(openXmlElement, value?.CharacterBullet);
+      SetPictureBullet(openXmlElement, value?.PictureBullet);
+      return openXmlElement;
+    }
+    return default;
   }
 }

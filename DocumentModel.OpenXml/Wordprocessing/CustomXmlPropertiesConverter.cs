@@ -10,17 +10,24 @@ public static class CustomXmlPropertiesConverter
   /// </summary>
   public static String? GetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? openXmlElement)
   {
-    return openXmlElement?.CustomXmlPlaceholder?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.CustomXmlPlaceholder = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder { Val = value };
-      else
-        openXmlElement.CustomXmlPlaceholder = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -72,6 +79,12 @@ public static class CustomXmlPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCustomXmlPlaceholder(openXmlElement, value?.CustomXmlPlaceholder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -173,6 +173,17 @@ public static class TableStylePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableStyleProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
+      SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
+      SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalFormattingTableProperties);
+      SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
+      SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalFormattingTableCellProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -66,6 +66,14 @@ public static class WebVideoPropertyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WebVideoProperty? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEmbeddedHtml(openXmlElement, value?.EmbeddedHtml);
+      SetHeight(openXmlElement, value?.Height);
+      SetWidth(openXmlElement, value?.Width);
+      return openXmlElement;
+    }
+    return default;
   }
 }

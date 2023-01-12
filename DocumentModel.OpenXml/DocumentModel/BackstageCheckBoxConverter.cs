@@ -375,6 +375,31 @@ public static class BackstageCheckBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageCheckBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExpand(openXmlElement, value?.Expand);
+      SetDescription(openXmlElement, value?.Description);
+      SetGetDescription(openXmlElement, value?.GetDescription);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetGetPressed(openXmlElement, value?.GetPressed);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      return openXmlElement;
+    }
+    return default;
   }
 }

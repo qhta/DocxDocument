@@ -52,6 +52,11 @@ public static class OfficeArtExtensionListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.OfficeArtExtensionList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.OfficeArtExtensionList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

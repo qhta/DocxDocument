@@ -130,6 +130,15 @@ public static class ThemeElementsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ThemeElements? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ThemeElements, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColorScheme(openXmlElement, value?.ColorScheme);
+      SetFontScheme(openXmlElement, value?.FontScheme);
+      SetFormatScheme(openXmlElement, value?.FormatScheme);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

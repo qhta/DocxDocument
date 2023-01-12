@@ -168,6 +168,21 @@ public static class TablePositionPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TablePositionProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLeftFromText(openXmlElement, value?.LeftFromText);
+      SetRightFromText(openXmlElement, value?.RightFromText);
+      SetTopFromText(openXmlElement, value?.TopFromText);
+      SetBottomFromText(openXmlElement, value?.BottomFromText);
+      SetVerticalAnchor(openXmlElement, value?.VerticalAnchor);
+      SetHorizontalAnchor(openXmlElement, value?.HorizontalAnchor);
+      SetTablePositionXAlignment(openXmlElement, value?.TablePositionXAlignment);
+      SetTablePositionX(openXmlElement, value?.TablePositionX);
+      SetTablePositionYAlignment(openXmlElement, value?.TablePositionYAlignment);
+      SetTablePositionY(openXmlElement, value?.TablePositionY);
+      return openXmlElement;
+    }
+    return default;
   }
 }

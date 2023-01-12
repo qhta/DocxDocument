@@ -10,12 +10,25 @@ public static class StringDataType3Converter
   /// </summary>
   public static UInt32? GetPointCount(DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PointCount");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPointCount(DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PointCount");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.StringDataType3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType? openXmlElement)
@@ -32,6 +45,12 @@ public static class StringDataType3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringDataType3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPointCount(openXmlElement, value?.PointCount);
+      return openXmlElement;
+    }
+    return default;
   }
 }

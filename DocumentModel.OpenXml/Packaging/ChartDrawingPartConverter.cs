@@ -64,6 +64,12 @@ public static class ChartDrawingPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartDrawingPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartDrawingPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUserShapes(openXmlElement, value?.UserShapes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

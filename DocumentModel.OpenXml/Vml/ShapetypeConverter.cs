@@ -1424,6 +1424,65 @@ public static class ShapetypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Shapetype? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Shapetype, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetStyle(openXmlElement, value?.Style);
+      SetHref(openXmlElement, value?.Href);
+      SetTarget(openXmlElement, value?.Target);
+      SetClass(openXmlElement, value?.Class);
+      SetTitle(openXmlElement, value?.Title);
+      SetAlternate(openXmlElement, value?.Alternate);
+      SetCoordinateSize(openXmlElement, value?.CoordinateSize);
+      SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
+      SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
+      SetPrint(openXmlElement, value?.Print);
+      SetOptionalString(openXmlElement, value?.OptionalString);
+      SetOned(openXmlElement, value?.Oned);
+      SetRegroupId(openXmlElement, value?.RegroupId);
+      SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
+      SetButton(openXmlElement, value?.Button);
+      SetUserHidden(openXmlElement, value?.UserHidden);
+      SetBullet(openXmlElement, value?.Bullet);
+      SetHorizontal(openXmlElement, value?.Horizontal);
+      SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
+      SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
+      SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
+      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+      SetAllowInCell(openXmlElement, value?.AllowInCell);
+      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+      SetUserDrawn(openXmlElement, value?.UserDrawn);
+      SetBorderTopColor(openXmlElement, value?.BorderTopColor);
+      SetBorderLeftColor(openXmlElement, value?.BorderLeftColor);
+      SetBorderBottomColor(openXmlElement, value?.BorderBottomColor);
+      SetBorderRightColor(openXmlElement, value?.BorderRightColor);
+      SetDiagramLayout(openXmlElement, value?.DiagramLayout);
+      SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
+      SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
+      SetInsetMode(openXmlElement, value?.InsetMode);
+      SetFilled(openXmlElement, value?.Filled);
+      SetFillColor(openXmlElement, value?.FillColor);
+      SetStroked(openXmlElement, value?.Stroked);
+      SetStrokeColor(openXmlElement, value?.StrokeColor);
+      SetStrokeWeight(openXmlElement, value?.StrokeWeight);
+      SetInsetPen(openXmlElement, value?.InsetPen);
+      SetOptionalNumber(openXmlElement, value?.OptionalNumber);
+      SetConnectorType(openXmlElement, value?.ConnectorType);
+      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+      SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
+      SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
+      SetForceDash(openXmlElement, value?.ForceDash);
+      SetOleIcon(openXmlElement, value?.OleIcon);
+      SetOle(openXmlElement, value?.Ole);
+      SetPreferRelative(openXmlElement, value?.PreferRelative);
+      SetClipToWrap(openXmlElement, value?.ClipToWrap);
+      SetClip(openXmlElement, value?.Clip);
+      SetAdjustment(openXmlElement, value?.Adjustment);
+      SetEdgePath(openXmlElement, value?.EdgePath);
+      SetMaster(openXmlElement, value?.Master);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -46,6 +46,12 @@ public static class FilteredLineSeriesExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLineChartSeries(openXmlElement, value?.LineChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

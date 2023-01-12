@@ -52,6 +52,11 @@ public static class Line3DChartExtensionListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Line3DChartExtensionList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

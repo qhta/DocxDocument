@@ -64,6 +64,13 @@ public static class SampleDataTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.SampleDataType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUseDefault(openXmlElement, value?.UseDefault);
+      SetDataModel(openXmlElement, value?.DataModel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

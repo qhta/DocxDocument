@@ -138,6 +138,16 @@ public static class GraphicFrameConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.GraphicFrame? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacro(openXmlElement, value?.Macro);
+      SetPublished(openXmlElement, value?.Published);
+      SetNonVisualGraphicFrameProperties(openXmlElement, value?.NonVisualGraphicFrameProperties);
+      SetTransform(openXmlElement, value?.Transform);
+      SetGraphic(openXmlElement, value?.Graphic);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -33,6 +33,12 @@ public static class TextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Text? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Text, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSpace(openXmlElement, value?.Space);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -23,11 +23,11 @@ public partial class Mcd
   /// <summary>
   /// bEncrypt
   /// </summary>
-  public DocumentModel.HexBinary? BEncrypt { get; set; }
+  public Byte[]? BEncrypt { get; set; }
   
   /// <summary>
   /// cmg
   /// </summary>
-  public DocumentModel.HexBinary? Cmg { get; set; }
+  public Byte[]? Cmg { get; set; }
   
 }

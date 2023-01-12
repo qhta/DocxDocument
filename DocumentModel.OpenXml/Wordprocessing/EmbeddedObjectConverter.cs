@@ -42,14 +42,22 @@ public static class EmbeddedObjectConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement)
+  public static Byte[]? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.AnchorId?.Value != null)
+      return Convert.FromHexString(openXmlElement.AnchorId.Value);
+    return null;
   }
   
-  public static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AnchorId = Convert.ToHexString(value);
+      else
+        openXmlElement.AnchorId = null;
+    }
   }
   
   public static DocumentModel.Vml.Group? GetGroup(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement)
@@ -468,6 +476,14 @@ public static class EmbeddedObjectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EmbeddedObject? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDxaOriginal(openXmlElement, value?.DxaOriginal);
+      SetDyaOriginal(openXmlElement, value?.DyaOriginal);
+      SetAnchorId(openXmlElement, value?.AnchorId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

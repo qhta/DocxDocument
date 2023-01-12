@@ -18,6 +18,6 @@ public partial class RecipientData
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  public DocumentModel.Base64Binary? UniqueTag { get; set; }
+  public Byte[]? UniqueTag { get; set; }
   
 }

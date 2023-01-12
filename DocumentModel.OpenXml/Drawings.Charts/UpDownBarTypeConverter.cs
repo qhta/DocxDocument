@@ -46,6 +46,12 @@ public static class UpDownBarTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.UpDownBarType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

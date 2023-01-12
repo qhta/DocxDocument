@@ -51,6 +51,13 @@ public static class LinearGradientFillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinearGradientFill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinearGradientFill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAngle(openXmlElement, value?.Angle);
+      SetScaled(openXmlElement, value?.Scaled);
+      return openXmlElement;
+    }
+    return default;
   }
 }

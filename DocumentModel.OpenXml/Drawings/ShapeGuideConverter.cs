@@ -54,6 +54,13 @@ public static class ShapeGuideConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapeGuide? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapeGuide, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetFormula(openXmlElement, value?.Formula);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -449,14 +449,22 @@ public static class GroupConverter
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public static DocumentModel.Base64Binary? GetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+  public static Byte[]? GetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.Gfxdata?.Value != null)
+      return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
+    return null;
   }
   
-  public static void SetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Gfxdata = Convert.ToBase64String(value);
+      else
+        openXmlElement.Gfxdata = null;
+    }
   }
   
   /// <summary>
@@ -958,6 +966,45 @@ public static class GroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Group? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Group, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetStyle(openXmlElement, value?.Style);
+      SetHref(openXmlElement, value?.Href);
+      SetTarget(openXmlElement, value?.Target);
+      SetClass(openXmlElement, value?.Class);
+      SetTitle(openXmlElement, value?.Title);
+      SetAlternate(openXmlElement, value?.Alternate);
+      SetCoordinateSize(openXmlElement, value?.CoordinateSize);
+      SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
+      SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
+      SetPrint(openXmlElement, value?.Print);
+      SetOptionalString(openXmlElement, value?.OptionalString);
+      SetOned(openXmlElement, value?.Oned);
+      SetRegroupId(openXmlElement, value?.RegroupId);
+      SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
+      SetButton(openXmlElement, value?.Button);
+      SetUserHidden(openXmlElement, value?.UserHidden);
+      SetBullet(openXmlElement, value?.Bullet);
+      SetHorizontal(openXmlElement, value?.Horizontal);
+      SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
+      SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
+      SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
+      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+      SetAllowInCell(openXmlElement, value?.AllowInCell);
+      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+      SetUserDrawn(openXmlElement, value?.UserDrawn);
+      SetDiagramLayout(openXmlElement, value?.DiagramLayout);
+      SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
+      SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
+      SetInsetMode(openXmlElement, value?.InsetMode);
+      SetGfxdata(openXmlElement, value?.Gfxdata);
+      SetEditAs(openXmlElement, value?.EditAs);
+      SetTableProperties(openXmlElement, value?.TableProperties);
+      SetTableLimits(openXmlElement, value?.TableLimits);
+      return openXmlElement;
+    }
+    return default;
   }
 }

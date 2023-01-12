@@ -279,6 +279,25 @@ public static class TextParagraphPropertiesTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextParagraphPropertiesType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLeftMargin(openXmlElement, value?.LeftMargin);
+      SetRightMargin(openXmlElement, value?.RightMargin);
+      SetLevel(openXmlElement, value?.Level);
+      SetIndent(openXmlElement, value?.Indent);
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetDefaultTabSize(openXmlElement, value?.DefaultTabSize);
+      SetRightToLeft(openXmlElement, value?.RightToLeft);
+      SetEastAsianLineBreak(openXmlElement, value?.EastAsianLineBreak);
+      SetFontAlignment(openXmlElement, value?.FontAlignment);
+      SetLatinLineBreak(openXmlElement, value?.LatinLineBreak);
+      SetHeight(openXmlElement, value?.Height);
+      SetLineSpacing(openXmlElement, value?.LineSpacing);
+      SetSpaceBefore(openXmlElement, value?.SpaceBefore);
+      SetSpaceAfter(openXmlElement, value?.SpaceAfter);
+      return openXmlElement;
+    }
+    return default;
   }
 }

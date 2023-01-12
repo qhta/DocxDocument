@@ -72,6 +72,14 @@ public static class LanguageTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LanguageType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LanguageType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetEastAsia(openXmlElement, value?.EastAsia);
+      SetBidi(openXmlElement, value?.Bidi);
+      return openXmlElement;
+    }
+    return default;
   }
 }

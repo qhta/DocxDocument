@@ -46,6 +46,12 @@ public static class DrawingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.Drawing? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Drawing, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShapeTree(openXmlElement, value?.ShapeTree);
+      return openXmlElement;
+    }
+    return default;
   }
 }

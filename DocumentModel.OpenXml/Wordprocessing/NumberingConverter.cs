@@ -106,12 +106,25 @@ public static class NumberingConverter
   
   public static Int32? GetNumberingIdMacAtCleanup(DocumentFormat.OpenXml.Wordprocessing.Numbering? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetNumberingIdMacAtCleanup(DocumentFormat.OpenXml.Wordprocessing.Numbering? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Numbering? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Numbering? openXmlElement)
@@ -131,6 +144,11 @@ public static class NumberingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Numbering? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Numbering, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

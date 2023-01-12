@@ -73,7 +73,7 @@ public partial class Group
   /// <summary>
   /// regroupid
   /// </summary>
-  public Int32? RegroupId { get; set; }
+  public Int64? RegroupId { get; set; }
   
   /// <summary>
   /// doubleclicknotify
@@ -138,17 +138,17 @@ public partial class Group
   /// <summary>
   /// dgmlayout
   /// </summary>
-  public Int32? DiagramLayout { get; set; }
+  public Int64? DiagramLayout { get; set; }
   
   /// <summary>
   /// dgmnodekind
   /// </summary>
-  public Int32? DiagramNodeKind { get; set; }
+  public Int64? DiagramNodeKind { get; set; }
   
   /// <summary>
   /// dgmlayoutmru
   /// </summary>
-  public Int32? DiagramLayoutMostRecentUsed { get; set; }
+  public Int64? DiagramLayoutMostRecentUsed { get; set; }
   
   /// <summary>
   /// insetmode
@@ -158,7 +158,7 @@ public partial class Group
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64Binary? Gfxdata { get; set; }
+  public Byte[]? Gfxdata { get; set; }
   
   /// <summary>
   /// Group Diagram Type

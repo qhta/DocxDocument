@@ -48,6 +48,13 @@ public static class ArtisticMosaicBubblesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticMosaicBubbles? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetPressure(openXmlElement, value?.Pressure);
+      return openXmlElement;
+    }
+    return default;
   }
 }

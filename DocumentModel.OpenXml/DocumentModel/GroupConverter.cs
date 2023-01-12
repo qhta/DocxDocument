@@ -832,6 +832,34 @@ public static class GroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Group? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Group, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetAutoScale(openXmlElement, value?.AutoScale);
+      SetCenterVertically(openXmlElement, value?.CenterVertically);
+      return openXmlElement;
+    }
+    return default;
   }
 }

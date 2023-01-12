@@ -178,6 +178,16 @@ public static class ProtectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Protection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Protection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartObject(openXmlElement, value?.ChartObject);
+      SetData(openXmlElement, value?.Data);
+      SetFormatting(openXmlElement, value?.Formatting);
+      SetSelection(openXmlElement, value?.Selection);
+      SetUserInterface(openXmlElement, value?.UserInterface);
+      return openXmlElement;
+    }
+    return default;
   }
 }

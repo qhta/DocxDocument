@@ -64,12 +64,25 @@ public static class PreviousTableCellPropertiesConverter
   /// </summary>
   public static Int32? GetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.GridSpan");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.GridSpan");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.GridSpan{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -478,6 +491,24 @@ public static class PreviousTableCellPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
+      SetTableCellWidth(openXmlElement, value?.TableCellWidth);
+      SetGridSpan(openXmlElement, value?.GridSpan);
+      SetHorizontalMerge(openXmlElement, value?.HorizontalMerge);
+      SetVerticalMerge(openXmlElement, value?.VerticalMerge);
+      SetTableCellBorders(openXmlElement, value?.TableCellBorders);
+      SetShading(openXmlElement, value?.Shading);
+      SetNoWrap(openXmlElement, value?.NoWrap);
+      SetTableCellMargin(openXmlElement, value?.TableCellMargin);
+      SetTextDirection(openXmlElement, value?.TextDirection);
+      SetTableCellFitText(openXmlElement, value?.TableCellFitText);
+      SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
+      SetHideMark(openXmlElement, value?.HideMark);
+      return openXmlElement;
+    }
+    return default;
   }
 }

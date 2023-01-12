@@ -10,12 +10,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? GetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues]]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues]] type");
   }
   
   public static void SetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues]]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues]] type");
   }
   
   /// <summary>
@@ -23,12 +23,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues]]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues]] type");
   }
   
   public static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues]]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.EnumValue`1[DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues]] type");
   }
   
   /// <summary>
@@ -36,12 +36,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<Boolean>? GetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.BooleanValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.BooleanValue] type");
   }
   
   public static void SetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<Boolean>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.BooleanValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.BooleanValue] type");
   }
   
   /// <summary>
@@ -49,12 +49,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<Int32>? GetStart(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value] type");
   }
   
   public static void SetStart(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value] type");
   }
   
   /// <summary>
@@ -62,12 +62,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<UInt32>? GetCount(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.UInt32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.UInt32Value] type");
   }
   
   public static void SetCount(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<UInt32>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.UInt32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.UInt32Value] type");
   }
   
   /// <summary>
@@ -75,12 +75,12 @@ public static class PresentationOfConverter
   /// </summary>
   public static DocumentModel.ListOf<Int32>? GetStep(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value] type");
   }
   
   public static void SetStep(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.Int32Value] type");
   }
   
   /// <summary>
@@ -130,6 +130,18 @@ public static class PresentationOfConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PresentationOf? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAxis(openXmlElement, value?.Axis);
+      SetPointType(openXmlElement, value?.PointType);
+      SetHideLastTrans(openXmlElement, value?.HideLastTrans);
+      SetStart(openXmlElement, value?.Start);
+      SetCount(openXmlElement, value?.Count);
+      SetStep(openXmlElement, value?.Step);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

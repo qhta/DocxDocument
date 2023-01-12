@@ -74,6 +74,13 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGroupShapeLocks(openXmlElement, value?.GroupShapeLocks);
+      SetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement, value?.NonVisualGroupDrawingShapePropsExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

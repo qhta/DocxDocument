@@ -47,6 +47,13 @@ public static class RelativeWidthConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeWidth? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetObjectId(openXmlElement, value?.ObjectId);
+      SetPercentageWidth(openXmlElement, value?.PercentageWidth);
+      return openXmlElement;
+    }
+    return default;
   }
 }

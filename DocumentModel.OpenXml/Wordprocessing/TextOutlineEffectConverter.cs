@@ -270,6 +270,15 @@ public static class TextOutlineEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextOutlineEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLineWidth(openXmlElement, value?.LineWidth);
+      SetCapType(openXmlElement, value?.CapType);
+      SetCompound(openXmlElement, value?.Compound);
+      SetAlignment(openXmlElement, value?.Alignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

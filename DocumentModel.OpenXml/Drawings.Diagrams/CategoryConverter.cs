@@ -51,6 +51,13 @@ public static class CategoryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Category? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Category, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetPriority(openXmlElement, value?.Priority);
+      return openXmlElement;
+    }
+    return default;
   }
 }

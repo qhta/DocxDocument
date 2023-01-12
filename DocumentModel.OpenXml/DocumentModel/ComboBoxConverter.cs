@@ -751,6 +751,50 @@ public static class ComboBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ComboBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ComboBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShowItemImage(openXmlElement, value?.ShowItemImage);
+      SetGetItemCount(openXmlElement, value?.GetItemCount);
+      SetGetItemLabel(openXmlElement, value?.GetItemLabel);
+      SetGetItemScreentip(openXmlElement, value?.GetItemScreentip);
+      SetGetItemSupertip(openXmlElement, value?.GetItemSupertip);
+      SetGetItemImage(openXmlElement, value?.GetItemImage);
+      SetGetItemID(openXmlElement, value?.GetItemID);
+      SetSizeString(openXmlElement, value?.SizeString);
+      SetInvalidateContentOnDrop(openXmlElement, value?.InvalidateContentOnDrop);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetMaxLength(openXmlElement, value?.MaxLength);
+      SetGetText(openXmlElement, value?.GetText);
+      SetOnChange(openXmlElement, value?.OnChange);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetShowImage(openXmlElement, value?.ShowImage);
+      SetGetShowImage(openXmlElement, value?.GetShowImage);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -44,6 +44,12 @@ public static class ChartStylePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartStylePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartStylePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartStyle(openXmlElement, value?.ChartStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

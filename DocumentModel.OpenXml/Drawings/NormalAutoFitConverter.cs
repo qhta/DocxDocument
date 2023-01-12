@@ -48,6 +48,13 @@ public static class NormalAutoFitConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NormalAutoFit? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NormalAutoFit, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFontScale(openXmlElement, value?.FontScale);
+      SetLineSpaceReduction(openXmlElement, value?.LineSpaceReduction);
+      return openXmlElement;
+    }
+    return default;
   }
 }

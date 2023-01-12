@@ -130,6 +130,12 @@ public static class PlotAreaConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PlotArea? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotArea, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPlotAreaRegion(openXmlElement, value?.PlotAreaRegion);
+      return openXmlElement;
+    }
+    return default;
   }
 }

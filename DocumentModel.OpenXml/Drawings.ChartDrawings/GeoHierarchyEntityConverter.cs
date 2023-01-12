@@ -69,6 +69,14 @@ public static class GeoHierarchyEntityConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEntityName(openXmlElement, value?.EntityName);
+      SetEntityId(openXmlElement, value?.EntityId);
+      SetEntityType(openXmlElement, value?.EntityType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -36,6 +36,12 @@ public static class CharacterBulletConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CharacterBullet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CharacterBullet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChar(openXmlElement, value?.Char);
+      return openXmlElement;
+    }
+    return default;
   }
 }

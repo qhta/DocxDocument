@@ -72,6 +72,14 @@ public static class DataBinding3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.DataBinding, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPrefixMappings(openXmlElement, value?.PrefixMappings);
+      SetXPath(openXmlElement, value?.XPath);
+      SetStoreItemId(openXmlElement, value?.StoreItemId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

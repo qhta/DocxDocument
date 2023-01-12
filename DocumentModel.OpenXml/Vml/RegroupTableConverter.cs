@@ -67,6 +67,12 @@ public static class RegroupTableConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RegroupTable? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RegroupTable, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -38,12 +38,25 @@ public static class NumberingInstanceConverter
   /// </summary>
   public static Int32? GetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.AbstractNumId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.AbstractNumId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.AbstractNumId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>? GetLevelOverrides(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
@@ -96,6 +109,14 @@ public static class NumberingInstanceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingInstance? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingInstance, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNumberID(openXmlElement, value?.NumberID);
+      SetDurableId(openXmlElement, value?.DurableId);
+      SetAbstractNumId(openXmlElement, value?.AbstractNumId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

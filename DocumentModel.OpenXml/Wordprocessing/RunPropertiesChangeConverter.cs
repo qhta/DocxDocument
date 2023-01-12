@@ -97,6 +97,15 @@ public static class RunPropertiesChangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesChange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      SetPreviousRunProperties(openXmlElement, value?.PreviousRunProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

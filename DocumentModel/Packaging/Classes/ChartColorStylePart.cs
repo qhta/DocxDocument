@@ -10,8 +10,8 @@ public partial class ChartColorStylePart
   /// </summary>
   public DocumentModel.Drawings.ChartsStyle.ColorStyle? ColorStyle { get; set; }
   
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

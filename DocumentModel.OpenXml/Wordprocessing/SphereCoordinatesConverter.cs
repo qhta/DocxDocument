@@ -63,6 +63,14 @@ public static class SphereCoordinatesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SphereCoordinates? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLattitude(openXmlElement, value?.Lattitude);
+      SetLongitude(openXmlElement, value?.Longitude);
+      SetRevolution(openXmlElement, value?.Revolution);
+      return openXmlElement;
+    }
+    return default;
   }
 }

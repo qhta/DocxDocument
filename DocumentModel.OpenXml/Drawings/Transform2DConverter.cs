@@ -125,6 +125,16 @@ public static class Transform2DConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Transform2D? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Transform2D, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRotation(openXmlElement, value?.Rotation);
+      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+      SetOffset(openXmlElement, value?.Offset);
+      SetExtents(openXmlElement, value?.Extents);
+      return openXmlElement;
+    }
+    return default;
   }
 }

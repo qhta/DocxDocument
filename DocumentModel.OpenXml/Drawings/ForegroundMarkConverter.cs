@@ -78,6 +78,15 @@ public static class ForegroundMarkConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ForegroundMark? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFirstXCoordinate(openXmlElement, value?.FirstXCoordinate);
+      SetFirstYCoordinate(openXmlElement, value?.FirstYCoordinate);
+      SetSecondXCoordinate(openXmlElement, value?.SecondXCoordinate);
+      SetSecondYCoordinate(openXmlElement, value?.SecondYCoordinate);
+      return openXmlElement;
+    }
+    return default;
   }
 }

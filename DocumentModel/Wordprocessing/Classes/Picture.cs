@@ -8,7 +8,7 @@ public partial class Picture
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? AnchorId { get; set; }
+  public Byte[]? AnchorId { get; set; }
   
   public DocumentModel.Vml.Group? Group { get; set; }
   

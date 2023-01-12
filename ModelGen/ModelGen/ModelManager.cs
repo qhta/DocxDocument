@@ -32,7 +32,7 @@ public static class ModelManager
 
   private static bool TryAddTypeTableConversion(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "AttachedTemplate")
+    if (typeInfo.Name == "HexBinaryValue")
       Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
@@ -48,11 +48,11 @@ public static class ModelManager
 
   private static bool TryAddBaseTypeConversion(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "AttachedTemplate")
-      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (typeInfo.Name.EndsWith("Relationship"))
+      return false;
+    if (typeInfo.Name == "Byte[]")
       return false;
     if (typeInfo.AcceptedProperties?.Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
     {

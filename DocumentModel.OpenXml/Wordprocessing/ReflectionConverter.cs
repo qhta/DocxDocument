@@ -213,6 +213,24 @@ public static class ReflectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Reflection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Reflection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlurRadius(openXmlElement, value?.BlurRadius);
+      SetStartingOpacity(openXmlElement, value?.StartingOpacity);
+      SetStartPosition(openXmlElement, value?.StartPosition);
+      SetEndingOpacity(openXmlElement, value?.EndingOpacity);
+      SetEndPosition(openXmlElement, value?.EndPosition);
+      SetDistanceFromText(openXmlElement, value?.DistanceFromText);
+      SetDirectionAngle(openXmlElement, value?.DirectionAngle);
+      SetFadeDirection(openXmlElement, value?.FadeDirection);
+      SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
+      SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
+      SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
+      SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
+      SetAlignment(openXmlElement, value?.Alignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

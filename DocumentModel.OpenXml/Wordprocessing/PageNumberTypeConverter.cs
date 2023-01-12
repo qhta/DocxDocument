@@ -38,12 +38,13 @@ public static class PageNumberTypeConverter
   /// </summary>
   public static Byte? GetChapterStyle(DocumentFormat.OpenXml.Wordprocessing.PageNumberType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
+    return openXmlElement?.ChapterStyle?.Value;
   }
   
   public static void SetChapterStyle(DocumentFormat.OpenXml.Wordprocessing.PageNumberType? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
+    if (openXmlElement != null)
+      openXmlElement.ChapterStyle = value;
   }
   
   /// <summary>
@@ -77,6 +78,15 @@ public static class PageNumberTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageNumberType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageNumberType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormat(openXmlElement, value?.Format);
+      SetStart(openXmlElement, value?.Start);
+      SetChapterStyle(openXmlElement, value?.ChapterStyle);
+      SetChapterSeparator(openXmlElement, value?.ChapterSeparator);
+      return openXmlElement;
+    }
+    return default;
   }
 }

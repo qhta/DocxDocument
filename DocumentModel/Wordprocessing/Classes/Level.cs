@@ -13,7 +13,7 @@ public partial class Level
   /// <summary>
   /// Template Code
   /// </summary>
-  public DocumentModel.HexBinary? TemplateCode { get; set; }
+  public Byte[]? TemplateCode { get; set; }
   
   /// <summary>
   /// Tentative Numbering

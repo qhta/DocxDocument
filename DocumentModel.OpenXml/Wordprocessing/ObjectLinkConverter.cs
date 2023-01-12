@@ -138,6 +138,18 @@ public static class ObjectLinkConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectLink? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectLink, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUpdateMode(openXmlElement, value?.UpdateMode);
+      SetLockedField(openXmlElement, value?.LockedField);
+      SetdrawAspect(openXmlElement, value?.drawAspect);
+      SetId(openXmlElement, value?.Id);
+      SetProgId(openXmlElement, value?.ProgId);
+      SetShapeId(openXmlElement, value?.ShapeId);
+      SetFieldCodes(openXmlElement, value?.FieldCodes);
+      return openXmlElement;
+    }
+    return default;
   }
 }
