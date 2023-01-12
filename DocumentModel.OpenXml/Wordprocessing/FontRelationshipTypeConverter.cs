@@ -72,6 +72,14 @@ public static class FontRelationshipTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontRelationshipType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFontKey(openXmlElement, value?.FontKey);
+      SetSubsetted(openXmlElement, value?.Subsetted);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -27,32 +27,39 @@ public static class FontConverter
   /// </summary>
   public static String? GetAltName(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
-    return openXmlElement?.AltName?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltName>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetAltName(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltName>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.AltName = new DocumentFormat.OpenXml.Wordprocessing.AltName { Val = value };
-      else
-        openXmlElement.AltName = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.AltName { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public static DocumentModel.HexBinary? GetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
+  public static Byte[]? GetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>();
     if (itemElement != null)
-      return HexBinaryConverter.GetValue(itemElement);
+      return ByteArrayConverter.GetValue(itemElement);
     return null;
   }
   
-  public static void SetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetPanose1Number(DocumentFormat.OpenXml.Wordprocessing.Font? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +68,7 @@ public static class FontConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = HexBinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>(value);
+        itemElement = ByteArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Panose1Number>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
@@ -350,6 +357,23 @@ public static class FontConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Font? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Font, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetAltName(openXmlElement, value?.AltName);
+      SetPanose1Number(openXmlElement, value?.Panose1Number);
+      SetFontCharSet(openXmlElement, value?.FontCharSet);
+      SetFontFamily(openXmlElement, value?.FontFamily);
+      SetNotTrueType(openXmlElement, value?.NotTrueType);
+      SetPitch(openXmlElement, value?.Pitch);
+      SetFontSignature(openXmlElement, value?.FontSignature);
+      SetEmbedRegularFont(openXmlElement, value?.EmbedRegularFont);
+      SetEmbedBoldFont(openXmlElement, value?.EmbedBoldFont);
+      SetEmbedItalicFont(openXmlElement, value?.EmbedItalicFont);
+      SetEmbedBoldItalicFont(openXmlElement, value?.EmbedBoldItalicFont);
+      return openXmlElement;
+    }
+    return default;
   }
 }

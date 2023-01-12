@@ -531,6 +531,14 @@ public static class BlipConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blip? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blip, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEmbed(openXmlElement, value?.Embed);
+      SetLink(openXmlElement, value?.Link);
+      SetCompressionState(openXmlElement, value?.CompressionState);
+      return openXmlElement;
+    }
+    return default;
   }
 }

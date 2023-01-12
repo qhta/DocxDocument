@@ -48,6 +48,13 @@ public static class AutoNumberedBulletConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AutoNumberedBullet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AutoNumberedBullet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetStartAt(openXmlElement, value?.StartAt);
+      return openXmlElement;
+    }
+    return default;
   }
 }

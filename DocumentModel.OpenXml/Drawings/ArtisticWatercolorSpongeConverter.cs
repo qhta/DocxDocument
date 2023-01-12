@@ -48,6 +48,13 @@ public static class ArtisticWatercolorSpongeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticWatercolorSponge? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetBrushSize(openXmlElement, value?.BrushSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

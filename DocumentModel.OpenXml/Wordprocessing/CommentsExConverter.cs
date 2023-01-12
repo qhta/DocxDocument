@@ -52,6 +52,11 @@ public static class CommentsExConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsEx? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.CommentsEx, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

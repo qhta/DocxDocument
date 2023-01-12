@@ -33,6 +33,12 @@ public static class AlphaBiLevelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaBiLevel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaBiLevel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetThreshold(openXmlElement, value?.Threshold);
+      return openXmlElement;
+    }
+    return default;
   }
 }

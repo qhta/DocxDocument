@@ -52,6 +52,11 @@ public static class DataLabelFieldTableConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTable? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

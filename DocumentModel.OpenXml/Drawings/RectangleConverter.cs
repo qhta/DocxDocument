@@ -90,6 +90,15 @@ public static class RectangleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rectangle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rectangle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLeft(openXmlElement, value?.Left);
+      SetTop(openXmlElement, value?.Top);
+      SetRight(openXmlElement, value?.Right);
+      SetBottom(openXmlElement, value?.Bottom);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -46,6 +46,12 @@ public static class FilteredBubbleSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredBubbleSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBubbleChartSeries(openXmlElement, value?.BubbleChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

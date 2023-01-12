@@ -18,6 +18,11 @@ public static class DocPartsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocParts? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocParts, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

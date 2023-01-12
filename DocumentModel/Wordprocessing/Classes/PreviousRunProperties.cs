@@ -45,7 +45,7 @@ public partial class PreviousRunProperties
   
   public Int32? Spacing { get; set; }
   
-  public Int32? CharacterScale { get; set; }
+  public Int64? CharacterScale { get; set; }
   
   public UInt32? Kern { get; set; }
   

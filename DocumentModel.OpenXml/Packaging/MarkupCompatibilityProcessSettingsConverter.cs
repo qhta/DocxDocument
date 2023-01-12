@@ -46,6 +46,13 @@ public static class MarkupCompatibilityProcessSettingsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.MarkupCompatibilityProcessSettings? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetProcessMode(openXmlElement, value?.ProcessMode);
+      SetTargetFileFormatVersions(openXmlElement, value?.TargetFileFormatVersions);
+      return openXmlElement;
+    }
+    return default;
   }
 }

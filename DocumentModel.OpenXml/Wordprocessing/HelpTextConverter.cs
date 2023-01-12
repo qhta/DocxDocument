@@ -51,6 +51,13 @@ public static class HelpTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.HelpText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.HelpText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -180,6 +180,20 @@ public static class SeparatorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Separator? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Separator, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

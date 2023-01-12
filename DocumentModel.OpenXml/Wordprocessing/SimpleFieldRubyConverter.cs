@@ -1461,6 +1461,15 @@ public static class SimpleFieldRubyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SimpleFieldRuby? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetInstruction(openXmlElement, value?.Instruction);
+      SetFieldLock(openXmlElement, value?.FieldLock);
+      SetDirty(openXmlElement, value?.Dirty);
+      SetFieldData(openXmlElement, value?.FieldData);
+      return openXmlElement;
+    }
+    return default;
   }
 }

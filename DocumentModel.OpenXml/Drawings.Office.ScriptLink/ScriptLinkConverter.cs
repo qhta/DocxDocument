@@ -64,6 +64,13 @@ public static class ScriptLinkConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.ScriptLink.ScriptLink? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

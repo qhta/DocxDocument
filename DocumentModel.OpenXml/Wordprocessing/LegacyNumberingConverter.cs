@@ -72,6 +72,14 @@ public static class LegacyNumberingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LegacyNumbering? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLegacy(openXmlElement, value?.Legacy);
+      SetLegacySpace(openXmlElement, value?.LegacySpace);
+      SetLegacyIndent(openXmlElement, value?.LegacyIndent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

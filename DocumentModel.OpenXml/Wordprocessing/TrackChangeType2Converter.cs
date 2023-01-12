@@ -69,6 +69,14 @@ public static class TrackChangeType2Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TrackChangeType2? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.TrackChangeType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

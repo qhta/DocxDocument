@@ -159,22 +159,48 @@ public static class BarChartConverter
   
   public static UInt16? GetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.GapWidth");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.GapWidth");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.GapWidth{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static SByte? GetOverlap(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Overlap");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlap>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetOverlap(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement, SByte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Overlap");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Overlap{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines>? GetSeriesLineses(DocumentFormat.OpenXml.Drawing.Charts.BarChart? openXmlElement)
@@ -290,6 +316,14 @@ public static class BarChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BarChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BarChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBarDirection(openXmlElement, value?.BarDirection);
+      SetBarGrouping(openXmlElement, value?.BarGrouping);
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

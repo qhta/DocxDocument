@@ -52,6 +52,11 @@ public static class PeopleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.People? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.People, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

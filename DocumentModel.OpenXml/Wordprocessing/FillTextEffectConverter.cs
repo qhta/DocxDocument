@@ -106,6 +106,14 @@ public static class FillTextEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FillTextEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.FillTextEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
+      SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
+      SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -78,7 +78,7 @@ public partial class ComboBox
   /// <summary>
   /// maxLength
   /// </summary>
-  public Int32? MaxLength { get; set; }
+  public Int64? MaxLength { get; set; }
   
   /// <summary>
   /// getText

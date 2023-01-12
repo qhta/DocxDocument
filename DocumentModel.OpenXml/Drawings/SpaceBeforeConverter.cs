@@ -7,22 +7,48 @@ public static class SpaceBeforeConverter
 {
   public static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.SpacingPercent");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.SpacingPercent");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.SpacingPoints");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.SpacingPoints");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.SpaceBefore? CreateModelElement(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
@@ -40,6 +66,11 @@ public static class SpaceBeforeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SpaceBefore? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SpaceBefore, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

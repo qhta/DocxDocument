@@ -54,6 +54,13 @@ public static class CameraToolConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CameraTool? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.CameraTool, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCellRange(openXmlElement, value?.CellRange);
+      SetShapeId(openXmlElement, value?.ShapeId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

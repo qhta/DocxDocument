@@ -218,6 +218,19 @@ public static class DivConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Div? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Div, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetBlockQuote(openXmlElement, value?.BlockQuote);
+      SetBodyDiv(openXmlElement, value?.BodyDiv);
+      SetLeftMarginDiv(openXmlElement, value?.LeftMarginDiv);
+      SetRightMarginDiv(openXmlElement, value?.RightMarginDiv);
+      SetTopMarginDiv(openXmlElement, value?.TopMarginDiv);
+      SetBottomMarginDiv(openXmlElement, value?.BottomMarginDiv);
+      SetDivBorder(openXmlElement, value?.DivBorder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

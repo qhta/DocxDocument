@@ -8,7 +8,7 @@ public partial class TableLook
   /// <summary>
   /// val
   /// </summary>
-  public DocumentModel.HexBinary? Val { get; set; }
+  public Byte[]? Val { get; set; }
   
   /// <summary>
   /// firstRow, this property is only available in Office 2010 and later.

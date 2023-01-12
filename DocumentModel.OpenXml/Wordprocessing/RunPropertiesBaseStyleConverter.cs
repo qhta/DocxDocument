@@ -560,12 +560,25 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   public static Int32? GetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Spacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Spacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Spacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -573,12 +586,25 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   public static Int64? GetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.CharacterScale");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.CharacterScale");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.CharacterScale{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -586,12 +612,25 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   public static UInt32? GetKern(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Kern");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetKern(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Kern");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Kern{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -969,6 +1008,45 @@ public static class RunPropertiesBaseStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesBaseStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunFonts(openXmlElement, value?.RunFonts);
+      SetBold(openXmlElement, value?.Bold);
+      SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
+      SetItalic(openXmlElement, value?.Italic);
+      SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
+      SetCaps(openXmlElement, value?.Caps);
+      SetSmallCaps(openXmlElement, value?.SmallCaps);
+      SetStrike(openXmlElement, value?.Strike);
+      SetDoubleStrike(openXmlElement, value?.DoubleStrike);
+      SetOutline(openXmlElement, value?.Outline);
+      SetShadow(openXmlElement, value?.Shadow);
+      SetEmboss(openXmlElement, value?.Emboss);
+      SetImprint(openXmlElement, value?.Imprint);
+      SetNoProof(openXmlElement, value?.NoProof);
+      SetSnapToGrid(openXmlElement, value?.SnapToGrid);
+      SetVanish(openXmlElement, value?.Vanish);
+      SetWebHidden(openXmlElement, value?.WebHidden);
+      SetColor(openXmlElement, value?.Color);
+      SetSpacing(openXmlElement, value?.Spacing);
+      SetCharacterScale(openXmlElement, value?.CharacterScale);
+      SetKern(openXmlElement, value?.Kern);
+      SetPosition(openXmlElement, value?.Position);
+      SetFontSize(openXmlElement, value?.FontSize);
+      SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
+      SetUnderline(openXmlElement, value?.Underline);
+      SetTextEffect(openXmlElement, value?.TextEffect);
+      SetBorder(openXmlElement, value?.Border);
+      SetShading(openXmlElement, value?.Shading);
+      SetFitText(openXmlElement, value?.FitText);
+      SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
+      SetEmphasis(openXmlElement, value?.Emphasis);
+      SetLanguages(openXmlElement, value?.Languages);
+      SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
+      SetSpecVanish(openXmlElement, value?.SpecVanish);
+      return openXmlElement;
+    }
+    return default;
   }
 }

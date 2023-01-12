@@ -44,6 +44,12 @@ public static class VbaDataPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.VbaDataPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.VbaDataPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVbaSuppData(openXmlElement, value?.VbaSuppData);
+      return openXmlElement;
+    }
+    return default;
   }
 }

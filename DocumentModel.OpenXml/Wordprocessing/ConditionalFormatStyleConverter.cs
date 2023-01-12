@@ -252,6 +252,24 @@ public static class ConditionalFormatStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetFirstRow(openXmlElement, value?.FirstRow);
+      SetLastRow(openXmlElement, value?.LastRow);
+      SetFirstColumn(openXmlElement, value?.FirstColumn);
+      SetLastColumn(openXmlElement, value?.LastColumn);
+      SetOddVerticalBand(openXmlElement, value?.OddVerticalBand);
+      SetEvenVerticalBand(openXmlElement, value?.EvenVerticalBand);
+      SetOddHorizontalBand(openXmlElement, value?.OddHorizontalBand);
+      SetEvenHorizontalBand(openXmlElement, value?.EvenHorizontalBand);
+      SetFirstRowFirstColumn(openXmlElement, value?.FirstRowFirstColumn);
+      SetFirstRowLastColumn(openXmlElement, value?.FirstRowLastColumn);
+      SetLastRowFirstColumn(openXmlElement, value?.LastRowFirstColumn);
+      SetLastRowLastColumn(openXmlElement, value?.LastRowLastColumn);
+      return openXmlElement;
+    }
+    return default;
   }
 }

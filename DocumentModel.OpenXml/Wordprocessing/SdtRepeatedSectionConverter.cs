@@ -64,6 +64,13 @@ public static class SdtRepeatedSectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtRepeatedSection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSectionTitle(openXmlElement, value?.SectionTitle);
+      SetDoNotAllowInsertDeleteSection(openXmlElement, value?.DoNotAllowInsertDeleteSection);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -217,6 +217,23 @@ public static class ConstraintConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Constraint? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Constraint, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetFor(openXmlElement, value?.For);
+      SetForName(openXmlElement, value?.ForName);
+      SetPointType(openXmlElement, value?.PointType);
+      SetReferenceType(openXmlElement, value?.ReferenceType);
+      SetReferenceFor(openXmlElement, value?.ReferenceFor);
+      SetReferenceForName(openXmlElement, value?.ReferenceForName);
+      SetReferencePointType(openXmlElement, value?.ReferencePointType);
+      SetOperator(openXmlElement, value?.Operator);
+      SetVal(openXmlElement, value?.Val);
+      SetFact(openXmlElement, value?.Fact);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

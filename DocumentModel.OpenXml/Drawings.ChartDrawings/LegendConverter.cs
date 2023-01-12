@@ -150,6 +150,17 @@ public static class LegendConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Legend? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPos(openXmlElement, value?.Pos);
+      SetAlign(openXmlElement, value?.Align);
+      SetOverlay(openXmlElement, value?.Overlay);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

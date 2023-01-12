@@ -44,6 +44,12 @@ public static class WordCommentsExtensiblePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordCommentsExtensiblePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCommentsExtensible(openXmlElement, value?.CommentsExtensible);
+      return openXmlElement;
+    }
+    return default;
   }
 }

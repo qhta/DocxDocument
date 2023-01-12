@@ -481,6 +481,32 @@ public static class ShapeDefaultsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeDefaults? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeDefaults, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetMaxShapeId(openXmlElement, value?.MaxShapeId);
+      SetStyle(openXmlElement, value?.Style);
+      SetBeFilled(openXmlElement, value?.BeFilled);
+      SetFillColor(openXmlElement, value?.FillColor);
+      SetIsStroke(openXmlElement, value?.IsStroke);
+      SetStrokeColor(openXmlElement, value?.StrokeColor);
+      SetAllowInCell(openXmlElement, value?.AllowInCell);
+      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+      SetInsetMode(openXmlElement, value?.InsetMode);
+      SetFill(openXmlElement, value?.Fill);
+      SetImageData(openXmlElement, value?.ImageData);
+      SetStroke(openXmlElement, value?.Stroke);
+      SetTextBox(openXmlElement, value?.TextBox);
+      SetShadow(openXmlElement, value?.Shadow);
+      SetSkew(openXmlElement, value?.Skew);
+      SetExtrusion(openXmlElement, value?.Extrusion);
+      SetCallout(openXmlElement, value?.Callout);
+      SetLock(openXmlElement, value?.Lock);
+      SetColorMostRecentlyUsed(openXmlElement, value?.ColorMostRecentlyUsed);
+      SetColorMenu(openXmlElement, value?.ColorMenu);
+      return openXmlElement;
+    }
+    return default;
   }
 }

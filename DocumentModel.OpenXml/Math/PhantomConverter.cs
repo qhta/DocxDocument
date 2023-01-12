@@ -74,6 +74,13 @@ public static class PhantomConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Phantom? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Phantom, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPhantomProperties(openXmlElement, value?.PhantomProperties);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

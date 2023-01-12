@@ -36,6 +36,12 @@ public static class VTVStreamDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTVStreamData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTVStreamData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVersion(openXmlElement, value?.Version);
+      return openXmlElement;
+    }
+    return default;
   }
 }

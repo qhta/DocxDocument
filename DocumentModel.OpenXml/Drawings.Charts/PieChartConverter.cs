@@ -95,12 +95,25 @@ public static class PieChartConverter
   
   public static UInt16? GetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.PieChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.PieChart? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.PieChartExtensionList? GetPieChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.PieChart? openXmlElement)
@@ -145,6 +158,12 @@ public static class PieChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PieChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PieChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

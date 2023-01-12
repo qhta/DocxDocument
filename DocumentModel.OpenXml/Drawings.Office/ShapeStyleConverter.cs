@@ -130,6 +130,15 @@ public static class ShapeStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.ShapeStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.ShapeStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLineReference(openXmlElement, value?.LineReference);
+      SetFillReference(openXmlElement, value?.FillReference);
+      SetEffectReference(openXmlElement, value?.EffectReference);
+      SetFontReference(openXmlElement, value?.FontReference);
+      return openXmlElement;
+    }
+    return default;
   }
 }

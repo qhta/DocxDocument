@@ -163,6 +163,17 @@ public static class ContentPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ContentPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ContentPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelationshipId(openXmlElement, value?.RelationshipId);
+      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+      SetNonVisualContentPartProperties(openXmlElement, value?.NonVisualContentPartProperties);
+      SetApplicationNonVisualDrawingProperties(openXmlElement, value?.ApplicationNonVisualDrawingProperties);
+      SetTransform2D(openXmlElement, value?.Transform2D);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -123,6 +123,17 @@ public static class LatentStyleExceptionInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyleExceptionInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetLocked(openXmlElement, value?.Locked);
+      SetUiPriority(openXmlElement, value?.UiPriority);
+      SetSemiHidden(openXmlElement, value?.SemiHidden);
+      SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
+      SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

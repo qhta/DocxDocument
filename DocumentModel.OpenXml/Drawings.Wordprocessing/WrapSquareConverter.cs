@@ -121,6 +121,17 @@ public static class WrapSquareConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapSquare? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWrapText(openXmlElement, value?.WrapText);
+      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+      SetEffectExtent(openXmlElement, value?.EffectExtent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

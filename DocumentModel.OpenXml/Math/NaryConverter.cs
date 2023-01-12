@@ -130,6 +130,15 @@ public static class NaryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Nary? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Nary, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNaryProperties(openXmlElement, value?.NaryProperties);
+      SetSubArgument(openXmlElement, value?.SubArgument);
+      SetSuperArgument(openXmlElement, value?.SuperArgument);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

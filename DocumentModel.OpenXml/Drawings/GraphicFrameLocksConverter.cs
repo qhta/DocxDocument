@@ -154,6 +154,18 @@ public static class GraphicFrameLocksConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GraphicFrameLocks? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GraphicFrameLocks, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoGrouping(openXmlElement, value?.NoGrouping);
+      SetNoDrilldown(openXmlElement, value?.NoDrilldown);
+      SetNoSelection(openXmlElement, value?.NoSelection);
+      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+      SetNoMove(openXmlElement, value?.NoMove);
+      SetNoResize(openXmlElement, value?.NoResize);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

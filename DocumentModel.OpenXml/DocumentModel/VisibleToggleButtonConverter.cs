@@ -540,6 +540,40 @@ public static class VisibleToggleButtonConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VisibleToggleButton? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.VisibleToggleButton, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGetPressed(openXmlElement, value?.GetPressed);
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetDescription(openXmlElement, value?.Description);
+      SetGetDescription(openXmlElement, value?.GetDescription);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetShowImage(openXmlElement, value?.ShowImage);
+      SetGetShowImage(openXmlElement, value?.GetShowImage);
+      return openXmlElement;
+    }
+    return default;
   }
 }

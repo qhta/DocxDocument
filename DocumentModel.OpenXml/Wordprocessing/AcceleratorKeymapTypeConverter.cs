@@ -36,6 +36,12 @@ public static class AcceleratorKeymapTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AcceleratorKeymapType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAcceleratorName(openXmlElement, value?.AcceleratorName);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -324,6 +324,26 @@ public static class OuterShadowConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OuterShadow? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.OuterShadow, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlurRadius(openXmlElement, value?.BlurRadius);
+      SetDistance(openXmlElement, value?.Distance);
+      SetDirection(openXmlElement, value?.Direction);
+      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

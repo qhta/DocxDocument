@@ -378,6 +378,12 @@ public static class MainDocumentPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.MainDocumentPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.MainDocumentPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDocument(openXmlElement, value?.Document);
+      return openXmlElement;
+    }
+    return default;
   }
 }

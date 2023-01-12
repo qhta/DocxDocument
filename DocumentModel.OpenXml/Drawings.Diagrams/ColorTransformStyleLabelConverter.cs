@@ -232,6 +232,19 @@ public static class ColorTransformStyleLabelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetFillColorList(openXmlElement, value?.FillColorList);
+      SetLineColorList(openXmlElement, value?.LineColorList);
+      SetEffectColorList(openXmlElement, value?.EffectColorList);
+      SetTextLineColorList(openXmlElement, value?.TextLineColorList);
+      SetTextFillColorList(openXmlElement, value?.TextFillColorList);
+      SetTextEffectColorList(openXmlElement, value?.TextEffectColorList);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

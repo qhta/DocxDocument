@@ -54,6 +54,13 @@ public static class DocPartNameConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartName? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartName, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetDecorated(openXmlElement, value?.Decorated);
+      return openXmlElement;
+    }
+    return default;
   }
 }

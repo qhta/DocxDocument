@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramDataPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -15,18 +15,18 @@ public partial class DiagramDataPart
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts { get; }
+  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts { get; set; }
   
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WorksheetPart>? WorksheetParts { get; }
+  public Collection<DocumentModel.Packaging.WorksheetPart>? WorksheetParts { get; set; }
   
 }

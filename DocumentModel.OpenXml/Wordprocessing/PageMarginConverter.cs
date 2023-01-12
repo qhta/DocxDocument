@@ -123,6 +123,18 @@ public static class PageMarginConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageMargin? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageMargin, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTop(openXmlElement, value?.Top);
+      SetRight(openXmlElement, value?.Right);
+      SetBottom(openXmlElement, value?.Bottom);
+      SetLeft(openXmlElement, value?.Left);
+      SetHeader(openXmlElement, value?.Header);
+      SetFooter(openXmlElement, value?.Footer);
+      SetGutter(openXmlElement, value?.Gutter);
+      return openXmlElement;
+    }
+    return default;
   }
 }

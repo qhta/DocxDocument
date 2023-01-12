@@ -104,6 +104,12 @@ public static class ExtendedChartPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ExtendedChartPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ExtendedChartPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartSpace(openXmlElement, value?.ChartSpace);
+      return openXmlElement;
+    }
+    return default;
   }
 }

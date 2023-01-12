@@ -55,12 +55,25 @@ public static class RubyPropertiesConverter
   /// </summary>
   public static Int16? GetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -139,6 +152,17 @@ public static class RubyPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RubyProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RubyProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRubyAlign(openXmlElement, value?.RubyAlign);
+      SetPhoneticGuideTextFontSize(openXmlElement, value?.PhoneticGuideTextFontSize);
+      SetPhoneticGuideRaise(openXmlElement, value?.PhoneticGuideRaise);
+      SetPhoneticGuideBaseTextSize(openXmlElement, value?.PhoneticGuideBaseTextSize);
+      SetLanguageId(openXmlElement, value?.LanguageId);
+      SetDirty(openXmlElement, value?.Dirty);
+      return openXmlElement;
+    }
+    return default;
   }
 }

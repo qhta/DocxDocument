@@ -290,6 +290,14 @@ public static class LayoutDefinitionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.LayoutDefinition? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUniqueId(openXmlElement, value?.UniqueId);
+      SetMinVersion(openXmlElement, value?.MinVersion);
+      SetDefaultStyle(openXmlElement, value?.DefaultStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

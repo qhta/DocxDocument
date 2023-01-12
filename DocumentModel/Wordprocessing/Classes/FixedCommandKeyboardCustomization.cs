@@ -13,11 +13,11 @@ public partial class FixedCommandKeyboardCustomization
   /// <summary>
   /// fciIndex
   /// </summary>
-  public DocumentModel.HexBinary? CommandIndex { get; set; }
+  public Byte[]? CommandIndex { get; set; }
   
   /// <summary>
   /// swArg
   /// </summary>
-  public DocumentModel.HexBinary? Argument { get; set; }
+  public Byte[]? Argument { get; set; }
   
 }

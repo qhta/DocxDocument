@@ -25,27 +25,43 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// fciIndex
   /// </summary>
-  public static DocumentModel.HexBinary? GetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
+  public static Byte[]? GetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CommandIndex?.Value != null)
+      return Convert.FromHexString(openXmlElement.CommandIndex.Value);
+    return null;
   }
   
-  public static void SetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CommandIndex = Convert.ToHexString(value);
+      else
+        openXmlElement.CommandIndex = null;
+    }
   }
   
   /// <summary>
   /// swArg
   /// </summary>
-  public static DocumentModel.HexBinary? GetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
+  public static Byte[]? GetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Argument?.Value != null)
+      return Convert.FromHexString(openXmlElement.Argument.Value);
+    return null;
   }
   
-  public static void SetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Argument = Convert.ToHexString(value);
+      else
+        openXmlElement.Argument = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
@@ -64,6 +80,14 @@ public static class FixedCommandKeyboardCustomizationConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCommandName(openXmlElement, value?.CommandName);
+      SetCommandIndex(openXmlElement, value?.CommandIndex);
+      SetArgument(openXmlElement, value?.Argument);
+      return openXmlElement;
+    }
+    return default;
   }
 }

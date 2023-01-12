@@ -364,6 +364,12 @@ public static class GlossaryDocumentPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.GlossaryDocumentPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGlossaryDocument(openXmlElement, value?.GlossaryDocument);
+      return openXmlElement;
+    }
+    return default;
   }
 }

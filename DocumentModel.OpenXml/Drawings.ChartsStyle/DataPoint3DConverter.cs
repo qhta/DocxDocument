@@ -229,6 +229,11 @@ public static class DataPoint3DConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.DataPoint3D? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPoint3D, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -63,6 +63,14 @@ public static class DocGridConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocGrid? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocGrid, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetLinePitch(openXmlElement, value?.LinePitch);
+      SetCharacterSpace(openXmlElement, value?.CharacterSpace);
+      return openXmlElement;
+    }
+    return default;
   }
 }

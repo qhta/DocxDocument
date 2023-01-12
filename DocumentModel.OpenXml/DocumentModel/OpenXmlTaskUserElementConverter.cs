@@ -72,6 +72,14 @@ public static class OpenXmlTaskUserElementConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.OpenXmlTaskUserElement? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUserId(openXmlElement, value?.UserId);
+      SetUserName(openXmlElement, value?.UserName);
+      SetUserProvider(openXmlElement, value?.UserProvider);
+      return openXmlElement;
+    }
+    return default;
   }
 }

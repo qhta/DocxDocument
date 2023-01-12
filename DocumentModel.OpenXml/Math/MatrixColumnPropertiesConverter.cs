@@ -10,12 +10,25 @@ public static class MatrixColumnPropertiesConverter
   /// </summary>
   public static Int64? GetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.MatrixColumnCount");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnCount>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMatrixColumnCount(DocumentFormat.OpenXml.Math.MatrixColumnProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.MatrixColumnCount");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnCount>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.MatrixColumnCount{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -65,6 +78,13 @@ public static class MatrixColumnPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumnProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumnProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMatrixColumnCount(openXmlElement, value?.MatrixColumnCount);
+      SetMatrixColumnJustification(openXmlElement, value?.MatrixColumnJustification);
+      return openXmlElement;
+    }
+    return default;
   }
 }

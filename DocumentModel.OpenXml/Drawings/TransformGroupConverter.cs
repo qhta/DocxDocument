@@ -181,6 +181,18 @@ public static class TransformGroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TransformGroup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TransformGroup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRotation(openXmlElement, value?.Rotation);
+      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+      SetOffset(openXmlElement, value?.Offset);
+      SetExtents(openXmlElement, value?.Extents);
+      SetChildOffset(openXmlElement, value?.ChildOffset);
+      SetChildExtents(openXmlElement, value?.ChildExtents);
+      return openXmlElement;
+    }
+    return default;
   }
 }

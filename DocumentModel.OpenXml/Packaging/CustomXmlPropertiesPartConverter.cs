@@ -44,6 +44,12 @@ public static class CustomXmlPropertiesPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomXmlPropertiesPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDataStoreItem(openXmlElement, value?.DataStoreItem);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -166,6 +166,17 @@ public static class CustomUIConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomUI? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOnLoad(openXmlElement, value?.OnLoad);
+      SetLoadImage(openXmlElement, value?.LoadImage);
+      SetCommands(openXmlElement, value?.Commands);
+      SetRibbon(openXmlElement, value?.Ribbon);
+      SetBackstage(openXmlElement, value?.Backstage);
+      SetContextMenus(openXmlElement, value?.ContextMenus);
+      return openXmlElement;
+    }
+    return default;
   }
 }

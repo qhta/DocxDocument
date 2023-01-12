@@ -10,12 +10,25 @@ public static class PivotFormatConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.PivotFormat? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.PivotFormat? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -144,6 +157,16 @@ public static class PivotFormatConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PivotFormat? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PivotFormat, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetMarker(openXmlElement, value?.Marker);
+      SetDataLabel(openXmlElement, value?.DataLabel);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -80,6 +80,12 @@ public static class EquationArrayConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.EquationArray? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.EquationArray, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEquationArrayProperties(openXmlElement, value?.EquationArrayProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

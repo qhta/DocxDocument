@@ -233,6 +233,24 @@ public static class SignatureLineConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.SignatureLine? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.SignatureLine, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetIsSignatureLine(openXmlElement, value?.IsSignatureLine);
+      SetId(openXmlElement, value?.Id);
+      SetProviderId(openXmlElement, value?.ProviderId);
+      SetSigningInstructionsSet(openXmlElement, value?.SigningInstructionsSet);
+      SetAllowComments(openXmlElement, value?.AllowComments);
+      SetShowSignDate(openXmlElement, value?.ShowSignDate);
+      SetSuggestedSigner(openXmlElement, value?.SuggestedSigner);
+      SetSuggestedSigner2(openXmlElement, value?.SuggestedSigner2);
+      SetSuggestedSignerEmail(openXmlElement, value?.SuggestedSignerEmail);
+      SetSigningInstructions(openXmlElement, value?.SigningInstructions);
+      SetAdditionalXml(openXmlElement, value?.AdditionalXml);
+      SetSignatureProviderUrl(openXmlElement, value?.SignatureProviderUrl);
+      return openXmlElement;
+    }
+    return default;
   }
 }

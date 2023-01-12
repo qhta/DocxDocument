@@ -31,12 +31,25 @@ public static class SdtPropertiesConverter
   
   public static String? GetSdtAlias(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: type DocumentFormat.OpenXml.Wordprocessing.SdtProperties has no property \"SdtAlias\"");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtAlias>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSdtAlias(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: type DocumentFormat.OpenXml.Wordprocessing.SdtProperties has no property \"SdtAlias\"");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtAlias>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtAlias { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.LockingKind? GetLock(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
@@ -174,22 +187,48 @@ public static class SdtPropertiesConverter
   
   public static Int32? GetSdtId(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.SdtId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSdtId(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.SdtId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetTag(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: type DocumentFormat.OpenXml.Wordprocessing.SdtProperties has no property \"Tag\"");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tag>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetTag(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: type DocumentFormat.OpenXml.Wordprocessing.SdtProperties has no property \"Tag\"");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tag>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Tag { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Color3? GetColor(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
@@ -759,6 +798,11 @@ public static class SdtPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

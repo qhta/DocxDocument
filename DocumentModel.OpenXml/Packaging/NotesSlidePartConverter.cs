@@ -330,6 +330,11 @@ public static class NotesSlidePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.NotesSlidePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.NotesSlidePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

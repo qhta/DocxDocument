@@ -52,6 +52,11 @@ public static class CopyrightsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Copyrights? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

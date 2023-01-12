@@ -7,33 +7,47 @@ public static class SdtContentDocPartObjectConverter
 {
   public static String? GetDocPartGallery(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject? openXmlElement)
   {
-    return openXmlElement?.DocPartGallery?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDocPartGallery(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.DocPartGallery = new DocumentFormat.OpenXml.Wordprocessing.DocPartGallery { Val = value };
-      else
-        openXmlElement.DocPartGallery = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartGallery { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
   public static String? GetDocPartCategory(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject? openXmlElement)
   {
-    return openXmlElement?.DocPartCategory?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDocPartCategory(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.DocPartCategory = new DocumentFormat.OpenXml.Wordprocessing.DocPartCategory { Val = value };
-      else
-        openXmlElement.DocPartCategory = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartCategory { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -81,6 +95,11 @@ public static class SdtContentDocPartObjectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDocPartObject? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

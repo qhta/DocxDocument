@@ -215,6 +215,12 @@ public static class BlipExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BlipExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BlipExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

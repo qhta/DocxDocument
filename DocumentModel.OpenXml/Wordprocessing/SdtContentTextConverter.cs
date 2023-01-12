@@ -36,6 +36,12 @@ public static class SdtContentTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMultiLine(openXmlElement, value?.MultiLine);
+      return openXmlElement;
+    }
+    return default;
   }
 }

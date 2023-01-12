@@ -191,12 +191,25 @@ public static class ErrorBarsConverter
   /// </summary>
   public static Double? GetErrorBarValue(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetErrorBarValue(DocumentFormat.OpenXml.Drawing.Charts.ErrorBars? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValue{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -275,6 +288,20 @@ public static class ErrorBarsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ErrorBars? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ErrorBars, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetErrorDirection(openXmlElement, value?.ErrorDirection);
+      SetErrorBarType(openXmlElement, value?.ErrorBarType);
+      SetErrorBarValueType(openXmlElement, value?.ErrorBarValueType);
+      SetNoEndCap(openXmlElement, value?.NoEndCap);
+      SetPlus(openXmlElement, value?.Plus);
+      SetMinus(openXmlElement, value?.Minus);
+      SetErrorBarValue(openXmlElement, value?.ErrorBarValue);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -44,6 +44,12 @@ public static class DiagramColorsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramColorsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramColorsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColorsDefinition(openXmlElement, value?.ColorsDefinition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

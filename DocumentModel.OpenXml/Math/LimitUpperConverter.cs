@@ -102,6 +102,14 @@ public static class LimitUpperConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.LimitUpper? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.LimitUpper, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLimitUpperProperties(openXmlElement, value?.LimitUpperProperties);
+      SetBase(openXmlElement, value?.Base);
+      SetLimit(openXmlElement, value?.Limit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

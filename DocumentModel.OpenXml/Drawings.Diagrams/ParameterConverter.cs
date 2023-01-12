@@ -51,6 +51,13 @@ public static class ParameterConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Parameter? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Parameter, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

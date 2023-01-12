@@ -8,14 +8,22 @@ public static class CommentExtensibleConverter
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+  public static Byte[]? GetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.DurableId?.Value != null)
+      return Convert.FromHexString(openXmlElement.DurableId.Value);
+    return null;
   }
   
-  public static void SetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.DurableId = Convert.ToHexString(value);
+      else
+        openXmlElement.DurableId = null;
+    }
   }
   
   /// <summary>
@@ -93,6 +101,15 @@ public static class CommentExtensibleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentExtensible? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDurableId(openXmlElement, value?.DurableId);
+      SetDateUtc(openXmlElement, value?.DateUtc);
+      SetIntelligentPlaceholder(openXmlElement, value?.IntelligentPlaceholder);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

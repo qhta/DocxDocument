@@ -331,6 +331,27 @@ public static class BackstageSubMenuConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageSubMenu? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDescription(openXmlElement, value?.Description);
+      SetGetDescription(openXmlElement, value?.GetDescription);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      return openXmlElement;
+    }
+    return default;
   }
 }

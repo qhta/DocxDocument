@@ -79,6 +79,13 @@ public static class BarPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BarProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.BarProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPosition(openXmlElement, value?.Position);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

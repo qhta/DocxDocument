@@ -813,6 +813,43 @@ public static class MenuConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Menu? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Menu, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSize(openXmlElement, value?.Size);
+      SetGetSize(openXmlElement, value?.GetSize);
+      SetItemSize(openXmlElement, value?.ItemSize);
+      SetDescription(openXmlElement, value?.Description);
+      SetGetDescription(openXmlElement, value?.GetDescription);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetShowImage(openXmlElement, value?.ShowImage);
+      SetGetShowImage(openXmlElement, value?.GetShowImage);
+      return openXmlElement;
+    }
+    return default;
   }
 }

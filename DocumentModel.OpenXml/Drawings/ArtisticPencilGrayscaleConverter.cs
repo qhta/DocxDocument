@@ -48,6 +48,13 @@ public static class ArtisticPencilGrayscaleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPencilGrayscale? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetBrushSize(openXmlElement, value?.BrushSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

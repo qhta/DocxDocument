@@ -162,6 +162,20 @@ public static class PageSetupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PageSetup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PageSetup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPaperSize(openXmlElement, value?.PaperSize);
+      SetFirstPageNumber(openXmlElement, value?.FirstPageNumber);
+      SetOrientation(openXmlElement, value?.Orientation);
+      SetBlackAndWhite(openXmlElement, value?.BlackAndWhite);
+      SetDraft(openXmlElement, value?.Draft);
+      SetUseFirstPageNumber(openXmlElement, value?.UseFirstPageNumber);
+      SetHorizontalDpi(openXmlElement, value?.HorizontalDpi);
+      SetVerticalDpi(openXmlElement, value?.VerticalDpi);
+      SetCopies(openXmlElement, value?.Copies);
+      return openXmlElement;
+    }
+    return default;
   }
 }

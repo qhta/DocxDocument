@@ -33,6 +33,12 @@ public static class TableLayoutConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLayout? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLayout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      return openXmlElement;
+    }
+    return default;
   }
 }

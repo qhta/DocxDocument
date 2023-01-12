@@ -102,6 +102,16 @@ public static class EastAsianLayoutConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EastAsianLayout? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetCombine(openXmlElement, value?.Combine);
+      SetCombineBrackets(openXmlElement, value?.CombineBrackets);
+      SetVertical(openXmlElement, value?.Vertical);
+      SetVerticalCompress(openXmlElement, value?.VerticalCompress);
+      return openXmlElement;
+    }
+    return default;
   }
 }

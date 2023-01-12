@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class EmbeddedObjectPart
 {
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

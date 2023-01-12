@@ -51,6 +51,13 @@ public static class ZoomConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Zoom? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Zoom, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetPercent(openXmlElement, value?.Percent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

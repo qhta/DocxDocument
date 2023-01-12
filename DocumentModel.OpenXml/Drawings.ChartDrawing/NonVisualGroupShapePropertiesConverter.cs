@@ -74,6 +74,13 @@ public static class NonVisualGroupShapePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
+      SetNonVisualGroupShapeDrawingProperties(openXmlElement, value?.NonVisualGroupShapeDrawingProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -61,6 +61,12 @@ public static class SerAxExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SerAxExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

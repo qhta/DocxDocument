@@ -154,6 +154,18 @@ public static class AdjustHandleXYConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandleXY? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandleXY, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetXAdjustmentGuide(openXmlElement, value?.XAdjustmentGuide);
+      SetMinX(openXmlElement, value?.MinX);
+      SetMaxX(openXmlElement, value?.MaxX);
+      SetYAdjustmentGuide(openXmlElement, value?.YAdjustmentGuide);
+      SetMinY(openXmlElement, value?.MinY);
+      SetMaxY(openXmlElement, value?.MaxY);
+      SetPosition(openXmlElement, value?.Position);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -199,6 +199,21 @@ public static class ConnectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Connection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Connection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetModelId(openXmlElement, value?.ModelId);
+      SetType(openXmlElement, value?.Type);
+      SetSourceId(openXmlElement, value?.SourceId);
+      SetDestinationId(openXmlElement, value?.DestinationId);
+      SetSourcePosition(openXmlElement, value?.SourcePosition);
+      SetDestinationPosition(openXmlElement, value?.DestinationPosition);
+      SetParentTransitionId(openXmlElement, value?.ParentTransitionId);
+      SetSiblingTransitionId(openXmlElement, value?.SiblingTransitionId);
+      SetPresentationId(openXmlElement, value?.PresentationId);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

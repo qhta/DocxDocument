@@ -48,6 +48,13 @@ public static class BrightnessContrastConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BrightnessContrast? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBright(openXmlElement, value?.Bright);
+      SetContrast(openXmlElement, value?.Contrast);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -46,6 +46,12 @@ public static class FilteredAreaSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredAreaSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

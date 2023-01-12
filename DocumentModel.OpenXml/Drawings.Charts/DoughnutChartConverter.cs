@@ -95,22 +95,48 @@ public static class DoughnutChartConverter
   
   public static UInt16? GetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Byte? GetHoleSize(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.HoleSize");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetHoleSize(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.HoleSize");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.HoleSize{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement)
@@ -156,6 +182,12 @@ public static class DoughnutChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DoughnutChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

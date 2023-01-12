@@ -54,6 +54,13 @@ public static class SaveThroughXsltConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SaveThroughXslt? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetSolutionId(openXmlElement, value?.SolutionId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

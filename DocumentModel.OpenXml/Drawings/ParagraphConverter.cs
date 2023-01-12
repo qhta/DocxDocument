@@ -175,6 +175,12 @@ public static class ParagraphConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Paragraph? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Paragraph, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

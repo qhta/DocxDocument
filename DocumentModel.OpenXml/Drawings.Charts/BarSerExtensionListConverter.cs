@@ -52,6 +52,11 @@ public static class BarSerExtensionListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BarSerExtensionList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

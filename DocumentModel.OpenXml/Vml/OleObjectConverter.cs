@@ -177,6 +177,21 @@ public static class OleObjectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.OleObject? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.OleObject, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetProgId(openXmlElement, value?.ProgId);
+      SetShapeId(openXmlElement, value?.ShapeId);
+      SetDrawAspect(openXmlElement, value?.DrawAspect);
+      SetObjectId(openXmlElement, value?.ObjectId);
+      SetId(openXmlElement, value?.Id);
+      SetUpdateMode(openXmlElement, value?.UpdateMode);
+      SetLinkType(openXmlElement, value?.LinkType);
+      SetLockedField(openXmlElement, value?.LockedField);
+      SetFieldCodes(openXmlElement, value?.FieldCodes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -44,6 +44,12 @@ public static class DocumentTasksPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DocumentTasksPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DocumentTasksPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTasks(openXmlElement, value?.Tasks);
+      return openXmlElement;
+    }
+    return default;
   }
 }

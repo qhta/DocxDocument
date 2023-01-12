@@ -201,6 +201,18 @@ public static class GradientStopConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GradientStop? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GradientStop, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPosition(openXmlElement, value?.Position);
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -74,6 +74,13 @@ public static class TextPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.TextProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShape3DType(openXmlElement, value?.Shape3DType);
+      SetFlatText(openXmlElement, value?.FlatText);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -52,6 +52,13 @@ public static class MailMergeRecipientDataPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.MailMergeRecipientDataPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRecipients(openXmlElement, value?.Recipients);
+      SetMailMergeRecipients(openXmlElement, value?.MailMergeRecipients);
+      return openXmlElement;
+    }
+    return default;
   }
 }

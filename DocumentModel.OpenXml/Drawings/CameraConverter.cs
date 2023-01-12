@@ -91,6 +91,15 @@ public static class CameraConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Camera? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Camera, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPreset(openXmlElement, value?.Preset);
+      SetFieldOfView(openXmlElement, value?.FieldOfView);
+      SetZoom(openXmlElement, value?.Zoom);
+      SetRotation(openXmlElement, value?.Rotation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

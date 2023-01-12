@@ -942,6 +942,13 @@ public static class RunConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Run? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Run, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMathRunProperties(openXmlElement, value?.MathRunProperties);
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -33,22 +33,22 @@ public partial class Gallery
   /// <summary>
   /// columns
   /// </summary>
-  public Int32? Columns { get; set; }
+  public Int64? Columns { get; set; }
   
   /// <summary>
   /// rows
   /// </summary>
-  public Int32? Rows { get; set; }
+  public Int64? Rows { get; set; }
   
   /// <summary>
   /// itemWidth
   /// </summary>
-  public Int32? ItemWidth { get; set; }
+  public Int64? ItemWidth { get; set; }
   
   /// <summary>
   /// itemHeight
   /// </summary>
-  public Int32? ItemHeight { get; set; }
+  public Int64? ItemHeight { get; set; }
   
   /// <summary>
   /// getItemWidth

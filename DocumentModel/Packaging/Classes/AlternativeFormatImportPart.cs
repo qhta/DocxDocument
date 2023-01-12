@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class AlternativeFormatImportPart
 {
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

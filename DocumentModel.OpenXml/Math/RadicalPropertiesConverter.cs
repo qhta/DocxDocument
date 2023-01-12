@@ -79,6 +79,13 @@ public static class RadicalPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.RadicalProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.RadicalProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHideDegree(openXmlElement, value?.HideDegree);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

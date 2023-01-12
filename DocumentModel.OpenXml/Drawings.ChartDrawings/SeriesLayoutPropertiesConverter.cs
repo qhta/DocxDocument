@@ -261,6 +261,14 @@ public static class SeriesLayoutPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParentLabelLayout(openXmlElement, value?.ParentLabelLayout);
+      SetRegionLabelLayout(openXmlElement, value?.RegionLabelLayout);
+      SetSeriesElementVisibilities(openXmlElement, value?.SeriesElementVisibilities);
+      return openXmlElement;
+    }
+    return default;
   }
 }

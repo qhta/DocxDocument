@@ -8,14 +8,22 @@ public static class PictureConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement)
+  public static Byte[]? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.AnchorId?.Value != null)
+      return Convert.FromHexString(openXmlElement.AnchorId.Value);
+    return null;
   }
   
-  public static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AnchorId = Convert.ToHexString(value);
+      else
+        openXmlElement.AnchorId = null;
+    }
   }
   
   public static DocumentModel.Vml.Group? GetGroup(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement)
@@ -382,6 +390,12 @@ public static class PictureConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Picture? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Picture, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAnchorId(openXmlElement, value?.AnchorId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

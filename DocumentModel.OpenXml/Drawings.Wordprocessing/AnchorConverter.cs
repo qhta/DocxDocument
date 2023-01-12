@@ -180,27 +180,43 @@ public static class AnchorConverter
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement)
+  public static Byte[]? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.EditId?.Value != null)
+      return Convert.FromHexString(openXmlElement.EditId.Value);
+    return null;
   }
   
-  public static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.EditId = Convert.ToHexString(value);
+      else
+        openXmlElement.EditId = null;
+    }
   }
   
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement)
+  public static Byte[]? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.AnchorId?.Value != null)
+      return Convert.FromHexString(openXmlElement.AnchorId.Value);
+    return null;
   }
   
-  public static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AnchorId = Convert.ToHexString(value);
+      else
+        openXmlElement.AnchorId = null;
+    }
   }
   
   /// <summary>
@@ -598,6 +614,29 @@ public static class AnchorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Anchor? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+      SetSimplePos(openXmlElement, value?.SimplePos);
+      SetRelativeHeight(openXmlElement, value?.RelativeHeight);
+      SetBehindDoc(openXmlElement, value?.BehindDoc);
+      SetLocked(openXmlElement, value?.Locked);
+      SetLayoutInCell(openXmlElement, value?.LayoutInCell);
+      SetHidden(openXmlElement, value?.Hidden);
+      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+      SetEditId(openXmlElement, value?.EditId);
+      SetAnchorId(openXmlElement, value?.AnchorId);
+      SetSimplePosition(openXmlElement, value?.SimplePosition);
+      SetHorizontalPosition(openXmlElement, value?.HorizontalPosition);
+      SetVerticalPosition(openXmlElement, value?.VerticalPosition);
+      SetExtent(openXmlElement, value?.Extent);
+      SetEffectExtent(openXmlElement, value?.EffectExtent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

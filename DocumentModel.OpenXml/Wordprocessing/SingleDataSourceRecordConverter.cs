@@ -41,12 +41,25 @@ public static class SingleDataSourceRecordConverter
   /// </summary>
   public static Int64? GetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office.Word.RecordHashCode");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office.Word.RecordHashCode");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
@@ -64,6 +77,13 @@ public static class SingleDataSourceRecordConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRecordIncluded(openXmlElement, value?.RecordIncluded);
+      SetRecordHashCode(openXmlElement, value?.RecordHashCode);
+      return openXmlElement;
+    }
+    return default;
   }
 }

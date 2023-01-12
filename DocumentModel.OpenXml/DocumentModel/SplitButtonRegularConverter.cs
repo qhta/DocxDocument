@@ -381,6 +381,27 @@ public static class SplitButtonRegularConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.SplitButtonRegular? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

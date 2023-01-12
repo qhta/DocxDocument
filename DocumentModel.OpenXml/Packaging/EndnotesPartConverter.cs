@@ -304,6 +304,12 @@ public static class EndnotesPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EndnotesPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EndnotesPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEndnotes(openXmlElement, value?.Endnotes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

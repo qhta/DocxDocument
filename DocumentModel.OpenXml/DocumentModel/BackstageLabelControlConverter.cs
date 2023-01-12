@@ -228,6 +228,23 @@ public static class BackstageLabelControlConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageLabelControl? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetAlignLabel(openXmlElement, value?.AlignLabel);
+      SetExpand(openXmlElement, value?.Expand);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetNoWrap(openXmlElement, value?.NoWrap);
+      return openXmlElement;
+    }
+    return default;
   }
 }

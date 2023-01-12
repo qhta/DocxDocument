@@ -8,40 +8,64 @@ public static class RunConverter
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidRunProperties(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
+  public static Byte[]? GetRsidRunProperties(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidRunProperties?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidRunProperties.Value);
+    return null;
   }
   
-  public static void SetRsidRunProperties(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidRunProperties(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidRunProperties = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidRunProperties = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidRunDeletion(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
+  public static Byte[]? GetRsidRunDeletion(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidRunDeletion?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidRunDeletion.Value);
+    return null;
   }
   
-  public static void SetRsidRunDeletion(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidRunDeletion(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidRunDeletion = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidRunDeletion = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidRunAddition(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
+  public static Byte[]? GetRsidRunAddition(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidRunAddition?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidRunAddition.Value);
+    return null;
   }
   
-  public static void SetRsidRunAddition(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidRunAddition(DocumentFormat.OpenXml.Wordprocessing.Run? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidRunAddition = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidRunAddition = null;
+    }
   }
   
   /// <summary>
@@ -956,6 +980,15 @@ public static class RunConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Run? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Run, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRsidRunProperties(openXmlElement, value?.RsidRunProperties);
+      SetRsidRunDeletion(openXmlElement, value?.RsidRunDeletion);
+      SetRsidRunAddition(openXmlElement, value?.RsidRunAddition);
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

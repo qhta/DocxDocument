@@ -52,6 +52,11 @@ public static class RuleListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.RuleList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.RuleList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

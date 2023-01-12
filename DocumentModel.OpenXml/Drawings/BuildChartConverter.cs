@@ -54,6 +54,13 @@ public static class BuildChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBuild(openXmlElement, value?.Build);
+      SetAnimateBackground(openXmlElement, value?.AnimateBackground);
+      return openXmlElement;
+    }
+    return default;
   }
 }

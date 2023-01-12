@@ -46,6 +46,12 @@ public static class StretchConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Stretch? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Stretch, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFillRectangle(openXmlElement, value?.FillRectangle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

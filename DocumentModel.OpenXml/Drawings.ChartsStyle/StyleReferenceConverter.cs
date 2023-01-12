@@ -24,12 +24,12 @@ public static class StyleReferenceConverter
   /// </summary>
   public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
   }
   
   public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement, DocumentModel.ListOf<String>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue]");
+    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
   }
   
   public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
@@ -47,6 +47,13 @@ public static class StyleReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetModifiers(openXmlElement, value?.Modifiers);
+      return openXmlElement;
+    }
+    return default;
   }
 }

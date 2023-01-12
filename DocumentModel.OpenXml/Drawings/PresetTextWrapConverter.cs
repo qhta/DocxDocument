@@ -61,6 +61,13 @@ public static class PresetTextWrapConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PresetTextWrap? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PresetTextWrap, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPreset(openXmlElement, value?.Preset);
+      SetAdjustValueList(openXmlElement, value?.AdjustValueList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

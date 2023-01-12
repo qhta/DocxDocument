@@ -97,6 +97,15 @@ public static class ParagraphPropertiesChangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesChange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      SetParagraphPropertiesExtended(openXmlElement, value?.ParagraphPropertiesExtended);
+      return openXmlElement;
+    }
+    return default;
   }
 }

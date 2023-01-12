@@ -1402,6 +1402,11 @@ public static class OfficeMathConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.OfficeMath? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.OfficeMath, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

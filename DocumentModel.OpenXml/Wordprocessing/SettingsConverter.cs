@@ -1035,12 +1035,25 @@ public static class SettingsConverter
   
   public static Int16? GetDefaultTabStop(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDefaultTabStop(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAutoHyphenation(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -1073,12 +1086,25 @@ public static class SettingsConverter
   
   public static UInt16? GetConsecutiveHyphenLimit(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ConsecutiveHyphenLimit");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConsecutiveHyphenLimit>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetConsecutiveHyphenLimit(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ConsecutiveHyphenLimit");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConsecutiveHyphenLimit>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ConsecutiveHyphenLimit{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetHyphenationZone(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -1149,12 +1175,25 @@ public static class SettingsConverter
   
   public static Int32? GetSummaryLength(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.SummaryLength");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SummaryLength>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSummaryLength(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.SummaryLength");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SummaryLength>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.SummaryLength{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetClickAndTypeStyle(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -1263,12 +1302,25 @@ public static class SettingsConverter
   
   public static Int16? GetBookFoldPrintingSheets(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetBookFoldPrintingSheets(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetDrawingGridHorizontalSpacing(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -1293,22 +1345,48 @@ public static class SettingsConverter
   
   public static Int32? GetDisplayHorizontalDrawingGrid(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DisplayHorizontalDrawingGrid");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHorizontalDrawingGrid>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDisplayHorizontalDrawingGrid(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DisplayHorizontalDrawingGrid");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHorizontalDrawingGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DisplayHorizontalDrawingGrid{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Int32? GetDisplayVerticalDrawingGrid(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DisplayVerticalDrawingGrid");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayVerticalDrawingGrid>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDisplayVerticalDrawingGrid(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.DisplayVerticalDrawingGrid");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayVerticalDrawingGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DisplayVerticalDrawingGrid{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetDoNotUseMarginsForDrawingGridOrigin(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -2339,33 +2417,59 @@ public static class SettingsConverter
   
   public static String? GetDecimalSymbol(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: type DocumentFormat.OpenXml.Wordprocessing.Settings has no property \"DecimalSymbol\"");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DecimalSymbol>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDecimalSymbol(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: type DocumentFormat.OpenXml.Wordprocessing.Settings has no property \"DecimalSymbol\"");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DecimalSymbol>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DecimalSymbol { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetListSeparator(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: type DocumentFormat.OpenXml.Wordprocessing.Settings has no property \"ListSeparator\"");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListSeparator>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetListSeparator(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: type DocumentFormat.OpenXml.Wordprocessing.Settings has no property \"ListSeparator\"");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ListSeparator>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ListSeparator { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
-  public static DocumentModel.HexBinary? GetDocumentId(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
+  public static Byte[]? GetDocumentId(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.DocumentId>();
     if (itemElement != null)
-      return HexBinaryConverter.GetValue(itemElement);
+      return ByteArrayConverter.GetValue(itemElement);
     return null;
   }
   
-  public static void SetDocumentId(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetDocumentId(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -2374,7 +2478,7 @@ public static class SettingsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = HexBinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.DocumentId>(value);
+        itemElement = ByteArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.DocumentId>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
@@ -2412,12 +2516,25 @@ public static class SettingsConverter
   
   public static Int32? GetDefaultImageDpi(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDefaultImageDpi(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.OnOffKind? GetConflictMode(DocumentFormat.OpenXml.Wordprocessing.Settings? openXmlElement)
@@ -2601,6 +2718,32 @@ public static class SettingsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Settings? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Settings, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWriteProtection(openXmlElement, value?.WriteProtection);
+      SetView(openXmlElement, value?.View);
+      SetZoom(openXmlElement, value?.Zoom);
+      SetRemovePersonalInformation(openXmlElement, value?.RemovePersonalInformation);
+      SetRemoveDateAndTime(openXmlElement, value?.RemoveDateAndTime);
+      SetDoNotDisplayPageBoundaries(openXmlElement, value?.DoNotDisplayPageBoundaries);
+      SetDisplayBackgroundShape(openXmlElement, value?.DisplayBackgroundShape);
+      SetPrintPostScriptOverText(openXmlElement, value?.PrintPostScriptOverText);
+      SetPrintFractionalCharacterWidth(openXmlElement, value?.PrintFractionalCharacterWidth);
+      SetPrintFormsData(openXmlElement, value?.PrintFormsData);
+      SetEmbedTrueTypeFonts(openXmlElement, value?.EmbedTrueTypeFonts);
+      SetEmbedSystemFonts(openXmlElement, value?.EmbedSystemFonts);
+      SetSaveSubsetFonts(openXmlElement, value?.SaveSubsetFonts);
+      SetSaveFormsData(openXmlElement, value?.SaveFormsData);
+      SetMirrorMargins(openXmlElement, value?.MirrorMargins);
+      SetAlignBorderAndEdges(openXmlElement, value?.AlignBorderAndEdges);
+      SetBordersDoNotSurroundHeader(openXmlElement, value?.BordersDoNotSurroundHeader);
+      SetBordersDoNotSurroundFooter(openXmlElement, value?.BordersDoNotSurroundFooter);
+      SetGutterAtTop(openXmlElement, value?.GutterAtTop);
+      SetHideSpellingErrors(openXmlElement, value?.HideSpellingErrors);
+      SetHideGrammaticalErrors(openXmlElement, value?.HideGrammaticalErrors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

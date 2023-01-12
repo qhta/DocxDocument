@@ -143,6 +143,11 @@ public static class CategoryAxisDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CategoryAxisData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -230,6 +230,18 @@ public static class DataTableConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataTable? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DataTable, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShowHorizontalBorder(openXmlElement, value?.ShowHorizontalBorder);
+      SetShowVerticalBorder(openXmlElement, value?.ShowVerticalBorder);
+      SetShowOutlineBorder(openXmlElement, value?.ShowOutlineBorder);
+      SetShowKeys(openXmlElement, value?.ShowKeys);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

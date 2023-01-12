@@ -5,13 +5,13 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class TableDefinitionPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.QueryTablePart>? QueryTableParts { get; }
+  public Collection<DocumentModel.Packaging.QueryTablePart>? QueryTableParts { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

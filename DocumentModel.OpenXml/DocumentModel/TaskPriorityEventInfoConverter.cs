@@ -33,6 +33,12 @@ public static class TaskPriorityEventInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskPriorityEventInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetValue(openXmlElement, value?.Value);
+      return openXmlElement;
+    }
+    return default;
   }
 }

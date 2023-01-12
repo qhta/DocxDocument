@@ -50,12 +50,25 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   public static UInt32? GetExplosion(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetExplosion(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -194,6 +207,18 @@ public static class CategoryFilterExceptionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CategoryFilterException? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetExplosion(openXmlElement, value?.Explosion);
+      SetInvertIfNegativeBoolean(openXmlElement, value?.InvertIfNegativeBoolean);
+      SetBubble3D(openXmlElement, value?.Bubble3D);
+      SetMarker(openXmlElement, value?.Marker);
+      SetDataLabel(openXmlElement, value?.DataLabel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

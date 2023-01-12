@@ -108,6 +108,17 @@ public static class TransformEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TransformEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TransformEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+      SetHorizontalShift(openXmlElement, value?.HorizontalShift);
+      SetVerticalShift(openXmlElement, value?.VerticalShift);
+      return openXmlElement;
+    }
+    return default;
   }
 }

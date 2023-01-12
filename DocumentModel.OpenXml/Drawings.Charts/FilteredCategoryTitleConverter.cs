@@ -46,6 +46,12 @@ public static class FilteredCategoryTitleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredCategoryTitle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAxisDataSourceType(openXmlElement, value?.AxisDataSourceType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

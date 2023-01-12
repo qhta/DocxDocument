@@ -68,6 +68,11 @@ public static class HyperlinkOnClickConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkOnClick? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkOnClick, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -33,6 +33,12 @@ public static class Saturation2Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Saturation2? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Saturation, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSaturationAmount(openXmlElement, value?.SaturationAmount);
+      return openXmlElement;
+    }
+    return default;
   }
 }

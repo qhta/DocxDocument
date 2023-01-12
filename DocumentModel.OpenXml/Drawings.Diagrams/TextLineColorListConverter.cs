@@ -168,6 +168,11 @@ public static class TextLineColorListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.TextLineColorList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

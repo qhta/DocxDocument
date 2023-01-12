@@ -8,7 +8,7 @@ public partial class RgbColorModelHex
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? Val { get; set; }
+  public Byte[]? Val { get; set; }
   
   public Int32? Tint { get; set; }
   

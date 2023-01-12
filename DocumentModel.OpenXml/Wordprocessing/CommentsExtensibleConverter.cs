@@ -77,6 +77,11 @@ public static class CommentsExtensibleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsExtensible? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

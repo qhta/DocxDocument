@@ -51,6 +51,13 @@ public static class ColorMostRecentlyUsedConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ColorMostRecentlyUsed? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetColors(openXmlElement, value?.Colors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

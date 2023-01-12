@@ -77,6 +77,11 @@ public static class TasksConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Tasks? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

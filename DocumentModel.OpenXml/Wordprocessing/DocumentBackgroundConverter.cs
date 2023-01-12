@@ -115,6 +115,16 @@ public static class DocumentBackgroundConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentBackground? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentBackground, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColor(openXmlElement, value?.Color);
+      SetThemeColor(openXmlElement, value?.ThemeColor);
+      SetThemeTint(openXmlElement, value?.ThemeTint);
+      SetThemeShade(openXmlElement, value?.ThemeShade);
+      SetBackground(openXmlElement, value?.Background);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -64,17 +64,24 @@ public static class WebSettingsConverter
   /// </summary>
   public static String? GetWebPageEncoding(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
   {
-    return openXmlElement?.WebPageEncoding?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetWebPageEncoding(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.WebPageEncoding = new DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding { Val = value };
-      else
-        openXmlElement.WebPageEncoding = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -300,12 +307,25 @@ public static class WebSettingsConverter
   /// </summary>
   public static Int32? GetPixelsPerInch(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPixelsPerInch(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -365,6 +385,23 @@ public static class WebSettingsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.WebSettings? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.WebSettings, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFrameset(openXmlElement, value?.Frameset);
+      SetDivs(openXmlElement, value?.Divs);
+      SetWebPageEncoding(openXmlElement, value?.WebPageEncoding);
+      SetOptimizeForBrowser(openXmlElement, value?.OptimizeForBrowser);
+      SetRelyOnVML(openXmlElement, value?.RelyOnVML);
+      SetAllowPNG(openXmlElement, value?.AllowPNG);
+      SetDoNotRelyOnCSS(openXmlElement, value?.DoNotRelyOnCSS);
+      SetDoNotSaveAsSingleFile(openXmlElement, value?.DoNotSaveAsSingleFile);
+      SetDoNotOrganizeInFolder(openXmlElement, value?.DoNotOrganizeInFolder);
+      SetDoNotUseLongFileNames(openXmlElement, value?.DoNotUseLongFileNames);
+      SetPixelsPerInch(openXmlElement, value?.PixelsPerInch);
+      SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

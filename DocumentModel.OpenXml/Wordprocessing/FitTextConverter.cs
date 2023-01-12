@@ -48,6 +48,13 @@ public static class FitTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FitText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FitText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

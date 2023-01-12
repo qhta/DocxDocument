@@ -54,6 +54,13 @@ public static class ColumnConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Column? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Column, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetSpace(openXmlElement, value?.Space);
+      return openXmlElement;
+    }
+    return default;
   }
 }

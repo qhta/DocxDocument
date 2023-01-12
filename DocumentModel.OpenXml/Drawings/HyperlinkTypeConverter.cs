@@ -218,6 +218,21 @@ public static class HyperlinkTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetInvalidUrl(openXmlElement, value?.InvalidUrl);
+      SetAction(openXmlElement, value?.Action);
+      SetTargetFrame(openXmlElement, value?.TargetFrame);
+      SetTooltip(openXmlElement, value?.Tooltip);
+      SetHistory(openXmlElement, value?.History);
+      SetHighlightClick(openXmlElement, value?.HighlightClick);
+      SetEndSound(openXmlElement, value?.EndSound);
+      SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
+      SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

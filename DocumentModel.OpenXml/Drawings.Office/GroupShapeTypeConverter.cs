@@ -74,6 +74,13 @@ public static class GroupShapeTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.GroupShapeType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.GroupShapeType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

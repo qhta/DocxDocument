@@ -10,12 +10,25 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   public static Int32? GetTableStyleRowBandSize(DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.TableStyleRowBandSize");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleRowBandSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetTableStyleRowBandSize(DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.TableStyleRowBandSize");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleRowBandSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.TableStyleRowBandSize{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +36,25 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   public static Int32? GetTableStyleColumnBandSize(DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.TableStyleColumnBandSize");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleColumnBandSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetTableStyleColumnBandSize(DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.TableStyleColumnBandSize");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyleColumnBandSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.TableStyleColumnBandSize{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -219,6 +245,19 @@ public static class StyleTablePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleTableProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTableStyleRowBandSize(openXmlElement, value?.TableStyleRowBandSize);
+      SetTableStyleColumnBandSize(openXmlElement, value?.TableStyleColumnBandSize);
+      SetTableJustification(openXmlElement, value?.TableJustification);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableIndentation(openXmlElement, value?.TableIndentation);
+      SetTableBorders(openXmlElement, value?.TableBorders);
+      SetShading(openXmlElement, value?.Shading);
+      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+      return openXmlElement;
+    }
+    return default;
   }
 }

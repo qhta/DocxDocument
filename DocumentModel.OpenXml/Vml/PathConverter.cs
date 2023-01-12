@@ -253,6 +253,26 @@ public static class PathConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Path? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Path, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetValue(openXmlElement, value?.Value);
+      SetLimo(openXmlElement, value?.Limo);
+      SetTextboxRectangle(openXmlElement, value?.TextboxRectangle);
+      SetAllowFill(openXmlElement, value?.AllowFill);
+      SetAllowStroke(openXmlElement, value?.AllowStroke);
+      SetAllowShading(openXmlElement, value?.AllowShading);
+      SetShowArrowhead(openXmlElement, value?.ShowArrowhead);
+      SetAllowGradientShape(openXmlElement, value?.AllowGradientShape);
+      SetAllowTextPath(openXmlElement, value?.AllowTextPath);
+      SetAllowInsetPen(openXmlElement, value?.AllowInsetPen);
+      SetConnectionPointType(openXmlElement, value?.ConnectionPointType);
+      SetConnectionPoints(openXmlElement, value?.ConnectionPoints);
+      SetConnectAngles(openXmlElement, value?.ConnectAngles);
+      SetAllowExtrusion(openXmlElement, value?.AllowExtrusion);
+      return openXmlElement;
+    }
+    return default;
   }
 }

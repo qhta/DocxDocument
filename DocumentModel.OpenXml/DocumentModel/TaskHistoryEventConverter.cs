@@ -423,6 +423,15 @@ public static class TaskHistoryEventConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskHistoryEvent? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTime(openXmlElement, value?.Time);
+      SetId(openXmlElement, value?.Id);
+      SetAttributionTaskUser(openXmlElement, value?.AttributionTaskUser);
+      SetTaskAnchor(openXmlElement, value?.TaskAnchor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -226,6 +226,13 @@ public static class AreaChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGrouping(openXmlElement, value?.Grouping);
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -86,6 +86,12 @@ public static class DiagramDefinitionExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

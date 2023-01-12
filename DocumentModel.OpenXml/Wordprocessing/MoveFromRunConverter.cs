@@ -1368,6 +1368,11 @@ public static class MoveFromRunConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MoveFromRun? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MoveFromRun, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

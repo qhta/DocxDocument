@@ -120,6 +120,17 @@ public static class ActiveWritingStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ActiveWritingStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLanguage(openXmlElement, value?.Language);
+      SetVendorID(openXmlElement, value?.VendorID);
+      SetDllVersion(openXmlElement, value?.DllVersion);
+      SetNaturalLanguageGrammarCheck(openXmlElement, value?.NaturalLanguageGrammarCheck);
+      SetCheckStyle(openXmlElement, value?.CheckStyle);
+      SetApplicationName(openXmlElement, value?.ApplicationName);
+      return openXmlElement;
+    }
+    return default;
   }
 }

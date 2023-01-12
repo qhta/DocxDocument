@@ -33,6 +33,12 @@ public static class CameraConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Camera? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Camera, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPresetCameraType(openXmlElement, value?.PresetCameraType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

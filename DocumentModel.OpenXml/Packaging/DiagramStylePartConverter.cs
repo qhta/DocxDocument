@@ -44,6 +44,12 @@ public static class DiagramStylePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramStylePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramStylePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStyleDefinition(openXmlElement, value?.StyleDefinition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

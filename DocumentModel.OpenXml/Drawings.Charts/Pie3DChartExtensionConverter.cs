@@ -61,6 +61,12 @@ public static class Pie3DChartExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Pie3DChartExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

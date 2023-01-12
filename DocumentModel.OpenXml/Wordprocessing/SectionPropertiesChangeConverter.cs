@@ -97,6 +97,15 @@ public static class SectionPropertiesChangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionPropertiesChange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      SetPreviousSectionProperties(openXmlElement, value?.PreviousSectionProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

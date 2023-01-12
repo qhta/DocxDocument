@@ -74,6 +74,13 @@ public static class Layout3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Layout3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetManualLayout(openXmlElement, value?.ManualLayout);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

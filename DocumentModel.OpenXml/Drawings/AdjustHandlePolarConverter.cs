@@ -154,6 +154,18 @@ public static class AdjustHandlePolarConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandlePolar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandlePolar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadialAdjustmentGuide(openXmlElement, value?.RadialAdjustmentGuide);
+      SetMinRadial(openXmlElement, value?.MinRadial);
+      SetMaxRadial(openXmlElement, value?.MaxRadial);
+      SetAngleAdjustmentGuide(openXmlElement, value?.AngleAdjustmentGuide);
+      SetMinAngle(openXmlElement, value?.MinAngle);
+      SetMaxAngle(openXmlElement, value?.MaxAngle);
+      SetPosition(openXmlElement, value?.Position);
+      return openXmlElement;
+    }
+    return default;
   }
 }

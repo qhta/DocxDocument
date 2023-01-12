@@ -51,6 +51,13 @@ public static class DiagramConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagram, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetBuildStep(openXmlElement, value?.BuildStep);
+      return openXmlElement;
+    }
+    return default;
   }
 }

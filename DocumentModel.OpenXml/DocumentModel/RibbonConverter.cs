@@ -120,6 +120,15 @@ public static class RibbonConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Ribbon? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStartFromScratch(openXmlElement, value?.StartFromScratch);
+      SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
+      SetTabs(openXmlElement, value?.Tabs);
+      SetContextualTabs(openXmlElement, value?.ContextualTabs);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -337,6 +337,15 @@ public static class LayoutNodeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.LayoutNode? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetStyleLabel(openXmlElement, value?.StyleLabel);
+      SetChildOrder(openXmlElement, value?.ChildOrder);
+      SetMoveWith(openXmlElement, value?.MoveWith);
+      return openXmlElement;
+    }
+    return default;
   }
 }

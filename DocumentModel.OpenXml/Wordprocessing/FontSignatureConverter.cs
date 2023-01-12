@@ -8,79 +8,127 @@ public static class FontSignatureConverter
   /// <summary>
   /// First 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static DocumentModel.HexBinary? GetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.UnicodeSignature0?.Value != null)
+      return Convert.FromHexString(openXmlElement.UnicodeSignature0.Value);
+    return null;
   }
   
-  public static void SetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.UnicodeSignature0 = Convert.ToHexString(value);
+      else
+        openXmlElement.UnicodeSignature0 = null;
+    }
   }
   
   /// <summary>
   /// Second 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static DocumentModel.HexBinary? GetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.UnicodeSignature1?.Value != null)
+      return Convert.FromHexString(openXmlElement.UnicodeSignature1.Value);
+    return null;
   }
   
-  public static void SetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.UnicodeSignature1 = Convert.ToHexString(value);
+      else
+        openXmlElement.UnicodeSignature1 = null;
+    }
   }
   
   /// <summary>
   /// Third 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static DocumentModel.HexBinary? GetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.UnicodeSignature2?.Value != null)
+      return Convert.FromHexString(openXmlElement.UnicodeSignature2.Value);
+    return null;
   }
   
-  public static void SetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.UnicodeSignature2 = Convert.ToHexString(value);
+      else
+        openXmlElement.UnicodeSignature2 = null;
+    }
   }
   
   /// <summary>
   /// Fourth 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static DocumentModel.HexBinary? GetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.UnicodeSignature3?.Value != null)
+      return Convert.FromHexString(openXmlElement.UnicodeSignature3.Value);
+    return null;
   }
   
-  public static void SetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.UnicodeSignature3 = Convert.ToHexString(value);
+      else
+        openXmlElement.UnicodeSignature3 = null;
+    }
   }
   
   /// <summary>
   /// Lower 32 Bits of Code Page Bit Field
   /// </summary>
-  public static DocumentModel.HexBinary? GetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CodePageSignature0?.Value != null)
+      return Convert.FromHexString(openXmlElement.CodePageSignature0.Value);
+    return null;
   }
   
-  public static void SetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CodePageSignature0 = Convert.ToHexString(value);
+      else
+        openXmlElement.CodePageSignature0 = null;
+    }
   }
   
   /// <summary>
   /// Upper 32 Bits of Code Page Bit Field
   /// </summary>
-  public static DocumentModel.HexBinary? GetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static Byte[]? GetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CodePageSignature1?.Value != null)
+      return Convert.FromHexString(openXmlElement.CodePageSignature1.Value);
+    return null;
   }
   
-  public static void SetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CodePageSignature1 = Convert.ToHexString(value);
+      else
+        openXmlElement.CodePageSignature1 = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.FontSignature? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
@@ -102,6 +150,17 @@ public static class FontSignatureConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontSignature? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontSignature, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUnicodeSignature0(openXmlElement, value?.UnicodeSignature0);
+      SetUnicodeSignature1(openXmlElement, value?.UnicodeSignature1);
+      SetUnicodeSignature2(openXmlElement, value?.UnicodeSignature2);
+      SetUnicodeSignature3(openXmlElement, value?.UnicodeSignature3);
+      SetCodePageSignature0(openXmlElement, value?.CodePageSignature0);
+      SetCodePageSignature1(openXmlElement, value?.CodePageSignature1);
+      return openXmlElement;
+    }
+    return default;
   }
 }

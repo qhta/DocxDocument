@@ -54,6 +54,13 @@ public static class AdjustPoint2DTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustPoint2DType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustPoint2DType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetX(openXmlElement, value?.X);
+      SetY(openXmlElement, value?.Y);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -194,6 +194,17 @@ public static class FillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Fill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Fill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetGroupFill(openXmlElement, value?.GroupFill);
+      return openXmlElement;
+    }
+    return default;
   }
 }

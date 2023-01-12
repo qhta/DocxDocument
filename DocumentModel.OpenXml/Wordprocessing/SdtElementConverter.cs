@@ -74,6 +74,13 @@ public static class SdtElementConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtElement? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtElement, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSdtProperties(openXmlElement, value?.SdtProperties);
+      SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

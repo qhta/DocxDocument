@@ -156,6 +156,20 @@ public static class HeaderFooterConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.HeaderFooter? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
+      SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);
+      SetDifferentFirst(openXmlElement, value?.DifferentFirst);
+      SetOddHeaderXsdstring(openXmlElement, value?.OddHeaderXsdstring);
+      SetOddFooterXsdstring(openXmlElement, value?.OddFooterXsdstring);
+      SetEvenHeaderXsdstring(openXmlElement, value?.EvenHeaderXsdstring);
+      SetEvenFooterXsdstring(openXmlElement, value?.EvenFooterXsdstring);
+      SetFirstHeaderXsdstring(openXmlElement, value?.FirstHeaderXsdstring);
+      SetFirstFooterXsdstring(openXmlElement, value?.FirstFooterXsdstring);
+      return openXmlElement;
+    }
+    return default;
   }
 }

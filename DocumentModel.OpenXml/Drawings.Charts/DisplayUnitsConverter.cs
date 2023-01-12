@@ -7,12 +7,25 @@ public static class DisplayUnitsConverter
 {
   public static Double? GetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.BuiltInUnitKind? GetBuiltInUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
@@ -109,6 +122,11 @@ public static class DisplayUnitsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DisplayUnits? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

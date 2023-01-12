@@ -613,6 +613,44 @@ public static class StrokeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Stroke? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Stroke, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetOn(openXmlElement, value?.On);
+      SetWeight(openXmlElement, value?.Weight);
+      SetColor(openXmlElement, value?.Color);
+      SetOpacity(openXmlElement, value?.Opacity);
+      SetLineStyle(openXmlElement, value?.LineStyle);
+      SetMiterlimit(openXmlElement, value?.Miterlimit);
+      SetJoinStyle(openXmlElement, value?.JoinStyle);
+      SetEndCap(openXmlElement, value?.EndCap);
+      SetDashStyle(openXmlElement, value?.DashStyle);
+      SetFillType(openXmlElement, value?.FillType);
+      SetSource(openXmlElement, value?.Source);
+      SetImageAspect(openXmlElement, value?.ImageAspect);
+      SetImageSize(openXmlElement, value?.ImageSize);
+      SetImageAlignShape(openXmlElement, value?.ImageAlignShape);
+      SetColor2(openXmlElement, value?.Color2);
+      SetStartArrow(openXmlElement, value?.StartArrow);
+      SetStartArrowWidth(openXmlElement, value?.StartArrowWidth);
+      SetStartArrowLength(openXmlElement, value?.StartArrowLength);
+      SetEndArrow(openXmlElement, value?.EndArrow);
+      SetEndArrowWidth(openXmlElement, value?.EndArrowWidth);
+      SetEndArrowLength(openXmlElement, value?.EndArrowLength);
+      SetHref(openXmlElement, value?.Href);
+      SetAlternateImageReference(openXmlElement, value?.AlternateImageReference);
+      SetTitle(openXmlElement, value?.Title);
+      SetForceDash(openXmlElement, value?.ForceDash);
+      SetRelationshipId(openXmlElement, value?.RelationshipId);
+      SetInsetpen(openXmlElement, value?.Insetpen);
+      SetLeftStroke(openXmlElement, value?.LeftStroke);
+      SetTopStroke(openXmlElement, value?.TopStroke);
+      SetRightStroke(openXmlElement, value?.RightStroke);
+      SetBottomStroke(openXmlElement, value?.BottomStroke);
+      SetColumnStroke(openXmlElement, value?.ColumnStroke);
+      return openXmlElement;
+    }
+    return default;
   }
 }

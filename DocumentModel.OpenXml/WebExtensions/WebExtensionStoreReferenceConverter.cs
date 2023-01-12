@@ -118,6 +118,16 @@ public static class WebExtensionStoreReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionStoreReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetVersion(openXmlElement, value?.Version);
+      SetStore(openXmlElement, value?.Store);
+      SetStoreType(openXmlElement, value?.StoreType);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

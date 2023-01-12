@@ -24,12 +24,25 @@ public static class LevelOverrideConverter
   /// </summary>
   public static Int32? GetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -75,6 +88,14 @@ public static class LevelOverrideConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelOverride? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelOverride, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLevelIndex(openXmlElement, value?.LevelIndex);
+      SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
+      SetLevel(openXmlElement, value?.Level);
+      return openXmlElement;
+    }
+    return default;
   }
 }

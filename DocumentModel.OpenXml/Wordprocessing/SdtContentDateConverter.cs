@@ -24,17 +24,24 @@ public static class SdtContentDateConverter
   /// </summary>
   public static String? GetDateFormat(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement)
   {
-    return openXmlElement?.DateFormat?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDateFormat(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.DateFormat = new DocumentFormat.OpenXml.Wordprocessing.DateFormat { Val = value };
-      else
-        openXmlElement.DateFormat = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DateFormat { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -133,6 +140,16 @@ public static class SdtContentDateConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDate? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDate, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFullDate(openXmlElement, value?.FullDate);
+      SetDateFormat(openXmlElement, value?.DateFormat);
+      SetLanguageId(openXmlElement, value?.LanguageId);
+      SetSdtDateMappingType(openXmlElement, value?.SdtDateMappingType);
+      SetCalendar(openXmlElement, value?.Calendar);
+      return openXmlElement;
+    }
+    return default;
   }
 }

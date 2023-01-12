@@ -33,6 +33,12 @@ public static class ArtisticBlurConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticBlur? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadius(openXmlElement, value?.Radius);
+      return openXmlElement;
+    }
+    return default;
   }
 }

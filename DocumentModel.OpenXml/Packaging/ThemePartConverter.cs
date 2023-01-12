@@ -64,6 +64,12 @@ public static class ThemePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTheme(openXmlElement, value?.Theme);
+      return openXmlElement;
+    }
+    return default;
   }
 }

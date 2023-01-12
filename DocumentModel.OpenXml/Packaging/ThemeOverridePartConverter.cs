@@ -64,6 +64,12 @@ public static class ThemeOverridePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemeOverridePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemeOverridePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetThemeOverride(openXmlElement, value?.ThemeOverride);
+      return openXmlElement;
+    }
+    return default;
   }
 }

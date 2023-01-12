@@ -132,6 +132,18 @@ public static class MoveBookmarkTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MoveBookmarkType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetName(openXmlElement, value?.Name);
+      SetColumnFirst(openXmlElement, value?.ColumnFirst);
+      SetColumnLast(openXmlElement, value?.ColumnLast);
+      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -126,6 +126,17 @@ public static class ItemConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Item? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Item, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetLabel(openXmlElement, value?.Label);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      return openXmlElement;
+    }
+    return default;
   }
 }

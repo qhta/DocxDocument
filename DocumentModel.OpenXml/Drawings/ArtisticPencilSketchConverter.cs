@@ -48,6 +48,13 @@ public static class ArtisticPencilSketchConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPencilSketch? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetPressure(openXmlElement, value?.Pressure);
+      return openXmlElement;
+    }
+    return default;
   }
 }

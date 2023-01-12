@@ -199,6 +199,13 @@ public static class AbsoluteAnchorSizeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFromAnchor(openXmlElement, value?.FromAnchor);
+      SetExtent(openXmlElement, value?.Extent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

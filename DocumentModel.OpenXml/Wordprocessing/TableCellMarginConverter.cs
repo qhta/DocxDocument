@@ -186,6 +186,17 @@ public static class TableCellMarginConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellMargin? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellMargin, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTopMargin(openXmlElement, value?.TopMargin);
+      SetLeftMargin(openXmlElement, value?.LeftMargin);
+      SetStartMargin(openXmlElement, value?.StartMargin);
+      SetBottomMargin(openXmlElement, value?.BottomMargin);
+      SetRightMargin(openXmlElement, value?.RightMargin);
+      SetEndMargin(openXmlElement, value?.EndMargin);
+      return openXmlElement;
+    }
+    return default;
   }
 }

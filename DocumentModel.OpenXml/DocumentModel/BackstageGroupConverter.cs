@@ -414,6 +414,29 @@ public static class BackstageGroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageGroup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetStyle(openXmlElement, value?.Style);
+      SetGetStyle(openXmlElement, value?.GetStyle);
+      SetHelperText(openXmlElement, value?.HelperText);
+      SetGetHelperText(openXmlElement, value?.GetHelperText);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

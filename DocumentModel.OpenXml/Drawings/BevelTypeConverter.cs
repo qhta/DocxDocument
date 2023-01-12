@@ -63,6 +63,14 @@ public static class BevelTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BevelType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BevelType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetHeight(openXmlElement, value?.Height);
+      SetPreset(openXmlElement, value?.Preset);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -36,6 +36,12 @@ public static class TaskUndoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskUndo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskUndo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

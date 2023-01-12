@@ -24,6 +24,11 @@ public static class AlternativeFormatImportPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.AlternativeFormatImportPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

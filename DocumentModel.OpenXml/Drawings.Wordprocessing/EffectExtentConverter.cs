@@ -78,6 +78,15 @@ public static class EffectExtentConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLeftEdge(openXmlElement, value?.LeftEdge);
+      SetTopEdge(openXmlElement, value?.TopEdge);
+      SetRightEdge(openXmlElement, value?.RightEdge);
+      SetBottomEdge(openXmlElement, value?.BottomEdge);
+      return openXmlElement;
+    }
+    return default;
   }
 }

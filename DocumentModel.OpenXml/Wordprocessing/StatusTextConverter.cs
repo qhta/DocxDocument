@@ -51,6 +51,13 @@ public static class StatusTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StatusText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StatusText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

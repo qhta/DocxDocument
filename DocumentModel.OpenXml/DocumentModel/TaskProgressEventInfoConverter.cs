@@ -33,6 +33,12 @@ public static class TaskProgressEventInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskProgressEventInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskProgressEventInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPercentComplete(openXmlElement, value?.PercentComplete);
+      return openXmlElement;
+    }
+    return default;
   }
 }

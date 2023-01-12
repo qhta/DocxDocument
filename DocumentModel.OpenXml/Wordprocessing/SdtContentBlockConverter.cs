@@ -861,6 +861,11 @@ public static class SdtContentBlockConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentBlock? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentBlock, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

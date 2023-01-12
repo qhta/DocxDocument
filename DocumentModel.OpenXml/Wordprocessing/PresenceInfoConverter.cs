@@ -54,6 +54,13 @@ public static class PresenceInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PresenceInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.PresenceInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetProviderId(openXmlElement, value?.ProviderId);
+      SetUserId(openXmlElement, value?.UserId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

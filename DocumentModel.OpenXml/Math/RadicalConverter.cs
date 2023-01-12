@@ -102,6 +102,14 @@ public static class RadicalConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Radical? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Radical, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadicalProperties(openXmlElement, value?.RadicalProperties);
+      SetDegree(openXmlElement, value?.Degree);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

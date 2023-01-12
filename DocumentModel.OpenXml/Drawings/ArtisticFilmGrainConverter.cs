@@ -48,6 +48,13 @@ public static class ArtisticFilmGrainConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticFilmGrain? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetGrainSize(openXmlElement, value?.GrainSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

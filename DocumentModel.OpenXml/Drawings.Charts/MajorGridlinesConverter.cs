@@ -43,6 +43,11 @@ public static class MajorGridlinesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MajorGridlines? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

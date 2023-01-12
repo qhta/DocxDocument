@@ -10,12 +10,13 @@ public static class AudioCDTimeTypeConverter
   /// </summary>
   public static Byte? GetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
+    return openXmlElement?.Track?.Value;
   }
   
   public static void SetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.ByteValue");
+    if (openXmlElement != null)
+      openXmlElement.Track = value;
   }
   
   /// <summary>
@@ -47,6 +48,13 @@ public static class AudioCDTimeTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioCDTimeType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioCDTimeType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTrack(openXmlElement, value?.Track);
+      SetTime(openXmlElement, value?.Time);
+      return openXmlElement;
+    }
+    return default;
   }
 }

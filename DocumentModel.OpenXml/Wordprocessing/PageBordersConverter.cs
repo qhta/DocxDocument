@@ -175,6 +175,18 @@ public static class PageBordersConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageBorders? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageBorders, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetZOrder(openXmlElement, value?.ZOrder);
+      SetDisplay(openXmlElement, value?.Display);
+      SetOffsetFrom(openXmlElement, value?.OffsetFrom);
+      SetTopBorder(openXmlElement, value?.TopBorder);
+      SetLeftBorder(openXmlElement, value?.LeftBorder);
+      SetBottomBorder(openXmlElement, value?.BottomBorder);
+      SetRightBorder(openXmlElement, value?.RightBorder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

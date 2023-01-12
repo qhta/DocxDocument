@@ -216,6 +216,23 @@ public static class IndentationConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Indentation? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Indentation, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLeft(openXmlElement, value?.Left);
+      SetStart(openXmlElement, value?.Start);
+      SetLeftChars(openXmlElement, value?.LeftChars);
+      SetStartCharacters(openXmlElement, value?.StartCharacters);
+      SetRight(openXmlElement, value?.Right);
+      SetEnd(openXmlElement, value?.End);
+      SetRightChars(openXmlElement, value?.RightChars);
+      SetEndCharacters(openXmlElement, value?.EndCharacters);
+      SetHanging(openXmlElement, value?.Hanging);
+      SetHangingChars(openXmlElement, value?.HangingChars);
+      SetFirstLine(openXmlElement, value?.FirstLine);
+      SetFirstLineChars(openXmlElement, value?.FirstLineChars);
+      return openXmlElement;
+    }
+    return default;
   }
 }

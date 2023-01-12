@@ -8,14 +8,22 @@ public static class TableLookConverter
   /// <summary>
   /// val
   /// </summary>
-  public static DocumentModel.HexBinary? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Byte[]? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Val?.Value != null)
+      return Convert.FromHexString(openXmlElement.Val.Value);
+    return null;
   }
   
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Val = Convert.ToHexString(value);
+      else
+        openXmlElement.Val = null;
+    }
   }
   
   /// <summary>
@@ -140,6 +148,18 @@ public static class TableLookConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLook? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLook, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetFirstRow(openXmlElement, value?.FirstRow);
+      SetLastRow(openXmlElement, value?.LastRow);
+      SetFirstColumn(openXmlElement, value?.FirstColumn);
+      SetLastColumn(openXmlElement, value?.LastColumn);
+      SetNoHorizontalBand(openXmlElement, value?.NoHorizontalBand);
+      SetNoVerticalBand(openXmlElement, value?.NoVerticalBand);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -370,6 +370,11 @@ public static class SlideLayoutPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SlideLayoutPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SlideLayoutPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

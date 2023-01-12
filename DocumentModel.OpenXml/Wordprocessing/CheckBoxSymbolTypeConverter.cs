@@ -25,14 +25,22 @@ public static class CheckBoxSymbolTypeConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
+  public static Byte[]? GetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Val?.Value != null)
+      return Convert.FromHexString(openXmlElement.Val.Value);
+    return null;
   }
   
-  public static void SetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Val = Convert.ToHexString(value);
+      else
+        openXmlElement.Val = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.CheckBoxSymbolType? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
@@ -50,6 +58,13 @@ public static class CheckBoxSymbolTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFont(openXmlElement, value?.Font);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

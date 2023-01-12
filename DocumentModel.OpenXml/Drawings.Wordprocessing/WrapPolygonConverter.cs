@@ -89,6 +89,13 @@ public static class WrapPolygonConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEdited(openXmlElement, value?.Edited);
+      SetStartPoint(openXmlElement, value?.StartPoint);
+      return openXmlElement;
+    }
+    return default;
   }
 }

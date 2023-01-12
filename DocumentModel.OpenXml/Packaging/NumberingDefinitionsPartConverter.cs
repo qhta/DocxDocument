@@ -64,6 +64,12 @@ public static class NumberingDefinitionsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.NumberingDefinitionsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNumbering(openXmlElement, value?.Numbering);
+      return openXmlElement;
+    }
+    return default;
   }
 }

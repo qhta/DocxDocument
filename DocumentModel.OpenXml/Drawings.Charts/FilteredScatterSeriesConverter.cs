@@ -46,6 +46,12 @@ public static class FilteredScatterSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredScatterSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetScatterChartSeries(openXmlElement, value?.ScatterChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

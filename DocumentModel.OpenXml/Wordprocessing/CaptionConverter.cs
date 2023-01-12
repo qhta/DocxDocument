@@ -132,6 +132,18 @@ public static class CaptionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Caption? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Caption, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetPosition(openXmlElement, value?.Position);
+      SetChapterNumber(openXmlElement, value?.ChapterNumber);
+      SetHeading(openXmlElement, value?.Heading);
+      SetNoLabel(openXmlElement, value?.NoLabel);
+      SetNumberFormat(openXmlElement, value?.NumberFormat);
+      SetSeparator(openXmlElement, value?.Separator);
+      return openXmlElement;
+    }
+    return default;
   }
 }

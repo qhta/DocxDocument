@@ -143,6 +143,11 @@ public static class LiveFeedBackgroundPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LiveFeedBackgroundProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

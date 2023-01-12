@@ -33,6 +33,12 @@ public static class AlphaModulationFixedConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationFixed? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationFixed, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAmount(openXmlElement, value?.Amount);
+      return openXmlElement;
+    }
+    return default;
   }
 }

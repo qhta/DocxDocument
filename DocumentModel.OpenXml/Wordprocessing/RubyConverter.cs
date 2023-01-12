@@ -102,6 +102,14 @@ public static class RubyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Ruby? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Ruby, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRubyProperties(openXmlElement, value?.RubyProperties);
+      SetRubyContent(openXmlElement, value?.RubyContent);
+      SetRubyBase(openXmlElement, value?.RubyBase);
+      return openXmlElement;
+    }
+    return default;
   }
 }

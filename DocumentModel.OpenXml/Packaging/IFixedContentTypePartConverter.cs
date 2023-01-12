@@ -18,6 +18,11 @@ public static class IFixedContentTypePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IFixedContentTypePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.IFixedContentTypePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

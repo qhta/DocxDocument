@@ -48,6 +48,13 @@ public static class AdjustConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Adjust? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Adjust, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

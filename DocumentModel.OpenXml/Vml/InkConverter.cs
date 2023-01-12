@@ -8,14 +8,22 @@ public static class InkConverter
   /// <summary>
   /// Ink Data
   /// </summary>
-  public static DocumentModel.Base64Binary? GetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
+  public static Byte[]? GetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.InkData?.Value != null)
+      return Convert.FromBase64String(openXmlElement.InkData.Value);
+    return null;
   }
   
-  public static void SetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.InkData = Convert.ToBase64String(value);
+      else
+        openXmlElement.InkData = null;
+    }
   }
   
   /// <summary>
@@ -46,6 +54,13 @@ public static class InkConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Ink? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Ink, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetInkData(openXmlElement, value?.InkData);
+      SetAnnotationFlag(openXmlElement, value?.AnnotationFlag);
+      return openXmlElement;
+    }
+    return default;
   }
 }

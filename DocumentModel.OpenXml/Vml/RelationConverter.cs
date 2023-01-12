@@ -87,6 +87,15 @@ public static class RelationConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Relation? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Relation, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetSourceId(openXmlElement, value?.SourceId);
+      SetDestinationId(openXmlElement, value?.DestinationId);
+      SetCenterShapeId(openXmlElement, value?.CenterShapeId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

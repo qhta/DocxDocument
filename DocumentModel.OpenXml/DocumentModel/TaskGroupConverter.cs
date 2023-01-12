@@ -355,6 +355,28 @@ public static class TaskGroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskGroup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetHelperText(openXmlElement, value?.HelperText);
+      SetGetHelperText(openXmlElement, value?.GetHelperText);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -260,6 +260,13 @@ public static class ColorStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.ColorStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMethod(openXmlElement, value?.Method);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

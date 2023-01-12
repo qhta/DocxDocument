@@ -10,12 +10,25 @@ public static class LineChartSeriesConverter
   /// </summary>
   public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Index");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +36,25 @@ public static class LineChartSeriesConverter
   /// </summary>
   public static UInt32? GetOrder(DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Order");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetOrder(DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.Order");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Order{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -380,6 +406,17 @@ public static class LineChartSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LineChartSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetOrder(openXmlElement, value?.Order);
+      SetSeriesText(openXmlElement, value?.SeriesText);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetMarker(openXmlElement, value?.Marker);
+      SetPictureOptions(openXmlElement, value?.PictureOptions);
+      return openXmlElement;
+    }
+    return default;
   }
 }

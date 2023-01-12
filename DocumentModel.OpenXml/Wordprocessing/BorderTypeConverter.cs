@@ -168,6 +168,20 @@ public static class BorderTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BorderType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.BorderType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetColor(openXmlElement, value?.Color);
+      SetThemeColor(openXmlElement, value?.ThemeColor);
+      SetThemeTint(openXmlElement, value?.ThemeTint);
+      SetThemeShade(openXmlElement, value?.ThemeShade);
+      SetSize(openXmlElement, value?.Size);
+      SetSpace(openXmlElement, value?.Space);
+      SetShadow(openXmlElement, value?.Shadow);
+      SetFrame(openXmlElement, value?.Frame);
+      return openXmlElement;
+    }
+    return default;
   }
 }
