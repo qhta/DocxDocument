@@ -218,6 +218,20 @@ public static class HiddenShape3DConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenShape3D? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetZ(openXmlElement, value?.Z);
+      SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
+      SetContourWidth(openXmlElement, value?.ContourWidth);
+      SetPresetMaterial(openXmlElement, value?.PresetMaterial);
+      SetBevelTop(openXmlElement, value?.BevelTop);
+      SetBevelBottom(openXmlElement, value?.BevelBottom);
+      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+      SetContourColor(openXmlElement, value?.ContourColor);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

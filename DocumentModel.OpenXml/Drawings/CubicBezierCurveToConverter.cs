@@ -52,6 +52,11 @@ public static class CubicBezierCurveToConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CubicBezierCurveTo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

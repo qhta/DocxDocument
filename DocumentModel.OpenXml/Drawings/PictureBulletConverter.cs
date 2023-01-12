@@ -46,6 +46,12 @@ public static class PictureBulletConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureBullet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PictureBullet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlip(openXmlElement, value?.Blip);
+      return openXmlElement;
+    }
+    return default;
   }
 }

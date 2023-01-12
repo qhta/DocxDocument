@@ -46,6 +46,12 @@ public static class LeaderLines3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LeaderLines3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

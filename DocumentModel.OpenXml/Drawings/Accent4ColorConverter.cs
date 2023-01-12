@@ -143,6 +143,11 @@ public static class Accent4ColorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Accent4Color? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Accent4Color, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

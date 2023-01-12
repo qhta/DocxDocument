@@ -50,6 +50,12 @@ public static class DataDisplayOptions16Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataDisplayOptions16? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBooleanFalse(openXmlElement, value?.BooleanFalse);
+      return openXmlElement;
+    }
+    return default;
   }
 }

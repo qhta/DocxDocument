@@ -23,7 +23,7 @@ public partial class EquationArrayProperties
   /// <summary>
   /// Row Spacing Rule.
   /// </summary>
-  public Int32? RowSpacingRule { get; set; }
+  public Int64? RowSpacingRule { get; set; }
   
   /// <summary>
   /// Row Spacing (Equation Array).

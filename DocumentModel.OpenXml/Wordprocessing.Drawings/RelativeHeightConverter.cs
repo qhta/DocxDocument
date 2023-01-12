@@ -47,6 +47,13 @@ public static class RelativeHeightConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeHeight? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelativeFrom(openXmlElement, value?.RelativeFrom);
+      SetPercentageHeight(openXmlElement, value?.PercentageHeight);
+      return openXmlElement;
+    }
+    return default;
   }
 }

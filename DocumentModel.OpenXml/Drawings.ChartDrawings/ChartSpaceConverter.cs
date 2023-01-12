@@ -242,6 +242,19 @@ public static class ChartSpaceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ChartSpace? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartSpace, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartData(openXmlElement, value?.ChartData);
+      SetChart(openXmlElement, value?.Chart);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+      SetColorMappingType(openXmlElement, value?.ColorMappingType);
+      SetFormatOverrides(openXmlElement, value?.FormatOverrides);
+      SetPrintSettings(openXmlElement, value?.PrintSettings);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

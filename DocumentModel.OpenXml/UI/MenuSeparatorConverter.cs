@@ -162,6 +162,19 @@ public static class MenuSeparatorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.MenuSeparator? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetIdQ(openXmlElement, value?.IdQ);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+      SetTitle(openXmlElement, value?.Title);
+      SetGetTitle(openXmlElement, value?.GetTitle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

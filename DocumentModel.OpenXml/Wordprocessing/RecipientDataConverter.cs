@@ -41,26 +41,39 @@ public static class RecipientDataConverter
   /// </summary>
   public static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  public static DocumentModel.Base64Binary? GetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement)
+  public static Byte[]? GetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>();
     if (itemElement != null)
-      return Base64BinaryConverter.GetValue(itemElement);
+      return ByteArrayConverter.GetValue(itemElement);
     return null;
   }
   
-  public static void SetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +82,7 @@ public static class RecipientDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = Base64BinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>(value);
+        itemElement = ByteArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
@@ -92,6 +105,14 @@ public static class RecipientDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RecipientData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RecipientData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetActive(openXmlElement, value?.Active);
+      SetColumnIndex(openXmlElement, value?.ColumnIndex);
+      SetUniqueTag(openXmlElement, value?.UniqueTag);
+      return openXmlElement;
+    }
+    return default;
   }
 }

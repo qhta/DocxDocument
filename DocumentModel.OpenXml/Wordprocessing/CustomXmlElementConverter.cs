@@ -82,6 +82,14 @@ public static class CustomXmlElementConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlElement? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      SetElement(openXmlElement, value?.Element);
+      SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

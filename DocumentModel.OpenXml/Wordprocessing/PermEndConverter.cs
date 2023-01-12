@@ -48,6 +48,13 @@ public static class PermEndConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermEnd? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermEnd, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+      return openXmlElement;
+    }
+    return default;
   }
 }

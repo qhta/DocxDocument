@@ -74,6 +74,13 @@ public static class PrimaryItemConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.PrimaryItem? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBackstageRegularButton(openXmlElement, value?.BackstageRegularButton);
+      SetBackstagePrimaryMenu(openXmlElement, value?.BackstagePrimaryMenu);
+      return openXmlElement;
+    }
+    return default;
   }
 }

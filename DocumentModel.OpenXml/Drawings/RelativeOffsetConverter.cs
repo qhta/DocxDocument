@@ -48,6 +48,13 @@ public static class RelativeOffsetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeOffset? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeOffset, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOffsetX(openXmlElement, value?.OffsetX);
+      SetOffsetY(openXmlElement, value?.OffsetY);
+      return openXmlElement;
+    }
+    return default;
   }
 }

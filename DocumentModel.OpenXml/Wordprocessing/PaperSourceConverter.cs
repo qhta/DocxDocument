@@ -48,6 +48,13 @@ public static class PaperSourceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PaperSource? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PaperSource, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFirst(openXmlElement, value?.First);
+      SetOther(openXmlElement, value?.Other);
+      return openXmlElement;
+    }
+    return default;
   }
 }

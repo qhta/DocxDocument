@@ -65,6 +65,14 @@ public static class NumericPointConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumericPoint? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumericPoint, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetFormatCode(openXmlElement, value?.FormatCode);
+      SetNumericValue(openXmlElement, value?.NumericValue);
+      return openXmlElement;
+    }
+    return default;
   }
 }

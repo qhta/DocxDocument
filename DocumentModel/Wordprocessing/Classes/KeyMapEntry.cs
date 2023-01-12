@@ -8,22 +8,22 @@ public partial class KeyMapEntry
   /// <summary>
   /// chmPrimary
   /// </summary>
-  public DocumentModel.HexBinary? CharacterMapPrimary { get; set; }
+  public Byte[]? CharacterMapPrimary { get; set; }
   
   /// <summary>
   /// chmSecondary
   /// </summary>
-  public DocumentModel.HexBinary? CharacterMapSecondary { get; set; }
+  public Byte[]? CharacterMapSecondary { get; set; }
   
   /// <summary>
   /// kcmPrimary
   /// </summary>
-  public DocumentModel.HexBinary? KeyCodePrimary { get; set; }
+  public Byte[]? KeyCodePrimary { get; set; }
   
   /// <summary>
   /// kcmSecondary
   /// </summary>
-  public DocumentModel.HexBinary? KeyCodeSecondary { get; set; }
+  public Byte[]? KeyCodeSecondary { get; set; }
   
   /// <summary>
   /// mask
@@ -53,6 +53,6 @@ public partial class KeyMapEntry
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  public DocumentModel.HexBinary? CharacterInsertion { get; set; }
+  public Byte[]? CharacterInsertion { get; set; }
   
 }

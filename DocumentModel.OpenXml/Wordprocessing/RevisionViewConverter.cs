@@ -108,6 +108,16 @@ public static class RevisionViewConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RevisionView? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RevisionView, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMarkup(openXmlElement, value?.Markup);
+      SetComments(openXmlElement, value?.Comments);
+      SetDisplayRevision(openXmlElement, value?.DisplayRevision);
+      SetFormatting(openXmlElement, value?.Formatting);
+      SetInkAnnotations(openXmlElement, value?.InkAnnotations);
+      return openXmlElement;
+    }
+    return default;
   }
 }

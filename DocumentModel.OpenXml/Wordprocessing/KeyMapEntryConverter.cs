@@ -8,53 +8,85 @@ public static class KeyMapEntryConverter
   /// <summary>
   /// chmPrimary
   /// </summary>
-  public static DocumentModel.HexBinary? GetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CharacterMapPrimary?.Value != null)
+      return Convert.FromHexString(openXmlElement.CharacterMapPrimary.Value);
+    return null;
   }
   
-  public static void SetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CharacterMapPrimary = Convert.ToHexString(value);
+      else
+        openXmlElement.CharacterMapPrimary = null;
+    }
   }
   
   /// <summary>
   /// chmSecondary
   /// </summary>
-  public static DocumentModel.HexBinary? GetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CharacterMapSecondary?.Value != null)
+      return Convert.FromHexString(openXmlElement.CharacterMapSecondary.Value);
+    return null;
   }
   
-  public static void SetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CharacterMapSecondary = Convert.ToHexString(value);
+      else
+        openXmlElement.CharacterMapSecondary = null;
+    }
   }
   
   /// <summary>
   /// kcmPrimary
   /// </summary>
-  public static DocumentModel.HexBinary? GetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.KeyCodePrimary?.Value != null)
+      return Convert.FromHexString(openXmlElement.KeyCodePrimary.Value);
+    return null;
   }
   
-  public static void SetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.KeyCodePrimary = Convert.ToHexString(value);
+      else
+        openXmlElement.KeyCodePrimary = null;
+    }
   }
   
   /// <summary>
   /// kcmSecondary
   /// </summary>
-  public static DocumentModel.HexBinary? GetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.KeyCodeSecondary?.Value != null)
+      return Convert.FromHexString(openXmlElement.KeyCodeSecondary.Value);
+    return null;
   }
   
-  public static void SetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.KeyCodeSecondary = Convert.ToHexString(value);
+      else
+        openXmlElement.KeyCodeSecondary = null;
+    }
   }
   
   /// <summary>
@@ -185,15 +217,15 @@ public static class KeyMapEntryConverter
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  public static DocumentModel.HexBinary? GetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>();
     if (itemElement != null)
-      return HexBinaryConverter.GetValue(itemElement);
+      return ByteArrayConverter.GetValue(itemElement);
     return null;
   }
   
-  public static void SetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -202,7 +234,7 @@ public static class KeyMapEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = HexBinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>(value);
+        itemElement = ByteArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
@@ -232,6 +264,21 @@ public static class KeyMapEntryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.KeyMapEntry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.KeyMapEntry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCharacterMapPrimary(openXmlElement, value?.CharacterMapPrimary);
+      SetCharacterMapSecondary(openXmlElement, value?.CharacterMapSecondary);
+      SetKeyCodePrimary(openXmlElement, value?.KeyCodePrimary);
+      SetKeyCodeSecondary(openXmlElement, value?.KeyCodeSecondary);
+      SetMask(openXmlElement, value?.Mask);
+      SetFixedCommandKeyboardCustomization(openXmlElement, value?.FixedCommandKeyboardCustomization);
+      SetMacroKeyboardCustomization(openXmlElement, value?.MacroKeyboardCustomization);
+      SetAllocatedCommandKeyboardCustomization(openXmlElement, value?.AllocatedCommandKeyboardCustomization);
+      SetWllMacroKeyboardCustomization(openXmlElement, value?.WllMacroKeyboardCustomization);
+      SetCharacterInsertion(openXmlElement, value?.CharacterInsertion);
+      return openXmlElement;
+    }
+    return default;
   }
 }

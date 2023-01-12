@@ -8,7 +8,7 @@ public partial class Ink
   /// <summary>
   /// Ink Data
   /// </summary>
-  public DocumentModel.Base64Binary? InkData { get; set; }
+  public Byte[]? InkData { get; set; }
   
   /// <summary>
   /// Annotation Flag

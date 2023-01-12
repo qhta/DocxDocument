@@ -80,6 +80,12 @@ public static class DelimiterConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Delimiter? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Delimiter, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

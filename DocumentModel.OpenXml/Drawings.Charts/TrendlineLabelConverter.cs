@@ -186,6 +186,17 @@ public static class TrendlineLabelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.TrendlineLabel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLayout(openXmlElement, value?.Layout);
+      SetChartText(openXmlElement, value?.ChartText);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

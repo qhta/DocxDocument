@@ -52,6 +52,11 @@ public static class QuadraticBezierCurveToConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.QuadraticBezierCurveTo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

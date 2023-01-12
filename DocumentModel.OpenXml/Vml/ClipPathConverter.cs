@@ -36,6 +36,12 @@ public static class ClipPathConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ClipPath? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ClipPath, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetValue(openXmlElement, value?.Value);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -46,6 +46,12 @@ public static class MoveToConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.MoveTo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.MoveTo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPoint(openXmlElement, value?.Point);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -33,6 +33,12 @@ public static class TextTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSpace(openXmlElement, value?.Space);
+      return openXmlElement;
+    }
+    return default;
   }
 }

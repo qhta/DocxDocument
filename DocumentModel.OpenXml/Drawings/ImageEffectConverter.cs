@@ -792,6 +792,39 @@ public static class ImageEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ImageEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVisible(openXmlElement, value?.Visible);
+      SetArtisticBlur(openXmlElement, value?.ArtisticBlur);
+      SetArtisticCement(openXmlElement, value?.ArtisticCement);
+      SetArtisticChalkSketch(openXmlElement, value?.ArtisticChalkSketch);
+      SetArtisticCrisscrossEtching(openXmlElement, value?.ArtisticCrisscrossEtching);
+      SetArtisticCutout(openXmlElement, value?.ArtisticCutout);
+      SetArtisticFilmGrain(openXmlElement, value?.ArtisticFilmGrain);
+      SetArtisticGlass(openXmlElement, value?.ArtisticGlass);
+      SetArtisticGlowDiffused(openXmlElement, value?.ArtisticGlowDiffused);
+      SetArtisticGlowEdges(openXmlElement, value?.ArtisticGlowEdges);
+      SetArtisticLightScreen(openXmlElement, value?.ArtisticLightScreen);
+      SetArtisticLineDrawing(openXmlElement, value?.ArtisticLineDrawing);
+      SetArtisticMarker(openXmlElement, value?.ArtisticMarker);
+      SetArtisticMosaicBubbles(openXmlElement, value?.ArtisticMosaicBubbles);
+      SetArtisticPaintStrokes(openXmlElement, value?.ArtisticPaintStrokes);
+      SetArtisticPaintBrush(openXmlElement, value?.ArtisticPaintBrush);
+      SetArtisticPastelsSmooth(openXmlElement, value?.ArtisticPastelsSmooth);
+      SetArtisticPencilGrayscale(openXmlElement, value?.ArtisticPencilGrayscale);
+      SetArtisticPencilSketch(openXmlElement, value?.ArtisticPencilSketch);
+      SetArtisticPhotocopy(openXmlElement, value?.ArtisticPhotocopy);
+      SetArtisticPlasticWrap(openXmlElement, value?.ArtisticPlasticWrap);
+      SetArtisticTexturizer(openXmlElement, value?.ArtisticTexturizer);
+      SetArtisticWatercolorSponge(openXmlElement, value?.ArtisticWatercolorSponge);
+      SetBackgroundRemoval(openXmlElement, value?.BackgroundRemoval);
+      SetBrightnessContrast(openXmlElement, value?.BrightnessContrast);
+      SetColorTemperature(openXmlElement, value?.ColorTemperature);
+      SetSaturation(openXmlElement, value?.Saturation);
+      SetSharpenSoften(openXmlElement, value?.SharpenSoften);
+      return openXmlElement;
+    }
+    return default;
   }
 }

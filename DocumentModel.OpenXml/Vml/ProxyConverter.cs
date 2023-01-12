@@ -79,6 +79,15 @@ public static class ProxyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Proxy? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Proxy, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStart(openXmlElement, value?.Start);
+      SetEnd(openXmlElement, value?.End);
+      SetShapeReference(openXmlElement, value?.ShapeReference);
+      SetConnectionLocation(openXmlElement, value?.ConnectionLocation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

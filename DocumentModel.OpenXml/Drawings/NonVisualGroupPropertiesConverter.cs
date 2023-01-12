@@ -36,6 +36,12 @@ public static class NonVisualGroupPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualGroupProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIsLegacyGroup(openXmlElement, value?.IsLegacyGroup);
+      return openXmlElement;
+    }
+    return default;
   }
 }

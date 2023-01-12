@@ -46,6 +46,12 @@ public static class DialogBoxLauncherConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DialogBoxLauncher? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+      return openXmlElement;
+    }
+    return default;
   }
 }

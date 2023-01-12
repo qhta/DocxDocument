@@ -48,6 +48,13 @@ public static class PositiveSize2DTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PositiveSize2DType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PositiveSize2DType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCx(openXmlElement, value?.Cx);
+      SetCy(openXmlElement, value?.Cy);
+      return openXmlElement;
+    }
+    return default;
   }
 }

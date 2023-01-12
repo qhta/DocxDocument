@@ -189,6 +189,19 @@ public static class DocPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.DocProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetName(openXmlElement, value?.Name);
+      SetDescription(openXmlElement, value?.Description);
+      SetHidden(openXmlElement, value?.Hidden);
+      SetTitle(openXmlElement, value?.Title);
+      SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
+      SetHyperlinkOnHover(openXmlElement, value?.HyperlinkOnHover);
+      SetNonVisualDrawingPropertiesExtensionList(openXmlElement, value?.NonVisualDrawingPropertiesExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

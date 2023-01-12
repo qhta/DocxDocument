@@ -33,6 +33,12 @@ public static class LineJoinMiterPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineJoinMiterProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLimit(openXmlElement, value?.Limit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

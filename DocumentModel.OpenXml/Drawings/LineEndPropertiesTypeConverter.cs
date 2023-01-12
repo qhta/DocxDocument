@@ -63,6 +63,14 @@ public static class LineEndPropertiesTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineEndPropertiesType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineEndPropertiesType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetWidth(openXmlElement, value?.Width);
+      SetLength(openXmlElement, value?.Length);
+      return openXmlElement;
+    }
+    return default;
   }
 }

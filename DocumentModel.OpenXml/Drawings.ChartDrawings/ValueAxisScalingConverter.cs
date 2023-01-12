@@ -90,6 +90,15 @@ public static class ValueAxisScalingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMax(openXmlElement, value?.Max);
+      SetMin(openXmlElement, value?.Min);
+      SetMajorUnit(openXmlElement, value?.MajorUnit);
+      SetMinorUnit(openXmlElement, value?.MinorUnit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

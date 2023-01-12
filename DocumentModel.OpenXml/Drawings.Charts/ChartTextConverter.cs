@@ -102,6 +102,14 @@ public static class ChartTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStringReference(openXmlElement, value?.StringReference);
+      SetRichText(openXmlElement, value?.RichText);
+      SetStringLiteral(openXmlElement, value?.StringLiteral);
+      return openXmlElement;
+    }
+    return default;
   }
 }

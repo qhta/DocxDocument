@@ -93,6 +93,11 @@ public static class SharedControlsQatItemsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.SharedControlsQatItems? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

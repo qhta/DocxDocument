@@ -102,6 +102,14 @@ public static class LimitLowerConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.LimitLower? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.LimitLower, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
+      SetBase(openXmlElement, value?.Base);
+      SetLimit(openXmlElement, value?.Limit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

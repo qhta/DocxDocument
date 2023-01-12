@@ -304,6 +304,12 @@ public static class WordprocessingCommentsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingCommentsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetComments(openXmlElement, value?.Comments);
+      return openXmlElement;
+    }
+    return default;
   }
 }

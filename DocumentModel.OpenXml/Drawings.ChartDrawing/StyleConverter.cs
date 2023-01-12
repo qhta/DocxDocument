@@ -130,6 +130,15 @@ public static class StyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Style? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Style, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLineReference(openXmlElement, value?.LineReference);
+      SetFillReference(openXmlElement, value?.FillReference);
+      SetEffectReference(openXmlElement, value?.EffectReference);
+      SetFontReference(openXmlElement, value?.FontReference);
+      return openXmlElement;
+    }
+    return default;
   }
 }

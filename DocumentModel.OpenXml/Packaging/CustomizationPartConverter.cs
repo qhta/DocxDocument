@@ -44,6 +44,12 @@ public static class CustomizationPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomizationPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomizationPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTemplateCommandGroup(openXmlElement, value?.TemplateCommandGroup);
+      return openXmlElement;
+    }
+    return default;
   }
 }

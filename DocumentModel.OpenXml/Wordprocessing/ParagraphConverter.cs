@@ -8,92 +8,148 @@ public static class ParagraphConverter
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidParagraphMarkRevision(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetRsidParagraphMarkRevision(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidParagraphMarkRevision?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidParagraphMarkRevision.Value);
+    return null;
   }
   
-  public static void SetRsidParagraphMarkRevision(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidParagraphMarkRevision(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidParagraphMarkRevision = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidParagraphMarkRevision = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidParagraphAddition(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetRsidParagraphAddition(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidParagraphAddition?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidParagraphAddition.Value);
+    return null;
   }
   
-  public static void SetRsidParagraphAddition(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidParagraphAddition(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidParagraphAddition = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidParagraphAddition = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidParagraphDeletion(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetRsidParagraphDeletion(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidParagraphDeletion?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidParagraphDeletion.Value);
+    return null;
   }
   
-  public static void SetRsidParagraphDeletion(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidParagraphDeletion(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidParagraphDeletion = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidParagraphDeletion = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetRsidParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidParagraphProperties?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidParagraphProperties.Value);
+    return null;
   }
   
-  public static void SetRsidParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidParagraphProperties = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidParagraphProperties = null;
+    }
   }
   
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidRunAdditionDefault(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetRsidRunAdditionDefault(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidRunAdditionDefault?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidRunAdditionDefault.Value);
+    return null;
   }
   
-  public static void SetRsidRunAdditionDefault(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidRunAdditionDefault(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidRunAdditionDefault = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidRunAdditionDefault = null;
+    }
   }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetParagraphId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetParagraphId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.ParagraphId?.Value != null)
+      return Convert.FromHexString(openXmlElement.ParagraphId.Value);
+    return null;
   }
   
-  public static void SetParagraphId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetParagraphId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.ParagraphId = Convert.ToHexString(value);
+      else
+        openXmlElement.ParagraphId = null;
+    }
   }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetTextId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
+  public static Byte[]? GetTextId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.TextId?.Value != null)
+      return Convert.FromHexString(openXmlElement.TextId.Value);
+    return null;
   }
   
-  public static void SetTextId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetTextId(DocumentFormat.OpenXml.Wordprocessing.Paragraph? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.TextId = Convert.ToHexString(value);
+      else
+        openXmlElement.TextId = null;
+    }
   }
   
   /// <summary>
@@ -1621,6 +1677,20 @@ public static class ParagraphConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Paragraph? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Paragraph, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRsidParagraphMarkRevision(openXmlElement, value?.RsidParagraphMarkRevision);
+      SetRsidParagraphAddition(openXmlElement, value?.RsidParagraphAddition);
+      SetRsidParagraphDeletion(openXmlElement, value?.RsidParagraphDeletion);
+      SetRsidParagraphProperties(openXmlElement, value?.RsidParagraphProperties);
+      SetRsidRunAdditionDefault(openXmlElement, value?.RsidRunAdditionDefault);
+      SetParagraphId(openXmlElement, value?.ParagraphId);
+      SetTextId(openXmlElement, value?.TextId);
+      SetNoSpellError(openXmlElement, value?.NoSpellError);
+      SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -146,6 +146,15 @@ public static class LineSketchTypePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSketchTypeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLineSketchNoneEmpty(openXmlElement, value?.LineSketchNoneEmpty);
+      SetLineSketchCurvedEmpty(openXmlElement, value?.LineSketchCurvedEmpty);
+      SetLineSketchFreehandEmpty(openXmlElement, value?.LineSketchFreehandEmpty);
+      SetLineSketchScribbleEmpty(openXmlElement, value?.LineSketchScribbleEmpty);
+      return openXmlElement;
+    }
+    return default;
   }
 }

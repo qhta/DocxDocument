@@ -10,17 +10,24 @@ public static class FramesetConverter
   /// </summary>
   public static String? GetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
   {
-    return openXmlElement?.FrameSize?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.FrameSize = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
-      else
-        openXmlElement.FrameSize = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -149,6 +156,14 @@ public static class FramesetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Frameset? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Frameset, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFrameSize(openXmlElement, value?.FrameSize);
+      SetFramesetSplitbar(openXmlElement, value?.FramesetSplitbar);
+      SetFrameLayout(openXmlElement, value?.FrameLayout);
+      return openXmlElement;
+    }
+    return default;
   }
 }

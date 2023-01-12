@@ -111,6 +111,15 @@ public static class TextBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetStyle(openXmlElement, value?.Style);
+      SetInset(openXmlElement, value?.Inset);
+      SetSingleClick(openXmlElement, value?.SingleClick);
+      return openXmlElement;
+    }
+    return default;
   }
 }

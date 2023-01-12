@@ -89,6 +89,14 @@ public static class PatternFillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PatternFill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PatternFill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPreset(openXmlElement, value?.Preset);
+      SetForegroundColor(openXmlElement, value?.ForegroundColor);
+      SetBackgroundColor(openXmlElement, value?.BackgroundColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

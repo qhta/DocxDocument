@@ -105,6 +105,16 @@ public static class ColorMenuConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ColorMenu? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ColorMenu, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetStrokeColor(openXmlElement, value?.StrokeColor);
+      SetFillColor(openXmlElement, value?.FillColor);
+      SetShadowColor(openXmlElement, value?.ShadowColor);
+      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

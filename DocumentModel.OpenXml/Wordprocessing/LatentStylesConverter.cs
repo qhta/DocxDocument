@@ -154,6 +154,17 @@ public static class LatentStylesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyles? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyles, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDefaultLockedState(openXmlElement, value?.DefaultLockedState);
+      SetDefaultUiPriority(openXmlElement, value?.DefaultUiPriority);
+      SetDefaultSemiHidden(openXmlElement, value?.DefaultSemiHidden);
+      SetDefaultUnhideWhenUsed(openXmlElement, value?.DefaultUnhideWhenUsed);
+      SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
+      SetCount(openXmlElement, value?.Count);
+      return openXmlElement;
+    }
+    return default;
   }
 }

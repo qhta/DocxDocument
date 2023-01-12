@@ -33,6 +33,12 @@ public static class FlatTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FlatText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FlatText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetZ(openXmlElement, value?.Z);
+      return openXmlElement;
+    }
+    return default;
   }
 }

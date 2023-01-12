@@ -22,14 +22,22 @@ public static class LevelConverter
   /// <summary>
   /// Template Code
   /// </summary>
-  public static DocumentModel.HexBinary? GetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
+  public static Byte[]? GetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.TemplateCode?.Value != null)
+      return Convert.FromHexString(openXmlElement.TemplateCode.Value);
+    return null;
   }
   
-  public static void SetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.TemplateCode = Convert.ToHexString(value);
+      else
+        openXmlElement.TemplateCode = null;
+    }
   }
   
   /// <summary>
@@ -54,12 +62,25 @@ public static class LevelConverter
   /// </summary>
   public static Int32? GetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -94,12 +115,25 @@ public static class LevelConverter
   /// </summary>
   public static Int32? GetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LevelRestart");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LevelRestart");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelRestart{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -210,12 +244,25 @@ public static class LevelConverter
   /// </summary>
   public static Int32? GetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -359,6 +406,26 @@ public static class LevelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Level? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Level, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLevelIndex(openXmlElement, value?.LevelIndex);
+      SetTemplateCode(openXmlElement, value?.TemplateCode);
+      SetTentative(openXmlElement, value?.Tentative);
+      SetStartNumberingValue(openXmlElement, value?.StartNumberingValue);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetLevelRestart(openXmlElement, value?.LevelRestart);
+      SetParagraphStyleIdInLevel(openXmlElement, value?.ParagraphStyleIdInLevel);
+      SetIsLegalNumberingStyle(openXmlElement, value?.IsLegalNumberingStyle);
+      SetLevelSuffix(openXmlElement, value?.LevelSuffix);
+      SetLevelText(openXmlElement, value?.LevelText);
+      SetLevelPictureBulletId(openXmlElement, value?.LevelPictureBulletId);
+      SetLegacyNumbering(openXmlElement, value?.LegacyNumbering);
+      SetLevelJustification(openXmlElement, value?.LevelJustification);
+      SetPreviousParagraphProperties(openXmlElement, value?.PreviousParagraphProperties);
+      SetNumberingSymbolRunProperties(openXmlElement, value?.NumberingSymbolRunProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

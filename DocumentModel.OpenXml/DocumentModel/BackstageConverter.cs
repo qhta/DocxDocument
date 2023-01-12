@@ -104,6 +104,13 @@ public static class BackstageConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Backstage? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Backstage, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOnShow(openXmlElement, value?.OnShow);
+      SetOnHide(openXmlElement, value?.OnHide);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -917,6 +917,33 @@ public static class TextCharacterPropertiesTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSmtClean(openXmlElement, value?.SmtClean);
+      SetSmtId(openXmlElement, value?.SmtId);
+      SetKumimoji(openXmlElement, value?.Kumimoji);
+      SetLanguage(openXmlElement, value?.Language);
+      SetAlternativeLanguage(openXmlElement, value?.AlternativeLanguage);
+      SetFontSize(openXmlElement, value?.FontSize);
+      SetBold(openXmlElement, value?.Bold);
+      SetItalic(openXmlElement, value?.Italic);
+      SetUnderline(openXmlElement, value?.Underline);
+      SetStrike(openXmlElement, value?.Strike);
+      SetKerning(openXmlElement, value?.Kerning);
+      SetCapital(openXmlElement, value?.Capital);
+      SetSpacing(openXmlElement, value?.Spacing);
+      SetNormalizeHeight(openXmlElement, value?.NormalizeHeight);
+      SetBaseline(openXmlElement, value?.Baseline);
+      SetNoProof(openXmlElement, value?.NoProof);
+      SetDirty(openXmlElement, value?.Dirty);
+      SetSpellingError(openXmlElement, value?.SpellingError);
+      SetSmartTagClean(openXmlElement, value?.SmartTagClean);
+      SetSmartTagId(openXmlElement, value?.SmartTagId);
+      SetBookmark(openXmlElement, value?.Bookmark);
+      SetOutline(openXmlElement, value?.Outline);
+      return openXmlElement;
+    }
+    return default;
   }
 }

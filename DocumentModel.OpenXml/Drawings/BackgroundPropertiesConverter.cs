@@ -78,6 +78,15 @@ public static class BackgroundPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMode(openXmlElement, value?.Mode);
+      SetPure(openXmlElement, value?.Pure);
+      SetNormal(openXmlElement, value?.Normal);
+      SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

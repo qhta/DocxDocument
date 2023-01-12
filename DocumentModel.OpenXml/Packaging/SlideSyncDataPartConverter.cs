@@ -30,6 +30,11 @@ public static class SlideSyncDataPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SlideSyncDataPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SlideSyncDataPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

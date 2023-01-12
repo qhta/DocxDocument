@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class FontPart
 {
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

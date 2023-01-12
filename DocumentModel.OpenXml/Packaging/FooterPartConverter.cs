@@ -304,6 +304,12 @@ public static class FooterPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.FooterPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.FooterPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFooter(openXmlElement, value?.Footer);
+      return openXmlElement;
+    }
+    return default;
   }
 }

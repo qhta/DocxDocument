@@ -74,6 +74,13 @@ public static class TaskAnchorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskAnchor? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCommentAnchor(openXmlElement, value?.CommentAnchor);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

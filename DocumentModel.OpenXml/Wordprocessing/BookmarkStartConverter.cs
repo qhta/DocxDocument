@@ -99,6 +99,16 @@ public static class BookmarkStartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BookmarkStart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.BookmarkStart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetColumnFirst(openXmlElement, value?.ColumnFirst);
+      SetColumnLast(openXmlElement, value?.ColumnLast);
+      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

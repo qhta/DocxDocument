@@ -73,7 +73,7 @@ public partial class Shape
   /// <summary>
   /// Regroup ID
   /// </summary>
-  public Int32? RegroupId { get; set; }
+  public Int64? RegroupId { get; set; }
   
   /// <summary>
   /// Double-click Notification Toggle
@@ -158,17 +158,17 @@ public partial class Shape
   /// <summary>
   /// Diagram Node Layout Identifier
   /// </summary>
-  public Int32? DiagramLayout { get; set; }
+  public Int64? DiagramLayout { get; set; }
   
   /// <summary>
   /// Diagram Node Identifier
   /// </summary>
-  public Int32? DiagramNodeKind { get; set; }
+  public Int64? DiagramNodeKind { get; set; }
   
   /// <summary>
   /// Diagram Node Recent Layout Identifier
   /// </summary>
-  public Int32? DiagramLayoutMostRecentUsed { get; set; }
+  public Int64? DiagramLayoutMostRecentUsed { get; set; }
   
   /// <summary>
   /// Text Inset Mode
@@ -278,7 +278,7 @@ public partial class Shape
   /// <summary>
   /// Encoded Package
   /// </summary>
-  public DocumentModel.Base64Binary? EncodedPackage { get; set; }
+  public Byte[]? EncodedPackage { get; set; }
   
   /// <summary>
   /// Storage for Alternate Math Content

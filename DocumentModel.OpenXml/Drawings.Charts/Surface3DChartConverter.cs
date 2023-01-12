@@ -200,6 +200,13 @@ public static class Surface3DChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Surface3DChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Surface3DChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWireframe(openXmlElement, value?.Wireframe);
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -97,6 +97,16 @@ public static class BinningConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Binning? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIntervalClosed(openXmlElement, value?.IntervalClosed);
+      SetUnderflow(openXmlElement, value?.Underflow);
+      SetOverflow(openXmlElement, value?.Overflow);
+      SetXsddouble(openXmlElement, value?.Xsddouble);
+      SetBinCountXsdunsignedInt(openXmlElement, value?.BinCountXsdunsignedInt);
+      return openXmlElement;
+    }
+    return default;
   }
 }

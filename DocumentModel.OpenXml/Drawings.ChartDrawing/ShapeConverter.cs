@@ -202,6 +202,19 @@ public static class ShapeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Shape? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacro(openXmlElement, value?.Macro);
+      SetTextLink(openXmlElement, value?.TextLink);
+      SetLockText(openXmlElement, value?.LockText);
+      SetPublished(openXmlElement, value?.Published);
+      SetNonVisualShapeProperties(openXmlElement, value?.NonVisualShapeProperties);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetStyle(openXmlElement, value?.Style);
+      SetTextBody(openXmlElement, value?.TextBody);
+      return openXmlElement;
+    }
+    return default;
   }
 }

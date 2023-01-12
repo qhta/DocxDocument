@@ -400,6 +400,25 @@ public static class ColorSchemeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorScheme? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorScheme, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetDark1Color(openXmlElement, value?.Dark1Color);
+      SetLight1Color(openXmlElement, value?.Light1Color);
+      SetDark2Color(openXmlElement, value?.Dark2Color);
+      SetLight2Color(openXmlElement, value?.Light2Color);
+      SetAccent1Color(openXmlElement, value?.Accent1Color);
+      SetAccent2Color(openXmlElement, value?.Accent2Color);
+      SetAccent3Color(openXmlElement, value?.Accent3Color);
+      SetAccent4Color(openXmlElement, value?.Accent4Color);
+      SetAccent5Color(openXmlElement, value?.Accent5Color);
+      SetAccent6Color(openXmlElement, value?.Accent6Color);
+      SetHyperlink(openXmlElement, value?.Hyperlink);
+      SetFollowedHyperlinkColor(openXmlElement, value?.FollowedHyperlinkColor);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

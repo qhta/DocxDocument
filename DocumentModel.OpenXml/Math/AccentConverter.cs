@@ -74,6 +74,13 @@ public static class AccentConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Accent? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Accent, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAccentProperties(openXmlElement, value?.AccentProperties);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

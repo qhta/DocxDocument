@@ -74,6 +74,15 @@ public static class ReferenceRelationshipConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ReferenceRelationship? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ReferenceRelationship, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelationshipType(openXmlElement, value?.RelationshipType);
+      SetIsExternal(openXmlElement, value?.IsExternal);
+      SetId(openXmlElement, value?.Id);
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

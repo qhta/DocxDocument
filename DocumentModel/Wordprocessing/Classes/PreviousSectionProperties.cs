@@ -8,22 +8,22 @@ public partial class PreviousSectionProperties
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public DocumentModel.HexBinary? RsidRPr { get; set; }
+  public Byte[]? RsidRPr { get; set; }
   
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public DocumentModel.HexBinary? RsidDel { get; set; }
+  public Byte[]? RsidDel { get; set; }
   
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public DocumentModel.HexBinary? RsidR { get; set; }
+  public Byte[]? RsidR { get; set; }
   
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public DocumentModel.HexBinary? RsidSect { get; set; }
+  public Byte[]? RsidSect { get; set; }
   
   /// <summary>
   /// FootnoteProperties.

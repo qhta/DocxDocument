@@ -539,6 +539,41 @@ public static class PropertySetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PropertySet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPresentationElementId(openXmlElement, value?.PresentationElementId);
+      SetPresentationName(openXmlElement, value?.PresentationName);
+      SetPresentationStyleLabel(openXmlElement, value?.PresentationStyleLabel);
+      SetPresentationStyleIndex(openXmlElement, value?.PresentationStyleIndex);
+      SetPresentationStyleCount(openXmlElement, value?.PresentationStyleCount);
+      SetLayoutTypeId(openXmlElement, value?.LayoutTypeId);
+      SetLayoutCategoryId(openXmlElement, value?.LayoutCategoryId);
+      SetQuickStyleTypeId(openXmlElement, value?.QuickStyleTypeId);
+      SetQuickStyleCategoryId(openXmlElement, value?.QuickStyleCategoryId);
+      SetColorType(openXmlElement, value?.ColorType);
+      SetColorCategoryId(openXmlElement, value?.ColorCategoryId);
+      SetCoherent3D(openXmlElement, value?.Coherent3D);
+      SetPlaceholderText(openXmlElement, value?.PlaceholderText);
+      SetPlaceholder(openXmlElement, value?.Placeholder);
+      SetRotation(openXmlElement, value?.Rotation);
+      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+      SetFixedWidthOverride(openXmlElement, value?.FixedWidthOverride);
+      SetFixedHeightOverride(openXmlElement, value?.FixedHeightOverride);
+      SetWidthScale(openXmlElement, value?.WidthScale);
+      SetHightScale(openXmlElement, value?.HightScale);
+      SetTextChanged(openXmlElement, value?.TextChanged);
+      SetFactorWidth(openXmlElement, value?.FactorWidth);
+      SetFactorHeight(openXmlElement, value?.FactorHeight);
+      SetNeighborOffsetWidth(openXmlElement, value?.NeighborOffsetWidth);
+      SetNeighborOffsetHeight(openXmlElement, value?.NeighborOffsetHeight);
+      SetRadiusScale(openXmlElement, value?.RadiusScale);
+      SetIncludeAngleScale(openXmlElement, value?.IncludeAngleScale);
+      SetPresentationLayoutVariables(openXmlElement, value?.PresentationLayoutVariables);
+      SetStyle(openXmlElement, value?.Style);
+      return openXmlElement;
+    }
+    return default;
   }
 }

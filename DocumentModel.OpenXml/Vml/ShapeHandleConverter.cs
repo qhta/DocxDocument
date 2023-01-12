@@ -168,6 +168,20 @@ public static class ShapeHandleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPosition(openXmlElement, value?.Position);
+      SetPolar(openXmlElement, value?.Polar);
+      SetMap(openXmlElement, value?.Map);
+      SetInvertX(openXmlElement, value?.InvertX);
+      SetInvertY(openXmlElement, value?.InvertY);
+      SetSwitch(openXmlElement, value?.Switch);
+      SetXRange(openXmlElement, value?.XRange);
+      SetYRange(openXmlElement, value?.YRange);
+      SetRadiusRange(openXmlElement, value?.RadiusRange);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -118,6 +118,15 @@ public static class RuleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rule? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rule, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetType(openXmlElement, value?.Type);
+      SetHow(openXmlElement, value?.How);
+      SetShapeReference(openXmlElement, value?.ShapeReference);
+      return openXmlElement;
+    }
+    return default;
   }
 }

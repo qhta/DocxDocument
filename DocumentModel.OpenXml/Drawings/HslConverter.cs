@@ -63,6 +63,14 @@ public static class HslConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Hsl? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Hsl, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHue(openXmlElement, value?.Hue);
+      SetSaturation(openXmlElement, value?.Saturation);
+      SetLuminance(openXmlElement, value?.Luminance);
+      return openXmlElement;
+    }
+    return default;
   }
 }

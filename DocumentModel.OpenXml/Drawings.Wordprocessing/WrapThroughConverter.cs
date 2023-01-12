@@ -91,6 +91,15 @@ public static class WrapThroughConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapThrough? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWrapText(openXmlElement, value?.WrapText);
+      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+      SetWrapPolygon(openXmlElement, value?.WrapPolygon);
+      return openXmlElement;
+    }
+    return default;
   }
 }

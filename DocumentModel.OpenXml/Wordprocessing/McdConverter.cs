@@ -59,27 +59,43 @@ public static class McdConverter
   /// <summary>
   /// bEncrypt
   /// </summary>
-  public static DocumentModel.HexBinary? GetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static Byte[]? GetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.BEncrypt?.Value != null)
+      return Convert.FromHexString(openXmlElement.BEncrypt.Value);
+    return null;
   }
   
-  public static void SetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.BEncrypt = Convert.ToHexString(value);
+      else
+        openXmlElement.BEncrypt = null;
+    }
   }
   
   /// <summary>
   /// cmg
   /// </summary>
-  public static DocumentModel.HexBinary? GetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static Byte[]? GetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Cmg?.Value != null)
+      return Convert.FromHexString(openXmlElement.Cmg.Value);
+    return null;
   }
   
-  public static void SetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Cmg = Convert.ToHexString(value);
+      else
+        openXmlElement.Cmg = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
@@ -100,6 +116,16 @@ public static class McdConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcd? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcd, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacroName(openXmlElement, value?.MacroName);
+      SetName(openXmlElement, value?.Name);
+      SetMenuHelp(openXmlElement, value?.MenuHelp);
+      SetBEncrypt(openXmlElement, value?.BEncrypt);
+      SetCmg(openXmlElement, value?.Cmg);
+      return openXmlElement;
+    }
+    return default;
   }
 }

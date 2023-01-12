@@ -48,6 +48,13 @@ public static class VTClipboardDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTClipboardData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTClipboardData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormat(openXmlElement, value?.Format);
+      SetSize(openXmlElement, value?.Size);
+      return openXmlElement;
+    }
+    return default;
   }
 }

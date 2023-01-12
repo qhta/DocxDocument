@@ -51,6 +51,13 @@ public static class ColorTransformCategoryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformCategory? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetPriority(openXmlElement, value?.Priority);
+      return openXmlElement;
+    }
+    return default;
   }
 }

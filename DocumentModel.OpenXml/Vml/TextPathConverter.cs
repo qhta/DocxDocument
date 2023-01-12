@@ -142,6 +142,19 @@ public static class TextPathConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextPath? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextPath, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetStyle(openXmlElement, value?.Style);
+      SetOn(openXmlElement, value?.On);
+      SetFitShape(openXmlElement, value?.FitShape);
+      SetFitPath(openXmlElement, value?.FitPath);
+      SetTrim(openXmlElement, value?.Trim);
+      SetXScale(openXmlElement, value?.XScale);
+      SetString(openXmlElement, value?.String);
+      return openXmlElement;
+    }
+    return default;
   }
 }

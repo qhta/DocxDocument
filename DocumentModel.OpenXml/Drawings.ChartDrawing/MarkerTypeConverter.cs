@@ -46,6 +46,13 @@ public static class MarkerTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.MarkerType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetXPosition(openXmlElement, value?.XPosition);
+      SetYPosition(openXmlElement, value?.YPosition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

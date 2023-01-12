@@ -222,6 +222,13 @@ public static class StyleDefinitionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDefinition? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUniqueId(openXmlElement, value?.UniqueId);
+      SetMinVersion(openXmlElement, value?.MinVersion);
+      return openXmlElement;
+    }
+    return default;
   }
 }

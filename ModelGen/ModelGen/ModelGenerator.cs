@@ -74,7 +74,8 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateClassOrInterface(TypeInfo type, string typeName, string filename, TypeKind kind)
   {
-    AssurePathExists(filename);
+    if (!AssurePathExists(filename))
+      return false;
     using (var textWriter = File.CreateText(filename))
     using (Writer = new IndentedTextWriter(textWriter, "  "))
     {
@@ -164,9 +165,9 @@ public class ModelGenerator : BaseCodeGenerator
     string qm = "?";
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
-    if (prop.IsReadonly)
-      Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; }}");
-    else
+    //if (prop.IsReadonly)
+    //  Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; }}");
+    //else
       Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; set; }}");
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
@@ -237,5 +238,19 @@ public class ModelGenerator : BaseCodeGenerator
   }
   #endregion
 
+  protected override bool AssurePathExists(string filename)
+  {
+    //if (File.Exists(filename))
+    //  return false;
+    var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
+    if (filePath.Contains(@"\Properties"))
+      return false;
+    if (filePath != null)
+      if (!Directory.Exists(filePath))
+      {
+        Directory.CreateDirectory(filePath);
+      }
+    return true;
+  }
 }
 

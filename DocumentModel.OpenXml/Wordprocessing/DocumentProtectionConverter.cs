@@ -143,14 +143,22 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public static DocumentModel.HexBinary? GetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
+      return Convert.FromHexString(openXmlElement.AlgorithmIdExtensibility.Value);
+    return null;
   }
   
-  public static void SetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AlgorithmIdExtensibility = Convert.ToHexString(value);
+      else
+        openXmlElement.AlgorithmIdExtensibility = null;
+    }
   }
   
   /// <summary>
@@ -173,14 +181,22 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public static DocumentModel.HexBinary? GetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
+      return Convert.FromHexString(openXmlElement.CryptographicProviderTypeExtensibility.Value);
+    return null;
   }
   
-  public static void SetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CryptographicProviderTypeExtensibility = Convert.ToHexString(value);
+      else
+        openXmlElement.CryptographicProviderTypeExtensibility = null;
+    }
   }
   
   /// <summary>
@@ -203,27 +219,43 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Password Hash
   /// </summary>
-  public static DocumentModel.Base64Binary? GetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.Hash?.Value != null)
+      return Convert.FromBase64String(openXmlElement.Hash.Value);
+    return null;
   }
   
-  public static void SetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Hash = Convert.ToBase64String(value);
+      else
+        openXmlElement.Hash = null;
+    }
   }
   
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public static DocumentModel.Base64Binary? GetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.Salt?.Value != null)
+      return Convert.FromBase64String(openXmlElement.Salt.Value);
+    return null;
   }
   
-  public static void SetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Salt = Convert.ToBase64String(value);
+      else
+        openXmlElement.Salt = null;
+    }
   }
   
   /// <summary>
@@ -246,27 +278,43 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.Base64Binary? GetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.HashValue?.Value != null)
+      return Convert.FromBase64String(openXmlElement.HashValue.Value);
+    return null;
   }
   
-  public static void SetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.HashValue = Convert.ToBase64String(value);
+      else
+        openXmlElement.HashValue = null;
+    }
   }
   
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.Base64Binary? GetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static Byte[]? GetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement?.SaltValue?.Value != null)
+      return Convert.FromBase64String(openXmlElement.SaltValue.Value);
+    return null;
   }
   
-  public static void SetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, DocumentModel.Base64Binary? value)
+  public static void SetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Base64BinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.SaltValue = Convert.ToBase64String(value);
+      else
+        openXmlElement.SaltValue = null;
+    }
   }
   
   /// <summary>
@@ -315,6 +363,30 @@ public static class DocumentProtectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentProtection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentProtection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEdit(openXmlElement, value?.Edit);
+      SetFormatting(openXmlElement, value?.Formatting);
+      SetEnforcement(openXmlElement, value?.Enforcement);
+      SetCryptographicProviderType(openXmlElement, value?.CryptographicProviderType);
+      SetCryptographicAlgorithmClass(openXmlElement, value?.CryptographicAlgorithmClass);
+      SetCryptographicAlgorithmType(openXmlElement, value?.CryptographicAlgorithmType);
+      SetCryptographicAlgorithmSid(openXmlElement, value?.CryptographicAlgorithmSid);
+      SetCryptographicSpinCount(openXmlElement, value?.CryptographicSpinCount);
+      SetCryptographicProvider(openXmlElement, value?.CryptographicProvider);
+      SetAlgorithmIdExtensibility(openXmlElement, value?.AlgorithmIdExtensibility);
+      SetAlgorithmIdExtensibilitySource(openXmlElement, value?.AlgorithmIdExtensibilitySource);
+      SetCryptographicProviderTypeExtensibility(openXmlElement, value?.CryptographicProviderTypeExtensibility);
+      SetCryptographicProviderTypeExtSource(openXmlElement, value?.CryptographicProviderTypeExtSource);
+      SetHash(openXmlElement, value?.Hash);
+      SetSalt(openXmlElement, value?.Salt);
+      SetAlgorithmName(openXmlElement, value?.AlgorithmName);
+      SetHashValue(openXmlElement, value?.HashValue);
+      SetSaltValue(openXmlElement, value?.SaltValue);
+      SetSpinCount(openXmlElement, value?.SpinCount);
+      return openXmlElement;
+    }
+    return default;
   }
 }

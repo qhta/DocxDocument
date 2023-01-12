@@ -8,6 +8,6 @@ public partial class FootnoteEndnoteSeparatorReferenceType
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>
-  public Int32? Id { get; set; }
+  public Int64? Id { get; set; }
   
 }

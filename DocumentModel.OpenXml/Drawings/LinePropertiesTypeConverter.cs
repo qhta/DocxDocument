@@ -78,6 +78,15 @@ public static class LinePropertiesTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinePropertiesType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinePropertiesType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetCapType(openXmlElement, value?.CapType);
+      SetCompoundLineType(openXmlElement, value?.CompoundLineType);
+      SetAlignment(openXmlElement, value?.Alignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

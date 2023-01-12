@@ -140,6 +140,15 @@ public static class StyleTableCellPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleTableCellProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShading(openXmlElement, value?.Shading);
+      SetNoWrap(openXmlElement, value?.NoWrap);
+      SetTableCellMargin(openXmlElement, value?.TableCellMargin);
+      SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -47,6 +47,13 @@ public static class StringPointConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringPoint? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StringPoint, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIndex(openXmlElement, value?.Index);
+      SetNumericValue(openXmlElement, value?.NumericValue);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -126,6 +126,15 @@ public static class FramesetSplitbarConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FramesetSplitbar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetColor(openXmlElement, value?.Color);
+      SetNoBorder(openXmlElement, value?.NoBorder);
+      SetFlatBorders(openXmlElement, value?.FlatBorders);
+      return openXmlElement;
+    }
+    return default;
   }
 }

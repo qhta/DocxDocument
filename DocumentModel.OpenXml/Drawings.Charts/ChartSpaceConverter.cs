@@ -82,12 +82,25 @@ public static class ChartSpaceConverter
   
   public static Byte? GetStyle(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetStyle(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, Byte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.ColorMapOverride? GetColorMapOverride(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
@@ -357,6 +370,14 @@ public static class ChartSpaceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpace? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpace, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDate1904(openXmlElement, value?.Date1904);
+      SetEditingLanguage(openXmlElement, value?.EditingLanguage);
+      SetRoundedCorners(openXmlElement, value?.RoundedCorners);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -158,6 +158,18 @@ public static class WebExtensionTaskpaneConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.UI.WebExtensionTaskpane? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDockState(openXmlElement, value?.DockState);
+      SetVisibility(openXmlElement, value?.Visibility);
+      SetWidth(openXmlElement, value?.Width);
+      SetRow(openXmlElement, value?.Row);
+      SetLocked(openXmlElement, value?.Locked);
+      SetWebExtensionPartReference(openXmlElement, value?.WebExtensionPartReference);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

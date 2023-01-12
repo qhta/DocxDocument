@@ -130,6 +130,15 @@ public static class PrintSettingsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PrintSettings? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PrintSettings, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHeaderFooter(openXmlElement, value?.HeaderFooter);
+      SetPageMargins(openXmlElement, value?.PageMargins);
+      SetPageSetup(openXmlElement, value?.PageSetup);
+      SetLegacyDrawingHeaderFooter(openXmlElement, value?.LegacyDrawingHeaderFooter);
+      return openXmlElement;
+    }
+    return default;
   }
 }

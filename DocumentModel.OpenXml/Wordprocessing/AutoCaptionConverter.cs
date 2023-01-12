@@ -54,6 +54,13 @@ public static class AutoCaptionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AutoCaption? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AutoCaption, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetCaption(openXmlElement, value?.Caption);
+      return openXmlElement;
+    }
+    return default;
   }
 }

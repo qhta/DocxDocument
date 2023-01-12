@@ -130,6 +130,17 @@ public static class GeographyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Geography? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetProjectionType(openXmlElement, value?.ProjectionType);
+      SetViewedRegionType(openXmlElement, value?.ViewedRegionType);
+      SetCultureLanguage(openXmlElement, value?.CultureLanguage);
+      SetCultureRegion(openXmlElement, value?.CultureRegion);
+      SetAttribution(openXmlElement, value?.Attribution);
+      SetGeoCache(openXmlElement, value?.GeoCache);
+      return openXmlElement;
+    }
+    return default;
   }
 }

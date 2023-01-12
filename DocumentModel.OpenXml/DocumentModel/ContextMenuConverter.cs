@@ -261,6 +261,12 @@ public static class ContextMenuConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ContextMenu? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIdMso(openXmlElement, value?.IdMso);
+      return openXmlElement;
+    }
+    return default;
   }
 }

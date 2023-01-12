@@ -596,6 +596,12 @@ public static class SdtRunRubyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtRunRuby? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSdtContentRunRuby(openXmlElement, value?.SdtContentRunRuby);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -48,6 +48,13 @@ public static class EntryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Entry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Entry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNew(openXmlElement, value?.New);
+      SetOld(openXmlElement, value?.Old);
+      return openXmlElement;
+    }
+    return default;
   }
 }

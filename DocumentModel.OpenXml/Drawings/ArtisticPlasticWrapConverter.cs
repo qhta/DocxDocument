@@ -48,6 +48,13 @@ public static class ArtisticPlasticWrapConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPlasticWrap? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTransparancy(openXmlElement, value?.Transparancy);
+      SetSmoothness(openXmlElement, value?.Smoothness);
+      return openXmlElement;
+    }
+    return default;
   }
 }

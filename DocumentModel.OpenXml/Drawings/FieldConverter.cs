@@ -98,12 +98,18 @@ public static class FieldConverter
   /// </summary>
   public static String? GetText(DocumentFormat.OpenXml.Drawing.Field? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Text");
+    return openXmlElement?.Text?.Text;
   }
   
   public static void SetText(DocumentFormat.OpenXml.Drawing.Field? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Text");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Text = new DocumentFormat.OpenXml.Drawing.Text(value);
+      else
+        openXmlElement.Text = null;
+    }
   }
   
   public static DocumentModel.Drawings.Field? CreateModelElement(DocumentFormat.OpenXml.Drawing.Field? openXmlElement)
@@ -124,6 +130,16 @@ public static class FieldConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Field? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Field, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetType(openXmlElement, value?.Type);
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
+      SetText(openXmlElement, value?.Text);
+      return openXmlElement;
+    }
+    return default;
   }
 }

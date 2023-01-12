@@ -8,27 +8,43 @@ public static class CommentIdConverter
   /// <summary>
   /// paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
+  public static Byte[]? GetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.ParaId?.Value != null)
+      return Convert.FromHexString(openXmlElement.ParaId.Value);
+    return null;
   }
   
-  public static void SetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.ParaId = Convert.ToHexString(value);
+      else
+        openXmlElement.ParaId = null;
+    }
   }
   
   /// <summary>
   /// durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
+  public static Byte[]? GetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.DurableId?.Value != null)
+      return Convert.FromHexString(openXmlElement.DurableId.Value);
+    return null;
   }
   
-  public static void SetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.DurableId = Convert.ToHexString(value);
+      else
+        openXmlElement.DurableId = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.CommentId? CreateModelElement(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
@@ -46,6 +62,13 @@ public static class CommentIdConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentId? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParaId(openXmlElement, value?.ParaId);
+      SetDurableId(openXmlElement, value?.DurableId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -33,6 +33,12 @@ public static class ParentLabelLayoutConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParentLabelLayoutVal(openXmlElement, value?.ParentLabelLayoutVal);
+      return openXmlElement;
+    }
+    return default;
   }
 }

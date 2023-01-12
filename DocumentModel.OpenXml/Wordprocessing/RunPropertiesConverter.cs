@@ -573,12 +573,25 @@ public static class RunPropertiesConverter
   /// </summary>
   public static Int32? GetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Spacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Spacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Spacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -586,12 +599,25 @@ public static class RunPropertiesConverter
   /// </summary>
   public static Int64? GetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.CharacterScale");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.CharacterScale");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.CharacterScale{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -599,12 +625,25 @@ public static class RunPropertiesConverter
   /// </summary>
   public static UInt32? GetKern(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Kern");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetKern(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.Kern");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Kern{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -1464,6 +1503,62 @@ public static class RunPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunStyle(openXmlElement, value?.RunStyle);
+      SetRunFonts(openXmlElement, value?.RunFonts);
+      SetBold(openXmlElement, value?.Bold);
+      SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
+      SetItalic(openXmlElement, value?.Italic);
+      SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
+      SetCaps(openXmlElement, value?.Caps);
+      SetSmallCaps(openXmlElement, value?.SmallCaps);
+      SetStrike(openXmlElement, value?.Strike);
+      SetDoubleStrike(openXmlElement, value?.DoubleStrike);
+      SetOutline(openXmlElement, value?.Outline);
+      SetShadow(openXmlElement, value?.Shadow);
+      SetEmboss(openXmlElement, value?.Emboss);
+      SetImprint(openXmlElement, value?.Imprint);
+      SetNoProof(openXmlElement, value?.NoProof);
+      SetSnapToGrid(openXmlElement, value?.SnapToGrid);
+      SetVanish(openXmlElement, value?.Vanish);
+      SetWebHidden(openXmlElement, value?.WebHidden);
+      SetColor(openXmlElement, value?.Color);
+      SetSpacing(openXmlElement, value?.Spacing);
+      SetCharacterScale(openXmlElement, value?.CharacterScale);
+      SetKern(openXmlElement, value?.Kern);
+      SetPosition(openXmlElement, value?.Position);
+      SetFontSize(openXmlElement, value?.FontSize);
+      SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
+      SetHighlight(openXmlElement, value?.Highlight);
+      SetUnderline(openXmlElement, value?.Underline);
+      SetTextEffect(openXmlElement, value?.TextEffect);
+      SetBorder(openXmlElement, value?.Border);
+      SetShading(openXmlElement, value?.Shading);
+      SetFitText(openXmlElement, value?.FitText);
+      SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
+      SetRightToLeftText(openXmlElement, value?.RightToLeftText);
+      SetComplexScript(openXmlElement, value?.ComplexScript);
+      SetEmphasis(openXmlElement, value?.Emphasis);
+      SetLanguages(openXmlElement, value?.Languages);
+      SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
+      SetSpecVanish(openXmlElement, value?.SpecVanish);
+      SetGlow(openXmlElement, value?.Glow);
+      SetShadow14(openXmlElement, value?.Shadow14);
+      SetReflection(openXmlElement, value?.Reflection);
+      SetTextOutlineEffect(openXmlElement, value?.TextOutlineEffect);
+      SetFillTextEffect(openXmlElement, value?.FillTextEffect);
+      SetScene3D(openXmlElement, value?.Scene3D);
+      SetProperties3D(openXmlElement, value?.Properties3D);
+      SetLigatures(openXmlElement, value?.Ligatures);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetNumberSpacing(openXmlElement, value?.NumberSpacing);
+      SetStylisticSets(openXmlElement, value?.StylisticSets);
+      SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
+      SetRunPropertiesChange(openXmlElement, value?.RunPropertiesChange);
+      return openXmlElement;
+    }
+    return default;
   }
 }

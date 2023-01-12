@@ -242,6 +242,19 @@ public static class TableBordersConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableBorders? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableBorders, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTopBorder(openXmlElement, value?.TopBorder);
+      SetLeftBorder(openXmlElement, value?.LeftBorder);
+      SetStartBorder(openXmlElement, value?.StartBorder);
+      SetBottomBorder(openXmlElement, value?.BottomBorder);
+      SetRightBorder(openXmlElement, value?.RightBorder);
+      SetEndBorder(openXmlElement, value?.EndBorder);
+      SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
+      SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

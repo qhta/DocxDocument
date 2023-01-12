@@ -168,6 +168,11 @@ public static class EffectColorListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.EffectColorList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

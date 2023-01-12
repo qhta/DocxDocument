@@ -54,6 +54,13 @@ public static class ListItemConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ListItem? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ListItem, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDisplayText(openXmlElement, value?.DisplayText);
+      SetValue(openXmlElement, value?.Value);
+      return openXmlElement;
+    }
+    return default;
   }
 }

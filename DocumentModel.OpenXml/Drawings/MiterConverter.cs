@@ -33,6 +33,12 @@ public static class MiterConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Miter? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Miter, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLimit(openXmlElement, value?.Limit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

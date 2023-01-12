@@ -135,12 +135,25 @@ public static class PictureOptionsConverter
   /// </summary>
   public static Double? GetPictureStackUnit(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPictureStackUnit(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? openXmlElement, Double? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? openXmlElement)
@@ -161,6 +174,16 @@ public static class PictureOptionsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PictureOptions? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PictureOptions, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetApplyToFront(openXmlElement, value?.ApplyToFront);
+      SetApplyToSides(openXmlElement, value?.ApplyToSides);
+      SetApplyToEnd(openXmlElement, value?.ApplyToEnd);
+      SetPictureFormat(openXmlElement, value?.PictureFormat);
+      SetPictureStackUnit(openXmlElement, value?.PictureStackUnit);
+      return openXmlElement;
+    }
+    return default;
   }
 }

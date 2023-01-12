@@ -8,7 +8,7 @@ public partial class MatrixColumnProperties
   /// <summary>
   /// Matrix Column Count.
   /// </summary>
-  public Int32? MatrixColumnCount { get; set; }
+  public Int64? MatrixColumnCount { get; set; }
   
   /// <summary>
   /// Matrix Column Justification.

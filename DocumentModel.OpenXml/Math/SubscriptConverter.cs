@@ -102,6 +102,14 @@ public static class SubscriptConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Subscript? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Subscript, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSubscriptProperties(openXmlElement, value?.SubscriptProperties);
+      SetBase(openXmlElement, value?.Base);
+      SetSubArgument(openXmlElement, value?.SubArgument);
+      return openXmlElement;
+    }
+    return default;
   }
 }

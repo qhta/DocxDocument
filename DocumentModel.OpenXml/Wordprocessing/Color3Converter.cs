@@ -87,6 +87,15 @@ public static class Color3Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color3? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Color, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetThemeColor(openXmlElement, value?.ThemeColor);
+      SetThemeTint(openXmlElement, value?.ThemeTint);
+      SetThemeShade(openXmlElement, value?.ThemeShade);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -64,6 +64,12 @@ public static class DiagramPersistLayoutPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramPersistLayoutPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDrawing(openXmlElement, value?.Drawing);
+      return openXmlElement;
+    }
+    return default;
   }
 }

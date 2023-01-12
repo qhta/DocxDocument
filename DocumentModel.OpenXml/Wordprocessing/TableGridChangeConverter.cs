@@ -64,6 +64,13 @@ public static class TableGridChangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableGridChange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableGridChange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetPreviousTableGrid(openXmlElement, value?.PreviousTableGrid);
+      return openXmlElement;
+    }
+    return default;
   }
 }

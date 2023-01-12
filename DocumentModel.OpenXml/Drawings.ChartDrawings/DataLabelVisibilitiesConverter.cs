@@ -72,6 +72,14 @@ public static class DataLabelVisibilitiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSeriesName(openXmlElement, value?.SeriesName);
+      SetCategoryName(openXmlElement, value?.CategoryName);
+      SetValue(openXmlElement, value?.Value);
+      return openXmlElement;
+    }
+    return default;
   }
 }

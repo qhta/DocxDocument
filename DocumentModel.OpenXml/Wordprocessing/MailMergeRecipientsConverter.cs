@@ -43,6 +43,11 @@ public static class MailMergeRecipientsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MailMergeRecipients? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MailMergeRecipients, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

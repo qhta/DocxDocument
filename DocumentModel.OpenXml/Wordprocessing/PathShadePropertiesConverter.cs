@@ -61,6 +61,13 @@ public static class PathShadePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PathShadeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPath(openXmlElement, value?.Path);
+      SetFillToRectangle(openXmlElement, value?.FillToRectangle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

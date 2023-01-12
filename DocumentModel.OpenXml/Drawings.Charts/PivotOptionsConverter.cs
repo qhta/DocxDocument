@@ -178,6 +178,16 @@ public static class PivotOptionsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PivotOptions? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDropZoneFilter(openXmlElement, value?.DropZoneFilter);
+      SetDropZoneCategories(openXmlElement, value?.DropZoneCategories);
+      SetDropZoneData(openXmlElement, value?.DropZoneData);
+      SetDropZoneSeries(openXmlElement, value?.DropZoneSeries);
+      SetDropZonesVisible(openXmlElement, value?.DropZonesVisible);
+      return openXmlElement;
+    }
+    return default;
   }
 }

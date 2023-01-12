@@ -64,27 +64,43 @@ public static class InlineConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement)
+  public static Byte[]? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.AnchorId?.Value != null)
+      return Convert.FromHexString(openXmlElement.AnchorId.Value);
+    return null;
   }
   
-  public static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.AnchorId = Convert.ToHexString(value);
+      else
+        openXmlElement.AnchorId = null;
+    }
   }
   
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement)
+  public static Byte[]? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.EditId?.Value != null)
+      return Convert.FromHexString(openXmlElement.EditId.Value);
+    return null;
   }
   
-  public static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.EditId = Convert.ToHexString(value);
+      else
+        openXmlElement.EditId = null;
+    }
   }
   
   /// <summary>
@@ -246,6 +262,22 @@ public static class InlineConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Inline? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+      SetAnchorId(openXmlElement, value?.AnchorId);
+      SetEditId(openXmlElement, value?.EditId);
+      SetExtent(openXmlElement, value?.Extent);
+      SetEffectExtent(openXmlElement, value?.EffectExtent);
+      SetDocProperties(openXmlElement, value?.DocProperties);
+      SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
+      SetGraphic(openXmlElement, value?.Graphic);
+      return openXmlElement;
+    }
+    return default;
   }
 }

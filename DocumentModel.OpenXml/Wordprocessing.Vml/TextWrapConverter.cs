@@ -78,6 +78,15 @@ public static class TextWrapConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.TextWrap? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetSide(openXmlElement, value?.Side);
+      SetAnchorX(openXmlElement, value?.AnchorX);
+      SetAnchorY(openXmlElement, value?.AnchorY);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -54,6 +54,13 @@ public static class DataModelExtensionBlockConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.DataModelExtensionBlock? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelId(openXmlElement, value?.RelId);
+      SetMinVer(openXmlElement, value?.MinVer);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -72,6 +72,14 @@ public static class DataBindingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataBinding, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPrefixMappings(openXmlElement, value?.PrefixMappings);
+      SetXPath(openXmlElement, value?.XPath);
+      SetStoreItemId(openXmlElement, value?.StoreItemId);
+      return openXmlElement;
+    }
+    return default;
   }
 }

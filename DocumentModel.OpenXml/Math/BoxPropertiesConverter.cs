@@ -206,6 +206,17 @@ public static class BoxPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BoxProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.BoxProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOperatorEmulator(openXmlElement, value?.OperatorEmulator);
+      SetNoBreak(openXmlElement, value?.NoBreak);
+      SetDifferential(openXmlElement, value?.Differential);
+      SetBreak(openXmlElement, value?.Break);
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

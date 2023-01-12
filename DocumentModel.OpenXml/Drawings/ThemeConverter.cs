@@ -194,6 +194,18 @@ public static class ThemeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Theme? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Theme, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetThemeId(openXmlElement, value?.ThemeId);
+      SetThemeElements(openXmlElement, value?.ThemeElements);
+      SetObjectDefaults(openXmlElement, value?.ObjectDefaults);
+      SetExtraColorSchemeList(openXmlElement, value?.ExtraColorSchemeList);
+      SetCustomColorList(openXmlElement, value?.CustomColorList);
+      SetOfficeStyleSheetExtensionList(openXmlElement, value?.OfficeStyleSheetExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

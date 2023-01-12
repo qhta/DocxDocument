@@ -253,6 +253,16 @@ public static class PathConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Path? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Path, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetHeight(openXmlElement, value?.Height);
+      SetFill(openXmlElement, value?.Fill);
+      SetStroke(openXmlElement, value?.Stroke);
+      SetExtrusionOk(openXmlElement, value?.ExtrusionOk);
+      return openXmlElement;
+    }
+    return default;
   }
 }

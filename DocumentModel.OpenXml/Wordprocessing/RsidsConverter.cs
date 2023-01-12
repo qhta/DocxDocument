@@ -80,6 +80,12 @@ public static class RsidsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Rsids? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Rsids, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRsidRoot(openXmlElement, value?.RsidRoot);
+      return openXmlElement;
+    }
+    return default;
   }
 }

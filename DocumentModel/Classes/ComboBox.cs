@@ -78,7 +78,7 @@ public partial class ComboBox
   /// <summary>
   /// maxLength, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? MaxLength { get; set; }
+  public Int64? MaxLength { get; set; }
   
   /// <summary>
   /// getText, this property is only available in Office 2010 and later.

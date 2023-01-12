@@ -283,6 +283,24 @@ public static class TaskFormGroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskFormGroup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetHelperText(openXmlElement, value?.HelperText);
+      SetGetHelperText(openXmlElement, value?.GetHelperText);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

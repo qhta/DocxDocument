@@ -10,12 +10,25 @@ public static class ArgumentPropertiesConverter
   /// </summary>
   public static Int64? GetArgumentSize(DocumentFormat.OpenXml.Math.ArgumentProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.ArgumentSize");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetArgumentSize(DocumentFormat.OpenXml.Math.ArgumentProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.ArgumentSize");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.ArgumentSize{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Math.ArgumentProperties? CreateModelElement(DocumentFormat.OpenXml.Math.ArgumentProperties? openXmlElement)
@@ -32,6 +45,12 @@ public static class ArgumentPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ArgumentProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.ArgumentProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetArgumentSize(openXmlElement, value?.ArgumentSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

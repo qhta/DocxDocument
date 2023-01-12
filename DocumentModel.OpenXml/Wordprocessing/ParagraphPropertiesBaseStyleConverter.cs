@@ -885,12 +885,25 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   public static Int32? GetOutlineLevel(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.OutlineLevel");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OutlineLevel>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetOutlineLevel(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.OutlineLevel");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OutlineLevel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.OutlineLevel{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle? openXmlElement)
@@ -936,6 +949,41 @@ public static class ParagraphPropertiesBaseStyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetKeepNext(openXmlElement, value?.KeepNext);
+      SetKeepLines(openXmlElement, value?.KeepLines);
+      SetPageBreakBefore(openXmlElement, value?.PageBreakBefore);
+      SetFrameProperties(openXmlElement, value?.FrameProperties);
+      SetWidowControl(openXmlElement, value?.WidowControl);
+      SetNumberingProperties(openXmlElement, value?.NumberingProperties);
+      SetSuppressLineNumbers(openXmlElement, value?.SuppressLineNumbers);
+      SetParagraphBorders(openXmlElement, value?.ParagraphBorders);
+      SetShading(openXmlElement, value?.Shading);
+      SetTabs(openXmlElement, value?.Tabs);
+      SetSuppressAutoHyphens(openXmlElement, value?.SuppressAutoHyphens);
+      SetKinsoku(openXmlElement, value?.Kinsoku);
+      SetWordWrap(openXmlElement, value?.WordWrap);
+      SetOverflowPunctuation(openXmlElement, value?.OverflowPunctuation);
+      SetTopLinePunctuation(openXmlElement, value?.TopLinePunctuation);
+      SetAutoSpaceDE(openXmlElement, value?.AutoSpaceDE);
+      SetAutoSpaceDN(openXmlElement, value?.AutoSpaceDN);
+      SetBiDi(openXmlElement, value?.BiDi);
+      SetAdjustRightIndent(openXmlElement, value?.AdjustRightIndent);
+      SetSnapToGrid(openXmlElement, value?.SnapToGrid);
+      SetSpacingBetweenLines(openXmlElement, value?.SpacingBetweenLines);
+      SetIndentation(openXmlElement, value?.Indentation);
+      SetContextualSpacing(openXmlElement, value?.ContextualSpacing);
+      SetMirrorIndents(openXmlElement, value?.MirrorIndents);
+      SetSuppressOverlap(openXmlElement, value?.SuppressOverlap);
+      SetJustification(openXmlElement, value?.Justification);
+      SetTextDirection(openXmlElement, value?.TextDirection);
+      SetTextAlignment(openXmlElement, value?.TextAlignment);
+      SetTextBoxTightWrap(openXmlElement, value?.TextBoxTightWrap);
+      SetOutlineLevel(openXmlElement, value?.OutlineLevel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

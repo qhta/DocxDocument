@@ -162,6 +162,19 @@ public static class VerticalSeparatorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.VerticalSeparator? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetIdQ(openXmlElement, value?.IdQ);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+      return openXmlElement;
+    }
+    return default;
   }
 }

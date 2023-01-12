@@ -72,6 +72,14 @@ public static class SchemaConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.Schema? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      SetManifestLocation(openXmlElement, value?.ManifestLocation);
+      SetSchemaLocation(openXmlElement, value?.SchemaLocation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

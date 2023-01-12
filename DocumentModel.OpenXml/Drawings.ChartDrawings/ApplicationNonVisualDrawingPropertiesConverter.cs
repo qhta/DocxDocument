@@ -54,6 +54,13 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacro(openXmlElement, value?.Macro);
+      SetPublished(openXmlElement, value?.Published);
+      return openXmlElement;
+    }
+    return default;
   }
 }

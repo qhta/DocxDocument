@@ -157,6 +157,15 @@ public static class BlipFillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.BlipFill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDpi(openXmlElement, value?.Dpi);
+      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+      SetBlip(openXmlElement, value?.Blip);
+      SetSourceRectangle(openXmlElement, value?.SourceRectangle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

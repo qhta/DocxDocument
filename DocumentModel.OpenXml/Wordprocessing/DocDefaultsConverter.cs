@@ -74,6 +74,13 @@ public static class DocDefaultsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocDefaults? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocDefaults, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunPropertiesDefault(openXmlElement, value?.RunPropertiesDefault);
+      SetParagraphPropertiesDefault(openXmlElement, value?.ParagraphPropertiesDefault);
+      return openXmlElement;
+    }
+    return default;
   }
 }

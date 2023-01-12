@@ -52,6 +52,11 @@ public static class WebExtensionReferenceListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionReferenceList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

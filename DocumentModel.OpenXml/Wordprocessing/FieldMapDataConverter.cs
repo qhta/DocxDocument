@@ -42,17 +42,24 @@ public static class FieldMapDataConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    return openXmlElement?.Name?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.Name = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
-      else
-        openXmlElement.Name = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -61,17 +68,24 @@ public static class FieldMapDataConverter
   /// </summary>
   public static String? GetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    return openXmlElement?.MappedName?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.MappedName = new DocumentFormat.OpenXml.Wordprocessing.MappedName { Val = value };
-      else
-        openXmlElement.MappedName = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.MappedName { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -80,12 +94,25 @@ public static class FieldMapDataConverter
   /// </summary>
   public static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnIndex");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -151,6 +178,17 @@ public static class FieldMapDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldMapData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldMapData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMailMergeFieldType(openXmlElement, value?.MailMergeFieldType);
+      SetName(openXmlElement, value?.Name);
+      SetMappedName(openXmlElement, value?.MappedName);
+      SetColumnIndex(openXmlElement, value?.ColumnIndex);
+      SetLanguageId(openXmlElement, value?.LanguageId);
+      SetDynamicAddress(openXmlElement, value?.DynamicAddress);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -102,6 +102,14 @@ public static class ValueColorsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueColors? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMinColorSolidColorFillProperties(openXmlElement, value?.MinColorSolidColorFillProperties);
+      SetMidColorSolidColorFillProperties(openXmlElement, value?.MidColorSolidColorFillProperties);
+      SetMaxColorSolidColorFillProperties(openXmlElement, value?.MaxColorSolidColorFillProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

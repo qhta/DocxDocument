@@ -64,6 +64,12 @@ public static class WebExtensionPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebExtensionPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebExtensionPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWebExtension(openXmlElement, value?.WebExtension);
+      return openXmlElement;
+    }
+    return default;
   }
 }

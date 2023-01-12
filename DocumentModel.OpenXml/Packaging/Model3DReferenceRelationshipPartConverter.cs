@@ -30,6 +30,11 @@ public static class Model3DReferenceRelationshipPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.Model3DReferenceRelationshipPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

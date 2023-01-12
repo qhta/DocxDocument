@@ -596,6 +596,12 @@ public static class SdtRowConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtRow? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtRow, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSdtContentRow(openXmlElement, value?.SdtContentRow);
+      return openXmlElement;
+    }
+    return default;
   }
 }

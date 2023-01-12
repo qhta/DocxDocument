@@ -102,6 +102,14 @@ public static class AudioFromCDConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioFromCD? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioFromCD, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStartTime(openXmlElement, value?.StartTime);
+      SetEndTime(openXmlElement, value?.EndTime);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -52,6 +52,11 @@ public static class AllocatedCommandManifestConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommandManifest? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

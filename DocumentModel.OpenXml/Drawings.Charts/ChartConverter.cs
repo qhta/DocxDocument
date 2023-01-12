@@ -399,6 +399,24 @@ public static class ChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Chart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Chart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTitle(openXmlElement, value?.Title);
+      SetAutoTitleDeleted(openXmlElement, value?.AutoTitleDeleted);
+      SetPivotFormats(openXmlElement, value?.PivotFormats);
+      SetView3D(openXmlElement, value?.View3D);
+      SetFloor(openXmlElement, value?.Floor);
+      SetSideWall(openXmlElement, value?.SideWall);
+      SetBackWall(openXmlElement, value?.BackWall);
+      SetPlotArea(openXmlElement, value?.PlotArea);
+      SetLegend(openXmlElement, value?.Legend);
+      SetPlotVisibleOnly(openXmlElement, value?.PlotVisibleOnly);
+      SetDisplayBlanksAs(openXmlElement, value?.DisplayBlanksAs);
+      SetShowDataLabelsOverMaximum(openXmlElement, value?.ShowDataLabelsOverMaximum);
+      SetChartExtensionList(openXmlElement, value?.ChartExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -76,6 +76,14 @@ public static class LightRigConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LightRig? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LightRig, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLightRigType(openXmlElement, value?.LightRigType);
+      SetLightDirectionType(openXmlElement, value?.LightDirectionType);
+      SetSphereCoordinates(openXmlElement, value?.SphereCoordinates);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -46,6 +46,12 @@ public static class RunPropertiesDefaultConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesDefault? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

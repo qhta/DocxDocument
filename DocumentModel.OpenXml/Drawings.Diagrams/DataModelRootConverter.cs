@@ -158,6 +158,16 @@ public static class DataModelRootConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DataModelRoot? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPointList(openXmlElement, value?.PointList);
+      SetConnectionList(openXmlElement, value?.ConnectionList);
+      SetBackground(openXmlElement, value?.Background);
+      SetWhole(openXmlElement, value?.Whole);
+      SetDataModelExtensionList(openXmlElement, value?.DataModelExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

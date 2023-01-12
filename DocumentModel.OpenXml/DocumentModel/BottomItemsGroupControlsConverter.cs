@@ -293,6 +293,11 @@ public static class BottomItemsGroupControlsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BottomItemsGroupControls? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BottomItemsGroupControls, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -5,9 +5,9 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class WebExTaskpanesPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -17,6 +17,6 @@ public partial class WebExTaskpanesPart
   /// <summary>
   /// Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WebExtensionPart>? WebExtensionParts { get; }
+  public Collection<DocumentModel.Packaging.WebExtensionPart>? WebExtensionParts { get; set; }
   
 }

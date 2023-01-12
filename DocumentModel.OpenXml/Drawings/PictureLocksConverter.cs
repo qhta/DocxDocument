@@ -244,6 +244,23 @@ public static class PictureLocksConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureLocks? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PictureLocks, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNoGrouping(openXmlElement, value?.NoGrouping);
+      SetNoSelection(openXmlElement, value?.NoSelection);
+      SetNoRotation(openXmlElement, value?.NoRotation);
+      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+      SetNoMove(openXmlElement, value?.NoMove);
+      SetNoResize(openXmlElement, value?.NoResize);
+      SetNoEditPoints(openXmlElement, value?.NoEditPoints);
+      SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
+      SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
+      SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
+      SetNoCrop(openXmlElement, value?.NoCrop);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

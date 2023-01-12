@@ -90,6 +90,15 @@ public static class RepurposedCommandConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.RepurposedCommand? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetIdMso(openXmlElement, value?.IdMso);
+      return openXmlElement;
+    }
+    return default;
   }
 }

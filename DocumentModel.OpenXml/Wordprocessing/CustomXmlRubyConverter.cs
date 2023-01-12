@@ -1418,6 +1418,11 @@ public static class CustomXmlRubyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlRuby? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

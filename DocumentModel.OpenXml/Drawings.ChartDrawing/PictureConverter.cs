@@ -166,6 +166,17 @@ public static class PictureConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Picture? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacro(openXmlElement, value?.Macro);
+      SetPublished(openXmlElement, value?.Published);
+      SetNonVisualPictureProperties(openXmlElement, value?.NonVisualPictureProperties);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetStyle(openXmlElement, value?.Style);
+      return openXmlElement;
+    }
+    return default;
   }
 }

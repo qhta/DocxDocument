@@ -186,6 +186,17 @@ public static class ParagraphBordersConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphBorders? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTopBorder(openXmlElement, value?.TopBorder);
+      SetLeftBorder(openXmlElement, value?.LeftBorder);
+      SetBottomBorder(openXmlElement, value?.BottomBorder);
+      SetRightBorder(openXmlElement, value?.RightBorder);
+      SetBetweenBorder(openXmlElement, value?.BetweenBorder);
+      SetBarBorder(openXmlElement, value?.BarBorder);
+      return openXmlElement;
+    }
+    return default;
   }
 }

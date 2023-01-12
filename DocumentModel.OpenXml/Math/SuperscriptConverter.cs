@@ -102,6 +102,14 @@ public static class SuperscriptConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Superscript? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Superscript, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSuperscriptProperties(openXmlElement, value?.SuperscriptProperties);
+      SetBase(openXmlElement, value?.Base);
+      SetSuperArgument(openXmlElement, value?.SuperArgument);
+      return openXmlElement;
+    }
+    return default;
   }
 }

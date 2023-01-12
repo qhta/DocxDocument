@@ -99,6 +99,16 @@ public static class CellMergeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CellMerge? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CellMerge, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVerticalMerge(openXmlElement, value?.VerticalMerge);
+      SetVerticalMergeOriginal(openXmlElement, value?.VerticalMergeOriginal);
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

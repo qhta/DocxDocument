@@ -93,6 +93,11 @@ public static class MoveFromMathControlConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MoveFromMathControl? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

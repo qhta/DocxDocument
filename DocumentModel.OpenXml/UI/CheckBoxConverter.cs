@@ -450,6 +450,35 @@ public static class CheckBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.CheckBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.CheckBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGetPressed(openXmlElement, value?.GetPressed);
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetDescription(openXmlElement, value?.Description);
+      SetGetDescription(openXmlElement, value?.GetDescription);
+      SetId(openXmlElement, value?.Id);
+      SetIdQ(openXmlElement, value?.IdQ);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetTag(openXmlElement, value?.Tag);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      return openXmlElement;
+    }
+    return default;
   }
 }

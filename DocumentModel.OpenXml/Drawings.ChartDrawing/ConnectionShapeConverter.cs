@@ -138,6 +138,16 @@ public static class ConnectionShapeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.ConnectionShape? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMacro(openXmlElement, value?.Macro);
+      SetPublished(openXmlElement, value?.Published);
+      SetNonVisualConnectorShapeDrawingProperties(openXmlElement, value?.NonVisualConnectorShapeDrawingProperties);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetStyle(openXmlElement, value?.Style);
+      return openXmlElement;
+    }
+    return default;
   }
 }

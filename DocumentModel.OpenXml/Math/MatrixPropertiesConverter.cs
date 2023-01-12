@@ -74,12 +74,25 @@ public static class MatrixPropertiesConverter
   /// </summary>
   public static Int64? GetRowSpacingRule(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacingRule");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetRowSpacingRule(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacingRule");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.RowSpacingRule{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -87,12 +100,25 @@ public static class MatrixPropertiesConverter
   /// </summary>
   public static Int64? GetColumnGapRule(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnGapRule");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnGapRule>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnGapRule(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement, Int64? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnGapRule");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnGapRule>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.ColumnGapRule{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -100,12 +126,25 @@ public static class MatrixPropertiesConverter
   /// </summary>
   public static UInt16? GetRowSpacing(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetRowSpacing(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RowSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.RowSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -113,12 +152,25 @@ public static class MatrixPropertiesConverter
   /// </summary>
   public static UInt32? GetColumnSpacing(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnSpacing(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.ColumnSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -126,12 +178,25 @@ public static class MatrixPropertiesConverter
   /// </summary>
   public static UInt16? GetColumnGap(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnGap");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnGap>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnGap(DocumentFormat.OpenXml.Math.MatrixProperties? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.ColumnGap");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ColumnGap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.ColumnGap{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -210,6 +275,20 @@ public static class MatrixPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBaseJustification(openXmlElement, value?.BaseJustification);
+      SetHidePlaceholder(openXmlElement, value?.HidePlaceholder);
+      SetRowSpacingRule(openXmlElement, value?.RowSpacingRule);
+      SetColumnGapRule(openXmlElement, value?.ColumnGapRule);
+      SetRowSpacing(openXmlElement, value?.RowSpacing);
+      SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
+      SetColumnGap(openXmlElement, value?.ColumnGap);
+      SetMatrixColumns(openXmlElement, value?.MatrixColumns);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

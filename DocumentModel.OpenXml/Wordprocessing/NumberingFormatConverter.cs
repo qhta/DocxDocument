@@ -51,6 +51,13 @@ public static class NumberingFormatConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingFormat? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingFormat, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetFormat(openXmlElement, value?.Format);
+      return openXmlElement;
+    }
+    return default;
   }
 }

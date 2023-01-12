@@ -8,53 +8,85 @@ public static class SectionPropertiesConverter
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
+  public static Byte[]? GetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidRPr?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidRPr.Value);
+    return null;
   }
   
-  public static void SetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidRPr = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidRPr = null;
+    }
   }
   
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
+  public static Byte[]? GetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidDel?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidDel.Value);
+    return null;
   }
   
-  public static void SetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidDel = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidDel = null;
+    }
   }
   
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
+  public static Byte[]? GetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidR?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidR.Value);
+    return null;
   }
   
-  public static void SetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidR = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidR = null;
+    }
   }
   
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
+  public static Byte[]? GetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidSect?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidSect.Value);
+    return null;
   }
   
-  public static void SetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidSect = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidSect = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? GetHeaderReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
@@ -598,12 +630,25 @@ public static class SectionPropertiesConverter
   
   public static Int32? GetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.SectionPropertiesChange? GetSectionPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
@@ -670,6 +715,15 @@ public static class SectionPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRsidRPr(openXmlElement, value?.RsidRPr);
+      SetRsidDel(openXmlElement, value?.RsidDel);
+      SetRsidR(openXmlElement, value?.RsidR);
+      SetRsidSect(openXmlElement, value?.RsidSect);
+      return openXmlElement;
+    }
+    return default;
   }
 }

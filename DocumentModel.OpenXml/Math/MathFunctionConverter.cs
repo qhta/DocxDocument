@@ -102,6 +102,14 @@ public static class MathFunctionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MathFunction? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.MathFunction, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFunctionProperties(openXmlElement, value?.FunctionProperties);
+      SetFunctionName(openXmlElement, value?.FunctionName);
+      SetBase(openXmlElement, value?.Base);
+      return openXmlElement;
+    }
+    return default;
   }
 }

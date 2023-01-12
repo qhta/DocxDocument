@@ -158,6 +158,16 @@ public static class AxisDataSourceTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AxisDataSourceType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
+      SetNumberReference(openXmlElement, value?.NumberReference);
+      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+      SetStringReference(openXmlElement, value?.StringReference);
+      SetStringLiteral(openXmlElement, value?.StringLiteral);
+      return openXmlElement;
+    }
+    return default;
   }
 }

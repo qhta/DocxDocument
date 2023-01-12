@@ -48,6 +48,13 @@ public static class ProofStateConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofState? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofState, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSpelling(openXmlElement, value?.Spelling);
+      SetGrammar(openXmlElement, value?.Grammar);
+      return openXmlElement;
+    }
+    return default;
   }
 }

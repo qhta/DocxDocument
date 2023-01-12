@@ -10,17 +10,24 @@ public static class FrameConverter
   /// </summary>
   public static String? GetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    return openXmlElement?.FrameSize?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.FrameSize = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
-      else
-        openXmlElement.FrameSize = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -69,12 +76,25 @@ public static class FrameConverter
   /// </summary>
   public static UInt32? GetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginWidth");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginWidth>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMarginWidth(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginWidth");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginWidth>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.MarginWidth{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -82,12 +102,25 @@ public static class FrameConverter
   /// </summary>
   public static UInt32? GetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginHeight");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginHeight>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMarginHeight(DocumentFormat.OpenXml.Wordprocessing.Frame? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MarginHeight");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MarginHeight>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.MarginHeight{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -207,6 +240,19 @@ public static class FrameConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Frame? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Frame, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFrameSize(openXmlElement, value?.FrameSize);
+      SetFrameName(openXmlElement, value?.FrameName);
+      SetSourceFileReference(openXmlElement, value?.SourceFileReference);
+      SetMarginWidth(openXmlElement, value?.MarginWidth);
+      SetMarginHeight(openXmlElement, value?.MarginHeight);
+      SetScrollbarVisibility(openXmlElement, value?.ScrollbarVisibility);
+      SetNoResizeAllowed(openXmlElement, value?.NoResizeAllowed);
+      SetLinkedToFile(openXmlElement, value?.LinkedToFile);
+      return openXmlElement;
+    }
+    return default;
   }
 }

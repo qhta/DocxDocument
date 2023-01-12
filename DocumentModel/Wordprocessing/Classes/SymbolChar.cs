@@ -13,6 +13,6 @@ public partial class SymbolChar
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public DocumentModel.HexBinary? Char { get; set; }
+  public Byte[]? Char { get; set; }
   
 }

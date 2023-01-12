@@ -13,7 +13,7 @@ public partial class SystemColor
   /// <summary>
   /// Last Color
   /// </summary>
-  public DocumentModel.HexBinary? LastColor { get; set; }
+  public Byte[]? LastColor { get; set; }
   
   public Int32? Tint { get; set; }
   

@@ -74,6 +74,14 @@ public static class DataLabelFieldTableEntryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTextFieldGuid(openXmlElement, value?.TextFieldGuid);
+      SetFormula(openXmlElement, value?.Formula);
+      SetDataLabelFieldTableCache(openXmlElement, value?.DataLabelFieldTableCache);
+      return openXmlElement;
+    }
+    return default;
   }
 }

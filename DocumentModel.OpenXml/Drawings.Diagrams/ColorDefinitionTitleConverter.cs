@@ -54,6 +54,13 @@ public static class ColorDefinitionTitleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorDefinitionTitle? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorDefinitionTitle, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLanguage(openXmlElement, value?.Language);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

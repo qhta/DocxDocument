@@ -111,6 +111,17 @@ public static class PermStartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermStart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermStart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEditorGroup(openXmlElement, value?.EditorGroup);
+      SetEd(openXmlElement, value?.Ed);
+      SetColumnFirst(openXmlElement, value?.ColumnFirst);
+      SetColumnLast(openXmlElement, value?.ColumnLast);
+      SetId(openXmlElement, value?.Id);
+      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+      return openXmlElement;
+    }
+    return default;
   }
 }

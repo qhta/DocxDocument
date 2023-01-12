@@ -154,6 +154,17 @@ public static class DelimiterPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.DelimiterProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.DelimiterProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBeginChar(openXmlElement, value?.BeginChar);
+      SetSeparatorChar(openXmlElement, value?.SeparatorChar);
+      SetEndChar(openXmlElement, value?.EndChar);
+      SetGrowOperators(openXmlElement, value?.GrowOperators);
+      SetShape(openXmlElement, value?.Shape);
+      SetControlProperties(openXmlElement, value?.ControlProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

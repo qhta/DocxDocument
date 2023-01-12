@@ -205,6 +205,22 @@ public static class ShadowConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Shadow? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Shadow, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetOn(openXmlElement, value?.On);
+      SetType(openXmlElement, value?.Type);
+      SetObscured(openXmlElement, value?.Obscured);
+      SetColor(openXmlElement, value?.Color);
+      SetOpacity(openXmlElement, value?.Opacity);
+      SetOffset(openXmlElement, value?.Offset);
+      SetColor2(openXmlElement, value?.Color2);
+      SetOffset2(openXmlElement, value?.Offset2);
+      SetOrigin(openXmlElement, value?.Origin);
+      SetMatrix(openXmlElement, value?.Matrix);
+      return openXmlElement;
+    }
+    return default;
   }
 }

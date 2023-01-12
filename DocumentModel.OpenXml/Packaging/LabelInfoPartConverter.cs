@@ -44,6 +44,12 @@ public static class LabelInfoPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.LabelInfoPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.LabelInfoPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetClassificationLabelList(openXmlElement, value?.ClassificationLabelList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

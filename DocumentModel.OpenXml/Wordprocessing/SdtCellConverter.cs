@@ -596,6 +596,12 @@ public static class SdtCellConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtCell? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtCell, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSdtContentCell(openXmlElement, value?.SdtContentCell);
+      return openXmlElement;
+    }
+    return default;
   }
 }

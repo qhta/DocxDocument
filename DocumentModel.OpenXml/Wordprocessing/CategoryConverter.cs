@@ -10,17 +10,24 @@ public static class CategoryConverter
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement)
   {
-    return openXmlElement?.Name?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Category? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.Name = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
-      else
-        openXmlElement.Name = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -71,6 +78,13 @@ public static class CategoryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Category? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Category, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetGallery(openXmlElement, value?.Gallery);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -51,6 +51,12 @@ public static class ParagraphPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ParagraphProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.ParagraphProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetJustification(openXmlElement, value?.Justification);
+      return openXmlElement;
+    }
+    return default;
   }
 }

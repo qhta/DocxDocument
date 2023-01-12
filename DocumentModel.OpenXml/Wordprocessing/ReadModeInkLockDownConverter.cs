@@ -84,6 +84,15 @@ public static class ReadModeInkLockDownConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ReadModeInkLockDown? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUseActualPages(openXmlElement, value?.UseActualPages);
+      SetWidth(openXmlElement, value?.Width);
+      SetHeight(openXmlElement, value?.Height);
+      SetFontSize(openXmlElement, value?.FontSize);
+      return openXmlElement;
+    }
+    return default;
   }
 }

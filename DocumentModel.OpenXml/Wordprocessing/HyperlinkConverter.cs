@@ -1585,6 +1585,17 @@ public static class HyperlinkConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Hyperlink? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Hyperlink, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTargetFrame(openXmlElement, value?.TargetFrame);
+      SetTooltip(openXmlElement, value?.Tooltip);
+      SetDocLocation(openXmlElement, value?.DocLocation);
+      SetHistory(openXmlElement, value?.History);
+      SetAnchor(openXmlElement, value?.Anchor);
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

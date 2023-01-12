@@ -89,6 +89,14 @@ public static class NumberingPictureBulletConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingPictureBullet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetNumberingPictureBulletId(openXmlElement, value?.NumberingPictureBulletId);
+      SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
+      SetDrawing(openXmlElement, value?.Drawing);
+      return openXmlElement;
+    }
+    return default;
   }
 }

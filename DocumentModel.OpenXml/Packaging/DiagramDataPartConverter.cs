@@ -104,6 +104,12 @@ public static class DiagramDataPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramDataPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramDataPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDataModelRoot(openXmlElement, value?.DataModelRoot);
+      return openXmlElement;
+    }
+    return default;
   }
 }

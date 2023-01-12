@@ -148,6 +148,16 @@ public static class FormatSchemeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FormatScheme? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FormatScheme, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetFillStyleList(openXmlElement, value?.FillStyleList);
+      SetLineStyleList(openXmlElement, value?.LineStyleList);
+      SetEffectStyleList(openXmlElement, value?.EffectStyleList);
+      SetBackgroundFillStyleList(openXmlElement, value?.BackgroundFillStyleList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

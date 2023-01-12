@@ -13,7 +13,7 @@ public partial class GeoPolygon
   /// <summary>
   /// numPoints, this property is only available in Office 2016 and later.
   /// </summary>
-  public Int32? NumPoints { get; set; }
+  public Int64? NumPoints { get; set; }
   
   /// <summary>
   /// pcaRings, this property is only available in Office 2016 and later.

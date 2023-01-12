@@ -171,6 +171,20 @@ public static class ShadingConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Shading? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Shading, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetColor(openXmlElement, value?.Color);
+      SetThemeColor(openXmlElement, value?.ThemeColor);
+      SetThemeTint(openXmlElement, value?.ThemeTint);
+      SetThemeShade(openXmlElement, value?.ThemeShade);
+      SetFill(openXmlElement, value?.Fill);
+      SetThemeFill(openXmlElement, value?.ThemeFill);
+      SetThemeFillTint(openXmlElement, value?.ThemeFillTint);
+      SetThemeFillShade(openXmlElement, value?.ThemeFillShade);
+      return openXmlElement;
+    }
+    return default;
   }
 }

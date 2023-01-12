@@ -398,6 +398,17 @@ public static class GroupBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.GroupBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetExpand(openXmlElement, value?.Expand);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      return openXmlElement;
+    }
+    return default;
   }
 }

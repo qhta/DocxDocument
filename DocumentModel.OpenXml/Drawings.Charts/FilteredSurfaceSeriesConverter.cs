@@ -46,6 +46,12 @@ public static class FilteredSurfaceSeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredSurfaceSeries? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSurfaceChartSeries(openXmlElement, value?.SurfaceChartSeries);
+      return openXmlElement;
+    }
+    return default;
   }
 }

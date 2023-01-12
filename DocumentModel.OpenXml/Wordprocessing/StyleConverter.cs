@@ -204,12 +204,25 @@ public static class StyleConverter
   /// </summary>
   public static Int32? GetUIPriority(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.UIPriority");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UIPriority>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetUIPriority(DocumentFormat.OpenXml.Wordprocessing.Style? openXmlElement, Int32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.UIPriority");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UIPriority>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.UIPriority{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -670,6 +683,36 @@ public static class StyleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Style? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Style, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetStyleId(openXmlElement, value?.StyleId);
+      SetDefault(openXmlElement, value?.Default);
+      SetCustomStyle(openXmlElement, value?.CustomStyle);
+      SetStyleName(openXmlElement, value?.StyleName);
+      SetAliases(openXmlElement, value?.Aliases);
+      SetBasedOn(openXmlElement, value?.BasedOn);
+      SetNextParagraphStyle(openXmlElement, value?.NextParagraphStyle);
+      SetLinkedStyle(openXmlElement, value?.LinkedStyle);
+      SetAutoRedefine(openXmlElement, value?.AutoRedefine);
+      SetStyleHidden(openXmlElement, value?.StyleHidden);
+      SetUIPriority(openXmlElement, value?.UIPriority);
+      SetSemiHidden(openXmlElement, value?.SemiHidden);
+      SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
+      SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
+      SetLocked(openXmlElement, value?.Locked);
+      SetPersonal(openXmlElement, value?.Personal);
+      SetPersonalCompose(openXmlElement, value?.PersonalCompose);
+      SetPersonalReply(openXmlElement, value?.PersonalReply);
+      SetRsid(openXmlElement, value?.Rsid);
+      SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
+      SetStyleRunProperties(openXmlElement, value?.StyleRunProperties);
+      SetStyleTableProperties(openXmlElement, value?.StyleTableProperties);
+      SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
+      SetStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

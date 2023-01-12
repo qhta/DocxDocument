@@ -61,6 +61,13 @@ public static class PresetGeometryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PresetGeometry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PresetGeometry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPreset(openXmlElement, value?.Preset);
+      SetAdjustValueList(openXmlElement, value?.AdjustValueList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

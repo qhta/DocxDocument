@@ -33,6 +33,12 @@ public static class ClassificationOutcomeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ClassificationOutcome? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetClassificationOutcomeType(openXmlElement, value?.ClassificationOutcomeType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

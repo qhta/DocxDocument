@@ -120,6 +120,15 @@ public static class FontSchemeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FontScheme? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FontScheme, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetMajorFont(openXmlElement, value?.MajorFont);
+      SetMinorFont(openXmlElement, value?.MinorFont);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

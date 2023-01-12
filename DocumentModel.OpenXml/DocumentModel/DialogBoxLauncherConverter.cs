@@ -46,6 +46,12 @@ public static class DialogBoxLauncherConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.DialogBoxLauncher? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetButtonRegular(openXmlElement, value?.ButtonRegular);
+      return openXmlElement;
+    }
+    return default;
   }
 }

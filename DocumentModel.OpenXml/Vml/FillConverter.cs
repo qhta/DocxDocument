@@ -482,6 +482,38 @@ public static class FillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Fill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Fill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetType(openXmlElement, value?.Type);
+      SetOn(openXmlElement, value?.On);
+      SetColor(openXmlElement, value?.Color);
+      SetOpacity(openXmlElement, value?.Opacity);
+      SetColor2(openXmlElement, value?.Color2);
+      SetSource(openXmlElement, value?.Source);
+      SetHref(openXmlElement, value?.Href);
+      SetAlternateImageReference(openXmlElement, value?.AlternateImageReference);
+      SetSize(openXmlElement, value?.Size);
+      SetOrigin(openXmlElement, value?.Origin);
+      SetPosition(openXmlElement, value?.Position);
+      SetAspect(openXmlElement, value?.Aspect);
+      SetColors(openXmlElement, value?.Colors);
+      SetAngle(openXmlElement, value?.Angle);
+      SetAlignShape(openXmlElement, value?.AlignShape);
+      SetFocus(openXmlElement, value?.Focus);
+      SetFocusSize(openXmlElement, value?.FocusSize);
+      SetFocusPosition(openXmlElement, value?.FocusPosition);
+      SetMethod(openXmlElement, value?.Method);
+      SetDetectMouseClick(openXmlElement, value?.DetectMouseClick);
+      SetTitle(openXmlElement, value?.Title);
+      SetOpacity2(openXmlElement, value?.Opacity2);
+      SetRecolor(openXmlElement, value?.Recolor);
+      SetRotate(openXmlElement, value?.Rotate);
+      SetRelationshipId(openXmlElement, value?.RelationshipId);
+      SetFillExtendedProperties(openXmlElement, value?.FillExtendedProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -187,6 +187,23 @@ public static class LockConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Lock? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Lock, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetPosition(openXmlElement, value?.Position);
+      SetSelection(openXmlElement, value?.Selection);
+      SetGrouping(openXmlElement, value?.Grouping);
+      SetUngrouping(openXmlElement, value?.Ungrouping);
+      SetRotation(openXmlElement, value?.Rotation);
+      SetCropping(openXmlElement, value?.Cropping);
+      SetVerticies(openXmlElement, value?.Verticies);
+      SetAdjustHandles(openXmlElement, value?.AdjustHandles);
+      SetTextLock(openXmlElement, value?.TextLock);
+      SetAspectRatio(openXmlElement, value?.AspectRatio);
+      SetShapeType(openXmlElement, value?.ShapeType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

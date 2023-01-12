@@ -326,6 +326,22 @@ public static class TextListStyleTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram2.TextListStyleType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDefaultParagraphProperties(openXmlElement, value?.DefaultParagraphProperties);
+      SetLevel1ParagraphProperties(openXmlElement, value?.Level1ParagraphProperties);
+      SetLevel2ParagraphProperties(openXmlElement, value?.Level2ParagraphProperties);
+      SetLevel3ParagraphProperties(openXmlElement, value?.Level3ParagraphProperties);
+      SetLevel4ParagraphProperties(openXmlElement, value?.Level4ParagraphProperties);
+      SetLevel5ParagraphProperties(openXmlElement, value?.Level5ParagraphProperties);
+      SetLevel6ParagraphProperties(openXmlElement, value?.Level6ParagraphProperties);
+      SetLevel7ParagraphProperties(openXmlElement, value?.Level7ParagraphProperties);
+      SetLevel8ParagraphProperties(openXmlElement, value?.Level8ParagraphProperties);
+      SetLevel9ParagraphProperties(openXmlElement, value?.Level9ParagraphProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

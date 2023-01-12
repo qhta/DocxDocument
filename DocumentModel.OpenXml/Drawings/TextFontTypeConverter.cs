@@ -25,14 +25,22 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public static DocumentModel.HexBinary? GetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static Byte[]? GetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Panose?.Value != null)
+      return Convert.FromHexString(openXmlElement.Panose.Value);
+    return null;
   }
   
-  public static void SetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Panose = Convert.ToHexString(value);
+      else
+        openXmlElement.Panose = null;
+    }
   }
   
   /// <summary>
@@ -40,12 +48,13 @@ public static class TextFontTypeConverter
   /// </summary>
   public static SByte? GetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.SByteValue");
+    return openXmlElement?.PitchFamily?.Value;
   }
   
   public static void SetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, SByte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.SByteValue");
+    if (openXmlElement != null)
+      openXmlElement.PitchFamily = value;
   }
   
   /// <summary>
@@ -53,12 +62,13 @@ public static class TextFontTypeConverter
   /// </summary>
   public static SByte? GetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.SByteValue");
+    return openXmlElement?.CharacterSet?.Value;
   }
   
   public static void SetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, SByte? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.SByteValue");
+    if (openXmlElement != null)
+      openXmlElement.CharacterSet = value;
   }
   
   public static DocumentModel.Drawings.TextFontType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
@@ -78,6 +88,15 @@ public static class TextFontTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextFontType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextFontType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTypeface(openXmlElement, value?.Typeface);
+      SetPanose(openXmlElement, value?.Panose);
+      SetPitchFamily(openXmlElement, value?.PitchFamily);
+      SetCharacterSet(openXmlElement, value?.CharacterSet);
+      return openXmlElement;
+    }
+    return default;
   }
 }

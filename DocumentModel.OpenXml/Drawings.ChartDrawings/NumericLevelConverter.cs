@@ -103,6 +103,14 @@ public static class NumericLevelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NumericLevel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPtCount(openXmlElement, value?.PtCount);
+      SetFormatCode(openXmlElement, value?.FormatCode);
+      SetName(openXmlElement, value?.Name);
+      return openXmlElement;
+    }
+    return default;
   }
 }

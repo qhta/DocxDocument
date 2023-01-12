@@ -10,8 +10,8 @@ public partial class LabelInfoPart
   /// </summary>
   public DocumentModel.ClassificationLabelList? ClassificationLabelList { get; set; }
   
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

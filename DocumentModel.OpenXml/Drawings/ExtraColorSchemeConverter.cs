@@ -74,6 +74,13 @@ public static class ExtraColorSchemeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ExtraColorScheme? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ExtraColorScheme, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColorScheme(openXmlElement, value?.ColorScheme);
+      SetColorMap(openXmlElement, value?.ColorMap);
+      return openXmlElement;
+    }
+    return default;
   }
 }

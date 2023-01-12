@@ -10,17 +10,24 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static String? GetUdlConnectionString(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    return openXmlElement?.UdlConnectionString?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetUdlConnectionString(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.UdlConnectionString = new DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString { Val = value };
-      else
-        openXmlElement.UdlConnectionString = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -29,17 +36,24 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static String? GetDataSourceTableName(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    return openXmlElement?.DataSourceTableName?.Val?.Value;
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDataSourceTableName(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName>();
+      if (itemElement != null)
+        itemElement.Remove();
       if (value != null)
-        openXmlElement.DataSourceTableName = new DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName { Val = value };
-      else
-        openXmlElement.DataSourceTableName = null;
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
     }
   }
   
@@ -75,12 +89,25 @@ public static class DataSourceObjectConverter
   /// </summary>
   public static UInt32? GetColumnDelimiter(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetColumnDelimiter(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -224,6 +251,17 @@ public static class DataSourceObjectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataSourceObject? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataSourceObject, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUdlConnectionString(openXmlElement, value?.UdlConnectionString);
+      SetDataSourceTableName(openXmlElement, value?.DataSourceTableName);
+      SetSourceReference(openXmlElement, value?.SourceReference);
+      SetColumnDelimiter(openXmlElement, value?.ColumnDelimiter);
+      SetMailMergeSource(openXmlElement, value?.MailMergeSource);
+      SetFirstRowHeader(openXmlElement, value?.FirstRowHeader);
+      return openXmlElement;
+    }
+    return default;
   }
 }

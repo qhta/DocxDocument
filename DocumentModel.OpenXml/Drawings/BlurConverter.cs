@@ -51,6 +51,13 @@ public static class BlurConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blur? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blur, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadius(openXmlElement, value?.Radius);
+      SetGrow(openXmlElement, value?.Grow);
+      return openXmlElement;
+    }
+    return default;
   }
 }

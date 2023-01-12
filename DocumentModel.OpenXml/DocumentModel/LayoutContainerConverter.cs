@@ -392,6 +392,17 @@ public static class LayoutContainerConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.LayoutContainer? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetAlign(openXmlElement, value?.Align);
+      SetExpand(openXmlElement, value?.Expand);
+      SetLayoutChildren(openXmlElement, value?.LayoutChildren);
+      return openXmlElement;
+    }
+    return default;
   }
 }

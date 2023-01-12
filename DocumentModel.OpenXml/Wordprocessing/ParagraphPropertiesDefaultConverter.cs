@@ -46,6 +46,12 @@ public static class ParagraphPropertiesDefaultConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesDefault? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetParagraphPropertiesBaseStyle(openXmlElement, value?.ParagraphPropertiesBaseStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

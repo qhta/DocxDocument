@@ -5,13 +5,13 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DigitalSignatureOriginPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
   /// <summary>
   /// Gets the XmlSignatureParts of the DigitalSignatureOriginPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.XmlSignaturePart>? XmlSignatureParts { get; }
+  public Collection<DocumentModel.Packaging.XmlSignaturePart>? XmlSignatureParts { get; set; }
   
 }

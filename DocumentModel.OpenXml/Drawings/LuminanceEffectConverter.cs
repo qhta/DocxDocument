@@ -48,6 +48,13 @@ public static class LuminanceEffectConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LuminanceEffect? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LuminanceEffect, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBrightness(openXmlElement, value?.Brightness);
+      SetContrast(openXmlElement, value?.Contrast);
+      return openXmlElement;
+    }
+    return default;
   }
 }

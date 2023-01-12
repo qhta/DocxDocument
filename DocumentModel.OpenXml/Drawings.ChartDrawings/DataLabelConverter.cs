@@ -202,6 +202,19 @@ public static class DataLabelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.DataLabel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIdx(openXmlElement, value?.Idx);
+      SetPos(openXmlElement, value?.Pos);
+      SetNumberFormat(openXmlElement, value?.NumberFormat);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+      SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
+      SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

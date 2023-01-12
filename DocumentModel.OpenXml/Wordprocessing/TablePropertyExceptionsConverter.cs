@@ -303,6 +303,21 @@ public static class TablePropertyExceptionsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TablePropertyExceptions? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTableWidth(openXmlElement, value?.TableWidth);
+      SetTableJustification(openXmlElement, value?.TableJustification);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableIndentation(openXmlElement, value?.TableIndentation);
+      SetTableBorders(openXmlElement, value?.TableBorders);
+      SetShading(openXmlElement, value?.Shading);
+      SetTableLayout(openXmlElement, value?.TableLayout);
+      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+      SetTableLook(openXmlElement, value?.TableLook);
+      SetTablePropertyExceptionsChange(openXmlElement, value?.TablePropertyExceptionsChange);
+      return openXmlElement;
+    }
+    return default;
   }
 }

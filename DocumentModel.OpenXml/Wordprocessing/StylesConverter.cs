@@ -108,6 +108,13 @@ public static class StylesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Styles? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Styles, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDocDefaults(openXmlElement, value?.DocDefaults);
+      SetLatentStyles(openXmlElement, value?.LatentStyles);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -96,6 +96,12 @@ public static class GradientFillPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientFillProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGradientStopList(openXmlElement, value?.GradientStopList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

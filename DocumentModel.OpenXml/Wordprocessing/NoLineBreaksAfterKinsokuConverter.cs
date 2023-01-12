@@ -54,6 +54,13 @@ public static class NoLineBreaksAfterKinsokuConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLanguage(openXmlElement, value?.Language);
+      SetVal(openXmlElement, value?.Val);
+      return openXmlElement;
+    }
+    return default;
   }
 }

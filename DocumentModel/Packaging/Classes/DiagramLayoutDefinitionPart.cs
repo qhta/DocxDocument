@@ -5,18 +5,18 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramLayoutDefinitionPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
   /// <summary>
   /// Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

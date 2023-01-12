@@ -63,6 +63,14 @@ public static class Vector3DTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Vector3DType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Vector3DType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDx(openXmlElement, value?.Dx);
+      SetDy(openXmlElement, value?.Dy);
+      SetDz(openXmlElement, value?.Dz);
+      return openXmlElement;
+    }
+    return default;
   }
 }

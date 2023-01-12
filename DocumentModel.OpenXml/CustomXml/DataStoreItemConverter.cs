@@ -64,6 +64,13 @@ public static class DataStoreItemConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.DataStoreItem? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetItemId(openXmlElement, value?.ItemId);
+      SetSchemaReferences(openXmlElement, value?.SchemaReferences);
+      return openXmlElement;
+    }
+    return default;
   }
 }

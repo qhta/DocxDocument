@@ -74,6 +74,13 @@ public static class Scene3DConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Scene3D? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Scene3D, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCamera(openXmlElement, value?.Camera);
+      SetLightRig(openXmlElement, value?.LightRig);
+      return openXmlElement;
+    }
+    return default;
   }
 }

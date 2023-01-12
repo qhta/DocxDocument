@@ -78,6 +78,15 @@ public static class PageSizeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageSize? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageSize, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetHeight(openXmlElement, value?.Height);
+      SetOrient(openXmlElement, value?.Orient);
+      SetCode(openXmlElement, value?.Code);
+      return openXmlElement;
+    }
+    return default;
   }
 }

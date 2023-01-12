@@ -194,6 +194,21 @@ public static class Shadow2Converter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Shadow2? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Shadow, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlurRadius(openXmlElement, value?.BlurRadius);
+      SetDistanceFromText(openXmlElement, value?.DistanceFromText);
+      SetDirectionAngle(openXmlElement, value?.DirectionAngle);
+      SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
+      SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
+      SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
+      SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

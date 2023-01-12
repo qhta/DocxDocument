@@ -72,6 +72,14 @@ public static class OEmbedConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.OEmbed.OEmbed? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOEmbedUrl(openXmlElement, value?.OEmbedUrl);
+      SetMediaType(openXmlElement, value?.MediaType);
+      SetPicLocksAutoForOEmbed(openXmlElement, value?.PicLocksAutoForOEmbed);
+      return openXmlElement;
+    }
+    return default;
   }
 }

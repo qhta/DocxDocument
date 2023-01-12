@@ -15,6 +15,6 @@ public partial class MailMergeRecipientDataPart
   /// </summary>
   public DocumentModel.Wordprocessing.MailMergeRecipients? MailMergeRecipients { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

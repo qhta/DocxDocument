@@ -108,6 +108,16 @@ public static class SeriesElementVisibilitiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetConnectorLines(openXmlElement, value?.ConnectorLines);
+      SetMeanLine(openXmlElement, value?.MeanLine);
+      SetMeanMarker(openXmlElement, value?.MeanMarker);
+      SetNonoutliers(openXmlElement, value?.Nonoutliers);
+      SetOutliers(openXmlElement, value?.Outliers);
+      return openXmlElement;
+    }
+    return default;
   }
 }

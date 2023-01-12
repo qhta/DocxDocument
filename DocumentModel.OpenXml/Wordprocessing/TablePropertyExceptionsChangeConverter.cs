@@ -97,6 +97,15 @@ public static class TablePropertyExceptionsChangeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TablePropertyExceptionsChange? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAuthor(openXmlElement, value?.Author);
+      SetDate(openXmlElement, value?.Date);
+      SetId(openXmlElement, value?.Id);
+      SetPreviousTablePropertyExceptions(openXmlElement, value?.PreviousTablePropertyExceptions);
+      return openXmlElement;
+    }
+    return default;
   }
 }

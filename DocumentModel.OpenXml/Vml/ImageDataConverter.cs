@@ -348,6 +348,30 @@ public static class ImageDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ImageData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ImageData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetChromAKey(openXmlElement, value?.ChromAKey);
+      SetCropLeft(openXmlElement, value?.CropLeft);
+      SetCropTop(openXmlElement, value?.CropTop);
+      SetCropRight(openXmlElement, value?.CropRight);
+      SetCropBottom(openXmlElement, value?.CropBottom);
+      SetGain(openXmlElement, value?.Gain);
+      SetBlackLevel(openXmlElement, value?.BlackLevel);
+      SetGamma(openXmlElement, value?.Gamma);
+      SetGrayscale(openXmlElement, value?.Grayscale);
+      SetBiLevel(openXmlElement, value?.BiLevel);
+      SetEmbossColor(openXmlElement, value?.EmbossColor);
+      SetRecolorTarget(openXmlElement, value?.RecolorTarget);
+      SetTitle(openXmlElement, value?.Title);
+      SetDetectMouseClick(openXmlElement, value?.DetectMouseClick);
+      SetRelId(openXmlElement, value?.RelId);
+      SetRelationshipId(openXmlElement, value?.RelationshipId);
+      SetPicture(openXmlElement, value?.Picture);
+      SetRelHref(openXmlElement, value?.RelHref);
+      return openXmlElement;
+    }
+    return default;
   }
 }

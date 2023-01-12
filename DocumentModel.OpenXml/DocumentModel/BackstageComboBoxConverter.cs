@@ -388,6 +388,30 @@ public static class BackstageComboBoxConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageComboBox? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetAlignLabel(openXmlElement, value?.AlignLabel);
+      SetExpand(openXmlElement, value?.Expand);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetGetText(openXmlElement, value?.GetText);
+      SetOnChange(openXmlElement, value?.OnChange);
+      SetSizeString(openXmlElement, value?.SizeString);
+      SetGetItemCount(openXmlElement, value?.GetItemCount);
+      SetGetItemLabel(openXmlElement, value?.GetItemLabel);
+      SetGetItemID(openXmlElement, value?.GetItemID);
+      return openXmlElement;
+    }
+    return default;
   }
 }

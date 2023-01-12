@@ -74,6 +74,13 @@ public static class ColorTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ColorType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.ColorType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

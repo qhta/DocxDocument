@@ -54,6 +54,13 @@ public static class WebExtensionPropertyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionProperty? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetValue(openXmlElement, value?.Value);
+      return openXmlElement;
+    }
+    return default;
   }
 }

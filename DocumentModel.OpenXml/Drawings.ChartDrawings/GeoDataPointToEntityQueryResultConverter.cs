@@ -74,6 +74,13 @@ public static class GeoDataPointToEntityQueryResultConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQueryResult? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointToEntityQueryResult, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGeoDataPointQuery(openXmlElement, value?.GeoDataPointQuery);
+      SetGeoDataPointToEntityQuery(openXmlElement, value?.GeoDataPointToEntityQuery);
+      return openXmlElement;
+    }
+    return default;
   }
 }

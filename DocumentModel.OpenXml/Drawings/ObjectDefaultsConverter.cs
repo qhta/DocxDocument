@@ -130,6 +130,15 @@ public static class ObjectDefaultsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ObjectDefaults? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ObjectDefaults, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShapeDefault(openXmlElement, value?.ShapeDefault);
+      SetLineDefault(openXmlElement, value?.LineDefault);
+      SetTextDefault(openXmlElement, value?.TextDefault);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

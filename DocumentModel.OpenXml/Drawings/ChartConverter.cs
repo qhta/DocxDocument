@@ -63,6 +63,14 @@ public static class ChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Chart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Chart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSeriesIndex(openXmlElement, value?.SeriesIndex);
+      SetCategoryIndex(openXmlElement, value?.CategoryIndex);
+      SetBuildStep(openXmlElement, value?.BuildStep);
+      return openXmlElement;
+    }
+    return default;
   }
 }

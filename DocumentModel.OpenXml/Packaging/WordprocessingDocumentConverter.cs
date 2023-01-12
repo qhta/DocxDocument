@@ -32,6 +32,12 @@ public static class WordprocessingDocumentConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingDocument? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingDocument, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDocumentType(openXmlElement, value?.DocumentType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -153,6 +153,19 @@ public static class SpacingBetweenLinesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SpacingBetweenLines? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBefore(openXmlElement, value?.Before);
+      SetBeforeLines(openXmlElement, value?.BeforeLines);
+      SetBeforeAutoSpacing(openXmlElement, value?.BeforeAutoSpacing);
+      SetAfter(openXmlElement, value?.After);
+      SetAfterLines(openXmlElement, value?.AfterLines);
+      SetAfterAutoSpacing(openXmlElement, value?.AfterAutoSpacing);
+      SetLine(openXmlElement, value?.Line);
+      SetLineRule(openXmlElement, value?.LineRule);
+      return openXmlElement;
+    }
+    return default;
   }
 }

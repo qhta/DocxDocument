@@ -530,6 +530,42 @@ public static class ExtrusionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Extrusion? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Extrusion, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetOn(openXmlElement, value?.On);
+      SetType(openXmlElement, value?.Type);
+      SetRender(openXmlElement, value?.Render);
+      SetViewpointOrigin(openXmlElement, value?.ViewpointOrigin);
+      SetViewpoint(openXmlElement, value?.Viewpoint);
+      SetSkewAngle(openXmlElement, value?.SkewAngle);
+      SetSkewAmount(openXmlElement, value?.SkewAmount);
+      SetForceDepth(openXmlElement, value?.ForceDepth);
+      SetBackDepth(openXmlElement, value?.BackDepth);
+      SetOrientation(openXmlElement, value?.Orientation);
+      SetOrientationAngle(openXmlElement, value?.OrientationAngle);
+      SetLockRotationCenter(openXmlElement, value?.LockRotationCenter);
+      SetAutoRotationCenter(openXmlElement, value?.AutoRotationCenter);
+      SetRotationCenter(openXmlElement, value?.RotationCenter);
+      SetRotationAngle(openXmlElement, value?.RotationAngle);
+      SetColor(openXmlElement, value?.Color);
+      SetShininess(openXmlElement, value?.Shininess);
+      SetSpecularity(openXmlElement, value?.Specularity);
+      SetDiffusity(openXmlElement, value?.Diffusity);
+      SetMetal(openXmlElement, value?.Metal);
+      SetEdge(openXmlElement, value?.Edge);
+      SetFacet(openXmlElement, value?.Facet);
+      SetLightFace(openXmlElement, value?.LightFace);
+      SetBrightness(openXmlElement, value?.Brightness);
+      SetLightPosition(openXmlElement, value?.LightPosition);
+      SetLightLevel(openXmlElement, value?.LightLevel);
+      SetLightHarsh(openXmlElement, value?.LightHarsh);
+      SetLightPosition2(openXmlElement, value?.LightPosition2);
+      SetLightLevel2(openXmlElement, value?.LightLevel2);
+      SetLightHarsh2(openXmlElement, value?.LightHarsh2);
+      return openXmlElement;
+    }
+    return default;
   }
 }

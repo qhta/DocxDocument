@@ -226,6 +226,24 @@ public static class ColorMappingTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorMappingType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorMappingType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBackground1(openXmlElement, value?.Background1);
+      SetText1(openXmlElement, value?.Text1);
+      SetBackground2(openXmlElement, value?.Background2);
+      SetText2(openXmlElement, value?.Text2);
+      SetAccent1(openXmlElement, value?.Accent1);
+      SetAccent2(openXmlElement, value?.Accent2);
+      SetAccent3(openXmlElement, value?.Accent3);
+      SetAccent4(openXmlElement, value?.Accent4);
+      SetAccent5(openXmlElement, value?.Accent5);
+      SetAccent6(openXmlElement, value?.Accent6);
+      SetHyperlink(openXmlElement, value?.Hyperlink);
+      SetFollowedHyperlink(openXmlElement, value?.FollowedHyperlink);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

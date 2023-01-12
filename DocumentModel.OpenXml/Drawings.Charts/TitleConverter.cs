@@ -190,6 +190,17 @@ public static class TitleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Title? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Title, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetChartText(openXmlElement, value?.ChartText);
+      SetLayout(openXmlElement, value?.Layout);
+      SetOverlay(openXmlElement, value?.Overlay);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -37,12 +37,18 @@ public static class RunConverter
   /// </summary>
   public static String? GetText(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Text");
+    return openXmlElement?.Text?.Text;
   }
   
   public static void SetText(DocumentFormat.OpenXml.Drawing.Run? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Text");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Text = new DocumentFormat.OpenXml.Drawing.Text(value);
+      else
+        openXmlElement.Text = null;
+    }
   }
   
   public static DocumentModel.Drawings.Run? CreateModelElement(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
@@ -60,6 +66,13 @@ public static class RunConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Run? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Run, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetText(openXmlElement, value?.Text);
+      return openXmlElement;
+    }
+    return default;
   }
 }

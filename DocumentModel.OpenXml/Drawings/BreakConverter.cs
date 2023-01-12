@@ -46,6 +46,12 @@ public static class BreakConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Break? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Break, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

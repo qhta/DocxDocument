@@ -370,6 +370,29 @@ public static class RadioGroupConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.RadioGroup? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      SetQualifiedId(openXmlElement, value?.QualifiedId);
+      SetTag(openXmlElement, value?.Tag);
+      SetAlignLabel(openXmlElement, value?.AlignLabel);
+      SetExpand(openXmlElement, value?.Expand);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetGetSelectedItemIndex(openXmlElement, value?.GetSelectedItemIndex);
+      SetGetItemCount(openXmlElement, value?.GetItemCount);
+      SetGetItemLabel(openXmlElement, value?.GetItemLabel);
+      SetGetItemID(openXmlElement, value?.GetItemID);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -74,6 +74,13 @@ public static class VbaSuppDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.VbaSuppData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.VbaSuppData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDocEvents(openXmlElement, value?.DocEvents);
+      SetMcds(openXmlElement, value?.Mcds);
+      return openXmlElement;
+    }
+    return default;
   }
 }

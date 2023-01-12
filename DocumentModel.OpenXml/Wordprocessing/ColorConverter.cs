@@ -87,6 +87,15 @@ public static class ColorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Color, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetThemeColor(openXmlElement, value?.ThemeColor);
+      SetThemeTint(openXmlElement, value?.ThemeTint);
+      SetThemeShade(openXmlElement, value?.ThemeShade);
+      return openXmlElement;
+    }
+    return default;
   }
 }

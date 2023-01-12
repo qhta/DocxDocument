@@ -48,6 +48,13 @@ public static class BreakConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Break? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Break, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetClear(openXmlElement, value?.Clear);
+      return openXmlElement;
+    }
+    return default;
   }
 }

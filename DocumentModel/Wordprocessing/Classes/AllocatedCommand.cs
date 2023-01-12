@@ -18,7 +18,7 @@ public partial class AllocatedCommand
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  public DocumentModel.HexBinary? CommandIndexBasedOn { get; set; }
+  public Byte[]? CommandIndexBasedOn { get; set; }
   
   /// <summary>
   /// acdName

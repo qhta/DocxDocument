@@ -69,12 +69,25 @@ public static class EndnotePropertiesConverter
   /// </summary>
   public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingStart");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement, UInt16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.NumberingStart");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingStart{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -126,6 +139,15 @@ public static class EndnotePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EndnoteProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEndnotePosition(openXmlElement, value?.EndnotePosition);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetNumberingStart(openXmlElement, value?.NumberingStart);
+      SetNumberingRestart(openXmlElement, value?.NumberingRestart);
+      return openXmlElement;
+    }
+    return default;
   }
 }

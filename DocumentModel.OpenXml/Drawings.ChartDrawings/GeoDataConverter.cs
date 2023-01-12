@@ -170,6 +170,19 @@ public static class GeoDataConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoData? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEntityName(openXmlElement, value?.EntityName);
+      SetEntityId(openXmlElement, value?.EntityId);
+      SetEast(openXmlElement, value?.East);
+      SetWest(openXmlElement, value?.West);
+      SetNorth(openXmlElement, value?.North);
+      SetSouth(openXmlElement, value?.South);
+      SetGeoPolygons(openXmlElement, value?.GeoPolygons);
+      SetCopyrights(openXmlElement, value?.Copyrights);
+      return openXmlElement;
+    }
+    return default;
   }
 }

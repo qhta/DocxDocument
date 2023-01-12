@@ -201,6 +201,13 @@ public static class ScatterChartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ScatterChart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ScatterChart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetScatterStyle(openXmlElement, value?.ScatterStyle);
+      SetVaryColors(openXmlElement, value?.VaryColors);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -395,6 +395,15 @@ public static class HiddenLinePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenLineProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWidth(openXmlElement, value?.Width);
+      SetCapType(openXmlElement, value?.CapType);
+      SetCompoundLineType(openXmlElement, value?.CompoundLineType);
+      SetAlignment(openXmlElement, value?.Alignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

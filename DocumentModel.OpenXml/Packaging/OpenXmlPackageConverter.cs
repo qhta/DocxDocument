@@ -120,6 +120,13 @@ public static class OpenXmlPackageConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.OpenXmlPackage? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.OpenXmlPackage, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetStrictRelationshipFound(openXmlElement, value?.StrictRelationshipFound);
+      SetCompressionOption(openXmlElement, value?.CompressionOption);
+      return openXmlElement;
+    }
+    return default;
   }
 }

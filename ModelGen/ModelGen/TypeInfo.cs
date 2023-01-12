@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 using DocumentFormat.OpenXml.Framework.Metadata;
 using System.Runtime.CompilerServices;
+using DocumentModel;
+using Qhta.TypeUtils;
 
 namespace ModelGen;
 
@@ -59,6 +61,11 @@ public class TypeInfo : ModelElement
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public Type Type { get; set; }
+
+  public bool IsSimple()
+  {
+    return Type.IsSimple() || Type == typeof(Byte[]) || Type == typeof(HexWord);
+  }
 
   internal IElementMetadata? Metadata { get; set;}
 

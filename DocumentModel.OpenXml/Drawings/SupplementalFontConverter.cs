@@ -54,6 +54,13 @@ public static class SupplementalFontConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SupplementalFont? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SupplementalFont, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetScript(openXmlElement, value?.Script);
+      SetTypeface(openXmlElement, value?.Typeface);
+      return openXmlElement;
+    }
+    return default;
   }
 }

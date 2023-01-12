@@ -48,6 +48,13 @@ public static class ExtentConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Extent? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCx(openXmlElement, value?.Cx);
+      SetCy(openXmlElement, value?.Cy);
+      return openXmlElement;
+    }
+    return default;
   }
 }

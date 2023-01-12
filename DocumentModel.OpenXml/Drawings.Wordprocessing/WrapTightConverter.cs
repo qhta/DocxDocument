@@ -91,6 +91,15 @@ public static class WrapTightConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapTight? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWrapText(openXmlElement, value?.WrapText);
+      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+      SetWrapPolygon(openXmlElement, value?.WrapPolygon);
+      return openXmlElement;
+    }
+    return default;
   }
 }

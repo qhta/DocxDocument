@@ -108,6 +108,17 @@ public static class TileConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Tile? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Tile, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetHorizontalOffset(openXmlElement, value?.HorizontalOffset);
+      SetVerticalOffset(openXmlElement, value?.VerticalOffset);
+      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+      SetFlip(openXmlElement, value?.Flip);
+      SetAlignment(openXmlElement, value?.Alignment);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -54,6 +54,13 @@ public static class BuildDiagramConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildDiagram? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildDiagram, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBuild(openXmlElement, value?.Build);
+      SetReverseAnimation(openXmlElement, value?.ReverseAnimation);
+      return openXmlElement;
+    }
+    return default;
   }
 }

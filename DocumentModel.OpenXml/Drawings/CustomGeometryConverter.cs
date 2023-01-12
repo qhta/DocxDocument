@@ -186,6 +186,17 @@ public static class CustomGeometryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomGeometry? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomGeometry, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAdjustValueList(openXmlElement, value?.AdjustValueList);
+      SetShapeGuideList(openXmlElement, value?.ShapeGuideList);
+      SetAdjustHandleList(openXmlElement, value?.AdjustHandleList);
+      SetConnectionSiteList(openXmlElement, value?.ConnectionSiteList);
+      SetRectangle(openXmlElement, value?.Rectangle);
+      SetPathList(openXmlElement, value?.PathList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

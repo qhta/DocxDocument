@@ -151,12 +151,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.LeftMargin");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.LeftMargin");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.LeftMargin{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -164,12 +177,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.RightMargin");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetRightMargin(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.RightMargin");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.RightMargin{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -209,12 +235,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.PreSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.PreSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.PreSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -222,12 +261,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.PostSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.PostSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.PostSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -235,12 +287,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.InterSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.InterSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.InterSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -248,22 +313,48 @@ public static class MathPropertiesConverter
   /// </summary>
   public static UInt32? GetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.IntraSpacing");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.IntraSpacing");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.IntraSpacing{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static UInt32? GetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.WrapIndent");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Math.WrapIndent");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.WrapIndent{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Math.BooleanKind? GetWrapRight(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
@@ -382,6 +473,23 @@ public static class MathPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MathProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.MathProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMathFont(openXmlElement, value?.MathFont);
+      SetBreakBinary(openXmlElement, value?.BreakBinary);
+      SetBreakBinarySubtraction(openXmlElement, value?.BreakBinarySubtraction);
+      SetSmallFraction(openXmlElement, value?.SmallFraction);
+      SetDisplayDefaults(openXmlElement, value?.DisplayDefaults);
+      SetLeftMargin(openXmlElement, value?.LeftMargin);
+      SetRightMargin(openXmlElement, value?.RightMargin);
+      SetDefaultJustification(openXmlElement, value?.DefaultJustification);
+      SetPreSpacing(openXmlElement, value?.PreSpacing);
+      SetPostSpacing(openXmlElement, value?.PostSpacing);
+      SetInterSpacing(openXmlElement, value?.InterSpacing);
+      SetIntraSpacing(openXmlElement, value?.IntraSpacing);
+      return openXmlElement;
+    }
+    return default;
   }
 }

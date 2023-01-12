@@ -895,6 +895,11 @@ public static class TextBoxContentConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextBoxContent? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextBoxContent, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }

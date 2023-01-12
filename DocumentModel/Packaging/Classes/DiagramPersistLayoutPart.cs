@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class DiagramPersistLayoutPart
 {
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
   /// <summary>
   /// Gets or sets the root element of this part.
@@ -15,8 +15,8 @@ public partial class DiagramPersistLayoutPart
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; }
+  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

@@ -117,6 +117,15 @@ public static class ValueColorPositionsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueColorPositions? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetCount(openXmlElement, value?.Count);
+      SetMinValueColorEndPosition(openXmlElement, value?.MinValueColorEndPosition);
+      SetValueColorMiddlePosition(openXmlElement, value?.ValueColorMiddlePosition);
+      SetMaxValueColorEndPosition(openXmlElement, value?.MaxValueColorEndPosition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -63,6 +63,14 @@ public static class AnchorConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Anchor? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Anchor, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetX(openXmlElement, value?.X);
+      SetY(openXmlElement, value?.Y);
+      SetZ(openXmlElement, value?.Z);
+      return openXmlElement;
+    }
+    return default;
   }
 }

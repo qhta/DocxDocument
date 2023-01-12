@@ -51,6 +51,13 @@ public static class FontCharSetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontCharSet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontCharSet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetStrictCharacterSet(openXmlElement, value?.StrictCharacterSet);
+      return openXmlElement;
+    }
+    return default;
   }
 }

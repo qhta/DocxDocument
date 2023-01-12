@@ -248,12 +248,25 @@ public static class SeriesConverter
   
   public static UInt32? GetDataId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetDataId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series? openXmlElement, UInt32? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataId{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? GetSeriesLayoutProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series? openXmlElement)
@@ -365,6 +378,20 @@ public static class SeriesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Series? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLayoutId(openXmlElement, value?.LayoutId);
+      SetHidden(openXmlElement, value?.Hidden);
+      SetOwnerIdx(openXmlElement, value?.OwnerIdx);
+      SetUniqueId(openXmlElement, value?.UniqueId);
+      SetFormatIdx(openXmlElement, value?.FormatIdx);
+      SetText(openXmlElement, value?.Text);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetValueColors(openXmlElement, value?.ValueColors);
+      SetValueColorPositions(openXmlElement, value?.ValueColorPositions);
+      return openXmlElement;
+    }
+    return default;
   }
 }

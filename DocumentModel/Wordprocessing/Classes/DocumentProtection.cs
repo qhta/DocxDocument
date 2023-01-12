@@ -53,7 +53,7 @@ public partial class DocumentProtection
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  public DocumentModel.HexBinary? AlgorithmIdExtensibility { get; set; }
+  public Byte[]? AlgorithmIdExtensibility { get; set; }
   
   /// <summary>
   /// Algorithm Extensibility Source
@@ -63,7 +63,7 @@ public partial class DocumentProtection
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  public DocumentModel.HexBinary? CryptographicProviderTypeExtensibility { get; set; }
+  public Byte[]? CryptographicProviderTypeExtensibility { get; set; }
   
   /// <summary>
   /// Provider Type Extensibility Source
@@ -73,12 +73,12 @@ public partial class DocumentProtection
   /// <summary>
   /// Password Hash
   /// </summary>
-  public DocumentModel.Base64Binary? Hash { get; set; }
+  public Byte[]? Hash { get; set; }
   
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  public DocumentModel.Base64Binary? Salt { get; set; }
+  public Byte[]? Salt { get; set; }
   
   /// <summary>
   /// algorithmName, this property is only available in Office 2010 and later.
@@ -88,12 +88,12 @@ public partial class DocumentProtection
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64Binary? HashValue { get; set; }
+  public Byte[]? HashValue { get; set; }
   
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Base64Binary? SaltValue { get; set; }
+  public Byte[]? SaltValue { get; set; }
   
   /// <summary>
   /// spinCount, this property is only available in Office 2010 and later.

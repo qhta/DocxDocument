@@ -54,6 +54,13 @@ public static class SVGBlipConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SVG.SVGBlip? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetEmbed(openXmlElement, value?.Embed);
+      SetLink(openXmlElement, value?.Link);
+      return openXmlElement;
+    }
+    return default;
   }
 }

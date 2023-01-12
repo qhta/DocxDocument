@@ -449,6 +449,38 @@ public static class StrokeChildTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.StrokeChildType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.StrokeChildType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetOn(openXmlElement, value?.On);
+      SetWeight(openXmlElement, value?.Weight);
+      SetColor(openXmlElement, value?.Color);
+      SetColor2(openXmlElement, value?.Color2);
+      SetOpacity(openXmlElement, value?.Opacity);
+      SetLineStyle(openXmlElement, value?.LineStyle);
+      SetMiterLimit(openXmlElement, value?.MiterLimit);
+      SetJoinStyle(openXmlElement, value?.JoinStyle);
+      SetEndCap(openXmlElement, value?.EndCap);
+      SetDashStyle(openXmlElement, value?.DashStyle);
+      SetInsetPen(openXmlElement, value?.InsetPen);
+      SetFillType(openXmlElement, value?.FillType);
+      SetSource(openXmlElement, value?.Source);
+      SetImageAspect(openXmlElement, value?.ImageAspect);
+      SetImageSize(openXmlElement, value?.ImageSize);
+      SetImageAlignShape(openXmlElement, value?.ImageAlignShape);
+      SetStartArrow(openXmlElement, value?.StartArrow);
+      SetStartArrowWidth(openXmlElement, value?.StartArrowWidth);
+      SetStartArrowLength(openXmlElement, value?.StartArrowLength);
+      SetEndArrow(openXmlElement, value?.EndArrow);
+      SetEndArrowWidth(openXmlElement, value?.EndArrowWidth);
+      SetEndArrowLength(openXmlElement, value?.EndArrowLength);
+      SetHref(openXmlElement, value?.Href);
+      SetAlternateImageReference(openXmlElement, value?.AlternateImageReference);
+      SetTitle(openXmlElement, value?.Title);
+      SetForceDash(openXmlElement, value?.ForceDash);
+      return openXmlElement;
+    }
+    return default;
   }
 }

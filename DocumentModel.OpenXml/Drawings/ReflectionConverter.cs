@@ -231,6 +231,25 @@ public static class ReflectionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Reflection? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Reflection, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlurRadius(openXmlElement, value?.BlurRadius);
+      SetStartOpacity(openXmlElement, value?.StartOpacity);
+      SetStartPosition(openXmlElement, value?.StartPosition);
+      SetEndAlpha(openXmlElement, value?.EndAlpha);
+      SetEndPosition(openXmlElement, value?.EndPosition);
+      SetDistance(openXmlElement, value?.Distance);
+      SetDirection(openXmlElement, value?.Direction);
+      SetFadeDirection(openXmlElement, value?.FadeDirection);
+      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+      SetAlignment(openXmlElement, value?.Alignment);
+      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+      return openXmlElement;
+    }
+    return default;
   }
 }

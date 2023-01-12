@@ -923,6 +923,12 @@ public static class TableCellConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCell? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCell, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTableCellProperties(openXmlElement, value?.TableCellProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

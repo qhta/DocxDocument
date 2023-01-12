@@ -8,79 +8,127 @@ public static class TableRowConverter
   /// <summary>
   /// Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidTableRowMarkRevision(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetRsidTableRowMarkRevision(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidTableRowMarkRevision?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidTableRowMarkRevision.Value);
+    return null;
   }
   
-  public static void SetRsidTableRowMarkRevision(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidTableRowMarkRevision(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidTableRowMarkRevision = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidTableRowMarkRevision = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Table Row
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidTableRowAddition(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetRsidTableRowAddition(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidTableRowAddition?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidTableRowAddition.Value);
+    return null;
   }
   
-  public static void SetRsidTableRowAddition(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidTableRowAddition(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidTableRowAddition = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidTableRowAddition = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Table Row Deletion
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidTableRowDeletion(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetRsidTableRowDeletion(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidTableRowDeletion?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidTableRowDeletion.Value);
+    return null;
   }
   
-  public static void SetRsidTableRowDeletion(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidTableRowDeletion(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidTableRowDeletion = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidTableRowDeletion = null;
+    }
   }
   
   /// <summary>
   /// Revision Identifier for Table Row Properties
   /// </summary>
-  public static DocumentModel.HexBinary? GetRsidTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetRsidTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.RsidTableRowProperties?.Value != null)
+      return Convert.FromHexString(openXmlElement.RsidTableRowProperties.Value);
+    return null;
   }
   
-  public static void SetRsidTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetRsidTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.RsidTableRowProperties = Convert.ToHexString(value);
+      else
+        openXmlElement.RsidTableRowProperties = null;
+    }
   }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetParagraphId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetParagraphId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.ParagraphId?.Value != null)
+      return Convert.FromHexString(openXmlElement.ParagraphId.Value);
+    return null;
   }
   
-  public static void SetParagraphId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetParagraphId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.ParagraphId = Convert.ToHexString(value);
+      else
+        openXmlElement.ParagraphId = null;
+    }
   }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.HexBinary? GetTextId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
+  public static Byte[]? GetTextId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.TextId?.Value != null)
+      return Convert.FromHexString(openXmlElement.TextId.Value);
+    return null;
   }
   
-  public static void SetTextId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetTextId(DocumentFormat.OpenXml.Wordprocessing.TableRow? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.TextId = Convert.ToHexString(value);
+      else
+        openXmlElement.TextId = null;
+    }
   }
   
   /// <summary>
@@ -967,6 +1015,19 @@ public static class TableRowConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableRow? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableRow, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRsidTableRowMarkRevision(openXmlElement, value?.RsidTableRowMarkRevision);
+      SetRsidTableRowAddition(openXmlElement, value?.RsidTableRowAddition);
+      SetRsidTableRowDeletion(openXmlElement, value?.RsidTableRowDeletion);
+      SetRsidTableRowProperties(openXmlElement, value?.RsidTableRowProperties);
+      SetParagraphId(openXmlElement, value?.ParagraphId);
+      SetTextId(openXmlElement, value?.TextId);
+      SetTablePropertyExceptions(openXmlElement, value?.TablePropertyExceptions);
+      SetTableRowProperties(openXmlElement, value?.TableRowProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -63,6 +63,14 @@ public static class RotationConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rotation? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rotation, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLatitude(openXmlElement, value?.Latitude);
+      SetLongitude(openXmlElement, value?.Longitude);
+      SetRevolution(openXmlElement, value?.Revolution);
+      return openXmlElement;
+    }
+    return default;
   }
 }

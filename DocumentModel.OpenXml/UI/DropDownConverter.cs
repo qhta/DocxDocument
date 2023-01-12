@@ -788,6 +788,50 @@ public static class DropDownConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DropDown? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DropDown, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetOnAction(openXmlElement, value?.OnAction);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetGetEnabled(openXmlElement, value?.GetEnabled);
+      SetImage(openXmlElement, value?.Image);
+      SetImageMso(openXmlElement, value?.ImageMso);
+      SetGetImage(openXmlElement, value?.GetImage);
+      SetShowItemImage(openXmlElement, value?.ShowItemImage);
+      SetGetItemCount(openXmlElement, value?.GetItemCount);
+      SetGetItemLabel(openXmlElement, value?.GetItemLabel);
+      SetGetItemScreentip(openXmlElement, value?.GetItemScreentip);
+      SetGetItemSupertip(openXmlElement, value?.GetItemSupertip);
+      SetGetItemImage(openXmlElement, value?.GetItemImage);
+      SetGetItemID(openXmlElement, value?.GetItemID);
+      SetSizeString(openXmlElement, value?.SizeString);
+      SetGetSelectedItemID(openXmlElement, value?.GetSelectedItemID);
+      SetGetSelectedItemIndex(openXmlElement, value?.GetSelectedItemIndex);
+      SetShowItemLabel(openXmlElement, value?.ShowItemLabel);
+      SetId(openXmlElement, value?.Id);
+      SetIdQ(openXmlElement, value?.IdQ);
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetTag(openXmlElement, value?.Tag);
+      SetScreentip(openXmlElement, value?.Screentip);
+      SetGetScreentip(openXmlElement, value?.GetScreentip);
+      SetSupertip(openXmlElement, value?.Supertip);
+      SetGetSupertip(openXmlElement, value?.GetSupertip);
+      SetLabel(openXmlElement, value?.Label);
+      SetGetLabel(openXmlElement, value?.GetLabel);
+      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      SetKeytip(openXmlElement, value?.Keytip);
+      SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetShowLabel(openXmlElement, value?.ShowLabel);
+      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetShowImage(openXmlElement, value?.ShowImage);
+      SetGetShowImage(openXmlElement, value?.GetShowImage);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -74,6 +74,13 @@ public static class QuickAccessToolbarConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.QuickAccessToolbar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSharedControlsQatItems(openXmlElement, value?.SharedControlsQatItems);
+      SetDocumentControlsQatItems(openXmlElement, value?.DocumentControlsQatItems);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -50,6 +50,12 @@ public static class AltChunkPropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AltChunkProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetMatchSource(openXmlElement, value?.MatchSource);
+      return openXmlElement;
+    }
+    return default;
   }
 }

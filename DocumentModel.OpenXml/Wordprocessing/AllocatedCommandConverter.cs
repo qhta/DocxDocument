@@ -42,14 +42,22 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  public static DocumentModel.HexBinary? GetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static Byte[]? GetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.CommandIndexBasedOn?.Value != null)
+      return Convert.FromHexString(openXmlElement.CommandIndexBasedOn.Value);
+    return null;
   }
   
-  public static void SetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.CommandIndexBasedOn = Convert.ToHexString(value);
+      else
+        openXmlElement.CommandIndexBasedOn = null;
+    }
   }
   
   /// <summary>
@@ -86,6 +94,15 @@ public static class AllocatedCommandConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommand? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommand, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetArgumentValue(openXmlElement, value?.ArgumentValue);
+      SetCommandBasedOn(openXmlElement, value?.CommandBasedOn);
+      SetCommandIndexBasedOn(openXmlElement, value?.CommandIndexBasedOn);
+      SetAcceleratorName(openXmlElement, value?.AcceleratorName);
+      return openXmlElement;
+    }
+    return default;
   }
 }

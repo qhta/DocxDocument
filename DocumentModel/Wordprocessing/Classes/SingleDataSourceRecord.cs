@@ -13,6 +13,6 @@ public partial class SingleDataSourceRecord
   /// <summary>
   /// RecordHashCode.
   /// </summary>
-  public Int32? RecordHashCode { get; set; }
+  public Int64? RecordHashCode { get; set; }
   
 }

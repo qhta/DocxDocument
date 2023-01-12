@@ -64,6 +64,12 @@ public static class DocumentSettingsPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DocumentSettingsPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DocumentSettingsPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetSettings(openXmlElement, value?.Settings);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -108,7 +108,7 @@ public partial class RunProperties
   /// <summary>
   /// CharacterScale.
   /// </summary>
-  public Int32? CharacterScale { get; set; }
+  public Int64? CharacterScale { get; set; }
   
   /// <summary>
   /// Kern.

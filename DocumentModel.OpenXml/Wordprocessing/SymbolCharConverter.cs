@@ -25,14 +25,22 @@ public static class SymbolCharConverter
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  public static DocumentModel.HexBinary? GetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement)
+  public static Byte[]? GetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement?.Char?.Value != null)
+      return Convert.FromHexString(openXmlElement.Char.Value);
+    return null;
   }
   
-  public static void SetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement, DocumentModel.HexBinary? value)
+  public static void SetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement, Byte[]? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.HexBinaryValue");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Char = Convert.ToHexString(value);
+      else
+        openXmlElement.Char = null;
+    }
   }
   
   public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement)
@@ -50,6 +58,13 @@ public static class SymbolCharConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SymbolChar? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SymbolChar, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFont(openXmlElement, value?.Font);
+      SetChar(openXmlElement, value?.Char);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -14,6 +14,12 @@ public static class HexBinaryConverter
     return new byte[0];
   }
 
+  public static byte[] GetValue(string value)
+  {
+    if (value != null)
+      return Convert.FromHexString(value);
+    return new byte[0];
+  }
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[] value)
     where OpenXmlElementType : DocumentFormat.OpenXml.OpenXmlElement, new()
   {

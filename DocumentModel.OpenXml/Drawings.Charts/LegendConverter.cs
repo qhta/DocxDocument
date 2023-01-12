@@ -214,6 +214,12 @@ public static class LegendConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Legend? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Legend, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLegendPosition(openXmlElement, value?.LegendPosition);
+      return openXmlElement;
+    }
+    return default;
   }
 }

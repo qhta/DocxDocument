@@ -48,6 +48,13 @@ public static class TableRowHeightConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableRowHeight? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableRowHeight, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetHeightType(openXmlElement, value?.HeightType);
+      return openXmlElement;
+    }
+    return default;
   }
 }

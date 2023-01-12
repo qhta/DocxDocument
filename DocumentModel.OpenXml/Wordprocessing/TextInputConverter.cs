@@ -55,12 +55,25 @@ public static class TextInputConverter
   /// </summary>
   public static Int16? GetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MaxLength");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MaxLength>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement, Int16? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.MaxLength");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MaxLength>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.MaxLength{ Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -93,6 +106,15 @@ public static class TextInputConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextInput? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextInput, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTextBoxFormFieldType(openXmlElement, value?.TextBoxFormFieldType);
+      SetDefaultTextBoxFormFieldString(openXmlElement, value?.DefaultTextBoxFormFieldString);
+      SetMaxLength(openXmlElement, value?.MaxLength);
+      SetFormat(openXmlElement, value?.Format);
+      return openXmlElement;
+    }
+    return default;
   }
 }

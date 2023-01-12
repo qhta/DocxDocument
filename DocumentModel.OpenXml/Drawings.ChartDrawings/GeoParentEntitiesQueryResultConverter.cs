@@ -102,6 +102,14 @@ public static class GeoParentEntitiesQueryResultConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetGeoParentEntitiesQuery(openXmlElement, value?.GeoParentEntitiesQuery);
+      SetGeoEntity(openXmlElement, value?.GeoEntity);
+      SetGeoParentEntity(openXmlElement, value?.GeoParentEntity);
+      return openXmlElement;
+    }
+    return default;
   }
 }

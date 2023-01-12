@@ -48,6 +48,13 @@ public static class LinearShadePropertiesConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LinearShadeProperties? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetAngle(openXmlElement, value?.Angle);
+      SetScaled(openXmlElement, value?.Scaled);
+      return openXmlElement;
+    }
+    return default;
   }
 }

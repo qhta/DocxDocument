@@ -240,6 +240,20 @@ public static class WebExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFronzen(openXmlElement, value?.Fronzen);
+      SetId(openXmlElement, value?.Id);
+      SetFrozen(openXmlElement, value?.Frozen);
+      SetWebExtensionStoreReference(openXmlElement, value?.WebExtensionStoreReference);
+      SetWebExtensionReferenceList(openXmlElement, value?.WebExtensionReferenceList);
+      SetWebExtensionPropertyBag(openXmlElement, value?.WebExtensionPropertyBag);
+      SetWebExtensionBindingList(openXmlElement, value?.WebExtensionBindingList);
+      SetSnapshot(openXmlElement, value?.Snapshot);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

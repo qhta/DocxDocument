@@ -54,6 +54,13 @@ public static class LevelTextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelText? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelText, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetVal(openXmlElement, value?.Val);
+      SetNull(openXmlElement, value?.Null);
+      return openXmlElement;
+    }
+    return default;
   }
 }

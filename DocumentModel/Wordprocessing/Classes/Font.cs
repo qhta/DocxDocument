@@ -18,7 +18,7 @@ public partial class Font
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  public DocumentModel.HexBinary? Panose1Number { get; set; }
+  public Byte[]? Panose1Number { get; set; }
   
   /// <summary>
   /// FontCharSet.

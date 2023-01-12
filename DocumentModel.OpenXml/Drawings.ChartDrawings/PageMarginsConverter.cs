@@ -108,6 +108,17 @@ public static class PageMarginsConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PageMargins? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetL(openXmlElement, value?.L);
+      SetR(openXmlElement, value?.R);
+      SetT(openXmlElement, value?.T);
+      SetB(openXmlElement, value?.B);
+      SetHeader(openXmlElement, value?.Header);
+      SetFooter(openXmlElement, value?.Footer);
+      return openXmlElement;
+    }
+    return default;
   }
 }

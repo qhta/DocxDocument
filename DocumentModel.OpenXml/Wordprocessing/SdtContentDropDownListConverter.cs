@@ -70,6 +70,12 @@ public static class SdtContentDropDownListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDropDownList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLastValue(openXmlElement, value?.LastValue);
+      return openXmlElement;
+    }
+    return default;
   }
 }

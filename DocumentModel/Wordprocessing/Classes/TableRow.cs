@@ -8,32 +8,32 @@ public partial class TableRow
   /// <summary>
   /// Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinary? RsidTableRowMarkRevision { get; set; }
+  public Byte[]? RsidTableRowMarkRevision { get; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row
   /// </summary>
-  public DocumentModel.HexBinary? RsidTableRowAddition { get; set; }
+  public Byte[]? RsidTableRowAddition { get; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Deletion
   /// </summary>
-  public DocumentModel.HexBinary? RsidTableRowDeletion { get; set; }
+  public Byte[]? RsidTableRowDeletion { get; set; }
   
   /// <summary>
   /// Revision Identifier for Table Row Properties
   /// </summary>
-  public DocumentModel.HexBinary? RsidTableRowProperties { get; set; }
+  public Byte[]? RsidTableRowProperties { get; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? ParagraphId { get; set; }
+  public Byte[]? ParagraphId { get; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? TextId { get; set; }
+  public Byte[]? TextId { get; set; }
   
   /// <summary>
   /// Table-Level Property Exceptions.

@@ -48,6 +48,13 @@ public static class DashStopConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.DashStop? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.DashStop, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDashLength(openXmlElement, value?.DashLength);
+      SetSpaceLength(openXmlElement, value?.SpaceLength);
+      return openXmlElement;
+    }
+    return default;
   }
 }

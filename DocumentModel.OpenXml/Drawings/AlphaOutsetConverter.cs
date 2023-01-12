@@ -33,6 +33,12 @@ public static class AlphaOutsetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaOutset? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaOutset, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRadius(openXmlElement, value?.Radius);
+      return openXmlElement;
+    }
+    return default;
   }
 }

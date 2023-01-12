@@ -76,6 +76,14 @@ public static class NumberDiagramInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram1.NumberDiagramInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetLvl(openXmlElement, value?.Lvl);
+      SetPtType(openXmlElement, value?.PtType);
+      SetDiagramAutoBullet(openXmlElement, value?.DiagramAutoBullet);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -102,6 +102,14 @@ public static class ThemeOverrideConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ThemeOverride? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ThemeOverride, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColorScheme(openXmlElement, value?.ColorScheme);
+      SetFontScheme(openXmlElement, value?.FontScheme);
+      SetFormatScheme(openXmlElement, value?.FormatScheme);
+      return openXmlElement;
+    }
+    return default;
   }
 }

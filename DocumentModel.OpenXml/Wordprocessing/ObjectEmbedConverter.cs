@@ -105,6 +105,16 @@ public static class ObjectEmbedConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectEmbed? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetdrawAspect(openXmlElement, value?.drawAspect);
+      SetId(openXmlElement, value?.Id);
+      SetProgId(openXmlElement, value?.ProgId);
+      SetShapeId(openXmlElement, value?.ShapeId);
+      SetFieldCodes(openXmlElement, value?.FieldCodes);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -8,37 +8,37 @@ public partial class Paragraph
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public DocumentModel.HexBinary? RsidParagraphMarkRevision { get; set; }
+  public Byte[]? RsidParagraphMarkRevision { get; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  public DocumentModel.HexBinary? RsidParagraphAddition { get; set; }
+  public Byte[]? RsidParagraphAddition { get; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  public DocumentModel.HexBinary? RsidParagraphDeletion { get; set; }
+  public Byte[]? RsidParagraphDeletion { get; set; }
   
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  public DocumentModel.HexBinary? RsidParagraphProperties { get; set; }
+  public Byte[]? RsidParagraphProperties { get; set; }
   
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  public DocumentModel.HexBinary? RsidRunAdditionDefault { get; set; }
+  public Byte[]? RsidRunAdditionDefault { get; set; }
   
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? ParagraphId { get; set; }
+  public Byte[]? ParagraphId { get; set; }
   
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.HexBinary? TextId { get; set; }
+  public Byte[]? TextId { get; set; }
   
   /// <summary>
   /// noSpellErr, this property is only available in Office 2010 and later.

@@ -44,6 +44,12 @@ public static class ChartColorStylePartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartColorStylePart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartColorStylePart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetColorStyle(openXmlElement, value?.ColorStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

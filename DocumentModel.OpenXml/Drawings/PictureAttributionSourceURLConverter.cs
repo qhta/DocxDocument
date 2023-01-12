@@ -36,6 +36,12 @@ public static class PictureAttributionSourceURLConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureAttributionSourceURL? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetId(openXmlElement, value?.Id);
+      return openXmlElement;
+    }
+    return default;
   }
 }

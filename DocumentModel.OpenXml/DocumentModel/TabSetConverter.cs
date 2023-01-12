@@ -106,6 +106,14 @@ public static class TabSetConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TabSet? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.TabSet, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetIdMso(openXmlElement, value?.IdMso);
+      SetVisible(openXmlElement, value?.Visible);
+      SetGetVisible(openXmlElement, value?.GetVisible);
+      return openXmlElement;
+    }
+    return default;
   }
 }

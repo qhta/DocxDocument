@@ -61,6 +61,13 @@ public static class BlendConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blend? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blend, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlendMode(openXmlElement, value?.BlendMode);
+      SetEffectContainer(openXmlElement, value?.EffectContainer);
+      return openXmlElement;
+    }
+    return default;
   }
 }

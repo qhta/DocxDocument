@@ -75,6 +75,15 @@ public static class HorizontalPositionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.HorizontalPosition? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetRelativeFrom(openXmlElement, value?.RelativeFrom);
+      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+      SetPositionOffset(openXmlElement, value?.PositionOffset);
+      SetPercentagePositionHeightOffset(openXmlElement, value?.PercentagePositionHeightOffset);
+      return openXmlElement;
+    }
+    return default;
   }
 }

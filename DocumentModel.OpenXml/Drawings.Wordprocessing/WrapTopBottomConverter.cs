@@ -76,6 +76,14 @@ public static class WrapTopBottomConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapTopBottom? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+      SetEffectExtent(openXmlElement, value?.EffectExtent);
+      return openXmlElement;
+    }
+    return default;
   }
 }

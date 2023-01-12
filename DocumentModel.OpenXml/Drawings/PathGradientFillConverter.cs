@@ -61,6 +61,13 @@ public static class PathGradientFillConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PathGradientFill? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PathGradientFill, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetPath(openXmlElement, value?.Path);
+      SetFillToRectangle(openXmlElement, value?.FillToRectangle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

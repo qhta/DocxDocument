@@ -204,6 +204,18 @@ public static class ShapeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.Shape? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Shape, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetModelId(openXmlElement, value?.ModelId);
+      SetShapeNonVisualProperties(openXmlElement, value?.ShapeNonVisualProperties);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetShapeStyle(openXmlElement, value?.ShapeStyle);
+      SetTextBody(openXmlElement, value?.TextBody);
+      SetTransform2D(openXmlElement, value?.Transform2D);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

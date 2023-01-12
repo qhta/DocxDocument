@@ -51,6 +51,13 @@ public static class ShapeIdMapConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeIdMap? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeIdMap, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtension(openXmlElement, value?.Extension);
+      SetData(openXmlElement, value?.Data);
+      return openXmlElement;
+    }
+    return default;
   }
 }

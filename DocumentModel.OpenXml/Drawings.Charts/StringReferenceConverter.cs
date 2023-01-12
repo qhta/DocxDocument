@@ -88,6 +88,14 @@ public static class StringReferenceConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringReference? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StringReference, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFormula(openXmlElement, value?.Formula);
+      SetStringCache(openXmlElement, value?.StringCache);
+      SetStrRefExtensionList(openXmlElement, value?.StrRefExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

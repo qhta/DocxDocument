@@ -242,6 +242,19 @@ public static class EffectListConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectList? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectList, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBlur(openXmlElement, value?.Blur);
+      SetFillOverlay(openXmlElement, value?.FillOverlay);
+      SetGlow(openXmlElement, value?.Glow);
+      SetInnerShadow(openXmlElement, value?.InnerShadow);
+      SetOuterShadow(openXmlElement, value?.OuterShadow);
+      SetPresetShadow(openXmlElement, value?.PresetShadow);
+      SetReflection(openXmlElement, value?.Reflection);
+      SetSoftEdge(openXmlElement, value?.SoftEdge);
+      return openXmlElement;
+    }
+    return default;
   }
 }

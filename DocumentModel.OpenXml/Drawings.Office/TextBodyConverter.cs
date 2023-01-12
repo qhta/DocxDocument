@@ -99,6 +99,13 @@ public static class TextBodyConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.TextBody? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.TextBody, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetBodyProperties(openXmlElement, value?.BodyProperties);
+      SetListStyle(openXmlElement, value?.ListStyle);
+      return openXmlElement;
+    }
+    return default;
   }
 }

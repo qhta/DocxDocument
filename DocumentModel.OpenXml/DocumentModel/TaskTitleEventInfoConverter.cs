@@ -36,6 +36,12 @@ public static class TaskTitleEventInfoConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskTitleEventInfo? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTitle(openXmlElement, value?.Title);
+      return openXmlElement;
+    }
+    return default;
   }
 }

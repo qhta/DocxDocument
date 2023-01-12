@@ -13,7 +13,7 @@ public partial class TextFontType
   /// <summary>
   /// Panose Setting
   /// </summary>
-  public DocumentModel.HexBinary? Panose { get; set; }
+  public Byte[]? Panose { get; set; }
   
   /// <summary>
   /// Similar Font Family

@@ -175,6 +175,18 @@ public static class Properties3DConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Properties3D? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Properties3D, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
+      SetContourWidth(openXmlElement, value?.ContourWidth);
+      SetPresetMaterialType(openXmlElement, value?.PresetMaterialType);
+      SetBevelTop(openXmlElement, value?.BevelTop);
+      SetBevelBottom(openXmlElement, value?.BevelBottom);
+      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+      SetContourColor(openXmlElement, value?.ContourColor);
+      return openXmlElement;
+    }
+    return default;
   }
 }

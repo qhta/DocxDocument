@@ -111,6 +111,12 @@ public static class MultiLvlStrRefExtensionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MultiLvlStrRefExtension? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtension, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetUri(openXmlElement, value?.Uri);
+      return openXmlElement;
+    }
+    return default;
   }
 }

@@ -107,6 +107,13 @@ public static class AlgorithmConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Algorithm? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetRevision(openXmlElement, value?.Revision);
+      return openXmlElement;
+    }
+    return default;
   }
 }

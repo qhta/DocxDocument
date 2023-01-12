@@ -102,6 +102,14 @@ public static class FractionConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Fraction? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.Fraction, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetFractionProperties(openXmlElement, value?.FractionProperties);
+      SetNumerator(openXmlElement, value?.Numerator);
+      SetDenominator(openXmlElement, value?.Denominator);
+      return openXmlElement;
+    }
+    return default;
   }
 }

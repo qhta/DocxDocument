@@ -176,6 +176,17 @@ public static class StyleLabelConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleLabel? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetName(openXmlElement, value?.Name);
+      SetScene3D(openXmlElement, value?.Scene3D);
+      SetShape3D(openXmlElement, value?.Shape3D);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetStyle(openXmlElement, value?.Style);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

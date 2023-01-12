@@ -154,6 +154,19 @@ public static class RuleConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Rule? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Rule, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetType(openXmlElement, value?.Type);
+      SetFor(openXmlElement, value?.For);
+      SetForName(openXmlElement, value?.ForName);
+      SetPointType(openXmlElement, value?.PointType);
+      SetVal(openXmlElement, value?.Val);
+      SetFact(openXmlElement, value?.Fact);
+      SetMax(openXmlElement, value?.Max);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

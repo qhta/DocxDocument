@@ -46,6 +46,12 @@ public static class OfficeMathArgumentTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.OfficeMathArgumentType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Math.OfficeMathArgumentType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetArgumentProperties(openXmlElement, value?.ArgumentProperties);
+      return openXmlElement;
+    }
+    return default;
   }
 }

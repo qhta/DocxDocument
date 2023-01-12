@@ -158,6 +158,16 @@ public static class DefaultShapeDefinitionTypeConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.DefaultShapeDefinitionType? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetBodyProperties(openXmlElement, value?.BodyProperties);
+      SetListStyle(openXmlElement, value?.ListStyle);
+      SetShapeStyle(openXmlElement, value?.ShapeStyle);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
+      return openXmlElement;
+    }
+    return default;
   }
 }

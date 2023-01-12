@@ -10,8 +10,8 @@ public partial class DiagramColorsPart
   /// </summary>
   public DocumentModel.Drawings.Diagrams.ColorsDefinition? ColorsDefinition { get; set; }
   
-  public String? ContentType { get; }
+  public String? ContentType { get; set; }
   
-  public String? RelationshipType { get; }
+  public String? RelationshipType { get; set; }
   
 }

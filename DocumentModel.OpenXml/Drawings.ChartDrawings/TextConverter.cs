@@ -74,6 +74,13 @@ public static class TextConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Text? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetTextData(openXmlElement, value?.TextData);
+      SetRichTextBody(openXmlElement, value?.RichTextBody);
+      return openXmlElement;
+    }
+    return default;
   }
 }

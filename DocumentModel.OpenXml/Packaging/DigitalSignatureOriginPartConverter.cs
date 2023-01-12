@@ -50,6 +50,11 @@ public static class DigitalSignatureOriginPartConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DigitalSignatureOriginPart? value)
     where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart, new()
   {
-  throw new NotImplementedException("Not implemented in GenerateCreateOpenXmlElementMethod: 1");
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      return openXmlElement;
+    }
+    return default;
   }
 }
