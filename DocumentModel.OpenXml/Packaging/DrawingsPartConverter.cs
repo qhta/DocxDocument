@@ -26,7 +26,7 @@ public static class DrawingsPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DrawingsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -183,7 +183,7 @@ public static class DrawingsPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DrawingsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

@@ -18,7 +18,7 @@ public static class DataPartConverter
   /// </summary>
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static DocumentModel.Packaging.DataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)

@@ -31,12 +31,25 @@ public static class TextDataConverter
   
   public static String? GetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)

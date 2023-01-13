@@ -24,12 +24,18 @@ public static class FontReferenceConverter
   /// </summary>
   public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
+    return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
   
   public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.ListOf<String>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Modifiers = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.StringValue>(value);
+      else
+        openXmlElement.Modifiers = null;
+    }
   }
   
   public static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)

@@ -2,6 +2,12 @@
 
 public static class StringValueConverter
 {
+
+  public static string GetValue(DocumentFormat.OpenXml.StringValue element)
+  {
+    return element.Value ?? string.Empty;
+  }
+
   public static string GetValue(DocumentFormat.OpenXml.Wordprocessing.StringType element)
   {
     return element.Val?.Value ?? string.Empty;
@@ -26,4 +32,5 @@ public static class StringValueConverter
       valProperty.SetValue(element, value);
     return element;
   }
+
 }

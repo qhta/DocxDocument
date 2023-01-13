@@ -7,7 +7,7 @@ public static class AlternativeFormatImportPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.AlternativeFormatImportPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? openXmlElement)

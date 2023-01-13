@@ -7,12 +7,12 @@ public static class SlideCommentsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.SlideCommentsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)

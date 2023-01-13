@@ -6,8 +6,8 @@ public static class Program
 
   public static void Main(string[] args)
   {
-    GenerateModelTypes();
-    //GenerateTypeConverter(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
+    //GenerateModelTypes();
+    GenerateTypeConverter(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
 
   public static void GenerateModelTypes()

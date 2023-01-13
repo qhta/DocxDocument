@@ -7,12 +7,12 @@ public static class CoreFilePropertiesPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.CoreFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)

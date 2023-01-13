@@ -26,7 +26,7 @@ public static class SlideLayoutPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlideLayoutPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -278,7 +278,7 @@ public static class SlideLayoutPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlideLayoutPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

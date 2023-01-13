@@ -7,7 +7,7 @@ public static class ImagePartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ImagePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.ImagePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ImagePart? openXmlElement)

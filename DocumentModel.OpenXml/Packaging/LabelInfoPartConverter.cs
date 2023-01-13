@@ -20,12 +20,12 @@ public static class LabelInfoPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.LabelInfoPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)

@@ -10,12 +10,25 @@ public static class TrendlineConverter
   /// </summary>
   public static String? GetTrendlineName(DocumentFormat.OpenXml.Drawing.Charts.Trendline? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TrendlineName");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineName>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetTrendlineName(DocumentFormat.OpenXml.Drawing.Charts.Trendline? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.TrendlineName");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineName>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TrendlineName { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>

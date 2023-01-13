@@ -7,7 +7,7 @@ public static class ThumbnailPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThumbnailPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.ThumbnailPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThumbnailPart? openXmlElement)

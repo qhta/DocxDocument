@@ -7,7 +7,7 @@ public static class TableDefinitionPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -31,7 +31,7 @@ public static class TableDefinitionPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.TableDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)

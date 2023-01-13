@@ -7,7 +7,7 @@ public static class RibbonExtensibilityPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -31,7 +31,7 @@ public static class RibbonExtensibilityPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.RibbonExtensibilityPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? openXmlElement)

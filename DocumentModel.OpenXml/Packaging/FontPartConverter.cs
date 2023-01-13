@@ -7,7 +7,7 @@ public static class FontPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.FontPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.FontPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.FontPart? openXmlElement)

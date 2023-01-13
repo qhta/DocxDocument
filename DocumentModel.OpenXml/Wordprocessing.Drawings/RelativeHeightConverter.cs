@@ -24,12 +24,25 @@ public static class RelativeHeightConverter
   /// </summary>
   public static String? GetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)

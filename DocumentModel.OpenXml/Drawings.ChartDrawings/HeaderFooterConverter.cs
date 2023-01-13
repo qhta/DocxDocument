@@ -61,12 +61,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -74,12 +87,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -87,12 +113,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -100,12 +139,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -113,12 +165,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -126,12 +191,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)

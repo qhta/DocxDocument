@@ -31,7 +31,8 @@ public static class EnumValueConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
-    where OpenXmlElementType : OpenXmlLeafElement, new() where OpenXmlEnumType : struct, IConvertible
+    where OpenXmlElementType : OpenXmlLeafElement, new() 
+    where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {
     if (value != null)

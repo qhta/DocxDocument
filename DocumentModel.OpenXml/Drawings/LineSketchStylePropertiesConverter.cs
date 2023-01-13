@@ -93,12 +93,25 @@ public static class LineSketchStylePropertiesConverter
   
   public static String? GetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.OfficeArtExtensionList6? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)

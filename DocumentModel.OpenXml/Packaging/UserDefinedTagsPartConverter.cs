@@ -7,12 +7,12 @@ public static class UserDefinedTagsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.UserDefinedTagsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? openXmlElement)

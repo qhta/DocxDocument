@@ -7,7 +7,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -44,7 +44,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)

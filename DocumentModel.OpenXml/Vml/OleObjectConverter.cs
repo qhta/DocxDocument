@@ -120,12 +120,25 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LinkType");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LinkType");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Vml.Office.LinkType { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -133,12 +146,25 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LockedField");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.LockedField");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Vml.Office.LockedField { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -146,12 +172,25 @@ public static class OleObjectConverter
   /// </summary>
   public static String? GetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.FieldCodes");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Vml.Office.FieldCodes");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Vml.Office.FieldCodes { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Vml.OleObject? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)

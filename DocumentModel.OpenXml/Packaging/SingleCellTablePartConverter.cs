@@ -7,12 +7,12 @@ public static class SingleCellTablePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.SingleCellTablePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SingleCellTablePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.SingleCellTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SingleCellTablePart? openXmlElement)

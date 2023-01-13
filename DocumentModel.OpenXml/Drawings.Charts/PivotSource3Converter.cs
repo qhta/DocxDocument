@@ -10,12 +10,25 @@ public static class PivotSource3Converter
   /// </summary>
   public static String? GetPivotTableName(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PivotTableName");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotTableName>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetPivotTableName(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.PivotTableName");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotTableName>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PivotTableName { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>

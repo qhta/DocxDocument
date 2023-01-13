@@ -10,12 +10,25 @@ public static class MathPropertiesConverter
   /// </summary>
   public static String? GetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.MathFont");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetMathFont(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.MathFont");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.MathFont { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>

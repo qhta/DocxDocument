@@ -58,7 +58,7 @@ public static class WordprocessingCommentsExPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -272,7 +272,7 @@ public static class WordprocessingCommentsExPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.WordprocessingCommentsExPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart? openXmlElement)

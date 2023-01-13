@@ -7,7 +7,7 @@ public static class ThemeOverridePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -31,7 +31,7 @@ public static class ThemeOverridePartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

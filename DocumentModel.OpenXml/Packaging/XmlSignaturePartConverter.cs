@@ -7,12 +7,12 @@ public static class XmlSignaturePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.XmlSignaturePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)

@@ -7,12 +7,12 @@ public static class SlideSyncDataPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.SlideSyncDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? openXmlElement)

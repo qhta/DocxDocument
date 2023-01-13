@@ -7,7 +7,7 @@ public static class DiagramPersistLayoutPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -44,7 +44,7 @@ public static class DiagramPersistLayoutPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.DiagramPersistLayoutPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement)
