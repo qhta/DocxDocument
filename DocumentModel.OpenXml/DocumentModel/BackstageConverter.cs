@@ -109,6 +109,8 @@ public static class BackstageConverter
       var openXmlElement = new OpenXmlElementType();
       SetOnShow(openXmlElement, value?.OnShow);
       SetOnHide(openXmlElement, value?.OnHide);
+      SetBackstageTab(openXmlElement, value?.BackstageTab);
+      SetBackstageFastCommandButton(openXmlElement, value?.BackstageFastCommandButton);
       return openXmlElement;
     }
     return default;

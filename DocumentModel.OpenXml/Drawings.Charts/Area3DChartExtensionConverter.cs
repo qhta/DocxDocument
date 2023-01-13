@@ -65,6 +65,7 @@ public static class Area3DChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredAreaSeries(openXmlElement, value?.FilteredAreaSeries);
       return openXmlElement;
     }
     return default;

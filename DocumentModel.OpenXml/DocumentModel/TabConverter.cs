@@ -312,6 +312,7 @@ public static class TabConverter
       SetGetVisible(openXmlElement, value?.GetVisible);
       SetKeytip(openXmlElement, value?.Keytip);
       SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetGroup(openXmlElement, value?.Group);
       return openXmlElement;
     }
     return default;

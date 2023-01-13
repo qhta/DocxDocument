@@ -55,6 +55,7 @@ public static class ScatterChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetScatterChartExtensions(openXmlElement, value?.ScatterChartExtensions);
       return openXmlElement;
     }
     return default;

@@ -783,6 +783,36 @@ public static class EffectDagConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetEffectContainer(openXmlElement, value?.EffectContainer);
+      SetEffect(openXmlElement, value?.Effect);
+      SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
+      SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
+      SetAlphaFloor(openXmlElement, value?.AlphaFloor);
+      SetAlphaInverse(openXmlElement, value?.AlphaInverse);
+      SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
+      SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
+      SetAlphaOutset(openXmlElement, value?.AlphaOutset);
+      SetAlphaReplace(openXmlElement, value?.AlphaReplace);
+      SetBiLevel(openXmlElement, value?.BiLevel);
+      SetBlend(openXmlElement, value?.Blend);
+      SetBlur(openXmlElement, value?.Blur);
+      SetColorChange(openXmlElement, value?.ColorChange);
+      SetColorReplacement(openXmlElement, value?.ColorReplacement);
+      SetDuotone(openXmlElement, value?.Duotone);
+      SetFill(openXmlElement, value?.Fill);
+      SetFillOverlay(openXmlElement, value?.FillOverlay);
+      SetGlow(openXmlElement, value?.Glow);
+      SetGrayscale(openXmlElement, value?.Grayscale);
+      SetHsl(openXmlElement, value?.Hsl);
+      SetInnerShadow(openXmlElement, value?.InnerShadow);
+      SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
+      SetOuterShadow(openXmlElement, value?.OuterShadow);
+      SetPresetShadow(openXmlElement, value?.PresetShadow);
+      SetReflection(openXmlElement, value?.Reflection);
+      SetRelativeOffset(openXmlElement, value?.RelativeOffset);
+      SetSoftEdge(openXmlElement, value?.SoftEdge);
+      SetTintEffect(openXmlElement, value?.TintEffect);
+      SetTransformEffect(openXmlElement, value?.TransformEffect);
       return openXmlElement;
     }
     return default;

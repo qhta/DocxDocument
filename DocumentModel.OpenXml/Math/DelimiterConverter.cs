@@ -84,6 +84,7 @@ public static class DelimiterConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
+      SetBases(openXmlElement, value?.Bases);
       return openXmlElement;
     }
     return default;

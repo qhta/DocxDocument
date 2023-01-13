@@ -55,6 +55,7 @@ public static class WebExtensionReferenceListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetWebExtensionStoreReferences(openXmlElement, value?.WebExtensionStoreReferences);
       return openXmlElement;
     }
     return default;

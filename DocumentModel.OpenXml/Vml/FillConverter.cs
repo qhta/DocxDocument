@@ -41,12 +41,16 @@ public static class FillConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.On?.Value;
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Fill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.On = value;
+      else
+        openXmlElement.On = null;
   }
   
   /// <summary>
@@ -252,12 +256,16 @@ public static class FillConverter
   /// </summary>
   public static Boolean? GetAlignShape(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AlignShape?.Value;
   }
   
   public static void SetAlignShape(DocumentFormat.OpenXml.Vml.Fill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AlignShape = value;
+      else
+        openXmlElement.AlignShape = null;
   }
   
   /// <summary>
@@ -330,12 +338,16 @@ public static class FillConverter
   /// </summary>
   public static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.DetectMouseClick?.Value;
   }
   
   public static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DetectMouseClick = value;
+      else
+        openXmlElement.DetectMouseClick = null;
   }
   
   /// <summary>
@@ -377,12 +389,16 @@ public static class FillConverter
   /// </summary>
   public static Boolean? GetRecolor(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Recolor?.Value;
   }
   
   public static void SetRecolor(DocumentFormat.OpenXml.Vml.Fill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Recolor = value;
+      else
+        openXmlElement.Recolor = null;
   }
   
   /// <summary>
@@ -390,12 +406,16 @@ public static class FillConverter
   /// </summary>
   public static Boolean? GetRotate(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Rotate?.Value;
   }
   
   public static void SetRotate(DocumentFormat.OpenXml.Vml.Fill? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Rotate = value;
+      else
+        openXmlElement.Rotate = null;
   }
   
   /// <summary>

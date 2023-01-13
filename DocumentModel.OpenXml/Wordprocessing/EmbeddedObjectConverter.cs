@@ -482,6 +482,22 @@ public static class EmbeddedObjectConverter
       SetDxaOriginal(openXmlElement, value?.DxaOriginal);
       SetDyaOriginal(openXmlElement, value?.DyaOriginal);
       SetAnchorId(openXmlElement, value?.AnchorId);
+      SetGroup(openXmlElement, value?.Group);
+      SetImageFile(openXmlElement, value?.ImageFile);
+      SetLine(openXmlElement, value?.Line);
+      SetOval(openXmlElement, value?.Oval);
+      SetPolyLine(openXmlElement, value?.PolyLine);
+      SetRectangle(openXmlElement, value?.Rectangle);
+      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+      SetShape(openXmlElement, value?.Shape);
+      SetShapetype(openXmlElement, value?.Shapetype);
+      SetArc(openXmlElement, value?.Arc);
+      SetCurve(openXmlElement, value?.Curve);
+      SetOleObject(openXmlElement, value?.OleObject);
+      SetDrawing(openXmlElement, value?.Drawing);
+      SetControl(openXmlElement, value?.Control);
+      SetObjectEmbed(openXmlElement, value?.ObjectEmbed);
+      SetObjectLink(openXmlElement, value?.ObjectLink);
       return openXmlElement;
     }
     return default;

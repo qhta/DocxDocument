@@ -90,6 +90,8 @@ public static class ChooseConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetName(openXmlElement, value?.Name);
+      SetDiagramChooseIf(openXmlElement, value?.DiagramChooseIf);
+      SetDiagramChooseElse(openXmlElement, value?.DiagramChooseElse);
       return openXmlElement;
     }
     return default;

@@ -333,6 +333,15 @@ public static class OfPieChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetOfPieType(openXmlElement, value?.OfPieType);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetGapWidth(openXmlElement, value?.GapWidth);
+      SetSplitType(openXmlElement, value?.SplitType);
+      SetSplitPosition(openXmlElement, value?.SplitPosition);
+      SetCustomSplit(openXmlElement, value?.CustomSplit);
+      SetSecondPieSize(openXmlElement, value?.SecondPieSize);
+      SetSeriesLineses(openXmlElement, value?.SeriesLineses);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

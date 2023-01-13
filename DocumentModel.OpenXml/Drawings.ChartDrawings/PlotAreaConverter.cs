@@ -134,6 +134,9 @@ public static class PlotAreaConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetPlotAreaRegion(openXmlElement, value?.PlotAreaRegion);
+      SetAxises(openXmlElement, value?.Axises);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

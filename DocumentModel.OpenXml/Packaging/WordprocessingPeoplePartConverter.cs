@@ -15,12 +15,20 @@ public static class WordprocessingPeoplePartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.People? GetPeople(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Word.People rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.PeopleConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetPeople(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement, DocumentModel.Wordprocessing.People? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.PeopleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.People>(value);
+         if (rootElement != null)
+           openXmlElement.People = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)
@@ -47,7 +55,9 @@ public static class WordprocessingPeoplePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetPeople(openXmlElement, value?.People);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

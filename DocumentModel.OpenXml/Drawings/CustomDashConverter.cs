@@ -55,6 +55,7 @@ public static class CustomDashConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDashStops(openXmlElement, value?.DashStops);
       return openXmlElement;
     }
     return default;

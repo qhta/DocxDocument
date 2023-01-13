@@ -55,12 +55,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.BeFilled?.Value;
   }
   
   public static void SetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BeFilled = value;
+      else
+        openXmlElement.BeFilled = null;
   }
   
   /// <summary>
@@ -85,12 +89,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.IsStroke?.Value;
   }
   
   public static void SetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IsStroke = value;
+      else
+        openXmlElement.IsStroke = null;
   }
   
   /// <summary>
@@ -115,12 +123,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowInCell?.Value;
   }
   
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowInCell = value;
+      else
+        openXmlElement.AllowInCell = null;
   }
   
   /// <summary>
@@ -128,12 +140,16 @@ public static class ShapeDefaultsConverter
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowOverlap?.Value;
   }
   
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowOverlap = value;
+      else
+        openXmlElement.AllowOverlap = null;
   }
   
   /// <summary>

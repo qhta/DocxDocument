@@ -15,12 +15,20 @@ public static class ExtendedFilePropertiesPartConverter
   /// </summary>
   public static DocumentModel.Properties.ExtendedProperties? GetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.ExtendedProperties.Properties rootElement)
+      return DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement, DocumentModel.Properties.ExtendedProperties? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.ExtendedProperties.Properties>(value);
+         if (rootElement != null)
+           openXmlElement.Properties = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
@@ -47,7 +55,9 @@ public static class ExtendedFilePropertiesPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetProperties(openXmlElement, value?.Properties);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

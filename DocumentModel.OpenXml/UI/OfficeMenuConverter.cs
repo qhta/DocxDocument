@@ -246,6 +246,15 @@ public static class OfficeMenuConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetUnsizedControlClone(openXmlElement, value?.UnsizedControlClone);
+      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetUnsizedGallery(openXmlElement, value?.UnsizedGallery);
+      SetUnsizedToggleButton(openXmlElement, value?.UnsizedToggleButton);
+      SetMenuSeparator(openXmlElement, value?.MenuSeparator);
+      SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
+      SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
+      SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
       return openXmlElement;
     }
     return default;

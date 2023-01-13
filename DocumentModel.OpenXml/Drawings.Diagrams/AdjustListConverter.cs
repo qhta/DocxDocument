@@ -55,6 +55,7 @@ public static class AdjustListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAdjusts(openXmlElement, value?.Adjusts);
       return openXmlElement;
     }
     return default;

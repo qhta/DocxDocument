@@ -70,6 +70,7 @@ public static class HyperlinkExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetHyperlinkColor(openXmlElement, value?.HyperlinkColor);
       return openXmlElement;
     }
     return default;

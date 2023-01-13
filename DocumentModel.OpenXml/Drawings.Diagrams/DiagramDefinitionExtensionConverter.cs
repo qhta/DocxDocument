@@ -90,6 +90,8 @@ public static class DiagramDefinitionExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);
+      SetTextListStyleType(openXmlElement, value?.TextListStyleType);
       return openXmlElement;
     }
     return default;

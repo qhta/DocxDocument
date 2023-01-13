@@ -71,6 +71,8 @@ public static class ExtrusionColorConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
       return openXmlElement;
     }
     return default;

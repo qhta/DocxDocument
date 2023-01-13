@@ -71,6 +71,8 @@ public static class SimpleGroupsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBackstageGroup(openXmlElement, value?.BackstageGroup);
+      SetTaskGroup(openXmlElement, value?.TaskGroup);
       return openXmlElement;
     }
     return default;

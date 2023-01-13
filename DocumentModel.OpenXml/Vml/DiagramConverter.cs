@@ -38,12 +38,16 @@ public static class DiagramConverter
   /// </summary>
   public static Boolean? GetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AutoFormat?.Value;
   }
   
   public static void SetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AutoFormat = value;
+      else
+        openXmlElement.AutoFormat = null;
   }
   
   /// <summary>
@@ -51,12 +55,16 @@ public static class DiagramConverter
   /// </summary>
   public static Boolean? GetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Reverse?.Value;
   }
   
   public static void SetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Reverse = value;
+      else
+        openXmlElement.Reverse = null;
   }
   
   /// <summary>
@@ -64,12 +72,16 @@ public static class DiagramConverter
   /// </summary>
   public static Boolean? GetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AutoLayout?.Value;
   }
   
   public static void SetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AutoLayout = value;
+      else
+        openXmlElement.AutoLayout = null;
   }
   
   /// <summary>

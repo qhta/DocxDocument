@@ -140,6 +140,10 @@ public static class BubbleSerExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetInvertSolidFillFormat(openXmlElement, value?.InvertSolidFillFormat);
+      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+      SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
+      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
       return openXmlElement;
     }
     return default;

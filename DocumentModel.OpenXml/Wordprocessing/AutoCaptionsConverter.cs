@@ -46,6 +46,7 @@ public static class AutoCaptionsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAutoCaption(openXmlElement, value?.AutoCaption);
       return openXmlElement;
     }
     return default;

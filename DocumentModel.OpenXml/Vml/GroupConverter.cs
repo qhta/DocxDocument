@@ -180,12 +180,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Print?.Value;
   }
   
   public static void SetPrint(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Print = value;
+      else
+        openXmlElement.Print = null;
   }
   
   /// <summary>
@@ -210,12 +214,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetOned(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Oned?.Value;
   }
   
   public static void SetOned(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Oned = value;
+      else
+        openXmlElement.Oned = null;
   }
   
   /// <summary>
@@ -237,12 +245,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.DoubleClickNotify?.Value;
   }
   
   public static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DoubleClickNotify = value;
+      else
+        openXmlElement.DoubleClickNotify = null;
   }
   
   /// <summary>
@@ -250,12 +262,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetButton(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Button?.Value;
   }
   
   public static void SetButton(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Button = value;
+      else
+        openXmlElement.Button = null;
   }
   
   /// <summary>
@@ -263,12 +279,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.UserHidden?.Value;
   }
   
   public static void SetUserHidden(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UserHidden = value;
+      else
+        openXmlElement.UserHidden = null;
   }
   
   /// <summary>
@@ -276,12 +296,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Bullet?.Value;
   }
   
   public static void SetBullet(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Bullet = value;
+      else
+        openXmlElement.Bullet = null;
   }
   
   /// <summary>
@@ -289,12 +313,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Horizontal?.Value;
   }
   
   public static void SetHorizontal(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Horizontal = value;
+      else
+        openXmlElement.Horizontal = null;
   }
   
   /// <summary>
@@ -302,12 +330,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.HorizontalStandard?.Value;
   }
   
   public static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalStandard = value;
+      else
+        openXmlElement.HorizontalStandard = null;
   }
   
   /// <summary>
@@ -315,12 +347,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.HorizontalNoShade?.Value;
   }
   
   public static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalNoShade = value;
+      else
+        openXmlElement.HorizontalNoShade = null;
   }
   
   /// <summary>
@@ -356,12 +392,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowInCell?.Value;
   }
   
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowInCell = value;
+      else
+        openXmlElement.AllowInCell = null;
   }
   
   /// <summary>
@@ -369,12 +409,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowOverlap?.Value;
   }
   
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowOverlap = value;
+      else
+        openXmlElement.AllowOverlap = null;
   }
   
   /// <summary>
@@ -382,12 +426,16 @@ public static class GroupConverter
   /// </summary>
   public static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.UserDrawn?.Value;
   }
   
   public static void SetUserDrawn(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UserDrawn = value;
+      else
+        openXmlElement.UserDrawn = null;
   }
   
   /// <summary>
@@ -1003,6 +1051,22 @@ public static class GroupConverter
       SetEditAs(openXmlElement, value?.EditAs);
       SetTableProperties(openXmlElement, value?.TableProperties);
       SetTableLimits(openXmlElement, value?.TableLimits);
+      SetChildGroup(openXmlElement, value?.ChildGroup);
+      SetShape(openXmlElement, value?.Shape);
+      SetShapetype(openXmlElement, value?.Shapetype);
+      SetArc(openXmlElement, value?.Arc);
+      SetCurve(openXmlElement, value?.Curve);
+      SetImageFile(openXmlElement, value?.ImageFile);
+      SetLine(openXmlElement, value?.Line);
+      SetOval(openXmlElement, value?.Oval);
+      SetPolyLine(openXmlElement, value?.PolyLine);
+      SetRectangle(openXmlElement, value?.Rectangle);
+      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+      SetDiagram(openXmlElement, value?.Diagram);
+      SetLock(openXmlElement, value?.Lock);
+      SetClipPath(openXmlElement, value?.ClipPath);
+      SetTextWrap(openXmlElement, value?.TextWrap);
+      SetAnchorLock(openXmlElement, value?.AnchorLock);
       return openXmlElement;
     }
     return default;

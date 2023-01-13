@@ -55,6 +55,7 @@ public static class CopyrightsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCopyrightXsdstrings(openXmlElement, value?.CopyrightXsdstrings);
       return openXmlElement;
     }
     return default;

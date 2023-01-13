@@ -10,12 +10,20 @@ public static class StylesPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Styles? GetStyles(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Styles rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetStyles(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement, DocumentModel.Wordprocessing.Styles? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Styles>(value);
+         if (rootElement != null)
+           openXmlElement.Styles = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.StylesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement)

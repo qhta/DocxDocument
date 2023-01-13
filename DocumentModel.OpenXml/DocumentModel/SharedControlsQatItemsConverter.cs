@@ -96,6 +96,9 @@ public static class SharedControlsQatItemsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetControlCloneQat(openXmlElement, value?.ControlCloneQat);
+      SetButtonRegular(openXmlElement, value?.ButtonRegular);
+      SetSeparator(openXmlElement, value?.Separator);
       return openXmlElement;
     }
     return default;

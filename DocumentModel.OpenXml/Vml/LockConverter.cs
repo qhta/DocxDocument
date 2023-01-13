@@ -24,12 +24,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetPosition(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Position?.Value;
   }
   
   public static void SetPosition(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Position = value;
+      else
+        openXmlElement.Position = null;
   }
   
   /// <summary>
@@ -37,12 +41,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetSelection(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Selection?.Value;
   }
   
   public static void SetSelection(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Selection = value;
+      else
+        openXmlElement.Selection = null;
   }
   
   /// <summary>
@@ -50,12 +58,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Grouping?.Value;
   }
   
   public static void SetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Grouping = value;
+      else
+        openXmlElement.Grouping = null;
   }
   
   /// <summary>
@@ -63,12 +75,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Ungrouping?.Value;
   }
   
   public static void SetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Ungrouping = value;
+      else
+        openXmlElement.Ungrouping = null;
   }
   
   /// <summary>
@@ -76,12 +92,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetRotation(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Rotation?.Value;
   }
   
   public static void SetRotation(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Rotation = value;
+      else
+        openXmlElement.Rotation = null;
   }
   
   /// <summary>
@@ -89,12 +109,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetCropping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Cropping?.Value;
   }
   
   public static void SetCropping(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Cropping = value;
+      else
+        openXmlElement.Cropping = null;
   }
   
   /// <summary>
@@ -102,12 +126,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Verticies?.Value;
   }
   
   public static void SetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Verticies = value;
+      else
+        openXmlElement.Verticies = null;
   }
   
   /// <summary>
@@ -115,12 +143,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AdjustHandles?.Value;
   }
   
   public static void SetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AdjustHandles = value;
+      else
+        openXmlElement.AdjustHandles = null;
   }
   
   /// <summary>
@@ -128,12 +160,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.TextLock?.Value;
   }
   
   public static void SetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.TextLock = value;
+      else
+        openXmlElement.TextLock = null;
   }
   
   /// <summary>
@@ -141,12 +177,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AspectRatio?.Value;
   }
   
   public static void SetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AspectRatio = value;
+      else
+        openXmlElement.AspectRatio = null;
   }
   
   /// <summary>
@@ -154,12 +194,16 @@ public static class LockConverter
   /// </summary>
   public static Boolean? GetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ShapeType?.Value;
   }
   
   public static void SetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShapeType = value;
+      else
+        openXmlElement.ShapeType = null;
   }
   
   public static DocumentModel.Vml.Lock? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)

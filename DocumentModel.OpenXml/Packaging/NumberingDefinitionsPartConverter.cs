@@ -34,12 +34,20 @@ public static class NumberingDefinitionsPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Numbering? GetNumbering(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Numbering rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.NumberingConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetNumbering(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement, DocumentModel.Wordprocessing.Numbering? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.NumberingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Numbering>(value);
+         if (rootElement != null)
+           openXmlElement.Numbering = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)
@@ -67,7 +75,10 @@ public static class NumberingDefinitionsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
       SetNumbering(openXmlElement, value?.Numbering);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

@@ -146,6 +146,11 @@ public static class GroupShapeConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+      SetShape(openXmlElement, value?.Shape);
+      SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

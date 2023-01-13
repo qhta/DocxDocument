@@ -65,6 +65,7 @@ public static class SurfaceChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredSurfaceSeries(openXmlElement, value?.FilteredSurfaceSeries);
       return openXmlElement;
     }
     return default;

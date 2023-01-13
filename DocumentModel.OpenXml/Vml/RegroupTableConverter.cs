@@ -71,6 +71,7 @@ public static class RegroupTableConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetExtension(openXmlElement, value?.Extension);
+      SetEntries(openXmlElement, value?.Entries);
       return openXmlElement;
     }
     return default;

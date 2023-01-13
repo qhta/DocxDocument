@@ -55,6 +55,7 @@ public static class BlipExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBlipExtensions(openXmlElement, value?.BlipExtensions);
       return openXmlElement;
     }
     return default;

@@ -46,6 +46,7 @@ public static class TabsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetTabStop(openXmlElement, value?.TabStop);
       return openXmlElement;
     }
     return default;

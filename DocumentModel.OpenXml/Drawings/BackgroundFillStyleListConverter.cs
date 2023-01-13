@@ -179,6 +179,12 @@ public static class BackgroundFillStyleListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetGroupFill(openXmlElement, value?.GroupFill);
       return openXmlElement;
     }
     return default;

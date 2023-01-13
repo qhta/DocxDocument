@@ -46,6 +46,7 @@ public static class SampleDataConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDataModel(openXmlElement, value?.DataModel);
       return openXmlElement;
     }
     return default;

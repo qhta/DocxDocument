@@ -261,6 +261,12 @@ public static class PathConverter
       SetFill(openXmlElement, value?.Fill);
       SetStroke(openXmlElement, value?.Stroke);
       SetExtrusionOk(openXmlElement, value?.ExtrusionOk);
+      SetCloseShapePath(openXmlElement, value?.CloseShapePath);
+      SetMoveTo(openXmlElement, value?.MoveTo);
+      SetLineTo(openXmlElement, value?.LineTo);
+      SetArcTo(openXmlElement, value?.ArcTo);
+      SetQuadraticBezierCurveTo(openXmlElement, value?.QuadraticBezierCurveTo);
+      SetCubicBezierCurveTo(openXmlElement, value?.CubicBezierCurveTo);
       return openXmlElement;
     }
     return default;

@@ -204,6 +204,11 @@ public static class RelativeAnchorSizeConverter
       var openXmlElement = new OpenXmlElementType();
       SetFromAnchor(openXmlElement, value?.FromAnchor);
       SetToAnchor(openXmlElement, value?.ToAnchor);
+      SetShape(openXmlElement, value?.Shape);
+      SetGroupShape(openXmlElement, value?.GroupShape);
+      SetGraphicFrame(openXmlElement, value?.GraphicFrame);
+      SetConnectionShape(openXmlElement, value?.ConnectionShape);
+      SetPicture(openXmlElement, value?.Picture);
       return openXmlElement;
     }
     return default;

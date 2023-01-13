@@ -55,6 +55,7 @@ public static class BubbleSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBubbleSerExtensions(openXmlElement, value?.BubbleSerExtensions);
       return openXmlElement;
     }
     return default;

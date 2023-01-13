@@ -66,4 +66,16 @@ public static class CustomPropertiesConverter
     }
     return null;
   }
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Properties.CustomProperties? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.CustomProperties.Properties, new()
+  {
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetValue(openXmlElement, value);
+      return openXmlElement;
+    }
+    return null;
+  }
 }

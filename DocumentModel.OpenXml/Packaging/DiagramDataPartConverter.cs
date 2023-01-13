@@ -15,12 +15,20 @@ public static class DiagramDataPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.DataModelRoot? GetDataModelRoot(DocumentFormat.OpenXml.Packaging.DiagramDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot rootElement)
+      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelRootConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetDataModelRoot(DocumentFormat.OpenXml.Packaging.DiagramDataPart? openXmlElement, DocumentModel.Drawings.Diagrams.DataModelRoot? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelRootConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot>(value);
+         if (rootElement != null)
+           openXmlElement.DataModelRoot = rootElement;
+      }
   }
   
   /// <summary>
@@ -107,7 +115,12 @@ public static class DiagramDataPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetDataModelRoot(openXmlElement, value?.DataModelRoot);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
+      //SetSlideParts(openXmlElement, value?.SlideParts);
+      //SetWorksheetParts(openXmlElement, value?.WorksheetParts);
       return openXmlElement;
     }
     return default;

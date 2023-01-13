@@ -55,6 +55,7 @@ public static class RadarSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRadarSerExtensions(openXmlElement, value?.RadarSerExtensions);
       return openXmlElement;
     }
     return default;

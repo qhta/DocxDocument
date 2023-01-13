@@ -104,6 +104,7 @@ public static class TextBodyConverter
       var openXmlElement = new OpenXmlElementType();
       SetBodyProperties(openXmlElement, value?.BodyProperties);
       SetListStyle(openXmlElement, value?.ListStyle);
+      SetParagraph(openXmlElement, value?.Paragraph);
       return openXmlElement;
     }
     return default;

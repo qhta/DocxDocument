@@ -55,6 +55,7 @@ public static class ValAxExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetValAxExtensions(openXmlElement, value?.ValAxExtensions);
       return openXmlElement;
     }
     return default;

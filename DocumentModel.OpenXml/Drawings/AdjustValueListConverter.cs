@@ -55,6 +55,7 @@ public static class AdjustValueListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetShapeGuides(openXmlElement, value?.ShapeGuides);
       return openXmlElement;
     }
     return default;

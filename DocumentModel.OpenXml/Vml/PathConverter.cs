@@ -78,12 +78,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowFill?.Value;
   }
   
   public static void SetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowFill = value;
+      else
+        openXmlElement.AllowFill = null;
   }
   
   /// <summary>
@@ -91,12 +95,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowStroke?.Value;
   }
   
   public static void SetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowStroke = value;
+      else
+        openXmlElement.AllowStroke = null;
   }
   
   /// <summary>
@@ -104,12 +112,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowShading?.Value;
   }
   
   public static void SetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowShading = value;
+      else
+        openXmlElement.AllowShading = null;
   }
   
   /// <summary>
@@ -117,12 +129,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ShowArrowhead?.Value;
   }
   
   public static void SetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShowArrowhead = value;
+      else
+        openXmlElement.ShowArrowhead = null;
   }
   
   /// <summary>
@@ -130,12 +146,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowGradientShape?.Value;
   }
   
   public static void SetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowGradientShape = value;
+      else
+        openXmlElement.AllowGradientShape = null;
   }
   
   /// <summary>
@@ -143,12 +163,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowTextPath?.Value;
   }
   
   public static void SetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowTextPath = value;
+      else
+        openXmlElement.AllowTextPath = null;
   }
   
   /// <summary>
@@ -156,12 +180,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowInsetPen?.Value;
   }
   
   public static void SetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowInsetPen = value;
+      else
+        openXmlElement.AllowInsetPen = null;
   }
   
   /// <summary>
@@ -217,12 +245,16 @@ public static class PathConverter
   /// </summary>
   public static Boolean? GetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowExtrusion?.Value;
   }
   
   public static void SetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowExtrusion = value;
+      else
+        openXmlElement.AllowExtrusion = null;
   }
   
   public static DocumentModel.Vml.Path? CreateModelElement(DocumentFormat.OpenXml.Vml.Path? openXmlElement)

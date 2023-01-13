@@ -400,6 +400,9 @@ public static class UnsizedSplitButtonConverter
       SetGetKeytip(openXmlElement, value?.GetKeytip);
       SetShowLabel(openXmlElement, value?.ShowLabel);
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetVisibleButton(openXmlElement, value?.VisibleButton);
+      SetVisibleToggleButton(openXmlElement, value?.VisibleToggleButton);
+      SetUnsizedMenu(openXmlElement, value?.UnsizedMenu);
       return openXmlElement;
     }
     return default;

@@ -20,12 +20,20 @@ public static class CustomizationPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.TemplateCommandGroup? GetTemplateCommandGroup(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.TemplateCommandGroupConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetTemplateCommandGroup(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement, DocumentModel.Wordprocessing.TemplateCommandGroup? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.TemplateCommandGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup>(value);
+         if (rootElement != null)
+           openXmlElement.TemplateCommandGroup = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.CustomizationPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
@@ -47,6 +55,8 @@ public static class CustomizationPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetTemplateCommandGroup(openXmlElement, value?.TemplateCommandGroup);
       return openXmlElement;
     }

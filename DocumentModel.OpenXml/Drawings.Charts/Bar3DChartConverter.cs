@@ -318,6 +318,13 @@ public static class Bar3DChartConverter
       SetBarDirection(openXmlElement, value?.BarDirection);
       SetBarGrouping(openXmlElement, value?.BarGrouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetBarChartSerieses(openXmlElement, value?.BarChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetGapWidth(openXmlElement, value?.GapWidth);
+      SetGapDepth(openXmlElement, value?.GapDepth);
+      SetShape(openXmlElement, value?.Shape);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetBar3DChartExtensionList(openXmlElement, value?.Bar3DChartExtensionList);
       return openXmlElement;
     }
     return default;

@@ -44,12 +44,16 @@ public static class TextPathConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.On?.Value;
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.On = value;
+      else
+        openXmlElement.On = null;
   }
   
   /// <summary>
@@ -57,12 +61,16 @@ public static class TextPathConverter
   /// </summary>
   public static Boolean? GetFitShape(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.FitShape?.Value;
   }
   
   public static void SetFitShape(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FitShape = value;
+      else
+        openXmlElement.FitShape = null;
   }
   
   /// <summary>
@@ -70,12 +78,16 @@ public static class TextPathConverter
   /// </summary>
   public static Boolean? GetFitPath(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.FitPath?.Value;
   }
   
   public static void SetFitPath(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.FitPath = value;
+      else
+        openXmlElement.FitPath = null;
   }
   
   /// <summary>
@@ -83,12 +95,16 @@ public static class TextPathConverter
   /// </summary>
   public static Boolean? GetTrim(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Trim?.Value;
   }
   
   public static void SetTrim(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Trim = value;
+      else
+        openXmlElement.Trim = null;
   }
   
   /// <summary>
@@ -96,12 +112,16 @@ public static class TextPathConverter
   /// </summary>
   public static Boolean? GetXScale(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.XScale?.Value;
   }
   
   public static void SetXScale(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.XScale = value;
+      else
+        openXmlElement.XScale = null;
   }
   
   /// <summary>

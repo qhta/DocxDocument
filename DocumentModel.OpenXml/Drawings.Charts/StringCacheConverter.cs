@@ -104,6 +104,9 @@ public static class StringCacheConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPointCount(openXmlElement, value?.PointCount);
+      SetStringPoints(openXmlElement, value?.StringPoints);
+      SetStrDataExtensionList(openXmlElement, value?.StrDataExtensionList);
       return openXmlElement;
     }
     return default;

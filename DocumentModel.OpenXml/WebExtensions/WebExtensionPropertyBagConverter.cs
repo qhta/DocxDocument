@@ -55,6 +55,7 @@ public static class WebExtensionPropertyBagConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetWebExtensionProperties(openXmlElement, value?.WebExtensionProperties);
       return openXmlElement;
     }
     return default;

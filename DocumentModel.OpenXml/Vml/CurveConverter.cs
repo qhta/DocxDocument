@@ -180,12 +180,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Print?.Value;
   }
   
   public static void SetPrint(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Print = value;
+      else
+        openXmlElement.Print = null;
   }
   
   /// <summary>
@@ -210,12 +214,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetOned(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Oned?.Value;
   }
   
   public static void SetOned(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Oned = value;
+      else
+        openXmlElement.Oned = null;
   }
   
   /// <summary>
@@ -237,12 +245,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.DoubleClickNotify?.Value;
   }
   
   public static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DoubleClickNotify = value;
+      else
+        openXmlElement.DoubleClickNotify = null;
   }
   
   /// <summary>
@@ -250,12 +262,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetButton(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Button?.Value;
   }
   
   public static void SetButton(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Button = value;
+      else
+        openXmlElement.Button = null;
   }
   
   /// <summary>
@@ -263,12 +279,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.UserHidden?.Value;
   }
   
   public static void SetUserHidden(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UserHidden = value;
+      else
+        openXmlElement.UserHidden = null;
   }
   
   /// <summary>
@@ -276,12 +296,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Bullet?.Value;
   }
   
   public static void SetBullet(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Bullet = value;
+      else
+        openXmlElement.Bullet = null;
   }
   
   /// <summary>
@@ -289,12 +313,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Horizontal?.Value;
   }
   
   public static void SetHorizontal(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Horizontal = value;
+      else
+        openXmlElement.Horizontal = null;
   }
   
   /// <summary>
@@ -302,12 +330,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.HorizontalStandard?.Value;
   }
   
   public static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalStandard = value;
+      else
+        openXmlElement.HorizontalStandard = null;
   }
   
   /// <summary>
@@ -315,12 +347,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.HorizontalNoShade?.Value;
   }
   
   public static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.HorizontalNoShade = value;
+      else
+        openXmlElement.HorizontalNoShade = null;
   }
   
   /// <summary>
@@ -356,12 +392,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowInCell?.Value;
   }
   
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowInCell = value;
+      else
+        openXmlElement.AllowInCell = null;
   }
   
   /// <summary>
@@ -369,12 +409,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowOverlap?.Value;
   }
   
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowOverlap = value;
+      else
+        openXmlElement.AllowOverlap = null;
   }
   
   /// <summary>
@@ -382,12 +426,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.UserDrawn?.Value;
   }
   
   public static void SetUserDrawn(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.UserDrawn = value;
+      else
+        openXmlElement.UserDrawn = null;
   }
   
   /// <summary>
@@ -519,12 +567,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Filled?.Value;
   }
   
   public static void SetFilled(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Filled = value;
+      else
+        openXmlElement.Filled = null;
   }
   
   /// <summary>
@@ -549,12 +601,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetStroked(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Stroked?.Value;
   }
   
   public static void SetStroked(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Stroked = value;
+      else
+        openXmlElement.Stroked = null;
   }
   
   /// <summary>
@@ -596,12 +652,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.InsetPen?.Value;
   }
   
   public static void SetInsetPen(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InsetPen = value;
+      else
+        openXmlElement.InsetPen = null;
   }
   
   /// <summary>
@@ -679,12 +739,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ForceDash?.Value;
   }
   
   public static void SetForceDash(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ForceDash = value;
+      else
+        openXmlElement.ForceDash = null;
   }
   
   /// <summary>
@@ -692,12 +756,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetOleIcon(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.OleIcon?.Value;
   }
   
   public static void SetOleIcon(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.OleIcon = value;
+      else
+        openXmlElement.OleIcon = null;
   }
   
   /// <summary>
@@ -705,12 +773,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetOle(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.Ole?.Value;
   }
   
   public static void SetOle(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Ole = value;
+      else
+        openXmlElement.Ole = null;
   }
   
   /// <summary>
@@ -718,12 +790,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetPreferRelative(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.PreferRelative?.Value;
   }
   
   public static void SetPreferRelative(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.PreferRelative = value;
+      else
+        openXmlElement.PreferRelative = null;
   }
   
   /// <summary>
@@ -731,12 +807,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetClipToWrap(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ClipToWrap?.Value;
   }
   
   public static void SetClipToWrap(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ClipToWrap = value;
+      else
+        openXmlElement.ClipToWrap = null;
   }
   
   /// <summary>
@@ -744,12 +824,16 @@ public static class CurveConverter
   /// </summary>
   public static Boolean? GetClip(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Clip?.Value;
   }
   
   public static void SetClip(DocumentFormat.OpenXml.Vml.Curve? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Clip = value;
+      else
+        openXmlElement.Clip = null;
   }
   
   /// <summary>
@@ -1498,6 +1582,27 @@ public static class CurveConverter
       SetControl1(openXmlElement, value?.Control1);
       SetControl2(openXmlElement, value?.Control2);
       SetTo(openXmlElement, value?.To);
+      SetPath(openXmlElement, value?.Path);
+      SetFormulas(openXmlElement, value?.Formulas);
+      SetShapeHandles(openXmlElement, value?.ShapeHandles);
+      SetFill(openXmlElement, value?.Fill);
+      SetStroke(openXmlElement, value?.Stroke);
+      SetShadow(openXmlElement, value?.Shadow);
+      SetTextBox(openXmlElement, value?.TextBox);
+      SetTextPath(openXmlElement, value?.TextPath);
+      SetImageData(openXmlElement, value?.ImageData);
+      SetSkew(openXmlElement, value?.Skew);
+      SetExtrusion(openXmlElement, value?.Extrusion);
+      SetCallout(openXmlElement, value?.Callout);
+      SetLock(openXmlElement, value?.Lock);
+      SetClipPath(openXmlElement, value?.ClipPath);
+      SetSignatureLine(openXmlElement, value?.SignatureLine);
+      SetTextWrap(openXmlElement, value?.TextWrap);
+      SetAnchorLock(openXmlElement, value?.AnchorLock);
+      SetTopBorder(openXmlElement, value?.TopBorder);
+      SetBottomBorder(openXmlElement, value?.BottomBorder);
+      SetLeftBorder(openXmlElement, value?.LeftBorder);
+      SetRightBorder(openXmlElement, value?.RightBorder);
       return openXmlElement;
     }
     return default;

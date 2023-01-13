@@ -219,6 +219,13 @@ public static class BlipExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetImageProperties(openXmlElement, value?.ImageProperties);
+      SetUseLocalDpi(openXmlElement, value?.UseLocalDpi);
+      SetWebVideoProperty(openXmlElement, value?.WebVideoProperty);
+      SetSVGBlip(openXmlElement, value?.SVGBlip);
+      SetPictureAttributionSourceURL(openXmlElement, value?.PictureAttributionSourceURL);
+      SetOEmbed(openXmlElement, value?.OEmbed);
+      SetOEmbedShared(openXmlElement, value?.OEmbedShared);
       return openXmlElement;
     }
     return default;

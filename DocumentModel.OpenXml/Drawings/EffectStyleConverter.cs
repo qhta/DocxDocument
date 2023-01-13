@@ -121,6 +121,10 @@ public static class EffectStyleConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetEffectList(openXmlElement, value?.EffectList);
+      SetEffectDag(openXmlElement, value?.EffectDag);
+      SetScene3DType(openXmlElement, value?.Scene3DType);
+      SetShape3DType(openXmlElement, value?.Shape3DType);
       return openXmlElement;
     }
     return default;

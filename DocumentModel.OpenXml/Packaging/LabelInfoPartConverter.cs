@@ -10,12 +10,20 @@ public static class LabelInfoPartConverter
   /// </summary>
   public static DocumentModel.ClassificationLabelList? GetClassificationLabelList(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList rootElement)
+      return DocumentModel.OpenXml.ClassificationLabelListConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetClassificationLabelList(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement, DocumentModel.ClassificationLabelList? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.ClassificationLabelListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList>(value);
+         if (rootElement != null)
+           openXmlElement.ClassificationLabelList = rootElement;
+      }
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
@@ -48,6 +56,8 @@ public static class LabelInfoPartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetClassificationLabelList(openXmlElement, value?.ClassificationLabelList);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

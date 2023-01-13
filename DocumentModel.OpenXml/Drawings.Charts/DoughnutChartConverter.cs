@@ -186,6 +186,11 @@ public static class DoughnutChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
+      SetHoleSize(openXmlElement, value?.HoleSize);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -327,6 +327,11 @@ public static class RadarChartSeries3Converter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
       SetMarker(openXmlElement, value?.Marker);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+      SetValues(openXmlElement, value?.Values);
+      SetRadarSerExtensionList(openXmlElement, value?.RadarSerExtensionList);
       return openXmlElement;
     }
     return default;

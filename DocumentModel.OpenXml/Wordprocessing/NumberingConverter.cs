@@ -147,6 +147,10 @@ public static class NumberingConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNumberingPictureBullets(openXmlElement, value?.NumberingPictureBullets);
+      SetAbstractNums(openXmlElement, value?.AbstractNums);
+      SetNumberingInstances(openXmlElement, value?.NumberingInstances);
+      SetNumberingIdMacAtCleanup(openXmlElement, value?.NumberingIdMacAtCleanup);
       return openXmlElement;
     }
     return default;

@@ -80,6 +80,8 @@ public static class TasksConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetItems(openXmlElement, value?.Items);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

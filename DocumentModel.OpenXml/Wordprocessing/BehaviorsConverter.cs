@@ -51,6 +51,7 @@ public static class BehaviorsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBehavior(openXmlElement, value?.Behavior);
       return openXmlElement;
     }
     return default;

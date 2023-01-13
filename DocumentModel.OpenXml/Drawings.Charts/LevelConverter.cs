@@ -55,6 +55,7 @@ public static class LevelConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetStringPoints(openXmlElement, value?.StringPoints);
       return openXmlElement;
     }
     return default;

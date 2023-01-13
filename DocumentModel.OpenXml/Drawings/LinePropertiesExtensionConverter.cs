@@ -65,6 +65,7 @@ public static class LinePropertiesExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetLineSketchStyleProperties(openXmlElement, value?.LineSketchStyleProperties);
       return openXmlElement;
     }
     return default;

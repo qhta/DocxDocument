@@ -113,6 +113,7 @@ public static class StylesConverter
       var openXmlElement = new OpenXmlElementType();
       SetDocDefaults(openXmlElement, value?.DocDefaults);
       SetLatentStyles(openXmlElement, value?.LatentStyles);
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

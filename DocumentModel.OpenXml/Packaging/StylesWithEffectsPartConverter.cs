@@ -33,6 +33,8 @@ public static class StylesWithEffectsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

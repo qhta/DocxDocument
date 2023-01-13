@@ -96,6 +96,9 @@ public static class SharedQatControlsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
+      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+      SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
       return openXmlElement;
     }
     return default;

@@ -65,6 +65,7 @@ public static class PieChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
       return openXmlElement;
     }
     return default;

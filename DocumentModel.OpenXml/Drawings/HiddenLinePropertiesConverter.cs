@@ -402,6 +402,18 @@ public static class HiddenLinePropertiesConverter
       SetCapType(openXmlElement, value?.CapType);
       SetCompoundLineType(openXmlElement, value?.CompoundLineType);
       SetAlignment(openXmlElement, value?.Alignment);
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetPresetDash(openXmlElement, value?.PresetDash);
+      SetCustomDash(openXmlElement, value?.CustomDash);
+      SetRound(openXmlElement, value?.Round);
+      SetLineJoinBevel(openXmlElement, value?.LineJoinBevel);
+      SetMiter(openXmlElement, value?.Miter);
+      SetHeadEnd(openXmlElement, value?.HeadEnd);
+      SetTailEnd(openXmlElement, value?.TailEnd);
+      SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
       return openXmlElement;
     }
     return default;

@@ -10,12 +10,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static Boolean? GetStrictRelationshipFound(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is System.Boolean");
-  }
-  
-  public static void SetStrictRelationshipFound(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement, Boolean? value)
-  {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is System.Boolean");
+    return openXmlElement?.StrictRelationshipFound;
   }
   
   /// <summary>
@@ -23,7 +18,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.Packaging.Package? GetPackage(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return openXmlElement?.Package;
   }
   
   /// <summary>
@@ -31,7 +26,9 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.FileAccess? GetFileOpenAccess(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
+    if (openXmlElement?.FileOpenAccess != null)
+      return EnumValueConverter.GetValue<System.IO.FileAccess, System.IO.FileAccess>(openXmlElement.FileOpenAccess);
+    return null;
   }
   
   /// <summary>
@@ -39,7 +36,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static DocumentModel.Properties.CoreProperties? GetPackageProperties(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return DocumentModel.OpenXml.Properties.CorePropertiesConverter.CreateModelElement(openXmlElement?.PackageProperties);
   }
   
   /// <summary>
@@ -47,12 +44,17 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.IO.Packaging.CompressionOption? GetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
+    if (openXmlElement?.CompressionOption != null)
+      return EnumValueConverter.GetValue<System.IO.Packaging.CompressionOption, System.IO.Packaging.CompressionOption>(openXmlElement.CompressionOption);
+    return null;
   }
   
   public static void SetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement, System.IO.Packaging.CompressionOption? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: 1");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.CompressionOption = 
+          (System.IO.Packaging.CompressionOption)EnumValueConverter.GetValue<System.IO.Packaging.CompressionOption, System.IO.Packaging.CompressionOption>(value);
   }
   
   /// <summary>
@@ -60,7 +62,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static System.Collections.Generic.Dictionary<String, String>? GetPartExtensionProvider(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return openXmlElement.PartExtensionProvider;
   }
   
   /// <summary>
@@ -87,7 +89,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static DocumentModel.Packaging.MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return DocumentModel.OpenXml.Packaging.MarkupCompatibilityProcessSettingsConverter.CreateModelElement(openXmlElement?.MarkupCompatibilityProcessSettings);
   }
   
   /// <summary>
@@ -95,7 +97,7 @@ public static class OpenXmlPackageConverter
   /// </summary>
   public static Boolean? GetAutoSave(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is System.Boolean");
+    return openXmlElement?.AutoSave;
   }
   
   public static DocumentModel.Packaging.OpenXmlPackage? CreateModelElement(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
@@ -123,8 +125,15 @@ public static class OpenXmlPackageConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetStrictRelationshipFound(openXmlElement, value?.StrictRelationshipFound);
+      //SetStrictRelationshipFound(openXmlElement, value?.StrictRelationshipFound);
+      //SetPackage(openXmlElement, value?.Package);
+      //SetFileOpenAccess(openXmlElement, value?.FileOpenAccess);
+      //SetPackageProperties(openXmlElement, value?.PackageProperties);
       SetCompressionOption(openXmlElement, value?.CompressionOption);
+      //SetPartExtensionProvider(openXmlElement, value?.PartExtensionProvider);
+      //SetDataParts(openXmlElement, value?.DataParts);
+      //SetMarkupCompatibilityProcessSettings(openXmlElement, value?.MarkupCompatibilityProcessSettings);
+      //SetAutoSave(openXmlElement, value?.AutoSave);
       return openXmlElement;
     }
     return default;

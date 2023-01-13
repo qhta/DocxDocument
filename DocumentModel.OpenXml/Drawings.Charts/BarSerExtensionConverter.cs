@@ -165,6 +165,11 @@ public static class BarSerExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetInvertSolidFillFormat(openXmlElement, value?.InvertSolidFillFormat);
+      SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
+      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+      SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
+      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
       return openXmlElement;
     }
     return default;

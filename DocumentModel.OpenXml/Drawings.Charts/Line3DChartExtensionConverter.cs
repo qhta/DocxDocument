@@ -65,6 +65,7 @@ public static class Line3DChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
       return openXmlElement;
     }
     return default;

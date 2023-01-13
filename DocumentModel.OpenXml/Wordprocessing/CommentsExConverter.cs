@@ -55,6 +55,7 @@ public static class CommentsExConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCommentExs(openXmlElement, value?.CommentExs);
       return openXmlElement;
     }
     return default;

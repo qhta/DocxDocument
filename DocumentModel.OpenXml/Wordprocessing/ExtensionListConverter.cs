@@ -55,6 +55,7 @@ public static class ExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetExtensions(openXmlElement, value?.Extensions);
       return openXmlElement;
     }
     return default;

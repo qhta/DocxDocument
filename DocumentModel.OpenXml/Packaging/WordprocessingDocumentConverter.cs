@@ -10,12 +10,9 @@ public static class WordprocessingDocumentConverter
   /// </summary>
   public static DocumentModel.WordprocessingDocumentType? GetDocumentType(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
-  }
-  
-  public static void SetDocumentType(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement, DocumentModel.WordprocessingDocumentType? value)
-  {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: 1");
+    if (openXmlElement?.DocumentType != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.WordprocessingDocumentType, DocumentModel.WordprocessingDocumentType>(openXmlElement.DocumentType);
+    return null;
   }
   
   public static DocumentModel.Packaging.WordprocessingDocument? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement)
@@ -35,7 +32,7 @@ public static class WordprocessingDocumentConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetDocumentType(openXmlElement, value?.DocumentType);
+      //SetDocumentType(openXmlElement, value?.DocumentType);
       return openXmlElement;
     }
     return default;

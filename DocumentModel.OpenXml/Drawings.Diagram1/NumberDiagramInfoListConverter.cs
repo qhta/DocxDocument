@@ -55,6 +55,7 @@ public static class NumberDiagramInfoListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNumberDiagramInfos(openXmlElement, value?.NumberDiagramInfos);
       return openXmlElement;
     }
     return default;

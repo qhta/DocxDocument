@@ -55,6 +55,7 @@ public static class WebExtensionBindingListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetWebExtensionBindings(openXmlElement, value?.WebExtensionBindings);
       return openXmlElement;
     }
     return default;

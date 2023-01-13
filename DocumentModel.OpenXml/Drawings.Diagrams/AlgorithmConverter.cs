@@ -112,6 +112,8 @@ public static class AlgorithmConverter
       var openXmlElement = new OpenXmlElementType();
       SetType(openXmlElement, value?.Type);
       SetRevision(openXmlElement, value?.Revision);
+      SetParameters(openXmlElement, value?.Parameters);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

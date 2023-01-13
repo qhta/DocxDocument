@@ -71,6 +71,8 @@ public static class PlusConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNumberReference(openXmlElement, value?.NumberReference);
+      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
       return openXmlElement;
     }
     return default;

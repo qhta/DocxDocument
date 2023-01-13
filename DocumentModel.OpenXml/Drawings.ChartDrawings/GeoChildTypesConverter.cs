@@ -55,6 +55,7 @@ public static class GeoChildTypesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetEntityTypes(openXmlElement, value?.EntityTypes);
       return openXmlElement;
     }
     return default;

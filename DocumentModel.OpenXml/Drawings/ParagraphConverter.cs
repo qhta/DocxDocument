@@ -179,6 +179,11 @@ public static class ParagraphConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
+      SetRun(openXmlElement, value?.Run);
+      SetBreak(openXmlElement, value?.Break);
+      SetField(openXmlElement, value?.Field);
+      SetTextMath(openXmlElement, value?.TextMath);
+      SetEndParagraphRunProperties(openXmlElement, value?.EndParagraphRunProperties);
       return openXmlElement;
     }
     return default;

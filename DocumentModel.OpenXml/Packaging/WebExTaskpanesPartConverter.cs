@@ -20,12 +20,20 @@ public static class WebExTaskpanesPartConverter
   /// </summary>
   public static DocumentModel.WebExtensions.UI.Taskpanes? GetTaskpanes(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes rootElement)
+      return DocumentModel.OpenXml.WebExtensions.UI.TaskpanesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetTaskpanes(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart? openXmlElement, DocumentModel.WebExtensions.UI.Taskpanes? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.WebExtensions.UI.TaskpanesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes>(value);
+         if (rootElement != null)
+           openXmlElement.Taskpanes = rootElement;
+      }
   }
   
   /// <summary>
@@ -67,7 +75,10 @@ public static class WebExTaskpanesPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetTaskpanes(openXmlElement, value?.Taskpanes);
+      //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
       return openXmlElement;
     }
     return default;

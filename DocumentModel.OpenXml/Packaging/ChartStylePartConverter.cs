@@ -10,12 +10,20 @@ public static class ChartStylePartConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartsStyle.ChartStyle? GetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle rootElement)
+      return DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart? openXmlElement, DocumentModel.Drawings.ChartsStyle.ChartStyle? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle>(value);
+         if (rootElement != null)
+           openXmlElement.ChartStyle = rootElement;
+      }
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartStylePart? openXmlElement)
@@ -48,6 +56,8 @@ public static class ChartStylePartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetChartStyle(openXmlElement, value?.ChartStyle);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

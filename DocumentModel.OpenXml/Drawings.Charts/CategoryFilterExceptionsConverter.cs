@@ -46,6 +46,7 @@ public static class CategoryFilterExceptionsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCategoryFilterException(openXmlElement, value?.CategoryFilterException);
       return openXmlElement;
     }
     return default;

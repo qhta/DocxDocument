@@ -38,12 +38,16 @@ public static class BorderTypeConverter
   /// </summary>
   public static Boolean? GetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Shadow?.Value;
   }
   
   public static void SetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Shadow = value;
+      else
+        openXmlElement.Shadow = null;
   }
   
   public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)

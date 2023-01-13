@@ -206,6 +206,10 @@ public static class RadarChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetRadarStyle(openXmlElement, value?.RadarStyle);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetRadarChartSerieses(openXmlElement, value?.RadarChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetRadarChartExtensionList(openXmlElement, value?.RadarChartExtensionList);
       return openXmlElement;
     }
     return default;

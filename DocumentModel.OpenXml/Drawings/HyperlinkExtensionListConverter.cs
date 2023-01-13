@@ -55,6 +55,7 @@ public static class HyperlinkExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetHyperlinkExtensions(openXmlElement, value?.HyperlinkExtensions);
       return openXmlElement;
     }
     return default;

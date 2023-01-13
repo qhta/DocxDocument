@@ -83,6 +83,7 @@ public static class CustomXmlPropertiesConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetCustomXmlPlaceholder(openXmlElement, value?.CustomXmlPlaceholder);
+      SetCustomXmlAttributes(openXmlElement, value?.CustomXmlAttributes);
       return openXmlElement;
     }
     return default;

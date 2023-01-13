@@ -55,6 +55,7 @@ public static class SubtotalsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetUnsignedIntegerTypes(openXmlElement, value?.UnsignedIntegerTypes);
       return openXmlElement;
     }
     return default;

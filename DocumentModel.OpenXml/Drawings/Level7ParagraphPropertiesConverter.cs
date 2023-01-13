@@ -460,6 +460,23 @@ public static class Level7ParagraphPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLineSpacing(openXmlElement, value?.LineSpacing);
+      SetSpaceBefore(openXmlElement, value?.SpaceBefore);
+      SetSpaceAfter(openXmlElement, value?.SpaceAfter);
+      SetBulletColorText(openXmlElement, value?.BulletColorText);
+      SetBulletColor(openXmlElement, value?.BulletColor);
+      SetBulletSizeText(openXmlElement, value?.BulletSizeText);
+      SetBulletSizePercentage(openXmlElement, value?.BulletSizePercentage);
+      SetBulletSizePoints(openXmlElement, value?.BulletSizePoints);
+      SetBulletFontText(openXmlElement, value?.BulletFontText);
+      SetBulletFont(openXmlElement, value?.BulletFont);
+      SetNoBullet(openXmlElement, value?.NoBullet);
+      SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
+      SetCharacterBullet(openXmlElement, value?.CharacterBullet);
+      SetPictureBullet(openXmlElement, value?.PictureBullet);
+      SetTabStopList(openXmlElement, value?.TabStopList);
+      SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

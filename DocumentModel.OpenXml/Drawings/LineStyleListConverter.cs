@@ -46,6 +46,7 @@ public static class LineStyleListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetOutline(openXmlElement, value?.Outline);
       return openXmlElement;
     }
     return default;

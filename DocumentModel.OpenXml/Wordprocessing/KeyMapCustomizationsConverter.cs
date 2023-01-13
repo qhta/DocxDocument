@@ -55,6 +55,7 @@ public static class KeyMapCustomizationsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetKeyMapEntries(openXmlElement, value?.KeyMapEntries);
       return openXmlElement;
     }
     return default;

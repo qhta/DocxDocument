@@ -146,6 +146,11 @@ public static class Light1ColorConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
       return openXmlElement;
     }
     return default;

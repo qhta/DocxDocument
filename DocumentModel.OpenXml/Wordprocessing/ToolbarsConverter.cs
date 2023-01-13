@@ -89,6 +89,8 @@ public static class ToolbarsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAllocatedCommandManifests(openXmlElement, value?.AllocatedCommandManifests);
+      SetToolbarDatas(openXmlElement, value?.ToolbarDatas);
       return openXmlElement;
     }
     return default;

@@ -260,6 +260,8 @@ public static class DataSourceObjectConverter
       SetColumnDelimiter(openXmlElement, value?.ColumnDelimiter);
       SetMailMergeSource(openXmlElement, value?.MailMergeSource);
       SetFirstRowHeader(openXmlElement, value?.FirstRowHeader);
+      SetFieldMapDatas(openXmlElement, value?.FieldMapDatas);
+      SetRecipientDataReference(openXmlElement, value?.RecipientDataReference);
       return openXmlElement;
     }
     return default;

@@ -39,12 +39,20 @@ public static class ThemePartConverter
   /// </summary>
   public static DocumentModel.Drawings.Theme? GetTheme(DocumentFormat.OpenXml.Packaging.ThemePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Theme rootElement)
+      return DocumentModel.OpenXml.Drawings.ThemeConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetTheme(DocumentFormat.OpenXml.Packaging.ThemePart? openXmlElement, DocumentModel.Drawings.Theme? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.ThemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Theme>(value);
+         if (rootElement != null)
+           openXmlElement.Theme = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.ThemePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemePart? openXmlElement)
@@ -67,6 +75,9 @@ public static class ThemePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetTheme(openXmlElement, value?.Theme);
       return openXmlElement;
     }

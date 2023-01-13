@@ -46,6 +46,7 @@ public static class ColorMapConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

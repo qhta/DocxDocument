@@ -10,7 +10,7 @@ public static class DataPartConverter
   /// </summary>
   public static Uri? GetUri(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return openXmlElement?.Uri;
   }
   
   /// <summary>
@@ -39,6 +39,8 @@ public static class DataPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetUri(openXmlElement, value?.Uri);
+      //SetContentType(openXmlElement, value?.ContentType);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class Bar3DChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBar3DChartExtensions(openXmlElement, value?.Bar3DChartExtensions);
       return openXmlElement;
     }
     return default;

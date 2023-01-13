@@ -231,6 +231,11 @@ public static class AreaChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetAreaChartSerieses(openXmlElement, value?.AreaChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDropLines(openXmlElement, value?.DropLines);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetAreaChartExtensionList(openXmlElement, value?.AreaChartExtensionList);
       return openXmlElement;
     }
     return default;

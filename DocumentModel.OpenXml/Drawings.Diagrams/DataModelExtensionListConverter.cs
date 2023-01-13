@@ -55,6 +55,7 @@ public static class DataModelExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDataModelExtensions(openXmlElement, value?.DataModelExtensions);
       return openXmlElement;
     }
     return default;

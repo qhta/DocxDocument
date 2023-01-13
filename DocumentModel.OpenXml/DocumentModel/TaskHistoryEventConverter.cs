@@ -430,6 +430,18 @@ public static class TaskHistoryEventConverter
       SetId(openXmlElement, value?.Id);
       SetAttributionTaskUser(openXmlElement, value?.AttributionTaskUser);
       SetTaskAnchor(openXmlElement, value?.TaskAnchor);
+      SetAssignTaskUser(openXmlElement, value?.AssignTaskUser);
+      SetUnassignTaskUser(openXmlElement, value?.UnassignTaskUser);
+      SetTaskCreateEventInfo(openXmlElement, value?.TaskCreateEventInfo);
+      SetTaskTitleEventInfo(openXmlElement, value?.TaskTitleEventInfo);
+      SetTaskScheduleEventInfo(openXmlElement, value?.TaskScheduleEventInfo);
+      SetTaskProgressEventInfo(openXmlElement, value?.TaskProgressEventInfo);
+      SetTaskPriorityEventInfo(openXmlElement, value?.TaskPriorityEventInfo);
+      SetTaskDeleteEventInfo(openXmlElement, value?.TaskDeleteEventInfo);
+      SetTaskUndeleteEventInfo(openXmlElement, value?.TaskUndeleteEventInfo);
+      SetTaskUnassignAll(openXmlElement, value?.TaskUnassignAll);
+      SetTaskUndo(openXmlElement, value?.TaskUndo);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

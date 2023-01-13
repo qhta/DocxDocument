@@ -415,6 +415,14 @@ public static class LineChartSeries3Converter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetMarker(openXmlElement, value?.Marker);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetTrendlines(openXmlElement, value?.Trendlines);
+      SetErrorBars(openXmlElement, value?.ErrorBars);
+      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+      SetValues(openXmlElement, value?.Values);
+      SetSmooth(openXmlElement, value?.Smooth);
+      SetLineSerExtensionList(openXmlElement, value?.LineSerExtensionList);
       return openXmlElement;
     }
     return default;

@@ -34,12 +34,20 @@ public static class FontTablePartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Fonts? GetFonts(DocumentFormat.OpenXml.Packaging.FontTablePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Fonts rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.FontsConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetFonts(DocumentFormat.OpenXml.Packaging.FontTablePart? openXmlElement, DocumentModel.Wordprocessing.Fonts? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.FontsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Fonts>(value);
+         if (rootElement != null)
+           openXmlElement.Fonts = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.FontTablePart? openXmlElement)
@@ -67,7 +75,10 @@ public static class FontTablePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetFontParts(openXmlElement, value?.FontParts);
       SetFonts(openXmlElement, value?.Fonts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

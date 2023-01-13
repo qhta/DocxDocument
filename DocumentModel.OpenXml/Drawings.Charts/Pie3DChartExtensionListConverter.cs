@@ -55,6 +55,7 @@ public static class Pie3DChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPie3DChartExtensions(openXmlElement, value?.Pie3DChartExtensions);
       return openXmlElement;
     }
     return default;

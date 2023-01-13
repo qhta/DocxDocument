@@ -160,6 +160,9 @@ public static class GradientFillConverter
       SetFlip(openXmlElement, value?.Flip);
       SetRotateWithShape(openXmlElement, value?.RotateWithShape);
       SetGradientStopList(openXmlElement, value?.GradientStopList);
+      SetLinearGradientFill(openXmlElement, value?.LinearGradientFill);
+      SetPathGradientFill(openXmlElement, value?.PathGradientFill);
+      SetTileRectangle(openXmlElement, value?.TileRectangle);
       return openXmlElement;
     }
     return default;

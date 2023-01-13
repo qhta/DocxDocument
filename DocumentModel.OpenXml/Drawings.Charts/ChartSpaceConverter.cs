@@ -389,6 +389,17 @@ public static class ChartSpaceConverter
       SetDate1904(openXmlElement, value?.Date1904);
       SetEditingLanguage(openXmlElement, value?.EditingLanguage);
       SetRoundedCorners(openXmlElement, value?.RoundedCorners);
+      SetStyle(openXmlElement, value?.Style);
+      SetColorMapOverride(openXmlElement, value?.ColorMapOverride);
+      SetPivotSource(openXmlElement, value?.PivotSource);
+      SetProtection(openXmlElement, value?.Protection);
+      SetChart(openXmlElement, value?.Chart);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExternalData(openXmlElement, value?.ExternalData);
+      SetPrintSettings(openXmlElement, value?.PrintSettings);
+      SetUserShapesReference(openXmlElement, value?.UserShapesReference);
+      SetChartSpaceExtensionList(openXmlElement, value?.ChartSpaceExtensionList);
       return openXmlElement;
     }
     return default;
